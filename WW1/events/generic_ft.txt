@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # generic Events
 ###########################
 
@@ -418,7 +418,7 @@ country_event = {
 		name = generic_ft_general_event.7.b
 		add_country_leader_trait = pragmatic_fascist
 		hidden_effect = {
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}
@@ -447,7 +447,7 @@ country_event = {
 		}
 		add_country_leader_trait = imperial_fascist_leader
 		hidden_effect = {
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}
@@ -485,7 +485,7 @@ country_event = {
 		add_country_leader_trait = socialist
 		hidden_effect = {
 			set_country_leader_ideology = socialism
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}	
@@ -534,7 +534,7 @@ country_event = {
 		add_country_leader_trait = liberal
 		hidden_effect = {
 			set_country_leader_ideology = liberalism
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}
@@ -583,7 +583,7 @@ country_event = {
 		add_country_leader_trait = conservative
 		hidden_effect = {
 			set_country_leader_ideology = conservatism
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}
@@ -648,7 +648,7 @@ country_event = {
 		name = generic_ft_general_event.8.a
 		if = {
 			limit = {
-				any_character = {
+				any_country_character = {
 					AND = {
 						is_country_leader = yes
 						has_ideology = socialism
@@ -659,7 +659,7 @@ country_event = {
 			add_stability = 0.05
 		}
 		else = {
-			every_character = {
+			every_country_character = {
 				limit = {
 					has_ideology = socialism 
 				}
@@ -672,7 +672,7 @@ country_event = {
 		name = generic_ft_general_event.8.b
 		if = {
 			limit = {
-				any_character = {
+				any_country_character = {
 					AND = {
 						is_country_leader = yes
 						has_ideology = liberalism
@@ -683,7 +683,7 @@ country_event = {
 			add_stability = 0.05
 		}
 		else = {
-			every_character = {
+			every_country_character = {
 				limit = {
 					has_ideology = liberalism
 				}
@@ -696,7 +696,7 @@ country_event = {
 		name = generic_ft_general_event.8.c
 		if = {
 			limit = {
-				any_character = {
+				any_country_character = {
 					AND = {
 						is_country_leader = yes
 						has_ideology = conservatism
@@ -707,7 +707,7 @@ country_event = {
 			add_stability = 0.05
 		}
 		else = {
-			every_character = {
+			every_country_character = {
 				limit = {
 					has_ideology = conservatism
 				}
@@ -755,7 +755,7 @@ country_event = {
 		add_country_leader_trait = centrist_trait
 		hidden_effect = {
 			set_country_leader_ideology = centrism
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}
@@ -771,7 +771,7 @@ country_event = {
 		add_country_leader_trait = moderate_reformer_trait
 		hidden_effect = {
 			set_country_leader_ideology = centrism
-			every_character = {
+			every_country_character = {
 			   	limit = {
 					is_country_leader = yes
 				}

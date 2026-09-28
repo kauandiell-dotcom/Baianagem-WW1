@@ -8566,7 +8566,7 @@ focus_tree = {
 		completion_reward = {
 			add_country_leader_trait = supreme_warlord_trait
 			custom_effect_tooltip = generic_skip_one_line_tt
-			every_character = {
+			every_country_character = {
 				limit = {
 					is_country_leader = yes
 					is_unit_leader = no
@@ -10840,7 +10840,7 @@ focus_tree = {
 				}
 			}
 			hidden_effect = {
-				every_character = {
+				every_country_character = {
 				   	limit = {
 						is_country_leader = yes
 						OR = {
@@ -11120,7 +11120,7 @@ focus_tree = {
 
 		completion_reward = {
 			hidden_effect = {
-				every_character = {
+				every_country_character = {
 				   	limit = {
 						is_country_leader = yes
 					}
@@ -13658,7 +13658,7 @@ focus_tree = {
 						has_completed_focus = institutional_support_focus
 					}
 				}
-				every_character = {
+				every_country_character = {
 					limit = {
 						is_country_leader = yes
 						is_unit_leader = no
@@ -13675,7 +13675,7 @@ focus_tree = {
 				}
 			}
 			else = {
-				every_character = {
+				every_country_character = {
 					limit = {
 						is_country_leader = yes
 						is_unit_leader = no
