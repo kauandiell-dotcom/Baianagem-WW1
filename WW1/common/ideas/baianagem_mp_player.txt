@@ -1,0 +1,32 @@
+ideas = {
+	country = {
+		baianagem_player_buff = {
+			picture = generic_victors_of_wwi
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				# Fast training exclusivo para jogador (reduz tempo de treino em 75%)
+				training_time_army_factor = -0.75
+
+				# Bônus de produção e construção de exército
+				production_speed_industrial_complex_factor = 0.25
+				production_speed_arms_factory_factor = 0.25
+
+				# Manpower e geração de poder de comando para sustentação de mega-exércitos
+				conscription_factor = 0.25
+				max_command_power = 100
+				command_power_gain_mult = 0.50
+				experience_gain_army_unit_factor = 0.50
+			}
+		}
+	}
+}

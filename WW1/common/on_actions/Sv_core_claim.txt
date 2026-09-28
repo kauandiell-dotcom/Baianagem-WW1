@@ -3,9 +3,10 @@ on_actions = {
         effect = {
             every_state = {
                 limit = {
-                    compliance > 65
+                    CONTROLLER = { is_ai = no }
                     is_claimed_by = CONTROLLER
                     NOT = { is_core_of = CONTROLLER }
+                    compliance > 65
                 }
                 add_core_of = CONTROLLER
             }

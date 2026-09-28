@@ -5,6 +5,7 @@ form_scandinavia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = NOR
 				original_tag = DEN
@@ -139,6 +140,7 @@ form_nordic_league_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = NOR
 				original_tag = DEN
@@ -544,6 +546,7 @@ form_north_sea_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = NOR
 				original_tag = DEN
@@ -685,6 +688,7 @@ form_baltic_sea_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = DEN
 			has_dlc = "Arms Against Tyranny"
 		}
@@ -867,6 +871,7 @@ form_gran_colombia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PAN
 				original_tag = ECU
@@ -1009,6 +1014,7 @@ form_austria_hungary_category = {
 		on_map_mode = decision_view_only
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = AUS
 				original_tag = CZE
@@ -1174,6 +1180,7 @@ form_austria_hungary_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = HUN
 			has_dlc = "Waking the Tiger"
 		}
@@ -1350,6 +1357,7 @@ form_commonwealth_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = POL
 				original_tag = LIT
@@ -1437,6 +1445,7 @@ form_united_netherlands_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = LUX
@@ -1515,6 +1524,7 @@ form_united_central_america_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GUA
 				original_tag = ELS
@@ -1575,6 +1585,7 @@ form_united_central_america_category = {
 		icon = GFX_decision_eng_trade_unions_support
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GUA
 				original_tag = ELS
@@ -1620,6 +1631,7 @@ form_united_central_america_category = {
 		icon = GFX_decision_eng_trade_unions_support
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GUA
 				original_tag = ELS
@@ -1668,6 +1680,7 @@ form_baltic_federation_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = EST
 				original_tag = LAT
@@ -1774,6 +1787,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Waking the Tiger"
 			NOT = { has_dlc = "Battle for the Bosporus" }
@@ -1912,6 +1926,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2022,6 +2037,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2077,6 +2093,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2128,6 +2145,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2192,6 +2210,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2256,6 +2275,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2306,6 +2326,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2368,6 +2389,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2448,6 +2470,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2504,6 +2527,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2570,6 +2594,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2632,6 +2657,7 @@ form_ottoman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -2769,6 +2795,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3107,6 +3134,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3229,6 +3257,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3382,6 +3411,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3524,6 +3554,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3647,6 +3678,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3790,6 +3822,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -3955,6 +3988,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4097,6 +4131,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4256,6 +4291,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4377,6 +4413,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4503,6 +4540,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4606,6 +4644,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4750,6 +4789,7 @@ form_european_union_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HOL
 				original_tag = BEL
@@ -4906,6 +4946,7 @@ form_mutapa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = SAF
 				original_tag = BOT
@@ -5003,6 +5044,7 @@ form_roman_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5328,6 +5370,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5456,6 +5499,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5526,6 +5570,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5642,6 +5687,7 @@ form_roman_empire_category = {
 		cost = 75
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5699,6 +5745,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5776,6 +5823,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5862,6 +5910,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5924,6 +5973,7 @@ form_roman_empire_category = {
 		cost = 75
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -5986,6 +6036,7 @@ form_roman_empire_category = {
 		cost = 75
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6047,6 +6098,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6124,6 +6176,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6213,6 +6266,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6330,6 +6384,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6404,6 +6459,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6461,6 +6517,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6558,6 +6615,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6619,6 +6677,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6680,6 +6739,7 @@ form_roman_empire_category = {
 		cost = 100
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6773,6 +6833,7 @@ form_roman_empire_category = {
 		cost = 120
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -6910,6 +6971,7 @@ form_persian_empire_category = {
 		on_map_mode = decision_view_only
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PER
 				original_tag = AFG
@@ -7232,6 +7294,7 @@ form_byzantine_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Waking the Tiger"
 			NOT = { has_dlc = "Battle for the Bosporus" }
@@ -7420,6 +7483,7 @@ form_byzantine_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -7592,6 +7656,7 @@ form_byzantine_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -7750,6 +7815,7 @@ form_byzantine_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -7830,6 +7896,7 @@ form_byzantine_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			OR = {
 				has_dlc = "Waking the Tiger"
@@ -7891,6 +7958,7 @@ form_byzantine_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Waking the Tiger"
 		}
@@ -7970,6 +8038,7 @@ form_arabia_category = {
 		on_map_mode = decision_view_only
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8137,6 +8206,7 @@ form_arabia_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8194,6 +8264,7 @@ form_arabia_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8257,6 +8328,7 @@ form_arabia_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8325,6 +8397,7 @@ form_arabia_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8394,6 +8467,7 @@ form_arabia_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8453,6 +8527,7 @@ form_arabia_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Waking the Tiger"
 		}
 
@@ -8508,6 +8583,7 @@ form_majapahit_empire_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = INS
 				original_tag = MAL
@@ -8595,6 +8671,7 @@ form_majapahit_empire_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = INS
 				original_tag = MAL
@@ -8640,6 +8717,7 @@ form_majapahit_empire_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = INS
 				original_tag = MAL
@@ -8689,6 +8767,7 @@ form_majapahit_empire_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = INS
 				original_tag = MAL
@@ -8740,6 +8819,7 @@ form_rattanakosin_kingdom_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = SIA
 			has_dlc = "Waking the Tiger"
 		}
@@ -8789,6 +8869,7 @@ form_hre_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 
 			OR = {
 				original_tag = GER
@@ -9047,6 +9128,7 @@ form_greater_german_reich_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GER
 			has_dlc = "Waking the Tiger"
 		}
@@ -9419,6 +9501,7 @@ form_greater_german_state_category = {
 		}
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Gotterdammerung"
 			original_tag = GER
 		}
@@ -9697,6 +9780,7 @@ form_andalusia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = MOR
 				original_tag = ALG
@@ -9794,6 +9878,7 @@ form_andalusia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "La Resistance"
 		}
 
@@ -9876,6 +9961,7 @@ form_andalusia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "La Resistance"
 		}
 
@@ -9933,6 +10019,7 @@ form_andalusia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "La Resistance"
 		}
 
@@ -10073,6 +10160,7 @@ form_andalusia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "La Resistance"
 		}
 
@@ -10198,6 +10286,7 @@ form_andalusia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "La Resistance"
 		}
 
@@ -10271,6 +10360,7 @@ maghreb_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 		}
 
 		visible = {
@@ -10376,6 +10466,7 @@ form_polynesia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HAW
 				original_tag = TAH
@@ -10473,6 +10564,7 @@ form_polynesia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = NZL
 		}
 
@@ -10648,6 +10740,7 @@ form_greater_greece_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -10805,6 +10898,7 @@ form_greater_greece_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -10851,6 +10945,7 @@ form_greater_greece_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -10899,6 +10994,7 @@ form_greater_greece_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -10940,6 +11036,7 @@ form_greater_greece_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -10984,6 +11081,7 @@ form_greater_greece_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -11031,6 +11129,7 @@ form_macedonian_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = GRE
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -11356,6 +11455,7 @@ form_turan_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = TUR
 			has_dlc = "Battle for the Bosporus"
 		}
@@ -11631,6 +11731,7 @@ form_turan_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Battle for the Bosporus"
 		}
 
@@ -11694,6 +11795,7 @@ form_turan_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Battle for the Bosporus"
 		}
 
@@ -11788,6 +11890,7 @@ form_turan_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			has_dlc = "Battle for the Bosporus"
 		}
 
@@ -11872,6 +11975,7 @@ form_turkestan_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = TAN # Tannu Tuva
 				original_tag = KAZ # Kazakhstan
@@ -12018,6 +12122,7 @@ form_mountainous_republic_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = DAG # Dagestan
 				original_tag = CIN # Chechnya-Ingushetia
@@ -12088,6 +12193,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia
 				original_tag = ARM # Armenia
@@ -12156,6 +12262,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia
 				original_tag = ARM # Armenia
@@ -12207,6 +12314,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia
 				original_tag = ARM # Armenia
@@ -12268,6 +12376,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia 
 				original_tag = ARM # Armenia
@@ -12315,6 +12424,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia 
 				original_tag = ARM # Armenia
@@ -12436,6 +12546,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia 
 				original_tag = ARM # Armenia
@@ -12574,6 +12685,7 @@ form_transcaucasus_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = GEO # Georgia 
 				original_tag = ARM # Armenia
@@ -12662,6 +12774,7 @@ form_siberia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = YAK # Yakutia
 				original_tag = FER # Far Eastern Republic
@@ -12841,6 +12954,7 @@ form_siberia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = YAK # Yakutia
 				original_tag = FER # Far Eastern Republic
@@ -12965,6 +13079,7 @@ form_siberia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = YAK # Yakutia
 				original_tag = FER # Far Eastern Republic
@@ -13062,6 +13177,7 @@ form_siberia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = YAK # Yakutia
 				original_tag = FER # Far Eastern Republic
@@ -13143,6 +13259,7 @@ form_siberia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = YAK # Yakutia
 				original_tag = FER # Far Eastern Republic
@@ -13255,6 +13372,7 @@ form_idel_ural_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = MEL # Mari EL
 				original_tag = CHU # Chuvashia
@@ -13324,6 +13442,7 @@ form_ethiopian_empire_category  = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ETH # Ethiopia # Maybe add Eritrea as well? 
 		}
 
@@ -13371,6 +13490,7 @@ form_ethiopian_empire_category  = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ETH # Ethiopia 
 		}
 
@@ -13419,6 +13539,7 @@ form_ethiopian_empire_category  = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ETH # Ethiopia 
 		}
 
@@ -13468,6 +13589,7 @@ form_ethiopian_empire_category  = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ETH # Ethiopia 
 		}
 
@@ -13523,6 +13645,7 @@ form_ethiopian_empire_category  = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ETH # Ethiopia 
 		}
 
@@ -13580,6 +13703,7 @@ form_east_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KEN # Kenya
 				original_tag = UGA # Uganda
@@ -13662,6 +13786,7 @@ form_east_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KEN # Kenya
 				original_tag = UGA # Uganda
@@ -13707,6 +13832,7 @@ form_east_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KEN # Kenya
 				original_tag = UGA # Uganda
@@ -13751,6 +13877,7 @@ form_east_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KEN # Kenya
 				original_tag = UGA # Uganda
@@ -13791,6 +13918,7 @@ form_east_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KEN # Kenya
 				original_tag = UGA # Uganda
@@ -13858,6 +13986,7 @@ form_east_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KEN # Kenya
 				original_tag = UGA # Uganda
@@ -13901,6 +14030,7 @@ form_horn_of_africa_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = ETH # Ethiopia
 				original_tag = ERI # Eritrea
@@ -14105,6 +14235,7 @@ form_horn_of_africa_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = ETH # Ethiopia
 				original_tag = ERI # Eritrea
@@ -14169,6 +14300,7 @@ form_horn_of_africa_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = ETH # Ethiopia
 				original_tag = ERI # Eritrea
@@ -14250,6 +14382,7 @@ form_horn_of_africa_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = ETH # Ethiopia
 				original_tag = ERI # Eritrea
@@ -14322,6 +14455,7 @@ greater_italy_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ITA # Italy
 		}
 
@@ -14574,6 +14708,7 @@ form_sweden_hungary_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = HUN # Hungary
 		}
 
@@ -14852,6 +14987,7 @@ antilles_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HAI # Haiti
 				original_tag = DOM # Dominican Republic
@@ -15042,6 +15178,7 @@ antilles_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HAI # Haiti
 				original_tag = DOM # Dominican Republic
@@ -15110,6 +15247,7 @@ antilles_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = HAI # Haiti
 				original_tag = DOM # Dominican Republic
@@ -15181,6 +15319,7 @@ latin_africa_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = COG # Congo Leopoldville
 				original_tag = KAT # Katanga
@@ -15589,6 +15728,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16010,6 +16150,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16117,6 +16258,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16219,6 +16361,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16320,6 +16463,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16460,6 +16604,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16603,6 +16748,7 @@ germany_formable_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = PRE # Prussia
 				original_tag = MEK # Mecklenburg
@@ -16795,6 +16941,7 @@ neo_assyrian_empire_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			original_tag = ASY # Assyria
 		}
 
@@ -16971,6 +17118,7 @@ neo_mesopotamia_category = {
 		icon = generic_form_nation
 
 		allowed = {
+			is_ai = no
 			OR = {
 				original_tag = KUR #Kurdistan
 				original_tag = IRQ # Iraq, can release ASY, and release and form KUR

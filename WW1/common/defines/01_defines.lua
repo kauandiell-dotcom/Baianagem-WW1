@@ -1,5 +1,5 @@
 -- Baianagem-WW1: Core Engine & Military Defines (HOI4 1.19.3)
--- Optimized for Multiplayer (5-8 players) and Simulation Stability
+-- Optimized for Multiplayer (5-8 players) with High Command Capacity
 
 -- ============================================================
 -- Network & Simulation Tick Pacing (Multiplayer Fix)
@@ -11,9 +11,9 @@ NDefines.NGame.GAME_SPEED_SECONDS = { 1.0, 0.25, 0.1, 0.05, 0.02 } -- Speed 5 ca
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 20		-- Smooth 20-day distribution of event checks (prevents 30-day lag spikes)
 
 -- ============================================================
--- Military Command Caps (Prevents AIFC frontline shuffle collapse)
+-- Military Command Caps (High Capacity for MP Players)
 -- ============================================================
-NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 24	-- 24 divisions per general (balanced AI theater management)
+NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 30	-- 30 divisions per general (generous capacity for players)
 NDefines.NMilitary.CORPS_COMMANDER_ARMIES_CAP = -1		-- Corps commander cannot command armies
-NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 24		-- Prevents infinite divisions under direct field marshal
-NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 5			-- 5 armies per field marshal (120 divisions maximum)
+NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 30		-- 30 divisions under direct field marshal
+NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 7			-- 7 armies per field marshal (210 divisions per theater)

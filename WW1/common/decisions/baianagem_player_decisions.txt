@@ -1,0 +1,58 @@
+baianagem_player_category = {
+
+	baianagem_refill_xp = {
+		icon = generic_army
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 7
+
+		allowed = {
+			is_ai = no
+		}
+
+		available = {
+			is_ai = no
+		}
+
+		visible = {
+			is_ai = no
+		}
+
+		complete_effect = {
+			army_experience = 500
+			navy_experience = 500
+			air_experience = 500
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	baianagem_emergency_manpower = {
+		icon = generic_manpower
+		cost = 0
+		fire_only_once = no
+		days_re_enable = 30
+
+		allowed = {
+			is_ai = no
+		}
+
+		available = {
+			is_ai = no
+		}
+
+		visible = {
+			is_ai = no
+		}
+
+		complete_effect = {
+			add_manpower = 250000
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

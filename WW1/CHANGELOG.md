@@ -7,23 +7,34 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
 ## [Unreleased] - Em Andamento
 
 ### Adicionado
-- Criação dos documentos fundamentais de governança e engenharia:
-  - `PROJECT.md`: Definição de escopo, objetivos e compatibilidade com HOI4 1.19.3.
-  - `ARCHITECTURE.md`: Organização de diretórios, padrões técnicos e esteira multiagente.
-  - `ROADMAP.md`: Cronograma e fases de desenvolvimento da Fase 0 à Fase 5.
-  - `CHANGELOG.md`: Registro de versões e intervenções.
-- Estrutura de governança multiagente em `.agents/`:
-  - Regras permanentes em `.agents/rules/` (`hoi4-syntax-and-compatibility.md`, `git-workflow.md`, `performance-standards.md`, `qa-validation-rules.md`).
-  - Skills operacionais em `.agents/skills/` (`hoi4-scripting`, `focus-tree-design`, `hoi4-events-decisions`, `hoi4-qa-validation`).
-  - Definições de papéis de agentes em `.agents/agents/`.
+- **Mecânicas de MP Exclusivas para Jogadores Humanos (`is_ai = no`)**:
+  - `common/ideas/baianagem_mp_player.txt`: Ideia `baianagem_player_buff` fornecendo -75% tempo de treinamento, +25% velocidade de construção, +25% conscrição, +100 max command power e +50% XP militar.
+  - `common/on_actions/baianagem_player_on_actions.txt`: No `on_startup`, jogadores humanos recebem automaticamente 4 slots de pesquisa, o buff de MP e 500 de XP em Exército, Marinha e Aeronáutica.
+  - `common/decisions/categories/baianagem_player_categories.txt` & `common/decisions/baianagem_player_decisions.txt`: Decisões exclusivas para jogadores reabastecerem 500 XP a cada 7 dias (templates e módulos 100% gratuitos) e acionarem reserva emergencial de 250k manpower.
+  - `localisation/english/baianagem_player_l_english.yml`: Localização completa em inglês codificada em UTF-8 com BOM.
+  - `common/scripted_effects/MBR_contingency.txt`: Stub de contingência para `MBR_grant_level_one_technologies`, silenciando 369 erros de efeito desconhecido na inicialização.
 
-### Auditoria e Diagnóstico (Fase 0)
-- Mapeamento completo dos 3.486 arquivos herdados do commit `e746c28`:
-  - Identificada dívida técnica grave decorrente de herança de mod anterior (*Modern Borders Redux* e submods agregados).
-  - Diagnosticada ausência de scripted effect `MBR_grant_level_one_technologies` chamado em 369 países.
-  - Identificadas 18 quebras de chaves em `history/countries/`, 1 em `common/ideas/specialforces_ideas.txt` e 3 em `history/units/`.
-  - Mapeadas inconsistências de sprites (`GFX_ww_stateview_bg`, `MBR_Central_Powers`), comentários inválidos (`--`) e unidades com equipamentos inexistentes (`GEN_helicopter`, `@bm-divisional`).
-  - Diagnosticada sobreposição de líderes modernos de 2024 em um mod temático de Primeira Guerra Mundial.
+### Otimizado & Corrigido
+- **Defines & Pacing de Rede (Multiplayer)** (`c92c0a8`):
+  - Inversão fatal corrigida em `01_defines.lua`: `LAG_DAYS_FOR_LOWER_SPEED = 3` e `LAG_DAYS_FOR_PAUSE = 10`.
+  - Adicionado atraso de 0.02s à Velocidade 5 para impedir host runaway e catch-up lag.
+  - Distribuído o processamento de eventos com `EVENT_PROCESS_OFFSET = 20`.
+  - Revertido `MAX_SHARED_SLOTS = 25` em `59_defines.lua` para estancar hiperinflação de fábricas pela IA.
+  - Normalizado `BASE_DEPLOYMENT_TRAINING = 1.0` em `fast_training_defines.lua` (eliminando spam de divisões pela IA).
+  - Removidos arquivos quebrados `dumm_defines_copy.lua` e `NoTempCost_defines.lua`.
+  - Ajustados limites de generais para suportar grandes exércitos de jogadores: `CORPS_COMMANDER_DIVISIONS_CAP = 30`, `FIELD_MARSHAL_ARMIES_CAP = 7`, `FIELD_MARSHAL_DIVISIONS_CAP = 30`.
+- **Personagens & Escopos Globais** (`9b45ab9`):
+  - Deletado `common/characters/MBR_generic_advisors.txt` (206.390 linhas, 14.560 conselheiros desnecessários).
+  - Removido `common/on_actions/MBR_generic_advisors_on_actions.txt`.
+  - Substituídos 15 escopos globais `every_character` e `any_character` por `every_country_character` e `any_country_character` em `generic_improved.txt` e `events/generic_ft.txt`.
+- **Focos Nacionais, Decisões e Unidades**:
+  - `common/national_focus/generic_improved.txt`: Removidas 7 chamadas destrutivas a `load_focus_tree` e `mark_focus_tree_layout_dirty = yes`. Desativado foco órfão `HABSBURG_part_of_something_bigger`.
+  - `common/on_actions/4rs_on_actions.txt`: Removido script que concedia 4 slots globalmente para a IA.
+  - `common/decisions/formable_nation_decisions.txt`: Adicionado `is_ai = no` a todas as 148 decisões de nações formáveis, eliminando mais de 9.700 verificações diárias da IA e preservando acesso integral aos jogadores.
+  - `common/decisions/generic_ft_decisions.txt`: Adicionado `allowed = { is_ai = no }` em `generic_ft_claim_state_decision` e corrigido bug de flag `coring_state_generic` -> `claiming_state_generic`.
+  - `common/on_actions/Sv_core_claim.txt`: Adicionado filtro de jogador humano (`CONTROLLER = { is_ai = no }`) na varredura mensal de coring, eliminando o congelamento mensal de 1.100 estados.
+  - `common/units/`: Removido `GEN_helicopter.txt` e desativada sub-unidade `air_assault` em `@bm-divisional.txt` que requisitavam equipamentos inexistentes (`helicopter_equipment`).
+  - `common/ideas/specialforces_ideas.txt` & `specialforces_decisions.txt`: Corrigidas 2 chaves não fechadas, convertidos comentários `--` para `#` e restrito acesso à IA.
 
 ---
 

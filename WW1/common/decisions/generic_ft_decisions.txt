@@ -355,6 +355,9 @@ generic_ft_external_affairs_category = {
 	generic_ft_claim_state_decision = {
 		icon = generic_confiscation
 		state_target = yes
+		allowed = {
+			is_ai = no
+		}
 	    target_trigger = {
 	        FROM = {
 	          	any_neighbor_state = {
@@ -397,7 +400,7 @@ generic_ft_external_affairs_category = {
 	    cost = 50
 	    days_remove = 80
 	    complete_effect = {
-	    	set_country_flag = coring_state_generic
+	    	set_country_flag = claiming_state_generic
 	    }
 	    remove_effect = {
 	        FROM = {

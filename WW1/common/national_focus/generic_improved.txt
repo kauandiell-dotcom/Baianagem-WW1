@@ -14,7 +14,7 @@ focus_tree = {
 
 	continuous_focus_position = { x = 50 y = 1100 }
 
-	shared_focus = HABSBURG_part_of_something_bigger
+	# shared_focus = HABSBURG_part_of_something_bigger (disabled for performance)
 
 	#Focus Path shortcuts	
 	shortcut = {
@@ -4518,13 +4518,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = radicalism_idea
 			    days = 365
@@ -4613,13 +4607,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = internationalism
 			    days = 1095
@@ -4771,13 +4759,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = nationalism
 			    days = 1095
@@ -8827,13 +8809,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = moderatism_idea
 			    days = 365
@@ -8920,13 +8896,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = generic_democratising
 			    days = 1095
@@ -10766,13 +10736,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = generic_unaligned
 			    days = 1095
@@ -11456,13 +11420,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			hidden_effect = { #collapse focus tree
-				load_focus_tree = {
-					tree = generic_focus_improved
-					keep_completed = yes
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			hidden_effect = { }
 			add_timed_idea = {
 			    idea = generic_unaligned
 			    days = 1095

@@ -1,16 +1,39 @@
 specialforcescap = {
 
-special_forces_cap_1 = {
-icon = generic_propaganda
-visible = { OR = {NOT = {has_idea = special_forces_cap_idea}}}
-available = { OR = {NOT = {has_idea = special_forces_cap_idea}}}
-complete_effect = {add_ideas = special_forces_cap_idea}
-ai_will_do = {factor = 0}}	
+	special_forces_cap_1 = {
+		icon = generic_propaganda
+		allowed = {
+			is_ai = no
+		}
+		visible = {
+			NOT = { has_idea = special_forces_cap_idea }
+		}
+		available = {
+			NOT = { has_idea = special_forces_cap_idea }
+		}
+		complete_effect = {
+			add_ideas = special_forces_cap_idea
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
 
-special_forces_cap_2 = {
-icon = generic_propaganda
-visible = {has_idea = special_forces_cap_idea}
-complete_effect = {remove_ideas = special_forces_cap_idea}
-ai_will_do = {factor = 0}}}
+	special_forces_cap_2 = {
+		icon = generic_propaganda
+		allowed = {
+			is_ai = no
+		}
+		visible = {
+			has_idea = special_forces_cap_idea
+		}
+		complete_effect = {
+			remove_ideas = special_forces_cap_idea
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
 
---Please give credits if thinking about using some of the code or getting ideas :)
+# Please give credits if thinking about using some of the code or getting ideas :)
