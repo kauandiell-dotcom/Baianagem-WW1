@@ -218,15 +218,33 @@ if = {
 # 1939 Start #
 
 create_country_leader = {
-	name = "Carol I"
-	picture = "GFX_portrait_ROM_carol_i"
-	ideology = despotism
+	name = "Ion I. C. Bratianu"
+	picture = "GFX_portrait_ROM_ion_ic_bratianu"
+	expire = "1935.1.1"
+	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
 	name = "Carol I"
 	picture = "GFX_portrait_ROM_carol_i"
+	expire = "1935.1.1"
 	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Constantin Dobrogeanu-Gherea"
+	picture = "GFX_portrait_ROM_dobrogeanu_gherea"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Alexandru C. Cuza"
+	picture = "GFX_portrait_ROM_alexandru_c_cuza"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

@@ -303,13 +303,31 @@ if = {
 create_country_leader = {
 	name = "Mehmed V"
 	picture = "GFX_portrait_TUR_mehmed_v"
+	expire = "1935.1.1"
 	ideology = despotism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "Mehmed V"
-	picture = "GFX_portrait_TUR_mehmed_v"
-	ideology = despotism
+	name = "Mustafa Kemal"
+	picture = "GFX_portrait_TUR_mustafa_kemal"
+	expire = "1935.1.1"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Mustafa Suphi"
+	picture = "GFX_portrait_TUR_mustafa_suphi"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Enver Pasha"
+	picture = "GFX_portrait_TUR_enver_pasha"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

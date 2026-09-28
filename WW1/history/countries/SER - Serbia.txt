@@ -85,22 +85,34 @@ set_popularities = {
 }
 set_stability = 0.6
 
-
-
-
-
-
-
 create_country_leader = {
-	name = "Peter I"
-	picture = "GFX_portrait_SER_peter_i"
-	ideology = despotism
+	name = "Andra Nikolic"
+	picture = "GFX_portrait_SER_andra_nikolic"
+	expire = "1935.1.1"
+	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
 	name = "Peter I"
 	picture = "GFX_portrait_SER_peter_i"
+	expire = "1935.1.1"
 	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Jasa Prodanovic"
+	picture = "GFX_portrait_SER_jasa_prodanovic"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Dragutin Dimitrijevic Apis"
+	picture = "GFX_portrait_SER_dragutin_dimitrijevic"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

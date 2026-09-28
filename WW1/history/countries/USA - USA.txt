@@ -953,14 +953,32 @@ if = {
 
 create_country_leader = {
 	name = "William Howard Taft"
-	picture = "GFX_portrait_USA_william_howard_taft"
+	picture = "GFX_portrait_USA_william_h_taft"
+	expire = "1935.1.1"
 	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "William Howard Taft"
-	picture = "GFX_portrait_USA_william_howard_taft"
-	ideology = liberalism
+	name = "Eugene V. Debs"
+	picture = "GFX_portrait_USA_eugene_v_debs"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Leonard Wood"
+	picture = "GFX_portrait_USA_leonard_wood"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
+	traits = { }
+}
+
+create_country_leader = {
+	name = "John J. Pershing"
+	picture = "GFX_portrait_USA_john_j_pershing"
+	expire = "1935.1.1"
+	ideology = despotism
 	traits = { }
 }

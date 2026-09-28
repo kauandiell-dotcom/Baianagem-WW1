@@ -218,13 +218,31 @@ set_stability = 0.50
 create_country_leader = {
 	name = "Franz Joseph I"
 	picture = "GFX_portrait_AUS_franz_joseph_i"
+	expire = "1935.1.1"
 	ideology = despotism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "Franz Joseph I"
-	picture = "GFX_portrait_AUS_franz_joseph_i"
-	ideology = despotism
+	name = "Viktor Adler"
+	picture = "GFX_portrait_AUS_viktor_adler"
+	expire = "1935.1.1"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Franz Koritschoner"
+	picture = "GFX_portrait_AUS_franz_koritschoner"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Conrad von Hotzendorf"
+	picture = "GFX_portrait_AUS_conrad_von_hotzendorf"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

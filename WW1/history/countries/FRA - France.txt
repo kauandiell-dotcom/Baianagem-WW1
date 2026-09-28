@@ -808,15 +808,33 @@ if = {
 # 1939 Start #
 
 create_country_leader = {
-	name = "Armand Fallières"
+	name = "Armand Fallieres"
 	picture = "GFX_portrait_FRA_armand_fallieres"
+	expire = "1935.1.1"
 	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "Armand Fallières"
-	picture = "GFX_portrait_FRA_armand_fallieres"
-	ideology = liberalism
+	name = "Jean Jaures"
+	picture = "GFX_portrait_FRA_jean_jaures"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Charles Maurras"
+	picture = "GFX_portrait_FRA_charles_maurras"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Ferdinand Foch"
+	picture = "GFX_portrait_FRA_ferdinand_foch"
+	expire = "1935.1.1"
+	ideology = despotism
 	traits = { }
 }

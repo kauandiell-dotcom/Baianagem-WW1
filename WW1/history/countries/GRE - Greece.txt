@@ -263,13 +263,31 @@ if = {
 create_country_leader = {
 	name = "Eleftherios Venizelos"
 	picture = "GFX_portrait_GRE_eleftherios_venizelos"
+	expire = "1935.1.1"
 	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "Eleftherios Venizelos"
-	picture = "GFX_portrait_GRE_eleftherios_venizelos"
-	ideology = liberalism
+	name = "George I"
+	picture = "GFX_portrait_GRE_george_i"
+	expire = "1935.1.1"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Avraam Benaroya"
+	picture = "GFX_portrait_GRE_avraam_benaroya"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Dimitrios Gounaris"
+	picture = "GFX_portrait_GRE_dimitrios_gounaris"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

@@ -1552,21 +1552,36 @@ create_equipment_variant = {
 
 
 
-# 1939 Start #			
-	
-
-
+# 1939 Start #
 
 create_country_leader = {
 	name = "Emperor Meiji"
 	picture = "GFX_portrait_JAP_emperor_meiji"
+	expire = "1935.1.1"
 	ideology = despotism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "Emperor Meiji"
-	picture = "GFX_portrait_JAP_emperor_meiji"
-	ideology = despotism
+	name = "Katsura Taro"
+	picture = "GFX_portrait_JAP_katsura_taro"
+	expire = "1935.1.1"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Kotoku Shusui"
+	picture = "GFX_portrait_JAP_kotoku_shusui"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Yamagata Aritomo"
+	picture = "GFX_portrait_JAP_yamagata_aritomo"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

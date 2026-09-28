@@ -1016,10 +1016,34 @@ if = {
 # Líder Comunista (Ex: Ernst Thälmann)
 # Líder Monárquico (Ex: Kaiser Wilhelm II)
 
-
 create_country_leader = {
 	name = "Wilhelm II"
 	picture = "GFX_portrait_GER_wilhelm_ii"
+	expire = "1935.1.1"
 	ideology = despotism
-	traits = { autocrat }
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Friedrich Ebert"
+	picture = "GFX_portrait_GER_friedrich_ebert"
+	expire = "1935.1.1"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Karl Liebknecht"
+	picture = "GFX_portrait_GER_karl_liebknecht"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Wolfgang Kapp"
+	picture = "GFX_portrait_GER_wolfgang_kapp"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
+	traits = { }
 }

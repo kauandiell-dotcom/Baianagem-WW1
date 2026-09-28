@@ -1192,14 +1192,32 @@ if = {
 
 create_country_leader = {
 	name = "H. H. Asquith"
-	picture = "GFX_portrait_ENG_george_v"
+	picture = "GFX_portrait_ENG_hh_asquith"
+	expire = "1935.1.1"
 	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "H. H. Asquith"
+	name = "George V"
 	picture = "GFX_portrait_ENG_george_v"
-	ideology = liberalism
+	expire = "1935.1.1"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Henry Hyndman"
+	picture = "GFX_portrait_ENG_henry_hyndman"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Lord Kitchener"
+	picture = "GFX_portrait_ENG_lord_kitchener"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

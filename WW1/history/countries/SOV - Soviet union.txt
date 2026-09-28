@@ -1039,10 +1039,34 @@ if = {
 # Prevent the save-game compatibility on_action from creating duplicates.
 set_country_flag = MBR_SOV_alternative_party_leaders_added
 
-
 create_country_leader = {
 	name = "Nicholas II"
-	picture = "GFX_portrait_SOV_Tsar_Nicholas"
+	picture = "GFX_portrait_SOV_nicholas_ii"
+	expire = "1935.1.1"
 	ideology = despotism
-	traits = { autocrat }
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Alexander Kerensky"
+	picture = "GFX_portrait_SOV_alexander_kerensky"
+	expire = "1935.1.1"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Vladimir Lenin"
+	picture = "GFX_portrait_SOV_vladimir_lenin"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Alexander Kolchak"
+	picture = "GFX_portrait_SOV_alexander_kolchak"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
+	traits = { }
 }

@@ -302,15 +302,33 @@ if = {
 ##############
 
 create_country_leader = {
-	name = "Ferdinand I"
-	picture = "GFX_portrait_BUL_ferdinand_i"
-	ideology = despotism
+	name = "Aleksandar Malinov"
+	picture = "GFX_portrait_BUL_aleksandar_malinov"
+	expire = "1935.1.1"
+	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
 	name = "Ferdinand I"
 	picture = "GFX_portrait_BUL_ferdinand_i"
+	expire = "1935.1.1"
 	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Dimitar Blagoev"
+	picture = "GFX_portrait_BUL_dimitar_blagoev"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Aleksandar Tsankov"
+	picture = "GFX_portrait_BUL_aleksandar_tsankov"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }

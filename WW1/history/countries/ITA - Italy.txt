@@ -250,14 +250,32 @@ set_popularities = {
 
 create_country_leader = {
 	name = "Giovanni Giolitti"
-	picture = "GFX_portrait_ITA_victor_emmanuel_iii"
+	picture = "GFX_portrait_ITA_giovanni_giolitti"
+	expire = "1935.1.1"
 	ideology = liberalism
 	traits = { }
 }
 
 create_country_leader = {
-	name = "Giovanni Giolitti"
-	picture = "GFX_portrait_ITA_victor_emmanuel_iii"
-	ideology = liberalism
+	name = "Vittorio Emanuele III"
+	picture = "GFX_portrait_ITA_vittorio_emanuele_iii"
+	expire = "1935.1.1"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Filippo Turati"
+	picture = "GFX_portrait_ITA_filippo_turati"
+	expire = "1935.1.1"
+	ideology = marxism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Benito Mussolini"
+	picture = "GFX_portrait_ITA_benito_mussolini"
+	expire = "1935.1.1"
+	ideology = fascism_ideology
 	traits = { }
 }
