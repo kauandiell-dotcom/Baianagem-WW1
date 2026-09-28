@@ -64,14 +64,10 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
     - Sanitização de referências a figuras de WW2 (Hitler, Mussolini) substituídas por lideranças imperiais de WW1.
   - `common/decisions/generic_ft_decisions.txt`: Corrigidos erros de digitação de eventos (`generic.12` -> `generic_ft.12`, `generic.15` -> `generic_ft.15`).
   - `common/decisions/formable_nation_decisions.txt`: Removidas decisões anacrônicas de WW2/modernas (`form_european_union` e `form_greater_german_reich`).
-- **Migração Cronológica — Fase 7 & QA Final (Árvores de Tecnologia 1911–1922 & Crise de Agadir)**:
-  - `common/technologies/`: Criada base tecnológica completa da Grande Guerra com marcos temporais de 1911, 1914, 1916 e 1918:
-    - `infantry.txt`: Armamento de infantaria (`infantry_weapons` 1911 a 1918), engenharia, reconhecimento e suporte.
-    - `artillery.txt`: Artilharia histórica (`gw_artillery` 1911, `interwar_artillery` 1915, `artillery1` 1918).
-    - `industry.txt`: Ferramentas básicas a avançadas e construção (1911–1917).
-    - `armor.txt`: Blindados pioneiros (`gw_tank` 1916, tanques leves 1917 e pesados 1918).
-    - `air_techs.txt`: Aviação pioneira e caças da Grande Guerra (1914–1916).
+- **Migração Cronológica — Fase 7 & QA Final (Escalonamento Tecnológico 1911 & Crise de Agadir)**:
+  - Arquitetura Tecnológica: Escalonamento orgânico do motor com `BASE_RESEARCH_YEAR = 1911` e `MAX_AHEAD_RESEARCH_PENALTY = 2.5` em `01_defines.lua`, permitindo a progressão completa da árvore de tecnologias (infantaria, blindados, aviação, marinha, doutrinas e indústria) a partir de 1911 sem sobreposição ou duplicação de IDs.
   - `events/WW1_Agadir.txt` & Localização: Cadeia de eventos históricos da Crise de Agadir (julho de 1911) entre Alemanha, França e Reino Unido (*Panthersprung*).
+  - Normalização de `descriptor.mod`: Remoção de `replace_path="events"` para permitir funcionamento estável de notícias globais, eleições e conferências de paz, mantendo os stubs isoladores de eventos de WW2 intactos em `events/`.
   - Varredura cega conclusiva: zero datas anacrônicas (2020+) e zero blocos temporais de WW2 remanescentes em código ativo; validação sintática estrita com 100% de integridade estrutural em todos os 1.597 arquivos do mod.
 
 ### Otimizado & Corrigido
