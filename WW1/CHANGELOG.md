@@ -13,6 +13,11 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
   - `common/decisions/categories/baianagem_player_categories.txt` & `common/decisions/baianagem_player_decisions.txt`: Decisões exclusivas para jogadores reabastecerem 500 XP a cada 7 dias (templates e módulos 100% gratuitos) e acionarem reserva emergencial de 250k manpower.
   - `localisation/english/baianagem_player_l_english.yml`: Localização completa em inglês codificada em UTF-8 com BOM.
   - `common/scripted_effects/MBR_contingency.txt`: Stub de contingência para `MBR_grant_level_one_technologies`, silenciando 369 erros de efeito desconhecido na inicialização.
+- **Migração Cronológica — Fase 1 (Fundação de Motor & Isolamento)**:
+  - `common/defines/01_defines.lua`: Injetado `START_DATE = "1911.6.1.12"`, `END_DATE = "1924.1.1.1"`, `BASE_RESEARCH_YEAR = 1911` e `MAX_AHEAD_RESEARCH_PENALTY = 2.5`.
+  - `descriptor.mod`: Adicionado `replace_path = "events"` para blindar o mod contra o carregamento acidental de eventos vanilla de WW2.
+  - `common/bookmarks/the_gathering_storm.txt`: Reconstruído integralmente para o cenário oficial de 1911 (*La Belle Époque*), com potências imperiais e constitucionais corretas.
+  - `common/scripted_effects/MBR_contingency.txt`: Atualizado pacote inicial de tecnologias para fuzis históricos básicos e suporte de 1911.
 
 ### Otimizado & Corrigido
 - **Defines & Pacing de Rede (Multiplayer)** (`c92c0a8`):

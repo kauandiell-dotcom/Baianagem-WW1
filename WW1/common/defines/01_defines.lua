@@ -2,6 +2,15 @@
 -- Optimized for Multiplayer (5-8 players) with High Command Capacity
 
 -- ============================================================
+-- Chronological Baseline: 1 de Junho de 1911 (1911.6.1.12)
+-- ============================================================
+NDefines.NGame.START_DATE = "1911.6.1.12"		-- Official campaign start in the Belle Époque
+NDefines.NGame.END_DATE = "1924.1.1.1"			-- Post-Lausanne & post-Russian Civil War conclusion
+NDefines.NTechnology.BASE_RESEARCH_YEAR = 1911	-- Base year for research penalty calculations
+NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2.0 -- Standard ahead-of-time factor
+NDefines.NTechnology.MAX_AHEAD_RESEARCH_PENALTY = 2.5     -- Max penalty cap
+
+-- ============================================================
 -- Network & Simulation Tick Pacing (Multiplayer Fix)
 -- ============================================================
 -- Lowers speed progressively before pausing so lagging clients can catch up
