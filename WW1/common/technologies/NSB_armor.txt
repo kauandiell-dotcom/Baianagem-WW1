@@ -117,7 +117,7 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1918
+		start_year = 1893
 		folder = {
 			name = nsb_armour_folder
 			position = { x = 2 y = 0 }
@@ -133,17 +133,17 @@ technologies = {
 
 			modifier = {
 				factor = 1.2
-				date > 1937.1.1
+				date > 1912.1.1
 			}
 
 			modifier = {
 				factor = 1.2
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
 				factor = 1.2
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 		}
 
@@ -224,17 +224,17 @@ technologies = {
 
 			modifier = {
 				factor = 1.1
-				date > 1937.1.1
+				date > 1912.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 		}
 
@@ -301,28 +301,28 @@ technologies = {
 				factor = 8
 				# Matilda II was designed and entered production in 1937
 				tag = ENG
-				date > 1936.9.1
+				date > 1911.9.1
 			}
 			modifier = {
 				factor = 8
 				# M3 Stuart entered production in 1941
 				tag = USA
-				date > 1940.9.1
+				date > 1915.9.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1937.1.1
+				date > 1912.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 		}
 
@@ -529,22 +529,22 @@ technologies = {
 				factor = 8
 				# M24 Chaffee was designed and entered production in 1943
 				tag = USA
-				date > 1943.3.1
+				date > 1918.3.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1942.1.1
+				date > 1917.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1943.1.1
+				date > 1918.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1944.1.1
+				date > 1919.1.1
 			}
 		}
 
@@ -614,22 +614,22 @@ technologies = {
 
 			modifier = {
 				factor = 1.1
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1940.1.1
+				date > 1915.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1941.1.1
+				date > 1916.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1942.1.1
+				date > 1917.1.1
 			}
 
 			modifier = {
@@ -641,7 +641,7 @@ technologies = {
 						num_of_military_factories < 50
 					}
 				}
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
@@ -653,7 +653,7 @@ technologies = {
 				factor = 4
 				# M3 Lee was designed and entered production in 1940-1941
 				tag = USA
-				date > 1940.3.1
+				date > 1915.3.1
 			}
 
 			modifier = {
@@ -677,7 +677,7 @@ technologies = {
 				factor = 6
 				# Crusader was designed and entered production in 1939
 				tag = ENG
-				date > 1938.11.1
+				date > 1913.11.1
 			}
 		}
 
@@ -800,41 +800,41 @@ technologies = {
 			modifier = {
 				factor = 3
 				tag = SOV
-				date > 1940.3.1
+				date > 1915.3.1
 			}
 
 			modifier = {
 				factor = 6
 				# M4 Sherman was entered production in late 1941
 				tag = USA
-				date > 1941.6.1
+				date > 1916.6.1
 			}
 
 			modifier = {
 				factor = 6
 				# Cromwell was designed and entered production in 1942-1944
 				tag = ENG
-				date > 1942.9.1
+				date > 1917.9.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1941.1.1
+				date > 1916.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1942.1.1
+				date > 1917.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1943.1.1
+				date > 1918.1.1
 			}
 
 			modifier = {
 				factor = 1.1
-				date > 1944.1.1
+				date > 1919.1.1
 			}
 		}
 
@@ -960,7 +960,7 @@ technologies = {
 				factor = 6
 				# Comet was designed and entered production in 1943-1944
 				tag = ENG
-				date > 1943.6.1
+				date > 1918.6.1
 			}
 		}
 
@@ -998,24 +998,24 @@ technologies = {
 
 			modifier = {
 				factor = 2
-				date > 1946.1.1
+				date > 1921.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1947.1.1
+				date > 1922.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1948.1.1
+				date > 1923.1.1
 			}
 
 			modifier = {
 				factor = 6
 				# Centurion was designed and entered production in 1945-1946
 				tag = ENG
-				date > 1944.9.1
+				date > 1919.9.1
 			}
 		}
 
@@ -1265,7 +1265,7 @@ technologies = {
 				factor = 8
 				# M26 Pershing entered production in 1944
 				tag = USA
-				date > 1944.1.1
+				date > 1919.1.1
 			}
 		}
 
@@ -1391,14 +1391,14 @@ technologies = {
 			base = 0
 			modifier = {
 				add = 1
-				date > 1943.9.1
+				date > 1918.9.1
 				NOT = { has_government = democratic }
 				num_of_military_factories > 150
 			}
 			modifier = {
 				add = 2
 				original_tag = GER
-				date > 1944.5.1
+				date > 1919.5.1
 				surrender_progress < 0.1
 				has_government = fascism
 				has_war_with = SOV

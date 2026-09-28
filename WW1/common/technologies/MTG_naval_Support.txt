@@ -11,7 +11,7 @@ technologies = {
 
 		research_cost = 1
 
-		start_year = 1922
+		start_year = 1897
 
 		path = {
 			leads_to_tech = basic_light_battery
@@ -176,12 +176,12 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 			
 			modifier = {
@@ -249,12 +249,12 @@ technologies = {
 			
 			modifier = {
 				factor = 1.5
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 
 			modifier = {
 				factor = 1.5
-				date > 1940.1.1
+				date > 1915.1.1
 			}
 			
 			modifier = {
@@ -330,12 +330,12 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > 1942.1.1
+				date > 1917.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1943.1.1
+				date > 1918.1.1
 			}
 			
 			modifier = {
@@ -491,12 +491,12 @@ technologies = {
 			
 			modifier = {
 				factor = 1.5
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 
 			modifier = {
 				factor = 1.5
-				date > 1940.1.1
+				date > 1915.1.1
 			}
 			
 			modifier = {
@@ -601,12 +601,12 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 			
 			modifier = {
@@ -833,7 +833,7 @@ technologies = {
 
 		research_cost = 2.0
 
-		start_year = 1922
+		start_year = 1897
 
 
 
@@ -1053,15 +1053,15 @@ technologies = {
 			
 			modifier = {
 				factor = 1.5
-				date > 1937.1.1
+				date > 1912.1.1
 			}
 			modifier = {
 				factor = 1.5
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 			modifier = {
 				factor = 1.5
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 		}
 
@@ -1113,12 +1113,12 @@ technologies = {
 			}
 			modifier = {
 				factor = 1.5
-				date > 1941.1.1
+				date > 1916.1.1
 			}
 
 			modifier = {
 				factor = 1.5
-				date > 1942.1.1
+				date > 1917.1.1
 			}
 		}
 
@@ -1203,7 +1203,7 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0
-				date < 1937.1.1
+				date < 1912.1.1
 			}
 			modifier = {
 				has_navy_size = { size < 10 }
@@ -1258,7 +1258,7 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0
-				date < 1939.1.1
+				date < 1914.1.1
 			}
 			modifier = {
 				is_historical_focus_on = yes
@@ -1310,7 +1310,7 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0
-				date < 1941.1.1
+				date < 1916.1.1
 			}
 			modifier = {
 				is_historical_focus_on = yes
@@ -1395,12 +1395,12 @@ technologies = {
 			
 			modifier = {
 				factor = 2
-				date > 1938.1.1
+				date > 1913.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1939.1.1
+				date > 1914.1.1
 			}
 		}
 
@@ -1456,18 +1456,18 @@ technologies = {
 					tag = JAP
 					tag = ITA
 				}
-				date > 1939.1.1
+				date > 1914.1.1
 				factor = 5
 			}
 			
 			modifier = {
 				factor = 2
-				date > 1940.1.1
+				date > 1915.1.1
 			}
 
 			modifier = {
 				factor = 2
-				date > 1941.1.1
+				date > 1916.1.1
 			}
 		}
 
@@ -1526,7 +1526,7 @@ technologies = {
 					tag = JAP
 					tag = ITA
 				}
-				date > 1941.1.1
+				date > 1916.1.1
 				factor = 5
 			}
 			modifier = {
@@ -1557,7 +1557,7 @@ technologies = {
 
 		research_cost = 2
 
-		start_year = 1922
+		start_year = 1897
 
 		path = {
 			leads_to_tech = improved_naval_mines
@@ -1618,7 +1618,7 @@ technologies = {
 
 		research_cost = 2
 
-		start_year = 1922
+		start_year = 1897
 
 		path = {
 			leads_to_tech = improved_submarine_mine_laying
@@ -2070,7 +2070,7 @@ technologies = {
 		}	
 
 		research_cost = 1.5
-		start_year = 1922
+		start_year = 1897
 
 		folder = {
 			name = mtgnavalsupportfolder
@@ -2156,12 +2156,12 @@ technologies = {
 			modifier = {
 				factor = 15
 				tag = USA				
-				date > 1942.1.1
+				date > 1917.1.1
 			}
 			modifier = {
 				factor = 15
 				tag = ENG				
-				date > 1941.6.1
+				date > 1916.6.1
 			}
 			modifier = {
 				factor = 15
