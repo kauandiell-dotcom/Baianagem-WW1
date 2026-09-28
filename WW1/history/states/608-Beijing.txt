@@ -11,16 +11,6 @@ state={
 		owner = CHI
 		add_core_of = CHI
 		add_core_of = PRC
-
-		1936.1.1 = {
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				add_core_of = HBC
-			}
-		}
-
 		buildings = {
 			infrastructure = 3 #was: 5
 			industrial_complex = 2
@@ -50,11 +40,6 @@ state={
 
 		victory_points = {
 			12026 1 # Baoding
-		}
-
-		1938.10.25 = {
-			owner = CHI
-			controller = JAP
 		}
 	}
 

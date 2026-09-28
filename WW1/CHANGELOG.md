@@ -18,6 +18,10 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
   - `descriptor.mod`: Adicionado `replace_path = "events"` para blindar o mod contra o carregamento acidental de eventos vanilla de WW2.
   - `common/bookmarks/the_gathering_storm.txt`: Reconstruído integralmente para o cenário oficial de 1911 (*La Belle Époque*), com potências imperiais e constitucionais corretas.
   - `common/scripted_effects/MBR_contingency.txt`: Atualizado pacote inicial de tecnologias para fuzis históricos básicos e suporte de 1911.
+- **Migração Cronológica — Fase 2 (Saneamento Territorial em `history/states/`)**:
+  - `history/states/*.txt` (216 arquivos modificados): Purgados integralmente todos os 234 blocos datados de WW2 (`1939.1.1`, `1938.10.25`, `1938.3.12`, `1939.3.14`, `1938.9.30`, `1939.4.12`, `1936.3.7`, `1936.11.9`, `1936.6.1`, `1939.3.22`).
+  - Realinhamento territorial de 1911: Líbia Otomana (8 estados) e Dodecaneso transferidos para `TUR` com reivindicação italiana; Rumélia Balcânica (Albânia, Macedônia, Kosovo, Trácia, Epiro, Ilhas do Egeu) transferida para `TUR`; Montenegro estabelecido como reino soberano (`MNT`); Galícia Oriental transferida para `AUS`; norte da China desmarcado de tags comunistas para autoridade imperial `CHI`.
+  - Validação estrita de chaves (`{ }`): zero erros de balanceamento em todos os 1.101 estados do jogo.
 
 ### Otimizado & Corrigido
 - **Defines & Pacing de Rede (Multiplayer)** (`c92c0a8`):
