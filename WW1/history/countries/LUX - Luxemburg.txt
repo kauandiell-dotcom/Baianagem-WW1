@@ -1,0 +1,121 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 8 # Luxembourg City
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "LUX_1936_generic"
+
+
+
+# Starting tech
+
+
+IF = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+set_war_support = 0.15
+set_stability = 0.7
+
+# MBR 2026 removed legacy content: recruit_character = LUX_joseph_bech
+# MBR 2026 removed legacy content: recruit_character = LUX_charles_marx
+# MBR 2026 removed legacy content: recruit_character = LUX_damian_kratzenberg
+# MBR 2026 removed legacy content: recruit_character = LUX_charlotte
+recruit_character = LUX_damien_roeser
+recruit_character = LUX_florent_destriveaux
+recruit_character = LUX_pierre_fischbach
+recruit_character = LUX_guillaume_soisson
+recruit_character = LUX_alex_federspiel
+recruit_character = LUX_henri_ahnen
+# MBR 2026 removed legacy content: recruit_character = LUX_emile_speller
+recruit_character = LUX_francois_schammel
+recruit_character = LUX_aloyse_glodt
+recruit_character = LUX_nicolas_de_dixmude
+recruit_character = LUX_paul_medinger
+recruit_character = LUX_nicholas_diedrich
+# MBR 2026 removed legacy content: recruit_character = LUX_pierre_dupong
+recruit_character = LUX_pierre_krier
+recruit_character = LUX_martin_karp
+# MBR 2026 removed legacy content: recruit_character = LUX_guillaume_konsbruck
+# MBR 2026 removed legacy content: recruit_character = LUX_felix_of_luxembourg
+
+
+# 1939 Scenario
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = construction_effort_2
+	complete_national_focus = production_effort_2
+	complete_national_focus = infrastructure_effort
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	IF = {
+		limit = {
+			NOT = { has_dlc = "By Blood Alone" }
+		}
+		
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+	promote_character = LUX_pierre_dupong
+	retire_character = LUX_joseph_bech
+
+}
+
+
+create_country_leader = {
+	name = "Xavier Bettel"
+	picture = "GFX_Xavier_Bettel"
+	ideology = liberalism
+	traits = { }
+}
+}
+

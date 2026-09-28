@@ -1,0 +1,14 @@
+on_actions = {
+    on_monthly = {
+        effect = {
+            every_state = {
+                limit = {
+                    compliance > 65
+                    is_claimed_by = CONTROLLER
+                    NOT = { is_core_of = CONTROLLER }
+                }
+                add_core_of = CONTROLLER
+            }
+        }
+    }
+}

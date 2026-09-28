@@ -1,0 +1,385 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 291 # Baghdad
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "IRQ_1936_generic"
+
+
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "IRQ_1936_air_bba"
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "IRQ_1936_air_legacy"
+		
+	}
+}
+
+# Starting tech
+
+
+set_convoys = 5
+
+if = {
+	limit = {
+		has_dlc = "Battle for the Bosporus"
+	}
+	
+}
+
+##### RECRUIT VANILLA CHARACTERS #####
+IF = {
+	limit = {
+		has_dlc = "Graveyard of Empires"
+	}
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_yasin_al_hashimi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ghazi_i
+}
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Graveyard of Empires"
+		}
+	}
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ghazi_i
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_yasin_al_hashimi
+}
+# MBR 2026 removed legacy content: recruit_character = IRQ_rashid_ali_algaylani
+# MBR 2026 removed legacy content: recruit_character = IRQ_yusuf_salman_yusuf
+# MBR 2026 removed legacy content: recruit_character = IRQ_fahmi_said
+# MBR 2026 removed legacy content: recruit_character = IRQ_ali_mahmud_al_shaykh
+# MBR 2026 removed legacy content: recruit_character = IRQ_hamdi_al_pachachi
+# MBR 2026 removed legacy content: recruit_character = IRQ_jamil_al_midfai
+# MBR 2026 removed legacy content: recruit_character = IRQ_bakr_sidqi
+# MBR 2026 removed legacy content: recruit_character = IRQ_abdullah
+# MBR 2026 removed legacy content: recruit_character = IRQ_amir_al_illah
+# MBR 2026 removed legacy content: recruit_character = IRQ_nuri_as_said
+# MBR 2026 removed legacy content: recruit_character = IRQ_sharaf_bin_rajeh
+# MBR 2026 removed legacy content: recruit_character = IRQ_faisal_ii
+
+
+##### GoE Setup #####
+
+IF = { 
+	limit = {
+		has_dlc = "Graveyard of Empires"
+	}
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_abd_al_ilah
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_taha_al_hashemi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_muhammad_husayn_kashif_al_ghita
+# MBR 2026 removed legacy content: 	recruit_character = PAL_amin_al_husseini
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_muhammad_amin_zaki
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_kamil_shabib
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_salah_al_din_al_sabbagh
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_jamil_abdul_wahab
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_fawsi_al_kaukji
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_mahmud_salman
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_hikmat_suleiman
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_tawfiq_al_suawaidi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_husain_al_rahhal
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_max_von_oppenheim
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_saib_shawkat
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ibrahim_al_ghandanfari
+# MBR 2026 removed legacy content: 	recruit_character = ARM_calouste_gulbenkian
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_hussein_fawzi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_fritz_grobba
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_werner_junck
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_harry_george_smart
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_naji_al_suwaidi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_akram_mushtak
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ahmed_barzani
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_mustafa_barzani
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_muhammad_ali_jawad
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_maruf_al_rusafi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ahmed_rushdi_muhammad
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_jamil_ahmad_abullah_al_rawi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_kamil_al_jaderji
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_mohamed_hadid
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_jafar_al_timman
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_mohamed_mahdi_kubba
+
+
+
+
+
+
+	#variables for Royal Iraqi Army modifier
+
+	set_variable = { IRQ_experience_gain_army_factor = -0.03 }
+	set_variable = { IRQ_army_org_factor = -0.05 }
+	set_variable = { IRQ_army_core_defence_factor = 0 }
+	set_variable = { IRQ_army_core_attack_factor = 0 }
+	set_variable = { IRQ_army_armor_defence_factor = 0 }
+	set_variable = { IRQ_army_armor_attack_factor = 0 }
+	set_variable = { IRQ_army_artillery_attack_factor = 0 }
+	set_variable = { IRQ_army_artillery_defence_factor = 0 }
+	set_variable = { IRQ_conscription_factor = -0.05 }
+	set_variable = { IRQ_training_time_factor = 0 }
+	set_variable = { IRQ_conscription = 0 }
+	set_variable = { IRQ_army_defence_factor = 0 }
+	set_variable = { IRQ_army_attack_factor = 0 }
+	set_variable = { IRQ_special_forces_cap = 0 }
+	set_variable = { IRQ_special_forces_out_of_supply_factor = 0 }
+	set_variable = { IRQ_extra_marine_supply_grace = 0 }
+	set_variable = { IRQ_max_planning_factor = 0 }
+	set_variable = { IRQ_planning_speed = -0.1 }
+	set_variable = { IRQ_max_command_power_mult = 0 }
+	set_variable = { IRQ_command_power_gain_mult = 0 }
+	set_variable = { IRQ_acclimatization_cold_climate_gain_factor = 0 }
+	set_variable = { IRQ_acclimatization_hot_climate_gain_factor = 0.15 }
+	set_variable = { IRQ_motorized_attack_factor = 0 }
+	set_variable = { IRQ_mechanized_attack_factor = 0 }
+	set_variable = { IRQ_modifier_army_sub_unit_cavalry_attack_factor = 0 }
+	set_variable = { IRQ_modifier_army_sub_unit_cavalry_defence_factor = 0 }
+	set_variable = { IRQ_modifier_army_sub_unit_cavalry_speed_factor = 0 }
+
+# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
+# MBR 2026 removed legacy content: 		modifier = IRQ_royal_army_modifier_IRQ
+# MBR 2026 removed legacy content: 	}
+
+	#Variables for Air Force Modifier 
+	set_variable = { IRQ_air_accidents_factor = -0.1 }
+	set_variable = { IRQ_air_ace_generation_chance_factor = 0 }
+	set_variable = { IRQ_air_weather_penalty = -0.05 }
+	set_variable = { IRQ_air_training_xp_gain_factor = 0 }
+	set_variable = { IRQ_air_manpower_requirement_factor = 0 }
+	set_variable = { IRQ_air_agility_factor = 0 }
+	set_variable = { IRQ_air_nav_efficiency = 0 }
+	set_variable = { IRQ_air_cas_efficiency = 0 }
+	set_variable = { IRQ_air_strategic_bomber_bombing_factor = 0 }
+	set_variable = { IRQ_air_range_factor = 0 }
+	set_variable = { IRQ_air_fuel_consumption_factor = 0 }
+	set_variable = { IRQ_air_superiority_efficiency = 0 }
+
+	#Variables for Navy
+	set_variable = { IRQ_navy_refit_speed = 0 }
+	set_variable = { IRQ_navy_repair_speed_factor = 0 }
+	set_variable = { IRQ_experience_gain_navy = 0.1 }
+	set_variable = { IRQ_mines_planting_by_fleets_factor = 0 }
+	set_variable = { IRQ_navy_anti_air_attack_factor = 0 }
+	set_variable = { IRQ_navy_spirit_category_type_cost_factor = 0 }
+	set_variable = { IRQ_convoy_retreat_speed = 0 }
+	set_variable = { IRQ_spotting_chance = 0 }
+	set_variable = { IRQ_production_speed_dockyard_factor = 0 }
+	set_variable = { IRQ_industrial_capacity_dockyard = 0 }
+	set_variable = { IRQ_extra_marine_supply_grace = 0 }
+	set_variable = { IRQ_naval_invasion_capacity = 0 }
+	set_variable = { IRQ_naval_mines_effect_reduction = 0 }
+	set_variable = { IRQ_experience_gain_navy_unit_factor = 0.1 }
+	set_variable = { IRQ_naval_coordination = 0 }
+	set_variable = { IRQ_naval_equipment_upgrade_xp_cost = 0 }
+	set_variable = { IRQ_naval_morale_factor = 0 }
+	set_variable = { IRQ_screening_efficiency = 0 }
+	set_variable = { IRQ_convoy_escort_efficiency = 0 }
+	set_variable = { IRQ_navy_capital_ship_defence_factor = 0 }
+	set_variable = { IRQ_naval_accidents_chance = 0 }
+	set_variable = { IRQ_navy_screen_defence_factor = 0 }
+	set_variable = { IRQ_production_speed_coastal_bunker_factor = 0 }
+
+	IF = {
+		limit = { has_dlc = "Arms Against Tyranny" }
+		give_market_access = ENG
+	}
+
+	ENG = {
+		add_opinion_modifier = {
+			target = IRQ
+			modifier = IRQ_anglo_iraqi_treaty_in_place_opm
+		}	
+	}
+	add_opinion_modifier = {
+		target = ENG
+		modifier = IRQ_anglo_iraqi_treaty_in_place_opm
+	}
+
+	# Kurdish Resistance
+	676 = {
+# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = KUR_resistance_modifier }
+	}
+
+	# Unhappy and Autonomous Shia Tribes 
+	1010 = {
+# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = IRQ_shia_resistance_modifier }
+	}
+	675 = {
+# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = IRQ_shia_resistance_modifier }
+	}
+
+}
+
+IF = {
+	limit = {
+		NOT = {
+			has_dlc	= "Graveyard of Empires"
+		}
+	}
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_abd_almalik_ibn_hisham
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ali_abn_hussein
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_iskandar_al-shami
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_mustafa_al_quidsi
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_ali_ben_jawad
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_abdullah_al-tell
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_khaled_al_dalabeeh
+# MBR 2026 removed legacy content: 	recruit_character = IRQ_taha_al_ahmani
+}
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	IF = {
+		limit = {
+			has_dlc = "Graveyard of Empires"
+		}
+		#1936
+		complete_national_focus = IRQ_party_of_national_brotherhood
+		complete_national_focus = IRQ_royal_iraqi_army
+		complete_national_focus = IRQ_bakr_sidqi_coup
+		complete_national_focus = IRQ_raf_levies_focus
+		complete_national_focus = IRQ_assasination_of_sidqi
+		#1937
+		complete_national_focus = IRQ_expand_habbaniya_airbase
+		complete_national_focus = IRQ_decouple_from_the_pound
+		complete_national_focus = IRQ_found_the_iraqi_state_railways
+		complete_national_focus = IRQ_purchase_foreign_equipment
+		complete_national_focus = IRQ_independent_flight_schools
+
+		#1938
+		complete_national_focus = IRQ_infantry_focus
+		complete_national_focus = IRQ_purchase_british_aircraft
+		complete_national_focus = IRQ_strengthen_the_iraqi_dinar
+		complete_national_focus = IRQ_heavy_industry_investments
+		complete_national_focus = IRQ_local_arms_industry
+		complete_national_focus = IRQ_al_muthanna_club
+
+		#1939
+		complete_national_focus = IRQ_construct_the_kut_barrage
+		complete_national_focus = IRQ_baghdad_colleges_of_engineering_and_education
+		complete_national_focus = IRQ_found_southern_steel_plants
+		complete_national_focus = IRQ_modernization
+
+		diplomatic_relation = {
+			country = TUR
+			relation = non_aggression_pact
+			active = yes
+		}
+
+		diplomatic_relation = {
+			country = PER
+			relation = non_aggression_pact
+			active = yes
+		}
+
+		diplomatic_relation = {
+			country = AFG
+			relation = non_aggression_pact
+			active = yes
+		}
+
+# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = SSB_saadabad_pact }
+
+		remove_ideas = {
+			IRQ_bakr_sidqi
+			IRQ_ghazi_i
+		}
+		retire_character = IRQ_ghazi_i
+		retire_character = IRQ_bakr_sidqi
+
+	}
+	IF = {
+		limit = {
+			NOT = { has_dlc = "Graveyard of Empires" }
+		}
+		# Generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = construction_effort_2
+		complete_national_focus = production_effort_2
+		complete_national_focus = infrastructure_effort
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort		
+	}
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "IRQ_1939_air_bba"
+		else = {
+			set_air_oob = "IRQ_1939_air_legacy"
+		}
+	}
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 100
+}
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	neutrality = 100
+}
+	IF = {
+		limit = { 
+			NOT = { 
+				has_dlc = "Graveyard of Empires" 
+			} 
+		}		
+# MBR 2026 removed legacy content: 		recruit_character = IRQ_faisal_ii
+		promote_character = IRQ_faisal_ii
+		retire_character = IRQ_ghazi_i
+	}
+}
+
+create_country_leader = {
+	name = "Abu Ala Al Walai"
+	picture = "GFX_abu_ala_al_walai"
+	ideology = despotism
+	traits = { }
+}
+
+
+create_country_leader = {
+	name = "Nouri al-Maliki"
+	picture = "GFX_Nouri_al-Maliki"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Saddam Hussein"
+	picture = "GFX_MBR_saddam_hussein_arcade"
+	ideology = fascism_ideology
+	traits = { }
+}

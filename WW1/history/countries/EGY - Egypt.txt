@@ -1,0 +1,123 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 907
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "EGY_1936_generic"
+
+
+# Starting tech
+
+
+IF = {
+	limit = {
+		has_dlc = "Battle for the Bosporus"
+	}
+	
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	
+}
+
+set_convoys = 20
+
+#set_cosmetic_tag = EGY_brit_puppet
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Muhammad Naguib"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Muhammad_Naguib
+# MBR 2026 removed vanilla political leader: 	ideology = liberalism
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 		#
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Ahmed Husayn"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Ahmed_Husayn
+# MBR 2026 removed vanilla political leader: 	ideology = fascism_ideology
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 		#
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Farouk Muhammad Ali"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = "GFX_portrait_egy_faud_i"
+# MBR 2026 removed vanilla political leader: 	ideology = despotism
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 		#
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Hosni al-Arabi"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Hosni_al_Arabi
+# MBR 2026 removed vanilla political leader: 	ideology = leninism
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 		#
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+
+
+create_country_leader = {
+	name = "Abdel Fattah el-Sisi"
+	picture = "GFX_EGY_Abdel_Fattah_el-Sisi"
+	ideology = despotism
+	traits = { }
+}

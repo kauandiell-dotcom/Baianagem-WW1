@@ -1,0 +1,95 @@
+# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 64
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "PRE_1936_generic"
+
+
+# Starting tech
+
+
+set_grand_doctrine = new_mobile_warfare
+set_grand_doctrine = new_convoy_raiding
+set_grand_doctrine = new_battlefield_support
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	
+}
+if = {
+	limit = {
+		
+		has_dlc = "No Step Back"
+		
+	}
+	
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	
+}
+
+set_research_slots = 3
+set_convoys = 50
+set_stability = 0.75
+
+2029.1.1 = {
+
+	add_political_power = 1197
+	add_command_power = 100
+	
+
+	#BUILDINGS
+	
+
+	
+
+set_grand_doctrine = new_mobile_warfare
+set_grand_doctrine = new_convoy_raiding
+set_grand_doctrine = new_battlefield_support
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+
+
+# MBR 2026 removed legacy content: recruit_character = PRE_eitel_friedrich
+

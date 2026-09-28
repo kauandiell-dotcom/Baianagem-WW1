@@ -1,0 +1,492 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 47
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "GRE_1936_generic"
+
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "GRE_1936_naval_mtg"
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "GRE_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "GRE_1936_air_bba"
+		
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "GRE_1936_air_legacy"
+		
+	}
+}
+
+###################
+#### 3D MODELS ####
+###################
+
+#Cosmetic tags used (3D models will look for these cosmetic tags when hooking themselves):
+#GRE_communism
+#GRE_democratic
+#GRE_fascism
+#GRE_neutrality
+set_cosmetic_tag = GRE_neutrality
+
+set_research_slots = 3
+
+
+
+set_grand_doctrine = grand_battleplan
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	
+}
+2026.1.1 = {
+	if = {
+		limit = { has_dlc = "Battle for the Bosporus" }
+		add_opinion_modifier = { 
+			target = ROM
+			modifier = BFTB_balkan_pact_ally
+		}
+		add_opinion_modifier = { 
+			target = TUR
+			modifier = BFTB_balkan_pact_ally
+		}
+		add_opinion_modifier = { 
+			target = YUG
+			modifier = BFTB_balkan_pact_ally
+		}
+		add_opinion_modifier = { 
+			target = BUL
+			modifier = BFTB_balkan_pact_enemy
+		}
+		add_opinion_modifier = { 
+			target = HUN
+			modifier = BFTB_balkan_pact_enemy
+		}
+		set_country_flag = GRE_factions_unlocked
+		
+
+		set_variable = { var = GRE_debt_to_the_ifc_britain_var value = 10 }
+		set_variable = { var = GRE_debt_to_the_ifc_france_var value = 10 }
+		set_variable = { var = GRE_debt_to_the_ifc_italy_var value = 10 }
+		set_variable = { var = GRE_debt_to_the_ifc_paid_var value = 0 }
+
+		add_opinion_modifier = { 
+			target = GER
+			modifier = GRE_strong_trading_ties
+		}
+		GER = { 
+			add_opinion_modifier = { 
+				target = GRE
+				modifier = GRE_strong_trading_ties
+			}
+		}
+	}
+
+	if = {
+		limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
+		
+	}
+}
+
+set_convoys = 10
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+
+	if = {
+		limit = { has_dlc = "Battle for the Bosporus" }
+		complete_national_focus = GRE_the_kings_government
+		complete_national_focus = GRE_metaxism_focus
+		complete_national_focus = GRE_four_year_plan
+		complete_national_focus = GRE_open_up_the_country
+		complete_national_focus = GRE_the_hellenic_spirit
+		complete_national_focus = GRE_the_national_youth_organisation
+		complete_national_focus = GRE_crack_down_on_the_republicans
+		complete_national_focus = GRE_use_the_military
+		complete_national_focus = GRE_reevaluating_the_drachma
+		complete_national_focus = GRE_utilize_our_strengths
+		complete_national_focus = GRE_hellenic_armed_forces
+		remove_ideas = {
+			civilian_economy
+			GRE_political_instability
+			GRE_political_instability_metaxas
+			GRE_debt_to_the_ifc
+			GRE_agrarian_society
+			GRE_state_of_the_nation_monarchism
+		}
+		
+# MBR 2026 removed legacy content: 		add_timed_idea = {
+# MBR 2026 removed legacy content: 			idea = GRE_four_year_plan_spirit
+# MBR 2026 removed legacy content: 			days = 730
+# MBR 2026 removed legacy content: 		}
+set_popularities = {
+	democratic = 100
+}
+		
+# MBR 2026 removed vanilla political leader: 		create_country_leader = {
+# MBR 2026 removed vanilla political leader: 			name = "Themistoklis Sofoulis"
+# MBR 2026 removed vanilla political leader: 			desc = "POLITICS_THEMISTOKLIS_SOFOULIS_DESC"
+# MBR 2026 removed vanilla political leader: 			picture = GFX_portrait_gre_themistoklis_sofoulis
+# MBR 2026 removed vanilla political leader: 			expire = "2055.1.1"
+# MBR 2026 removed vanilla political leader: 			ideology = liberalism
+# MBR 2026 removed vanilla political leader: 			traits = {
+# MBR 2026 removed vanilla political leader: 				professional_crisis_solver
+# MBR 2026 removed vanilla political leader: 			}
+# MBR 2026 removed vanilla political leader: 		}
+	
+		set_party_name = { ideology = neutrality long_name = GRE_metaxas_party_long name = GRE_metaxas_party }
+	
+		set_variable = { var = GRE_debt_to_the_ifc_britain_var value = 5 }
+		set_variable = { var = GRE_debt_to_the_ifc_france_var value = 5 }
+		set_variable = { var = GRE_debt_to_the_ifc_italy_var value = 5 }
+		set_variable = { var = GRE_debt_to_the_ifc_paid_var value = 15 }
+		set_country_flag = GRE_1936_election
+		set_country_flag = GRE_factions_unlocked
+		set_variable = { var = GRE_monarchist_loyalty value = 2 }
+		set_variable = { var = GRE_republican_loyalty value = -2 }
+		set_variable = { var = GRE_communist_loyalty value = -1 }
+		set_variable = { var = GRE_fascist_loyalty value = 0 }
+		GRE_political_instability_update_effect = yes #Apply effects from Loyal Monarchists
+	}
+
+#generic focuses
+	if = { 
+		limit = { NOT = { has_dlc = "Battle for the Bosporus" } } 	
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = naval_effort
+		complete_national_focus = large_navy
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+
+		
+	}
+
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "GRE_1939_naval_mtg"
+		else = {
+			set_naval_oob = "GRE_1939_naval_legacy"
+		}
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "GRE_1939_air_bba"
+		else = {
+			set_air_oob = "GRE_1939_air_legacy"
+			
+		}
+	}
+	
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+set_stability = 0.72
+set_war_support = 0.23
+set_convoys = 80
+
+
+if = { 
+	limit = { has_dlc = "Battle for the Bosporus" }
+# MBR 2026 removed legacy content: 	recruit_character = GRE_konstantinos_demertzis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_nikos_zachariadis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_george_mercouris
+# MBR 2026 removed legacy content: 	recruit_character = GRE_alexandros_papagos
+# MBR 2026 removed legacy content: 	recruit_character = GRE_charalambos_katsimitros
+# MBR 2026 removed legacy content: 	recruit_character = GRE_markos_drakos
+# MBR 2026 removed legacy content: 	recruit_character = GRE_alexandros_sakellariou
+recruit_character = GRE_konstantinos_ventiris
+recruit_character = GRE_nikolaos_plastiras
+recruit_character = GRE_napoleon_zervas
+recruit_character = GRE_vasilios_tsarpalis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_dimitrios_oikonomou
+recruit_character = GRE_panagiotis_gazis
+recruit_character = GRE_nikos_beloyannis
+recruit_character = GRE_petros_voulgaris
+recruit_character = GRE_spyridon_avgeris
+recruit_character = GRE_georgios_tsolakoglou
+recruit_character = GRE_aris_velouchiotis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_epameinondas_kavvadias
+recruit_character = GRE_marinos_mitralexis
+recruit_character = GRE_georgios_kosmas
+# MBR 2026 removed legacy content: 	recruit_character = GRE_konstantinos_tsaldaris
+# MBR 2026 removed legacy content: 	recruit_character = GRE_ioannis_metaxas
+# MBR 2026 removed legacy content: 	recruit_character = GRE_markos_vafiadis
+recruit_character = GRE_aristeidis_dimitratos
+recruit_character = GRE_xenophon_giosmas
+recruit_character = GRE_georgios_papandreou
+recruit_character = GRE_sophoklis_venizelos
+recruit_character = GRE_dimitris_glinos
+recruit_character = GRE_aristotle_onassis
+recruit_character = GRE_dimitrios_holevas
+recruit_character = GRE_emmanouil_tsouderos
+recruit_character = GRE_konstantinos_maniadakis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_eleftherios_venizelos
+# MBR 2026 removed legacy content: 	recruit_character = GRE_theodoros_pangalos # Empty character -> Can become unit leader later
+# MBR 2026 removed legacy content: 	recruit_character = GRE_dimitrios_psarros # Empty character -> Can become unit leader later
+# MBR 2026 removed legacy content: 	recruit_character = GRE_panagiotis_demestichas # Empty character -> Can become unit leader later
+# MBR 2026 removed legacy content: 	recruit_character = GRE_georgios_kosmidis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_stylianos_gonatas
+# MBR 2026 removed legacy content: 	recruit_character = GRE_king_george_ii
+}
+
+if = {
+	limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
+# MBR 2026 removed legacy content: 	recruit_character = GRE_ioannis_metaxas
+# MBR 2026 removed legacy content: 	recruit_character = GRE_markos_vafiadis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_konstantinos_tsaldaris
+# MBR 2026 removed legacy content: 	recruit_character = GRE_georgios_kosmidis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_markos_drakos
+recruit_character = GRE_nikolaos_plastiras
+recruit_character = GRE_napoleon_zervas
+recruit_character = GRE_konstantinos_ventiris
+recruit_character = GRE_nikos_beloyannis
+# MBR 2026 removed legacy content: 	recruit_character = GRE_alexandros_sakellariou
+recruit_character = GRE_panagiotis_gazis
+recruit_character = GRE_petros_voulgaris
+# MBR 2026 removed legacy content: 	recruit_character = GRE_eleftherios_venizelos
+recruit_character = GRE_vasilios_tsarpalis
+recruit_character = GRE_aristeidis_moraitinis
+recruit_character = GRE_aris_velouchiotis
+recruit_character = GRE_damaskinos
+recruit_character = GRE_evripidis_bakirtris
+recruit_character = GRE_georgios_papandreou
+}
+
+if = {
+	limit = {
+		AND = {
+			has_dlc = "La Resistance"
+			has_dlc = "Battle for the Bosporus"
+		}
+	}
+# MBR 2026 removed legacy content: 	create_operative_leader = {
+# MBR 2026 removed legacy content: 		name = "Patrick Leigh Fermor"
+# MBR 2026 removed legacy content: 		GFX = GFX_portrait_eng_patrick_fermor
+# MBR 2026 removed legacy content: 		traits = { operative_tough operative_commando }
+# MBR 2026 removed legacy content: 		bypass_recruitment = no
+# MBR 2026 removed legacy content: 		available_to_spy_master = yes
+# MBR 2026 removed legacy content: 		female = no
+# MBR 2026 removed legacy content: 		nationalities = { ENG GRE }
+# MBR 2026 removed legacy content: 	}
+recruit_character = GRE_father_dimistrios
+}
+
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Hydra Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 2
+			destroyer_engine_upgrade = 2
+			ship_ASW_upgrade = 2
+			ship_anti_air_upgrade = 2
+		}
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Katsonis Class"				
+		type = ship_hull_submarine_1
+		name_group = GRE_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Glafkos Class"				
+		type = ship_hull_submarine_2
+		name_group = GRE_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_torpedo_sub_1
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Aetos Class"					
+		type = ship_hull_light_1
+		name_group = GRE_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hydra Class"	
+		type = ship_hull_light_1
+		name_group = GRE_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	# Cruisers #
+	create_equipment_variant = {
+		name = "Averof Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = GRE_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_medium_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Elli Class"				
+		type = ship_hull_cruiser_1
+		name_group = GRE_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_mine_layer_1
+		}
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "Kilkis Class"	
+		type = ship_hull_pre_dreadnought
+		name_group = GRE_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+}
+
+# 1939 Start #
+2029.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Destroyers #
+	create_equipment_variant = {
+			name = "Vasilefs Georgios I Class"	
+			type = ship_hull_light_2
+			name_group = GRE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_torpedo_1
+				rear_1_custom_slot = ship_depth_charge_1
+			}
+		}
+	}
+}
+
+create_country_leader = {
+	name = "Kyriakos Mitsotakis"
+	picture = "GFX_kyriakos_mitsotakis"
+	ideology = liberalism
+	traits = { }
+}

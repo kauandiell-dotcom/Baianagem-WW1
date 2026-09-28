@@ -1,0 +1,94 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 547
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "KEN_1936_generic"
+
+
+
+# Starting tech
+
+
+set_convoys = 5
+
+recruit_character = KEN_acas
+recruit_character = KEN_communist_guy
+recruit_character = KEN_ncs
+recruit_character = KEN_awt
+recruit_character = KEN_pot
+recruit_character = KEN_fascist_guy
+recruit_character = KEN_ai2
+recruit_character = KEN_nt
+recruit_character = KEN_aco2
+recruit_character = KEN_ar
+recruit_character = KEN_acr
+recruit_character = KEN_mt
+recruit_character = KEN_stc
+recruit_character = KEN_aa2
+recruit_character = KEN_acgs
+recruit_character = KEN_ncm
+recruit_character = KEN_nccr
+recruit_character = KEN_coi
+recruit_character = KEN_democratic_guy
+recruit_character = KEN_acd2
+
+2029.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+# A colony of Italy in 1939.  However, if independent it would have the same politics as in 1936
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+	
+	
+# MBR 2026 removed vanilla political leader: 	name = "Dedan Ngwale"
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Dedan_Ngwale
+# MBR 2026 removed vanilla political leader: 	expire = "2055.1.1"
+# MBR 2026 removed vanilla political leader: 	ideology = centrism
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 		#
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+
+
+
+create_country_leader = {
+	name = "Augostino Stephen Karanu Njoroge"
+	picture = "GFX_Augostino_Stephen_Karanu_Njoroge"
+	ideology = liberalism
+	traits = { }
+}

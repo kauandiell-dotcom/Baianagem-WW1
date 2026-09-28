@@ -1,0 +1,105 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 608 # Beiping
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "HBC_1936_generic"
+
+
+
+set_stability = 0.6
+set_war_support = 0.35
+
+# Starting tech
+
+
+IF = {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+# MBR 2026 removed legacy content: 	recruit_character = CHI_song_zheyuan
+# MBR 2026 removed legacy content: 	recruit_character = CHI_wan_fulin
+recruit_character = HBC_wu_peifu
+	
+}
+
+
+if = { 
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	
+}
+
+# Should not exist in the 1939 scenario 
+#2029.1.1 = {
+#
+#	add_political_power = 1198
+#	add_command_power = 100
+#
+#	if = {
+#		limit = {
+#			has_dlc = "Waking the Tiger"
+#		}
+#
+#		CHI = { add_to_faction = PREV }
+#		add_to_war = {
+#			targeted_alliance = CHI
+#			enemy = JAP
+#			hostility_reason = asked_to_join
+#		}
+#		
+#		#complete_national_focus = CHI_secure_internal_politics
+#		#complete_national_focus = CHI_cooperation_with_the_communists
+#		#complete_national_focus = CHI_land_redistribution
+#		#complete_national_focus = CHI_land_value_tax
+#		#complete_national_focus = CHI_judiciary_reforms
+#		#complete_national_focus = CHI_communist_administrators
+#		#complete_national_focus = CHI_industrial_investment
+#		#complete_national_focus = CHI_public_education_reform
+#		#complete_national_focus = CHI_local_arms_production
+#		#complete_national_focus = CHI_long_term_economic_planning
+#		#complete_national_focus = CHI_ideological_education
+#		#complete_national_focus = CHI_local_arms_development
+#		#complete_national_focus = CHI_heavy_weapons_development
+#		#complete_national_focus = CHI_public_works
+#		#complete_national_focus = CHI_labor_reform
+#		#complete_national_focus = CHI_rural_militias
+#		else = {			
+#			#generic focuses
+#			complete_national_focus = army_effort
+#			complete_national_focus = equipment_effort
+#			complete_national_focus = motorization_effort
+#			complete_national_focus = aviation_effort
+#			complete_national_focus = naval_effort
+#			complete_national_focus = flexible_navy
+#			complete_national_focus = industrial_effort
+#			complete_national_focus = construction_effort
+#			complete_national_focus = production_effort
+#		}	
+#	}
+#
+#	
+#	
+#	
+#	complete_special_project = {
+#		project = sp:sp_air_radar
+#	}
+#}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}

@@ -1,0 +1,32 @@
+###############################################
+# Better Player Cooperation - Rule Groups
+#
+# A faction rule must belong to a group to be usable at all, so the
+# universal_* rules are grouped here. No group declares a default_rule,
+# so NOTHING is applied automatically - these are only offered as
+# manual choices in the faction screen.
+###############################################
+
+rule_group_universal_joining = {
+	rules = {
+		universal_join_rule
+	}
+}
+
+rule_group_universal_war_declaration = {
+	rules = {
+		universal_war_rule
+	}
+}
+
+rule_group_universal_call_to_war = {
+	rules = {
+		universal_call_rule
+	}
+}
+
+rule_group_universal_leader = {
+	rules = {
+		universal_leader_rule
+	}
+}

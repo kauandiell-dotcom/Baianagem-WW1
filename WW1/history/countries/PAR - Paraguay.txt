@@ -1,0 +1,244 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 301
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "PAR_1936_generic"
+
+
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "PAR_1936_air_bba"
+	ELSE = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "PAR_1936_air_legacy"
+		
+	}
+}
+
+set_research_slots = 2
+# TODO JA, add the correct dlc-requirments
+IF = {
+	limit = {
+		has_dlc = "Trial of Allegiance"
+	}
+# MBR 2026 removed legacy content: 	add_timed_idea = {
+# MBR 2026 removed legacy content: 		idea = BOL_toll_of_the_chaco_war
+# MBR 2026 removed legacy content: 		days = 1400
+# MBR 2026 removed legacy content: 	}
+	JUNO_set_shared_military_branch_defaults = yes
+}
+
+
+# Starting tech
+
+
+set_stability = 0.26
+
+IF = {
+	limit = {
+		has_dlc = "Trial of Allegiance"
+	}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+# MBR 2026 removed legacy content: 	add_timed_idea = {
+# MBR 2026 removed legacy content: 		idea = idea_PAR_the_aftershock_of_the_tripple_alliance
+# MBR 2026 removed legacy content: 		days = 1780
+# MBR 2026 removed legacy content: 	}
+	every_core_state = {
+# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
+# MBR 2026 removed legacy content: 			modifier = idea_PAR_river_navy
+# MBR 2026 removed legacy content: 			#days = <INT> #will be temporary if specified
+# MBR 2026 removed legacy content: 			#scope = TAG #optional, state or country tag or a variable
+# MBR 2026 removed legacy content: 		}
+	}
+	#recruit_character = PAR_war_industrialist
+	#recruit_character = PAR_captain_of_industry
+# MBR 2026 removed legacy content: 	recruit_character = PAR_ivan_belyaev
+# MBR 2026 removed legacy content: 	recruit_character = PAR_rafael_franco
+# MBR 2026 removed legacy content: 	recruit_character = PAR_higinio_morinigo
+recruit_character = PAR_manuel_t_aponte
+recruit_character = PAR_juan_stefanich
+recruit_character = PAR_juan_manuel_frutos
+recruit_character = PAR_isaias_baez_allende
+recruit_character = PAR_alfred_stroessner_matiauda
+recruit_character = PAR_amancio_pampliega
+# MBR 2026 removed legacy content: 	recruit_character = PAR_juan_natalicio_gonzalez
+recruit_character = PAR_remigio_bastia_martin
+recruit_character = PAR_francisco_esculies
+recruit_character = PAR_riccardo_odriosola
+# MBR 2026 removed legacy content: 	recruit_character = PAR_Jose_Felix_Estigarribia
+# MBR 2026 removed legacy content: 	recruit_character = PAR_Eusebio_Ayala
+recruit_character = PAR_eduardo_schaerer
+recruit_character = PAR_arturo_javier_gonzalez
+recruit_character = PAR_finance_graduate
+recruit_character = PAR_fortification_armchair_general
+	#recruit_character = PAR_backroom_windbag
+	#recruit_character = PAR_war_profiteer
+	#recruit_character = PAR_quartermaster_general
+	#recruit_character = PAR_financial_expert
+	#recruit_character = PAR_armaments_organizer
+	#recruit_character = PAR_lieutenant_of_industry
+recruit_character = PAR_aristides_rivas_ortellado
+recruit_character = PAR_freire_gomez_esteves
+# MBR 2026 removed legacy content: 	recruit_character = PAR_ramon_paredes 
+recruit_character = PAR_mutshuito_villasboa_barboza
+recruit_character = PAR_emilio_gardel
+recruit_character = PAR_anselmo_jover_peralta
+recruit_character = PAR_bernardino_caballero
+recruit_character = PAR_pedro_duarte_ortellado
+recruit_character = PAR_felipe_molas_lopez 
+recruit_character = PAR_tomas_salomoni
+recruit_character = PAR_justo_pastor_benitez
+recruit_character = PAR_damian_bruyn
+recruit_character = PAR_higenio_morinigo_martinez
+
+	ELSE = {
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+# MBR 2026 removed legacy content: 		recruit_character = PAR_rafael_franco
+# MBR 2026 removed legacy content: 		recruit_character = PAR_emilio_melgarejo
+# MBR 2026 removed legacy content: 		recruit_character = PAR_francisco_daza
+# MBR 2026 removed legacy content: 		recruit_character = PAR_manuel_de_la_cruz
+recruit_character = PAR_manuel_t_aponte
+recruit_character = PAR_hector_velasquez
+recruit_character = PAR_jesus_g_arraza
+recruit_character = PAR_juan_stefanich
+recruit_character = PAR_juan_manuel_frutos
+recruit_character = PAR_isaias_baez_allende
+recruit_character = PAR_vicente_almonacid
+recruit_character = PAR_alfred_stroessner_matiauda
+recruit_character = PAR_amancio_pampliega
+recruit_character = PAR_hernan_rojas_baltassare
+recruit_character = PAR_higenio_morinigo_martinez
+# MBR 2026 removed legacy content: 		recruit_character = PAR_juan_natalicio_gonzalez
+recruit_character = PAR_remigio_bastia_martin
+recruit_character = PAR_francisco_esculies
+recruit_character = PAR_riccardo_odriosola
+	}
+}
+
+
+set_country_flag = monroe_doctrine
+
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	if = {
+		limit = { has_dlc = "Trial of Allegiance" }
+		complete_national_focus = PAR_fedrerista_land_reforms #35
+		complete_national_focus = PAR_ban_vouchers #35
+		complete_national_focus = PAR_allow_unions_to_strike #35
+		complete_national_focus = PAR_allow_women_workers #70
+		complete_national_focus = PAR_central_bank_of_paraguay #70
+		complete_national_focus = PAR_a_great_charter #70
+		complete_national_focus = PAR_invite_japanese_settlers #35
+		complete_national_focus = PAR_military_pensions #35
+		complete_national_focus = PAR_chaco_war_decoration #35
+		complete_national_focus = GUAY_laissez_faire #70
+		complete_national_focus = GUAY_land_reforms #35
+		complete_national_focus = GUAY_workers_rights #70
+		complete_national_focus = PAR_urbanization #70
+		complete_national_focus = PAR_order_italian_planes #70
+		complete_national_focus = GUAY_agricultural_colonization #70
+		complete_national_focus = GUAY_beef_and_hide_industry #70
+		complete_national_focus = GUAY_wool_makers #35
+		complete_national_focus = GUAY_heavy_industry #70
+		complete_national_focus = GUAY_the_tag_economic_miracle #70
+		complete_national_focus = GUAY_exploit_mineral_wealth #35
+	}
+	if = {
+		limit = { NOT = { has_dlc = "Trial of Allegiance" }}
+		#generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = construction_effort_2
+		complete_national_focus = production_effort_2
+		complete_national_focus = infrastructure_effort
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+	}
+
+
+	IF = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "PAR_1939_air_bba"
+		ELSE = {
+			set_air_oob = "PAR_1939_air_legacy"
+			
+		}
+	}
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+
+	IF = {
+		limit = {
+			NOT = {
+				has_dlc = "Trial of Allegiance"
+			}
+		}
+# MBR 2026 removed legacy content: 		recruit_character = PAR_higinio_morinigo
+		promote_character = PAR_higinio_morinigo
+		retire_character = PAR_manuel_de_la_cruz
+	}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 100
+}
+	
+}
+
+
+create_country_leader = {
+	name = "Horacio Cartes"
+	picture = "GFX_Horacio_Cartes"
+	ideology = liberalism
+	traits = { }
+}

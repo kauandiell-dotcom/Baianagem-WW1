@@ -1,0 +1,2664 @@
+on_actions = {
+	on_ruling_party_change = {
+			effect = {
+
+				#Germany
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GER
+							has_government = fascism
+							NOT = { has_cosmetic_tag = EUR_UNIFIED } 
+							NOT = { has_cosmetic_tag = HRE_UNIFIED } 
+							NOT = { has_cosmetic_tag = GER_strasserite_state }
+							NOT = { has_global_flag = form_greater_proletarian_state_flag }
+							NOT = { has_cosmetic_tag = GER_greater_german_reich } 
+						}
+					}
+					set_cosmetic_tag = GER_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GER
+							has_government = democratic
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED } 
+							NOT = { has_global_flag = form_greater_proletarian_state_flag }
+							NOT = { has_cosmetic_tag = GER_strasserite_state }
+							NOT = { has_cosmetic_tag = GER_greater_german_reich } 
+						}
+					}
+					set_cosmetic_tag = GER_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GER
+							has_government = communism 
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED } 
+							NOT = { has_global_flag = form_greater_proletarian_state_flag }
+							NOT = { has_cosmetic_tag = GER_strasserite_state }
+							NOT = { has_cosmetic_tag = GER_greater_german_reich } 
+						}
+					}
+					set_cosmetic_tag = GER_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GER
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED }
+							NOT = { has_global_flag = form_greater_proletarian_state_flag }
+							NOT = { has_cosmetic_tag = GER_strasserite_state }
+							NOT = { has_cosmetic_tag = GER_greater_german_reich } 
+						}
+					}
+					set_cosmetic_tag = GER_neutrality_IDEO
+				}
+
+				#Soviet Union
+
+				if = {
+					limit = {
+						ROOT = {
+							tag = SOV
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = SOV_ROME}
+							NOT = { has_cosmetic_tag = SOV_PANSLAVIC}
+						}
+					}
+					set_cosmetic_tag = SOV_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = SOV
+							has_government = democratic
+							NOT = { has_cosmetic_tag = SOV_ROME}
+							NOT = { has_cosmetic_tag = SOV_PANSLAVIC}
+						}
+					}
+					set_cosmetic_tag = SOV_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = SOV
+							has_government = communism 
+							NOT = { has_cosmetic_tag = SOV_ROME}
+							NOT = { has_cosmetic_tag = SOV_PANSLAVIC}
+							NOT = { has_cosmetic_tag = SOV_left_opposition}
+							NOT = { has_cosmetic_tag = SOV_right_opposition}
+						}
+					}
+					set_cosmetic_tag = SOV_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = SOV
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = SOV_ROME}
+							NOT = { has_cosmetic_tag = SOV_PANSLAVIC}
+						}
+					}
+					set_cosmetic_tag = SOV_neutrality_IDEO
+				}
+
+				#France
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FRA
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = FRA_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FRA
+							has_government = democratic
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = FRA_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FRA
+							has_government = communism 
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = FRA_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FRA
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = FRA_THIRD_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = FRA_neutrality_IDEO
+				}
+
+				#England
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ENG
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_unified }
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_india_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = ENG_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ENG
+							has_government = democratic
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_unified }
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_india_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = ENG_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ENG
+							has_government = communism 
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_unified }
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_india_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = ENG_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ENG
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_unified }
+							NOT = { has_cosmetic_tag = ENG_imperial_federation_india_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = ENG_neutrality_IDEO
+				}
+
+				#USA
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = USA
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = USA_CSA }
+							NOT = { has_cosmetic_tag = USA_SAF_EDW }
+							NOT = { has_cosmetic_tag = USA_wallis_simpson }
+						}
+					}
+					set_cosmetic_tag = USA_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = USA
+							has_government = democratic
+							NOT = { has_cosmetic_tag = USA_CSA }
+							NOT = { has_cosmetic_tag = USA_SAF_EDW }
+							NOT = { has_cosmetic_tag = USA_wallis_simpson }
+						}
+					}
+					set_cosmetic_tag = USA_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = USA
+							has_government = communism 
+							NOT = { has_cosmetic_tag = USA_SAF_EDW }
+							NOT = { has_cosmetic_tag = USA_wallis_simpson }
+						}
+					}
+					set_cosmetic_tag = USA_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = USA
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = USA_CSA }
+							NOT = { has_cosmetic_tag = USA_SAF_EDW }
+							NOT = { has_cosmetic_tag = USA_wallis_simpson }
+						}
+					}
+					set_cosmetic_tag = USA_neutrality_IDEO
+				}
+
+				#Japan
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = JAP
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = JAP_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = JAP
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = JAP_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = JAP
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = JAP_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = JAP
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = JAP_neutrality_IDEO
+				}
+
+				#Italy
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ITA
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_global_flag = form_roman_empire_flag }
+							NOT = { has_global_flag = greater_italy_flag }
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = ITA_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ITA
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_global_flag = form_roman_empire_flag }
+							NOT = { has_global_flag = greater_italy_flag }
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = ITA_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ITA
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_global_flag = form_roman_empire_flag }
+							NOT = { has_global_flag = greater_italy_flag }
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = ITA_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ITA
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_global_flag = form_roman_empire_flag }
+							NOT = { has_global_flag = greater_italy_flag }
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = ITA_neutrality_IDEO
+				}
+
+				  #minor powers
+
+				#turkey
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TUR
+							has_government = fascism 
+							NOT = { has_country_flag = TUR_PROVISIONARY_flag }
+							NOT = { has_global_flag = form_ottoman_empire_flag }
+							NOT = { has_global_flag = form_turan_flag }
+
+						}
+					}
+					set_cosmetic_tag = TUR_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TUR
+							has_government = democratic
+							NOT = { has_country_flag = TUR_PROVISIONARY_flag }
+							NOT = { has_global_flag = form_ottoman_empire_flag }
+							NOT = { has_global_flag = form_turan_flag }
+
+						}
+					}
+					set_cosmetic_tag = TUR_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TUR
+							has_government = communism
+							NOT = { has_country_flag = TUR_PROVISIONARY_flag }
+							NOT = { has_global_flag = form_ottoman_empire_flag }
+							NOT = { has_global_flag = form_turan_flag }
+	
+						}
+					}
+					set_cosmetic_tag = TUR_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TUR
+							has_government = neutrality
+							NOT = { has_country_flag = TUR_PROVISIONARY_flag }
+							NOT = { has_global_flag = form_ottoman_empire_flag }
+							NOT = { has_global_flag = form_turan_flag }
+
+						}
+					}
+					set_cosmetic_tag = TUR_neutrality_IDEO
+				}
+				#greece
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GRE
+							has_government = fascism 
+							NOT = { has_global_flag = form_byzantine_empire_flag }
+							NOT = { has_global_flag = form_greater_greece_flag }
+							NOT = { has_global_flag = form_macedonian_empire_flag }
+						}
+					}
+					set_cosmetic_tag = GRE_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GRE
+							has_government = democratic
+							NOT = { has_global_flag = form_byzantine_empire_flag }
+							NOT = { has_global_flag = form_greater_greece_flag }
+							NOT = { has_global_flag = form_macedonian_empire_flag }
+						}
+					}
+					set_cosmetic_tag = GRE_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GRE
+							has_government = communism 
+							NOT = { has_global_flag = form_byzantine_empire_flag }
+							NOT = { has_global_flag = form_greater_greece_flag }
+							NOT = { has_global_flag = form_macedonian_empire_flag }
+						}
+					}
+					set_cosmetic_tag = GRE_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GRE
+							has_government = neutrality
+							NOT = { has_global_flag = form_byzantine_empire_flag }
+							NOT = { has_global_flag = form_greater_greece_flag }
+							NOT = { has_global_flag = form_macedonian_empire_flag }
+						}
+					}
+					set_cosmetic_tag = GRE_neutrality_IDEO
+				}
+                                #Bulgaria
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BUL
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = BUL_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BUL
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = BUL_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BUL
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = BUL_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BUL
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = BUL_neutrality_IDEO
+				}
+                                #Sweden
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SWE
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = SWE_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SWE
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = SWE_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SWE
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = SWE_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SWE
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = SWE_neutrality_IDEO
+				}
+                                #Finland
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FIN
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = FIN_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FIN
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = FIN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FIN
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = FIN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = FIN
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = FIN_neutrality_IDEO
+				}
+                                #Norway
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NOR
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = NOR_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NOR
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = NOR_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NOR
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = NOR_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NOR
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = NOR_neutrality_IDEO
+				}
+                                #Denmark
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = DEN
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = DEN_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = DEN
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = DEN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = DEN
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = DEN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = DEN
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = DEN_neutrality_IDEO
+				}
+
+                                #Mexico
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MEX
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = MEX_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MEX
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = MEX_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MEX
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = MEX_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MEX
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = MEX_neutrality_IDEO
+				}
+
+                                #Brazil
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BRA
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = BRA_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BRA
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = BRA_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BRA
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = BRA_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BRA
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = BRA_neutrality_IDEO
+				}
+
+                                #Austria
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AUS
+							has_government = fascism 
+							NOT = { has_completed_focus = AUS_clamp_down_on_dnsap }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED } 
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = AUS_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AUS
+							has_government = democratic
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED } 
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = AUS_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AUS
+							has_government = communism 
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED }
+							NOT = { has_cosmetic_tag = HUN_EMPIRE } 
+						}
+					}
+					set_cosmetic_tag = AUS_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AUS
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HRE_UNIFIED } 
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = AUS_neutrality_IDEO
+				}
+
+                                #Hungary
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HUN
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+							NOT = { has_cosmetic_tag = UN_sweden_hungary_unified }
+						}
+					}
+					set_cosmetic_tag = HUN_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HUN
+							has_government = democratic
+							NOT = { has_cosmetic_tag = UN_sweden_hungary_unified }
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = HUN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HUN
+							has_government = communism 
+							NOT = { has_cosmetic_tag = UN_sweden_hungary_unified }
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = HUN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HUN
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = UN_sweden_hungary_unified }
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = HUN_neutrality_IDEO
+				}
+
+                                #Yugoslavia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUG
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = YUG_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUG
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = YUG_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUG
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = YUG_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUG
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = YUG_neutrality_IDEO
+				}
+
+                                #Czechoslovakia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CZE
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = CZE_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CZE
+							has_government = democratic
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = CZE_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CZE
+							has_government = communism 
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = CZE_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CZE
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = HUN_EMPIRE }
+						}
+					}
+					set_cosmetic_tag = CZE_neutrality_IDEO
+				}
+
+                                #Romania
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ROM
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = ROM_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ROM
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = ROM_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag =ROM
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = ROM_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ROM
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = ROM_neutrality_IDEO
+				}
+                                #China
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHI
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = CHI_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHI
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = CHI_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHI
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = CHI_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHI
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = CHI_neutrality_IDEO
+				}
+                                #CCP
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PRC
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = PRC_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PRC
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = PRC_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PRC
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = PRC_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PRC
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = PRC_neutrality_IDEO
+				}
+                                #Guanxci
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GXC
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = GXC_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GXC
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = GXC_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GXC
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = GXC_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GXC
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = GXC_neutrality_IDEO
+				}
+                                #Yunnan
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUN
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = YUN_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUN
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = YUN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUN
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = YUN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = YUN
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = YUN_neutrality_IDEO
+				}
+
+                                #Shanxi
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SHX
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = SHX_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SHX
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = SHX_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SHX
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = SHX_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SHX
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = SHX_neutrality_IDEO
+				}
+                                #Xei San ma
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = XSM
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = XSM_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = XSM
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = XSM_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = XSM
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = XSM_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = XSM
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = XSM_neutrality_IDEO
+				}
+                                #Sinkiang
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SIK
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = SIK_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SIK
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = SIK_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag =SIK
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = SIK_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SIK
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = SIK_neutrality_IDEO
+				}
+                                #Manchuria
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MAN
+							has_government = fascism 
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								is_subject_of = JAP
+							}
+						}
+						drop_cosmetic_tag = yes
+					}
+					else = {
+						set_cosmetic_tag = MAN_fascism_IDEO
+					}
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MAN
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = MAN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MAN
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = MAN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MAN
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = MAN_neutrality_IDEO
+				}
+                                #South Africa
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SAF
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = SAF_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SAF
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = SAF_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SAF
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = SAF_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SAF
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = SAF_neutrality_IDEO
+				}
+                                #New Zealand
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NZL
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = NZL_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NZL
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = NZL_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NZL
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = NZL_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NZL
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = NZL_neutrality_IDEO
+				}
+                                #Australia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AST
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = AST_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AST
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = AST_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AST
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = AST_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = AST
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = AST_neutrality_IDEO
+				}
+                                #Raj
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = RAJ
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = RAJ_UK }
+							NOT = { has_cosmetic_tag = RAJ_mughal_breakaway_state }
+							NOT = { has_cosmetic_tag = RAJ_mughal_empire }
+							NOT = { has_cosmetic_tag = RAJ_timurid_empire }
+							NOT = { has_cosmetic_tag = RAJ_eic_tag }
+							NOT = { has_cosmetic_tag = RAJ_akhand_bharat_tag }
+						}
+					}
+					set_cosmetic_tag = RAJ_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = RAJ
+							has_government = democratic
+							NOT = { has_cosmetic_tag = RAJ_UK }
+							NOT = { has_cosmetic_tag = RAJ_mughal_breakaway_state }
+							NOT = { has_cosmetic_tag = RAJ_mughal_empire }
+							NOT = { has_cosmetic_tag = RAJ_timurid_empire }
+							NOT = { has_cosmetic_tag = RAJ_eic_tag }
+							NOT = { has_cosmetic_tag = RAJ_akhand_bharat_tag }
+						}
+					}
+					set_cosmetic_tag = RAJ_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = RAJ
+							has_government = communism 
+							NOT = { has_cosmetic_tag = RAJ_UK }
+							NOT = { has_cosmetic_tag = RAJ_mughal_breakaway_state }
+							NOT = { has_cosmetic_tag = RAJ_mughal_empire }
+							NOT = { has_cosmetic_tag = RAJ_timurid_empire }
+							NOT = { has_cosmetic_tag = RAJ_eic_tag }
+							NOT = { has_cosmetic_tag = RAJ_akhand_bharat_tag }
+						}
+					}
+					set_cosmetic_tag = RAJ_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = RAJ
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = RAJ_UK }
+							NOT = { has_cosmetic_tag = RAJ_mughal_breakaway_state }
+							NOT = { has_cosmetic_tag = RAJ_mughal_empire }
+							NOT = { has_cosmetic_tag = RAJ_timurid_empire }
+							NOT = { has_cosmetic_tag = RAJ_eic_tag }
+							NOT = { has_cosmetic_tag = RAJ_akhand_bharat_tag }
+						}
+					}
+					set_cosmetic_tag = RAJ_neutrality_IDEO
+				}
+                                #Canada
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CAN
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag =CAN_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CAN
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = CAN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CAN
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = CAN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CAN
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = CAN_neutrality_IDEO
+				}
+                                #Estonia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = EST
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = EST_belarus }
+						}
+					}
+					set_cosmetic_tag = EST_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = EST
+							has_government = democratic
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = EST_belarus }
+						}
+					}
+					set_cosmetic_tag = EST_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = EST
+							has_government = communism 
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = EST_belarus }
+						}
+					}
+					set_cosmetic_tag = EST_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = EST
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = EST_belarus }
+						}
+					}
+					set_cosmetic_tag = EST_neutrality_IDEO
+				}
+                                #Latvia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LAT
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LAT_belarus }
+						}
+					}
+					set_cosmetic_tag = LAT_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LAT
+							has_government = democratic
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LAT_belarus }
+						}
+					}
+					set_cosmetic_tag = LAT_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LAT
+							has_government = communism 
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LAT_belarus }
+						}
+					}
+					set_cosmetic_tag = LAT_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LAT
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LAT_belarus }
+						}
+					}
+					set_cosmetic_tag = LAT_neutrality_IDEO
+				}
+                                #Lithuania
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LIT
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LIVONIA }
+							NOT = { has_cosmetic_tag = LIT_belarus }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = LIT_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LIT
+							has_government = democratic
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LIVONIA }
+							NOT = { has_cosmetic_tag = LIT_belarus }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = LIT_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LIT
+							has_government = communism 
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LIVONIA }
+							NOT = { has_cosmetic_tag = LIT_belarus }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = LIT_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LIT
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = BAL_UNIFIED }
+							NOT = { has_cosmetic_tag = LIVONIA }
+							NOT = { has_cosmetic_tag = LIT_belarus }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = LIT_neutrality_IDEO
+				}
+                                #Ethiopia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ETH
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = ETH_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ETH
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = ETH_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ETH
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = ETH_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ETH
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = ETH_neutrality_IDEO
+				}
+                                #Spanish
+				if = {
+					limit = {
+						ROOT = {
+							tag = SPR
+							NOT = { tag = SPC }
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = SPR_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = SPR
+							NOT = { tag = SPC }
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = SPR_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = SPR
+							NOT = { tag = SPC }
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = SPR_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = SPR
+							NOT = { tag = SPC }
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = SPR_neutrality_IDEO
+				}
+                                #Poland
+				if = {
+					limit = {
+						ROOT = {
+							tag = POL
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = POL_KINGDOM_RUS }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = POL_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = POL
+							has_government = democratic
+							NOT = { has_cosmetic_tag = POL_KINGDOM_RUS }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = POL_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = POL
+							has_government = communism 
+							NOT = { has_cosmetic_tag = POL_KINGDOM_RUS }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = POL_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = POL
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = POL_KINGDOM_RUS }
+							NOT = { has_cosmetic_tag = PLC_UNIFIED }
+						}
+					}
+					set_cosmetic_tag = POL_neutrality_IDEO
+				}
+				#argentina
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ARG
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = ARG_fourth_reich_fascism }
+						}
+					}
+					set_cosmetic_tag = ARG_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ARG
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = ARG_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ARG
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = ARG_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = ARG
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = ARG_neutrality_IDEO
+				}
+				#chile
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHL
+							has_government = fascism 
+							NOT = { has_cosmetic_tag = CHL_mapuche_state }
+						}
+					}
+					set_cosmetic_tag = CHL_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHL
+							has_government = democratic
+							NOT = { has_cosmetic_tag = CHL_mapuche_state }
+						}
+					}
+					set_cosmetic_tag = CHL_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHL
+							has_government = communism 
+							NOT = { has_cosmetic_tag = CHL_mapuche_state }
+						}
+					}
+					set_cosmetic_tag = CHL_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = CHL
+							has_government = neutrality
+							NOT = { has_cosmetic_tag = CHL_mapuche_state }
+						}
+					}
+					set_cosmetic_tag = CHL_neutrality_IDEO
+				}
+				#paraguay
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PAR
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = PAR_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PAR
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = PAR_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PAR
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = PAR_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PAR
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = PAR_neutrality_IDEO
+				}
+				#uruguay
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = URG
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = URG_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = URG
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = URG_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = URG
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = URG_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = URG
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = URG_neutrality_IDEO
+				}
+				#Belgium
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BEL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = BEL_AUS_danubian_state }
+							NOT = { has_cosmetic_tag = BEL_vnv_dominant }
+							NOT = { has_cosmetic_tag = BEL_greater_netherlands }
+							NOT = { has_cosmetic_tag = BEL_burgundy }
+							NOT = { has_cosmetic_tag = BEL_beligca }
+							NOT = { has_cosmetic_tag = BEL_flanders }
+							NOT = { has_cosmetic_tag = BEL_european_union_leader }
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = BEL_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BEL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = BEL_AUS_danubian_state }
+							NOT = { has_cosmetic_tag = BEL_vnv_dominant }
+							NOT = { has_cosmetic_tag = BEL_greater_netherlands }
+							NOT = { has_cosmetic_tag = BEL_burgundy }
+							NOT = { has_cosmetic_tag = BEL_beligca }
+							NOT = { has_cosmetic_tag = BEL_flanders }
+							NOT = { has_cosmetic_tag = BEL_european_union_leader }
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = BEL_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BEL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = BEL_AUS_danubian_state }
+							NOT = { has_cosmetic_tag = BEL_vnv_dominant }
+							NOT = { has_cosmetic_tag = BEL_greater_netherlands }
+							NOT = { has_cosmetic_tag = BEL_burgundy }
+							NOT = { has_cosmetic_tag = BEL_beligca }
+							NOT = { has_cosmetic_tag = BEL_flanders }
+							NOT = { has_cosmetic_tag = BEL_european_union_leader }
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = BEL_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = BEL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = BEL_AUS_danubian_state }
+							NOT = { has_cosmetic_tag = BEL_vnv_dominant }
+							NOT = { has_cosmetic_tag = BEL_greater_netherlands }
+							NOT = { has_cosmetic_tag = BEL_burgundy }
+							NOT = { has_cosmetic_tag = BEL_beligca }
+							NOT = { has_cosmetic_tag = BEL_flanders }
+							NOT = { has_cosmetic_tag = BEL_european_union_leader }
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = BEL_neutrality_IDEO
+				}
+				#Netherlands
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HOL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HOL_AUS_danubian_state }
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = HOL_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HOL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HOL_AUS_danubian_state }
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = HOL_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HOL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HOL_AUS_danubian_state }
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = HOL_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HOL
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = HOL_AUS_danubian_state }
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = HOL_neutrality_IDEO
+				}
+				#Luxemburg
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LUX
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = LUX_AUS_danubian_state }
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = LUX_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LUX
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = LUX_AUS_danubian_state }
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = LUX_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LUX
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = LUX_AUS_danubian_state }
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = LUX_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LUX
+							NOT = { has_cosmetic_tag = HOL_benelux_unified }
+							NOT = { has_cosmetic_tag = EUR_UNIFIED }
+							NOT = { has_cosmetic_tag = LUX_AUS_danubian_state }
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = LUX_neutrality_IDEO
+				}
+
+				#Mongolia
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MON
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = MON_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MON
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = MON_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MON
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = MON_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MON
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = MON_neutrality_IDEO
+				}
+				#Tannu Tuva
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TAN
+							has_government = fascism 
+						}
+					}
+					set_cosmetic_tag = TAN_fascism_IDEO
+
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TAN
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = TAN_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TAN
+							has_government = communism 
+						}
+					}
+					set_cosmetic_tag = TAN_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = TAN
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = TAN_neutrality_IDEO
+				}
+
+				# Mengjiang
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MEN
+							NOT = { has_government = fascism }
+						}
+					}
+					set_cosmetic_tag = MEN_generic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = MEN
+							OR = {
+								AND = {
+									has_government = neutrality
+									OVERLORD = {
+										original_tag = JAP
+										OR = {
+											has_government = neutrality
+											has_government = fascism
+										}
+									}
+								}
+								has_government = fascism
+							}
+						}
+					}
+					set_cosmetic_tag = MEN_fascism_IDEO
+				}
+
+				# other chinese warlords
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SIC
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = SIC_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SIC
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = SIC_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = XIC
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = XIC_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = XIC
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = XIC_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SND
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = SND_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SND
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = SND_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HBC
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = HBC_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = HBC
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = HBC_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = KHM
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = KHM_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = KHM
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = KHM_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NXM
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = NXM_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = NXM
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = NXM_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GSM
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = GSM_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GSM
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = GSM_generic_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GDC
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = GDC_communism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = GDC
+							NOT = { has_government = communism }
+						}
+					}
+					set_cosmetic_tag = GDC_generic_IDEO
+				}
+
+
+				# new nations
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = SYR
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_cosmetic_tag = SYR_mandate
+								NOT = { is_subject = yes }
+							}
+						}
+						ROOT = {
+							every_other_country = {
+								limit = {
+									original_tag = SYR
+								}
+								set_cosmetic_tag = SYR_mandate
+							}
+							drop_cosmetic_tag = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = LEB
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_cosmetic_tag = LEB_mandate
+								NOT = { is_subject = yes }
+							}
+						}
+						ROOT = {
+							every_other_country = {
+								limit = {
+									original_tag = LEB
+								}
+								set_cosmetic_tag = LEB_mandate
+							}
+							drop_cosmetic_tag = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PAL
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_cosmetic_tag = PAL_mandate
+								NOT = { is_subject = yes }
+							}
+						}
+						ROOT = {
+							every_other_country = {
+								limit = {
+									original_tag = PAL
+								}
+								set_cosmetic_tag = PAL_mandate
+							}
+							drop_cosmetic_tag = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = JOR
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_cosmetic_tag = JOR_emirate
+								NOT = { is_subject = yes }
+							}
+						}
+						ROOT = {
+							every_other_country = {
+								limit = {
+									original_tag = JOR
+								}
+								set_cosmetic_tag = JOR_emirate
+							}
+							drop_cosmetic_tag = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = KUW
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_cosmetic_tag = KUW_protectorate
+								NOT = { is_subject = yes }
+							}
+						}
+						ROOT = {
+							every_other_country = {
+								limit = {
+									original_tag = KUW
+								}
+								set_cosmetic_tag = KUW_protectorate
+							}
+							drop_cosmetic_tag = yes
+						}
+					}
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = UKR
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = UKR_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = UKR
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = UKR_neutrality_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = UKR
+							has_government = fascism
+						}
+					}
+					set_cosmetic_tag = UKR_fascism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = UKR
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = UKR_communism_IDEO
+				}
+				
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = IRE
+							has_government = democratic
+						}
+					}
+					set_cosmetic_tag = IRE_democratic_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = IRE
+							has_government = neutrality
+						}
+					}
+					set_cosmetic_tag = IRE_neutrality_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = IRE
+							has_government = fascism
+						}
+					}
+					set_cosmetic_tag = IRE_fascism_IDEO
+				}
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = IRE
+							has_government = communism
+						}
+					}
+					set_cosmetic_tag = IRE_communism_IDEO
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = IRQ
+							NOT = { has_cosmetic_tag = IRQ_kurdistan_tag }
+							NOT = { has_cosmetic_tag = IRQ_greater_iraq_tag }
+							NOT = { has_cosmetic_tag = IRQ_hashemite_arab_federation }
+							NOT = { has_cosmetic_tag = IRQ_united_arab_republic }
+							NOT = { has_cosmetic_tag = ARA_UNIFIED }
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_government = neutrality
+							}
+						}
+						set_cosmetic_tag = IRQ_neutrality_IDEO
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_government = fascism
+							}
+						}
+						set_cosmetic_tag = IRQ_fascism_IDEO
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_government = communism
+							}
+						}
+						set_cosmetic_tag = IRQ_communism_IDEO
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_government = democratic
+							}
+						}
+						set_cosmetic_tag = IRQ_democratic_IDEO
+					}
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							original_tag = PER
+							NOT = { has_cosmetic_tag = PER_islamic_republic }
+							NOT = { has_cosmetic_tag = PER_great_persian_empire }
+							NOT = { has_cosmetic_tag = PER_great_iranian_empire }
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_government = neutrality
+							}
+						}
+						set_cosmetic_tag = PER_neutrality_IDEO
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_government = fascism
+							}
+						}
+						set_cosmetic_tag = PER_fascism_IDEO
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_government = communism
+							}
+						}
+						set_cosmetic_tag = PER_communism_IDEO
+					}
+					else_if = {
+						limit = {
+							ROOT = {
+								has_government = democratic
+							}
+						}
+						set_cosmetic_tag = PER_democratic_IDEO
+					}
+				}
+		}
+	}
+
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						original_tag = SYR
+						original_tag = LEB
+						original_tag = PAL
+						original_tag = JOR
+						original_tag = KUW
+						original_tag = BRM
+					}
+					# slop nations stop having protectorate cosmetic tags
+				}
+				drop_cosmetic_tag = yes
+			}
+
+			if = {
+				limit = {
+					OR = {
+						original_tag = ICE
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+}
+
+
+
+

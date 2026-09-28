@@ -1,0 +1,94 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 313
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "GUA_1936_generic"
+
+
+
+# Starting tech
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+# MBR 2026 removed legacy content: recruit_character = GUA_jorge_ubico
+# MBR 2026 removed legacy content: recruit_character = GUA_justo_arbenz
+# MBR 2026 removed legacy content: recruit_character = GUA_máximo_arbenz
+# MBR 2026 removed legacy content: recruit_character = GUA_diego_barahona
+recruit_character = GUA_jorge_torriello_garrido
+recruit_character = GUA_carlos_diaz_de_leon
+recruit_character = GUA_jacopo_arbenz_guzman
+recruit_character = GUA_w_tesch_orlando
+recruit_character = GUA_r_buenaventure_pineda
+recruit_character = GUA_tomas_mendoza_urribe
+recruit_character = GUA_miguel_garcia_granados
+recruit_character = GUA_jose_ezuira_abel
+recruit_character = GUA_m_ydigaras_fuentes
+recruit_character = GUA_federico_ponce_vaides
+recruit_character = GUA_manuel_orellana
+recruit_character = GUA_francisco_javier_arana
+recruit_character = GUA_juan_arevalo_bermejo
+recruit_character = GUA_eduardo_villagran_ariza
+recruit_character = GUA_manuel_arroyo
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 5
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+
+create_country_leader = {
+	name = "Alejandro Giammeatti"
+	picture = "GFX_alejandro_giammeatti"
+	ideology = liberalism
+	traits = { }
+}

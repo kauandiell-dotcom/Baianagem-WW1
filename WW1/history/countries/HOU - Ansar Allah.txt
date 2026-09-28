@@ -1,0 +1,29 @@
+# MBR 2026: Houthi administration in northern Yemen.
+MBR_grant_level_one_technologies = yes
+
+capital = 293
+oob = "HOU_2026"
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+set_stability = 0.62
+set_war_support = 0.82
+set_convoys = 3
+
+create_country_leader = {
+	name = "Abdul-Malik al-Houthi"
+	picture = "GFX_Abdul-Malik_Al-Houthi"
+	ideology = despotism
+	traits = { }
+}
+
+# The Yemeni states begin at peace and must justify their own war goals.

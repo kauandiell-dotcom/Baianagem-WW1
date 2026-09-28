@@ -1,0 +1,101 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 312
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "HON_1936_generic"
+
+
+
+# Starting tech
+
+
+# MBR 2026 removed legacy content: recruit_character = HON_tiburcio_carías_andino
+# MBR 2026 removed legacy content: recruit_character = HON_lorenzo_ferrera
+# MBR 2026 removed legacy content: recruit_character = HON_pedro_figueroa
+# MBR 2026 removed legacy content: recruit_character = HON_lisandro_machado
+recruit_character = HON_oswaldo_lopez_arellano
+recruit_character = HON_carlos_vaupel_comeza
+recruit_character = HON_neto_britto
+recruit_character = HON_jose_zuniga_huete
+recruit_character = HON_teodore_alberto
+recruit_character = HON_rufio_villegas
+recruit_character = HON_carlos_molina_dejonje
+recruit_character = HON_didier_masson
+recruit_character = HON_miguel_angel_sevilla
+recruit_character = HON_raimundo_stochler_garcia
+recruit_character = HON_juan_b_valladares
+recruit_character = HON_francisco_s_tapio_toro
+recruit_character = HON_enrique_doll_rojas
+recruit_character = HON_gustavo_schmidt
+recruit_character = HON_carlos_alberto_ucles
+recruit_character = HON_roberto_michelleti_bain
+recruit_character = HON_orlando_rodriguez_jimino
+recruit_character = HON_abraham_williams_calderon
+recruit_character = HON_hernan_fernandez_silva
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 10
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+}
+
+
+create_country_leader = {
+	name = "Carlos Flores"
+	picture = "GFX_carlos_flores"
+	ideology = liberalism
+	traits = { }
+}

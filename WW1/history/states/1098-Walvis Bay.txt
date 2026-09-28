@@ -1,0 +1,31 @@
+state={
+	id=1098
+	name="STATE_1098"
+	manpower = 4100
+	state_category = wasteland
+
+	history={
+		owner = SAF
+		buildings = {
+			infrastructure = 2
+			
+			2207 = {
+				naval_base = 1
+			}
+		}
+		victory_points {
+			2207 1
+		}
+		
+		add_core_of = SAF
+		add_core_of = NMB
+
+	}
+
+	provinces={
+		2207  
+	}
+	
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

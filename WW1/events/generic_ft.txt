@@ -1,0 +1,1093 @@
+﻿###########################
+# generic Events
+###########################
+
+add_namespace = generic_ft
+
+#1st General - Infantry | Cavalry | Armour
+unit_leader_event = {
+	id = generic_ft.1
+	title = generic_ft_general_event.1.t
+	desc = { 
+		text = generic_ft_general_event.1.desc
+	}
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = generic_ft_upgraded_general
+		}
+		hidden_effect = {
+			random_army_leader = {
+				limit = {
+					NOT = { 
+						OR = {
+							has_character_flag = generic_ft_upgraded_general
+							is_field_marshal = yes
+							has_trait = winter_specialist
+							has_trait = desert_fox
+							has_trait = trait_mountaineer
+							has_trait = jungle_rat
+							has_trait = ranger
+							has_trait = swamp_fox
+							has_trait = hill_fighter
+						}
+					}
+				}
+				unit_leader_event = {
+				    id = generic_ft.2
+				    days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = generic_ft_general_event.1.a
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = infantry_leader 
+		}
+	}
+	option = {
+		name = generic_ft_general_event.1.b
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = cavalry_leader
+		}
+	}
+	option = {
+		name = generic_ft_general_event.1.c
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = panzer_leader
+		}
+		
+	}
+}
+
+#2nd General - Terrain
+unit_leader_event = {
+	id = generic_ft.2
+	title = generic_ft_general_event.2.t
+	desc = { 
+		text = generic_ft_general_event.2.desc
+	}
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = generic_ft_upgraded_general
+		}
+		hidden_effect = {
+			random_army_leader = {
+				limit = {
+					NOT = { 
+						OR = {
+							has_character_flag = generic_ft_upgraded_general
+							is_field_marshal = no
+							has_trait = organizer
+							has_trait = skilled_staffer
+						}
+					}
+				}
+				unit_leader_event = {
+				    id = generic_ft.3
+				    days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = generic_ft_general_event.2.a
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = australia }
+					capital_scope = { is_on_continent = north_america }
+					capital_scope = { is_on_continent = asia }
+					capital_scope = { is_on_continent = africa }
+					capital_scope = { is_on_continent = middle_east }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = desert_fox 
+		}
+	}
+	option = {
+		name = generic_ft_general_event.2.b
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = africa }
+					capital_scope = { is_on_continent = south_america }
+					capital_scope = { is_on_continent = australia }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = jungle_rat
+		}
+	}
+	option = {
+		name = generic_ft_general_event.2.c
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = australia }
+					capital_scope = { is_on_continent = south_america }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = swamp_fox
+		}
+	}
+	option = {
+		name = generic_ft_general_event.2.d
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = europe }
+					capital_scope = { is_on_continent = north_america }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = ranger
+		}
+	}
+	option = {
+		name = generic_ft_general_event.2.e
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = north_america }
+					capital_scope = { is_on_continent = middle_east }
+					capital_scope = { is_on_continent = africa }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = hill_fighter
+		}
+	}
+	option = {
+		name = generic_ft_general_event.2.f
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = europe }
+					capital_scope = { is_on_continent = south_america }
+					capital_scope = { is_on_continent = asia }
+					capital_scope = { is_on_continent = middle_east }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = trait_mountaineer
+		}
+	}
+	option = {
+		name = generic_ft_general_event.2.g
+		trigger = {
+			owner = {
+				OR = {
+					capital_scope = { is_on_continent = europe }
+					capital_scope = { is_on_continent = north_america }
+					capital_scope = { is_on_continent = asia }
+				}
+			}
+		}
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = winter_specialist
+		}
+	}
+}
+
+#3rd Field Marshal - Organizer | Skilled Staffer
+unit_leader_event = {
+	id = generic_ft.3
+	title = generic_ft_general_event.3.t
+	desc = { 
+		text = generic_ft_general_event.3.desc
+	}
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = generic_ft_upgraded_general
+		}
+	}
+
+	option = {
+		name = generic_ft_general_event.3.a
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = organizer 
+		}
+	}
+	option = {
+		name = generic_ft_general_event.3.b
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = skilled_staffer
+		}
+	}
+}
+
+#1st Admiral trait - Screens Expert
+unit_leader_event = {
+	id = generic_ft.4
+	title = generic_ft_general_event.4.t
+	desc = { 
+		text = generic_ft_general_event.4.desc
+	}
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = generic_ft_upgraded_general
+		}
+
+		hidden_effect = {
+			random_navy_leader  = {
+				limit = {
+					NOT = { 
+						has_character_flag = generic_ft_upgraded_general
+						OR = {
+							has_trait = blockade_runner
+							has_trait = seawolf
+						}
+					}
+				}
+				unit_leader_event = {
+				    id = generic_ft.5
+				    days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = generic_ft_general_event.4.a
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = spotter 
+		}
+	}
+	option = {
+		name = generic_ft_general_event.4.b
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = fleet_protector
+		}
+	}
+	option = {
+		name = generic_ft_general_event.4.c
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = superior_tactician
+		}
+	}
+}
+
+#2nd Admiral trait - Submarine Expert
+unit_leader_event = {
+	id = generic_ft.5
+	title = generic_ft_general_event.5.t
+	desc = { 
+		text = generic_ft_general_event.5.desc
+	}
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = generic_ft_upgraded_general
+		}
+
+		hidden_effect = {
+			random_navy_leader  = {
+				limit = {
+					NOT = { 
+						has_character_flag = generic_ft_upgraded_general
+						OR = {
+							has_trait = air_controller
+							has_trait = ironside
+							has_trait = gunnery_expert
+							has_trait = aviation_enthusiast
+						}
+					}
+				}
+				unit_leader_event = {
+				    id = generic_ft.6
+				    days = 15
+				}
+			}
+		}
+	}
+
+	option = {
+		name = generic_ft_general_event.5.a
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = blockade_runner 
+		}
+	}
+	option = {
+		name = generic_ft_general_event.5.b
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = seawolf
+		}
+	}
+}
+
+#3rd Admiral trait - Big Ship Expert
+unit_leader_event = {
+	id = generic_ft.6
+	title = generic_ft_general_event.6.t
+	desc = { 
+		text = generic_ft_general_event.6.desc
+	}
+	picture = GFX_report_event_military_planning
+
+	is_triggered_only = yes
+
+	immediate = {
+		ROOT = {
+			set_character_flag = generic_ft_upgraded_general
+		}
+	}
+
+	option = {
+		name = generic_ft_general_event.6.a
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = air_controller 
+		}
+	}
+	option = {
+		name = generic_ft_general_event.6.b
+		ROOT = {
+			add_skill_level = 1
+			add_unit_leader_trait = ironside
+		}
+	}
+}
+
+#Fascist Trait Decision
+country_event = {
+	id = generic_ft.7
+	title = generic_ft_general_event.7.t
+	desc = { 
+		text = generic_ft_general_event.7.desc
+	}
+	picture = GFX_report_event_fascists_posing
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = generic_ft_general_event.7.a
+		add_country_leader_trait = national_fanatic
+	}
+	option = {
+		name = generic_ft_general_event.7.b
+		add_country_leader_trait = pragmatic_fascist
+		hidden_effect = {
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}
+			   	add_country_leader_role = {
+				    character = FROM
+				    promote_leader = yes
+				    country_leader = {
+				        ideology = despotism
+				        expire = "1965.1.1.1"
+				        traits = { reformed_fascist_authoritarian }
+				    }
+				}
+			}
+		}
+	}
+	option = {
+		name = generic_ft_general_event.7.c
+		trigger = {
+			OR = {
+				original_tag = TIB
+				original_tag = KOR
+				original_tag = LAO
+				original_tag = VIN
+				original_tag = CAM
+			}
+		}
+		add_country_leader_trait = imperial_fascist_leader
+		hidden_effect = {
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}
+			   	add_country_leader_role = {
+				    character = FROM
+				    promote_leader = yes
+				    country_leader = {
+				        ideology = despotism
+				        expire = "1965.1.1.1"
+				        traits = { imperial_fascist_leader }
+				    }
+				}
+			}
+		}
+	}
+}
+
+#First Election Democratic
+country_event = {
+	id = generic_ft.8
+	title = generic_ft_general_event.8.t
+	desc = { 
+		text = generic_ft_general_event.8.desc
+	}
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = generic_ft_general_event.8.a
+		add_country_leader_trait = socialist
+		hidden_effect = {
+			set_country_leader_ideology = socialism
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}	
+			   	set_character_flag = socialist_demo_leader
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						has_character_flag = socialist_demo_leader
+					}
+				}
+				set_character_flag = liberal_demo_leader
+				add_country_leader_role = {
+				    character = FROM
+				    promote_leader = no
+				    country_leader = {
+				        ideology = liberalism
+				        expire = "1965.1.1.1"
+				        traits = { liberal }
+				    }
+				}
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						OR = {
+							has_character_flag = socialist_demo_leader
+							has_character_flag = liberal_demo_leader
+						}
+					}
+				}
+				add_country_leader_role = {
+				    character = FROM
+				    promote_leader = no
+				    country_leader = {
+				        ideology = conservatism
+				        expire = "1965.1.1.1"
+				        traits = { conservative }
+				    }
+				}
+			}
+		}
+	}
+	option = {
+		name = generic_ft_general_event.8.b
+		add_country_leader_trait = liberal
+		hidden_effect = {
+			set_country_leader_ideology = liberalism
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}
+		   		set_character_flag = liberal_demo_leader
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						has_character_flag = liberal_demo_leader
+					}
+				}
+				set_character_flag = socialist_demo_leader
+				add_country_leader_role = {
+				    character = FROM
+				    promote_leader = no
+				    country_leader = {
+				        ideology = socialism
+				        expire = "1965.1.1.1"
+				        traits = { socialist }
+				    }
+				}
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						OR = {
+							has_character_flag = socialist_demo_leader
+							has_character_flag = liberal_demo_leader
+						}
+					}
+				}
+				add_country_leader_role = {
+				    character = FROM
+				    promote_leader = no
+				    country_leader = {
+				        ideology = conservatism
+				        expire = "1965.1.1.1"
+				        traits = { conservative }
+				    }
+				}
+			}
+		}
+	}
+	option = {
+		name = generic_ft_general_event.8.c
+		add_country_leader_trait = conservative
+		hidden_effect = {
+			set_country_leader_ideology = conservatism
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}
+		   		set_character_flag = conservative_demo_leader
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						has_character_flag = conservative_demo_leader
+					}
+				}
+				set_character_flag = socialist_demo_leader
+				add_country_leader_role = {
+				    character = FROM
+				    promote_leader = no
+				    country_leader = {
+				        ideology = socialism
+				        expire = "1965.1.1.1"
+				        traits = { socialist }
+				    }
+				}
+			}
+			random_unit_leader = {
+				limit = {
+					NOT = {
+						OR = {
+							has_character_flag = socialist_demo_leader
+							has_character_flag = conservative_demo_leader
+						}
+					}
+				}
+				add_country_leader_role = {
+				    character = FROM
+				    promote_leader = no
+				    country_leader = {
+				        ideology = liberalism
+				        expire = "1965.1.1.1"
+				        traits = { liberal }
+				    }
+				}
+			}
+		}
+	}
+}
+
+#First Election Democratic
+country_event = {
+	id = generic_ft.9
+	title = generic_ft_general_event.9.t
+	desc = { 
+		text = generic_ft_general_event.9.desc
+	}
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = generic_ft_general_event.8.a
+		if = {
+			limit = {
+				any_character = {
+					AND = {
+						is_country_leader = yes
+						has_ideology = socialism
+					}
+				}
+			}
+			add_political_power = 100
+			add_stability = 0.05
+		}
+		else = {
+			every_character = {
+				limit = {
+					has_ideology = socialism 
+				}
+				random_select_amount = 1
+				promote_character = yes
+			}
+		}
+	}
+	option = {
+		name = generic_ft_general_event.8.b
+		if = {
+			limit = {
+				any_character = {
+					AND = {
+						is_country_leader = yes
+						has_ideology = liberalism
+					}
+				}
+			}
+			add_political_power = 100
+			add_stability = 0.05
+		}
+		else = {
+			every_character = {
+				limit = {
+					has_ideology = liberalism
+				}
+				random_select_amount = 1
+				promote_character = yes
+			}
+		}
+	}
+	option = {
+		name = generic_ft_general_event.8.c
+		if = {
+			limit = {
+				any_character = {
+					AND = {
+						is_country_leader = yes
+						has_ideology = conservatism
+					}
+				}
+			}
+			add_political_power = 100
+			add_stability = 0.05
+		}
+		else = {
+			every_character = {
+				limit = {
+					has_ideology = conservatism
+				}
+				random_select_amount = 1
+				promote_character = yes
+			}
+		}
+	}
+}
+
+#Snap Election Democratic
+country_event = {
+	id = generic_ft.10
+	title = generic_ft_general_event.10.t
+	desc = { 
+		text = generic_ft_general_event.10.desc
+	}
+	picture = GFX_report_event_election_vote
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = generic_ft_general_event.10.a
+		trigger = {
+			NOT = {
+				has_country_flag = reformer_unaligned_generic_ft
+			}
+		}
+		add_country_leader_trait = moderate_trait
+		hidden_effect = {
+			set_country_leader_ideology = moderatism
+		}
+	}
+	option = {
+		name = generic_ft_general_event.10.b
+		trigger = {
+			NOT = {
+				has_country_flag = reformer_unaligned_generic_ft
+			}
+		}
+		add_country_leader_trait = centrist_trait
+		hidden_effect = {
+			set_country_leader_ideology = centrism
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}
+		   		set_character_flag = liberal_demo_leader
+			}
+		}
+	}
+	option = {
+		name = generic_ft_general_event.10.c
+		trigger = {
+			has_country_flag = reformer_unaligned_generic_ft
+		}
+		add_country_leader_trait = moderate_reformer_trait
+		hidden_effect = {
+			set_country_leader_ideology = centrism
+			every_character = {
+			   	limit = {
+					is_country_leader = yes
+				}
+		   		set_character_flag = liberal_demo_leader
+			}
+		}
+	}
+}
+
+#Spread Communism Event
+country_event = {
+	id = generic_ft.11
+	title = generic.1.t
+	desc = { 
+		text = generic.1.d_neutral_good
+		trigger = {
+			has_government = FROM
+		}
+	}
+	desc = {
+		text = generic.1.d_bad
+		trigger = {
+			NOT = { has_government = FROM }
+		}
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_timed_idea = {
+				idea = generic_communist_influence
+				days = 180
+			}
+		}
+	}
+	option = {
+		name = generic.1.a
+		trigger = {
+			has_government = FROM
+		}
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = generic_communist_influence
+				days = 180
+			}
+		}
+	}
+	option = {
+		name = generic.1.b
+		trigger = {
+			NOT = { has_government = FROM }
+		}
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = generic_communist_influence
+				days = 180
+			}
+		}
+	}
+}
+
+#Appeasement Event
+country_event = {
+	id = generic_ft.12
+	title = generic_ft.12.t
+	desc = { 
+		text = generic_ft.12.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.12.a
+		give_guarantee = FROM
+		FROM = {
+			effect_tooltip = {
+				add_political_power = 50
+				send_equipment = {
+				    equipment = infantry_equipment
+				    amount = 300
+				    target = ROOT
+				}
+			}
+			country_event = {
+				id = generic_ft.13
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_opinion = {
+				    target = FROM
+				    value > 20
+				}
+			}
+		}
+	}
+	option = {
+		name = generic_ft.12.b
+		FROM = {
+			country_event = {
+				id = generic_ft.14
+			}
+			effect_tooltip = {
+				add_political_power = -10
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = rejected_demands
+				}
+			}
+		}
+		ai_chance = {
+			factor = 3
+		}
+	}
+}
+
+#Accepted Appeasement
+country_event = {
+	id = generic_ft.13
+	title = generic_ft.13.t
+	desc = { 
+		text = generic_ft.13.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.13.a
+		add_political_power = 50
+		send_equipment = {
+		    equipment = infantry_equipment
+		    amount = 300
+		    target = FROM
+		}
+		FROM = {
+			effect_tooltip = {
+				give_guarantee = ROOT
+			}
+		}
+	}
+}
+
+#Rejected
+country_event = {
+	id = generic_ft.14
+	title = generic_ft.14.t
+	desc = { 
+		text = generic_ft.14.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.14.a
+		add_political_power = -10
+		add_opinion_modifier = {
+			target = FROM 
+			modifier = rejected_demands
+		}
+	}
+}
+
+#Request Major Investment
+country_event = {
+	id = generic_ft.15
+	title = generic_ft.15.t
+	desc = { 
+		text = generic_ft.15.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.12.a
+		give_guarantee = FROM
+		FROM = {
+			effect_tooltip = {
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+			country_event = {
+				id = generic_ft.16
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_opinion = {
+				    target = FROM
+				    value > 60
+				}
+			}
+		}
+	}
+	option = {
+		name = generic_ft.12.b
+		FROM = {
+			country_event = {
+				id = generic_ft.14
+			}
+			effect_tooltip = {
+				add_political_power = -10
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = rejected_demands
+				}
+			}
+		}
+		ai_chance = {
+			factor = 3
+		}
+	}
+}
+
+#Accepted Investment
+country_event = {
+	id = generic_ft.16
+	title = generic_ft.13.t
+	desc = { 
+		text = generic_ft.13.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.13.a
+		add_offsite_building = { type = arms_factory level = 1 }
+	}
+}
+
+#Request Soviet Involvement
+country_event = {
+	id = generic_ft.17
+	title = generic_ft.17.t
+	desc = { 
+		text = generic_ft.17.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.12.a
+		give_guarantee = FROM
+		FROM = {
+			country_event = {
+				id = generic_ft.18
+			}
+			add_stability = 0.05
+			army_experience = 10
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_mastery_bonus = {
+				name = PRC_soviet_battle_tactics
+				bonus = 0.2
+				days = 240
+				grand_doctrine = mass_assault
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			SOV = {
+				give_guarantee = FROM
+			}
+			country_event = {
+				id = generic_ft.16
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 50
+				has_opinion = {
+				    target = FROM
+				    value > 20
+				}
+			}
+		}
+	}
+	option = {
+		name = generic_ft.12.b
+		FROM = {
+			country_event = {
+				id = generic_ft.14
+			}
+			effect_tooltip = {
+				add_political_power = -10
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = rejected_demands
+				}
+			}
+		}
+		ai_chance = {
+			factor = 3
+		}
+	}
+}
+
+#Soviet Accepted 
+country_event = {
+	id = generic_ft.18
+	title = generic_ft.13.t
+	desc = { 
+		text = generic_ft.13.d
+	}
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = generic_ft.13.a
+		effect_tooltip = {
+			add_stability = 0.05
+			army_experience = 10
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_mastery_bonus = {
+				name = PRC_soviet_battle_tactics
+				bonus = 0.2
+				days = 240
+				grand_doctrine = mass_assault
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			SOV = {
+				give_guarantee = ROOT
+			}
+		}
+	}
+}

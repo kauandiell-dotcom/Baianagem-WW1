@@ -1,0 +1,83 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 771
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "ZAM_1936_generic"
+
+
+# Starting tech
+
+
+set_convoys = 0
+
+recruit_character = ZAM_acas
+recruit_character = ZAM_acgs
+recruit_character = ZAM_ncm
+recruit_character = ZAM_nt
+recruit_character = ZAM_pot
+recruit_character = ZAM_nccr
+recruit_character = ZAM_aco2
+recruit_character = ZAM_coi
+recruit_character = ZAM_aa2
+recruit_character = ZAM_democratic_guy
+recruit_character = ZAM_acd2
+recruit_character = ZAM_acr
+recruit_character = ZAM_fascist_guy
+recruit_character = ZAM_stc
+recruit_character = ZAM_ncs
+recruit_character = ZAM_awt
+recruit_character = ZAM_mt
+recruit_character = ZAM_communist_guy
+recruit_character = ZAM_ai2
+recruit_character = ZAM_ar
+
+
+2029.1.1 = {
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+
+create_country_leader = {
+	name = "Anderson Mazoka"
+	picture = "GFX_Anderson_Mazoka"
+	ideology = liberalism
+	traits = { }
+}

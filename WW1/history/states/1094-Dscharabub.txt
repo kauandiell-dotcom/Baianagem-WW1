@@ -1,0 +1,24 @@
+
+state={
+	id=1094
+	name="STATE_1094" 
+	manpower = 1000
+	
+	state_category = wasteland
+	impassable = yes
+
+	history={
+		owner = ENG
+		buildings = {
+			infrastructure = 0
+		}
+		add_core_of = LBA
+		add_core_of = EGY
+	}
+
+	provinces={
+		1060 10104 
+	}
+
+	local_supplies=0.0 
+}

@@ -1,0 +1,65 @@
+# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 525 # Seoul/Keijō/Gyeongseong
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "KOR_1936_generic"
+
+
+
+# Starting tech
+
+
+set_grand_doctrine = mass_assault
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+# MBR 2026 removed legacy content: recruit_character = KOR_jiro_minami
+# MBR 2026 removed legacy content: recruit_character = KOR_syngman_rhee
+# MBR 2026 removed legacy content: recruit_character = KOR_lyuh_woon_hyung
+# MBR 2026 removed legacy content: recruit_character = KOR_yi_kang
+# MBR 2026 removed legacy content: recruit_character = KOR_kim_il_sung
+# MBR 2026 removed legacy content: recruit_character = KOR_yi_un
+# MBR 2026 removed legacy content: recruit_character = KOR_choe_hyon
+# MBR 2026 removed legacy content: recruit_character = KOR_pak_hon_yong
+
+create_country_leader = {
+	name = "Ли Сын Ман"
+	desc = ""
+	picture = "gfx/syngmanrhee.jpg"
+	expire = "2065.1.1"
+	ideology = liberalism
+}
+
+create_country_leader = {
+	name = "Пак Чон Хи"
+	desc = ""
+	picture = "gfx/park.png"
+	expire = "2065.1.1"
+	ideology = despotism
+}
+
+
+create_country_leader = {
+	name = "Yoon Suk Yeol"
+	picture = "GFX_Yoon_Suk_Yeol"
+	ideology = liberalism
+	traits = { }
+}

@@ -1,0 +1,105 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 305
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "ECU_1936_generic"
+
+
+
+# Starting tech
+
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+# MBR 2026 removed legacy content: recruit_character = ECU_federico_páez
+# MBR 2026 removed legacy content: recruit_character = ECU_juan_toro
+# MBR 2026 removed legacy content: recruit_character = ECU_andrés_guilarte
+# MBR 2026 removed legacy content: recruit_character = ECU_josé_la_mar
+recruit_character = ECU_cosme_renella_barbatto
+recruit_character = ECU_benigno_andrade_flores
+recruit_character = ECU_uriarte_fanquil_del_ponte
+recruit_character = ECU_julio_salem_gallegos
+recruit_character = ECU_jorge_escobedo_duarte
+recruit_character = ECU_carlos_hidalgo_garcia
+recruit_character = ECU_luis_cabrera_sevilla
+recruit_character = ECU_ramon_baquerizo_davila
+recruit_character = ECU_federico_paez_chiriboaga
+recruit_character = ECU_gustavo_becerra_paz
+recruit_character = ECU_juan_bayardo_tobar
+recruit_character = ECU_ramon_moran_valverde
+recruit_character = ECU_ramon_castro_jijon
+recruit_character = ECU_juan_pablo_martinez_iguarte
+recruit_character = ECU_hugo_endara_penaherrera
+recruit_character = ECU_juan_ramon_castro
+recruit_character = ECU_gilberto_enriquez_gallo
+recruit_character = ECU_davide_flores
+recruit_character = ECU_carlos_arosemena_tola
+recruit_character = ECU_carlos_arroyo_del_rio
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 5
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+# MBR 2026 removed legacy content: 	recruit_character = ECU_aurelio_mosquera
+	promote_character = ECU_aurelio_mosquera
+	retire_character = ECU_federico_páez
+}
+
+create_country_leader = {
+	name = "Abdala Bucaram"
+	picture = "GFX_abdala_bucaram"
+	ideology = liberalism
+	traits = { }
+}

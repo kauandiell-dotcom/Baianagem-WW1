@@ -1,0 +1,92 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 671 #Hanoi
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "VIN_1936_generic"
+
+
+
+set_research_slots = 3
+
+# Starting tech
+# clone of France
+
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	
+}
+
+set_politics = {
+	ruling_party = communism
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	communism = 100
+}
+
+#NOTICE# please watch out for spelling, im using Vietnamese names as they spell them, game might not support these characters!
+
+#create_country_leader = {
+#	name = "Phan Bôi Châu" 
+#	desc = ""
+#	picture = GFX_portrait_Phan_Boi_Chau
+#	expire = "2043.3.1"
+#	ideology = fascism_ideology 
+#	traits = {
+#		
+#	}
+#}
+
+# MBR 2026 removed legacy content: recruit_character = VIN_bao_dai
+# MBR 2026 removed legacy content: recruit_character = VIN_ngo_dinh_diem
+# MBR 2026 removed legacy content: recruit_character = VIN_ho_chi_minh
+
+create_country_leader = {
+	name = "Luong Cuong"
+	picture = "GFX_Portrait_Luong_Cuong"
+	ideology = marxism
+	traits = { }
+}
+

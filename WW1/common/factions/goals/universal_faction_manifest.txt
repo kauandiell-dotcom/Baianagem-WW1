@@ -1,0 +1,33 @@
+###############################################
+# Better Player Cooperation - Faction Manifest
+#
+# A deliberately empty manifest.
+#
+# It grants NO modifiers, NO rules and NO restrictions - the faction
+# starts as a blank slate and the leader picks everything by hand.
+#
+# It cannot simply be left out, though: the game scales
+# PASSIVE_INITIATIVE_GENERATION (0.015 FI/day) by manifest fulfillment.
+# With no manifest there is nothing to scale by, so the faction would
+# earn no Faction Initiative and could never pay the 1 FI it costs to
+# change a rule.
+#
+# So fulfillment is pinned at a constant 100% (1 / 1). Initiative flows
+# at the normal vanilla rate, and nothing else is imposed.
+###############################################
+
+faction_manifest_universal = {
+	name = universal_faction_manifest_name
+	description = universal_faction_manifest_desc
+	is_manifest = yes
+
+	ratio_progress = {
+		total_amount = 1
+		completed_amount = 1
+
+		range = {
+			min = 0
+			max = 1
+		}
+	}
+}

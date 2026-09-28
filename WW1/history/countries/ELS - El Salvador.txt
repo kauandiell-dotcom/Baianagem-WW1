@@ -1,0 +1,104 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 314
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "ELS_1936_generic"
+
+
+
+# Starting tech
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+# MBR 2026 removed legacy content: recruit_character = ELS_maximiliano_hernández_martínez
+# MBR 2026 removed legacy content: recruit_character = ELS_victoriano_ubico
+# MBR 2026 removed legacy content: recruit_character = ELS_benito_ubico
+# MBR 2026 removed legacy content: recruit_character = ELS_bartolomé_vasconcelos
+recruit_character = ELS_hector_escobar_serrano
+recruit_character = ELS_milton_andrade_cabrera
+recruit_character = ELS_humbert_aberle
+recruit_character = ELS_horacio_carnejo_ibanez
+recruit_character = ELS_osmin_aguirre_y_salinas
+recruit_character = ELS_reinaldo_galindo_pohl
+recruit_character = ELS_mauro_espinola_castro
+recruit_character = ELS_jose_angel_castillo
+recruit_character = ELS_manuel_de_jesus_cordova
+recruit_character = ELS_augustin_farabundo_marti
+recruit_character = ELS_manuel_jose_maria_lemus_lopez
+recruit_character = ELS_raul_rodolfi_sanchez
+recruit_character = ELS_ricardo_abrego_abrego
+recruit_character = ELS_humberto_costa
+recruit_character = ELS_oscar_a_bolanos
+recruit_character = ELS_salvador_castaneda_castro
+recruit_character = ELS_jose_maria_cuellar
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 5
+
+2029.1.1 = {
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+}
+
+
+create_country_leader = {
+	name = "Alirio Garcia Flamenco Sevilla"
+	picture = "GFX_Alirio_Garcia_Flamenco_Sevilla"
+	ideology = liberalism
+	traits = { }
+}

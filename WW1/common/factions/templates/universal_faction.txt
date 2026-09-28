@@ -1,0 +1,33 @@
+###############################################
+# Better Player Cooperation - Faction Template
+#
+# A blank preset: no goals, no default rules, no restrictions.
+# Everything is chosen manually by the faction leader after creation.
+###############################################
+
+universal_faction_template = {
+
+    name = universal_faction_name
+    icon = GFX_faction_logo_generic_10
+
+    visible = { always = yes }
+    available = { always = yes }
+
+    can_leader_join_other_factions = yes
+
+    manifest = faction_manifest_universal
+
+    # No preset goals - pick them in the faction screen.
+    goals = {
+
+    }
+
+    # No preset rules. An unset rule is an unrestricted rule, so this
+    # faction starts with no joining, war, call-to-war or leadership
+    # limits at all. The universal_* rules below are available to pick
+    # manually if you ever want them stated explicitly.
+    default_rules = {
+
+    }
+
+}

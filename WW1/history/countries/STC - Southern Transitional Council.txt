@@ -1,0 +1,27 @@
+# MBR 2026: Southern Transitional Council in Aden and Socotra.
+MBR_grant_level_one_technologies = yes
+
+capital = 992
+oob = "STC_2026"
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 100
+}
+
+set_stability = 0.55
+set_war_support = 0.65
+set_convoys = 4
+
+create_country_leader = {
+	name = "Aidarous al-Zubaidi"
+	picture = "GFX_middle_east_general_2"
+	ideology = conservatism
+	traits = { }
+}

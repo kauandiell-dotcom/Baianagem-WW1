@@ -1,0 +1,27 @@
+
+state={
+	id=1085
+	name="STATE_1085"
+	manpower = 60000
+	
+	state_category = large_city
+
+	history={
+		owner = GER
+		
+		buildings = {
+			infrastructure = 1
+
+			# Gileppe Dam
+			3488 = { dam = 1 }
+		}
+		add_core_of = BEL
+		add_core_of = GER
+	}
+
+	provinces={
+		3488
+	}
+
+	local_supplies=14.0 
+}

@@ -1,0 +1,71 @@
+
+# ============================================================
+# SCRIPTED LOCALISATION — Universal K/M Display
+# ============================================================
+# Logic: if value >= 1000 → show K, else show raw number
+# For stats stored in K (manpower, casualties): if _val >= 1000 → show M, else show K
+
+# --- MANPOWER (stored in K via manpower_k) ---
+# _val is in K. If >= 1000K (1M) → show M, else show K
+defined_text = { name = GetJirGlobalMp1_Loc text = { trigger = { check_variable = { global.jir_mp_1_val > 999 } } localization_key = JIR_MP_GLOBAL_M_1 } text = { trigger = { always = yes } localization_key = JIR_MP_GLOBAL_K_1 } }
+defined_text = { name = GetJirGlobalMp2_Loc text = { trigger = { check_variable = { global.jir_mp_2_val > 999 } } localization_key = JIR_MP_GLOBAL_M_2 } text = { trigger = { always = yes } localization_key = JIR_MP_GLOBAL_K_2 } }
+defined_text = { name = GetJirGlobalMp3_Loc text = { trigger = { check_variable = { global.jir_mp_3_val > 999 } } localization_key = JIR_MP_GLOBAL_M_3 } text = { trigger = { always = yes } localization_key = JIR_MP_GLOBAL_K_3 } }
+defined_text = { name = GetJirGlobalMp4_Loc text = { trigger = { check_variable = { global.jir_mp_4_val > 999 } } localization_key = JIR_MP_GLOBAL_M_4 } text = { trigger = { always = yes } localization_key = JIR_MP_GLOBAL_K_4 } }
+defined_text = { name = GetJirGlobalMp5_Loc text = { trigger = { check_variable = { global.jir_mp_5_val > 999 } } localization_key = JIR_MP_GLOBAL_M_5 } text = { trigger = { always = yes } localization_key = JIR_MP_GLOBAL_K_5 } }
+
+# --- CASUALTIES (stored as raw casualties value) ---
+# _val is raw. If >= 1,000,000 → show M (jir_cas_X_m = raw/1M), else show K (raw/1000)
+defined_text = { name = GetJirCas1_Loc text = { trigger = { check_variable = { global.jir_cas_1_val > 999999 } } localization_key = JIR_CAS_GLOBAL_M_1 } text = { trigger = { always = yes } localization_key = JIR_CAS_GLOBAL_K_1 } }
+defined_text = { name = GetJirCas2_Loc text = { trigger = { check_variable = { global.jir_cas_2_val > 999999 } } localization_key = JIR_CAS_GLOBAL_M_2 } text = { trigger = { always = yes } localization_key = JIR_CAS_GLOBAL_K_2 } }
+defined_text = { name = GetJirCas3_Loc text = { trigger = { check_variable = { global.jir_cas_3_val > 999999 } } localization_key = JIR_CAS_GLOBAL_M_3 } text = { trigger = { always = yes } localization_key = JIR_CAS_GLOBAL_K_3 } }
+defined_text = { name = GetJirCas4_Loc text = { trigger = { check_variable = { global.jir_cas_4_val > 999999 } } localization_key = JIR_CAS_GLOBAL_M_4 } text = { trigger = { always = yes } localization_key = JIR_CAS_GLOBAL_K_4 } }
+defined_text = { name = GetJirCas5_Loc text = { trigger = { check_variable = { global.jir_cas_5_val > 999999 } } localization_key = JIR_CAS_GLOBAL_M_5 } text = { trigger = { always = yes } localization_key = JIR_CAS_GLOBAL_K_5 } }
+
+# --- AIR (stored as raw plane count) ---
+# If >= 1000 → show K, else show raw
+defined_text = { name = GetJirAir1_Loc text = { trigger = { check_variable = { global.jir_air_1_val > 999 } } localization_key = JIR_AIR_K_1 } text = { trigger = { always = yes } localization_key = JIR_AIR_RAW_1 } }
+defined_text = { name = GetJirAir2_Loc text = { trigger = { check_variable = { global.jir_air_2_val > 999 } } localization_key = JIR_AIR_K_2 } text = { trigger = { always = yes } localization_key = JIR_AIR_RAW_2 } }
+defined_text = { name = GetJirAir3_Loc text = { trigger = { check_variable = { global.jir_air_3_val > 999 } } localization_key = JIR_AIR_K_3 } text = { trigger = { always = yes } localization_key = JIR_AIR_RAW_3 } }
+defined_text = { name = GetJirAir4_Loc text = { trigger = { check_variable = { global.jir_air_4_val > 999 } } localization_key = JIR_AIR_K_4 } text = { trigger = { always = yes } localization_key = JIR_AIR_RAW_4 } }
+defined_text = { name = GetJirAir5_Loc text = { trigger = { check_variable = { global.jir_air_5_val > 999 } } localization_key = JIR_AIR_K_5 } text = { trigger = { always = yes } localization_key = JIR_AIR_RAW_5 } }
+
+# --- NAVY (stored as raw ship count) ---
+# If >= 1000 → show K, else show raw
+defined_text = { name = GetJirShip1_Loc text = { trigger = { check_variable = { global.jir_ship_1_val > 999 } } localization_key = JIR_SHIP_K_1 } text = { trigger = { always = yes } localization_key = JIR_SHIP_RAW_1 } }
+defined_text = { name = GetJirShip2_Loc text = { trigger = { check_variable = { global.jir_ship_2_val > 999 } } localization_key = JIR_SHIP_K_2 } text = { trigger = { always = yes } localization_key = JIR_SHIP_RAW_2 } }
+defined_text = { name = GetJirShip3_Loc text = { trigger = { check_variable = { global.jir_ship_3_val > 999 } } localization_key = JIR_SHIP_K_3 } text = { trigger = { always = yes } localization_key = JIR_SHIP_RAW_3 } }
+defined_text = { name = GetJirShip4_Loc text = { trigger = { check_variable = { global.jir_ship_4_val > 999 } } localization_key = JIR_SHIP_K_4 } text = { trigger = { always = yes } localization_key = JIR_SHIP_RAW_4 } }
+defined_text = { name = GetJirShip5_Loc text = { trigger = { check_variable = { global.jir_ship_5_val > 999 } } localization_key = JIR_SHIP_K_5 } text = { trigger = { always = yes } localization_key = JIR_SHIP_RAW_5 } }
+
+# --- FACTORIES (stored as raw factory count) ---
+# If >= 1000 → show K, else show raw
+defined_text = { name = GetJirFac1_Loc text = { trigger = { check_variable = { global.jir_fac_1_val > 999 } } localization_key = JIR_FAC_K_1 } text = { trigger = { always = yes } localization_key = JIR_FAC_RAW_1 } }
+defined_text = { name = GetJirFac2_Loc text = { trigger = { check_variable = { global.jir_fac_2_val > 999 } } localization_key = JIR_FAC_K_2 } text = { trigger = { always = yes } localization_key = JIR_FAC_RAW_2 } }
+defined_text = { name = GetJirFac3_Loc text = { trigger = { check_variable = { global.jir_fac_3_val > 999 } } localization_key = JIR_FAC_K_3 } text = { trigger = { always = yes } localization_key = JIR_FAC_RAW_3 } }
+defined_text = { name = GetJirFac4_Loc text = { trigger = { check_variable = { global.jir_fac_4_val > 999 } } localization_key = JIR_FAC_K_4 } text = { trigger = { always = yes } localization_key = JIR_FAC_RAW_4 } }
+defined_text = { name = GetJirFac5_Loc text = { trigger = { check_variable = { global.jir_fac_5_val > 999 } } localization_key = JIR_FAC_K_5 } text = { trigger = { always = yes } localization_key = JIR_FAC_RAW_5 } }
+
+# If val >= 1.0 (1M battalions) → show M, else show K
+defined_text = { name = GetJirArmy1_Loc text = { trigger = { check_variable = { global.jir_top_1_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_1 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_1 } }
+defined_text = { name = GetJirArmy2_Loc text = { trigger = { check_variable = { global.jir_top_2_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_2 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_2 } }
+defined_text = { name = GetJirArmy3_Loc text = { trigger = { check_variable = { global.jir_top_3_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_3 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_3 } }
+defined_text = { name = GetJirArmy4_Loc text = { trigger = { check_variable = { global.jir_top_4_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_4 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_4 } }
+defined_text = { name = GetJirArmy5_Loc text = { trigger = { check_variable = { global.jir_top_5_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_5 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_5 } }
+defined_text = { name = GetJirArmy6_Loc text = { trigger = { check_variable = { global.jir_top_6_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_6 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_6 } }
+defined_text = { name = GetJirArmy7_Loc text = { trigger = { check_variable = { global.jir_top_7_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_7 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_7 } }
+defined_text = { name = GetJirArmy8_Loc text = { trigger = { check_variable = { global.jir_top_8_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_8 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_8 } }
+defined_text = { name = GetJirArmy9_Loc text = { trigger = { check_variable = { global.jir_top_9_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_9 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_9 } }
+defined_text = { name = GetJirArmy10_Loc text = { trigger = { check_variable = { global.jir_top_10_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_10 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_10 } }
+defined_text = { name = GetJirArmy11_Loc text = { trigger = { check_variable = { global.jir_top_11_val > 0.999 } } localization_key = JIR_ARMY_GLOBAL_M_11 } text = { trigger = { always = yes } localization_key = JIR_ARMY_GLOBAL_K_11 } }
+
+# --- GENERAL STATS FORMATTING (Custom Comparison View) ---
+defined_text = { name = GetJirGen1Mp_Loc text = { trigger = { always = yes } localization_key = jir_gen_mp_m_format } }
+defined_text = { name = GetJirGen1Loss_Loc text = { trigger = { always = yes } localization_key = jir_gen_loss_m_format } }
+defined_text = { name = GetJirGen2Mp_Loc text = { trigger = { always = yes } localization_key = jir_gen_mp_m_format } }
+defined_text = { name = GetJirGen2Loss_Loc text = { trigger = { always = yes } localization_key = jir_gen_loss_m_format } }
+defined_text = { name = GetJirGen3Mp_Loc text = { trigger = { always = yes } localization_key = jir_gen_mp_m_format } }
+defined_text = { name = GetJirGen3Loss_Loc text = { trigger = { always = yes } localization_key = jir_gen_loss_m_format } }
+defined_text = { name = GetJirGen4Mp_Loc text = { trigger = { always = yes } localization_key = jir_gen_mp_m_format } }
+defined_text = { name = GetJirGen4Loss_Loc text = { trigger = { always = yes } localization_key = jir_gen_loss_m_format } }
+defined_text = { name = GetJirGen5Mp_Loc text = { trigger = { always = yes } localization_key = jir_gen_mp_m_format } }
+defined_text = { name = GetJirGen5Loss_Loc text = { trigger = { always = yes } localization_key = jir_gen_loss_m_format } }

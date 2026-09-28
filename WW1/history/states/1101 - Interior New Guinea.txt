@@ -1,0 +1,27 @@
+state = {
+	id = 1101
+	name = "STATE_1101"
+
+	manpower = 162500 #PreTAOG 38000 
+	state_category = enclave
+
+	impassable = yes 
+	force_link_ownership_to = 979 # New Guinea 
+
+	history = {
+
+		add_core_of = PNG
+		owner = GER
+
+		buildings = {
+			infrastructure = 0
+		}
+
+	}
+
+	provinces = {
+		5135 11004 11018 12428
+	}
+
+	local_supplies = 0.0 
+}

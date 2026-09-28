@@ -1,0 +1,104 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 304
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "PAN_1936_generic"
+
+
+
+# Starting tech
+
+
+# MBR 2026 removed legacy content: recruit_character = PAN_harmodio_arias_madrid
+# MBR 2026 removed legacy content: recruit_character = PAN_bartolomé_sinibaldi
+# MBR 2026 removed legacy content: recruit_character = PAN_tiburcio_andino
+# MBR 2026 removed legacy content: recruit_character = PAN_aniceto_andino
+recruit_character = PAN_enrique_jimenez_brin
+recruit_character = PAN_nestor_urribe_suarez
+recruit_character = PAN_carlos_zavala
+recruit_character = PAN_marcos_a_gelabert
+recruit_character = PAN_juan_jose_parada
+recruit_character = PAN_arturo_osborne_irraga
+recruit_character = PAN_enrico_fabrego_paz
+recruit_character = PAN_ferdinando_hernandez_ytuarte
+recruit_character = PAN_margarita_belloso_jimenez
+recruit_character = PAN_omar_torrijos
+recruit_character = PAN_bolivar_villarino
+recruit_character = PAN_juan_a_hernandez
+recruit_character = PAN_juan_remon
+recruit_character = PAN_manuel_rios_urribe
+recruit_character = PAN_victor_pareja
+recruit_character = PAN_nicolas_ardito_barletta
+recruit_character = PAN_jose_pezet
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 10
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+# MBR 2026 removed legacy content: 	recruit_character = PAN_juan_demostenes_arosemena
+	promote_character = PAN_juan_demostenes_arosemena
+# MBR 2026 removed legacy content: 	recruit_character = PAN_july_portocarrero
+	promote_character = PAN_july_portocarrero
+	retire_character = PAN_harmodio_arias_madrid
+	retire_character = PAN_bartolomé_sinibaldi
+}
+
+create_country_leader = {
+	name = "Juan Carlos Varela"
+	picture = "GFX_Juan_Carlos_Varela"
+	ideology = liberalism
+	traits = { }
+}

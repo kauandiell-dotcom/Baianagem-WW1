@@ -1,0 +1,214 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 328 # Hsingking
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "MAN_1936_generic"
+
+
+set_variable = { MAN_state_shintoism_surrender_limit = 0 }
+set_variable = { MAN_state_shintoism_war_support_factor = 0 }
+set_variable = { MAN_state_shintoism_pocket_penalty = 0 }
+set_variable = { MAN_state_shintoism_stability_factor = -0.05 }
+set_variable = { MAN_state_shintoism_army_core_defence_factor = 0 }
+set_variable = { MAN_state_shintoism_research_speed_factor = 0 }
+set_variable = { MAN_state_shintoism_recruitable_population_factor = 0 }
+set_variable = { MAN_state_shintoism_political_power_gain = -0.1 }
+set_variable = { MAN_levy_cap_max = 48 }
+set_variable = { MAN_levy_cap_min = 0 }
+set_variable = { MAN_levy_cap = 12 }
+set_variable = { MAN_levy_deployed = 0 }
+clamp_variable = {
+	var = MAN_levy_cap
+	min = MAN_levy_cap_min
+	max = MAN_levy_cap_max
+}
+
+
+
+
+set_country_flag = MAN_northern_bandits
+set_country_flag = MAN_eastern_bandits
+set_country_flag = MAN_western_bandits
+
+
+
+
+
+
+# MBR 2026 removed legacy content: recruit_character = MAN_aisin_gioro_puyi
+# MBR 2026 removed legacy content: recruit_character = MAN_zhang_haipeng
+# MBR 2026 removed legacy content: recruit_character = MAN_zhang_jinghui
+# MBR 2026 removed legacy content: recruit_character = MAN_aisin_gioro_xiqia
+# MBR 2026 removed legacy content: recruit_character = MAN_yoshiko_kawashima
+# MBR 2026 removed legacy content: recruit_character = MAN_zhao_shangzhi
+# MBR 2026 removed legacy content: recruit_character = MAN_deng_linge
+# MBR 2026 removed legacy content: recruit_character = MAN_yin_zuoqian
+# MBR 2026 removed legacy content: recruit_character = MAN_xian_yuan
+# MBR 2026 removed legacy content: recruit_character = MAN_urzhin_garmaev
+# MBR 2026 removed legacy content: recruit_character = MAN_yu_zishan
+# MBR 2026 removed legacy content: recruit_character = MAN_ma_zhanshan
+# MBR 2026 removed legacy content: recruit_character = MAN_jonjurjab
+# MBR 2026 removed legacy content: recruit_character = MAN_pujie
+# MBR 2026 removed legacy content: recruit_character = MAN_songgotu_zhanshan
+# MBR 2026 removed legacy content: recruit_character = MAN_zhang_yanqing
+# MBR 2026 removed legacy content: recruit_character = MAN_zhang_shiyi
+# MBR 2026 removed legacy content: recruit_character = MAN_sun_qichang
+# MBR 2026 removed legacy content: recruit_character = MAN_li_shaogeng
+# MBR 2026 removed legacy content: recruit_character = MAN_chu_kudo
+# MBR 2026 removed legacy content: recruit_character = MAN_yuan_jinkai
+# MBR 2026 removed legacy content: recruit_character = MAN_xie_jieshi
+# MBR 2026 removed legacy content: recruit_character = MAN_ding_chao
+# MBR 2026 removed legacy content: recruit_character = MAN_li_zhaolin
+# MBR 2026 removed legacy content: recruit_character = MAN_kanjurjab
+# MBR 2026 removed legacy content: recruit_character = MAN_ding_jianxiu
+# MBR 2026 removed legacy content: recruit_character = MAN_kawashima_naniwa
+
+# Old fake characters 
+#recruit_character = MAN_kyoiji_tomonaga
+#recruit_character = MAN_yonimitsu_kasahara
+#recruit_character = MAN_hesehn_tiemei
+#recruit_character = MAN_guan_xingde
+#recruit_character = MAN_megata_toshiro
+#recruit_character = MAN_hung_zhehuang
+#recruit_character = MAN_nakajima_kesago
+
+IF = {
+	limit = { has_dlc = "No Step Back" }
+# MBR 2026 removed legacy content: 	recruit_character = SOV_grigory_semyonov
+}
+IF = {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	
+}
+
+set_convoys = 5
+
+328 = { #Kirin
+# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+715 = { #Liaoning
+# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+714 = { #Heilungkiang
+# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+717 = { #Hungkiang
+# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+761 = { #Hulunbuir
+# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
+}
+
+2029.1.1 = {
+
+	add_to_war = {
+		targeted_alliance = JAP
+		enemy = CHI
+		hostility_reason = puppet
+	}
+
+	remove_ideas = {
+		MAN_aisin_gioro_puyi
+	}	
+	
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+
+	if = {
+		limit = { has_dlc = "Waking the Tiger" }
+
+		
+		#No bandits
+		unlock_national_focus = MAN_pacify_the_countryside
+		remove_ideas = MAN_banditry
+
+		complete_national_focus = MAN_army_modernization
+		complete_national_focus = MAN_mukden_military_academy
+		complete_national_focus = MAN_law_university
+		complete_national_focus = MAN_obedience
+
+		#Five year plan
+		unlock_national_focus = MAN_first_five_year_plan
+# MBR 2026 removed legacy content: 		add_timed_idea = { days = 1275 idea = MAN_five_year_plan_industry }
+
+		complete_national_focus = MAN_trade_delegation
+		complete_national_focus = MAN_expand_the_textile_industry
+		complete_national_focus = MAN_hoankyoku
+		complete_national_focus = MAN_invite_japanese_investors
+		complete_national_focus = MAN_expand_the_railways
+		complete_national_focus = MAN_develop_aluminum_sources
+		complete_national_focus = MAN_social_research_unit
+	}
+
+	if = {
+		limit = { has_dlc = "No Compromise, No Surrender" }
+
+		
+		#No bandits
+		unlock_national_focus = MAN_tsr_pacify_the_countryside
+		remove_ideas = MAN_banditry
+
+		complete_national_focus = MAN_tsr_army_modernization
+		complete_national_focus = MAN_tsr_mukden_military_academy
+		complete_national_focus = MAN_tsr_law_university
+		complete_national_focus = MAN_tsr_obedience
+
+		#Five year plan
+		unlock_national_focus = MAN_tsr_first_five_year_plan
+# MBR 2026 removed legacy content: 		add_timed_idea = { days = 1275 idea = MAN_five_year_plan_industry }
+
+		complete_national_focus = MAN_tsr_trade_delegation
+		complete_national_focus = MAN_tsr_expand_the_textile_industry
+		complete_national_focus = MAN_tsr_hoankyoku
+		complete_national_focus = MAN_tsr_invite_japanese_investors
+		complete_national_focus = MAN_tsr_expand_the_railways
+		complete_national_focus = MAN_tsr_expand_showa_steel_works
+		complete_national_focus = MAN_tsr_develop_aluminum_sources
+		complete_national_focus = MAN_tsr_strengthen_ties_with_nissan
+		complete_national_focus = MAN_tsr_social_research_unit
+	}
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+}

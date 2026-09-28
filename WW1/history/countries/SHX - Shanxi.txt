@@ -1,0 +1,156 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 615
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "SHX_1936_generic"
+
+
+set_variable = { CHI_warlord_army_political_power_gain = 0 }
+set_variable = { CHI_warlord_army_army_core_attack_factor = 0 }
+set_variable = { CHI_warlord_army_army_core_defence_factor = 0 }
+set_variable = { CHI_warlord_army_production_speed_buildings_factor = 0 }
+set_variable = { CHI_warlord_army_army_infantry_attack_factor = 0 }
+set_variable = { CHI_warlord_army_army_infantry_defence_factor = 0 }
+set_variable = { CHI_warlord_army_special_forces_cap = 0 }
+set_variable = { CHI_warlord_army_special_forces_out_of_supply_factor = 0 }
+set_variable = { warlord_faction_influence_war_score_factor = 0 }
+set_variable = { warlord_faction_influence_contribution_factor = 0 }
+
+set_variable = { RNG_state_shintoism_surrender_limit = 0 }
+set_variable = { RNG_state_shintoism_war_support_factor = 0 }
+set_variable = { RNG_state_shintoism_pocket_penalty = 0 }
+set_variable = { RNG_state_shintoism_stability_factor = 0 }
+set_variable = { RNG_state_shintoism_army_core_defence_factor = 0 }
+set_variable = { RNG_state_shintoism_research_speed_factor = 0 }
+set_variable = { RNG_state_shintoism_recruitable_population_factor = 0 }
+set_variable = { RNG_state_shintoism_political_power_gain = 0 }
+
+IF = {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+	# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_oob = "SHX_1936_sea"
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_oob = "SHX_1936"
+	}
+}
+
+set_stability = 0.65
+set_war_support = 0.4
+
+# Starting tech
+
+
+IF = {
+	limit = {
+		has_dlc = "No Compromise, No Surrender"
+	}
+# MBR 2026 removed legacy content: 	recruit_character = CHI_fu_zuoyi
+	
+	
+}
+# MBR 2026 removed legacy content: recruit_character = SHX_yan_xishan
+# MBR 2026 removed legacy content: recruit_character = SHX_wang_jingguo
+# MBR 2026 removed legacy content: recruit_character = SHX_zhang_shen
+# MBR 2026 removed legacy content: recruit_character = SHX_luo_zhao
+# MBR 2026 removed legacy content: recruit_character = SHX_liao_ting
+recruit_character = SHX_cheng_zhao
+recruit_character = SHX_ma_tian
+recruit_character = SHX_zhu_ting
+recruit_character = SHX_wang_li_sun
+recruit_character = SHX_min_lan_tung_tin
+recruit_character = SHX_tan_fang
+recruit_character = SHX_huang_peng
+recruit_character = SHX_peng_dong
+recruit_character = SHX_kong_fang
+recruit_character = SHX_yang_lu
+recruit_character = SHX_sun_li
+recruit_character = SHX_wang_zuanxu
+recruit_character = SHX_fu_zuoyi
+recruit_character = SHX_qu_yangke
+
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	
+}
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+
+	if = {
+		limit = {
+			has_dlc = "Waking the Tiger"
+		}
+
+		#CHI = { add_to_faction = PREV }
+		#add_to_war = {
+		#	targeted_alliance = CHI
+		#	enemy = JAP
+		#	hostility_reason = asked_to_join
+		#}
+		
+		#complete_national_focus = CHI_secure_internal_politics
+		#complete_national_focus = CHI_cooperation_with_the_communists
+		#complete_national_focus = CHI_land_redistribution
+		#complete_national_focus = CHI_land_value_tax
+		#complete_national_focus = CHI_judiciary_reforms
+		#complete_national_focus = CHI_communist_administrators
+		#complete_national_focus = CHI_industrial_investment
+		#complete_national_focus = CHI_public_education_reform
+		#complete_national_focus = CHI_local_arms_production
+		#complete_national_focus = CHI_long_term_economic_planning
+		#complete_national_focus = CHI_ideological_education
+		#complete_national_focus = CHI_local_arms_development
+		#complete_national_focus = CHI_heavy_weapons_development
+		#complete_national_focus = CHI_public_works
+		#complete_national_focus = CHI_labor_reform
+		#complete_national_focus = CHI_rural_militias
+		else = {			
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = flexible_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}	
+	}
+
+	
+	
+	
+
+set_grand_doctrine = mass_assault
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}

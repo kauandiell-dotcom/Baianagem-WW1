@@ -1,0 +1,26 @@
+state = {
+	id = 273
+	name = "STATE_273" # Libyan Desert
+	manpower = 24633
+	
+	state_category = wasteland
+	impassable = yes
+	force_link_ownership_to = 662 # Sirte
+
+	history = {
+
+		owner = ITA
+		add_core_of = LBA
+
+		buildings = {
+			infrastructure = 0
+		}
+		
+	}
+
+	provinces = {
+		4962 10884 12082 12866 
+	}
+
+	local_supplies = 0.0 
+}

@@ -1,0 +1,189 @@
+﻿###########################
+# Ideology Events
+###########################
+
+add_namespace = ideo
+
+country_event = {
+	id = ideo.1
+	title =  ideo.title.1
+	desc = ideo.desc.1
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_popularity = { ideology = communism popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+	}
+}
+
+country_event = {
+	id = ideo.2
+	title =  ideo.title.2
+	desc = ideo.desc.2
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		add_popularity = { ideology = democratic popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+	}
+}
+
+country_event = {
+	id = ideo.3
+	title =  ideo.title.3
+	desc = ideo.desc.3
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = { ideology = fascism popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+	}
+}
+
+country_event = {
+	id = ideo.4
+	title =  ideo.title.4
+	desc = ideo.desc.4
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		add_popularity = { ideology = neutrality popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+}
+
+country_event = {
+	id = ideo.5
+	title =  ideo.title.1
+	desc = ideo.desc.1
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = { ideology = communism popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+	}
+}
+
+country_event = {
+	id = ideo.6
+	title =  ideo.title.2
+	desc = ideo.desc.2
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = { ideology = democratic popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+	}
+}
+
+country_event = {
+	id = ideo.7
+	title =  ideo.title.3
+	desc = ideo.desc.3
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+		add_popularity = { ideology = fascism popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+	}
+}
+
+country_event = {
+	id = ideo.8
+	title =  ideo.title.4
+	desc = ideo.desc.4
+	is_triggered_only = yes
+
+	option = {
+		name = ideo.opt.1
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		add_popularity = { ideology = neutrality popularity = 0.75 }
+	}
+	option = {
+		name = ideo.opt.2
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+	}
+}

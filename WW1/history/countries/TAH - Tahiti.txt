@@ -1,0 +1,83 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 641
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "TAH_1936_generic"
+
+
+#oob = ""
+
+# Starting tech
+
+
+set_convoys = 20
+
+recruit_character = TAH_pot
+recruit_character = TAH_awt
+recruit_character = TAH_communist_guy
+recruit_character = TAH_ncm
+recruit_character = TAH_acgs
+recruit_character = TAH_nccr
+recruit_character = TAH_fascist_guy
+recruit_character = TAH_ar
+recruit_character = TAH_stc
+recruit_character = TAH_aco2
+recruit_character = TAH_aa2
+recruit_character = TAH_ncs
+recruit_character = TAH_nt
+recruit_character = TAH_acas
+recruit_character = TAH_acd2
+recruit_character = TAH_democratic_guy
+recruit_character = TAH_mt
+recruit_character = TAH_ai2
+recruit_character = TAH_coi
+recruit_character = TAH_acr
+
+2029.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Teri'i-nui-o-Tahiti a Pomare"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Terii_nui_o_Tahiti_a_Pomare
+# MBR 2026 removed vanilla political leader: 	ideology = despotism
+# MBR 2026 removed vanilla political leader: 	female = yes
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 		#
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }

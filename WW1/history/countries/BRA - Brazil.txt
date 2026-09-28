@@ -1,0 +1,205 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 500
+
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "BRA_1936_generic"
+
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+}
+
+###############################################################################
+# ToA
+###############################################################################
+IF = {
+	limit = {
+		has_dlc = "Trial of Allegiance"
+	}
+	set_country_flag = BRA_toa_DLC
+
+	every_owned_state = {
+		limit = {
+			OR = {
+				has_state_category = wasteland
+				has_state_category = pastoral
+				has_state_category = rural
+				state = 498
+				state = 499
+			}
+			NOT = {
+				state = 961
+				state = 962
+				state = 963
+				state = 964
+				state = 965
+				state = 966
+				state = 967
+				state = 968
+				state = 496
+			}
+		}
+
+		set_variable = { BRA_state_development_production_speed = -0.4 }
+		set_variable = { BRA_state_development_local_building_slots_factor = -0.4 }
+		set_variable = { BRA_state_development_local_factories = -0.4 }
+		set_variable = { BRA_state_development_state_resources_factor = -0.4 }
+	}
+
+	JUNO_set_shared_military_branch_defaults = yes
+
+	set_variable = { BRA_economy_production_efficiency_gain_factor = -0.2 }
+	set_variable = { BRA_economy_production_max_efficiency_factor = -0.2 }
+	set_variable = { BRA_economy_industrial_capacity_factor = -0.2 }
+	
+	set_variable = { BRA_weak_government_stability_factor = -0.15 }
+	set_variable = { BRA_weak_government_pp_factor = -0.2 }
+	set_variable = { BRA_weak_government_neutrality_factor = 0.02 }
+	set_variable = { BRA_weak_government_command_power_factor = -0.4 }
+
+	set_variable = { BRA_coup_stability_factor = -0.05 }
+	set_variable = { BRA_coup_communism_factor = 0.05 }
+	set_variable = { BRA_coup_democratic_factor = 0 }
+	set_variable = { BRA_coup_fascism_factor = 0 }
+	set_variable = { BRA_coup_neutrality_factor = 0 }
+
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "2024.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		neutrality = 100
+	}
+
+	set_party_name = {
+		ideology = neutrality
+		name = BRA_military_party
+		long_name = BRA_military_party_long
+	}
+
+	set_party_name = {
+		ideology = democratic
+		name = BRA_provisional_government
+		long_name = BRA_provisional_government_long
+	}
+
+	country_event = {
+		id = JUNO_brazil_events.153
+		days = 30
+		random_days = 15
+	}
+}
+
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2024.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 100
+	}
+}
+
+set_country_flag = monroe_directive
+
+2029.1.1 = {
+	add_political_power = 1198
+	add_command_power = 100
+	
+	IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+		complete_national_focus = BRA_tribunal_de_seguranca_nacional
+		complete_national_focus = BRA_coffee_crisis_aftermath
+		complete_national_focus = BRA_ensure_continued_military_support
+		complete_national_focus = BRA_work_with_the_integralists
+		complete_national_focus = SMB_army
+		complete_national_focus = SMB_navy
+		complete_national_focus = BRA_desenvolvimentismo
+		complete_national_focus = BRA_cohen_plan
+		complete_national_focus = BRA_estado_novo
+		complete_national_focus = BRA_promote_resource_extraction
+		complete_national_focus = BRA_the_polaca
+		complete_national_focus = BRA_stimulate_the_civilian_economy
+		complete_national_focus = BRA_radio_nacional
+		complete_national_focus = BRA_deal_with_the_cangaceiro
+		complete_national_focus = BRA_establish_psad
+		complete_national_focus = BRA_autarky 
+		complete_national_focus = BRA_departamendo_de_propaganda
+		complete_national_focus = BRA_tech_slot_1
+
+		ELSE = {
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_fleet_in_being
+	set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_convoys = 40
+
+2029.1.1 = {
+	set_politics = {
+		ruling_party = democratic
+		last_election = "2024.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	set_popularities = {
+		democratic = 100
+	}
+}
+
+# STARTING LEADER
+create_country_leader = {
+	name = "Luiz Inacio Lula da Silva"
+	picture = "GFX_luiz_inacio_lula_da_silva"
+	ideology = neutrality
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Nilo"
+	picture = "GFX_luiz_inacio_lula_da_silva"
+	ideology = despotism
+	traits = { }
+}

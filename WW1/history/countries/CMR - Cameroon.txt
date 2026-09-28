@@ -1,0 +1,76 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 773
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "CMR_1936_generic"
+
+
+# Starting tech
+
+
+set_convoys = 20
+
+recruit_character = CMR_aa2
+recruit_character = CMR_democratic_guy
+recruit_character = CMR_acgs
+recruit_character = CMR_ncm
+recruit_character = CMR_nt
+recruit_character = CMR_acas
+recruit_character = CMR_awt
+recruit_character = CMR_pot
+recruit_character = CMR_stc
+recruit_character = CMR_acd2
+recruit_character = CMR_communist_guy
+recruit_character = CMR_aco2
+recruit_character = CMR_fascist_guy
+recruit_character = CMR_coi
+recruit_character = CMR_ar
+recruit_character = CMR_nccr
+recruit_character = CMR_mt
+recruit_character = CMR_ai2
+recruit_character = CMR_ncs
+recruit_character = CMR_acr
+
+
+2029.1.1 = {
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 100
+}

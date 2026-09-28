@@ -1,0 +1,859 @@
+sub_units = {
+	#
+	#	ARMORED CAR FLAME
+	#
+	bm_armored_car_flame = {
+		abbreviation = "FAC"
+		sprite = armored_car
+		map_icon_category = armored
+		group = support
+		
+		active = yes
+		regimental = no
+		
+		priority = 600
+		ai_priority = 250
+		
+		# TYPE
+		type = {
+			motorized
+			flame
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_front_line
+			category_army
+			category_support_battalions
+		}
+
+		combat_width = 0
+		max_strength = 10
+		max_organisation = 35
+		default_morale = 0.4
+		manpower = 50
+		training_time = 200
+		weight = 0.2
+		supply_consumption = 0.05
+		can_be_parachuted = no
+		breakthrough = 0.2
+		soft_attack = 0.15
+		armor_value = 1
+
+		essential = {
+			infantry_equipment
+			support_equipment
+			armored_car_equipment
+		}
+		
+		transport = armored_car_equipment
+		
+		need = {
+			infantry_equipment = 10
+			support_equipment = 10
+			armored_car_equipment = 15
+		}
+
+		urban = {
+			attack = 0.10
+		}
+		fort = {
+			attack = 0.1
+		}
+
+		same_support_type = flame
+	}
+
+	#
+	#	CHEMICAL ARTILLERY
+	#
+	bm_chemical_artillery = {
+		abbreviation = "CART"
+		sprite = artillery
+		map_icon_category = infantry
+		group = support
+		active = yes
+		affects_speed = no     # Used to check if t
+		can_be_parachuted = yes
+		regimental = no
+		priority = 600
+		ai_priority = 250
+		# TYPE
+		type = {
+			infantry
+			support
+		}
+		# CATEGORIES
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+			category_support_artillery
+		}
+		# MODIFERS
+		combat_width = 0
+		manpower = 150
+		training_time = 120
+		max_organisation = 10
+		default_morale = 0.5
+		max_strength = 0.3
+		weight = 0.1
+		supply_consumption = 0.25
+		
+		# Support nerfs to combat abilities
+		defense = -0.52
+		breakthrough = -0.30
+		soft_attack = -0.25
+		hard_attack = -0.60
+		# EQUIPMENT NEEDED
+		need = {
+			support_equipment = 5
+			artillery_equipment = 18
+		}
+		# REQUIRED EQUIPMENT
+		essential = {
+			artillery_equipment
+			support_equipment
+		}
+		# TERRAIN
+		forest = {
+			attack = 0.1
+			movement = -0.05
+		}
+		hills = {
+			movement = -0.05
+			attack = -0.05
+		}
+		mountain = {
+			movement = -0.15
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.05
+			movement = -0.1
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.15
+		}
+		fort = {
+			attack = 0.25 # Effective against forti
+		}
+		river = {
+			attack = -0.2
+			movement = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+
+	#
+	#	COMMAND REGIMENT
+	#
+	bm_command_regiment = {
+		abbreviation = "COM"
+		sprite = infantry
+		map_icon_category = infantry
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = yes
+		regimental = no
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+		# MODIFERS
+        max_organisation = 20
+        max_strength = 2
+		training_time = 120
+        combat_width = 0
+        default_morale = 0.3
+        manpower = 100
+        weight = 0.1
+        supply_consumption = 0.02
+		
+		soft_attack = -0.9
+		hard_attack = -0.9
+        defense = -0.9
+        breakthrough = -0.9
+        
+        # EQUIPMENT NEEDED
+        need = {
+            infantry_equipment = 5
+            support_equipment = 20
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+            infantry_equipment
+            support_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+		battalion_mult = {
+            category = category_army
+            max_organisation = 0.15 # Because he is a commander
+        }
+
+        same_support_type = bm_command_regiment
+	}
+
+	#
+	#	HEAVY TANK COMMAND REGIMENT
+	#
+	bm_heavy_tank_command_regiment = {
+		abbreviation = "HTCM"
+		sprite = heavy_armor
+		map_icon_category = armored
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = no
+		regimental = no
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			armor
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_tanks
+			category_support_battalions
+			category_all_armor
+			category_army
+		}
+
+		# MODIFERS
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 100
+		training_time = 120
+		weight = 0.5
+		supply_consumption = 0.06
+		fuel_consumption = -0.352
+		
+		defense = -0.7
+		breakthrough = -0.7
+		soft_attack = -0.7
+		hard_attack = -0.7
+		armor_value = -0.7
+        
+        # EQUIPMENT NEEDED
+        need = {
+			heavy_tank_chassis = 12
+			support_equipment = 12
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+			heavy_tank_chassis
+			support_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            breakthrough = 0.05
+        }
+        
+        # TERRAIN
+		forest = {
+		    attack = -0.04
+			movement = -0.04
+		}
+		hills = {
+		    attack = -0.02
+		}
+		mountain = 	{
+		    attack = -0.03
+		}
+		jungle = {
+		    attack = -0.06
+			movement = -0.04
+		}
+		marsh = {
+		    attack = -0.04 
+			movement = -0.02
+		}
+		urban = {
+			attack = -0.05
+			defence = -0.02
+		}
+		river = { 
+			attack = -0.04 
+			movement = -0.04
+		}
+		amphibious = { 
+			attack = -0.09
+		}
+		fort = {
+			attack = 0.01
+		}
+
+		same_support_type = recon
+	}
+
+	#
+	#	LIGHT TANK COMMAND REGIMENT
+	#
+	bm_light_tank_command_regiment = {
+		abbreviation = "LTCM"
+		sprite = light_armor
+		map_icon_category = armored
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = yes
+		regimental = no
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			armor
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_tanks
+			category_support_battalions
+			category_all_armor
+			category_army
+		}
+
+		# MODIFERS
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 100
+		training_time = 120
+		weight = 0.3
+		supply_consumption = 0.04
+		fuel_consumption = -0.352
+		
+		defense = -0.7
+		breakthrough = -0.7
+		soft_attack = -0.7
+		hard_attack = -0.7
+		armor_value = -0.7
+        
+        # EQUIPMENT NEEDED
+        need = {
+			light_tank_chassis = 12
+			support_equipment = 12
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+			light_tank_chassis
+			support_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            breakthrough = 0.05
+        }
+        
+        # TERRAIN
+		forest = {
+		    attack = -0.02
+			movement = -0.04
+		}
+		mountain = 	{
+		    attack = -0.01
+		}
+		jungle = {
+		    attack = -0.03
+			movement = -0.04
+		}
+		marsh = {
+		    attack = -0.01 
+			movement = -0.01
+		}
+		urban = {
+			attack = -0.04
+			defence = -0.01
+		}
+		river = { 
+			attack = -0.02 
+			movement = -0.02
+		}
+		amphibious = { 
+			attack = -0.04
+		}	
+
+        same_support_type = bm_command_regiment
+	}
+
+	#
+	#	MEDIUM TANK COMMAND REGIMENT
+	#
+	bm_medium_tank_command_regiment = {
+		abbreviation = "MTCM"
+		sprite = medium_armor
+		map_icon_category = armored
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = no
+		regimental = no
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			armor
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_tanks
+			category_support_battalions
+			category_all_armor
+			category_army
+		}
+
+		# MODIFERS
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 100
+		training_time = 120
+		weight = 0.4
+		supply_consumption = 0.05
+		fuel_consumption = -0.352
+		
+		defense = -0.7
+		breakthrough = -0.7
+		soft_attack = -0.7
+		hard_attack = -0.7
+		armor_value = -0.7
+        
+        # EQUIPMENT NEEDED
+        need = {
+			medium_tank_chassis = 12
+			support_equipment = 12
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+			medium_tank_chassis
+			support_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            breakthrough = 0.05
+        }
+        
+        # TERRAIN
+		forest = {
+		    attack = -0.03
+			movement = -0.04
+		}
+		hills = 	{
+		    attack = -0.01
+		}
+		mountain = 	{
+		    attack = -0.02
+		}
+		jungle = {
+		    attack = -0.04
+			movement = -0.04
+		}
+		marsh = {
+		    attack = -0.01 
+			movement = -0.01
+		}
+		urban = {
+			attack = -0.04
+			defence = -0.01
+		}
+		river = { 
+			attack = -0.02 
+			movement = -0.02
+		}
+		amphibious = { 
+			attack = -0.08
+		}
+
+        same_support_type = bm_command_regiment
+	}
+
+	#
+	#	MODERN TANK COMMAND REGIMENT
+	#
+	bm_modern_tank_command_regiment = {
+		abbreviation = "MTCM"
+		sprite = modern_armor
+		map_icon_category = armored
+		group = support
+
+		active = yes
+		affects_speed = no
+		can_be_parachuted = no
+		regimental = no
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			armor
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_tanks
+			category_support_battalions
+			category_all_armor
+			category_army
+		}
+
+		# MODIFERS
+		combat_width = 0
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 100
+		training_time = 120
+		weight = 0.5
+		supply_consumption = 0.06
+		fuel_consumption = -0.352
+		
+		defense = -0.7
+		breakthrough = -0.7
+		soft_attack = -0.7
+		hard_attack = -0.7
+		armor_value = -0.7
+        
+        # EQUIPMENT NEEDED
+        need = {
+			modern_tank_chassis = 12
+			support_equipment = 12
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+			modern_tank_chassis
+			support_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            breakthrough = 0.05
+        }
+        
+        # TERRAIN
+		forest = {
+		    attack = -0.03
+			movement = -0.04
+		}
+		hills = 	{
+		    attack = -0.01
+		}
+		mountain = 	{
+		    attack = -0.02
+		}
+		jungle = {
+		    attack = -0.04
+			movement = -0.04
+		}
+		marsh = {
+		    attack = -0.01 
+			movement = -0.01
+		}
+		urban = {
+			attack = -0.04
+			defence = -0.01
+		}
+		river = { 
+			attack = -0.02 
+			movement = -0.02
+		}
+		amphibious = { 
+			attack = -0.07
+		}
+
+        same_support_type = bm_command_regiment
+	}
+
+	#
+	#	MOT COMMAND REGIMENT
+	#
+	bm_mot_command_regiment = {
+		abbreviation = "MCM"
+		sprite = infantry
+		map_icon_category = infantry
+		group = support
+
+		active = yes
+		affects_speed = yes
+		can_be_parachuted = yes
+		regimental = no
+
+		transport = motorized_equipment
+
+		priority = 600
+		ai_priority = 250
+
+		# TYPE
+		type = {
+			support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+		# MODIFERS
+        max_organisation = 20
+        max_strength = 2
+		training_time = 120
+        combat_width = 0
+        default_morale = 0.30
+        manpower = 140
+        weight = 0.2
+        supply_consumption = 0.03
+		fuel_consumption = -0.352
+
+		soft_attack = -0.9
+		hard_attack = -0.9
+        defense = -0.9
+        breakthrough = -0.9
+        
+        # EQUIPMENT NEEDED
+        need = {
+            infantry_equipment = 10
+            support_equipment = 20
+			motorized_equipment = 20
+        }
+        
+        # REQUIRED EQUIPMENT
+        essential = {
+            infantry_equipment
+            support_equipment
+			motorized_equipment
+        }
+        
+        # MODIFIER FOR CATEGORIES
+        battalion_mult = {
+            category = category_army
+			max_organisation = 0.10 # Because he is a commander
+            defense = 0.05
+        }
+        
+        # TERRAIN
+		jungle = {
+			movement = -0.05
+		}
+		forest = {
+			movement = -0.05
+		}
+		marsh = {
+			movement = -0.05
+		}
+		river = {
+			movement = -0.05
+		}
+
+        same_support_type = bm_command_regiment
+	}
+
+	#
+	#	MOTORCYCLE RECON
+	#
+	bm_motorcycle_recon = {
+		abbreviation = "MCREC"
+		sprite = motorized_military_police
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		can_be_parachuted 	= yes
+		regimental = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_recon
+		}
+		
+		battalion_mult = {
+			category = category_artillery
+			soft_attack = 0.1
+		}
+	
+		combat_width = 0
+		max_strength 		= 2
+		max_organisation 	= 20
+		default_morale 		= 0.3
+		manpower 			= 500
+		training_time 		= 80
+		weight 				= 0.1
+		supply_consumption 	= 0.02
+		recon 				= 1.5
+		defense = -0.09
+		breakthrough = -0.5
+		soft_attack = -0.75
+		hard_attack = -0.8
+
+		need = {
+			infantry_equipment = 30
+			support_equipment = 15
+			motorbike_equipment = 30
+		}
+
+		essential = {
+			infantry_equipment
+			support_equipment
+			motorized_equipment
+			motorbike_equipment
+		}
+
+		forest = {
+			movement = 0.05
+		}
+		hills = {
+			movement = 0.15
+		}
+		mountain = {
+			movement = 0.05
+		}
+		jungle = {
+			movement = 0.05
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.3
+		}
+		desert = {
+			movement = 0.3
+		}
+		river = {
+			movement = 0.15
+		}
+		
+		same_support_type = recon
+	}
+
+	#
+	#	PACK HOWITZER
+	#
+	bm_pack_howitzer = {
+		abbreviation = "PHOW"
+		sprite = artillery
+		map_icon_category = infantry
+		group = support
+
+		active = yes
+		regimental = no
+
+		priority = 600
+		ai_priority = 250
+		special_forces = no
+		can_be_parachuted = yes
+		affects_speed = no
+
+		# TYPE
+		type = {
+			support
+			infantry
+		}
+
+		# CATEGORIES
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+			category_support_artillery
+		}
+
+		# MODIFERS
+		combat_width = 0
+		manpower = 300
+		training_time = 120
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 0.2
+		weight = 0.1
+		supply_consumption = 0.12
+		defense = -0.85
+		breakthrough = -0.9
+		soft_attack = -0.8
+		hard_attack = -0.9
+		ap_attack = -0.15
+
+		battalion_mult = {
+			category = category_light_infantry
+			defense = 0.02
+		}
+
+		# EQUIPMENT NEEDED
+		need = {
+			artillery_equipment = 12
+			anti_tank_equipment = 6
+			support_equipment = 3
+		}
+
+		# REQUIRED EQUIPMENT
+		essential = {
+			artillery_equipment
+			support_equipment
+		}
+
+		# TERRAIN
+		# empty
+	}
+}

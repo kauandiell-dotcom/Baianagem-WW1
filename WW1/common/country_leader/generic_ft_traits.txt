@@ -1,0 +1,403 @@
+leader_traits = {
+	
+	moscow_communist = {
+		random = no
+		political_power_factor = 0.15
+		trade_opinion_factor = 0.15
+		war_stability_factor = -0.05
+	}
+
+	independent_communist = {
+		random = no
+		subversive_activites_upkeep = -0.15
+		send_volunteer_size = 4
+		drift_defence_factor = 0.25
+		party_popularity_stability_factor = -0.1
+	}
+
+	supreme_warlord_trait = {
+		random = no
+		mobilization_laws_cost_factor = -0.1
+		mobilization_speed = 0.1
+	}
+
+	nazi_fascist_copy = {
+		random = no
+		justify_war_goal_time = -0.1
+		research_speed_factor = 0.025
+		enemy_justify_war_goal_time = -0.1
+		resistance_target = 0.04
+	}
+
+	italian_fascist_copy = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		conscription_factor = 0.02
+		experience_gain_army_factor = -0.025
+		resistance_target = 0.03
+	}
+
+	imperial_fascist_leader = {
+		random = no
+		stability_factor = 0.2
+		surrender_limit = 0.1
+		consumer_goods_factor = 0.05
+		resistance_target = 0.03
+	}
+
+	national_fanatic = {
+		random = no
+		war_support_factor = 0.1
+		offensive_war_stability_factor = 0.1
+		drift_defence_factor = 0.1
+		improve_relations_maintain_cost_factor = 0.25
+		resistance_target = 0.05
+	}
+
+	pragmatic_fascist = {
+		random = no
+		political_power_factor = 0.1	
+		trade_laws_cost_factor = -0.25
+		economy_cost_factor = -0.25
+		drift_defence_factor = -0.15
+		resistance_target = 0.02
+	}
+
+	reformed_fascist_authoritarian = {
+		random = no
+		political_power_factor = 0.075
+		trade_laws_cost_factor = -0.1
+		economy_cost_factor = -0.1
+		drift_defence_factor = -0.15
+		resistance_target = 0.01
+	}
+
+	conservative = {
+		random = no
+		political_power_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.02
+		resistance_target = 0.02
+		communism_acceptance = -75
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	socialist = {
+		random = no
+		consumer_goods_factor = 0.03
+		non_core_manpower = 0.02
+		drift_defence_factor = 0.1
+		fascism_acceptance = -75
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	liberal = {
+		random = no
+		improve_relations_maintain_cost_factor = -0.25
+		trade_opinion_factor = 0.1
+		civilian_intel_to_others = 5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	moderate_trait = {
+		random = no
+		political_power_factor = 0.05
+		foreign_subversive_activites = -0.1
+		surrender_limit = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	centrist_trait = {
+		random = no
+		political_power_factor = 0.05
+		stability_factor = 0.05
+		war_support_factor = -0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	moderate_reformer_trait = {
+		random = no
+		political_power_factor = -0.05
+		stability_factor = 0.05
+		trade_opinion_factor = 0.05
+		democratic_acceptance = 25
+	}
+
+	moderate_reformer_successful_trait = {
+		random = no
+		political_power_factor = 0.1
+		stability_factor = 0.1
+		trade_opinion_factor = 0.05
+		democratic_acceptance = 50
+	}
+
+	despot_0 = {
+		random = no
+		political_power_gain = 0.05
+		root_out_resistance_effectiveness_factor = 0.1
+		resistance_target = 0.15
+	}
+
+	despot = {
+		random = no
+		political_power_gain = 0.05
+		root_out_resistance_effectiveness_factor = 0.1
+		resistance_target = 0.1
+	}
+
+	despot_2 = {
+		random = no
+		political_power_gain = 0.1
+		root_out_resistance_effectiveness_factor = 0.1
+		resistance_target = 0.1
+	}
+
+	despot_3 = {
+		random = no
+		political_power_gain = 0.1
+		root_out_resistance_effectiveness_factor = 0.1
+		conscription_factor = 0.05
+		resistance_target = 0.05
+		generate_wargoal_tension = -0.1
+	}
+
+	visionary_leader = {
+		random = no
+		research_speed_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.075
+		war_support_factor = 0.1
+	}
+
+	historic_figure = {
+		random = no
+		stability_factor = 0.1
+		production_speed_buildings_factor = 0.075
+		command_abilities_cost_factor = -0.15
+	}
+
+	big_dictator = {
+		random = no
+		political_power_gain = 0.1
+		root_out_resistance_effectiveness_factor = 0.15
+		resistance_decay = 0.05
+		war_stability_factor = 0.1
+	}
+
+	agricultural_leader = {
+		random = no
+		production_speed_infrastructure_factor = 0.05
+		industrial_capacity_factory = -0.05
+	}
+
+	agricultural_leader_2 = {
+		random = no
+		production_speed_infrastructure_factor = 0.05 
+		local_resources_factor = 0.1
+		industry_free_repair_factor = 0.05
+		industrial_capacity_factory = -0.025
+	}
+	agricultural_leader_3 = {
+		random = no
+		production_speed_infrastructure_factor = 0.15
+		local_resources_factor = 0.1
+		industry_free_repair_factor = 0.05
+		consumer_goods_factor = -0.025
+		industrial_capacity_factory = -0.01
+	}
+
+	industrial_leader = {
+		random = no
+		production_factory_max_efficiency_factor = 0.02
+		production_speed_buildings_factor = -0.05
+	}
+	industrial_leader_2 = {
+		random = no
+		production_factory_max_efficiency_factor = 0.02
+		global_building_slots_factor = 0.1
+		fuel_gain_factor_from_states = 0.1
+		production_speed_buildings_factor = -0.025
+	}
+	industrial_leader_3 = {
+		random = no
+		production_factory_max_efficiency_factor = 0.05
+		industrial_capacity_factory = 0.025
+		global_building_slots_factor = 0.1
+		fuel_gain_factor_from_states = 0.1
+		production_speed_buildings_factor = -0.01
+	}
+
+	urban_leader = {
+		random = no
+		party_popularity_stability_factor = 0.05
+		stability_factor = -0.05
+	}
+
+	urban_leader_2 = {
+		random = no
+		party_popularity_stability_factor = 0.05
+		forced_surrender_limit = 0.1
+		drift_defence_factor = 0.15
+		stability_factor = -0.025
+	}
+
+	urban_leader_3 = {
+		random = no
+		party_popularity_stability_factor = 0.15
+		forced_surrender_limit = 0.1
+		drift_defence_factor = 0.15
+		required_garrison_factor = -0.1
+		stability_factor = -0.01
+	}
+	military_leader = {
+		random = no
+		land_doctrine_cost_factor = -0.05
+		political_power_factor = -0.05
+	}
+	military_leader_2 = {
+		random = no
+		land_doctrine_cost_factor = -0.05
+		land_mastery_gain_factor = 0.05
+		land_reinforce_rate = 0.025
+		political_power_factor = -0.025
+	}
+
+	military_leader_3 = {
+		random = no
+		land_doctrine_cost_factor = -0.15
+		land_reinforce_rate = 0.025
+		land_mastery_gain_factor = 0.1
+		grant_medal_cost_factor = -0.25
+		political_power_factor = -0.01
+	}
+
+	junta_leader = {
+		random = no
+		land_reinforce_rate = 0.025
+		experience_gain_army_factor = 0.1
+		experience_gain_navy_factor = 0.1
+		experience_gain_air_factor = 0.1
+		command_power_gain_mult = 0.15
+		high_command_cost_factor = -0.25
+		political_power_factor = -0.01
+	}
+	
+	aristocrat = {
+		random = no
+		stability_factor = 0.05
+		consumer_goods_factor = 0.05
+	}
+
+	aristocrat_2 = {
+		random = no
+		stability_factor = 0.05
+		neutrality_acceptance = 50
+		join_faction_tension = -0.10
+		trade_opinion_factor = 0.15
+		consumer_goods_factor = 0.025
+	}
+
+	autocrat = {
+		random = no
+		stability_factor = 0.1
+		army_morale_factor = 0.03
+		legitimacy_gain_factor = 0.10
+		consumer_goods_factor = 0.025
+	}
+
+	divine_mandate = {
+		random = no
+		stability_factor = 0.1
+		generate_wargoal_tension = -0.25
+		justify_war_goal_time = -0.33
+	}
+
+	oligarch = {
+		random = no
+		stability_factor = 0.1
+		neutrality_acceptance = 50
+		join_faction_tension = -0.10
+		trade_opinion_factor = 0.15
+		opinion_gain_monthly_same_ideology_factor = 0.15
+		enemy_justify_war_goal_time = 0.15
+		consumer_goods_factor = 0.025
+	}
+
+	religious_authority_trait = {
+		random = no
+		stability_factor = 0.15
+		neutrality_acceptance = 50
+		generate_wargoal_tension = -0.25
+		join_faction_tension = -0.10
+		trade_opinion_factor = 0.15
+		out_of_supply_factor = -0.05
+		consumer_goods_factor = 0.005
+	}
+
+	generic_ft_conserative_politician = {
+		sprite = 13
+		random = no
+		political_power_factor = 0.05
+		consumer_goods_factor = -0.05
+		war_stability_factor = 0.10
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	generic_ft_liberal_politician = {
+		sprite = 13
+		random = no
+		stability_factor = 0.1
+		improve_relations_maintain_cost_factor = -0.5
+		trade_opinion_factor = 0.10
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	generic_ft_socialism_politician = {
+		sprite = 13
+		random = no
+		compliance_growth_on_our_occupied_states = -0.05
+		opinion_gain_monthly_same_ideology_factor = 1.0
+		party_popularity_stability_factor = 0.1
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	generic_ft_radical_politician = {
+		sprite = 13
+		random = no
+		resistance_damage_to_garrison = -0.25
+		foreign_subversive_activites = -0.3
+		offensive_war_stability_factor = 0.1
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+
+	generic_ft_neutral_politician = {
+		sprite = 13
+		random = no
+		neutrality_drift = 0.05
+		conscription = 0.01
+
+		ai_will_do = {
+			factor = 2
+		}
+	}
+}

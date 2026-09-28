@@ -1,0 +1,82 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 777
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "TOG_1936_generic"
+
+
+# Starting tech
+
+
+set_convoys = 10
+
+recruit_character = TOG_awt
+recruit_character = TOG_acd2
+recruit_character = TOG_nt
+recruit_character = TOG_aco2
+recruit_character = TOG_acas
+recruit_character = TOG_acr
+recruit_character = TOG_mt
+recruit_character = TOG_stc
+recruit_character = TOG_aa2
+recruit_character = TOG_ncm
+recruit_character = TOG_communist_guy
+recruit_character = TOG_ncs
+recruit_character = TOG_pot
+recruit_character = TOG_nccr
+recruit_character = TOG_fascist_guy
+recruit_character = TOG_coi
+recruit_character = TOG_ai2
+recruit_character = TOG_democratic_guy
+recruit_character = TOG_ar
+recruit_character = TOG_acgs
+
+2029.1.1 = {
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+
+create_country_leader = {
+	name = "Ata Messan Ajavan Zeus"
+	picture = "GFX_ata_messan_ajavan_zeus"
+	ideology = liberalism
+	traits = { }
+}

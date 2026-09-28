@@ -1,0 +1,478 @@
+ideas = {
+
+	# Special ones that can be applied on other countries through focus system.
+	country = {
+	
+		generic_focus_defensive_preparations = {
+			allowed = {
+				always = no
+			}
+			available = {}
+
+			removal_cost = -1
+
+			picture = YUG_federal_defense_council
+					
+			modifier = {
+				army_core_defence_factor = 0.1
+				training_time_army_factor = -0.1
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.2
+				production_speed_anti_air_building_factor = 0.2
+			}
+		}
+
+		generic_focus_deterrence = {
+			
+			name = deterrence
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_production_bonus
+	
+			modifier = {
+				land_bunker_effectiveness_factor = 0.1
+				coastal_bunker_effectiveness_factor = 0.1
+				bunker_max_level_terrain_limit = 1
+			}
+		}
+
+		generic_communist_influence = {
+			allowed = {
+				always = no
+			}
+			available = {}
+
+			removal_cost = -1
+
+			picture = generic_communism_drift_bonus
+					
+			modifier = {
+				communism_drift = 0.2
+				communism_acceptance = 15
+			}
+		}
+
+		aircraft_design_generic = {
+			allowed = {
+				always = no
+			}
+			available = {}
+
+			removal_cost = -1
+
+			picture = generic_air_research
+					
+			modifier = {
+				
+			}
+
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+
+		navy_design_generic = {
+			allowed = {
+				always = no
+			}
+			available = {}
+
+			removal_cost = -1
+
+			picture = generic_coastal_navy
+					
+			modifier = {
+				
+			}
+
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+		}
+
+		regime_change = {
+			allowed = {
+				always = no
+			}
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_spy_coup
+					
+			modifier = {
+				stability_weekly = -0.005
+				war_support_weekly = 0.005
+				political_power_gain = 0.25
+			}
+		}
+
+		radicalism_idea = {
+			allowed = {
+				always = no
+			}
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+					
+			modifier = {
+				democratic_drift = -0.05
+				neutrality_drift = -0.05
+			}
+		}
+
+		moderatism_idea = {
+			allowed = {
+				always = no
+			}
+			available = { }
+
+			removal_cost = -1
+
+			picture = generic_pp_unity_bonus
+					
+			modifier = {
+				fascism_drift = -0.05
+				communism_drift = -0.05
+			}
+		}
+
+		secret_police_norm  = {
+			allowed = {
+				always = no
+			}
+			name = secret_police_idea
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_spy_intel
+					
+			modifier = {
+				root_out_resistance_effectiveness_factor = 0.15
+			}
+		}
+		#Communist Ideas
+
+		invited_foreign_commies = {
+			
+			allowed = {
+				always = no
+			}
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_communist_army
+					
+			modifier = {
+				weekly_manpower = 200
+			}
+		}
+		#Democratic Ideas
+
+		generic_democratising = {
+			allowed = {
+				always = no
+			}
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+					
+			modifier = {
+				democratic_drift = 0.1
+			}
+		}
+
+		generic_unaligned = {
+			allowed = {
+				always = no
+			}
+
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_neutrality_drift_bonus
+					
+			modifier = {
+				neutrality_drift = 0.1
+			}
+		}
+
+		generic_neutral_drift_factor_idea  = {
+			allowed = {
+				always = no
+			}
+
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_neutrality_drift_bonus
+					
+			modifier = {
+				neutrality_drift = 0.2
+				democratic_drift = -0.2
+			}
+		}
+
+		#Interventionism Ideas
+
+		#Armed Neutrality
+
+		#Neutral Ideas
+
+		#Moderate Institutions
+		honour_guard_idea = {
+			allowed = {
+				always = no
+			}
+			name = honour_guard_focus
+			available = {  }
+
+			removal_cost = -1
+
+			picture = generic_motorized_equipment_manufacturer_2
+					
+			modifier = {
+				cavalry_defence_factor = 0.10
+			}
+		}
+
+		##Puppet Ideas
+		puppet_cooperate_idea_1 = {
+			allowed = {
+				always = no
+			}
+			name = puppet_cooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+
+			modifier = {
+				master_ideology_drift = 0.01
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		puppet_cooperate_idea_2 = {
+			allowed = {
+				always = no
+			}
+			name = puppet_cooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+
+			modifier = {
+				master_ideology_drift = 0.02
+				consumer_goods_factor = -0.075
+				overlord_trade_cost_factor = -0.25
+			}
+		}
+
+		puppet_cooperate_idea_3 = {
+			allowed = {
+				always = no
+			}
+			name = puppet_cooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+
+			modifier = {
+				master_ideology_drift = 0.03
+				consumer_goods_factor = -0.075
+				overlord_trade_cost_factor = -0.25
+				autonomy_gain_trade_factor = 0.25
+				autonomy_gain_warscore_factor = 0.25
+			}
+		}
+
+		puppet_cooperate_idea_final = {
+			allowed = {
+				always = no
+			}
+			name = puppet_cooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_morale_bonus
+
+			modifier = {
+				master_ideology_drift = 0.05
+				consumer_goods_factor = -0.1
+				overlord_trade_cost_factor = -0.25
+				autonomy_gain_trade_factor = 0.25
+				autonomy_gain_warscore_factor = 0.25
+				min_export = -0.25
+			}
+		}
+
+		puppet_uncooperate_idea = {
+			allowed = {
+				always = no
+			}
+			available = {}
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				autonomy_gain = 0.1
+			}
+		}
+
+		puppet_uncooperate_idea_1 = {
+			allowed = {
+				always = no
+			}
+			name = puppet_uncooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				autonomy_gain = 0.2
+				industrial_capacity_factory = 0.025
+				training_time_factor = -0.1
+			}
+		}
+
+		puppet_uncooperate_idea_2 = {
+			allowed = {
+				always = no
+			}
+			name = puppet_uncooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				autonomy_gain = 0.4
+				industrial_capacity_factory = 0.025
+				war_support_factor = 0.15
+				training_time_factor = -0.1
+			}
+		}
+
+		puppet_uncooperate_idea_3 = {
+			allowed = {
+				always = no
+			}
+			name = puppet_uncooperate_idea
+			available = {}
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				autonomy_gain = 0.6
+				industrial_capacity_factory = 0.025
+				war_support_factor = 0.15
+				minimum_training_level = -0.1
+				training_time_factor = -0.1
+			}
+		}
+
+		puppet_uncooperate_idea_final = {
+			allowed = {
+				always = no
+			}
+			available = {}
+			removal_cost = -1
+
+			picture = generic_intel_bonus
+
+			modifier = {
+				autonomy_gain = 1
+				war_support_factor = 0.25
+				army_core_defence_factor = 0.15
+
+			}
+		}
+
+		puppet_attacking_overlod_idea = {
+		    allowed = {
+		    	always = no
+		    }
+		    removal_cost = -1
+		    picture = generic_victors_of_ww1
+		    targeted_modifier = {
+			    tag = FROM    #
+			    attack_bonus_against = -0.15
+			    defense_bonus_against = -0.05
+			}
+		}
+
+		#Industrial Ideas
+		SPR_war_involvement = {
+			allowed = {
+				always = no
+			}
+			available = { }
+
+			removal_cost = -1
+
+			picture = spa_maquis
+					
+			modifier = {
+				send_volunteer_divisions_required = -0.75
+				send_volunteers_tension = -0.50
+			}
+		}
+
+		SPR_war_involvement_spa = {
+			allowed = {
+				always = no
+			}
+			name = SPR_war_involvement
+			available = { }
+
+			removal_cost = -1
+
+			picture = SPR_nationalist_remnants
+					
+			modifier = {
+				send_volunteer_divisions_required = -0.75
+				send_volunteers_tension = -0.50
+			}
+		}
+
+		SPR_war_involvement_spr = {
+			allowed = {
+				always = no
+			}
+			name = SPR_war_involvement
+			available = { }
+
+			removal_cost = -1
+
+			picture = SPA_maquis
+					
+			modifier = {
+				send_volunteer_divisions_required = -0.75
+				send_volunteers_tension = -0.50
+			}
+		}
+	}
+}

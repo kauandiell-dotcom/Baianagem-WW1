@@ -1,0 +1,301 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 284
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "NZL_1936_generic"
+
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "NZL_1936_air_bba"
+		
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "NZL_1936_air_legacy"
+		
+	}
+}
+
+# Starting tech
+set_stability = 0.7
+set_war_support = 0.3
+
+
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	
+}
+
+# MBR 2026 removed legacy content: recruit_character = NZL_michael_joseph_savage
+# MBR 2026 removed legacy content: recruit_character = NZL_sidney_holland
+# MBR 2026 removed legacy content: recruit_character = NZL_john_ormond
+# MBR 2026 removed legacy content: recruit_character = NZL_elsie_farrelly
+# MBR 2026 removed legacy content: recruit_character = NZL_bernard_freyberg
+# MBR 2026 removed legacy content: recruit_character = NZL_robert_row
+# MBR 2026 removed legacy content: recruit_character = NZL_william_stevens
+# MBR 2026 removed legacy content: recruit_character = NZL_edmund_rupert_drummond
+# MBR 2026 removed legacy content: recruit_character = NZL_peter_phipps
+recruit_character = NZL_r_a_cochrane
+recruit_character = NZL_l_p_peterson
+recruit_character = NZL_j_c_nichols
+recruit_character = NZL_n_weir
+recruit_character = NZL_j_e_duigan
+recruit_character = NZL_edward_puttick
+recruit_character = NZL_norris_stephen_falla
+recruit_character = NZL_trevor_handley
+recruit_character = NZL_keith_j_holyoake
+recruit_character = NZL_a_j_stallworthy
+recruit_character = NZL_eric_prendergast
+recruit_character = NZL_arthur_dawes
+recruit_character = NZL_william_sinclair_burgess
+recruit_character = NZL_h_e_horan
+recruit_character = NZL_h_d_mcgregor
+recruit_character = NZL_w_h_stratton
+recruit_character = NZL_a_e_davy
+recruit_character = NZL_walter_nash
+recruit_character = NZL_w_a_veitch_milne
+# MBR 2026 removed legacy content: recruit_character = NZL_peter_fraser
+recruit_character = NZL_bob_semple
+recruit_character = NZL_leslie_lefeaux
+recruit_character = NZL_thomas_leech
+recruit_character = NZL_william_polson
+recruit_character = NZL_alexander_galbraith
+recruit_character = NZL_john_a_lee
+recruit_character = NZL_bernard_ashwin
+recruit_character = NZL_vic_wilcox
+
+
+if = {
+	limit = { has_dlc = "Together for Victory" }
+
+	add_to_tech_sharing_group = commonwealth_research
+}
+
+
+
+set_variable = { NZL_train_var = 40 }
+set_variable = { NZL_ministry_of_public_works_dynamic_modifier_stability_factor = 0.05 }
+set_variable = { NZL_ministry_of_public_works_dynamic_modifier_consumer_goods_factor = -0.05 }
+set_variable = { NZL_ministry_of_public_works_dynamic_modifier_conscription_factor = 0 }
+
+726 = {
+	start_resistance = yes
+	set_compliance = 10
+	set_resistance = 25
+}
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "NZL_1939_air_bba"
+		else = {
+			set_air_oob = "NZL_1939_air_legacy"
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "NZL_1939_naval_mtg"
+		else = {
+			set_naval_oob = "NZL_1939_naval_legacy"
+		}
+	}
+	
+	if = {
+		limit = { has_dlc = "Together for Victory" }
+		complete_national_focus = NZL_army_reforms
+		complete_national_focus = NZL_charlton_automatic_rifle
+		complete_national_focus = NZL_domestic_arms_industry
+		complete_national_focus = NZL_expand_the_nzpaf
+		complete_national_focus = NZL_form_the_rnzaf
+		complete_national_focus = NZL_national_roads_board
+		complete_national_focus = NZL_new_zealand_steel
+		complete_national_focus = NZL_taranaki_oil
+		complete_national_focus = NZL_bureau_of_industry 
+		
+		else = {
+			#generic focuses
+			complete_national_focus = army_effort
+			complete_national_focus = equipment_effort
+			complete_national_focus = motorization_effort
+			complete_national_focus = aviation_effort
+			complete_national_focus = naval_effort
+			complete_national_focus = large_navy
+			complete_national_focus = industrial_effort
+			complete_national_focus = construction_effort
+			complete_national_focus = production_effort
+		}
+	}
+
+	
+
+	
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_dlc = "No Step Back"
+			}
+		}
+		
+	}
+	if = {
+		limit = {
+			
+			has_dlc = "No Step Back"
+			
+		}
+		
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		
+	}
+}
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+set_convoys = 70
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+	# Didn't take office until '40, added for flavor
+	promote_character = NZL_peter_fraser
+	retire_character = NZL_michael_joseph_savage
+	set_convoys = 80
+}
+
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Leander Class"
+		type = light_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 2
+			ship_engine_upgrade = 2
+			ship_gun_upgrade = 2
+			ship_anti_air_upgrade = 2
+		}
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Danae Class"
+		type = ship_hull_cruiser_1
+		name_group = NZL_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+	}
+}
+
+# 1939 Start #
+2029.1.1 = {
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Light Cruisers #
+		create_equipment_variant = {
+			name = "Leander Class"
+			type = ship_hull_cruiser_2
+			name_group = NZL_CL_HISTORICAL
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = ship_anti_air_1
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot = ship_airplane_launcher_1
+				rear_1_custom_slot = ship_light_medium_battery_1
+			}
+			optional_assets = {
+				{
+					icon = "GFX_commonwealth_light_cruiser_hobart"
+					model = "commonwealth_gfx_light_cruiser_entity"
+				}
+			}
+		}
+	}
+}
+
+create_country_leader = {
+	name = "Bill English"
+	picture = "GFX_bill_english"
+	ideology = liberalism
+	traits = { }
+}

@@ -1,0 +1,406 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 107
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "YUG_1936_generic"
+
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_oob = "YUG_1936"
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_oob = "YUG_1936_nsb"
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "YUG_1936_naval_mtg"
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "YUG_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "YUG_1936_air_bba"
+		
+	else = {
+		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "YUG_1936_air_legacy"
+		
+	}
+}
+
+set_research_slots = 3
+
+# MBR 2026 removed legacy content: recruit_character = YUG_prince_paul
+# MBR 2026 removed legacy content: recruit_character = YUG_milan_stojadinovic
+# MBR 2026 removed legacy content: recruit_character = YUG_milan_grol
+# MBR 2026 removed legacy content: recruit_character = YUG_josip_broz_tito
+# MBR 2026 removed legacy content: recruit_character = YUG_vladimir_Cukavac
+# MBR 2026 removed legacy content: recruit_character = YUG_ivan_gosnjak
+# MBR 2026 removed legacy content: recruit_character = YUG_danilo_kalafatovic
+# MBR 2026 removed legacy content: recruit_character = YUG_milutin_nedic
+# MBR 2026 removed legacy content: recruit_character = YUG_petar_kosic
+# MBR 2026 removed legacy content: recruit_character = YUG_josef_depre
+# MBR 2026 removed legacy content: recruit_character = YUG_marijan_polic
+recruit_character = YUG_borivoje_mirkovic
+recruit_character = YUG_dusan_simovic
+recruit_character = YUG_draza_mihailovic
+recruit_character = YUG_mihajlo_lukic
+recruit_character = YUG_bogoljub_ilic
+recruit_character = YUG_petar_vukcevic
+recruit_character = YUG_ljubomir_maric
+recruit_character = YUG_arso_jovanovic
+recruit_character = YUG_slobodan_jovanovic
+recruit_character = YUG_milovan_djilas
+recruit_character = YUG_milan_nedic
+recruit_character = YUG_ivan_ribar
+recruit_character = YUG_dimitrije_ljotic
+recruit_character = YUG_ivo_lola_ribar
+# MBR 2026 removed legacy content: recruit_character = YUG_peter_ii
+# MBR 2026 removed legacy content: recruit_character = SOV_vasily_flug
+# MBR 2026 removed legacy content: recruit_character = SOV_boris_shteifon
+
+
+if = {
+	limit = {
+		has_dlc = "Death or Dishonor"
+	}
+	
+}
+
+
+if = {
+	limit = {
+		#has_dlc = Battle for the Bosporus
+	}
+	add_opinion_modifier = { 
+		target = GRE
+		modifier = BFTB_balkan_pact_ally
+	}
+	add_opinion_modifier = { 
+		target = ROM
+		modifier = BFTB_balkan_pact_ally
+	}
+	add_opinion_modifier = { 
+		target = TUR
+		modifier = BFTB_balkan_pact_ally
+	}
+	add_opinion_modifier = { 
+		target = BUL
+		modifier = BFTB_balkan_pact_enemy
+	}
+	add_opinion_modifier = { 
+		target = HUN
+		modifier = BFTB_balkan_pact_enemy
+	}
+}
+
+
+
+set_grand_doctrine = superior_firepower
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	
+}
+
+2029.1.1 = {
+
+	
+
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		
+	}	
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	if = {
+		limit = {
+			has_dlc = "Death or Dishonor"
+		}
+		complete_national_focus = YUG_western_focus
+		complete_national_focus = YUG_industrialization_program
+		complete_national_focus = YUG_friendship_treaty_with_italy
+		complete_national_focus = YUG_attract_axis_capital
+		complete_national_focus = YUG_expand_the_mining_industry
+		complete_national_focus = YUG_develop_civilian_industry
+		complete_national_focus = YUG_evolution
+		complete_national_focus = YUG_army_modernization
+		complete_national_focus = YUG_mountain_brigades
+		complete_national_focus = YUG_modernize_the_air_force
+		complete_national_focus = YUG_purchase_foreign
+		complete_national_focus = YUG_license_production 
+		complete_national_focus = YUG_fighter_license 
+		complete_national_focus = YUG_establish_the_banovina_of_croatia
+		complete_national_focus = YUG_ban_slovene_nationalist_parties
+		complete_national_focus = YUG_concessions_for_macedonians
+		complete_national_focus = YUG_small_arms 
+		complete_national_focus = YUG_domestic_artillery_production
+		complete_national_focus = YUG_expand_the_serbian_shipyards
+
+		unlock_national_focus = YUG_rare_minerals_exploitation
+	}
+	
+	if = {
+		limit = {
+			NOT = { has_dlc = "Death or Dishonor" }
+		}
+		#generic focuses
+		complete_national_focus = army_effort
+		complete_national_focus = equipment_effort
+		complete_national_focus = motorization_effort
+		complete_national_focus = aviation_effort
+		complete_national_focus = naval_effort
+		complete_national_focus = flexible_navy
+		complete_national_focus = industrial_effort
+		complete_national_focus = construction_effort
+		complete_national_focus = production_effort
+	}
+	if = {
+		limit = { NOT = { has_dlc = "No Step Back" } }
+		set_oob = "YUG_1939"
+	}
+	if = {
+		limit = { has_dlc = "No Step Back" } 
+		set_oob = "YUG_1939_nsb"
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "YUG_1939_naval_mtg"
+		else = {
+			set_naval_oob = "YUG_1939_naval_legacy"
+		}
+	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "YUG_1939_air_bba"
+			
+		else = {
+			set_air_oob = "YUG_1939_air_legacy"
+			
+		}
+	}
+
+	
+
+set_grand_doctrine = superior_firepower
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		
+	}
+}
+
+set_convoys = 10
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+}
+
+set_stability = 0.6
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "Ikarus IK-2" #
+		type = small_plane_airframe_1
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Dubrovnik Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 1
+			destroyer_engine_upgrade = 1
+			ship_ASW_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}
+	create_equipment_variant = {
+		name = "Dalmacija Class"
+		type = heavy_cruiser_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 1
+			ship_armor_upgrade = 1
+			ship_gun_upgrade = 1
+		}
+	}
+
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "Hrabri Class"				
+		type = ship_hull_submarine_2
+		name_group = YUG_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Dubrovnik Class"				
+		type = ship_hull_light_2
+		name_group = YUG_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+	# Cruisers #
+	create_equipment_variant = {
+		name = "Dalmacija Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = YUG_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+}
+
+# 1939 Start #
+2029.1.1 = {
+	if = {
+		limit = {
+			has_dlc = "By Blood Alone"
+		}
+		create_equipment_variant = {
+			name = "Ikarus IK-3" #
+			type = small_plane_airframe_1
+			modules = {
+				fixed_main_weapon_slot = light_mg_2x
+				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+				engine_type_slot = engine_2_1x
+				special_type_slot_1 = empty
+			}
+		}
+	}
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		# Ship variants #
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		# Destroyers #
+		create_equipment_variant = {
+			name = "Beograd Class"	
+			type = ship_hull_light_2
+			name_group = YUG_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_mine_layer_1
+				rear_1_custom_slot = ship_depth_charge_1
+			}
+		}
+	}
+}

@@ -1,0 +1,121 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+capital = 590
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+}
+
+oob = "KAZ_1936_generic"
+set_research_slots = 3
+
+# MBR balance: enough strategic depth to resist an early Russian attack
+# without giving Kazakhstan a significant offensive advantage.
+add_manpower = 30000
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 4000
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 200
+}
+# Starting tech
+set_grand_doctrine = mass_assault
+set_grand_doctrine = new_fleet_in_being
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "By Blood Alone"
+		}
+	}
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+}
+
+if = {
+	limit = {
+		not = {
+			has_dlc = "Man the Guns"
+		}
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Nikolay Aleksandrovich Skvortsov"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Nikolay_Aleksandrovich_Skvortsov
+# MBR 2026 removed vanilla political leader: 	expire = "2043.3.1"
+# MBR 2026 removed vanilla political leader: 	ideology = stalinism
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+# MBR 2026 removed vanilla political leader: create_country_leader = {
+# MBR 2026 removed vanilla political leader: 	name = "Ilyas Zhansugurov"
+# MBR 2026 removed vanilla political leader: 	desc = ""
+# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Ilyas_Zhansugurov
+# MBR 2026 removed vanilla political leader: 	expire = "2043.3.1"
+# MBR 2026 removed vanilla political leader: 	ideology = conservatism
+# MBR 2026 removed vanilla political leader: 	traits = {
+# MBR 2026 removed vanilla political leader: 	}
+# MBR 2026 removed vanilla political leader: }
+recruit_character = KAZ_awt
+recruit_character = KAZ_acd2
+recruit_character = KAZ_nt
+recruit_character = KAZ_aco2
+recruit_character = KAZ_acas
+recruit_character = KAZ_acr
+recruit_character = KAZ_mt
+recruit_character = KAZ_stc
+recruit_character = KAZ_aa2
+recruit_character = KAZ_ncm
+recruit_character = KAZ_communist_guy
+recruit_character = KAZ_ncs
+recruit_character = KAZ_pot
+recruit_character = KAZ_nccr
+recruit_character = KAZ_fascist_guy
+recruit_character = KAZ_coi
+recruit_character = KAZ_ai2
+recruit_character = KAZ_democratic_guy
+recruit_character = KAZ_ar
+recruit_character = KAZ_acgs
+create_country_leader = {
+	name = "Kassym-Jomart Tokayev"
+	picture = "GFX_kasym_jomart_tokayev"
+	ideology = liberalism
+	traits = {
+	}
+}

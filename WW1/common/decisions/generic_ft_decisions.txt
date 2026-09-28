@@ -1,0 +1,416 @@
+political_actions = {
+	generic_ft_snap_election = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			
+		}
+		visible = {
+			has_completed_focus = electoral_legitimacy_focus
+		}
+		priority = 100
+		cost = 150
+		fire_only_once = no
+		days_remove = 50
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+			political_power_gain = -0.1
+		}
+		remove_effect = {
+			country_event = {
+				id = generic_ft.9
+			}
+		}
+	}
+
+	generic_ft_revival_purge = {
+		icon = GFX_decision_generic_assassination
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		activation = {
+			has_completed_focus = generic_purge_disloyals
+			has_dynamic_modifier = { modifier = generic_communist_spirit_dynamic }
+			check_variable = {
+				generic_ft_purge_var < 4
+			}
+		}
+
+		cancel_trigger = {
+			
+		}
+		cancel_effect = {
+			
+		}
+
+		days_mission_timeout = 100
+		days_re_enable = 1
+		timeout_effect = {
+			custom_effect_tooltip = GENERIC_modify_communist_modifier_tt
+			army_experience = 5
+			add_to_variable = { 
+				communist_spirit_stability_factor = 0.05
+				tooltip = stability_factor_tt
+			}
+			add_to_variable = {
+			    var = generic_ft_purge_var
+			    value = 1
+			}
+		}
+	}
+	
+}
+generic_ft_internal_affairs_category = {
+	suppress_rebellious_state_decision = {
+		icon = generic_arrest
+		state_target = yes
+	    target_array = owned_states
+	    target_trigger = {
+	        FROM = {
+	            is_owned_by = ROOT
+	            has_active_resistance = yes
+	        }
+	    }
+	    on_map_mode = map_only
+	    visible = {
+	    	OR = {
+	    		has_completed_focus = internal_policing
+	    		has_completed_focus = brutal_oppression_focus
+	    	}
+	    }
+	    available = {
+	    	FROM = {
+	    		resistance > 10
+	    	}
+	    	NOT = {
+	    		has_country_flag = suppress_state_generic
+	    	}
+	    }
+	    cost = 50
+	    days_remove = 40
+	    days_re_enable = 180
+	    complete_effect = {
+	    	set_country_flag = suppress_state_generic
+	    }
+	    remove_effect = {
+	        FROM = {
+	            add_resistance = -40
+	            add_compliance = -2.5
+	        }
+	        clr_country_flag = suppress_state_generic
+	    }
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+
+	core_compliant_state_decision = {
+		icon = generic_nationalism
+		state_target = yes
+	    target_array = owned_states
+	    target_trigger = {
+	        FROM = {
+	            is_owned_by = ROOT
+	            NOT = {
+	            	is_core_of = ROOT
+	            }
+	        }
+	    }
+	    on_map_mode = map_only 
+	    visible = {
+	       has_completed_focus = generic_assimilation_effort
+	    }
+	    available = {
+	    	FROM = {
+	    		compliance > 60
+	    	}
+	    	NOT = {
+	    		has_country_flag = coring_state_generic
+	    	}
+	    }
+	    cost = 100
+	    days_remove = 75
+	    complete_effect = {
+	    	set_country_flag = coring_state_generic
+	    }
+	    remove_effect = {
+	        FROM = {
+	            add_core_of = ROOT
+	        }
+	        clr_country_flag = coring_state_generic
+	    }
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+generic_ft_external_affairs_category = {
+	#Communist Subversion in
+	generic_ft_spread_communism = {
+		icon = GFX_decisions_generic_infiltration
+		target_array = neighbors
+		visible = {
+			has_completed_focus = spread_communism_focus
+			
+		}
+		target_trigger = {
+	        FROM = {
+				NOT = {
+					has_government = communism
+				}
+			}
+	    }
+		available = {
+			NOT = {
+				has_country_flag = spread_communism_generic_flag
+			}
+		}
+		cost = 100
+		fire_only_once = no
+		days_remove = 25
+		days_re_enable = 1095
+		modifier = {
+			political_power_gain = -0.15
+		}
+		complete_effect = {
+			set_country_flag = spread_communism_generic_flag
+		}
+		remove_effect = {
+			clr_country_flag = spread_communism_generic_flag
+			FROM = {
+				country_event = {
+					id = generic_ft.11
+				}
+				effect_tooltip = {
+					add_timed_idea = {
+						idea = generic_communist_influence
+						days = 180
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Appease Majors
+	generic_ft_appease_majors = {
+		icon = GFX_decision_generic_welfare
+		visible = {
+			has_completed_focus = appease_major_powers_focus
+			NOT = {
+				has_war = yes
+			}
+		}
+		target_trigger = {
+	        FROM = {
+				is_major = yes
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+	    }
+		available = {
+			FROM = {
+				has_opinion = {
+				    target = ROOT
+				    value > 15
+				}
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		modifier = {
+			
+		}
+		complete_effect = {
+			add_war_support = -0.025
+			custom_effect_tooltip = generic_skip_one_line_tt
+			FROM = {
+				country_event = {
+					id = generic.12
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = acceptance_tt
+			effect_tooltip = {
+				add_political_power = 50
+				send_equipment = {
+				    equipment = infantry_equipment
+				    amount = 500
+				    target = FROM
+				}
+				FROM = {
+					give_guarantee = ROOT
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = tempting_majors_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Request Investment from Majors
+	generic_ft_investment_from_majors = {
+		icon = GFX_decision_hol_attract_foreign_investors
+		visible = {
+			has_completed_focus = appease_major_powers_focus
+			NOT = {
+				has_war = yes
+			}
+		}
+		target_trigger = {
+	        FROM = {
+				is_major = yes
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+	    }
+		available = {
+			FROM = {
+				has_opinion = {
+				    target = ROOT
+				    value > 50
+				}
+			}
+		}
+		cost = 75
+		fire_only_once = yes
+		modifier = {
+			
+		}
+		complete_effect = {
+			FROM = {
+				country_event = {
+					id = generic.15
+				}
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = acceptance_tt
+			effect_tooltip = {
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = tempting_majors_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Seduce Majors
+	generic_ft_seduce_majors = {
+		icon = GFX_decision_gre_investment_decisions
+		visible = {
+			has_completed_focus = seduce_major_powers_focus
+		}
+		target_trigger = {
+	        FROM = {
+				is_major = yes
+			}
+	    }
+		available = {
+			has_war_with = FROM
+			NOT = {
+				has_country_flag = seducing_major_flag
+			}
+		}
+		cost = 25
+		days_remove = 125
+		fire_only_once = yes
+		targeted_modifier = {
+		    tag = FROM
+		    attack_bonus_against = 0.1
+		    defense_bonus_against = 0.1
+		}
+		complete_effect = {
+			set_country_flag = seducing_major_flag
+		}
+		remove_effect = {
+			clr_country_flag = seducing_major_flag
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#Claim State
+	generic_ft_claim_state_decision = {
+		icon = generic_confiscation
+		state_target = yes
+	    target_trigger = {
+	        FROM = {
+	          	any_neighbor_state = {
+	          		is_owned_by = ROOT
+	          	}
+	            NOT = {
+	            	OR = {	
+	            		is_claimed_by = ROOT
+	            		is_core_of = ROOT
+	            		is_owned_by = ROOT
+	            	}
+	            }
+	        }
+	    }
+	    on_map_mode = map_only 
+	    visible = {
+			has_completed_focus = claim_nearby_focus
+			FROM = {
+				NOT = {
+					OR = {	
+						is_claimed_by = ROOT
+						is_core_of = ROOT
+					}
+				}
+			}
+	    }
+	    available = {
+	    	FROM = {
+	    		NOT = {
+	    			OR = {	
+	    				is_claimed_by = ROOT
+	    				is_core_of = ROOT
+	    			}
+	    		}
+	    	}
+	    	NOT = {
+	    		has_country_flag = claiming_state_generic
+	    	}
+	    }
+	    cost = 50
+	    days_remove = 80
+	    complete_effect = {
+	    	set_country_flag = coring_state_generic
+	    }
+	    remove_effect = {
+	        FROM = {
+	            add_claim_by = ROOT
+	        }
+	        clr_country_flag = claiming_state_generic
+	    }
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+division_template = {
+	name = "Government Infantry Brigade"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1st Government Brigade"
+		location = 2029
+		division_template = "Government Infantry Brigade"
+		start_equipment_factor = 0.75
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "2nd Government Brigade"
+		location = 2029
+		division_template = "Government Infantry Brigade"
+		start_equipment_factor = 0.75
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "3rd Government Brigade"
+		location = 2029
+		division_template = "Government Infantry Brigade"
+		start_equipment_factor = 0.70
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "Marib Defence Brigade"
+		location = 2029
+		division_template = "Government Infantry Brigade"
+		start_equipment_factor = 0.70
+		start_experience_factor = 0.30
+	}
+}

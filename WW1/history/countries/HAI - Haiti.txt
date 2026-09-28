@@ -1,0 +1,89 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 318
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "HAI_1936_generic"
+
+
+
+# Starting tech
+
+
+# MBR 2026 removed legacy content: recruit_character = HAI_sténio_vincent
+# MBR 2026 removed legacy content: recruit_character = HAI_jacques_roumain
+# MBR 2026 removed legacy content: recruit_character = HAI_vilbrum_soulouque
+# MBR 2026 removed legacy content: recruit_character = HAI_jacques_soulouque
+recruit_character = HAI_emilie_lescot
+recruit_character = HAI_pascale_b_g_guillaume
+recruit_character = HAI_charles_h_forbin
+recruit_character = HAI_andre_sainte_frederic
+recruit_character = HAI_paul_magloire
+recruit_character = HAI_georges_leger
+recruit_character = HAI_belmeau_max_pierre
+recruit_character = HAI_franck_lavaud
+recruit_character = HAI_andre_dumont
+recruit_character = HAI_antoine_levelt
+recruit_character = HAI_ernst_severe
+recruit_character = HAI_g_edouard_roy
+recruit_character = HAI_raymond_gassner
+recruit_character = HAI_luis_dabtes_bellegarde
+recruit_character = HAI_demosthenes_calixte
+recruit_character = HAI_louis_dejoie
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 5
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+
+create_country_leader = {
+	name = "Boniface Alexander"
+	picture = "GFX_boniface_alexander"
+	ideology = liberalism
+	traits = { }
+}

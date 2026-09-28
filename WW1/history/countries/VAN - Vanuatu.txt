@@ -1,0 +1,82 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 1071 # New Hebrides  
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "VAN_1936_generic"
+
+
+#oob = "LAO_1936"
+
+set_research_slots = 3
+
+# Starting tech
+# clone of France
+
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	
+}
+if = {
+	limit = {
+		
+		has_dlc = "No Step Back"
+		
+	}
+	
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
+
+
+
+
+create_country_leader = {
+	name = "Barak Sope"
+	picture = "GFX_Barak_Sope"
+	ideology = liberalism
+	traits = { }
+}

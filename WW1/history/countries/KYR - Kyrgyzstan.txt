@@ -1,0 +1,94 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 732
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "KYR_1936_generic"
+
+
+#oob = ""
+
+# Starting tech
+
+
+set_convoys = 5
+
+recruit_character = KYR_ncs
+recruit_character = KYR_pot
+recruit_character = KYR_nccr
+recruit_character = KYR_fascist_guy
+recruit_character = KYR_coi
+recruit_character = KYR_ai2
+recruit_character = KYR_democratic_guy
+recruit_character = KYR_ar
+recruit_character = KYR_acgs
+recruit_character = KYR_awt
+recruit_character = KYR_acd2
+recruit_character = KYR_nt
+recruit_character = KYR_aco2
+recruit_character = KYR_acas
+recruit_character = KYR_acr
+recruit_character = KYR_mt
+recruit_character = KYR_stc
+recruit_character = KYR_aa2
+recruit_character = KYR_ncm
+recruit_character = KYR_communist_guy
+
+
+2029.1.1 = {
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	
+
+set_grand_doctrine = grand_battleplan
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+
+#create_country_leader = {
+#	
+#	name = "Jonas Lote"
+#	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
+#	expire = "2055.1.1"
+#	ideology = centrism
+#	traits = {
+#		#
+#	}
+#}
+
+
+create_country_leader = {
+	name = "Sadyr Japarov"
+	picture = "GFX_sadyr_zhaparov"
+	ideology = despotism
+	traits = { }
+}
+}
+

@@ -1,0 +1,67 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 218
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "DON_1936_generic"
+
+
+set_research_slots = 2
+
+# Starting tech
+
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "No Step Back"
+		}
+	}
+	
+}
+if = {
+	limit = {
+		
+		has_dlc = "No Step Back"
+		
+	}
+	
+}
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 100
+}
+
+# MBR 2026 removed legacy content: recruit_character = DON_vladimir_sidorin

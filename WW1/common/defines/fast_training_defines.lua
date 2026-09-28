@@ -1,0 +1,1 @@
+NDefines.NDeployment.BASE_DEPLOYMENT_TRAINING = 5

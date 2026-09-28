@@ -1,0 +1,71 @@
+universal_join_rule = {
+
+    type = joining_rule
+
+    visible = { always = yes }
+    available = { always = yes }
+    can_remove = { always = yes }
+
+    trigger = {
+        always = yes
+    }
+
+    ai_will_do = {
+        factor = 100
+    }
+
+}
+
+universal_war_rule = {
+
+    type = war_declaration_rule
+
+    visible = { always = yes }
+    available = { always = yes }
+    can_remove = { always = yes }
+
+    trigger = {
+        always = yes
+    }
+
+    ai_will_do = {
+        factor = 100
+    }
+
+}
+
+universal_call_rule = {
+
+    type = call_to_war_rule
+
+    visible = { always = yes }
+    available = { always = yes }
+    can_remove = { always = yes }
+
+    trigger = {
+        always = yes
+    }
+
+    ai_will_do = {
+        factor = 100
+    }
+
+}
+
+universal_leader_rule = {
+
+    type = change_leader_rules
+
+    visible = { always = yes }
+    available = { always = yes }
+    can_remove = { always = yes }
+
+    trigger = {
+        always = yes
+    }
+
+    ai_will_do = {
+        factor = 100
+    }
+
+}

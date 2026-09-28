@@ -1,0 +1,103 @@
+﻿# MBR 2026: universal starting technologies are loaded with country history.
+MBR_grant_level_one_technologies = yes
+
+capital = 317
+# GENERIC TECH
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_recon = 1
+}
+oob = "NIC_1936_generic"
+
+
+
+# Starting tech
+
+
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	
+}
+
+# MBR 2026 removed legacy content: recruit_character = NIC_juan_bautista_sacasa
+# MBR 2026 removed legacy content: recruit_character = NIC_anastasio_somoza_garcía
+# MBR 2026 removed legacy content: recruit_character = NIC_francisco_leiva
+# MBR 2026 removed legacy content: recruit_character = NIC_josé_francisco_leiva
+recruit_character = NIC_joel_garcia_zaldana
+recruit_character = NIC_toribio_fermin
+recruit_character = NIC_augusto_caraval_antonio
+recruit_character = NIC_guillermo_r_cuadra
+recruit_character = NIC_bernardo_doroteo
+recruit_character = NIC_manuel_roque_garcia
+recruit_character = NIC_sebastian_morazan
+recruit_character = NIC_gustavo_flores_mendienta
+recruit_character = NIC_juan_pablo_esquerra
+recruit_character = NIC_noel_esto_nino_miranda
+recruit_character = NIC_maximiliano_benito
+recruit_character = NIC_victor_roman_y_reyes
+recruit_character = NIC_manuel_corovel_kirsch
+recruit_character = NIC_benjamin_lacayo_sacasa
+recruit_character = NIC_leonardo_arguello_vargas
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 10
+
+2029.1.1 = {
+
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
+	
+
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+
+2029.1.1 = {
+set_politics = {
+	ruling_party = neutrality
+	last_election = "2024.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+}
+
+
+create_country_leader = {
+	name = "Arnoldo Aleman"
+	picture = "GFX_arnoldo_aleman"
+	ideology = despotism
+	traits = { }
+}

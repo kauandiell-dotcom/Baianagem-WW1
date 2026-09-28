@@ -1,0 +1,13 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = { MBR_recruit_generic_advisors = yes }
+		}
+	}
+	on_release_as_free = {
+		effect = { MBR_recruit_generic_advisors = yes }
+	}
+	on_release_as_puppet = {
+		effect = { MBR_recruit_generic_advisors = yes }
+	}
+}

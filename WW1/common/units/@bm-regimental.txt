@@ -1,0 +1,374 @@
+sub_units = {
+	#
+	#	AT RIFLE COMPANY
+	#
+	bm_at_rifle_company = {
+		abbreviation = "ATR"
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 200
+		ai_priority = 100
+
+		can_be_parachuted = yes
+		affects_speed = no
+		active = yes
+
+		type = {
+			infantry
+			support
+		}
+
+		group = support
+		divisional = no
+
+		allowed_battalion_groups = {
+			infantry
+			combat_support
+		}
+
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_all_infantry
+			category_army
+		}
+
+		combat_width = 0
+		max_strength = 5
+		max_organisation = 0
+		default_morale = 0.3
+		manpower = 180
+		weight = 0.1
+		supply_consumption = 0.025
+		ap_attack = 0.25
+
+		battalion_mult = {
+			category = category_light_infantry
+			hard_attack = 0.03
+		}
+
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+		
+		need = {
+			infantry_equipment = 30
+			support_equipment = 10
+		}
+
+		#urban = {
+		#	defence = 0.15
+		#	attack = 0.1
+		#	movement = -0.05
+		#}
+	}
+
+	#
+	#	FLAMETHROWER SUPPORT
+	#
+	bm_flamethower_support = {
+		abbreviation = "FS"
+		sprite = infantry
+		map_icon_category = infantry
+
+		priority = 200
+		ai_priority = 100
+
+		can_be_parachuted = yes
+		affects_speed = no
+		active = yes
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		divisional = no
+
+		allowed_battalion_groups = {
+			infantry
+			mobile
+			combat_support
+			mobile_combat_support
+		}
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_all_infantry
+			category_army
+		}
+
+		combat_width = 0
+		max_strength = 5
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 100
+		training_time = 180
+		weight = 0.1
+		supply_consumption = 0.03
+		
+		breakthrough = 0.15
+		soft_attack = 0.1
+
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+
+		need = {
+			infantry_equipment = 25
+			support_equipment = 25
+		}
+
+		#urban = {
+		#	attack = 0.1
+		#}
+		#fort = {
+		#	attack = 0.1
+		#}
+		
+		same_support_type = flame
+	}
+	
+	#
+	#	MECHANICED FLAMETHROWER
+	#
+	bm_mechanized_flamethrower = {
+		abbreviation = "FMEC"
+		sprite = mechanized
+		map_icon_category = infantry
+		group = support
+		
+		active = yes
+		
+		priority = 600
+		ai_priority = 250
+		
+		# TYPE
+		type = {
+			mechanized
+			flame
+			support
+		}
+
+		divisional = no
+
+		allowed_battalion_groups = {
+			armor
+			mobile
+			mobile_combat_support
+			armor_combat_support
+		}
+
+		# CATEGORIES
+        categories = {
+        	category_front_line
+        	category_all_infantry
+        	category_army
+			category_support_battalions
+        }
+
+		combat_width = 0
+
+		#Size Definitions
+		max_strength = 10
+		max_organisation = 40
+		default_morale = 0.4
+		manpower = 80
+		training_time = 220
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.06
+		can_be_parachuted = no
+    
+		# Combat stats
+		breakthrough = 0.3
+		soft_attack = 0.2
+
+		essential = {
+			infantry_equipment
+			support_equipment
+			mechanized_equipment
+		}
+		
+		transport = mechanized_equipment
+		
+		need = {
+			infantry_equipment = 15
+			support_equipment = 15
+			mechanized_equipment = 20
+		}
+
+		#urban = {
+		#	attack = 0.15
+		#}
+		#fort = {
+		#	attack = 0.15
+		#}
+		
+		same_support_type = flame
+	}
+
+	#
+	#	MORTAR COMPANY
+	#
+	bm_mortar_company = {
+		abbreviation = "MRT"
+        sprite = infantry
+        map_icon_category = infantry
+        group = support
+
+        active = yes
+		divisional = no
+
+        priority = 600
+        ai_priority = 250
+		affects_speed = no     # Used to check if the unit will affect the template's speed, support companies have it set to no.
+
+		# TYPE
+		type = {
+			infantry
+			support
+		}
+
+		allowed_battalion_groups = {
+			infantry
+			combat_support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 40
+		default_morale = 0.3
+		manpower = 100
+		training_time = 180
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.03
+		entrenchment  = 2
+		can_be_parachuted = yes
+		
+		# Support nerfs to combat abilities
+		defense = 0.1
+		soft_attack = 0.2 
+		hard_attack = 0.1 #mod update
+
+
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+
+		need = {
+			infantry_equipment = 40
+			support_equipment = 10
+		}
+
+
+		#hills = {
+		#	attack = 0.1
+		#	defence = 0.1
+		#}
+		#mountain = {
+		#	attack = 0.1
+		#	defence = 0.1
+		#}
+		#plains = {
+		#	attack = 0.1
+		#	defence = 0.1
+		#}
+	}
+
+	#
+	#	SNIPER COMPANY
+	#
+	bm_sniper_company = {
+		abbreviation = "MRT"
+        sprite = infantry
+        map_icon_category = infantry
+        group = support
+
+		active = yes
+		divisional = no
+
+        priority = 600
+        ai_priority = 250
+		can_be_parachuted = yes
+		affects_speed = no
+
+		# TYPE
+		type = {
+			infantry
+			support
+		}
+
+		allowed_battalion_groups = {
+			infantry
+			mobile
+			combat_support
+			mobile_combat_support
+		}
+
+		# CATEGORIES
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		# MODIFERS
+		combat_width = 0
+		max_strength = 10
+		max_organisation = 50
+		breakthrough = 0.15
+		default_morale = 0.3
+		manpower = 100
+		training_time = 180
+		weight = 0.1
+		supply_consumption = 0.03
+		entrenchment = 1
+		recon = 0.5
+		defense = 0.1
+		soft_attack = 0.25
+
+		# EQUIPMENT NEEDED
+		need = {
+			infantry_equipment = 40
+			support_equipment = 10
+		}
+
+		# REQUIRED EQUIPMENT
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+
+		# TERRAIN
+		#urban = {
+		#	attack = 0.25
+		#	defence = 0.35
+		#}
+		#marsh = {
+		#	attack = 0.1
+		#}
+		#desert = {
+		#	attack = 0.1
+		#	defence = 0.2
+		#}
+	}
+}

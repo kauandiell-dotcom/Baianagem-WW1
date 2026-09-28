@@ -1,0 +1,13 @@
+ideas = {
+	country = {
+		MBR_Central_Powers = {
+			allowed = { always = no }
+			picture = MBR_Central_Powers
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_buildings_factor = 0.20  # Adiciona +20% de velocidade de construção
+			}
+		}
+	}
+}
