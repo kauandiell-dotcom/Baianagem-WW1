@@ -142,8 +142,8 @@ set_convoys = 120
 
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
+	last_election = "1910.3.13"
+	election_frequency = 72
 	elections_allowed = yes
 }
 set_popularities = {
@@ -335,9 +335,17 @@ IF = {
 }
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Javier Milei"
-	picture = "GFX_javier_milei"
+	name = "Roque Sáenz Peña"
+	picture = "GFX_portrait_ARG_roque_saenz_pena"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Roque Sáenz Peña"
+	picture = "GFX_portrait_ARG_roque_saenz_pena"
 	ideology = liberalism
 	traits = { }
 }

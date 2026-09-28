@@ -186,7 +186,7 @@ recruit_character = PER_ali_khan_mansour
 set_convoys = 10
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
+	last_election = "1909.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
@@ -195,9 +195,17 @@ set_popularities = {
 }
 
 
+
 create_country_leader = {
-	name = "Ali Khamenei"
-	picture = "GFX_sayyid_ali_hosseini_khamenei"
+	name = "Ahmad Shah Qajar"
+	picture = "GFX_portrait_PER_ahmad_shah"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Ahmad Shah Qajar"
+	picture = "GFX_portrait_PER_ahmad_shah"
 	ideology = despotism
 	traits = { }
 }

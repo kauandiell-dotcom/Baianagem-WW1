@@ -342,7 +342,7 @@ IF = {
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.5.22"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -372,9 +372,17 @@ IF = {
 
 
 
+
 create_country_leader = {
-	name = "Bart De Wever"
-	picture = "GFX_BEL_Bart_De_Wever"
+	name = "Albert I"
+	picture = "GFX_portrait_BEL_albert_i"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Albert I"
+	picture = "GFX_portrait_BEL_albert_i"
 	ideology = liberalism
 	traits = { }
 }

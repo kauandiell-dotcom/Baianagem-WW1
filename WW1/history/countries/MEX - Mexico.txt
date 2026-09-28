@@ -87,7 +87,7 @@ IF = {
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.6.26"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -178,9 +178,17 @@ IF = {
 
 
 
+
 create_country_leader = {
-	name = "Andres Manuel Lopez Obrador"
-	picture = "GFX_Andres_Manuel_Lopez_Obrador"
+	name = "Francisco León de la Barra"
+	picture = "GFX_portrait_MEX_francisco_leon_de_la_barra"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Francisco León de la Barra"
+	picture = "GFX_portrait_MEX_francisco_leon_de_la_barra"
 	ideology = liberalism
 	traits = { }
 }

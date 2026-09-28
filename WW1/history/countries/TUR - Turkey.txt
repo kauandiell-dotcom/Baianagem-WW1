@@ -78,7 +78,7 @@ if = {
 }
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
+	last_election = "1908.12.1"
 	election_frequency = 48
 	elections_allowed = no
 }
@@ -92,10 +92,10 @@ set_war_support = 0.3
 
 if = {
 	limit = { has_dlc = "Battle for the Bosporus" }
+recruit_character = TUR_mustafa_kemal_ataturk
 recruit_character = TUR_fakhri_pasha
 recruit_character = TUR_refet_bele
 recruit_character = TUR_zeki_dogan
-recruit_character = TUR_sabiha_gokcen
 recruit_character = TUR_ali_fuat_cebesoy
 recruit_character = TUR_vecihi_hurkus
 recruit_character = TUR_ali_ihsan_sabis
@@ -109,7 +109,6 @@ recruit_character = TUR_riza_nur
 recruit_character = TUR_nejdet_sancar
 recruit_character = TUR_kazim_ozalp
 recruit_character = TUR_sukru_saracoglu_prime_minister
-recruit_character = TUR_adnan_menderes
 recruit_character = TUR_nuri_demirag_prime_minister
 recruit_character = TUR_hasan_saka
 recruit_character = TUR_hilmi_uran
@@ -131,7 +130,6 @@ recruit_character = TUR_kamil_tolon
 if = {
 	limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
 recruit_character = TUR_memduh_tagmac
-recruit_character = TUR_sabiha_gokcen
 recruit_character = TUR_mehmet_gunaltay
 recruit_character = TUR_ali_fuat_cebesoy
 recruit_character = TUR_refik_saydam
@@ -302,9 +300,17 @@ if = {
 }
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Recep Tayyip Erdogan"
-	picture = "GFX_Recep_Tayyip_Erdogan"
+	name = "Mehmed V"
+	picture = "GFX_portrait_TUR_mehmed_v"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Mehmed V"
+	picture = "GFX_portrait_TUR_mehmed_v"
 	ideology = despotism
 	traits = { }
 }

@@ -365,9 +365,9 @@ set_war_support = 0.3
 # Setup German Politics
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
+	last_election = "1907.1.25"
+	election_frequency = 60
+	elections_allowed = no
 }
 set_popularities = {
 	neutrality = 100
@@ -1014,33 +1014,14 @@ if = {
 
 ## 1939 Start ##
 # Líder Democrático / Liberal (Atual)[cite: 2]
-create_country_leader = {
-	name = "Friedrich Merz"
-	picture = "GFX_Friedrich_Merz"
-	ideology = liberalism
-	traits = { }
-}
-
 # Líder Fascista (Ex: Adolf Hitler)
-create_country_leader = {
-	name = "Adolf Hitler"
-	picture = "GFX_portrait_GER_adolf_hitler"
-	ideology = nazism
-	traits = { }
-}
-
 # Líder Comunista (Ex: Ernst Thälmann)
-create_country_leader = {
-	name = "Ernst Thälmann"
-	picture = "GFX_portrait_GER_ernst_thalmann"
-	ideology = marxism
-	traits = { }
-}
-
 # Líder Monárquico (Ex: Kaiser Wilhelm II)
+
+
 create_country_leader = {
 	name = "Wilhelm II"
 	picture = "GFX_portrait_GER_wilhelm_ii"
 	ideology = despotism
-	traits = { }
+	traits = { autocrat }
 }

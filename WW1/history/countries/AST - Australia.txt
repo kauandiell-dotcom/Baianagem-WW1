@@ -189,7 +189,7 @@ IF = {
 
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.4.13"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -671,9 +671,17 @@ set_variable = { AST_call_on_fascists_cost = 20 }
 
 
 
+
 create_country_leader = {
-	name = "Angus Campbell"
-	picture = "GFX_Angus_Campbell"
+	name = "Andrew Fisher"
+	picture = "GFX_portrait_AST_andrew_fisher"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Andrew Fisher"
+	picture = "GFX_portrait_AST_andrew_fisher"
 	ideology = liberalism
 	traits = { }
 }

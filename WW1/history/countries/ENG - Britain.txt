@@ -217,8 +217,8 @@ if = {
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
+	last_election = "1910.12.19"
+	election_frequency = 60
 	elections_allowed = yes
 }
 set_popularities = {
@@ -1189,9 +1189,17 @@ if = {
 			icon = "GFX_ENG_heavy_fighter1_medium"
 		}
 	}
+
 create_country_leader = {
-	name = "Keir Starmer"
-	picture = "GFX_keir_starmer"
+	name = "H. H. Asquith"
+	picture = "GFX_portrait_ENG_george_v"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "H. H. Asquith"
+	picture = "GFX_portrait_ENG_george_v"
 	ideology = liberalism
 	traits = { }
 }

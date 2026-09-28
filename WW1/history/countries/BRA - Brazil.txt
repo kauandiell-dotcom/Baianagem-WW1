@@ -77,18 +77,7 @@ IF = {
 	set_variable = { BRA_coup_fascism_factor = 0 }
 	set_variable = { BRA_coup_neutrality_factor = 0 }
 
-	set_politics = {
-		ruling_party = neutrality
-		last_election = "2024.1.1"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-
-	set_popularities = {
-		neutrality = 100
-	}
-
-	set_party_name = {
+			set_party_name = {
 		ideology = neutrality
 		name = BRA_military_party
 		long_name = BRA_military_party_long
@@ -113,30 +102,31 @@ IF = {
 			has_dlc = "Trial of Allegiance"
 		}
 	}
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2024.1.1"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 100
-	}
-}
+		}
 
 set_country_flag = monroe_directive
 set_convoys = 40
 # STARTING LEADER
+
 create_country_leader = {
-	name = "Luiz Inacio Lula da Silva"
-	picture = "GFX_luiz_inacio_lula_da_silva"
-	ideology = neutrality
+	name = "Hermes da Fonseca"
+	picture = "GFX_portrait_BRA_hermes_da_fonseca"
+	ideology = liberalism
 	traits = { }
 }
 
+set_politics = {
+	ruling_party = democratic
+	last_election = "1910.3.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 100
+}
 create_country_leader = {
-	name = "Nilo"
-	picture = "GFX_luiz_inacio_lula_da_silva"
-	ideology = despotism
+	name = "Hermes da Fonseca"
+	picture = "GFX_portrait_BRA_hermes_da_fonseca"
+	ideology = liberalism
 	traits = { }
 }

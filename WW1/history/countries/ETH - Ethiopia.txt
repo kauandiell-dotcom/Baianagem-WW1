@@ -183,7 +183,7 @@ set_global_flag = second_italo_ethiopian_war_flag
 set_convoys = 5
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
+	last_election = "1910.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
@@ -200,9 +200,17 @@ set_popularities = {
 }
 }
 
+
 create_country_leader = {
-	name = "Birhanu Jula"
-	picture = "GFX_Birhanu_Jula"
+	name = "Menelik II"
+	picture = "GFX_portrait_ETH_menelik_ii"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Menelik II"
+	picture = "GFX_portrait_ETH_menelik_ii"
 	ideology = despotism
 	traits = { }
 }

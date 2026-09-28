@@ -250,9 +250,9 @@ recruit_character = BUL_stefan_nedev
 	#RULING PARTY
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1908.5.25"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 	else = { #VANILLA
@@ -265,9 +265,9 @@ set_popularities = {
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1908.5.25"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 recruit_character = BUL_georgi_petsov
@@ -301,17 +301,17 @@ if = {
 ##############
 #### 1939 ####
 ##############
+
 create_country_leader = {
-	name = "Andrei Botsev"
-	picture = "GFX_Andrei_Botsev"
-	ideology = liberalism
+	name = "Ferdinand I"
+	picture = "GFX_portrait_BUL_ferdinand_i"
+	ideology = despotism
 	traits = { }
 }
 
-
 create_country_leader = {
-	name = "Boyko Borissov"
-	picture = "GFX_Boyko_Borissov"
-	ideology = liberalism
+	name = "Ferdinand I"
+	picture = "GFX_portrait_BUL_ferdinand_i"
+	ideology = despotism
 	traits = { }
 }

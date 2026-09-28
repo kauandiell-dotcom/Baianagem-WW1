@@ -123,7 +123,7 @@ if = { #########   By Blood Alone Stuff
 	
 	if = {
 		limit = {
-			has_start_date < 2026.01.02
+			has_start_date < 1912.01.01
 		}
 			
 		set_variable = { SWI_councilor_1 = SWI_johannes_baumann }
@@ -139,7 +139,7 @@ if = { #########   By Blood Alone Stuff
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1908.10.25"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -159,9 +159,17 @@ set_popularities = {
 set_stability = 0.85
 
 
+
 create_country_leader = {
-	name = "Adolf Ogi"
-	picture = "GFX_Adolf_Ogi"
+	name = "Marc Ruchet"
+	picture = "GFX_portrait_SWI_marc_ruchet"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Marc Ruchet"
+	picture = "GFX_portrait_SWI_marc_ruchet"
 	ideology = liberalism
 	traits = { }
 }

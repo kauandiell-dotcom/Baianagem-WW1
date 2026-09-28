@@ -199,9 +199,9 @@ IF = {
 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
+	last_election = "1911.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 
 set_popularities = {
@@ -212,33 +212,20 @@ set_stability = 0.50
 
 
 # Líder Democrático / Neutro (Atual)
-create_country_leader = {
-	name = "Alexander Van Der Bellen"
-	picture = "GFX_alexander_van_der_bellen"
-	ideology = liberalism
-	traits = { }
-}
-
 # Líder Fascista
-create_country_leader = {
-	name = "Arthur Seyss-Inquart"
-	picture = "GFX_portrait_AUS_arthur_seyss_inquart"
-	ideology = fascism_ideology
-	traits = { }
-}
-
 # Líder Comunista
+# Líder Monárquico / Autoritário
+
 create_country_leader = {
-	name = "Johann Koplenig"
-	picture = "GFX_portrait_AUS_johann_koplenig"
-	ideology = marxism
+	name = "Franz Joseph I"
+	picture = "GFX_portrait_AUS_franz_joseph_i"
+	ideology = despotism
 	traits = { }
 }
 
-# Líder Monárquico / Autoritário
 create_country_leader = {
-	name = "Otto von Habsburg"
-	picture = "GFX_portrait_AUS_otto_habsburg"
+	name = "Franz Joseph I"
+	picture = "GFX_portrait_AUS_franz_joseph_i"
 	ideology = despotism
 	traits = { }
 }

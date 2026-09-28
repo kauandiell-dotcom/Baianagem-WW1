@@ -200,9 +200,9 @@ set_convoys = 20
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
 	democratic = 100
@@ -432,9 +432,17 @@ if = {
 }
 
 
+
 create_country_leader = {
-	name = "Narendra Modi"
-	picture = "GFX_narendra_modi"
-	ideology = liberalism
+	name = "Lord Hardinge"
+	picture = "GFX_portrait_RAJ_lord_hardinge"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Lord Hardinge"
+	picture = "GFX_portrait_RAJ_lord_hardinge"
+	ideology = despotism
 	traits = { }
 }

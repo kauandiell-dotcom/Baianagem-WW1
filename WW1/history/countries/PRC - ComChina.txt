@@ -34,7 +34,7 @@ if = {
 
 set_politics = {
 	ruling_party = communism
-	last_election = "2024.1.1"
+	last_election = "1910.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
@@ -256,9 +256,3 @@ IF = {
 
 
 add_opinion_modifier = { target = CHI modifier = hostile_status }
-create_country_leader = {
-	name = "Xi Jinping"
-	picture = "GFX_Xi_Jinping"
-	ideology = leninism
-	traits = { }
-}

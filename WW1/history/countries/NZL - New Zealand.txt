@@ -102,7 +102,7 @@ set_variable = { NZL_ministry_of_public_works_dynamic_modifier_conscription_fact
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1908.11.17"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -149,9 +149,17 @@ if = {
 }
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Bill English"
-	picture = "GFX_bill_english"
+	name = "Sir Joseph Ward"
+	picture = "GFX_portrait_NZL_joseph_ward"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Sir Joseph Ward"
+	picture = "GFX_portrait_NZL_joseph_ward"
 	ideology = liberalism
 	traits = { }
 }

@@ -339,7 +339,7 @@ if = {
 	}
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.5.20"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -358,7 +358,7 @@ set_popularities = {
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.5.20"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -431,9 +431,17 @@ add_equipment_to_stockpile = {
 }
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Mette Frederiksen"
-	picture = "GFX_mette_frederiksen"
+	name = "Frederick VIII"
+	picture = "GFX_portrait_DEN_frederick_viii"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Frederick VIII"
+	picture = "GFX_portrait_DEN_frederick_viii"
 	ideology = liberalism
 	traits = { }
 }

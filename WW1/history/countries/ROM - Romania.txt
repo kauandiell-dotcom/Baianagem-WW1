@@ -129,7 +129,7 @@ if = {
 set_convoys = 10
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1911.1.1"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -217,17 +217,17 @@ if = {
 }
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Adrian Nastase"
-	picture = "GFX_adrian_nastase"
-	ideology = liberalism
+	name = "Carol I"
+	picture = "GFX_portrait_ROM_carol_i"
+	ideology = despotism
 	traits = { }
 }
 
-
 create_country_leader = {
-	name = "Marcel Ciolacu"
-	picture = "GFX_Marcel_Ciolacu"
-	ideology = liberalism
+	name = "Carol I"
+	picture = "GFX_portrait_ROM_carol_i"
+	ideology = despotism
 	traits = { }
 }

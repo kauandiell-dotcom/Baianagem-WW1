@@ -67,7 +67,7 @@ if = {
 set_convoys = 25
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.9.15"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -91,9 +91,17 @@ recruit_character = SAF_e_g_jansen
 recruit_character = SAF_nicolaas_havenga
 recruit_character = SAF_sir_patrick_duncan
 recruit_character = SAF_abram_fischer
+
 create_country_leader = {
-	name = "Cyril Ramaphosa"
-	picture = "GFX_cyril_ramaphosa"
+	name = "Louis Botha"
+	picture = "GFX_portrait_SAF_louis_botha"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Louis Botha"
+	picture = "GFX_portrait_SAF_louis_botha"
 	ideology = liberalism
 	traits = { }
 }

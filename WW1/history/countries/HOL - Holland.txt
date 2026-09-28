@@ -133,7 +133,7 @@ if = {
 }
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1909.6.11"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -334,9 +334,17 @@ if = {
 
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Willem-Alexander"
-	picture = "GFX_willem_alexander"
+	name = "Wilhelmina"
+	picture = "GFX_portrait_HOL_wilhelmina"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Wilhelmina"
+	picture = "GFX_portrait_HOL_wilhelmina"
 	ideology = liberalism
 	traits = { }
 }

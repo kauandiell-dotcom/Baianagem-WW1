@@ -516,7 +516,7 @@ set_autonomy = {
 # Setup Politics 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
+	last_election = "1908.5.15"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -1556,9 +1556,17 @@ create_equipment_variant = {
 	
 
 
+
 create_country_leader = {
-	name = "Shigeru Ishiba"
-	picture = "GFX_shigeru_ishiba"
+	name = "Emperor Meiji"
+	picture = "GFX_portrait_JAP_emperor_meiji"
+	ideology = despotism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Emperor Meiji"
+	picture = "GFX_portrait_JAP_emperor_meiji"
 	ideology = despotism
 	traits = { }
 }

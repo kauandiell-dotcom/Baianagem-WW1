@@ -80,7 +80,7 @@ if = {
 set_convoys = 50
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1911.5.28"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -207,10 +207,17 @@ if = {
 }
 
 
+
 create_country_leader = {
-	name = "Marcelo Rebelo de Sousa"
-	picture = "GFX_Marcelo_Rebelo_de_Sousa"
+	name = "Teófilo Braga"
+	picture = "GFX_portrait_POR_teofilo_braga"
 	ideology = liberalism
 	traits = { }
 }
 
+create_country_leader = {
+	name = "Teófilo Braga"
+	picture = "GFX_portrait_POR_teofilo_braga"
+	ideology = liberalism
+	traits = { }
+}

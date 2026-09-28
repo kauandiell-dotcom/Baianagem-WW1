@@ -159,7 +159,7 @@ set_convoys = 700
 
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1908.11.3"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -951,9 +951,17 @@ if = {
 
 
 # 1939 Start #
+
 create_country_leader = {
-	name = "Donald Trump"
-	picture = "GFX_Donald_Trump"
+	name = "William Howard Taft"
+	picture = "GFX_portrait_USA_william_howard_taft"
+	ideology = liberalism
+	traits = { }
+}
+
+create_country_leader = {
+	name = "William Howard Taft"
+	picture = "GFX_portrait_USA_william_howard_taft"
 	ideology = liberalism
 	traits = { }
 }

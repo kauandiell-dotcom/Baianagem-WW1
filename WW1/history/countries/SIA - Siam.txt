@@ -140,9 +140,9 @@ if = {
 set_convoys = 15
 set_politics = {
 	ruling_party = democratic
-	last_election = "2024.1.1"
+	last_election = "1910.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
 	democratic = 100
@@ -325,17 +325,17 @@ set_variable = { SIA_army_of_siam_supply_consumption_factor = -0.1 }
 set_variable = { SIA_army_of_siam_supply_node_range = 0.15 }
 
 
+
 create_country_leader = {
-	name = "Abhisit Vejjajiva"
-	picture = "GFX_abhisit_vejjajiva"
-	ideology = liberalism
+	name = "Vajiravudh (Rama VI)"
+	picture = "GFX_portrait_SIA_vajiravudh"
+	ideology = despotism
 	traits = { }
 }
 
-
 create_country_leader = {
-	name = "Prayut Chan-o-cha"
-	picture = "GFX_Portrait_Prayut_Chan_ocha"
-	ideology = liberalism
+	name = "Vajiravudh (Rama VI)"
+	picture = "GFX_portrait_SIA_vajiravudh"
+	ideology = despotism
 	traits = { }
 }

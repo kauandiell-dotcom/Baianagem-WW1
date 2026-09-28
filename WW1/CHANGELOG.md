@@ -32,6 +32,28 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
     - Removida declaração de guerra prematura do Japão contra a China (`JAP` vs `CHI`).
     - Purgadas ideias órfãs do MBR (`MBR_Central_Powers` em TUR/BUL, `MBR_USA_fast_food_monopoly` nos EUA).
     - Validação sintática: 100% dos 369 arquivos de países verificados com zero erros de chaves (`diff = 0`).
+- **Migração Cronológica — Fase 4 (Líderes Históricos de 1911 & Saneamento Eleitoral)**:
+  - `history/countries/*.txt` (369 arquivos modificados):
+    - Substituição integral de chefes de Estado modernos (Trump, Macron, Starmer, Merz, Hitler, Van Der Bellen, Putin, Meloni, Erdogan, Ishiba, Lula, Milei, Lai Ching-te, etc.) por líderes históricos de 1911:
+      - EUA: William Howard Taft (`1908.11.3`)
+      - Reino Unido: H. H. Asquith / Jorge V (`1910.12.19`)
+      - França: Armand Fallières (`1910.5.8`)
+      - Alemanha: Kaiser Wilhelm II (`1907.1.25`)
+      - Áustria-Hungria: Imperador Franz Joseph I (`1911.1.1`)
+      - Rússia: Czar Nicolau II (`1907.11.14`)
+      - Itália: Giovanni Giolitti / Vítor Emanuel III (`1909.3.7`)
+      - Império Otomano: Sultão Mehmed V (`1908.12.1`)
+      - Japão: Imperador Meiji (`1908.5.15`)
+      - Brasil: Marechal Hermes da Fonseca (`1910.3.1`)
+      - Argentina: Roque Sáenz Peña (`1910.3.13`)
+      - China: Regência do Príncipe Zaifeng / Dinastia Qing (`1911.1.1`)
+      - Potências regionais atualizadas: Sérvia (Pedro I), Grécia (Venizelos), Bulgária (Fernando I), Romênia (Carol I), Montenegro (Nicolau I), Bélgica (Alberto I), Holanda (Guilhermina), Suíça (Marc Ruchet), Noruega (Haakon VII), Dinamarca (Frederico VIII), Portugal (Teófilo Braga), México (León de la Barra), Canadá (Wilfrid Laurier), Austrália (Andrew Fisher), Nova Zelândia (Joseph Ward), África do Sul (Louis Botha), Índia/Raj (Lord Hardinge), Pérsia (Ahmad Shah), Sião (Rama VI), Etiópia (Menelik II), Cuba (José Miguel Gómez).
+    - Saneamento eleitoral global: 100% das 378 datas de eleições anacrônicas de 2024 remapeadas para o período coerente de 1907–1911.
+    - Condição temporal de inicialização da Suíça atualizada para `has_start_date < 1912.01.01`.
+  - `common/characters/TUR.txt`:
+    - Adicionado papel de general de corpo de exército (`corps_commander`) para Mustafa Kemal Atatürk em 1911.
+    - Purgados recrutamentos prematuros de personagens não nascidos em 1911 (Sabiha Gökçen, Adnan Menderes).
+    - Validação de chaves: 0 erros em todos os 369 arquivos de países e em `TUR.txt`.
 
 ### Otimizado & Corrigido
 - **Defines & Pacing de Rede (Multiplayer)** (`c92c0a8`):

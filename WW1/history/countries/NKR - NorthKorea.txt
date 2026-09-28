@@ -32,32 +32,11 @@ if = {
 
 set_politics = {
 	ruling_party = communism
-	last_election = "2024.1.1"
+	last_election = "1910.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
 	communism = 100
-}
-create_country_leader = {
-	name = "Ким Ир Сен"
-	desc = ""
-	picture = "gfx/leaders/NKR/kim.dds"
-	expire = "2055.1.1"
-	ideology = stalinism
-}
-
-create_country_leader = {
-	name = "Kim Jong Un"
-	picture = "GFX_kim"
-	ideology = leninism
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Kim Jong Un"
-	picture = "GFX_kim"
-	ideology = despotism
-	traits = { }
 }

@@ -527,9 +527,9 @@ set_convoys = 50
 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
+	last_election = "1907.11.14"
+	election_frequency = 60
+	elections_allowed = no
 }
 set_popularities = {
 	neutrality = 100
@@ -1035,34 +1035,14 @@ if = {
 }
 
 # 1939 Start #
-create_country_leader = {
-	name = "Tsar"
-	picture = "GFX_portrait_SOV_Tsar_Nicholas"
-	ideology = despotism
-	traits = { }
-}
-
 # when the corresponding ideology becomes the ruling party.
-create_country_leader = {
-	name = "Gennady Zyuganov"
-	picture = "GFX_Gennady_Zyuganov"
-	ideology = marxism
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Vladimir Zhirinovsky"
-	picture = "GFX_Vladimir_Zhirinovsky"
-	ideology = fascism_ideology
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Alexei Navalny"
-	picture = "GFX_Western_Alexei_Navalny"
-	ideology = liberalism
-	traits = { }
-}
-
 # Prevent the save-game compatibility on_action from creating duplicates.
 set_country_flag = MBR_SOV_alternative_party_leaders_added
+
+
+create_country_leader = {
+	name = "Nicholas II"
+	picture = "GFX_portrait_SOV_Tsar_Nicholas"
+	ideology = despotism
+	traits = { autocrat }
+}
