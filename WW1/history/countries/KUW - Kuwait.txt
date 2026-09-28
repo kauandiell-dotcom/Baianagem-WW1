@@ -29,7 +29,6 @@ set_convoys = 5
 
 set_cosmetic_tag = KUW_protectorate
 
-# MBR 2026 removed legacy content: recruit_character = KUW_ahmad_al_sabah
 recruit_character = KUW_pot
 recruit_character = KUW_aco2
 recruit_character = KUW_mt
@@ -50,27 +49,6 @@ recruit_character = KUW_ncs
 recruit_character = KUW_nt
 recruit_character = KUW_communist_guy
 recruit_character = KUW_acr
-
-2029.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

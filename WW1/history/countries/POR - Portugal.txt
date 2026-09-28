@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 112
@@ -78,86 +77,6 @@ if = {
 	}
 	
 }
-
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	if = {
-		limit = {
-			has_dlc = "La Resistance"
-		}
-
-		complete_national_focus = POR_estado_novo
-		unlock_national_focus = POR_support_the_spanish_nationalists
-		complete_national_focus = POR_portuguese_legion
-		complete_national_focus = POR_observation_mission
-		unlock_national_focus = POR_send_assistance
-		complete_national_focus = POR_army_reorganization
-		complete_national_focus = POR_metropolitan_army
-		complete_national_focus = POR_corpo_do_estado_maior
-		complete_national_focus = POR_second_navy_reequipment
-		complete_national_focus = POR_a_powerful_merchant_marine
-		complete_national_focus = POR_merchant_marine_protection
-		complete_national_focus = POR_arsenal_do_alfeite
-		complete_national_focus = POR_continue_the_public_works
-		complete_national_focus = POR_instituto_superior_tecnico
-		complete_national_focus = POR_roads_bridges_and_dams
-		complete_national_focus = POR_ogme
-		complete_national_focus = POR_food_industries
-		complete_national_focus = POR_textile_industry
-		complete_national_focus = POR_colonial_assimilation_policy
-		complete_national_focus = POR_portuguese_artillery
-
-		SPA = {
-			add_opinion_modifier = {
-				target = POR
-				modifier = POR_helped_in_civil_war
-			}
-		}
-
-
-		else = {
-			#generic focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "POR_1939_naval_mtg"
-		else = {
-			set_naval_oob = "POR_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "POR_1939_air_bba"
-		else = {
-			set_air_oob = "POR_1939_air_legacy"
-		}
-	}
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_convoys = 50
 set_politics = {
 	ruling_party = democratic
@@ -168,19 +87,6 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-}
-
 set_convoys = 100
 set_stability = 0.75
 
@@ -189,14 +95,6 @@ if = {
 		has_dlc = "La Resistance"
 	}
 
-# MBR 2026 removed legacy content: 	recruit_character = POR_antonio_de_oliveira_salazar
-# MBR 2026 removed legacy content: 	recruit_character = POR_bento_goncalves
-# MBR 2026 removed legacy content: 	recruit_character = POR_rolao_preto
-# MBR 2026 removed legacy content: 	recruit_character = POR_jose_norton_de_matos
-# MBR 2026 removed legacy content: 	recruit_character = POR_jose_vicente_de_freitas
-# MBR 2026 removed legacy content: 	recruit_character = POR_luis_augusto_ferreira_martins
-# MBR 2026 removed legacy content: 	recruit_character = POR_raul_augusto_esteves
-# MBR 2026 removed legacy content: 	recruit_character = POR_jose_mendes_cabecadas
 recruit_character = POR_julio_botelho_moniz
 recruit_character = POR_humberto_delgado
 recruit_character = POR_vieira_da_rocha
@@ -234,11 +132,6 @@ if = {
 		NOT = { has_dlc = "La Resistance" }
 	}
 
-# MBR 2026 removed legacy content: 	recruit_character = POR_antonio_de_oliveira_salazar
-# MBR 2026 removed legacy content: 	recruit_character = POR_bento_goncalves
-# MBR 2026 removed legacy content: 	recruit_character = POR_rolao_preto
-# MBR 2026 removed legacy content: 	recruit_character = POR_jose_norton_de_matos
-# MBR 2026 removed legacy content: 	recruit_character = POR_jose_vicente_de_freitas
 recruit_character = POR_jose_manuel_sarmento_de_beires
 recruit_character = POR_manuel_ortins_torres_de_bettencourt
 recruit_character = POR_humberto_carmona

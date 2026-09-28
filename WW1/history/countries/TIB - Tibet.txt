@@ -17,10 +17,6 @@ oob = "TIB_1936_generic"
 # Starting tech
 
 
-# MBR 2026 removed legacy content: recruit_character = TIB_jamphel_yeshe_gyaltsen
-# MBR 2026 removed legacy content: recruit_character = TIB_namgang_rinpoche
-# MBR 2026 removed legacy content: recruit_character = TIB_penor_tashi
-# MBR 2026 removed legacy content: recruit_character = TIB_tsepon_shatra
 recruit_character = TIB_gyato_wangdu
 recruit_character = TIB_lobsang_tenzin
 recruit_character = TIB_sampo_tsewang_rigzin
@@ -37,42 +33,8 @@ recruit_character = TIB_khemey_sonam_wangdi
 recruit_character = TIB_jigme_taring
 recruit_character = TIB_reting_rimpoche
 recruit_character = TIB_taktra_rinpoche
-# MBR 2026 removed legacy content: recruit_character = TIB_lungshar
-# MBR 2026 removed legacy content: recruit_character = TIB_phuntsok_wangyal
-# MBR 2026 removed legacy content: recruit_character = TIB_langdun
-# MBR 2026 removed legacy content: recruit_character = TIB_thubten_kunpela
-# MBR 2026 removed legacy content: recruit_character = TIB_tsarong_dzasa
 
 ### Starting Ideas ###
-
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = construction_effort_2
-	complete_national_focus = production_effort_2
-	complete_national_focus = infrastructure_effort
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-
-set_grand_doctrine = mass_assault
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

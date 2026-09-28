@@ -39,28 +39,6 @@ recruit_character = ANG_nccr
 recruit_character = ANG_aco2
 recruit_character = ANG_democratic_guy
 recruit_character = ANG_ncs
-
-
-2029.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
 set_politics = {
 	ruling_party = neutrality
 	last_election = "2024.1.1"
@@ -71,28 +49,7 @@ set_popularities = {
 	neutrality = 100
 }
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
 	
-# MBR 2026 removed vanilla political leader: 	name = "Jonas Lote"
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Jonas_Lote
-# MBR 2026 removed vanilla political leader: 	expire = "2055.1.1"
-# MBR 2026 removed vanilla political leader: 	ideology = centrism
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 		#
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }
 
 
 #Now a colony of Italy  However, if independent it would have
-2029.1.1 = {
-set_politics = {
-	ruling_party = neutrality
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	neutrality = 100
-}
-}
-

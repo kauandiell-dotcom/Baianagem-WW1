@@ -59,33 +59,6 @@ if = {
 set_research_slots = 4
 set_convoys = 50
 set_stability = 0.7
-
-2029.1.1 = {
-
-	add_political_power = 1197
-	add_command_power = 100
-	
-
-	#BUILDINGS
-	
-
-	
-
-set_grand_doctrine = new_mobile_warfare
-set_grand_doctrine = new_convoy_raiding
-set_grand_doctrine = new_battlefield_support
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -99,22 +72,4 @@ set_popularities = {
 
 
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "Klaus Klauser"
-# MBR 2026 removed vanilla political leader: 	desc = ""
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Klaus_Klauser
-# MBR 2026 removed vanilla political leader: 	expire = "2055.1.1"
-# MBR 2026 removed vanilla political leader: 	ideology = nazism
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "Konrad Adenauer"
-# MBR 2026 removed vanilla political leader: 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Konrad_Adenauer
-# MBR 2026 removed vanilla political leader: 	expire = "2055.1.1"
-# MBR 2026 removed vanilla political leader: 	ideology = conservatism
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }

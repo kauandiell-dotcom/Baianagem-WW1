@@ -36,9 +36,6 @@ IF = {
 	
 
 	### Set dynamic modifiers ###
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = COG_force_publique
-# MBR 2026 removed legacy content: 	}
 
 	# The Force Publique Modifier
 	set_variable = { BEL.COG_force_publique_army_leader_cost_factor = 1.0 }
@@ -123,21 +120,7 @@ IF = {
 	}
 
 	# Recruiting Characters
-# MBR 2026 removed legacy content: 	recruit_character = COG_pierre_ryckmans
-# MBR 2026 removed legacy content: 	recruit_character = COG_joseph_kasa_vubu
-# MBR 2026 removed legacy content: 	recruit_character = COG_cyrille_adoula
-# MBR 2026 removed legacy content: 	recruit_character = COG_justin_kokolo
-# MBR 2026 removed legacy content: 	recruit_character = COG_louis_bobozo
 recruit_character = COG_gerard_greindl
-# MBR 2026 removed legacy content: 	recruit_character = COG_paul_ermens
-# MBR 2026 removed legacy content: 	recruit_character = COG_auguste_gilliaert
-# MBR 2026 removed legacy content: 	recruit_character = COG_emile_janssens
-# MBR 2026 removed legacy content: 	recruit_character = COG_frederic_vandewalle
-# MBR 2026 removed legacy content: 	recruit_character = COG_joseph_beernaert
-# MBR 2026 removed legacy content: 	recruit_character = COG_armand_huyghe
-# MBR 2026 removed legacy content: 	recruit_character = COG_leopold_de_koninck
-# MBR 2026 removed legacy content: 	recruit_character = COG_charles_tombeur
-# MBR 2026 removed legacy content: 	recruit_character = COG_fredrik_olsen
 recruit_character = COG_joris_six
 recruit_character = COG_simon_kimbangu
 recruit_character = COG_marcel_maquet
@@ -147,11 +130,6 @@ recruit_character = COG_jean_bolikango
 recruit_character = COG_patrice_lumumba
 recruit_character = COG_joseph_ileo
 recruit_character = COG_isaac_kalonji
-# MBR 2026 removed legacy content: 	recruit_character = COG_pedro_vii_alfonso
-# MBR 2026 removed legacy content: 	recruit_character = COG_mbop_mabiinc_mambeky
-# MBR 2026 removed legacy content: 	recruit_character = COG_moe_poaty_iii
-# MBR 2026 removed legacy content: 	recruit_character = COG_cristophe_gbenye
-# MBR 2026 removed legacy content: 	recruit_character = RWA_yuhi_musinga
 recruit_character = COG_eugene_jungers
 recruit_character = COG_auguste_tilkens
 recruit_character = BEL_albert_de_vleeschauwer
@@ -172,100 +150,3 @@ set_popularities = {
 }
 
 ### The 1939 Scenario ###
-2029.1.1 = {
-	
-	## Without the DLC (They won't exist but for if they are released) ###
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "Gotterdammerung"
-			}
-		}
-		#generic focuses
-		complete_national_focus = army_effort
-		complete_national_focus = equipment_effort
-		complete_national_focus = motorization_effort
-		complete_national_focus = aviation_effort
-		complete_national_focus = naval_effort
-		complete_national_focus = flexible_navy
-		complete_national_focus = industrial_effort
-		complete_national_focus = construction_effort
-		complete_national_focus = production_effort
-	}
-	IF = { ## With the DLC ##
-		limit = {
-			has_dlc = "Gotterdammerung"
-		}
-
-		set_oob = "COG_1939"
-
-		# Ideology and Politics 
-set_politics = {
-	ruling_party = neutrality
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	neutrality = 100
-}
-
-		add_political_power = 600
-		add_command_power = 50
-
-		# ONES THAT CAN JUST BE COMPLETED NORMALLY
-		complete_national_focus = COG_governor_general_pierre_ryckmans
-		complete_national_focus = CONGO_belgian_congo
-		complete_national_focus = CONGO_rawji_group
-		complete_national_focus = CONGO_the_heart_of_africa
-		complete_national_focus = COG_invest_in_urban_centers
-		complete_national_focus = COG_strengthen_the_banque_du_congo_belge
-		complete_national_focus = COG_cooperate_with_the_comite_special_du_katanga
-		complete_national_focus = COG_establish_new_sabena_air_routes
-		complete_national_focus = COG_closer_cooperation_with_eugene_jungers
-		complete_national_focus = COG_uplift_the_apostolic_vicar_of_leopoldville
-		complete_national_focus = COG_contract_the_empain_group
-		complete_national_focus = COG_promote_marcel_maquet_to_provincial_commisioner
-		complete_national_focus = CONGO_congo_army
-		complete_national_focus = CONGO_belgian_officer_corps
-		complete_national_focus = CONGO_ccci 
-		complete_national_focus = CONGO_regional_specialization
-		complete_national_focus = COG_improve_colonial_lawmaking
-		complete_national_focus = CONGO_bakwanga_mine
-		complete_national_focus = CONGO_societe_miniere_de_bakwanga
-
-		# ONES THAT HAVE TO BE HANDELED MANUALLY
-		unlock_national_focus = COG_allow_local_autonomy
-		unlock_national_focus = CONGO_jungle_industry
-
-		add_stability = 0.05
-		every_owned_state = {
-			limit = {
-				is_core_of = ROOT
-				is_controlled_by = ROOT
-			}
-			add_extra_state_shared_building_slots = 1
-		}
-
-		# Hires Eugene Jungers by default
-
-
-	}
-	
-	# Technically won't matter if you have the DLC or not for this
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
-
-
-
-
-
-
-

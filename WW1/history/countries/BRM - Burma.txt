@@ -39,30 +39,6 @@ recruit_character = BRM_acd2
 recruit_character = BRM_nt
 recruit_character = BRM_ar
 recruit_character = BRM_fascist_guy
-
-
-2029.1.1 = {
-
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = neutrality
 	last_election = "2024.1.1"
@@ -73,21 +49,9 @@ set_popularities = {
 	neutrality = 100
 }
 
-# MBR 2026 removed legacy content: recruit_character = BRM_archibald_cochrane
-# MBR 2026 removed legacy content: recruit_character = BRM_ne_win
-# MBR 2026 removed legacy content: recruit_character = BRM_ba_maw
-# MBR 2026 removed legacy content: recruit_character = BRM_u_nu
-# MBR 2026 removed legacy content: recruit_character = BRM_myat_phaya_lat
-
-
-
-
 create_country_leader = {
 	name = "Min Aung Hlaing"
 	picture = "GFX_Min_Aung_Hlaing"
 	ideology = despotism
 	traits = { }
 }
-}
-
-

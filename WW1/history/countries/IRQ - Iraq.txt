@@ -40,8 +40,6 @@ IF = {
 	limit = {
 		has_dlc = "Graveyard of Empires"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_yasin_al_hashimi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ghazi_i
 }
 IF = {
 	limit = {
@@ -49,21 +47,7 @@ IF = {
 			has_dlc = "Graveyard of Empires"
 		}
 	}
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ghazi_i
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_yasin_al_hashimi
 }
-# MBR 2026 removed legacy content: recruit_character = IRQ_rashid_ali_algaylani
-# MBR 2026 removed legacy content: recruit_character = IRQ_yusuf_salman_yusuf
-# MBR 2026 removed legacy content: recruit_character = IRQ_fahmi_said
-# MBR 2026 removed legacy content: recruit_character = IRQ_ali_mahmud_al_shaykh
-# MBR 2026 removed legacy content: recruit_character = IRQ_hamdi_al_pachachi
-# MBR 2026 removed legacy content: recruit_character = IRQ_jamil_al_midfai
-# MBR 2026 removed legacy content: recruit_character = IRQ_bakr_sidqi
-# MBR 2026 removed legacy content: recruit_character = IRQ_abdullah
-# MBR 2026 removed legacy content: recruit_character = IRQ_amir_al_illah
-# MBR 2026 removed legacy content: recruit_character = IRQ_nuri_as_said
-# MBR 2026 removed legacy content: recruit_character = IRQ_sharaf_bin_rajeh
-# MBR 2026 removed legacy content: recruit_character = IRQ_faisal_ii
 
 
 ##### GoE Setup #####
@@ -72,39 +56,6 @@ IF = {
 	limit = {
 		has_dlc = "Graveyard of Empires"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_abd_al_ilah
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_taha_al_hashemi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_muhammad_husayn_kashif_al_ghita
-# MBR 2026 removed legacy content: 	recruit_character = PAL_amin_al_husseini
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_muhammad_amin_zaki
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_kamil_shabib
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_salah_al_din_al_sabbagh
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_jamil_abdul_wahab
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_fawsi_al_kaukji
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_mahmud_salman
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_hikmat_suleiman
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_tawfiq_al_suawaidi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_husain_al_rahhal
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_max_von_oppenheim
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_saib_shawkat
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ibrahim_al_ghandanfari
-# MBR 2026 removed legacy content: 	recruit_character = ARM_calouste_gulbenkian
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_hussein_fawzi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_fritz_grobba
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_werner_junck
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_harry_george_smart
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_naji_al_suwaidi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_akram_mushtak
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ahmed_barzani
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_mustafa_barzani
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_muhammad_ali_jawad
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_maruf_al_rusafi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ahmed_rushdi_muhammad
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_jamil_ahmad_abullah_al_rawi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_kamil_al_jaderji
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_mohamed_hadid
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_jafar_al_timman
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_mohamed_mahdi_kubba
 
 
 
@@ -141,9 +92,6 @@ IF = {
 	set_variable = { IRQ_modifier_army_sub_unit_cavalry_defence_factor = 0 }
 	set_variable = { IRQ_modifier_army_sub_unit_cavalry_speed_factor = 0 }
 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = IRQ_royal_army_modifier_IRQ
-# MBR 2026 removed legacy content: 	}
 
 	#Variables for Air Force Modifier 
 	set_variable = { IRQ_air_accidents_factor = -0.1 }
@@ -202,15 +150,12 @@ IF = {
 
 	# Kurdish Resistance
 	676 = {
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = KUR_resistance_modifier }
 	}
 
 	# Unhappy and Autonomous Shia Tribes 
 	1010 = {
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = IRQ_shia_resistance_modifier }
 	}
 	675 = {
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = IRQ_shia_resistance_modifier }
 	}
 
 }
@@ -221,115 +166,7 @@ IF = {
 			has_dlc	= "Graveyard of Empires"
 		}
 	}
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_abd_almalik_ibn_hisham
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ali_abn_hussein
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_iskandar_al-shami
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_mustafa_al_quidsi
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_ali_ben_jawad
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_abdullah_al-tell
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_khaled_al_dalabeeh
-# MBR 2026 removed legacy content: 	recruit_character = IRQ_taha_al_ahmani
 }
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	IF = {
-		limit = {
-			has_dlc = "Graveyard of Empires"
-		}
-		#1936
-		complete_national_focus = IRQ_party_of_national_brotherhood
-		complete_national_focus = IRQ_royal_iraqi_army
-		complete_national_focus = IRQ_bakr_sidqi_coup
-		complete_national_focus = IRQ_raf_levies_focus
-		complete_national_focus = IRQ_assasination_of_sidqi
-		#1937
-		complete_national_focus = IRQ_expand_habbaniya_airbase
-		complete_national_focus = IRQ_decouple_from_the_pound
-		complete_national_focus = IRQ_found_the_iraqi_state_railways
-		complete_national_focus = IRQ_purchase_foreign_equipment
-		complete_national_focus = IRQ_independent_flight_schools
-
-		#1938
-		complete_national_focus = IRQ_infantry_focus
-		complete_national_focus = IRQ_purchase_british_aircraft
-		complete_national_focus = IRQ_strengthen_the_iraqi_dinar
-		complete_national_focus = IRQ_heavy_industry_investments
-		complete_national_focus = IRQ_local_arms_industry
-		complete_national_focus = IRQ_al_muthanna_club
-
-		#1939
-		complete_national_focus = IRQ_construct_the_kut_barrage
-		complete_national_focus = IRQ_baghdad_colleges_of_engineering_and_education
-		complete_national_focus = IRQ_found_southern_steel_plants
-		complete_national_focus = IRQ_modernization
-
-		diplomatic_relation = {
-			country = TUR
-			relation = non_aggression_pact
-			active = yes
-		}
-
-		diplomatic_relation = {
-			country = PER
-			relation = non_aggression_pact
-			active = yes
-		}
-
-		diplomatic_relation = {
-			country = AFG
-			relation = non_aggression_pact
-			active = yes
-		}
-
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = SSB_saadabad_pact }
-
-		remove_ideas = {
-			IRQ_bakr_sidqi
-			IRQ_ghazi_i
-		}
-		retire_character = IRQ_ghazi_i
-		retire_character = IRQ_bakr_sidqi
-
-	}
-	IF = {
-		limit = {
-			NOT = { has_dlc = "Graveyard of Empires" }
-		}
-		# Generic focuses
-		complete_national_focus = army_effort
-		complete_national_focus = equipment_effort
-		complete_national_focus = motorization_effort
-		complete_national_focus = aviation_effort
-		complete_national_focus = construction_effort_2
-		complete_national_focus = production_effort_2
-		complete_national_focus = infrastructure_effort
-		complete_national_focus = industrial_effort
-		complete_national_focus = construction_effort
-		complete_national_focus = production_effort		
-	}
-
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "IRQ_1939_air_bba"
-		else = {
-			set_air_oob = "IRQ_1939_air_legacy"
-		}
-	}
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = neutrality
 	last_election = "2024.1.1"
@@ -339,29 +176,6 @@ set_politics = {
 set_popularities = {
 	neutrality = 100
 }
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = neutrality
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	neutrality = 100
-}
-	IF = {
-		limit = { 
-			NOT = { 
-				has_dlc = "Graveyard of Empires" 
-			} 
-		}		
-# MBR 2026 removed legacy content: 		recruit_character = IRQ_faisal_ii
-		promote_character = IRQ_faisal_ii
-		retire_character = IRQ_ghazi_i
-	}
-}
-
 create_country_leader = {
 	name = "Abu Ala Al Walai"
 	picture = "GFX_abu_ala_al_walai"

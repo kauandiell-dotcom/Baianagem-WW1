@@ -16,7 +16,6 @@ oob = "MEN_1936_generic"
 
 
 
-# MBR 2026 removed legacy content: recruit_character = MEN_prince_demchugdongrub
 recruit_character = MEN_hesehn_tiemei
 recruit_character = MEN_guan_xingde
 recruit_character = MEN_kyoiji_tomonaga
@@ -27,12 +26,6 @@ recruit_character = MEN_yonimitsu_kasahara
 recruit_character = MEN_nalan_kang_an
 recruit_character = MEN_songgotu_zhanshan
 recruit_character = MEN_megata_toshiro
-# MBR 2026 removed legacy content: recruit_character = MEN_yondonwangchug
-# MBR 2026 removed legacy content: recruit_character = MEN_li_shouxin
-# MBR 2026 removed legacy content: recruit_character = MEN_chin_yung_chang
-# MBR 2026 removed legacy content: recruit_character = MEN_serendongrub
-# MBR 2026 removed legacy content: recruit_character = MEN_jodbajab
-# MBR 2026 removed legacy content: recruit_character = MEN_altanochir
 recruit_character = MEN_wang_ying
 
 IF = {
@@ -44,9 +37,6 @@ IF = {
 
 	
 
-# MBR 2026 removed legacy content: 	recruit_character = MEN_songgotu_shangzhi
-# MBR 2026 removed legacy content: 	recruit_character = MEN_sonin_xiangying
-# MBR 2026 removed legacy content: 	recruit_character = MEN_zhao_zhanshan
 	
 	ELSE = {
 
@@ -81,74 +71,6 @@ IF = {
 
 	}	
 }
-
-2029.1.1 = {
-
-	add_to_war = {
-		targeted_alliance = JAP
-		enemy = CHI
-		hostility_reason = puppet
-	}
-	
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-	
-
-	set_grand_doctrine = grand_battleplan
-	set_grand_doctrine = new_fleet_in_being
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-
-	MEN_prince_demchugdongrub = {
-		add_country_leader_role = {
-			promote_leader = yes
-			country_leader = {
-				ideology = despotism
-				expire = "2055.1.1.1"
-				traits = { MEN_borjigin_descendant } 
-			}
-		}
-	}
-
-	set_country_flag = MEN_moved_capital_to_zhangbei
-
-	set_capital = {
-		state = 611
-		remember_old_capital = yes
-	}
-
-	remove_ideas = MEN_pailingmiao_council_idea
-
-	swap_ideas = {
-		remove_idea = MEN_stretched_administration_idea
-		add_idea = MEN_stretched_administration_idea_2
-	}
- 
- 
-
-	set_cosmetic_tag = MEN_mengjiang_autonomy
-
-	add_state_core = 616
-	add_state_core = 1040
-
-	
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

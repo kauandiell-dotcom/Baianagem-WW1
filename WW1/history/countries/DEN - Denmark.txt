@@ -49,24 +49,15 @@ IF = {
 }
 
 #### COUNTRY LEADERS ####
-# MBR 2026 removed legacy content: recruit_character = DEN_thorvald_stauning
-# MBR 2026 removed legacy content: recruit_character = DEN_knud_bach
-# MBR 2026 removed legacy content: recruit_character = DEN_knud_bach_2
-# MBR 2026 removed legacy content: recruit_character = DEN_knud_bach_3
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = DEN_christian_x
-# MBR 2026 removed legacy content: 	recruit_character = DEN_freedom_council
 }
-# MBR 2026 removed legacy content: recruit_character = DEN_aksel_larsen
-# MBR 2026 removed legacy content: recruit_character = DEN_frits_clausen
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = DEN_werner_best
 }
 
 #### MILITARY LEADERS and ADVISORS ####
@@ -74,40 +65,22 @@ if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = DEN_erik_with
 }
-# MBR 2026 removed legacy content: recruit_character = DEN_william_wain_prior
-# MBR 2026 removed legacy content: recruit_character = DEN_ebbe_gortz
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = DEN_frederik_christian_essemann
-# MBR 2026 removed legacy content: 	recruit_character = DEN_carl_jacobsen
-# MBR 2026 removed legacy content: 	recruit_character = DEN_christian_peder_kryssing
-# MBR 2026 removed legacy content: 	recruit_character = DEN_erik_leschly
-# MBR 2026 removed legacy content: 	recruit_character = DEN_erik_moller
-# MBR 2026 removed legacy content: 	recruit_character = DEN_paul_ramm
-# MBR 2026 removed legacy content: 	recruit_character = DEN_charles_henry_rye
 }
-# MBR 2026 removed legacy content: recruit_character = DEN_christian_frederik_von_schalburg
-# MBR 2026 removed legacy content: recruit_character = DEN_hjalmar_rechnitzer
-# MBR 2026 removed legacy content: recruit_character = DEN_aage_vedel
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = DEN_emmanuel_briand_de_crevecoeur
-# MBR 2026 removed legacy content: 	recruit_character = DEN_christian_evers
 }
-# MBR 2026 removed legacy content: recruit_character = DEN_carl_hammerich
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = DEN_paul_ipsen
 recruit_character = DEN_prince_frederik
-# MBR 2026 removed legacy content: 	recruit_character = DEN_frederik_ix
 recruit_character = DEN_christian_forslev
 recruit_character = DEN_asger_grandjean
 recruit_character = DEN_aage_falking
@@ -151,7 +124,6 @@ recruit_character = DEN_arnold_peter_moller
 recruit_character = DEN_alsing_andersen
 recruit_character = DEN_karl_kristian_steincke
 recruit_character = DEN_niels_bohr
-# MBR 2026 removed legacy content: 	recruit_character = DEN_cay_lembcke
 recruit_character = DEN_emil_strobech
 }
 recruit_character = DEN_ejnar_warum
@@ -188,14 +160,12 @@ if = {
 	set_variable = { DEN_neglected_military_mobilization_speed = -0.2 }
 	set_variable = { DEN_neglected_military_surrender_limit = -0.2}
 	set_variable = { DEN_neglected_military_planning_speed = -0.1 }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = DEN_neglected_military_dynamic_modifier }
 
 	#ECONOMIC CRISIS
 	set_variable = { DEN_economic_crisis_monthly_population = -0.1 }
 	set_variable = { DEN_economic_crisis_stability_weekly = -0.001 }
 	set_variable = { DEN_economic_crisis_neutrality_drift = 0.02 }
 	set_variable = { DEN_economic_crisis_democratic_drift = -0.05 }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = DEN_economic_crisis_dynamic_modifier }
 
 	#INDUSTRIAL CAPABILITIES
 	set_variable = { DEN_industrial_capability_resources_to_market = 0 }
@@ -209,7 +179,6 @@ if = {
 	set_variable = { DEN_industrial_capabilities_refit_speed = 0 }
 	set_variable = { DEN_industrial_capabilities_ship_repair = 0 }
 	set_variable = { DEN_industrial_capability_local_resources = 0 }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = DEN_industrial_capability_dynamic_modifier }
 
 	#WAR PREPARATIONS
 	set_variable = { DEN_war_preparations_lack_of_resource_penalty = 0 }
@@ -394,120 +363,6 @@ set_politics = {
 	elections_allowed = yes
 }
 }
-
-2029.1.1 = {
-	if = {
-		limit = {
-			has_dlc = "Arms Against Tyranny"
-		}
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "Arms Against Tyranny" }
-		}
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-	}
-	
-
-	
-	
-
-	set_power_balance = {
-		id = DEN_balance_of_power
-		set_default = no  # whether or not to reset the power balance to the initial value, default = no
-		set_value = -0.1
-	}
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	if = {
-		limit = {
-			has_dlc = "Arms Against Tyranny"
-		}
-		complete_national_focus = DEN_kanslergadeforliget
-		complete_national_focus = DEN_industrial_investments
-		complete_national_focus = DEN_public_works
-		complete_national_focus = DEN_agricultural_subsidies
-		complete_national_focus = DEN_support_schleswigian_farmers
-		complete_national_focus = DEN_devalue_the_krone	
-		complete_national_focus = DEN_trade_with_britain
-		complete_national_focus = DEN_trade_with_germany
-		complete_national_focus = DEN_declare_neutrality
-		complete_national_focus = DEN_political_unity
-		complete_national_focus = DEN_policy_of_disarmament
-		complete_national_focus = DEN_social_stability
-		complete_national_focus = DEN_sign_forsvarsforliget
-		complete_national_focus = DEN_welcome_foreign_scientists
-		complete_national_focus = DEN_stockpile_oil
-		complete_national_focus = DEN_expand_vaernepligten
-		complete_national_focus = DEN_build_motorveje
-		complete_national_focus = DEN_expand_ubadsvabnet
-		complete_national_focus = DEN_limited_market_regulations
-		complete_national_focus = DEN_import_machinery_and_material
-		complete_national_focus = DEN_sikkerhedspolitiet
-		complete_national_focus = DEN_modernize_agricultural_machinery
-		complete_national_focus = DEN_modernize_industrial_machinery
-	}
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "DEN_1939_naval_mtg"
-		else = {
-			set_naval_oob = "DEN_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "DEN_1939_air_bba"
-		else = {
-			set_air_oob = "DEN_1939_air_legacy"
-			
-		}
-	}
-
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		
-	}
-}
-
-
 set_convoys = 55
 
 ### VARIANTS ###
@@ -576,28 +431,6 @@ add_equipment_to_stockpile = {
 }
 
 # 1939 Start #
-2029.1.1 = {
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		# Submarines #
-		create_equipment_variant = {
-			name = "Havmanden Class"				
-			type = ship_hull_submarine_1
-			name_group = DEN_SS_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_1
-				fixed_ship_engine_slot = sub_ship_engine_2
-				rear_1_custom_slot = empty
-			}
-		}
-	}
-}
-
 create_country_leader = {
 	name = "Mette Frederiksen"
 	picture = "GFX_mette_frederiksen"

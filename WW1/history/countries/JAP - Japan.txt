@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 282 # Tokyo/Kanto
@@ -27,9 +26,6 @@ set_country_flag = JAP_kantai_kessen_blocked
 
 ### THE IMPERIAL INFLUENCE SYSTEM ###
 
-# MBR 2026: removed legacy national spirit: add_dynamic_modifier = {
-# MBR 2026: removed legacy national spirit: 	modifier = JAP_imperial_influence_dm
-# MBR 2026: removed legacy national spirit: }
 
 #Setting up the Faction Levels within the Imperial Influence
 #Current Tiers and Influence Points:
@@ -75,9 +71,6 @@ set_variable = { JAP_faction_demand_failed_missions = 0 } #Checks how many Deman
 
 
 ## STATE SHINTOISM
-# MBR 2026: removed legacy national spirit: add_dynamic_modifier = {
-# MBR 2026: removed legacy national spirit: 	modifier = JAP_state_shinotism_dm
-# MBR 2026: removed legacy national spirit: }
 set_variable = { JAP_state_shinotism_surrender_limit = 0.1 } 
 set_variable = { JAP_state_shinotism_war_support_factor = 0.2 }
 set_variable = { JAP_state_shinotism_stability_factor = 0 }
@@ -86,9 +79,6 @@ set_variable = { JAP_state_shinotism_justify_war_goal_time = 0 }
 set_variable = { JAP_state_shinotism_research_speed_factor = 0 }
 
 # THE IMPERIAL ARMY
-# MBR 2026: removed legacy national spirit: add_dynamic_modifier = {
-# MBR 2026: removed legacy national spirit: 	modifier = JAP_imperial_army_dm
-# MBR 2026: removed legacy national spirit: }
 set_variable = { JAP_army_army_infantry_attack_factor = 0 }
 set_variable = { JAP_army_army_morale_factor = 0.05 }
 set_variable = { JAP_army_army_defence_factor = -0.05 }
@@ -118,9 +108,6 @@ set_variable = { JAP_army_max_dig_in = 0 }
 set_variable = { JAP_army_dig_in_speed_factor = 0 }
 
 # THE IMPERIAL NAVY
-# MBR 2026: removed legacy national spirit: add_dynamic_modifier = {
-# MBR 2026: removed legacy national spirit: 	modifier = JAP_imperial_navy_dm
-# MBR 2026: removed legacy national spirit: }
 set_variable = { JAP_navy_naval_torpedo_hit_chance_factor = 0.15 }
 #set_variable = { JAP_navy_naval_torpedo_screen_penetration_factor = 0.1 }
 set_variable = { JAP_navy_ships_at_battle_start = 0.1 }
@@ -143,9 +130,6 @@ set_variable = { JAP_navy_refit_speed = 0}
 set_variable = { JAP_navy_naval_ship_recovery_chance = 0}
 
 # THE IMPERIAL AIRFORCE SERVICES
-# MBR 2026: removed legacy national spirit: add_dynamic_modifier = {
-# MBR 2026: removed legacy national spirit: 	modifier = JAP_army_and_naval_air_services_dm
-# MBR 2026: removed legacy national spirit: }
 set_variable = { JAP_airforce_air_nav_efficiency = 0.1 }
 set_variable = { JAP_airforce_air_wing_xp_loss_when_killed_factor = 0.1 }
 set_variable = { JAP_airforce_air_untrained_pilots_penalty_factor = 0.1 }
@@ -162,9 +146,6 @@ set_variable = { JAP_airforce_air_accidents_factor = 0 }
 #set_variable = { JAP_airforce_navy_carrier_air_targetting_factor = 0 }
 
 # THE JAPANESE INDUSTRY
-# MBR 2026: removed legacy national spirit: add_dynamic_modifier = {
-# MBR 2026: removed legacy national spirit: 	modifier = JAP_early_industrialization_efforts_dm
-# MBR 2026: removed legacy national spirit: }
 set_variable = { JAP_industry_industry_air_damage_factor = 0.25 } 
 set_variable = { JAP_industry_lack_of_resource_penalty_factor = 0.1 }
 set_variable = { JAP_industry_research_speed_factor = -0.03 }
@@ -545,127 +526,6 @@ set_popularities = {
 
 
 ### Recruiting Characters ### 
-# MBR 2026 removed legacy content: recruit_character = JAP_tetsu_katayama
-# MBR 2026 removed legacy content: recruit_character = JAP_kyuichi_tokuda
-# MBR 2026 removed legacy content: recruit_character = JAP_emperor_hirohito
-# MBR 2026 removed legacy content: recruit_character = JAP_tomoyuki_yamashita
-# MBR 2026 removed legacy content: recruit_character = JAP_hisaichi_terauchi
-# MBR 2026 removed legacy content: recruit_character = JAP_shunroku_hata
-# MBR 2026 removed legacy content: recruit_character = JAP_akira_muto
-# MBR 2026 removed legacy content: recruit_character = JAP_kanji_ishiwara
-# MBR 2026 removed legacy content: recruit_character = JAP_shizuichi_tanaka
-# MBR 2026 removed legacy content: recruit_character = JAP_yasuji_okamura
-# MBR 2026 removed legacy content: recruit_character = JAP_toshizo_nishio
-# MBR 2026 removed legacy content: recruit_character = JAP_rikichi_ando
-# MBR 2026 removed legacy content: recruit_character = JAP_naruhiko_higashikuni
-# MBR 2026 removed legacy content: recruit_character = JAP_seishiro_itagaki
-# MBR 2026 removed legacy content: recruit_character = JAP_takashi_sakai
-# MBR 2026 removed legacy content: recruit_character = JAP_kenji_doihara
-# MBR 2026 removed legacy content: recruit_character = JAP_kenkichi_ueda
-# MBR 2026 removed legacy content: recruit_character = JAP_shigeru_honjo
-# MBR 2026 removed legacy content: recruit_character = JAP_yoshijiro_umezu
-# MBR 2026 removed legacy content: recruit_character = JAP_otozo_yamada
-# MBR 2026 removed legacy content: recruit_character = JAP_hatazo_adachi
-# MBR 2026 removed legacy content: recruit_character = JAP_iwane_matsui
-# MBR 2026 removed legacy content: recruit_character = JAP_sadao_araki
-# MBR 2026 removed legacy content: recruit_character = JAP_keisuke_fujie
-# MBR 2026 removed legacy content: recruit_character = JAP_kiichiro_higuchi
-# MBR 2026 removed legacy content: recruit_character = JAP_masaharu_homma
-# MBR 2026 removed legacy content: recruit_character = JAP_harukichi_hyakutake
-# MBR 2026 removed legacy content: recruit_character = JAP_jo_iimura
-# MBR 2026 removed legacy content: recruit_character = JAP_hitoshi_imamura
-# MBR 2026 removed legacy content: recruit_character = JAP_masatane_kanda
-# MBR 2026 removed legacy content: recruit_character = JAP_kuniaki_koiso
-# MBR 2026 removed legacy content: recruit_character = JAP_isoroku_yamamoto
-# MBR 2026 removed legacy content: recruit_character = JAP_mineichi_koga
-# MBR 2026 removed legacy content: recruit_character = JAP_kiyoshi_hasegawa
-# MBR 2026 removed legacy content: recruit_character = JAP_shigeyoshi_inoue
-# MBR 2026 removed legacy content: recruit_character = JAP_nobutake_kondo
-# MBR 2026 removed legacy content: recruit_character = JAP_takeo_takagi
-# MBR 2026 removed legacy content: recruit_character = JAP_soemu_toyoda
-# MBR 2026 removed legacy content: recruit_character = JAP_jisaburo_ozawa
-# MBR 2026 removed legacy content: recruit_character = JAP_zengo_yoshida
-# MBR 2026 removed legacy content: recruit_character = JAP_hiroaki_abe
-# MBR 2026 removed legacy content: recruit_character = JAP_tadashige_daigo
-# MBR 2026 removed legacy content: recruit_character = JAP_gengo_hyakutake
-# MBR 2026 removed legacy content: recruit_character = JAP_yoshitoshi_tokugawa
-# MBR 2026 removed legacy content: recruit_character = JAP_fushimi_hiroyasu
-# MBR 2026 removed legacy content: recruit_character = JAP_korechika_anami
-# MBR 2026 removed legacy content: recruit_character = JAP_mitsuo_fuchida
-# MBR 2026 removed legacy content: recruit_character = JAP_minoru_genda
-# MBR 2026 removed legacy content: recruit_character = JAP_tateo_kato
-# MBR 2026 removed legacy content: recruit_character = JAP_osami_nagano
-# MBR 2026 removed legacy content: recruit_character = JAP_torashiro_kawabe
-# MBR 2026 removed legacy content: recruit_character = JAP_shigetaro_shimada
-# MBR 2026 removed legacy content: recruit_character = JAP_yoshio_nishina
-# MBR 2026 removed legacy content: recruit_character = JAP_hideo_itokawa
-# MBR 2026 removed legacy content: recruit_character = JAP_kanin_kotohito
-# MBR 2026 removed legacy content: recruit_character = JAP_hideki_tojo
-# MBR 2026 removed legacy content: recruit_character = JAP_matome_ugaki
-# MBR 2026 removed legacy content: recruit_character = JAP_nishizo_tsukahara
-# MBR 2026 removed legacy content: recruit_character = JAP_hajime_sugiyama
-# MBR 2026 removed legacy content: recruit_character = JAP_chuichi_nagumo
-# MBR 2026 removed legacy content: recruit_character = JAP_hino_kumazo
-# MBR 2026 removed legacy content: recruit_character = JAP_mitsumasa_yonai
-# MBR 2026 removed legacy content: recruit_character = JAP_takuo_godo
-# MBR 2026 removed legacy content: recruit_character = JAP_chiune_sugihara
-# MBR 2026 removed legacy content: recruit_character = JAP_kingoro_hashimoto
-# MBR 2026 removed legacy content: recruit_character = JAP_sanzo_nosaka
-# MBR 2026 removed legacy content: recruit_character = JAP_hiroshi_oshima
-# MBR 2026 removed legacy content: recruit_character = JAP_kijuro_shidehara
-# MBR 2026 removed legacy content: recruit_character = JAP_kijiro_nambu
-# MBR 2026 removed legacy content: recruit_character = JAP_keiji_fukuda
-# MBR 2026 removed legacy content: recruit_character = JAP_jiro_horikoshi
-# MBR 2026 removed legacy content: recruit_character = JAP_hideki_yukawa
-# MBR 2026 removed legacy content: recruit_character = JAP_yoji_ito
-# MBR 2026 removed legacy content: recruit_character = JAP_hideo_iwakuro
-# MBR 2026 removed legacy content: recruit_character = JAP_yuzuru_hiraga
-# MBR 2026 removed legacy content: recruit_character = JAP_keisuke_okada
-# MBR 2026 removed legacy content: recruit_character = JAP_shun_akikusa
-# MBR 2026 removed legacy content: recruit_character = JAP_koki_hirota
-# MBR 2026 removed legacy content: recruit_character = JAP_kazushige_ugaki
-# MBR 2026 removed legacy content: recruit_character = JAP_fumimaro_konoe
-# MBR 2026 removed legacy content: recruit_character = JAP_senjuro_hayashi
-# MBR 2026 removed legacy content: recruit_character = JAP_jinzaburo_masaki
-# MBR 2026 removed legacy content: recruit_character = JAP_emperor_yasuhito
-# MBR 2026 removed legacy content: recruit_character = JAP_tokugawa_iesato
-# MBR 2026 removed legacy content: recruit_character = JAP_masafumi_arima
-# MBR 2026 removed legacy content: recruit_character = JAP_tsuneyoshi_takeda
-# MBR 2026 removed legacy content: recruit_character = JAP_yasuhiko_asaka
-# MBR 2026 removed legacy content: recruit_character = JAP_isamu_cho
-# MBR 2026 removed legacy content: recruit_character = JAP_hayao_tada
-# MBR 2026 removed legacy content: recruit_character = JAP_nashimoto_morimasa
-# MBR 2026 removed legacy content: recruit_character = JAP_michitaro_komatsubara
-# MBR 2026 removed legacy content: recruit_character = JAP_takahashi_korekiyo
-# MBR 2026 removed legacy content: recruit_character = JAP_naoki_hoshino
-# MBR 2026 removed legacy content: recruit_character = JAP_koichi_kido
-# MBR 2026 removed legacy content: recruit_character = JAP_shigenori_togo
-# MBR 2026 removed legacy content: recruit_character = JAP_heisuke_yanagawa
-# MBR 2026 removed legacy content: recruit_character = JAP_yosuke_matsuoka
-# MBR 2026 removed legacy content: recruit_character = JAP_genki_abe
-# MBR 2026 removed legacy content: recruit_character = JAP_nobusuke_kishi
-# MBR 2026 removed legacy content: recruit_character = JAP_masatoshi_okochi
-# MBR 2026 removed legacy content: recruit_character = JAP_shumei_okawa
-# MBR 2026 removed legacy content: recruit_character = JAP_okinori_kaya
-# MBR 2026 removed legacy content: recruit_character = JAP_koyata_iwasaki
-# MBR 2026 removed legacy content: recruit_character = JAP_chikuhei_nakajima
-# MBR 2026 removed legacy content: recruit_character = JAP_yoshisuke_aikawa
-# MBR 2026 removed legacy content: recruit_character = JAP_kenjiro_matsumoto
-# MBR 2026 removed legacy content: recruit_character = JAP_uzo_nishiyama
-# MBR 2026 removed legacy content: recruit_character = JAP_gotaro_ogawa
-# MBR 2026 removed legacy content: recruit_character = JAP_kiichiro_hiranuma
-# MBR 2026 removed legacy content: recruit_character = JAP_yamauchi_sachiko
-# MBR 2026 removed legacy content: recruit_character = JAP_wakatsuki_reijiro
-# MBR 2026 removed legacy content: recruit_character = JAP_shinji_sogo
-# MBR 2026 removed legacy content: recruit_character = JAP_jotaro_watanabe
-# MBR 2026 removed legacy content: recruit_character = JAP_masakazu_kawabe
-# MBR 2026 removed legacy content: recruit_character = JAP_harukichi_shimoi
-# MBR 2026 removed legacy content: recruit_character = JAP_teijiro_toyoda
-# MBR 2026 removed legacy content: recruit_character = JAP_chuuichi_nagumo
-# MBR 2026 removed legacy content: recruit_character = JAP_tamon_yamaguchi
-# MBR 2026 removed legacy content: recruit_character = JAP_toyoaki_horiuchi
-# MBR 2026 removed legacy content: recruit_character = JAP_tadaichi_wakamatsu
-# MBR 2026 removed legacy content: recruit_character = JAP_masanobu_tsuji
 
 
 ### DLC-SPECIFIC CHARACTERS ###
@@ -673,64 +533,12 @@ IF = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = JAP_ichiro_hatoyama
-# MBR 2026 removed legacy content: 	recruit_character = JAP_machida_chuuji
-# MBR 2026 removed legacy content: 	recruit_character = JAP_abe_isoo
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hitoshi_yamakawa
-# MBR 2026 removed legacy content: 	recruit_character = JAP_kanson_arahata
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yamakawa_kikue
-# MBR 2026 removed legacy content: 	recruit_character = JAP_empress_nagako
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yoshio_kodama
-# MBR 2026 removed legacy content: 	recruit_character = JAP_adachi_kenzo
-# MBR 2026 removed legacy content: 	recruit_character = JAP_seigo_nakano
-# MBR 2026 removed legacy content: 	recruit_character = JAP_saburo_aizawa
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yoshiyuki_kawashima
-# MBR 2026 removed legacy content: 	recruit_character = JAP_teruzo_ando
-# MBR 2026 removed legacy content: 	recruit_character = JAP_shiro_nonaka
-# MBR 2026 removed legacy content: 	recruit_character = JAP_asaichi_isobe
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yasuhide_kurihara
-# MBR 2026 removed legacy content: 	recruit_character = JAP_kiyosada_koda
-# MBR 2026 removed legacy content: 	recruit_character = JAP_takaji_muranaka
-# MBR 2026 removed legacy content: 	recruit_character = JAP_morihei_ueshiba
-# MBR 2026 removed legacy content: 	recruit_character = JAP_fukumoto_kazuo
-# MBR 2026 removed legacy content: 	recruit_character = JAP_nissho_inoue
-# MBR 2026 removed legacy content: 	recruit_character = JAP_bin_akao
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yukio_ozaki
-# MBR 2026 removed legacy content: 	recruit_character = JAP_toyama_mitsuru
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hajime_kawakami
-# MBR 2026 removed legacy content: 	recruit_character = JAP_osamu_shimomura
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hideo_shima
-# MBR 2026 removed legacy content: 	recruit_character = JAP_ichikawa_fusae
-# MBR 2026 removed legacy content: 	recruit_character = JAP_komakichi_matsuoka
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yoshio_shiga
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hisachi_aso
-# MBR 2026 removed legacy content: 	recruit_character = JAP_suzuki_bunji
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hakamada_satomi
-# MBR 2026 removed legacy content: 	recruit_character = JAP_noboru_yamaguchi
-# MBR 2026 removed legacy content: 	recruit_character = JAP_tsuji_jun
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hiratsuka_raicho
-# MBR 2026 removed legacy content: 	recruit_character = JAP_masamichi_royama
-# MBR 2026 removed legacy content: 	recruit_character = JAP_minoru_takano
-# MBR 2026 removed legacy content: 	recruit_character = JAP_kojiro_fukushi
-# MBR 2026 removed legacy content: 	recruit_character = JAP_hotsumi_ozaki
-# MBR 2026 removed legacy content: 	recruit_character = JAP_onisaburo_deguchi
-# MBR 2026 removed legacy content: 	recruit_character = JAP_saionji_kinmochi
-# MBR 2026 removed legacy content: 	recruit_character = JAP_gempo_yamamoto
-# MBR 2026 removed legacy content: 	recruit_character = JAP_akira_kurosawa
-# MBR 2026 removed legacy content: 	recruit_character = JAP_emperor_nobuhito
-# MBR 2026 removed legacy content: 	recruit_character = JAP_yoshihige_abe
-# MBR 2026 removed legacy content: 	recruit_character = JAP_kozo_sasaki
-# MBR 2026 removed legacy content: 	recruit_character = JAP_giro_senoo
-# MBR 2026 removed legacy content: 	recruit_character = JAP_taketora_ogata
 	ELSE_IF = {
 		limit = {
 			NOT = {
 				has_dlc = "No Compromise, No Surrender"
 			}
 		}
-# MBR 2026 removed legacy content: 		recruit_character = JAP_random_general_1
-# MBR 2026 removed legacy content: 		recruit_character = JAP_random_general_2
-# MBR 2026 removed legacy content: 		recruit_character = JAP_random_general_3
 	}
 }
 
@@ -742,213 +550,6 @@ IF = {
 
 
 # Setup 1939 Start Date
-2029.1.1 = {
-
-	set_country_flag = JAP_1939_start_date_initiated
-
-	IF = {
-		limit = {
-			has_dlc = "No Compromise, No Surrender"
-		}
-		add_country_leader_role = {
-			character = JAP_machida_chuuji
-			promote_leader = yes
-			country_leader = {
-				ideology = liberalism
-				expire = "2079.1.1.1"
-				traits = { HUN_popular_liberal } 
-			}
-		}	
-	}
-
-	set_party_name = {
-		ideology = democratic
-		long_name = JAP_minseito_party_long
-		name = JAP_minseito_party
-	}
-
-	# Setup Politics 
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-
-	set_autonomy = {
-		target = MEN
-		autonomous_state = autonomy_wtt_imperial_protectorate
-	}
-
-	# Kodoha coup has historical outcomes
-	retire_character = JAP_takahashi_korekiyo
-	retire_character = JAP_jotaro_watanabe
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	add_breakthrough_progress = {
-		specialization = specialization_naval
-		value = 2.0
-	}
-
-	add_breakthrough_progress = {
-		specialization = specialization_air 
-		value = 1.0
-	}
-
-	add_breakthrough_progress = {
-		specialization = specialization_land 
-		value = 0.5
-	}
-
-	complete_special_project = {
-		project = sp:sp_naval_torpedo_cruiser
-		scientist = JAP_keiji_fukuda
-		state = 528
-	}
-
-	# Adding Ideas
-	
-
-	IF = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		remove_ideas = MTG_naval_treaty_adherent
-	}
-
-	complete_national_focus = JAP_sea_purge_the_kodoha_faction
-	complete_national_focus = JAP_ministry_of_commerce_and_industry
-	complete_national_focus = JAP_the_imperial_defense_plan
-	complete_national_focus = JAP_revisit_the_thirteen_demands
-	complete_national_focus = JAP_promulgate_the_military_ministers_system
-	unlock_national_focus = JAP_establish_mongol_military_government
-	complete_national_focus = JAP_expand_kawagoe_army_arsenal
-	complete_national_focus = JAP_increase_armament_spending
-	complete_national_focus = JAP_rely_on_supremacy_of_the_will
-	complete_national_focus = JAP_imperial_headquarters_liasion_conference
-	complete_national_focus = JAP_the_harakiri_debate
-	complete_national_focus = JAP_expand_hiratsuka_navy_arsenal
-	complete_national_focus = JAP_konoes_first_cabinet
-	complete_national_focus = JAP_reinforce_the_beijing_garrison
-	complete_national_focus = JAP_sea_national_spiritual_mobliization_movement
-	complete_national_focus = JAP_enact_the_national_conscription_law
-	complete_national_focus = JAP_ministry_of_colonial_affairs
-	complete_national_focus = JAP_establish_showa_aircraft_idnsutry
-	unlock_national_focus = JAP_reorganize_the_united_autonomous_government
-	complete_national_focus = JAP_form_the_central_economic_council
-	complete_national_focus = JAP_expand_the_showa_research_association
-	complete_national_focus = JAP_sea_state_general_mobilization_law
-	complete_national_focus = JAP_approach_mitsubishi
-	complete_national_focus = JAP_enact_religious_organizations_law
-	complete_national_focus = JAP_new_order_in_east_asia
-	complete_national_focus = JAP_form_cabinet_intelligence_bureau
-	complete_national_focus = JAP_mengjiang_united_autonomous_government
-	complete_national_focus = JAP_nanshin_ron
-	complete_national_focus = JAP_modern_bombers
-	complete_national_focus = JAP_expand_navy_technical_department
-	complete_national_focus = JAP_develop_new_fighters
-	complete_national_focus = JAP_prepare_the_southern_front
-	complete_national_focus = JAP_crackdown_on_foreign_agents
-	complete_national_focus = JAP_strategic_offensives
-
-	declare_war_on = {
-		target = CHI
-		type = puppet_wargoal_focus
-	}
-	
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_base_strike
-set_sub_doctrine = massed_carrier_fleet
-add_mastery = {
-    amount = 200
-    sub_doctrine = massed_carrier_fleet
-}
-set_grand_doctrine = new_operational_integrity
-
-set_sub_doctrine = defensive_postures
-add_mastery = {
-    amount = 200
-    sub_doctrine = defensive_postures
-}
-set_sub_doctrine = infiltration_tactics
-add_mastery = {
-    amount = 200
-    sub_doctrine = infiltration_tactics
-}
-set_sub_doctrine = field_engineering
-add_mastery = {
-    amount = 150
-    sub_doctrine = field_engineering
-}
-
-
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-		scientist = JAP_yoji_ito
-		state = 532
-	}
-
-	IF = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		
-
-		complete_special_project = {
-			project = sp:sp_naval_super_heavy_battleship
-			scientist = JAP_keiji_fukuda
-			state = 529
-		}
-		set_naval_oob = "JAP_1939_naval"
-
-	}
-	IF = {
-		limit = {
-			not = { has_dlc = "Man the Guns" }
-		}
-		
-		complete_special_project = {
-			project = sp:sp_naval_super_heavy_battleship
-			scientist = JAP_keiji_fukuda
-			state = 529
-		}
-		set_naval_oob = "JAP_1939_naval_legacy"
-	}
-	IF = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		
-		set_oob = "JAP_1939_nsb"
-		ELSE = {
-			
-			set_oob = "JAP_1939"
-		}
-	}
-	IF = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "JAP_1939_air_bba"
-			
-		ELSE = {
-			set_air_oob = "JAP_1939_air_legacy"
-			
-		}
-	}
-
-}
-
-
-
-
-
 IF = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -1952,262 +1553,6 @@ create_equipment_variant = {
 
 
 # 1939 Start #			
-2029.1.1 = {
-
-	IF = {
-		limit = {
-			has_dlc = "By Blood Alone"
-		}
-		create_equipment_variant = {
-			name = "Ki-27"
-			type = small_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = light_mg_2x
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = empty
-			}
-		}
-		create_equipment_variant = {
-			name = "A5M"
-			type = cv_small_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = light_mg_2x
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = empty
-			}
-			icon = "GFX_JAP_cv_fighter1_medium"
-		}
-		create_equipment_variant = {
-			name = "B5N"
-			type = cv_small_plane_naval_bomber_airframe_1
-			modules = {
-				fixed_main_weapon_slot = torpedo_mounting
-				fixed_auxiliary_weapon_slot_1 = bomb_locks
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = fuel_tanks_small
-				special_type_slot_2 = lmg_defense_turret
-			}
-			icon = "GFX_JAP_cv_naval_bomber1_medium"
-		}
-		create_equipment_variant = {
-			name = "Ki-30/32"
-			type = small_plane_cas_airframe_1
-			modules = {
-				fixed_main_weapon_slot = small_bomb_bay
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = lmg_defense_turret
-			}
-		}
-		create_equipment_variant = {
-			name = "Ki-21"
-			type = medium_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = medium_bomb_bay
-				engine_type_slot = engine_2_2x
-				special_type_slot_1 = lmg_defense_turret_2x
-			}
-		}
-		create_equipment_variant = {
-			name = "G3M2"
-			type = medium_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = medium_bomb_bay
-				fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-				engine_type_slot = engine_3_2x #Increased tier due to thrust/weight issues
-				special_type_slot_1 = lmg_defense_turret_2x
-				special_type_slot_2 = fuel_tanks_medium
-			}
-			icon = "GFX_JAP_early_bomber_medium"
-		}
-	}
-	IF = {
-		limit = {
-			NOT = { has_dlc = "Man the Guns" }
-		}
-		### Carrier Variants
-		create_equipment_variant = {
-			name = "Hiryu Class"
-			type = carrier_2
-			parent_version = 0
-			upgrades = {
-				ship_deckspace_upgrade = 1
-				carrier_armor_upgrade = 0
-				ship_engine_upgrade = 0
-				ship_reliability_upgrade = 1
-			}
-		}
-		
-		create_equipment_variant = {
-			name = "Kagero Class"
-			type = destroyer_2
-			parent_version = 0
-			upgrades = {
-				ship_torpedo_upgrade = 2
-				destroyer_engine_upgrade = 3
-				ship_ASW_upgrade = 2
-				ship_anti_air_upgrade = 2
-			}
-		}
-	}
-	IF = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-		create_equipment_variant = {
-			name = "Shokaku Class"
-			type = ship_hull_carrier_2
-			name_group = JAP_CV_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_deck_slot_1 = ship_deck_space
-				fixed_ship_deck_slot_2 = ship_deck_space
-				fixed_ship_anti_air_slot = ship_anti_air_2
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = carrier_ship_engine_2
-				fixed_ship_secondaries_slot = dp_ship_secondaries_1
-				front_1_custom_slot = ship_deck_space
-				mid_1_custom_slot = ship_deck_space
-			}
-			optional_assets = {
-				{
-					icon = "GFX_JAP_carrier_shokaku"
-					model = "JAP_carrier_0_entity"
-				}
-			}
-		}
-		create_equipment_variant = {
-			name = "Yamato Class"
-			type = ship_hull_super_heavy_1
-			name_group = JAP_BB_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_super_heavy_battery_1
-				fixed_ship_anti_air_slot = ship_anti_air_2
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = heavy_ship_engine_2
-				fixed_ship_secondaries_slot = ship_secondaries_2
-				fixed_ship_armor_slot = ship_armor_shbb
-				front_1_custom_slot = ship_anti_air_1
-				front_2_custom_slot = empty
-				mid_1_custom_slot = empty
-				mid_2_custom_slot = ship_secondaries_2
-				mid_3_custom_slot = dp_ship_secondaries_2
-				rear_1_custom_slot = ship_super_heavy_battery_1
-				rear_2_custom_slot = ship_airplane_launcher_1
-			}
-		}
-		create_equipment_variant = {
-			name = "Asashio Class"
-			type = ship_hull_light_2
-			name_group = JAP_DD_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = dp_light_battery_2
-				fixed_ship_anti_air_slot = ship_anti_air_2
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_2
-				fixed_ship_torpedo_slot = ship_torpedo_2
-				mid_1_custom_slot = ship_torpedo_2
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-		}
-		create_equipment_variant = {
-			name = "Katori Class"
-			type = ship_hull_cruiser_2
-			name_group = JAP_CL_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_medium_battery_1
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = cruiser_ship_engine_1
-				fixed_ship_secondaries_slot = ship_secondaries_1
-				mid_1_custom_slot = ship_torpedo_1
-				mid_2_custom_slot = empty
-				rear_1_custom_slot = ship_airplane_launcher_1
-			}
-			obsolete = yes
-		}
-		create_equipment_variant = {
-			name = "Kagero Class"
-			type = ship_hull_light_2
-			name_group = JAP_DD_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = dp_light_battery_2
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_2
-				fixed_ship_torpedo_slot = ship_torpedo_2
-				mid_1_custom_slot = ship_torpedo_2
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-			optional_assets = {
-				{
-					icon = "GFX_JAP_destroyer_yukikaze"
-					model = "JAP_destroyer_1_entity"
-				}
-			}
-		}
-		create_equipment_variant = {
-			name = "Hatsutaka Class" 	# DD-sized minelayers
-			type = ship_hull_light_2
-			name_group = JAP_MINELAYERS_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_battery_1
-				fixed_ship_anti_air_slot = empty
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_1
-				fixed_ship_torpedo_slot = empty
-				mid_1_custom_slot = ship_mine_layer_1
-				rear_1_custom_slot = ship_mine_layer_1
-			}
-		}
-		create_equipment_variant = {
-			name = "A1/B1 Class"
-			type = ship_hull_cruiser_submarine
-			name_group = JAP_SS_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_1
-				fixed_ship_engine_slot = sub_ship_engine_1
-				front_1_custom_slot = ship_airplane_launcher_1
-				mid_1_custom_slot = empty
-				rear_1_custom_slot = empty
-			}
-		}
-	}
-	IF = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		create_equipment_variant = {
-			name = "Type 97 Chi-Ha"
-			type = medium_tank_chassis_1
-			design_team = mio:JAP_sagami_army_arsenal_organization
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_close_support_gun
-				turret_type_slot = tank_medium_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_diesel_engine
-				special_type_slot_1 = tank_radio_1
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 4
-				tank_nsb_armor_upgrade = 2
-			}
-			icon = "GFX_JAP_basic_medium_tank_medium"
-		}
-	}	
-}
 	
 
 

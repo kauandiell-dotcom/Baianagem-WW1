@@ -20,11 +20,6 @@ set_research_slots = 3
 
 set_convoys = 10
 
-# MBR 2026 removed legacy content: recruit_character = IRE_Éamon_de_valera
-# MBR 2026 removed legacy content: recruit_character = IRE_eoin_oduffy
-# MBR 2026 removed legacy content: recruit_character = IRE_james_larkin
-# MBR 2026 removed legacy content: recruit_character = IRE_william_norton
-# MBR 2026 removed legacy content: recruit_character = IRE_michael_costello
 recruit_character = IRE_p_a_mulcahy
 recruit_character = IRE_liam_archer
 recruit_character = IRE_a_t_lawlor
@@ -40,35 +35,6 @@ recruit_character = IRE_john_byrne
 recruit_character = IRE_sean_lemass
 recruit_character = IRE_douglas_hyde
 recruit_character = IRE_sean_ceallaigh
-# MBR 2026 removed legacy content: recruit_character = IRE_ernest_walton
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -78,21 +44,9 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-}
-
 create_country_leader = {
 	name = "Michael D. Higgins"
 	picture = "GFX_IRE_Michael_Higgins"
 	ideology = liberalism
 	traits = { }
 }
-}
-

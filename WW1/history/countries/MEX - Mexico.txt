@@ -54,19 +54,6 @@ IF = {
 	
 }
 
-# MBR 2026 removed legacy content: recruit_character = MEX_lazaro_cardenas
-# MBR 2026 removed legacy content: recruit_character = MEX_salvador_abascal
-# MBR 2026 removed legacy content: recruit_character = MEX_adolfo_de_la_huerta
-# MBR 2026 removed legacy content: recruit_character = MEX_dionisio_encina
-# MBR 2026 removed legacy content: recruit_character = MEX_hernan_laborde
-# MBR 2026 removed legacy content: recruit_character = MEX_heliodoro_charis
-# MBR 2026 removed legacy content: recruit_character = MEX_luis_farell
-# MBR 2026 removed legacy content: recruit_character = MEX_gildardo_magana
-# MBR 2026 removed legacy content: recruit_character = MEX_manuel_perez_trevino
-# MBR 2026 removed legacy content: recruit_character = MEX_abelardo_rodriguez
-# MBR 2026 removed legacy content: recruit_character = MEX_manuel_avila_camacho
-# MBR 2026 removed legacy content: recruit_character = MEX_othon_blanco
-# MBR 2026 removed legacy content: recruit_character = MEX_heriberto_corona
 recruit_character = MEX_antonio_cardenas_rodriguez
 recruit_character = MEX_jesus_garza_siller
 recruit_character = MEX_gilberto_limon
@@ -74,7 +61,6 @@ recruit_character = MEX_pablo_macias
 recruit_character = MEX_jose_gonzalo_escobar
 recruit_character = MEX_agustin_olachea
 recruit_character = MEX_leon_trotsky
-# MBR 2026 removed legacy content: recruit_character = MEX_saturnino_cedillo
 recruit_character = MEX_hector_meixueiro
 recruit_character = MEX_matias_santos_ramos
 recruit_character = MEX_enrique_estrada
@@ -86,17 +72,6 @@ recruit_character = MEX_aaron_saenz
 recruit_character = MEX_vicente_lombardo
 recruit_character = MEX_eduardo_hay
 recruit_character = MEX_alberto_pani
-# MBR 2026 removed legacy content: recruit_character = MEX_juan_andreu
-# MBR 2026 removed legacy content: recruit_character = MEX_plutarco_calles
-# MBR 2026 removed legacy content: recruit_character = MEX_francisco_mugica
-# MBR 2026 removed legacy content: recruit_character = MEX_jesus_degollado_guizar
-# MBR 2026 removed legacy content: recruit_character = MEX_valentin_campa
-# MBR 2026 removed legacy content: recruit_character = MEX_luis_maria_martinez
-# MBR 2026 removed legacy content: recruit_character = MEX_alberto_gorostieta_vega
-# MBR 2026 removed legacy content: recruit_character = MEX_dionisio_navarro_anguiano
-# MBR 2026 removed legacy content: recruit_character = MEX_manuel_sanchez
-# MBR 2026 removed legacy content: recruit_character = MEX_indigenous_council
-# MBR 2026 removed legacy content: recruit_character = MEX_maria_de_iturbide
 
 set_country_flag = monroe_doctrine
 
@@ -110,115 +85,6 @@ IF = {
 	}
 	
 }
-
-2029.1.1 = {
-	add_political_power = 1198
-	add_command_power = 100
-
-	set_global_flag = flag_mexico_cedillo_has_revolted
-
-	IF = {
-		limit = { has_dlc = "By Blood Alone" }
-			# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "MEX_1936_air_bba" #deliberately using 1936
-		ELSE = {
-			# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "MEX_1936_air_legacy"
-		}
-	}
-	IF = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "MEX_1939_naval_mtg"
-		ELSE = {
-			set_naval_oob = "MEX_1939_naval_legacy"
-		}
-	}
-	
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-
-	IF = {
-		limit = {
-			has_dlc = "Man the Guns"
-		}
-
-		remove_ideas = {
-			MEX_cedillo_tension_2 # Already rebelled by this point
-		}
-		
-		complete_national_focus = MEX_focus_plan_of_agua_prieta
-		# 70
-		complete_national_focus = MEX_focus_exile_calles # Increase Church Power (3)
-		# 140
-		complete_national_focus = MEX_focus_control_the_army
-		# 210
-		complete_national_focus = MEX_focus_repeal_the_calles_law # Increase Church Power (4)
-		# 280
-		complete_national_focus = MEX_focus_peripheral_infrastructure
-		# 350
-		complete_national_focus = MEX_focus_rural_schools # 3rd research slot, decrease Church Power (3)
-		# 420
-		complete_national_focus = MEX_focus_national_bank
-		# 490
-		complete_national_focus = MEX_focus_agricultural_credit_bank
-		# 560
-		complete_national_focus = MEX_focus_rent_freeze
-		# 630
-		complete_national_focus = MEX_focus_confederation_of_mexican_workers # Decrease Church Power (2)
-		# 700
-		complete_national_focus = MEX_focus_ejido_worker_militias # Communist drift
-		# 770
-		complete_national_focus = MEX_focus_oil_field_expansion
-		# 840
-		complete_national_focus = MEX_focus_rural_infrastructure
-		# 910
-		unlock_national_focus = MEX_focus_nationalize_the_oil_fields
-		# 980
-		remove_ideas = {
-			MEX_oil_concessions
-		}
-		
-		ENG = {
-			add_opinion_modifier = {
-				target = MEX
-				modifier = embargo
-			}
-		}
-		USA = {
-			add_opinion_modifier = {
-				target = MEX
-				modifier = embargo
-			}
-		}
-		add_opinion_modifier = {
-			target = ENG
-			modifier = embargo
-		}
-		add_opinion_modifier = {
-			target = USA
-			modifier = embargo
-		}
-		
-		ELSE = {
-			#generic focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

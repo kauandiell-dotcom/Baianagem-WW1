@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 70
@@ -78,7 +77,6 @@ if = {
 	}
 }
 
-# MBR 2026 removed legacy content: recruit_character = SLO_jozef_tiso
 recruit_character = SLO_jaroslav_kratochvil
 recruit_character = SLO_vojtech_daubner
 recruit_character = SLO_jozef_hora
@@ -92,9 +90,7 @@ recruit_character = SLO_jindrich_honzl
 recruit_character = SLO_frantisek_straka
 recruit_character = SLO_karol_sidor
 recruit_character = SLO_emil_lendvay
-# MBR 2026 removed legacy content: recruit_character = SLO_jozef_turanec			#instanced - general with PfoT, navy chief without
 recruit_character = SLO_gustav_malar
-# MBR 2026 removed legacy content: recruit_character = SLO_rudolf_viest
 recruit_character = SLO_janko_jesensky
 recruit_character = SLO_ferdinand_catlos
 recruit_character = SLO_anton_pulanick
@@ -103,12 +99,7 @@ if = {
 	limit = {
 		has_dlc = "Peace For Our Time"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = SLO_karol_smidke		#communist country leader
-# MBR 2026 removed legacy content: 	recruit_character = SLO_vojtech_tuka		#alternate fascist country leader (also advisor on CZE)
-# MBR 2026 removed legacy content: 	recruit_character = SLO_jan_ursiny			#democratic country leader
 
-# MBR 2026 removed legacy content: 	recruit_character = SLO_stefan_jurech		#field marshall
-# MBR 2026 removed legacy content: 	recruit_character = SLO_augustin_malar		#general
 recruit_character = SLO_julius_thorzo		#replacement navy chief, since SLO_jozef_turanec was a general irl
 }
 
@@ -120,40 +111,6 @@ if = {
 	}
 	
 }
-
-2029.1.1 = {
-	
-	add_political_power = 1198
-	add_command_power = 100
-
-	if = {
-		limit = {
-			has_dlc = "Peace For Our Time"
-		}
-		
-	}
-
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_battlefield_support
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

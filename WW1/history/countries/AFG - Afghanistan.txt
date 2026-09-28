@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 267
@@ -48,12 +47,6 @@ IF = {
 	limit = {
 		has_dlc = "Graveyard of Empires"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mohammed_zahir_shah
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mohammad_hashim_khan
-# MBR 2026 removed legacy content: 	recruit_character = AFG_sardar_shah_wali_khan
-# MBR 2026 removed legacy content: 	recruit_character = AFG_abdur_rahim_khan
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mahmud_tarzi
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mohammed_daoud_khan
 recruit_character = AFG_abdul_majid_zabuli
 recruit_character = AFG_abdul_hai_habibi
 recruit_character = AFG_qiamuddin_khadim
@@ -62,14 +55,7 @@ recruit_character = AFG_ghulam_muhammad_ghobar
 recruit_character = AFG_turbaz_khan
 recruit_character = AFG_mohammad_gul_khan_momand
 recruit_character = AFG_shah_mahmud_khan
-# MBR 2026 removed legacy content: 	recruit_character = AFG_amunullah_khan
 recruit_character = AFG_soraya_tarzi
-# MBR 2026 removed legacy content: 	recruit_character = AFG_provisional_government
-# MBR 2026 removed legacy content: 	recruit_character = AFG_muhammad_ibrahim_khan
-# MBR 2026 removed legacy content: 	recruit_character = AFG_faqir_of_ipi
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mazrak_zadran
-# MBR 2026 removed legacy content: 	recruit_character = AFG_nisar_muhammad_yousafzai
-# MBR 2026 removed legacy content: 	recruit_character = GER_oskar_von_nidermayer
 recruit_character = AFG_abdurauf_fitrat
 recruit_character = AFG_fayzulla_xojayev
 recruit_character = AFG_korsirmat
@@ -81,12 +67,6 @@ recruit_character = AFG_sheikh_omar_mojadidi
 recruit_character = AFG_abdul_hadi_dawi
 
 	# Generics
-# MBR 2026 removed legacy content: 	recruit_character = AFG_generic_army_1
-# MBR 2026 removed legacy content: 	recruit_character = AFG_generic_army_2
-# MBR 2026 removed legacy content: 	recruit_character = AFG_generic_army_3
-# MBR 2026 removed legacy content: 	recruit_character = AFG_generic_army_4
-# MBR 2026 removed legacy content: 	recruit_character = AFG_generic_navy_1
-# MBR 2026 removed legacy content: 	recruit_character = AFG_generic_navy_2
 recruit_character = AFG_placeholder_fascist
 recruit_character = AFG_generic_american_1
 recruit_character = AFG_generic_american_2
@@ -108,7 +88,6 @@ recruit_character = AFG_generic_american_3
 	set_variable = { AFG_economy_production_max_efficiency_factor = -0.35 }
 	set_variable = { AFG_economy_industrial_capacity_factor = -0.5 }
 	set_variable = { AFG_stability_factor_dm = 0.2 }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = AFG_subsistence_economy_modifier }
 
 	#Variables for Quami modifier
 	set_variable = { AFG_modifier_army_sub_unit_irregular_infantry_defence_factor = 0.05 }
@@ -132,9 +111,6 @@ recruit_character = AFG_generic_american_3
 	set_variable = { AFG_army_supply_combat_penalties_on_core_factor = 0 }
 
 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = AFG_quami_modifier
-# MBR 2026 removed legacy content: 	}
 
 	#variables for Nufus modifier
 
@@ -195,9 +171,6 @@ recruit_character = AFG_generic_american_3
 		set_variable = { AFG_state_development_state_resources_factor = -0.2 }
 		set_variable = { AFG_state_production_speed_infrastructure_factor = -0.2 }
 
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = AFG_economic_regionalism
-# MBR 2026 removed legacy content: 		}
 	}
 
 	every_owned_state = {
@@ -207,9 +180,6 @@ recruit_character = AFG_generic_american_3
 				state = 1007
 			}
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { 
-# MBR 2026 removed legacy content: 			modifier = AFG_disgruntled_minority
-# MBR 2026 removed legacy content: 		}
 	}
 
 set_politics = {
@@ -259,18 +229,12 @@ IF = {
 	limit = {
 		NOT = { has_dlc = "Graveyard of Empires"}
 	}
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mohammed_zahir_shah
-# MBR 2026 removed legacy content: 	recruit_character = AFG_akram_sattari
-# MBR 2026 removed legacy content: 	recruit_character = AFG_yaqub_khan
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mihrdil_shahnawaz
-# MBR 2026 removed legacy content: 	recruit_character = AFG_sardar_shah_wali_khan
 recruit_character = AFG_hares_muzafar
 recruit_character = AFG_asadullah_seraj_khan
 recruit_character = AFG_gholam_wali
 recruit_character = AFG_nasirullah_husain
 recruit_character = AFG_muhammad_amin_bughra
 recruit_character = AFG_azam_ataullah
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mohammed_daoud_khan
 recruit_character = AFG_renato_bardolucci
 recruit_character = AFG_ali_muhammed_khan
 recruit_character = AFG_mohammed_etemadi_khan
@@ -278,7 +242,6 @@ recruit_character = AFG_aalem_daana
 recruit_character = AFG_wazir_akbar_khan
 recruit_character = AFG_mahmud_khan
 recruit_character = AFG_haji_faiz_muhammed_zikeria
-# MBR 2026 removed legacy content: 	recruit_character = AFG_mohammad_hashim_khan
 recruit_character = AFG_muhammed_nowroz
 	
 set_politics = {
@@ -295,113 +258,6 @@ set_popularities = {
 	### Techs ###
 	
 }
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	IF = {
-		limit = {
-			has_dlc = "Graveyard of Empires"
-		}
-		#1936
-		complete_national_focus = AFG_support_king_zahir
-		complete_national_focus = AFG_expand_telegraph_network
-		complete_national_focus = AFG_biding_our_time
-		complete_national_focus = AFG_visit_foreign_capitals
-		complete_national_focus = AFG_placeholder_1
-		complete_national_focus = AFG_fruit_packing
-		complete_national_focus = AFG_ministry_of_supply
-		complete_national_focus = AFG_implement_currency_controls
-		complete_national_focus = AFG_sugar_processing
-		complete_national_focus = AFG_clear_malarial_swamps
-		 #1937
-		complete_national_focus = AFG_clear_malarial_swamps
-		complete_national_focus = AFG_infrastructure_construction
-		complete_national_focus = AFG_electrification
-		complete_national_focus = AFG_establish_radio_networks
-		#1938
-		complete_national_focus = AFG_expand_karakul_lambskin_industry
-		complete_national_focus = AFG_reform_2
-		complete_national_focus = AFG_secure_dynasty
-		complete_national_focus = AFG_maintain_neutrality
-		#1939
-		complete_national_focus = AFG_qargha_dam
-		complete_national_focus = AFG_maintain_quami
-		complete_national_focus = AFG_introduce_national_service
-		complete_national_focus = AFG_asymmetric_warfare
-
-		diplomatic_relation = {
-			country = TUR
-			relation = non_aggression_pact
-			active = yes
-		}
-
-		diplomatic_relation = {
-			country = PER
-			relation = non_aggression_pact
-			active = yes
-		}
-
-		diplomatic_relation = {
-			country = IRQ
-			relation = non_aggression_pact
-			active = yes
-		}
-
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = SSB_saadabad_pact }
-	}
-	IF = {
-		limit = {
-			NOT = { has_dlc = "Graveyard of Empires" }
-		}
-		# Generic focuses
-		complete_national_focus = army_effort
-		complete_national_focus = equipment_effort
-		complete_national_focus = motorization_effort
-		complete_national_focus = aviation_effort
-		complete_national_focus = construction_effort_2
-		complete_national_focus = production_effort_2
-		complete_national_focus = infrastructure_effort
-		complete_national_focus = industrial_effort
-		complete_national_focus = construction_effort
-		complete_national_focus = production_effort		
-	}
-
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "AFG_1939_air_bba"
-		else = {
-			set_air_oob = "AFG_1939_air_legacy"
-			
-		}
-	}
-	
-
-	set_grand_doctrine = grand_battleplan
-	set_grand_doctrine = new_fleet_in_being
-	set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = fascism
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	fascism = 100
-}
-}
-
-
-
 create_country_leader = {
 	name = "Hibatullah Akhundzada"
 	picture = "GFX_hibatullah_akhundzada"

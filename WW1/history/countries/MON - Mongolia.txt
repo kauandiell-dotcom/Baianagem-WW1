@@ -19,10 +19,6 @@ oob = "MON_1936_generic"
 
 
 
-# MBR 2026 removed legacy content: recruit_character = MON_anandyn_amar
-# MBR 2026 removed legacy content: recruit_character = MON_mingzhu_zhanshan
-# MBR 2026 removed legacy content: recruit_character = MON_fu_shangzhi
-# MBR 2026 removed legacy content: recruit_character = MON_songgotu_kangan
 recruit_character = MON_haidav
 recruit_character = MON_dagva
 recruit_character = MON_chimid
@@ -39,35 +35,6 @@ recruit_character = MON_gomgchigryn_bumtsend
 recruit_character = MON_dansrabilegyin_dogsam
 recruit_character = MON_yundunwangcug
 recruit_character = MON_pai_yun_ti
-# MBR 2026 removed legacy content: recruit_character = MON_khorloogiin_choibalsan
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = construction_effort_2
-	complete_national_focus = production_effort_2
-	complete_national_focus = infrastructure_effort
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-
-set_grand_doctrine = mass_assault
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -77,31 +44,9 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-2029.1.1 = {
-	
-
-	retire_character = MON_anandyn_amar
-
-	add_country_leader_role = {
-		character = MON_khorloogiin_choibalsan
-		promote_leader = yes
-		country_leader = {
-			ideology = stalinism
-			expire = "2038.1.1.12"
-			traits = { MON_pan_mongolian_stalinist } 
-		}
-	}	
-	set_global_flag = MON_choibalsan_ascended_flag 
-	
-}
-
-
 create_country_leader = {
 	name = "Ukhnaagiin Khürelsükh"
 	picture = "GFX_ukhnaagiin_khurelsukh"
 	ideology = liberalism
 	traits = { }
 }
-}
-

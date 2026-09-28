@@ -67,60 +67,6 @@ recruit_character = USB_paul-henri_spaak
 recruit_character = USB_charles_bastin
 recruit_character = USB_leon_degrelle
 recruit_character = USB_jules_iserentant
-
-
-2029.1.1 = {
-
-	add_political_power = 1199
-	add_command_power = 100
-	
-	#adding ministers
-	
-
-	#focuses
-
-	
-
-set_grand_doctrine = superior_firepower
-set_grand_doctrine = new_base_strike
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		
-		create_equipment_variant = {
-			name = "Martin M166"
-			type = tac_bomber_equipment_0
-			upgrades = {
-				plane_tac_bomb_upgrade = 2
-				plane_range_upgrade = 1
-				plane_engine_upgrade = 2
-				plane_reliability_upgrade = 3
-			}
-		}
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "No Step Back" }
-		}
-		
-	}
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		
-	}
-}
-
-
-
-
 set_convoys = 400
 
 
@@ -133,24 +79,6 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-}
-
-
-
-
-
-
-
 create_country_leader = {
 	name = "Babette Josephs"
 	picture = "GFX_Babette_Josephs"

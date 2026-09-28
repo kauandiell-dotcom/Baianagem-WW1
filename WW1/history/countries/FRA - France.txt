@@ -135,111 +135,6 @@ if = {
 	}
 	
 }
-2029.1.1 = {
-
-	add_political_power = 899
-	add_command_power = 100
-
-	#adding ministers
-	
-
-	complete_national_focus = FRA_begin_rearmament
-	complete_national_focus = FRA_form_the_popular_front
-	complete_national_focus = FRA_reform_the_labour_laws
-	complete_national_focus = FRA_the_blum_viollette_proposal
-	complete_national_focus = FRA_review_foreign_policy
-	complete_national_focus = FRA_intervention_in_spain
-	complete_national_focus = FRA_buy_time
-	complete_national_focus = FRA_defensive_focus
-	complete_national_focus = FRA_firepower_kills
-	complete_national_focus = FRA_go_with_britain
-	complete_national_focus = FRA_devalue_the_franc
-	complete_national_focus = FRA_invest_in_the_metropole
-
-	# MBR: no starting factions.
-
-
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "FRA_1939_naval_mtg"
-		else = {
-			set_naval_oob = "FRA_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "FRA_1939_air_bba"
-			
-		else = {
-			set_air_oob = "FRA_1939_air_legacy"
-			
-		}
-	}
-
-	IF = {
-		limit = {
-			has_dlc = "Gotterdammerung"
-		}
-		complete_special_project = {
-			project = sp:sp_land_stronghold_network
-			scientist = FRA_louis_renault
-			state = 16
-		}
-	}
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_operational_integrity
-set_sub_doctrine = great_war_infantry
-add_mastery = {
-    amount = 100
-    sub_doctrine = great_war_infantry
-}
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
-		}
-		
-		set_oob = "FRA_1939"
-	}
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		
-		set_oob = "FRA_1939_nsb"
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		
-		remove_ideas = MTG_naval_treaty_adherent
-
-	}
-	if = {
-		limit = {
-			has_dlc = "Gotterdammerung"
-			has_guaranteed = BEL
-		}
-		diplomatic_relation = { 
-			country = BEL
-			relation = guarantee 
-			active = no
-		}
-	}
-}
-
 set_convoys = 300
 
 
@@ -255,27 +150,6 @@ set_popularities = {
 
 
 
-# MBR 2026 removed legacy content: recruit_character = FRA_philippe_petain
-# MBR 2026 removed legacy content: recruit_character = FRA_maurice_thorez
-# MBR 2026 removed legacy content: recruit_character = FRA_pierre_laval
-# MBR 2026 removed legacy content: recruit_character = FRA_edouard_daladier
-# MBR 2026 removed legacy content: recruit_character = FRA_jean_de_lattre_de_tassigny
-# MBR 2026 removed legacy content: recruit_character = FRA_alphonse_juin
-# MBR 2026 removed legacy content: recruit_character = FRA_maurice_gamelin
-# MBR 2026 removed legacy content: recruit_character = FRA_maxime_weygand
-# MBR 2026 removed legacy content: recruit_character = FRA_alphonse_georges
-# MBR 2026 removed legacy content: recruit_character = FRA_antoinemariebenoit_besson
-# MBR 2026 removed legacy content: recruit_character = FRA_charles_de_gaulle
-# MBR 2026 removed legacy content: recruit_character = FRA_philippe_leclerc
-# MBR 2026 removed legacy content: recruit_character = FRA_henri_giraud
-# MBR 2026 removed legacy content: recruit_character = FRA_charles_huntziger
-# MBR 2026 removed legacy content: recruit_character = FRA_gastonhenri_billotte
-# MBR 2026 removed legacy content: recruit_character = FRA_henry_freydenberg
-# MBR 2026 removed legacy content: recruit_character = FRA_rene_olry
-# MBR 2026 removed legacy content: recruit_character = FRA_francois_darlan
-# MBR 2026 removed legacy content: recruit_character = FRA_jeanmarie_charles_abrial
-# MBR 2026 removed legacy content: recruit_character = FRA_jeanpierre_esteva
-# MBR 2026 removed legacy content: recruit_character = FRA_jean_de_laborde
 recruit_character = FRA_jean_romatet
 recruit_character = FRA_emile_laure
 recruit_character = FRA_joseph_doumenc
@@ -287,7 +161,6 @@ recruit_character = FRA_jean_decoux
 recruit_character = FRA_jean_marie_bergeret
 recruit_character = FRA_marcel_gensoul
 recruit_character = FRA_martial_valin
-# MBR 2026 removed legacy content: recruit_character = FRA_rene_emile_godfroy
 recruit_character = FRA_joseph_vuillemin
 recruit_character = FRA_henri_marie_auguste_bineau
 recruit_character = FRA_louis_kahn
@@ -305,7 +178,6 @@ recruit_character = FRA_pierre_pucheu
 recruit_character = FRA_charles_tillon
 recruit_character = FRA_vincent_auriol
 recruit_character = FRA_rene_massigli
-# MBR 2026 removed legacy content: recruit_character = FRA_charles_maurras
 recruit_character = FRA_zivony_peshkov
 recruit_character = FRA_roger_salengro
 recruit_character = FRA_leon_blum
@@ -313,16 +185,8 @@ recruit_character = FRA_felix_gouin
 recruit_character = FRA_paul_baudouin
 recruit_character = FRA_maurice_gauche
 recruit_character = FRA_jacques_duclos
-# MBR 2026 removed legacy content: recruit_character = FRA_marcel_bucard
 recruit_character = FRA_georges_valois
-# MBR 2026 removed legacy content: recruit_character = FRA_marcel_deat
 
-# MBR 2026 removed legacy content: recruit_character = FRA_irene_joliot_curie
-# MBR 2026 removed legacy content: recruit_character = FRA_frederic_joliot_curie
-# MBR 2026 removed legacy content: recruit_character = FRA_francois_hussenot
-# MBR 2026 removed legacy content: recruit_character = FRA_louis_renault
-# MBR 2026 removed legacy content: recruit_character = FRA_henri_edmond_fouche
-# MBR 2026 removed legacy content: recruit_character = FRA_joseph_bethenod
 
 if = {
 	limit = {
@@ -331,52 +195,15 @@ if = {
 			has_dlc = "No Step Back"
 		}
 	}
-# MBR 2026 removed legacy content: 	recruit_character = FRA_emile_rimailho #Artillery Scientist
-# MBR 2026 removed legacy content: 	recruit_character = FRA_eugene_schneider_ii #Artillery Scientist
 }
 
 
 if = {
 	limit = { has_dlc = "La Resistance" }
-# MBR 2026 removed legacy content: 	create_operative_leader = {
-# MBR 2026 removed legacy content: 		name = "Jeannie Rousseau"
-# MBR 2026 removed legacy content: 		GFX = GFX_portrait_jennie_rousseau
-# MBR 2026 removed legacy content: 		traits = { operative_linguist }
-# MBR 2026 removed legacy content: 		bypass_recruitment = no
-# MBR 2026 removed legacy content: 		available_to_spy_master = yes
-# MBR 2026 removed legacy content: 		female = yes
-# MBR 2026 removed legacy content: 		nationalities = { FRA }
-# MBR 2026 removed legacy content: 	}
 
-# MBR 2026 removed legacy content: 	create_operative_leader = {
-# MBR 2026 removed legacy content: 		name = "Odette Samson"
-# MBR 2026 removed legacy content: 		GFX = GFX_portrait_odette_samson
-# MBR 2026 removed legacy content: 		traits = { operative_tough }
-# MBR 2026 removed legacy content: 		bypass_recruitment = no
-# MBR 2026 removed legacy content: 		available_to_spy_master = yes
-# MBR 2026 removed legacy content: 		female = yes
-# MBR 2026 removed legacy content: 		nationalities = { FRA }
-# MBR 2026 removed legacy content: 	}
 
-# MBR 2026 removed legacy content: 	create_operative_leader = {
-# MBR 2026 removed legacy content: 		name = "René Joyeuse"
-# MBR 2026 removed legacy content: 		GFX = GFX_portrait_rene_joyeuse
-# MBR 2026 removed legacy content: 		traits = { operative_infiltrator operative_commando }
-# MBR 2026 removed legacy content: 		bypass_recruitment = no
-# MBR 2026 removed legacy content: 		available_to_spy_master = no
-# MBR 2026 removed legacy content: 		nationalities = { FRA QUE }
-# MBR 2026 removed legacy content: 	}
 
-# MBR 2026 removed legacy content: 	create_operative_leader = {
-# MBR 2026 removed legacy content: 		name = "Gilbert Renault"
-# MBR 2026 removed legacy content: 		GFX = GFX_portrait_gilbert_renault
-# MBR 2026 removed legacy content: 		traits = { }
-# MBR 2026 removed legacy content: 		bypass_recruitment = no
-# MBR 2026 removed legacy content: 		available_to_spy_master = yes
-# MBR 2026 removed legacy content: 		nationalities = { FRA }
-# MBR 2026 removed legacy content: 	}
 
-# MBR 2026 removed legacy content: 	recruit_character = FRA_rene_nicod
 }
 
 ### VARIANTS ###
@@ -980,238 +807,6 @@ if = {
 }
 
 # 1939 Start #
-2029.1.1 = {
-	if = {
-		limit = {
-			has_dlc = "By Blood Alone"
-		}
-		create_equipment_variant = {
-			name = "M.S. 406" #
-			type = small_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = light_mg_2x
-				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
-				engine_type_slot = engine_1_1x
-				special_type_slot_1 = empty
-			}
-		}
-		create_equipment_variant = {
-			name = "M.B. 152" #
-			type = small_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = light_mg_2x
-				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = empty
-			}
-			icon = "GFX_FRA_fighter3_medium"
-		}
-		create_equipment_variant = {
-			name = "M.B. 210" #
-			type = medium_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = medium_bomb_bay
-				fixed_auxiliary_weapon_slot_1 = empty
-				engine_type_slot = engine_2_2x
-				special_type_slot_1 = lmg_defense_turret
-			}
-		}
-		create_equipment_variant = {
-			name = "LeO 451" #
-			type = medium_plane_airframe_2
-			modules = {
-				fixed_main_weapon_slot = medium_bomb_bay
-				fixed_auxiliary_weapon_slot_1 = empty
-				engine_type_slot = engine_2_2x
-				special_type_slot_1 = lmg_defense_turret
-				special_type_slot_2 = cannon_defense_turret
-			}
-		}
-		create_equipment_variant = {
-			name = "Br. 693" #
-			type = small_plane_cas_airframe_2
-			modules = {
-				fixed_main_weapon_slot = small_bomb_bay
-				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
-				fixed_auxiliary_weapon_slot_2 = light_mg_2x
-				engine_type_slot = engine_2_2x
-				special_type_slot_1 = lmg_defense_turret
-				special_type_slot_2 = armor_plate_small
-			}
-			icon = "GFX_FRA_CAS2_medium"
-		}
-		create_equipment_variant = {
-			name = "LN.40" #
-			type = cv_small_plane_cas_airframe_1
-			modules = {
-				fixed_main_weapon_slot = bomb_locks
-				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
-				engine_type_slot = engine_2_1x
-				special_type_slot_1 = dive_brakes_small
-			}
-			icon = "GFX_FRA_CAS1_medium"
-		}
-		create_equipment_variant = {
-			name = "Potez 631" #
-			type = small_plane_airframe_1
-			modules = {
-				fixed_main_weapon_slot = light_mg_4x
-				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
-				engine_type_slot = engine_2_2x
-				special_type_slot_1 = lmg_defense_turret
-			}
-			icon = "GFX_FRA_heavy_fighter1_medium"
-		}
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
-		create_equipment_variant = {
-			name = "Aurore Class"
-			type = submarine_2
-			upgrades = {
-				ship_reliability_upgrade = 3
-				sub_engine_upgrade = 3
-				sub_stealth_upgrade = 3
-				sub_torpedo_upgrade = 3
-			}
-		}
-
-		create_equipment_variant = {
-			name = "Le Hardi Class"
-			type = destroyer_2
-			upgrades = {
-				ship_torpedo_upgrade = 1
-				destroyer_engine_upgrade = 1
-				ship_ASW_upgrade = 1
-				ship_anti_air_upgrade = 1
-			}
-		}
-
-		create_equipment_variant = {
-			name = "Mogador Class"
-			type = destroyer_2
-			upgrades = {
-				ship_torpedo_upgrade = 2
-				destroyer_engine_upgrade = 2
-				ship_ASW_upgrade = 2
-				ship_anti_air_upgrade = 2
-			}
-		}
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		# Submarines #
-		create_equipment_variant = {
-			name = "Aurore Class"
-			type = ship_hull_submarine_2
-			name_group = FRA_SS_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_torpedo_slot = ship_torpedo_sub_2
-				fixed_ship_engine_slot = sub_ship_engine_2
-				rear_1_custom_slot = ship_torpedo_sub_2
-			}
-		}
-		# Destroyers #
-		create_equipment_variant = {
-			name = "Le Hardi Class"
-			type = ship_hull_light_2
-			name_group = FRA_DE_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_battery_3
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_2
-				fixed_ship_torpedo_slot = ship_torpedo_2
-				mid_1_custom_slot = ship_torpedo_2
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-		}
-		create_equipment_variant = {
-			name = "Joffre Class"
-			type = ship_hull_carrier_1
-			name_group = FRA_CV_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_deck_slot_1 = ship_deck_space
-				fixed_ship_deck_slot_2 = ship_deck_space
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = carrier_ship_engine_2
-				fixed_ship_secondaries_slot = dp_ship_secondaries_3
-				front_1_custom_slot = empty
-			}
-		}
-	}
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		create_equipment_variant = {
-			name = "Char B1bis"
-			type = heavy_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_medium_howitzer
-				turret_type_slot = tank_heavy_fixed_superstructure_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_1
-				special_type_slot_2 = secondary_turret_small_cannon
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 6
-				tank_nsb_armor_upgrade = 6
-			}
-			icon = "GFX_FRA_basic_heavy_tank_medium"
-		}
-
-		create_equipment_variant = {
-			name = "FCM 36"
-			type = light_tank_chassis_2
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_light_one_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_diesel_engine
-				special_type_slot_1 = sloped_armor
-
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 2
-				tank_nsb_armor_upgrade = 4
-			}
-			icon = "GFX_FRA_improved_light_tank_medium"
-		}
-
-		create_equipment_variant = {
-			name = "AMC 35"
-			type = medium_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon_2
-				turret_type_slot = tank_medium_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_welded_armor
-				engine_type_slot = tank_gasoline_engine
-
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 4
-				tank_nsb_armor_upgrade = 3
-			}
-			icon = "GFX_FRA_basic_medium_tank_medium"
-		}
-	}
-}
-
-
 create_country_leader = {
 	name = "Emmanuel Macron"
 	picture = "GFX_Emmanuel_Macron"

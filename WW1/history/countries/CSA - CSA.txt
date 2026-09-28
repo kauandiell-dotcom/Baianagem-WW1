@@ -71,48 +71,6 @@ recruit_character = CSA_jules_iserentant
 recruit_character = CSA_jules_pire
 recruit_character = CSA_oscar_michiels
 recruit_character = CSA_yvan_gerard
-
-
-2029.1.1 = {
-
-	add_political_power = 1199
-	add_command_power = 100
-	
-	#adding ministers
-	
-
-	#focuses
-
-	
-
-set_grand_doctrine = superior_firepower
-set_grand_doctrine = new_base_strike
-set_grand_doctrine = new_strategic_destruction
-	
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = {
-			NOT = { has_dlc = "By Blood Alone" }
-		}
-		
-		create_equipment_variant = {
-			name = "Martin M166"
-			type = tac_bomber_equipment_0
-			upgrades = {
-				plane_tac_bomb_upgrade = 2
-				plane_range_upgrade = 1
-				plane_engine_upgrade = 2
-				plane_reliability_upgrade = 3
-			}
-		}
-	}
-}
-
-
-
-
 set_convoys = 100
 
 
@@ -125,31 +83,7 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-}
-
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "William Dudley Pelley"
-# MBR 2026 removed vanilla political leader: 	desc = "POLITICS_WILLIAM_DUDLEY_PELLEY_DESC"
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_William_Dudley_Pelley
-# MBR 2026 removed vanilla political leader: 	expire = "2055.1.1"
-# MBR 2026 removed vanilla political leader: 	ideology = fascism_ideology
-# MBR 2026 removed vanilla political leader: 	traits = {
 		
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }
 
 
 
@@ -234,67 +168,6 @@ create_equipment_variant = {
 	}
 
 }
-
-2029.1.1 = {
-	
-	create_equipment_variant = {
-		name = "Salmon Class"
-		type = submarine_2
-		upgrades = {
-			ship_reliability_upgrade = 1
-			sub_engine_upgrade = 1
-			sub_stealth_upgrade = 1
-			sub_torpedo_upgrade = 1
-		}
-	}
-
-	create_equipment_variant = {
-		name = "Benson & Gleaves Class"
-		type = destroyer_2
-		upgrades = {
-			ship_torpedo_upgrade = 3
-			destroyer_engine_upgrade = 3
-			ship_ASW_upgrade = 3
-			ship_anti_air_upgrade = 3
-		}
-	}
-
-	create_equipment_variant = {
-		name = "Wasp Class"
-		type = carrier_2
-		upgrades = {
-			ship_deckspace_upgrade = 2
-			carrier_armor_upgrade = 2
-			ship_engine_upgrade = 2
-			ship_reliability_upgrade = 2
-		}
-	}
-
-	create_equipment_variant = {
-		name = "F2A Buffalo"
-		type = cv_fighter_equipment_1
-		upgrades = {
-			cv_plane_gun_upgrade = 5
-			cv_plane_range_upgrade = 0
-			plane_engine_upgrade = 2
-			plane_reliability_upgrade = 5
-		}
-	}
-
-
-	# 1941
-	#create_equipment_variant = {
-	#	name = "South Dakota Class"
-	#	type = battleship_2
-	#	upgrades = {
-	#		ship_reliability_upgrade = 3
-	#		ship_engine_upgrade = 3
-	#		ship_armor_upgrade = 3
-	#		ship_gun_upgrade = 3
-	#	}
-	#}
-}
-
 create_country_leader = {
 	name = "Barbara Howe"
 	picture = "GFX_Barbara_Howe"

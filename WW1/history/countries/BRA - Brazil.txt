@@ -125,70 +125,7 @@ IF = {
 }
 
 set_country_flag = monroe_directive
-
-2029.1.1 = {
-	add_political_power = 1198
-	add_command_power = 100
-	
-	IF = {
-		limit = {
-			has_dlc = "Trial of Allegiance"
-		}
-		complete_national_focus = BRA_tribunal_de_seguranca_nacional
-		complete_national_focus = BRA_coffee_crisis_aftermath
-		complete_national_focus = BRA_ensure_continued_military_support
-		complete_national_focus = BRA_work_with_the_integralists
-		complete_national_focus = SMB_army
-		complete_national_focus = SMB_navy
-		complete_national_focus = BRA_desenvolvimentismo
-		complete_national_focus = BRA_cohen_plan
-		complete_national_focus = BRA_estado_novo
-		complete_national_focus = BRA_promote_resource_extraction
-		complete_national_focus = BRA_the_polaca
-		complete_national_focus = BRA_stimulate_the_civilian_economy
-		complete_national_focus = BRA_radio_nacional
-		complete_national_focus = BRA_deal_with_the_cangaceiro
-		complete_national_focus = BRA_establish_psad
-		complete_national_focus = BRA_autarky 
-		complete_national_focus = BRA_departamendo_de_propaganda
-		complete_national_focus = BRA_tech_slot_1
-
-		ELSE = {
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-
-	set_grand_doctrine = grand_battleplan
-	set_grand_doctrine = new_fleet_in_being
-	set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_convoys = 40
-
-2029.1.1 = {
-	set_politics = {
-		ruling_party = democratic
-		last_election = "2024.1.1"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-	set_popularities = {
-		democratic = 100
-	}
-}
-
 # STARTING LEADER
 create_country_leader = {
 	name = "Luiz Inacio Lula da Silva"

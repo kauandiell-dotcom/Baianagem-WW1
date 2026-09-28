@@ -14,10 +14,6 @@ oob = "NEP_1936_generic"
 
 
 
-# MBR 2026 removed legacy content: recruit_character = NEP_juddha_rana
-# MBR 2026 removed legacy content: recruit_character = NEP_bhakti_thapa
-# MBR 2026 removed legacy content: recruit_character = NEP_bir_shamsher_singh_thapa
-# MBR 2026 removed legacy content: recruit_character = NEP_amar_thapa
 recruit_character = NEP_khusbu_singh
 recruit_character = NEP_hira_rana
 recruit_character = NEP_birsha_gurung
@@ -44,36 +40,7 @@ set_war_support = 0.1
 set_stability = 0.8
 
 323 = { #Nepal
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = construction_effort_2
-	complete_national_focus = production_effort_2
-	complete_national_focus = infrastructure_effort
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-
-set_grand_doctrine = mass_assault
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -90,5 +57,3 @@ create_country_leader = {
 	ideology = liberalism
 	traits = { }
 }
-}
-

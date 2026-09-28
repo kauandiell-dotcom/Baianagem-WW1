@@ -41,9 +41,6 @@ IF = {
 	set_stability = 0.40
 
 	### Set dynamic modifiers ###
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = CHL_chilean_economy_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
 	JUNO_set_shared_military_branch_defaults = yes
 
 	# The Economy Modifier 
@@ -118,82 +115,23 @@ IF = {
 			has_dlc = "Trial of Allegiance"
 		}
 	}
-# MBR 2026 removed legacy content: 	recruit_character = CHL_arturo_alessandri
-# MBR 2026 removed legacy content: 	recruit_character = CHL_jorge_gonzález_von_marées
-# MBR 2026 removed legacy content: 	recruit_character = CHL_carlos_contreras_labarca
-# MBR 2026 removed legacy content: 	recruit_character = CHL_escudero_oscar_otárola
-# MBR 2026 removed legacy content: 	recruit_character = CHL_domingo_blanco # not in the dlc
-# MBR 2026 removed legacy content: 	recruit_character = CHL_julio_allard_pinto
 recruit_character = CHL_gustavo_silva # not in the dlc
 recruit_character = CHL_jose_luis_sanchez_besa
-# MBR 2026 removed legacy content: 	recruit_character = CHL_marmaduke_grove
-# MBR 2026 removed legacy content: 	recruit_character = CHL_e_novoa_fuentes
 recruit_character = CHL_dario_mujica_gamboa
 recruit_character = CHL_c_j_de_la_motte
-# MBR 2026 removed legacy content: 	recruit_character = CHL_carlos_fuentes_rabe
-# MBR 2026 removed legacy content: 	recruit_character = CHL_arturo_espinoza_mujica
 recruit_character = CHL_carlos_puga_monsalve
 recruit_character = CHL_francisco_o_ryan_orrego
 recruit_character = CHL_ernesto_m_orlando
 recruit_character = CHL_dario_cellejas_rojas
-# MBR 2026 removed legacy content: 	recruit_character = CHL_ariosto_herrera
 recruit_character = CHL_luis_alamos_barros
 recruit_character = CHL_miguel_cruchaga_tacomal
-# MBR 2026 removed legacy content: 	recruit_character = CHL_gustavo_ross_santa_maria
 	ELSE_IF = {
 		limit = {
 			has_dlc = "Trial of Allegiance"
 		}
-# MBR 2026 removed legacy content: 		recruit_character = CHL_arturo_alessandri
-# MBR 2026 removed legacy content: 		recruit_character = CHL_jorge_gonzález_von_marées
-# MBR 2026 removed legacy content: 		recruit_character = CHL_carlos_contreras_labarca
-# MBR 2026 removed legacy content: 		recruit_character = CHL_pedro_aguirre_cerda
-# MBR 2026 removed legacy content: 		recruit_character = CHL_escudero_oscar_otárola
-# MBR 2026 removed legacy content: 		recruit_character = CHL_julio_allard_pinto
 recruit_character = CHL_jose_luis_sanchez_besa
-# MBR 2026 removed legacy content: 		recruit_character = CHL_marmaduke_grove
-# MBR 2026 removed legacy content: 		recruit_character = CHL_e_novoa_fuentes
-# MBR 2026 removed legacy content: 		recruit_character = CHL_carlos_fuentes_rabe
-# MBR 2026 removed legacy content: 		recruit_character = CHL_arturo_espinoza_mujica
-# MBR 2026 removed legacy content: 		recruit_character = CHL_ariosto_herrera
 recruit_character = CHL_luis_alamos_barros
 recruit_character = CHL_miguel_cruchaga_tacomal
-# MBR 2026 removed legacy content: 		recruit_character = CHL_gustavo_ross_santa_maria
-# MBR 2026 removed legacy content: 		recruit_character = CHL_elias_lafertte_gavino
-# MBR 2026 removed legacy content: 		recruit_character = CHL_carlos_ibanez
-# MBR 2026 removed legacy content: 		recruit_character = CHL_carlos_keller_reuff
-# MBR 2026 removed legacy content: 		recruit_character = CHL_juan_gomez_millas
-# MBR 2026 removed legacy content: 		recruit_character = CHL_manuel_hidalgo_plaza
-# MBR 2026 removed legacy content: 		recruit_character = CHL_juan_antonio_rios
-# MBR 2026 removed legacy content: 		recruit_character = CHL_gabriel_gonzales_videla
-# MBR 2026 removed legacy content: 		recruit_character = CHL_eduardo_cruz_coke
-# MBR 2026 removed legacy content: 		recruit_character = CHL_fernando_alessandri
-# MBR 2026 removed legacy content: 		recruit_character = CHL_antoine_iii
-# MBR 2026 removed legacy content: 		recruit_character = CHL_manuel_manquilef
-# MBR 2026 removed legacy content: 		recruit_character = CHL_venancio_huenchual
-# MBR 2026 removed legacy content: 		recruit_character = CHL_esteban_romero_sandoval
-# MBR 2026 removed legacy content: 		recruit_character = CHL_bartolome_blanche
-# MBR 2026 removed legacy content: 		recruit_character = CHL_pedro_dartnell
-# MBR 2026 removed legacy content: 		recruit_character = CHL_guillermo_barrios_tirado
-# MBR 2026 removed legacy content: 		recruit_character = CHL_francisco_valderrama
-# MBR 2026 removed legacy content: 		recruit_character = CHL_augustin_de_guevara
-# MBR 2026 removed legacy content: 		recruit_character = CHL_pedro_calderon
-# MBR 2026 removed legacy content: 		recruit_character = CHL_ricardo_aguayo
-# MBR 2026 removed legacy content: 		recruit_character = CHL_humberto_valdivieso
-# MBR 2026 removed legacy content: 		recruit_character = CHL_gregorio_tascon
-# MBR 2026 removed legacy content: 		recruit_character = CHL_rafael_reyes
-# MBR 2026 removed legacy content: 		recruit_character = CHL_vincente_merino_bielich
-# MBR 2026 removed legacy content: 		recruit_character = CHL_oscar_reeves_leiva
-# MBR 2026 removed legacy content: 		recruit_character = CHL_oscar_fuentes_pantoja
-# MBR 2026 removed legacy content: 		recruit_character = CHL_alfredo_portales_mourgues
-# MBR 2026 removed legacy content: 		recruit_character = CHL_olegario_reyes
-# MBR 2026 removed legacy content: 		recruit_character = CHL_emilio_soto
-# MBR 2026 removed legacy content: 		recruit_character = CHL_jorge_cobo
-# MBR 2026 removed legacy content: 		recruit_character = CHL_peter_hansen
-# MBR 2026 removed legacy content: 		recruit_character = CHL_manuel_pedregal
-# MBR 2026 removed legacy content: 		recruit_character = CHL_augusto_pimochet
-# MBR 2026 removed legacy content: 		recruit_character = CHL_carlos_prats
-# MBR 2026 removed legacy content: 		recruit_character = CHL_rene_schneider
 recruit_character = CHL_ulk
 recruit_character = CHL_arnaldo_carrasco
 recruit_character = CHL_elena_caffarena
@@ -230,7 +168,6 @@ recruit_character = CHL_pedro_alfonso
 recruit_character = CHL_guillermo_araya
 recruit_character = CHL_marta_vergara
 recruit_character = CHL_osvaldo_lira_perez
-# MBR 2026 removed legacy content: 		recruit_character = CHL_quintin_lame
 recruit_character = CHL_carlos_huayquinir
 	}
 }
@@ -260,141 +197,7 @@ set_popularities = {
 }
 
 # Setting up 1939 oobs and focuses
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	IF = {
-		limit = {
-			has_dlc = "Trial of Allegiance"
-		}
-		set_country_flag = CHL_1939_flag
-		set_global_flag = nacista_coup_attempt_happened
-		# Unique Focuses
-		complete_national_focus = CHL_endorse_the_constitution
-		complete_national_focus = CHL_policies_of_arturo_alessandri
-		complete_national_focus = CHL_construct_the_estadio_nacional
-		complete_national_focus = CHL_inflation_control_by_the_central_bank
-		complete_national_focus = CHL_suppress_the_nacistas
-		complete_national_focus = CHL_public_works
-		complete_national_focus = SMB_army
-		complete_national_focus = CHL_cooperation_with_the_falange
-		complete_national_focus = CHL_contract_efe
-		complete_national_focus = CHL_devalue_the_peso
-		complete_national_focus = SMB_navy
-		complete_national_focus = SMB_construct_naval_bases
-		complete_national_focus = CHL_expand_the_forestry
-		complete_national_focus = SMB_army_academy
-		complete_national_focus = SMB_regular_infantry
-		complete_national_focus = SMB_artillery
-		complete_national_focus = SMB_purchase_destroyers_and_subs
-		complete_national_focus = SMB_expand_repair_yards
-		complete_national_focus = SMB_foreign_designs
-		complete_national_focus = SMB_foreign_advisors
-		complete_national_focus = CHL_connect_the_northern_railways
-		complete_national_focus = CHL_establish_corfo
-		complete_national_focus = CHL_privatize_national_industries
-		complete_national_focus = CHL_strengthen_instituto_nacional
-		complete_national_focus = CHL_host_spanish_refugees
-
-		ELSE = {
-			# Generic Focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = flexible_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-	
-	IF = {
-		limit = {
-			has_dlc = "Trial of Allegiance"
-		}
-		set_oob = "CHL_TOA_1939"
-	}
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "Trial of Allegiance"
-			}
-		}
-		set_oob = "CHL_1939"
-	}
-	
-	IF = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "CHL_1939_naval_mtg"
-		ELSE = {
-			set_naval_oob = "CHL_1939_naval_legacy"
-		}
-	}
-	IF = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "CHL_1939_air_bba"
-		ELSE = {
-			set_air_oob = "CHL_1939_air_legacy"
-			
-		}
-	}
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 # Setting up 1939 Politics
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-
-set_popularities = {
-	democratic = 100
-}
-
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "Trial of Allegiance"
-			}
-		}
-# MBR 2026 removed legacy content: 		recruit_character = CHL_pedro_aguirre_cerda
-		promote_character = CHL_pedro_aguirre_cerda
-		retire_character = CHL_arturo_alessandri
-		ELSE_IF = {
-			limit = {
-				has_dlc = "Trial of Allegiance"
-			}
-			add_country_leader_role = {
-			    character = CHL_pedro_aguirre_cerda
-			    promote_leader = yes
-			    country_leader = {
-			        ideology = socialism
-			        expire = "2055.1.1.1"
-			        traits = { JUNO_gobernar_es_educar }
-			    }
-			}
-			retire_character = CHL_arturo_alessandri
-		}
-	}
-	
-}
-
 ### VARIANTS ###
 # 1936 Start #
 IF = {

@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 110 # Oslo
@@ -32,32 +31,20 @@ if = {
 }
 
 #Country Leaders 
-# MBR 2026 removed legacy content: recruit_character = NOR_johan_nygaardsvold
-# MBR 2026 removed legacy content: recruit_character = NOR_vidkun_quisling
-# MBR 2026 removed legacy content: recruit_character = NOR_peder_anker_wedel_jarlsberg
-# MBR 2026 removed legacy content: recruit_character = NOR_adam_egede_nissen
 #other 
 recruit_character = NOR_johan_ludwig_mowinckel
-# MBR 2026 removed legacy content: recruit_character = NOR_carl_gustav_fleischer
-# MBR 2026 removed legacy content: recruit_character = NOR_elias_corneliussen
 recruit_character = NOR_skule_storheil
 recruit_character = NOR_ole_reistad
 recruit_character = NOR_tryggve_gran
 recruit_character = NOR_birger_ljungberg
-# MBR 2026 removed legacy content: recruit_character = NOR_henry_diesen
-# MBR 2026 removed legacy content: recruit_character = NOR_wilhelm_von_tangen_hansteen
 recruit_character = NOR_alfred_roscher_lund
 recruit_character = NOR_konrad_sundlo
-# MBR 2026 removed legacy content: recruit_character = NOR_otto_ruge
-# MBR 2026 removed legacy content: recruit_character = NOR_jacob_von_der_lippe
 recruit_character = NOR_kristian_laake
 recruit_character = NOR_hjalmar_riiser_larsen
 recruit_character = NOR_bjarne_oen
-# MBR 2026 removed legacy content: recruit_character = NOR_edgar_otto
 recruit_character = NOR_adolf_indrebo
 recruit_character = NOR_halvdan_koht
 recruit_character = NOR_trygve_halvdan_lie
-# MBR 2026 removed legacy content: recruit_character = NOR_carsten_tank_nielsen 
 
 set_global_flag = NOR_trotsky_in_norway 
 
@@ -65,30 +52,18 @@ if = {
 	limit = {
 		has_aat = yes 
 	}
-# MBR 2026 removed legacy content: 	recruit_character = NOR_queen_mathilde_i
-# MBR 2026 removed legacy content: 	recruit_character = NOR_martin_tranmael
-# MBR 2026 removed legacy content: 	recruit_character = NOR_johan_h_andresen
-# MBR 2026 removed legacy content: 	recruit_character = NOR_olav_scheflo
-# MBR 2026 removed legacy content: 	recruit_character = NOR_king_haakon_vii
-# MBR 2026 removed legacy content: 	recruit_character = NOR_prince_olav
-# MBR 2026 removed legacy content: 	recruit_character = NOR_josef_terboven
-# MBR 2026 removed legacy content: 	recruit_character = NOR_jonas_lie
 recruit_character = NOR_axel_aubert
 recruit_character = NOR_peder_furubotn
 recruit_character = NOR_jeanette_olsen
-# MBR 2026 removed legacy content: 	recruit_character = NOR_lev_trotsky
 recruit_character = NOR_sverre_riisnaes
 recruit_character = NOR_birger_meidell
 recruit_character = NOR_ragnar_skancke
-# MBR 2026 removed legacy content: 	recruit_character = NOR_jacob_ager_laurantzon	  
-# MBR 2026 removed legacy content: 	recruit_character = NOR_jacob_hivden_haug
 recruit_character = NOR_rasmus_hatledal
 recruit_character = NOR_bjorn_christophersen
 recruit_character = NOR_joakim_lehmkuhl
 recruit_character = NOR_oscar_torp
 recruit_character = NOR_hans_ystgaard 
 recruit_character = NOR_birger_eriksen
-# MBR 2026 removed legacy content: 	recruit_character = NOR_edvard_christian_danielsen
 recruit_character = NOR_rolf_fuglesang
 recruit_character = NOR_eivind_blehr
 recruit_character = NOR_eivind_heiberg
@@ -146,96 +121,6 @@ if = {
 	set_variable = { NOR.NOR_army_air_force_dmod_air_defence_factor = 0 }
 	set_variable = { NOR.NOR_army_air_force_dmod_air_nav_efficiency = 0 }
 }
-
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-
-	if = {
-		limit = {
-			has_aat = yes 
-		}
-		complete_national_focus = NOR_continue_nygaardsvold_government
-		complete_national_focus = NOR_broken_gun_policies
-		complete_national_focus = NOR_leaving_the_hard_thirties_behind
-		complete_national_focus = NOR_cut_military_budget
-		complete_national_focus = NOR_bail_out_towns
-		complete_national_focus = NOR_print_more_money
-		complete_national_focus = NOR_social_incrementalism
-		complete_national_focus = NOR_restart_public_investment
-		complete_national_focus = NOR_restore_public_trust_in_the_storting
-		complete_national_focus = NOR_building_an_independent_norway
-		complete_national_focus = NOR_hurtigruten
-		complete_national_focus = NOR_norwegian_school_of_economics
-		complete_national_focus = NOR_weathering_the_storm_to_come
-		complete_national_focus = NOR_the_neutrality_guard
-		complete_national_focus = NOR_rearm_for_defense
-		complete_national_focus = NOR_patrol_our_coast
-		complete_national_focus = NOR_fortify_norway
-		complete_national_focus = NOR_coastal_defense
-		complete_national_focus = NOR_start_rearmament
-		complete_national_focus = NOR_drobak_coastal_fort
-		complete_national_focus = NOR_kickstart_military_industry
-
-		
-	}
-	if = {
-		limit = {
-			has_aat = no 
-		}
-		#generic focuses
-		complete_national_focus = army_effort
-		complete_national_focus = equipment_effort
-		complete_national_focus = motorization_effort
-		complete_national_focus = aviation_effort
-		complete_national_focus = naval_effort
-		complete_national_focus = large_navy
-		complete_national_focus = industrial_effort
-		complete_national_focus = construction_effort
-		complete_national_focus = production_effort
-		complete_national_focus = NOR_norges_tekniske_hogskole
-	}
-	
-	set_oob = "NOR_1939"
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "NOR_1939_naval_mtg"
-		else = {
-			set_naval_oob = "NOR_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "NOR_1939_air_bba"
-		else = {
-			set_air_oob = "NOR_1939_air_legacy"
-		}
-	}
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		
-	}
-	set_convoys = 400		# 4th biggest merchant marine in the world
-	set_stability = 0.8
-}
-
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -245,19 +130,6 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-}
-
 ### VARIANTS ###
 # 1936 Start #
 if = {
@@ -347,34 +219,6 @@ if = {
 }
 
 # 1939 Start #
-2029.1.1 = {
-	if = {
-		limit = { not = { has_dlc = "Man the Guns" } }
-		# Ship variants #
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-		# Destroyers #
-		create_equipment_variant = {
-			name = "Sleipner & Odin Class"							
-			type = ship_hull_light_1
-			name_group = NOR_DD_HISTORICAL
-			parent_version = 0
-			modules = {
-				fixed_ship_battery_slot = ship_light_battery_1
-				fixed_ship_anti_air_slot = ship_anti_air_1
-				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-				fixed_ship_radar_slot = empty
-				fixed_ship_engine_slot = light_ship_engine_1
-				fixed_ship_torpedo_slot = ship_torpedo_1
-				mid_1_custom_slot = ship_mine_layer_1
-				rear_1_custom_slot = ship_depth_charge_1
-			}
-		}
-}
-
-}
-
 create_country_leader = {
 	name = "Jonas Gahr Støre"
 	picture = "GFX_Labor_Jonas_Gahr_Stoere"

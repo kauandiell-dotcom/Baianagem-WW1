@@ -73,26 +73,13 @@ IF = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = QHM_ma_lin
 recruit_character = GSM_ma_yuanxiang
 recruit_character = XSM_wang_jingzhai
-# MBR 2026 removed legacy content: 	recruit_character = XSM_han_youwen
-# MBR 2026 removed legacy content: 	recruit_character = XSM_han_yimu
 	
 	
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = CHI_ma_clique_collective
-# MBR 2026 removed legacy content: 	}	
 	ELSE = {
-# MBR 2026 removed legacy content: 		recruit_character = XSM_ma_hongbin
-# MBR 2026 removed legacy content: 		recruit_character = XSM_ma_buqing
-# MBR 2026 removed legacy content: 		recruit_character = XSM_ma_hongkui
 	}
 }
-# MBR 2026 removed legacy content: recruit_character = XSM_ma_bufang
-# MBR 2026 removed legacy content: recruit_character = XSM_mao_sun
-# MBR 2026 removed legacy content: recruit_character = XSM_hsia_sun
-# MBR 2026 removed legacy content: recruit_character = XSM_hsia_jin
 recruit_character = XSM_au_yongrui
 recruit_character = XSM_ho_tengfei
 recruit_character = XSM_lian_zenguang
@@ -115,82 +102,6 @@ if = {
 	}
 	
 }
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "No Compromise, No Surrender"
-			}
-		}
-
-		# MBR: no starting factions.
-		add_to_war = {
-			targeted_alliance = CHI
-			enemy = JAP
-			hostility_reason = asked_to_join
-		}
-
-		complete_national_focus = CHI_secure_internal_politics
-		complete_national_focus = CHI_cooperation_with_the_nationalists
-		complete_national_focus = CHI_industrial_investment
-		complete_national_focus = CHI_public_education_reform
-		complete_national_focus = CHI_long_term_economic_planning
-		complete_national_focus = CHI_technological_cooperation
-		complete_national_focus = CHI_local_arms_production
-		complete_national_focus = CHI_new_model_province
-		complete_national_focus = CHI_root_out_corruption
-		complete_national_focus = CHI_land_reform
-		complete_national_focus = CHI_reform_the_administration
-
-		ELSE = {	
-
-			# MBR: no starting factions.
-			add_to_war = {
-				targeted_alliance = CHI
-				enemy = JAP
-				hostility_reason = asked_to_join
-			}
-			
-			complete_national_focus = XSM_the_military_governor
-			complete_national_focus = XSM_a_hui_army
-			complete_national_focus = XSM_sway_the_people
-			complete_national_focus = XSM_sweep_out_communists
-			complete_national_focus = XSM_send_ma_lin_on_hajj
-
-			complete_national_focus = CHI_sea_secure_internal_politics
-			complete_national_focus = CHI_sea_cooperation_with_the_nationalists
-			complete_national_focus = CHI_sea_develop_capital
-			complete_national_focus = CHI_sea_expand_public_education
-			complete_national_focus = CHI_sea_long_term_economic_planning
-			complete_national_focus = CHI_sea_technological_cooperation
-			complete_national_focus = CHI_sea_develop_capital_arsenal
-			complete_national_focus = CHI_sea_new_model_province
-			complete_national_focus = CHI_sea_root_out_corruption
-			complete_national_focus = CHI_sea_land_reform
-			complete_national_focus = CHI_sea_reform_the_administration
-			complete_national_focus = CHI_sea_develop_capital
-			complete_national_focus = CHI_sea_further_industrial_investment
-
-		}
-	}
-
-	
-	
-
-set_grand_doctrine = mass_assault
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

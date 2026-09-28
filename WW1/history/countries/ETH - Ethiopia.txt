@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 271
@@ -82,27 +81,6 @@ IF = {
 	set_variable = { ETH_irc_enemy_army_bonus_air_superiority_factor = -0.05 }
 	set_variable = { ETH_communist_factory_repair_factor = 0 }
 	### Set dynamic modifiers 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_corrupt_bureaucracy_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_industrialization_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_international_red_cross_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_army_1_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_navy_1_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_airforce_1_dynamic_modifier
-# MBR 2026 removed legacy content: 	}
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = ETH_operative_modifier
-# MBR 2026 removed legacy content: 	}
 	# Decentralization start levels
 	set_variable = { ETH_state_decentralization_building_slots = -0.1 }
 	set_variable = { ETH_state_decentralization_infrastructure = -0.1 }
@@ -145,14 +123,7 @@ IF = {
 # Starting tech
 
 
-# MBR 2026 removed legacy content: recruit_character = ETH_haile_selassie
-# MBR 2026 removed legacy content: recruit_character = ETH_haile_selassie_gugsa
-# MBR 2026 removed legacy content: recruit_character = ETH_alemework_beyene
-# MBR 2026 removed legacy content: recruit_character = ETH_ras_imru_haile_selassie
 # Generals 
-# MBR 2026 removed legacy content: recruit_character = ETH_seyoum_mengesha
-# MBR 2026 removed legacy content: recruit_character = ETH_desta_damtew
-# MBR 2026 removed legacy content: recruit_character = ETH_ras_kassa 
 # Political Advisors
 recruit_character = ETH_makonnen_endelkatchew
 # Military Advisors
@@ -160,22 +131,7 @@ recruit_character = ETH_john_robinson
 
 IF = {
 	limit = { has_dlc = "By Blood Alone" }
-# MBR 2026 removed legacy content: 	recruit_character = ETH_hailu_tekle_haymanot
-# MBR 2026 removed legacy content: 	recruit_character = ETH_abba_jofir
-# MBR 2026 removed legacy content: 	recruit_character = ETH_amha_selassie
 	# Generals 
-# MBR 2026 removed legacy content: 	recruit_character = ETH_mulugeta_yeggazu_of_illubabor
-# MBR 2026 removed legacy content: 	recruit_character = ETH_abebe_aregai
-# MBR 2026 removed legacy content: 	recruit_character = ETH_balcho_safo
-# MBR 2026 removed legacy content: 	recruit_character = ETH_ayalew_birru
-# MBR 2026 removed legacy content: 	recruit_character = ETH_beyene_merid
-# MBR 2026 removed legacy content: 	recruit_character = ETH_nasibu_zeamanuel
-# MBR 2026 removed legacy content: 	recruit_character = ETH_random_general_1
-# MBR 2026 removed legacy content: 	recruit_character = ETH_random_general_2
-# MBR 2026 removed legacy content: 	recruit_character = ETH_random_general_3
-# MBR 2026 removed legacy content: 	recruit_character = ETH_random_general_4
-# MBR 2026 removed legacy content: 	recruit_character = ETH_random_general_5
-# MBR 2026 removed legacy content: 	recruit_character = ETH_random_general_6
 	# political Advisors
 recruit_character = ETH_abuna_qerellos_iv
 recruit_character = IA_emma_goldman
@@ -198,8 +154,6 @@ recruit_character = ETH_random_leader_6
 recruit_character = ETH_senedu_gebru
 recruit_character = ETH_random_sud_advisor
 recruit_character = ETH_random_som_advisor
-# MBR 2026 removed legacy content: 	recruit_character = ETH_anarchist_council
-# MBR 2026 removed legacy content: 	recruit_character = ETH_prov_mil_admin
 	
 	# Military Advisors
 recruit_character = ETH_viking_tamm
@@ -211,8 +165,6 @@ recruit_character = ETH_feodor_konovalov
 
 IF = { 
 	limit = { NOT = { has_dlc = "By Blood Alone" } }
-# MBR 2026 removed legacy content: 	recruit_character = ETH_fitawrari_yeebio_woldai
-# MBR 2026 removed legacy content: 	recruit_character = ETH_amare_makonnen
 	# recruit_character = ETH_haile_mariam
 recruit_character = ETH_gabriel_zawde_gilaneh
 recruit_character = ETH_woldemeskal_tariku
@@ -228,32 +180,7 @@ recruit_character = ETH_fitauri_zawde_gobena
 recruit_character = ETH_bedjironde_tekle_hawariate
 }
 set_global_flag = second_italo_ethiopian_war_flag
-2026.05.05 = { clr_global_flag = second_italo_ethiopian_war_flag }
-
 set_convoys = 5
-
-2029.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
-
 set_politics = {
 	ruling_party = neutrality
 	last_election = "2024.1.1"

@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 9
@@ -394,39 +393,8 @@ set_popularities = {
 
 ##RECRUITING CZECH CHARACTERS
 #Shared
-# MBR 2026 removed legacy content: recruit_character = CZE_karl_albrecht
-# MBR 2026 removed legacy content: recruit_character = CZE_jaroslav_krejchi
-# MBR 2026 removed legacy content: recruit_character = CZE_klement_gottwald
-# MBR 2026 removed legacy content: recruit_character = CZE_vojtyech_luzha
-# MBR 2026 removed legacy content: recruit_character = CZE_josef_shnejdarek
-# MBR 2026 removed legacy content: recruit_character = CZE_richard_tesarzhik
-# MBR 2026 removed legacy content: recruit_character = CZE_sergej_vojcechovsky
-# MBR 2026 removed legacy content: recruit_character = CZE_rudolf_viest
-# MBR 2026 removed legacy content: recruit_character = CZE_alois_vicherek
-# MBR 2026 removed legacy content: recruit_character = CZE_jaroslav_fajfr
-# MBR 2026 removed legacy content: recruit_character = CZE_jan_golian
-# MBR 2026 removed legacy content: recruit_character = CZE_karel_janousek
-# MBR 2026 removed legacy content: recruit_character = CZE_josef_frantisek
-# MBR 2026 removed legacy content: recruit_character = CZE_ludvik_krejci
-# MBR 2026 removed legacy content: recruit_character = CZE_karel_vaclav_petrik
-# MBR 2026 removed legacy content: recruit_character = CZE_frantisek_havel
-# MBR 2026 removed legacy content: recruit_character = CZE_stefan_osusky
-# MBR 2026 removed legacy content: recruit_character = CZE_ferdinand_catlos
-# MBR 2026 removed legacy content: recruit_character = CZE_jozef_tiso
-# MBR 2026 removed legacy content: recruit_character = CZE_vojtech_tuka
-# MBR 2026 removed legacy content: recruit_character = CZE_albrecht_franz
-# MBR 2026 removed legacy content: recruit_character =	CZE_karel_englis
-# MBR 2026 removed legacy content: recruit_character = CZE_andrej_hlinka
 
 #Shared characters that are instanced 
-# MBR 2026 removed legacy content: recruit_character = CZE_edvard_benesh
-# MBR 2026 removed legacy content: recruit_character = CZE_konrad_henlein		
-# MBR 2026 removed legacy content: recruit_character = CZE_frantisek_moravec
-# MBR 2026 removed legacy content: recruit_character = CZE_emil_kolben 
-# MBR 2026 removed legacy content: recruit_character = CZE_frantisek_machnik
-# MBR 2026 removed legacy content: recruit_character = CZE_zdenek_fierlinger
-# MBR 2026 removed legacy content: recruit_character = CZE_karel_pavala
-# MBR 2026 removed legacy content: recruit_character = CZE_zdenko_hudecek
 
 #No Pfot only
 if = {
@@ -435,81 +403,15 @@ if = {
 			has_dlc = "Peace For Our Time"
 		}
 	}
-# MBR 2026 removed legacy content: 	recruit_character = CZE_robert_rychtrmoc
 		CZE_robert_rychtrmoc = {	#make sure the other non-aligned options dont take priority due to later position
 		 	promote_character = yes
 		}
-# MBR 2026 removed legacy content: 	recruit_character = CZE_ludvik_svoboda
-# MBR 2026 removed legacy content: 	recruit_character = CZE_gustav_husak		
-# MBR 2026 removed legacy content: 	recruit_character = CZE_karel_kuttelwascher	
 }
 
 if = {
 	limit = {
 		has_dlc = "Peace For Our Time"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = CZE_antonin_hampl		#Demo leader during second Republic. PLACE INFRONT OF MILAN!
-# MBR 2026 removed legacy content: 	recruit_character = CZE_milan_hodza			#start date leader for DLC
-# MBR 2026 removed legacy content: 	recruit_character = CZE_bohumir_smeral		#alternate communist leader
-# MBR 2026 removed legacy content: 	recruit_character = CZE_karel_schwarzenberg	#monarchist leader
-# MBR 2026 removed legacy content: 	recruit_character = CZE_radola_gajda		#non-collaborationist fascist leader
-# MBR 2026 removed legacy content: 	recruit_character = CZE_emil_hacha			#neutrality party leader
-# MBR 2026 removed legacy content: 	recruit_character = CZE_kamil_krofta		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_karel_domin			#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_josef_guttman		#communist editor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_milada_horakova		#womens rights activist
-# MBR 2026 removed legacy content: 	recruit_character = CZE_ferdinand_peroutka	#"liberal journalist"
-# MBR 2026 removed legacy content: 	recruit_character = CZE_bohumil_lausman		#cpt of industry
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jan_dostalek		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_emil_franke			#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jan_krcmar			#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_pavel_reiman		#"socialist writer"
-# MBR 2026 removed legacy content: 	recruit_character = CZE_vaclav_kopecky		#stalinist backroom backstabber
-# MBR 2026 removed legacy content: 	recruit_character = CZE_josef_rozsevac		#monarchofascist advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jan_ruckl			#csl economist
-# MBR 2026 removed legacy content: 	recruit_character = CZE_vladimir_mandl		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = AUS_ernst_fischer		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_ludwig_czech		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jan_sramek			#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_bozena_machacova_dostalova #advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_josef_cerny			#advisor
-# MBR 2026 removed legacy content: 	recruit_character =	CZE_rudolf_mlcoch 		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_josef_kalfus		#advisor
-# MBR 2026 removed legacy content: 	recruit_character =	CZE_alois_tucny			#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_rudolf_bechyne 		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_frantisek_chvalkovsky #advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_stanislav_bukovsky	#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_augustin_voloshyn 	#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_simon_drgac			#generic head of intelligence for the context of having dlc as františek moravec has a custom trait
-# MBR 2026 removed legacy content: 	recruit_character = CZE_bedrich_homola		#general
-# MBR 2026 removed legacy content: 	recruit_character = CZE_emil_linhart		#general
-# MBR 2026 removed legacy content: 	recruit_character = CZE_frantisek_hrabcik	#general
-# MBR 2026 removed legacy content: 	recruit_character = CZE_antonin_hasal		#general
-# MBR 2026 removed legacy content: 	recruit_character = CZE_lev_prchala			#general, soon field marshall
-# MBR 2026 removed legacy content: 	recruit_character = CZE_josef_votruba		#general, soon field marshall
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jan_syrovy			#field marshall, country leader later historically
-# MBR 2026 removed legacy content: 	recruit_character = CZE_stefan_jurech		#general
-# MBR 2026 removed legacy content: 	recruit_character = CZE_melichar_frantisek	#general and advisor, unlocked by focus
-# MBR 2026 removed legacy content: 	recruit_character = CZE_mikulas_dolezal		#defensive army chief - replaces Krejci so he can be high command
-# MBR 2026 removed legacy content: 	recruit_character = CZE_antonin_pavlik		#armor hc
-# MBR 2026 removed legacy content: 	recruit_character = CZE_vladimir_prikryl	#artillery hc - born 1888, not to be confused with the general born in 1895
-# MBR 2026 removed legacy content: 	recruit_character = CZE_karel_husarek		#general and advisor, unlocked by focus
-# MBR 2026 removed legacy content: 	recruit_character = CZE_alois_elias			#general, unlocked by focus
-# MBR 2026 removed legacy content: 	recruit_character = CZE_josef_vana			#general, unlocked by focus
-# MBR 2026 removed legacy content: 	recruit_character = CZE_emanuel_moravec		#general, unlocked by focus
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jaroslav_kejla 		#air chief
-# MBR 2026 removed legacy content: 	recruit_character = CZE_karel_prochazka		#air chief replacement for Kuttelwascher
-# MBR 2026 removed legacy content: 	recruit_character = CZE_frantisek_placak	#navy chief
-# MBR 2026 removed legacy content: 	recruit_character = CZE_alexej_surin		#land scientist
-# MBR 2026 removed legacy content: 	recruit_character = CZE_antonin_husnik		#air scientist
-# MBR 2026 removed legacy content: 	recruit_character = CZE_georg_placzek		#nuclear scientist
-# MBR 2026 removed legacy content: 	recruit_character = CZE_karel_pavala_army	#general, split character to avoid a bug that doesn't allow admiral/commander on one character
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jaroslav_slechta	#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_hugo_vavrecka		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_jan_antonin_bata	#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_dominik_cipera		#advisor
-# MBR 2026 removed legacy content: 	recruit_character = CZE_sergej_ingr			#Army High Command
-# MBR 2026 removed legacy content: 	recruit_character = CZE_louis_eugene_faucher #Chief of Army
 
 	# Character Flags
 	# CZE_vojtech_tuka = {	#for tooltip purposes, I set a flag when he's released instead
@@ -595,7 +497,6 @@ if = {
 	limit = {
 		has_dlc = "Peace For Our Time"
 	}
-	# MBR 2026: legacy Czechoslovak mission removed with vanilla decisions.
 }
 
 ### DYNAMIC MODIFIERS AND VARIABLES ###
@@ -633,9 +534,6 @@ if = {
 					state = 70 #Western Slovakia
 				}
 			}
-# MBR 2026 removed legacy content: 			add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 				modifier = CZE_first_sudetenland_fortification_program_GD
-# MBR 2026 removed legacy content: 			}
 		}
 	}
 	if = {
@@ -654,9 +552,6 @@ if = {
 					state = 70 #Western Slovakia
 				}
 			}
-# MBR 2026 removed legacy content: 			add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 				modifier = CZE_first_sudetenland_fortification_program
-# MBR 2026 removed legacy content: 			}
 		}
 	}
 
@@ -667,7 +562,6 @@ if = {
 	set_variable = { CZE_a_divided_nation_drift_defence_factor = -0.30 } #DANGER WILL ROBINSON DANGER!!! This value is a variable that is used for the remove check on when CZE_a_divided_nation_dynamic_modifier is removed in the CZE_a_divided_nation_category. Should be divisible by 10*
 	set_variable = { CZE_a_divided_nation_political_power_cost = 0.30 } #Should be divisible by 10*
 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CZE_a_divided_nation_dynamic_modifier }
 
 	#Decision Costs Variables
 	set_variable = { CZE_divided_nation_25_default = 25 } #PP
@@ -685,20 +579,12 @@ if = {
 				state = 74 #Czeske Slezsko
 			}
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = CZE_sudetenland_german_state_modifier
-# MBR 2026 removed legacy content: 			scope = ROOT
-# MBR 2026 removed legacy content: 		}
 	}
 
 	every_owned_state = {
 		limit = {
 			state = 72 #Tesinko
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = CZE_tesinko_polish_state_modifier
-# MBR 2026 removed legacy content: 			scope = ROOT
-# MBR 2026 removed legacy content: 		}
 	}
 
 	every_owned_state = {
@@ -708,10 +594,6 @@ if = {
 				state = 75 #Morvia
 			}
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = CZE_czech_state_modifier
-# MBR 2026 removed legacy content: 			scope = ROOT
-# MBR 2026 removed legacy content: 		}
 	}
 
 	every_owned_state = {
@@ -721,30 +603,18 @@ if = {
 				state = 71 #Eastern Slovakia
 			}
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = CZE_slovakia_state_modifier
-# MBR 2026 removed legacy content: 			scope = ROOT
-# MBR 2026 removed legacy content: 		}
 	}
 
 	every_owned_state = {
 		limit = {
 			state = 664 #Southern Slovakia
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = CZE_hungarian_state_modifier
-# MBR 2026 removed legacy content: 			scope = ROOT
-# MBR 2026 removed legacy content: 		}
 	}
 
 	every_owned_state = {
 		limit = {
 			state = 73 #Podkarpatska Rus 
 		}
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 			modifier = CZE_ukrainian_state_modifier
-# MBR 2026 removed legacy content: 			scope = ROOT
-# MBR 2026 removed legacy content: 		}
 	}
 
 	set_rule = { #Prevent ideology change from bypassing a focus
@@ -806,7 +676,6 @@ if = {
 	set_variable = { CZE_ceskoslovenska_armada_dynamic_modifier_party_popularity_stability_factor = 0 }
 	set_variable = { CZE_ceskoslovenska_armada_dynamic_modifier_mobilization_speed = 0 }
 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CZE_ceskoslovenska_armada_dynamic_modifier }
 
 	#Czech Air Force
 	set_variable = { CZE_ceskoslovenske_letectvo_air_untrained_pilots_penalty_factor = -0.25 }
@@ -1266,95 +1135,6 @@ if = {
 }
 
 ### 1939 SETUP ###
-
-2029.1.1 = { #Everything I did before I got eaten
-
-	add_political_power = 1198
-	add_command_power = 100
-
-	set_grand_doctrine = grand_battleplan
-	set_grand_doctrine = new_battlefield_support
-
-	
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-
-	if = {
-		limit = {
-			has_dlc = "Peace For Our Time"
-		}
-		if = {
-			limit = {
-				has_dynamic_modifier = {
-					modifier = CZE_a_divided_nation_dynamic_modifier
-				}
-			}
-			remove_dynamic_modifier = { modifier = CZE_a_divided_nation_dynamic_modifier }
-		}
-
-		#National Focuses
-		complete_national_focus = CZE_force_the_industrialists_hand
-		complete_national_focus = CZE_continue_armed_force_reform
-		complete_national_focus = CZE_form_the_state_defense_guard
-		complete_national_focus = CZE_the_second_fortification_program	
-		complete_national_focus = CZE_vonapo_20
-		complete_national_focus = CZE_placate_benes_faction
-		complete_national_focus = CZE_no_compromise_with_the_sdp
-		complete_national_focus = CZE_keep_focus_on_weapon_exports
-		complete_national_focus = CZE_establish_a_armament_factory_in_uhersky_brod
-		complete_national_focus = CZE_the_slovak_arrow
-		complete_national_focus = CZE_merge_the_financial_and_state_guard
-		complete_national_focus = CZE_department_two_expansion
-		complete_national_focus = CZE_continue_the_central_bohemia_plan
-		complete_national_focus = CZE_free_tuka
-		complete_national_focus = CZE_air_force_officer_recruitment
-		complete_national_focus = CZE_reorient_the_broad_coalition
-		complete_national_focus = CZE_king_of_the_castle
-		complete_national_focus = CZE_bribery_investigations
-		complete_national_focus = CZE_opl_exercises
-		complete_national_focus = CZE_closer_ties_with_the_moderate_germany_parties
-		complete_national_focus = CZE_national_defense_act
-		complete_national_focus = CZE_contact_henlein
-		complete_national_focus = CZE_car_and_oil_rationing
-		complete_national_focus = CZE_establish_the_fall_backlines
-		complete_national_focus = CZE_deepend_ties_with_the_trademans
-		complete_national_focus = CZE_grow_ckd_secondary_facilities
-		complete_national_focus = CZE_bolster_domestic_construction
-		complete_national_focus = CZE_compromise_with_the_veteran_agrarian
-
-		# ONES THAT HAVE TO BE BYPASSED
-		unlock_national_focus = CZE_mobilize_the_reserves
-		unlock_national_focus = CZE_coalition_building
-		unlock_national_focus = CZE_continue_industrial_relocation_schemes
-		unlock_national_focus = CZE_devaluate_the_koruna
-
-		#Skoda setup
-		unlock_national_focus = CZE_raise_more_industrial_funds
-		CZE_start_skoda_GUI = yes
-		mark_focus_tree_layout_dirty = yes
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = CZE_skoda_works_dynamic_modifier }
-
-		remove_ideas = {
-			CZE_sudeten_german_quandary
-			CZE_taticek_of_czechoslovakia
-			CZE_industrialists_veto
-			CZE_industrialists_veto_2
-			CZE_agrarian_politics_1
-			CZE_a_divided_nation_fake_ns
-		}
-
-		#Second Republic was a thing
-		CZE_get_rid_of_the_auto_blok = yes
-		set_cosmetic_tag = CZE_fall_of_the_republic
-	}
-}
-
-
-
-
-
 create_country_leader = {
 	name = "Petr Pavel"
 	picture = "GFX_Petr_Pavel"

@@ -22,6 +22,16 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
   - `history/states/*.txt` (216 arquivos modificados): Purgados integralmente todos os 234 blocos datados de WW2 (`1939.1.1`, `1938.10.25`, `1938.3.12`, `1939.3.14`, `1938.9.30`, `1939.4.12`, `1936.3.7`, `1936.11.9`, `1936.6.1`, `1939.3.22`).
   - Realinhamento territorial de 1911: Líbia Otomana (8 estados) e Dodecaneso transferidos para `TUR` com reivindicação italiana; Rumélia Balcânica (Albânia, Macedônia, Kosovo, Trácia, Epiro, Ilhas do Egeu) transferida para `TUR`; Montenegro estabelecido como reino soberano (`MNT`); Galícia Oriental transferida para `AUS`; norte da China desmarcado de tags comunistas para autoridade imperial `CHI`.
   - Validação estrita de chaves (`{ }`): zero erros de balanceamento em todos os 1.101 estados do jogo.
+- **Migração Cronológica — Fase 3 (Saneamento Diplomático e Histórico de Países)**:
+  - `history/countries/*.txt` (337 arquivos modificados, 18.212 linhas deletadas):
+    - Purgados todos os blocos datados anacrônicos de `2029.1.1 = { }` e `2026.1.1 = { }` herdados do Blitzkrieg/MBR modern mod.
+    - Corrigidas anomalias estruturais de chaves órfãs (`}`) em 18 arquivos de países herdados (`ALB`, `BEL`, `BRM`, `CAM`, `CYP`, `EST`, `HOL`, `IRE`, `KYR`, `LAT`, `LUX`, `MAC`, `MAL`, `MOL`, `MON`, `NEP`, `SLV`, `TAJ`).
+    - Alinhamento diplomático de 1911: Tríplice Aliança configurada com Alemanha, Áustria-Hungria e Itália (`add_to_faction = ITA`); removidos prematuramente Bulgária e Império Otomano da facção inicial.
+    - Remoção de tratados de não-agressão de WW2 e bandeiras anacrônicas (`olympics_1936`).
+    - Capitais históricas de 1911 restauradas: Império Otomano em Constantinopla (`capital = 797`) e Império Russo em São Petersburgo (`capital = 195`).
+    - Removida declaração de guerra prematura do Japão contra a China (`JAP` vs `CHI`).
+    - Purgadas ideias órfãs do MBR (`MBR_Central_Powers` em TUR/BUL, `MBR_USA_fast_food_monopoly` nos EUA).
+    - Validação sintática: 100% dos 369 arquivos de países verificados com zero erros de chaves (`diff = 0`).
 
 ### Otimizado & Corrigido
 - **Defines & Pacing de Rede (Multiplayer)** (`c92c0a8`):

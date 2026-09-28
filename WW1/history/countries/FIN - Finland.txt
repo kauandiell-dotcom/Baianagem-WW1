@@ -193,133 +193,54 @@ set_party_name = {
 	long_name = FIN_neutrality_party_kokoomus_long
 }
 
-# MBR 2026 removed legacy content: recruit_character = FIN_pehr_evind_svinhufvud
-# MBR 2026 removed legacy content: recruit_character = FIN_kyosti_kallio
-# MBR 2026 removed legacy content: recruit_character = FIN_risto_ryti
-# MBR 2026 removed legacy content: recruit_character = FIN_juho_kusti_paasikivi
 
-# MBR 2026 removed legacy content: recruit_character = FIN_vilho_annala
-# MBR 2026 removed legacy content: recruit_character = FIN_vaino_tanner
-# MBR 2026 removed legacy content: recruit_character = FIN_aimo_aaltonen
-# MBR 2026 removed legacy content: recruit_character = FIN_yrjo_leino #Only as Communist Revolutionary without DLC
-# MBR 2026 removed legacy content: recruit_character = FIN_prince_wolfgang_von_hesse
 
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = FIN_otto_wille_kuusinen
 }
 
 ### ARMY LEADERS
-# MBR 2026 removed legacy content: recruit_character = FIN_carl_mannerheim
-# MBR 2026 removed legacy content: recruit_character = FIN_erik_heinrichs
-# MBR 2026 removed legacy content: recruit_character = FIN_vilho_petter_nenonen
-# MBR 2026 removed legacy content: recruit_character = FIN_woldemar_hagglund
-# MBR 2026 removed legacy content: recruit_character = FIN_juho_heiskanen
-# MBR 2026 removed legacy content: recruit_character = FIN_wiljo_einar_tuompo
-# MBR 2026 removed legacy content: recruit_character = FIN_aarne_juutilainen
-# MBR 2026 removed legacy content: recruit_character = FIN_fanni_luukkonen
-# MBR 2026 removed legacy content: recruit_character = FIN_paavo_talvela
-# MBR 2026 removed legacy content: recruit_character = FIN_hannu_hannuksela
-# MBR 2026 removed legacy content: recruit_character = FIN_hjalmar_siilasvuo
-# MBR 2026 removed legacy content: recruit_character = FIN_taavetti_laatikainen
-# MBR 2026 removed legacy content: recruit_character = FIN_matti_aarnio
-# MBR 2026 removed legacy content: recruit_character = FIN_erkki_raappana
-# MBR 2026 removed legacy content: recruit_character = FIN_aarne_sihvo
-# MBR 2026 removed legacy content: recruit_character = FIN_aksel_airo
-# MBR 2026 removed legacy content: recruit_character = FIN_ruben_lagus
-# MBR 2026 removed legacy content: recruit_character = FIN_paavo_susitaival #Only as Fascist Demagogue without DLC
 
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
 	#Fascists
-# MBR 2026 removed legacy content: 	recruit_character = FIN_kurt_martti_wallenius
-# MBR 2026 removed legacy content: 	recruit_character = FIN_lauri_torni
 
 	#Communists
-# MBR 2026 removed legacy content: 	recruit_character = FIN_emil_vaateri
-# MBR 2026 removed legacy content: 	recruit_character = FIN_eyolf_mattsson
-# MBR 2026 removed legacy content: 	recruit_character = FIN_toivo_antikainen
 }
 
 
 ### NAVY LEADERS
-# MBR 2026 removed legacy content: recruit_character = FIN_ragnar_hakola
-# MBR 2026 removed legacy content: recruit_character = FIN_svante_sundman
 
 ### THEORISTS ###
-# MBR 2026 removed legacy content: recruit_character = FIN_vaino_valve
-# MBR 2026 removed legacy content: recruit_character = FIN_gustaf_magnusson
-# MBR 2026 removed legacy content: recruit_character = FIN_torsti_verkkola
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
 	#Communist
-# MBR 2026 removed legacy content: 	recruit_character = FIN_akseli_anttila
 }
 
 ###ARMY CHIEFS ###
-# MBR 2026 removed legacy content: recruit_character = FIN_lauri_malmberg
-# MBR 2026 removed legacy content: recruit_character = FIN_hugo_osterman
 
 ### NAVY CHIEFS ###
-# MBR 2026 removed legacy content: recruit_character = FIN_olavi_arho
-# MBR 2026 removed legacy content: recruit_character = FIN_eero_rahola
 
 ### AIR CHIEFS ###
-# MBR 2026 removed legacy content: recruit_character = FIN_jarl_lundqvist
-# MBR 2026 removed legacy content: recruit_character = FIN_olavi_sarko
 
 ### MILITARY HIGH COMMAND ###
-# MBR 2026 removed legacy content: recruit_character = FIN_karl_oesch
-# MBR 2026 removed legacy content: recruit_character = FIN_harald_ohquist
-# MBR 2026 removed legacy content: recruit_character = FIN_valio_porvari
-# MBR 2026 removed legacy content: recruit_character = FIN_lauri_tiainen
-# MBR 2026 removed legacy content: recruit_character = FIN_frans_helminen
-# MBR 2026 removed legacy content: recruit_character = FIN_alpo_marttinen
-# MBR 2026 removed legacy content: recruit_character = FIN_kaarlo_somerto
-# MBR 2026 removed legacy content: recruit_character = FIN_reino_hallamaa
-# MBR 2026 removed legacy content: recruit_character = FIN_johan_arajuuri
-# MBR 2026 removed legacy content: recruit_character = GER_nikolaus_von_falkenhorst #Defined in the German char file
 
 
 ### POLITICAL ADVISORS ###
-# MBR 2026 removed legacy content: recruit_character = FIN_ake_henrik_gartz
-# MBR 2026 removed legacy content: recruit_character = FIN_aimo_lahti
-# MBR 2026 removed legacy content: recruit_character = FIN_antti_hackzell
-# MBR 2026 removed legacy content: recruit_character = FIN_rudolf_holsti
-# MBR 2026 removed legacy content: recruit_character = FIN_aimo_cajander
-# MBR 2026 removed legacy content: recruit_character = FIN_urho_kekkonen
-# MBR 2026 removed legacy content: recruit_character = FIN_ralf_torngren
-# MBR 2026 removed legacy content: recruit_character = FIN_ernst_von_born
-# MBR 2026 removed legacy content: recruit_character = FIN_hilja_riipinen
-# MBR 2026 removed legacy content: recruit_character = FIN_esko_riekki
-# MBR 2026 removed legacy content: recruit_character = FIN_elias_simojoki
-# MBR 2026 removed legacy content: recruit_character = FIN_ilmari_kianto
-# MBR 2026 removed legacy content: recruit_character = FIN_miina_sillanpaa
-# MBR 2026 removed legacy content: recruit_character = FIN_karl_august_fagerholm #Democratic Reformer
 
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
 	#Fascists
-# MBR 2026 removed legacy content: 	recruit_character = FIN_vilho_helanen
-# MBR 2026 removed legacy content: 	recruit_character = FIN_reino_ala_kulju
 
 	#Socialists
-# MBR 2026 removed legacy content: 	recruit_character = FIN_mandi_hannula
-# MBR 2026 removed legacy content: 	recruit_character = FIN_otto_brusiin
-# MBR 2026 removed legacy content: 	recruit_character = FIN_aarne_saarinen
-# MBR 2026 removed legacy content: 	recruit_character = FIN_karl_harald_wiik
-# MBR 2026 removed legacy content: 	recruit_character = FIN_kaisu_mirjami_rydberg
-# MBR 2026 removed legacy content: 	recruit_character = FIN_sandra_lehtinen
-# MBR 2026 removed legacy content: 	recruit_character = FIN_kullervo_manner
-# MBR 2026 removed legacy content: 	recruit_character = FIN_arvo_tuominen
 }
 
 #Set up flags for Civil Wars
@@ -354,111 +275,6 @@ if = {
 }
 
 set_convoys = 5
-
-2029.1.1 = {
-	add_political_power = 1198
-	add_command_power = 100
-
-	### TECH ###
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_operational_integrity
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-
-	# TECH ADJUSTMENTS
-	
-
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		
-	}
-
-	# These templates would otherwise not be unlocked
-	load_oob = "unlock_motorized"
-	load_oob = "unlock_tanks_mot"
-	
-	### FOCUS TREE ###
-	#1936
-	complete_national_focus = FIN_finnish_neutrality
-	complete_national_focus = FIN_enhance_southern_infrastructure
-	unlock_national_focus = FIN_industrial_development #Timed idea should be gone
-	unlock_national_focus = FIN_vaisala_radiosonde_tests #35 #tech bonus should be consumed
-	complete_national_focus = FIN_increase_military_budget #35
-	complete_national_focus = FIN_suomen_maavoimat
-
-	#1937
-	complete_national_focus = FIN_reach_out_to_scandinavia #35
-	complete_national_focus = FIN_moderate_politics #35
-	complete_national_focus = FIN_mannerheim_line
-	complete_national_focus = FIN_national_unity
-	complete_national_focus = FIN_outokumpu_for_defence_industry
-	complete_national_focus = FIN_industrial_upgrade_in_harjavalta #35
-	complete_national_focus = FIN_janiskoski_power_plant #35 (1938 historically)
-
-	#1938
-	complete_national_focus = FIN_political_unity
-	complete_national_focus = FIN_railways_and_infrastructure
-	complete_national_focus = FIN_repurpose_small_industries
-	complete_national_focus = FIN_extra_refresher_exercises # (ASAP - gated behind WT)
-	complete_national_focus = FIN_weapon_caches #35 (ASAP - gated behind WT)
-	complete_national_focus = FIN_the_cold_front #35
-	
-	#1939 (Nov -> Winter War)
-	complete_national_focus = FIN_defense_in_depth
-	complete_national_focus = FIN_jaeger_movement
-	complete_national_focus = FIN_salvaged_and_retooled
-	complete_national_focus = FIN_motti_tactics #35
-
-	# FOCUS ADJUSTMENTS
-
-	#FIN_industrial_development
-	remove_ideas = FIN_infrastructure_effort #Timed idea should be gone by 1939
-
-	#FIN_vaisala_radiosonde_tests
-	111 = {
-		add_extra_state_shared_building_slots = 1
-		add_building_construction = {
-			type = industrial_complex
-			level = 1
-			instant_build = yes
-		}
-	}
-
-	# BOP & COUNTRY LEADER ADJUSTMENTS
-	set_power_balance = {
-		id = FIN_power_balance
-		left_side = FIN_bad_side
-		right_side = FIN_good_side
-		set_value = 0 #Adding FIN_sisu_2 idea below
-	}
-
-
-	retire_country_leader = yes
-	#Set Maalaisliitto (Agrarian League) as Non-Aligned party
-	set_party_name = {
-		ideology = neutrality
-		name = FIN_neutrality_party
-		long_name = FIN_neutrality_party_long
-	}
-
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "FIN_1939_air_bba"
-			
-		else = {
-			set_air_oob = "FIN_1939_air_legacy"
-			
-		}
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -472,20 +288,6 @@ add_stability = -0.1
 
 #Event for Svinhufvud's Term Ending
 country_event = { id = AAT_finland_political.02 days = 426 }
-
-
-2029.1.1 = {
-set_politics = {
-	ruling_party = democratic
-	last_election = "2024.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-}
-set_popularities = {
-	democratic = 100
-}
-}
-
 ### VARIANTS ###
 # 1936 Start #
 if = {
@@ -573,47 +375,6 @@ if = {
 		producer = FRA
 	}
 }
-
-
-
-2029.1.1 = {
-	if = {
-		limit = {
-			has_dlc = "No Step Back"
-		}
-		set_country_flag = FIN_vickers_template_created_flag
-		create_equipment_variant = {
-			name = "Vickers Mark E Tpye B"
-			type = light_tank_chassis_0
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_high_velocity_cannon
-				turret_type_slot = tank_light_one_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = secondary_turret_hmg
-			}
-			upgrades = {
-				tank_nsb_armor_upgrade = 3
-				tank_nsb_engine_upgrade = 2
-			}
-			obsolete = yes
-			icon = "GFX_FIN_gw_tank_destroyer_vickers_medium"
-			model = "commonwealth_gfx_light_armor_entity"
-		}
-
-		add_equipment_to_stockpile = { 
-			type = light_tank_chassis_0
-			variant_name = "Vickers 6 ton A"
-			amount = 26
-			producer = ENG
-		}
-	}
-}
-
-
-
 create_country_leader = {
 	name = "Alexander Stubb"
 	picture = "GFX_alexander_stubb"

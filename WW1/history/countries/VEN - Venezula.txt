@@ -24,10 +24,6 @@ if = {
 	
 }
 
-# MBR 2026 removed legacy content: recruit_character = VEN_eleazar_lópez_contreras
-# MBR 2026 removed legacy content: recruit_character = VEN_juan_bautista_fuenmayor
-# MBR 2026 removed legacy content: recruit_character = VEN_luis_figueroa
-# MBR 2026 removed legacy content: recruit_character = VEN_patricio_franco
 recruit_character = VEN_isaias_medina_angarita
 recruit_character = VEN_humberto_santabria_villa
 recruit_character = VEN_carlos_molina_talavayo
@@ -47,42 +43,6 @@ recruit_character = VEN_isidoro_ruiz_tuerro
 
 
 set_country_flag = monroe_doctrine
-
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "VEN_1939_air_bba"
-		else = {
-			set_air_oob = "VEN_1939_air_legacy"
-		}
-	}
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_convoys = 10
 set_politics = {
 	ruling_party = neutrality

@@ -40,27 +40,6 @@ recruit_character = TAH_mt
 recruit_character = TAH_ai2
 recruit_character = TAH_coi
 recruit_character = TAH_acr
-
-2029.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -71,13 +50,3 @@ set_popularities = {
 	democratic = 100
 }
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "Teri'i-nui-o-Tahiti a Pomare"
-# MBR 2026 removed vanilla political leader: 	desc = ""
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Terii_nui_o_Tahiti_a_Pomare
-# MBR 2026 removed vanilla political leader: 	ideology = despotism
-# MBR 2026 removed vanilla political leader: 	female = yes
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 		#
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }

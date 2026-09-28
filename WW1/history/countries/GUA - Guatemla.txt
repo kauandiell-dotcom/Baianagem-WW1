@@ -23,10 +23,6 @@ if = {
 	
 }
 
-# MBR 2026 removed legacy content: recruit_character = GUA_jorge_ubico
-# MBR 2026 removed legacy content: recruit_character = GUA_justo_arbenz
-# MBR 2026 removed legacy content: recruit_character = GUA_máximo_arbenz
-# MBR 2026 removed legacy content: recruit_character = GUA_diego_barahona
 recruit_character = GUA_jorge_torriello_garrido
 recruit_character = GUA_carlos_diaz_de_leon
 recruit_character = GUA_jacopo_arbenz_guzman
@@ -47,34 +43,6 @@ recruit_character = GUA_manuel_arroyo
 set_country_flag = monroe_doctrine
 set_war_support = 0.1
 set_convoys = 5
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

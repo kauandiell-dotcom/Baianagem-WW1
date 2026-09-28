@@ -16,11 +16,6 @@ oob = "ALB_1936_generic"
 
 
 
-# MBR 2026 removed legacy content: recruit_character = ALB_king_zog
-# MBR 2026 removed legacy content: recruit_character = ALB_enver_hoxha
-# MBR 2026 removed legacy content: recruit_character = ALB_xhemal_aranitasi
-# MBR 2026 removed legacy content: recruit_character = ALB_eqrem_belishi
-# MBR 2026 removed legacy content: recruit_character = ALB_tefik_mborja
 recruit_character = ALB_halil_nergutti
 recruit_character = ALB_ismael_ghaxa
 recruit_character = ALB_hajre_fetahu
@@ -39,9 +34,6 @@ recruit_character = ALB_hasan_begolli
 recruit_character = ALB_fiqri_dine
 recruit_character = ALB_midhat_frasheri
 recruit_character = ALB_jocelyn_percy
-# MBR 2026 removed legacy content: recruit_character = ALB_wilhelm_of_wied
-
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -63,5 +55,3 @@ create_country_leader = {
 	ideology = liberalism
 	traits = { }
 }
-}
-

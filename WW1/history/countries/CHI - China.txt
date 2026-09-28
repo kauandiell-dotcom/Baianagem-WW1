@@ -1,4 +1,3 @@
-# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 524 # Nanjing
@@ -97,104 +96,10 @@ IF = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
-# MBR 2026 removed legacy content: 	recruit_character = CHI_carsun_chang
-# MBR 2026 removed legacy content: 	recruit_character = CHI_soong_ching_ling
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhang_fakui
-# MBR 2026 removed legacy content: 	recruit_character = CHI_feng_yuxiang
-# MBR 2026 removed legacy content: 	recruit_character = CHI_jiang_guangnai
-# MBR 2026 removed legacy content: 	recruit_character = CHI_cai_tingkai
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chen_mingshu
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chan_chak
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chen_lifu
-# MBR 2026 removed legacy content: 	recruit_character = CHI_du_yuesheng
-# MBR 2026 removed legacy content: 	recruit_character = CHI_huang_jinrong
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chu_minying
-# MBR 2026 removed legacy content: 	recruit_character = CHI_mei_siping
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhou_fohai
-# MBR 2026 removed legacy content: 	recruit_character = CHI_hu_hanmin
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zou_lu
-# MBR 2026 removed legacy content: 	recruit_character = CHI_y_c_james_yen
-# MBR 2026 removed legacy content: 	recruit_character = CHI_liang_shuming
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zou_taofen
-# MBR 2026 removed legacy content: 	recruit_character = CHI_tao_xingzhi
-# MBR 2026 removed legacy content: 	recruit_character = CHI_shen_junru
-# MBR 2026 removed legacy content: 	recruit_character = CHI_shi_liang
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chang_kia_ngau
-# MBR 2026 removed legacy content: 	recruit_character = CHI_wong_tsu
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chu_chia_jen
-# MBR 2026 removed legacy content: 	recruit_character = CHI_dai_jitao
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhang_guotao_kmt
-# MBR 2026 removed legacy content: 	recruit_character = CHI_jiang_baili
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhang_zhizhong
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chen_bijun
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chen_gongbo
-# MBR 2026 removed legacy content: 	recruit_character = CHI_gao_zongwu
-# MBR 2026 removed legacy content: 	recruit_character = CHI_wang_chonghui
-# MBR 2026 removed legacy content: 	recruit_character = CHI_mao_renfeng
-# MBR 2026 removed legacy content: 	recruit_character = CHI_hsu_huang_sheng
-# MBR 2026 removed legacy content: 	recruit_character = CHI_xu_tingyao
 	#recruit_character = CHI_wan_fulin
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhu_shaoliang
-# MBR 2026 removed legacy content: 	recruit_character = CHI_jiang_dingwen
-# MBR 2026 removed legacy content: 	recruit_character = CHI_jiang_dingwen_admiral
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zheng_qi
-# MBR 2026 removed legacy content: 	recruit_character = CHI_shen_honglie
-# MBR 2026 removed legacy content: 	recruit_character = CHI_gui_yongqing
-# MBR 2026 removed legacy content: 	recruit_character = CHI_chen_qingyun
-# MBR 2026 removed legacy content: 	recruit_character = CHI_teng_chie
-# MBR 2026 removed legacy content: 	recruit_character = CHI_huang_qixiang
-# MBR 2026 removed legacy content: 	recruit_character = CHI_ju_zheng
-# MBR 2026 removed legacy content: 	recruit_character = CHI_li_huang
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhang_qun
-# MBR 2026 removed legacy content: 	recruit_character = CHI_sun_fo
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhang_lan # Needs to be able to be transferred to PRC as well
-# MBR 2026 removed legacy content: 	recruit_character = CHI_symeon_du
-# MBR 2026 removed legacy content: 	recruit_character = CHI_zhu_jiahua
 	ELSE = { 
-# MBR 2026 removed legacy content: 		recruit_character = CHI_zhang_xueliang 
-# MBR 2026 removed legacy content: 		recruit_character = CHI_gu_zhutong # Sent to Sichuan
-# MBR 2026 removed legacy content: 		recruit_character = CHI_fu_zuoyi # Sent to Shaanxi
-# MBR 2026 removed legacy content: 		recruit_character = CHI_chen_jitang # Should be available in CHI at some point
-# MBR 2026 removed legacy content: 		recruit_character = CHI_li_zongren # Should be available in CHI at some point
-# MBR 2026 removed legacy content: 		recruit_character = CHI_bai_chongxi # Should be available in CHI at some point
-# MBR 2026 removed legacy content: 		recruit_character = CHI_yu_hanmou # Should be available in CHI at some point
-# MBR 2026 removed legacy content: 		recruit_character = CHI_fang_zeyi # Communist
-# MBR 2026 removed legacy content: 		recruit_character = CHI_bo_yibo # Communist
-# MBR 2026 removed legacy content: 		recruit_character = CHI_zhu_de # Communist
-# MBR 2026 removed legacy content: 		recruit_character = CHI_zhang_guotao # In PRC content 
-# MBR 2026 removed legacy content: 		recruit_character = CHI_huang_shen # Not a real person
 	}
 }
-# MBR 2026 removed legacy content: recruit_character = CHI_weng_wenhao
-# MBR 2026 removed legacy content: recruit_character = CHI_random_prince_of_terror 
-# MBR 2026 removed legacy content: recruit_character = CHI_chiang_kaishek
-# MBR 2026 removed legacy content: recruit_character = CHI_wang_jingwei
-# MBR 2026 removed legacy content: recruit_character = CHI_tu_yuming
-# MBR 2026 removed legacy content: recruit_character = CHI_hsueh_yueh
-# MBR 2026 removed legacy content: recruit_character = CHI_tai_anlan
-# MBR 2026 removed legacy content: recruit_character = CHI_wang_yaowu
-# MBR 2026 removed legacy content: recruit_character = CHI_sun_li_jen
-# MBR 2026 removed legacy content: recruit_character = CHI_hu_zongnan
-# MBR 2026 removed legacy content: recruit_character = CHI_wei_lihuang
-# MBR 2026 removed legacy content: recruit_character = CHI_chen_cheng
-# MBR 2026 removed legacy content: recruit_character = CHI_wang_shuming
-# MBR 2026 removed legacy content: recruit_character = CHI_zhou_zhirou # Shared in pre-sea
-# MBR 2026 removed legacy content: recruit_character = CHI_xiao_yisu
-# MBR 2026 removed legacy content: recruit_character = CHI_chen_shaokuan
-# MBR 2026 removed legacy content: recruit_character = CHI_he_yingqin
-# MBR 2026 removed legacy content: recruit_character = CHI_gao_zhihang
-# MBR 2026 removed legacy content: recruit_character = CHI_h_h_kung
-# MBR 2026 removed legacy content: recruit_character = CHI_chen_guofu
-# MBR 2026 removed legacy content: recruit_character = CHI_chiang_ching_kuo
-# MBR 2026 removed legacy content: recruit_character = CHI_chen_yi
-# MBR 2026 removed legacy content: recruit_character = CHI_soong_mei_ling
-# MBR 2026 removed legacy content: recruit_character = CHI_lin_sen
-# MBR 2026 removed legacy content: recruit_character = CHI_wang_ganchang 
-# MBR 2026 removed legacy content: recruit_character = CHI_dai_li # Shared in pre-sea
-# MBR 2026 removed legacy content: recruit_character = CHI_t_v_soong # Shared 
-# MBR 2026 removed legacy content: recruit_character = CHI_alexander_von_falkenhausen # Shared 
-# MBR 2026 removed legacy content: recruit_character = CHI_claire_lee_chennault # Shared 
-# MBR 2026 removed legacy content: recruit_character = CHI_kwong_jiang # Shared 
 
 if = {
 	limit = {
@@ -233,96 +138,56 @@ IF = {
 		has_dlc = "La Resistance"
 	}
 
-# MBR 2026 removed legacy content: 	create_operative_leader = {
-# MBR 2026 removed legacy content: 		name = CHI_zheng_pingru
-# MBR 2026 removed legacy content: 		GFX = GFX_portrait_CHI_zheng_pingru
-# MBR 2026 removed legacy content: 		traits = { operative_well_groomed }
-# MBR 2026 removed legacy content: 		bypass_recruitment = no
-# MBR 2026 removed legacy content: 		available_to_spy_master = yes
-# MBR 2026 removed legacy content: 		female = yes
-# MBR 2026 removed legacy content: 		nationalities = { CHI RNG PRC }
-# MBR 2026 removed legacy content: 	}
 
-# MBR 2026 removed legacy content: 	create_operative_leader = {
-# MBR 2026 removed legacy content: 		name = CHI_xu_lai
-# MBR 2026 removed legacy content: 		GFX = GFX_portrait_CHI_xu_lai
-# MBR 2026 removed legacy content: 		traits = { operative_seducer operative_well_groomed }
-# MBR 2026 removed legacy content: 		bypass_recruitment = no
-# MBR 2026 removed legacy content: 		available_to_spy_master = yes
-# MBR 2026 removed legacy content: 		female = yes
-# MBR 2026 removed legacy content: 		nationalities = { CHI RNG PRC }
-# MBR 2026 removed legacy content: 	}
 
 }
 
 600 = { #Jiangxi
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 749 = { #Huangshan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 606 = { #Anhui
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 607 = { #Henan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 620 = { #Hubei
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 602 = { #Hunan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 750 = { #Changde
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 744 = { #Xian
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 605 = { #Sichuan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 748 = { #Zunyi
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 603 = { #Guizhu
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 615 = { #Shanxi
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 622 = { #Shaanxi
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 325 = { #Yunnan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 747 = { #Dali
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 1032 = { #Yanan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 283 = { #Gansu
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 #598 = { #Jiangsu
 #	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 #}
 753 = { #Gannan
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 599 = { #Guangxi 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 1045 = { #Guyuan  
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 616 = { #Ningxia   
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 1044 = { #Wuwei    
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = dense_rural_infrastructure }
 }
 IF = {
 	limit = {
@@ -336,20 +201,11 @@ set_popularities = {
 	#	autonomous_state = autonomy_sea_warlord_subject
 	#}
 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CHI_corruption_in_the_administration }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CHI_inefficient_economy }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CHI_corruption_in_the_armed_forces }
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CHI_illicit_trade }
 	#add_dynamic_modifier = { modifier = CHI_unstructured_logistics } 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CHI_ROCAF } 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = { modifier = CHI_neglected_countryside }
 	
 	#Tech
 	
 
-# MBR 2026 removed legacy content: 	add_dynamic_modifier = {
-# MBR 2026 removed legacy content: 		modifier = CHI_nine_power_treaty_sea
-# MBR 2026 removed legacy content: 	}
 
 	IF = {
 		limit = {
@@ -553,7 +409,6 @@ set_popularities = {
 	set_variable = { CHI_economic_support_cic_amount = 100 } #CiC to Subject Warlords
 
 	613 = { #Shanghai
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = CHI_shanghai_international_settlement }
 	}
 
 	set_variable = { CHI_holding_state_mission_time_var = 90 }
@@ -659,123 +514,6 @@ set_popularities = {
 save_global_event_target_as = WTT_current_china_leader
 
 set_convoys = 40
-
-2029.1.1 = {
-	
-	set_global_flag = CHI_xian_fired #Don't trigger the Xi'an Incident again
-
-	IF = {
-		limit = {
-			has_dlc = "No Compromise, No Surrender"
-		}
-		set_oob = "CHI_1939_sea"
-		
-		complete_national_focus = CHI_dang_guo 							
-		complete_national_focus = CHI_promote_the_national_currency 		
-		complete_national_focus = CHI_denounce_feudalism 					
-		complete_national_focus = CHI_decree_the_end_to_corruption 		
-		complete_national_focus = CHI_arrest_the_seven_gentlemen 			
-		complete_national_focus = CHI_military_affairs_commission_sea 	
-		complete_national_focus = CHI_protracted_warfare 					
-		complete_national_focus = CHI_defence_in_depth 
-		complete_national_focus = CHI_initiate_the_gung_ho_movement 		
-		complete_national_focus = CHI_one_nation_undivided 				
-		#complete_national_focus = CHI_the_three_year_plan 				
-		complete_national_focus = CHI_the_4_defence_areas					
-		complete_national_focus = CHI_finance_cooperatives				
-		complete_national_focus = CHI_guerrilla_warfare
-		complete_national_focus = CHI_relocate_factories_from_the_coast	
-		complete_national_focus = CHI_expand_the_cooperatives				
-		complete_national_focus = CHI_formalize_field_promotions			
-		complete_national_focus = CHI_demonstrate_our_resolve 			
-		complete_national_focus = CHI_send_the_first_lady_abroad			
-		complete_national_focus = CHI_administer_cooperatives
-		complete_national_focus = CHI_secure_the_soviet_border			
-		complete_national_focus = CHI_crackdown_on_corruption_in_recruitment
-		complete_national_focus = CHI_facilitate_operation_zet
-
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = CHI_american_support }
-# MBR 2026 removed legacy content: 		add_dynamic_modifier = { modifier = CHI_soviet_support }
-
-		set_variable = { nine_power_justify_war_goal_time = -0.14 } #8
-		set_variable = { nine_power_min_export = 0.14 } 
-		set_variable = { nine_power_treaty_cg = 0.14 }
-		else = {
-			complete_national_focus = CHI_unified_industrial_planning
-			complete_national_focus = CHI_mission_to_germany
-			complete_national_focus = CHI_rural_reconstruction_movement
-			complete_national_focus = CHI_invite_foreign_investors
-			complete_national_focus = CHI_british_cooperation
-			unlock_national_focus = CHI_fighter_purchases
-			complete_national_focus = CHI_mission_to_the_us
-			complete_national_focus = CHI_mission_to_the_soviet_union
-			complete_national_focus = CHI_hire_chennault
-			complete_national_focus = CHI_rapprochement_with_soviet_union
-			complete_national_focus = CHI_invite_soviet_advisers
-			complete_national_focus = CHI_military_affairs_commission
-			complete_national_focus = CHI_burma_road
-			unlock_national_focus = CHI_the_soviet_volunteer_group
-			complete_national_focus = CHI_bureau_of_investigation_and_statistics
-			complete_national_focus = CHI_camco
-			complete_national_focus = CHI_three_principles_of_the_people
-			complete_national_focus = CHI_army_reform
-			complete_national_focus = CHI_nationalism
-		}
-	}
-
-	add_political_power = 1198
-	add_command_power = 100
-	set_stability = 0.5
-	set_war_support = 0.7
-	
-
-	
-	if = {
-		limit = { 
-			NOT = { has_dlc = "No Compromise, No Surrender" }
-		}
-		remove_ideas = CHI_army_corruption_1
-		
-		set_oob = "CHI_1939"
-	}
-	
-	set_global_flag = fall_of_nanjing
-	# MBR: no starting factions.
-	remove_opinion_modifier = { target = PRC modifier = hostile_status }
-	#load_oob = "CHI_united_front"
-	set_global_flag = CHI_unite
-	
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "CHI_1939_air_bba"
-		else = {
-			set_air_oob = "CHI_1939_air_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "CHI_1939_naval_mtg"
-		else = {
-			set_naval_oob = "CHI_1939_naval_legacy"
-		}
-	}
-	
-
-set_grand_doctrine = mass_assault
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-set_sub_doctrine = large_unit_tactics
-add_mastery = {
-    amount = 200
-    sub_doctrine = large_unit_tactics
-}
-
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"

@@ -40,10 +40,6 @@ if = {
 	
 }
 
-# MBR 2026 removed legacy content: recruit_character = PRU_Óscar_benavides
-# MBR 2026 removed legacy content: recruit_character = PRU_sebastián_lynch
-# MBR 2026 removed legacy content: recruit_character = PRU_hilarión_lynch
-# MBR 2026 removed legacy content: recruit_character = PRU_santiago_ruíztagle
 recruit_character = PRU_rafael_escardo
 recruit_character = PRU_alberto_lopez_flores
 recruit_character = PRU_oscar_gilardi
@@ -70,50 +66,6 @@ recruit_character = PRU_reynaldo_vinatea
 set_country_flag = monroe_doctrine
 
 set_convoys = 5
-
-2029.1.1 = {
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	if = {
-		limit = { has_dlc = "Man the Guns" }
-			set_naval_oob = "PRU_1939_naval_mtg"
-		else = {
-			set_naval_oob = "PRU_1939_naval_legacy"
-		}
-	}
-	if = {
-		limit = { has_dlc = "By Blood Alone" }
-			set_air_oob = "PRU_1939_air_bba"
-		else = {
-			set_air_oob = "PRU_1939_air_legacy"
-			
-		}
-	}
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -123,14 +75,6 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-2029.1.1 = {
-# MBR 2026 removed legacy content: 	recruit_character = PRU_manuel_prado_ugarteche
-	promote_character = PRU_manuel_prado_ugarteche
-	retire_character = PRU_Óscar_benavides
-}
-
-
 ### VARIANTS ###
 # 1936 Start #
 if = {

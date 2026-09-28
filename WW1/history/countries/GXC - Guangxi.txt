@@ -58,20 +58,14 @@ IF = {
 	
 	ELSE = {
 recruit_character = GXC_wang_shuming
-# MBR 2026 removed legacy content: 		recruit_character = GXC_chen_jitang
 	}
 }
-# MBR 2026 removed legacy content: recruit_character = GXC_li_zongren
-# MBR 2026 removed legacy content: recruit_character = GXC_liu_peng
-# MBR 2026 removed legacy content: recruit_character = GXC_zhang_lu
-# MBR 2026 removed legacy content: recruit_character = GXC_li_ting
 recruit_character = GXC_bai_yeung
 recruit_character = GXC_heng_lo
 recruit_character = GXC_yu_hanmou
 recruit_character = GXC_zha_zemin
 recruit_character = GXC_huo_duyi
 recruit_character = GXC_niu_keung
-# MBR 2026 removed legacy content: recruit_character = GXC_bai_chongxi
 recruit_character = GXC_teng_qingshan
 recruit_character = GXC_do_liang
 recruit_character = GXC_huang_shaohong
@@ -86,78 +80,6 @@ if = {
 	}
 	
 }
-
-2029.1.1 = {
-
-
-	add_political_power = 1198
-	add_command_power = 100
-	
-	IF = {
-		limit = {
-			NOT = {
-				has_dlc = "No Compromise, No Surrender"
-			}
-		}
-
-		# MBR: no starting factions.
-		add_to_war = {
-			targeted_alliance = CHI
-			enemy = JAP
-			hostility_reason = asked_to_join
-		}
-
-		complete_national_focus = CHI_secure_internal_politics
-		complete_national_focus = CHI_cooperation_with_the_nationalists
-		complete_national_focus = CHI_industrial_investment
-		complete_national_focus = CHI_public_education_reform
-		complete_national_focus = CHI_long_term_economic_planning
-		complete_national_focus = CHI_technological_cooperation
-		complete_national_focus = CHI_local_arms_production
-		complete_national_focus = CHI_new_model_province
-		complete_national_focus = CHI_root_out_corruption
-		complete_national_focus = CHI_land_reform
-		complete_national_focus = CHI_reform_the_administration
-
-		ELSE = {	
-
-			# MBR: no starting factions.
-			add_to_war = {
-				targeted_alliance = CHI
-				enemy = JAP
-				hostility_reason = asked_to_join
-			}
-			
-			complete_national_focus = CHI_sea_secure_internal_politics
-			complete_national_focus = CHI_sea_cooperation_with_the_nationalists
-			complete_national_focus = CHI_sea_develop_capital
-			complete_national_focus = CHI_sea_expand_public_education
-			complete_national_focus = CHI_sea_long_term_economic_planning
-			complete_national_focus = CHI_sea_technological_cooperation
-			complete_national_focus = CHI_sea_develop_capital_arsenal
-			complete_national_focus = CHI_sea_new_model_province
-			complete_national_focus = CHI_sea_root_out_corruption
-			complete_national_focus = CHI_sea_land_reform
-			complete_national_focus = CHI_sea_reform_the_administration
-			complete_national_focus = CHI_sea_develop_capital
-			complete_national_focus = CHI_sea_further_industrial_investment
-
-			unlock_national_focus = GXC_the_japanese_visit
-			unlock_national_focus = GXC_question_chiangs_authority
-			unlock_national_focus = GXC_the_scorched_earth_speech
-			unlock_national_focus = GXC_rumors_of_deposition
-			unlock_national_focus = GXC_denounce_chiang
-			unlock_national_focus = GXC_formation_of_the_nraja
-			unlock_national_focus = GXC_declare_opposition
-
-		}
-	}
-
-
-}
-
-
-
 set_convoys = 5
 
 set_politics = {

@@ -17,10 +17,6 @@ oob = "DOM_1936_generic"
 # Starting tech
 
 
-# MBR 2026 removed legacy content: recruit_character = DOM_rafael_trujillo
-# MBR 2026 removed legacy content: recruit_character = DOM_jacinto_gonzáles
-# MBR 2026 removed legacy content: recruit_character = DOM_fernando_bayo
-# MBR 2026 removed legacy content: recruit_character = DOM_horacio_cabral
 recruit_character = DOM_domingo_de_los_santos_ortiz
 recruit_character = DOM_jose_miguel_moncada
 recruit_character = DOM_humberto_rojas
@@ -42,34 +38,6 @@ recruit_character = DOM_jacinto_bienvenido_peynado
 set_country_flag = monroe_doctrine
 set_war_support = 0.1
 set_convoys = 5
-
-2029.1.1 = {
-	
-	add_political_power = 1198
-	add_command_power = 100
-
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	
-
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
-set_grand_doctrine = new_strategic_destruction
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -79,13 +47,6 @@ set_politics = {
 set_popularities = {
 	democratic = 100
 }
-
-2029.1.1 = {
-# MBR 2026 removed legacy content: 	recruit_character = DOM_jacinto_peynado
-	promote_character = DOM_jacinto_peynado
-	retire_character = DOM_rafael_trujillo
-}
-
 create_country_leader = {
 	name = "Braulio Alcantara Lopez"
 	picture = "GFX_Braulio_Alcantara_Lopez"

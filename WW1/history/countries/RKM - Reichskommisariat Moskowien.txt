@@ -61,23 +61,6 @@ if = {
 
 set_research_slots = 3
 set_convoys = 0
-
-2029.1.1 = {
-
-	add_political_power = 1197
-	add_command_power = 100
-
-	
-
-set_grand_doctrine = new_mobile_warfare
-set_grand_doctrine = new_convoy_raiding
-set_grand_doctrine = new_battlefield_support
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
-
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -88,7 +71,6 @@ set_popularities = {
 	democratic = 100
 }
 
-# MBR 2026 removed legacy content: recruit_character = RKM_siegfried_kasche
 
 
 

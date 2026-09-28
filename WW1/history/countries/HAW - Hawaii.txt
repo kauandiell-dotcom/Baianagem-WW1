@@ -19,27 +19,6 @@ oob = "HAW_1936_generic"
 
 
 set_convoys = 20
-
-2029.1.1 = {
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	
-
-set_grand_doctrine = grand_battleplan
-
-	complete_special_project = {
-		project = sp:sp_air_radar
-	}
-}
 set_politics = {
 	ruling_party = democratic
 	last_election = "2024.1.1"
@@ -50,32 +29,5 @@ set_popularities = {
 	democratic = 100
 }
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "David Kalakaua Kawananakoa"
-# MBR 2026 removed vanilla political leader: 	desc = ""
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_David_Kalakaua_Kawananakoa
-# MBR 2026 removed vanilla political leader: 	ideology = despotism
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 		#
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "Joseph Poindexter"
-# MBR 2026 removed vanilla political leader: 	desc = ""
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Joseph_Poindexter
-# MBR 2026 removed vanilla political leader: 	ideology = liberalism
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 		#
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }
 
-# MBR 2026 removed vanilla political leader: create_country_leader = {
-# MBR 2026 removed vanilla political leader: 	name = "Charles Fujimoto"
-# MBR 2026 removed vanilla political leader: 	desc = ""
-# MBR 2026 removed vanilla political leader: 	picture = GFX_portrait_Charles_Fujimoto
-# MBR 2026 removed vanilla political leader: 	ideology = marxism
-# MBR 2026 removed vanilla political leader: 	traits = {
-# MBR 2026 removed vanilla political leader: 		#
-# MBR 2026 removed vanilla political leader: 	}
-# MBR 2026 removed vanilla political leader: }
