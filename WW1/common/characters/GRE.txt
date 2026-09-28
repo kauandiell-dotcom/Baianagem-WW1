@@ -1,0 +1,57 @@
+characters = {
+	GRE_eleftherios_venizelos = {
+		name = "Eleftherios Venizelos"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRE/GRE_eleftherios_venizelos.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1936.3.18"
+		}
+	}
+
+	GRE_george_i = {
+		name = "George I"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRE/GRE_george_i.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1913.3.18"
+		}
+	}
+
+	GRE_avraam_benaroya = {
+		name = "Avraam Benaroya"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRE/GRE_avraam_benaroya.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	GRE_dimitrios_gounaris = {
+		name = "Dimitrios Gounaris"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GRE/GRE_dimitrios_gounaris.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1922.11.28"
+		}
+	}
+}

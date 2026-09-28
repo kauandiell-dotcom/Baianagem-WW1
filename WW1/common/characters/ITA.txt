@@ -1,0 +1,57 @@
+characters = {
+	ITA_giovanni_giolitti = {
+		name = "Giovanni Giolitti"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ITA/ITA_giovanni_giolitti.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1928.7.17"
+		}
+	}
+
+	ITA_vittorio_emanuele_iii = {
+		name = "Vittorio Emanuele III"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ITA/ITA_vittorio_emanuele_iii.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1947.12.28"
+		}
+	}
+
+	ITA_filippo_turati = {
+		name = "Filippo Turati"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ITA/ITA_filippo_turati.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1932.3.29"
+		}
+	}
+
+	ITA_benito_mussolini = {
+		name = "Benito Mussolini"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ITA/ITA_benito_mussolini.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1945.4.28"
+		}
+	}
+}

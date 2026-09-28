@@ -1,0 +1,57 @@
+characters = {
+	SER_andra_nikolic = {
+		name = "Andra Nikolic"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SER/SER_andra_nikolic.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1918.1.1"
+		}
+	}
+
+	SER_peter_i = {
+		name = "Peter I"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SER/SER_peter_i.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1921.8.16"
+		}
+	}
+
+	SER_jasa_prodanovic = {
+		name = "Jasa Prodanovic"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SER/SER_jasa_prodanovic.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	SER_dragutin_dimitrijevic = {
+		name = "Dragutin Dimitrijevic Apis"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SER/SER_dragutin_dimitrijevic.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1917.6.26"
+		}
+	}
+}

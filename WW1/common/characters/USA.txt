@@ -1,0 +1,57 @@
+characters = {
+	USA_william_h_taft = {
+		name = "William Howard Taft"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/USA_william_h_taft.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1930.3.8"
+		}
+	}
+
+	USA_eugene_v_debs = {
+		name = "Eugene V. Debs"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/USA_eugene_v_debs.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1926.10.20"
+		}
+	}
+
+	USA_leonard_wood = {
+		name = "Leonard Wood"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/USA_leonard_wood.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1927.8.7"
+		}
+	}
+
+	USA_john_j_pershing = {
+		name = "John J. Pershing"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/USA_john_j_pershing.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1948.7.15"
+		}
+	}
+}

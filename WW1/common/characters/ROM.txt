@@ -1,0 +1,57 @@
+characters = {
+	ROM_ion_ic_bratianu = {
+		name = "Ion I. C. Bratianu"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ROM/ROM_ion_ic_bratianu.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1927.11.24"
+		}
+	}
+
+	ROM_carol_i = {
+		name = "Carol I"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ROM/ROM_carol_i.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1914.10.10"
+		}
+	}
+
+	ROM_dobrogeanu_gherea = {
+		name = "Constantin Dobrogeanu-Gherea"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ROM/ROM_dobrogeanu_gherea.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1920.5.7"
+		}
+	}
+
+	ROM_alexandru_c_cuza = {
+		name = "Alexandru C. Cuza"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ROM/ROM_alexandru_c_cuza.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+}

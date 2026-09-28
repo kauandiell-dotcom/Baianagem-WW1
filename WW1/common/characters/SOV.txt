@@ -1,0 +1,57 @@
+characters = {
+	SOV_nicholas_ii = {
+		name = "Nicholas II"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_nicholas_ii.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { autocrat }
+			expire = "1935.1.1"
+		}
+	}
+
+	SOV_alexander_kerensky = {
+		name = "Alexander Kerensky"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_alexander_kerensky.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	SOV_vladimir_lenin = {
+		name = "Vladimir Lenin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_vladimir_lenin.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1924.1.21"
+		}
+	}
+
+	SOV_alexander_kolchak = {
+		name = "Alexander Kolchak"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_alexander_kolchak.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+}

@@ -1,0 +1,57 @@
+characters = {
+	FRA_armand_fallieres = {
+		name = "Armand Fallieres"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/FRA_armand_fallieres.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1920.1.1"
+		}
+	}
+
+	FRA_jean_jaures = {
+		name = "Jean Jaures"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/FRA_jean_jaures.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1914.7.31"
+		}
+	}
+
+	FRA_charles_maurras = {
+		name = "Charles Maurras"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/FRA_charles_maurras.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	FRA_ferdinand_foch = {
+		name = "Ferdinand Foch"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/FRA_ferdinand_foch.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1929.3.20"
+		}
+	}
+}

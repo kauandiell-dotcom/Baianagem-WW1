@@ -85,13 +85,20 @@ set_popularities = {
 	neutrality = 100
 }
 
+# 1911 Country Leaders
+recruit_character = TUR_mehmed_v
+recruit_character = TUR_mustafa_kemal
+recruit_character = TUR_mustafa_suphi
+recruit_character = TUR_enver_pasha
+
+
 set_convoys = 20
 set_stability = 0.5
 set_war_support = 0.3
 
 if = {
 	limit = { has_dlc = "Battle for the Bosporus" }
-recruit_character = TUR_mustafa_kemal_ataturk
+_ataturk
 recruit_character = TUR_fakhri_pasha
 recruit_character = TUR_refet_bele
 recruit_character = TUR_zeki_dogan

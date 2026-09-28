@@ -1,0 +1,57 @@
+characters = {
+	JAP_emperor_meiji = {
+		name = "Emperor Meiji"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/JAP/JAP_emperor_meiji.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1912.7.30"
+		}
+	}
+
+	JAP_katsura_taro = {
+		name = "Katsura Taro"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/JAP/JAP_katsura_taro.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1913.10.10"
+		}
+	}
+
+	JAP_kotoku_shusui = {
+		name = "Kotoku Shusui"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/JAP/JAP_kotoku_shusui.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	JAP_yamagata_aritomo = {
+		name = "Yamagata Aritomo"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/JAP/JAP_yamagata_aritomo.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1922.2.1"
+		}
+	}
+}

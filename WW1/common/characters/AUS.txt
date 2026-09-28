@@ -1,0 +1,57 @@
+characters = {
+	AUS_franz_joseph_i = {
+		name = "Franz Joseph I"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AUS/AUS_franz_joseph_i.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1916.11.21"
+		}
+	}
+
+	AUS_viktor_adler = {
+		name = "Viktor Adler"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AUS/AUS_viktor_adler.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1918.11.11"
+		}
+	}
+
+	AUS_franz_koritschoner = {
+		name = "Franz Koritschoner"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AUS/AUS_franz_koritschoner.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	AUS_conrad_von_hotzendorf = {
+		name = "Conrad von Hotzendorf"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AUS/AUS_conrad_von_hotzendorf.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1925.8.25"
+		}
+	}
+}

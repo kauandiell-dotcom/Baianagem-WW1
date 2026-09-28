@@ -1,0 +1,57 @@
+characters = {
+	GER_wilhelm_ii = {
+		name = "Wilhelm II"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_wilhelm_ii.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { autocrat }
+			expire = "1941.6.4"
+		}
+	}
+
+	GER_friedrich_ebert = {
+		name = "Friedrich Ebert"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_friedrich_ebert.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1925.2.28"
+		}
+	}
+
+	GER_karl_liebknecht = {
+		name = "Karl Liebknecht"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_karl_liebknecht.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	GER_wolfgang_kapp = {
+		name = "Wolfgang Kapp"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_wolfgang_kapp.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+}

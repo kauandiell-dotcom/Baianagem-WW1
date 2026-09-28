@@ -1,0 +1,57 @@
+characters = {
+	BRA_hermes_da_fonseca = {
+		name = "Hermes da Fonseca"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_hermes_da_fonseca.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1923.9.9"
+		}
+	}
+
+	BRA_edgard_leuenroth = {
+		name = "Edgard Leuenroth"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_edgard_leuenroth.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+
+	BRA_dantas_barreto = {
+		name = "Dantas Barreto"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_dantas_barreto.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1931.1.1"
+		}
+	}
+
+	BRA_pedro_henrique = {
+		name = "Pedro Henrique de Orleans e Braganca"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BRA/BRA_pedro_henrique.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+}

@@ -1,0 +1,57 @@
+characters = {
+	BUL_aleksandar_malinov = {
+		name = "Aleksandar Malinov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BUL/BUL_aleksandar_malinov.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1938.3.20"
+		}
+	}
+
+	BUL_ferdinand_i = {
+		name = "Ferdinand I"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BUL/BUL_ferdinand_i.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1948.9.10"
+		}
+	}
+
+	BUL_dimitar_blagoev = {
+		name = "Dimitar Blagoev"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BUL/BUL_dimitar_blagoev.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1924.5.7"
+		}
+	}
+
+	BUL_aleksandar_tsankov = {
+		name = "Aleksandar Tsankov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/BUL/BUL_aleksandar_tsankov.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1935.1.1"
+		}
+	}
+}

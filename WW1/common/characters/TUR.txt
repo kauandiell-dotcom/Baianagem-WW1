@@ -2696,4 +2696,60 @@ characters={
 		#}
 	}
 
+
+	TUR_mehmed_v = {
+		name = "Mehmed V"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TUR/TUR_mehmed_v.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1918.7.3"
+		}
+	}
+
+	TUR_mustafa_kemal = {
+		name = "Mustafa Kemal"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TUR/TUR_mustafa_kemal.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1938.11.10"
+		}
+	}
+
+	TUR_mustafa_suphi = {
+		name = "Mustafa Suphi"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TUR/TUR_mustafa_suphi.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1921.1.28"
+		}
+	}
+
+	TUR_enver_pasha = {
+		name = "Enver Pasha"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/TUR/TUR_enver_pasha.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1922.8.4"
+		}
+	}
 }

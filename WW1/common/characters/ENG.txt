@@ -1,0 +1,57 @@
+characters = {
+	ENG_hh_asquith = {
+		name = "H. H. Asquith"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ENG/ENG_hh_asquith.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1928.2.15"
+		}
+	}
+
+	ENG_george_v = {
+		name = "George V"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ENG/ENG_george_v.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1936.1.20"
+		}
+	}
+
+	ENG_henry_hyndman = {
+		name = "Henry Hyndman"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ENG/ENG_henry_hyndman.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1921.11.20"
+		}
+	}
+
+	ENG_lord_kitchener = {
+		name = "Lord Kitchener"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ENG/ENG_lord_kitchener.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1916.6.5"
+		}
+	}
+}
