@@ -1049,7 +1049,7 @@ focus_tree = {
 			}
 			modifier = {
 				factor = 0
-				date < 2029.1.1
+				date < 1914.1.1
 				OR = { 
 					# we dont want chinese minors to go crazy on slots early since they get eaten
 					tag = GXC 

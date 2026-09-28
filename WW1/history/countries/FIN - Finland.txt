@@ -1,4 +1,3 @@
-﻿# MBR 2026: universal starting technologies are loaded with country history.
 MBR_grant_level_one_technologies = yes
 
 capital = 111
@@ -157,7 +156,7 @@ set_variable = { FIN_prioritize_heavy_industry_dec_cost = 50 } #Will be duplicat
 # 1936 BoP (1939 BoP set up below)
 if = {
 	limit = {
-		has_start_date < 2026.01.02
+		has_start_date < 1912.01.01
 	}
 	set_power_balance = {
 		id = FIN_power_balance

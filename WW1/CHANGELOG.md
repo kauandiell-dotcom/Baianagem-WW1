@@ -54,6 +54,25 @@ Todas as alterações técnicas e de design relevantes deste projeto são docume
     - Adicionado papel de general de corpo de exército (`corps_commander`) para Mustafa Kemal Atatürk em 1911.
     - Purgados recrutamentos prematuros de personagens não nascidos em 1911 (Sabiha Gökçen, Adnan Menderes).
     - Validação de chaves: 0 erros em todos os 369 arquivos de países e em `TUR.txt`.
+- **Migração Cronológica — Fase 5 (Higienização de Equipamentos e Módulos)**:
+  - `common/units/equipment/modules/00_tank_modules.txt`: Purgados 16 módulos de fantasia/sci-fi herdados de Equestria at War (`tank_magic_*` cannons com cristais, `tank_gas_turbine_engine`, projéteis de cristal).
+  - `common/units/equipment/modules/00_plane_modules.txt`: Purgados 25 módulos anacrônicos de pós-guerra (`jet_engine_*`, motores a jato axiais, `nuclear_ramjet_*`, `rocket_pods`, foguetes e bombas guiadas).
+  - `history/countries/`: Purgados special projects modernos de helicóptero (`sp:sp_air_helicopter`) de todos os países.
+- **Migração Cronológica — Fase 6 (Calibração de Focos Nacionais & Decisões)**:
+  - `common/national_focus/generic_improved.txt` & árvores de foco:
+    - Reescalonamento temporal completo dos gatilhos: `date < 1937` -> `date < 1912`, `date < 1938` -> `date < 1913`, `date > 1938` -> `date > 1913`, `date > 1939` -> `date > 1914`, `date > 1940` -> `date > 1915`.
+    - Sanitização de referências a figuras de WW2 (Hitler, Mussolini) substituídas por lideranças imperiais de WW1.
+  - `common/decisions/generic_ft_decisions.txt`: Corrigidos erros de digitação de eventos (`generic.12` -> `generic_ft.12`, `generic.15` -> `generic_ft.15`).
+  - `common/decisions/formable_nation_decisions.txt`: Removidas decisões anacrônicas de WW2/modernas (`form_european_union` e `form_greater_german_reich`).
+- **Migração Cronológica — Fase 7 & QA Final (Árvores de Tecnologia 1911–1922 & Crise de Agadir)**:
+  - `common/technologies/`: Criada base tecnológica completa da Grande Guerra com marcos temporais de 1911, 1914, 1916 e 1918:
+    - `infantry.txt`: Armamento de infantaria (`infantry_weapons` 1911 a 1918), engenharia, reconhecimento e suporte.
+    - `artillery.txt`: Artilharia histórica (`gw_artillery` 1911, `interwar_artillery` 1915, `artillery1` 1918).
+    - `industry.txt`: Ferramentas básicas a avançadas e construção (1911–1917).
+    - `armor.txt`: Blindados pioneiros (`gw_tank` 1916, tanques leves 1917 e pesados 1918).
+    - `air_techs.txt`: Aviação pioneira e caças da Grande Guerra (1914–1916).
+  - `events/WW1_Agadir.txt` & Localização: Cadeia de eventos históricos da Crise de Agadir (julho de 1911) entre Alemanha, França e Reino Unido (*Panthersprung*).
+  - Varredura cega conclusiva: zero datas anacrônicas (2020+) e zero blocos temporais de WW2 remanescentes em código ativo; validação sintática estrita com 100% de integridade estrutural em todos os 1.597 arquivos do mod.
 
 ### Otimizado & Corrigido
 - **Defines & Pacing de Rede (Multiplayer)** (`c92c0a8`):

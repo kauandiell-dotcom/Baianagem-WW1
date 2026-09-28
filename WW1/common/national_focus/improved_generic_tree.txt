@@ -134,7 +134,7 @@ category = industry
 			factor = 1
 		}
 		available = {
-		date > 2027.1.1
+		date > 1912.1.1
 		is_ai = no
 		}
 		completion_reward = {
@@ -653,7 +653,7 @@ instant_build = yes
 		}
 		available = {
 			is_major = yes 
-date > 2027.1.1
+date > 1912.1.1
 		}
 		completion_reward = {
 			
@@ -1249,7 +1249,7 @@ add_country_leader_trait = rcp_kek
 		cost = 2
 		available_if_capitulated = yes
 		available = {
-			date > 2029.1.1
+			date > 1914.1.1
 			NOT = { has_game_rule = { rule = RCP_allow_claim_focuses option = BLOCKED } }
 			OR = {
 				is_ai = yes
@@ -1311,7 +1311,7 @@ completion_reward = {
 		cost = 2
 		available_if_capitulated = yes
 		available = {
-			date > 2029.6.1
+			date > 1914.6.1
 			NOT = { has_game_rule = { rule = RCP_allow_claim_focuses option = BLOCKED } }
 			OR = {
 				is_ai = yes
@@ -1373,7 +1373,7 @@ completion_reward = {
 		cost = 2
 		available_if_capitulated = yes
 		available = {
-			date > 2030.1.1
+			date > 1915.1.1
 			NOT = { has_game_rule = { rule = RCP_allow_claim_focuses option = BLOCKED } }
 			OR = {
 				is_ai = yes
@@ -4014,7 +4014,7 @@ instant_build = yes
 				name = "Anarchist Commune"
 				desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
 				picture = "gfx/leaders/anarchy.dds"
-				expire = "2055.1.1"
+				expire = "1924.1.1"
 				ideology = marxism
 				traits = {
 					our_right_to_survive

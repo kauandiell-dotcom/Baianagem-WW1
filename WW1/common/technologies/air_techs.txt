@@ -1,0 +1,46 @@
+technologies = {
+	early_fighter = {
+		research_cost = 1.0
+		start_year = 1914
+		folder = {
+			name = air_techs_folder
+			position = { x = 0 y = 0 }
+		}
+		categories = {
+			air_equipment
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	fighter1 = {
+		research_cost = 1.5
+		start_year = 1916
+		folder = {
+			name = air_techs_folder
+			position = { x = 0 y = 2 }
+		}
+		categories = {
+			air_equipment
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	early_bomber = {
+		research_cost = 1.5
+		start_year = 1915
+		folder = {
+			name = air_techs_folder
+			position = { x = 2 y = 1 }
+		}
+		categories = {
+			air_equipment
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}

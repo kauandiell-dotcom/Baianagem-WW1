@@ -1,0 +1,71 @@
+# Agadir Crisis (July 1911)
+add_namespace = ww1_agadir
+
+# German gunboat Panther arrives in Agadir
+country_event = {
+	id = ww1_agadir.1
+	title = ww1_agadir.1.t
+	desc = ww1_agadir.1.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = no
+
+	trigger = {
+		tag = GER
+		date > 1911.7.1
+		date < 1911.8.1
+		NOT = { has_global_flag = agadir_crisis_happened }
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	immediate = {
+		set_global_flag = agadir_crisis_happened
+	}
+
+	option = {
+		name = ww1_agadir.1.a
+		ai_chance = { factor = 90 }
+		add_political_power = 50
+		FRA = { country_event = { id = ww1_agadir.2 days = 2 } }
+		ENG = { country_event = { id = ww1_agadir.3 days = 3 } }
+	}
+
+	option = {
+		name = ww1_agadir.1.b
+		ai_chance = { factor = 10 }
+		add_stability = 0.05
+	}
+}
+
+# French reaction
+country_event = {
+	id = ww1_agadir.2
+	title = ww1_agadir.2.t
+	desc = ww1_agadir.2.d
+	picture = GFX_report_event_french_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_agadir.2.a
+		add_war_support = 0.05
+	}
+}
+
+# British reaction (Mansion House speech)
+country_event = {
+	id = ww1_agadir.3
+	title = ww1_agadir.3.t
+	desc = ww1_agadir.3.d
+	picture = GFX_report_event_british_inspect_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_agadir.3.a
+		add_war_support = 0.05
+	}
+}

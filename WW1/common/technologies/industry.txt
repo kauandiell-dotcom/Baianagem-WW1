@@ -1,0 +1,97 @@
+technologies = {
+	basic_machine_tools = {
+		production_factory_max_efficiency_factor = 0.1
+		research_cost = 1.0
+		start_year = 1911
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 0 }
+		}
+		categories = {
+			industry
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	improved_machine_tools = {
+		production_factory_max_efficiency_factor = 0.1
+		research_cost = 1.5
+		start_year = 1914
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 2 }
+		}
+		categories = {
+			industry
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	advanced_machine_tools = {
+		production_factory_max_efficiency_factor = 0.1
+		research_cost = 2.0
+		start_year = 1917
+		folder = {
+			name = industry_folder
+			position = { x = 0 y = 4 }
+		}
+		categories = {
+			industry
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	construction1 = {
+		production_speed_buildings_factor = 0.1
+		research_cost = 1.0
+		start_year = 1911
+		folder = {
+			name = industry_folder
+			position = { x = 2 y = 0 }
+		}
+		categories = {
+			industry
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	construction2 = {
+		production_speed_buildings_factor = 0.1
+		research_cost = 1.5
+		start_year = 1914
+		folder = {
+			name = industry_folder
+			position = { x = 2 y = 2 }
+		}
+		categories = {
+			industry
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	construction3 = {
+		production_speed_buildings_factor = 0.1
+		research_cost = 2.0
+		start_year = 1917
+		folder = {
+			name = industry_folder
+			position = { x = 2 y = 4 }
+		}
+		categories = {
+			industry
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+}
