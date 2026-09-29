@@ -20,6 +20,28 @@ state = {
 		buildings = {
 			infrastructure = 2
 		}
+
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_core_of = SIC
+				remove_core_of = XSM
+			}
+		}
+
+		1938.10.25 = {
+		IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender" 
+				}
+				remove_core_of = SIC
+			}		
+			owner = CHI
+			controller = CHI
+		}
+
 	}
 
 	provinces = {
