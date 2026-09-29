@@ -1988,15 +1988,6 @@ technologies = {
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
 
-		path = {
-			leads_to_tech = mechanised_infantry
-			research_cost_coeff = 1
-		}
-
-		path = {
-
-		}
-
 		research_cost = 2
 		start_year = 1911
 		folder = {
@@ -2326,93 +2317,7 @@ technologies = {
 	}
 
 	mechanised_infantry = {
-
-		enable_subunits = {
-			mechanized
-		}
-
-		enable_equipments = {
-			mechanized_equipment_1
-		}
-
-		enable_equipment_modules = {
-			tank_half_track_suspension
-		}
-
-		mot_fire_support = {
-			breakthrough = 0.1
-			soft_attack = 0.05
-		}
-
-		motorized = {
-			hardness = 1.0
-		}
-		mot_artillery_brigade = {
-			hardness = 1.0
-		}
-		mot_anti_tank_brigade = {
-			hardness = 1.0
-		}
-		mot_anti_air_brigade = {
-			hardness = 1.0
-		}
-		mot_rocket_artillery_brigade = {
-			hardness = 1.0
-		}
-
-		path = {
-			leads_to_tech = mechanised_infantry2
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = amphibious_mechanized_infantry
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 1915
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @1940 }
-		}
-
-		categories = {
-			motorized_equipment
-			mio_cat_tech_all_motorized_mechanized
-			infantry_tech
-			cat_mechanized_equipment
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			base = 2
-
-			modifier = {
-				factor = 2
-				is_major = yes
-			}
-
-			modifier = {
-				factor = 3
-				tag = USA
-			}
-
-			modifier = {
-				factor = 1.5
-				date > 1916.1.1
-			}
-
-			modifier = {
-				factor = 1.5
-				date > 1917.1.1
-			}
-
-			modifier = {
-				factor = 1.5
-				date > 1918.1.1
-			}
-		}
+		allow = { always = no }
 	}
 
  	militia_tech = {
@@ -2423,151 +2328,19 @@ technologies = {
 	}
 
 	amphibious_mechanized_infantry = {
-
-		enable_equipments = {
-			amphibious_mechanized_equipment_1
-		}
-
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-
-		enable_subunits = {
-			amphibious_mechanized
-		}
-
-		path = {
-			leads_to_tech = amphibious_mechanized_infantry_2
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 1916
-		folder = {
-			name = infantry_folder
-			position = { x = 2 y = @1941 }
-		}
-
-		categories = {
-			motorized_equipment
-			mio_cat_tech_all_motorized_mechanized
-			infantry_tech
-			cat_mechanized_equipment
-			tp_tech
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				tag = USA
-				factor = 5
-			}
-		}
+		allow = { always = no }
 	}
 
 	amphibious_mechanized_infantry_2 = {
-
-		enable_equipments = {
-			amphibious_mechanized_equipment_2
-		}
-
-		research_cost = 2
-		start_year = 1918
-		folder = {
-			name = infantry_folder
-			position = { x = 2 y = @1943 }
-		}
-
-		categories = {
-			motorized_equipment
-			mio_cat_tech_all_motorized_mechanized
-			infantry_tech
-			cat_mechanized_equipment
-			tp_tech
-		}
-
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 2
-		}
+		allow = { always = no }
 	}
 
 	mechanised_infantry2 = {
-
-		enable_equipments = {
-			mechanized_equipment_2
-		}
-
-		mot_fire_support = {
-			breakthrough = 0.1
-			soft_attack = 0.05
-		}
-
-		path = {
-			leads_to_tech = mechanised_infantry3
-			research_cost_coeff = 1
-		}
-
-		research_cost = 2
-		start_year = 1917
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @1942 }
-		}
-
-		categories = {
-			motorized_equipment
-			mio_cat_tech_all_motorized_mechanized
-			infantry_tech
-			cat_mechanized_equipment
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 5
-				original_tag = GER				
-			}
-		}
+		allow = { always = no }
 	}
 
 	mechanised_infantry3 = {
-
-		enable_equipments = {
-			mechanized_equipment_3
-		}
-
-		mechanized = {
-			soft_attack = 0.15
-			hard_attack = 0.15
-		}
-
-		mot_fire_support = {
-			breakthrough = 0.1
-			soft_attack = 0.05
-		}
-
-		research_cost = 3
-		start_year = 1919
-		folder = {
-			name = infantry_folder
-			position = { x = 0 y = @1944 }
-		}
-
-		categories = {
-			motorized_equipment
-			mio_cat_tech_all_motorized_mechanized
-			infantry_tech
-			cat_mechanized_equipment
-		}
-		special_project_specialization = { specialization_land }
-
-		ai_will_do = {
-			factor = 1
-		}
+		allow = { always = no }
 	}
 
 	######### FROM JAPANESE FOCUS ##########
