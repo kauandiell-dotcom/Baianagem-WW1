@@ -1,14 +1,6 @@
+# Special forces ideas - Disabled infinite special forces cap
 ideas = {		
 	country = {
-		special_forces_cap_idea = {
-			allowed = { always = no }
-			allowed_civil_war = { always = yes }
-			picture = FRA_scw_intervention_nationalists_focus	
-			modifier = {
-				special_forces_min = 10000
-			}
-		}
+		# Disabled: Handled via NDefines.NMilitary.SPECIAL_FORCES_CAP_BASE = 0.10
 	}
 }
-
-# Please give credits if thinking about using some of the code or getting ideas :)

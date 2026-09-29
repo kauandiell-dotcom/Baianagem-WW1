@@ -1,0 +1,81 @@
+sub_units = {
+
+	artillery_brigade = {
+		abbreviation = "ART"
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1198
+		ai_priority = 100
+		active = yes
+		is_artillery_brigade = yes
+		
+		type = {
+			infantry
+			artillery
+		}
+
+		group = combat_support
+		
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+		}
+
+		combat_width = 3
+
+		manpower = 800
+		need = {
+			artillery_equipment = 48		# Demands large battery concentrations (48 guns per battalion)
+		}
+		
+		max_strength = 2.0
+		max_organisation = 5			# Very low org: cannot fight on its own without infantry screen
+		default_morale = 0.2
+		training_time = 140
+		weight = 0.6
+		supply_consumption = 0.28
+
+		# WW1 Trommelfeuer (Drumfire) Saturação de Trincheiras
+		soft_attack = 38.0				# Devastating soft attack to strip enemy division organization
+		hard_attack = 4.0
+		breakthrough = -0.90			# Extreme breakthrough penalty: cannot assault alone like a tank
+		defense = 14.0
+		
+		forest = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		hills = {
+			movement = -0.05
+		}
+
+		mountain = {
+			movement = -0.2
+		}
+
+		jungle = {
+			attack = -0.25
+			movement = -0.2
+		}
+
+		marsh = {
+			attack = -0.2
+			movement = -0.3
+		}
+
+		fort = {
+			attack = 0.35				# Specialized bombardment of forts and trench lines
+		}
+
+		river = {
+			attack = -0.2
+			movement = -0.2
+		}
+
+		amphibious = {
+			attack = -0.4
+		}
+	}
+}
