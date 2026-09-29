@@ -12,7 +12,26 @@ state = {
 		buildings = {
 			infrastructure = 0
 		}
-	
+
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender" 
+				}
+				add_core_of = KHM
+			}
+		}	
+
+		1938.10.25 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender" 
+				}
+				remove_core_of = KHM
+			}	
+			owner = SIK
+			controller = SIK		
+		}	
 	}
 
 
