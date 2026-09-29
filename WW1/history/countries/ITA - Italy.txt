@@ -1,8 +1,5 @@
 MBR_grant_level_one_technologies = yes
 
-give_guarantee = GER
-give_guarantee = AUS
-
 capital = 2 # Rome
 
 # GENERIC TECH
@@ -236,14 +233,14 @@ set_grand_doctrine = new_fleet_in_being
 set_convoys = 200
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1909.3.7"
 	election_frequency = 60
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 85
-	neutrality = 15
+	neutrality = 85
+	democratic = 15
 }
 
 # 1911 Country Leaders
