@@ -37,12 +37,12 @@ sub_units = {
 		
 		supply_consumption = 0.4
 
-		#Tanks are awesome
-		# soft_attack = 0.5
-
-		suppression = 2.5
-
-		breakthrough = 0.15	
+		# WW1 Infantry Support Profile: Low Org, Low Defense, Low Solo Breakthrough
+		breakthrough = -0.80
+		soft_attack = 0.35
+		hard_attack = 0.30
+		defense = -0.60
+		entrenchment = -5
 
 		forest = {
 		    attack = -0.5
