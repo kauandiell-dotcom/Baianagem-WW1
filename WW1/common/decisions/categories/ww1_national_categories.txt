@@ -1,0 +1,99 @@
+# Decision Categories for WW1 Master Mechanics
+
+ww1_tactical_war_powers = {
+	icon = generic_crisis
+	allowed = {
+		always = yes
+	}
+	visible = {
+		has_war = yes
+	}
+}
+
+ww1_crisis_management_ger = {
+	icon = generic_propaganda
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_crisis_active
+	}
+}
+
+ww1_crisis_management_eng = {
+	icon = generic_propaganda
+	allowed = {
+		tag = ENG
+	}
+	visible = {
+		tag = ENG
+		has_country_flag = ENG_crisis_active
+	}
+}
+
+ww1_crisis_management_fra = {
+	icon = generic_propaganda
+	allowed = {
+		tag = FRA
+	}
+	visible = {
+		tag = FRA
+		has_country_flag = FRA_crisis_active
+	}
+}
+
+ww1_crisis_management_sov = {
+	icon = generic_propaganda
+	allowed = {
+		tag = SOV
+	}
+	visible = {
+		tag = SOV
+		has_country_flag = SOV_crisis_active
+	}
+}
+
+ww1_crisis_management_aus = {
+	icon = generic_propaganda
+	allowed = {
+		tag = AUS
+	}
+	visible = {
+		tag = AUS
+		has_country_flag = AUS_crisis_active
+	}
+}
+
+ww1_crisis_management_ita = {
+	icon = generic_propaganda
+	allowed = {
+		tag = ITA
+	}
+	visible = {
+		tag = ITA
+		has_country_flag = ITA_crisis_active
+	}
+}
+
+ww1_crisis_management_tur = {
+	icon = generic_propaganda
+	allowed = {
+		tag = TUR
+	}
+	visible = {
+		tag = TUR
+		has_country_flag = TUR_crisis_active
+	}
+}
+
+ww1_crisis_management_usa = {
+	icon = generic_propaganda
+	allowed = {
+		tag = USA
+	}
+	visible = {
+		tag = USA
+		has_country_flag = USA_crisis_active
+	}
+}

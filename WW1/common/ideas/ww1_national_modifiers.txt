@@ -1,0 +1,870 @@
+﻿ideas = {
+	country = {
+
+		# =======================================================
+		# 1. IMPÃ‰RIO ALEMÃƒO (GER)
+		# =======================================================
+
+		# 1.1 O Grande Estado-Maior Prussiano
+		GER_grosser_generalstab = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.25
+				max_planning = 0.20
+				army_org_factor = 0.10
+			}
+		}
+
+		# 1.2 MonopÃ³lios Industriais & QuÃ­micos (Krupp, BASF, Bayer)
+		GER_krupp_chemical_conglomerates = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_speed_arms_factory_factor = 0.15
+				research_speed_factor = 0.08
+			}
+		}
+
+		# 1.3 A Corrida Naval de Tirpitz
+		GER_tirpitz_naval_ambition = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				navy_capital_ship_attack_factor = 0.10
+			}
+		}
+
+		# 1.4 A Paranoia do Cerco (Einkreisung)
+		GER_encirclement_paranoia = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				supply_consumption_factor = 0.08
+			}
+		}
+
+		# 1.5 A Paz Social da Burgfrieden
+		GER_burgfrieden_social_peace = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.10
+			}
+		}
+
+		# Crises AlemÃ£s & VitÃ³ria
+		GER_turnip_winter_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.10
+				industrial_capacity_factory = -0.20
+				consumer_goods_factor = 0.10
+				army_org_factor = -0.15
+				army_morale_factor = -0.15
+			}
+		}
+
+		GER_turnip_winter_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				war_support_factor = -0.05
+				industrial_capacity_factory = -0.10
+				consumer_goods_factor = 0.05
+				army_org_factor = -0.08
+			}
+		}
+
+		GER_turnip_winter_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor = 0.02
+			}
+		}
+
+		GER_hindenburg_program_victory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.12
+				army_org_factor = 0.05
+				war_support_factor = 0.10
+			}
+		}
+
+		chemical_gas_disruption = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.30
+				army_morale_factor = -0.25
+				army_defence_factor = -0.20
+			}
+		}
+
+		# =======================================================
+		# 2. REINO UNIDO (ENG)
+		# =======================================================
+
+		# 2.1 O PadrÃ£o das Duas PotÃªncias Navais
+		ENG_two_power_standard = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.25
+				navy_max_range_factor = 0.20
+				convoy_escort_efficiency = 0.25
+			}
+		}
+
+		# 2.2 O Centro Financeiro da City de Londres
+		ENG_city_of_london_credit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				trade_laws_cost_factor = -0.30
+				civilian_factory_use = 0.10
+			}
+		}
+
+		# 2.3 ExÃ©rcito Profissional de VoluntÃ¡rios (BEF)
+		ENG_professional_bef = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.15
+				training_time_army_factor = -0.20
+				conscription_factor = -0.35
+			}
+		}
+
+		# 2.4 A Malha do ImpÃ©rio Global
+		ENG_the_imperial_web = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_attrition = -0.15
+				political_power_factor = 0.10
+			}
+		}
+
+		# 2.5 A QuestÃ£o do Home Rule IrlandÃªs
+		ENG_irish_home_rule_tension = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+			}
+		}
+
+		# Crises BritÃ¢nicas & VitÃ³ria
+		ENG_submarine_blockade_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				consumer_goods_factor = 0.12
+				industrial_capacity_factory = -0.15
+				production_speed_infrastructure_factor = -0.25
+			}
+		}
+
+		ENG_submarine_blockade_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				consumer_goods_factor = 0.06
+				industrial_capacity_factory = -0.08
+			}
+		}
+
+		ENG_submarine_blockade_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		ENG_arsenal_of_the_empire = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+		}
+
+		landships_breakthrough_boost = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_armor_attack_factor = 0.35
+				army_infantry_attack_factor = 0.15
+				army_bonus = {
+					breakthrough = 0.25
+				}
+			}
+		}
+
+		# =======================================================
+		# 3. FRANÃ‡A (FRA)
+		# =======================================================
+
+		# 3.1 A Ferida de 1870 & Revanche
+		FRA_wound_of_1870 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.20
+				justify_war_goal_time = -0.25
+			}
+		}
+
+		# 3.2 Ã‰lan Vital & Ofensiva a Outrance
+		FRA_elan_vital_doctrine = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.20
+				army_infantry_attack_factor = 0.15
+			}
+		}
+
+		# 3.3 A GlÃ³ria do CanhÃ£o de 75mm Modelo 1897
+		FRA_canon_75mm_supremacy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.20
+				production_speed_artillery_factor = 0.15
+			}
+		}
+
+		# 3.4 EstagnaÃ§Ã£o DemogrÃ¡fica
+		FRA_demographic_stagnation = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.15
+			}
+		}
+
+		# 3.5 Instabilidade da Terceira RepÃºblica
+		FRA_third_republic_instability = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.15
+			}
+		}
+
+		# Crises Francesas & VitÃ³ria
+		FRA_trench_mutiny_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.20
+				army_org_factor = -0.15
+				army_speed_factor = -0.20
+				industrial_capacity_factory = -0.10
+			}
+		}
+
+		FRA_trench_mutiny_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				army_org_factor = -0.08
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		FRA_trench_mutiny_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.04
+				army_org_factor = -0.03
+			}
+		}
+
+		FRA_union_sacree_victory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				industrial_capacity_factory = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		voie_sacree_resilience_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.40
+				land_reinforce_rate = 0.50
+				army_core_defence_factor = 0.20
+			}
+		}
+
+		# =======================================================
+		# 4. RÃšSSIA (SOV)
+		# =======================================================
+
+		# 4.1 A Autocracia Czarista & FÃ© Ortodoxa
+		SOV_tsarist_autocracy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.15
+			}
+		}
+
+		# 4.2 O Rolo Compressor Humano
+		SOV_the_steamroller = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.40
+				training_time_army_factor = -0.20
+				supply_consumption_factor = -0.15
+			}
+		}
+
+		# 4.3 Gargalo Industrial & Fome de Fuzis
+		SOV_rifle_famine_scar = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = -0.20
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		# 4.4 A Bitola Larga e as DistÃ¢ncias das Estepes
+		SOV_broad_gauge_vastness = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				attrition = -0.15
+				production_speed_infrastructure_factor = -0.15
+			}
+		}
+
+		# 4.5 O Protetor dos Eslavos e dos BÃ¡lcÃ£s
+		SOV_pan_slavic_protector = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.30
+				war_support_factor = 0.10
+			}
+		}
+
+		# Crises Russas & VitÃ³ria
+		SOV_rifle_famine_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.25
+				industrial_capacity_factory = -0.30
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		SOV_rifle_famine_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				industrial_capacity_factory = -0.15
+				army_attack_factor = -0.08
+				consumer_goods_factor = 0.08
+			}
+		}
+
+		SOV_rifle_famine_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		SOV_unbreakable_union_victory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.15
+				army_morale_factor = 0.15
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		brusilov_offensive_shock_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.25
+				army_artillery_attack_factor = 0.20
+				army_speed_factor = 0.20
+				planning_speed = 0.30
+			}
+		}
+
+		# =======================================================
+		# 5. ÃUSTRIA-HUNGRIA (AUS)
+		# =======================================================
+
+		# 5.1 O Compromisso do Ausgleich de 1867
+		AUS_dual_monarchy_compromise = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.08
+				political_power_factor = -0.10
+			}
+		}
+
+		# 5.2 A Torre de Babel Militar (11 LÃ­nguas)
+		AUS_tower_of_babel_army = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.12
+				land_reinforce_rate = -0.10
+			}
+		}
+
+		# 5.3 Os Arsenais de Cerco da Å koda & Steyr
+		AUS_skoda_siege_arsenals = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.25
+				production_speed_artillery_factor = 0.20
+			}
+		}
+
+		# 5.4 O Baluarte dos Alpes e CÃ¡rpatos
+		AUS_alpine_carpathian_bastion = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.15
+				max_dig_in = 5
+			}
+		}
+
+		# 5.5 A AmbiÃ§Ã£o Imperial nos BÃ¡lcÃ£s
+		AUS_balkan_destiny = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				justify_war_goal_time = -0.20
+			}
+		}
+
+		# Crises Austro-HÃºngaras & VitÃ³ria
+		AUS_nationalities_fracture_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.20
+				army_morale_factor = -0.25
+				conscription_factor = -0.20
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		AUS_nationalities_fracture_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				army_morale_factor = -0.12
+				conscription_factor = -0.10
+				consumer_goods_factor = 0.08
+			}
+		}
+
+		AUS_nationalities_fracture_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.04
+				army_morale_factor = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		AUS_danubian_triumph = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.12
+				war_support_factor = 0.12
+				army_org_factor = 0.10
+			}
+		}
+
+		skoda_siege_bombardment_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.35
+				land_reinforce_rate = 0.15
+			}
+		}
+
+		# =======================================================
+		# 6. ITÃLIA (ITA)
+		# =======================================================
+
+		# 6.1 O Sonho das Terras Irredentas
+		ITA_terre_irredente_dream = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.30
+				war_support_factor = 0.15
+			}
+		}
+
+		# 6.2 A Doutrina dos Alpini
+		ITA_alpini_tradition = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		# 6.3 A Escassez de CarvÃ£o e MinÃ©rio Nacional
+		ITA_coal_iron_scarcity = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.20
+			}
+		}
+
+		# 6.4 A DivisÃ£o Norte-Sul da ItÃ¡lia
+		ITA_southern_question_gap = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+			}
+		}
+
+		# 6.5 O "Sacro Egoismo" DiplomÃ¡tico
+		ITA_sacro_egoismo_policy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_laws_cost_factor = -0.25
+				political_power_factor = 0.10
+			}
+		}
+
+		# Crises Italianas & VitÃ³ria
+		ITA_isonzo_attrition_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				army_infantry_attack_factor = -0.20
+				army_morale_factor = -0.20
+				consumer_goods_factor = 0.10
+				political_power_factor = -0.15
+			}
+		}
+
+		ITA_isonzo_attrition_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				army_infantry_attack_factor = -0.08
+				army_morale_factor = -0.08
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		ITA_isonzo_attrition_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+				army_morale_factor = -0.03
+			}
+		}
+
+		ITA_vittorio_veneto_triumph = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				army_infantry_attack_factor = 0.12
+				army_morale_factor = 0.12
+			}
+		}
+
+		arditi_infiltration_shock_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.30
+				army_speed_factor = 0.20
+				army_bonus = {
+					breakthrough = 0.30
+				}
+			}
+		}
+
+		# =======================================================
+		# 7. IMPÃ‰RIO OTOMANO (TUR)
+		# =======================================================
+
+		# 7.1 A Fortaleza dos Estreitos & Baterias de Ã‡anakkale
+		TUR_straits_fortress_cannons = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				amphibious_invasion_defence = 0.60
+				max_dig_in = 10
+				dig_in_speed_factor = 0.35
+			}
+		}
+
+		# 7.2 O Homem Enfermo da Europa (DÃ­vida & CapitulaÃ§Ãµes)
+		TUR_sick_man_debt = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				research_speed_factor = -0.10
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		# 7.3 A Tenacidade LendÃ¡ria do Soldado MehmetÃ§ik
+		TUR_mehmetcik_tenacity = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.25
+				supply_consumption_factor = -0.25
+				army_core_defence_factor = 0.25
+			}
+		}
+
+		# 7.4 O Triunvirato dos TrÃªs PaxÃ¡s
+		TUR_three_pashas_dictatorship = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.15
+				training_time_army_factor = -0.15
+			}
+		}
+
+		# 7.5 O Estandarte do Califado IslÃ¢mico
+		TUR_caliphate_global_banner = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				subversive_activites_upkeep = -0.30
+				war_support_factor = 0.10
+			}
+		}
+
+		# Crises Otomanas & VitÃ³ria
+		TUR_desert_supply_collapse_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.20
+				supply_consumption_factor = 0.25
+				industrial_capacity_factory = -0.15
+				army_org_factor = -0.15
+			}
+		}
+
+		TUR_desert_supply_collapse_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				supply_consumption_factor = 0.12
+				industrial_capacity_factory = -0.08
+				army_org_factor = -0.08
+			}
+		}
+
+		TUR_desert_supply_collapse_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.04
+				supply_consumption_factor = 0.05
+			}
+		}
+
+		TUR_anatolian_sovereignty_victory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.15
+				army_core_defence_factor = 0.20
+			}
+		}
+
+		kemal_fanatic_defence_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.35
+				dig_in_speed_factor = 0.50
+				max_dig_in = 8
+				army_morale_factor = 0.30
+			}
+		}
+
+		# =======================================================
+		# 8. ESTADOS UNIDOS (USA)
+		# =======================================================
+
+		# 8.1 O Milagre da ProduÃ§Ã£o Fordista
+		USA_fordist_industrial_miracle = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.30
+				production_speed_infrastructure_factor = 0.30
+			}
+		}
+
+		# 8.2 Isolacionismo HistÃ³rico & Doutrina Monroe
+		USA_monroe_isolationism = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.50
+				war_support_factor = -0.30
+				industrial_capacity_factory = -0.30
+			}
+		}
+
+		# 8.3 O Poder Financeiro de Wall Street
+		USA_wall_street_credit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				civilian_factory_use = 0.15
+			}
+		}
+
+		# 8.4 A HeranÃ§a da Grande Frota Branca
+		USA_great_white_fleet_heritage = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_capital_ship_attack_factor = 0.10
+				navy_max_range_factor = 0.15
+			}
+		}
+
+		# 8.5 A Cultura Armada Pioneira
+		USA_firearms_pioneer_culture = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.10
+			}
+		}
+
+		# Crises Americanas & VitÃ³ria
+		USA_mobilization_bottleneck_crisis_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.15
+				training_time_army_factor = 0.25
+				army_org_factor = -0.15
+			}
+		}
+
+		USA_mobilization_bottleneck_crisis_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.08
+				training_time_army_factor = 0.12
+				army_org_factor = -0.08
+			}
+		}
+
+		USA_mobilization_bottleneck_crisis_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.03
+				training_time_army_factor = 0.05
+			}
+		}
+
+		USA_arsenal_of_democracy_unleashed = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.25
+				industrial_capacity_dockyard = 0.20
+				conscription_factor = 0.25
+				army_attack_factor = 0.10
+			}
+		}
+
+		trench_sweeper_shotgun_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.30
+				army_bonus = {
+					breakthrough = 0.25
+				}
+			}
+		}
+
+	}
+}

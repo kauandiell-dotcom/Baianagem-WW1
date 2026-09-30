@@ -1,0 +1,577 @@
+﻿# National Crisis Relief Decisions (Every 6 months / 180 days cooldown)
+
+# =======================================================
+# ALEMANHA (GER)
+# =======================================================
+ww1_crisis_management_ger = {
+
+	GER_relief_step_1 = {
+		icon = generic_factory
+		available = {
+			has_idea = GER_turnip_winter_crisis_3
+			NOT = { has_country_flag = GER_relief_step_1_done }
+		}
+		visible = {
+			has_idea = GER_turnip_winter_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = GER_turnip_winter_crisis_3
+				add_idea = GER_turnip_winter_crisis_2
+			}
+			set_country_flag = GER_relief_step_1_done
+		}
+	}
+
+	GER_relief_step_2 = {
+		icon = generic_research
+		available = {
+			has_idea = GER_turnip_winter_crisis_2
+			NOT = { has_country_flag = GER_relief_step_2_done }
+		}
+		visible = {
+			has_idea = GER_turnip_winter_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = GER_turnip_winter_crisis_2
+				add_idea = GER_turnip_winter_crisis_1
+			}
+			set_country_flag = GER_relief_step_2_done
+		}
+	}
+
+	GER_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = GER_turnip_winter_crisis_1
+			NOT = { has_country_flag = GER_relief_step_3_done }
+		}
+		visible = {
+			has_idea = GER_turnip_winter_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = GER_turnip_winter_crisis_1
+				add_idea = GER_hindenburg_program_victory
+			}
+			clr_country_flag = GER_crisis_active
+			set_country_flag = GER_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# REINO UNIDO (ENG)
+# =======================================================
+ww1_crisis_management_eng = {
+
+	ENG_relief_step_1 = {
+		icon = generic_naval
+		available = {
+			has_idea = ENG_submarine_blockade_crisis_3
+			NOT = { has_country_flag = ENG_relief_step_1_done }
+		}
+		visible = {
+			has_idea = ENG_submarine_blockade_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = ENG_submarine_blockade_crisis_3
+				add_idea = ENG_submarine_blockade_crisis_2
+			}
+			set_country_flag = ENG_relief_step_1_done
+		}
+	}
+
+	ENG_relief_step_2 = {
+		icon = generic_factory
+		available = {
+			has_idea = ENG_submarine_blockade_crisis_2
+			NOT = { has_country_flag = ENG_relief_step_2_done }
+		}
+		visible = {
+			has_idea = ENG_submarine_blockade_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = ENG_submarine_blockade_crisis_2
+				add_idea = ENG_submarine_blockade_crisis_1
+			}
+			set_country_flag = ENG_relief_step_2_done
+		}
+	}
+
+	ENG_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = ENG_submarine_blockade_crisis_1
+			NOT = { has_country_flag = ENG_relief_step_3_done }
+		}
+		visible = {
+			has_idea = ENG_submarine_blockade_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = ENG_submarine_blockade_crisis_1
+				add_idea = ENG_arsenal_of_the_empire
+			}
+			clr_country_flag = ENG_crisis_active
+			set_country_flag = ENG_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# FRANÃ‡A (FRA)
+# =======================================================
+ww1_crisis_management_fra = {
+
+	FRA_relief_step_1 = {
+		icon = generic_military
+		available = {
+			has_idea = FRA_trench_mutiny_crisis_3
+			NOT = { has_country_flag = FRA_relief_step_1_done }
+		}
+		visible = {
+			has_idea = FRA_trench_mutiny_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = FRA_trench_mutiny_crisis_3
+				add_idea = FRA_trench_mutiny_crisis_2
+			}
+			set_country_flag = FRA_relief_step_1_done
+		}
+	}
+
+	FRA_relief_step_2 = {
+		icon = generic_speech
+		available = {
+			has_idea = FRA_trench_mutiny_crisis_2
+			NOT = { has_country_flag = FRA_relief_step_2_done }
+		}
+		visible = {
+			has_idea = FRA_trench_mutiny_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = FRA_trench_mutiny_crisis_2
+				add_idea = FRA_trench_mutiny_crisis_1
+			}
+			set_country_flag = FRA_relief_step_2_done
+		}
+	}
+
+	FRA_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = FRA_trench_mutiny_crisis_1
+			NOT = { has_country_flag = FRA_relief_step_3_done }
+		}
+		visible = {
+			has_idea = FRA_trench_mutiny_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = FRA_trench_mutiny_crisis_1
+				add_idea = FRA_union_sacree_victory
+			}
+			clr_country_flag = FRA_crisis_active
+			set_country_flag = FRA_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# RÃšSSIA (SOV)
+# =======================================================
+ww1_crisis_management_sov = {
+
+	SOV_relief_step_1 = {
+		icon = generic_factory
+		available = {
+			has_idea = SOV_rifle_famine_crisis_3
+			NOT = { has_country_flag = SOV_relief_step_1_done }
+		}
+		visible = {
+			has_idea = SOV_rifle_famine_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = SOV_rifle_famine_crisis_3
+				add_idea = SOV_rifle_famine_crisis_2
+			}
+			set_country_flag = SOV_relief_step_1_done
+		}
+	}
+
+	SOV_relief_step_2 = {
+		icon = generic_train
+		available = {
+			has_idea = SOV_rifle_famine_crisis_2
+			NOT = { has_country_flag = SOV_relief_step_2_done }
+		}
+		visible = {
+			has_idea = SOV_rifle_famine_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = SOV_rifle_famine_crisis_2
+				add_idea = SOV_rifle_famine_crisis_1
+			}
+			set_country_flag = SOV_relief_step_2_done
+		}
+	}
+
+	SOV_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = SOV_rifle_famine_crisis_1
+			NOT = { has_country_flag = SOV_relief_step_3_done }
+		}
+		visible = {
+			has_idea = SOV_rifle_famine_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = SOV_rifle_famine_crisis_1
+				add_idea = SOV_unbreakable_union_victory
+			}
+			clr_country_flag = SOV_crisis_active
+			set_country_flag = SOV_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# ÃUSTRIA-HUNGRIA (AUS)
+# =======================================================
+ww1_crisis_management_aus = {
+
+	AUS_relief_step_1 = {
+		icon = generic_speech
+		available = {
+			has_idea = AUS_nationalities_fracture_crisis_3
+			NOT = { has_country_flag = AUS_relief_step_1_done }
+		}
+		visible = {
+			has_idea = AUS_nationalities_fracture_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = AUS_nationalities_fracture_crisis_3
+				add_idea = AUS_nationalities_fracture_crisis_2
+			}
+			set_country_flag = AUS_relief_step_1_done
+		}
+	}
+
+	AUS_relief_step_2 = {
+		icon = generic_political_address
+		available = {
+			has_idea = AUS_nationalities_fracture_crisis_2
+			NOT = { has_country_flag = AUS_relief_step_2_done }
+		}
+		visible = {
+			has_idea = AUS_nationalities_fracture_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = AUS_nationalities_fracture_crisis_2
+				add_idea = AUS_nationalities_fracture_crisis_1
+			}
+			set_country_flag = AUS_relief_step_2_done
+		}
+	}
+
+	AUS_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = AUS_nationalities_fracture_crisis_1
+			NOT = { has_country_flag = AUS_relief_step_3_done }
+		}
+		visible = {
+			has_idea = AUS_nationalities_fracture_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = AUS_nationalities_fracture_crisis_1
+				add_idea = AUS_danubian_triumph
+			}
+			clr_country_flag = AUS_crisis_active
+			set_country_flag = AUS_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# ITÃLIA (ITA)
+# =======================================================
+ww1_crisis_management_ita = {
+
+	ITA_relief_step_1 = {
+		icon = generic_military
+		available = {
+			has_idea = ITA_isonzo_attrition_crisis_3
+			NOT = { has_country_flag = ITA_relief_step_1_done }
+		}
+		visible = {
+			has_idea = ITA_isonzo_attrition_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = ITA_isonzo_attrition_crisis_3
+				add_idea = ITA_isonzo_attrition_crisis_2
+			}
+			set_country_flag = ITA_relief_step_1_done
+		}
+	}
+
+	ITA_relief_step_2 = {
+		icon = generic_factory
+		available = {
+			has_idea = ITA_isonzo_attrition_crisis_2
+			NOT = { has_country_flag = ITA_relief_step_2_done }
+		}
+		visible = {
+			has_idea = ITA_isonzo_attrition_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = ITA_isonzo_attrition_crisis_2
+				add_idea = ITA_isonzo_attrition_crisis_1
+			}
+			set_country_flag = ITA_relief_step_2_done
+		}
+	}
+
+	ITA_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = ITA_isonzo_attrition_crisis_1
+			NOT = { has_country_flag = ITA_relief_step_3_done }
+		}
+		visible = {
+			has_idea = ITA_isonzo_attrition_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = ITA_isonzo_attrition_crisis_1
+				add_idea = ITA_vittorio_veneto_triumph
+			}
+			clr_country_flag = ITA_crisis_active
+			set_country_flag = ITA_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# IMPÃ‰RIO OTOMANO (TUR)
+# =======================================================
+ww1_crisis_management_tur = {
+
+	TUR_relief_step_1 = {
+		icon = generic_military
+		available = {
+			has_idea = TUR_desert_supply_collapse_crisis_3
+			NOT = { has_country_flag = TUR_relief_step_1_done }
+		}
+		visible = {
+			has_idea = TUR_desert_supply_collapse_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = TUR_desert_supply_collapse_crisis_3
+				add_idea = TUR_desert_supply_collapse_crisis_2
+			}
+			set_country_flag = TUR_relief_step_1_done
+		}
+	}
+
+	TUR_relief_step_2 = {
+		icon = generic_speech
+		available = {
+			has_idea = TUR_desert_supply_collapse_crisis_2
+			NOT = { has_country_flag = TUR_relief_step_2_done }
+		}
+		visible = {
+			has_idea = TUR_desert_supply_collapse_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = TUR_desert_supply_collapse_crisis_2
+				add_idea = TUR_desert_supply_collapse_crisis_1
+			}
+			set_country_flag = TUR_relief_step_2_done
+		}
+	}
+
+	TUR_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = TUR_desert_supply_collapse_crisis_1
+			NOT = { has_country_flag = TUR_relief_step_3_done }
+		}
+		visible = {
+			has_idea = TUR_desert_supply_collapse_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = TUR_desert_supply_collapse_crisis_1
+				add_idea = TUR_anatolian_sovereignty_victory
+			}
+			clr_country_flag = TUR_crisis_active
+			set_country_flag = TUR_relief_step_3_done
+		}
+	}
+}
+
+# =======================================================
+# ESTADOS UNIDOS (USA)
+# =======================================================
+ww1_crisis_management_usa = {
+
+	USA_relief_step_1 = {
+		icon = generic_factory
+		available = {
+			has_idea = USA_mobilization_bottleneck_crisis_3
+			NOT = { has_country_flag = USA_relief_step_1_done }
+		}
+		visible = {
+			has_idea = USA_mobilization_bottleneck_crisis_3
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = USA_mobilization_bottleneck_crisis_3
+				add_idea = USA_mobilization_bottleneck_crisis_2
+			}
+			set_country_flag = USA_relief_step_1_done
+		}
+	}
+
+	USA_relief_step_2 = {
+		icon = generic_consumer_goods
+		available = {
+			has_idea = USA_mobilization_bottleneck_crisis_2
+			NOT = { has_country_flag = USA_relief_step_2_done }
+		}
+		visible = {
+			has_idea = USA_mobilization_bottleneck_crisis_2
+		}
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = USA_mobilization_bottleneck_crisis_2
+				add_idea = USA_mobilization_bottleneck_crisis_1
+			}
+			set_country_flag = USA_relief_step_2_done
+		}
+	}
+
+	USA_relief_step_3 = {
+		icon = generic_welfare
+		available = {
+			has_idea = USA_mobilization_bottleneck_crisis_1
+			NOT = { has_country_flag = USA_relief_step_3_done }
+		}
+		visible = {
+			has_idea = USA_mobilization_bottleneck_crisis_1
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = USA_mobilization_bottleneck_crisis_1
+				add_idea = USA_arsenal_of_democracy_unleashed
+			}
+			clr_country_flag = USA_crisis_active
+			set_country_flag = USA_relief_step_3_done
+		}
+	}
+}

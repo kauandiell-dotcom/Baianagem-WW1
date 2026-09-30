@@ -1,0 +1,372 @@
+# Active Tactical Combat Powers (Botões de Guerra)
+
+ww1_tactical_war_powers = {
+
+	# =======================================================
+	# 1. IMPÉRIO OTOMANO (TUR)
+	# =======================================================
+	TUR_nusret_minefield_defense = {
+		icon = generic_coastal_fortification
+		available = {
+			tag = TUR
+			has_war = yes
+			NOT = { has_country_flag = nusret_mines_laid }
+		}
+		visible = {
+			tag = TUR
+			has_war = yes
+		}
+		cost = 30
+		days_remove = 90
+
+		complete_effect = {
+			set_country_flag = nusret_mines_laid
+			add_dynamic_modifier = {
+				modifier = TUR_straits_fortification_modifier
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = nusret_mines_laid
+			remove_dynamic_modifier = {
+				modifier = TUR_straits_fortification_modifier
+			}
+		}
+	}
+
+	TUR_kemal_fanatic_order = {
+		icon = generic_speech
+		available = {
+			tag = TUR
+			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = kemal_fanatic_defence_idea }
+		}
+		visible = {
+			tag = TUR
+			has_war = yes
+		}
+		cost = 40
+		days_remove = 30
+
+		modifier = {
+			command_power_gain_mult = -0.50
+		}
+
+		complete_effect = {
+			add_command_power = -30
+			add_timed_idea = {
+				idea = kemal_fanatic_defence_idea
+				days = 30
+			}
+		}
+	}
+
+	# =======================================================
+	# 2. ALEMANHA (GER)
+	# =======================================================
+	GER_chemical_gas_assault = {
+		icon = generic_operation
+		available = {
+			tag = GER
+			has_war = yes
+			has_command_power > 40
+			NOT = { has_country_flag = chemical_gas_cooldown }
+		}
+		visible = {
+			tag = GER
+			has_war = yes
+		}
+		cost = 50
+		days_remove = 14
+
+		complete_effect = {
+			add_command_power = -40
+			set_country_flag = chemical_gas_cooldown
+			every_enemy_country = {
+				limit = {
+					is_major = yes
+				}
+				add_timed_idea = {
+					idea = chemical_gas_disruption
+					days = 14
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = chemical_gas_cooldown
+		}
+	}
+
+	GER_activate_unrestricted_u_boats = {
+		icon = generic_naval
+		available = {
+			tag = GER
+			has_war = yes
+			NOT = { has_country_flag = unrestricted_u_boats_active }
+		}
+		visible = {
+			tag = GER
+			has_war = yes
+			NOT = { has_country_flag = unrestricted_u_boats_active }
+		}
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = unrestricted_u_boats_active
+			every_enemy_country = {
+				limit = {
+					tag = ENG
+				}
+				set_country_flag = suffering_u_boat_blockade
+				add_dynamic_modifier = {
+					modifier = GER_u_boat_economic_stranglehold_modifier
+				}
+			}
+		}
+	}
+
+	GER_deactivate_unrestricted_u_boats = {
+		icon = generic_naval
+		available = {
+			tag = GER
+			has_country_flag = unrestricted_u_boats_active
+		}
+		visible = {
+			tag = GER
+			has_country_flag = unrestricted_u_boats_active
+		}
+		cost = 25
+
+		complete_effect = {
+			clr_country_flag = unrestricted_u_boats_active
+			every_enemy_country = {
+				limit = {
+					tag = ENG
+				}
+				clr_country_flag = suffering_u_boat_blockade
+				remove_dynamic_modifier = {
+					modifier = GER_u_boat_economic_stranglehold_modifier
+				}
+			}
+		}
+	}
+
+	# =======================================================
+	# 3. REINO UNIDO (ENG)
+	# =======================================================
+	ENG_landships_mark_i_push = {
+		icon = generic_tank
+		available = {
+			tag = ENG
+			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = landships_breakthrough_boost }
+		}
+		visible = {
+			tag = ENG
+			has_war = yes
+		}
+		cost = 40
+		days_remove = 21
+
+		complete_effect = {
+			add_command_power = -35
+			add_timed_idea = {
+				idea = landships_breakthrough_boost
+				days = 21
+			}
+		}
+	}
+
+	ENG_call_dominion_anzac_levies = {
+		icon = generic_cavalry
+		available = {
+			tag = ENG
+			has_war = yes
+			NOT = { has_country_flag = anzac_levies_called }
+		}
+		visible = {
+			tag = ENG
+			has_war = yes
+		}
+		cost = 50
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = anzac_levies_called
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 5000
+			}
+		}
+	}
+
+	# =======================================================
+	# 4. FRANÇA (FRA)
+	# =======================================================
+	FRA_activate_voie_sacree = {
+		icon = generic_trucks
+		available = {
+			tag = FRA
+			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = voie_sacree_resilience_idea }
+		}
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+		cost = 40
+		days_remove = 60
+
+		complete_effect = {
+			add_command_power = -30
+			add_timed_idea = {
+				idea = voie_sacree_resilience_idea
+				days = 60
+			}
+		}
+	}
+
+	FRA_messines_tunnel_explosion = {
+		icon = generic_military
+		available = {
+			tag = FRA
+			has_war = yes
+			has_command_power > 40
+			NOT = { has_country_flag = tunnel_mine_detonated }
+		}
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+		cost = 50
+		days_remove = 45
+
+		complete_effect = {
+			add_command_power = -40
+			set_country_flag = tunnel_mine_detonated
+			every_enemy_country = {
+				limit = {
+					tag = GER
+				}
+				add_timed_idea = {
+					idea = chemical_gas_disruption
+					days = 7
+				}
+			}
+		}
+	}
+
+	# =======================================================
+	# 5. RÚSSIA (SOV)
+	# =======================================================
+	SOV_launch_brusilov_offensive = {
+		icon = generic_military
+		available = {
+			tag = SOV
+			has_war = yes
+			has_command_power > 50
+			NOT = { has_idea = brusilov_offensive_shock_idea }
+		}
+		visible = {
+			tag = SOV
+			has_war = yes
+		}
+		cost = 50
+		days_remove = 45
+
+		complete_effect = {
+			add_command_power = -50
+			add_timed_idea = {
+				idea = brusilov_offensive_shock_idea
+				days = 45
+			}
+		}
+	}
+
+	# =======================================================
+	# 6. ÁUSTRIA-HUNGRIA (AUS)
+	# =======================================================
+	AUS_skoda_siege_barrage = {
+		icon = generic_military
+		available = {
+			tag = AUS
+			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = skoda_siege_bombardment_idea }
+		}
+		visible = {
+			tag = AUS
+			has_war = yes
+		}
+		cost = 40
+		days_remove = 15
+
+		complete_effect = {
+			add_command_power = -35
+			add_timed_idea = {
+				idea = skoda_siege_bombardment_idea
+				days = 15
+			}
+		}
+	}
+
+	# =======================================================
+	# 7. ITÁLIA (ITA)
+	# =======================================================
+	ITA_arditi_night_infiltration = {
+		icon = generic_military
+		available = {
+			tag = ITA
+			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = arditi_infiltration_shock_idea }
+		}
+		visible = {
+			tag = ITA
+			has_war = yes
+		}
+		cost = 35
+		days_remove = 14
+
+		complete_effect = {
+			add_command_power = -30
+			add_timed_idea = {
+				idea = arditi_infiltration_shock_idea
+				days = 14
+			}
+		}
+	}
+
+	# =======================================================
+	# 8. ESTADOS UNIDOS (USA)
+	# =======================================================
+	USA_winchester_trench_sweep = {
+		icon = generic_military
+		available = {
+			tag = USA
+			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = trench_sweeper_shotgun_idea }
+		}
+		visible = {
+			tag = USA
+			has_war = yes
+		}
+		cost = 40
+		days_remove = 21
+
+		complete_effect = {
+			add_command_power = -35
+			add_timed_idea = {
+				idea = trench_sweeper_shotgun_idea
+				days = 21
+			}
+		}
+	}
+
+}

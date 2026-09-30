@@ -17,6 +17,14 @@ oob = "USA_1936_generic"
 
 starting_train_buffer = 5
 
+add_ideas = {
+	USA_fordist_industrial_miracle
+	USA_monroe_isolationism
+	USA_wall_street_credit
+	USA_great_white_fleet_heritage
+	USA_firearms_pioneer_culture
+}
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "USA_1936_naval_mtg"

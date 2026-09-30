@@ -1,0 +1,497 @@
+spriteTypes = {
+
+	# =======================================================
+	# 1. IMPÉRIO ALEMÃO (GER)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_GER_grosser_generalstab"
+		texturefile = "gfx/interface/ideas/idea_GER_fan_prussian_militarism.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_krupp_chemical_conglomerates"
+		texturefile = "gfx/interface/ideas/idea_krupp.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_tirpitz_naval_ambition"
+		texturefile = "gfx/interface/ideas/idea_GER_erich_raeder.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_encirclement_paranoia"
+		texturefile = "gfx/interface/ideas/idea_ger_revive_the_kaiserreich.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_burgfrieden_social_peace"
+		texturefile = "gfx/interface/ideas/generic_pp_unity_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_turnip_winter_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_turnip_winter_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_turnip_winter_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_economic_increase.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GER_hindenburg_program_victory"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_german_infiltration_assault_idea"
+		texturefile = "gfx/interface/ideas/idea_GER_fan_prussian_militarism.dds"
+	}
+
+	# =======================================================
+	# 2. REINO UNIDO (ENG)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_ENG_splendid_isolation_legacy"
+		texturefile = "gfx/interface/ideas/idea_generic_the_london_naval_treaty.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_pax_britannica_dreadnoughts"
+		texturefile = "gfx/interface/ideas/idea_generic_sea_focused_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_imperial_cable_and_trade"
+		texturefile = "gfx/interface/ideas/generic_intel_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_continental_commitment_hesitation"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_white_feather_social_pressure"
+		texturefile = "gfx/interface/ideas/generic_volunteer_expedition_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_submarine_blockade_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_submarine_blockade_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_submarine_blockade_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_economic_increase.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_arsenal_of_the_empire"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_landships_breakthrough_boost"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+
+	# =======================================================
+	# 3. FRANÇA (FRA)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_FRA_revanchism_alsace_lorraine"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_elan_vital_offensive"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_canon_75mm_reign"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_low_birthrate_crisis"
+		texturefile = "gfx/interface/ideas/generic_manpower_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_sacred_union_republic"
+		texturefile = "gfx/interface/ideas/generic_pp_unity_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_trench_mutiny_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_trench_mutiny_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_trench_mutiny_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_union_sacree_victory"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_creeping_barrage_idea"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+
+	# =======================================================
+	# 4. IMPÉRIO RUSSO (SOV)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_SOV_tsarist_autocracy"
+		texturefile = "gfx/interface/ideas/idea_generic_king_handled.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_the_steamroller"
+		texturefile = "gfx/interface/ideas/generic_manpower_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_rifle_famine_scar"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_broad_gauge_vastness"
+		texturefile = "gfx/interface/ideas/idea_generic_railroads.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_pan_slavic_protector"
+		texturefile = "gfx/interface/ideas/generic_pp_unity_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_rifle_famine_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_rifle_famine_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_rifle_famine_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_SOV_unbreakable_union_victory"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_brusilov_offensive_doctrine_idea"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+
+	# =======================================================
+	# 5. ÁUSTRIA-HUNGRIA (AUS)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_AUS_dual_monarchy_compromise"
+		texturefile = "gfx/interface/ideas/idea_generic_king_handled.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_tower_of_babel_army"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_skoda_siege_arsenals"
+		texturefile = "gfx/interface/ideas/idea_AUS_alpen_elektrowerke.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_alpine_carpathian_bastion"
+		texturefile = "gfx/interface/ideas/idea_generic_mountain_warfare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_balkan_destiny"
+		texturefile = "gfx/interface/ideas/idea_AUS_aggression.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_nationalities_fracture_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_nationalities_fracture_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_nationalities_fracture_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_AUS_danubian_triumph"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_skoda_heavy_bombardment_idea"
+		texturefile = "gfx/interface/ideas/idea_AUS_army.dds"
+	}
+
+	# =======================================================
+	# 6. ITÁLIA (ITA)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_ITA_terre_irredente_dream"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_alpini_tradition"
+		texturefile = "gfx/interface/ideas/idea_generic_mountain_warfare.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_coal_iron_scarcity"
+		texturefile = "gfx/interface/ideas/idea_generic_exploit_mines.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_southern_question_gap"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_sacro_egoismo_policy"
+		texturefile = "gfx/interface/ideas/generic_pp_unity_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_isonzo_attrition_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_isonzo_attrition_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_isonzo_attrition_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ITA_vittorio_veneto_triumph"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_arditi_dagger_assault_idea"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+
+	# =======================================================
+	# 7. IMPÉRIO OTOMANO (TUR)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_TUR_straits_fortress_cannons"
+		texturefile = "gfx/interface/ideas/generic_wall_line.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_sick_man_debt"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_mehmetcik_tenacity"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_three_pashas_dictatorship"
+		texturefile = "gfx/interface/ideas/idea_generic_king_handled.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_caliphate_global_banner"
+		texturefile = "gfx/interface/ideas/generic_pp_unity_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_desert_supply_collapse_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_desert_supply_collapse_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_desert_supply_collapse_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_TUR_anatolian_sovereignty_victory"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_jihad_holy_call_idea"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_kemal_fanatic_defence_idea"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+
+	# =======================================================
+	# 8. ESTADOS UNIDOS (USA)
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_USA_fordist_industrial_miracle"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_monroe_isolationism"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_wall_street_credit"
+		texturefile = "gfx/interface/ideas/generic_economic_increase.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_great_white_fleet_heritage"
+		texturefile = "gfx/interface/ideas/generic_navy_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_firearms_pioneer_culture"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_mobilization_bottleneck_crisis_3"
+		texturefile = "gfx/interface/ideas/generic_goods_red_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_mobilization_bottleneck_crisis_2"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_mobilization_bottleneck_crisis_1"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_arsenal_of_democracy_unleashed"
+		texturefile = "gfx/interface/ideas/generic_victors_of_ww1.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_trench_sweeper_shotgun_idea"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+
+	# =======================================================
+	# 9. SUBUNIDADES EXCLUSIVAS (COUNTERS & DESIGNER)
+	# =======================================================
+	spriteType = {
+		name = "GFX_unit_ottoman_ghazi_militia_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_cavalry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_ottoman_ghazi_militia_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_cavalry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_ottoman_ghazi_militia_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_cavalry_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_german_stosstruppen_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_assault_engineer_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_german_stosstruppen_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_assault_engineer_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_german_stosstruppen_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_assault_engineer_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_french_75mm_rapid_brigade_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_art_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_french_75mm_rapid_brigade_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_art_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_french_75mm_rapid_brigade_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_art_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_russian_opolcheniye_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_infantry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_russian_opolcheniye_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_russian_opolcheniye_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_austrian_gebirgsjager_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_mountain_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_austrian_gebirgsjager_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mountain_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_austrian_gebirgsjager_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_mountain_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_italian_arditi_shock_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_blackshirt_assault_battalion_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_italian_arditi_shock_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_blackshirt_assault_battalion_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_italian_arditi_shock_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_blackshirt_assault_battalion_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_anzac_corps_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_marine_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_anzac_corps_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_marine_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_anzac_corps_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_marine_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_unit_american_doughboys_icon_medium"
+		textureFile = "gfx/interface/counters/divisions_large/unit_infantry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_american_doughboys_icon_medium_white"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_unit_american_doughboys_icon_small"
+		textureFile = "gfx/interface/counters/divisions_small/onmap_unit_infantry_icon.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+}

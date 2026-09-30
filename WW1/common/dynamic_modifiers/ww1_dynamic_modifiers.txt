@@ -1,0 +1,28 @@
+# Dynamic Modifiers for WW1 Master Mechanics
+
+TUR_straits_fortification_modifier = {
+	enable = {
+		tag = TUR
+	}
+	icon = GFX_idea_generic_coastal_defense_ships
+	amphibious_invasion_defence = 0.50
+	army_core_defence_factor = 0.15
+}
+
+GER_u_boat_economic_stranglehold_modifier = {
+	enable = {
+		has_country_flag = suffering_u_boat_blockade
+	}
+	icon = GFX_idea_generic_naval_loss
+	industrial_capacity_factory = -0.15
+	consumer_goods_factor = 0.10
+}
+
+ENG_distant_blockade_modifier = {
+	enable = {
+		has_country_flag = suffering_distant_blockade
+	}
+	icon = GFX_idea_generic_goods_red_bonus
+	consumer_goods_factor = 0.08
+	industrial_capacity_factory = -0.10
+}

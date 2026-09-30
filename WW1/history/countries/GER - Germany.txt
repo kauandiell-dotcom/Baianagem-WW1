@@ -69,7 +69,14 @@ if = {
 
 starting_train_buffer = 2
 set_fuel_ratio = 0.8
-add_ideas = MBR_Central_Powers
+add_ideas = {
+	MBR_Central_Powers
+	GER_grosser_generalstab
+	GER_krupp_chemical_conglomerates
+	GER_tirpitz_naval_ambition
+	GER_encirclement_paranoia
+	GER_burgfrieden_social_peace
+}
 
 # starting_truck_buffer = 0.8
 
