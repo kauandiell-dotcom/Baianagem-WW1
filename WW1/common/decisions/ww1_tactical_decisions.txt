@@ -7,14 +7,15 @@ ww1_tactical_war_powers = {
 	# =======================================================
 	TUR_nusret_minefield_defense = {
 		icon = generic_coastal_fortification
-		available = {
+		allowed = {
 			tag = TUR
-			has_war = yes
-			NOT = { has_country_flag = nusret_mines_laid }
 		}
 		visible = {
 			tag = TUR
+		}
+		available = {
 			has_war = yes
+			NOT = { has_country_flag = nusret_mines_laid }
 		}
 		cost = 30
 		days_remove = 90
@@ -36,15 +37,16 @@ ww1_tactical_war_powers = {
 
 	TUR_kemal_fanatic_order = {
 		icon = generic_speech
-		available = {
+		allowed = {
 			tag = TUR
-			has_war = yes
-			has_command_power > 30
-			NOT = { has_idea = kemal_fanatic_defence_idea }
 		}
 		visible = {
 			tag = TUR
+		}
+		available = {
 			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = kemal_fanatic_defence_idea }
 		}
 		cost = 40
 		days_remove = 30
@@ -62,20 +64,43 @@ ww1_tactical_war_powers = {
 		}
 	}
 
+	TUR_call_to_holy_defense = {
+		icon = generic_propaganda
+		allowed = {
+			tag = TUR
+		}
+		visible = {
+			tag = TUR
+			NOT = { has_country_flag = jihad_proclaimed }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 40
+		fire_only_once = yes
+
+		complete_effect = {
+			set_country_flag = jihad_proclaimed
+			add_ideas = jihad_holy_call_idea
+			add_manpower = 50000
+		}
+	}
+
 	# =======================================================
 	# 2. ALEMANHA (GER)
 	# =======================================================
 	GER_chemical_gas_assault = {
 		icon = generic_operation
-		available = {
+		allowed = {
 			tag = GER
-			has_war = yes
-			has_command_power > 40
-			NOT = { has_country_flag = chemical_gas_cooldown }
 		}
 		visible = {
 			tag = GER
+		}
+		available = {
 			has_war = yes
+			has_command_power > 40
+			NOT = { has_country_flag = chemical_gas_cooldown }
 		}
 		cost = 50
 		days_remove = 14
@@ -99,17 +124,78 @@ ww1_tactical_war_powers = {
 		}
 	}
 
-	GER_activate_unrestricted_u_boats = {
-		icon = generic_naval
-		available = {
+	GER_stosstrupp_assault = {
+		icon = generic_military
+		allowed = {
 			tag = GER
-			has_war = yes
-			NOT = { has_country_flag = unrestricted_u_boats_active }
 		}
 		visible = {
 			tag = GER
+		}
+		available = {
 			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = german_infiltration_assault_idea }
+		}
+		cost = 40
+		days_remove = 30
+
+		modifier = {
+			command_power_gain_mult = -0.30
+		}
+
+		complete_effect = {
+			add_command_power = -35
+			add_timed_idea = {
+				idea = german_infiltration_assault_idea
+				days = 30
+			}
+		}
+	}
+
+	GER_kaiserschlacht_offensive = {
+		icon = generic_operation
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			tag = GER
+			NOT = { has_country_flag = kaiserschlacht_executed }
+		}
+		available = {
+			has_war = yes
+			has_command_power > 50
+			NOT = { has_idea = GER_kaiserschlacht_idea }
+		}
+		cost = 50
+		days_remove = 60
+		fire_only_once = yes
+
+		modifier = {
+			command_power_gain_mult = -0.50
+		}
+
+		complete_effect = {
+			add_command_power = -50
+			set_country_flag = kaiserschlacht_executed
+			add_timed_idea = {
+				idea = GER_kaiserschlacht_idea
+				days = 60
+			}
+		}
+	}
+
+	GER_activate_unrestricted_u_boats = {
+		icon = generic_naval
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			tag = GER
 			NOT = { has_country_flag = unrestricted_u_boats_active }
+		}
+		available = {
+			has_war = yes
 		}
 		cost = 25
 
@@ -129,12 +215,14 @@ ww1_tactical_war_powers = {
 
 	GER_deactivate_unrestricted_u_boats = {
 		icon = generic_naval
-		available = {
+		allowed = {
 			tag = GER
-			has_country_flag = unrestricted_u_boats_active
 		}
 		visible = {
 			tag = GER
+			has_country_flag = unrestricted_u_boats_active
+		}
+		available = {
 			has_country_flag = unrestricted_u_boats_active
 		}
 		cost = 25
@@ -158,15 +246,16 @@ ww1_tactical_war_powers = {
 	# =======================================================
 	ENG_landships_mark_i_push = {
 		icon = generic_tank
-		available = {
+		allowed = {
 			tag = ENG
-			has_war = yes
-			has_command_power > 35
-			NOT = { has_idea = landships_breakthrough_boost }
 		}
 		visible = {
 			tag = ENG
+		}
+		available = {
 			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = landships_breakthrough_boost }
 		}
 		cost = 40
 		days_remove = 21
@@ -182,13 +271,14 @@ ww1_tactical_war_powers = {
 
 	ENG_call_dominion_anzac_levies = {
 		icon = generic_cavalry
-		available = {
+		allowed = {
 			tag = ENG
-			has_war = yes
-			NOT = { has_country_flag = anzac_levies_called }
 		}
 		visible = {
 			tag = ENG
+			NOT = { has_country_flag = anzac_levies_called }
+		}
+		available = {
 			has_war = yes
 		}
 		cost = 50
@@ -204,20 +294,102 @@ ww1_tactical_war_powers = {
 		}
 	}
 
+	ENG_creeping_barrage_offensive = {
+		icon = generic_military
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			tag = ENG
+		}
+		available = {
+			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = creeping_barrage_idea }
+		}
+		cost = 35
+		days_remove = 21
+
+		complete_effect = {
+			add_command_power = -30
+			add_timed_idea = {
+				idea = creeping_barrage_idea
+				days = 21
+			}
+		}
+	}
+
+	ENG_impose_distant_blockade = {
+		icon = generic_naval
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			tag = ENG
+			NOT = { has_country_flag = distant_blockade_active }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 25
+
+		complete_effect = {
+			set_country_flag = distant_blockade_active
+			every_enemy_country = {
+				limit = {
+					tag = GER
+				}
+				set_country_flag = suffering_distant_blockade
+				add_dynamic_modifier = {
+					modifier = ENG_distant_blockade_modifier
+				}
+			}
+		}
+	}
+
+	ENG_lift_distant_blockade = {
+		icon = generic_naval
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			tag = ENG
+			has_country_flag = distant_blockade_active
+		}
+		available = {
+			has_country_flag = distant_blockade_active
+		}
+		cost = 25
+
+		complete_effect = {
+			clr_country_flag = distant_blockade_active
+			every_enemy_country = {
+				limit = {
+					tag = GER
+				}
+				clr_country_flag = suffering_distant_blockade
+				remove_dynamic_modifier = {
+					modifier = ENG_distant_blockade_modifier
+				}
+			}
+		}
+	}
+
 	# =======================================================
 	# 4. FRANÇA (FRA)
 	# =======================================================
 	FRA_activate_voie_sacree = {
 		icon = generic_trucks
-		available = {
+		allowed = {
 			tag = FRA
-			has_war = yes
-			has_command_power > 30
-			NOT = { has_idea = voie_sacree_resilience_idea }
 		}
 		visible = {
 			tag = FRA
+		}
+		available = {
 			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = voie_sacree_resilience_idea }
 		}
 		cost = 40
 		days_remove = 60
@@ -233,15 +405,16 @@ ww1_tactical_war_powers = {
 
 	FRA_messines_tunnel_explosion = {
 		icon = generic_military
-		available = {
+		allowed = {
 			tag = FRA
-			has_war = yes
-			has_command_power > 40
-			NOT = { has_country_flag = tunnel_mine_detonated }
 		}
 		visible = {
 			tag = FRA
+			NOT = { has_country_flag = tunnel_mine_detonated }
+		}
+		available = {
 			has_war = yes
+			has_command_power > 40
 		}
 		cost = 50
 		days_remove = 45
@@ -261,20 +434,46 @@ ww1_tactical_war_powers = {
 		}
 	}
 
+	FRA_creeping_barrage_offensive = {
+		icon = generic_military
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			tag = FRA
+		}
+		available = {
+			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = creeping_barrage_idea }
+		}
+		cost = 35
+		days_remove = 21
+
+		complete_effect = {
+			add_command_power = -30
+			add_timed_idea = {
+				idea = creeping_barrage_idea
+				days = 21
+			}
+		}
+	}
+
 	# =======================================================
 	# 5. RÚSSIA (SOV)
 	# =======================================================
 	SOV_launch_brusilov_offensive = {
 		icon = generic_military
-		available = {
+		allowed = {
 			tag = SOV
-			has_war = yes
-			has_command_power > 50
-			NOT = { has_idea = brusilov_offensive_shock_idea }
 		}
 		visible = {
 			tag = SOV
+		}
+		available = {
 			has_war = yes
+			has_command_power > 50
+			NOT = { has_idea = brusilov_offensive_shock_idea }
 		}
 		cost = 50
 		days_remove = 45
@@ -293,15 +492,16 @@ ww1_tactical_war_powers = {
 	# =======================================================
 	AUS_skoda_siege_barrage = {
 		icon = generic_military
-		available = {
+		allowed = {
 			tag = AUS
-			has_war = yes
-			has_command_power > 35
-			NOT = { has_idea = skoda_siege_bombardment_idea }
 		}
 		visible = {
 			tag = AUS
+		}
+		available = {
 			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = skoda_siege_bombardment_idea }
 		}
 		cost = 40
 		days_remove = 15
@@ -320,15 +520,16 @@ ww1_tactical_war_powers = {
 	# =======================================================
 	ITA_arditi_night_infiltration = {
 		icon = generic_military
-		available = {
+		allowed = {
 			tag = ITA
-			has_war = yes
-			has_command_power > 30
-			NOT = { has_idea = arditi_infiltration_shock_idea }
 		}
 		visible = {
 			tag = ITA
+		}
+		available = {
 			has_war = yes
+			has_command_power > 30
+			NOT = { has_idea = arditi_infiltration_shock_idea }
 		}
 		cost = 35
 		days_remove = 14
@@ -347,15 +548,16 @@ ww1_tactical_war_powers = {
 	# =======================================================
 	USA_winchester_trench_sweep = {
 		icon = generic_military
-		available = {
+		allowed = {
 			tag = USA
-			has_war = yes
-			has_command_power > 35
-			NOT = { has_idea = trench_sweeper_shotgun_idea }
 		}
 		visible = {
 			tag = USA
+		}
+		available = {
 			has_war = yes
+			has_command_power > 35
+			NOT = { has_idea = trench_sweeper_shotgun_idea }
 		}
 		cost = 40
 		days_remove = 21

@@ -1,0 +1,326 @@
+# WW1 1911 Guaranteed On-Startup Initializer for Major Powers Starting Spirits & Mechanics
+# Guarantees 100% that all 8 major powers receive their 5 authentic starting national spirits on Day 1 (1911.6.1)
+# regardless of history file parser quirks, missing DLC triggers, or tag aliases.
+
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				# =======================================================
+				# 1. IMPÉRIO ALEMÃO (GER)
+				# =======================================================
+				if = {
+					limit = { tag = GER }
+					if = {
+						limit = { NOT = { has_idea = GER_grosser_generalstab } }
+						add_ideas = GER_grosser_generalstab
+					}
+					if = {
+						limit = { NOT = { has_idea = GER_krupp_chemical_conglomerates } }
+						add_ideas = GER_krupp_chemical_conglomerates
+					}
+					if = {
+						limit = { NOT = { has_idea = GER_tirpitz_naval_ambition } }
+						add_ideas = GER_tirpitz_naval_ambition
+					}
+					if = {
+						limit = { NOT = { has_idea = GER_encirclement_paranoia } }
+						add_ideas = GER_encirclement_paranoia
+					}
+					if = {
+						limit = { NOT = { has_idea = GER_burgfrieden_social_peace } }
+						add_ideas = GER_burgfrieden_social_peace
+					}
+				}
+
+				# =======================================================
+				# 2. REINO UNIDO (ENG)
+				# =======================================================
+				if = {
+					limit = { tag = ENG }
+					if = {
+						limit = { NOT = { has_idea = ENG_two_power_standard } }
+						add_ideas = ENG_two_power_standard
+					}
+					if = {
+						limit = { NOT = { has_idea = ENG_city_of_london_credit } }
+						add_ideas = ENG_city_of_london_credit
+					}
+					if = {
+						limit = { NOT = { has_idea = ENG_professional_bef } }
+						add_ideas = ENG_professional_bef
+					}
+					if = {
+						limit = { NOT = { has_idea = ENG_the_imperial_web } }
+						add_ideas = ENG_the_imperial_web
+					}
+					if = {
+						limit = { NOT = { has_idea = ENG_irish_home_rule_tension } }
+						add_ideas = ENG_irish_home_rule_tension
+					}
+				}
+
+				# =======================================================
+				# 3. FRANÇA (FRA)
+				# =======================================================
+				if = {
+					limit = { tag = FRA }
+					if = {
+						limit = { NOT = { has_idea = FRA_wound_of_1870 } }
+						add_ideas = FRA_wound_of_1870
+					}
+					if = {
+						limit = { NOT = { has_idea = FRA_elan_vital_doctrine } }
+						add_ideas = FRA_elan_vital_doctrine
+					}
+					if = {
+						limit = { NOT = { has_idea = FRA_canon_75mm_supremacy } }
+						add_ideas = FRA_canon_75mm_supremacy
+					}
+					if = {
+						limit = { NOT = { has_idea = FRA_demographic_stagnation } }
+						add_ideas = FRA_demographic_stagnation
+					}
+					if = {
+						limit = { NOT = { has_idea = FRA_third_republic_instability } }
+						add_ideas = FRA_third_republic_instability
+					}
+				}
+
+				# =======================================================
+				# 4. IMPÉRIO RUSSO (SOV / RUS)
+				# =======================================================
+				if = {
+					limit = {
+						OR = {
+							tag = SOV
+							tag = RUS
+						}
+					}
+					if = {
+						limit = { NOT = { has_idea = SOV_tsarist_autocracy } }
+						add_ideas = SOV_tsarist_autocracy
+					}
+					if = {
+						limit = { NOT = { has_idea = SOV_the_steamroller } }
+						add_ideas = SOV_the_steamroller
+					}
+					if = {
+						limit = { NOT = { has_idea = SOV_rifle_famine_scar } }
+						add_ideas = SOV_rifle_famine_scar
+					}
+					if = {
+						limit = { NOT = { has_idea = SOV_broad_gauge_vastness } }
+						add_ideas = SOV_broad_gauge_vastness
+					}
+					if = {
+						limit = { NOT = { has_idea = SOV_pan_slavic_protector } }
+						add_ideas = SOV_pan_slavic_protector
+					}
+				}
+
+				# =======================================================
+				# 5. ÁUSTRIA-HUNGRIA (AUS)
+				# =======================================================
+				if = {
+					limit = { tag = AUS }
+					if = {
+						limit = { NOT = { has_idea = AUS_dual_monarchy_compromise } }
+						add_ideas = AUS_dual_monarchy_compromise
+					}
+					if = {
+						limit = { NOT = { has_idea = AUS_tower_of_babel_army } }
+						add_ideas = AUS_tower_of_babel_army
+					}
+					if = {
+						limit = { NOT = { has_idea = AUS_skoda_siege_arsenals } }
+						add_ideas = AUS_skoda_siege_arsenals
+					}
+					if = {
+						limit = { NOT = { has_idea = AUS_alpine_carpathian_bastion } }
+						add_ideas = AUS_alpine_carpathian_bastion
+					}
+					if = {
+						limit = { NOT = { has_idea = AUS_balkan_destiny } }
+						add_ideas = AUS_balkan_destiny
+					}
+				}
+
+				# =======================================================
+				# 6. ITÁLIA (ITA)
+				# =======================================================
+				if = {
+					limit = { tag = ITA }
+					if = {
+						limit = { NOT = { has_idea = ITA_terre_irredente_dream } }
+						add_ideas = ITA_terre_irredente_dream
+					}
+					if = {
+						limit = { NOT = { has_idea = ITA_alpini_tradition } }
+						add_ideas = ITA_alpini_tradition
+					}
+					if = {
+						limit = { NOT = { has_idea = ITA_coal_iron_scarcity } }
+						add_ideas = ITA_coal_iron_scarcity
+					}
+					if = {
+						limit = { NOT = { has_idea = ITA_southern_question_gap } }
+						add_ideas = ITA_southern_question_gap
+					}
+					if = {
+						limit = { NOT = { has_idea = ITA_sacro_egoismo_policy } }
+						add_ideas = ITA_sacro_egoismo_policy
+					}
+				}
+
+				# =======================================================
+				# 7. IMPÉRIO OTOMANO (TUR)
+				# =======================================================
+				if = {
+					limit = { tag = TUR }
+					if = {
+						limit = { NOT = { has_idea = TUR_straits_fortress_cannons } }
+						add_ideas = TUR_straits_fortress_cannons
+					}
+					if = {
+						limit = { NOT = { has_idea = TUR_sick_man_debt } }
+						add_ideas = TUR_sick_man_debt
+					}
+					if = {
+						limit = { NOT = { has_idea = TUR_mehmetcik_tenacity } }
+						add_ideas = TUR_mehmetcik_tenacity
+					}
+					if = {
+						limit = { NOT = { has_idea = TUR_three_pashas_dictatorship } }
+						add_ideas = TUR_three_pashas_dictatorship
+					}
+					if = {
+						limit = { NOT = { has_idea = TUR_caliphate_global_banner } }
+						add_ideas = TUR_caliphate_global_banner
+					}
+				}
+
+				# =======================================================
+				# 8. ESTADOS UNIDOS (USA)
+				# =======================================================
+				if = {
+					limit = { tag = USA }
+					if = {
+						limit = { NOT = { has_idea = USA_fordist_industrial_miracle } }
+						add_ideas = USA_fordist_industrial_miracle
+					}
+					if = {
+						limit = { NOT = { has_idea = USA_monroe_isolationism } }
+						add_ideas = USA_monroe_isolationism
+					}
+					if = {
+						limit = { NOT = { has_idea = USA_wall_street_credit } }
+						add_ideas = USA_wall_street_credit
+					}
+					if = {
+						limit = { NOT = { has_idea = USA_great_white_fleet_heritage } }
+						add_ideas = USA_great_white_fleet_heritage
+					}
+					if = {
+						limit = { NOT = { has_idea = USA_firearms_pioneer_culture } }
+						add_ideas = USA_firearms_pioneer_culture
+					}
+				}
+			}
+
+			# =======================================================
+			# DOUBLE SAFETY LAYER: Direct Tag Scopes
+			# =======================================================
+			if = {
+				limit = { country_exists = GER }
+				GER = {
+					if = { limit = { NOT = { has_idea = GER_grosser_generalstab } } add_ideas = GER_grosser_generalstab }
+					if = { limit = { NOT = { has_idea = GER_krupp_chemical_conglomerates } } add_ideas = GER_krupp_chemical_conglomerates }
+					if = { limit = { NOT = { has_idea = GER_tirpitz_naval_ambition } } add_ideas = GER_tirpitz_naval_ambition }
+					if = { limit = { NOT = { has_idea = GER_encirclement_paranoia } } add_ideas = GER_encirclement_paranoia }
+					if = { limit = { NOT = { has_idea = GER_burgfrieden_social_peace } } add_ideas = GER_burgfrieden_social_peace }
+				}
+			}
+			if = {
+				limit = { country_exists = ENG }
+				ENG = {
+					if = { limit = { NOT = { has_idea = ENG_two_power_standard } } add_ideas = ENG_two_power_standard }
+					if = { limit = { NOT = { has_idea = ENG_city_of_london_credit } } add_ideas = ENG_city_of_london_credit }
+					if = { limit = { NOT = { has_idea = ENG_professional_bef } } add_ideas = ENG_professional_bef }
+					if = { limit = { NOT = { has_idea = ENG_the_imperial_web } } add_ideas = ENG_the_imperial_web }
+					if = { limit = { NOT = { has_idea = ENG_irish_home_rule_tension } } add_ideas = ENG_irish_home_rule_tension }
+				}
+			}
+			if = {
+				limit = { country_exists = FRA }
+				FRA = {
+					if = { limit = { NOT = { has_idea = FRA_wound_of_1870 } } add_ideas = FRA_wound_of_1870 }
+					if = { limit = { NOT = { has_idea = FRA_elan_vital_doctrine } } add_ideas = FRA_elan_vital_doctrine }
+					if = { limit = { NOT = { has_idea = FRA_canon_75mm_supremacy } } add_ideas = FRA_canon_75mm_supremacy }
+					if = { limit = { NOT = { has_idea = FRA_demographic_stagnation } } add_ideas = FRA_demographic_stagnation }
+					if = { limit = { NOT = { has_idea = FRA_third_republic_instability } } add_ideas = FRA_third_republic_instability }
+				}
+			}
+			if = {
+				limit = { country_exists = SOV }
+				SOV = {
+					if = { limit = { NOT = { has_idea = SOV_tsarist_autocracy } } add_ideas = SOV_tsarist_autocracy }
+					if = { limit = { NOT = { has_idea = SOV_the_steamroller } } add_ideas = SOV_the_steamroller }
+					if = { limit = { NOT = { has_idea = SOV_rifle_famine_scar } } add_ideas = SOV_rifle_famine_scar }
+					if = { limit = { NOT = { has_idea = SOV_broad_gauge_vastness } } add_ideas = SOV_broad_gauge_vastness }
+					if = { limit = { NOT = { has_idea = SOV_pan_slavic_protector } } add_ideas = SOV_pan_slavic_protector }
+				}
+			}
+			if = {
+				limit = { country_exists = RUS }
+				RUS = {
+					if = { limit = { NOT = { has_idea = SOV_tsarist_autocracy } } add_ideas = SOV_tsarist_autocracy }
+					if = { limit = { NOT = { has_idea = SOV_the_steamroller } } add_ideas = SOV_the_steamroller }
+					if = { limit = { NOT = { has_idea = SOV_rifle_famine_scar } } add_ideas = SOV_rifle_famine_scar }
+					if = { limit = { NOT = { has_idea = SOV_broad_gauge_vastness } } add_ideas = SOV_broad_gauge_vastness }
+					if = { limit = { NOT = { has_idea = SOV_pan_slavic_protector } } add_ideas = SOV_pan_slavic_protector }
+				}
+			}
+			if = {
+				limit = { country_exists = AUS }
+				AUS = {
+					if = { limit = { NOT = { has_idea = AUS_dual_monarchy_compromise } } add_ideas = AUS_dual_monarchy_compromise }
+					if = { limit = { NOT = { has_idea = AUS_tower_of_babel_army } } add_ideas = AUS_tower_of_babel_army }
+					if = { limit = { NOT = { has_idea = AUS_skoda_siege_arsenals } } add_ideas = AUS_skoda_siege_arsenals }
+					if = { limit = { NOT = { has_idea = AUS_alpine_carpathian_bastion } } add_ideas = AUS_alpine_carpathian_bastion }
+					if = { limit = { NOT = { has_idea = AUS_balkan_destiny } } add_ideas = AUS_balkan_destiny }
+				}
+			}
+			if = {
+				limit = { country_exists = ITA }
+				ITA = {
+					if = { limit = { NOT = { has_idea = ITA_terre_irredente_dream } } add_ideas = ITA_terre_irredente_dream }
+					if = { limit = { NOT = { has_idea = ITA_alpini_tradition } } add_ideas = ITA_alpini_tradition }
+					if = { limit = { NOT = { has_idea = ITA_coal_iron_scarcity } } add_ideas = ITA_coal_iron_scarcity }
+					if = { limit = { NOT = { has_idea = ITA_southern_question_gap } } add_ideas = ITA_southern_question_gap }
+					if = { limit = { NOT = { has_idea = ITA_sacro_egoismo_policy } } add_ideas = ITA_sacro_egoismo_policy }
+				}
+			}
+			if = {
+				limit = { country_exists = TUR }
+				TUR = {
+					if = { limit = { NOT = { has_idea = TUR_straits_fortress_cannons } } add_ideas = TUR_straits_fortress_cannons }
+					if = { limit = { NOT = { has_idea = TUR_sick_man_debt } } add_ideas = TUR_sick_man_debt }
+					if = { limit = { NOT = { has_idea = TUR_mehmetcik_tenacity } } add_ideas = TUR_mehmetcik_tenacity }
+					if = { limit = { NOT = { has_idea = TUR_three_pashas_dictatorship } } add_ideas = TUR_three_pashas_dictatorship }
+					if = { limit = { NOT = { has_idea = TUR_caliphate_global_banner } } add_ideas = TUR_caliphate_global_banner }
+				}
+			}
+			if = {
+				limit = { country_exists = USA }
+				USA = {
+					if = { limit = { NOT = { has_idea = USA_fordist_industrial_miracle } } add_ideas = USA_fordist_industrial_miracle }
+					if = { limit = { NOT = { has_idea = USA_monroe_isolationism } } add_ideas = USA_monroe_isolationism }
+					if = { limit = { NOT = { has_idea = USA_wall_street_credit } } add_ideas = USA_wall_street_credit }
+					if = { limit = { NOT = { has_idea = USA_great_white_fleet_heritage } } add_ideas = USA_great_white_fleet_heritage }
+					if = { limit = { NOT = { has_idea = USA_firearms_pioneer_culture } } add_ideas = USA_firearms_pioneer_culture }
+				}
+			}
+		}
+	}
+}
