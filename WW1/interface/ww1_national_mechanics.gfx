@@ -87,6 +87,26 @@ spriteTypes = {
 		name = "GFX_idea_landships_breakthrough_boost"
 		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_ENG_two_power_standard"
+		texturefile = "gfx/interface/ideas/idea_generic_sea_focused_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_city_of_london_credit"
+		texturefile = "gfx/interface/ideas/generic_intel_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_professional_bef"
+		texturefile = "gfx/interface/ideas/generic_volunteer_expedition_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_the_imperial_web"
+		texturefile = "gfx/interface/ideas/idea_generic_the_london_naval_treaty.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ENG_irish_home_rule_tension"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
 
 	# =======================================================
 	# 3. FRANÇA (FRA)
@@ -130,6 +150,26 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_creeping_barrage_idea"
 		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_wound_of_1870"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_elan_vital_doctrine"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_canon_75mm_supremacy"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_demographic_stagnation"
+		texturefile = "gfx/interface/ideas/generic_manpower_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_FRA_third_republic_instability"
+		texturefile = "gfx/interface/ideas/generic_pp_unity_bonus.dds"
 	}
 
 	# =======================================================
@@ -353,6 +393,30 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_idea_trench_sweeper_shotgun_idea"
+		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
+	}
+
+	# =======================================================
+	# IDEIAS TÁTICAS E DE CRISE COMPLEMENTARES
+	# =======================================================
+	spriteType = {
+		name = "GFX_idea_chemical_gas_disruption"
+		texturefile = "gfx/interface/ideas/generic_disjointed_gov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_voie_sacree_resilience_idea"
+		texturefile = "gfx/interface/ideas/generic_production_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_brusilov_offensive_shock_idea"
+		texturefile = "gfx/interface/ideas/generic_morale_bonus.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_skoda_siege_bombardment_idea"
+		texturefile = "gfx/interface/ideas/idea_AUS_army.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_arditi_infiltration_shock_idea"
 		texturefile = "gfx/interface/ideas/generic_infantry_bonus.dds"
 	}
 

@@ -1,7 +1,7 @@
 bookmarks = {
 	bookmark = {
-		name = "GATHERING_STORM_NAME"
-		desc = "GATHERING_STORM_DESC"
+		name = "WW1_GATHERING_STORM_NAME"
+		desc = "WW1_GATHERING_STORM_DESC"
 		date = 1911.6.1.12
 		picture = "GFX_select_date_1936"
 		default_country = "GER"
@@ -9,86 +9,158 @@ bookmarks = {
 
 		# German Empire (Kaiser Wilhelm II)
 		"GER" = {
-			history = "GER_GATHERING_STORM_DESC"
+			history = "WW1_GER_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				GER_grosser_generalstab
+				GER_krupp_chemical_conglomerates
+				GER_tirpitz_naval_ambition
+				GER_encirclement_paranoia
+				GER_burgfrieden_social_peace
 			}
 			focuses = {
+				generic_army_effort
+				generic_industrial_effort
+				generic_naval_effort
+				political_sphere
 			}
 		}
 
 		# Austro-Hungarian Empire (Franz Joseph I)
 		"AUS" = {
-			history = "AUS_GATHERING_STORM_DESC"
+			history = "WW1_AUS_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				AUS_dual_monarchy_compromise
+				AUS_tower_of_babel_army
+				AUS_skoda_siege_arsenals
+				AUS_alpine_carpathian_bastion
+				AUS_balkan_destiny
 			}
 			focuses = {
+				generic_army_effort
+				generic_industrial_effort
+				generic_naval_effort
+				political_sphere
 			}
 		}
 
 		# Ottoman Empire (Mehmed V)
 		"TUR" = {
-			history = "TUR_GATHERING_STORM_DESC"
+			history = "WW1_TUR_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				TUR_straits_fortress_cannons
+				TUR_sick_man_debt
+				TUR_mehmetcik_tenacity
+				TUR_three_pashas_dictatorship
+				TUR_caliphate_global_banner
 			}
 			focuses = {
+				generic_army_effort
+				generic_industrial_effort
+				generic_naval_effort
+				political_sphere
 			}
 		}
 
 		# British Empire (George V / H. H. Asquith)
 		"ENG" = {
-			history = "ENG_GATHERING_STORM_DESC"
+			history = "WW1_ENG_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
+				ENG_two_power_standard
+				ENG_city_of_london_credit
+				ENG_professional_bef
+				ENG_the_imperial_web
+				ENG_irish_home_rule_tension
 			}
 			focuses = {
+				generic_naval_effort
+				generic_industrial_effort
+				generic_army_effort
+				political_sphere
 			}
 		}
 
 		# French Third Republic (Armand Fallières / Joseph Caillaux)
 		"FRA" = {
-			history = "FRA_GATHERING_STORM_DESC"
+			history = "WW1_FRA_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
+				FRA_wound_of_1870
+				FRA_elan_vital_doctrine
+				FRA_canon_75mm_supremacy
+				FRA_demographic_stagnation
+				FRA_third_republic_instability
 			}
 			focuses = {
+				generic_army_effort
+				generic_industrial_effort
+				generic_naval_effort
+				political_sphere
 			}
 		}
 
 		# Russian Empire (Tsar Nicholas II)
 		"SOV" = {
-			history = "SOV_GATHERING_STORM_DESC"
+			history = "WW1_SOV_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
+				SOV_tsarist_autocracy
+				SOV_the_steamroller
+				SOV_rifle_famine_scar
+				SOV_broad_gauge_vastness
+				SOV_pan_slavic_protector
 			}
 			focuses = {
+				generic_army_effort
+				generic_industrial_effort
+				generic_naval_effort
+				political_sphere
 			}
 		}
 
 		# Kingdom of Italy (Victor Emmanuel III / Giovanni Giolitti)
 		"ITA" = {
-			history = "ITA_GATHERING_STORM_DESC"
+			history = "WW1_ITA_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
+				ITA_terre_irredente_dream
+				ITA_alpini_tradition
+				ITA_coal_iron_scarcity
+				ITA_southern_question_gap
+				ITA_sacro_egoismo_policy
 			}
 			focuses = {
+				generic_army_effort
+				generic_industrial_effort
+				generic_naval_effort
+				political_sphere
 			}
 		}
 
 		# United States of America (William Howard Taft)
 		"USA" = {
-			history = "USA_GATHERING_STORM_DESC"
+			history = "WW1_USA_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
+				USA_fordist_industrial_miracle
+				USA_monroe_isolationism
+				USA_wall_street_credit
+				USA_great_white_fleet_heritage
+				USA_firearms_pioneer_culture
 			}
 			focuses = {
+				generic_industrial_effort
+				generic_naval_effort
+				generic_army_effort
+				political_sphere
 			}
 		}
 
 		"---" = {
-			history = "OTHER_GATHERING_STORM_DESC"
+			history = "WW1_OTHER_GATHERING_STORM_DESC"
 		}
 	}
 }
