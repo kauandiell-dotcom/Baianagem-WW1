@@ -30,16 +30,16 @@ sub_units = {
 		
 		# WW1 Infantry Support Profile: High Org Anchor, Low Solo Breakthrough
 		max_organisation = 70			# Extremely high organization: acts as a moral and structural anchor
-		max_strength = 6
+		max_strength = 2
 		default_morale = 0.4
 		training_time = 180
 		weight = 1.25
 		supply_consumption = 0.25
 
 		breakthrough = -0.75			# Breakthrough drastically reduced: cannot blitz alone
-		soft_attack = 18.0				# Heavy anti-trench gunfire
-		hard_attack = 8.0
-		defense = 22.0
+		soft_attack = 0.30				# +30% soft attack support
+		hard_attack = 0.25				# +25% hard attack support
+		# Defense is derived naturally from tank design/chassis
 
 		suppression = 2.5
 

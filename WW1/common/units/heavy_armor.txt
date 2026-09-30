@@ -33,14 +33,14 @@ sub_units = {
 		# WW1 Infantry Support Profile: Heavy Mobile Fortress
 		max_organisation = 75			# Immense coesion & staying power
 		default_morale = 0.45
-		max_strength = 8
-		weight = 1.6
+		max_strength = 2
+		weight = 1.5
 		supply_consumption = 0.32
 
 		breakthrough = -0.80			# Drastically reduced: cannot breach or blitz without accompanying troops
-		soft_attack = 26.0				# Devastating gun and machinegun battery
-		hard_attack = 12.0
-		defense = 30.0
+		soft_attack = 0.40				# +40% soft attack support
+		hard_attack = 0.35				# +35% hard attack support
+		# Defense is derived naturally from tank design/chassis
 
 		suppression = 3.0		
 

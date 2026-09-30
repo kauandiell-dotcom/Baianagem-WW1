@@ -36,11 +36,11 @@ sub_units = {
 		weight = 0.6
 		supply_consumption = 0.28
 
-		# WW1 Trommelfeuer (Drumfire) Saturação de Trincheiras
-		soft_attack = 38.0				# Devastating soft attack to strip enemy division organization
-		hard_attack = 4.0
+		# WW1 Trommelfeuer (Drumfire) Saturação de Trincheiras (Calibrated Scale)
+		soft_attack = 0.35				# +35% soft attack on 48 guns: massive org drain
+		hard_attack = 0.10
 		breakthrough = -0.90			# Extreme breakthrough penalty: cannot assault alone like a tank
-		defense = 14.0
+		defense = -0.30					# Fragile in direct defense without infanty line
 		
 		forest = {
 			attack = -0.2
