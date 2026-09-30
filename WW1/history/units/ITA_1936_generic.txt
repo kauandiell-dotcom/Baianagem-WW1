@@ -1,5 +1,8 @@
+# Kingdom of Italy (Regno d'Italia) - Starting Order of Battle (1911)
+# Balanced, authentic historical composition with elite Arditi Shock Troops, Alpini & Bersaglieri
+
 division_template = {
-	name = "Basic Infantry Division"
+	name = "Divisione di Fanteria"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -13,57 +16,93 @@ division_template = {
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
 	}
 }
-units = {	division = {
-		name = "1. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "2. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "3. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "4. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "5. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "6. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "7. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "8. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "9. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "10. Infantry Division"
-		location = 923
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
+
+division_template = {
+	name = "Divisione Alpina"
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
 	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Divisione Bersaglieri e Cavalleria"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Reparto d'Assalto Arditi"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		italian_arditi = { x = 2 y = 0 }
+		italian_arditi = { x = 2 y = 1 }
+		italian_arditi = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	# --- Northern & Alpine Frontier (Venice, Milan, Turin) ---
+	division = { name = "1a Divisione Alpina (Taurinense)" location = 603 division_template = "Divisione Alpina" start_experience_factor = 0.35 }
+	division = { name = "2a Divisione Alpina (Tridentina)" location = 611 division_template = "Divisione Alpina" start_experience_factor = 0.35 }
+	division = { name = "3a Divisione Alpina (Julia)" location = 782 division_template = "Divisione Alpina" start_experience_factor = 0.35 }
+	division = { name = "4a Divisione Alpina (Cuneense)" location = 603 division_template = "Divisione Alpina" start_experience_factor = 0.3 }
+
+	division = { name = "1° Reparto d'Assalto Arditi" location = 782 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
+	division = { name = "2° Reparto d'Assalto Arditi" location = 782 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
+	division = { name = "3° Reparto d'Assalto Arditi" location = 611 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
+	division = { name = "4° Reparto d'Assalto Arditi" location = 603 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
+
+	division = { name = "1a Divisione di Fanteria (Superga)" location = 782 division_template = "Divisione di Fanteria" start_experience_factor = 0.25 }
+	division = { name = "2a Divisione di Fanteria (Sforzesca)" location = 782 division_template = "Divisione di Fanteria" start_experience_factor = 0.25 }
+	division = { name = "3a Divisione di Fanteria (Ravenna)" location = 782 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "4a Divisione di Fanteria (Livorno)" location = 782 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+
+	division = { name = "5a Divisione di Fanteria (Cosseria)" location = 611 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "6a Divisione di Fanteria (Pavia)" location = 611 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "1a Divisione Bersaglieri" location = 611 division_template = "Divisione Bersaglieri e Cavalleria" start_experience_factor = 0.3 }
+	division = { name = "2a Divisione Bersaglieri" location = 603 division_template = "Divisione Bersaglieri e Cavalleria" start_experience_factor = 0.3 }
+
+	# --- Rome & Central/Southern Italy ---
+	division = { name = "7a Divisione di Fanteria (Curtatone)" location = 923 division_template = "Divisione di Fanteria" start_experience_factor = 0.3 }
+	division = { name = "8a Divisione di Fanteria (Granatieri di Sardegna)" location = 923 division_template = "Divisione di Fanteria" start_experience_factor = 0.35 }
+	division = { name = "9a Divisione di Fanteria (Pasubio)" location = 923 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "10a Divisione di Fanteria (Piave)" location = 923 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "1a Divisione di Cavalleria (Eugenio di Savoia)" location = 923 division_template = "Divisione Bersaglieri e Cavalleria" start_experience_factor = 0.25 }
+
+	division = { name = "11a Divisione di Fanteria (Brennero)" location = 3901 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "12a Divisione di Fanteria (Sassari)" location = 3901 division_template = "Divisione di Fanteria" start_experience_factor = 0.25 }
+	division = { name = "13a Divisione di Fanteria (Re)" location = 3901 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "14a Divisione di Fanteria (Pinerolo)" location = 3901 division_template = "Divisione di Fanteria" start_experience_factor = 0.2 }
+	division = { name = "2a Divisione di Cavalleria (Emanuele Filiberto)" location = 3901 division_template = "Divisione Bersaglieri e Cavalleria" start_experience_factor = 0.25 }
 }

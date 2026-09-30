@@ -1,5 +1,8 @@
+# French Republic (Troisième République) - Starting Order of Battle (1911)
+# Balanced, authentic historical composition with elite 75mm Rapid Fire Battery divisions & Chasseurs Alpins
+
 division_template = {
-	name = "Basic Infantry Division"
+	name = "Division d'Infanterie"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -13,57 +16,119 @@ division_template = {
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
 	}
 }
-units = {	division = {
-		name = "1. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "2. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "3. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "4. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "5. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "6. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "7. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "8. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "9. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "10. Infantry Division"
-		location = 6547
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
+
+division_template = {
+	name = "Division de Cavalerie"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
 	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Chasseurs Alpins"
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Division de Choc 75mm"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		french_75mm_rapid_battery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Division Coloniale"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Frontière de l'Est (Nancy & Belfort) ---
+	division = { name = "11e Division d'Infanterie (Division de Fer)" location = 648 division_template = "Division d'Infanterie" start_experience_factor = 0.35 }
+	division = { name = "1re Division d'Infanterie" location = 648 division_template = "Division d'Infanterie" start_experience_factor = 0.25 }
+	division = { name = "2e Division d'Infanterie" location = 648 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "3e Division d'Infanterie" location = 648 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "4e Division d'Infanterie" location = 648 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "1re Division de Choc 75mm" location = 648 division_template = "Division de Choc 75mm" start_experience_factor = 0.4 }
+	division = { name = "2e Division de Choc 75mm" location = 648 division_template = "Division de Choc 75mm" start_experience_factor = 0.4 }
+	division = { name = "1re Division de Cavalerie" location = 648 division_template = "Division de Cavalerie" start_experience_factor = 0.25 }
+
+	# --- Frontière du Nord (Lille) ---
+	division = { name = "5e Division d'Infanterie" location = 929 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "6e Division d'Infanterie" location = 929 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "7e Division d'Infanterie" location = 929 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "8e Division d'Infanterie" location = 929 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "3e Division de Choc 75mm" location = 929 division_template = "Division de Choc 75mm" start_experience_factor = 0.4 }
+	division = { name = "2e Division de Cavalerie" location = 929 division_template = "Division de Cavalerie" start_experience_factor = 0.2 }
+
+	# --- Réserve Centrale & Paris ---
+	division = { name = "9e Division d'Infanterie" location = 6547 division_template = "Division d'Infanterie" start_experience_factor = 0.25 }
+	division = { name = "10e Division d'Infanterie" location = 6547 division_template = "Division d'Infanterie" start_experience_factor = 0.25 }
+	division = { name = "12e Division d'Infanterie" location = 6547 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "13e Division d'Infanterie" location = 6547 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "14e Division d'Infanterie" location = 6547 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "4e Division de Choc 75mm" location = 6547 division_template = "Division de Choc 75mm" start_experience_factor = 0.4 }
+	division = { name = "3e Division de Cavalerie" location = 6547 division_template = "Division de Cavalerie" start_experience_factor = 0.2 }
+
+	# --- Front des Alpes & Méditerranée (Lyon & Marseille) ---
+	division = { name = "15e Division d'Infanterie" location = 752 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "16e Division d'Infanterie" location = 752 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "1re Division de Chasseurs Alpins" location = 752 division_template = "Chasseurs Alpins" start_experience_factor = 0.35 }
+	division = { name = "2e Division de Chasseurs Alpins" location = 752 division_template = "Chasseurs Alpins" start_experience_factor = 0.35 }
+	division = { name = "4e Division de Cavalerie" location = 752 division_template = "Division de Cavalerie" start_experience_factor = 0.2 }
+
+	division = { name = "17e Division d'Infanterie" location = 958 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "18e Division d'Infanterie" location = 958 division_template = "Division d'Infanterie" start_experience_factor = 0.2 }
+	division = { name = "3e Division de Chasseurs Alpins" location = 958 division_template = "Chasseurs Alpins" start_experience_factor = 0.35 }
+	division = { name = "4e Division de Chasseurs Alpins" location = 958 division_template = "Chasseurs Alpins" start_experience_factor = 0.35 }
+
+	# --- Afrique du Nord (Alger) ---
+	division = { name = "1re Division d'Infanterie Coloniale" location = 1037 division_template = "Division Coloniale" start_experience_factor = 0.25 }
+	division = { name = "2e Division d'Infanterie Coloniale" location = 1037 division_template = "Division Coloniale" start_experience_factor = 0.25 }
+	division = { name = "1er Régiment de Tirailleurs Algériens" location = 1037 division_template = "Division Coloniale" start_experience_factor = 0.3 }
+	division = { name = "2e Régiment de Zouaves" location = 1037 division_template = "Division Coloniale" start_experience_factor = 0.3 }
 }

@@ -1,5 +1,8 @@
+# Ottoman Empire (Devlet-i Aliyye-i Osmaniyye) - Starting Order of Battle (1911)
+# Balanced, authentic historical composition with elite Ghazi Desert Militia, Nizam Infantry & Süvari Cavalry
+
 division_template = {
-	name = "Basic Infantry Division"
+	name = "Piyade Tumeni"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -13,57 +16,85 @@ division_template = {
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
 	}
 }
-units = {	division = {
-		name = "1. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "2. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "3. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "4. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "5. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "6. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "7. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "8. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "9. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "10. Infantry Division"
-		location = 804
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
+
+division_template = {
+	name = "Suvari Tumeni"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
 	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Redif Kolordusu"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Ghazi Bedevi Kolordusu"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		ottoman_ghazi_militia = { x = 1 y = 0 }
+		ottoman_ghazi_militia = { x = 1 y = 1 }
+		ottoman_ghazi_militia = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	# --- Thrace & The Turkish Straits (Istanbul) ---
+	division = { name = "1. Hassa Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.3 }
+	division = { name = "2. Hassa Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.3 }
+	division = { name = "3. Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.25 }
+	division = { name = "4. Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "1. Boğazlar Muhafız Redif Tümeni" location = 9833 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
+	division = { name = "1. Süvari Tümeni" location = 9833 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
+
+	# --- Anatolian Heartland (Ankara & Izmir) ---
+	division = { name = "5. Piyade Tümeni" location = 849 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "6. Piyade Tümeni" location = 849 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "2. Ankara Redif Tümeni" location = 849 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
+	division = { name = "2. Süvari Tümeni" location = 849 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
+
+	division = { name = "7. Piyade Tümeni" location = 928 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "8. Piyade Tümeni" location = 928 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "3. İzmir Redif Tümeni" location = 928 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
+	division = { name = "1. Ege Ghazi Kolordusu" location = 928 division_template = "Ghazi Bedevi Kolordusu" start_experience_factor = 0.35 }
+
+	# --- Levant & Arab Peninsula (Damascus) ---
+	division = { name = "9. Piyade Tümeni" location = 1074 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "1. Şam Ghazi ve Bedevi Alayı" location = 1074 division_template = "Ghazi Bedevi Kolordusu" start_experience_factor = 0.35 }
+	division = { name = "2. Hicaz Ghazi Muhafızları" location = 1074 division_template = "Ghazi Bedevi Kolordusu" start_experience_factor = 0.35 }
+	division = { name = "3. Süvari Tümeni" location = 1074 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
+
+	# --- Mesopotamia & Persian Gulf (Baghdad) ---
+	division = { name = "10. Piyade Tümeni" location = 1600 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
+	division = { name = "4. Bağdat Redif Tümeni" location = 1600 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
+	division = { name = "3. Mezopotamya Ghazi Alayı" location = 1600 division_template = "Ghazi Bedevi Kolordusu" start_experience_factor = 0.35 }
+	division = { name = "4. Süvari Tümeni" location = 1600 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
 }
