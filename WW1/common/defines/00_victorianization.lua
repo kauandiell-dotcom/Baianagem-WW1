@@ -83,8 +83,8 @@ NDefines_Graphics.NGraphics.AIRBASE_ICON_DISTANCE_CUTOFF = 700
 NDefines_Graphics.NGraphics.NAVALBASE_ICON_DISTANCE_CUTOFF = 700
 NDefines_Graphics.NGraphics.RADAR_ICON_DISTANCE_CUTOFF = 800
 NDefines_Graphics.NGraphics.CAPITAL_ICON_CUTOFF = 500
-NDefines_Graphics.NGraphics.UNITS_DISTANCE_CUTOFF = 80
-NDefines_Graphics.NGraphics.SHIPS_DISTANCE_CUTOFF = 80
+NDefines_Graphics.NGraphics.UNITS_DISTANCE_CUTOFF = 200.0
+NDefines_Graphics.NGraphics.SHIPS_DISTANCE_CUTOFF = 220.0
 NDefines_Graphics.NGraphics.UNIT_ARROW_DISTANCE_CUTOFF = 700
 NDefines_Graphics.NGraphics.UNITS_ICONS_DISTANCE_CUTOFF = 500
 NDefines_Graphics.NGraphics.NAVAL_COMBAT_DISTANCE_CUTOFF = 900
@@ -123,4 +123,4 @@ NDefines_Graphics.NGraphics.RAID_ARROW_NAVAL_SUBDIVISIONS = 6
 NDefines_Graphics.NGraphics.RAID_ARROW_LAND_SUBDIVISIONS = 6
 
 --NFrontend
-NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 70.0
+NDefines_Graphics.NFrontend.CAMERA_MIN_HEIGHT = 45.0

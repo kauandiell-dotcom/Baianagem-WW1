@@ -27,14 +27,14 @@ NDefines_Graphics.NGraphics.POSTEFFECT_TOTAL_MIN_SNOW = 0          -- default 0.
 NDefines_Graphics.NGraphics.POSTEFFECT_TOTAL_MAX_SNOW = 0          -- default 0.05
 
 -- 3D Mesh loading frame pacing
-NDefines_Graphics.NGraphics.MAX_MESHES_LOADED_PER_FRAME = 3        -- default 10 (eliminates frame drops on sudden visual spikes)
+NDefines_Graphics.NGraphics.MAX_MESHES_LOADED_PER_FRAME = 10       -- default 10 (populates 3D figurines promptly without stutters)
 
 -- Shadow rendering cutoff (eliminates dynamic cascading shadow maps in 2GB RAM / iGPU systems)
 NDefines_Graphics.NGraphics.DRAW_SHADOWS_CUTOFF = 0                 -- default 150 (saves huge VRAM bandwidth)
 
--- Fast transition to 2D NATO counters (stops heavy 3D unit mesh rendering early)
-NDefines_Graphics.NGraphics.UNITS_DISTANCE_CUTOFF = 60              -- default 80 (switches to performant 2D counters)
-NDefines_Graphics.NGraphics.SHIPS_DISTANCE_CUTOFF = 60              -- default 80
+-- Transition to 2D NATO counters at strategic zoom (renders full 3D models at tactical/operational zoom)
+NDefines_Graphics.NGraphics.UNITS_DISTANCE_CUTOFF = 200.0           -- default 120.0-200.0 (renders 3D soldiers/horses/tanks at tactical zoom)
+NDefines_Graphics.NGraphics.SHIPS_DISTANCE_CUTOFF = 220.0           -- default 120.0-220.0
 
 -- Map icons & buildings draw distance optimization
 NDefines_Graphics.NGraphics.MAP_BUILDINGS_SHRINK_DISTANCE = 120.0   -- default 180.0
