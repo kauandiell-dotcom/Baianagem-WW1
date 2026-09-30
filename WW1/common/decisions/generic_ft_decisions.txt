@@ -208,6 +208,7 @@ generic_ft_external_affairs_category = {
 	#Appease Majors
 	generic_ft_appease_majors = {
 		icon = GFX_decision_generic_welfare
+		target_array = majors
 		visible = {
 			has_completed_focus = appease_major_powers_focus
 			NOT = {
@@ -268,6 +269,7 @@ generic_ft_external_affairs_category = {
 	#Request Investment from Majors
 	generic_ft_investment_from_majors = {
 		icon = GFX_decision_hol_attract_foreign_investors
+		target_array = majors
 		visible = {
 			has_completed_focus = appease_major_powers_focus
 			NOT = {
@@ -318,6 +320,7 @@ generic_ft_external_affairs_category = {
 	#Seduce Majors
 	generic_ft_seduce_majors = {
 		icon = GFX_decision_gre_investment_decisions
+		target_array = majors
 		visible = {
 			has_completed_focus = seduce_major_powers_focus
 		}
@@ -355,6 +358,7 @@ generic_ft_external_affairs_category = {
 	generic_ft_claim_state_decision = {
 		icon = generic_confiscation
 		state_target = yes
+		target_array = neighbors
 		allowed = {
 			is_ai = no
 		}

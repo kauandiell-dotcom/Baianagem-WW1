@@ -6244,6 +6244,10 @@ focus_tree = {
 						original_tag = SOV
 					}
 					has_government = communism
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
 				}
 				add_opinion_modifier = { target = ROOT modifier = generic_independant_communism_boost }
 				add_ai_strategy = {
@@ -9881,6 +9885,10 @@ focus_tree = {
 			every_country = {
 				limit = {
 					has_government = democratic
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
 				}
 				add_opinion_modifier = {
 					target = ROOT
@@ -10989,6 +10997,12 @@ focus_tree = {
 			add_political_power = 200
 			custom_effect_tooltip = generic_skip_one_line_tt
 			every_country = {
+				limit = {
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
+				}
 				add_opinion_modifier = { target = ROOT modifier = political_movings_opinion }
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -11117,6 +11131,10 @@ focus_tree = {
 			every_country = {
 				limit = {
 					has_government = democratic
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
 				}
 				add_opinion_modifier = {
 					target = ROOT
@@ -13015,6 +13033,10 @@ focus_tree = {
 					every_country = {
 						limit = {
 							OR = {
+								is_major = yes
+								is_neighbor_of = ROOT
+							}
+							OR = {
 								has_government = democratic
 								has_government = neutrality
 							}
@@ -13750,6 +13772,7 @@ focus_tree = {
 			every_country = {
 				limit = {
 					is_major = no
+					is_neighbor_of = ROOT
 					NOT = {
 						has_war_with = ROOT
 					}
@@ -14013,6 +14036,10 @@ focus_tree = {
 			every_country = {
 				limit = {
 					has_government = communism
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
 				}
 				add_opinion_modifier = {
 					target = ROOT
@@ -14040,6 +14067,10 @@ focus_tree = {
 					OR = {
 						has_government = democratic
 						has_government = fascism
+					}
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
 					}
 				}
 				add_opinion_modifier = {
@@ -14099,6 +14130,10 @@ focus_tree = {
 			every_country = {
 				limit = {
 					has_government = democratic
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
 				}
 				add_opinion_modifier = {
 					target = ROOT
@@ -14126,6 +14161,10 @@ focus_tree = {
 					OR = {
 						has_government = communism
 						has_government = fascism
+					}
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
 					}
 				}
 				add_opinion_modifier = {
@@ -14185,6 +14224,10 @@ focus_tree = {
 			every_country = {
 				limit = {
 					has_government = fascism
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
+					}
 				}
 				add_opinion_modifier = {
 					target = ROOT
@@ -14212,6 +14255,10 @@ focus_tree = {
 					OR = {
 						has_government = communism
 						has_government = democratic
+					}
+					OR = {
+						is_major = yes
+						is_neighbor_of = ROOT
 					}
 				}
 				add_opinion_modifier = {

@@ -1,15 +1,17 @@
 on_actions = {
-    on_monthly = {
-        effect = {
-            every_state = {
-                limit = {
-                    CONTROLLER = { is_ai = no }
-                    is_claimed_by = CONTROLLER
-                    NOT = { is_core_of = CONTROLLER }
-                    compliance > 65
-                }
-                add_core_of = CONTROLLER
-            }
-        }
-    }
+	on_monthly = {
+		effect = {
+			every_country = {
+				limit = { is_ai = no }
+				every_controlled_state = {
+					limit = {
+						is_claimed_by = PREV
+						NOT = { is_core_of = PREV }
+						compliance > 65
+					}
+					add_core_of = PREV
+				}
+			}
+		}
+	}
 }

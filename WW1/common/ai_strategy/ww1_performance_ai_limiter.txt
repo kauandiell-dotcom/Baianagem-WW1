@@ -1,0 +1,62 @@
+# Baianagem-WW1: Supreme Performance AI Division Limiter
+# Native HOI4 1.19 ai_strategy rules to prevent division spam and supply-chain collapse in minor nations
+# Only affects AI-controlled minor nations (never restricts human players or major historical powers)
+
+ww1_micro_state_division_limiter = {
+	enable = {
+		is_ai = yes
+		is_major = no
+		num_of_controlled_states < 2
+		num_of_military_factories < 2
+		num_divisions > 2
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ai_wanted_divisions_factor
+		value = -90
+	}
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = 50
+	}
+}
+
+ww1_small_minor_division_limiter = {
+	enable = {
+		is_ai = yes
+		is_major = no
+		num_of_military_factories < 4
+		num_of_controlled_states < 4
+		num_divisions > 6
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ai_wanted_divisions_factor
+		value = -75
+	}
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = 25
+	}
+}
+
+ww1_medium_minor_division_limiter = {
+	enable = {
+		is_ai = yes
+		is_major = no
+		num_of_military_factories < 8
+		num_divisions > 15
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ai_wanted_divisions_factor
+		value = -50
+	}
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = 15
+	}
+}

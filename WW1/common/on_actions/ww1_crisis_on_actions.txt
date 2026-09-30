@@ -8,6 +8,15 @@ on_actions = {
 			if = {
 				limit = { country_exists = GER }
 				GER = {
+					# Agadir Crisis (July 1911)
+					if = {
+						limit = {
+							date > 1911.7.1
+							NOT = { has_global_flag = agadir_crisis_happened }
+						}
+						country_event = { id = ww1_agadir.1 days = 1 }
+					}
+
 					# Check Crisis Trigger
 					if = {
 						limit = {

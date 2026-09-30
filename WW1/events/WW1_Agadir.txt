@@ -8,17 +8,11 @@ country_event = {
 	desc = ww1_agadir.1.d
 	picture = GFX_report_event_german_speech
 
-	is_triggered_only = no
+	is_triggered_only = yes
 
 	trigger = {
 		tag = GER
-		date > 1911.7.1
-		date < 1911.8.1
 		NOT = { has_global_flag = agadir_crisis_happened }
-	}
-
-	mean_time_to_happen = {
-		days = 5
 	}
 
 	immediate = {

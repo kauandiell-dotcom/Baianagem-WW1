@@ -1,5 +1,5 @@
-# Modern Borders Redux: the same neutral staff pool for every non-dynamic country.
-every_possible_country = {
+# Modern Borders Redux: generic advisor staff pool for existing active countries.
+every_country = {
 	limit = { is_dynamic_country = no }
 
 	generate_character = {
