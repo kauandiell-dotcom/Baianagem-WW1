@@ -1707,12 +1707,19 @@ focus_tree = {
 	focus = {
 		id = GER_unrestricted_submarine_warfare
 		icon = GFX_focus_GER_unrestricted_submarine_warfare
-		prerequisite = { focus = GER_silent_dictatorship_ohl }
+		prerequisite = { focus = GER_submarine_cruiser_u_kreuzer_fleet }
 		cost = 10
 		x = 54
 		y = 8
 		ai_will_do = { factor = 80 }
 		available_if_capitulated = yes
+		available = {
+			has_war = yes
+			OR = {
+				date > 1917.1.1
+				has_completed_focus = GER_silent_dictatorship_ohl
+			}
+		}
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.8 }
@@ -1895,12 +1902,16 @@ focus_tree = {
 	focus = {
 		id = GER_kiel_sailors_mutiny
 		icon = GFX_focus_GER_ressurect_the_red_front_fighters_league
-		prerequisite = { focus = GER_operation_blucher_yorck }
+		prerequisite = { focus = GER_unrestricted_submarine_warfare }
 		cost = 5
 		x = 54
-		y = 19
+		y = 9
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
+		available = {
+			has_war = yes
+			date > 1917.1.1
+		}
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.45 }
@@ -2013,9 +2024,8 @@ focus_tree = {
 	focus = {
 		id = GER_austro_hungarian_staff_coordination
 		icon = GFX_focus_GER_the_central_powers
-		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
 		cost = 7
-		x = 85
+		x = 105
 		y = 2
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
@@ -2107,13 +2117,15 @@ focus_tree = {
 		id = GER_the_blank_cheque
 		icon = GFX_focus_ger_support_austrian_claims
 		prerequisite = { focus = GER_expand_heavy_howitzers }
-		prerequisite = { focus = GER_tirpitz_fourth_naval_bill }
 		mutually_exclusive = { focus = GER_willy_nicky_telegrams_bjorko }
 		cost = 5
 		x = 84
 		y = 4
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
+		available = {
+			has_completed_focus = GER_tirpitz_fourth_naval_bill
+		}
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.2 }
@@ -2633,12 +2645,18 @@ focus_tree = {
 	focus = {
 		id = GER_hindenburg_program
 		icon = GFX_focus_OHL
-		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
+		prerequisite = { focus = GER_chemical_warfare_initiative }
 		cost = 10
 		x = 83
 		y = 10
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
+		available = {
+			OR = {
+				has_completed_focus = GER_the_miracle_of_tannenberg
+				has_completed_focus = GER_aufmarsch_ost_focus
+			}
+		}
 
 		completion_reward = {
 			add_ideas = GER_hindenburg_program_victory
@@ -2806,12 +2824,16 @@ focus_tree = {
 	focus = {
 		id = GER_sealed_train_to_petrograd
 		icon = GFX_focus_GER_sealed_train_to_petrograd
-		prerequisite = { focus = GER_silent_dictatorship_ohl }
+		prerequisite = { focus = GER_treaty_of_bucharest_1918 }
 		cost = 5
 		x = 104
 		y = 13
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
+		available = {
+			has_war_with = RUS
+			has_completed_focus = GER_silent_dictatorship_ohl
+		}
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.9 }
@@ -3012,13 +3034,21 @@ focus_tree = {
 	focus = {
 		id = GER_the_kaiserschlacht_1918
 		icon = GFX_focus_GER_the_kaiserschlacht_1918
-		prerequisite = { focus = GER_treaty_of_brest_litovsk }
-		prerequisite = { focus = GER_unrestricted_submarine_warfare }
+		prerequisite = { focus = GER_light_machine_guns_mg08_15 }
 		cost = 10
-		x = 88
-		y = 16
+		x = 86
+		y = 15
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
+		available = {
+			has_war_with = FRA
+			OR = {
+				has_completed_focus = GER_treaty_of_brest_litovsk
+				RUS = { has_capitulated = yes }
+				is_in_faction_with = RUS
+				date > 1918.1.1
+			}
+		}
 
 		completion_reward = {
 			add_ideas = GER_kaiserschlacht_idea
@@ -3191,9 +3221,9 @@ focus_tree = {
 	focus = {
 		id = GER_the_black_day_of_the_german_army
 		icon = GFX_focus_GER_tend_to_the_future_of_germany
-		prerequisite = { focus = GER_operation_gneisenau_matz }
+		prerequisite = { focus = GER_spanish_flu_epidemic_crisis }
 		cost = 5
-		x = 86
+		x = 84
 		y = 18
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
@@ -3210,7 +3240,7 @@ focus_tree = {
 		prerequisite = { focus = GER_the_kaiserschlacht_1918 }
 		cost = 5
 		x = 88
-		y = 18
+		y = 16
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -3292,12 +3322,14 @@ focus_tree = {
 	focus = {
 		id = GER_hajj_wilhelm_pan_islamic_crusade
 		icon = GFX_ww1_nationalfocus_islam
-		prerequisite = { focus = GER_berlin_baghdad_railway }
 		cost = 7
 		x = 121
 		y = 2
 		ai_will_do = { factor = 10 }
 		available_if_capitulated = yes
+		available = {
+			has_completed_focus = GER_berlin_baghdad_railway
+		}
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.14 }
@@ -3586,7 +3618,7 @@ focus_tree = {
 		prerequisite = { focus = GER_second_battle_of_ypres_gas }
 		cost = 7
 		x = 80
-		y = 10
+		y = 12
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3602,7 +3634,7 @@ focus_tree = {
 		prerequisite = { focus = GER_falkenhayn_dismissal_third_ohl }
 		cost = 7
 		x = 80
-		y = 12
+		y = 13
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3616,7 +3648,7 @@ focus_tree = {
 	focus = {
 		id = GER_gas_warfare_yellow_cross_lost
 		icon = GFX_ww1_nationalfocus_gasmask
-		prerequisite = { focus = GER_chemical_warfare_initiative }
+		prerequisite = { focus = GER_stosstruppen_tactics }
 		cost = 7
 		x = 84
 		y = 12
@@ -3651,7 +3683,7 @@ focus_tree = {
 		prerequisite = { focus = GER_heavy_siege_howitzers_paris_gun }
 		cost = 7
 		x = 80
-		y = 15
+		y = 16
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -3666,8 +3698,8 @@ focus_tree = {
 		icon = GFX_focus_GER_air_innovation
 		prerequisite = { focus = GER_giant_zeppelin_staaken_fleet }
 		cost = 7
-		x = 68
-		y = 8
+		x = 66
+		y = 11
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -3682,8 +3714,8 @@ focus_tree = {
 		icon = GFX_focus_GER_air_innovation
 		prerequisite = { focus = GER_gotha_raids_on_london }
 		cost = 7
-		x = 68
-		y = 9
+		x = 66
+		y = 12
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3713,7 +3745,7 @@ focus_tree = {
 	focus = {
 		id = GER_operation_michael_st_quentin
 		icon = GFX_GER_sturmtruppen
-		prerequisite = { focus = GER_the_kaiserschlacht_1918 focus = GER_bruchmueller_feuerwalze_doctrine }
+		prerequisite = { focus = GER_the_kaiserschlacht_1918 }
 		cost = 10
 		x = 84
 		y = 16
@@ -3748,8 +3780,8 @@ focus_tree = {
 		icon = GFX_focus_GER_war_with_france
 		prerequisite = { focus = GER_the_black_day_of_the_german_army }
 		cost = 7
-		x = 80
-		y = 18
+		x = 82
+		y = 19
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3765,8 +3797,8 @@ focus_tree = {
 		icon = GFX_focus_GER_rebuild_the_high_seas_fleet
 		prerequisite = { focus = GER_collapse_of_central_allies }
 		cost = 5
-		x = 80
-		y = 19
+		x = 82
+		y = 20
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3783,7 +3815,7 @@ focus_tree = {
 		prerequisite = { focus = GER_seek_armistice_fourteen_points focus = GER_fleet_sortie_order_mutiny }
 		cost = 5
 		x = 84
-		y = 19
+		y = 21
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3799,7 +3831,7 @@ focus_tree = {
 		prerequisite = { focus = GER_kaiser_abdication_amerongen }
 		cost = 7
 		x = 84
-		y = 20
+		y = 22
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -3816,7 +3848,7 @@ focus_tree = {
 		prerequisite = { focus = GER_armistice_at_compiegne }
 		cost = 7
 		x = 84
-		y = 21
+		y = 23
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
