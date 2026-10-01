@@ -1,0 +1,623 @@
+# =========================================================================
+# IMPERIAL GERMANY - NATIONAL & HISTORICAL COUNTRY EVENTS (WW1 / BAIANAGEM)
+# =========================================================================
+
+add_namespace = ww1_ger
+add_namespace = ww1_germany_events
+
+# -------------------------------------------------------------------------
+# ww1_ger.1 / ww1_germany_events.1: Agadir Crisis Resolution
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.1
+	title = ww1_ger.1.t
+	desc = ww1_ger.1.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.1.a
+		ai_chance = { factor = 85 }
+		add_stability = 0.05
+		add_political_power = 50
+		custom_effect_tooltip = ww1_ger_agadir_concessions_tt
+	}
+
+	option = {
+		name = ww1_ger.1.b
+		ai_chance = { factor = 15 }
+		add_war_support = 0.10
+		add_political_power = 60
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.1
+	title = ww1_germany_events.1.t
+	desc = ww1_germany_events.1.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.1.a
+		ai_chance = { factor = 85 }
+		add_stability = 0.05
+		add_political_power = 50
+	}
+
+	option = {
+		name = ww1_germany_events.1.b
+		ai_chance = { factor = 15 }
+		add_war_support = 0.10
+		add_political_power = 60
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.2: Centenary of the Battle of the Nations (Leipzig 1913)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.2
+	title = ww1_ger.2.t
+	desc = ww1_ger.2.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.2.a
+		add_stability = 0.05
+		add_war_support = 0.05
+		add_political_power = 100
+		add_ideas = GER_leipzig_military_pride
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.3 / ww1_germany_events.2: The Blank Cheque to Franz Joseph
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.3
+	title = ww1_ger.3.t
+	desc = ww1_ger.3.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.3.a
+		add_political_power = 50
+		add_war_support = 0.10
+		set_global_flag = ger_blank_cheque_issued
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.2
+	title = ww1_germany_events.2.t
+	desc = ww1_germany_events.2.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.2.a
+		add_political_power = 50
+		add_war_support = 0.10
+		set_global_flag = ger_blank_cheque_issued
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.3: The Invasion of Belgium / Neutrality Violated
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.3
+	title = ww1_germany_events.3.t
+	desc = ww1_germany_events.3.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.3.a
+		add_ideas = GER_schlieffen_momentum
+		add_war_support = 0.10
+		declare_war_on = { target = BEL type = take_state }
+		declare_war_on = { target = LUX type = take_state }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.4: Aufmarsch II Ost - Belgian Neutrality Pledged
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.4
+	title = ww1_germany_events.4.t
+	desc = ww1_germany_events.4.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.4.a
+		add_stability = 0.10
+		add_political_power = 75
+		set_global_flag = ger_belgian_neutrality_respected
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.4 / ww1_germany_events.5: The Fall of the Liège Fortresses
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.4
+	title = ww1_ger.4.t
+	desc = ww1_ger.4.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.4.a
+		army_experience = 15
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.5
+	title = ww1_germany_events.5.t
+	desc = ww1_germany_events.5.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.5.a
+		army_experience = 15
+		add_war_support = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.5 / ww1_germany_events.6: The Miracle of Tannenberg
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.5
+	title = ww1_ger.5.t
+	desc = ww1_ger.5.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.5.a
+		add_stability = 0.10
+		add_war_support = 0.10
+		army_experience = 25
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.6
+	title = ww1_germany_events.6.t
+	desc = ww1_germany_events.6.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.6.a
+		add_stability = 0.10
+		add_war_support = 0.10
+		army_experience = 25
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.6: Haber-Bosch Industrial Synthesis breakthrough
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.6
+	title = ww1_ger.6.t
+	desc = ww1_ger.6.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.6.a
+		add_ideas = GER_haber_bosch_nitrogen_miracle_idea
+		add_political_power = 50
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.7 / ww1_germany_events.7: Chemical Gas Deployment on Western Front
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.7
+	title = ww1_ger.7.t
+	desc = ww1_ger.7.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.7.a
+		add_war_support = 0.05
+		army_experience = 10
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.7
+	title = ww1_germany_events.7.t
+	desc = ww1_germany_events.7.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.7.a
+		add_war_support = 0.05
+		army_experience = 10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.8: Unrestricted Submarine Warfare & Torpedoing
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.8
+	title = ww1_germany_events.8.t
+	desc = ww1_germany_events.8.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.8.a
+		add_ideas = GER_unrestricted_submarines_active
+		add_ideas = GER_unrestricted_submarine_warfare_spirit
+		add_war_support = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.8: 3rd OHL Assumes Supreme Command (Silent Dictatorship)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.8
+	title = ww1_ger.8.t
+	desc = ww1_ger.8.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.8.a
+		add_ideas = GER_silent_dictatorship_ohl
+		add_ideas = GER_ohl_supreme_command
+		add_war_support = 0.15
+		add_political_power = -50
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.9 / ww1_germany_events.9: Lenin's Sealed Train Arrives in Petrograd
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.9
+	title = ww1_ger.9.t
+	desc = ww1_ger.9.d
+	picture = GFX_report_event_soviet_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.9.a
+		add_political_power = 40
+		if = {
+			limit = { country_exists = RUS }
+			RUS = {
+				add_stability = -0.20
+				add_war_support = -0.20
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.9
+	title = ww1_germany_events.9.t
+	desc = ww1_germany_events.9.d
+	picture = GFX_report_event_soviet_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.9.a
+		add_political_power = 40
+		if = {
+			limit = { country_exists = RUS }
+			RUS = {
+				add_stability = -0.20
+				add_war_support = -0.20
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.10 / ww1_germany_events.10: The Peace of Brest-Litovsk
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.10
+	title = ww1_ger.10.t
+	desc = ww1_ger.10.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.10.a
+		add_stability = 0.15
+		add_war_support = 0.15
+		remove_ideas = GER_turnip_winter_crisis_3
+		remove_ideas = GER_turnip_winter_crisis_2
+		remove_ideas = GER_turnip_winter_crisis_1
+		remove_ideas = GER_encirclement_paranoia
+		set_country_flag = brest_litovsk_concluded
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.10
+	title = ww1_germany_events.10.t
+	desc = ww1_germany_events.10.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.10.a
+		add_stability = 0.15
+		add_war_support = 0.15
+		remove_ideas = GER_turnip_winter_crisis_3
+		remove_ideas = GER_turnip_winter_crisis_2
+		remove_ideas = GER_turnip_winter_crisis_1
+		remove_ideas = GER_encirclement_paranoia
+		set_country_flag = brest_litovsk_concluded
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.11 / ww1_germany_events.11: The Reichstag Peace Resolution
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.11
+	title = ww1_ger.11.t
+	desc = ww1_ger.11.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.11.a
+		add_stability = 0.15
+		add_political_power = 60
+		add_ideas = GER_civilian_general_staff
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.11
+	title = ww1_germany_events.11.t
+	desc = ww1_germany_events.11.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.11.a
+		add_stability = 0.15
+		add_political_power = 60
+		add_ideas = GER_civilian_general_staff
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.12: Prussian Three-Class Franchise Abolished
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.12
+	title = ww1_ger.12.t
+	desc = ww1_ger.12.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.12.a
+		add_stability = 0.20
+		add_political_power = 80
+		set_country_flag = prussian_franchise_reformed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.13: The Deutsche Vaterlandspartei Coup
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.13
+	title = ww1_ger.13.t
+	desc = ww1_ger.13.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.13.a
+		add_ideas = GER_vaterlandspartei_total_mobilization
+		add_ideas = GER_vaterlandspartei_rule
+		add_war_support = 0.20
+		add_stability = -0.15
+		set_country_flag = vaterlandspartei_in_power
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.14 / ww1_germany_events.13: The Secret Reinsurance of Björkö 2.0
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.14
+	title = ww1_ger.14.t
+	desc = ww1_ger.14.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.14.a
+		add_stability = 0.10
+		add_political_power = 100
+		set_global_flag = bjorko_alliance_formed
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.13
+	title = ww1_germany_events.13.t
+	desc = ww1_germany_events.13.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.13.a
+		add_stability = 0.10
+		add_political_power = 100
+		set_global_flag = bjorko_alliance_formed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.15 / ww1_germany_events.14: The Green Banner of Jihad Raised
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.15
+	title = ww1_ger.15.t
+	desc = ww1_ger.15.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.15.a
+		add_ideas = GER_pan_islamic_caliphate_support
+		add_ideas = GER_pan_islamic_jihad_spirit
+		add_war_support = 0.15
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.14
+	title = ww1_germany_events.14.t
+	desc = ww1_germany_events.14.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.14.a
+		add_ideas = GER_pan_islamic_caliphate_support
+		add_ideas = GER_pan_islamic_jihad_spirit
+		add_war_support = 0.15
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.16 / ww1_germany_events.12: Spartakusaufstand 1917 Proletarian Revolution
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.16
+	title = ww1_ger.16.t
+	desc = ww1_ger.16.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.16.a
+		set_cosmetic_tag = GER_socialist
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_ideas = GER_spartakusbund_revolutionary_ardor
+		add_stability = 0.10
+		add_war_support = 0.15
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.12
+	title = ww1_germany_events.12.t
+	desc = ww1_germany_events.12.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.12.a
+		set_cosmetic_tag = GER_socialist
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_ideas = GER_spartakusbund_revolutionary_ardor
+		add_stability = 0.10
+		add_war_support = 0.15
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_ger.17 / ww1_germany_events.15: Emergency Annexation of German-Austria
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_ger.17
+	title = ww1_ger.17.t
+	desc = ww1_ger.17.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ger.17.a
+		add_ideas = GER_danubian_integration_modifier
+		add_political_power = 100
+		add_war_support = 0.15
+		set_country_flag = grossdeutschland_annexed
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.15
+	title = ww1_germany_events.15.t
+	desc = ww1_germany_events.15.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.15.a
+		add_ideas = GER_danubian_integration_modifier
+		add_political_power = 100
+		add_war_support = 0.15
+		set_country_flag = grossdeutschland_annexed
+	}
+}

@@ -1,1 +1,753 @@
-# MBR 1911: intentionally empty; every country uses generic_focus.
+focus_tree = {
+	id = german_focus
+	default = no
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GER
+		}
+	}
+	continuous_focus_position = { x = 100 y = 1250 }
+
+	#########################################################################
+	# PHASE I (1911-1914) - BELLE ÉPOQUE & PRE-WAR ARMS RACE
+	#########################################################################
+
+	focus = {
+		id = GER_agadir_crisis_gambit
+		icon = GFX_focus_GER_agadir_crisis_gambit
+		cost = 5
+		x = 5
+		y = 0
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.1 }
+			773 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1088 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_tirpitz_fourth_naval_bill
+		icon = GFX_focus_GER_navy
+		cost = 10
+		x = 8
+		y = 0
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_tirpitz_naval_ambition
+			58 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			56 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_berlin_baghdad_railway
+		icon = GFX_focus_GER_berlin_baghdad_railway
+		prerequisite = { focus = GER_agadir_crisis_gambit }
+		cost = 7
+		x = 5
+		y = 1
+		ai_will_do = { factor = 75 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			64 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			66 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { country_exists = TUR }
+				add_opinion_modifier = {
+					target = TUR
+					modifier = ger_berlin_baghdad_railway_op
+				}
+			}
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_army_bill_1912
+		icon = GFX_focus_GER_army_bill_1912
+		cost = 7
+		x = 11
+		y = 0
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 80000
+			army_experience = 15
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = GER_centenary_of_leipzig_1913
+		icon = GFX_focus_GER_centenary_of_leipzig_1913
+		prerequisite = { focus = GER_army_bill_1912 }
+		cost = 7
+		x = 11
+		y = 1
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.05
+			add_political_power = 60
+			add_ideas = GER_burgfrieden_social_peace
+		}
+	}
+
+	focus = {
+		id = GER_expand_heavy_howitzers
+		icon = GFX_focus_GER_krupp
+		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
+		cost = 10
+		x = 11
+		y = 2
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_krupp_chemical_conglomerates
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = artillery_howitzers_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = GER_the_blank_cheque
+		icon = GFX_focus_ger_support_austrian_claims
+		prerequisite = { focus = GER_expand_heavy_howitzers }
+		prerequisite = { focus = GER_tirpitz_fourth_naval_bill }
+		mutually_exclusive = { focus = GER_willy_nicky_telegrams_bjorko }
+		cost = 5
+		x = 14
+		y = 3
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.2 }
+			add_war_support = 0.15
+			if = {
+				limit = { country_exists = AUH }
+				add_opinion_modifier = {
+					target = AUH
+					modifier = ger_blank_cheque_op
+				}
+			}
+		}
+	}
+
+	#########################################################################
+	# PHASE II (1914-1917) - OPERATIONAL CHOICE & TOTAL WAR
+	#########################################################################
+
+	focus = {
+		id = GER_execute_schlieffen_plan
+		icon = GFX_focus_ger_around_maginot
+		prerequisite = { focus = GER_the_blank_cheque }
+		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
+		cost = 5
+		x = 13
+		y = 4
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.3 }
+			add_ideas = GER_schlieffen_momentum
+			34 = {
+				add_claim_by = GER
+			}
+		}
+	}
+
+	focus = {
+		id = GER_smash_liege_forts
+		icon = GFX_ww1_mex_upca_conquer
+		prerequisite = { focus = GER_execute_schlieffen_plan }
+		cost = 5
+		x = 13
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.5 }
+			34 = {
+				damage_building = {
+					type = bunker
+					damage = 3
+				}
+			}
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_the_miracle_of_tannenberg
+		icon = GFX_focus_GER_the_miracle_of_tannenberg
+		prerequisite = { focus = GER_smash_liege_forts }
+		cost = 7
+		x = 13
+		y = 6
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.6 }
+			5 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_war_support = 0.10
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_aufmarsch_ost_focus
+		icon = GFX_focus_GER_aufmarsch_ost_focus
+		prerequisite = { focus = GER_the_blank_cheque }
+		mutually_exclusive = { focus = GER_execute_schlieffen_plan }
+		cost = 10
+		x = 16
+		y = 4
+		ai_will_do = { factor = 15 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.4 }
+			42 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+			28 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_haber_bosch_nitrogen_miracle
+		icon = GFX_focus_GER_haber_bosch_nitrogen_miracle
+		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
+		cost = 10
+		x = 12
+		y = 7
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_krupp_chemical_conglomerates
+			add_tech_bonus = {
+				name = synthetic_resources_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_chemical_warfare_initiative
+		icon = GFX_ww1_nationalfocus_gasmask
+		prerequisite = { focus = GER_haber_bosch_nitrogen_miracle }
+		cost = 10
+		x = 12
+		y = 8
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.7 }
+			add_ideas = chemical_gas_disruption
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_hindenburg_program
+		icon = GFX_focus_OHL
+		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
+		cost = 10
+		x = 15
+		y = 7
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_hindenburg_program_victory
+			add_war_support = 0.10
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_stosstruppen_tactics
+		icon = GFX_ww1_nationalfocus_ironcross
+		prerequisite = { focus = GER_hindenburg_program focus = GER_chemical_warfare_initiative }
+		cost = 10
+		x = 15
+		y = 8
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = german_infiltration_assault_idea
+			army_experience = 30
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	#########################################################################
+	# PHASE III - POLITICAL ROUTE 1: OHL MILITARY DICTATORSHIP (HISTORICAL)
+	#########################################################################
+
+	focus = {
+		id = GER_silent_dictatorship_ohl
+		icon = GFX_focus_GER_silent_dictatorship_ohl
+		prerequisite = { focus = GER_stosstruppen_tactics }
+		mutually_exclusive = {
+			focus = GER_bethmann_civilian_supremacy
+			focus = GER_found_vaterlandspartei
+			focus = GER_spartakusbund_proletarian_revolt
+		}
+		cost = 10
+		x = 19
+		y = 9
+		ai_will_do = { factor = 70 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GER_grosser_generalstab
+				add_idea = GER_ohl_supreme_command
+			}
+			add_ideas = GER_silent_dictatorship_ohl
+			add_stability = 0.05
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = GER_unrestricted_submarine_warfare
+		icon = GFX_focus_GER_unrestricted_submarine_warfare
+		prerequisite = { focus = GER_silent_dictatorship_ohl }
+		cost = 10
+		x = 18
+		y = 10
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.8 }
+			add_ideas = GER_unrestricted_submarine_warfare_spirit
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_sealed_train_to_petrograd
+		icon = GFX_focus_GER_sealed_train_to_petrograd
+		prerequisite = { focus = GER_silent_dictatorship_ohl }
+		cost = 5
+		x = 20
+		y = 10
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.9 }
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = GER_treaty_of_brest_litovsk
+		icon = GFX_goal_deal_with_german_empire
+		prerequisite = { focus = GER_sealed_train_to_petrograd }
+		cost = 10
+		x = 20
+		y = 11
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.10 }
+			if = {
+				limit = { has_idea = GER_turnip_winter_crisis_3 }
+				remove_ideas = GER_turnip_winter_crisis_3
+			}
+			if = {
+				limit = { has_idea = GER_turnip_winter_crisis_2 }
+				remove_ideas = GER_turnip_winter_crisis_2
+			}
+			if = {
+				limit = { has_idea = GER_turnip_winter_crisis_1 }
+				remove_ideas = GER_turnip_winter_crisis_1
+			}
+			if = {
+				limit = { has_idea = GER_encirclement_paranoia }
+				remove_ideas = GER_encirclement_paranoia
+			}
+			11 = { add_claim_by = GER }
+			188 = { add_claim_by = GER }
+			189 = { add_claim_by = GER }
+			190 = { add_claim_by = GER }
+			10 = { add_claim_by = GER }
+			85 = { add_claim_by = GER }
+			86 = { add_claim_by = GER }
+			87 = { add_claim_by = GER }
+			192 = { add_claim_by = GER }
+			193 = { add_claim_by = GER }
+			194 = { add_claim_by = GER }
+			add_stability = 0.15
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = GER_the_kaiserschlacht_1918
+		icon = GFX_focus_GER_the_kaiserschlacht_1918
+		prerequisite = { focus = GER_treaty_of_brest_litovsk }
+		prerequisite = { focus = GER_unrestricted_submarine_warfare }
+		cost = 10
+		x = 19
+		y = 12
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_kaiserschlacht_idea
+			army_experience = 50
+			add_war_support = 0.15
+		}
+	}
+
+	#########################################################################
+	# PHASE III - POLITICAL ROUTE 2: VOLKSKAISERREICH (REFORMIST MONARCHY)
+	#########################################################################
+
+	focus = {
+		id = GER_bethmann_civilian_supremacy
+		icon = GFX_focus_GER_bethmann_civilian_supremacy
+		prerequisite = { focus = GER_stosstruppen_tactics }
+		mutually_exclusive = {
+			focus = GER_silent_dictatorship_ohl
+			focus = GER_found_vaterlandspartei
+			focus = GER_spartakusbund_proletarian_revolt
+		}
+		cost = 10
+		x = 23
+		y = 9
+		ai_will_do = { factor = 15 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_civilian_general_staff
+			add_stability = 0.15
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_prussian_franchise_reform
+		icon = GFX_focus_GER_prussian_franchise_reform
+		prerequisite = { focus = GER_bethmann_civilian_supremacy }
+		cost = 10
+		x = 23
+		y = 10
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_burgfrieden_social_peace
+			add_stability = 0.20
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = GER_reichstag_peace_resolution
+		icon = GFX_focus_GER_reichstag_peace_resolution
+		prerequisite = { focus = GER_prussian_franchise_reform }
+		cost = 10
+		x = 23
+		y = 11
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.11 }
+			add_stability = 0.10
+			add_war_support = -0.10
+		}
+	}
+
+	focus = {
+		id = GER_constitutional_monarchy_proclamation
+		icon = GFX_focus_GER_constitutional_monarchy_proclamation
+		prerequisite = { focus = GER_reichstag_peace_resolution }
+		cost = 10
+		x = 23
+		y = 12
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_constitutional_monarchy_spirit
+			add_stability = 0.25
+			add_political_power = 120
+		}
+	}
+
+	#########################################################################
+	# PHASE III - POLITICAL ROUTE 3: DEUTSCHE VATERLANDSPARTEI (RADICAL)
+	#########################################################################
+
+	focus = {
+		id = GER_found_vaterlandspartei
+		icon = GFX_focus_GER_found_vaterlandspartei
+		prerequisite = { focus = GER_stosstruppen_tactics }
+		mutually_exclusive = {
+			focus = GER_silent_dictatorship_ohl
+			focus = GER_bethmann_civilian_supremacy
+			focus = GER_spartakusbund_proletarian_revolt
+		}
+		cost = 10
+		x = 27
+		y = 9
+		ai_will_do = { factor = 10 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_vaterlandspartei_rule
+			add_war_support = 0.20
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = GER_total_war_mobilization
+		icon = GFX_focus_GER_total_war_mobilization
+		prerequisite = { focus = GER_found_vaterlandspartei }
+		cost = 10
+		x = 27
+		y = 10
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_total_war_labor_conscription
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			42 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_manpower = 150000
+		}
+	}
+
+	focus = {
+		id = GER_annexation_of_belgium_and_briey
+		icon = GFX_focus_GER_annexation_of_belgium_and_briey
+		prerequisite = { focus = GER_total_war_mobilization }
+		cost = 10
+		x = 27
+		y = 11
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_belgian_briey_exploitation
+			34 = { add_claim_by = GER }
+			6 = { add_claim_by = GER }
+			17 = { add_claim_by = GER }
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_morphed_mitteleuropa_iron_rule
+		icon = GFX_focus_GER_morphed_mitteleuropa_iron_rule
+		prerequisite = { focus = GER_annexation_of_belgium_and_briey }
+		cost = 10
+		x = 27
+		y = 12
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.10
+			add_political_power = 150
+		}
+	}
+
+	#########################################################################
+	# SPECIAL PATHS & EASTER EGGS
+	#########################################################################
+
+	focus = {
+		id = GER_willy_nicky_telegrams_bjorko
+		icon = GFX_focus_GER_willy_nicky_telegrams_bjorko
+		mutually_exclusive = { focus = GER_the_blank_cheque }
+		cost = 10
+		x = 2
+		y = 0
+		ai_will_do = { factor = 5 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.13 }
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_hajj_wilhelm_pan_islamic_crusade
+		icon = GFX_ww1_nationalfocus_islam
+		prerequisite = { focus = GER_berlin_baghdad_railway }
+		cost = 10
+		x = 5
+		y = 2
+		ai_will_do = { factor = 10 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.14 }
+			add_ideas = GER_pan_islamic_jihad_spirit
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = GER_spartakusbund_proletarian_revolt
+		icon = GFX_goal_generic_workers
+		mutually_exclusive = {
+			focus = GER_silent_dictatorship_ohl
+			focus = GER_bethmann_civilian_supremacy
+			focus = GER_found_vaterlandspartei
+		}
+		cost = 5
+		x = 30
+		y = 9
+		ai_will_do = { factor = 5 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.12 }
+			add_stability = -0.20
+		}
+	}
+
+	focus = {
+		id = GER_emergency_danubian_annexation
+		icon = GFX_focus_GER_emergency_danubian_annexation
+		cost = 7
+		x = 33
+		y = 4
+		ai_will_do = { factor = 5 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.15 }
+			4 = { add_core_of = GER }
+			152 = { add_core_of = GER }
+			153 = { add_core_of = GER }
+			add_political_power = 80
+		}
+	}
+}

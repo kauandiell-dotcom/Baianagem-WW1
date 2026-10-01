@@ -1,0 +1,216 @@
+ideas = {
+	country = {
+
+		# =========================================================================
+		# IMPERIAL GERMANY - NATIONAL SPIRITS & IDEAS (WW1 / BAIANAGEM)
+		# =========================================================================
+
+		# 1. Silent Military Dictatorship (OHL Supremacy)
+		GER_silent_dictatorship_ohl = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.15
+				breakthrough_factor = 0.15
+				consumer_goods_factor = 0.05
+				war_support_factor = 0.15
+				stability_factor = 0.10
+				political_power_cost = 0.20
+			}
+		}
+
+		# 2. OHL Supreme Command (Upgraded General Staff)
+		GER_ohl_supreme_command = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.30
+				max_planning = 0.25
+				breakthrough_factor = 0.15
+				political_power_cost = 0.25
+			}
+		}
+
+		# 3. Schlieffen Plan Momentum (Operational Tempo)
+		GER_schlieffen_momentum = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.15
+				breakthrough_factor = 0.20
+				army_attack_factor = 0.10
+				planning_speed = 0.25
+			}
+		}
+
+		# 4. Civilian Parliamentary General Staff (Bethmann Subordination)
+		GER_civilian_general_staff = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.15
+				army_attack_factor = -0.05
+				planning_speed = 0.10
+			}
+		}
+
+		# 5. Spartakusbund Revolutionary Ardor (Proletarian Councils)
+		GER_spartakusbund_revolutionary_ardor = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.10
+				industrial_capacity_factory = 0.15
+				mobilization_speed = 0.25
+				war_support_factor = 0.10
+			}
+		}
+
+		# 6. Deutsche Vaterlandspartei Total Mobilization
+		GER_vaterlandspartei_total_mobilization = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.20
+				conscription_factor = 0.15
+				consumer_goods_factor = 0.10
+				stability_factor = -0.15
+				production_speed_arms_factory_factor = 0.20
+			}
+		}
+
+		# 7. Deutsche Vaterlandspartei Authoritarian Rule
+		GER_vaterlandspartei_rule = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				stability_factor = -0.15
+				industrial_capacity_factory = 0.10
+				political_power_gain = 0.20
+			}
+		}
+
+		# 8. Total War Auxiliary Labor Conscription (Hilfsdienstgesetz)
+		GER_total_war_labor_conscription = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				industrial_capacity_factory = 0.15
+				production_factory_max_efficiency_factor = 0.15
+				stability_factor = -0.10
+			}
+		}
+
+		# 9. Belgian and Briey-Longwy Basin Exploitation
+		GER_belgian_briey_exploitation = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				local_resources_factor = 0.20
+				compliance_growth = 0.05
+			}
+		}
+
+		# 10. Haber-Bosch Synthetic Nitrogen Breakthrough
+		GER_haber_bosch_nitrogen_miracle_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.15
+				supply_consumption_factor = -0.10
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		# 11. Leipzig Battle of the Nations Centenary Military Pride
+		GER_leipzig_military_pride = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		# 12. Krupp 420mm Heavy Howitzers Production (Dicke Bertha)
+		GER_heavy_howitzers_production = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_artillery_factor = 0.20
+				army_artillery_attack_factor = 0.10
+				army_artillery_defence_factor = 0.05
+			}
+		}
+
+		# 13. Active Unrestricted Submarine Warfare Campaign
+		GER_unrestricted_submarines_active = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				convoy_raiding_efficiency_factor = 0.30
+				navy_submarine_attack_factor = 0.20
+			}
+		}
+
+		# 14. Unrestricted Submarine Warfare Spirit
+		GER_unrestricted_submarine_warfare_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_submarine_attack_factor = 0.25
+				convoy_raiding_efficiency_factor = 0.30
+			}
+		}
+
+		# 15. Pan-Islamic Caliphate Holy War Support
+		GER_pan_islamic_caliphate_support = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.05
+				war_support_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+
+		# 16. Imperial Pan-Islamic Jihad Spirit
+		GER_pan_islamic_jihad_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				army_morale_factor = 0.15
+				land_reinforce_rate = 0.10
+			}
+		}
+
+		# 17. Danubian Integration & Austrian Administration Modifier
+		GER_danubian_integration_modifier = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				compliance_growth = 0.15
+				resistance_growth = -0.15
+				non_core_manpower = 0.10
+			}
+		}
+
+		# 18. Constitutional Parliamentary Monarchy Spirit
+		GER_constitutional_monarchy_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.20
+				political_power_factor = 0.15
+				drift_defence_factor = 0.25
+			}
+		}
+
+	}
+}

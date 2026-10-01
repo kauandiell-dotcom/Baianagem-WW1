@@ -54,4 +54,136 @@ characters = {
 			expire = "1935.1.1"
 		}
 	}
+
+	# -------------------------------------------------------------
+	# Historical German Leaders & High Command (Milestone 2)
+	# -------------------------------------------------------------
+
+	GER_paul_von_hindenburg = {
+		name = "Paul von Hindenburg"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_wilhelm_ii.png"
+			}
+			army = {
+				large = "gfx/leaders/GER/GER_wilhelm_ii.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { autocrat }
+			expire = "1934.8.2"
+		}
+		field_marshal = {
+			traits = { offensive_doctrine thorough_planner }
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = GER_paul_von_hindenburg
+			ledger = army
+			cost = 100
+		}
+	}
+
+	GER_erich_ludendorff = {
+		name = "Erich Ludendorff"
+		portraits = {
+			army = {
+				large = "gfx/leaders/GER/GER_wilhelm_ii.png"
+			}
+			civilian = {
+				large = "gfx/leaders/GER/GER_wilhelm_ii.png"
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist aggressive_assault fortress_buster }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = GER_erich_ludendorff
+			ledger = army
+			cost = 100
+		}
+	}
+
+	GER_theobald_von_bethmann_hollweg = {
+		name = "Theobald von Bethmann-Hollweg"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_friedrich_ebert.png"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = { }
+			expire = "1921.1.1"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = GER_theobald_von_bethmann_hollweg
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	GER_rosa_luxemburg = {
+		name = "Rosa Luxemburg"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_karl_liebknecht.png"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1935.1.1"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = GER_rosa_luxemburg
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	GER_alfred_von_tirpitz = {
+		name = "Alfred von Tirpitz"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/GER_wolfgang_kapp.png"
+			}
+			navy = {
+				large = "gfx/leaders/GER/GER_wolfgang_kapp.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1930.3.6"
+		}
+		navy_leader = {
+			traits = { superior_tactician }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = GER_alfred_von_tirpitz
+			ledger = navy
+			cost = 100
+		}
+	}
 }
