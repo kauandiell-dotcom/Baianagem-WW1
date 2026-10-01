@@ -20,13 +20,13 @@
  GER_the_blank_cheque_desc: "In the wake of Archduke Franz Ferdinand's assassination in Sarajevo, Kaiser Wilhelm II assures Emperor Franz Joseph of Germany's unconditional, steadfast alliance against Serbian aggression."
 
  # Phase II (1914-1917) - Operational Choice & Total War
- GER_execute_schlieffen_plan: "Execute the Schlieffen Plan"
+ GER_execute_schlieffen_plan: "[Historical] Execute the Schlieffen Plan"
  GER_execute_schlieffen_plan_desc: "Following Count von Schlieffen's master strategy, our massive right wing shall sweep through Belgium and Luxembourg in a lightning wheeling motion to envelop Paris within forty days."
  GER_smash_liege_forts: "Smash Liège Fortresses"
  GER_smash_liege_forts_desc: "Deploy our Krupp 420mm siege mortars against the fortified ring of Liège. General Erich Ludendorff shall personally lead the assault to blast open the gateway to France."
  GER_the_miracle_of_tannenberg: "The Miracle of Tannenberg"
  GER_the_miracle_of_tannenberg_desc: "Under the brilliant joint leadership of Field Marshal von Hindenburg and General Ludendorff, the Eighth Army encircles and destroys the invading Russian Second Army in the Masurian forests."
- GER_aufmarsch_ost_focus: "Aufmarsch II Ost"
+ GER_aufmarsch_ost_focus: "[Alternative] Aufmarsch II Ost (Eastern Focus)"
  GER_aufmarsch_ost_focus_desc: "Rejecting the invasion of neutral Belgium, we anchor our western defenses in the impregnable fortresses of Alsace-Lorraine and concentrate eighty percent of the Imperial Army to smash the Czar in the East."
  GER_haber_bosch_nitrogen_miracle: "Haber-Bosch Nitrogen Miracle"
  GER_haber_bosch_nitrogen_miracle_desc: "Fritz Haber and Carl Bosch have perfected atmospheric nitrogen fixation. This scientific breakthrough provides unlimited synthetic nitrates for explosives, entirely breaking the Allied blockade."
@@ -38,7 +38,7 @@
  GER_stosstruppen_tactics_desc: "Discarding rigid massed infantry waves, we train autonomous elite stormtrooper squads equipped with light machine guns, trench mortars, and flamethrowers to bypass enemy strongpoints."
 
  # Phase III - OHL Military Dictatorship
- GER_silent_dictatorship_ohl: "Silent Military Dictatorship"
+ GER_silent_dictatorship_ohl: "[Historical] Silent Military Dictatorship (OHL)"
  GER_silent_dictatorship_ohl_desc: "The Kaiser recedes into a ceremonial figurehead as Hindenburg and Ludendorff establish total military governance over the Reich, subordinating civilian ministries to the High Command."
  GER_unrestricted_submarine_warfare: "Unrestricted Submarine Warfare"
  GER_unrestricted_submarine_warfare_desc: "Unleash our U-boat wolfpacks to sink any vessel approaching the British Isles without warning. We shall starve Britain into surrender before American aid can reach European soil."
@@ -50,7 +50,7 @@
  GER_the_kaiserschlacht_1918_desc: "Transferred veteran divisions from the Russian front join our stormtroopers in Operation Michael—the ultimate spring offensive to crush the Allied armies and capture Paris."
 
  # Phase III - Volkskaiserreich (Reformist Monarchy)
- GER_bethmann_civilian_supremacy: "Civilian Parliamentary Supremacy"
+ GER_bethmann_civilian_supremacy: "[Alternative - Democratic] Civilian Parliamentary Supremacy"
  GER_bethmann_civilian_supremacy_desc: "Chancellor von Bethmann-Hollweg reasserts civilian constitutional authority over the military camarilla, preventing reckless escalation and preserving the rule of law."
  GER_prussian_franchise_reform: "Prussian Franchise Reform"
  GER_prussian_franchise_reform_desc: "Abolish the archaic three-class voting system in Prussia. Grant equal, secret, and direct suffrage to all citizens, integrating the social-democratic working class into the state."
@@ -60,7 +60,7 @@
  GER_constitutional_monarchy_proclamation_desc: "Transform the German Empire into a modern constitutional parliamentary monarchy. The Chancellor becomes accountable to the elected Reichstag, safeguarding peace and national unity."
 
  # Phase III - Deutsche Vaterlandspartei (Radical Annexationist)
- GER_found_vaterlandspartei: "Found the Deutsche Vaterlandspartei"
+ GER_found_vaterlandspartei: "[Alternative - Nationalist] Found the Deutsche Vaterlandspartei"
  GER_found_vaterlandspartei_desc: "Grand Admiral von Tirpitz and Wolfgang Kapp establish the German Fatherland Party to champion uncompromising annexations, total war, and the annihilation of pacifist defeatism."
  GER_total_war_mobilization: "Total War Mobilization"
  GER_total_war_mobilization_desc: "Enact universal compulsory labor conscription for all men and women between fifteen and sixty. Every scrap of metal, bushel of grain, and ounce of labor belongs to the fatherland."
@@ -70,11 +70,11 @@
  GER_morphed_mitteleuropa_iron_rule_desc: "Forge all central and eastern European nations into an imperial economic and military bloc directed solely from Berlin, creating an unshakeable continental hegemony."
 
  # Easter Eggs & Alt-History
- GER_willy_nicky_telegrams_bjorko: "Willy-Nicky Telegrams: Björkö 2.0"
+ GER_willy_nicky_telegrams_bjorko: "[Alternative - Diplomacy] Willy-Nicky Telegrams: Björkö 2.0"
  GER_willy_nicky_telegrams_bjorko_desc: "Kaiser Wilhelm reaches out directly to his cousin Tsar Nicholas II to resurrect the secret Björkö alliance. Germany and Russia unite their empires, dividing the Old World between them."
  GER_hajj_wilhelm_pan_islamic_crusade: "Hajj Wilhelm: Pan-Islamic Crusade"
  GER_hajj_wilhelm_pan_islamic_crusade_desc: "Embracing Max von Oppenheim's revolutionary strategy, the Kaiser proclaims solidarity with the Islamic world, unleashing Holy War across the British and Russian colonial peripheries."
- GER_spartakusbund_proletarian_revolt: "Spartakusbund Proletarian Revolt"
+ GER_spartakusbund_proletarian_revolt: "[Alternative - Socialist] Spartakusbund Proletarian Revolt"
  GER_spartakusbund_proletarian_revolt_desc: "As the burdens of imperialist war become unbearable, Rosa Luxemburg and Karl Liebknecht lead the revolutionary working class to overthrow the monarchy and establish a socialist republic."
  GER_emergency_danubian_annexation: "Emergency Danubian Annexation"
  GER_emergency_danubian_annexation_desc: "With the Austro-Hungarian state disintegrating on the battlefield, German troops march into Vienna to annex the German-Austrian homelands into the Greater German Reich."
@@ -1011,3 +1011,20 @@
  ww1_germany_events.82.t:0 "The Realization of Mittelafrika"
  ww1_germany_events.82.d:0 "Under the peace treaties, our colonial vision is realized. The Belgian Congo and French Equatorial territories are annexed, creating a continuous German colonial realm from the Atlantic coast of Cameroon to the Indian Ocean in German East Africa. General von Lettow-Vorbeck returns to Berlin as a conquering hero."
  ww1_germany_events.82.a:0 "Hail German Mittelafrika!"
+
+ # 4 New Historical Kaiser Focuses & Mechanics
+ GER_septemberprogramm_war_aims:0 "[Historical] Septemberprogramm War Aims"
+ GER_septemberprogramm_war_aims_desc:0 "Drafted by Chancellor von Bethmann-Hollweg and the General Staff, the Septemberprogramm outlines Germany's grand strategic vision: securing Mitteleuropa through economic hegemony, territorial annexations in the East, and ending French and Belgian ability to menace the Fatherland."
+ GER_total_war_patriotism_kriegsanleihen:0 "[Historical] Imperial War Loans (Kriegsanleihen)"
+ GER_total_war_patriotism_kriegsanleihen_desc:0 "To finance the colossal expenditure of global industrial warfare, the Reichsbank launches nationwide Kriegsanleihen subscription campaigns. Millions of patriotic citizens invest their life savings directly into victory."
+ GER_hohenzollern_imperial_hegemony:0 "[Historical] Hohenzollern Imperial Hegemony"
+ GER_hohenzollern_imperial_hegemony_desc:0 "Consolidating absolute imperial authority, the Hohenzollern dynasty stands undefeated at the apex of European civilization. With military triumph guaranteed, the Kaiserreich establishes an enduring continental Pax Germanica."
+ GER_secret_ottoman_alliance_august_1914:0 "[Historical] Secret Ottoman-German Alliance"
+ GER_secret_ottoman_alliance_august_1914_desc:0 "On August 2, 1914, Ambassador Wangenheim and Grand Vizier Said Halim Pasha seal a secret military alliance in Constantinople. The Ottoman Empire pledges to stand firmly beside the Central Powers against Russia."
+ ger_septemberprogramm_tt:0 "Formalizes Imperial war aims to establish political and economic hegemony across Central Europe."
+ GER_kriegsanleihen_war_loans:0 "Kriegsanleihen War Bonds"
+ GER_kriegsanleihen_war_loans_desc:0 "State war bonds subscribed by millions of patriotic German citizens fund ammunition, heavy artillery, and naval production."
+ GER_volkskaiserreich_constitution:0 "Volkskaiserreich Constitution"
+ GER_volkskaiserreich_constitution_desc:0 "Constitutional parliamentary reforms subordinate the military command to the elected Reichstag, uniting the social classes under a democratic constitutional monarchy."
+ creeping_barrage_idea:0 "Creeping Barrage Tactics"
+ creeping_barrage_idea_desc:0 "A carefully timed moving wall of artillery shells suppresses enemy defenders right ahead of advancing infantry assaults."
