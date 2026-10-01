@@ -8,7 +8,7 @@ focus_tree = {
 			tag = GER
 		}
 	}
-	continuous_focus_position = { x = 100 y = 1250 }
+	continuous_focus_position = { x = 50 y = 1400 }
 
 	#########################################################################
 	# PHASE I (1911-1914) - BELLE ÉPOQUE & PRE-WAR ARMS RACE
@@ -18,7 +18,7 @@ focus_tree = {
 		id = GER_agadir_crisis_gambit
 		icon = GFX_focus_GER_agadir_crisis_gambit
 		cost = 5
-		x = 5
+		x = 3
 		y = 0
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
@@ -49,7 +49,7 @@ focus_tree = {
 		id = GER_tirpitz_fourth_naval_bill
 		icon = GFX_focus_GER_navy
 		cost = 10
-		x = 8
+		x = 7
 		y = 0
 		ai_will_do = { factor = 80 }
 		available_if_capitulated = yes
@@ -81,7 +81,7 @@ focus_tree = {
 		icon = GFX_focus_GER_berlin_baghdad_railway
 		prerequisite = { focus = GER_agadir_crisis_gambit }
 		cost = 7
-		x = 5
+		x = 3
 		y = 1
 		ai_will_do = { factor = 75 }
 		available_if_capitulated = yes
@@ -116,7 +116,7 @@ focus_tree = {
 		id = GER_army_bill_1912
 		icon = GFX_focus_GER_army_bill_1912
 		cost = 7
-		x = 11
+		x = 9
 		y = 0
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
@@ -133,7 +133,7 @@ focus_tree = {
 		icon = GFX_focus_GER_centenary_of_leipzig_1913
 		prerequisite = { focus = GER_army_bill_1912 }
 		cost = 7
-		x = 11
+		x = 9
 		y = 1
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
@@ -151,7 +151,7 @@ focus_tree = {
 		icon = GFX_focus_GER_krupp
 		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
 		cost = 10
-		x = 11
+		x = 9
 		y = 2
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
@@ -182,7 +182,7 @@ focus_tree = {
 		prerequisite = { focus = GER_tirpitz_fourth_naval_bill }
 		mutually_exclusive = { focus = GER_willy_nicky_telegrams_bjorko }
 		cost = 5
-		x = 14
+		x = 10
 		y = 3
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
@@ -210,7 +210,7 @@ focus_tree = {
 		prerequisite = { focus = GER_the_blank_cheque }
 		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
 		cost = 5
-		x = 13
+		x = 9
 		y = 4
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = yes
@@ -229,7 +229,7 @@ focus_tree = {
 		icon = GFX_ww1_mex_upca_conquer
 		prerequisite = { focus = GER_execute_schlieffen_plan }
 		cost = 5
-		x = 13
+		x = 9
 		y = 5
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
@@ -251,7 +251,7 @@ focus_tree = {
 		icon = GFX_focus_GER_the_miracle_of_tannenberg
 		prerequisite = { focus = GER_smash_liege_forts }
 		cost = 7
-		x = 13
+		x = 9
 		y = 6
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
@@ -277,8 +277,8 @@ focus_tree = {
 		prerequisite = { focus = GER_the_blank_cheque }
 		mutually_exclusive = { focus = GER_execute_schlieffen_plan }
 		cost = 10
-		x = 16
-		y = 4
+		x = 12
+		y = 5
 		ai_will_do = { factor = 15 }
 		available_if_capitulated = yes
 
@@ -307,7 +307,7 @@ focus_tree = {
 		icon = GFX_focus_GER_haber_bosch_nitrogen_miracle
 		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
 		cost = 10
-		x = 12
+		x = 9
 		y = 7
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
@@ -329,7 +329,7 @@ focus_tree = {
 		icon = GFX_ww1_nationalfocus_gasmask
 		prerequisite = { focus = GER_haber_bosch_nitrogen_miracle }
 		cost = 10
-		x = 12
+		x = 9
 		y = 8
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = yes
@@ -346,7 +346,7 @@ focus_tree = {
 		icon = GFX_focus_OHL
 		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
 		cost = 10
-		x = 15
+		x = 12
 		y = 7
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
@@ -363,8 +363,8 @@ focus_tree = {
 		icon = GFX_ww1_nationalfocus_ironcross
 		prerequisite = { focus = GER_hindenburg_program focus = GER_chemical_warfare_initiative }
 		cost = 10
-		x = 15
-		y = 8
+		x = 10
+		y = 9
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -394,8 +394,8 @@ focus_tree = {
 			focus = GER_spartakusbund_proletarian_revolt
 		}
 		cost = 10
-		x = 19
-		y = 9
+		x = 10
+		y = 10
 		ai_will_do = { factor = 70 }
 		available_if_capitulated = yes
 
@@ -415,8 +415,8 @@ focus_tree = {
 		icon = GFX_focus_GER_unrestricted_submarine_warfare
 		prerequisite = { focus = GER_silent_dictatorship_ohl }
 		cost = 10
-		x = 18
-		y = 10
+		x = 9
+		y = 11
 		ai_will_do = { factor = 80 }
 		available_if_capitulated = yes
 
@@ -432,8 +432,8 @@ focus_tree = {
 		icon = GFX_focus_GER_sealed_train_to_petrograd
 		prerequisite = { focus = GER_silent_dictatorship_ohl }
 		cost = 5
-		x = 20
-		y = 10
+		x = 11
+		y = 11
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -448,8 +448,8 @@ focus_tree = {
 		icon = GFX_goal_deal_with_german_empire
 		prerequisite = { focus = GER_sealed_train_to_petrograd }
 		cost = 10
-		x = 20
-		y = 11
+		x = 11
+		y = 12
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -493,8 +493,8 @@ focus_tree = {
 		prerequisite = { focus = GER_treaty_of_brest_litovsk }
 		prerequisite = { focus = GER_unrestricted_submarine_warfare }
 		cost = 10
-		x = 19
-		y = 12
+		x = 10
+		y = 13
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -519,8 +519,8 @@ focus_tree = {
 			focus = GER_spartakusbund_proletarian_revolt
 		}
 		cost = 10
-		x = 23
-		y = 9
+		x = 6
+		y = 10
 		ai_will_do = { factor = 15 }
 		available_if_capitulated = yes
 
@@ -536,8 +536,8 @@ focus_tree = {
 		icon = GFX_focus_GER_prussian_franchise_reform
 		prerequisite = { focus = GER_bethmann_civilian_supremacy }
 		cost = 10
-		x = 23
-		y = 10
+		x = 6
+		y = 11
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -553,8 +553,8 @@ focus_tree = {
 		icon = GFX_focus_GER_reichstag_peace_resolution
 		prerequisite = { focus = GER_prussian_franchise_reform }
 		cost = 10
-		x = 23
-		y = 11
+		x = 6
+		y = 12
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = yes
 
@@ -570,8 +570,8 @@ focus_tree = {
 		icon = GFX_focus_GER_constitutional_monarchy_proclamation
 		prerequisite = { focus = GER_reichstag_peace_resolution }
 		cost = 10
-		x = 23
-		y = 12
+		x = 6
+		y = 13
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -596,8 +596,8 @@ focus_tree = {
 			focus = GER_spartakusbund_proletarian_revolt
 		}
 		cost = 10
-		x = 27
-		y = 9
+		x = 14
+		y = 10
 		ai_will_do = { factor = 10 }
 		available_if_capitulated = yes
 
@@ -613,8 +613,8 @@ focus_tree = {
 		icon = GFX_focus_GER_total_war_mobilization
 		prerequisite = { focus = GER_found_vaterlandspartei }
 		cost = 10
-		x = 27
-		y = 10
+		x = 14
+		y = 11
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -645,8 +645,8 @@ focus_tree = {
 		icon = GFX_focus_GER_annexation_of_belgium_and_briey
 		prerequisite = { focus = GER_total_war_mobilization }
 		cost = 10
-		x = 27
-		y = 11
+		x = 14
+		y = 12
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -664,8 +664,8 @@ focus_tree = {
 		icon = GFX_focus_GER_morphed_mitteleuropa_iron_rule
 		prerequisite = { focus = GER_annexation_of_belgium_and_briey }
 		cost = 10
-		x = 27
-		y = 12
+		x = 14
+		y = 13
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -685,7 +685,7 @@ focus_tree = {
 		icon = GFX_focus_GER_willy_nicky_telegrams_bjorko
 		mutually_exclusive = { focus = GER_the_blank_cheque }
 		cost = 10
-		x = 2
+		x = 1
 		y = 0
 		ai_will_do = { factor = 5 }
 		available_if_capitulated = yes
@@ -701,7 +701,7 @@ focus_tree = {
 		icon = GFX_ww1_nationalfocus_islam
 		prerequisite = { focus = GER_berlin_baghdad_railway }
 		cost = 10
-		x = 5
+		x = 3
 		y = 2
 		ai_will_do = { factor = 10 }
 		available_if_capitulated = yes
@@ -722,8 +722,8 @@ focus_tree = {
 			focus = GER_found_vaterlandspartei
 		}
 		cost = 5
-		x = 30
-		y = 9
+		x = 3
+		y = 10
 		ai_will_do = { factor = 5 }
 		available_if_capitulated = yes
 
@@ -737,7 +737,7 @@ focus_tree = {
 		id = GER_emergency_danubian_annexation
 		icon = GFX_focus_GER_emergency_danubian_annexation
 		cost = 7
-		x = 33
+		x = 14
 		y = 4
 		ai_will_do = { factor = 5 }
 		available_if_capitulated = yes
