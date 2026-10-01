@@ -113,6 +113,79 @@ ideas = {
 			}
 		}
 
+		GER_civil_war_fervor = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				surrender_limit = -0.35
+				army_org_factor = 0.15
+				division_speed = 0.15
+				conscription_factor = 0.20
+				planning_speed = 0.25
+			}
+		}
+
+		GER_red_guards_militia = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.15
+				conscription = 0.03
+				recovery_rate_factor = 0.10
+			}
+		}
+
+		GER_freikorps_paramilitary = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				breakthrough_factor = 0.15
+				stability_factor = -0.10
+			}
+		}
+
+		GER_continental_league_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_laws_cost_factor = -0.25
+				consumer_goods_factor = -0.03
+				production_speed_railway_factor = 0.20
+			}
+		}
+
+		GER_baku_oil_concession = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = 0.35
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		GER_volkskaiserreich_constitution = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = 0.15
+				drift_defence_factor = 0.30
+			}
+		}
+
+		GER_morphed_mitteleuropa_iron_rule = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				local_resources_factor = 0.15
+				war_support_factor = 0.10
+			}
+		}
+
+
+
 		# =======================================================
 		# 2. REINO UNIDO (ENG)
 		# =======================================================

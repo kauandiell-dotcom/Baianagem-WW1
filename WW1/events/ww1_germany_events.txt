@@ -1274,3 +1274,423 @@ country_event = {
 		add_political_power = -50
 	}
 }
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.50: Revolutionary Agitation in Kiel and the Ruhr
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.50
+	title = ww1_germany_events.50.t
+	desc = ww1_germany_events.50.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.50.a
+		add_stability = -0.10
+		add_war_support = -0.05
+		set_country_flag = GER_revolutionary_unrest
+		add_ideas = GER_red_guards_militia
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.51: Outbreak of the German Civil War (Spartakusaufstand)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.51
+	title = ww1_germany_events.51.t
+	desc = ww1_germany_events.51.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.51.a
+		add_stability = -0.20
+		add_war_support = 0.10
+		add_ideas = GER_civil_war_fervor
+		start_civil_war = {
+			ideology = communism
+			size = 0.55
+			capital = 64
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.52: Consolidation of the Socialist Republic
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.52
+	title = ww1_germany_events.52.t
+	desc = ww1_germany_events.52.d
+	picture = GFX_report_event_soviet_purge_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.52.a
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		promote_character = GER_rosa_luxemburg
+		promote_character = GER_karl_liebknecht
+		set_cosmetic_tag = GER_socialist
+		remove_ideas = GER_civil_war_fervor
+		add_stability = 0.15
+		add_political_power = 100
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.53: The Petrograd-Berlin Communist Axis
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.53
+	title = ww1_germany_events.53.t
+	desc = ww1_germany_events.53.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.53.a
+		if = {
+			limit = {
+				has_government = communism
+				OR = {
+					SOV = { exists = yes has_government = communism }
+					RUS = { exists = yes has_government = communism }
+				}
+			}
+			create_faction = "Red_Internationale"
+			if = {
+				limit = { SOV = { exists = yes has_government = communism } }
+				SOV = { add_to_faction = GER }
+			}
+			if = {
+				limit = { RUS = { exists = yes has_government = communism } }
+				RUS = { add_to_faction = GER }
+			}
+		}
+		add_opinion_modifier = {
+			target = SOV
+			modifier = ger_blank_cheque_op
+		}
+		add_political_power = 75
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.54: Scripted War: Entente Anti-Bolshevik Intervention
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.54
+	title = ww1_germany_events.54.t
+	desc = ww1_germany_events.54.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.54.a
+		add_war_support = 0.20
+		if = {
+			limit = { FRA = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = FRA type = annex_everything }
+		}
+		if = {
+			limit = { ENG = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = ENG type = annex_everything }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.55: Junker Backlash Against Electoral Equality
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.55
+	title = ww1_germany_events.55.t
+	desc = ww1_germany_events.55.d
+	picture = GFX_report_event_german_reichstag
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.55.a
+		add_political_power = -50
+		add_stability = -0.05
+		set_country_flag = GER_prussian_franchise_reformed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.56: The October Reforms & Parliamentary Monarchy
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.56
+	title = ww1_germany_events.56.t
+	desc = ww1_germany_events.56.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.56.a
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		promote_character = GER_theobald_von_bethmann_hollweg
+		promote_character = GER_friedrich_ebert
+		add_stability = 0.15
+		add_political_power = 80
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.57: Wilsonian Peace Mission to Washington
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.57
+	title = ww1_germany_events.57.t
+	desc = ww1_germany_events.57.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.57.a
+		add_war_support = -0.10
+		add_stability = 0.10
+		if = {
+			limit = { USA = { exists = yes } }
+			USA = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_blank_cheque_op
+				}
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.58: The Kapp-Tirpitz Coup d'État
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.58
+	title = ww1_germany_events.58.t
+	desc = ww1_germany_events.58.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.58.a
+		set_politics = {
+			ruling_party = fascism_ideology
+			elections_allowed = no
+		}
+		promote_character = GER_wolfgang_kapp
+		promote_character = GER_alfred_von_tirpitz
+		add_ideas = GER_freikorps_paramilitary
+		add_stability = -0.15
+		add_war_support = 0.20
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.59: Crushing the Ruhr General Strike
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.59
+	title = ww1_germany_events.59.t
+	desc = ww1_germany_events.59.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.59.a
+		add_stability = -0.10
+		add_political_power = 50
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.60: Scripted War: The Baltic Crusade of the Landeswehr
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.60
+	title = ww1_germany_events.60.t
+	desc = ww1_germany_events.60.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.60.a
+		add_war_support = 0.15
+		if = {
+			limit = { LIT = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = LIT type = annex_everything }
+		}
+		if = {
+			limit = { LAT = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = LAT type = annex_everything }
+		}
+		if = {
+			limit = { EST = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = EST type = annex_everything }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.61: Scripted Demands: Siegfrieden Annexations
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.61
+	title = ww1_germany_events.61.t
+	desc = ww1_germany_events.61.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.61.a
+		add_war_support = 0.15
+		if = {
+			limit = { BEL = { exists = yes } }
+			create_wargoal = { target = BEL type = annex_everything }
+		}
+		if = {
+			limit = { LUX = { exists = yes } }
+			annex_country = { target = LUX transfer_troops = no }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.62: The Secret Willy-Nicky Summit in Björkö
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.62
+	title = ww1_germany_events.62.t
+	desc = ww1_germany_events.62.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.62.a
+		add_opinion_modifier = {
+			target = RUS
+			modifier = ger_blank_cheque_op
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_political_power = 60
+		add_ideas = GER_continental_league_idea
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.63: Scripted War: Continental League vs British Empire
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.63
+	title = ww1_germany_events.63.t
+	desc = ww1_germany_events.63.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.63.a
+		add_war_support = 0.20
+		create_faction = "Continental_League"
+		if = {
+			limit = { RUS = { exists = yes NOT = { has_war_with = GER } } }
+			RUS = { add_to_faction = GER }
+		}
+		if = {
+			limit = { ENG = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = ENG type = annex_everything }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.64: The Danubian Crisis & Austro-Hungarian Collapse
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.64
+	title = ww1_germany_events.64.t
+	desc = ww1_germany_events.64.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.64.a
+		add_stability = -0.10
+		add_war_support = 0.10
+		set_country_flag = GER_danubian_crisis_unfolding
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.65: Scripted War: The Alpine Clash with Italy
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.65
+	title = ww1_germany_events.65.t
+	desc = ww1_germany_events.65.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.65.a
+		add_war_support = 0.15
+		# Annex German Austria
+		if = {
+			limit = { AUS = { exists = yes } }
+			annex_country = { target = AUS transfer_troops = yes }
+		}
+		# Clash with Italy
+		if = {
+			limit = { ITA = { exists = yes NOT = { has_war_with = GER } } }
+			declare_war_on = { target = ITA type = annex_everything }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.66: Scripted War / Expedition: March on Baku Oil
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.66
+	title = ww1_germany_events.66.t
+	desc = ww1_germany_events.66.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.66.a
+		add_ideas = GER_baku_oil_concession
+		add_war_support = 0.10
+		add_political_power = 60
+	}
+}
+
