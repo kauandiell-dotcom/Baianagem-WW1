@@ -1,0 +1,75 @@
+# =========================================================================
+# GERMAN EMPIRE - SPECIALIZED WW1 DECISION CATEGORIES
+# =========================================================================
+
+GER_schlieffen_operations = {
+	icon = military_operation
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_schlieffen_operations_active
+	}
+	visible_when_empty = no
+}
+
+GER_kriegsrohstoffabteilung = {
+	icon = generic_economy
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_kra_established
+	}
+	visible_when_empty = no
+}
+
+GER_food_and_rationing = {
+	icon = generic_crisis
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_food_rationing_active
+	}
+	visible_when_empty = no
+}
+
+GER_eastern_occupation_ober_ost = {
+	icon = military_operation
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_ober_ost_established
+	}
+	visible_when_empty = no
+}
+
+GER_u_boat_campaign = {
+	icon = generic_navy
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_u_boat_campaign_active
+	}
+	visible_when_empty = no
+}
+
+GER_weltpolitik_diplomacy = {
+	icon = generic_diplomacy
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_weltpolitik_active
+	}
+	visible_when_empty = no
+}

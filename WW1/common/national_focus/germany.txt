@@ -8,7 +8,7 @@ focus_tree = {
 			tag = GER
 		}
 	}
-	continuous_focus_position = { x = 50 y = 1400 }
+	continuous_focus_position = { x = 50 y = 1600 }
 
 	#########################################################################
 	# PHASE I (1911-1914) - BELLE ÉPOQUE & PRE-WAR ARMS RACE
@@ -49,7 +49,7 @@ focus_tree = {
 		id = GER_tirpitz_fourth_naval_bill
 		icon = GFX_focus_GER_navy
 		cost = 10
-		x = 7
+		x = 8
 		y = 0
 		ai_will_do = { factor = 80 }
 		available_if_capitulated = yes
@@ -81,7 +81,7 @@ focus_tree = {
 		icon = GFX_focus_GER_berlin_baghdad_railway
 		prerequisite = { focus = GER_agadir_crisis_gambit }
 		cost = 7
-		x = 3
+		x = 5
 		y = 1
 		ai_will_do = { factor = 75 }
 		available_if_capitulated = yes
@@ -116,7 +116,7 @@ focus_tree = {
 		id = GER_army_bill_1912
 		icon = GFX_focus_GER_army_bill_1912
 		cost = 7
-		x = 9
+		x = 12
 		y = 0
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
@@ -133,7 +133,7 @@ focus_tree = {
 		icon = GFX_focus_GER_centenary_of_leipzig_1913
 		prerequisite = { focus = GER_army_bill_1912 }
 		cost = 7
-		x = 9
+		x = 12
 		y = 1
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
@@ -151,7 +151,7 @@ focus_tree = {
 		icon = GFX_focus_GER_krupp
 		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
 		cost = 10
-		x = 9
+		x = 12
 		y = 2
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
@@ -182,8 +182,8 @@ focus_tree = {
 		prerequisite = { focus = GER_tirpitz_fourth_naval_bill }
 		mutually_exclusive = { focus = GER_willy_nicky_telegrams_bjorko }
 		cost = 5
-		x = 10
-		y = 3
+		x = 14
+		y = 4
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -201,21 +201,637 @@ focus_tree = {
 	}
 
 	#########################################################################
+	
+	#########################################################################
+	# PRE-WAR BLOCK I: IMPERIAL POLITICS & REICHSTAG (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_kaiser_wilhelm_personal_rule
+		icon = GFX_focus_ger_support_austrian_claims
+		cost = 5
+		x = 0
+		y = 0
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+			add_country_leader_trait = {
+				character = GER_wilhelm_ii
+				trait = supreme_war_lord
+			}
+		}
+	}
+
+	focus = {
+		id = GER_reichstag_1912_elections
+		icon = GFX_GER_mllitary_leagues_demands
+		prerequisite = { focus = GER_kaiser_wilhelm_personal_rule }
+		cost = 7
+		x = 0
+		y = 1
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.17 }
+			add_political_power = 50
+			add_ideas = GER_parliamentary_friction
+		}
+	}
+
+	focus = {
+		id = GER_appease_the_junkers
+		icon = GFX_GER_militarism
+		prerequisite = { focus = GER_reichstag_1912_elections }
+		mutually_exclusive = { focus = GER_reichstag_social_concessions }
+		cost = 7
+		x = -1
+		y = 2
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			army_experience = 15
+			64 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = GER_reichstag_social_concessions
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_reichstag_1912_elections }
+		mutually_exclusive = { focus = GER_appease_the_junkers }
+		cost = 7
+		x = 1
+		y = 2
+		ai_will_do = { factor = 20 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 40
+			remove_ideas = GER_parliamentary_friction
+		}
+	}
+
+	focus = {
+		id = GER_prussian_franchise_debate
+		icon = GFX_focus_GER_prussian_franchise_reform
+		prerequisite = { focus = GER_appease_the_junkers focus = GER_reichstag_social_concessions }
+		cost = 7
+		x = 0
+		y = 3
+		ai_will_do = { factor = 75 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 60
+		}
+	}
+
+	#########################################################################
+	# PRE-WAR BLOCK II: HEAVY INDUSTRY & RUHR CARTELS (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_heartland_of_the_ruhr
+		icon = GFX_GER_industrialization_of_warfare
+		prerequisite = { focus = GER_agadir_crisis_gambit }
+		cost = 7
+		x = 3
+		y = 1
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = GER_peacetime_industrial_giants
+		}
+	}
+
+	focus = {
+		id = GER_krupp_heavy_ordnance_contracts
+		icon = GFX_focus_GER_krupp
+		prerequisite = { focus = GER_heartland_of_the_ruhr }
+		cost = 7
+		x = 3
+		y = 2
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			57 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = artillery_howitzers_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = GER_silesian_coal_and_foundries
+		icon = GFX_GER_military_workshop
+		prerequisite = { focus = GER_krupp_heavy_ordnance_contracts }
+		cost = 7
+		x = 2
+		y = 3
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			66 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_saarland_steel_works
+		icon = GFX_GER_new_industry_developments
+		prerequisite = { focus = GER_krupp_heavy_ordnance_contracts }
+		cost = 7
+		x = 4
+		y = 3
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			42 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_chemical_cartels_basf
+		icon = GFX_GER_chemical_industry_expansion
+		prerequisite = { focus = GER_silesian_coal_and_foundries }
+		prerequisite = { focus = GER_saarland_steel_works }
+		cost = 7
+		x = 3
+		y = 4
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_chemistry_bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			set_country_flag = GER_kra_established
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_electrical_giants_siemens_aeg
+		icon = GFX_GER_electronic_industry_development
+		prerequisite = { focus = GER_chemical_cartels_basf }
+		cost = 7
+		x = 3
+		y = 5
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			64 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = electronics_bonus
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	#########################################################################
+	# PRE-WAR BLOCK III: INFRASTRUCTURE & REICHSBAHN (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_reichsbahn_strategic_network
+		icon = GFX_TUR_baghdadberlin_railway
+		prerequisite = { focus = GER_berlin_baghdad_railway }
+		cost = 7
+		x = 6
+		y = 2
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			64 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			57 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_rhine_railway_bridges
+		icon = GFX_focus_GER_berlin_baghdad_railway
+		prerequisite = { focus = GER_reichsbahn_strategic_network }
+		cost = 5
+		x = 6
+		y = 3
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			42 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			28 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = GER_schlieffen_operations_active
+		}
+	}
+
+	focus = {
+		id = GER_east_prussian_supply_depots
+		icon = GFX_GER_korsettstangen_units
+		prerequisite = { focus = GER_reichsbahn_strategic_network }
+		cost = 5
+		x = 6
+		y = 4
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			5 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			army_experience = 10
+		}
+	}
+
+	#########################################################################
+	# PRE-WAR BLOCK IV: KAISERLICHE MARINE & TIRPITZ LAWS (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_dreadnought_battle_squadrons
+		icon = GFX_GER_naval_design_advancement
+		prerequisite = { focus = GER_tirpitz_fourth_naval_bill }
+		cost = 7
+		x = 8
+		y = 1
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			58 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			navy_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_hipper_battlecruisers
+		icon = GFX_focus_GER_navy
+		prerequisite = { focus = GER_dreadnought_battle_squadrons }
+		cost = 7
+		x = 7
+		y = 2
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = battlecruiser_bonus
+				bonus = 1.0
+				uses = 1
+				category = naval_equipment
+			}
+			navy_experience = 15
+		}
+	}
+
+	focus = {
+		id = GER_kiel_canal_widening
+		icon = GFX_GER_adriatic_sea_reinforcement
+		prerequisite = { focus = GER_dreadnought_battle_squadrons }
+		cost = 7
+		x = 9
+		y = 2
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			58 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_heligoland_island_fortress
+		icon = GFX_focus_GER_unrestricted_submarine_warfare
+		prerequisite = { focus = GER_hipper_battlecruisers }
+		prerequisite = { focus = GER_kiel_canal_widening }
+		cost = 5
+		x = 8
+		y = 3
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			58 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 3
+					instant_build = yes
+				}
+			}
+			set_country_flag = GER_u_boat_campaign_active
+		}
+	}
+
+	#########################################################################
+	# PRE-WAR BLOCK V: LUFTSPREITKRÄFTE & ZEPPELINS (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_imperial_airship_corps
+		icon = GFX_TUR_air_defense
+		prerequisite = { focus = GER_kiel_canal_widening }
+		cost = 7
+		x = 10
+		y = 3
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			add_ideas = GER_zeppelin_strategic_terror
+		}
+	}
+
+	focus = {
+		id = GER_aviator_training_schools
+		icon = GFX_FRA_aronautique_militaire
+		prerequisite = { focus = GER_imperial_airship_corps }
+		cost = 7
+		x = 10
+		y = 4
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 20
+			64 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_rumpler_reconnaissance_craft
+		icon = GFX_GER_research_funding
+		prerequisite = { focus = GER_aviator_training_schools }
+		cost = 7
+		x = 10
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = scout_plane_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_equipment
+			}
+			air_experience = 15
+		}
+	}
+
+	#########################################################################
+	# PRE-WAR BLOCK VI: ARMY EXPANSION & GENERAL STAFF (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_army_bill_1913_expansion
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
+		cost = 7
+		x = 13
+		y = 2
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 120000
+			army_experience = 20
+			add_ideas = GER_moltke_generalstab_doctrine
+		}
+	}
+
+	focus = {
+		id = GER_kriegsakademie_staff_cadres
+		icon = GFX_GER_specialist_units
+		prerequisite = { focus = GER_army_bill_1913_expansion }
+		cost = 7
+		x = 13
+		y = 3
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_command_power = 30
+		}
+	}
+
+	focus = {
+		id = GER_machine_gun_detachments_mg08
+		icon = GFX_focus_GER_army_bill_1912
+		prerequisite = { focus = GER_kriegsakademie_staff_cadres }
+		cost = 7
+		x = 12
+		y = 4
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			army_experience = 15
+		}
+	}
+
+	#########################################################################
+	# PRE-WAR BLOCK VII: EUROPEAN DIPLOMACY & WELTPOLITIK (1911-1914)
+	#########################################################################
+
+	focus = {
+		id = GER_austro_hungarian_staff_coordination
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
+		cost = 7
+		x = 15
+		y = 2
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			AUS = {
+				country_event = { id = ww1_germany_events.18 }
+			}
+			add_political_power = 40
+			set_country_flag = GER_weltpolitik_active
+		}
+	}
+
+	focus = {
+		id = GER_ottoman_military_mission_sanders
+		icon = GFX_TUR_german_five_year_mission
+		prerequisite = { focus = GER_austro_hungarian_staff_coordination }
+		cost = 7
+		x = 16
+		y = 3
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			TUR = {
+				country_event = { id = ww1_germany_events.19 }
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_preserve_italian_loyalty
+		icon = GFX_TUR_secret_treaty_with_germany
+		prerequisite = { focus = GER_ottoman_military_mission_sanders }
+		cost = 7
+		x = 16
+		y = 4
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ITA = {
+				country_event = { id = ww1_germany_events.20 }
+			}
+			add_political_power = 40
+		}
+	}
+
 	# PHASE II (1914-1917) - OPERATIONAL CHOICE & TOTAL WAR
 	#########################################################################
 
 	focus = {
 		id = GER_execute_schlieffen_plan
 		icon = GFX_focus_ger_around_maginot
-		prerequisite = { focus = GER_the_blank_cheque }
+		prerequisite = { focus = GER_ultimatum_to_belgium }
 		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
 		cost = 5
-		x = 9
-		y = 4
+		x = 12
+		y = 7
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = yes
 
 		completion_reward = {
+			set_country_flag = ger_schlieffen_plan_launched
 			country_event = { id = ww1_germany_events.3 }
 			add_ideas = GER_schlieffen_momentum
 			34 = {
@@ -229,8 +845,8 @@ focus_tree = {
 		icon = GFX_ww1_mex_upca_conquer
 		prerequisite = { focus = GER_execute_schlieffen_plan }
 		cost = 5
-		x = 9
-		y = 5
+		x = 11
+		y = 8
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -249,10 +865,10 @@ focus_tree = {
 	focus = {
 		id = GER_the_miracle_of_tannenberg
 		icon = GFX_focus_GER_the_miracle_of_tannenberg
-		prerequisite = { focus = GER_smash_liege_forts }
+		prerequisite = { focus = GER_proclaim_state_of_war_danger }
 		cost = 7
-		x = 9
-		y = 6
+		x = 15
+		y = 7
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -277,8 +893,8 @@ focus_tree = {
 		prerequisite = { focus = GER_the_blank_cheque }
 		mutually_exclusive = { focus = GER_execute_schlieffen_plan }
 		cost = 10
-		x = 12
-		y = 5
+		x = 16
+		y = 6
 		ai_will_do = { factor = 15 }
 		available_if_capitulated = yes
 
@@ -307,8 +923,8 @@ focus_tree = {
 		icon = GFX_focus_GER_haber_bosch_nitrogen_miracle
 		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
 		cost = 10
-		x = 9
-		y = 7
+		x = 14
+		y = 8
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -329,8 +945,8 @@ focus_tree = {
 		icon = GFX_ww1_nationalfocus_gasmask
 		prerequisite = { focus = GER_haber_bosch_nitrogen_miracle }
 		cost = 10
-		x = 9
-		y = 8
+		x = 14
+		y = 9
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = yes
 
@@ -346,8 +962,8 @@ focus_tree = {
 		icon = GFX_focus_OHL
 		prerequisite = { focus = GER_the_miracle_of_tannenberg focus = GER_aufmarsch_ost_focus }
 		cost = 10
-		x = 12
-		y = 7
+		x = 14
+		y = 10
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -363,8 +979,8 @@ focus_tree = {
 		icon = GFX_ww1_nationalfocus_ironcross
 		prerequisite = { focus = GER_hindenburg_program focus = GER_chemical_warfare_initiative }
 		cost = 10
-		x = 10
-		y = 9
+		x = 14
+		y = 11
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
@@ -381,6 +997,1163 @@ focus_tree = {
 	}
 
 	#########################################################################
+	
+	#########################################################################
+	# PHASE II: JULY CRISIS & OPERATIONAL CAMPAIGNS (1914-1916)
+	#########################################################################
+
+	focus = {
+		id = GER_sarajevo_reaction
+		icon = GFX_GER_mllitary_leagues_demands
+		prerequisite = { focus = GER_austro_hungarian_staff_coordination }
+		cost = 3
+		x = 14
+		y = 3
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+			AUS = {
+				country_event = { id = ww1_germany_events.21 }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_proclaim_state_of_war_danger
+		icon = GFX_GER_militarism
+		prerequisite = { focus = GER_the_blank_cheque }
+		cost = 3
+		x = 14
+		y = 5
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_burgfrieden_social_peace
+			add_war_support = 0.10
+			add_stability = 0.05
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_ultimatum_to_belgium
+		icon = GFX_ww1_mex_upca_conquer
+		prerequisite = { focus = GER_proclaim_state_of_war_danger }
+		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
+		cost = 3
+		x = 12
+		y = 6
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			BEL = {
+				country_event = { id = ww1_germany_events.22 }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_battle_of_the_frontiers
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_execute_schlieffen_plan }
+		cost = 5
+		x = 13
+		y = 8
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_manpower = 50000
+			28 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = GER_crossing_the_marne
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_battle_of_the_frontiers }
+		prerequisite = { focus = GER_smash_liege_forts }
+		cost = 5
+		x = 12
+		y = 9
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.23 }
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_race_to_the_sea
+		icon = GFX_GER_korsettstangen_units
+		prerequisite = { focus = GER_crossing_the_marne }
+		cost = 5
+		x = 12
+		y = 10
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			6 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = GER_trench_stalemate_western_front
+		}
+	}
+
+	focus = {
+		id = GER_battle_of_masurian_lakes
+		icon = GFX_focus_GER_the_miracle_of_tannenberg
+		prerequisite = { focus = GER_the_miracle_of_tannenberg }
+		cost = 5
+		x = 15
+		y = 8
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_relief_of_przemysl
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_battle_of_masurian_lakes }
+		cost = 5
+		x = 16
+		y = 9
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			AUS = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_blank_cheque_op
+				}
+			}
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = GER_gorlice_tarnow_breakthrough
+		icon = GFX_GER_industrialization_of_warfare
+		prerequisite = { focus = GER_relief_of_przemysl }
+		cost = 7
+		x = 15
+		y = 10
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.24 }
+			army_experience = 30
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_the_great_retreat_of_1915
+		icon = GFX_goal_deal_with_german_empire
+		prerequisite = { focus = GER_gorlice_tarnow_breakthrough }
+		cost = 7
+		x = 15
+		y = 11
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			10 = { add_claim_by = GER }
+			87 = { add_claim_by = GER }
+			189 = { add_claim_by = GER }
+			set_country_flag = GER_ober_ost_established
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_battle_of_verdun_attrition
+		icon = GFX_GER_poison_gas_development
+		prerequisite = { focus = GER_race_to_the_sea }
+		cost = 7
+		x = 12
+		y = 11
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.25 }
+			add_ideas = GER_falkenhayn_attrition_doctrine
+			army_experience = 30
+		}
+	}
+
+	focus = {
+		id = GER_somme_defensive_elasticity
+		icon = GFX_GER_stahlhelm
+		prerequisite = { focus = GER_battle_of_verdun_attrition }
+		cost = 7
+		x = 12
+		y = 12
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_hindenburg_line_construction
+		icon = GFX_GER_korsettstangen_units
+		prerequisite = { focus = GER_somme_defensive_elasticity }
+		cost = 7
+		x = 12
+		y = 13
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			6 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+				}
+			}
+			17 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	
+	#########################################################################
+	# BLOCK III-A: WAR ECONOMY & KRA (1914-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_rathenau_war_raw_materials_board
+		icon = GFX_SOV_war_industries_committees
+		prerequisite = { focus = GER_electrical_giants_siemens_aeg }
+		cost = 5
+		x = 3
+		y = 6
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_rathenau_kra_coordination
+			set_country_flag = ger_kra_board_established
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_confiscate_strategic_metals
+		icon = GFX_GER_industrialization_of_warfare
+		prerequisite = { focus = GER_rathenau_war_raw_materials_board }
+		cost = 5
+		x = 2
+		y = 7
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.03
+			add_war_support = 0.05
+			42 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_synthetic_buna_rubber_development
+		icon = GFX_GER_chemical_industry_expansion
+		prerequisite = { focus = GER_rathenau_war_raw_materials_board }
+		cost = 7
+		x = 4
+		y = 7
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = synthetic_rubber_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = GER_ersatz_materials_industry
+		icon = GFX_GER_new_industry_developments
+		prerequisite = { focus = GER_confiscate_strategic_metals }
+		prerequisite = { focus = GER_synthetic_buna_rubber_development }
+		cost = 5
+		x = 3
+		y = 8
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_ersatz_materials_production
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_coal_and_steel_rationing_board
+		icon = GFX_SOV_stimulate_steel_market
+		prerequisite = { focus = GER_ersatz_materials_industry }
+		cost = 5
+		x = 3
+		y = 9
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			55 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_imperial_war_credits_kriegsanleihen
+		icon = GFX_ENG_1915_ministry_of_munitions
+		prerequisite = { focus = GER_coal_and_steel_rationing_board }
+		cost = 5
+		x = 3
+		y = 10
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.05
+		}
+	}
+
+	#########################################################################
+	# BLOCK III-B: FOOD CRISIS & STARVATION BLOCKADE (1914-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_british_starvation_blockade_strain
+		icon = GFX_ENG_pax_britannica
+		prerequisite = { focus = GER_rhine_railway_bridges }
+		cost = 5
+		x = 6
+		y = 5
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_naval_blockade_strain
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_kriegsbrot_and_flour_rationing
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_british_starvation_blockade_strain }
+		cost = 5
+		x = 6
+		y = 6
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.02
+			add_ideas = GER_kriegsbrot_rationing
+		}
+	}
+
+	focus = {
+		id = GER_imperial_grain_office
+		icon = GFX_GER_auxiliary_service_law
+		prerequisite = { focus = GER_kriegsbrot_and_flour_rationing }
+		cost = 5
+		x = 6
+		y = 7
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			5 = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_swine_massacre_consequences
+		icon = GFX_GER_auxiliary_service_law
+		prerequisite = { focus = GER_kriegsbrot_and_flour_rationing }
+		cost = 5
+		x = 5
+		y = 7
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.27 }
+			add_stability = -0.05
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = GER_steckrubenwinter_crisis_management
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_imperial_grain_office }
+		cost = 7
+		x = 6
+		y = 8
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_turnip_winter_crisis_1
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_danubian_grain_imports
+		icon = GFX_goal_AUS_ausgleich
+		prerequisite = { focus = GER_steckrubenwinter_crisis_management }
+		cost = 5
+		x = 6
+		y = 9
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = GER_turnip_winter_crisis_1
+			add_ideas = GER_turnip_winter_crisis_2
+		}
+	}
+
+	#########################################################################
+	# BLOCK IV: NAVAL WAR & HOCHSEEFLOTTE (1914-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_skagerrak_battle_of_jutland_clash
+		icon = GFX_focus_GER_navy
+		prerequisite = { focus = GER_heligoland_island_fortress }
+		cost = 5
+		x = 7
+		y = 4
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.28 }
+			navy_experience = 35
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_break_the_distant_blockade_attempt
+		icon = GFX_GER_naval_design_advancement
+		prerequisite = { focus = GER_skagerrak_battle_of_jutland_clash }
+		cost = 7
+		x = 7
+		y = 5
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_ideas = GER_high_seas_fleet_active
+		}
+	}
+
+	focus = {
+		id = GER_commerce_raiding_cruisers
+		icon = GFX_GER_adriatic_sea_reinforcement
+		prerequisite = { focus = GER_skagerrak_battle_of_jutland_clash }
+		cost = 5
+		x = 9
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 20
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_unrestricted_u_boat_debate
+		icon = GFX_focus_GER_unrestricted_submarine_warfare
+		prerequisite = { focus = GER_skagerrak_battle_of_jutland_clash }
+		cost = 5
+		x = 8
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.29 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_sussex_pledge_cruiser_rules_choice
+		icon = GFX_ENG_special_american_relationship
+		prerequisite = { focus = GER_unrestricted_u_boat_debate }
+		mutually_exclusive = { focus = GER_torpedo_transatlantic_convoys }
+		cost = 7
+		x = 8
+		y = 6
+		ai_will_do = { factor = 40 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			set_country_flag = ger_respected_sussex_pledge
+			USA = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_blank_cheque_op
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_torpedo_transatlantic_convoys
+		icon = GFX_focus_GER_unrestricted_submarine_warfare
+		prerequisite = { focus = GER_unrestricted_u_boat_debate }
+		mutually_exclusive = { focus = GER_sussex_pledge_cruiser_rules_choice }
+		cost = 7
+		x = 9
+		y = 6
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_unrestricted_submarines_active
+			add_war_support = 0.10
+			if = {
+				limit = { country_exists = USA }
+				USA = {
+					add_war_support = 0.15
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_operation_albion_baltic_islands
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_break_the_distant_blockade_attempt }
+		cost = 5
+		x = 7
+		y = 6
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 20
+			army_experience = 15
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_submarine_cruiser_u_kreuzer_fleet
+		icon = GFX_GER_naval_design_advancement
+		prerequisite = { focus = GER_torpedo_transatlantic_convoys }
+		cost = 7
+		x = 8
+		y = 7
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 30
+			add_tech_bonus = {
+				name = submarine_bonus
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	#########################################################################
+	# BLOCK V: AVIATION & AERIAL SUPERIORITY (1915-1918)
+	#########################################################################
+
+	focus = {
+		id = GER_the_fokker_scourge_dominance
+		icon = GFX_FRA_aronautique_militaire
+		prerequisite = { focus = GER_rumpler_reconnaissance_craft }
+		cost = 5
+		x = 10
+		y = 6
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			add_ideas = GER_fokker_scourge_air_dominance
+		}
+	}
+
+	focus = {
+		id = GER_albatros_diii_fighters
+		icon = GFX_TUR_air_defense
+		prerequisite = { focus = GER_the_fokker_scourge_dominance }
+		cost = 5
+		x = 10
+		y = 7
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 20
+			add_tech_bonus = {
+				name = air_doctrine_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = GER_dicta_boelcke_air_tactics
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_albatros_diii_fighters }
+		cost = 5
+		x = 10
+		y = 8
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 30
+			add_ideas = GER_dicta_boelcke_doctrine
+		}
+	}
+
+	focus = {
+		id = GER_richthofens_flying_circus_aces
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_dicta_boelcke_air_tactics }
+		cost = 5
+		x = 10
+		y = 9
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.05
+			air_experience = 25
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_gotha_bombers_turkenkreuz
+		icon = GFX_FRA_aronautique_militaire
+		prerequisite = { focus = GER_richthofens_flying_circus_aces }
+		cost = 7
+		x = 10
+		y = 10
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.30 }
+			air_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_giant_zeppelin_staaken_fleet
+		icon = GFX_TUR_air_defense
+		prerequisite = { focus = GER_richthofens_flying_circus_aces }
+		cost = 7
+		x = 11
+		y = 10
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 20
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_all_metal_junkers_aircraft
+		icon = GFX_GER_electronic_industry_development
+		prerequisite = { focus = GER_gotha_bombers_turkenkreuz }
+		cost = 7
+		x = 10
+		y = 11
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = all_metal_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_equipment
+			}
+		}
+	}
+
+	#########################################################################
+	# BLOCK VI: TOTAL WAR MOBILIZATION & TECH (1916-1918)
+	#########################################################################
+
+	focus = {
+		id = GER_auxiliary_service_law_hilfsdienst
+		icon = GFX_GER_auxiliary_service_law
+		prerequisite = { focus = GER_stosstruppen_tactics }
+		cost = 5
+		x = 13
+		y = 12
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_hindenburg_total_mobilization
+			add_war_support = 0.05
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = GER_women_in_munitions_industry
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_auxiliary_service_law_hilfsdienst }
+		cost = 5
+		x = 13
+		y = 13
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 75000
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_light_machine_guns_mg08_15
+		icon = GFX_GER_specialist_units
+		prerequisite = { focus = GER_women_in_munitions_industry }
+		cost = 5
+		x = 13
+		y = 14
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = GER_flammenwerfer_shock_detachments
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_women_in_munitions_industry }
+		cost = 5
+		x = 12
+		y = 14
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_ideas = german_infiltration_assault_idea
+		}
+	}
+
+	focus = {
+		id = GER_heavy_siege_howitzers_paris_gun
+		icon = GFX_GER_industrialization_of_warfare
+		prerequisite = { focus = GER_light_machine_guns_mg08_15 }
+		cost = 7
+		x = 13
+		y = 15
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.31 }
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_first_german_tank_a7v
+		icon = GFX_GER_a7v
+		prerequisite = { focus = GER_heavy_siege_howitzers_paris_gun }
+		cost = 7
+		x = 13
+		y = 16
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_salvaged_beutepanzer_corps
+		icon = GFX_FRA_renault_ft
+		prerequisite = { focus = GER_first_german_tank_a7v }
+		cost = 5
+		x = 13
+		y = 17
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	#########################################################################
+	# BLOCK VII: BILATERAL EUROPEAN DIPLOMACY (1914-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_balkan_railway_through_corridor
+		icon = GFX_TUR_baghdadberlin_railway
+		prerequisite = { focus = GER_preserve_italian_loyalty }
+		cost = 5
+		x = 17
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 60
+			TUR = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_berlin_baghdad_railway_op
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_sweden_iron_ore_guarantees
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_balkan_railway_through_corridor }
+		cost = 5
+		x = 17
+		y = 6
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			SWE = {
+				country_event = { id = ww1_germany_events.32 }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_bulgarian_triple_alliance_pact
+		icon = GFX_GER_mllitary_leagues_demands
+		prerequisite = { focus = GER_balkan_railway_through_corridor }
+		cost = 5
+		x = 18
+		y = 6
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			BUL = {
+				country_event = { id = ww1_germany_events.33 }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_danish_strait_mining_pact
+		icon = GFX_focus_GER_navy
+		prerequisite = { focus = GER_sweden_iron_ore_guarantees }
+		cost = 5
+		x = 17
+		y = 7
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			DEN = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_blank_cheque_op
+				}
+			}
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_romanian_oil_and_grain_pact
+		icon = GFX_GER_military_workshop
+		prerequisite = { focus = GER_bulgarian_triple_alliance_pact }
+		cost = 5
+		x = 18
+		y = 7
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ROM = {
+				country_event = { id = ww1_germany_events.34 }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_swiss_neutral_financial_corridor
+		icon = GFX_ENG_scientific_development
+		prerequisite = { focus = GER_danish_strait_mining_pact }
+		cost = 5
+		x = 17
+		y = 8
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_greek_royalist_support_treaty
+		icon = GFX_GER_weltpolitik
+		prerequisite = { focus = GER_romanian_oil_and_grain_pact }
+		cost = 5
+		x = 18
+		y = 8
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			GRE = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_blank_cheque_op
+				}
+			}
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_ambassador_bernstorff_us_lobby
+		icon = GFX_ENG_special_american_relationship
+		prerequisite = { focus = GER_swiss_neutral_financial_corridor }
+		cost = 7
+		x = 17
+		y = 9
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = { country_exists = USA }
+				USA = {
+					add_opinion_modifier = {
+						target = GER
+						modifier = ger_blank_cheque_op
+					}
+					add_war_support = -0.05
+				}
+			}
+			add_political_power = 60
+		}
+	}
+
+	#########################################################################
+	# BLOCK VIII: COLONIES & WELTPOLITIK ASYMMETRIC WAR (1914-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_mittelafrika_colonial_vision
+		icon = GFX_GER_weltpolitik
+		cost = 5
+		x = 19
+		y = 2
+		ai_will_do = { factor = 75 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_lettow_vorbeck_east_africa_stand
+		icon = GFX_GER_asienkorps_units
+		prerequisite = { focus = GER_mittelafrika_colonial_vision }
+		cost = 5
+		x = 19
+		y = 3
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.35 }
+			add_war_support = 0.05
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_siege_of_tsingtao_resistance
+		icon = GFX_GER_korsettstangen_units
+		prerequisite = { focus = GER_mittelafrika_colonial_vision }
+		cost = 5
+		x = 20
+		y = 3
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 15
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_support_irish_easter_rising
+		icon = GFX_GER_mllitary_leagues_demands
+		prerequisite = { focus = GER_lettow_vorbeck_east_africa_stand }
+		cost = 5
+		x = 19
+		y = 4
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.36 }
+			if = {
+				limit = { country_exists = ENG }
+				ENG = {
+					add_stability = -0.05
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_boer_maritz_rebellion_backing
+		icon = GFX_GER_militarism
+		prerequisite = { focus = GER_siege_of_tsingtao_resistance }
+		cost = 5
+		x = 20
+		y = 4
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 40
+			if = {
+				limit = { country_exists = SAF }
+				SAF = {
+					add_stability = -0.05
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GER_zimmermann_telegram_proposal
+		icon = GFX_TUR_secret_treaty_with_germany
+		prerequisite = { focus = GER_support_irish_easter_rising }
+		cost = 7
+		x = 19
+		y = 5
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.37 }
+		}
+	}
+
 	# PHASE III - POLITICAL ROUTE 1: OHL MILITARY DICTATORSHIP (HISTORICAL)
 	#########################################################################
 
@@ -394,8 +2167,8 @@ focus_tree = {
 			focus = GER_spartakusbund_proletarian_revolt
 		}
 		cost = 10
-		x = 10
-		y = 10
+		x = 14
+		y = 12
 		ai_will_do = { factor = 70 }
 		available_if_capitulated = yes
 
@@ -415,8 +2188,8 @@ focus_tree = {
 		icon = GFX_focus_GER_unrestricted_submarine_warfare
 		prerequisite = { focus = GER_silent_dictatorship_ohl }
 		cost = 10
-		x = 9
-		y = 11
+		x = 16
+		y = 13
 		ai_will_do = { factor = 80 }
 		available_if_capitulated = yes
 
@@ -432,8 +2205,8 @@ focus_tree = {
 		icon = GFX_focus_GER_sealed_train_to_petrograd
 		prerequisite = { focus = GER_silent_dictatorship_ohl }
 		cost = 5
-		x = 11
-		y = 11
+		x = 15
+		y = 13
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -448,8 +2221,8 @@ focus_tree = {
 		icon = GFX_goal_deal_with_german_empire
 		prerequisite = { focus = GER_sealed_train_to_petrograd }
 		cost = 10
-		x = 11
-		y = 12
+		x = 15
+		y = 14
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -493,8 +2266,8 @@ focus_tree = {
 		prerequisite = { focus = GER_treaty_of_brest_litovsk }
 		prerequisite = { focus = GER_unrestricted_submarine_warfare }
 		cost = 10
-		x = 10
-		y = 13
+		x = 14
+		y = 16
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -512,15 +2285,15 @@ focus_tree = {
 	focus = {
 		id = GER_bethmann_civilian_supremacy
 		icon = GFX_focus_GER_bethmann_civilian_supremacy
-		prerequisite = { focus = GER_stosstruppen_tactics }
+		prerequisite = { focus = GER_prussian_franchise_debate }
 		mutually_exclusive = {
 			focus = GER_silent_dictatorship_ohl
 			focus = GER_found_vaterlandspartei
 			focus = GER_spartakusbund_proletarian_revolt
 		}
 		cost = 10
-		x = 6
-		y = 10
+		x = 0
+		y = 4
 		ai_will_do = { factor = 15 }
 		available_if_capitulated = yes
 
@@ -536,8 +2309,8 @@ focus_tree = {
 		icon = GFX_focus_GER_prussian_franchise_reform
 		prerequisite = { focus = GER_bethmann_civilian_supremacy }
 		cost = 10
-		x = 6
-		y = 11
+		x = 0
+		y = 5
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -553,8 +2326,8 @@ focus_tree = {
 		icon = GFX_focus_GER_reichstag_peace_resolution
 		prerequisite = { focus = GER_prussian_franchise_reform }
 		cost = 10
-		x = 6
-		y = 12
+		x = 0
+		y = 8
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = yes
 
@@ -570,8 +2343,8 @@ focus_tree = {
 		icon = GFX_focus_GER_constitutional_monarchy_proclamation
 		prerequisite = { focus = GER_reichstag_peace_resolution }
 		cost = 10
-		x = 6
-		y = 13
+		x = 0
+		y = 10
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -589,15 +2362,15 @@ focus_tree = {
 	focus = {
 		id = GER_found_vaterlandspartei
 		icon = GFX_focus_GER_found_vaterlandspartei
-		prerequisite = { focus = GER_stosstruppen_tactics }
+		prerequisite = { focus = GER_hindenburg_program }
 		mutually_exclusive = {
 			focus = GER_silent_dictatorship_ohl
 			focus = GER_bethmann_civilian_supremacy
 			focus = GER_spartakusbund_proletarian_revolt
 		}
 		cost = 10
-		x = 14
-		y = 10
+		x = 18
+		y = 12
 		ai_will_do = { factor = 10 }
 		available_if_capitulated = yes
 
@@ -613,8 +2386,8 @@ focus_tree = {
 		icon = GFX_focus_GER_total_war_mobilization
 		prerequisite = { focus = GER_found_vaterlandspartei }
 		cost = 10
-		x = 14
-		y = 11
+		x = 18
+		y = 14
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -645,8 +2418,8 @@ focus_tree = {
 		icon = GFX_focus_GER_annexation_of_belgium_and_briey
 		prerequisite = { focus = GER_total_war_mobilization }
 		cost = 10
-		x = 14
-		y = 12
+		x = 18
+		y = 15
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = yes
 
@@ -664,8 +2437,8 @@ focus_tree = {
 		icon = GFX_focus_GER_morphed_mitteleuropa_iron_rule
 		prerequisite = { focus = GER_annexation_of_belgium_and_briey }
 		cost = 10
-		x = 14
-		y = 13
+		x = 18
+		y = 17
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = yes
 
@@ -685,7 +2458,7 @@ focus_tree = {
 		icon = GFX_focus_GER_willy_nicky_telegrams_bjorko
 		mutually_exclusive = { focus = GER_the_blank_cheque }
 		cost = 10
-		x = 1
+		x = -2
 		y = 0
 		ai_will_do = { factor = 5 }
 		available_if_capitulated = yes
@@ -701,7 +2474,7 @@ focus_tree = {
 		icon = GFX_ww1_nationalfocus_islam
 		prerequisite = { focus = GER_berlin_baghdad_railway }
 		cost = 10
-		x = 3
+		x = 5
 		y = 2
 		ai_will_do = { factor = 10 }
 		available_if_capitulated = yes
@@ -722,8 +2495,8 @@ focus_tree = {
 			focus = GER_found_vaterlandspartei
 		}
 		cost = 5
-		x = 3
-		y = 10
+		x = -1
+		y = 3
 		ai_will_do = { factor = 5 }
 		available_if_capitulated = yes
 
@@ -737,8 +2510,8 @@ focus_tree = {
 		id = GER_emergency_danubian_annexation
 		icon = GFX_focus_GER_emergency_danubian_annexation
 		cost = 7
-		x = 14
-		y = 4
+		x = 21
+		y = 5
 		ai_will_do = { factor = 5 }
 		available_if_capitulated = yes
 
@@ -750,4 +2523,1012 @@ focus_tree = {
 			add_political_power = 80
 		}
 	}
+
+	#########################################################################
+	# BLOCK IX-A: WESTERN FRONT TACTICAL CAMPAIGNS (1915-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_second_battle_of_ypres_gas
+		icon = GFX_GER_poison_gas_development
+		prerequisite = { focus = GER_race_to_the_sea }
+		cost = 5
+		x = 11
+		y = 11
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.38 }
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_champagne_defensive_victories
+		icon = GFX_GER_stahlhelm
+		prerequisite = { focus = GER_second_battle_of_ypres_gas }
+		cost = 5
+		x = 11
+		y = 12
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_operation_alberich_scorched_earth
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_champagne_defensive_victories }
+		cost = 5
+		x = 11
+		y = 13
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_arras_and_vimy_ridge_stand
+		icon = GFX_GER_korsettstangen_units
+		prerequisite = { focus = GER_operation_alberich_scorched_earth }
+		cost = 5
+		x = 11
+		y = 14
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_battle_of_cambrai_counterstroke
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_arras_and_vimy_ridge_stand }
+		cost = 5
+		x = 11
+		y = 15
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 30
+			add_ideas = GER_caporetto_momentum
+		}
+	}
+
+	#########################################################################
+	# BLOCK IX-B: ALPINE, BALKAN & ROMANIAN CAMPAIGNS (1915-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_common_army_heeresfront_coordination
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_preserve_italian_loyalty }
+		cost = 5
+		x = 16
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_austro_hungarian_naval_danube_flotilla
+		icon = GFX_focus_GER_navy
+		prerequisite = { focus = GER_common_army_heeresfront_coordination }
+		cost = 5
+		x = 16
+		y = 7
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 15
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_fourteenth_army_alpine_corps
+		icon = GFX_AUS_imperialroyal_mountain_troops
+		prerequisite = { focus = GER_austro_hungarian_naval_danube_flotilla }
+		cost = 5
+		x = 19
+		y = 8
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_alpine_corps_offensive
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_battle_of_caporetto_breakthrough
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_fourteenth_army_alpine_corps }
+		cost = 7
+		x = 19
+		y = 9
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.39 }
+			army_experience = 30
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = GER_invasion_of_romania_falkenhayn
+		icon = GFX_GER_industrialization_of_warfare
+		prerequisite = { focus = GER_romanian_oil_and_grain_pact }
+		cost = 5
+		x = 18
+		y = 9
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_fall_of_bucharest_oil_fields
+		icon = GFX_GER_military_workshop
+		prerequisite = { focus = GER_invasion_of_romania_falkenhayn }
+		cost = 5
+		x = 18
+		y = 10
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.40 }
+			add_ideas = GER_romanian_oil_concessions
+		}
+	}
+
+	#########################################################################
+	# BLOCK IX-C: MIDDLE EAST OPERATIONS (1914-1917)
+	#########################################################################
+
+	focus = {
+		id = GER_asienkorps_palestine_expedition
+		icon = GFX_GER_asienkorps_units
+		prerequisite = { focus = GER_ottoman_military_mission_sanders }
+		cost = 5
+		x = 15
+		y = 4
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_asienkorps_desert_mastery
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_siege_of_kut_al_amara_aid
+		icon = GFX_TUR_schellendorf_plan
+		prerequisite = { focus = GER_asienkorps_palestine_expedition }
+		cost = 5
+		x = 15
+		y = 5
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_war_support = 0.05
+		}
+	}
+
+	#########################################################################
+	# BLOCK X: EASTERN SETTLEMENT & MITTELEUROPA (1917-1918)
+	#########################################################################
+
+	focus = {
+		id = GER_create_regency_kingdom_of_poland
+		icon = GFX_POL_regency_council_focus
+		prerequisite = { focus = GER_treaty_of_brest_litovsk }
+		cost = 5
+		x = 15
+		y = 15
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.41 }
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_liberate_the_ukrainian_hetmanate
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_treaty_of_brest_litovsk }
+		cost = 5
+		x = 16
+		y = 15
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.42 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_establish_united_baltic_duchy
+		icon = GFX_focus_deal_with_german_empire
+		prerequisite = { focus = GER_create_regency_kingdom_of_poland }
+		cost = 5
+		x = 15
+		y = 16
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_kingdom_of_finland_vassal
+		icon = GFX_focus_pol_german_king
+		prerequisite = { focus = GER_liberate_the_ukrainian_hetmanate }
+		cost = 5
+		x = 16
+		y = 16
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 40
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_kingdom_of_lithuania_urach
+		icon = GFX_focus_pol_german_king
+		prerequisite = { focus = GER_create_regency_kingdom_of_poland }
+		cost = 5
+		x = 17
+		y = 16
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 40
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_caucasian_intervention_georgia
+		icon = GFX_GER_asienkorps_units
+		prerequisite = { focus = GER_liberate_the_ukrainian_hetmanate }
+		cost = 5
+		x = 15
+		y = 17
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_mitteleuropa_customs_union
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_establish_united_baltic_duchy }
+		prerequisite = { focus = GER_kingdom_of_finland_vassal }
+		cost = 7
+		x = 16
+		y = 17
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_mitteleuropa_hegemony
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = GER_baltic_german_colonization_order
+		icon = GFX_GER_auxiliary_service_law
+		prerequisite = { focus = GER_establish_united_baltic_duchy }
+		cost = 5
+		x = 17
+		y = 17
+		ai_will_do = { factor = 80 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 50000
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_don_and_kuban_cossack_treaties
+		icon = GFX_SOV_integration_of_the_cossacks
+		prerequisite = { focus = GER_caucasian_intervention_georgia }
+		cost = 5
+		x = 15
+		y = 18
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 15
+		}
+	}
+
+	#########################################################################
+	# BLOCK XI-A: OHL DICTATORSHIP ENDGAMES (1917-1918)
+	#########################################################################
+
+	focus = {
+		id = GER_oust_bethmann_hollweg
+		icon = GFX_GER_military_dictatorship
+		prerequisite = { focus = GER_silent_dictatorship_ohl }
+		cost = 5
+		x = 14
+		y = 13
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 60
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_chancellor_michaelis_puppet
+		icon = GFX_GER_militarism
+		prerequisite = { focus = GER_oust_bethmann_hollweg }
+		cost = 5
+		x = 14
+		y = 14
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_krupp_ordnance_dictate
+		icon = GFX_GER_industrialization_of_warfare
+		prerequisite = { focus = GER_chancellor_michaelis_puppet }
+		cost = 5
+		x = 14
+		y = 15
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_vaterlandspartei_iron_fist
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = GER_operation_georgette_flanders
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_the_kaiserschlacht_1918 }
+		cost = 5
+		x = 13
+		y = 19
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_operation_gneisenau_matz
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_the_kaiserschlacht_1918 }
+		cost = 5
+		x = 14
+		y = 17
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_operation_blucher_yorck
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_the_kaiserschlacht_1918 }
+		cost = 5
+		x = 16
+		y = 18
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_the_black_day_of_the_german_army
+		icon = GFX_GER_korsettstangen_units
+		prerequisite = { focus = GER_operation_gneisenau_matz }
+		cost = 5
+		x = 14
+		y = 18
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.44 }
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = GER_seek_armistice_fourteen_points
+		icon = GFX_ENG_special_american_relationship
+		prerequisite = { focus = GER_the_black_day_of_the_german_army }
+		cost = 5
+		x = 14
+		y = 19
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_kiel_sailors_mutiny
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_operation_blucher_yorck }
+		cost = 5
+		x = 16
+		y = 19
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.45 }
+			add_stability = -0.15
+		}
+	}
+
+	#########################################################################
+	# BLOCK XI-B: VOLKSKAISERREICH PARLIAMENTARY MONARCHY
+	#########################################################################
+
+	focus = {
+		id = GER_prince_max_von_baden_cabinet
+		icon = GFX_GER_militarism
+		prerequisite = { focus = GER_bethmann_civilian_supremacy }
+		cost = 5
+		x = 0
+		y = 6
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = GER_repeal_anti_socialist_heritage
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_prince_max_von_baden_cabinet }
+		cost = 5
+		x = 1
+		y = 7
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_three_class_franchise_abolition_law
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_prince_max_von_baden_cabinet }
+		cost = 5
+		x = 0
+		y = 7
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = GER_direct_negotiations_with_woodrow_wilson
+		icon = GFX_ENG_special_american_relationship
+		prerequisite = { focus = GER_reichstag_peace_resolution }
+		cost = 5
+		x = 0
+		y = 9
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = GER_federal_constitutional_monarchy
+		icon = GFX_focus_ger_support_austrian_claims
+		prerequisite = { focus = GER_constitutional_monarchy_proclamation }
+		cost = 5
+		x = 1
+		y = 11
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_post_war_welfare_and_reconstruction
+		icon = GFX_GER_new_industry_developments
+		prerequisite = { focus = GER_constitutional_monarchy_proclamation }
+		cost = 7
+		x = 0
+		y = 11
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 60
+		}
+	}
+
+	#########################################################################
+	# BLOCK XI-C: VATERLANDSPARTEI IMPERIAL JUNTA
+	#########################################################################
+
+	focus = {
+		id = GER_kapp_and_tirpitz_rally
+		icon = GFX_GER_mllitary_leagues_demands
+		prerequisite = { focus = GER_found_vaterlandspartei }
+		cost = 5
+		x = 18
+		y = 13
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.10
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_dissolve_the_reichstag
+		icon = GFX_GER_military_dictatorship
+		prerequisite = { focus = GER_kapp_and_tirpitz_rally }
+		cost = 5
+		x = 19
+		y = 14
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.10
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = GER_annex_the_flemish_coast
+		icon = GFX_focus_GER_navy
+		prerequisite = { focus = GER_annexation_of_belgium_and_briey }
+		cost = 5
+		x = 20
+		y = 16
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_colonize_the_eastern_frontier_strip
+		icon = GFX_GER_auxiliary_service_law
+		prerequisite = { focus = GER_annexation_of_belgium_and_briey }
+		cost = 5
+		x = 18
+		y = 16
+		ai_will_do = { factor = 85 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 50000
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = GER_totalitarian_labor_camps
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_dissolve_the_reichstag }
+		cost = 5
+		x = 19
+		y = 16
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_vaterlandspartei_iron_fist
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = GER_unconditional_victory_or_ruin
+		icon = GFX_GER_militarism
+		prerequisite = { focus = GER_morphed_mitteleuropa_iron_rule }
+		cost = 7
+		x = 19
+		y = 18
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.20
+			add_political_power = 100
+		}
+	}
+
+	#########################################################################
+	# BLOCK XI-D: SPARTAKUSAUFSTAND SOCIALIST REVOLUTION
+	#########################################################################
+
+	focus = {
+		id = GER_berlin_january_mass_strikes
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_spartakusbund_proletarian_revolt }
+		cost = 5
+		x = -1
+		y = 4
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.10
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_soldiers_and_workers_councils
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_berlin_january_mass_strikes }
+		cost = 5
+		x = -1
+		y = 5
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_proclaim_freie_sozialistische_republik
+		icon = GFX_goal_polish_syndicalism
+		prerequisite = { focus = GER_soldiers_and_workers_councils }
+		cost = 5
+		x = -1
+		y = 6
+		ai_will_do = { factor = 100 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.12 }
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_dissolve_the_junker_officer_caste
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_proclaim_freie_sozialistische_republik }
+		cost = 5
+		x = -2
+		y = 7
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_ideas = GER_proletarian_red_army
+		}
+	}
+
+	focus = {
+		id = GER_alliance_with_soviet_russia
+		icon = GFX_SOV_orthodox_brotherhood
+		prerequisite = { focus = GER_proclaim_freie_sozialistische_republik }
+		cost = 5
+		x = -1
+		y = 7
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = GER_socialist_land_and_factory_collectivization
+		icon = GFX_goal_generic_workers
+		prerequisite = { focus = GER_alliance_with_soviet_russia }
+		cost = 5
+		x = -1
+		y = 8
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_world_proletarian_revolution
+		icon = GFX_goal_polish_syndicalism
+		prerequisite = { focus = GER_socialist_land_and_factory_collectivization }
+		cost = 7
+		x = -1
+		y = 9
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.20
+			add_political_power = 100
+		}
+	}
+
+	#########################################################################
+	# BLOCK XII: ALT-HISTORY & EASTER EGGS
+	#########################################################################
+
+	focus = {
+		id = GER_willy_nicky_personal_summit
+		icon = GFX_SOV_limit_tsar_influence
+		prerequisite = { focus = GER_willy_nicky_telegrams_bjorko }
+		cost = 5
+		x = -2
+		y = 1
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_partition_of_british_sphere_asia
+		icon = GFX_TUR_baghdadberlin_railway
+		prerequisite = { focus = GER_willy_nicky_personal_summit }
+		cost = 5
+		x = -2
+		y = 2
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 80
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_continental_bloc_against_london
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_partition_of_british_sphere_asia }
+		cost = 7
+		x = -2
+		y = 3
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.15
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GER_max_von_oppenheim_memorandum
+		icon = GFX_GER_weltpolitik
+		prerequisite = { focus = GER_hajj_wilhelm_pan_islamic_crusade }
+		cost = 5
+		x = 5
+		y = 3
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_bedouin_and_persian_rebellions
+		icon = GFX_GER_asienkorps_units
+		prerequisite = { focus = GER_max_von_oppenheim_memorandum }
+		cost = 5
+		x = 5
+		y = 4
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 60
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_holy_war_on_the_suez_canal
+		icon = GFX_TUR_secret_treaty_with_germany
+		prerequisite = { focus = GER_bedouin_and_persian_rebellions }
+		cost = 7
+		x = 5
+		y = 5
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_danubian_crisis_annexation_protocol
+		icon = GFX_GER_consolidate_central_powers
+		prerequisite = { focus = GER_emergency_danubian_annexation }
+		cost = 5
+		x = 21
+		y = 6
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_incorporate_bohemia_and_austria
+		icon = GFX_focus_GER_emergency_danubian_annexation
+		prerequisite = { focus = GER_danubian_crisis_annexation_protocol }
+		cost = 7
+		x = 21
+		y = 7
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.10
+		}
+	}
+
+
+	focus = {
+		id = GER_das_grosse_hauptquartier
+		icon = GFX_GER_mllitary_leagues_demands
+		prerequisite = { focus = GER_army_bill_1912 }
+		cost = 5
+		x = 13
+		y = 1
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_political_power = 40
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_kaiserliche_werften_expansion
+		icon = GFX_GER_naval_design_advancement
+		prerequisite = { focus = GER_dreadnought_battle_squadrons }
+		cost = 5
+		x = 8
+		y = 2
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 20
+			58 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
 }

@@ -212,5 +212,366 @@ ideas = {
 			}
 		}
 
+		# =====================================================================
+		# MULTI-TIER EVOLUTIONARY NATIONAL SPIRITS (CLEAN NON-STACKING DESIGN)
+		# =====================================================================
+
+		# War Economy Tier 1: Peacetime Industrial Giants
+		GER_peacetime_industrial_giants = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = 0.00
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		# War Economy Tier 2: KRA Raw Materials Mobilization
+		GER_rathenau_kra_coordination = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+				production_speed_industrial_complex_factor = -0.05
+				consumer_goods_factor = 0.03
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		# War Economy Tier 3: Hindenburg Total War Program
+		GER_hindenburg_total_mobilization = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				consumer_goods_factor = 0.08
+				stability_factor = -0.10
+				industrial_capacity_factory = 0.20
+			}
+		}
+
+		# War Economy Tier 4: War Triumph or Economic Exhaustion
+		GER_war_exhaustion_or_triumph = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_arms_factory_factor = 0.10
+				consumer_goods_factor = 0.05
+				stability_weekly = 0.001
+			}
+		}
+
+		# Blockade Tier 1: Unhindered Global Commerce
+		GER_free_seas_trade = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_laws_cost_factor = -0.20
+			}
+		}
+
+		# Blockade Tier 2: British Distant Blockade Strain
+		GER_naval_blockade_strain = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.03
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+
+		# Blockade Tier 3: Turnip Winter Food Crisis (Steckrübenwinter)
+		GER_turnip_winter_crisis = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.10
+				monthly_population = -0.20
+				consumer_goods_factor = 0.06
+			}
+		}
+
+		# Blockade Tier 4: Ukrainian Grain Relief
+		GER_ukraine_grain_relief = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				consumer_goods_factor = -0.03
+				monthly_population = 0.10
+			}
+		}
+
+		# General Staff Doctrine Tier 1: Moltke Manoeuvre Warfare
+		GER_moltke_generalstab_doctrine = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.10
+				planning_speed = 0.20
+				max_planning = 0.15
+			}
+		}
+
+		# General Staff Doctrine Tier 2: Falkenhayn Attrition Warfare
+		GER_falkenhayn_attrition_doctrine = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				defence = 0.15
+				entrenchment_speed_factor = 0.25
+				max_dig_in = 5
+				army_speed_factor = -0.05
+			}
+		}
+
+		# General Staff Doctrine Tier 3: Ludendorff Infiltration & Stormtroopers
+		GER_ludendorff_stormtrooper_assault = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				breakthrough_factor = 0.20
+				army_attack_factor = 0.12
+				special_forces_attack_factor = 0.20
+				land_reinforce_rate = 0.15
+			}
+		}
+
+		# General Staff Doctrine Tier 4: Kaiserheer Veterans
+		GER_veteran_kaiserheer = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				experience_loss_factor = -0.20
+				army_org_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+
+		# Political Restlessness Tier 1: Parliamentary Friction
+		GER_parliamentary_friction = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.15
+				stability_factor = -0.05
+			}
+		}
+
+		# Political Restlessness Tier 2: Reichstag Strikes & Food Riots
+		GER_reichstag_strike_unrest = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.30
+				stability_factor = -0.15
+				war_support_factor = -0.10
+				industrial_capacity_factory = -0.10
+			}
+		}
+
+		# Operational Tactical State: Schlieffen Plan Failed (Trench Stalemate)
+		GER_schlieffen_plan_failed = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = -0.08
+				stability_factor = -0.05
+				army_speed_factor = -0.08
+				max_dig_in = 3
+			}
+		}
+
+		# Operational Tactical State: Fokker Scourge (Air Dominance)
+		GER_fokker_scourge_air_dominance = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_factor = 0.20
+				air_mission_efficiency = 0.15
+				air_accidents_factor = -0.15
+			}
+		}
+
+		# Operational Tactical State: Zeppelin Terror Bombing
+		GER_zeppelin_strategic_terror = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				enemy_operative_detection_chance = 0.10
+				air_strategic_bomber_bombing_factor = 0.20
+			}
+		}
+
+		# Operational Tactical State: Skagerrak High Seas Victory
+		GER_skagerrak_naval_victory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_max_range_factor = 0.15
+				naval_hit_chance = 0.10
+				war_support_factor = 0.10
+			}
+		}
+
+		# Operational Tactical State: Skagerrak High Seas Stalemate
+		GER_skagerrak_naval_stalemate = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_speed_factor = -0.05
+				war_support_factor = -0.02
+			}
+		}
+
+	
+		GER_schlieffen_hangover = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.10
+				army_speed_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		GER_western_triumph = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+				war_support_factor = 0.15
+				stability_factor = 0.10
+			}
+		}
+
+		GER_trench_stalemate_western_front = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_dig_in = 5
+				dig_in_speed_factor = 0.20
+				army_defense_factor = 0.10
+				army_speed_factor = -0.10
+			}
+		}
+
+	
+		GER_ersatz_materials_production = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				consumer_goods_expected_value = -0.02
+			}
+		}
+
+		GER_kriegsbrot_rationing = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.03
+				stability_factor = -0.03
+			}
+		}
+
+		GER_high_seas_fleet_active = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_screen_attack_factor = 0.10
+				navy_capital_ship_attack_factor = 0.10
+				naval_hit_chance = 0.05
+			}
+		}
+
+		GER_fokker_scourge_air_dominance = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_detect_factor = 0.15
+				air_air_superiority_attack_factor = 0.15
+			}
+		}
+
+		GER_dicta_boelcke_doctrine = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_ace_generation_chance_factor = 0.25
+				air_mission_efficiency = 0.10
+			}
+		}
+
+	
+		GER_alpine_corps_offensive = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				attrition = -0.10
+			}
+		}
+
+		GER_caporetto_momentum = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				breakthrough_factor = 0.15
+				army_speed_factor = 0.10
+			}
+		}
+
+		GER_romanian_oil_concessions = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.02
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		GER_mitteleuropa_hegemony = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_laws_cost_factor = -0.25
+				consumer_goods_expected_value = -0.05
+				stability_factor = 0.10
+			}
+		}
+
+		GER_proletarian_red_army = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+				division_recovery_rate_factor = 0.15
+				mobilization_laws_cost_factor = -0.50
+			}
+		}
+
+		GER_vaterlandspartei_iron_fist = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				war_support_factor = 0.15
+				stability_factor = -0.10
+			}
+		}
+
+		GER_asienkorps_desert_mastery = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				attrition = -0.15
+				heat_attrition_factor = -0.20
+			}
+		}
+
 	}
 }

@@ -1,0 +1,437 @@
+# =========================================================================
+# GERMAN EMPIRE - WW1 OPERATIONAL & STRATEGIC DECISIONS
+# =========================================================================
+
+# -------------------------------------------------------------------------
+# 1. PLANO SCHLIEFFEN - OPERAÇÕES TÁTICAS (1914)
+# -------------------------------------------------------------------------
+GER_schlieffen_operations = {
+
+	ger_mission_reach_paris = {
+		icon = generic_civil_support
+		days_mission_timeout = 25
+		available = {
+			controls_state = 16
+		}
+		activation = {
+			has_country_flag = ger_schlieffen_plan_launched
+			NOT = { has_country_flag = ger_schlieffen_concluded }
+		}
+		visible = {
+			has_country_flag = ger_schlieffen_plan_launched
+			NOT = { has_country_flag = ger_schlieffen_concluded }
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ger_schlieffen_concluded
+			set_country_flag = ger_schlieffen_succeeded
+			remove_ideas = GER_schlieffen_momentum
+			add_ideas = GER_western_triumph
+			country_event = { id = ww1_germany_events.26 }
+		}
+		timeout_effect = {
+			set_country_flag = ger_schlieffen_concluded
+			set_country_flag = ger_schlieffen_failed
+			remove_ideas = GER_schlieffen_momentum
+			add_timed_idea = { idea = GER_schlieffen_hangover days = 30 }
+			country_event = { id = ww1_germany_events.23 }
+		}
+	}
+
+
+	ger_schlieffen_reinforce_right_wing = {
+		icon = generic_prepare_civil_war
+		available = {
+			has_war_with = FRA
+			NOT = { has_country_flag = ger_right_wing_reinforced }
+		}
+		visible = {
+			has_war_with = FRA
+		}
+		cost = 25
+		days_remove = 30
+		modifier = {
+			army_speed_factor = 0.10
+			army_attack_factor = 0.05
+		}
+		complete_effect = {
+			set_country_flag = ger_right_wing_reinforced
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	ger_schlieffen_railway_timetables = {
+		icon = generic_infrastructure
+		available = {
+			has_war_with = FRA
+		}
+		visible = {
+			has_war_with = FRA
+		}
+		cost = 25
+		days_remove = 45
+		modifier = {
+			strategic_redeployment_speed = 0.25
+			out_of_supply_factor = -0.15
+		}
+		ai_will_do = { factor = 90 }
+	}
+
+	ger_schlieffen_liege_siege_howitzers = {
+		icon = generic_artillery
+		available = {
+			has_war_with = BEL
+			NOT = { has_country_flag = ger_liege_shelled }
+		}
+		visible = {
+			has_war_with = BEL
+		}
+		cost = 20
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ger_liege_shelled
+			army_experience = 10
+			if = {
+				limit = { 34 = { is_controlled_by = BEL } }
+				34 = {
+					damage_building = {
+						type = bunker
+						damage = 2
+					}
+				}
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	ger_schlieffen_violate_luxembourg = {
+		icon = generic_propaganda
+		available = {
+			NOT = { has_war_with = LUX }
+			LUX = { exists = yes }
+			has_war_with = FRA
+		}
+		visible = {
+			LUX = { exists = yes }
+		}
+		cost = 10
+		fire_only_once = yes
+		complete_effect = {
+			declare_war_on = {
+				target = LUX
+				type = annex_everything
+			}
+		}
+		ai_will_do = { factor = 95 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# 2. KRIcoordinateGSROHSTOFFABTEILUNG (KRA) - MATÉRIAS-PRIMAS
+# -------------------------------------------------------------------------
+GER_kriegsrohstoffabteilung = {
+
+	ger_kra_requisition_scrap_metals = {
+		icon = generic_industry
+		cost = 20
+		days_remove = 90
+		days_re_enable = 30
+		modifier = {
+			industrial_capacity_factory = 0.05
+			stability_factor = -0.02
+		}
+		ai_will_do = { factor = 80 }
+	}
+
+	ger_kra_buna_rubber_rnd = {
+		icon = generic_research
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes
+		complete_effect = {
+			add_tech_bonus = {
+				name = synthetic_resources_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+			57 = {
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+		}
+		ai_will_do = { factor = 90 }
+	}
+
+	ger_kra_substitute_textiles = {
+		icon = generic_consumer_goods
+		cost = 15
+		days_remove = 90
+		days_re_enable = 30
+		modifier = {
+			consumer_goods_factor = -0.03
+		}
+		ai_will_do = { factor = 85 }
+	}
+
+	ger_kra_priority_coal_allocations = {
+		icon = generic_production
+		cost = 25
+		days_remove = 90
+		days_re_enable = 30
+		modifier = {
+			production_speed_arms_factory_factor = 0.10
+			production_speed_industrial_complex_factor = -0.10
+		}
+		ai_will_do = { factor = 75 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# 3. ALIMENTAÇÃO, RACIONAMENTO E O INVERNO DOS NABOS
+# -------------------------------------------------------------------------
+GER_food_and_rationing = {
+
+	ger_rationing_introduce_k_brot = {
+		icon = generic_crisis
+		cost = 20
+		days_remove = 120
+		days_re_enable = 60
+		modifier = {
+			consumer_goods_factor = -0.05
+			stability_factor = -0.03
+		}
+		ai_will_do = { factor = 70 }
+	}
+
+	ger_rationing_pomeranian_grain_requisition = {
+		icon = generic_agriculture
+		cost = 15
+		days_remove = 90
+		days_re_enable = 45
+		modifier = {
+			supply_consumption_factor = -0.05
+			war_support_factor = -0.02
+		}
+		ai_will_do = { factor = 65 }
+	}
+
+	ger_rationing_emergency_soup_kitchens = {
+		icon = generic_welfare
+		cost = 30
+		days_remove = 60
+		days_re_enable = 60
+		modifier = {
+			stability_weekly = 0.002
+		}
+		ai_will_do = { factor = 80 }
+	}
+
+	ger_rationing_import_danubian_grain = {
+		icon = generic_trade
+		available = {
+			AUS = { is_in_faction_with = GER }
+		}
+		cost = 25
+		days_remove = 90
+		days_re_enable = 60
+		modifier = {
+			monthly_population = 0.05
+			stability_factor = 0.03
+		}
+		ai_will_do = { factor = 85 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# 4. OCUPAÇÃO ORIENTAL E OBER OST
+# -------------------------------------------------------------------------
+GER_eastern_occupation_ober_ost = {
+
+	ger_ober_ost_bialowieza_timber = {
+		icon = generic_wood
+		available = {
+			194 = { is_controlled_by = GER }
+		}
+		cost = 20
+		days_remove = 90
+		days_re_enable = 60
+		modifier = {
+			production_speed_buildings_factor = 0.05
+		}
+		ai_will_do = { factor = 75 }
+	}
+
+	ger_ober_ost_polish_regency_council = {
+		icon = generic_diplomacy
+		available = {
+			10 = { is_controlled_by = GER }
+			87 = { is_controlled_by = GER }
+			NOT = { has_country_flag = ger_polish_regency_proclaimed }
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ger_polish_regency_proclaimed
+			add_political_power = 60
+			add_stability = 0.05
+		}
+		ai_will_do = { factor = 90 }
+	}
+
+	ger_ober_ost_ukrainian_grain_trains = {
+		icon = generic_agriculture
+		available = {
+			193 = { is_controlled_by = GER }
+		}
+		cost = 30
+		days_remove = 120
+		days_re_enable = 60
+		modifier = {
+			stability_factor = 0.05
+			consumer_goods_factor = -0.03
+		}
+		ai_will_do = { factor = 95 }
+	}
+
+	ger_ober_ost_railway_gauge_conversion = {
+		icon = generic_infrastructure
+		available = {
+			has_war_with = RUS
+		}
+		cost = 25
+		days_remove = 60
+		days_re_enable = 60
+		modifier = {
+			supply_node_range = 0.20
+			strategic_redeployment_speed = 0.15
+		}
+		ai_will_do = { factor = 85 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# 5. GUERRA SUBMARINA (U-BOATS)
+# -------------------------------------------------------------------------
+GER_u_boat_campaign = {
+
+	ger_u_boat_patrol_western_approaches = {
+		icon = generic_navy
+		available = {
+			has_war_with = ENG
+		}
+		cost = 25
+		days_remove = 60
+		days_re_enable = 30
+		modifier = {
+			convoy_raiding_efficiency_factor = 0.20
+		}
+		ai_will_do = { factor = 85 }
+	}
+
+	ger_u_boat_mine_celtic_sea = {
+		icon = generic_naval_mines
+		available = {
+			has_war_with = ENG
+		}
+		cost = 30
+		days_remove = 45
+		days_re_enable = 45
+		complete_effect = {
+			navy_experience = 15
+		}
+		ai_will_do = { factor = 80 }
+	}
+
+	ger_u_boat_prize_rules_compliance = {
+		icon = generic_diplomatic_treaty
+		cost = 15
+		days_remove = 90
+		days_re_enable = 45
+		modifier = {
+			war_support_factor = 0.02
+		}
+		ai_will_do = { factor = 70 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# 6. WELTPOLITIK & DIPLOMACIA ESTRATÉGICA
+# -------------------------------------------------------------------------
+GER_weltpolitik_diplomacy = {
+
+	ger_weltpolitik_hejaz_railway_subsidy = {
+		icon = generic_railways
+		available = {
+			TUR = { is_in_faction_with = GER }
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			TUR = {
+				add_political_power = 50
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_berlin_baghdad_railway_op
+				}
+			}
+		}
+		ai_will_do = { factor = 90 }
+	}
+
+	ger_weltpolitik_bulgarian_mission = {
+		icon = generic_officers
+		available = {
+			NOT = { BUL = { is_in_faction_with = GER } }
+			BUL = { exists = yes }
+		}
+		cost = 35
+		fire_only_once = yes
+		complete_effect = {
+			BUL = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_berlin_baghdad_railway_op
+				}
+			}
+		}
+		ai_will_do = { factor = 85 }
+	}
+
+	ger_weltpolitik_bribe_italian_press = {
+		icon = generic_political_action
+		available = {
+			NOT = { has_war_with = ITA }
+			ITA = { exists = yes }
+		}
+		cost = 25
+		days_remove = 90
+		days_re_enable = 60
+		modifier = {
+			drift_defence_factor = 0.10
+		}
+		ai_will_do = { factor = 75 }
+	}
+
+	ger_weltpolitik_zimmermann_telegram = {
+		icon = generic_intelligence
+		available = {
+			has_country_flag = GER_unrestricted_sub_warfare_active
+			NOT = { has_war_with = USA }
+			USA = { exists = yes }
+			MEX = { exists = yes }
+			NOT = { has_country_flag = ger_zimmermann_telegram_sent }
+		}
+		cost = 30
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ger_zimmermann_telegram_sent
+			MEX = {
+				country_event = { id = ww1_germany_events.16 }
+			}
+		}
+		ai_will_do = { factor = 60 }
+	}
+}

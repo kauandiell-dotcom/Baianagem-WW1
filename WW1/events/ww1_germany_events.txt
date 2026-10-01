@@ -621,3 +621,656 @@ country_event = {
 		set_country_flag = grossdeutschland_annexed
 	}
 }
+# -------------------------------------------------------------------------
+# ww1_germany_events.17: The 1912 Reichstag Elections
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.17
+	title = ww1_germany_events.17.t
+	desc = ww1_germany_events.17.d
+	picture = GFX_report_event_german_reichstag
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.17.a
+		add_political_power = -30
+		add_stability = -0.05
+	}
+
+	option = {
+		name = ww1_germany_events.17.b
+		add_political_power = 25
+		add_war_support = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.18: Austro-Hungarian Staff Coordination
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.18
+	title = ww1_germany_events.18.t
+	desc = ww1_germany_events.18.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.18.a
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_blank_cheque_op
+		}
+		add_war_support = 0.05
+		army_experience = 10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.19: The Liman von Sanders Military Mission
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.19
+	title = ww1_germany_events.19.t
+	desc = ww1_germany_events.19.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.19.a
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_berlin_baghdad_railway_op
+		}
+		army_experience = 15
+		add_political_power = 30
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.20: The Triple Alliance Diplomatic Reaffirmation
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.20
+	title = ww1_germany_events.20.t
+	desc = ww1_germany_events.20.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.20.a
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_blank_cheque_op
+		}
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.21: The Blank Cheque to Vienna
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.21
+	title = ww1_germany_events.21.t
+	desc = ww1_germany_events.21.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.21.a
+		add_war_support = 0.10
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_blank_cheque_op
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.22: German Ultimatum Demanding Free Transit Through Belgium
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.22
+	title = ww1_germany_events.22.t
+	desc = ww1_germany_events.22.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.22.a
+		ai_chance = { factor = 95 }
+		GER = {
+			declare_war_on = {
+				target = BEL
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = {
+				add_war_support = 0.20
+				declare_war_on = {
+					target = GER
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ww1_germany_events.22.b
+		ai_chance = { factor = 5 }
+		give_military_access = GER
+		GER = {
+			add_political_power = 50
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.23: The Miracle of the Marne - Offensive Halts
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.23
+	title = ww1_germany_events.23.t
+	desc = ww1_germany_events.23.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.23.a
+		add_stability = -0.05
+		army_experience = 20
+		set_country_flag = ger_schlieffen_failed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.24: The Gorlice-Tarnow Breakthrough
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.24
+	title = ww1_germany_events.24.t
+	desc = ww1_germany_events.24.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.24.a
+		army_experience = 30
+		add_war_support = 0.05
+		if = {
+			limit = { country_exists = RUS }
+			RUS = {
+				add_stability = -0.05
+				add_war_support = -0.05
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.25: Operation Gericht - The Hell of Verdun
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.25
+	title = ww1_germany_events.25.t
+	desc = ww1_germany_events.25.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.25.a
+		army_experience = 25
+		add_ideas = GER_falkenhayn_attrition_doctrine
+		if = {
+			limit = { country_exists = FRA }
+			FRA = {
+				add_manpower = -50000
+				add_war_support = -0.05
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.26: The Fall of Paris - Victory in the West
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.26
+	title = ww1_germany_events.26.t
+	desc = ww1_germany_events.26.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.26.a
+		add_war_support = 0.20
+		add_stability = 0.15
+		add_political_power = 100
+		set_country_flag = ger_schlieffen_succeeded
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.27: The Great Swine Massacre of 1915
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.27
+	title = ww1_germany_events.27.t
+	desc = ww1_germany_events.27.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.27.a
+		add_political_power = 25
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.28: Skagerrak - The Battle of Jutland
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.28
+	title = ww1_germany_events.28.t
+	desc = ww1_germany_events.28.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.28.a
+		navy_experience = 35
+		add_war_support = 0.10
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.29: The Holtzendorff Memorandum
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.29
+	title = ww1_germany_events.29.t
+	desc = ww1_germany_events.29.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.29.a
+		add_political_power = 40
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.30: Operation Türkenkreuz - London Air Raids
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.30
+	title = ww1_germany_events.30.t
+	desc = ww1_germany_events.30.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.30.a
+		air_experience = 25
+		if = {
+			limit = { country_exists = ENG }
+			ENG = {
+				add_stability = -0.05
+				add_war_support = 0.05
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.31: The Paris Gun (Lange 21cm Kanone)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.31
+	title = ww1_germany_events.31.t
+	desc = ww1_germany_events.31.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.31.a
+		army_experience = 20
+		add_war_support = 0.05
+		if = {
+			limit = { country_exists = FRA }
+			FRA = {
+				add_stability = -0.05
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.32: Swedish Iron Ore Agreement
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.32
+	title = ww1_germany_events.32.t
+	desc = ww1_germany_events.32.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.32.a
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_blank_cheque_op
+		}
+		GER = {
+			add_political_power = 40
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.33: The Bulgarian Alliance Treaty
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.33
+	title = ww1_germany_events.33.t
+	desc = ww1_germany_events.33.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.33.a
+		ai_chance = { factor = 95 }
+		GER = {
+			add_to_faction = BUL
+		}
+		add_war_support = 0.10
+	}
+
+	option = {
+		name = ww1_germany_events.33.b
+		ai_chance = { factor = 5 }
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_blank_cheque_op
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.34: Romanian Oil & Grain Ultimatum
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.34
+	title = ww1_germany_events.34.t
+	desc = ww1_germany_events.34.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.34.a
+		ai_chance = { factor = 80 }
+		add_opinion_modifier = {
+			target = GER
+			modifier = ger_blank_cheque_op
+		}
+		GER = {
+			add_political_power = 50
+		}
+	}
+
+	option = {
+		name = ww1_germany_events.34.b
+		ai_chance = { factor = 20 }
+		GER = {
+			create_wargoal = {
+				type = annex_everything
+				target = ROM
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.35: Lettow-Vorbeck's Stand in German East Africa
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.35
+	title = ww1_germany_events.35.t
+	desc = ww1_germany_events.35.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.35.a
+		add_war_support = 0.05
+		army_experience = 25
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.36: The Easter Rising in Dublin
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.36
+	title = ww1_germany_events.36.t
+	desc = ww1_germany_events.36.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.36.a
+		add_political_power = 40
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.37: The Zimmermann Telegram
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.37
+	title = ww1_germany_events.37.t
+	desc = ww1_germany_events.37.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.37.a
+		add_war_support = 0.05
+		if = {
+			limit = { country_exists = MEX }
+			MEX = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ger_blank_cheque_op
+				}
+			}
+		}
+		if = {
+			limit = { country_exists = USA }
+			USA = {
+				add_war_support = 0.15
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.38: Second Battle of Ypres - Chlorine Gas Attack
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.38
+	title = ww1_germany_events.38.t
+	desc = ww1_germany_events.38.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.38.a
+		army_experience = 20
+		add_war_support = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.39: The Breakthrough at Caporetto
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.39
+	title = ww1_germany_events.39.t
+	desc = ww1_germany_events.39.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.39.a
+		add_ideas = GER_caporetto_momentum
+		army_experience = 30
+		if = {
+			limit = { country_exists = ITA }
+			ITA = {
+				add_stability = -0.15
+				add_war_support = -0.15
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.40: The Fall of Bucharest
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.40
+	title = ww1_germany_events.40.t
+	desc = ww1_germany_events.40.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.40.a
+		add_ideas = GER_romanian_oil_concessions
+		add_political_power = 60
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.41: Regency Kingdom of Poland Proclaimed
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.41
+	title = ww1_germany_events.41.t
+	desc = ww1_germany_events.41.d
+	picture = GFX_report_event_officers_meeting
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.41.a
+		add_stability = 0.05
+		add_political_power = 50
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.42: The Ukrainian Hetmanate Established
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.42
+	title = ww1_germany_events.42.t
+	desc = ww1_germany_events.42.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.42.a
+		add_stability = 0.10
+		remove_ideas = GER_turnip_winter_crisis_1
+		remove_ideas = GER_turnip_winter_crisis_2
+		remove_ideas = GER_turnip_winter_crisis_3
+		add_political_power = 60
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.43: Operation Michael - The Kaiserschlacht
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.43
+	title = ww1_germany_events.43.t
+	desc = ww1_germany_events.43.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.43.a
+		add_ideas = GER_kaiserschlacht_idea
+		army_experience = 35
+		add_war_support = 0.15
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.44: The Black Day of the German Army
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.44
+	title = ww1_germany_events.44.t
+	desc = ww1_germany_events.44.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.44.a
+		remove_ideas = GER_kaiserschlacht_idea
+		add_stability = -0.10
+		add_war_support = -0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_events.45: Mutiny in the High Seas Fleet at Kiel
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_events.45
+	title = ww1_germany_events.45.t
+	desc = ww1_germany_events.45.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_events.45.a
+		add_stability = -0.15
+		add_political_power = -50
+	}
+}
