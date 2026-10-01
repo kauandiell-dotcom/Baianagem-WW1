@@ -184,6 +184,97 @@ ideas = {
 			}
 		}
 
+		GER_verdun_meatgrinder = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				experience_loss_factor = 0.20
+				conscription_factor = -0.05
+			}
+		}
+
+		GER_somme_defensive_grit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.15
+				entrenchment = 10
+				max_dig_in = 5
+			}
+		}
+
+		GER_defense_in_depth_doctrine = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.15
+				out_of_supply_factor = -0.15
+				recovery_rate_factor = 0.10
+			}
+		}
+
+		GER_bruchmueller_artillery = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				artillery_attack_factor = 0.20
+				breakthrough_factor = 0.15
+				planning_speed = 0.25
+			}
+		}
+
+		GER_paris_gun_terror = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				enemy_declare_war_tension = 0.05
+				war_support_factor = 0.10
+			}
+		}
+
+		GER_mustard_gas_arsenal = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				attrition_for_enemy = 0.15
+			}
+		}
+
+		GER_spanish_flu_pandemic = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.15
+				recovery_rate_factor = -0.20
+				industrial_capacity_factory = -0.15
+				stability_factor = -0.10
+			}
+		}
+
+		GER_stab_in_the_back_myth = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				stability_factor = -0.10
+				political_power_factor = 0.10
+			}
+		}
+
+		GER_siegfrieden_hegemony = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.15
+				political_power_factor = 0.20
+				stability_factor = 0.10
+				war_support_factor = 0.15
+			}
+		}
+
+
 
 
 		# =======================================================

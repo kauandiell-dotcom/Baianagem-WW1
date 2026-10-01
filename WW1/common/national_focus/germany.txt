@@ -1830,18 +1830,19 @@ focus_tree = {
 
 	focus = {
 		id = GER_battle_of_verdun_attrition
-		icon = GFX_GER_poison_gas_development
+		icon = GFX_FRA_attaque__outrance
 		prerequisite = { focus = GER_race_to_the_sea }
-		cost = 7
+		cost = 10
 		x = 74
 		y = 11
-		ai_will_do = { factor = 85 }
+		ai_will_do = { factor = 95 }
 		available_if_capitulated = yes
 
 		completion_reward = {
-			country_event = { id = ww1_germany_events.25 }
-			add_ideas = GER_falkenhayn_attrition_doctrine
-			army_experience = 30
+			country_event = { id = ww1_germany_events.70 }
+			add_ideas = GER_verdun_meatgrinder
+			add_war_support = 0.10
+			army_experience = 25
 		}
 	}
 
@@ -1856,13 +1857,9 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = doctrine_bonus
-				bonus = 1.0
-				uses = 1
-				category = land_doctrine
-			}
-			add_war_support = 0.05
+			add_ideas = GER_somme_defensive_grit
+			add_stability = 0.05
+			army_experience = 20
 		}
 	}
 
@@ -3581,4 +3578,294 @@ focus_tree = {
 		}
 	}
 
+
+
+	focus = {
+		id = GER_falkenhayn_dismissal_third_ohl
+		icon = GFX_GER_military_dictatorship
+		prerequisite = { focus = GER_second_battle_of_ypres_gas }
+		cost = 7
+		x = 80
+		y = 10
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.71 }
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = GER_elastic_defense_in_depth
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_falkenhayn_dismissal_third_ohl }
+		cost = 7
+		x = 80
+		y = 12
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_defense_in_depth_doctrine
+			add_stability = 0.05
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = GER_gas_warfare_yellow_cross_lost
+		icon = GFX_ww1_nationalfocus_gasmask
+		prerequisite = { focus = GER_chemical_warfare_initiative }
+		cost = 7
+		x = 84
+		y = 12
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_mustard_gas_arsenal
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_bruchmueller_feuerwalze_doctrine
+		icon = GFX_GER_auftragstaktik
+		prerequisite = { focus = GER_gas_warfare_yellow_cross_lost }
+		cost = 7
+		x = 84
+		y = 13
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_bruchmueller_artillery
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_paris_gun_super_battery
+		icon = GFX_focus_generic_railway_gun
+		prerequisite = { focus = GER_heavy_siege_howitzers_paris_gun }
+		cost = 7
+		x = 80
+		y = 15
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.72 }
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_gotha_raids_on_london
+		icon = GFX_focus_GER_air_innovation
+		prerequisite = { focus = GER_giant_zeppelin_staaken_fleet }
+		cost = 7
+		x = 68
+		y = 8
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.73 }
+			air_experience = 25
+		}
+	}
+
+	focus = {
+		id = GER_fokker_d_vii_air_supremacy
+		icon = GFX_focus_GER_air_innovation
+		prerequisite = { focus = GER_gotha_raids_on_london }
+		cost = 7
+		x = 68
+		y = 9
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 30
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = GER_treaty_of_bucharest_1918
+		icon = GFX_focus_GER_subjugate_romanian_economy
+		prerequisite = { focus = GER_fall_of_bucharest_oil_fields }
+		cost = 7
+		x = 96
+		y = 11
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.74 }
+			add_stability = 0.05
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = GER_operation_michael_st_quentin
+		icon = GFX_GER_sturmtruppen
+		prerequisite = { focus = GER_the_kaiserschlacht_1918 focus = GER_bruchmueller_feuerwalze_doctrine }
+		cost = 10
+		x = 84
+		y = 16
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.75 }
+			add_war_support = 0.15
+			army_experience = 30
+		}
+	}
+
+	focus = {
+		id = GER_spanish_flu_epidemic_crisis
+		icon = GFX_ww1_nationalfocus_gasmask
+		prerequisite = { focus = GER_operation_michael_st_quentin }
+		cost = 5
+		x = 84
+		y = 17
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.76 }
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = GER_collapse_of_central_allies
+		icon = GFX_focus_GER_war_with_france
+		prerequisite = { focus = GER_the_black_day_of_the_german_army }
+		cost = 7
+		x = 80
+		y = 18
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.77 }
+			add_stability = -0.15
+			add_war_support = -0.15
+		}
+	}
+
+	focus = {
+		id = GER_fleet_sortie_order_mutiny
+		icon = GFX_focus_GER_rebuild_the_high_seas_fleet
+		prerequisite = { focus = GER_collapse_of_central_allies }
+		cost = 5
+		x = 80
+		y = 19
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.78 }
+			add_stability = -0.15
+			add_political_power = -50
+		}
+	}
+
+	focus = {
+		id = GER_kaiser_abdication_amerongen
+		icon = GFX_focus_GER_return_of_the_kaiser
+		prerequisite = { focus = GER_seek_armistice_fourteen_points focus = GER_fleet_sortie_order_mutiny }
+		cost = 5
+		x = 84
+		y = 19
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.79 }
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = GER_armistice_at_compiegne
+		icon = GFX_focus_generic_world_peace
+		prerequisite = { focus = GER_kaiser_abdication_amerongen }
+		cost = 7
+		x = 84
+		y = 20
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.80 }
+			add_stability = 0.15
+			add_war_support = -0.20
+		}
+	}
+
+	focus = {
+		id = GER_the_stab_in_the_back_myth
+		icon = GFX_GER_military_dictatorship
+		prerequisite = { focus = GER_armistice_at_compiegne }
+		cost = 7
+		x = 84
+		y = 21
+		ai_will_do = { factor = 90 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = GER_stab_in_the_back_myth
+			add_war_support = 0.15
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = GER_siegfrieden_peace_with_france
+		icon = GFX_focus_GER_total_war_mobilization
+		prerequisite = { focus = GER_operation_blucher_yorck }
+		available = {
+			OR = {
+				controls_state = 16
+				FRA = { capitulated = yes }
+			}
+		}
+		cost = 10
+		x = 90
+		y = 19
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.81 }
+			add_ideas = GER_siegfrieden_hegemony
+			add_stability = 0.20
+			add_political_power = 150
+			add_war_support = 0.20
+		}
+	}
+
+	focus = {
+		id = GER_mittelafrika_colonial_empire
+		icon = GFX_focus_GER_realize_mittelafrika
+		prerequisite = { focus = GER_siegfrieden_peace_with_france }
+		cost = 10
+		x = 90
+		y = 20
+		ai_will_do = { factor = 95 }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = { id = ww1_germany_events.82 }
+			add_political_power = 100
+			add_war_support = 0.10
+		}
+	}
 }
