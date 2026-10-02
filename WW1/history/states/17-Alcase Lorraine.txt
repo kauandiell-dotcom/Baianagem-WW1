@@ -21,7 +21,14 @@ state={
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
-			air_base = 5
+			air_base = 1
+			# Séré de Rivières Barrier Fortresses
+			9642 = {
+				bunker = 2 # Fort de Toul / Nancy
+			}
+			11516 = {
+				bunker = 2 # Place fortifiée d'Épinal
+			}
 		}
 		add_core_of = FRA
 	}

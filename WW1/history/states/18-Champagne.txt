@@ -20,7 +20,11 @@ state={
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
-			air_base = 10
+			air_base = 1
+			# Place fortifiée de Verdun
+			9490 = {
+				bunker = 2 # Forts Douaumont / Vaux / Verdun
+			}
 		}
 		add_core_of = FRA
 	}
