@@ -5,11 +5,22 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/SOV/SOV_nicholas_ii.png"
 			}
+			army = {
+				large = "gfx/leaders/SOV/SOV_nicholas_ii.png"
+			}
 		}
 		country_leader = {
 			ideology = despotism
 			traits = { autocrat }
 			expire = "1935.1.1"
+		}
+		field_marshal = {
+			traits = { old_guard }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
 		}
 	}
 
@@ -24,6 +35,12 @@ characters = {
 			ideology = liberalism
 			traits = { }
 			expire = "1935.1.1"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_alexander_kerensky
+			ledger = civilian
+			cost = 100
 		}
 	}
 
@@ -47,11 +64,344 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/SOV/SOV_alexander_kolchak.png"
 			}
+			navy = {
+				large = "gfx/leaders/SOV/SOV_alexander_kolchak.png"
+			}
 		}
 		country_leader = {
 			ideology = fascism_ideology
 			traits = { }
 			expire = "1935.1.1"
+		}
+		navy_leader = {
+			traits = { bold blockade_runner }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = SOV_alexander_kolchak
+			ledger = navy
+			cost = 100
+		}
+	}
+
+	# -------------------------------------------------------------
+	# Historical Russian Leaders & High Command (1911-1918)
+	# -------------------------------------------------------------
+
+	SOV_pyotr_stolypin = {
+		name = "Pyotr Stolypin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_pyotr_stolypin.png"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { autocrat }
+			expire = "1935.1.1"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_pyotr_stolypin
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	SOV_grand_duke_nicholas = {
+		name = "Grand Duke Nicholas Nikolaevich"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_grand_duke_nicholas.png"
+			}
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_grand_duke_nicholas.png"
+			}
+		}
+		field_marshal = {
+			traits = { old_guard inspirational_leader }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = SOV_grand_duke_nicholas
+			ledger = army
+			cost = 100
+		}
+	}
+
+	SOV_alexei_brusilov = {
+		name = "Alexei Brusilov"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_alexei_brusilov.png"
+			}
+		}
+		field_marshal = {
+			traits = { offensive_doctrine trickster thorough_planner }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SOV_alexei_brusilov
+			ledger = army
+			cost = 100
+		}
+	}
+
+	SOV_mikhail_alekseyev = {
+		name = "Mikhail Alekseyev"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_mikhail_alekseyev.png"
+			}
+		}
+		field_marshal = {
+			traits = { organizer thorough_planner }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SOV_mikhail_alekseyev
+			ledger = army
+			cost = 100
+		}
+	}
+
+	SOV_lavr_kornilov = {
+		name = "Lavr Kornilov"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_lavr_kornilov.png"
+			}
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_lavr_kornilov.png"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = { }
+			expire = "1935.1.1"
+		}
+		corps_commander = {
+			traits = { aggressive_assault trait_reckless infantry_officer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SOV_lavr_kornilov
+			ledger = army
+			cost = 100
+		}
+	}
+
+	SOV_nicholas_yudenich = {
+		name = "Nikolai Yudenich"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_nicholas_yudenich.png"
+			}
+		}
+		corps_commander = {
+			traits = { mountaineer winter_specialist fortress_buster }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SOV_nicholas_yudenich
+			ledger = army
+			cost = 100
+		}
+	}
+
+	SOV_anton_denikin = {
+		name = "Anton Denikin"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_anton_denikin.png"
+			}
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_anton_denikin.png"
+			}
+		}
+		corps_commander = {
+			traits = { skilled_staffer trait_cautious }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+	SOV_alexander_samsonov = {
+		name = "Alexander Samsonov"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_alexander_samsonov.png"
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless old_guard }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+
+	SOV_vladimir_sukhomlinov = {
+		name = "Vladimir Sukhomlinov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_vladimir_sukhomlinov.png"
+			}
+			army = {
+				large = "gfx/leaders/SOV/SOV_vladimir_sukhomlinov.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_vladimir_sukhomlinov
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	SOV_mikhail_rodzianko = {
+		name = "Mikhail Rodzianko"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_mikhail_rodzianko.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_mikhail_rodzianko
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	SOV_sergei_sazonov = {
+		name = "Sergei Sazonov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_sergei_sazonov.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_sergei_sazonov
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	SOV_boris_savinkov = {
+		name = "Boris Savinkov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_boris_savinkov.png"
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			traits = { }
+			expire = "1925.5.7"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_boris_savinkov
+			ledger = civilian
+			cost = 100
+		}
+	}
+
+	SOV_nikolai_essen = {
+		name = "Nikolai von Essen"
+		portraits = {
+			navy = {
+				large = "gfx/leaders/SOV/SOV_nikolai_essen.png"
+			}
+		}
+		navy_leader = {
+			traits = { spotter fleet_protector }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 4
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = SOV_nikolai_essen
+			ledger = navy
+			cost = 100
+		}
+	}
+
+	SOV_andrei_eberhardt = {
+		name = "Andrei Eberhardt"
+		portraits = {
+			navy = {
+				large = "gfx/leaders/SOV/SOV_andrei_eberhardt.png"
+			}
+		}
+		navy_leader = {
+			traits = { aggressive_fire ironside }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = SOV_andrei_eberhardt
+			ledger = navy
+			cost = 100
+		}
+	}
+
+	SOV_grigori_rasputin = {
+		name = "Grigori Rasputin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_grigori_rasputin.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_grigori_rasputin
+			ledger = civilian
+			cost = 100
 		}
 	}
 }

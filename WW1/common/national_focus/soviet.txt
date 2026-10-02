@@ -1,1 +1,4037 @@
-# MBR 1911: intentionally empty; every country uses generic_focus.
+focus_tree = {
+	id = russian_empire_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			OR = {
+				tag = SOV
+				tag = RUS
+			}
+		}
+	}
+	default = no
+	reset_on_civilwar = no
+
+	focus = {
+		id = SOV_the_empire_of_nicholas_ii
+		icon = GFX_focus_RUS_crown
+		x = 13
+		y = 0
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_the_stolypin_conundrum
+		icon = GFX_focus_RUS_stolypin
+		x = 7
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_empire_of_nicholas_ii
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = SOV_stolypin_reforms_spirit
+		}
+	}
+
+	focus = {
+		id = SOV_kiev_opera_gala_1911
+		icon = GFX_focus_RUS_stolypin_shot
+		x = 7
+		y = 2
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_stolypin_conundrum
+		}
+		completion_reward = {
+			country_event = { id = ww1_russia.1 }
+		}
+	}
+
+	focus = {
+		id = SOV_stolypin_martyrdom
+		icon = GFX_focus_RUS_stolypin_dead
+		x = 5
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kiev_opera_gala_1911
+		}
+		mutually_exclusive = {
+			focus = SOV_stolypin_survives_the_bullet
+		}
+		completion_reward = {
+			remove_ideas = SOV_stolypin_reforms_spirit
+			add_stability = -0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_kokovtsov_premiership
+		icon = GFX_focus_RUS_kokovtsov
+		x = 5
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_stolypin_martyrdom
+		}
+		completion_reward = {
+			add_political_power = 80
+			add_ideas = SOV_financial_prudence_spirit
+		}
+	}
+
+	focus = {
+		id = SOV_reactionary_resurgence
+		icon = GFX_focus_RUS_black_hundreds
+		x = 5
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kokovtsov_premiership
+		}
+		completion_reward = {
+			add_popularity = { ideology = despotism popularity = 0.10 }
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_goremykin_stagnation
+		icon = GFX_focus_RUS_elderly_minister
+		x = 5
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_reactionary_resurgence
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = -50
+		}
+	}
+
+	focus = {
+		id = SOV_rasputin_court_influence
+		icon = GFX_focus_RUS_rasputin
+		x = 5
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_goremykin_stagnation
+		}
+		completion_reward = {
+			add_ideas = SOV_rasputin_court_intrigues
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = SOV_stolypin_survives_the_bullet
+		icon = GFX_focus_RUS_stolypin_victory
+		x = 9
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kiev_opera_gala_1911
+		}
+		mutually_exclusive = {
+			focus = SOV_stolypin_martyrdom
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			set_country_flag = SOV_stolypin_alive
+		}
+	}
+
+	focus = {
+		id = SOV_stolypins_twenty_years
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 9
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_stolypin_survives_the_bullet
+		}
+		completion_reward = {
+			add_ideas = SOV_stolypin_unbroken_reforms
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_curb_gentry_privileges
+		icon = GFX_focus_RUS_duma_compromise
+		x = 9
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_stolypins_twenty_years
+		}
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+			consumer_goods_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = SOV_zemstvo_reform_expansion
+		icon = GFX_focus_RUS_local_barracks
+		x = 9
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_curb_gentry_privileges
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_the_iron_prime_minister
+		icon = GFX_focus_RUS_iron_hand
+		x = 9
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_zemstvo_reform_expansion
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_tsarist_autocracy add_idea = SOV_enlightened_constitutional_autocracy }
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_the_third_state_duma
+		icon = GFX_focus_RUS_duma
+		x = 16
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_empire_of_nicholas_ii
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_guchkov_and_the_octobrists
+		icon = GFX_focus_RUS_guchkov
+		x = 14
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_third_state_duma
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = SOV_octobrist_naval_credits
+		}
+	}
+
+	focus = {
+		id = SOV_milyukov_and_the_kadets
+		icon = GFX_focus_RUS_milyukov
+		x = 18
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_third_state_duma
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = SOV_kadet_liberal_judiciary
+		}
+	}
+
+	focus = {
+		id = SOV_the_fourth_state_duma_1912
+		icon = GFX_focus_rus_duma_elections
+		x = 16
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_guchkov_and_the_octobrists
+			focus = SOV_milyukov_and_the_kadets
+		}
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_curb_socialist_deputies
+		icon = GFX_focus_RUS_police_crackdown
+		x = 14
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_fourth_state_duma_1912
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = { ideology = communism popularity = -0.05 }
+		}
+	}
+
+	focus = {
+		id = SOV_pass_public_health_acts
+		icon = GFX_focus_RUS_workers_insurance
+		x = 18
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_fourth_state_duma_1912
+		}
+		completion_reward = {
+			add_ideas = SOV_workers_health_insurance
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = SOV_progressive_bloc_1915
+		icon = GFX_focus_RUS_progressive_bloc
+		x = 16
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_curb_socialist_deputies
+			focus = SOV_pass_public_health_acts
+		}
+		completion_reward = {
+			add_political_power = 100
+			set_country_flag = SOV_progressive_bloc_formed
+		}
+	}
+
+	focus = {
+		id = SOV_ministry_of_national_confidence
+		icon = GFX_focus_RUS_constitutional_assembly
+		x = 14
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_progressive_bloc_1915
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = SOV_rodzianko_ultimatum
+		icon = GFX_focus_RUS_rodzianko_speech
+		x = 18
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_progressive_bloc_1915
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_murder_of_rasputin
+		icon = GFX_focus_RUS_rasputin_murder
+		x = 16
+		y = 7
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_ministry_of_national_confidence
+			focus = SOV_rodzianko_ultimatum
+		}
+		completion_reward = {
+			remove_ideas = SOV_rasputin_court_intrigues
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_february_bread_riots_1917
+		icon = GFX_focus_RUS_bread_riots
+		x = 11
+		y = 8
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_rasputin_court_influence
+		}
+		completion_reward = {
+			add_stability = -0.15
+			country_event = { id = ww1_russia.10 }
+		}
+	}
+
+	focus = {
+		id = SOV_mutiny_of_petrograd_garrison
+		icon = GFX_focus_RUS_garrison_mutiny
+		x = 11
+		y = 9
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_february_bread_riots_1917
+		}
+		completion_reward = {
+			add_stability = -0.20
+			add_war_support = -0.15
+		}
+	}
+
+	focus = {
+		id = SOV_abdication_at_pskov
+		icon = GFX_focus_RUS_tsar_abdication
+		x = 11
+		y = 10
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_mutiny_of_petrograd_garrison
+		}
+		completion_reward = {
+			country_event = { id = ww1_russia.11 }
+		}
+	}
+
+	focus = {
+		id = SOV_provisional_government_formed
+		icon = GFX_focus_RUS_provisional_gov
+		x = 8
+		y = 11
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_abdication_at_pskov
+		}
+		completion_reward = {
+			set_politics = { ruling_party = liberalism elections_allowed = yes }
+			swap_ideas = { remove_idea = SOV_tsarist_autocracy add_idea = SOV_dual_power_dvoevlastie }
+		}
+	}
+
+	focus = {
+		id = SOV_petrograd_soviet_order_no_1
+		icon = GFX_focus_SOV_first_decrees
+		x = 14
+		y = 11
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_abdication_at_pskov
+		}
+		completion_reward = {
+			add_ideas = SOV_petrograd_order_no_1
+			army_org_factor = -0.20
+		}
+	}
+
+	focus = {
+		id = SOV_prince_lvov_coalition
+		icon = GFX_focus_RUS_lvov_cabinet
+		x = 8
+		y = 12
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_provisional_government_formed
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_executive_committee_ispolkom
+		icon = GFX_focus_SOV_the_supreme_soviet
+		x = 14
+		y = 12
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_petrograd_soviet_order_no_1
+		}
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.10 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_the_kerensky_ministry
+		icon = GFX_focus_RUS_kerensky_speech
+		x = 11
+		y = 13
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_prince_lvov_coalition
+			focus = SOV_executive_committee_ispolkom
+		}
+		completion_reward = {
+			country_event = { id = ww1_russia.15 }
+		}
+	}
+
+	focus = {
+		id = SOV_the_july_days_crisis
+		icon = GFX_focus_SOV_july_days
+		x = 9
+		y = 14
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_kerensky_ministry
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_the_kornilov_affair
+		icon = GFX_focus_RUS_kornilov
+		x = 13
+		y = 14
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_kerensky_ministry
+		}
+		completion_reward = {
+			country_event = { id = ww1_russia.20 }
+		}
+	}
+
+	focus = {
+		id = SOV_all_power_to_the_soviets
+		icon = GFX_focus_SOV_party
+		x = 3
+		y = 15
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		allow_branch = {
+			has_country_flag = SOV_bolshevik_path_open
+		}
+		prerequisite = {
+			focus = SOV_the_kornilov_affair
+		}
+		completion_reward = {
+			set_country_flag = SOV_bolshevik_path_chosen
+		}
+	}
+
+	focus = {
+		id = SOV_storming_of_winter_palace
+		icon = GFX_focus_SOV_storming_winter_palace
+		x = 3
+		y = 16
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_all_power_to_the_soviets
+		}
+		completion_reward = {
+			set_politics = { ruling_party = communism elections_allowed = no }
+			set_country_leader = SOV_vladimir_lenin
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_decree_on_peace
+		icon = GFX_focus_SOV_decree_peace
+		x = 1
+		y = 17
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_storming_of_winter_palace
+		}
+		completion_reward = {
+			add_ideas = SOV_decree_on_peace_spirit
+			add_war_support = -0.30
+		}
+	}
+
+	focus = {
+		id = SOV_decree_on_land
+		icon = GFX_focus_SOV_decree_land
+		x = 5
+		y = 17
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_storming_of_winter_palace
+		}
+		completion_reward = {
+			add_ideas = SOV_peasant_soviet_control
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_founding_of_the_cheka
+		icon = GFX_focus_SOV_combat_the_counter_revolution
+		x = 1
+		y = 18
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_decree_on_peace
+		}
+		completion_reward = {
+			add_ideas = SOV_cheka_terror_apparatus
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_creation_of_the_red_army
+		icon = GFX_focus_SOV_red_army
+		x = 5
+		y = 18
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_decree_on_land
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_the_steamroller add_idea = SOV_reborn_red_army }
+			add_manpower = 250000
+		}
+	}
+
+	focus = {
+		id = SOV_war_communism_decrees
+		icon = GFX_focus_SOV_labor
+		x = 3
+		y = 19
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_founding_of_the_cheka
+			focus = SOV_creation_of_the_red_army
+		}
+		completion_reward = {
+			add_ideas = SOV_war_communism_regime
+			production_speed_arms_factory_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_crush_the_white_armies
+		icon = GFX_focus_SOV_international_union_of_soviet_republics
+		x = 3
+		y = 20
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_war_communism_decrees
+		}
+		completion_reward = {
+			add_war_support = 0.20
+			add_stability = 0.15
+			army_morale_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_kornilov_iron_dictatorship
+		icon = GFX_focus_RUS_army_officers
+		x = 9
+		y = 15
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		allow_branch = {
+			has_country_flag = SOV_kornilov_path_open
+		}
+		prerequisite = {
+			focus = SOV_the_kornilov_affair
+		}
+		completion_reward = {
+			set_country_flag = SOV_kornilov_path_chosen
+			set_politics = { ruling_party = fascism_ideology elections_allowed = no }
+			set_country_leader = SOV_lavr_kornilov
+		}
+	}
+
+	focus = {
+		id = SOV_martial_law_in_petrograd
+		icon = GFX_focus_RUS_local_barracks
+		x = 9
+		y = 16
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kornilov_iron_dictatorship
+		}
+		completion_reward = {
+			add_ideas = SOV_white_martial_law
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_purge_the_soviets
+		icon = GFX_focus_anti_soviet_pact
+		x = 7
+		y = 17
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_martial_law_in_petrograd
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = communism popularity = -0.30 }
+		}
+	}
+
+	focus = {
+		id = SOV_restore_capital_punishment
+		icon = GFX_focus_RUS_firing_squad
+		x = 11
+		y = 17
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_martial_law_in_petrograd
+		}
+		completion_reward = {
+			add_ideas = SOV_draconian_discipline
+			army_org_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_national_salvation_directory
+		icon = GFX_focus_RUS_Kaledin_Alekseev_Kornilov_triumvirate
+		x = 9
+		y = 18
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_purge_the_soviets
+			focus = SOV_restore_capital_punishment
+		}
+		completion_reward = {
+			add_ideas = SOV_salvation_directory_rule
+			conscription_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_total_frontline_discipline
+		icon = GFX_focus_rus_volunteer_army
+		x = 9
+		y = 19
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_national_salvation_directory
+		}
+		completion_reward = {
+			army_attack_factor = 0.10
+			army_defence_factor = 0.10
+			war_support_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_one_and_indivisible_russia
+		icon = GFX_focus_RUS_for_united_russia
+		x = 9
+		y = 20
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_total_frontline_discipline
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
+			add_stability = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_convene_constituent_assembly
+		icon = GFX_focus_RUS_constitutional_assembly
+		x = 16
+		y = 15
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		allow_branch = {
+			has_country_flag = SOV_democratic_path_open
+		}
+		prerequisite = {
+			focus = SOV_the_kerensky_ministry
+		}
+		completion_reward = {
+			set_country_flag = SOV_democratic_path_chosen
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+		}
+	}
+
+	focus = {
+		id = SOV_chernov_and_sr_plurality
+		icon = GFX_focus_RUS_chernov
+		x = 14
+		y = 16
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_convene_constituent_assembly
+		}
+		completion_reward = {
+			add_political_power = 100
+			set_country_leader = SOV_boris_savinkov
+		}
+	}
+
+	focus = {
+		id = SOV_defend_the_tauride_palace
+		icon = GFX_focus_RUS_duma
+		x = 18
+		y = 16
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_convene_constituent_assembly
+		}
+		completion_reward = {
+			add_ideas = SOV_constituent_assembly_defense
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_federal_democratic_republic
+		icon = GFX_focus_RUS_democratic_coat_of_arms
+		x = 16
+		y = 17
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_chernov_and_sr_plurality
+			focus = SOV_defend_the_tauride_palace
+		}
+		completion_reward = {
+			add_stability = 0.15
+			add_ideas = SOV_russian_federal_republic
+		}
+	}
+
+	focus = {
+		id = SOV_legal_land_distribution
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 14
+		y = 18
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_federal_democratic_republic
+		}
+		completion_reward = {
+			consumer_goods_factor = -0.05
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_autonomy_to_minority_nations
+		icon = GFX_focus_RUS_federal_autonomy
+		x = 18
+		y = 18
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_federal_democratic_republic
+		}
+		completion_reward = {
+			add_ideas = SOV_voluntary_federation
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_democratic_war_effort
+		icon = GFX_focus_RUS_citizens_army
+		x = 16
+		y = 19
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_legal_land_distribution
+			focus = SOV_autonomy_to_minority_nations
+		}
+		completion_reward = {
+			add_war_support = 0.15
+			army_org_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_social_democracy_victorious
+		icon = GFX_focus_RUS_victory_cross
+		x = 16
+		y = 20
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_democratic_war_effort
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
+			add_stability = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_the_tsar_refuses_abdication
+		icon = GFX_focus_RUS_tsar_resolute
+		x = 23
+		y = 10
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		allow_branch = {
+			has_country_flag = SOV_tsarist_path_open
+		}
+		prerequisite = {
+			focus = SOV_mutiny_of_petrograd_garrison
+		}
+		completion_reward = {
+			set_country_flag = SOV_tsarist_path_chosen
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = SOV_summon_frontline_cavalry
+		icon = GFX_focus_RUS_cossacks
+		x = 21
+		y = 11
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_tsar_refuses_abdication
+		}
+		completion_reward = {
+			add_manpower = 50000
+			add_ideas = SOV_loyal_guard_regiments
+		}
+	}
+
+	focus = {
+		id = SOV_unleash_the_black_hundreds
+		icon = GFX_focus_RUS_black_hundreds
+		x = 25
+		y = 11
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_tsar_refuses_abdication
+		}
+		completion_reward = {
+			add_ideas = SOV_union_of_russian_people
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_dissolve_the_rebellious_duma
+		icon = GFX_focus_rus_resist_the_duma
+		x = 23
+		y = 12
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_summon_frontline_cavalry
+			focus = SOV_unleash_the_black_hundreds
+		}
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_reinforce_fundamental_laws
+		icon = GFX_focus_RUS_crown
+		x = 23
+		y = 13
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_dissolve_the_rebellious_duma
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_tsarist_autocracy add_idea = SOV_absolute_autocracy_triumphant }
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_absolutist_restoration
+		icon = GFX_focus_RUS_orthodox_cross
+		x = 21
+		y = 14
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_reinforce_fundamental_laws
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_purification_of_the_empire
+		icon = GFX_focus_RUS_police_crackdown
+		x = 25
+		y = 14
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_reinforce_fundamental_laws
+		}
+		completion_reward = {
+			add_ideas = SOV_iron_gendarmerie
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_divine_right_unbroken
+		icon = GFX_focus_RUS_imperial_eagle
+		x = 23
+		y = 15
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_absolutist_restoration
+			focus = SOV_purification_of_the_empire
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
+			add_stability = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_modernizing_the_colossus
+		icon = GFX_focus_RUS_industry
+		x = 39
+		y = 0
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			add_ideas = SOV_industrial_momentum
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_peasant_land_bank
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 29
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modernizing_the_colossus
+		}
+		completion_reward = {
+			add_political_power = 75
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = SOV_dissolution_of_the_obshchina
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 29
+		y = 2
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_peasant_land_bank
+		}
+		completion_reward = {
+			add_ideas = SOV_private_peasant_ownership
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_consolidate_khutor_farms
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 27
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_dissolution_of_the_obshchina
+		}
+		completion_reward = {
+			add_manpower = 100000
+			industrial_capacity_factory = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_siberian_resettlement_program
+		icon = GFX_focus_RUS_transsiberian
+		x = 31
+		y = 3
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_dissolution_of_the_obshchina
+		}
+		completion_reward = {
+			random_owned_state = { limit = { region = 153 } add_extra_state_shared_building_slots = 2 }
+			add_manpower = 50000
+		}
+	}
+
+	focus = {
+		id = SOV_zemstvo_agronomists
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 29
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_dissolution_of_the_obshchina
+		}
+		completion_reward = {
+			add_ideas = SOV_zemstvo_agronomy_network
+			consumer_goods_factor = -0.01
+		}
+	}
+
+	focus = {
+		id = SOV_modern_agricultural_machinery
+		icon = GFX_focus_RUS_industry
+		x = 27
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_consolidate_khutor_farms
+		}
+		completion_reward = {
+			consumer_goods_factor = -0.03
+			production_speed_industrial_complex_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_altai_grain_harvests
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 31
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_siberian_resettlement_program
+		}
+		completion_reward = {
+			add_ideas = SOV_siberian_butter_and_grain
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_ukrainian_sugar_refineries
+		icon = GFX_focus_RUS_industry
+		x = 29
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_zemstvo_agronomists
+		}
+		completion_reward = {
+			add_political_power = 60
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = SOV_grain_export_monopoly
+		icon = GFX_focus_RUS_industry
+		x = 29
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modern_agricultural_machinery
+			focus = SOV_altai_grain_harvests
+			focus = SOV_ukrainian_sugar_refineries
+		}
+		completion_reward = {
+			add_political_power = 100
+			consumer_goods_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = SOV_state_grain_elevators
+		icon = GFX_focus_RUS_industry
+		x = 27
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_grain_export_monopoly
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 197 } add_building_construction = { type = supply_node level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_rural_electrification_initiatives
+		icon = GFX_focus_RUS_industry
+		x = 31
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_grain_export_monopoly
+		}
+		completion_reward = {
+			random_owned_state = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_cooperative_credit_societies
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 29
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_state_grain_elevators
+			focus = SOV_rural_electrification_initiatives
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_flourishing_rural_middle_class
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 29
+		y = 8
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_cooperative_credit_societies
+		}
+		completion_reward = {
+			add_ideas = SOV_prosperous_kulaks
+			add_stability = 0.10
+			consumer_goods_factor = -0.04
+		}
+	}
+
+	focus = {
+		id = SOV_putilov_works_expansion
+		icon = GFX_focus_RUS_putilov
+		x = 36
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modernizing_the_colossus
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_extra_state_shared_building_slots = 3 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_donbass_coal_and_iron_basin
+		icon = GFX_focus_RUS_industry
+		x = 36
+		y = 2
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_putilov_works_expansion
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 227 } add_resource = { type = steel amount = 24 } add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_obukhov_ordnance_works
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 34
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_putilov_works_expansion
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_krivoy_rog_iron_mines
+		icon = GFX_focus_RUS_industry
+		x = 34
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_donbass_coal_and_iron_basin
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 227 } add_resource = { type = steel amount = 16 } }
+		}
+	}
+
+	focus = {
+		id = SOV_baku_black_gold_monopoly
+		icon = GFX_focus_RUS_oil
+		x = 38
+		y = 3
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_donbass_coal_and_iron_basin
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 229 } add_resource = { type = oil amount = 30 } add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_makeyevka_metallurgical_works
+		icon = GFX_focus_RUS_industry
+		x = 36
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_donbass_coal_and_iron_basin
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 227 } add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_urals_heavy_smelters
+		icon = GFX_focus_RUS_industry
+		x = 34
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_krivoy_rog_iron_mines
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 217 } add_resource = { type = steel amount = 20 } add_resource = { type = tungsten amount = 12 } }
+		}
+	}
+
+	focus = {
+		id = SOV_nobel_and_rothschild_refineries
+		icon = GFX_focus_RUS_oil
+		x = 38
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_baku_black_gold_monopoly
+		}
+		completion_reward = {
+			add_ideas = SOV_nobel_brothers_petroleum
+			fuel_gain_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_motovilikha_artillery_plant
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 36
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_makeyevka_metallurgical_works
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 217 } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_saint_petersburg_heavy_engineering
+		icon = GFX_focus_RUS_industry
+		x = 36
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_urals_heavy_smelters
+			focus = SOV_nobel_and_rothschild_refineries
+			focus = SOV_motovilikha_artillery_plant
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_moscow_textile_and_rubber_mills
+		icon = GFX_focus_RUS_industry
+		x = 36
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_saint_petersburg_heavy_engineering
+		}
+		completion_reward = {
+			consumer_goods_factor = -0.02
+			production_speed_industrial_complex_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_domestic_machine_tool_production
+		icon = GFX_focus_RUS_industry
+		x = 36
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_moscow_textile_and_rubber_mills
+		}
+		completion_reward = {
+			production_factory_max_efficiency_factor = 0.10
+			industrial_capacity_factory = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_electrification_of_heavy_industry
+		icon = GFX_focus_RUS_industry
+		x = 36
+		y = 8
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_domestic_machine_tool_production
+		}
+		completion_reward = {
+			industrial_capacity_factory = 0.10
+			production_speed_arms_factory_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_trans_siberian_double_tracking
+		icon = GFX_focus_RUS_transsiberian
+		x = 45
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modernizing_the_colossus
+		}
+		completion_reward = {
+			add_ideas = SOV_double_tracked_siberia
+			swap_ideas = { remove_idea = SOV_broad_gauge_vastness add_idea = SOV_modern_broad_gauge_network }
+		}
+	}
+
+	focus = {
+		id = SOV_circum_baikal_engineering
+		icon = GFX_focus_RUS_transsiberian
+		x = 43
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_trans_siberian_double_tracking
+		}
+		completion_reward = {
+			production_speed_infrastructure_factor = 0.10
+			attrition = -0.05
+		}
+	}
+
+	focus = {
+		id = SOV_poland_strategic_railway_grid
+		icon = GFX_focus_RUS_transsiberian
+		x = 47
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_trans_siberian_double_tracking
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 87 } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_amur_railway_link
+		icon = GFX_focus_RUS_transsiberian
+		x = 45
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_trans_siberian_double_tracking
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 408 } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_murmansk_ice_free_port_lifeline
+		icon = GFX_focus_RUS_murmansk_rail
+		x = 45
+		y = 3
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_circum_baikal_engineering
+			focus = SOV_poland_strategic_railway_grid
+			focus = SOV_amur_railway_link
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 214 } add_building_construction = { type = naval_base level = 3 instant_build = yes } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_ideas = SOV_arctic_lifeline
+		}
+	}
+
+	focus = {
+		id = SOV_arkhangelsk_broad_gauge_conversion
+		icon = GFX_focus_RUS_transsiberian
+		x = 43
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_murmansk_ice_free_port_lifeline
+		}
+		completion_reward = {
+			production_speed_infrastructure_factor = 0.10
+			supply_consumption_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = SOV_caucasus_mountain_lines
+		icon = GFX_focus_RUS_transsiberian
+		x = 47
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_murmansk_ice_free_port_lifeline
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 231 } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_white_sea_icebreaker_fleet
+		icon = GFX_focus_RUS_navy
+		x = 45
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_murmansk_ice_free_port_lifeline
+		}
+		completion_reward = {
+			add_ideas = SOV_arctic_convoy_protection
+			convoy_escort_efficiency = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_military_railway_battalions
+		icon = GFX_focus_RUS_army
+		x = 45
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_arkhangelsk_broad_gauge_conversion
+			focus = SOV_caucasus_mountain_lines
+			focus = SOV_white_sea_icebreaker_fleet
+		}
+		completion_reward = {
+			add_ideas = SOV_railway_corps_efficiency
+			repair_speed_infrastructure_factor = 0.25
+		}
+	}
+
+	focus = {
+		id = SOV_broad_gauge_streamlining
+		icon = GFX_focus_RUS_transsiberian
+		x = 45
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_military_railway_battalions
+		}
+		completion_reward = {
+			out_of_supply_factor = -0.20
+			army_speed_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_strategic_reserve_depots
+		icon = GFX_focus_RUS_industry
+		x = 45
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_broad_gauge_streamlining
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 219 } add_building_construction = { type = supply_node level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_special_council_for_defense
+		icon = GFX_focus_RUS_industry
+		x = 51
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modernizing_the_colossus
+		}
+		completion_reward = {
+			add_ideas = SOV_special_defense_council
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_war_industry_committees_zemgor
+		icon = GFX_focus_RUS_local_barracks
+		x = 51
+		y = 3
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_special_council_for_defense
+		}
+		completion_reward = {
+			add_ideas = SOV_zemgor_mobilization
+			production_speed_arms_factory_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_convert_civilian_foundries
+		icon = GFX_focus_RUS_industry
+		x = 51
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_war_industry_committees_zemgor
+		}
+		completion_reward = {
+			convert_civ_factories_to_mil = 4
+			production_speed_arms_factory_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_female_ammunition_workers
+		icon = GFX_focus_RUS_workers_insurance
+		x = 49
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_war_industry_committees_zemgor
+		}
+		completion_reward = {
+			add_ideas = SOV_female_factory_reserves
+			industrial_capacity_factory = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_centralized_grain_procurement
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 51
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_convert_civilian_foundries
+			focus = SOV_female_ammunition_workers
+		}
+		completion_reward = {
+			add_stability = 0.05
+			consumer_goods_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = SOV_emergency_coal_allotment
+		icon = GFX_focus_RUS_industry
+		x = 49
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_female_ammunition_workers
+		}
+		completion_reward = {
+			production_speed_industrial_complex_factor = 0.05
+			fuel_gain_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_end_the_shell_shortage
+		icon = GFX_focus_RUS_putilov
+		x = 51
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_centralized_grain_procurement
+			focus = SOV_emergency_coal_allotment
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_arsenal_of_the_russian_state }
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_arsenal_of_the_russian_empire
+		icon = GFX_focus_RUS_industry
+		x = 51
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_end_the_shell_shortage
+		}
+		completion_reward = {
+			industrial_capacity_factory = 0.15
+			army_artillery_attack_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_integrated_war_production
+		icon = GFX_focus_RUS_industry
+		x = 47
+		y = 8
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_strategic_reserve_depots
+			focus = SOV_arsenal_of_the_russian_empire
+		}
+		completion_reward = {
+			production_factory_max_efficiency_factor = 0.15
+			war_support_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_rebuilding_the_empires_shields
+		icon = GFX_focus_RUS_navy
+		x = 64
+		y = 0
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			add_ideas = SOV_naval_rebuilding_drive
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_baltic_fleet_resurgence
+		icon = GFX_focus_RUS_navy
+		x = 57
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_rebuilding_the_empires_shields
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_gangut_class_dreadnoughts
+		icon = GFX_focus_RUS_navy
+		x = 55
+		y = 2
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_baltic_fleet_resurgence
+		}
+		completion_reward = {
+			add_tech_bonus = { name = battleship_bonus bonus = 1.0 uses = 1 category = naval_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_gulf_of_finland_minefields
+		icon = GFX_focus_RUS_navy
+		x = 59
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_baltic_fleet_resurgence
+		}
+		completion_reward = {
+			add_ideas = SOV_baltic_minefield_screen
+			navy_anti_air_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_kronstadt_and_reval_fortresses
+		icon = GFX_focus_RUS_navy
+		x = 57
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_gangut_class_dreadnoughts
+			focus = SOV_gulf_of_finland_minefields
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_novik_class_fast_destroyers
+		icon = GFX_focus_RUS_navy
+		x = 55
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kronstadt_and_reval_fortresses
+		}
+		completion_reward = {
+			add_tech_bonus = { name = dd_bonus bonus = 1.0 uses = 1 category = naval_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_bars_class_submarines
+		icon = GFX_focus_RUS_navy
+		x = 59
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kronstadt_and_reval_fortresses
+		}
+		completion_reward = {
+			add_tech_bonus = { name = sub_bonus bonus = 1.0 uses = 1 category = naval_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_krab_minelaying_submarine
+		icon = GFX_focus_RUS_navy
+		x = 59
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_bars_class_submarines
+		}
+		completion_reward = {
+			add_tech_bonus = { name = sub_bonus bonus = 1.5 uses = 1 category = naval_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_british_baltic_submarine_flotilla
+		icon = GFX_focus_RUS_navy
+		x = 55
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_novik_class_fast_destroyers
+		}
+		completion_reward = {
+			add_ideas = SOV_british_sub_cooperation
+			convoy_raiding_efficiency_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_borodino_battlecruisers_laid_down
+		icon = GFX_focus_RUS_navy
+		x = 57
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_novik_class_fast_destroyers
+			focus = SOV_bars_class_submarines
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_building_construction = { type = dockyard level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_baltic_mine_offensive
+		icon = GFX_focus_RUS_navy
+		x = 57
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_borodino_battlecruisers_laid_down
+		}
+		completion_reward = {
+			add_ideas = SOV_offensive_minelaying
+			convoy_raiding_efficiency_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_moonsund_archipelago_defenses
+		icon = GFX_focus_RUS_navy
+		x = 55
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_baltic_mine_offensive
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 191 } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_baltic_sea_denial
+		icon = GFX_focus_RUS_navy
+		x = 57
+		y = 8
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_moonsund_archipelago_defenses
+		}
+		completion_reward = {
+			navy_max_range_factor = 0.20
+			naval_hit_chance = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_black_sea_fleet_supremacy
+		icon = GFX_focus_RUS_navy
+		x = 65
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_rebuilding_the_empires_shields
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 197 } add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_imperatritsa_mariya_battleships
+		icon = GFX_focus_RUS_navy
+		x = 63
+		y = 2
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_black_sea_fleet_supremacy
+		}
+		completion_reward = {
+			add_tech_bonus = { name = bb_bonus bonus = 1.0 uses = 1 category = naval_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_bosphorus_raid_doctrine
+		icon = GFX_focus_RUS_navy
+		x = 67
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_black_sea_fleet_supremacy
+		}
+		completion_reward = {
+			add_ideas = SOV_bosphorus_raiders
+			navy_capital_ship_attack_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_sevastopol_naval_bastion
+		icon = GFX_focus_RUS_navy
+		x = 65
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_imperatritsa_mariya_battleships
+			focus = SOV_bosphorus_raid_doctrine
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 197 } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_cut_anatolia_coal_lines
+		icon = GFX_focus_RUS_navy
+		x = 63
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sevastopol_naval_bastion
+		}
+		completion_reward = {
+			convoy_raiding_efficiency_factor = 0.25
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_caucasian_amphibious_raids
+		icon = GFX_focus_RUS_navy
+		x = 67
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sevastopol_naval_bastion
+		}
+		completion_reward = {
+			amphibious_invasion_speed_factor = 0.20
+			add_ideas = SOV_amphibious_readiness
+		}
+	}
+
+	focus = {
+		id = SOV_trabzon_amphibious_landing
+		icon = GFX_focus_RUS_navy
+		x = 65
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_cut_anatolia_coal_lines
+			focus = SOV_caucasian_amphibious_raids
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_prepare_for_tsargrad_landing
+		icon = GFX_focus_RUS_Constantinople_Agreement
+		x = 65
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_trabzon_amphibious_landing
+		}
+		completion_reward = {
+			add_ideas = SOV_tsargrad_corps_readiness
+			amphibious_invasion_speed_factor = 0.30
+		}
+	}
+
+	focus = {
+		id = SOV_black_sea_command_secured
+		icon = GFX_focus_RUS_navy
+		x = 65
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_prepare_for_tsargrad_landing
+		}
+		completion_reward = {
+			navy_max_range_factor = 0.25
+			naval_hit_chance = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_imperial_russian_air_service
+		icon = GFX_focus_RUS_air_service
+		x = 73
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_rebuilding_the_empires_shields
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 195 } add_building_construction = { type = air_base level = 2 instant_build = yes } }
+			add_tech_bonus = { name = air_bonus bonus = 1.0 uses = 1 category = air_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_kacha_military_flying_school
+		icon = GFX_focus_RUS_air_service
+		x = 73
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_imperial_russian_air_service
+		}
+		completion_reward = {
+			air_ace_generation_chance_factor = 0.25
+			air_doctrine_cost_factor = -0.10
+		}
+	}
+
+	focus = {
+		id = SOV_sikorsky_ilya_muromets
+		icon = GFX_focus_RUS_sikorsky_bomber
+		x = 71
+		y = 3
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kacha_military_flying_school
+		}
+		completion_reward = {
+			add_tech_bonus = { name = strat_bomber_bonus bonus = 2.0 uses = 1 category = air_equipment }
+			add_ideas = SOV_sikorsky_engineering
+		}
+	}
+
+	focus = {
+		id = SOV_lebed_reconnaissance_corps
+		icon = GFX_focus_RUS_air_service
+		x = 75
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kacha_military_flying_school
+		}
+		completion_reward = {
+			air_detection = 0.20
+			add_tech_bonus = { name = cas_bonus bonus = 1.0 uses = 1 category = air_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_heavy_bombing_squadron_evok
+		icon = GFX_focus_RUS_sikorsky_bomber
+		x = 71
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sikorsky_ilya_muromets
+		}
+		completion_reward = {
+			add_ideas = SOV_evok_heavy_squadron
+			strategic_bombing_factor = 0.25
+		}
+	}
+
+	focus = {
+		id = SOV_nesterov_aerial_ramming_tactics
+		icon = GFX_focus_RUS_air_service
+		x = 75
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_lebed_reconnaissance_corps
+		}
+		completion_reward = {
+			air_air_attack_factor = 0.10
+			air_ace_generation_chance_factor = 0.25
+		}
+	}
+
+	focus = {
+		id = SOV_anatra_anasal_fighter_fleet
+		icon = GFX_focus_RUS_air_service
+		x = 73
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_heavy_bombing_squadron_evok
+			focus = SOV_nesterov_aerial_ramming_tactics
+		}
+		completion_reward = {
+			add_tech_bonus = { name = fighter_bonus bonus = 1.0 uses = 1 category = air_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_kazakov_ace_fighter_groups
+		icon = GFX_focus_RUS_air_service
+		x = 75
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_nesterov_aerial_ramming_tactics
+		}
+		completion_reward = {
+			air_ace_generation_chance_factor = 0.50
+			air_superiority_detect_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_strategic_air_bombardment_doctrine
+		icon = GFX_focus_RUS_sikorsky_bomber
+		x = 71
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_heavy_bombing_squadron_evok
+		}
+		completion_reward = {
+			air_doctrine_cost_factor = -0.20
+			strategic_bombing_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_seaplane_carriers_in_the_black_sea
+		icon = GFX_focus_RUS_navy
+		x = 75
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_kazakov_ace_fighter_groups
+		}
+		completion_reward = {
+			navy_carrier_air_attack_factor = 0.15
+			add_tech_bonus = { name = cv_bonus bonus = 1.0 uses = 1 category = naval_equipment }
+		}
+	}
+
+	focus = {
+		id = SOV_integrated_air_naval_reconnaissance
+		icon = GFX_focus_RUS_air_service
+		x = 73
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_anatra_anasal_fighter_fleet
+			focus = SOV_seaplane_carriers_in_the_black_sea
+		}
+		completion_reward = {
+			naval_strike_attack_factor = 0.20
+			air_superiority_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_mastery_of_the_imperial_skies
+		icon = GFX_focus_RUS_air_service
+		x = 73
+		y = 8
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_strategic_air_bombardment_doctrine
+			focus = SOV_integrated_air_naval_reconnaissance
+		}
+		completion_reward = {
+			air_superiority_factor = 0.15
+			air_mission_efficiency = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_the_great_military_program
+		icon = GFX_focus_RUS_army
+		x = 92
+		y = 0
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			add_manpower = 150000
+			add_ideas = SOV_great_military_program_spirit
+		}
+	}
+
+	focus = {
+		id = SOV_sukhomlinov_reforms
+		icon = GFX_focus_RUS_army_officers
+		x = 83
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_great_military_program
+		}
+		completion_reward = {
+			add_ideas = SOV_sukhomlinov_administration
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_grand_duke_nicholas_stavka
+		icon = GFX_focus_RUS_grand_duke
+		x = 87
+		y = 1
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_great_military_program
+		}
+		completion_reward = {
+			planning_speed = 0.20
+			max_planning = 0.15
+			army_org_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_modernize_mosin_nagant_1891
+		icon = GFX_focus_RUS_army
+		x = 81
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sukhomlinov_reforms
+		}
+		completion_reward = {
+			add_tech_bonus = { name = inf_bonus bonus = 1.0 uses = 1 category = infantry_weapons }
+		}
+	}
+
+	focus = {
+		id = SOV_cossack_hosts_mobilization
+		icon = GFX_focus_RUS_cossacks
+		x = 85
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sukhomlinov_reforms
+			focus = SOV_grand_duke_nicholas_stavka
+		}
+		completion_reward = {
+			add_manpower = 80000
+			cavalry_attack_factor = 0.15
+			cavalry_speed_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_reorganize_military_districts
+		icon = GFX_focus_RUS_army_officers
+		x = 89
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_grand_duke_nicholas_stavka
+		}
+		completion_reward = {
+			reinforce_rate = 0.10
+			training_time_army_factor = -0.10
+		}
+	}
+
+	focus = {
+		id = SOV_savage_division_cavalry
+		icon = GFX_focus_RUS_cossacks
+		x = 79
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_cossack_hosts_mobilization
+		}
+		completion_reward = {
+			add_manpower = 30000
+			cavalry_attack_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_standing_corps_readiness
+		icon = GFX_focus_RUS_army
+		x = 83
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modernize_mosin_nagant_1891
+			focus = SOV_cossack_hosts_mobilization
+		}
+		completion_reward = {
+			army_org_factor = 0.05
+			army_infantry_defence_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_telegraph_and_wireless_corps
+		icon = GFX_focus_RUS_army_officers
+		x = 87
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_cossack_hosts_mobilization
+			focus = SOV_reorganize_military_districts
+		}
+		completion_reward = {
+			encryption_factor = 0.15
+			decryption_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_praporshchik_accelerated_officers
+		icon = GFX_focus_RUS_army_officers
+		x = 81
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_standing_corps_readiness
+		}
+		completion_reward = {
+			reinforce_rate = 0.15
+			army_org_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_imperial_guard_regiments
+		icon = GFX_focus_RUS_crown
+		x = 85
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_standing_corps_readiness
+			focus = SOV_telegraph_and_wireless_corps
+		}
+		completion_reward = {
+			special_forces_attack_factor = 0.15
+			special_forces_defence_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_general_staff_academy_doctrine
+		icon = GFX_focus_RUS_army_officers
+		x = 89
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_telegraph_and_wireless_corps
+		}
+		completion_reward = {
+			land_doctrine_cost_factor = -0.15
+			planning_speed = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_general_headquarters_baranovichi
+		icon = GFX_focus_RUS_army_officers
+		x = 85
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_imperial_guard_regiments
+			focus = SOV_praporshchik_accelerated_officers
+			focus = SOV_general_staff_academy_doctrine
+		}
+		completion_reward = {
+			add_ideas = SOV_stavka_operational_clarity
+			planning_speed = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_the_shell_shortage_crisis
+		icon = GFX_focus_RUS_shell_famine
+		x = 93
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_great_military_program
+		}
+		completion_reward = {
+			country_event = { id = ww1_crisis.4 }
+		}
+	}
+
+	focus = {
+		id = SOV_the_great_retreat_to_the_dvina
+		icon = GFX_focus_RUS_great_retreat
+		x = 91
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_shell_shortage_crisis
+		}
+		completion_reward = {
+			army_speed_factor = 0.15
+			entrenchment_speed = 0.20
+			add_stability = -0.10
+		}
+	}
+
+	focus = {
+		id = SOV_tula_and_izhevsk_arms_surge
+		icon = GFX_focus_RUS_industry
+		x = 95
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_shell_shortage_crisis
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 219 } add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_scovill_and_vickers_foreign_shells
+		icon = GFX_focus_RUS_industry
+		x = 91
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_great_retreat_to_the_dvina
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 50000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 800 }
+		}
+	}
+
+	focus = {
+		id = SOV_schneider_and_putilov_heavy_howitzers
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 95
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_tula_and_izhevsk_arms_surge
+		}
+		completion_reward = {
+			add_tech_bonus = { name = art_bonus bonus = 1.0 uses = 1 category = artillery }
+		}
+	}
+
+	focus = {
+		id = SOV_sokolov_wheeled_maxim_mounts
+		icon = GFX_focus_RUS_army
+		x = 89
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_scovill_and_vickers_foreign_shells
+		}
+		completion_reward = {
+			army_infantry_defence_factor = 0.10
+			production_speed_arms_factory_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_m1902_76mm_putilov_divisional_gun
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 93
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_scovill_and_vickers_foreign_shells
+			focus = SOV_schneider_and_putilov_heavy_howitzers
+		}
+		completion_reward = {
+			army_artillery_attack_factor = 0.15
+			army_artillery_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_railway_heavy_guns
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 97
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_schneider_and_putilov_heavy_howitzers
+		}
+		completion_reward = {
+			railway_gun_bombardment_factor = 0.25
+		}
+	}
+
+	focus = {
+		id = SOV_massed_artillery_preparation
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 93
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_m1902_76mm_putilov_divisional_gun
+			focus = SOV_sokolov_wheeled_maxim_mounts
+			focus = SOV_railway_heavy_guns
+		}
+		completion_reward = {
+			artillery_barrage_cost_factor = -0.25
+			army_artillery_attack_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_gas_warfare_and_zelinsky_masks
+		icon = GFX_focus_RUS_zelinsky_mask
+		x = 93
+		y = 8
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_massed_artillery_preparation
+		}
+		completion_reward = {
+			add_ideas = SOV_zelinsky_gas_protection
+			attrition = -0.10
+		}
+	}
+
+	focus = {
+		id = SOV_brusilov_breakthrough_1916
+		icon = GFX_focus_RUS_brusilov
+		x = 103
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_great_military_program
+		}
+		completion_reward = {
+			add_ideas = brusilov_offensive_shock_idea
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_deep_echelon_surprise_assault
+		icon = GFX_focus_RUS_army
+		x = 101
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_brusilov_breakthrough_1916
+		}
+		completion_reward = {
+			breakthrough_factor = 0.20
+			planning_speed = 0.25
+		}
+	}
+
+	focus = {
+		id = SOV_shock_battalions_of_death
+		icon = GFX_focus_RUS_shock_battalion
+		x = 105
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_brusilov_breakthrough_1916
+		}
+		completion_reward = {
+			special_forces_cap = 0.05
+			add_ideas = SOV_shock_battalions_spirit
+		}
+	}
+
+	focus = {
+		id = SOV_fedorov_avtomat_early_rifle
+		icon = GFX_focus_RUS_army
+		x = 99
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_deep_echelon_surprise_assault
+		}
+		completion_reward = {
+			add_tech_bonus = { name = inf_tech bonus = 2.0 uses = 1 category = infantry_weapons }
+			infantry_attack_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_garford_putilov_armored_cars
+		icon = GFX_focus_RUS_Garford_Putilov_armoured_car
+		x = 101
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_deep_echelon_surprise_assault
+		}
+		completion_reward = {
+			add_tech_bonus = { name = armor_bonus bonus = 1.0 uses = 1 category = armor }
+		}
+	}
+
+	focus = {
+		id = SOV_bochkareva_womens_battalion
+		icon = GFX_focus_RUS_womens_battalion
+		x = 105
+		y = 6
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_shock_battalions_of_death
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_steel_breastplates_shock
+		icon = GFX_focus_RUS_shock_battalion
+		x = 107
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_shock_battalions_of_death
+		}
+		completion_reward = {
+			special_forces_defence_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_vezdekhod_and_tsar_tank_experiments
+		icon = GFX_focus_RUS_Tsar_Tank
+		x = 103
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_garford_putilov_armored_cars
+			focus = SOV_bochkareva_womens_battalion
+			focus = SOV_fedorov_avtomat_early_rifle
+			focus = SOV_steel_breastplates_shock
+		}
+		completion_reward = {
+			add_tech_bonus = { name = armor_bonus bonus = 2.0 uses = 1 category = armor }
+			add_ideas = SOV_tank_innovation
+		}
+	}
+
+	focus = {
+		id = SOV_inelastic_trench_fortifications
+		icon = GFX_focus_RUS_army
+		x = 103
+		y = 8
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_vezdekhod_and_tsar_tank_experiments
+		}
+		completion_reward = {
+			entrenchment_speed = 0.25
+			max_entrenchment = 5
+		}
+	}
+
+	focus = {
+		id = SOV_the_unbreakable_steamroller
+		icon = GFX_focus_RUS_army
+		x = 103
+		y = 9
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_inelastic_trench_fortifications
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_the_steamroller add_idea = SOV_unbreakable_steamroller }
+			army_attack_factor = 0.15
+			army_defence_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_third_rome_foreign_policy
+		icon = GFX_focus_RUS_Constantinople_Agreement
+		x = 122
+		y = 0
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		completion_reward = {
+			add_ideas = SOV_protector_of_orthodoxy
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_pan_slavic_protectorate
+		icon = GFX_focus_RUS_pan_slavism
+		x = 114
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_third_rome_foreign_policy
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = SOV_slavic_brotherhood
+		}
+	}
+
+	focus = {
+		id = SOV_the_balkan_league_architect
+		icon = GFX_focus_BUL_bulgarian_serbian_treaty
+		x = 112
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_pan_slavic_protectorate
+		}
+		completion_reward = {
+			add_opinion_modifier = { target = SER modifier = SOV_slavic_brother_opinion }
+			add_opinion_modifier = { target = BUL modifier = SOV_slavic_brother_opinion }
+		}
+	}
+
+	focus = {
+		id = SOV_sacred_guarantee_to_serbia
+		icon = GFX_focus_RUS_serbia_shield
+		x = 116
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_pan_slavic_protectorate
+		}
+		completion_reward = {
+			give_guarantee = SER
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_first_balkan_war_mediation
+		icon = GFX_focus_bul_balkan_prussia
+		x = 112
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_balkan_league_architect
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_aid_to_serbian_army
+		icon = GFX_focus_attack_serbia
+		x = 116
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sacred_guarantee_to_serbia
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 }
+			add_opinion_modifier = { target = SER modifier = SOV_serbian_munitions_aid }
+		}
+	}
+
+	focus = {
+		id = SOV_prevent_second_balkan_war
+		icon = GFX_focus_anti_serbian_crusade
+		x = 112
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_first_balkan_war_mediation
+		}
+		completion_reward = {
+			add_ideas = SOV_balkan_peacekeeper
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_bring_romania_into_the_war
+		icon = GFX_focus_germany_romania_yugoslavia
+		x = 114
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_first_balkan_war_mediation
+			focus = SOV_aid_to_serbian_army
+		}
+		completion_reward = {
+			add_opinion_modifier = { target = ROM modifier = SOV_transylvania_promise }
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_the_july_crisis_mobilization
+		icon = GFX_focus_RUS_mobilization_order
+		x = 115
+		y = 5
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sacred_guarantee_to_serbia
+			focus = SOV_prevent_second_balkan_war
+			focus = SOV_bring_romania_into_the_war
+		}
+		completion_reward = {
+			country_event = { id = ww1_russia.5 }
+			add_war_support = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_pan_slavic_triumph
+		icon = GFX_focus_RUS_pan_slavism
+		x = 115
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_july_crisis_mobilization
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_pan_slavic_protector add_idea = SOV_triumph_of_pan_slavism }
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_liberate_south_slavs
+		icon = GFX_focus_invite_yugoslavia
+		x = 115
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_pan_slavic_triumph
+		}
+		completion_reward = {
+			add_ideas = SOV_south_slavic_confederation
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_reaffirm_franco_russian_alliance
+		icon = GFX_focus_RUS_france_alliance
+		x = 121
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_third_rome_foreign_policy
+		}
+		completion_reward = {
+			add_opinion_modifier = { target = FRA modifier = SOV_sacred_alliance_opinion }
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_anglo_russian_entente_in_persia
+		icon = GFX_focus_crusade_against_britain
+		x = 125
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_third_rome_foreign_policy
+		}
+		completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = SOV_entente_cordiale_opinion }
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_french_strategic_loans
+		icon = GFX_focus_RUS_industry
+		x = 121
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_reaffirm_franco_russian_alliance
+		}
+		completion_reward = {
+			add_ideas = SOV_french_railway_credits
+			production_speed_infrastructure_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_persian_corridor_security
+		icon = GFX_focus_crush_arabia
+		x = 125
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_anglo_russian_entente_in_persia
+		}
+		completion_reward = {
+			random_owned_state = { limit = { state = 229 } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_gold_transfers_for_credit
+		icon = GFX_focus_RUS_industry
+		x = 127
+		y = 2
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_anglo_russian_entente_in_persia
+		}
+		completion_reward = {
+			add_political_power = 50
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = SOV_plan_19_galicia_variant
+		icon = GFX_focus_RUS_army_officers
+		x = 121
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_french_strategic_loans
+		}
+		completion_reward = {
+			add_ideas = SOV_plan_19_galicia_doctrine
+			army_attack_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_plan_19_east_prussia_variant
+		icon = GFX_focus_attack_russia
+		x = 125
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_persian_corridor_security
+		}
+		completion_reward = {
+			add_ideas = SOV_plan_19_prussia_doctrine
+			planning_speed = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_sarikamish_counter_encirclement
+		icon = GFX_focus_RUS_army
+		x = 119
+		y = 3
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_french_strategic_loans
+		}
+		completion_reward = {
+			army_morale_factor = 0.15
+			winter_attrition_factor = -0.20
+		}
+	}
+
+	focus = {
+		id = SOV_storming_of_erzurum
+		icon = GFX_focus_RUS_army_officers
+		x = 119
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_sarikamish_counter_encirclement
+		}
+		completion_reward = {
+			army_infantry_attack_factor = 0.10
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_expeditionary_corps_to_france
+		icon = GFX_focus_RUS_france_alliance
+		x = 121
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_plan_19_galicia_variant
+		}
+		completion_reward = {
+			add_opinion_modifier = { target = FRA modifier = SOV_russian_blood_on_the_marne }
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_claim_tsargrad_and_the_straits
+		icon = GFX_focus_RUS_Constantinople_Agreement
+		x = 123
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_plan_19_galicia_variant
+			focus = SOV_plan_19_east_prussia_variant
+		}
+		completion_reward = {
+			add_ideas = SOV_constantinople_agreement_allied_pledge
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_liberate_galician_ruthenians
+		icon = GFX_focus_RUS_crown
+		x = 121
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_claim_tsargrad_and_the_straits
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 100000
+		}
+	}
+
+	focus = {
+		id = SOV_restore_congress_poland_under_crown
+		icon = GFX_focus_RUS_crown
+		x = 125
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_claim_tsargrad_and_the_straits
+		}
+		completion_reward = {
+			add_ideas = SOV_grand_duchy_of_poland
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_cross_over_the_carpathians
+		icon = GFX_focus_RUS_army
+		x = 123
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_liberate_galician_ruthenians
+			focus = SOV_restore_congress_poland_under_crown
+		}
+		completion_reward = {
+			army_attack_factor = 0.15
+			army_speed_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_storm_the_bosphorus_and_dardanelles
+		icon = GFX_focus_RUS_Constantinople_Agreement
+		x = 123
+		y = 7
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_cross_over_the_carpathians
+		}
+		completion_reward = {
+			add_ideas = SOV_tsargrad_liberated
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = SOV_hagia_sophia_cross_restored
+		icon = GFX_focus_RUS_orthodox_cross
+		x = 123
+		y = 8
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_storm_the_bosphorus_and_dardanelles
+		}
+		completion_reward = {
+			add_stability = 0.25
+			add_war_support = 0.25
+			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
+		}
+	}
+
+	focus = {
+		id = SOV_willy_nicky_secret_correspondence
+		icon = GFX_focus_deal_with_russia
+		x = 131
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_third_rome_foreign_policy
+		}
+		completion_reward = {
+			add_political_power = 75
+			country_event = { id = ww1_russia.30 }
+		}
+	}
+
+	focus = {
+		id = SOV_bjorko_treaty_reborn
+		icon = GFX_focus_befriend_white_russia
+		x = 129
+		y = 2
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_willy_nicky_secret_correspondence
+		}
+		mutually_exclusive = {
+			focus = SOV_peace_of_brest_litovsk
+		}
+		completion_reward = {
+			add_opinion_modifier = { target = GER modifier = SOV_bjorko_pact_opinion }
+			set_country_flag = SOV_bjorko_treaty_ratified
+		}
+	}
+
+	focus = {
+		id = SOV_peace_of_brest_litovsk
+		icon = GFX_focus_deal_with_russia
+		x = 133
+		y = 2
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_willy_nicky_secret_correspondence
+		}
+		mutually_exclusive = {
+			focus = SOV_bjorko_treaty_reborn
+		}
+		completion_reward = {
+			country_event = { id = ww1_russia.40 }
+		}
+	}
+
+	focus = {
+		id = SOV_continental_league_against_britain
+		icon = GFX_focus_crusade_against_britain
+		x = 129
+		y = 3
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_bjorko_treaty_reborn
+		}
+		completion_reward = {
+			add_ideas = SOV_continental_bloc
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_partition_persia_and_india
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 129
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_continental_league_against_britain
+		}
+		completion_reward = {
+			add_ideas = SOV_march_to_the_indus
+			army_speed_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_treaty_of_berlin_rapprochement
+		icon = GFX_focus_deal_with_russia
+		x = 129
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_partition_persia_and_india
+		}
+		completion_reward = {
+			trade_laws_cost_factor = -0.50
+			consumer_goods_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = SOV_eurasian_imperial_hegemony
+		icon = GFX_focus_RUS_crown
+		x = 129
+		y = 6
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_treaty_of_berlin_rapprochement
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
+			add_stability = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_brest_demobilization_and_losses
+		icon = GFX_focus_RUS_great_retreat
+		x = 133
+		y = 3
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_peace_of_brest_litovsk
+		}
+		completion_reward = {
+			add_ideas = SOV_brest_humiliation
+			add_stability = -0.15
+		}
+	}
+
+	focus = {
+		id = SOV_reconstruction_from_the_ashes
+		icon = GFX_focus_RUS_industry
+		x = 133
+		y = 4
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_brest_demobilization_and_losses
+		}
+		completion_reward = {
+			add_ideas = SOV_reconstruction_drive
+			industrial_capacity_factory = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_prepare_for_inevitable_reckoning
+		icon = GFX_focus_RUS_army
+		x = 133
+		y = 5
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_reconstruction_from_the_ashes
+		}
+		completion_reward = {
+			add_war_support = 0.20
+			army_attack_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_moscow_state_conference
+		icon = GFX_focus_RUS_duma
+		x = 11
+		y = 14
+		cost = 5
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_kerensky_ministry
+		}
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_czech_legion_transsiberian_revolt
+		icon = GFX_focus_rusian_civil_war
+		x = 7
+		y = 19
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_purge_the_soviets
+		}
+		completion_reward = {
+			add_manpower = 40000
+			add_ideas = SOV_czech_legion_control_of_transsiberian
+		}
+	}
+
+	focus = {
+		id = SOV_tambov_peasant_rebellion
+		icon = GFX_focus_SOV_combat_the_counter_revolution
+		x = 5
+		y = 20
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_creation_of_the_red_army
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_armed_forces_of_south_russia
+		icon = GFX_focus_rus_volunteer_army
+		x = 9
+		y = 21
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_one_and_indivisible_russia
+		}
+		completion_reward = {
+			add_ideas = SOV_vsyur_high_command
+			add_manpower = 60000
+		}
+	}
+
+	focus = {
+		id = SOV_omsk_siberian_government
+		icon = GFX_focus_befriend_white_russia
+		x = 11
+		y = 21
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_one_and_indivisible_russia
+		}
+		completion_reward = {
+			add_ideas = SOV_supreme_ruler_regime
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_ruble_gold_standard_preservation
+		icon = GFX_focus_RUS_industry
+		x = 39
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_modernizing_the_colossus
+		}
+		completion_reward = {
+			add_ideas = SOV_witte_gold_standard
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = SOV_baku_batumi_pipeline_expansion
+		icon = GFX_focus_RUS_oil
+		x = 38
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_nobel_and_rothschild_refineries
+		}
+		completion_reward = {
+			fuel_gain_factor = 0.15
+			random_owned_state = { limit = { state = 229 } add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = SOV_ural_platinum_reserves
+		icon = GFX_focus_RUS_industry
+		x = 34
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_urals_heavy_smelters
+		}
+		completion_reward = {
+			add_political_power = 80
+			random_owned_state = { limit = { state = 217 } add_resource = { type = tungsten amount = 10 } }
+		}
+	}
+
+	focus = {
+		id = SOV_sevkabel_factory_complex
+		icon = GFX_focus_RUS_industry
+		x = 34
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_ural_platinum_reserves
+		}
+		completion_reward = {
+			industrial_capacity_factory = 0.05
+			production_speed_arms_factory_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_siberian_fur_trade_treasury
+		icon = GFX_focus_RUS_agricultural_boom
+		x = 31
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_altai_grain_harvests
+		}
+		completion_reward = {
+			add_political_power = 60
+			consumer_goods_factor = -0.01
+		}
+	}
+
+	focus = {
+		id = SOV_moonsund_mine_barrage
+		icon = GFX_focus_RUS_navy
+		x = 55
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_borodino_battlecruisers_laid_down
+		}
+		completion_reward = {
+			add_ideas = SOV_moonsund_mine_shield
+			navy_anti_air_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_rioni_river_torpedo_station
+		icon = GFX_focus_RUS_navy
+		x = 67
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_caucasian_amphibious_raids
+		}
+		completion_reward = {
+			naval_hit_chance = 0.05
+			convoy_raiding_efficiency_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_synchronized_aerial_machine_guns
+		icon = GFX_focus_RUS_air_service
+		x = 77
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_lebed_reconnaissance_corps
+		}
+		completion_reward = {
+			air_air_attack_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_osowiec_and_novogeorgievsk_forts
+		icon = GFX_focus_RUS_army
+		x = 89
+		y = 5
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_the_great_retreat_to_the_dvina
+		}
+		completion_reward = {
+			entrenchment_speed = 0.20
+			army_infantry_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_attack_of_the_dead_men_1915
+		icon = GFX_focus_RUS_shock_battalion
+		x = 89
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_osowiec_and_novogeorgievsk_forts
+		}
+		completion_reward = {
+			army_morale_factor = 0.25
+			army_infantry_defence_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_russian_chemical_flamethrowers
+		icon = GFX_focus_RUS_shock_battalion
+		x = 99
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_fedorov_avtomat_early_rifle
+		}
+		completion_reward = {
+			breakthrough_factor = 0.10
+			army_infantry_attack_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_optical_rangefinders_and_periscopes
+		icon = GFX_focus_RUS_Tsar_Cannon
+		x = 97
+		y = 7
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_railway_heavy_guns
+		}
+		completion_reward = {
+			army_artillery_attack_factor = 0.10
+			recon_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = SOV_motono_sazonov_treaty_1916
+		icon = GFX_focus_deal_with_russia
+		x = 127
+		y = 1
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_third_rome_foreign_policy
+		}
+		completion_reward = {
+			add_ideas = SOV_russo_japanese_friendship
+			add_opinion_modifier = { target = JAP modifier = SOV_allied_treaty_opinion }
+		}
+	}
+
+	focus = {
+		id = SOV_murmansk_convoys_arrival
+		icon = GFX_focus_RUS_murmansk_rail
+		x = 127
+		y = 6
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_gold_transfers_for_credit
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 40000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 500 }
+		}
+	}
+
+	focus = {
+		id = SOV_red_cross_missions_to_serbia
+		icon = GFX_focus_RUS_workers_insurance
+		x = 116
+		y = 4
+		cost = 7
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+
+		prerequisite = {
+			focus = SOV_aid_to_serbian_army
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+}

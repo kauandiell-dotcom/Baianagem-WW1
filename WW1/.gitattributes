@@ -1,0 +1,17 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Paradox Scripting & Localisation (preserve LF)
+*.txt text eol=lf
+*.yml text eol=lf
+*.gfx text eol=lf
+*.gui text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+
+# Binary Texture & Image Assets
+*.dds binary
+*.png binary
+*.tga binary
+*.jpg binary

@@ -1,0 +1,184 @@
+add_namespace = ww1_russia
+
+# -------------------------------------------------------------
+# 1. Atentado contra Pyotr Stolypin na Ópera de Kiev (Setembro de 1911)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.1
+	title = ww1_russia.1.t
+	desc = ww1_russia.1.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.1.a
+		ai_chance = { factor = 75 }
+		add_stability = -0.05
+		set_country_flag = SOV_stolypin_died_historical
+		custom_effect_tooltip = SOV_stolypin_dies_tt
+	}
+
+	option = {
+		name = ww1_russia.1.b
+		ai_chance = { factor = 25 }
+		add_stability = 0.05
+		set_country_flag = SOV_stolypin_survived_alt
+		custom_effect_tooltip = SOV_stolypin_survives_tt
+	}
+}
+
+# -------------------------------------------------------------
+# 2. Mobilização Geral da Grande Guerra (Julho de 1914)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.5
+	title = ww1_russia.5.t
+	desc = ww1_russia.5.d
+	picture = GFX_report_event_gathering_protest
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.5.a
+		add_war_support = 0.20
+		add_manpower = 200000
+		custom_effect_tooltip = SOV_general_mobilization_tt
+	}
+}
+
+# -------------------------------------------------------------
+# 3. Os Motins do Pão de Fevereiro de 1917
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.10
+	title = ww1_russia.10.t
+	desc = ww1_russia.10.d
+	picture = GFX_report_event_worker_protests
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.10.a
+		add_stability = -0.20
+		add_political_power = -100
+		set_country_flag = SOV_february_crisis_underway
+	}
+}
+
+# -------------------------------------------------------------
+# 4. A Abdicação em Pskov (Março de 1917)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.11
+	title = ww1_russia.11.t
+	desc = ww1_russia.11.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.11.a
+		ai_chance = { factor = 90 }
+		set_country_flag = SOV_tsar_abdicated
+		set_country_flag = SOV_provisional_gov_open
+		custom_effect_tooltip = SOV_abdication_accepted_tt
+	}
+
+	option = {
+		name = ww1_russia.11.b
+		ai_chance = { factor = 10 }
+		set_country_flag = SOV_tsarist_path_open
+		custom_effect_tooltip = SOV_tsar_resists_tt
+	}
+}
+
+# -------------------------------------------------------------
+# 5. O Ministério Kerensky & A Crise de Julho
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.15
+	title = ww1_russia.15.t
+	desc = ww1_russia.15.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.15.a
+		add_political_power = 50
+		set_country_flag = SOV_kerensky_in_power
+	}
+}
+
+# -------------------------------------------------------------
+# 6. O Caso Kornilov (Agosto de 1917)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.20
+	title = ww1_russia.20.t
+	desc = ww1_russia.20.d
+	picture = GFX_report_event_gathering_protest
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.20.a
+		ai_chance = { factor = 70 }
+		set_country_flag = SOV_bolshevik_path_open
+		custom_effect_tooltip = SOV_kornilov_fails_tt
+	}
+
+	option = {
+		name = ww1_russia.20.b
+		ai_chance = { factor = 30 }
+		set_country_flag = SOV_kornilov_path_open
+		custom_effect_tooltip = SOV_kornilov_succeeds_tt
+	}
+}
+
+# -------------------------------------------------------------
+# 7. A Correspondência Willy-Nicky & O Tratado de Björkö
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.30
+	title = ww1_russia.30.t
+	desc = ww1_russia.30.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.30.a
+		add_political_power = 50
+	}
+}
+
+# -------------------------------------------------------------
+# 8. O Tratado de Paz de Brest-Litovsk (1918)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.40
+	title = ww1_russia.40.t
+	desc = ww1_russia.40.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.40.a
+		add_stability = -0.15
+		white_peace = GER
+		white_peace = AUS
+		white_peace = TUR
+		white_peace = BUL
+	}
+}
