@@ -1,0 +1,469 @@
+ideas = {
+	country = {
+
+		# =========================================================================
+		# 1. PILLAR AGRÁRIO (Stolypin vs Crise Agrária)
+		# =========================================================================
+
+		SOV_backward_agrarian_system = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = -0.05
+				conscription_factor = -0.05
+			}
+		}
+
+		SOV_stolypin_reforms_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				stability_factor = 0.05
+				political_power_gain = 0.10
+			}
+		}
+
+		SOV_stolypin_unbroken_reforms = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.10
+				production_speed_infrastructure_factor = 0.15
+				political_power_gain = 0.15
+			}
+		}
+
+		SOV_prosperous_kulaks = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.04
+				stability_factor = 0.05
+				monthly_population = 0.10
+			}
+		}
+
+		SOV_private_peasant_ownership = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		SOV_siberian_butter_and_grain = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		SOV_peasant_unrest = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.10
+				consumer_goods_factor = 0.05
+				conscription_factor = -0.10
+			}
+		}
+
+		SOV_agrarian_collapse = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.20
+				consumer_goods_factor = 0.10
+				war_support_factor = -0.15
+			}
+		}
+
+		# =========================================================================
+		# 2. PILLAR INDUSTRIAL & ECONÔMICO
+		# =========================================================================
+
+		SOV_witte_industrialization_legacy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_rail_way_factor = 0.15
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		SOV_witte_gold_standard = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.02
+				political_power_gain = 0.05
+			}
+		}
+
+		SOV_war_industry_mobilization = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.15
+				production_speed_arms_factory_factor = 0.15
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		SOV_zemgor_mobilization = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				supply_consumption_factor = -0.05
+			}
+		}
+
+		SOV_war_communism_regime = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.20
+				war_support_factor = 0.15
+				consumer_goods_factor = -0.05
+				stability_factor = -0.15
+			}
+		}
+
+		SOV_war_communism_economy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.25
+				consumer_goods_factor = -0.07
+				stability_factor = -0.10
+			}
+		}
+
+		SOV_denikin_free_market = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.15
+			}
+		}
+
+		SOV_reconstruction_drive = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.20
+				repair_speed_factor = 0.25
+			}
+		}
+
+		# =========================================================================
+		# 3. PILLAR MILITAR & STAVKA
+		# =========================================================================
+
+		SOV_great_military_program_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.05
+				planning_speed = 0.10
+				conscription_factor = 0.05
+			}
+		}
+
+		SOV_sukhomlinov_administration = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.05
+				planning_speed = -0.10
+			}
+		}
+
+		SOV_stavka_operational_clarity = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.15
+				planning_speed = 0.15
+				army_org_factor = 0.05
+			}
+		}
+
+		SOV_shell_shortage_crisis = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.15
+				army_artillery_attack_factor = -0.25
+				army_org_factor = -0.10
+				war_support_factor = -0.10
+			}
+		}
+
+		SOV_brusilov_doctrine_victory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.15
+				breakthrough_factor = 0.20
+				planning_speed = 0.20
+			}
+		}
+
+		SOV_shock_battalions_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				special_forces_attack_factor = 0.15
+				breakthrough_factor = 0.10
+			}
+		}
+
+		SOV_unbreakable_steamroller = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_org_factor = 0.10
+				army_morale_factor = 0.15
+			}
+		}
+
+		SOV_reborn_red_army = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.20
+				conscription_factor = 0.15
+				army_org_factor = 0.10
+				war_support_factor = 0.15
+			}
+		}
+
+		SOV_white_martial_law = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				breakthrough_factor = 0.15
+				stability_factor = 0.10
+				political_power_cost = 0.15
+			}
+		}
+
+		SOV_draconian_discipline = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.15
+				experience_loss_factor = -0.15
+			}
+		}
+
+		SOV_vsyur_high_command = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.20
+				max_planning = 0.15
+			}
+		}
+
+		SOV_supreme_ruler_regime = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
+				political_power_gain = 0.15
+			}
+		}
+
+		SOV_czech_legion_control_of_transsiberian = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_node_range = 0.25
+				army_speed_factor = 0.10
+			}
+		}
+
+		# =========================================================================
+		# 4. PILLAR POLÍTICO & GOVERNO
+		# =========================================================================
+
+		SOV_tsarist_autocracy_and_duma = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = -0.05
+			}
+		}
+
+		SOV_rasputin_court_intrigues = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.15
+				political_power_cost = 0.20
+				war_support_factor = -0.10
+			}
+		}
+
+		SOV_dual_power_dvoevlastie = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.25
+				political_power_gain = -0.50
+				army_org_factor = -0.20
+			}
+		}
+
+		SOV_petrograd_order_no_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.30
+				army_attack_factor = -0.20
+				stability_factor = -0.10
+			}
+		}
+
+		SOV_dictatorship_of_the_proletariat = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				communism_drift = 0.15
+				stability_factor = 0.10
+				war_support_factor = 0.15
+				political_power_gain = 0.20
+			}
+		}
+
+		SOV_salvation_directory_rule = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.15
+				army_org_factor = 0.10
+			}
+		}
+
+		SOV_constituent_assembly_defense = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				democratic_drift = 0.10
+				stability_factor = 0.10
+			}
+		}
+
+		SOV_russian_federal_republic = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				political_power_gain = 0.20
+			}
+		}
+
+		SOV_absolute_autocracy_triumphant = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				political_power_gain = 0.25
+				conscription_factor = 0.10
+			}
+		}
+
+		SOV_enlightened_constitutional_autocracy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.20
+				political_power_gain = 0.15
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		SOV_brest_humiliation = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = -0.20
+				stability_factor = -0.10
+			}
+		}
+
+		SOV_tsargrad_liberated = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.20
+				stability_factor = 0.15
+				political_power_gain = 0.15
+			}
+		}
+
+		SOV_slavic_brotherhood = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = 0.05
+			}
+		}
+
+		SOV_arctic_lifeline = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				convoy_escort_efficiency_factor = 0.20
+				naval_speed_factor = 0.05
+			}
+		}
+
+		SOV_arsenal_of_the_russian_state = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+
+		SOV_triumph_of_pan_slavism = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.20
+				stability_factor = 0.15
+				conscription_factor = 0.10
+			}
+		}
+
+		SOV_modern_broad_gauge_network = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_rail_way_factor = 0.20
+				supply_node_range = 0.15
+			}
+		}
+
+	}
+}
+

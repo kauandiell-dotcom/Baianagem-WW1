@@ -573,5 +573,26 @@ ideas = {
 			}
 		}
 
+		GER_kaiserschlacht_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.20
+				breakthrough_factor = 0.25
+				army_speed_factor = 0.15
+				org_loss_when_moving = -0.20
+			}
+		}
+
+		german_infiltration_assault_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				special_forces_attack_factor = 0.20
+				breakthrough_factor = 0.15
+				recon_factor = 0.20
+			}
+		}
+
 	}
 }
