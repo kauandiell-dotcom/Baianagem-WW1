@@ -1,4 +1,4 @@
-ideas = {
+﻿ideas = {
 	country = {
 
 		# =======================================================
@@ -1040,59 +1040,5 @@ ideas = {
 			}
 		}
 
-		german_infiltration_assault_idea = {
-			allowed = { always = no }
-			picture = german_infiltration_assault_idea
-			removal_cost = -1
-			modifier = {
-				army_bonus = {
-					breakthrough = 0.15
-					soft_attack = 0.10
-					recon = 0.5
-				}
-				initiative_factor = 0.10
-			}
-		}
-
-		GER_kaiserschlacht_idea = {
-			allowed = { always = no }
-			picture = GER_kaiserschlacht_idea
-			removal_cost = -1
-			modifier = {
-				army_attack_factor = 0.15
-				army_bonus = {
-					breakthrough = 0.20
-					soft_attack = 0.15
-				}
-				army_speed_factor = 0.10
-				planning_speed = 0.25
-			}
-		}
-
-		creeping_barrage_idea = {
-			allowed = { always = no }
-			picture = creeping_barrage_idea
-			removal_cost = -1
-			modifier = {
-				army_artillery_attack_factor = 0.20
-				army_bonus = {
-					breakthrough = 0.15
-					soft_attack = 0.10
-				}
-			}
-		}
-
-		jihad_holy_call_idea = {
-			allowed = { always = no }
-			picture = jihad_holy_call_idea
-			removal_cost = -1
-			modifier = {
-				war_support_factor = 0.10
-				army_morale_factor = 0.15
-				recruitable_population_factor = 0.05
-			}
-		}
-
 	}
 }
-

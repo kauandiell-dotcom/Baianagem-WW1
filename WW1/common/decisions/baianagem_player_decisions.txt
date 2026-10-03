@@ -32,7 +32,8 @@ baianagem_player_category = {
 	baianagem_emergency_manpower = {
 		icon = generic_manpower
 		cost = 0
-		fire_only_once = yes
+		fire_only_once = no
+		days_re_enable = 30
 
 		allowed = {
 			is_ai = no
