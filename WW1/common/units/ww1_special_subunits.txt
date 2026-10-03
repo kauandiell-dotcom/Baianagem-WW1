@@ -22,7 +22,6 @@ sub_units = {
 			category_front_line
 			category_army
 			category_all_infantry
-			category_light_infantry
 		}
 		
 		combat_width = 1
@@ -32,7 +31,7 @@ sub_units = {
 		manpower = 400
 		max_organisation = 25
 		default_morale = 0.40
-		max_strength = 12
+		max_strength = 1.0
 		training_time = 75
 		weight = 0.3
 		supply_consumption = 0.03
@@ -57,7 +56,6 @@ sub_units = {
 		abbreviation = "STO"
 		sprite = infantry
 		map_icon_category = infantry
-		special_forces = yes
 		priority = 1500
 		ai_priority = 500
 		active = yes
@@ -72,9 +70,7 @@ sub_units = {
 			category_front_line
 			category_army
 			category_all_infantry
-			category_light_infantry
 			category_special_forces
-			category_special_forces_leg_infantry
 		}
 		
 		combat_width = 2
@@ -85,7 +81,7 @@ sub_units = {
 		manpower = 800
 		max_organisation = 20
 		default_morale = 0.45
-		max_strength = 25
+		max_strength = 2.0
 		training_time = 140
 		weight = 0.8
 		supply_consumption = 0.10
@@ -111,7 +107,6 @@ sub_units = {
 		abbreviation = "ANZ"
 		sprite = infantry
 		map_icon_category = infantry
-		special_forces = yes
 		priority = 1400
 		ai_priority = 400
 		active = yes
@@ -126,9 +121,7 @@ sub_units = {
 			category_front_line
 			category_army
 			category_all_infantry
-			category_light_infantry
 			category_special_forces
-			category_special_forces_leg_infantry
 		}
 		
 		combat_width = 2
@@ -139,7 +132,7 @@ sub_units = {
 		manpower = 1000
 		max_organisation = 25
 		default_morale = 0.45
-		max_strength = 25
+		max_strength = 2.0
 		training_time = 120
 		weight = 0.8
 		supply_consumption = 0.08
@@ -168,24 +161,20 @@ sub_units = {
 		ai_priority = 0
 		active = yes
 		affects_speed = no
-		is_artillery_brigade = yes
 		
 		group = support
 		regimental = no
 		combat_width = 0
 
 		type = {
-			infantry
-			support
 			artillery
+			support
 		}
 		
 		categories = {
 			category_support_battalions
-			category_divisional_support_battalions
 			category_army
-			category_artillery
-			category_support_artillery
+			category_line_artillery
 		}
 
 		need = {
@@ -194,7 +183,7 @@ sub_units = {
 		manpower = 300
 		max_organisation = 10
 		default_morale = 0.30
-		max_strength = 1.0
+		max_strength = 0.8
 		training_time = 100
 		weight = 0.2
 		supply_consumption = 0.07
@@ -224,8 +213,6 @@ sub_units = {
 			category_front_line
 			category_army
 			category_all_infantry
-			category_light_infantry
-			category_militia
 		}
 		
 		combat_width = 1
@@ -235,7 +222,7 @@ sub_units = {
 		manpower = 1000
 		max_organisation = 15
 		default_morale = 0.25
-		max_strength = 20
+		max_strength = 1.5
 		training_time = 45
 		weight = 0.4
 		supply_consumption = 0.04
@@ -255,14 +242,13 @@ sub_units = {
 		abbreviation = "GBJ"
 		sprite = infantry
 		map_icon_category = infantry
-		special_forces = yes
-		mountaineers = yes
 		priority = 1300
 		ai_priority = 400
 		active = yes
 		
 		type = {
 			infantry
+			mountaineers
 		}
 		
 		group = infantry
@@ -271,10 +257,7 @@ sub_units = {
 			category_front_line
 			category_army
 			category_all_infantry
-			category_light_infantry
 			category_special_forces
-			category_mountaineers
-			category_special_forces_leg_infantry
 		}
 		
 		combat_width = 2
@@ -285,7 +268,7 @@ sub_units = {
 		manpower = 800
 		max_organisation = 25
 		default_morale = 0.40
-		max_strength = 20
+		max_strength = 2.0
 		training_time = 130
 		weight = 0.7
 		supply_consumption = 0.07
@@ -308,7 +291,6 @@ sub_units = {
 		abbreviation = "ARD"
 		sprite = infantry
 		map_icon_category = infantry
-		special_forces = yes
 		priority = 1450
 		ai_priority = 450
 		active = yes
@@ -323,9 +305,7 @@ sub_units = {
 			category_front_line
 			category_army
 			category_all_infantry
-			category_light_infantry
 			category_special_forces
-			category_special_forces_leg_infantry
 		}
 		
 		combat_width = 2
@@ -336,7 +316,7 @@ sub_units = {
 		manpower = 700
 		max_organisation = 20
 		default_morale = 0.50
-		max_strength = 22
+		max_strength = 1.8
 		training_time = 130
 		weight = 0.7
 		supply_consumption = 0.08
@@ -386,7 +366,7 @@ sub_units = {
 		manpower = 1500
 		max_organisation = 30
 		default_morale = 0.50
-		max_strength = 30
+		max_strength = 3.0
 		training_time = 140
 		weight = 1.2
 		supply_consumption = 0.15

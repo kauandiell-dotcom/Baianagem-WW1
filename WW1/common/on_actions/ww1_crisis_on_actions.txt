@@ -6,409 +6,391 @@ on_actions = {
 		effect = {
 			# GERMANY
 			if = {
-				limit = { tag = GER }
-
-				# Agadir Crisis (July 1911)
-				if = {
-					limit = {
-						date > 1911.7.1
-						NOT = { has_global_flag = agadir_crisis_happened }
-					}
-					set_global_flag = agadir_crisis_happened
-					country_event = { id = ww1_agadir.1 days = 1 }
-				}
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = FRA
-							has_war_with = ENG
-						}
-						NOT = { has_country_flag = GER_crisis_event_fired }
-						NOT = { has_country_flag = GER_crisis_active }
-						NOT = { has_country_flag = GER_crisis_resolved }
-					}
-					add_to_variable = { GER_war_weeks = 1 }
+				limit = { country_exists = GER }
+				GER = {
+					# Agadir Crisis (July 1911)
 					if = {
-						limit = { check_variable = { GER_war_weeks > 12 } }
-						set_country_flag = GER_crisis_event_fired
-						country_event = { id = ww1_crisis.1 }
+						limit = {
+							date > 1911.7.1
+							NOT = { has_global_flag = agadir_crisis_happened }
+						}
+						country_event = { id = ww1_agadir.1 days = 1 }
 					}
-				}
-				# Check Crisis Automatic Resolution (peace or enemy capitulation)
-				if = {
-					limit = {
-						has_country_flag = GER_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							AND = {
-								OR = { NOT = { has_war_with = FRA } FRA = { has_capitulated = yes } }
-								OR = { NOT = { has_war_with = ENG } ENG = { has_capitulated = yes } }
+
+					# Check Crisis Trigger
+					if = {
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = FRA
+								has_war_with = ENG
+								has_war_with = SOV
+								has_war_with = USA
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = GER_crisis_active }
+							NOT = { has_country_flag = GER_crisis_resolved }
+						}
+						add_to_variable = { GER_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { GER_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.1 }
+						}
+					}
+					# Check Crisis Automatic Resolution (peace or enemy capitulation)
+					if = {
+						limit = {
+							has_country_flag = GER_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								AND = {
+									OR = { NOT = { has_war_with = FRA } FRA = { has_capitulated = yes } }
+									OR = { NOT = { has_war_with = ENG } ENG = { has_capitulated = yes } }
+								}
 							}
 						}
+						remove_ideas = GER_turnip_winter_crisis_3
+						remove_ideas = GER_turnip_winter_crisis_2
+						remove_ideas = GER_turnip_winter_crisis_1
+						if = {
+							limit = { NOT = { has_idea = GER_hindenburg_program_victory } }
+							add_ideas = GER_hindenburg_program_victory
+						}
+						clr_country_flag = GER_crisis_active
+						set_country_flag = GER_crisis_resolved
 					}
-					remove_ideas = GER_turnip_winter_crisis_3
-					remove_ideas = GER_turnip_winter_crisis_2
-					remove_ideas = GER_turnip_winter_crisis_1
-					if = {
-						limit = { NOT = { has_idea = GER_hindenburg_program_victory } }
-						add_ideas = GER_hindenburg_program_victory
-					}
-					clr_country_flag = GER_crisis_active
-					set_country_flag = GER_crisis_resolved
 				}
 			}
 
 			# UNITED KINGDOM
 			if = {
-				limit = { tag = ENG }
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						has_war_with = GER
-						NOT = { has_country_flag = ENG_crisis_event_fired }
-						NOT = { has_country_flag = ENG_crisis_active }
-						NOT = { has_country_flag = ENG_crisis_resolved }
-					}
-					add_to_variable = { ENG_war_weeks = 1 }
+				limit = { country_exists = ENG }
+				ENG = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { ENG_war_weeks > 12 } }
-						set_country_flag = ENG_crisis_event_fired
-						country_event = { id = ww1_crisis.2 }
-					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = ENG_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = GER
+								has_war_with = TUR
+								has_war_with = AUS
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = ENG_crisis_active }
+							NOT = { has_country_flag = ENG_crisis_resolved }
+						}
+						add_to_variable = { ENG_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { ENG_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.2 }
 						}
 					}
-					remove_ideas = ENG_submarine_blockade_crisis_3
-					remove_ideas = ENG_submarine_blockade_crisis_2
-					remove_ideas = ENG_submarine_blockade_crisis_1
+					# Check Crisis Automatic Resolution
 					if = {
-						limit = { NOT = { has_idea = ENG_arsenal_of_the_empire } }
-						add_ideas = ENG_arsenal_of_the_empire
+						limit = {
+							has_country_flag = ENG_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
+							}
+						}
+						remove_ideas = ENG_submarine_blockade_crisis_3
+						remove_ideas = ENG_submarine_blockade_crisis_2
+						remove_ideas = ENG_submarine_blockade_crisis_1
+						if = {
+							limit = { NOT = { has_idea = ENG_arsenal_of_the_empire } }
+							add_ideas = ENG_arsenal_of_the_empire
+						}
+						clr_country_flag = ENG_crisis_active
+						set_country_flag = ENG_crisis_resolved
 					}
-					clr_country_flag = ENG_crisis_active
-					set_country_flag = ENG_crisis_resolved
 				}
 			}
 
 			# FRANCE
 			if = {
-				limit = { tag = FRA }
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = GER
-							has_war_with = AUS
-						}
-						NOT = { has_country_flag = FRA_crisis_event_fired }
-						NOT = { has_country_flag = FRA_crisis_active }
-						NOT = { has_country_flag = FRA_crisis_resolved }
-					}
-					add_to_variable = { FRA_war_weeks = 1 }
+				limit = { country_exists = FRA }
+				FRA = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { FRA_war_weeks > 12 } }
-						set_country_flag = FRA_crisis_event_fired
-						country_event = { id = ww1_crisis.3 }
-					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = FRA_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = GER
+								has_war_with = AUS
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = FRA_crisis_active }
+							NOT = { has_country_flag = FRA_crisis_resolved }
+						}
+						add_to_variable = { FRA_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { FRA_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.3 }
 						}
 					}
-					remove_ideas = FRA_trench_mutiny_crisis_3
-					remove_ideas = FRA_trench_mutiny_crisis_2
-					remove_ideas = FRA_trench_mutiny_crisis_1
+					# Check Crisis Automatic Resolution
 					if = {
-						limit = { NOT = { has_idea = FRA_union_sacree_victory } }
-						add_ideas = FRA_union_sacree_victory
+						limit = {
+							has_country_flag = FRA_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
+							}
+						}
+						remove_ideas = FRA_trench_mutiny_crisis_3
+						remove_ideas = FRA_trench_mutiny_crisis_2
+						remove_ideas = FRA_trench_mutiny_crisis_1
+						if = {
+							limit = { NOT = { has_idea = FRA_union_sacree_victory } }
+							add_ideas = FRA_union_sacree_victory
+						}
+						clr_country_flag = FRA_crisis_active
+						set_country_flag = FRA_crisis_resolved
 					}
-					clr_country_flag = FRA_crisis_active
-					set_country_flag = FRA_crisis_resolved
 				}
 			}
 
 			# RUSSIA
 			if = {
-				limit = {
-					OR = {
-						tag = SOV
-						tag = RUS
-					}
-				}
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = GER
-							has_war_with = AUS
-							has_war_with = TUR
-						}
-						NOT = { has_country_flag = SOV_crisis_event_fired }
-						NOT = { has_country_flag = SOV_crisis_active }
-						NOT = { has_country_flag = SOV_crisis_resolved }
-					}
-					add_to_variable = { SOV_war_weeks = 1 }
+				limit = { country_exists = SOV }
+				SOV = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { SOV_war_weeks > 12 } }
-						set_country_flag = SOV_crisis_event_fired
-						country_event = { id = ww1_crisis.4 }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = GER
+								has_war_with = AUS
+								has_war_with = TUR
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = SOV_crisis_active }
+							NOT = { has_country_flag = SOV_crisis_resolved }
+						}
+						add_to_variable = { SOV_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { SOV_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.4 }
+						}
 					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = SOV_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							AND = {
-								OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
-								OR = { NOT = { has_war_with = AUS } AUS = { has_capitulated = yes } }
+					# Check Crisis Automatic Resolution
+					if = {
+						limit = {
+							has_country_flag = SOV_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								AND = {
+									OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
+									OR = { NOT = { has_war_with = AUS } AUS = { has_capitulated = yes } }
+								}
 							}
 						}
+						remove_ideas = SOV_rifle_famine_crisis_3
+						remove_ideas = SOV_rifle_famine_crisis_2
+						remove_ideas = SOV_rifle_famine_crisis_1
+						if = {
+							limit = { NOT = { has_idea = SOV_unbreakable_union_victory } }
+							add_ideas = SOV_unbreakable_union_victory
+						}
+						clr_country_flag = SOV_crisis_active
+						set_country_flag = SOV_crisis_resolved
 					}
-					remove_ideas = SOV_rifle_famine_crisis_3
-					remove_ideas = SOV_rifle_famine_crisis_2
-					remove_ideas = SOV_rifle_famine_crisis_1
-					if = {
-						limit = { NOT = { has_idea = SOV_unbreakable_union_victory } }
-						add_ideas = SOV_unbreakable_union_victory
-					}
-					clr_country_flag = SOV_crisis_active
-					set_country_flag = SOV_crisis_resolved
 				}
 			}
 
 			# AUSTRIA-HUNGARY
 			if = {
-				limit = { tag = AUS }
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = SOV
-							has_war_with = RUS
-							has_war_with = ITA
-							has_war_with = SER
-						}
-						NOT = { has_country_flag = AUS_crisis_event_fired }
-						NOT = { has_country_flag = AUS_crisis_active }
-						NOT = { has_country_flag = AUS_crisis_resolved }
-					}
-					add_to_variable = { AUS_war_weeks = 1 }
+				limit = { country_exists = AUS }
+				AUS = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { AUS_war_weeks > 12 } }
-						set_country_flag = AUS_crisis_event_fired
-						country_event = { id = ww1_crisis.5 }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = SOV
+								has_war_with = ITA
+								has_war_with = SER
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = AUS_crisis_active }
+							NOT = { has_country_flag = AUS_crisis_resolved }
+						}
+						add_to_variable = { AUS_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { AUS_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.5 }
+						}
 					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = AUS_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							AND = {
-								OR = {
-									AND = { NOT = { has_war_with = SOV } NOT = { has_war_with = RUS } }
-									AND = { country_exists = SOV SOV = { has_capitulated = yes } }
-									AND = { country_exists = RUS RUS = { has_capitulated = yes } }
+					# Check Crisis Automatic Resolution
+					if = {
+						limit = {
+							has_country_flag = AUS_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								AND = {
+									OR = { NOT = { has_war_with = SOV } SOV = { has_capitulated = yes } }
+									OR = { NOT = { has_war_with = ITA } ITA = { has_capitulated = yes } }
 								}
-								OR = { NOT = { has_war_with = ITA } ITA = { has_capitulated = yes } }
 							}
 						}
+						remove_ideas = AUS_nationalities_fracture_crisis_3
+						remove_ideas = AUS_nationalities_fracture_crisis_2
+						remove_ideas = AUS_nationalities_fracture_crisis_1
+						if = {
+							limit = { NOT = { has_idea = AUS_danubian_triumph } }
+							add_ideas = AUS_danubian_triumph
+						}
+						clr_country_flag = AUS_crisis_active
+						set_country_flag = AUS_crisis_resolved
 					}
-					remove_ideas = AUS_nationalities_fracture_crisis_3
-					remove_ideas = AUS_nationalities_fracture_crisis_2
-					remove_ideas = AUS_nationalities_fracture_crisis_1
-					if = {
-						limit = { NOT = { has_idea = AUS_danubian_triumph } }
-						add_ideas = AUS_danubian_triumph
-					}
-					clr_country_flag = AUS_crisis_active
-					set_country_flag = AUS_crisis_resolved
 				}
 			}
 
 			# ITALY
 			if = {
-				limit = { tag = ITA }
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = AUS
-							has_war_with = GER
-						}
-						NOT = { has_country_flag = ITA_crisis_event_fired }
-						NOT = { has_country_flag = ITA_crisis_active }
-						NOT = { has_country_flag = ITA_crisis_resolved }
-					}
-					add_to_variable = { ITA_war_weeks = 1 }
+				limit = { country_exists = ITA }
+				ITA = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { ITA_war_weeks > 12 } }
-						set_country_flag = ITA_crisis_event_fired
-						country_event = { id = ww1_crisis.6 }
-					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = ITA_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							OR = { NOT = { has_war_with = AUS } AUS = { has_capitulated = yes } }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = AUS
+								has_war_with = GER
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = ITA_crisis_active }
+							NOT = { has_country_flag = ITA_crisis_resolved }
+						}
+						add_to_variable = { ITA_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { ITA_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.6 }
 						}
 					}
-					remove_ideas = ITA_isonzo_attrition_crisis_3
-					remove_ideas = ITA_isonzo_attrition_crisis_2
-					remove_ideas = ITA_isonzo_attrition_crisis_1
+					# Check Crisis Automatic Resolution
 					if = {
-						limit = { NOT = { has_idea = ITA_vittorio_veneto_triumph } }
-						add_ideas = ITA_vittorio_veneto_triumph
+						limit = {
+							has_country_flag = ITA_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								OR = { NOT = { has_war_with = AUS } AUS = { has_capitulated = yes } }
+							}
+						}
+						remove_ideas = ITA_isonzo_attrition_crisis_3
+						remove_ideas = ITA_isonzo_attrition_crisis_2
+						remove_ideas = ITA_isonzo_attrition_crisis_1
+						if = {
+							limit = { NOT = { has_idea = ITA_vittorio_veneto_triumph } }
+							add_ideas = ITA_vittorio_veneto_triumph
+						}
+						clr_country_flag = ITA_crisis_active
+						set_country_flag = ITA_crisis_resolved
 					}
-					clr_country_flag = ITA_crisis_active
-					set_country_flag = ITA_crisis_resolved
 				}
 			}
 
 			# OTTOMAN EMPIRE
 			if = {
-				limit = { tag = TUR }
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = ENG
-							has_war_with = FRA
-							has_war_with = SOV
-							has_war_with = RUS
-						}
-						NOT = { has_country_flag = TUR_crisis_event_fired }
-						NOT = { has_country_flag = TUR_crisis_active }
-						NOT = { has_country_flag = TUR_crisis_resolved }
-					}
-					add_to_variable = { TUR_war_weeks = 1 }
+				limit = { country_exists = TUR }
+				TUR = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { TUR_war_weeks > 12 } }
-						set_country_flag = TUR_crisis_event_fired
-						country_event = { id = ww1_crisis.7 }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = ENG
+								has_war_with = FRA
+								has_war_with = SOV
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = TUR_crisis_active }
+							NOT = { has_country_flag = TUR_crisis_resolved }
+						}
+						add_to_variable = { TUR_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { TUR_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.7 }
+						}
 					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = TUR_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							AND = {
-								OR = { NOT = { has_war_with = ENG } ENG = { has_capitulated = yes } }
-								OR = {
-									AND = { NOT = { has_war_with = SOV } NOT = { has_war_with = RUS } }
-									AND = { country_exists = SOV SOV = { has_capitulated = yes } }
-									AND = { country_exists = RUS RUS = { has_capitulated = yes } }
+					# Check Crisis Automatic Resolution
+					if = {
+						limit = {
+							has_country_flag = TUR_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								AND = {
+									OR = { NOT = { has_war_with = ENG } ENG = { has_capitulated = yes } }
+									OR = { NOT = { has_war_with = SOV } SOV = { has_capitulated = yes } }
 								}
 							}
 						}
+						remove_ideas = TUR_desert_supply_collapse_crisis_3
+						remove_ideas = TUR_desert_supply_collapse_crisis_2
+						remove_ideas = TUR_desert_supply_collapse_crisis_1
+						if = {
+							limit = { NOT = { has_idea = TUR_anatolian_sovereignty_victory } }
+							add_ideas = TUR_anatolian_sovereignty_victory
+						}
+						clr_country_flag = TUR_crisis_active
+						set_country_flag = TUR_crisis_resolved
 					}
-					remove_ideas = TUR_desert_supply_collapse_crisis_3
-					remove_ideas = TUR_desert_supply_collapse_crisis_2
-					remove_ideas = TUR_desert_supply_collapse_crisis_1
-					if = {
-						limit = { NOT = { has_idea = TUR_anatolian_sovereignty_victory } }
-						add_ideas = TUR_anatolian_sovereignty_victory
-					}
-					clr_country_flag = TUR_crisis_active
-					set_country_flag = TUR_crisis_resolved
 				}
 			}
 
 			# UNITED STATES
 			if = {
-				limit = { tag = USA }
-
-				# Check Crisis Trigger
-				if = {
-					limit = {
-						date > 1914.8.1
-						has_war = yes
-						OR = {
-							has_war_with = GER
-							has_war_with = AUS
-						}
-						NOT = { has_country_flag = USA_crisis_event_fired }
-						NOT = { has_country_flag = USA_crisis_active }
-						NOT = { has_country_flag = USA_crisis_resolved }
-					}
-					add_to_variable = { USA_war_weeks = 1 }
+				limit = { country_exists = USA }
+				USA = {
+					# Check Crisis Trigger
 					if = {
-						limit = { check_variable = { USA_war_weeks > 12 } }
-						set_country_flag = USA_crisis_event_fired
-						country_event = { id = ww1_crisis.8 }
+						limit = {
+							has_war = yes
+							OR = {
+								has_war_with = GER
+								has_war_with = AUS
+								any_enemy_country = { is_major = yes }
+							}
+							NOT = { has_country_flag = USA_crisis_active }
+							NOT = { has_country_flag = USA_crisis_resolved }
+						}
+						add_to_variable = { USA_war_weeks = 1 }
+						if = {
+							limit = { check_variable = { USA_war_weeks > 12 } }
+							country_event = { id = ww1_crisis.8 }
+						}
 					}
-				}
-				# Check Crisis Automatic Resolution
-				if = {
-					limit = {
-						has_country_flag = USA_crisis_active
-						OR = {
-							has_war = no
-							NOT = { any_enemy_country = { is_major = yes } }
-							AND = {
-								OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
-								OR = { NOT = { has_war_with = AUS } AUS = { has_capitulated = yes } }
+					# Check Crisis Automatic Resolution
+					if = {
+						limit = {
+							has_country_flag = USA_crisis_active
+							OR = {
+								has_war = no
+								NOT = { any_enemy_country = { is_major = yes } }
+								AND = {
+									OR = { NOT = { has_war_with = GER } GER = { has_capitulated = yes } }
+									OR = { NOT = { has_war_with = AUS } AUS = { has_capitulated = yes } }
+								}
 							}
 						}
+						remove_ideas = USA_mobilization_bottleneck_crisis_3
+						remove_ideas = USA_mobilization_bottleneck_crisis_2
+						remove_ideas = USA_mobilization_bottleneck_crisis_1
+						if = {
+							limit = { NOT = { has_idea = USA_arsenal_of_democracy_unleashed } }
+							add_ideas = USA_arsenal_of_democracy_unleashed
+						}
+						clr_country_flag = USA_crisis_active
+						set_country_flag = USA_crisis_resolved
 					}
-					remove_ideas = USA_mobilization_bottleneck_crisis_3
-					remove_ideas = USA_mobilization_bottleneck_crisis_2
-					remove_ideas = USA_mobilization_bottleneck_crisis_1
-					if = {
-						limit = { NOT = { has_idea = USA_arsenal_of_democracy_unleashed } }
-						add_ideas = USA_arsenal_of_democracy_unleashed
-					}
-					clr_country_flag = USA_crisis_active
-					set_country_flag = USA_crisis_resolved
 				}
 			}
 		}
@@ -418,156 +400,91 @@ on_actions = {
 	on_peaceconference_ended = {
 		effect = {
 			if = {
-				limit = { country_exists = GER }
+				limit = { country_exists = GER has_country_flag = GER_crisis_active has_war = no }
 				GER = {
-					if = {
-						limit = {
-							has_country_flag = GER_crisis_active
-							has_war = no
-						}
-						remove_ideas = GER_turnip_winter_crisis_3
-						remove_ideas = GER_turnip_winter_crisis_2
-						remove_ideas = GER_turnip_winter_crisis_1
-						if = { limit = { NOT = { has_idea = GER_hindenburg_program_victory } } add_ideas = GER_hindenburg_program_victory }
-						clr_country_flag = GER_crisis_active
-						set_country_flag = GER_crisis_resolved
-					}
+					remove_ideas = GER_turnip_winter_crisis_3
+					remove_ideas = GER_turnip_winter_crisis_2
+					remove_ideas = GER_turnip_winter_crisis_1
+					if = { limit = { NOT = { has_idea = GER_hindenburg_program_victory } } add_ideas = GER_hindenburg_program_victory }
+					clr_country_flag = GER_crisis_active
+					set_country_flag = GER_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = ENG }
+				limit = { country_exists = ENG has_country_flag = ENG_crisis_active has_war = no }
 				ENG = {
-					if = {
-						limit = {
-							has_country_flag = ENG_crisis_active
-							has_war = no
-						}
-						remove_ideas = ENG_submarine_blockade_crisis_3
-						remove_ideas = ENG_submarine_blockade_crisis_2
-						remove_ideas = ENG_submarine_blockade_crisis_1
-						if = { limit = { NOT = { has_idea = ENG_arsenal_of_the_empire } } add_ideas = ENG_arsenal_of_the_empire }
-						clr_country_flag = ENG_crisis_active
-						set_country_flag = ENG_crisis_resolved
-					}
+					remove_ideas = ENG_submarine_blockade_crisis_3
+					remove_ideas = ENG_submarine_blockade_crisis_2
+					remove_ideas = ENG_submarine_blockade_crisis_1
+					if = { limit = { NOT = { has_idea = ENG_arsenal_of_the_empire } } add_ideas = ENG_arsenal_of_the_empire }
+					clr_country_flag = ENG_crisis_active
+					set_country_flag = ENG_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = FRA }
+				limit = { country_exists = FRA has_country_flag = FRA_crisis_active has_war = no }
 				FRA = {
-					if = {
-						limit = {
-							has_country_flag = FRA_crisis_active
-							has_war = no
-						}
-						remove_ideas = FRA_trench_mutiny_crisis_3
-						remove_ideas = FRA_trench_mutiny_crisis_2
-						remove_ideas = FRA_trench_mutiny_crisis_1
-						if = { limit = { NOT = { has_idea = FRA_union_sacree_victory } } add_ideas = FRA_union_sacree_victory }
-						clr_country_flag = FRA_crisis_active
-						set_country_flag = FRA_crisis_resolved
-					}
+					remove_ideas = FRA_trench_mutiny_crisis_3
+					remove_ideas = FRA_trench_mutiny_crisis_2
+					remove_ideas = FRA_trench_mutiny_crisis_1
+					if = { limit = { NOT = { has_idea = FRA_union_sacree_victory } } add_ideas = FRA_union_sacree_victory }
+					clr_country_flag = FRA_crisis_active
+					set_country_flag = FRA_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = SOV }
+				limit = { country_exists = SOV has_country_flag = SOV_crisis_active has_war = no }
 				SOV = {
-					if = {
-						limit = {
-							has_country_flag = SOV_crisis_active
-							has_war = no
-						}
-						remove_ideas = SOV_rifle_famine_crisis_3
-						remove_ideas = SOV_rifle_famine_crisis_2
-						remove_ideas = SOV_rifle_famine_crisis_1
-						if = { limit = { NOT = { has_idea = SOV_unbreakable_union_victory } } add_ideas = SOV_unbreakable_union_victory }
-						clr_country_flag = SOV_crisis_active
-						set_country_flag = SOV_crisis_resolved
-					}
+					remove_ideas = SOV_rifle_famine_crisis_3
+					remove_ideas = SOV_rifle_famine_crisis_2
+					remove_ideas = SOV_rifle_famine_crisis_1
+					if = { limit = { NOT = { has_idea = SOV_unbreakable_union_victory } } add_ideas = SOV_unbreakable_union_victory }
+					clr_country_flag = SOV_crisis_active
+					set_country_flag = SOV_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = RUS }
-				RUS = {
-					if = {
-						limit = {
-							has_country_flag = SOV_crisis_active
-							has_war = no
-						}
-						remove_ideas = SOV_rifle_famine_crisis_3
-						remove_ideas = SOV_rifle_famine_crisis_2
-						remove_ideas = SOV_rifle_famine_crisis_1
-						if = { limit = { NOT = { has_idea = SOV_unbreakable_union_victory } } add_ideas = SOV_unbreakable_union_victory }
-						clr_country_flag = SOV_crisis_active
-						set_country_flag = SOV_crisis_resolved
-					}
-				}
-			}
-			if = {
-				limit = { country_exists = AUS }
+				limit = { country_exists = AUS has_country_flag = AUS_crisis_active has_war = no }
 				AUS = {
-					if = {
-						limit = {
-							has_country_flag = AUS_crisis_active
-							has_war = no
-						}
-						remove_ideas = AUS_nationalities_fracture_crisis_3
-						remove_ideas = AUS_nationalities_fracture_crisis_2
-						remove_ideas = AUS_nationalities_fracture_crisis_1
-						if = { limit = { NOT = { has_idea = AUS_danubian_triumph } } add_ideas = AUS_danubian_triumph }
-						clr_country_flag = AUS_crisis_active
-						set_country_flag = AUS_crisis_resolved
-					}
+					remove_ideas = AUS_nationalities_fracture_crisis_3
+					remove_ideas = AUS_nationalities_fracture_crisis_2
+					remove_ideas = AUS_nationalities_fracture_crisis_1
+					if = { limit = { NOT = { has_idea = AUS_danubian_triumph } } add_ideas = AUS_danubian_triumph }
+					clr_country_flag = AUS_crisis_active
+					set_country_flag = AUS_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = ITA }
+				limit = { country_exists = ITA has_country_flag = ITA_crisis_active has_war = no }
 				ITA = {
-					if = {
-						limit = {
-							has_country_flag = ITA_crisis_active
-							has_war = no
-						}
-						remove_ideas = ITA_isonzo_attrition_crisis_3
-						remove_ideas = ITA_isonzo_attrition_crisis_2
-						remove_ideas = ITA_isonzo_attrition_crisis_1
-						if = { limit = { NOT = { has_idea = ITA_vittorio_veneto_triumph } } add_ideas = ITA_vittorio_veneto_triumph }
-						clr_country_flag = ITA_crisis_active
-						set_country_flag = ITA_crisis_resolved
-					}
+					remove_ideas = ITA_isonzo_attrition_crisis_3
+					remove_ideas = ITA_isonzo_attrition_crisis_2
+					remove_ideas = ITA_isonzo_attrition_crisis_1
+					if = { limit = { NOT = { has_idea = ITA_vittorio_veneto_triumph } } add_ideas = ITA_vittorio_veneto_triumph }
+					clr_country_flag = ITA_crisis_active
+					set_country_flag = ITA_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = TUR }
+				limit = { country_exists = TUR has_country_flag = TUR_crisis_active has_war = no }
 				TUR = {
-					if = {
-						limit = {
-							has_country_flag = TUR_crisis_active
-							has_war = no
-						}
-						remove_ideas = TUR_desert_supply_collapse_crisis_3
-						remove_ideas = TUR_desert_supply_collapse_crisis_2
-						remove_ideas = TUR_desert_supply_collapse_crisis_1
-						if = { limit = { NOT = { has_idea = TUR_anatolian_sovereignty_victory } } add_ideas = TUR_anatolian_sovereignty_victory }
-						clr_country_flag = TUR_crisis_active
-						set_country_flag = TUR_crisis_resolved
-					}
+					remove_ideas = TUR_desert_supply_collapse_crisis_3
+					remove_ideas = TUR_desert_supply_collapse_crisis_2
+					remove_ideas = TUR_desert_supply_collapse_crisis_1
+					if = { limit = { NOT = { has_idea = TUR_anatolian_sovereignty_victory } } add_ideas = TUR_anatolian_sovereignty_victory }
+					clr_country_flag = TUR_crisis_active
+					set_country_flag = TUR_crisis_resolved
 				}
 			}
 			if = {
-				limit = { country_exists = USA }
+				limit = { country_exists = USA has_country_flag = USA_crisis_active has_war = no }
 				USA = {
-					if = {
-						limit = {
-							has_country_flag = USA_crisis_active
-							has_war = no
-						}
-						remove_ideas = USA_mobilization_bottleneck_crisis_3
-						remove_ideas = USA_mobilization_bottleneck_crisis_2
-						remove_ideas = USA_mobilization_bottleneck_crisis_1
-						if = { limit = { NOT = { has_idea = USA_arsenal_of_democracy_unleashed } } add_ideas = USA_arsenal_of_democracy_unleashed }
-						clr_country_flag = USA_crisis_active
-						set_country_flag = USA_crisis_resolved
-					}
+					remove_ideas = USA_mobilization_bottleneck_crisis_3
+					remove_ideas = USA_mobilization_bottleneck_crisis_2
+					remove_ideas = USA_mobilization_bottleneck_crisis_1
+					if = { limit = { NOT = { has_idea = USA_arsenal_of_democracy_unleashed } } add_ideas = USA_arsenal_of_democracy_unleashed }
+					clr_country_flag = USA_crisis_active
+					set_country_flag = USA_crisis_resolved
 				}
 			}
 		}
