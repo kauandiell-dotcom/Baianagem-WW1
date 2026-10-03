@@ -142,8 +142,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				production_speed_artillery_factor = 0.20
-				army_artillery_attack_factor = 0.10
+				industrial_capacity_factory = 0.05
+				army_artillery_attack_factor = 0.15
 				army_artillery_defence_factor = 0.05
 			}
 		}
@@ -322,7 +322,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				defence = 0.15
-				entrenchment_speed_factor = 0.25
+				dig_in_speed_factor = 0.25
 				max_dig_in = 5
 				army_speed_factor = -0.05
 			}
@@ -390,7 +390,7 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				air_superiority_factor = 0.20
+				air_superiority_efficiency = 0.20
 				air_mission_efficiency = 0.15
 				air_accidents_factor = -0.15
 			}
@@ -454,7 +454,7 @@ ideas = {
 			modifier = {
 				max_dig_in = 5
 				dig_in_speed_factor = 0.20
-				army_defense_factor = 0.10
+				army_defence_factor = 0.10
 				army_speed_factor = -0.10
 			}
 		}
@@ -485,15 +485,6 @@ ideas = {
 				navy_screen_attack_factor = 0.10
 				navy_capital_ship_attack_factor = 0.10
 				naval_hit_chance = 0.05
-			}
-		}
-
-		GER_fokker_scourge_air_dominance = {
-			allowed = { always = no }
-			removal_cost = -1
-			modifier = {
-				air_superiority_detect_factor = 0.15
-				air_air_superiority_attack_factor = 0.15
 			}
 		}
 
@@ -549,7 +540,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				army_org_factor = 0.10
-				division_recovery_rate_factor = 0.15
+				recovery_rate_factor = 0.15
 				mobilization_laws_cost_factor = -0.50
 			}
 		}
@@ -573,26 +564,7 @@ ideas = {
 			}
 		}
 
-		GER_kaiserschlacht_idea = {
-			allowed = { always = no }
-			removal_cost = -1
-			modifier = {
-				army_attack_factor = 0.20
-				breakthrough_factor = 0.25
-				army_speed_factor = 0.15
-				org_loss_when_moving = -0.20
-			}
-		}
 
-		german_infiltration_assault_idea = {
-			allowed = { always = no }
-			removal_cost = -1
-			modifier = {
-				special_forces_attack_factor = 0.20
-				breakthrough_factor = 0.15
-				recon_factor = 0.20
-			}
-		}
 
 	}
 }
