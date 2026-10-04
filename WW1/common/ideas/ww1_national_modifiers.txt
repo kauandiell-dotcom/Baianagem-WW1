@@ -1,4 +1,4 @@
-﻿ideas = {
+ideas = {
 	country = {
 
 		# =======================================================
@@ -390,9 +390,7 @@
 			modifier = {
 				army_armor_attack_factor = 0.35
 				army_infantry_attack_factor = 0.15
-				army_bonus = {
-					breakthrough = 0.25
-				}
+				breakthrough_factor = 0.25
 			}
 		}
 
@@ -426,7 +424,7 @@
 			removal_cost = -1
 			modifier = {
 				army_artillery_attack_factor = 0.20
-				production_speed_artillery_factor = 0.15
+				industrial_capacity_factory = 0.05
 			}
 		}
 
@@ -641,7 +639,7 @@
 			removal_cost = -1
 			modifier = {
 				army_artillery_attack_factor = 0.25
-				production_speed_artillery_factor = 0.20
+				industrial_capacity_factory = 0.05
 			}
 		}
 
@@ -818,9 +816,7 @@
 			modifier = {
 				army_infantry_attack_factor = 0.30
 				army_speed_factor = 0.20
-				army_bonus = {
-					breakthrough = 0.30
-				}
+				breakthrough_factor = 0.30
 			}
 		}
 
@@ -1034,9 +1030,7 @@
 			removal_cost = -1
 			modifier = {
 				army_infantry_attack_factor = 0.30
-				army_bonus = {
-					breakthrough = 0.25
-				}
+				breakthrough_factor = 0.25
 			}
 		}
 
