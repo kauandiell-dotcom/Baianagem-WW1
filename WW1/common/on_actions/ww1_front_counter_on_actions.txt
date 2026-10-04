@@ -1,11 +1,23 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = ww1_front_counter_enabled
+				set_global_flag = ww1_front_counter_enabled
+				bww1_fc_scan_and_update_frontlines = yes
+			}
+		}
+	}
+
 	on_daily = {
 		effect = {
 			if = {
 				limit = {
 					is_ai = no
 					has_country_flag = ww1_front_counter_enabled
-					has_war = yes
 				}
 				bww1_fc_scan_and_update_frontlines = yes
 			}

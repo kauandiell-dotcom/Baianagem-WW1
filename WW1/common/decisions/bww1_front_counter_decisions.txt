@@ -9,7 +9,7 @@ bww1_front_counter_category = {
 
 		visible = {
 			is_ai = no
-			NOT = { has_global_flag = ww1_front_counter_enabled }
+			NOT = { has_country_flag = ww1_front_counter_enabled }
 		}
 
 		cost = 0
@@ -35,7 +35,7 @@ bww1_front_counter_category = {
 
 		visible = {
 			is_ai = no
-			has_global_flag = ww1_front_counter_enabled
+			has_country_flag = ww1_front_counter_enabled
 		}
 
 		cost = 0
@@ -56,12 +56,12 @@ bww1_front_counter_category = {
 		icon = generic_intelligence_operation
 
 		available = {
-			has_global_flag = ww1_front_counter_enabled
+			has_country_flag = ww1_front_counter_enabled
 		}
 
 		visible = {
 			is_ai = no
-			has_global_flag = ww1_front_counter_enabled
+			has_country_flag = ww1_front_counter_enabled
 		}
 
 		cost = 0
@@ -76,23 +76,22 @@ bww1_front_counter_category = {
 		}
 	}
 
-	# Dynamic On-Map Counter on Frontline States
-	bww1_fc_map_sector = {
+	# Dynamic On-Map Sector Badge - Friendly Side
+	bww1_fc_friendly_badge = {
+		name = bww1_fc_friendly_badge_name
 		icon = GFX_decision_infiltrate_state
 
-		state_trigger = any_controlled_state
+		state_target = yes
+		target_array = ROOT.bww1_frontline_friendly_states
 
 		target_trigger = {
-			FROM = {
-				has_variable = bww1_is_frontline_state
-			}
+			always = yes
 		}
 
 		on_map_mode = map_only
 
 		visible = {
-			has_global_flag = ww1_front_counter_enabled
-			has_war = yes
+			has_country_flag = ww1_front_counter_enabled
 		}
 
 		available = {
@@ -103,7 +102,47 @@ bww1_front_counter_category = {
 			always = yes
 		}
 
-		custom_cost_text = bww1_fc_map_numbers
+		custom_cost_text = bww1_fc_friendly_badge_cost
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			bww1_fc_scan_and_update_frontlines = yes
+		}
+	}
+
+	# Dynamic On-Map Sector Badge - Opposing Side
+	bww1_fc_enemy_badge = {
+		name = bww1_fc_enemy_badge_name
+		icon = GFX_decision_border_war
+
+		state_target = yes
+		target_array = ROOT.bww1_frontline_enemy_states
+
+		target_trigger = {
+			always = yes
+		}
+
+		on_map_mode = map_only
+
+		visible = {
+			has_country_flag = ww1_front_counter_enabled
+		}
+
+		available = {
+			always = yes
+		}
+
+		custom_cost_trigger = {
+			always = yes
+		}
+
+		custom_cost_text = bww1_fc_enemy_badge_cost
 
 		cost = 0
 		fire_only_once = no

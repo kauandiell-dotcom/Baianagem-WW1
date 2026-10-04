@@ -5,8 +5,11 @@ scripted_gui = {
 		window_name = "bww1_front_counter_window"
 		visible = {
 			has_country_flag = ww1_front_counter_enabled
-			has_war = yes
-			check_variable = { bww1_total_friendly_manpower > 0 }
+		}
+		effects = {
+			bww1_fc_refresh_btn = {
+				bww1_fc_scan_and_update_frontlines = yes
+			}
 		}
 	}
 
