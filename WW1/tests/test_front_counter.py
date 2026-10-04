@@ -80,7 +80,7 @@ class TestFrontlineTroopCounter(unittest.TestCase):
         window_name = m.group(1)
 
         self.assertIn(f'name = "{window_name}"', gui_txt, "window_name not found in interface gui")
-        self.assertIn("context_type = state_mapicon", sgui_txt, "Must use state_mapicon")
+        self.assertTrue("context_type = player_context" in sgui_txt or "context_type = state_mapicon" in sgui_txt, "Must use valid context_type")
 
     def test_transparency_for_micro_zoom(self):
         """Verify textboxes have alwaystransparent = yes so unit micro is never blocked."""

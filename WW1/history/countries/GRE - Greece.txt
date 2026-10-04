@@ -13,9 +13,11 @@ set_technology = {
 oob = "GRE_1936_generic"
 
 add_ideas = {
-	limited_conscription
+	extensive_conscription
 	GRE_hellenic_megali_ambition
 }
+
+set_manpower = 75000
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_1

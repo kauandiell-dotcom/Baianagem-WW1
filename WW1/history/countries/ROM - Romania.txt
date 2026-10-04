@@ -13,9 +13,11 @@ set_technology = {
 oob = "ROM_1936_generic"
 
 add_ideas = {
-	limited_conscription
+	extensive_conscription
 	ROM_danubian_granary_and_oil
 }
+
+set_manpower = 100000
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_1

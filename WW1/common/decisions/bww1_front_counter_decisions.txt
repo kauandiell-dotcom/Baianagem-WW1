@@ -75,4 +75,45 @@ bww1_front_counter_category = {
 			bww1_fc_scan_and_update_frontlines = yes
 		}
 	}
+
+	# Dynamic On-Map Counter on Frontline States
+	bww1_fc_map_sector = {
+		icon = GFX_decision_infiltrate_state
+
+		state_trigger = any_controlled_state
+
+		target_trigger = {
+			FROM = {
+				has_variable = bww1_is_frontline_state
+			}
+		}
+
+		on_map_mode = map_only
+
+		visible = {
+			has_global_flag = ww1_front_counter_enabled
+			has_war = yes
+		}
+
+		available = {
+			always = yes
+		}
+
+		custom_cost_trigger = {
+			always = yes
+		}
+
+		custom_cost_text = bww1_fc_map_numbers
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			bww1_fc_scan_and_update_frontlines = yes
+		}
+	}
 }

@@ -13,9 +13,11 @@ set_technology = {
 oob = "SER_1936_generic"
 
 add_ideas = {
-	limited_conscription
+	extensive_conscription
 	SER_balkan_defiance
 }
+
+set_manpower = 85000
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_1

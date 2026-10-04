@@ -1046,6 +1046,8 @@ ideas = {
 				army_core_defence_factor = 0.15
 				mobilization_speed = 0.20
 				army_morale_factor = 0.10
+				conscription = 0.03
+				conscription_factor = 0.35
 			}
 		}
 
@@ -1056,7 +1058,8 @@ ideas = {
 			modifier = {
 				army_org_factor = 0.10
 				army_morale_factor = 0.10
-				conscription_factor = 0.10
+				conscription = 0.03
+				conscription_factor = 0.35
 				training_time_army_factor = -0.10
 			}
 		}
@@ -1068,7 +1071,8 @@ ideas = {
 			modifier = {
 				army_core_defence_factor = 0.10
 				army_morale_factor = 0.10
-				conscription_factor = 0.05
+				conscription = 0.025
+				conscription_factor = 0.25
 			}
 		}
 
@@ -1081,6 +1085,8 @@ ideas = {
 				max_dig_in = 5
 				dig_in_speed_factor = 0.25
 				industrial_capacity_factory = 0.10
+				conscription = 0.025
+				conscription_factor = 0.30
 			}
 		}
 
@@ -1093,6 +1099,8 @@ ideas = {
 				fuel_gain_factor = 0.20
 				consumer_goods_factor = -0.03
 				monthly_population = 0.15
+				conscription = 0.03
+				conscription_factor = 0.30
 			}
 		}
 

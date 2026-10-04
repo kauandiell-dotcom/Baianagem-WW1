@@ -13,9 +13,11 @@ set_technology = {
 oob = "BUL_1936_generic"
 
 add_ideas = {
-	limited_conscription
+	extensive_conscription
 	BUL_prussia_of_the_balkans
 }
+
+set_manpower = 110000
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_1

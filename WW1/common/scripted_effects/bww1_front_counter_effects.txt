@@ -53,6 +53,19 @@ bww1_fc_scan_and_update_frontlines = {
 				bww1_fc_calculate_state_manpower = yes
 			}
 		}
+
+		# Accumulate total front manpower
+		set_variable = { bww1_total_friendly_manpower = 0 }
+		set_variable = { bww1_total_enemy_manpower = 0 }
+		every_controlled_state = {
+			limit = {
+				has_variable = bww1_is_frontline_state
+			}
+			ROOT = {
+				add_to_variable = { bww1_total_friendly_manpower = PREV.bww1_friendly_manpower }
+				add_to_variable = { bww1_total_enemy_manpower = PREV.bww1_enemy_manpower }
+			}
+		}
 	}
 }
 
