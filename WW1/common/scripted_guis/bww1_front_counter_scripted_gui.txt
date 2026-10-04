@@ -2,14 +2,9 @@ scripted_gui = {
 
 	bww1_front_counter_gui = {
 		context_type = player_context
-		window_name = "bww1_front_counter_window"
+		window_name = "bww1_front_counter_dummy_window"
 		visible = {
-			has_country_flag = ww1_front_counter_enabled
-		}
-		effects = {
-			bww1_fc_refresh_btn = {
-				bww1_fc_scan_and_update_frontlines = yes
-			}
+			always = no
 		}
 	}
 

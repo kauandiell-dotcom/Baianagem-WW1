@@ -1,4 +1,4 @@
-# Scripted Effects for Dynamic Frontline Troop Counter (Baianagem-WW1)
+# Scripted Effects for Dynamic Independent Multi-Front Troop Counter (Baianagem-WW1)
 
 bww1_fc_cleanup_frontlines = {
 	every_state = {
@@ -13,215 +13,117 @@ bww1_fc_cleanup_frontlines = {
 	}
 	clear_array = ROOT.bww1_frontline_friendly_states
 	clear_array = ROOT.bww1_frontline_enemy_states
-
-	set_variable = { ROOT.bww1_front_friendly_manpower = 0 }
-	set_variable = { ROOT.bww1_front_enemy_manpower = 0 }
-	set_variable = { ROOT.bww1_front_friendly_divs = 0 }
-	set_variable = { ROOT.bww1_front_enemy_divs = 0 }
 }
 
 bww1_fc_scan_and_update_frontlines = {
-	# 1. Clear previous frontline calculations
+	# 1. Clear previous frontline markings
 	bww1_fc_cleanup_frontlines = yes
 
-	# 2. Identify the active frontline adversary tag
-	# Scenario A: In active war, find neighboring hostile nation
+	# 2. Calculate average manpower per division for ROOT
+	set_temp_variable = { friendly_mp_per_div = ROOT.deployed_army_manpower_k }
+	multiply_temp_variable = { friendly_mp_per_div = 1000 }
 	if = {
 		limit = {
-			has_war = yes
+			check_variable = { ROOT.num_divisions > 0 }
 		}
-		every_other_country = {
-			limit = {
-				has_war_with = ROOT
-				any_controlled_state = {
-					any_neighbor_state = {
-						controller = { tag = ROOT }
-					}
-				}
-			}
-			ROOT = {
-				if = {
-					limit = { NOT = { has_variable = bww1_front_enemy_tag } }
-					set_variable = { bww1_front_enemy_tag = PREV }
-				}
-			}
-		}
+		divide_temp_variable = { friendly_mp_per_div = ROOT.num_divisions }
 	}
-
-	# Scenario B: Peacetime or no enemy found, find neighboring nation with active border presence
-	if = {
-		limit = {
-			OR = {
-				has_war = no
-				NOT = { has_variable = bww1_front_enemy_tag }
-			}
-		}
-		# Check foreign neighbors where friendly troops are stationed along the border
-		every_other_country = {
-			limit = {
-				NOT = { is_in_faction_with = ROOT }
-				NOT = { tag = ROOT }
-				any_controlled_state = {
-					any_neighbor_state = {
-						controller = { tag = ROOT }
-						OR = {
-							ROOT = { num_armies_in_state@PREV > 0 }
-							divisions_in_state = { state = PREV size > 0 }
-						}
-					}
-				}
-			}
-			ROOT = {
-				if = {
-					limit = { NOT = { has_variable = bww1_front_enemy_tag } }
-					set_variable = { bww1_front_enemy_tag = PREV }
-				}
-			}
-		}
-
-		# Fallback: Pick any sovereign bordering foreign neighbor
-		if = {
-			limit = { NOT = { has_variable = bww1_front_enemy_tag } }
-			every_other_country = {
-				limit = {
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { tag = ROOT }
-					any_controlled_state = {
-						any_neighbor_state = {
-							controller = { tag = ROOT }
-						}
-					}
-				}
-				ROOT = {
-					if = {
-						limit = { NOT = { has_variable = bww1_front_enemy_tag } }
-						set_variable = { bww1_front_enemy_tag = PREV }
-					}
-				}
-			}
-		}
+	else = {
+		set_temp_variable = { friendly_mp_per_div = 16000 }
 	}
+	clamp_temp_variable = { var = friendly_mp_per_div min = 5000 max = 22000 }
 
-	# 3. If an adversary front is active, compute real manpower and division metrics
-	if = {
+	# 3. Scan ALL controlled states of ROOT to detect every active border sector across all frontiers
+	every_controlled_state = {
 		limit = {
-			has_variable = bww1_front_enemy_tag
+			any_neighbor_state = {
+				NOT = { controller = { tag = ROOT } }
+				NOT = { controller = { is_in_faction_with = ROOT } }
+			}
 		}
 
-		# Compute real average manpower per division for ROOT
-		set_temp_variable = { friendly_mp_per_div = ROOT.deployed_army_manpower_k }
-		multiply_temp_variable = { friendly_mp_per_div = 1000 }
+		# Tag friendly state on the active frontline
+		set_variable = { bww1_is_frontline_state = 1 }
+		ROOT = {
+			add_to_array = { bww1_frontline_friendly_states = PREV }
+		}
+
+		# Count friendly divisions in this state
+		set_variable = { bww1_state_friendly_divs = 0 }
+		set_temp_variable = { t_divs = ROOT.num_armies_in_state@THIS }
 		if = {
 			limit = {
-				check_variable = { ROOT.num_divisions > 0 }
+				check_variable = { t_divs > 0 }
 			}
-			divide_temp_variable = { friendly_mp_per_div = ROOT.num_divisions }
+			set_variable = { bww1_state_friendly_divs = t_divs }
 		}
 		else = {
-			set_temp_variable = { friendly_mp_per_div = 16000 }
+			if = { limit = { controller = { divisions_in_state = { state = PREV size > 40 } } } set_variable = { bww1_state_friendly_divs = 42 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 30 } } } set_variable = { bww1_state_friendly_divs = 32 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 20 } } } set_variable = { bww1_state_friendly_divs = 22 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 15 } } } set_variable = { bww1_state_friendly_divs = 16 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 10 } } } set_variable = { bww1_state_friendly_divs = 11 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 7 } } } set_variable = { bww1_state_friendly_divs = 8 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 4 } } } set_variable = { bww1_state_friendly_divs = 5 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 2 } } } set_variable = { bww1_state_friendly_divs = 3 } }
+			else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 0 } } } set_variable = { bww1_state_friendly_divs = 1 } }
 		}
-		clamp_temp_variable = { var = friendly_mp_per_div min = 5000 max = 22000 }
 
-		# Compute real average manpower per division for Opponent
-		set_temp_variable = { enemy_mp_per_div = bww1_front_enemy_tag.deployed_army_manpower_k }
-		multiply_temp_variable = { enemy_mp_per_div = 1000 }
-		if = {
-			limit = {
-				check_variable = { bww1_front_enemy_tag.num_divisions > 0 }
-			}
-			divide_temp_variable = { enemy_mp_per_div = bww1_front_enemy_tag.num_divisions }
-		}
-		else = {
-			set_temp_variable = { enemy_mp_per_div = 14000 }
-		}
-		clamp_temp_variable = { var = enemy_mp_per_div min = 5000 max = 22000 }
+		# Calculate real friendly manpower stationed in this state
+		set_variable = { bww1_state_friendly_manpower = bww1_state_friendly_divs }
+		multiply_variable = { bww1_state_friendly_manpower = friendly_mp_per_div }
 
-		# Scan friendly frontline states bordering the adversary
-		every_controlled_state = {
+		# 4. Scan opposing neighbor states directly facing this sector
+		every_neighbor_state = {
 			limit = {
-				any_neighbor_state = {
-					controller = { tag = ROOT.bww1_front_enemy_tag }
-				}
+				NOT = { controller = { tag = ROOT } }
+				NOT = { controller = { is_in_faction_with = ROOT } }
+				NOT = { has_variable = bww1_is_frontline_state }
 			}
+
 			set_variable = { bww1_is_frontline_state = 1 }
 			ROOT = {
-				add_to_array = { bww1_frontline_friendly_states = PREV }
+				add_to_array = { bww1_frontline_enemy_states = PREV }
 			}
 
-			# Determine exact friendly division count in state
-			set_variable = { bww1_state_friendly_divs = 0 }
-			set_temp_variable = { t_divs = ROOT.num_armies_in_state@THIS }
+			# Calculate foreign controller's average manpower per division
+			set_temp_variable = { enemy_mp_per_div = controller.deployed_army_manpower_k }
+			multiply_temp_variable = { enemy_mp_per_div = 1000 }
 			if = {
 				limit = {
-					check_variable = { t_divs > 0 }
+					check_variable = { controller.num_divisions > 0 }
 				}
-				set_variable = { bww1_state_friendly_divs = t_divs }
+				divide_temp_variable = { enemy_mp_per_div = controller.num_divisions }
 			}
 			else = {
-				if = { limit = { controller = { divisions_in_state = { state = PREV size > 40 } } } set_variable = { bww1_state_friendly_divs = 42 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 30 } } } set_variable = { bww1_state_friendly_divs = 32 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 20 } } } set_variable = { bww1_state_friendly_divs = 22 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 15 } } } set_variable = { bww1_state_friendly_divs = 16 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 10 } } } set_variable = { bww1_state_friendly_divs = 11 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 7 } } } set_variable = { bww1_state_friendly_divs = 8 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 4 } } } set_variable = { bww1_state_friendly_divs = 5 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 2 } } } set_variable = { bww1_state_friendly_divs = 3 } }
-				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 0 } } } set_variable = { bww1_state_friendly_divs = 1 } }
+				set_temp_variable = { enemy_mp_per_div = 14000 }
 			}
+			clamp_temp_variable = { var = enemy_mp_per_div min = 5000 max = 22000 }
 
-			# Calculate real manpower for this state
-			set_variable = { bww1_state_friendly_manpower = bww1_state_friendly_divs }
-			multiply_variable = { bww1_state_friendly_manpower = friendly_mp_per_div }
-
-			ROOT = {
-				add_to_variable = { bww1_front_friendly_divs = PREV.bww1_state_friendly_divs }
-				add_to_variable = { bww1_front_friendly_manpower = PREV.bww1_state_friendly_manpower }
-			}
-		}
-
-		# Scan adversary frontline states bordering ROOT
-		var:bww1_front_enemy_tag = {
-			every_controlled_state = {
+			# Count enemy divisions in this foreign state
+			set_variable = { bww1_state_enemy_divs = 0 }
+			set_temp_variable = { t_edivs = controller.num_armies_in_state@THIS }
+			if = {
 				limit = {
-					any_neighbor_state = {
-						controller = { tag = ROOT }
-					}
+					check_variable = { t_edivs > 0 }
 				}
-				set_variable = { bww1_is_frontline_state = 1 }
-				ROOT = {
-					add_to_array = { bww1_frontline_enemy_states = PREV }
-				}
-
-				# Determine exact enemy division count in state
-				set_variable = { bww1_state_enemy_divs = 0 }
-				set_temp_variable = { t_edivs = PREV.num_armies_in_state@THIS }
-				if = {
-					limit = {
-						check_variable = { t_edivs > 0 }
-					}
-					set_variable = { bww1_state_enemy_divs = t_edivs }
-				}
-				else = {
-					if = { limit = { controller = { divisions_in_state = { state = PREV size > 40 } } } set_variable = { bww1_state_enemy_divs = 42 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 30 } } } set_variable = { bww1_state_enemy_divs = 32 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 20 } } } set_variable = { bww1_state_enemy_divs = 22 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 15 } } } set_variable = { bww1_state_enemy_divs = 16 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 10 } } } set_variable = { bww1_state_enemy_divs = 11 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 7 } } } set_variable = { bww1_state_enemy_divs = 8 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 4 } } } set_variable = { bww1_state_enemy_divs = 5 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 2 } } } set_variable = { bww1_state_enemy_divs = 3 } }
-					else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 0 } } } set_variable = { bww1_state_enemy_divs = 1 } }
-				}
-
-				# Calculate real manpower for this state
-				set_variable = { bww1_state_enemy_manpower = bww1_state_enemy_divs }
-				multiply_variable = { bww1_state_enemy_manpower = enemy_mp_per_div }
-
-				ROOT = {
-					add_to_variable = { bww1_front_enemy_divs = PREV.bww1_state_enemy_divs }
-					add_to_variable = { bww1_front_enemy_manpower = PREV.bww1_state_enemy_manpower }
-				}
+				set_variable = { bww1_state_enemy_divs = t_edivs }
 			}
+			else = {
+				if = { limit = { controller = { divisions_in_state = { state = PREV size > 40 } } } set_variable = { bww1_state_enemy_divs = 42 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 30 } } } set_variable = { bww1_state_enemy_divs = 32 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 20 } } } set_variable = { bww1_state_enemy_divs = 22 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 15 } } } set_variable = { bww1_state_enemy_divs = 16 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 10 } } } set_variable = { bww1_state_enemy_divs = 11 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 7 } } } set_variable = { bww1_state_enemy_divs = 8 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 4 } } } set_variable = { bww1_state_enemy_divs = 5 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 2 } } } set_variable = { bww1_state_enemy_divs = 3 } }
+				else_if = { limit = { controller = { divisions_in_state = { state = PREV size > 0 } } } set_variable = { bww1_state_enemy_divs = 1 } }
+			}
+
+			# Calculate real enemy manpower stationed in this state
+			set_variable = { bww1_state_enemy_manpower = bww1_state_enemy_divs }
+			multiply_variable = { bww1_state_enemy_manpower = enemy_mp_per_div }
 		}
 	}
 }

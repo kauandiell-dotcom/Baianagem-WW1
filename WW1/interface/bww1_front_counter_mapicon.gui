@@ -1,126 +1,87 @@
 guiTypes = {
 
+	# Dummy window kept completely inactive and off-screen to avoid any screen HUD panels
 	containerWindowType = {
-		name = "bww1_front_counter_window"
-		position = { x = -260 y = 80 }
-		size = { width = 520 height = 110 }
-		orientation = center_up
-		origo = upper_left
-		moveable = yes
+		name = "bww1_front_counter_dummy_window"
+		position = { x = -9999 y = -9999 }
+		size = { width = 1 height = 1 }
+		alwaystransparent = yes
+	}
+
+	# On-Map Frontline Troop Numbers:
+	# Removes circular pins, buttons, and backgrounds so ONLY the giant 36pt bold white numbers render on the 3D map states
+	containerWindowType = {
+		name = "decision_mapicon_item"
+		position = { x=0 y=0 }
+		size = { width = 40 height = 40 }
 		clipping = no
 
-		# Background frame - authentic dark iron plate with gold/bronze border
-		background = {
-			name = "bww1_fc_bg"
-			quadTextureSprite = "GFX_tiled_window_1b_thin_border"
-		}
-
-		# Header Title
-		instantTextboxType = {
-			name = "bww1_fc_header_title"
-			position = { x = 20 y = 12 }
-			font = "hoi_18mbs"
-			text = "bww1_fc_header_text"
-			maxWidth = 460
-			maxHeight = 24
-			format = center
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		# Left Side: Friendly Country & Troops
-		instantTextboxType = {
-			name = "bww1_fc_friendly_name"
-			position = { x = 20 y = 34 }
-			font = "hoi_16mbs"
-			text = "bww1_fc_friendly_name_text"
-			maxWidth = 200
-			maxHeight = 20
-			format = left
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		instantTextboxType = {
-			name = "bww1_fc_friendly_box"
-			position = { x = 20 y = 50 }
-			font = "hoi_36header"
-			text = "bww1_fc_friendly_val"
-			maxWidth = 210
-			maxHeight = 36
-			format = left
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		instantTextboxType = {
-			name = "bww1_fc_friendly_divs_box"
-			position = { x = 20 y = 84 }
-			font = "hoi_16mbs"
-			text = "bww1_fc_friendly_divs_val"
-			maxWidth = 200
-			maxHeight = 20
-			format = left
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		# Center: VS Clash
-		instantTextboxType = {
-			name = "bww1_fc_divider_box"
-			position = { x = 230 y = 52 }
-			font = "hoi_30header"
-			text = "bww1_fc_divider_val"
-			maxWidth = 60
-			maxHeight = 35
-			format = center
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		# Right Side: Opposing Country & Troops
-		instantTextboxType = {
-			name = "bww1_fc_enemy_name"
-			position = { x = 300 y = 34 }
-			font = "hoi_16mbs"
-			text = "bww1_fc_enemy_name_text"
-			maxWidth = 200
-			maxHeight = 20
-			format = right
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		instantTextboxType = {
-			name = "bww1_fc_enemy_box"
-			position = { x = 290 y = 50 }
-			font = "hoi_36header"
-			text = "bww1_fc_enemy_val"
-			maxWidth = 210
-			maxHeight = 36
-			format = right
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		instantTextboxType = {
-			name = "bww1_fc_enemy_divs_box"
-			position = { x = 300 y = 84 }
-			font = "hoi_16mbs"
-			text = "bww1_fc_enemy_divs_val"
-			maxWidth = 200
-			maxHeight = 20
-			format = right
-			fixedsize = yes
-			alwaystransparent = yes
-		}
-
-		# Instant Refresh Button
 		buttonType = {
-			name = "bww1_fc_refresh_btn"
-			quadTextureSprite = "GFX_sort_up"
-			position = { x = 485 y = 12 }
-			pdx_tooltip = "bww1_fc_refresh_counter_desc"
+			name = "background_btn"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			position = { x=0 y=0 }
+		}
+
+		iconType = {
+			name = "decision_icon"
+			spriteType = "GFX_tiled_window_transparent"
+			position = { x=0 y=0 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "progress_good"
+			spriteType = "GFX_tiled_window_transparent"
+			position = { x=0 y=0 }
+		}
+
+		iconType = {
+			name = "progress_bad"
+			spriteType = "GFX_tiled_window_transparent"
+			position = { x=0 y=0 }
+		}
+
+		containerWindowType = {
+			name = "cost_container"
+			position = { x = 0 y = 0 }
+			orientation = center
+			origo = center
+			clipping = no
+
+			background = {
+				name = "cost_bg"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+			}
+
+			positionType = {
+				name = "cost_text_horizontal_margin"
+				position = { x = 11 y = 11 }
+			}
+
+			instantTextboxType = {
+				name = "cost_text"
+				font = "hoi_36header"
+				position = { x = -150 y = -20 }
+				maxWidth = 300
+				maxHeight = 40
+				orientation = center
+				vertical_alignment = center
+				format = center
+				alwaystransparent = yes
+			}
+		}
+
+		iconType = {
+			name = "target_flag"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			position = { x=0 y=0 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "timer_icon"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			position = { x=0 y=0 }
 		}
 	}
 
