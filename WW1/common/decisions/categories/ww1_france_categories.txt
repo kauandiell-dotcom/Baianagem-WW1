@@ -1,0 +1,46 @@
+# =========================================================================
+# FRENCH REPUBLIC DECISION CATEGORIES
+# =========================================================================
+
+FRA_third_republic_politics = {
+	icon = generic_democracy
+	picture = decision_cat_generic
+	priority = 90
+	allowed = { original_tag = FRA }
+}
+
+FRA_western_front_operations = {
+	icon = generic_assault
+	picture = decision_cat_generic
+	priority = 95
+	allowed = { original_tag = FRA }
+}
+
+FRA_defence_of_verdun = {
+	icon = generic_defense
+	picture = decision_cat_generic
+	priority = 98
+	allowed = { original_tag = FRA }
+}
+
+FRA_mutinies_crisis_management = {
+	icon = generic_military_police
+	picture = decision_cat_generic
+	priority = 99
+	allowed = { original_tag = FRA }
+}
+
+FRA_war_economy_and_munitions = {
+	icon = generic_industry
+	picture = decision_cat_generic
+	priority = 85
+	allowed = { original_tag = FRA }
+}
+
+FRA_entente_diplomacy = {
+	icon = generic_diplomacy
+	picture = decision_cat_generic
+	priority = 80
+	allowed = { original_tag = FRA }
+}
+

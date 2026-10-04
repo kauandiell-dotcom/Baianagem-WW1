@@ -1,0 +1,493 @@
+# Data for French Narrative Events
+# Multilateral crisis chains, historical turning points, and battle dispatches
+
+FRENCH_EVENTS_CODE = '''# =========================================================================
+# FRENCH REPUBLIC — EVENT NARRATIVE ENGINE (1911–1918)
+# =========================================================================
+
+add_namespace = ww1_france
+
+# -------------------------------------------------------------------------
+# ww1_france.1: The Agadir Crisis — German Gunboat Panther Arrives
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.1
+	title = ww1_france.1.t
+	desc = ww1_france.1.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Stand firm & seek British support (Historical)
+	option = {
+		name = ww1_france.1.a
+		ai_chance = { base = 90 }
+		add_political_power = 25
+		add_war_support = 0.05
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { country_event = { id = ww1_france.2 days = 2 } }
+		}
+	}
+
+	# Option B: Seek bilateral settlement with Germany directly
+	option = {
+		name = ww1_france.1.b
+		ai_chance = { base = 10 }
+		add_political_power = -25
+		if = {
+			limit = { country_exists = GER }
+			GER = { country_event = { id = ww1_france.3 days = 2 } }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.2: British Reaction to Agadir (Mansion House Speech)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.2
+	title = ww1_france.2.t
+	desc = ww1_france.2.d
+	picture = GFX_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.2.a
+		add_war_support = 0.05
+		FRA = {
+			country_event = { id = ww1_france.4 days = 2 }
+			add_opinion_modifier = {
+				target = ENG
+				modifier = FRA_entente_support_opinion
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.4: Franco-German Accord on Morocco & Congo
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.4
+	title = ww1_france.4.t
+	desc = ww1_france.4.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Sign the Treaty (Cede Congo territory for Morocco Protectorate)
+	option = {
+		name = ww1_france.4.a
+		ai_chance = { base = 95 }
+		add_political_power = 50
+		set_country_flag = FRA_agadir_resolved_diplomatically
+		if = {
+			limit = { country_exists = GER }
+			GER = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = FRA_colonial_settlement_opinion
+				}
+			}
+		}
+	}
+
+	# Option B: Refuse any territorial cession to Germany
+	option = {
+		name = ww1_france.4.b
+		ai_chance = { base = 5 }
+		add_war_support = 0.10
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.10: The Treaty of Fez — French Protectorate in Morocco
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.10
+	title = ww1_france.10.t
+	desc = ww1_france.10.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.10.a
+		add_political_power = 50
+		add_stability = 0.05
+		set_country_flag = FRA_protectorate_of_morocco_established
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.20: The Three-Year Law Debate of 1913
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.20
+	title = ww1_france.20.t
+	desc = ww1_france.20.d
+	picture = GFX_report_event_generic_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Pass the Three-Year Law firmly (Historical)
+	option = {
+		name = ww1_france.20.a
+		ai_chance = { base = 85 }
+		swap_ideas = {
+			remove_idea = FRA_demographic_stagnation
+			add_idea = FRA_three_year_conscription
+		}
+		add_stability = -0.05
+		add_war_support = 0.10
+		set_country_flag = FRA_three_year_law_passed
+	}
+
+	# Option B: Compromise on Two-and-a-half Years
+	option = {
+		name = ww1_france.20.b
+		ai_chance = { base = 15 }
+		add_stability = 0.05
+		add_manpower = 75000
+		set_country_flag = FRA_two_half_year_compromise
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.30: Presidential Election of 1913
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.30
+	title = ww1_france.30.t
+	desc = ww1_france.30.d
+	picture = GFX_report_event_generic_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Raymond Poincaré elected President (Historical)
+	option = {
+		name = ww1_france.30.a
+		ai_chance = { base = 85 }
+		swap_ideas = {
+			remove_idea = FRA_third_republic_instability
+			add_idea = FRA_poincare_national_firmness
+		}
+		promote_character = FRA_raymond_poincare
+		set_country_flag = FRA_poincare_president
+	}
+
+	# Option B: Jules Pams elected President (Left-Radical Moderation)
+	option = {
+		name = ww1_france.30.b
+		ai_chance = { base = 15 }
+		add_stability = 0.10
+		add_war_support = -0.05
+		promote_character = FRA_jules_pams
+		set_country_flag = FRA_pams_president
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.40: The Assassination of Jean Jaurès (July 31, 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.40
+	title = ww1_france.40.t
+	desc = ww1_france.40.d
+	picture = GFX_report_event_gathering_protest
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.40.a
+		add_war_support = 0.10
+		add_stability = -0.05
+		set_country_flag = FRA_jaures_martyrdom
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.41: General Mobilization Order (August 1, 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.41
+	title = ww1_france.41.t
+	desc = ww1_france.41.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.41.a
+		swap_ideas = {
+			remove_idea = FRA_wound_of_1870
+			add_idea = FRA_union_sacree_spirit
+		}
+		add_war_support = 0.20
+		add_stability = 0.10
+		set_country_flag = FRA_mobilization_complete
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.50: Execution of Plan XVII
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.50
+	title = ww1_france.50.t
+	desc = ww1_france.50.d
+	picture = GFX_report_event_soldiers_marching
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.50.a
+		set_country_flag = FRA_plan_xvii_launched
+		add_timed_idea = {
+			idea = FRA_elan_vital_offensive_burst
+			days = 25
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.51: Plan XVII Triumphant — Alsace & Lorraine Liberated!
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.51
+	title = ww1_france.51.t
+	desc = ww1_france.51.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.51.a
+		add_stability = 0.15
+		add_war_support = 0.15
+		add_political_power = 100
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.52: Disaster in the Frontiers — The Doctrine Rebuked
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.52
+	title = ww1_france.52.t
+	desc = ww1_france.52.d
+	picture = GFX_report_event_soldier_dead
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.52.a
+		swap_ideas = {
+			remove_idea = FRA_elan_vital_doctrine
+			add_idea = FRA_lessons_of_the_frontiers
+		}
+		add_stability = -0.10
+		add_war_support = -0.05
+		set_country_flag = FRA_frontiers_failed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.61: Les Taxis de la Marne (September 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.61
+	title = ww1_france.61.t
+	desc = ww1_france.61.d
+	picture = GFX_report_event_trucks_military
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.61.a
+		add_war_support = 0.10
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.71: The Battle of Verdun — "Ils ne passeront pas!"
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.71
+	title = ww1_france.71.t
+	desc = ww1_france.71.d
+	picture = GFX_report_event_artillery_fire
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.71.a
+		add_war_support = 0.15
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.81: The Nivelle Catastrophe at Chemin des Dames (1917)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.81
+	title = ww1_france.81.t
+	desc = ww1_france.81.d
+	picture = GFX_report_event_soldier_dead
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.81.a
+		add_stability = -0.20
+		add_war_support = -0.15
+		add_ideas = FRA_trench_mutiny_crisis_3
+		set_country_flag = FRA_crisis_active
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.91: General Pétain Pacifies the French Army
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.91
+	title = ww1_france.91.t
+	desc = ww1_france.91.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.91.a
+		add_stability = 0.05
+		add_political_power = 25
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.92: Army Discipline Restored via Elastic Defense
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.92
+	title = ww1_france.92.t
+	desc = ww1_france.92.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.92.a
+		add_stability = 0.10
+		add_war_support = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.101: Clemenceau "Le Tigre" Takes Power (November 1917)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.101
+	title = ww1_france.101.t
+	desc = ww1_france.101.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.101.a
+		swap_ideas = {
+			remove_idea = FRA_union_sacree_spirit
+			add_idea = FRA_clemenceau_iron_resolve
+		}
+		promote_character = FRA_georges_clemenceau
+		set_country_flag = FRA_clemenceau_premier
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.111: Arrival of General Pershing & The American Doughboys
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.111
+	title = ww1_france.111.t
+	desc = ww1_france.111.d
+	picture = GFX_report_event_us_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.111.a
+		add_war_support = 0.15
+		add_stability = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.131: The Armistice of Compiègne (November 11, 1918)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.131
+	title = ww1_france.131.t
+	desc = ww1_france.131.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.131.a
+		add_stability = 0.20
+		add_war_support = 0.10
+		set_country_flag = FRA_armistice_signed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.132: The Reintegration of Alsace and Lorraine
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.132
+	title = ww1_france.132.t
+	desc = ww1_france.132.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.132.a
+		swap_ideas = {
+			remove_idea = FRA_clemenceau_iron_resolve
+			add_idea = FRA_revanche_accomplished
+		}
+		transfer_state = 28 # Alsace
+		transfer_state = 42 # Lorraine
+		add_core_state = 28
+		add_core_state = 42
+		add_political_power = 150
+	}
+}
+'''
