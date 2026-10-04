@@ -492,17 +492,21 @@ def main():
 
     print("=" * 80)
 
-    # Now execute test_runner.py
+    # Now execute test_runner.py and test_front_counter.py
     print("\n[*] Executing Master Automated Test Suite (tests/test_runner.py)...")
     import subprocess
     cmd = [sys.executable, os.path.join(TESTS_DIR, "test_runner.py")]
     res = subprocess.run(cmd, cwd=MOD_ROOT)
 
-    if total_issues == 0 and res.returncode == 0:
+    print("\n[*] Executing Frontline Troop Counter Test Suite (tests/test_front_counter.py)...")
+    fc_cmd = [sys.executable, os.path.join(TESTS_DIR, "test_front_counter.py")]
+    fc_res = subprocess.run(fc_cmd, cwd=MOD_ROOT)
+
+    if total_issues == 0 and res.returncode == 0 and fc_res.returncode == 0:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (Total QA Issues: {total_issues}, Test Runner Code: {res.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (Total QA Issues: {total_issues}, Test Runner Code: {res.returncode}, FC Code: {fc_res.returncode}) <<<\n")
         sys.exit(1)
 
 

@@ -1,0 +1,192 @@
+# Scripted Effects for Frontline Troop Counter (Baianagem-WW1)
+
+bww1_fc_cleanup_frontlines = {
+	every_state = {
+		limit = {
+			has_variable = bww1_is_frontline_state
+		}
+		clear_variable = bww1_is_frontline_state
+		clear_variable = bww1_friendly_manpower
+		clear_variable = bww1_enemy_manpower
+		clear_variable = bww1_friendly_divs
+		clear_variable = bww1_enemy_divs
+		clear_variable = bww1_intel_level
+	}
+	clear_array = ROOT.bww1_frontline_states_array
+}
+
+bww1_fc_scan_and_update_frontlines = {
+	# Clear previously tagged frontline states
+	bww1_fc_cleanup_frontlines = yes
+
+	if = {
+		limit = {
+			has_war = yes
+		}
+
+		# Scan friendly states controlled directly by player
+		every_controlled_state = {
+			limit = {
+				any_neighbor_state = {
+					controller = {
+						has_war_with = ROOT
+					}
+				}
+			}
+			set_variable = { bww1_is_frontline_state = 1 }
+			add_to_array = {
+				array = ROOT.bww1_frontline_states_array
+				value = THIS
+			}
+			bww1_fc_calculate_state_manpower = yes
+		}
+
+		# Scan states controlled by active coalition allies participating in this war
+		every_allied_country = {
+			limit = {
+				has_war_together_with = ROOT
+			}
+			every_controlled_state = {
+				limit = {
+					any_neighbor_state = {
+						controller = {
+							has_war_with = ROOT
+						}
+					}
+				}
+				set_variable = { bww1_is_frontline_state = 1 }
+				add_to_array = {
+					array = ROOT.bww1_frontline_states_array
+					value = THIS
+				}
+				bww1_fc_calculate_state_manpower = yes
+			}
+		}
+	}
+}
+
+bww1_fc_calculate_state_manpower = {
+	save_event_target_as = bww1_target_sector_state
+
+	# 1. Initialize friendly division count
+	set_variable = { bww1_friendly_divs = 0 }
+
+	# Troops from ROOT in this state
+	set_temp_variable = { t_friendly = ROOT.num_armies_in_state@event_target:bww1_target_sector_state }
+	add_to_variable = { bww1_friendly_divs = t_friendly }
+
+	# Troops from co-belligerent allies in this state
+	ROOT = {
+		every_allied_country = {
+			limit = {
+				has_war_together_with = ROOT
+			}
+			set_temp_variable = { t_ally = num_armies_in_state@event_target:bww1_target_sector_state }
+			event_target:bww1_target_sector_state = {
+				add_to_variable = { bww1_friendly_divs = t_ally }
+			}
+		}
+	}
+
+	# Convert friendly divisions to manpower (average 16,500 soldiers per division in WW1 mod)
+	set_variable = { bww1_friendly_manpower = bww1_friendly_divs }
+	multiply_variable = { bww1_friendly_manpower = 16500 }
+
+	# 2. Opposing enemy forces across the frontline
+	set_variable = { bww1_enemy_divs = 0 }
+	set_variable = { bww1_intel_level = 1 } # 1 = Low, 2 = Medium, 3 = High
+
+	every_neighbor_state = {
+		limit = {
+			controller = {
+				has_war_with = ROOT
+			}
+		}
+		save_event_target_as = bww1_enemy_neighbor_state
+
+		controller = {
+			save_event_target_as = bww1_enemy_controller
+			set_temp_variable = { t_enemy = num_armies_in_state@event_target:bww1_enemy_neighbor_state }
+			event_target:bww1_target_sector_state = {
+				add_to_variable = { bww1_enemy_divs = t_enemy }
+			}
+
+			# Evaluate army intelligence against opposing controller
+			if = {
+				limit = {
+					ROOT = { army_intel@PREV > 0.60 }
+				}
+				event_target:bww1_target_sector_state = {
+					set_variable = { bww1_intel_level = 3 }
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = { army_intel@PREV > 0.25 }
+				}
+				event_target:bww1_target_sector_state = {
+					if = {
+						limit = {
+							check_variable = { bww1_intel_level < 2 }
+						}
+						set_variable = { bww1_intel_level = 2 }
+					}
+				}
+			}
+
+			# Enemy's coalition allies stationed in that border state
+			every_allied_country = {
+				limit = {
+					has_war_together_with = event_target:bww1_enemy_controller
+				}
+				set_temp_variable = { t_enemy_ally = num_armies_in_state@event_target:bww1_enemy_neighbor_state }
+				event_target:bww1_target_sector_state = {
+					add_to_variable = { bww1_enemy_divs = t_enemy_ally }
+				}
+			}
+		}
+	}
+
+	# 3. Calculate estimated enemy manpower with fog of war modulation
+	set_variable = { bww1_enemy_manpower = bww1_enemy_divs }
+	multiply_variable = { bww1_enemy_manpower = 16500 }
+
+	# Modulate based on intelligence level to avoid exact unit leaks
+	if = {
+		limit = {
+			check_variable = { bww1_intel_level = 1 }
+			check_variable = { bww1_enemy_manpower > 0 }
+		}
+		# Low intel: round to nearest 10,000
+		divide_variable = { bww1_enemy_manpower = 10000 }
+		round_variable = bww1_enemy_manpower
+		multiply_variable = { bww1_enemy_manpower = 10000 }
+		if = {
+			limit = {
+				check_variable = { bww1_enemy_manpower < 10000 }
+				check_variable = { bww1_enemy_divs > 0 }
+			}
+			set_variable = { bww1_enemy_manpower = 15000 }
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { bww1_intel_level = 2 }
+			check_variable = { bww1_enemy_manpower > 0 }
+		}
+		# Medium intel: round to nearest 5,000
+		divide_variable = { bww1_enemy_manpower = 5000 }
+		round_variable = bww1_enemy_manpower
+		multiply_variable = { bww1_enemy_manpower = 5000 }
+	}
+	else_if = {
+		limit = {
+			check_variable = { bww1_intel_level = 3 }
+			check_variable = { bww1_enemy_manpower > 0 }
+		}
+		# High intel: round to nearest 1,000
+		divide_variable = { bww1_enemy_manpower = 1000 }
+		round_variable = bww1_enemy_manpower
+		multiply_variable = { bww1_enemy_manpower = 1000 }
+	}
+}

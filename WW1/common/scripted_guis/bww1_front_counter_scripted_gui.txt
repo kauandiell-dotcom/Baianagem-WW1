@@ -1,0 +1,19 @@
+scripted_gui = {
+
+	bww1_front_counter_gui = {
+		context_type = state_mapicon
+		window_name = "bww1_front_counter_window"
+		mapicon_targets = {
+			target_array = ROOT.bww1_frontline_states_array
+		}
+		visible = {
+			ROOT = { has_country_flag = ww1_front_counter_enabled }
+			has_variable = bww1_is_frontline_state
+			OR = {
+				check_variable = { bww1_friendly_manpower > 0 }
+				check_variable = { bww1_enemy_manpower > 0 }
+			}
+		}
+	}
+
+}

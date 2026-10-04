@@ -1,0 +1,76 @@
+bww1_front_counter_category = {
+
+	bww1_fc_enable_counter = {
+		icon = generic_prepare_civil_war
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = ww1_front_counter_enabled }
+		}
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = ww1_front_counter_enabled
+			bww1_fc_scan_and_update_frontlines = yes
+		}
+	}
+
+	bww1_fc_disable_counter = {
+		icon = generic_civil_support
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			is_ai = no
+			has_country_flag = ww1_front_counter_enabled
+		}
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			clr_country_flag = ww1_front_counter_enabled
+			bww1_fc_cleanup_frontlines = yes
+		}
+	}
+
+	bww1_fc_refresh_counter = {
+		icon = generic_intelligence_operation
+
+		available = {
+			has_country_flag = ww1_front_counter_enabled
+		}
+
+		visible = {
+			is_ai = no
+			has_country_flag = ww1_front_counter_enabled
+		}
+
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			bww1_fc_scan_and_update_frontlines = yes
+		}
+	}
+}
