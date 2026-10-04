@@ -464,6 +464,158 @@ ideas = {
 			}
 		}
 
+		SOV_goremykin_reactionary_cabinet = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.15
+				consumer_goods_factor = 0.03
+				stability_factor = -0.05
+			}
+		}
+
+		SOV_progressive_coalition_cabinet = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				stability_factor = 0.05
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+
+		SOV_petrograd_soviet_order_no_1 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				command_power_gain = -0.20
+				org_loss_when_moving = 0.10
+				army_morale_factor = -0.15
+			}
+		}
+
+		SOV_land_socialization_decree = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				consumer_goods_factor = -0.05
+				conscription_factor = 0.05
+			}
+		}
+
+		SOV_all_russian_cheka = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				subversive_activites_upkeep = -0.30
+				foreign_subversive_activites = -0.30
+				drift_defence_factor = 0.50
+				enemy_operative_detection_chance_factor = 0.25
+				stability_factor = 0.10
+			}
+		}
+
+		SOV_declaration_rights_peoples = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				compliance_growth_focus = 0.20
+				resistance_growth = -0.15
+				non_core_manpower = 0.05
+			}
+		}
+
+		SOV_black_hundreds_paramilitaries = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.35
+				conscription_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		SOV_divine_autocracy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.10
+				subject_tribute_factor = 0.25
+			}
+		}
+
+		SOV_imperial_secret_police = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				subversive_activites_upkeep = -0.25
+				stability_factor = 0.10
+				drift_defence_factor = 0.40
+			}
+		}
+
+		SOV_undivided_autocratic_will = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.20
+				stability_factor = -0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_sacred_romanov_autocracy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				political_power_factor = 0.15
+				conscription_factor = 0.05
+			}
+		}
+
+		SOV_grain_procurement_system = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				factory_output_factor = 0.05
+			}
+		}
+
+		SOV_defender_of_orthodox_christendom = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				opinion_gain_monthly_factor = 0.25
+				generate_wargoal_tension = -0.20
+				army_morale_factor = 0.05
+			}
+		}
+
+		SOV_shield_of_the_slavs = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_against_major_factor = 0.05
+				reinforce_rate = 0.15
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_pan_slavic_patronage = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.10
+				army_core_attack_factor = 0.05
+				send_volunteers_tension = -0.50
+			}
+		}
+
 	}
 }
+
 

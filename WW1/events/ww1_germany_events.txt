@@ -393,6 +393,8 @@ country_event = {
 # -------------------------------------------------------------------------
 # ww1_germany_events.19: The Liman von Sanders Military Mission
 # -------------------------------------------------------------------------
+# ww1_germany_events.19: The Secret Ottoman-German Alliance (August 1914)
+# -------------------------------------------------------------------------
 country_event = {
 	id = ww1_germany_events.19
 	title = ww1_germany_events.19.t
@@ -401,14 +403,41 @@ country_event = {
 
 	is_triggered_only = yes
 
+	# Option A: Ratify the Alliance with Germany & Join the Central Powers! (Historical)
 	option = {
 		name = ww1_germany_events.19.a
+		ai_chance = { base = 95 }
+		if = {
+			limit = { country_exists = GER }
+			GER = {
+				add_to_faction = TUR
+			}
+		}
 		add_opinion_modifier = {
 			target = GER
 			modifier = ger_berlin_baghdad_railway_op
 		}
-		army_experience = 15
-		add_political_power = 30
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 10000
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment_1
+			amount = 150
+		}
+		army_experience = 25
+		add_political_power = 60
+		add_war_support = 0.15
+		set_country_flag = ottoman_joined_central_powers
+	}
+
+	# Option B: Maintain Strict Armed Neutrality (Alt-History)
+	option = {
+		name = ww1_germany_events.19.b
+		ai_chance = { base = 5 }
+		add_stability = 0.10
+		add_war_support = -0.15
+		add_political_power = 40
 	}
 }
 

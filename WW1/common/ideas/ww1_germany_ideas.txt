@@ -587,5 +587,49 @@ ideas = {
 			}
 		}
 
+		# 21. Wartime Rationing (Kriegsbrot)
+		GER_wartime_rationing_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		# 22. Kaiserliche Weltmacht (Imperial Hegemony)
+		GER_kaiserliche_weltmacht = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.10
+				army_core_defence_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		# 23. Democratic Franchise Reform
+		GER_democratic_franchise_reform = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				conscription_factor = 0.10
+				stability_factor = 0.05
+			}
+		}
+
+		# 24. Democratic Legitimacy
+		GER_democratic_legitimacy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.10
+				research_speed_factor = 0.05
+			}
+		}
+
 	}
 }
+

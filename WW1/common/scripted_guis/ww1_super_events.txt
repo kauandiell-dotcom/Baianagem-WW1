@@ -1,0 +1,16 @@
+scripted_gui = {
+
+	ww1_super_event_outbreak = {
+		context_type = player_context
+		window_name = "ww1_super_event_outbreak_window"
+		visible = {
+			has_global_flag = ww1_super_event_outbreak_active
+		}
+		effects = {
+			dismiss_button_click = {
+				clr_global_flag = ww1_super_event_outbreak_active
+			}
+		}
+	}
+
+}

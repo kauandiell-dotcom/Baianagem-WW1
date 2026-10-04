@@ -1,0 +1,130 @@
+add_namespace = ww1_outbreak
+add_namespace = ww1_news
+
+# =========================================================================
+# 1. THE ASSASSINATION OF ARCHDUKE FRANZ FERDINAND (SARAJEVO, JUNE 28, 1914)
+# =========================================================================
+
+news_event = {
+	id = ww1_news.1914_sarajevo_assassination
+	title = ww1_news.1914_sarajevo_assassination.t
+	desc = ww1_news.1914_sarajevo_assassination.d
+	picture = GFX_report_event_generic_conference
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1914.6.27
+		NOT = { has_global_flag = sarajevo_assassination_occurred }
+		country_exists = AUS
+		country_exists = SER
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = sarajevo_assassination_occurred
+		# Trigger Austrian July Crisis reaction
+		AUS = {
+			country_event = { id = ww1_diplomacy.1 days = 3 }
+		}
+	}
+
+	option = {
+		name = ww1_news.1914_sarajevo_assassination.a
+		trigger = { tag = AUS }
+		add_war_support = 0.15
+		add_political_power = 50
+	}
+
+	option = {
+		name = ww1_news.1914_sarajevo_assassination.b
+		trigger = { tag = SER }
+		add_war_support = 0.10
+	}
+
+	option = {
+		name = ww1_news.1914_sarajevo_assassination.c
+		trigger = {
+			NOT = { tag = AUS }
+			NOT = { tag = SER }
+		}
+	}
+}
+
+# =========================================================================
+# 2. THE OUTBREAK OF THE GREAT WAR (GLOBAL BROADCAST & SUPER EVENT)
+# =========================================================================
+
+news_event = {
+	id = ww1_news.1914_great_war_outbreak
+	title = ww1_news.1914_great_war_outbreak.t
+	desc = ww1_news.1914_great_war_outbreak.d
+	picture = GFX_report_event_german_troops
+	major = yes
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = ww1_super_event_outbreak_active
+		play_song = "maintheme"
+	}
+
+	# Central Powers Reaction
+	option = {
+		name = ww1_news.1914_great_war_outbreak.central_powers
+		trigger = {
+			OR = {
+				tag = GER
+				tag = AUS
+				tag = TUR
+				tag = BUL
+			}
+		}
+		add_war_support = 0.15
+		add_stability = 0.05
+	}
+
+	# Entente Powers Reaction
+	option = {
+		name = ww1_news.1914_great_war_outbreak.entente
+		trigger = {
+			OR = {
+				tag = FRA
+				tag = ENG
+				tag = SOV
+				tag = SER
+				tag = BEL
+				tag = RUS
+			}
+		}
+		add_war_support = 0.15
+		add_stability = 0.05
+	}
+
+	# Neutral World Reaction
+	option = {
+		name = ww1_news.1914_great_war_outbreak.neutrals
+		trigger = {
+			NOT = {
+				OR = {
+					tag = GER
+					tag = AUS
+					tag = TUR
+					tag = BUL
+					tag = FRA
+					tag = ENG
+					tag = SOV
+					tag = SER
+					tag = BEL
+					tag = RUS
+				}
+			}
+		}
+		add_war_support = 0.05
+	}
+}

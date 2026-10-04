@@ -404,4 +404,32 @@ characters = {
 			cost = 100
 		}
 	}
+
+	SOV_maria_bochkareva = {
+		name = "Maria Bochkareva"
+		portraits = {
+			army = {
+				large = "gfx/leaders/SOV/SOV_maria_bochkareva.png"
+			}
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_maria_bochkareva.png"
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer reckless }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = SOV_maria_bochkareva
+			ledger = army
+			cost = 100
+			traits = { army_chief_morale_2 }
+		}
+	}
 }
+

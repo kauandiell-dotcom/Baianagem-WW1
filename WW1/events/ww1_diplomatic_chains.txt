@@ -69,6 +69,9 @@ country_event = {
 			AUS = {
 				declare_war_on = { target = SER type = annex_everything }
 			}
+			set_global_flag = ww1_super_event_outbreak_active
+			play_song = "maintheme"
+			news_event = { id = ww1_news.1914_great_war_outbreak days = 1 }
 		}
 		if = {
 			limit = { country_exists = SOV }
@@ -396,3 +399,60 @@ country_event = {
 		add_political_power = 50
 	}
 }
+
+# =========================================================================
+# 8. CONSTANTINOPLE AGREEMENT (MARCH 1915)
+# =========================================================================
+
+# ww1_diplomacy.70: France and Britain acknowledge Russian claims on Constantinople
+country_event = {
+	id = ww1_diplomacy.70
+	title = ww1_diplomacy.70.t
+	desc = ww1_diplomacy.70.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	# Option A: Acknowledge Russia's historical right to Tsargrad
+	option = {
+		name = ww1_diplomacy.70.a
+		ai_chance = { base = 95 }
+		add_opinion_modifier = {
+			target = SOV
+			modifier = ger_blank_cheque_op
+		}
+		SOV = {
+			country_event = { id = ww1_diplomacy.71 days = 1 }
+		}
+	}
+
+	# Option B: Oppose Russian domination of the Straits
+	option = {
+		name = ww1_diplomacy.70.b
+		ai_chance = { base = 5 }
+		add_opinion_modifier = {
+			target = SOV
+			modifier = ger_war_guilt_op
+		}
+	}
+}
+
+# ww1_diplomacy.71: Russia receives Entente recognition of Constantinople claims
+country_event = {
+	id = ww1_diplomacy.71
+	title = ww1_diplomacy.71.t
+	desc = ww1_diplomacy.71.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_diplomacy.71.a
+		add_war_support = 0.15
+		add_political_power = 75
+		add_state_claim = 341 # Istanbul / Constantinople
+		add_state_claim = 340 # Adrianople / Eastern Thrace
+		custom_effect_tooltip = SOV_constantinople_agreement_confirmed_tt
+	}
+}
+
