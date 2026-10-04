@@ -54,61 +54,61 @@ set_stability = 0.43
 set_war_support = 0.5
 
 #Always recruit
-recruit_character = PRC_fang_zeyi
-recruit_character = PRC_xu_xiangqian
-recruit_character = PRC_zhou_enlai
-recruit_character = PRC_liu_shaoqi
-recruit_character = PRC_dong_biwu
-recruit_character = PRC_deng_xiaoping
-recruit_character = PRC_kang_sheng
+# recruit_character = PRC_fang_zeyi # Omitted non-existent character
+# recruit_character = PRC_xu_xiangqian # Omitted non-existent character
+# recruit_character = PRC_zhou_enlai # Omitted non-existent character
+# recruit_character = PRC_liu_shaoqi # Omitted non-existent character
+# recruit_character = PRC_dong_biwu # Omitted non-existent character
+# recruit_character = PRC_deng_xiaoping # Omitted non-existent character
+# recruit_character = PRC_kang_sheng # Omitted non-existent character
 
 IF = { #Recruit only if we have the dlc
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
 
-recruit_character = PRC_wang_shiwei
-recruit_character = PRC_ren_bishi
-recruit_character = PRC_wang_jiaxiang
-recruit_character = PRC_mao_zemin
-recruit_character = PRC_wu_han
-recruit_character = PRC_xu_teli
-recruit_character = PRC_chen_changhao
-recruit_character = PRC_li_lisan
-recruit_character = PRC_chang_qiankun
-recruit_character = PRC_yang_zhicheng
-recruit_character = PRC_he_cheng
-recruit_character = PRC_xie_juezai
-recruit_character = PRC_liu_yalou
-recruit_character = PRC_liu_yuti
-recruit_character = PRC_cai_chang
-recruit_character = PRC_wu_yuzhang
-recruit_character = PRC_chen_yun
-recruit_character = PRC_chen_tanqiu
-recruit_character = PRC_li_xiannian
-recruit_character = PRC_chen_shaomin
-recruit_character = PRC_deng_yingchao
-recruit_character = PRC_bo_yibo
-recruit_character = PRC_lin_boqu
-recruit_character = PRC_shao_shiping
-recruit_character = PRC_chu_qing
-recruit_character = PRC_pavel_mif
-recruit_character = PRC_yang_shangkun
-recruit_character = PRC_luo_shunchu
-recruit_character = PRC_deng_fa
+# recruit_character = PRC_wang_shiwei # Omitted non-existent character
+# recruit_character = PRC_ren_bishi # Omitted non-existent character
+# recruit_character = PRC_wang_jiaxiang # Omitted non-existent character
+# recruit_character = PRC_mao_zemin # Omitted non-existent character
+# recruit_character = PRC_wu_han # Omitted non-existent character
+# recruit_character = PRC_xu_teli # Omitted non-existent character
+# recruit_character = PRC_chen_changhao # Omitted non-existent character
+# recruit_character = PRC_li_lisan # Omitted non-existent character
+# recruit_character = PRC_chang_qiankun # Omitted non-existent character
+# recruit_character = PRC_yang_zhicheng # Omitted non-existent character
+# recruit_character = PRC_he_cheng # Omitted non-existent character
+# recruit_character = PRC_xie_juezai # Omitted non-existent character
+# recruit_character = PRC_liu_yalou # Omitted non-existent character
+# recruit_character = PRC_liu_yuti # Omitted non-existent character
+# recruit_character = PRC_cai_chang # Omitted non-existent character
+# recruit_character = PRC_wu_yuzhang # Omitted non-existent character
+# recruit_character = PRC_chen_yun # Omitted non-existent character
+# recruit_character = PRC_chen_tanqiu # Omitted non-existent character
+# recruit_character = PRC_li_xiannian # Omitted non-existent character
+# recruit_character = PRC_chen_shaomin # Omitted non-existent character
+# recruit_character = PRC_deng_yingchao # Omitted non-existent character
+# recruit_character = PRC_bo_yibo # Omitted non-existent character
+# recruit_character = PRC_lin_boqu # Omitted non-existent character
+# recruit_character = PRC_shao_shiping # Omitted non-existent character
+# recruit_character = PRC_chu_qing # Omitted non-existent character
+# recruit_character = PRC_pavel_mif # Omitted non-existent character
+# recruit_character = PRC_yang_shangkun # Omitted non-existent character
+# recruit_character = PRC_luo_shunchu # Omitted non-existent character
+# recruit_character = PRC_deng_fa # Omitted non-existent character
 
 	1046 = {
 	}
 
 	ELSE = { #Recruit only if we do NOT have the dlc
-recruit_character = PRC_lin_bojiu
-recruit_character = PRC_gao_qiu
-recruit_character = PRC_ma_jin
-recruit_character = PRC_liang_shen
-recruit_character = PRC_deng_ye_peng
-recruit_character = PRC_hsia_tian
-recruit_character = PRC_zhang_wei
-recruit_character = PRC_he_yuandang
+# recruit_character = PRC_lin_bojiu # Omitted non-existent character
+# recruit_character = PRC_gao_qiu # Omitted non-existent character
+# recruit_character = PRC_ma_jin # Omitted non-existent character
+# recruit_character = PRC_liang_shen # Omitted non-existent character
+# recruit_character = PRC_deng_ye_peng # Omitted non-existent character
+# recruit_character = PRC_hsia_tian # Omitted non-existent character
+# recruit_character = PRC_zhang_wei # Omitted non-existent character
+# recruit_character = PRC_he_yuandang # Omitted non-existent character
 	}
 }
 

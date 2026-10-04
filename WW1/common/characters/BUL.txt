@@ -1,57 +1,828 @@
-characters = {
-	BUL_aleksandar_malinov = {
-		name = "Aleksandar Malinov"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BUL/BUL_aleksandar_malinov.png"
+characters={
+	BUL_aleksandar_stamboliyski={
+		name="Aleksandar Stamboliyski"
+		portraits={
+			civilian={
+				large="gfx/leaders/BUL_aleksandar_stamboliyski.dds"
 			}
 		}
-		country_leader = {
-			ideology = liberalism
-			traits = { }
-			expire = "1938.3.20"
+		country_leader={
+			##desc="BUL_aleksandar_stamboliyski_DESC"
+			ideology=marxism
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	BUL_ferdinand_i = {
-		name = "Ferdinand I"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BUL/BUL_ferdinand_i.png"
+	BUL_dimitar_blagoev={
+		name="Dimitar Blagoev"
+		portraits={
+			civilian={
+				large="gfx/leaders/BUL_dimitar_blagoev.dds"
 			}
 		}
-		country_leader = {
-			ideology = despotism
-			traits = { }
-			expire = "1948.9.10"
+		country_leader={
+			##desc="BUL_dimitar_blagoev_DESC"
+			ideology=stalinism
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	BUL_dimitar_blagoev = {
-		name = "Dimitar Blagoev"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BUL/BUL_dimitar_blagoev.png"
+	BUL_ferdinand_i={
+		name="Ferdinand I"
+		portraits={
+			civilian={
+				large="gfx/leaders/BUL/BUL_ferdinand_i.dds"
 			}
 		}
-		country_leader = {
-			ideology = marxism
-			traits = { }
-			expire = "1924.5.7"
+		country_leader={
+			##desc="BUL_ferdinand_i_DESC"
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	BUL_aleksandar_tsankov = {
-		name = "Aleksandar Tsankov"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/BUL/BUL_aleksandar_tsankov.png"
+	BUL_zhekov={
+		name="Nikola Zhekov"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/BUL/army_generals/BUL_Nikola_Zhekov.dds"
+				small="GFX_idea_BUL_nikola_zhekov"
 			}
 		}
-		country_leader = {
-			ideology = fascism_ideology
-			traits = { }
-			expire = "1935.1.1"
+		advisor={
+			slot = theorist
+			idea_token = BUL_zhekov
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				military_theorist 
+			}
+			#research_bonus = {
+			#	land_doctrine = 0.100
+			#}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ logistics_wizard aggressive_assaulter offensive_doctrine organisational_leader mountaineer hill_fighter engineer infantry_expert }
+			skill=5
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=12077
+		}
+	}
+	BUL_vladimir_vazov={
+		name="Vladimir Vazov"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/BUL/army_generals/BUL_Vladimir_Vazov.dds"
+			}
+		}
+		corps_commander={
+			traits={
+				engineer commando trickster adaptable paratrooper winter_specialist fortress_buster
+			}
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=75049
+		}
+	}
+	BUL_lukov_h.={
+		name="Ivan Lukov"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/BUL/army_generals/BUL_Ivan_Lukov.dds"
+			}
+		}
+		corps_commander={
+			traits = { old_guard militias_officer camouflage_expert winter_expert }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=12032
+		}
+	}
+	BUL_kolev={
+		name="Ivan Kolev"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/BUL/army_generals/BUL_Ivan_Kolev.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer guerilla_fighter irregulars_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=12028
+		}
+	}
+	BUL_fichev={
+		name="Ivan Fichev"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/BUL/army_generals/BUL_fichev.dds"
+				small="GFX_idea_BUL_ivan_fichev"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = BUL_fichev
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_offensive_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ inflexible_strategist defensive_doctrine unyielding_defender engineer_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=12018
+		}
+	}
+	BUL_dobrev={
+		name="Dobrev"
+		portraits={
+			army={
+				large="gfx/admiral/BUL_dobrev.dds"
+			}
+		}
+		navy_leader={
+			skill=4
+			attack_skill=2
+			defense_skill=1
+			maneuvering_skill=4
+			coordination_skill=3
+			legacy_id=12080
+		}
+	}
+	BUL_serafimov={
+		name="Rashko Serafimov"
+		portraits={
+			army={
+				large="gfx/admiral/BUL_serafimov.dds"
+				small="GFX_idea_BUL_rashko_serafimov"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = BUL_rashko_serafimov
+			ledger = navy
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				navy_chief_reform_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=1
+			defense_skill=5
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=12081
+		}
+	}
+	BUL_atanas_todorov={
+		name="Atanas Todorov"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_5"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits={ armaments_organizer }
+			expire="1922.1.1.1"
+			id=-1
+		}
+	}
+	BUL_andrey_lazarov={
+		name="Andrey Lazarov"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_6"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1926.1.1.1"
+			id=-1
+		}
+	}
+	
+	##Army Chief
+	
+	BUL_sava_savov={
+		advisor={
+			slot = army_chief
+			idea_token = BUL_sava_savov
+			ledger = army
+			cost = 25
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_old_guard
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_sava_savov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_sava_savov"
+			}
+		}
+	}
+	BUL_stefan_nerezov={
+		advisor={
+			slot = army_chief
+			idea_token = BUL_stefan_nerezov
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_reform_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_stefan_nerezov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_stefan_nerezov"
+			}
+		}
+	}
+	BUL_konstantin_zhostov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_konstantin_zhostov
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_artillery_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_konstantin_zhostov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_konstantin_zhostov"
+			}
+		}
+	}
+	
+	##Army HC
+	
+	BUL_radko_dimitriev={
+		advisor={
+			slot = high_command
+			idea_token = BUL_radko_dimitriev
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_maneuver_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_radko_dimitriev"
+		portraits={
+			army={
+				small="GFX_idea_BUL_radko_dimitriev"
+			}
+		}
+	}
+	BUL_vicho_dikov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_vicho_dikov
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_organizational_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_vicho_dikov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_vicho_dikov"
+			}
+		}
+	}
+	BUL_mihail_savov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_mihail_savov
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_infantry_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_mihail_savov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_mihail_savov"
+			}
+		}
+	}
+	BUL_nikola_topaldzhikov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_nikola_topaldzhikov
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_logistics_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_nikola_topaldzhikov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_nikola_topaldzhikov"
+			}
+		}
+	}
+	BUL_petar_midilev={
+		advisor={
+			slot = high_command
+			idea_token = BUL_petar_midilev
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_morale_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_petar_midilev"
+		portraits={
+			army={
+				small="GFX_idea_BUL_petar_midilev"
+			}
+		}
+	}
+	BUL_hristo_burmov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_hristo_burmov
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_entrenchment_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_hristo_burmov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_hristo_burmov"
+			}
+		}
+	}
+	BUL_pravoslav_tenev={
+		advisor={
+			slot = high_command
+			idea_token = BUL_pravoslav_tenev
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_commando_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_pravoslav_tenev"
+		portraits={
+			army={
+				small="GFX_idea_BUL_pravoslav_tenev"
+			}
+		}
+	}
+	BUL_lazar_draganov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_lazar_draganov
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_cavalry_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_lazar_draganov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_lazar_draganov"
+			}
+		}
+	}
+	BUL_stepan_paprikov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_stepan_paprikov
+			ledger = army 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_concealment_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_stepan_paprikov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_stepan_paprikov"
+			}
+		}
+	}
+	BUL_aleksandyr_dimitrov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_aleksandyr_dimitrov
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_drill_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_aleksandyr_dimitrov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_aleksandyr_dimitrov"
+			}
+		}
+	}
+	BUL_kalin_naidenov={
+		advisor={
+			slot = high_command
+			idea_token = BUL_kalin_naidenov
+			ledger = army
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				army_chief_defensive_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_kalin_naidenov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_kalin_naidenov"
+			}
+		}
+	}
+	
+	##Navy HC
+	
+	BUL_konstantin_kirkov={
+		advisor={
+			slot = navy_chief
+			idea_token = BUL_konstantin_kirkov
+			ledger = navy
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				navy_chief_commerce_raiding_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_konstantin_kirkov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_konstantin_kirkov"
+			}
+		}
+	}
+	
+	##Air HC
+	
+	BUL_vasil_zlatarov={
+		advisor={
+			slot = air_chief
+			idea_token = BUL_vasil_zlatarov
+			ledger = air
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				air_chief_all_weather_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_vasil_zlatarov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_vasil_zlatarov"
+			}
+		}
+	}
+	BUL_radul_milkov={
+		advisor={
+			slot = air_chief
+			idea_token = BUL_radul_milkov
+			ledger = air 
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				air_close_air_support_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_radul_milkov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_radul_milkov"
+			}
+		}
+	}
+	
+	##Political Advisors
+	
+	BUL_nikola_genadiev={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_nikola_genadiev
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				silent_workhorse 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_nikola_genadiev"
+		portraits={
+			army={
+				small="GFX_idea_BUL_nikola_genadiev"
+			}
+		}
+	}
+	BUL_marko_tourlakov={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_marko_tourlakov
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				smooth_talking_charmer 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_marko_tourlakov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_marko_tourlakov"
+			}
+		}
+	}
+	BUL_rayko_daskalov={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_rayko_daskalov
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				#editor
+				education_reformer
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_rayko_daskalov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_rayko_daskalov"
+			}
+		}
+	}
+	BUL_ivan_evstratiev_geshov={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_ivan_evstratiev_geshov
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				#armaments_organizer
+				propaganda_expert
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_ivan_evstratiev_geshov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_ivan_evstratiev_geshov"
+			}
+		}
+	}
+	BUL_mikhail_madzharov={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_mikhail_madzharov
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				ideological_crusader
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_mikhail_madzharov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_mikhail_madzharov"
+			}
+		}
+	}
+	BUL_todor_ivanchov={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_todor_ivanchov
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				captain_of_industry 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_todor_ivanchov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_todor_ivanchov"
+			}
+		}
+	}
+	BUL_atanas_vatev={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_atanas_vatev
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				quartermaster_general
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_atanas_vatev"
+		portraits={
+			army={
+				small="GFX_idea_BUL_atanas_vatev"
+			}
+		}
+	}
+	BUL_kristo_pastukhov={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_kristo_pastukhov
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				popular_figurehead 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_kristo_pastukhov"
+		portraits={
+			army={
+				small="GFX_idea_BUL_kristo_pastukhov"
+			}
+		}
+	}
+	BUL_stoyan_danev={
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_stoyan_danev
+			ledger = civilian
+			allowed = {
+				tag = BUL
+			}
+			traits = {
+				war_industrialist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="BUL_stoyan_danev"
+		portraits={
+			army={
+				small="GFX_idea_BUL_stoyan_danev"
+			}
 		}
 	}
 }

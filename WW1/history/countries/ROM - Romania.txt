@@ -64,20 +64,20 @@ set_research_slots = 3
 set_stability = 0.6
 set_war_support = 0.6
 
-recruit_character = ROM_gheorghe_potopeanu
-recruit_character = ROM_emanoil_ionescu
-recruit_character = ROM_gheorghe_mihail
-recruit_character = ROM_ermil_gheorghiu
-recruit_character = ROM_nicolae_sova
-recruit_character = ROM_gheorghe_jienescu
-recruit_character = ROM_paul_teodorescu
-recruit_character = ROM_gheorghe_vasiliu
-recruit_character = ROM_iuliu_maniu
-recruit_character = ROM_petru_groza
-recruit_character = ROM_gheorghe_gheorghiu_dej
-recruit_character = ROM_nicolae_malaxa
-recruit_character = ROM_mihail_sturdza
-recruit_character = ROM_gheorghe_argeseanu
+# recruit_character = ROM_gheorghe_potopeanu # Omitted non-WW1 character
+# recruit_character = ROM_emanoil_ionescu # Omitted non-WW1 character
+# recruit_character = ROM_gheorghe_mihail # Omitted non-WW1 character
+# recruit_character = ROM_ermil_gheorghiu # Omitted non-WW1 character
+# recruit_character = ROM_nicolae_sova # Omitted non-WW1 character
+# recruit_character = ROM_gheorghe_jienescu # Omitted non-WW1 character
+# recruit_character = ROM_paul_teodorescu # Omitted non-WW1 character
+# recruit_character = ROM_gheorghe_vasiliu # Omitted non-WW1 character
+# recruit_character = ROM_iuliu_maniu # Omitted non-WW1 character
+# recruit_character = ROM_petru_groza # Omitted non-WW1 character
+# recruit_character = ROM_gheorghe_gheorghiu_dej # Omitted non-WW1 character
+# recruit_character = ROM_nicolae_malaxa # Omitted non-WW1 character
+# recruit_character = ROM_mihail_sturdza # Omitted non-WW1 character
+# recruit_character = ROM_gheorghe_argeseanu # Omitted non-WW1 character
 
 # Starting tech
 
@@ -143,10 +143,10 @@ set_popularities = {
 }
 
 # 1911 Country Leaders
-recruit_character = ROM_ion_ic_bratianu
+# recruit_character = ROM_ion_ic_bratianu # Omitted non-WW1 character
 recruit_character = ROM_carol_i
-recruit_character = ROM_dobrogeanu_gherea
-recruit_character = ROM_alexandru_c_cuza
+# recruit_character = ROM_dobrogeanu_gherea # Omitted non-WW1 character
+# recruit_character = ROM_alexandru_c_cuza # Omitted non-WW1 character
 
 ### VARIANTS ###
 # 1936 Start #
@@ -261,3 +261,37 @@ create_country_leader = {
 	ideology = fascism_ideology
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = ROM_constantin_prezan
+recruit_character = ROM_alexandru_averescu
+recruit_character = ROM_ferdinand_i
+recruit_character = ROM_christian_rakovsky
+recruit_character = ROM_eremia_grigorescu
+recruit_character = ROM_grigore_crainiceanu
+recruit_character = ROM_ioan_culcer
+recruit_character = ROM_artur_vaitoianu
+recruit_character = ROM_ion_dragalina
+recruit_character = ROM_constantin_coanda
+recruit_character = ROM_nigrescu
+recruit_character = ROM_sebestian
+recruit_character = ROM_niculescurizea
+recruit_character = ROM_mihai_tenescu
+recruit_character = ROM_constantin_balescu
+recruit_character = ROM_constantin_niculescu_rizea
+recruit_character = ROM_istrate_micescu
+recruit_character = ROM_mihail_moruzov
+recruit_character = ROM_ioan_popescu
+recruit_character = ROM_aurel_vlad
+recruit_character = ROM_Monkey_Man
+recruit_character = ROM_dumitru_iliescu
+recruit_character = ROM_constantin_cristescu
+recruit_character = ROM_vintila_bratianu
+recruit_character = ROM_nicolae_titulescu
+recruit_character = ROM_nicolae_negru
+recruit_character = ROM_alexandru_marghiloman
+recruit_character = ROM_vasile_zottu
+recruit_character = ROM_general_genner

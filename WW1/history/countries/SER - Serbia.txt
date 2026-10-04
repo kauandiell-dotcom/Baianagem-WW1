@@ -67,26 +67,26 @@ if = {
 	
 }
 
-recruit_character = SER_acd2
-recruit_character = SER_communist_guy
-recruit_character = SER_acr
-recruit_character = SER_fascist_guy
-recruit_character = SER_aa2
-recruit_character = SER_democratic_guy
-recruit_character = SER_ncm
-recruit_character = SER_nt
-recruit_character = SER_awt
-recruit_character = SER_ar
-recruit_character = SER_stc
-recruit_character = SER_ai2
-recruit_character = SER_aco2
-recruit_character = SER_ncs
-recruit_character = SER_coi
-recruit_character = SER_acgs
-recruit_character = SER_acas
-recruit_character = SER_pot
-recruit_character = SER_nccr
-recruit_character = SER_mt
+# recruit_character = SER_acd2 # Omitted non-WW1 character
+# recruit_character = SER_communist_guy # Omitted non-WW1 character
+# recruit_character = SER_acr # Omitted non-WW1 character
+# recruit_character = SER_fascist_guy # Omitted non-WW1 character
+# recruit_character = SER_aa2 # Omitted non-WW1 character
+# recruit_character = SER_democratic_guy # Omitted non-WW1 character
+# recruit_character = SER_ncm # Omitted non-WW1 character
+# recruit_character = SER_nt # Omitted non-WW1 character
+# recruit_character = SER_awt # Omitted non-WW1 character
+# recruit_character = SER_ar # Omitted non-WW1 character
+# recruit_character = SER_stc # Omitted non-WW1 character
+# recruit_character = SER_ai2 # Omitted non-WW1 character
+# recruit_character = SER_aco2 # Omitted non-WW1 character
+# recruit_character = SER_ncs # Omitted non-WW1 character
+# recruit_character = SER_coi # Omitted non-WW1 character
+# recruit_character = SER_acgs # Omitted non-WW1 character
+# recruit_character = SER_acas # Omitted non-WW1 character
+# recruit_character = SER_pot # Omitted non-WW1 character
+# recruit_character = SER_nccr # Omitted non-WW1 character
+# recruit_character = SER_mt # Omitted non-WW1 character
 set_convoys = 0
 
 set_politics = {
@@ -100,10 +100,10 @@ set_popularities = {
 }
 
 # 1911 Country Leaders
-recruit_character = SER_andra_nikolic
+# recruit_character = SER_andra_nikolic # Omitted non-WW1 character
 recruit_character = SER_peter_i
-recruit_character = SER_jasa_prodanovic
-recruit_character = SER_dragutin_dimitrijevic
+# recruit_character = SER_jasa_prodanovic # Omitted non-WW1 character
+# recruit_character = SER_dragutin_dimitrijevic # Omitted non-WW1 character
 
 set_stability = 0.6
 
@@ -138,3 +138,31 @@ create_country_leader = {
 	ideology = fascism_ideology
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = SER_radomir_putnik
+recruit_character = SER_filip_filipovic
+recruit_character = SER_stepa_stepanovic
+recruit_character = SER_zivojin_misic
+recruit_character = SER_pavle_jurisic_sturm
+recruit_character = SER_petar_bojovic
+recruit_character = SER_momcilo_hadzilic
+recruit_character = SER_petar_pesic
+recruit_character = SER_mihailo_rasic
+recruit_character = SER_milos_vasic
+recruit_character = SER_stevan_hadzic
+recruit_character = SER_zivko_pavlovic
+recruit_character = SER_jovan_jovanovic_pizon
+recruit_character = SER_lazar_pacu
+recruit_character = SER_mihailo_gavrilovic
+recruit_character = SER_stojan_novakovic
+recruit_character = SER_momcilo_nincic
+recruit_character = SER_stojan_protic
+recruit_character = SER_milovan_milovanovic
+recruit_character = SER_svetozar_pribicevic
+recruit_character = SER_duro_dakovic
+recruit_character = SER_milenko_vesnic
+recruit_character = SER_kosta_miletic

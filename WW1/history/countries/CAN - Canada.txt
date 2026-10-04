@@ -59,22 +59,22 @@ recruit_character = CAN_andrew_mcnaughton
 recruit_character = CAN_george_jones
 recruit_character = CAN_raymond_collishaw
 recruit_character = CAN_guy_simonds
-recruit_character = CAN_james_stanley_scott
+# recruit_character = CAN_james_stanley_scott # Omitted non-WW1 character
 recruit_character = CAN_alasdair_murray
 recruit_character = CAN_george_volkoff
 recruit_character = CAN_george_croil
 recruit_character = CAN_percy_nelles
-recruit_character = CAN_robert_manion
+# recruit_character = CAN_robert_manion # Omitted non-WW1 character
 recruit_character = CAN_ian_a_mackenzie
 recruit_character = CAN_c_d_howe
 recruit_character = CAN_newton_wesley_rowell
-recruit_character = CAN_chuck_crate
+# recruit_character = CAN_chuck_crate # Omitted non-WW1 character
 recruit_character = CAN_james_ilsley
-recruit_character = CAN_william_kashtan
+# recruit_character = CAN_william_kashtan # Omitted non-WW1 character
 recruit_character = CAN_leo_richer_lafleche
 recruit_character = CAN_r_b_bennett
 recruit_character = CAN_louis_st_laurent
-recruit_character = CAN_lindsay_gordon
+# recruit_character = CAN_lindsay_gordon # Omitted non-WW1 character
 
 IF = {
 	limit = {
@@ -205,3 +205,17 @@ create_country_leader = {
 	ideology = liberalism
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = CAN_wilfrid_laurier
+recruit_character = CAN_turner
+recruit_character = CAN_lipsettl
+recruit_character = CAN_hughes
+recruit_character = CAN_alex_walker
+recruit_character = CAN_jim_walker
+recruit_character = CAN_alexander_white
+recruit_character = CAN_tasker_cook
+recruit_character = CAN_gino_verchiella

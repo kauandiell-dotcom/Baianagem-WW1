@@ -1,0 +1,863 @@
+characters={
+	
+	##Party Leaders
+	
+	POL_j_pilsudski={ #Fake one
+		name="Józef Piłsudski"
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/POL_jozef_pilsudski_socialist.png"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits={}
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	POL_rosa_luxemburg={
+		name="Rosa Luxemburg"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_6"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1934.1.1.1"
+			id=-1
+		}
+	}
+	POL_roman_dmowski={
+		name="Roman Dmowski"
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/POL_Roman_Dmowski.png"
+			}
+		}
+		country_leader={
+			ideology=falangism
+			expire="1933.1.1.1"
+			id=-1
+		}
+	}
+	POL_pilsudski={ #Real one
+		name="Józef Piłsudski"
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/POL_jozef_pilsudski_socialist.png"
+			}
+		}
+		country_leader={
+			ideology=oligarchism
+			traits={}
+			expire="1932.1.1.1"
+			id=-1
+		}
+	}
+	#Pilsudski best core bonuses if stay with him
+	POL_regencycouncil={
+		name="Regency Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/POL_regency.png"
+			}
+		}
+		#ideology oligarchism
+	}
+	POL_karol_stefan={ #Austrian King; ideology moderatism
+		name = "Karol Stefan I Habsburg-Lothringen"
+		portraits={
+			civilian={
+				large="gfx/leaders/POL/POL_karol_stefan_.png"
+			}
+		}
+	}
+	POL_leopold={ #German King; ideology despotism
+		name="Leopold I Wittelsbach"
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/GER_leopold_von_bayern.png"
+			}
+		}
+	}
+	#Ideology autocracy
+	
+	##Theorists, HC, Generals
+	POL_serednicki={
+		advisor={
+			slot = air_chief
+			idea_token=POL_serednicki
+			ledger = air 
+			allowed = {
+				original_tag = POL
+			}
+			#research_bonus = {
+			#	air_doctrine = 0.100
+			#}
+			traits = {
+				air_warfare_theorist 
+			}
+		}
+		name="Aleksander Serednicki"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_aleksander_serednicki.png"
+			}
+		}
+	}
+	POL_norwid={
+		advisor={
+			slot = air_chief
+			idea_token=POL_norwid
+			ledger = air
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				air_chief_ground_support_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Mieczysław Norwid-Neugebauer"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_mieczyslaw_norwid_neugebauer.png"
+			}
+		}
+	}
+	
+	POL_stanislaw_haller={
+		advisor={
+			slot = theorist
+			idea_token=POL_stanislaw_haller
+			ledger = army 
+			allowed = {
+				original_tag = POL
+			}
+			#research_bonus = {
+			#	land_doctrine = 0.100
+			#}
+			traits = {
+				military_theorist 
+			}
+		}
+		name="Stanisław Haller"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_stanislaw_haller.png"
+			}
+		}
+	}
+	POL_jozef_pilsudski={ #For army chief and general
+		advisor={
+			slot = army_chief
+			idea_token=POL_jozef_pilsudski
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				army_chief_morale_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal = {
+			traits = {
+				old_guard politically_connected media_personality
+				unyielding_defender defensive_doctrine inspirational_leader
+				guerilla_fighter scavenger
+			}
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		name="Józef Piłsudski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_jozef_pilsudski.png"
+			}
+			army={
+				large="gfx/leaders/POL/POL_jozef_pilsudski.png"
+			}
+		}
+	}
+	POL_szeptycki={
+		name="Stanisław Szeptycki"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_stanislaw_szeptycki.png"
+			}
+			army={
+				large="gfx/leaders/POL/POL_stanislaw_szeptycki.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=POL_szeptycki
+			ledger = army 
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				army_infantry_2 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal = {
+			traits={
+				logistics_wizard fast_planner unyielding_defender offensive_doctrine infantry_leader infantry_expert
+				ranger swamp_fox adaptable engineer winter_specialist winter_expert
+			}
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+	POL_rozwadowski={
+		name="Tadeusz Jordan-Rozwadowski"
+		portraits={
+			army={
+				#small="gfx/interface/ideas/POL/idea_POL_taduesz_rozwadowski.png"	##Not working for some reason
+				small="GFX_idea_rudolf_hess"
+			}
+			army={
+				large="gfx/leaders/POL/POL_Tadeusz_Jordan_Rozwadowski.png"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token=POL_rozwadowski
+			ledger = army 
+			allowed  = {
+				original_tag = POL
+			}
+			traits = {
+				army_chief_maneuver_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = {
+				brilliant_strategist
+				urban_assault_specialist hill_fighter winter_specialist
+				organizer engineer cavalry_leader trickster fortress_buster skirmisher
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	POL_smigly={
+		name="Edward Rydz-Śmigły"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_edward_rydz_smigly_tgr.png"
+			}
+			army={
+				large="gfx/leaders/POL/POL_edward_rydz_smigly.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=POL_smigly
+			ledger=army
+			allowed = {
+				original_tag  = POL
+			}
+			traits = {
+				army_commando_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={
+				ranger swamp_fox winter_expert
+				expert_improviser engineer cavalry_leader commando trickster fortress_buster skirmisher
+			}
+			skill=5
+			attack_skill=6
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+	POL_jozef_haller={
+		name="Józef Haller von Hallenburg"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_jozef_haller.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=POL_jozef_haller
+			ledger = army 
+			allowed = {
+				original_tag  = POL
+			}
+			traits = {
+				army_cavalry_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	POL_sosnkowski={
+		name="Kazimierz Sosnkowski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_kazimierz_sosnkowski_tgw.png"
+			}
+			army={
+				large="gfx/leaders/POL/POL_kazimierz_sosnkowski.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=POL_sosnkowski
+			ledger = army 
+				allowed = {
+					original_tag  = POL
+				}
+				traits = {
+					army_regrouping_1
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		corps_commander={
+			traits={ cavalry_officer cavalry_leader panzer_leader naval_invader camouflage_expert fortress_buster }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+	POL_sikorski={
+		name="Władysław Sikorski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_wladyslaw_sikorski.png"
+			}
+		}
+		advisor={
+			slot=high_command
+			idea_token=POL_sikorski
+			ledger=army
+			allowed={
+				original_tag=POL
+			}
+			traits={
+				army_artillery_1
+			}
+			ai_will_do={
+				factor=1.0
+			}
+		}
+	}
+	POL_zielinski={
+		name="Zygmunt Zieliński"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_zygmunt_zielinski.png"
+			}
+			army={
+				large="gfx/leaders/POL/POL_Zygmunt_Zielinski.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=POL_zielinski
+			ledger = army 
+				allowed = {
+					original_tag = POL
+				}
+				traits = {
+					army_entrenchment_1
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		corps_commander={
+			traits={
+				old_guard inflexible_strategist infantry_officer jaeger mountaineer hill_fighter
+			}
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+		}
+	}
+	POL_musnicki={
+		name="Józef Dowbor-Muśnicki"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_jozef_dowbor_musnicki.png"
+			}
+			army={
+				large="gfx/leaders/POL/POL_jozef_dowbor_musnicki.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=POL_musnicki
+			ledger = army 
+				allowed = {
+					original_tag = POL
+				}
+				traits = {
+					army_logistics_1
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		corps_commander={
+			traits={
+				infantry_officer swamp_fox ranger camouflage_expert
+			}
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+		}
+	}
+	POL_berbecki={
+		name="Leon Berbecki"
+		portraits={
+			army={
+				large="gfx/leaders/POL/POL_Leon_Berbecki.png"
+				small="GFX_idea_rudolf_hess"
+			}
+		}
+		corps_commander = {
+			traits = {
+				infantry_officer ambusher
+			}
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+		}
+	}
+
+	##Navy Leaders
+	
+	POL_unrug={
+		name="Józef Unrug"
+		portraits={
+			navy={
+				small="gfx/interface/ideas/POL/idea_POL_jozef_unrug_tgr.png"
+				large="gfx/leaders/Europe/portrait_europe_generic_navy_6.dds"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = POL_unrug
+			ledger = navy
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				navy_chief_decisive_battle_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits = {
+				fleet_protector ironside destroyer_leader hunter_killer big_guns_expert safety_first ground_pounder
+				blue_water_expert
+			}
+			skill=4
+			attack_skill=4
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=4
+		}
+	}
+	POL_swirski={
+		name="Jerzy Świrski"
+		portraits={
+			navy={
+				small="gfx/interface/ideas/idea_ENG_generic_navy_1.png"
+				large="gfx/leaders/Europe/portrait_europe_generic_navy_4.dds"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = POL_swirski
+			ledger = navy
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				navy_submarine_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits = {
+				seawolf blockade_runner air_controller concealment_expert mine_layer flight_deck_manager torpedo_bomber
+				inshore_fighter green_water_expert
+			}
+			skill=3
+			attack_skill=1
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=1
+		}
+	}
+	POL_porebski={
+		name="Kazimierz Porębski"
+		portraits={
+			navy={
+				small="gfx/interface/ideas/idea_europe_generic_navy_1.png"
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = POL_porebski
+			ledger = navy
+			cost = 25
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				navy_chief_old_guard
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits = {
+				fly_swatter spotter cruiser_captain search_pattern_expert concealment_expert mine_sweeper
+				cold_water_expert
+			}
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=1
+		}
+	}
+	POL_steyer={
+		name="Włodzimierz Steyer"
+		portraits={
+			navy={
+				small="gfx/interface/ideas/idea_USA_generic_navy_2.png"
+				large="gfx/leaders/Europe/portrait_europe_generic_navy_7.dds"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = POL_steyer
+			ledger = navy
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				navy_amphibious_assault_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits = {
+				superior_tactician concealment_expert smoke_screen_specialist mine_layer ground_pounder
+			}
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
+		}
+	}
+
+	##Political Advisors
+	
+	POL_rataj={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_rataj
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				quartermaster_general
+				railroad_enthusiast
+			}
+		}
+		name="Maciej Rataj"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_maciej_rataj.png"
+			}
+		}
+	}
+	POL_wojciechowski={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_wojciechowski
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				captain_of_industry
+			}
+		}
+		name="Stanisław Wojciechowski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_stanislaw_wojciechowski.png"
+			}
+		}
+	}
+	POL_grabsky={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_grabsky
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				#backroom_backstabber
+				economic_reformer
+			}
+		}
+		name="Władysław Grabsky"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_wladyslaw_grabski.png"
+			}
+		}
+	}
+	POL_paderewski={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_paderewski
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				war_industrialist
+			}
+		}
+		name="Ignacy Jan Paderewski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_ignacy_jan_paderewski.png"
+			}
+		}
+	}
+	POL_daszynski={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_daszynski
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				propaganda_expert
+			}
+		}
+		name="Ignacy Daszyński"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_ignacy_daszynski.png"
+			}
+		}
+	}
+	POL_moraczewski={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_moraczewski
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				popular_figurehead
+			}
+		}
+		name="Jędrzej Moraczewski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_jedrzej_moraczewski.png"
+			}
+		}
+	}
+	POL_wasilewski={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_wasilewski
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				technocrat
+			}
+		}
+		name="Leon Wasilewski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_leon_wasilewski.png"
+			}
+		}
+	}
+	POL_dabski={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_dabski
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				tenacious_negotiator
+			}
+		}
+		name="Jan Dąbski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_jan_dabski.png"
+			}
+		}
+	}
+	POL_sapieha={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_sapieha
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				head_of_intelligence
+			}
+		}
+		name="Eustachy Sapieha"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_eustachy_sapiecha.png"
+			}
+		}
+	}
+	POL_studnicki={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_studnicki
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				conservative_grandee
+				staunch_monarchist
+			}
+		}
+		name="Władysław Gizbert-Studnicki"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_wladyslaw_studnicki.png"
+			}
+		}
+	}
+	POL_macewicz={
+		advisor={
+			slot = political_advisor
+			idea_token=POL_macewicz
+			ledger = civilian
+			allowed = {
+				original_tag = POL
+			}
+			traits = {
+				ideological_crusader
+			}
+		}
+		name="Gustaw Macewicz"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_gustaw_macewicz.png"
+			}
+		}
+	}
+	POL_skulski={
+		name="Leopold Skulski"
+		portraits={
+			army={
+				small="gfx/interface/ideas/POL/idea_POL_leopold_skulski.png"
+			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=POL_skulski
+			ledger = civilian
+			allowed={
+				original_tag=POL
+			}
+			traits={
+				conservative_nationalist
+			}
+		}
+	}
+	POL_dmowski={
+		name="Roman Dmowski"
+		portraits={
+			army={
+				small="gfx/hoi4tgw_portraits/POL/advisor/POL_roman_dmowski.dds"
+			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=POL_dmowski
+			ledger = civilian
+			allowed={
+				original_tag=POL
+			}
+			available={
+				has_completed_focus=POL_reconcile_dmowski
+			}
+			cost=50.00
+			traits={
+				extreme_nationalist
+			}
+		}
+	}
+}

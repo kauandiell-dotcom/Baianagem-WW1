@@ -249,33 +249,33 @@ IF = {
 
 if = {
 	limit = { has_dlc = Gotterdammerung }
-recruit_character = BEL_achille_van_acker
-recruit_character = BEL_willy_coppens
-recruit_character = BEL_remy_van_lierde
-recruit_character = BEL_jean_offenburg
-recruit_character = BEL_raymond_lallemant
-recruit_character = BEL_dieudonne_salve
-recruit_character = BEL_prudent_nuyten
-recruit_character = BEL_albert_deveze
-recruit_character = BEL_edouard_van_den_burgen
-recruit_character = BEL_camille_gutt
-recruit_character = BEL_camille_huysmans
-recruit_character = BEL_julien_lahaut
-recruit_character = BEL_emile_de_cartier_de_marchienne
-recruit_character = BEL_edgar_sengier
-recruit_character = BEL_walthere_dewe
-recruit_character = BEL_august_borms
-recruit_character = BEL_mike_donnet
+# recruit_character = BEL_achille_van_acker # Omitted non-WW1 character
+# recruit_character = BEL_willy_coppens # Omitted non-WW1 character
+# recruit_character = BEL_remy_van_lierde # Omitted non-WW1 character
+# recruit_character = BEL_jean_offenburg # Omitted non-WW1 character
+# recruit_character = BEL_raymond_lallemant # Omitted non-WW1 character
+# recruit_character = BEL_dieudonne_salve # Omitted non-WW1 character
+# recruit_character = BEL_prudent_nuyten # Omitted non-WW1 character
+# recruit_character = BEL_albert_deveze # Omitted non-WW1 character
+# recruit_character = BEL_edouard_van_den_burgen # Omitted non-WW1 character
+# recruit_character = BEL_camille_gutt # Omitted non-WW1 character
+# recruit_character = BEL_camille_huysmans # Omitted non-WW1 character
+# recruit_character = BEL_julien_lahaut # Omitted non-WW1 character
+# recruit_character = BEL_emile_de_cartier_de_marchienne # Omitted non-WW1 character
+# recruit_character = BEL_edgar_sengier # Omitted non-WW1 character
+# recruit_character = BEL_walthere_dewe # Omitted non-WW1 character
+# recruit_character = BEL_august_borms # Omitted non-WW1 character
+# recruit_character = BEL_mike_donnet # Omitted non-WW1 character
 	else = {
-recruit_character = BEL_fritz_conrad
-recruit_character = BEL_georges_deffontaine
-recruit_character = BEL_victor_strydonck_burkel
-recruit_character = BEL_georges_vereecken
-recruit_character = BEL_charles_bastin
-recruit_character = BEL_rene_lagrou
-recruit_character = BEL_fritz_lob
-recruit_character = BEL_jules_iserentant
-recruit_character = BEL_gaston_eyskens
+# recruit_character = BEL_fritz_conrad # Omitted non-WW1 character
+# recruit_character = BEL_georges_deffontaine # Omitted non-WW1 character
+# recruit_character = BEL_victor_strydonck_burkel # Omitted non-WW1 character
+# recruit_character = BEL_georges_vereecken # Omitted non-WW1 character
+# recruit_character = BEL_charles_bastin # Omitted non-WW1 character
+# recruit_character = BEL_rene_lagrou # Omitted non-WW1 character
+# recruit_character = BEL_fritz_lob # Omitted non-WW1 character
+# recruit_character = BEL_jules_iserentant # Omitted non-WW1 character
+# recruit_character = BEL_gaston_eyskens # Omitted non-WW1 character
 	}
 }
 
@@ -381,3 +381,33 @@ create_country_leader = {
 	ideology = liberalism
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = BEL_albert_i
+recruit_character = BEL_leman
+recruit_character = BEL_de_witte_de_haelen
+recruit_character = BEL_albert_lantonnois_van_rode
+recruit_character = BEL_emile_dossin_de_saintgeorges
+recruit_character = BEL_didier_thorn
+recruit_character = BEL_charles_allard
+recruit_character = BEL_david_berger
+recruit_character = BEL_albert_advisor
+recruit_character = BEL_dixmude
+recruit_character = BEL_cyriaque_gillain
+recruit_character = BEL_rucqouy
+recruit_character = BEL_ridder_de_selliers_de_moranville
+recruit_character = BEL_henry_h_maglinse
+recruit_character = BEL_felix_wielemans
+recruit_character = BEL_jules_davignon
+recruit_character = BEL_baron_beyens
+recruit_character = BEL_geraard_cooreman
+recruit_character = BEL_baron_wahis
+recruit_character = BEL_joseph_hellebaut
+recruit_character = BEL_marcel_de_crombrugghe
+recruit_character = BEL_count_carton_de_wiart
+recruit_character = BEL_edwart_anseele
+recruit_character = BEL_leon_delacroix
+recruit_character = BEL_georges_moulaert

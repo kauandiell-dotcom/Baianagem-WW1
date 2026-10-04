@@ -109,8 +109,8 @@ add_ideas = {
 # 1911 Country Leaders
 recruit_character = TUR_mehmed_v
 recruit_character = TUR_mustafa_kemal
-recruit_character = TUR_mustafa_suphi
-recruit_character = TUR_enver_pasha
+# recruit_character = TUR_mustafa_suphi # Omitted non-WW1 character
+# recruit_character = TUR_enver_pasha # Omitted non-WW1 character
 
 
 set_convoys = 20
@@ -120,51 +120,51 @@ set_war_support = 0.3
 if = {
 	limit = { has_dlc = "Battle for the Bosporus" }
 _ataturk
-recruit_character = TUR_fakhri_pasha
+# recruit_character = TUR_fakhri_pasha # Omitted non-WW1 character
 recruit_character = TUR_refet_bele
-recruit_character = TUR_zeki_dogan
-recruit_character = TUR_ali_fuat_cebesoy
-recruit_character = TUR_vecihi_hurkus
-recruit_character = TUR_ali_ihsan_sabis
-recruit_character = TUR_izzettin_calislar
-recruit_character = TUR_ahmet_ali_celikten
-recruit_character = TUR_mehmet_fahri_engin
-recruit_character = TUR_muzaffer_goksenin
-recruit_character = TUR_halil_kut
-recruit_character = TUR_mumtaz_okmen
-recruit_character = TUR_riza_nur
-recruit_character = TUR_nejdet_sancar
-recruit_character = TUR_kazim_ozalp
-recruit_character = TUR_sukru_saracoglu_prime_minister
-recruit_character = TUR_nuri_demirag_prime_minister
+# recruit_character = TUR_zeki_dogan # Omitted non-WW1 character
+# recruit_character = TUR_ali_fuat_cebesoy # Omitted non-WW1 character
+# recruit_character = TUR_vecihi_hurkus # Omitted non-WW1 character
+# recruit_character = TUR_ali_ihsan_sabis # Omitted non-WW1 character
+# recruit_character = TUR_izzettin_calislar # Omitted non-WW1 character
+# recruit_character = TUR_ahmet_ali_celikten # Omitted non-WW1 character
+# recruit_character = TUR_mehmet_fahri_engin # Omitted non-WW1 character
+# recruit_character = TUR_muzaffer_goksenin # Omitted non-WW1 character
+# recruit_character = TUR_halil_kut # Omitted non-WW1 character
+# recruit_character = TUR_mumtaz_okmen # Omitted non-WW1 character
+# recruit_character = TUR_riza_nur # Omitted non-WW1 character
+# recruit_character = TUR_nejdet_sancar # Omitted non-WW1 character
+# recruit_character = TUR_kazim_ozalp # Omitted non-WW1 character
+# recruit_character = TUR_sukru_saracoglu_prime_minister # Omitted non-WW1 character
+# recruit_character = TUR_nuri_demirag_prime_minister # Omitted non-WW1 character
 recruit_character = TUR_hasan_saka
-recruit_character = TUR_hilmi_uran
-recruit_character = TUR_fethi_okyar
-recruit_character = TUR_sukru_saracoglu
-recruit_character = TUR_halide_edib_adivar
-recruit_character = TUR_sevket_sureyya_aydemir
-recruit_character = TUR_mehmet_emin_yurdakul
-recruit_character = TUR_nuri_demirag
-recruit_character = TUR_nuri_killigil
-recruit_character = TUR_said_i_nursi
-recruit_character = TUR_nihal_atsiz
-recruit_character = TUR_zeki_velidi_togan
-recruit_character = TUR_nazim_hikmet
-recruit_character = TUR_kamil_tolon
+# recruit_character = TUR_hilmi_uran # Omitted non-WW1 character
+# recruit_character = TUR_fethi_okyar # Omitted non-WW1 character
+# recruit_character = TUR_sukru_saracoglu # Omitted non-WW1 character
+# recruit_character = TUR_halide_edib_adivar # Omitted non-WW1 character
+# recruit_character = TUR_sevket_sureyya_aydemir # Omitted non-WW1 character
+# recruit_character = TUR_mehmet_emin_yurdakul # Omitted non-WW1 character
+# recruit_character = TUR_nuri_demirag # Omitted non-WW1 character
+# recruit_character = TUR_nuri_killigil # Omitted non-WW1 character
+# recruit_character = TUR_said_i_nursi # Omitted non-WW1 character
+# recruit_character = TUR_nihal_atsiz # Omitted non-WW1 character
+# recruit_character = TUR_zeki_velidi_togan # Omitted non-WW1 character
+# recruit_character = TUR_nazim_hikmet # Omitted non-WW1 character
+# recruit_character = TUR_kamil_tolon # Omitted non-WW1 character
 
 }
 
 if = {
 	limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
-recruit_character = TUR_memduh_tagmac
-recruit_character = TUR_mehmet_gunaltay
-recruit_character = TUR_ali_fuat_cebesoy
-recruit_character = TUR_refik_saydam
-recruit_character = TUR_erkan_gataly
-recruit_character = TUR_ali_orlungat
-recruit_character = TUR_hassan_saka
-recruit_character = TUR_kazim_ozalp
-recruit_character = TUR_mumtaz_okmen
+# recruit_character = TUR_memduh_tagmac # Omitted non-WW1 character
+# recruit_character = TUR_mehmet_gunaltay # Omitted non-WW1 character
+# recruit_character = TUR_ali_fuat_cebesoy # Omitted non-WW1 character
+# recruit_character = TUR_refik_saydam # Omitted non-WW1 character
+# recruit_character = TUR_erkan_gataly # Omitted non-WW1 character
+# recruit_character = TUR_ali_orlungat # Omitted non-WW1 character
+# recruit_character = TUR_hassan_saka # Omitted non-WW1 character
+# recruit_character = TUR_kazim_ozalp # Omitted non-WW1 character
+# recruit_character = TUR_mumtaz_okmen # Omitted non-WW1 character
 }
 
 if = {
@@ -174,7 +174,7 @@ if = {
 			has_dlc = "Battle for the Bosporus"
 		}
 	}
-recruit_character = TUR_elyesa_bazna
+# recruit_character = TUR_elyesa_bazna # Omitted non-WW1 character
 }
 
 ### VARIANTS ###
@@ -359,3 +359,41 @@ create_country_leader = {
 	ideology = fascism_ideology
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = advisor
+recruit_character = TUR_mehmed_vi
+recruit_character = TUR_Kress_von_Kressenstein
+recruit_character = TUR_ismail_enver_pasha
+recruit_character = TUR_mehmed_esad_pasha
+recruit_character = TUR_hasan_tahsin_pasha
+recruit_character = TUR_huseyin_hilmi
+recruit_character = TUR_mahmud_shevket_pasha
+recruit_character = TUR_kolemen_abdullah_pasha
+recruit_character = TUR_ali_riza_pasha
+recruit_character = TUR_mahmud_muhtar_pasha
+recruit_character = TUR_fevzi_cakmak_pasha
+recruit_character = TUR_cevat_cobanli_pasha
+recruit_character = TUR_halil_kut_pasha
+recruit_character = TUR_ahmed_ramiz_bey
+recruit_character = TUR_arif_pasha
+recruit_character = TUR_reshad_orbay
+recruit_character = TUR_ahmed_izzet
+recruit_character = TUR_mustafa_ismet
+recruit_character = TUR_erich_von_falkenhayn
+recruit_character = TUR_otto_liman_von_sanders
+recruit_character = TUR_colmar_von_der_goltz
+recruit_character = TUR_ethem_nejat
+recruit_character = TUR_huseyin_rauf
+recruit_character = TUR_ahmed_nessimy
+recruit_character = TUR_celal_bayar
+recruit_character = TUR_djemal_pasha
+recruit_character = TUR_ahmed_tevfik
+recruit_character = TUR_mehmet_nazim
+recruit_character = TUR_talaat_pasha
+recruit_character = TUR_mehemmed_naby
+recruit_character = TUR_mehmed_said_pasha
+recruit_character = TUR_nazim_pasha

@@ -1,57 +1,781 @@
-characters = {
-	USA_william_h_taft = {
-		name = "William Howard Taft"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/USA/USA_william_h_taft.png"
+characters={
+	##Country Leaders
+	USA_william_h_taft={
+		name="William H. Taft"
+		portraits={
+			civilian={
+				large="gfx/leaders/USA/USA_william_h_taft.dds"
 			}
 		}
-		country_leader = {
-			ideology = liberalism
-			traits = { }
-			expire = "1930.3.8"
+		country_leader={
+			ideology=conservatism
+			expire="1913.3.4.1"
+			id=-1
 		}
 	}
-
-	USA_eugene_v_debs = {
-		name = "Eugene V. Debs"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/USA/USA_eugene_v_debs.png"
-			}
+	USA_woodrow_wilson={
+		name="Woodrow Wilson"
+		portraits={
+			civilian={ large="gfx/leaders/USA/USA_wilson.png"}
 		}
-		country_leader = {
-			ideology = marxism
-			traits = { }
-			expire = "1926.10.20"
+		country_leader={
+			ideology=moderatism
+			expire="1935.1.1.1"
+			id=-1
+			traits={dislikes_germany}
 		}
 	}
-
-	USA_leonard_wood = {
-		name = "Leonard Wood"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/USA/USA_leonard_wood.png"
+	USA_charles_e_hughes={
+		name="Charles E. Hughes"
+		portraits={
+			civilian={large="gfx/leaders/USA/USA_charles_hughes.png"}
+		}
+		#country_leader={
+		#	ideology=liberalism
+		#	expire="1935.1.1.1"
+		#	id=-1
+		#}
+	}
+	
+	##Field Marshals
+	USA_tasker_h_bliss={
+		name="Tasker H. Bliss"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_Tasker_Bliss.png"
+				small="gfx/interface/ideas/USA/idea_USA_tasker_h_bliss.png"
 			}
 		}
-		country_leader = {
-			ideology = fascism_ideology
-			traits = { }
-			expire = "1927.8.7"
+		field_marshal={
+			traits={
+				offensive_doctrine thorough_planner logistics_wizard organisational_leader engineer
+			}
+			skill=4
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+		}
+		advisor={
+			slot = army_chief
+			idea_token=USA_tasker_h_bliss
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_chief_offensive_1
+			}
 		}
 	}
-
-	USA_john_j_pershing = {
-		name = "John J. Pershing"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/USA/USA_john_j_pershing.png"
+	USA_hugh_l_scott={
+		name="Hugh L. Scott"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_hugh_scott.png"
+				small="gfx/interface/ideas/USA/idea_USA_hugh_l_scott.png"
 			}
 		}
-		country_leader = {
-			ideology = despotism
-			traits = { }
-			expire = "1948.7.15"
+		field_marshal={
+			traits={ old_guard politically_connected engineer_officer defensive_doctrine inspirational_leader }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+		}
+		advisor={
+			slot = theorist
+			idea_token=USA_hugh_l_scott
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				mass_assault_expert
+			}
+		}
+	}
+	
+	##Generals
+	USA_john_j_pershing={
+		name="John J. Pershing"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_John_Pershing.png"
+				small="gfx/interface/ideas/USA/idea_USA_john_j_pershing.png"
+			}
+		}
+		corps_commander={
+			traits={
+				reckless fortress_buster expert_improviser engineer skirmisher camouflage_expert
+				paratrooper adaptable jungle_rat desert_fox
+			}
+			skill=5
+			attack_skill=4
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=5
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_john_j_pershing
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_infantry_3
+			}
+		}
+	}
+	USA_hunter_liggett={
+		name="Hunter Liggett"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_Hunter_Liggett.png"
+				small="gfx/interface/ideas/USA/idea_USA_Hunter_Liggett.png"
+			}
+		}
+		corps_commander={
+			traits={
+				infantry_officer infantry_expert mountaineer hill_fighter
+			}
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_hunter_liggett
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_artillery_1
+			}
+		}
+	}
+	USA_peyton_c_march={
+		name="Peyton C. March"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_peyton_march.png"
+				small="gfx/interface/ideas/USA/idea_USA_peyton_c_march.png"
+			}
+		}
+		corps_commander={
+			traits={
+				armor_officer cavalry_officer cavalry_leader panzer_leader engineer skilled_staffer combined_arms_expert
+			}
+			skill=3
+			attack_skill=1
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+		}
+		advisor={
+			slot = army_chief
+			idea_token=USA_peyton_c_march
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_chief_organizational_2
+			}
+		}
+	}
+	USA_robert_bullard={
+		name="Robert L. Bullard"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_Robert_Bullard.png"
+				small="gfx/interface/ideas/USA/idea_USA_Robert_Bullard.png"
+			}
+		}
+		corps_commander={
+			traits={
+				infantry_officer reckless infantry_leader paratrooper ambusher
+			}
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_robert_bullard
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_regrouping_1
+			}
+		}
+	}
+	USA_joseph_t_dickman={
+		name="Joseph T. Dickman"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_Joseph_Dickman.png"
+				#small="gfx/interface/ideas/USA/idea_USA_Joseph_Dickman.png"
+				small="gfx/interface/ideas/idea_USA_generic_land_3.dds"
+			}
+		}
+		corps_commander={
+			traits={
+				infantry_officer cautious winter_specialist winter_expert camouflage_expert scavenger
+			}
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_joseph_t_dickman
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_entrenchment_1
+			}
+		}
+	}
+	USA_john_a_lejeune={
+		name="John A. Lejeune"
+		portraits={
+			army={
+				large="gfx/leaders/USA/USA_John_A_Lejeune.png"
+				small="gfx/interface/ideas/USA/idea_USA_John_A_Lejeune.png"
+			}
+		}
+		corps_commander={
+			traits={
+				brilliant_strategist naval_invader ranger urban_assault_specialist paratrooper commando invader_ii
+			}
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_john_a_lejeune
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_CombinedArms_1
+			}
+		}
+	}
+	
+	##High Command
+	USA_leonard_wood={
+		name="Leonard Wood"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/idea_USA_Leonard_Wood.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token=USA_leonard_wood
+			ledger=army
+			allowed  = {always=yes}
+
+			traits  = {
+				mobile_warfare_expert
+			}
+		}
+	}
+	USA_samuel_d_rockenbach={
+		name="Samuel D. Rockenbach"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/idea_USA_Samuel_Rockenbach.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_samuel_d_rockenbach
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_armored_1
+			}
+		}
+	}
+	USA_robert_alexander={
+		name="Robert Alexander"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/idea_USA_Robert_Alexander.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token=USA_robert_alexander
+			ledger = army
+			allowed  = {always=yes}
+
+			traits  = {
+				army_logistics_2
+			}
+		}
+	}
+		
+	##Political Advisors
+	USA_thomas_edison={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_thomas_edison
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				ideological_crusader
+				rearmer
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Thomas A. Edison"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_thomas_edison.png"
+			}
+		}
+	}
+	USA_william_simmons={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_william_simmons
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				prince_of_terror
+				propaganda_expert
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="William Simmons"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_william_simmons.png"
+			}
+		}
+	}
+	USA_william_jennings_bryan={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_william_jennings_bryan
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				education_reformer
+				social_reformer 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="William Jennings Bryan"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_william_jennings_bryan.png"
+			}
+		}
+	}
+	USA_edward_house={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_edward_house
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				dealbroker 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="USA_edward_house"
+		portraits={
+			army={
+				small="GFX_idea_USA_edward_house"
+			}
+		}
+	}
+	USA_george_b_mcclellan={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_george_b_mcclellan
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				popular_figurehead 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="USA_george_b_mcclellan"
+		portraits={
+			army={
+				small="GFX_idea_USA_george_b_mcclellan"
+			}
+		}
+	}
+	USA_henry_ford={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_henry_ford
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				conservative_nationalist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Henry Ford"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_henry_ford.png"
+			}
+		}
+	}
+	USA_nikola_tesla={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_nikola_tesla
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				war_industrialist
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Nikola Tesla"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_nikola_tesla.png"
+			}
+		}
+	}
+	USA_oscar_w_underwood={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_oscar_w_underwood
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				smooth_talking_charmer
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Oscar W. Underwood"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_oscar_w_underwood.png"
+			}
+		}
+	}
+	USA_john_rockefeller={
+		advisor={
+			slot = political_advisor
+			idea_token = USA_john_rockefeller
+			ledger = civilian
+			allowed = {always=yes}
+			traits = {
+				compassionate_gentleman 
+				#great_architect
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="John D. Rockefeller"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/USA_john_rockefeller.png"
+			}
+		}
+	}
+		
+	##Air
+		USA_william_mitchell={
+			advisor={
+				slot = air_chief
+				idea_token = USA_william_mitchell
+				ledger = air
+				allowed = {always=yes}
+				traits = {
+					air_chief_all_weather_3 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="William L. Mitchell"
+			portraits={
+				army={
+					small="gfx/interface/ideas/USA/idea_USA_william_mitchell.png"
+				}
+			}
+		}
+		USA_mason_patrick={
+			advisor={
+				slot = air_chief
+				idea_token = USA_mason_patrick
+				ledger = air 
+				allowed = {always=yes}
+				traits = {
+					air_tactical_bombing_1					
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="Mason Patrick"
+			portraits={
+				army={
+					small="GFX_idea_USA_mason_patrick"
+				}
+			}
+		}
+		
+	##Admirals
+	USA_william_s_benson={
+		name="William S. Benson"
+		portraits={
+
+			army={
+				large="gfx/hoi4tgw_portraits/USA/navy_admirals/USA_William_Benson.dds"
+				small="gfx/interface/ideas/USA/idea_USA_William_Benson.png"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = USA_william_s_benson
+			ledger = navy 
+			allowed = {
+				always=yes
+			}
+			traits = {
+				navy_chief_naval_aviation_2 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits={
+				air_controller spotter
+				concealment_expert mine_sweeper smoke_screen_expert flight_deck_manager torpedo_bomber
+				arctic_water_expert inshore_fighter
+			}
+			skill=5
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=5
+		}
+	}
+	USA_henry_t_mayo={
+		name="Henry T. Mayo"
+		portraits={
+
+			army={
+				large="gfx/hoi4tgw_portraits/USA/navy_admirals/USA_Henry_Mayo.dds"
+				small="gfx/interface/ideas/USA/idea_USA_Henry_Mayo.png"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = USA_henry_t_mayo
+			ledger = navy
+			allowed = {always=yes}
+			traits = {
+				navy_naval_air_defense_3 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits={
+				ironside superior_tactician
+				concealment_expert smoke_screen_expert big_guns_expert safety_first ground_pounder marksman
+				blue_water_expert
+			}
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=3
+		}
+	}
+	USA_william_s_sims={
+		name="William S. Sims"
+		portraits={
+
+			army={
+				large="gfx/hoi4tgw_portraits/USA/navy_admirals/USA_William_Sims.dds"
+				small="gfx/interface/ideas/USA/idea_USA_William_Sims.png"
+			}
+		}
+		navy_leader={
+			traits={
+				blockade_runner ironside
+				concealment_expert smoke_screen_expert mine_sweeper big_guns_expert safety_first ground_pounder crisis_magician
+				green_water_expert
+			}
+			skill=3
+			attack_skill=1
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=1
+		}
+	}
+	USA_william_b_caperton={
+		name="William B. Caperton"
+		portraits={
+
+			army={
+				large="gfx/hoi4tgw_portraits/USA/navy_admirals/USA_William_Caperton.dds"
+				small="gfx/interface/ideas/USA/idea_USA_William_Caperton.png"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = USA_william_b_caperton
+			ledger = navy
+			allowed = {always=yes}
+			traits = {
+				navy_chief_maneuver_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits={
+				blockade_runner spotter
+				concealment_expert mine_layer smoke_screen_expert
+			}
+			skill=3
+			attack_skill=1
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=2
+		}
+	}
+	USA_frank_f_fletcher={
+		name="Frank F. Fletcher"
+		portraits={
+
+			army={
+				large="gfx/hoi4tgw_portraits/USA/navy_admirals/USA_Frank_Fletcher.dds"
+				small="gfx/interface/ideas/USA/idea_USA_Frank_Fletcher.png"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = USA_frank_f_fletcher
+			ledger = navy
+			allowed = {always=yes}
+			traits = {
+				navy_chief_commerce_raiding_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits={
+				fleet_protector fly_swatter
+				lancer destroyer_leader loading_drill_master hunter_killer cruiser_captain search_pattern_expert
+			}
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=2
+		}
+	}
+	USA_richmond_p_hobson={
+		name="Richmond P. Hobson"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/USA/navy_admirals/USA_Richmond_Hobson.dds"
+			}
+		}
+		navy_leader={
+			traits={
+				seawolf
+				silent_hunter torpedo_expert loading_drill_master
+				green_water_expert inshore_fighter
+			}
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=1
+		}
+	}
+		
+	##Navy HC
+	USA_george_dewey={
+		advisor={
+			slot = navy_chief
+			idea_token =USA_george_dewey
+			ledger = navy
+			allowed = {always=yes}
+			traits = {
+				navy_chief_decisive_battle_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="George Dewey"
+		portraits={
+			army={
+				small="GFX_idea_USA_george_dewey"
+			}
+		}
+	}
+	USA_robert_e_coontz={
+		advisor={
+			slot = navy_chief
+			idea_token = USA_robert_e_coontz
+			ledger = navy
+			allowed = {always=yes}
+			traits = {
+				navy_anti_submarine_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="Robert E. Coontz"
+		portraits={
+			army={
+				small="gfx/interface/ideas/USA/idea_USA_robert_e_coontz.png"
+			}
 		}
 	}
 }

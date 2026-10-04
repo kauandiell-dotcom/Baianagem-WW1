@@ -13,11 +13,12 @@ NDefines.NTechnology.MAX_AHEAD_RESEARCH_PENALTY = 2.5     -- Max penalty cap
 -- ============================================================
 -- Network & Simulation Tick Pacing (Multiplayer Fix)
 -- ============================================================
--- Lowers speed progressively before pausing so lagging clients can catch up
-NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 3		-- Vanilla is 10; 3 prevents huge desync gaps in MP
-NDefines.NGame.LAG_DAYS_FOR_PAUSE = 10			-- Pauses only after speed reduction fails to recover
-NDefines.NGame.GAME_SPEED_SECONDS = { 1.0, 0.25, 0.1, 0.05, 0.02 } -- Speed 5 capped at 0.02s to prevent host runaway
+-- High lag tolerance: game speed NEVER drops on minor client stutters or delays
+NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 60		-- Vanilla is 10; 60 prevents annoying MP slowdowns on minor lag
+NDefines.NGame.LAG_DAYS_FOR_PAUSE = 120			-- Only pause if client is heavily desynced/lagging over 120 days
+NDefines.NGame.GAME_SPEED_SECONDS = { 1.5, 0.5, 0.2, 0.1, 0.0 } -- Smooth progression, vanilla-compatible speed 5
 NDefines.NCountry.EVENT_PROCESS_OFFSET = 20		-- Smooth 20-day distribution of event checks (prevents 30-day lag spikes)
+
 
 -- ============================================================
 -- Military Command Caps (High Capacity for MP Players)

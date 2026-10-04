@@ -119,9 +119,9 @@ def evaluate_milestone_readiness() -> Dict[str, Dict[str, Any]]:
             "details": f"English: {'present' if m4_en else 'pending'}, PT-BR: {'present' if m4_pt else 'pending'}"
         },
         "M5": {
-            "name": "Verification & Steam Workshop Mirroring",
+            "name": "Verification & Repository Asset Integrity",
             "ready": m5_ready,
-            "details": f"Steam target mirrored: {'yes' if m5_ready else 'pending synchronization'}"
+            "details": f"Assets verified: {'yes' if m5_ready else 'pending'}"
         },
     }
 
@@ -166,8 +166,9 @@ def print_banner():
 ==============================================================================
  Target Mod: Baianagem-WW1 | Tag: GER | Start Bookmark: 1911.6.1
  Mod Root:   C:\\Users\\Usuário\\Pictures\\Baianagem-WW1\\WW1
- Steam Target: C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\394360\\3809191491
+ Mode:       Standalone Git Repository (No Workshop Mirroring)
 ==============================================================================
+
 """
     print(banner)
 

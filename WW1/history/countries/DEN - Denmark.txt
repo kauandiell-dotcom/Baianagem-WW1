@@ -79,36 +79,36 @@ if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-recruit_character = DEN_prince_frederik
-recruit_character = DEN_christian_forslev
-recruit_character = DEN_asger_grandjean
-recruit_character = DEN_aage_falking
+# recruit_character = DEN_prince_frederik # Omitted non-WW1 character
+# recruit_character = DEN_christian_forslev # Omitted non-WW1 character
+# recruit_character = DEN_asger_grandjean # Omitted non-WW1 character
+# recruit_character = DEN_aage_falking # Omitted non-WW1 character
 }
-recruit_character = DEN_hans_a_rolsted
-recruit_character = DEN_kaj_birksted
-recruit_character = DEN_poul_sommer
+# recruit_character = DEN_hans_a_rolsted # Omitted non-WW1 character
+# recruit_character = DEN_kaj_birksted # Omitted non-WW1 character
+# recruit_character = DEN_poul_sommer # Omitted non-WW1 character
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-recruit_character = DEN_johan_von_stemann
-recruit_character = DEN_peter_horn
+# recruit_character = DEN_johan_von_stemann # Omitted non-WW1 character
+# recruit_character = DEN_peter_horn # Omitted non-WW1 character
 }
-recruit_character = DEN_paul_sommer
-recruit_character = DEN_hans_lunding
+# recruit_character = DEN_paul_sommer # Omitted non-WW1 character
+# recruit_character = DEN_hans_lunding # Omitted non-WW1 character
 
 #### POLITICAL ADVISORS ####
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-recruit_character = DEN_peter_rochegune_munch
-recruit_character = DEN_christmas_moller
-recruit_character = DEN_vilhelm_buhl
-recruit_character = DEN_erik_scavenius
-recruit_character = DEN_jorgen_jorgensen
+# recruit_character = DEN_peter_rochegune_munch # Omitted non-WW1 character
+# recruit_character = DEN_christmas_moller # Omitted non-WW1 character
+# recruit_character = DEN_vilhelm_buhl # Omitted non-WW1 character
+# recruit_character = DEN_erik_scavenius # Omitted non-WW1 character
+# recruit_character = DEN_jorgen_jorgensen # Omitted non-WW1 character
 }
-recruit_character = DEN_knud_kristensen
+# recruit_character = DEN_knud_kristensen # Omitted non-WW1 character
 if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
@@ -118,15 +118,15 @@ if = {
 	limit = {
 		has_dlc = "Arms Against Tyranny"
 	}
-recruit_character = DEN_hans_hedtoft
-recruit_character = DEN_arnold_peter_moller
-recruit_character = DEN_alsing_andersen
-recruit_character = DEN_karl_kristian_steincke
-recruit_character = DEN_niels_bohr
-recruit_character = DEN_emil_strobech
+# recruit_character = DEN_hans_hedtoft # Omitted non-WW1 character
+# recruit_character = DEN_arnold_peter_moller # Omitted non-WW1 character
+# recruit_character = DEN_alsing_andersen # Omitted non-WW1 character
+# recruit_character = DEN_karl_kristian_steincke # Omitted non-WW1 character
+# recruit_character = DEN_niels_bohr # Omitted non-WW1 character
+# recruit_character = DEN_emil_strobech # Omitted non-WW1 character
 }
-recruit_character = DEN_ejnar_warum
-recruit_character = DEN_viggo_kampman
+# recruit_character = DEN_ejnar_warum # Omitted non-WW1 character
+# recruit_character = DEN_viggo_kampman # Omitted non-WW1 character
 
 
 
@@ -444,3 +444,28 @@ create_country_leader = {
 	ideology = liberalism
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = DEN_palle_berthelsen
+recruit_character = advisor
+recruit_character = DEN_frederick_viii
+recruit_character = DEN_carstensen
+recruit_character = DEN_evers
+recruit_character = DEN_garde
+recruit_character = DEN_kofoed_hansen
+recruit_character = DEN_topsoe_jensen
+recruit_character = DEN_juelbrockdorff
+recruit_character = DEN_otto_kofoed_hansen
+recruit_character = DEN_niels_nergaard
+recruit_character = DEN_henri_konow
+recruit_character = DEN_jens_christensen
+recruit_character = DEN_johan_deuntzer
+recruit_character = DEN_svend_hogsbro
+recruit_character = DEN_henri_wenck
+recruit_character = DEN_frederik_schroder
+recruit_character = DEN_edvard_brandes
+recruit_character = DEN_tage_reedtz_thott
+recruit_character = DEN_otto_liebe

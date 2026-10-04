@@ -94,25 +94,25 @@ if = {
 		}
 	}
 }
-recruit_character = HOL_charles_douw_van_der_krap
-recruit_character = HOL_nico_van_straten
+# recruit_character = HOL_charles_douw_van_der_krap # Omitted non-WW1 character
+# recruit_character = HOL_nico_van_straten # Omitted non-WW1 character
 recruit_character = HOL_hein_ter_poorten
-recruit_character = HOL_adrianus_rudolphus_van_den_bent
-recruit_character = HOL_hendrik_van_oyen
-recruit_character = HOL_hendrik_seyffardt
-recruit_character = HOL_henri_winkelman
-recruit_character = HOL_maarten_belzer
-recruit_character = HOL_marius_raaijmakers
-recruit_character = HOL_saul_de_groot
-recruit_character = HOL_antonie_pannekoek
-recruit_character = HOL_walraven_van_hall
-recruit_character = HOL_jacob_adriaan_de_wilde
-recruit_character = HOL_anton_de_kom
-recruit_character = HOL_jan_goudriaan
-recruit_character = HOL_adriaan_dijxhoorn
-recruit_character = HOL_prince_bernhard
-recruit_character = HOL_cornelis_van_geelkerken
-recruit_character = HOL_meinout_rost_van_tonningen
+# recruit_character = HOL_adrianus_rudolphus_van_den_bent # Omitted non-WW1 character
+# recruit_character = HOL_hendrik_van_oyen # Omitted non-WW1 character
+# recruit_character = HOL_hendrik_seyffardt # Omitted non-WW1 character
+# recruit_character = HOL_henri_winkelman # Omitted non-WW1 character
+# recruit_character = HOL_maarten_belzer # Omitted non-WW1 character
+# recruit_character = HOL_marius_raaijmakers # Omitted non-WW1 character
+# recruit_character = HOL_saul_de_groot # Omitted non-WW1 character
+# recruit_character = HOL_antonie_pannekoek # Omitted non-WW1 character
+# recruit_character = HOL_walraven_van_hall # Omitted non-WW1 character
+# recruit_character = HOL_jacob_adriaan_de_wilde # Omitted non-WW1 character
+# recruit_character = HOL_anton_de_kom # Omitted non-WW1 character
+# recruit_character = HOL_jan_goudriaan # Omitted non-WW1 character
+# recruit_character = HOL_adriaan_dijxhoorn # Omitted non-WW1 character
+# recruit_character = HOL_prince_bernhard # Omitted non-WW1 character
+# recruit_character = HOL_cornelis_van_geelkerken # Omitted non-WW1 character
+# recruit_character = HOL_meinout_rost_van_tonningen # Omitted non-WW1 character
 # Taog indonesia stuff
 if = {
 	limit = {
@@ -347,3 +347,33 @@ create_country_leader = {
 	ideology = liberalism
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = HOL_wilhelmina
+recruit_character = HOL_abraham_kuyper
+recruit_character = HOL_pieter_jelles_troelstra
+recruit_character = HOL_dufour
+recruit_character = HOL_cool
+recruit_character = HOL_weber
+recruit_character = HOL_forbes_wels
+recruit_character = HOL_pop
+recruit_character = HOL_neeteson
+recruit_character = HOL_van_terwisga
+recruit_character = HOL_latour
+recruit_character = HOL_michielsen
+recruit_character = HOL_de_greve
+recruit_character = HOL_van_rietschoten
+recruit_character = HOL_dijkstra
+recruit_character = HOL_burger
+recruit_character = HOL_thiange
+recruit_character = HOL_cornelis_snijders
+recruit_character = HOL_pinke
+recruit_character = HOL_rambonnet
+recruit_character = HOL_ten_cate
+recruit_character = HOL_wentholt
+recruit_character = HOL_ellis
+recruit_character = HOL_tydeman
+recruit_character = HOL_gerard_jaapies

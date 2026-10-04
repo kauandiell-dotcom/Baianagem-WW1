@@ -1,57 +1,859 @@
-characters = {
-	GRE_eleftherios_venizelos = {
-		name = "Eleftherios Venizelos"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/GRE/GRE_eleftherios_venizelos.png"
+characters={
+	##Leaders
+	GRE_george_i={
+		name="George I"
+		portraits={
+			civilian={
+				large="gfx/leaders/GRE/GRE_george_i.dds"
 			}
 		}
-		country_leader = {
-			ideology = liberalism
-			traits = { }
-			expire = "1936.3.18"
+		country_leader={
+			#desc="GRE_george_i_DESC"
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	GRE_george_i = {
-		name = "George I"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/GRE/GRE_george_i.png"
+	GRE_constantine={
+		name="Constantine I"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_constantine_i.dds"
 			}
 		}
-		country_leader = {
-			ideology = despotism
-			traits = { }
-			expire = "1913.3.18"
+		field_marshal={
+			traits={
+				politically_connected media_personality
+				logistics_wizard inspirational_leader
+				trickster ambusher
+				mountaineer hill_fighter paratrooper
+			} 
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=35002
+		}
+		country_leader={
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	GRE_avraam_benaroya = {
-		name = "Avraam Benaroya"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/GRE/GRE_avraam_benaroya.png"
+	GRE_alexandros_i={
+		name="Alexandros I"
+		portraits={
+			civilian={
+				large="gfx/leaders/GRE/GRE_alexandros_i.dds"
 			}
 		}
-		country_leader = {
-			ideology = marxism
-			traits = { }
-			expire = "1935.1.1"
-		}
+		#country_leader={
+		#	#desc="GRE_alexandros_i_DESC"
+		#	ideology=despotism
+		#	expire="1935.1.1.1"
+		#	id=-1
+		#}
 	}
-
-	GRE_dimitrios_gounaris = {
-		name = "Dimitrios Gounaris"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/GRE/GRE_dimitrios_gounaris.png"
+	GRE_alexandros_papanastasiou={
+		name="Alexandros Papanastasiou"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_8"
 			}
 		}
-		country_leader = {
-			ideology = fascism_ideology
-			traits = { }
-			expire = "1922.11.28"
+		country_leader={
+			ideology=liberalism
+			traits={ }
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
+	GRE_viktor_tzavelas={
+		name="Viktor Tzavelas"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_8"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	GRE_konstantinos_manos={
+		name="Konstantinos Manos"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_8"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits={ war_industrialist eager_collaborator }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	
+	##Field Marshals
+	GRE_panagiotis_danglis={
+		name="Panagiótis Danglís"
+		portraits={
+			army={
+				#large="gfx/leaders/GRE/GRE_panagiotis_danglis.dds"
+				large="gfx/hoi4tgw_portraits/GRE/army_generals/GRE_panagiotis_danglis.dds"
+				small="GFX_idea_GRE_panagiotis_danglis"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = GRE_panagiotis_danglis
+			ledger = army
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_chief_entrenchment_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={
+				inflexible_strategist
+				logistics_wizard thorough_planner unyielding_defender
+				expert_improviser engineer
+				mountaineer hill_fighter
+			}
+			skill=4
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=35004
+		}
+	}
+	
+	##Generals
+	GRE_Maurice_Sarrail = {
+		name = "Maurice Sarrail"
+		portraits = {
+			army = {
+				large="gfx/leaders/GRE/FRA_Maurice_Sarrail.png"
+				small="gfx/interface/ideas/FRA/idea_FRA_maurice_sarrail.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = GRE_Maurice_Sarrail
+			ledger = army
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				superior_firepower_expert
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = {
+				engineer_officer
+				engineer infantry_leader infantry_expert commando skirmisher naval_invader
+				mountaineer hill_fighter ranger urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	GRE_paraskevopoulos={
+		name="Leonídas Paraskevópoulos"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_paraskevopoulos.dds"
+				small="gfx/interface/ideas/idea_ENG_generic_land_1.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_paraskevopoulos
+			ledger = army
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_artillery_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={
+				cautious
+				fortress_buster expert_improviser engineer camouflage_expert
+				ranger urban_assault_specialist desert_fox jungle_rat adaptable
+			}
+			skill=4
+			attack_skill=5
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=35022
+		}
+	}
+	GRE_zymvrakakis={
+		name="Emmanouil Zymvrakakis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_emmanouil_zymvrakakis.dds"
+				small="gfx/interface/ideas/idea_south_america_generic_land_1.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_zymvrakakis
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_commando_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer naval_invader commando trickster skirmisher }
+			skill=3
+			attack_skill=1
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=35014
+		}
+	}
+	GRE_nider={
+		name="Konstantinos Nider"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_nider.dds"
+				small="gfx/interface/ideas/idea_ITA_generic_land_8.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_nider
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_chief_planning_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer engineer_officer organizer infantry_leader winter_specialist winter_expert }
+			skill=3
+			attack_skill=1
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=35016
+		}
+	}
+	GRE_kondylis={
+		name="Georgios Kondylis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_kondylis.dds"
+				small="gfx/interface/ideas/idea_generic_army_europe_3.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_kondylis
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_concealment_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer guerilla_fighter ambusher camouflage_expert }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=35032
+		}
+	}
+	GRE_nikolaos_trikoupis={
+		name="Nikolaos Trikoupis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_nikolaos_trikoupis.dds"
+				small="gfx/interface/ideas/idea_europe_generic_land_4.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_nikolaos_trikoupis
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_entrenchment_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer cavalry_officer cavalry_leader }
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=35005
+		}
+	}
+	GRE_victor_dousmanis={
+		name="Víctor Doúsmanis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_victor_dousmanis.dds"
+			}
+		}
+		corps_commander={
+		    traits={ infantry_officer ascari_officer scavenger }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=35010
+		}
+	}
+	GRE_papoulas={
+		name="Anastasios Papoulas"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_papoulas.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer old_guard inflexible_strategist paratrooper }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=35019
+		}
+	}
+	GRE_prince_andreas={
+		name="Prince Andreas"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_prince_andreas.dds"
+				small="gfx/interface/ideas/idea_south_america_generic_land_4.dds"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = GRE_prince_andreas
+			ledger = army
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer irregulars_officer cautious desert_fox jungle_rat urban_assault_specialist }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=35028
+		}
+	}
+	GRE_sapountzakis={
+		name="Konstantinos Sapountzakis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_sapountzakis.dds"
+				small="gfx/interface/ideas/idea_ENG_generic_land_2.dds"
+			}
+		}
+		#advisor={
+		#	slot = army_chief
+		#	idea_token = GRE_sapountzakis
+		#	ledger = army
+		#	cost = 25
+		#	allowed = {
+		#		tag = GRE
+		#	}
+		#	traits = {
+		#		army_chief_old_guard
+		#	}
+		#	ai_will_do = {
+		#		factor = 1.000
+		#	}
+		#}
+		corps_commander={
+			traits={ old_guard militias_officer skilled_staffer }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=35027
+		}
+	}
+	GRE_mazarakis={
+		name="Konstantinos Mazarakis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_mazarakis.dds"
+				small="gfx/interface/ideas/idea_USA_generic_land_3.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_mazarakis
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_CombinedArms_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ armor_officer panzer_leader expert_improviser engineer }
+			skill=3
+			attack_skill=2
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=1
+			legacy_id=35030
+		}
+	}
+	GRE_othonaios={
+		name="Alexandros Othonaios"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_othonaios.dds"
+				small="gfx/interface/ideas/idea_ITA_generic_land_5.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_othonaios
+			ledger = army
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_infantry_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+		    traits={ infantry_officer jaeger swamp_fox ranger }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=35031
+		}
+	}
+	GRE_plastiras={
+		name="Nikólaos Plastíras"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_plastiras.dds"
+				small="gfx/interface/ideas/idea_gre_nikolaos_plastiras.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GRE_plastiras
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				army_chief_morale_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+		    traits={ infantry_officer brilliant_strategist infantry_expert }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=35034
+		}
+	}
+	GRE_hatzianestis={
+		name="Georgios Hatzianestis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/GRE_hatzianestis.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer reckless harsh_leader }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=35023
+		}
+	}
+	
+	##High Command
+	GRE_constantin_moschopoulos={
+		name="GRE_constantin_moschopoulos"
+		portraits={
+			army={
+				small="GFX_idea_GRE_constantin_moschopoulos"
+				#small="gfx/interface/ideas/idea_ITA_generic_land_7.dds"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = GRE_constantin_moschopoulos
+			ledger = army 
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				military_theorist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	
+	##Navy Leaders
+	GRE_kountouriotis={
+		name="Paulos Kountouriotis"
+		portraits={
+			army={
+				large="gfx/admiral/GRE_kountouriotis.dds"
+				small="GFX_idea_GRE_paulos_kountouriotis"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = GRE_paulos_kountouriotis
+			ledger = navy
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				navy_chief_decisive_battle_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+			traits={ ironside gunnery_expert spotter }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=35006
+		}
+	}
+	GRE_hatzikiriakos={
+		name="Alexandros Hatzikyriakos"
+		portraits={
+			army={
+				large="gfx/admiral/GRE_hatzikiriakos.dds"
+			}
+		}
+		navy_leader={
+		    traits={ navy_career_officer fleet_protector }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=1
+			legacy_id=35033
+		}
+	}
+	GRE_mark_kerr={
+		name="GRE_mark_kerr"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
+				small="GFX_idea_GRE_mark_kerr"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = GRE_mark_kerr
+			ledger = navy
+			allowed = {
+				tag = GRE
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		navy_leader={
+		    traits={ gentlemanly fly_swatter air_controller }
+			skill=3
+			attack_skill=1
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=3
+		}
+	}
+	
+	##Political Advisors
+	GRE_giogios_averoff={
+		name="Georgios Averoff"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_generic_political_advisor_europe_4.dds"
+			}
+		}
+		advisor={
+			slot=political_advisor
+			idea_token=GRE_giogios_averoff
+			ledger = civilian
+			allowed={ tag=GRE }
+			traits={ war_industrialist }
+			ai_will_do={ factor=1.0 }
+		}
+	}
+	
+		GRE_nikolaos_stratos={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_nikolaos_stratos
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					popular_figurehead 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_nikolaos_stratos"
+			portraits={
+				army={
+					small="GFX_idea_GRE_nikolaos_stratos"
+				}
+			}
+		}
+		GRE_emmanouil_repoulis={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_emmanouil_repoulis
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					education_reformer 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_emmanouil_repoulis"
+			portraits={
+				army={
+					small="GFX_idea_GRE_emmanouil_repoulis"
+				}
+			}
+		}
+		GRE_dimitrios_rallis={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_dimitrios_rallis
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					captain_of_industry 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_dimitrios_rallis"
+			portraits={
+				army={
+					small="GFX_idea_GRE_dimitrios_rallis"
+				}
+			}
+		}
+		GRE_dimitrios_gounaris={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_dimitrios_gounaris
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					conservative_nationalist
+					staunch_monarchist
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_dimitrios_gounaris"
+			portraits={
+				army={
+					small="GFX_idea_GRE_dimitrios_gounaris"
+				}
+			}
+		}
+		GRE_eleftherios_venizelos={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_eleftherios_venizelos
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					#democratic_reformer
+					dealbroker
+					ideological_crusader
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_eleftherios_venizelos"
+			portraits={
+				army={
+					small="GFX_idea_GRE_eleftherios_venizelos"
+				}
+			}
+		}
+		GRE_petros_protopapadakis={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_petros_protopapadakis
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					armaments_organizer 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_petros_protopapadakis"
+			portraits={
+				army={
+					small="GFX_idea_GRE_petros_protopapadakis"
+				}
+			}
+		}
+		GRE_alexandros_zaimis={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_alexandros_zaimis
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					smooth_talking_charmer 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_alexandros_zaimis"
+			portraits={
+				army={
+					small="GFX_idea_GRE_alexandros_zaimis"
+				}
+			}
+		}
+		GRE_spiridon_lambros={
+			advisor={
+				slot = political_advisor
+				idea_token = GRE_spiridon_lambros
+				ledger = civilian
+				allowed = {
+					tag = GRE
+				}
+				traits = {
+					compassionate_gentleman 
+				}
+				ai_will_do = {
+					factor = 1.000
+				}
+			}
+			name="GRE_spiridon_lambros"
+			portraits={
+				army={
+					small="GFX_idea_GRE_spiridon_lambros"
+				}
+			}
+		}
+	
+	
 }

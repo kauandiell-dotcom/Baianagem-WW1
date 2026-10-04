@@ -83,7 +83,7 @@ set_popularities = {
 # 1911 Country Leaders
 recruit_character = GRE_eleftherios_venizelos
 recruit_character = GRE_george_i
-recruit_character = GRE_avraam_benaroya
+# recruit_character = GRE_avraam_benaroya # Omitted non-WW1 character
 recruit_character = GRE_dimitrios_gounaris
 
 
@@ -94,43 +94,43 @@ set_convoys = 80
 
 if = { 
 	limit = { has_dlc = "Battle for the Bosporus" }
-recruit_character = GRE_konstantinos_ventiris
-recruit_character = GRE_nikolaos_plastiras
-recruit_character = GRE_napoleon_zervas
-recruit_character = GRE_vasilios_tsarpalis
-recruit_character = GRE_panagiotis_gazis
-recruit_character = GRE_nikos_beloyannis
-recruit_character = GRE_petros_voulgaris
-recruit_character = GRE_spyridon_avgeris
-recruit_character = GRE_georgios_tsolakoglou
-recruit_character = GRE_aris_velouchiotis
-recruit_character = GRE_marinos_mitralexis
-recruit_character = GRE_georgios_kosmas
-recruit_character = GRE_aristeidis_dimitratos
-recruit_character = GRE_xenophon_giosmas
-recruit_character = GRE_georgios_papandreou
-recruit_character = GRE_sophoklis_venizelos
-recruit_character = GRE_dimitris_glinos
-recruit_character = GRE_aristotle_onassis
-recruit_character = GRE_dimitrios_holevas
-recruit_character = GRE_emmanouil_tsouderos
-recruit_character = GRE_konstantinos_maniadakis
+# recruit_character = GRE_konstantinos_ventiris # Omitted non-WW1 character
+# recruit_character = GRE_nikolaos_plastiras # Omitted non-WW1 character
+# recruit_character = GRE_napoleon_zervas # Omitted non-WW1 character
+# recruit_character = GRE_vasilios_tsarpalis # Omitted non-WW1 character
+# recruit_character = GRE_panagiotis_gazis # Omitted non-WW1 character
+# recruit_character = GRE_nikos_beloyannis # Omitted non-WW1 character
+# recruit_character = GRE_petros_voulgaris # Omitted non-WW1 character
+# recruit_character = GRE_spyridon_avgeris # Omitted non-WW1 character
+# recruit_character = GRE_georgios_tsolakoglou # Omitted non-WW1 character
+# recruit_character = GRE_aris_velouchiotis # Omitted non-WW1 character
+# recruit_character = GRE_marinos_mitralexis # Omitted non-WW1 character
+# recruit_character = GRE_georgios_kosmas # Omitted non-WW1 character
+# recruit_character = GRE_aristeidis_dimitratos # Omitted non-WW1 character
+# recruit_character = GRE_xenophon_giosmas # Omitted non-WW1 character
+# recruit_character = GRE_georgios_papandreou # Omitted non-WW1 character
+# recruit_character = GRE_sophoklis_venizelos # Omitted non-WW1 character
+# recruit_character = GRE_dimitris_glinos # Omitted non-WW1 character
+# recruit_character = GRE_aristotle_onassis # Omitted non-WW1 character
+# recruit_character = GRE_dimitrios_holevas # Omitted non-WW1 character
+# recruit_character = GRE_emmanouil_tsouderos # Omitted non-WW1 character
+# recruit_character = GRE_konstantinos_maniadakis # Omitted non-WW1 character
 }
 
 if = {
 	limit = { NOT = { has_dlc = "Battle for the Bosporus" } }
-recruit_character = GRE_nikolaos_plastiras
-recruit_character = GRE_napoleon_zervas
-recruit_character = GRE_konstantinos_ventiris
-recruit_character = GRE_nikos_beloyannis
-recruit_character = GRE_panagiotis_gazis
-recruit_character = GRE_petros_voulgaris
-recruit_character = GRE_vasilios_tsarpalis
-recruit_character = GRE_aristeidis_moraitinis
-recruit_character = GRE_aris_velouchiotis
-recruit_character = GRE_damaskinos
-recruit_character = GRE_evripidis_bakirtris
-recruit_character = GRE_georgios_papandreou
+# recruit_character = GRE_nikolaos_plastiras # Omitted non-WW1 character
+# recruit_character = GRE_napoleon_zervas # Omitted non-WW1 character
+# recruit_character = GRE_konstantinos_ventiris # Omitted non-WW1 character
+# recruit_character = GRE_nikos_beloyannis # Omitted non-WW1 character
+# recruit_character = GRE_panagiotis_gazis # Omitted non-WW1 character
+# recruit_character = GRE_petros_voulgaris # Omitted non-WW1 character
+# recruit_character = GRE_vasilios_tsarpalis # Omitted non-WW1 character
+# recruit_character = GRE_aristeidis_moraitinis # Omitted non-WW1 character
+# recruit_character = GRE_aris_velouchiotis # Omitted non-WW1 character
+# recruit_character = GRE_damaskinos # Omitted non-WW1 character
+# recruit_character = GRE_evripidis_bakirtris # Omitted non-WW1 character
+# recruit_character = GRE_georgios_papandreou # Omitted non-WW1 character
 }
 
 if = {
@@ -140,7 +140,7 @@ if = {
 			has_dlc = "Battle for the Bosporus"
 		}
 	}
-recruit_character = GRE_father_dimistrios
+# recruit_character = GRE_father_dimistrios # Omitted non-WW1 character
 }
 
 
@@ -313,3 +313,40 @@ create_country_leader = {
 	ideology = fascism_ideology
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = GRE_constantine
+recruit_character = GRE_alexandros_i
+recruit_character = GRE_alexandros_papanastasiou
+recruit_character = GRE_viktor_tzavelas
+recruit_character = GRE_konstantinos_manos
+recruit_character = GRE_panagiotis_danglis
+recruit_character = advisor
+recruit_character = GRE_Maurice_Sarrail
+recruit_character = GRE_paraskevopoulos
+recruit_character = GRE_zymvrakakis
+recruit_character = GRE_nider
+recruit_character = GRE_kondylis
+recruit_character = GRE_nikolaos_trikoupis
+recruit_character = GRE_victor_dousmanis
+recruit_character = GRE_papoulas
+recruit_character = GRE_prince_andreas
+recruit_character = GRE_sapountzakis
+recruit_character = GRE_mazarakis
+recruit_character = GRE_othonaios
+recruit_character = GRE_plastiras
+recruit_character = GRE_hatzianestis
+recruit_character = GRE_constantin_moschopoulos
+recruit_character = GRE_kountouriotis
+recruit_character = GRE_hatzikiriakos
+recruit_character = GRE_mark_kerr
+recruit_character = GRE_giogios_averoff
+recruit_character = GRE_nikolaos_stratos
+recruit_character = GRE_emmanouil_repoulis
+recruit_character = GRE_dimitrios_rallis
+recruit_character = GRE_petros_protopapadakis
+recruit_character = GRE_alexandros_zaimis
+recruit_character = GRE_spiridon_lambros

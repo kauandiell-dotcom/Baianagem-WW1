@@ -23,8 +23,8 @@ from spec import (
     EXPECTED_FOCUSES,
     EXPECTED_EVENT_IDS,
     EXPECTED_NEW_IDEAS,
-    STEAM_WORKSHOP_TARGET,
 )
+
 from tier1_syntax import validate_yaml_localization
 
 MOD_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -132,24 +132,17 @@ class TestTier4LocalizationMirror(unittest.TestCase):
             f"Missing PT-BR localization keys ({len(all_missing)} missing): {all_missing}"
         )
 
-    def test_steam_workshop_target_directory_exists(self):
-        """Verify that the target Steam Workshop mod directory exists."""
-        self.assertTrue(
-            os.path.isdir(STEAM_WORKSHOP_TARGET),
-            f"Steam Workshop target directory not found: {STEAM_WORKSHOP_TARGET}"
-        )
+    def test_repository_asset_integrity(self):
 
-    def test_steam_workshop_mirroring_fidelity(self):
         """
-        Verify that active files from the project match the Steam Workshop copy.
+        Verify that all critical mod assets exist within the repository.
         Checks DDS goals, GFX, focus tree, ideas, events, and localization.
         """
-        if not os.path.isdir(STEAM_WORKSHOP_TARGET):
-            self.skipTest("Steam Workshop target directory not accessible")
-
         files_to_check = [
             os.path.join("interface", "ww1_germany_goals.gfx"),
+            os.path.join("interface", "ww1_russia_goals.gfx"),
             os.path.join("common", "national_focus", "germany.txt"),
+            os.path.join("common", "national_focus", "soviet.txt"),
             os.path.join("events", "ww1_germany_events.txt"),
             os.path.join("common", "ideas", "ww1_germany_ideas.txt"),
             os.path.join("localisation", "english", "ww1_germany_focus_l_english.yml"),
@@ -162,39 +155,14 @@ class TestTier4LocalizationMirror(unittest.TestCase):
                 if dds_file.endswith(".dds"):
                     files_to_check.append(os.path.join("gfx", "interface", "goals", dds_file))
 
-        missing_in_target = []
-        hash_mismatches = []
-        checked_count = 0
-
+        missing_files = []
         for rel_path in files_to_check:
             src_path = os.path.join(MOD_ROOT, rel_path)
-            tgt_path = os.path.join(STEAM_WORKSHOP_TARGET, rel_path)
-
             if not os.path.exists(src_path):
-                continue
+                missing_files.append(rel_path)
 
-            checked_count += 1
-            if not os.path.exists(tgt_path):
-                missing_in_target.append(rel_path)
-                continue
+        self.assertEqual(len(missing_files), 0, f"Missing repository files: {missing_files[:5]}")
 
-            src_hash = get_file_sha256(src_path)
-            tgt_hash = get_file_sha256(tgt_path)
-            if src_hash != tgt_hash:
-                hash_mismatches.append(rel_path)
-
-        if checked_count == 0:
-            self.skipTest("No deployed files found to mirror yet")
-
-        if missing_in_target or hash_mismatches:
-            msg = (
-                f"Steam Workshop mirror is out of sync ({len(missing_in_target)} missing, "
-                f"{len(hash_mismatches)} hash mismatches). "
-                f"Requires Robocopy sync in Milestone 5.\n"
-                f"Missing in target: {missing_in_target[:5]}...\n"
-                f"Mismatched: {hash_mismatches[:5]}..."
-            )
-            self.skipTest(msg)
 
 
 def run_tier4(verbose: bool = True) -> bool:

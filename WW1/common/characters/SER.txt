@@ -1,57 +1,569 @@
-characters = {
-	SER_andra_nikolic = {
-		name = "Andra Nikolic"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/SER/SER_andra_nikolic.png"
+characters={
+	SER_radomir_putnik={
+		name="Radomir Putnik"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/SER/army_generals/SER_radomir_putnik.dds"
+				small="gfx/interface/ideas/SER/idea_SER_radomir_putnik.png"
 			}
 		}
-		country_leader = {
-			ideology = liberalism
-			traits = { }
-			expire = "1918.1.1"
+		advisor={
+			slot = army_chief
+			idea_token = SER_radomir_putnik
+			ledger = army
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_chief_entrenchment_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ expert_delegator unyielding_defender logistics_wizard fast_planner expert_improviser engineer fortress_buster adaptable }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=82002
 		}
 	}
-
-	SER_peter_i = {
-		name = "Peter I"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/SER/SER_peter_i.png"
+	SER_filip_filipovic={
+		name="Filip Filipovic"
+		portraits={
+			civilian={
+				large="gfx/leaders/SER/SER_filip_filipovic.dds"
 			}
 		}
-		country_leader = {
-			ideology = despotism
-			traits = { }
-			expire = "1921.8.16"
+		country_leader={
+			#desc="SER_filip_filipovic_DESC"
+			ideology=stalinism
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	SER_jasa_prodanovic = {
-		name = "Jasa Prodanovic"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/SER/SER_jasa_prodanovic.png"
+	SER_peter_i={
+		name="Peter I"
+		portraits={
+			civilian={
+				large="gfx/leaders/SER/SER_peter_i.dds"
 			}
 		}
-		country_leader = {
-			ideology = marxism
-			traits = { }
-			expire = "1935.1.1"
+		country_leader={
+			#desc="SER_peter_i_DESC"
+			ideology=conservatism
+			traits={nationalist_symbol}
+			expire="1935.1.1.1"
+			id=-1
+		}
+		country_leader={
+			#desc="SER_peter_i_DESC"
+			ideology=autocracy
+			expire="1935.1.1.1"
+			id=-1
 		}
 	}
-
-	SER_dragutin_dimitrijevic = {
-		name = "Dragutin Dimitrijevic Apis"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/SER/SER_dragutin_dimitrijevic.png"
+	SER_stepa_stepanovic={
+		name="Stepa Stepanović"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/SER/army_generals/SER_stepa_stepanovic.dds"
+				small="gfx/interface/ideas/SER/idea_SER_stepa_stepanovic.png"
 			}
 		}
-		country_leader = {
-			ideology = fascism_ideology
-			traits = { }
-			expire = "1917.6.26"
+		advisor={
+			slot = army_chief
+			idea_token = SER_stepa_stepanović
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_chief_offensive_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ trickster guerilla_fighter adaptable }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=82003
+		}
+	}
+	SER_zivojin_misic = {
+		name="Živojin Mišić"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/SER/army_generals/SER_zivojin_misic.dds"
+				small="gfx/interface/ideas/SER/idea_SER_zivojin_misic.png"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SER_zivojin_misic
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_chief_maneuver_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ brilliant_strategist commando trickster engineer expert_improviser infantry_leader infantry_expert naval_invader adaptable }
+			skill=5
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=82004
+		}
+	}
+	SER_pavle_jurisic_sturm = {
+		name="Pavle Jurišić Šturm"
+		portraits={
+			army={
+				large="gfx/hoi4tgw_portraits/SER/army_generals/SER_jurisic_sturm.dds"
+				small="gfx/interface/ideas/SER/idea_SER_jurisic_sturm.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_pavle_jurišić_Šturm
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_concealment_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ old_guard inflexible_strategist ranger }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=82005
+		}
+	}
+	SER_petar_bojovic={
+		name="Petar Bojović"
+		portraits={
+
+			army={
+				large="gfx/hoi4tgw_portraits/SER/army_generals/SER_petar_bojovic.dds"
+				small="gfx/interface/ideas/SER/idea_SER_petar_bojovic.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_petar_bojović
+			ledger = army
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_infantry_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_expert paratrooper naval_invader }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=82006
+		}
+	}
+	SER_momcilo_hadzilic={
+		name="Momcilo Hadzilic"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_8"
+			}
+		}
+		country_leader={
+			ideology=nazism
+			traits={ captain_of_industry }
+			expire="1925.1.1.1"
+			id=-1
+		}
+	}
+	SER_petar_pesic={
+		advisor={
+			slot = high_command
+			idea_token = SER_petar_pesic
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_artillery_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_petar_pesic"
+		portraits={
+			army={
+				small="gfx/interface/ideas/SER/idea_SER_petar_pesic.png"
+			}
+		}
+	}
+	SER_mihailo_rasic={
+		advisor={
+			slot = high_command
+			idea_token = SER_mihailo_rasic
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_commando_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_mihailo_rasic"
+		portraits={
+			army={
+				small="gfx/interface/ideas/SER/idea_SER_mihailo_rasic.png"
+			}
+		}
+	}
+	SER_milos_vasic={
+		advisor={
+			slot = high_command
+			idea_token = SER_milos_vasic
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_cavalry_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_milos_vasic"
+		portraits={
+			army={
+				small="gfx/interface/ideas/SER/idea_SER_milos_vasic.png"
+			}
+		}
+	}
+	SER_stevan_hadzic={
+		advisor={
+			slot = high_command
+			idea_token = SER_stevan_hadzic
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_logistics_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_stevan_hadzic"
+		portraits={
+			army={
+				small="GFX_idea_SER_stevan_hadzic"
+			}
+		}
+	}
+	SER_zivko_pavlovic={
+		advisor={
+			slot = high_command
+			idea_token = SER_zivko_pavlovic
+			ledger = army
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				army_chief_organizational_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_zivko_pavlovic"
+		portraits={
+			army={
+				small="gfx/interface/ideas/SER/idea_SER_petar_zivkovic_army.png"
+			}
+		}
+	}
+	SER_jovan_jovanovic_pizon={
+		advisor={
+			slot = theorist
+			idea_token = SER_jovan_jovanovic_pizon
+			ledger = army 
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				military_theorist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_jovan_jovanovic_pizon"
+		portraits={
+			army={
+				small="GFX_idea_SER_jovan_jovanovic_pizon"
+			}
+		}
+	}
+	
+	##Political Advisors
+	SER_lazar_pacu={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_lazar_pacu
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				compassionate_gentleman
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_lazar_pacu"
+		portraits={
+			army={
+				small="GFX_idea_SER_lazar_pacu"
+			}
+		}
+	}
+	SER_mihailo_gavrilovic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_mihailo_gavrilovic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				war_industrialist 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_mihailo_gavrilovic"
+		portraits={
+			army={
+				small="GFX_idea_SER_mihailo_gavrilovic"
+			}
+		}
+	}
+	SER_stojan_novakovic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_stojan_novakovic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_stojan_novakovic"
+		portraits={
+			army={
+				small="GFX_idea_SER_stojan_novakovic"
+			}
+		}
+	}
+	SER_momcilo_nincic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_momcilo_nincic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				armaments_organizer 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_momcilo_nincic"
+		portraits={
+			army={
+				small="GFX_idea_SER_momcilo_nincic"
+			}
+		}
+	}
+	SER_stojan_protic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_stojan_protic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				captain_of_industry
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_stojan_protic"
+		portraits={
+			army={
+				small="GFX_idea_SER_stojan_protic"
+			}
+		}
+	}
+	SER_milovan_milovanovic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_milovan_milovanovic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_milovan_milovanovic"
+		portraits={
+			army={
+				small="GFX_idea_SER_milovan_milovanovic"
+			}
+		}
+	}
+	SER_svetozar_pribicevic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_svetozar_pribicevic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				prince_of_terror
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_svetozar_pribicevic"
+		portraits={
+			army={
+				small="GFX_idea_SER_svetozar_pribicevic"
+			}
+		}
+	}
+	SER_duro_dakovic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_duro_dakovic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				quartermaster_general
+				railroad_enthusiast
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_duro_dakovic"
+		portraits={
+			army={
+				small="GFX_idea_SER_duro_dakovic"
+			}
+		}
+	}
+	SER_milenko_vesnic={
+		advisor={
+			slot = political_advisor
+			idea_token = SER_milenko_vesnic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				war_profiteer 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_milenko_vesnic"
+		portraits={
+			army={
+				small="GFX_idea_SER_milenko_vesnic"
+			}
+		}
+	}
+	
+	##Air
+	SER_kosta_miletic={
+		advisor={
+			slot = air_chief
+			idea_token = SER_kosta_miletic
+			ledger = air
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				air_close_air_support_1 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		name="SER_kosta_miletic"
+		portraits={
+			army={
+				small="GFX_idea_SER_kosta_miletic"
+			}
 		}
 	}
 }

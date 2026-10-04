@@ -190,7 +190,7 @@ set_popularities = {
 
 # 1911 Country Leaders
 recruit_character = USA_william_h_taft
-recruit_character = USA_eugene_v_debs
+# recruit_character = USA_eugene_v_debs # Omitted non-WW1 character
 recruit_character = USA_leonard_wood
 recruit_character = USA_john_j_pershing
 
@@ -199,36 +199,36 @@ recruit_character = USA_john_j_pershing
 
 
 # DIPLOMACY
-recruit_character = USA_robert_goddard
-recruit_character = USA_robert_oppenheimer
-recruit_character = USA_curtis_lemay
-recruit_character = USA_thomas_kinkaid
-recruit_character = USA_henry_arnold
-recruit_character = USA_dewitt_clinton_ramsey
-recruit_character = USA_harold_mcclelland
-recruit_character = USA_charles_lindbergh
-recruit_character = USA_george_kenney
-recruit_character = USA_john_cannon
-recruit_character = USA_george_marshall
-recruit_character = USA_carl_spaatz
-recruit_character = USA_marc_mitscher
-recruit_character = USA_jimmy_doolittle
-recruit_character = USA_claire_lee_chennault
-recruit_character = USA_john_winant
-recruit_character = USA_henry_morgenthau
-recruit_character = USA_william_donovan
-recruit_character = USA_whittaker_chambers
-recruit_character = USA_robert_taft
-recruit_character = USA_donald_nelson
-recruit_character = USA_joseph_mccarthy
-recruit_character = USA_cordell_hull
-recruit_character = USA_harold_ickes
-recruit_character = USA_william_regnery
-recruit_character = USA_joseph_patterson
-recruit_character = USA_henry_stimson
-recruit_character = USA_victor_perlo
-recruit_character = USA_charles_coughlin
-recruit_character = USA_harry_white
+# recruit_character = USA_robert_goddard # Omitted non-WW1 character
+# recruit_character = USA_robert_oppenheimer # Omitted non-WW1 character
+# recruit_character = USA_curtis_lemay # Omitted non-WW1 character
+# recruit_character = USA_thomas_kinkaid # Omitted non-WW1 character
+# recruit_character = USA_henry_arnold # Omitted non-WW1 character
+# recruit_character = USA_dewitt_clinton_ramsey # Omitted non-WW1 character
+# recruit_character = USA_harold_mcclelland # Omitted non-WW1 character
+# recruit_character = USA_charles_lindbergh # Omitted non-WW1 character
+# recruit_character = USA_george_kenney # Omitted non-WW1 character
+# recruit_character = USA_john_cannon # Omitted non-WW1 character
+# recruit_character = USA_george_marshall # Omitted non-WW1 character
+# recruit_character = USA_carl_spaatz # Omitted non-WW1 character
+# recruit_character = USA_marc_mitscher # Omitted non-WW1 character
+# recruit_character = USA_jimmy_doolittle # Omitted non-WW1 character
+# recruit_character = USA_claire_lee_chennault # Omitted non-WW1 character
+# recruit_character = USA_john_winant # Omitted non-WW1 character
+# recruit_character = USA_henry_morgenthau # Omitted non-WW1 character
+# recruit_character = USA_william_donovan # Omitted non-WW1 character
+# recruit_character = USA_whittaker_chambers # Omitted non-WW1 character
+# recruit_character = USA_robert_taft # Omitted non-WW1 character
+# recruit_character = USA_donald_nelson # Omitted non-WW1 character
+# recruit_character = USA_joseph_mccarthy # Omitted non-WW1 character
+# recruit_character = USA_cordell_hull # Omitted non-WW1 character
+# recruit_character = USA_harold_ickes # Omitted non-WW1 character
+# recruit_character = USA_william_regnery # Omitted non-WW1 character
+# recruit_character = USA_joseph_patterson # Omitted non-WW1 character
+# recruit_character = USA_henry_stimson # Omitted non-WW1 character
+# recruit_character = USA_victor_perlo # Omitted non-WW1 character
+# recruit_character = USA_charles_coughlin # Omitted non-WW1 character
+# recruit_character = USA_harry_white # Omitted non-WW1 character
 
 if = {
 	limit = { not = { has_dlc = "No Compromise, No Surrender" } }
@@ -1011,3 +1011,38 @@ create_country_leader = {
 	ideology = despotism
 	traits = { }
 }
+
+
+# ==============================================================================
+# Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
+# ==============================================================================
+recruit_character = USA_woodrow_wilson
+recruit_character = USA_charles_e_hughes
+recruit_character = USA_tasker_h_bliss
+recruit_character = USA_hugh_l_scott
+recruit_character = USA_hunter_liggett
+recruit_character = USA_peyton_c_march
+recruit_character = USA_robert_bullard
+recruit_character = USA_joseph_t_dickman
+recruit_character = USA_john_a_lejeune
+recruit_character = USA_samuel_d_rockenbach
+recruit_character = USA_robert_alexander
+recruit_character = USA_thomas_edison
+recruit_character = USA_william_simmons
+recruit_character = USA_william_jennings_bryan
+recruit_character = USA_edward_house
+recruit_character = USA_george_b_mcclellan
+recruit_character = USA_henry_ford
+recruit_character = USA_nikola_tesla
+recruit_character = USA_oscar_w_underwood
+recruit_character = USA_john_rockefeller
+recruit_character = USA_william_mitchell
+recruit_character = USA_mason_patrick
+recruit_character = USA_william_s_benson
+recruit_character = USA_henry_t_mayo
+recruit_character = USA_william_s_sims
+recruit_character = USA_william_b_caperton
+recruit_character = USA_frank_f_fletcher
+recruit_character = USA_richmond_p_hobson
+recruit_character = USA_george_dewey
+recruit_character = USA_robert_e_coontz

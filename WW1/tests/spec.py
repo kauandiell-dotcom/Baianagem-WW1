@@ -505,6 +505,3 @@ EXPECTED_REFERENCED_STATES: List[int] = [
     773,  # Cameroon
     1088, # German Congo / New Cameroon
 ]
-
-# Target Steam Workshop directory
-STEAM_WORKSHOP_TARGET = r"E:\SteamLibrary\steamapps\workshop\content\394360\3809191491" if os.path.isdir(r"E:\SteamLibrary\steamapps\workshop\content\394360\3809191491") else r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3809191491"
