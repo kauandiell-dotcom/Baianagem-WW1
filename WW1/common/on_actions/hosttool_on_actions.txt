@@ -425,9 +425,12 @@ on_actions = {
 					set_variable={host = YUN.id}
 				}
 		
-			var:host = {
-				set_variable = { host_marked_states = 0 }
-				set_country_flag = host
+			if = {
+				limit = { has_variable = host }
+				var:host = {
+					set_variable = { host_marked_states = 0 }
+					set_country_flag = host
+				}
 			}
 		}
 	}
