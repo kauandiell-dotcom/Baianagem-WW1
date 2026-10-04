@@ -192,8 +192,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				max_planning = 0.15
-				planning_speed = 0.15
+				max_planning = 0.10
+				planning_speed = 0.10
 				army_org_factor = 0.05
 			}
 		}
@@ -213,9 +213,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_attack_factor = 0.15
-				breakthrough_factor = 0.20
-				planning_speed = 0.20
+				army_attack_factor = 0.05
+				breakthrough_factor = 0.05
+				planning_speed = 0.10
 			}
 		}
 
@@ -223,8 +223,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				special_forces_attack_factor = 0.15
-				breakthrough_factor = 0.10
+				special_forces_attack_factor = 0.05
+				breakthrough_factor = 0.05
 			}
 		}
 
@@ -232,9 +232,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				conscription_factor = 0.15
-				army_org_factor = 0.10
-				army_morale_factor = 0.15
+				conscription_factor = 0.10
+				army_org_factor = 0.05
+				army_morale_factor = 0.08
 			}
 		}
 

@@ -175,27 +175,20 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = GER_grosser_generalstab
-				add_idea = GER_ohl_supreme_command
-			}
 			if = {
 				limit = { has_idea = GER_moltke_generalstab_doctrine }
-				swap_ideas = {
-					remove_idea = GER_moltke_generalstab_doctrine
-					add_idea = GER_ohl_supreme_command
-				}
+				remove_ideas = GER_moltke_generalstab_doctrine
 			}
-			else_if = {
+			if = {
+				limit = { has_idea = GER_falkenhayn_attrition_doctrine }
+				remove_ideas = GER_falkenhayn_attrition_doctrine
+			}
+			if = {
 				limit = { has_idea = GER_grosser_generalstab }
-				swap_ideas = {
-					remove_idea = GER_grosser_generalstab
-					add_idea = GER_ohl_supreme_command
-				}
+				remove_ideas = GER_grosser_generalstab
 			}
-			else = {
-				add_ideas = GER_ohl_supreme_command
-			}
+			add_ideas = GER_ohl_supreme_command
+			add_ideas = GER_silent_dictatorship_ohl
 			set_country_flag = GER_historical_path_chosen
 			add_stability = 0.05
 			add_war_support = 0.15
@@ -2520,12 +2513,15 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = ger_schlieffen_plan_launched
 			country_event = { id = ww1_germany_events.3 }
-			add_ideas = GER_schlieffen_momentum
+			add_timed_idea = {
+				idea = GER_schlieffen_momentum
+				days = 90
+			}
 			34 = {
 				add_claim_by = GER
 			}
-					activate_mission = ger_mission_reach_paris
-}
+			activate_mission = ger_mission_reach_paris
+		}
 	}
 
 	focus = {
@@ -2964,6 +2960,8 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = german_infiltration_assault_idea
+			set_technology = { sturmtruppe_battalion_tech = 1 }
+			load_oob = "unlock_elite_inf"
 			army_experience = 30
 			add_tech_bonus = {
 				name = special_forces_bonus
@@ -3301,7 +3299,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = GER_kaiserschlacht_idea
+			add_timed_idea = {
+				idea = GER_kaiserschlacht_idea
+				days = 180
+			}
 			army_experience = 50
 			add_war_support = 0.15
 			set_country_flag = ger_blank_cheque_given

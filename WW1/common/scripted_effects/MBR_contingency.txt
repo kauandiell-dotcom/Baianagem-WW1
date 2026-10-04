@@ -8,10 +8,4 @@ MBR_grant_level_one_technologies = {
 		tech_engineers = 1
 		tech_recon = 1
 	}
-	if = {
-		limit = {
-			NOT = { has_template_containing_unit = elite_inf }
-		}
-		load_oob = "unlock_elite_inf"
-	}
 }

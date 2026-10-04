@@ -41,7 +41,16 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 75
-			add_ideas = SOV_stolypin_reforms_spirit
+			if = {
+				limit = { has_idea = SOV_backward_agrarian_system }
+				swap_ideas = {
+					remove_idea = SOV_backward_agrarian_system
+					add_idea = SOV_stolypin_reforms_spirit
+				}
+			}
+			else = {
+				add_ideas = SOV_stolypin_reforms_spirit
+			}
 		}
 	}
 
@@ -730,7 +739,8 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.20
 			add_stability = 0.15
-			army_morale_factor = 0.15
+			add_political_power = 100
+			army_experience = 30
 		}
 	}
 
@@ -818,7 +828,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = SOV_salvation_directory_rule
-			conscription_factor = 0.15
+			add_manpower = 75000
+			add_war_support = 0.05
 		}
 	}
 
@@ -1507,7 +1518,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_offsite_building = { type = synthetic_refinery level = 2 }
-			fuel_gain_factor = 0.25
+			229 = { add_building_construction = { type = fuel_silo level = 2 instant_build = yes } }
+			add_tech_bonus = { name = industry bonus = 1.0 ahead_reduction = 1 uses = 1 category = industry }
 		}
 	}
 
@@ -1642,7 +1654,15 @@ focus_tree = {
 			focus = SOV_trans_siberian_double_tracking
 		}
 		completion_reward = {
-			random_owned_state = { limit = { state = 87 } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			random_owned_state = {
+				limit = { state = 87 }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				add_building_construction = { type = rail_way level = 2 instant_build = yes }
+			}
+			random_owned_state = {
+				limit = { state = 10 }
+				add_building_construction = { type = rail_way level = 2 instant_build = yes }
+			}
 		}
 	}
 
@@ -1658,7 +1678,11 @@ focus_tree = {
 			focus = SOV_trans_siberian_double_tracking
 		}
 		completion_reward = {
-			random_owned_state = { limit = { state = 408 } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			random_owned_state = {
+				limit = { state = 408 }
+				add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				add_building_construction = { type = rail_way level = 2 instant_build = yes }
+			}
 		}
 	}
 
@@ -1725,9 +1749,9 @@ focus_tree = {
 			focus = SOV_murmansk_ice_free_port_lifeline
 		}
 		completion_reward = {
-			convoy_escort_efficiency_factor = 0.25
-			navy_experience = 25
-			convoy_escort_efficiency = 0.20
+			navy_experience = 35
+			add_convoys = 50
+			random_owned_state = { limit = { state = 214 } add_building_construction = { type = naval_base level = 2 instant_build = yes } }
 		}
 	}
 
@@ -1943,8 +1967,9 @@ focus_tree = {
 			focus = SOV_arsenal_of_the_russian_empire
 		}
 		completion_reward = {
-			production_factory_max_efficiency_factor = 0.15
-			war_support_factor = 0.10
+			add_war_support = 0.10
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			219 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 	}
 
@@ -2009,9 +2034,8 @@ focus_tree = {
 			focus = SOV_baltic_fleet_resurgence
 		}
 		completion_reward = {
-			navy_experience = 20
-			surface_detection_factor = 0.15
-			navy_anti_air_factor = 0.10
+			navy_experience = 25
+			random_owned_state = { limit = { state = 195 } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
 		}
 	}
 
@@ -2092,9 +2116,8 @@ focus_tree = {
 			focus = SOV_novik_class_fast_destroyers
 		}
 		completion_reward = {
-			navy_experience = 25
+			navy_experience = 30
 			add_tech_bonus = { name = submarine_bonus bonus = 1.0 ahead_reduction = 1 }
-			convoy_raiding_efficiency_factor = 0.20
 		}
 	}
 
@@ -2127,9 +2150,8 @@ focus_tree = {
 			focus = SOV_borodino_battlecruisers_laid_down
 		}
 		completion_reward = {
-			convoy_raiding_efficiency_factor = 0.20
-			navy_experience = 20
-			convoy_raiding_efficiency_factor = 0.20
+			navy_experience = 30
+			add_tech_bonus = { name = naval_doctrine bonus = 1.0 ahead_reduction = 1 uses = 1 }
 		}
 	}
 
@@ -2161,8 +2183,9 @@ focus_tree = {
 			focus = SOV_moonsund_archipelago_defenses
 		}
 		completion_reward = {
-			navy_max_range_factor = 0.20
-			naval_hit_chance = 0.10
+			navy_experience = 40
+			add_tech_bonus = { name = naval_doctrine bonus = 1.0 uses = 1 }
+			add_war_support = 0.05
 		}
 	}
 
@@ -2244,7 +2267,13 @@ focus_tree = {
 			focus = SOV_sevastopol_naval_bastion
 		}
 		completion_reward = {
-			convoy_raiding_efficiency_factor = 0.25
+			navy_experience = 25
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
 			add_war_support = 0.05
 		}
 	}
@@ -2261,9 +2290,14 @@ focus_tree = {
 			focus = SOV_sevastopol_naval_bastion
 		}
 		completion_reward = {
-			amphibious_invasion_speed_factor = 0.20
-			invasion_preparation_speed = 0.30
-			amphibious_invasion_defence = 0.15
+			army_experience = 25
+			navy_experience = 20
+			add_manpower = 20000
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 500
+				producer = SOV
+			}
 		}
 	}
 
@@ -2297,9 +2331,11 @@ focus_tree = {
 			focus = SOV_trabzon_amphibious_landing
 		}
 		completion_reward = {
-			special_forces_attack_factor = 0.20
-			army_experience = 25
-			amphibious_invasion_speed_factor = 0.30
+			army_experience = 35
+			navy_experience = 25
+			add_manpower = 40000
+			add_convoys = 50
+			add_war_support = 0.05
 		}
 	}
 
@@ -2315,8 +2351,22 @@ focus_tree = {
 			focus = SOV_prepare_for_tsargrad_landing
 		}
 		completion_reward = {
-			navy_max_range_factor = 0.25
-			naval_hit_chance = 0.15
+			navy_experience = 35
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			random_owned_state = {
+				limit = { state = 197 }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 
@@ -2608,8 +2658,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_manpower = 80000
-			cavalry_attack_factor = 0.15
-			cavalry_speed_factor = 0.10
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = SOV }
+			army_experience = 20
 		}
 	}
 
@@ -2644,7 +2694,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_manpower = 30000
-			cavalry_attack_factor = 0.10
+			add_war_support = 0.05
+			army_experience = 15
 		}
 	}
 
@@ -2680,8 +2731,8 @@ focus_tree = {
 			focus = SOV_reorganize_military_districts
 		}
 		completion_reward = {
-			encryption_factor = 0.15
-			decryption_factor = 0.15
+			add_tech_bonus = { name = electronics_bonus bonus = 1.0 ahead_reduction = 1 uses = 2 category = electronics }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 producer = SOV }
 		}
 	}
 
@@ -2716,8 +2767,10 @@ focus_tree = {
 			focus = SOV_telegraph_and_wireless_corps
 		}
 		completion_reward = {
-			special_forces_attack_factor = 0.15
-			special_forces_defence_factor = 0.15
+			army_experience = 35
+			add_manpower = 40000
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 10000 producer = SOV }
+			add_war_support = 0.05
 		}
 	}
 
@@ -2838,7 +2891,8 @@ focus_tree = {
 			focus = SOV_tula_and_izhevsk_arms_surge
 		}
 		completion_reward = {
-			add_tech_bonus = { name = art_bonus bonus = 1.0 uses = 1 category = artillery }
+			add_tech_bonus = { name = art_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = artillery }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 300 producer = SOV }
 		}
 	}
 
@@ -2889,7 +2943,9 @@ focus_tree = {
 			focus = SOV_schneider_and_putilov_heavy_howitzers
 		}
 		completion_reward = {
-			railway_gun_bombardment_factor = 0.25
+			add_tech_bonus = { name = art_tech bonus = 1.0 ahead_reduction = 1 uses = 1 category = artillery }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 250 producer = SOV }
+			army_experience = 25
 		}
 	}
 
@@ -2943,7 +2999,10 @@ focus_tree = {
 			focus = SOV_the_great_military_program
 		}
 		completion_reward = {
-			add_ideas = brusilov_offensive_shock_idea
+			add_timed_idea = {
+				idea = brusilov_offensive_shock_idea
+				days = 180
+			}
 			add_political_power = 100
 		}
 	}
@@ -2977,7 +3036,7 @@ focus_tree = {
 			focus = SOV_brusilov_breakthrough_1916
 		}
 		completion_reward = {
-			special_forces_cap = 0.05
+			army_experience = 25
 			add_ideas = SOV_shock_battalions_spirit
 		}
 	}
@@ -2994,8 +3053,8 @@ focus_tree = {
 			focus = SOV_deep_echelon_surprise_assault
 		}
 		completion_reward = {
-			add_tech_bonus = { name = inf_tech bonus = 2.0 uses = 1 category = infantry_weapons }
-			infantry_attack_factor = 0.15
+			add_tech_bonus = { name = inf_tech bonus = 1.0 ahead_reduction = 1 uses = 1 category = infantry_weapons }
+			add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 3000 producer = SOV }
 		}
 	}
 
@@ -3012,6 +3071,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = { name = armor_bonus bonus = 1.0 uses = 1 category = armor }
+			add_equipment_to_stockpile = { type = armored_car_equipment_1 amount = 100 producer = SOV }
 		}
 	}
 
@@ -3044,7 +3104,9 @@ focus_tree = {
 			focus = SOV_shock_battalions_of_death
 		}
 		completion_reward = {
-			special_forces_defence_factor = 0.15
+			add_tech_bonus = { name = inf_equipment bonus = 1.0 ahead_reduction = 1 uses = 1 category = infantry_weapons }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 producer = SOV }
+			army_experience = 20
 		}
 	}
 
@@ -3451,7 +3513,8 @@ focus_tree = {
 			focus = SOV_sarikamish_counter_encirclement
 		}
 		completion_reward = {
-			army_infantry_attack_factor = 0.10
+			army_experience = 35
+			add_war_support = 0.05
 			add_political_power = 100
 		}
 	}

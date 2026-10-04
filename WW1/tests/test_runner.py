@@ -94,7 +94,7 @@ def evaluate_milestone_readiness() -> Dict[str, Dict[str, Any]]:
     )
     m4_ready = m4_en and m4_pt
 
-    steam_target = r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3809191491"
+    steam_target = r"E:\SteamLibrary\steamapps\workshop\content\394360\3809191491" if os.path.isdir(r"E:\SteamLibrary\steamapps\workshop\content\394360\3809191491") else r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3809191491"
     m5_ready = os.path.isdir(steam_target) and m1_ready and os.path.isfile(os.path.join(steam_target, "interface", "ww1_germany_goals.gfx"))
 
     return {

@@ -10,11 +10,11 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_attack_factor = 0.15
-				breakthrough_factor = 0.15
+				army_attack_factor = 0.05
+				breakthrough_factor = 0.05
 				consumer_goods_factor = 0.05
-				war_support_factor = 0.15
-				stability_factor = 0.10
+				war_support_factor = 0.10
+				stability_factor = 0.05
 				political_power_cost = 0.20
 			}
 		}
@@ -24,9 +24,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				planning_speed = 0.30
-				max_planning = 0.25
-				breakthrough_factor = 0.15
+				planning_speed = 0.15
+				max_planning = 0.15
+				breakthrough_factor = 0.05
 				political_power_cost = 0.25
 			}
 		}
@@ -36,10 +36,10 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_speed_factor = 0.15
-				breakthrough_factor = 0.20
-				army_attack_factor = 0.10
-				planning_speed = 0.25
+				army_speed_factor = 0.08
+				breakthrough_factor = 0.08
+				army_attack_factor = 0.05
+				planning_speed = 0.15
 			}
 		}
 
@@ -120,9 +120,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.15
-				supply_consumption_factor = -0.10
-				industrial_capacity_factory = 0.10
+				army_artillery_attack_factor = 0.08
+				supply_consumption_factor = -0.05
+				industrial_capacity_factory = 0.05
 			}
 		}
 
@@ -143,7 +143,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				industrial_capacity_factory = 0.05
-				army_artillery_attack_factor = 0.15
+				army_artillery_attack_factor = 0.08
 				army_artillery_defence_factor = 0.05
 			}
 		}
@@ -321,9 +321,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				defence = 0.15
-				dig_in_speed_factor = 0.25
-				max_dig_in = 5
+				army_defence_factor = 0.08
+				dig_in_speed_factor = 0.20
+				max_dig_in = 4
 				army_speed_factor = -0.05
 			}
 		}
@@ -333,10 +333,10 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				breakthrough_factor = 0.20
-				army_attack_factor = 0.12
-				special_forces_attack_factor = 0.20
-				land_reinforce_rate = 0.15
+				breakthrough_factor = 0.05
+				army_attack_factor = 0.05
+				special_forces_attack_factor = 0.05
+				land_reinforce_rate = 0.08
 			}
 		}
 
@@ -345,9 +345,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				experience_loss_factor = -0.20
-				army_org_factor = 0.10
-				army_morale_factor = 0.10
+				experience_loss_factor = -0.15
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
 			}
 		}
 
@@ -511,8 +511,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				breakthrough_factor = 0.15
-				army_speed_factor = 0.10
+				breakthrough_factor = 0.08
+				army_speed_factor = 0.05
 			}
 		}
 
@@ -564,7 +564,28 @@ ideas = {
 			}
 		}
 
+		# 19. Hutier Infiltration Tactics (Sturmtruppen)
+		german_infiltration_assault_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				special_forces_attack_factor = 0.05
+				breakthrough_factor = 0.05
+				max_planning = 0.05
+			}
+		}
 
+		# 20. Kaiserschlacht Offensive (Operation Michael)
+		GER_kaiserschlacht_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				breakthrough_factor = 0.10
+				supply_consumption_factor = 0.15
+				conscription_factor = -0.05
+			}
+		}
 
 	}
 }

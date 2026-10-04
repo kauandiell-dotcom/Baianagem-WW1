@@ -25,6 +25,20 @@ add_ideas = {
 	USA_firearms_pioneer_culture
 }
 
+# 1911 Starting Armament Stockpile
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 30000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 400
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 400
+}
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "USA_1936_naval_mtg"

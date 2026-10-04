@@ -1,29 +1,115 @@
-﻿division_template = {
-	name = "Basic Infantry Division"
+# Bulgarian Order of Battle (1911)
+# Authentic historical composition: "Prussia of the Balkans" - Heavy 16-battalion infantry divisions + Cavalry
+
+division_template = {
+	name = "Bulgarska Pehotna Diviziya"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+		infantry = { x = 3 y = 3 }
+		artillery_brigade = { x = 4 y = 0 }
+		artillery_brigade = { x = 4 y = 1 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
 	}
 }
-units = {	division = {
-		name = "1. Infantry Division"
-		location = 793
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "2. Infantry Division"
-		location = 793
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
+
+division_template = {
+	name = "Konitska Diviziya"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Sofiyska Pehotna Diviziya"
+		location = 949 # Sofia
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.35
+	}
+	division = {
+		name = "2. Trakiyska Pehotna Diviziya"
+		location = 6923 # Plovdiv
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.35
+	}
+	division = {
+		name = "3. Balkanska Pehotna Diviziya"
+		location = 6814 # Stara Zagora / Sliven
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "4. Preslavska Pehotna Diviziya"
+		location = 9783 # Varna
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "5. Dunavska Pehotna Diviziya"
+		location = 9612 # Ruse
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "6. Bdinska Pehotna Diviziya"
+		location = 9771 # Vidin
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "7. Rilska Pehotna Diviziya"
+		location = 793 # Kyustendil
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "8. Tundzhanska Pehotna Diviziya"
+		location = 9862 # Haskovo
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "9. Plevenska Pehotna Diviziya"
+		location = 3796 # Pleven
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "10. Belomorska Pehotna Diviziya"
+		location = 9902 # Burgas
+		division_template = "Bulgarska Pehotna Diviziya"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "1. Konitska Diviziya"
+		location = 949 # Sofia
+		division_template = "Konitska Diviziya"
+		start_experience_factor = 0.35
 	}
 }

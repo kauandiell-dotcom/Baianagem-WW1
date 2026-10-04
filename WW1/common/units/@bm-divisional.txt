@@ -8,7 +8,7 @@ sub_units = {
 		map_icon_category = armored
 		group = mobile
 
-		active = yes
+		active = no
 		transport = armored_car_equipment
 
 		priority = 600
@@ -89,7 +89,7 @@ sub_units = {
 		map_icon_category = armored
 		group = mobile
 
-		active = yes
+		active = no
 		transport = armored_car_equipment
 
 		priority = 600
@@ -167,7 +167,7 @@ sub_units = {
 		map_icon_category = armored
 		group = mobile
 
-		active = yes
+		active = no
 		transport = armored_car_equipment
 
 		priority = 600
@@ -537,7 +537,7 @@ sub_units = {
 		map_icon_category = infantry
 		group = mobile_combat_support
 
-		active = yes
+		active = no
 		special_forces = no
 
 		priority = 600
@@ -617,7 +617,7 @@ sub_units = {
 		map_icon_category = infantry
 		group = mobile_combat_support
 
-		active = yes
+		active = no
 		special_forces = no
 
 		priority = 600
@@ -705,7 +705,7 @@ sub_units = {
 		map_icon_category = infantry
 		group = mobile_combat_support
 
-		active = yes
+		active = no
 		special_forces = no
 
 		priority = 600
@@ -803,7 +803,7 @@ sub_units = {
 
 		priority = 610
 		ai_priority = 200
-		active = yes
+		active = no
 
 		type = {
 			mechanized
@@ -895,7 +895,7 @@ sub_units = {
 
 		priority = 600
 		ai_priority = 200
-		active = yes
+		active = no
 
 		type = {
 			motorized
@@ -969,7 +969,7 @@ sub_units = {
 		
 		priority = 601
 		ai_priority = 2
-		active = yes
+		active = no
 
 		type = {
 			motorized
@@ -1117,7 +1117,7 @@ sub_units = {
 		
 		priority = 601
 		ai_priority = 1
-		active = yes
+		active = no
 
 		type = {
 			infantry
@@ -1132,8 +1132,8 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 30
-		max_organisation = 70
+		max_strength = 20
+		max_organisation = 20
 		default_morale = 0.5
 		manpower = 1000
 

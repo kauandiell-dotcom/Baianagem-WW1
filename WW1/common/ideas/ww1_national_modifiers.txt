@@ -10,20 +10,20 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				planning_speed = 0.25
-				max_planning = 0.20
-				army_org_factor = 0.10
+				planning_speed = 0.15
+				max_planning = 0.10
+				army_org_factor = 0.05
 			}
 		}
 
-		# 1.2 MonopÃ³lios Industriais & QuÃ­micos (Krupp, BASF, Bayer)
+		# 1.2 Monopólios Industriais & Químicos (Krupp, BASF, Bayer)
 		GER_krupp_chemical_conglomerates = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				industrial_capacity_factory = 0.15
-				production_speed_arms_factory_factor = 0.15
-				research_speed_factor = 0.08
+				industrial_capacity_factory = 0.08
+				production_speed_arms_factory_factor = 0.10
+				research_speed_factor = 0.05
 			}
 		}
 
@@ -32,8 +32,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				industrial_capacity_dockyard = 0.15
-				navy_capital_ship_attack_factor = 0.10
+				industrial_capacity_dockyard = 0.10
+				navy_capital_ship_attack_factor = 0.05
 			}
 		}
 
@@ -218,9 +218,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				artillery_attack_factor = 0.20
-				breakthrough_factor = 0.15
-				planning_speed = 0.25
+				artillery_attack_factor = 0.10
+				breakthrough_factor = 0.05
+				planning_speed = 0.15
 			}
 		}
 
@@ -388,14 +388,14 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_armor_attack_factor = 0.35
-				army_infantry_attack_factor = 0.15
-				breakthrough_factor = 0.25
+				army_armor_attack_factor = 0.10
+				army_infantry_attack_factor = 0.05
+				breakthrough_factor = 0.10
 			}
 		}
 
 		# =======================================================
-		# 3. FRANÃ‡A (FRA)
+		# 3. FRANÇA (FRA)
 		# =======================================================
 
 		# 3.1 A Ferida de 1870 & Revanche
@@ -408,22 +408,22 @@ ideas = {
 			}
 		}
 
-		# 3.2 Ã‰lan Vital & Ofensiva a Outrance
+		# 3.2 Élan Vital & Ofensiva a Outrance
 		FRA_elan_vital_doctrine = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_morale_factor = 0.20
-				army_infantry_attack_factor = 0.15
+				army_morale_factor = 0.08
+				army_infantry_attack_factor = 0.05
 			}
 		}
 
-		# 3.3 A GlÃ³ria do CanhÃ£o de 75mm Modelo 1897
+		# 3.3 A Glória do Canhão de 75mm Modelo 1897
 		FRA_canon_75mm_supremacy = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.20
+				army_artillery_attack_factor = 0.08
 				industrial_capacity_factory = 0.05
 			}
 		}
@@ -492,17 +492,17 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				supply_consumption_factor = -0.40
-				land_reinforce_rate = 0.50
-				army_core_defence_factor = 0.20
+				supply_consumption_factor = -0.15
+				land_reinforce_rate = 0.20
+				army_core_defence_factor = 0.10
 			}
 		}
 
 		# =======================================================
-		# 4. RÃšSSIA (SOV)
+		# 4. RÚSSIA (SOV)
 		# =======================================================
 
-		# 4.1 A Autocracia Czarista & FÃ© Ortodoxa
+		# 4.1 A Autocracia Czarista & Fé Ortodoxa
 		SOV_tsarist_autocracy = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -517,9 +517,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				conscription_factor = 0.40
-				training_time_army_factor = -0.20
-				supply_consumption_factor = -0.15
+				conscription_factor = 0.15
+				training_time_army_factor = -0.10
+				supply_consumption_factor = -0.05
 			}
 		}
 
@@ -602,15 +602,15 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_infantry_attack_factor = 0.25
-				army_artillery_attack_factor = 0.20
-				army_speed_factor = 0.20
-				planning_speed = 0.30
+				army_attack_factor = 0.10
+				breakthrough_factor = 0.10
+				army_speed_factor = 0.05
+				planning_speed = 0.10
 			}
 		}
 
 		# =======================================================
-		# 5. ÃUSTRIA-HUNGRIA (AUS)
+		# 5. ÁUSTRIA-HUNGRIA (AUS)
 		# =======================================================
 
 		# 5.1 O Compromisso do Ausgleich de 1867
@@ -623,7 +623,7 @@ ideas = {
 			}
 		}
 
-		# 5.2 A Torre de Babel Militar (11 LÃ­nguas)
+		# 5.2 A Torre de Babel Militar (11 Línguas)
 		AUS_tower_of_babel_army = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -633,12 +633,12 @@ ideas = {
 			}
 		}
 
-		# 5.3 Os Arsenais de Cerco da Å koda & Steyr
+		# 5.3 Os Arsenais de Cerco da Škoda & Steyr
 		AUS_skoda_siege_arsenals = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.25
+				army_artillery_attack_factor = 0.08
 				industrial_capacity_factory = 0.05
 			}
 		}
@@ -710,8 +710,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.35
-				land_reinforce_rate = 0.15
+				army_artillery_attack_factor = 0.12
+				land_reinforce_rate = 0.10
 			}
 		}
 
@@ -814,17 +814,17 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_infantry_attack_factor = 0.30
-				army_speed_factor = 0.20
-				breakthrough_factor = 0.30
+				army_infantry_attack_factor = 0.08
+				army_speed_factor = 0.05
+				breakthrough_factor = 0.10
 			}
 		}
 
 		# =======================================================
-		# 7. IMPÃ‰RIO OTOMANO (TUR)
+		# 7. IMPÉRIO OTOMANO (TUR)
 		# =======================================================
 
-		# 7.1 A Fortaleza dos Estreitos & Baterias de Ã‡anakkale
+		# 7.1 A Fortaleza dos Estreitos & Baterias de Çanakkale
 		TUR_straits_fortress_cannons = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -835,7 +835,7 @@ ideas = {
 			}
 		}
 
-		# 7.2 O Homem Enfermo da Europa (DÃ­vida & CapitulaÃ§Ãµes)
+		# 7.2 O Homem Enfermo da Europa (Dívida & Capitulações)
 		TUR_sick_man_debt = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -846,14 +846,14 @@ ideas = {
 			}
 		}
 
-		# 7.3 A Tenacidade LendÃ¡ria do Soldado MehmetÃ§ik
+		# 7.3 A Tenacidade Lendária do Soldado Mehmetçik
 		TUR_mehmetcik_tenacity = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_morale_factor = 0.25
-				supply_consumption_factor = -0.25
-				army_core_defence_factor = 0.25
+				army_morale_factor = 0.10
+				supply_consumption_factor = -0.10
+				army_core_defence_factor = 0.10
 			}
 		}
 
@@ -915,7 +915,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.15
 				war_support_factor = 0.15
-				army_core_defence_factor = 0.20
+				army_core_defence_factor = 0.10
 			}
 		}
 
@@ -923,10 +923,10 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_core_defence_factor = 0.35
-				dig_in_speed_factor = 0.50
-				max_dig_in = 8
-				army_morale_factor = 0.30
+				army_core_defence_factor = 0.12
+				dig_in_speed_factor = 0.25
+				max_dig_in = 4
+				army_morale_factor = 0.10
 			}
 		}
 
@@ -1029,8 +1029,70 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_infantry_attack_factor = 0.30
-				breakthrough_factor = 0.25
+				army_infantry_attack_factor = 0.08
+				breakthrough_factor = 0.08
+			}
+		}
+
+		# =======================================================
+		# 9. POTENCIAS MENORES & BALCAS (SER, BUL, GRE, BEL, ROM)
+		# =======================================================
+
+		# 9.1 Servia: Desafio Balcanico (Balkan Defiance)
+		SER_balkan_defiance = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.15
+				mobilization_speed = 0.20
+				army_morale_factor = 0.10
+			}
+		}
+
+		# 9.2 Bulgaria: A Prussia dos Balcas (Prussia of the Balkans)
+		BUL_prussia_of_the_balkans = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+				army_morale_factor = 0.10
+				conscription_factor = 0.10
+				training_time_army_factor = -0.10
+			}
+		}
+
+		# 9.3 Grecia: A Ambicao da Megali Idea (Hellenic Megali Ambition)
+		GRE_hellenic_megali_ambition = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_morale_factor = 0.10
+				conscription_factor = 0.05
+			}
+		}
+
+		# 9.4 Belgica: Baluarte do Mosa & Fortalezas (Fortress Belgium)
+		BEL_fortress_belgium = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.20
+				max_dig_in = 5
+				dig_in_speed_factor = 0.25
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		# 9.5 Romenia: Celeiro do Danubio & Petroleo de Ploiesti (Danubian Granary & Oil)
+		ROM_danubian_granary_and_oil = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.10
+				fuel_gain_factor = 0.20
+				consumer_goods_factor = -0.03
+				monthly_population = 0.15
 			}
 		}
 

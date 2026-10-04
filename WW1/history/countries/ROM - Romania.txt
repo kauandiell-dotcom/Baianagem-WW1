@@ -5,11 +5,28 @@ capital = 46
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	gw_artillery = 1
 	tech_support = 1		
 	tech_engineers = 1
 	tech_recon = 1
 }
 oob = "ROM_1936_generic"
+
+add_ideas = {
+	limited_conscription
+	ROM_danubian_granary_and_oil
+}
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 16000
+	producer = ROM
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 350
+	producer = ROM
+}
 
 
 if = {
@@ -86,18 +103,7 @@ if = {
 	
 }
 
-#Kick off kings crazy life
-if = {
-	limit = {
-		has_dlc = "Death or Dishonor"
-	}
-	ROM = {
-		#Pick from list of the sane events first
-		random_list = {
-			100 = { country_event = { id = DOD_romania.81 days = 2 random_days = 20 } }
-		}
-	}
-}
+# 1911: Romania is ruled by King Carol I of Hohenzollern-Sigmaringen; 1930s Carol II events disabled.
 
 if = {
 	limit = {

@@ -46,7 +46,7 @@ add_breakthrough_progress = {
 	value = 0.3
 }
 
-set_grand_doctrine = new_mobile_warfare
+set_grand_doctrine = grand_battleplan
 set_grand_doctrine = new_convoy_raiding
 set_grand_doctrine = new_battlefield_support
 
@@ -75,6 +75,20 @@ add_ideas = {
 	GER_tirpitz_naval_ambition
 	GER_encirclement_paranoia
 	GER_burgfrieden_social_peace
+}
+
+# 1911 Starting Armament Stockpile
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 65000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 1200
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 800
 }
 
 # starting_truck_buffer = 0.8

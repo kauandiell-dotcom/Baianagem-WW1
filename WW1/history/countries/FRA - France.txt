@@ -73,6 +73,21 @@ add_ideas = {
 	FRA_demographic_stagnation
 	FRA_third_republic_instability
 }
+
+# 1911 Starting Armament Stockpile
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 55000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 1000
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 700
+}
+
 IF = {
 	limit = {
 		has_dlc = "Gotterdammerung"

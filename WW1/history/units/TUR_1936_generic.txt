@@ -17,6 +17,7 @@ division_template = {
 	support = {
 		engineer = { x = 0 y = 0 }
 		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
 	}
 }
 
@@ -67,13 +68,17 @@ division_template = {
 }
 
 units = {
-	# --- Thrace & The Turkish Straits (Istanbul) ---
+	# --- Thrace & The Turkish Straits (Constantinople & Adrianople) ---
 	division = { name = "1. Hassa Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.3 }
 	division = { name = "2. Hassa Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.3 }
 	division = { name = "3. Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.25 }
 	division = { name = "4. Piyade Tümeni" location = 9833 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
 	division = { name = "1. Boğazlar Muhafız Redif Tümeni" location = 9833 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
 	division = { name = "1. Süvari Tümeni" location = 9833 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
+
+	# Adrianople / Edirne Frontier Defense
+	division = { name = "1. Edirne Piyade Tümeni" location = 11842 division_template = "Piyade Tumeni" start_experience_factor = 0.25 }
+	division = { name = "2. Edirne Redif Tümeni" location = 11842 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
 
 	# --- Anatolian Heartland (Ankara & Izmir) ---
 	division = { name = "5. Piyade Tümeni" location = 849 division_template = "Piyade Tumeni" start_experience_factor = 0.2 }
@@ -97,4 +102,10 @@ units = {
 	division = { name = "4. Bağdat Redif Tümeni" location = 1600 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
 	division = { name = "3. Mezopotamya Ghazi Alayı" location = 1600 division_template = "Ghazi Bedevi Kolordusu" start_experience_factor = 0.35 }
 	division = { name = "4. Süvari Tümeni" location = 1600 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
+
+	# --- Caucasus & Eastern Anatolia (Erzurum & Trabzon) ---
+	division = { name = "11. Kafkas Piyade Tümeni" location = 9860 division_template = "Piyade Tumeni" start_experience_factor = 0.25 }
+	division = { name = "5. Erzurum Redif Tümeni" location = 9860 division_template = "Redif Kolordusu" start_experience_factor = 0.2 }
+	division = { name = "1. Trabzon Piyade Tümeni" location = 9932 division_template = "Piyade Tumeni" start_experience_factor = 0.25 }
+	division = { name = "5. Kafkas Süvari Tümeni" location = 9860 division_template = "Suvari Tumeni" start_experience_factor = 0.25 }
 }

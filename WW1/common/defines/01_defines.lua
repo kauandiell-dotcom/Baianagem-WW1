@@ -28,17 +28,30 @@ NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 30		-- 30 divisions under direc
 NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 7			-- 7 armies per field marshal (210 divisions per theater)
 
 -- ============================================================
--- Special Forces Capacity (2x Vanilla Baseline)
+-- Special Forces Capacity (Controlled Shock Troops)
 -- ============================================================
-NDefines.NMilitary.SPECIAL_FORCES_CAP_BASE = 0.10		-- Vanilla is 0.05 (Now 10% of total army)
-NDefines.NMilitary.SPECIAL_FORCES_CAP_MIN = 48			-- Vanilla is 24 (Minimum 48 battalions)
+NDefines.NMilitary.SPECIAL_FORCES_CAP_BASE = 0.05		-- 5% of total army to avoid elite spam
+NDefines.NMilitary.SPECIAL_FORCES_CAP_MIN = 24			-- Baseline 24 battalions
 
 -- ============================================================
--- Land Combat & Organization Damage Dynamics (WW1 Attrition)
+-- Land Combat & Organization Damage Dynamics (Balanced WW1 Engine)
 -- ============================================================
--- Increases organization damage relative to strength damage, enabling artillery barrages to drain org
-NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.085	-- Vanilla is 0.053 (~60% increase in org depletion)
-NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.045	-- Vanilla is 0.060 (Reduces immediate equipment/HP wipe, focusing on retreat)
+-- Normalizes org damage to prevent instant evaporation, while str damage punishes reckless Force Attack
+NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.055	-- Calibrated (Vanilla 0.053): defense holds against barrage
+NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.065	-- Punishes Force Attack: real casualties and equipment depletion
+
+-- ============================================================
+-- Combat Stacking Penalties (Anti-Division Spam System)
+-- ============================================================
+-- Heavily penalizes stuffing too many divisions into the same battle
+NDefines.NMilitary.COMBAT_STACKING_START = 6			-- Penalties begin at 6 divisions per battle
+NDefines.NMilitary.COMBAT_STACKING_PENALTY = -0.06		-- -6% efficiency per extra division (anti-spam)
+
+-- ============================================================
+-- Logistics & Supply Depletion (Destructive Out of Supply)
+-- ============================================================
+NDefines.NSupply.OUT_OF_SUPPLY_ATTRITION = 0.40			-- 40% attrition when unsupplied
+NDefines.NSupply.OUT_OF_SUPPLY_ORG_FACTOR = -0.65		-- -65% org penalty for starving divisions
 
 -- ============================================================
 -- Air Warfare & Bombing Redirection (WW1 Doctrine)

@@ -28,18 +28,18 @@ sub_units = {
 		}
 		manpower = 500
 		
-		# WW1 Infantry Support Profile: Low Org, Low Defense, Low Solo Breakthrough
-		max_organisation = 15			# Low organization: cannot anchor defensive lines
-		default_morale = 0.30
+		# WW1 Infantry Support Profile: High Org morale support, Low Defense, Low Solo Breakthrough
+		max_organisation = 35			# High organization: provides morale anchor and staying power to supported infantry
+		default_morale = 0.35
 		training_time = 180
 		max_strength = 2
 		weight = 1.0
 		supply_consumption = 0.20
 
-		breakthrough = -0.75			# Breakthrough drastically reduced: cannot blitz alone
+		breakthrough = 0.20				# Breakthrough support for infantry assault (calibrated 0.20-0.30)
 		soft_attack = 0.20				# Soft attack support
 		hard_attack = 0.15				# Hard attack support
-		defense = -0.60					# Heavy defense penalty: cannot be used as static bunker
+		defense = -0.20					# Modest defense penalty (tanks are assault weapons)
 		entrenchment = -5				# Severe entrenchment penalty: tanks cannot dig into trenches
 
 

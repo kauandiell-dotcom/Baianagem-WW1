@@ -5,11 +5,23 @@ capital = 797
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	gw_artillery = 1
 	tech_support = 1		
 	tech_engineers = 1
 	tech_recon = 1
 }
 oob = "TUR_1936_generic"
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 18000
+	producer = TUR
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 350
+	producer = TUR
+}
 
 
 if = {
@@ -86,6 +98,7 @@ set_popularities = {
 }
 
 add_ideas = {
+	limited_conscription
 	TUR_straits_fortress_cannons
 	TUR_sick_man_debt
 	TUR_mehmetcik_tenacity

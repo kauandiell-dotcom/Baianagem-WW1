@@ -72,6 +72,20 @@ add_ideas = {
 	ENG_irish_home_rule_tension
 }
 
+# 1911 Starting Armament Stockpile
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 40000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 800
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 600
+}
+
 if = {
 	limit = {
 		has_dlc = "Man the Guns"

@@ -68,7 +68,10 @@ country_event = {
 
 	option = {
 		name = ww1_germany_events.3.a
-		add_ideas = GER_schlieffen_momentum
+		add_timed_idea = {
+			idea = GER_schlieffen_momentum
+			days = 90
+		}
 		add_war_support = 0.10
 		declare_war_on = { target = BEL type = take_state }
 		declare_war_on = { target = LUX type = take_state }
@@ -1453,6 +1456,18 @@ country_event = {
 	option = {
 		name = ww1_germany_events.71.a
 		remove_ideas = GER_verdun_meatgrinder
+		if = {
+			limit = { has_idea = GER_falkenhayn_attrition_doctrine }
+			remove_ideas = GER_falkenhayn_attrition_doctrine
+		}
+		if = {
+			limit = { has_idea = GER_moltke_generalstab_doctrine }
+			remove_ideas = GER_moltke_generalstab_doctrine
+		}
+		if = {
+			limit = { has_idea = GER_grosser_generalstab }
+			remove_ideas = GER_grosser_generalstab
+		}
 		promote_character = GER_paul_von_hindenburg
 		promote_character = GER_erich_ludendorff
 		add_ideas = GER_ohl_supreme_command

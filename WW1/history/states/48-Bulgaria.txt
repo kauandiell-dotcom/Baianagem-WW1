@@ -5,7 +5,8 @@ state={
 	manpower = 1685989
 	resources={
 		aluminium = 2
-		coal = 1 #initial distribution
+		coal = 1
+		steel = 12
 	}
 	
 	
@@ -22,6 +23,7 @@ state={
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 6
+			arms_factory = 3
 			air_base = 3
 		}
 		add_core_of = BUL

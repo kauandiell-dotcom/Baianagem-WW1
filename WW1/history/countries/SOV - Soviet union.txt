@@ -541,6 +541,21 @@ add_ideas = {
 	SOV_rifle_famine_scar
 	SOV_broad_gauge_vastness
 	SOV_pan_slavic_protector
+	SOV_backward_agrarian_system
+}
+
+# 1911 Starting Armament Stockpile
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 80000
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 1500
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 900
 }
 
 # 1911 Country Leaders & High Command

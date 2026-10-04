@@ -4,10 +4,10 @@ state={
 	name="STATE_47" # Thessaly
 	manpower=2312500
 	resources={
-		steel=3 # was: 4
-		chromium=12 # was: 22
-		aluminium=30 # was: 58
-		tungsten = 10 # was: 20
+		steel=8
+		chromium=12
+		aluminium=30
+		tungsten = 10
 	}
 	
 	state_category = city
@@ -20,15 +20,6 @@ state={
 		victory_points = {
 			3973 3
 		}
-		#victory_points = {
-		#	863 1
-		#}
-		#victory_points = {
-		#	3864 3
-		#}
-		#victory_points = {
-		#	976 1
-		#}
 		victory_points = {
 			7127 3
 		}
@@ -38,6 +29,7 @@ state={
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 3
+			arms_factory = 3
 			dockyard = 1
 			air_base = 4
 			4109 = {

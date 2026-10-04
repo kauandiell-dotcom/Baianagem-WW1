@@ -24,23 +24,23 @@ sub_units = {
 
 		combat_width = 3
 
-		manpower = 800
+		manpower = 750
 		need = {
-			artillery_equipment = 48		# Demands large battery concentrations (48 guns per battalion)
+			artillery_equipment = 36		# 36 guns per battery regiment
 		}
 		
-		max_strength = 2.0
-		max_organisation = 5			# Very low org: cannot fight on its own without infantry screen
+		max_strength = 3.0
+		max_organisation = 10
 		default_morale = 0.2
-		training_time = 140
+		training_time = 120
 		weight = 0.6
-		supply_consumption = 0.28
+		supply_consumption = 0.15		# 0.15 supply consumption: strong logistical footprint
 
-		# WW1 Trommelfeuer (Drumfire) Saturação de Trincheiras (Calibrated Scale)
-		soft_attack = 0.35				# +35% soft attack on 48 guns: massive org drain
+		# WW1 Trommelfeuer (Drumfire) Trench Bombardment
+		soft_attack = 0.30				# High soft attack for trench clearance and org drain
 		hard_attack = 0.10
-		breakthrough = -0.90			# Extreme breakthrough penalty: cannot assault alone like a tank
-		defense = -0.30					# Fragile in direct defense without infanty line
+		breakthrough = -0.50
+		defense = -0.20
 		
 		forest = {
 			attack = -0.2

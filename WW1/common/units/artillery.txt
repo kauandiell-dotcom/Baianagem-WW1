@@ -29,22 +29,22 @@ sub_units = {
 		combat_width = 0
 
 		need = {
-			artillery_equipment = 16	# Increased from 12
+			artillery_equipment = 16	# 16 guns for divisional support battery
 		}
-		manpower = 400					# Increased from 300
+		manpower = 400					# 400 artillery personnel
 		training_time = 120
 		max_organisation = 0
 		default_morale = 0.1
 		max_strength = 0.2
 		weight = 0.1
 		
-		supply_consumption = 0.18
+		supply_consumption = 0.12
 
 		# High organization-draining support firepower
-		soft_attack = 0.15				# +15% soft attack
+		soft_attack = 0.20				# +20% soft attack
 		hard_attack = 0.05
-		breakthrough = -0.50
-		defense = -0.20
+		breakthrough = -0.40
+		defense = -0.15
 
 		can_be_parachuted = no
 	}

@@ -26,9 +26,9 @@ sub_units = {
 		combat_width = 2
 		
 		# Size Definitions - Rapid shock assault troop
-		max_strength = 25
-		max_organisation = 25			# Lower than regular infantry (35): rapid burst, exhausts quickly
-		default_morale = 0.50
+		max_strength = 20
+		max_organisation = 20			# Low org (20 vs 50 of line): rapid burst, exhausts quickly
+		default_morale = 0.40
 		manpower = 1000
 
 		# Misc Abilities
@@ -36,48 +36,42 @@ sub_units = {
 		suppression = 2.0
 		weight = 0.6
 		
-		supply_consumption = 0.12
+		supply_consumption = 0.16
 		
 		# Shock & Breach Modifiers (Calibrated PDX Scale)
-		breakthrough = 0.80				# +80% breakthrough: powerful infiltration wedge
-		ap_attack = 0.60				# +60% piercing against WW1 armor & bunkers
-		soft_attack = 0.40				# +40% soft attack in trench clearing
-		hard_attack = 0.50				# +50% hard attack against heavy guns and early vehicles
-		defense = -0.25					# -25% defense: offensive shock troop, fragile when static
+		breakthrough = 0.25				# +25% breakthrough: realistic infiltration wedge (reduced from 0.80)
+		ap_attack = 0.15				# +15% piercing against bunkers & trenches (reduced from 0.60)
+		soft_attack = 0.20				# +20% soft attack (reduced from 0.40)
+		hard_attack = 0.10				# +10% hard attack (reduced from 0.50)
+		defense = -0.30					# -30% defense: fragile under static counter-attack
 	
 		need = {
-			infantry_equipment = 180	# High equipment cost
-			support_equipment = 15		# Trench tools & grenades
-			artillery_equipment = 5		# Trench mortars
+			infantry_equipment = 140	# High equipment cost
+			support_equipment = 30		# Trench tools & grenades
+			artillery_equipment = 12	# Trench mortars
 		}
 		
 		urban = {
-			attack = 0.40
-			movement = 0.2
+			attack = 0.15
+			movement = 0.1
 		}
 		forest = {
-			attack = 0.30
-			movement = 0.1
-		}
-		mountain = {
-			attack = 0.30
-			movement = 0.1
+			attack = 0.10
 		}
 		hills = {
-			attack = 0.30
-			movement = 0.1
+			attack = 0.05
+		}
+		mountain = {
+			attack = -0.10
 		}
 		river = {
-			attack = 0.30
-		}
-		amphibious = {
-			attack = 0.30
+			attack = -0.15
 		}
 		marsh = {
-			attack = 0.30
+			attack = -0.15
 		}
 		fort = {
-			attack = 0.40
+			attack = 0.20
 		}
 	}
 }

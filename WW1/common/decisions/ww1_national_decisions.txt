@@ -575,3 +575,21 @@ ww1_crisis_management_usa = {
 		}
 	}
 }
+
+# =======================================================
+# WW1 MECHANICS & LOGISTICS GUIDE
+# =======================================================
+ww1_mechanics_guide = {
+
+	ww1_guide_stacking_and_logistics_decision = {
+		icon = generic_propaganda
+		available = {
+			always = no
+		}
+		visible = {
+			always = yes
+		}
+		cost = 0
+		fire_only_once = no
+	}
+}

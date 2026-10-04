@@ -1,29 +1,118 @@
-﻿division_template = {
-	name = "Basic Infantry Division"
+# Romanian Order of Battle (1911)
+# Authentic historical composition: Heavy 16-battalion infantry divisions + Cavalry across Wallachia, Moldavia, and Dobruja
+
+division_template = {
+	name = "Divizia de Infanterie"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+		infantry = { x = 3 y = 3 }
+		artillery_brigade = { x = 4 y = 0 }
+		artillery_brigade = { x = 4 y = 1 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
 	}
 }
-units = {	division = {
-		name = "1. Infantry Division"
-		location = 660
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "2. Infantry Division"
-		location = 660
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
+
+division_template = {
+	name = "Divizia de Cavalerie"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Bucharest & Capital District ---
+	division = {
+		name = "1. Divizia de Infanterie"
+		location = 9617 # Bucharest
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "2. Divizia de Infanterie"
+		location = 9617 # Bucharest
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "1. Divizia de Cavalerie"
+		location = 9617 # Bucharest
+		division_template = "Divizia de Cavalerie"
+		start_experience_factor = 0.30
+	}
+
+	# --- Ploiești & Oilfields ---
+	division = {
+		name = "3. Divizia de Infanterie"
+		location = 3663 # Ploiești
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "4. Divizia de Infanterie"
+		location = 3663 # Ploiești / Prahova
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
+	}
+
+	# --- Moldavia ---
+	division = {
+		name = "5. Divizia de Infanterie"
+		location = 9716 # Iași
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "6. Divizia de Infanterie"
+		location = 6706 # Bacău / Siret
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
+	}
+
+	# --- Dobruja ---
+	division = {
+		name = "7. Divizia de Infanterie"
+		location = 11597 # Constanța
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "8. Divizia de Infanterie"
+		location = 9614 # Tulcea / Danube Delta
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
+	}
+
+	# --- Oltenia ---
+	division = {
+		name = "9. Divizia de Infanterie"
+		location = 6652 # Craiova
+		division_template = "Divizia de Infanterie"
+		start_experience_factor = 0.25
 	}
 }

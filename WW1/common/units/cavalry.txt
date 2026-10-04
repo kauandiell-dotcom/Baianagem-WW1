@@ -1,0 +1,90 @@
+sub_units = {
+
+	cavalry = {
+		abbreviation = "CAV"
+		sprite = cavalry
+		map_icon_category = infantry
+		
+		priority = 600
+		ai_priority = 200
+		active = yes
+
+		type = {
+			infantry
+			cavalry
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+			category_cavalry
+		}
+		
+		combat_width = 2
+		
+		# Size Definitions - WW1 Cavalry Regiment
+		max_strength = 20
+		max_organisation = 35			# Below line infantry (50); vulnerable to trench fire
+		default_morale = 0.30
+		manpower = 1000
+		maximum_speed = 6.4
+		
+		# Resource Demands
+		training_time = 90
+		suppression = 2.0
+		weight = 0.5
+		supply_consumption = 0.08
+		
+		# Combat Modifiers (Calibrated for WW1 mobile screening / exploitation)
+		soft_attack = 0.05
+		breakthrough = 0.10
+		defense = -0.15					# High vulnerability when caught in defensive positions
+		
+		need = {
+			infantry_equipment = 120
+		}
+
+		# Terrain Modifiers
+		forest = {
+			movement = -0.20
+			attack = -0.10
+		}
+		mountain = {
+			movement = -0.30
+			attack = -0.20
+			defence = -0.10
+		}
+		hills = {
+			movement = -0.10
+			attack = -0.05
+		}
+		marsh = {
+			movement = -0.30
+			attack = -0.20
+		}
+		urban = {
+			movement = -0.20
+			attack = -0.25
+			defence = -0.20
+		}
+		river = {
+			movement = -0.20
+			attack = -0.20
+		}
+		fort = {
+			attack = -0.35
+		}
+		plains = {
+			movement = 0.10
+			attack = 0.10
+		}
+		desert = {
+			movement = 0.10
+			attack = 0.10
+		}
+	}
+
+}

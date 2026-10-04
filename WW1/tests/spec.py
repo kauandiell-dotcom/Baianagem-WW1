@@ -3,6 +3,7 @@ Authoritative specification for the German Empire National Focus Tree (Baianagem
 Derived directly from PLANO_FOCUS_TREE_ALEMANHA_WW1.md, PROJECT.md, and ORIGINAL_REQUEST.md.
 """
 
+import os
 from typing import Dict, List, Set, Any
 
 # Total number of national focuses in the German tree
@@ -506,4 +507,4 @@ EXPECTED_REFERENCED_STATES: List[int] = [
 ]
 
 # Target Steam Workshop directory
-STEAM_WORKSHOP_TARGET = r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3809191491"
+STEAM_WORKSHOP_TARGET = r"E:\SteamLibrary\steamapps\workshop\content\394360\3809191491" if os.path.isdir(r"E:\SteamLibrary\steamapps\workshop\content\394360\3809191491") else r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3809191491"

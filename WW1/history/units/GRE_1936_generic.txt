@@ -1,29 +1,121 @@
-﻿division_template = {
-	name = "Basic Infantry Division"
+# Greek Order of Battle (1911)
+# Authentic historical composition: Heavy Balkan Infantry Divisions, Cavalry, and Aegean Fleet Screens
+
+division_template = {
+	name = "Merarchia Pezikou"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+		infantry = { x = 3 y = 3 }
+		artillery_brigade = { x = 4 y = 0 }
+		artillery_brigade = { x = 4 y = 1 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
 	}
 }
-units = {	division = {
-		name = "1. Infantry Division"
-		location = 863
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
-	}	division = {
-		name = "2. Infantry Division"
-		location = 863
-		division_template = "Basic Infantry Division"
-		start_experience_factor = 0.2
+
+division_template = {
+	name = "Merarchia Ippikou"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Thessaly & Northern Frontier ---
+	division = {
+		name = "1. Merarchia Pezikou 'Larissa'"
+		location = 976 # Larissa
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "3. Merarchia Pezikou 'Ipeiros'"
+		location = 3914 # Epirus border
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "5. Merarchia Pezikou 'Thessalia'"
+		location = 3973 # Volos
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "1. Merarchia Ippikou"
+		location = 863 # Thessaly plains
+		division_template = "Merarchia Ippikou"
+		start_experience_factor = 0.25
+	}
+
+	# --- Central Greece & Athens ---
+	division = {
+		name = "2. Merarchia Pezikou 'Athenai'"
+		location = 4109 # Athens
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.30
+	}
+	division = {
+		name = "6. Merarchia Pezikou 'Attiki'"
+		location = 4109 # Athens
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.25
+	}
+
+	# --- Peloponnese ---
+	division = {
+		name = "4. Merarchia Pezikou 'Peloponnisos'"
+		location = 7211 # Patras
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.25
+	}
+	division = {
+		name = "7. Merarchia Pezikou 'Sparti'"
+		location = 11965 # Kalamata
+		division_template = "Merarchia Pezikou"
+		start_experience_factor = 0.25
+	}
+
+	# --- Royal Hellenic Navy (Vasiliko Polemiko Naftiko) ---
+	fleet = {
+		name = "Vasiliko Polemiko Naftiko"
+		naval_base = 4109 # Piraeus / Athens
+		task_force = {
+			name = "Vasilikos Stolos"
+			location = 4109
+			ship = { name = "RHS Georgios Averof" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Elli" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Aetos" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Ierax" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Leon" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Panthir" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Hydra" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Spetsai" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+			ship = { name = "RHS Psara" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = GRE } } }
+		}
 	}
 }
