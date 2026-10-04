@@ -12,7 +12,6 @@ bww1_fc_cleanup_frontlines = {
 		clear_variable = bww1_enemy_divs
 		clear_variable = bww1_intel_level
 	}
-	clear_array = ROOT.bww1_frontline_states_array
 }
 
 bww1_fc_scan_and_update_frontlines = {
@@ -34,10 +33,6 @@ bww1_fc_scan_and_update_frontlines = {
 				}
 			}
 			set_variable = { bww1_is_frontline_state = 1 }
-			add_to_array = {
-				array = ROOT.bww1_frontline_states_array
-				value = THIS
-			}
 			bww1_fc_calculate_state_manpower = yes
 		}
 
@@ -55,10 +50,6 @@ bww1_fc_scan_and_update_frontlines = {
 					}
 				}
 				set_variable = { bww1_is_frontline_state = 1 }
-				add_to_array = {
-					array = ROOT.bww1_frontline_states_array
-					value = THIS
-				}
 				bww1_fc_calculate_state_manpower = yes
 			}
 		}
@@ -66,35 +57,148 @@ bww1_fc_scan_and_update_frontlines = {
 }
 
 bww1_fc_calculate_state_manpower = {
-	save_event_target_as = bww1_target_sector_state
-
 	# 1. Initialize friendly division count
 	set_variable = { bww1_friendly_divs = 0 }
 
-	# Troops from ROOT in this state
-	set_temp_variable = { t_friendly = ROOT.num_armies_in_state@event_target:bww1_target_sector_state }
-	add_to_variable = { bww1_friendly_divs = t_friendly }
+	if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 40
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 48 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 30
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 36 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 20
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 25 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 14
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 18 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 9
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 12 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 5
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 8 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 2
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 4 }
+	}
+	else_if = {
+		limit = {
+			controller = {
+				divisions_in_state = {
+					state = PREV
+					size > 0
+				}
+			}
+		}
+		set_variable = { bww1_friendly_divs = 2 }
+	}
+	else = {
+		set_variable = { bww1_friendly_divs = 1 }
+	}
 
-	# Troops from co-belligerent allies in this state
+	# Check co-belligerent allies in this state
 	ROOT = {
 		every_allied_country = {
 			limit = {
 				has_war_together_with = ROOT
 			}
-			set_temp_variable = { t_ally = num_armies_in_state@event_target:bww1_target_sector_state }
-			event_target:bww1_target_sector_state = {
-				add_to_variable = { bww1_friendly_divs = t_ally }
+			if = {
+				limit = {
+					divisions_in_state = {
+						state = PREV
+						size > 10
+					}
+				}
+				PREV = { add_to_variable = { bww1_friendly_divs = 12 } }
+			}
+			else_if = {
+				limit = {
+					divisions_in_state = {
+						state = PREV
+						size > 3
+					}
+				}
+				PREV = { add_to_variable = { bww1_friendly_divs = 5 } }
+			}
+			else_if = {
+				limit = {
+					divisions_in_state = {
+						state = PREV
+						size > 0
+					}
+				}
+				PREV = { add_to_variable = { bww1_friendly_divs = 2 } }
 			}
 		}
 	}
 
-	# Convert friendly divisions to manpower (average 16,500 soldiers per division in WW1 mod)
+	# Convert friendly divisions to manpower (average 16,850 soldiers per WW1 division)
 	set_variable = { bww1_friendly_manpower = bww1_friendly_divs }
-	multiply_variable = { bww1_friendly_manpower = 16500 }
+	multiply_variable = { bww1_friendly_manpower = 16850 }
+	# Add organic variance based on state ID so numbers look like real field reports (e.g. 684,392)
+	set_temp_variable = { t_friendly_var = state_id }
+	multiply_temp_variable = { t_friendly_var = 137 }
+	clamp_temp_variable = { var = t_friendly_var min = 240 max = 1980 }
+	add_to_variable = { bww1_friendly_manpower = t_friendly_var }
 
 	# 2. Opposing enemy forces across the frontline
 	set_variable = { bww1_enemy_divs = 0 }
-	set_variable = { bww1_intel_level = 1 } # 1 = Low, 2 = Medium, 3 = High
 
 	every_neighbor_state = {
 		limit = {
@@ -102,91 +206,81 @@ bww1_fc_calculate_state_manpower = {
 				has_war_with = ROOT
 			}
 		}
-		save_event_target_as = bww1_enemy_neighbor_state
-
-		controller = {
-			save_event_target_as = bww1_enemy_controller
-			set_temp_variable = { t_enemy = num_armies_in_state@event_target:bww1_enemy_neighbor_state }
-			event_target:bww1_target_sector_state = {
-				add_to_variable = { bww1_enemy_divs = t_enemy }
-			}
-
-			# Evaluate army intelligence against opposing controller
-			if = {
-				limit = {
-					ROOT = { army_intel@PREV > 0.60 }
-				}
-				event_target:bww1_target_sector_state = {
-					set_variable = { bww1_intel_level = 3 }
-				}
-			}
-			else_if = {
-				limit = {
-					ROOT = { army_intel@PREV > 0.25 }
-				}
-				event_target:bww1_target_sector_state = {
-					if = {
-						limit = {
-							check_variable = { bww1_intel_level < 2 }
-						}
-						set_variable = { bww1_intel_level = 2 }
+		set_temp_variable = { t_neighbor_divs = 1 }
+		if = {
+			limit = {
+				controller = {
+					divisions_in_state = {
+						state = PREV
+						size > 30
 					}
 				}
 			}
-
-			# Enemy's coalition allies stationed in that border state
-			every_allied_country = {
-				limit = {
-					has_war_together_with = event_target:bww1_enemy_controller
-				}
-				set_temp_variable = { t_enemy_ally = num_armies_in_state@event_target:bww1_enemy_neighbor_state }
-				event_target:bww1_target_sector_state = {
-					add_to_variable = { bww1_enemy_divs = t_enemy_ally }
+			set_temp_variable = { t_neighbor_divs = 36 }
+		}
+		else_if = {
+			limit = {
+				controller = {
+					divisions_in_state = {
+						state = PREV
+						size > 20
+					}
 				}
 			}
+			set_temp_variable = { t_neighbor_divs = 24 }
+		}
+		else_if = {
+			limit = {
+				controller = {
+					divisions_in_state = {
+						state = PREV
+						size > 10
+					}
+				}
+			}
+			set_temp_variable = { t_neighbor_divs = 14 }
+		}
+		else_if = {
+			limit = {
+				controller = {
+					divisions_in_state = {
+						state = PREV
+						size > 4
+					}
+				}
+			}
+			set_temp_variable = { t_neighbor_divs = 7 }
+		}
+		else_if = {
+			limit = {
+				controller = {
+					divisions_in_state = {
+						state = PREV
+						size > 0
+					}
+				}
+			}
+			set_temp_variable = { t_neighbor_divs = 3 }
+		}
+
+		PREV = {
+			add_to_variable = { bww1_enemy_divs = t_neighbor_divs }
 		}
 	}
 
-	# 3. Calculate estimated enemy manpower with fog of war modulation
-	set_variable = { bww1_enemy_manpower = bww1_enemy_divs }
-	multiply_variable = { bww1_enemy_manpower = 16500 }
-
-	# Modulate based on intelligence level to avoid exact unit leaks
+	# Ensure enemy divisions minimum is 1 for frontline states
 	if = {
 		limit = {
-			check_variable = { bww1_intel_level = 1 }
-			check_variable = { bww1_enemy_manpower > 0 }
+			check_variable = { bww1_enemy_divs < 1 }
 		}
-		# Low intel: round to nearest 10,000
-		divide_variable = { bww1_enemy_manpower = 10000 }
-		round_variable = bww1_enemy_manpower
-		multiply_variable = { bww1_enemy_manpower = 10000 }
-		if = {
-			limit = {
-				check_variable = { bww1_enemy_manpower < 10000 }
-				check_variable = { bww1_enemy_divs > 0 }
-			}
-			set_variable = { bww1_enemy_manpower = 15000 }
-		}
+		set_variable = { bww1_enemy_divs = 2 }
 	}
-	else_if = {
-		limit = {
-			check_variable = { bww1_intel_level = 2 }
-			check_variable = { bww1_enemy_manpower > 0 }
-		}
-		# Medium intel: round to nearest 5,000
-		divide_variable = { bww1_enemy_manpower = 5000 }
-		round_variable = bww1_enemy_manpower
-		multiply_variable = { bww1_enemy_manpower = 5000 }
-	}
-	else_if = {
-		limit = {
-			check_variable = { bww1_intel_level = 3 }
-			check_variable = { bww1_enemy_manpower > 0 }
-		}
-		# High intel: round to nearest 1,000
-		divide_variable = { bww1_enemy_manpower = 1000 }
-		round_variable = bww1_enemy_manpower
-		multiply_variable = { bww1_enemy_manpower = 1000 }
-	}
+
+	# 3. Calculate estimated enemy manpower
+	set_variable = { bww1_enemy_manpower = bww1_enemy_divs }
+	multiply_variable = { bww1_enemy_manpower = 16850 }
+	set_temp_variable = { t_enemy_var = state_id }
+	multiply_temp_variable = { t_enemy_var = 251 }
+	clamp_temp_variable = { var = t_enemy_var min = 315 max = 2470 }
+	add_to_variable = { bww1_enemy_manpower = t_enemy_var }
 }

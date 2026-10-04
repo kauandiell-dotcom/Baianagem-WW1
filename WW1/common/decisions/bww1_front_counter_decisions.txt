@@ -9,7 +9,7 @@ bww1_front_counter_category = {
 
 		visible = {
 			is_ai = no
-			NOT = { has_country_flag = ww1_front_counter_enabled }
+			NOT = { has_global_flag = ww1_front_counter_enabled }
 		}
 
 		cost = 0
@@ -21,6 +21,7 @@ bww1_front_counter_category = {
 
 		complete_effect = {
 			set_country_flag = ww1_front_counter_enabled
+			set_global_flag = ww1_front_counter_enabled
 			bww1_fc_scan_and_update_frontlines = yes
 		}
 	}
@@ -34,7 +35,7 @@ bww1_front_counter_category = {
 
 		visible = {
 			is_ai = no
-			has_country_flag = ww1_front_counter_enabled
+			has_global_flag = ww1_front_counter_enabled
 		}
 
 		cost = 0
@@ -46,6 +47,7 @@ bww1_front_counter_category = {
 
 		complete_effect = {
 			clr_country_flag = ww1_front_counter_enabled
+			clr_global_flag = ww1_front_counter_enabled
 			bww1_fc_cleanup_frontlines = yes
 		}
 	}
@@ -54,12 +56,12 @@ bww1_front_counter_category = {
 		icon = generic_intelligence_operation
 
 		available = {
-			has_country_flag = ww1_front_counter_enabled
+			has_global_flag = ww1_front_counter_enabled
 		}
 
 		visible = {
 			is_ai = no
-			has_country_flag = ww1_front_counter_enabled
+			has_global_flag = ww1_front_counter_enabled
 		}
 
 		cost = 0

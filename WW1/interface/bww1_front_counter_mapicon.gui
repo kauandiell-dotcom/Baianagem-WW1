@@ -2,20 +2,18 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "bww1_front_counter_window"
-		position = { x = 0 y = 0 }
-		size = { width = 240 height = 30 }
-		orientation = center
-		origo = center
+		position = { x = -160 y = -20 }
+		size = { width = 320 height = 40 }
 		clipping = no
 
 		# Friendly troop counter (left side of frontline)
 		instantTextboxType = {
 			name = "bww1_fc_friendly_box"
-			position = { x = 0 y = 0 }
-			font = "hoi_20bs"
+			position = { x = 0 y = 5 }
+			font = "hoi_24header"
 			text = "bww1_fc_friendly_val"
-			maxWidth = 105
-			maxHeight = 24
+			maxWidth = 145
+			maxHeight = 30
 			format = right
 			fixedsize = yes
 			alwaystransparent = yes
@@ -24,11 +22,11 @@ guiTypes = {
 		# Frontline divider
 		instantTextboxType = {
 			name = "bww1_fc_divider_box"
-			position = { x = 105 y = 0 }
-			font = "hoi_20bs"
+			position = { x = 145 y = 5 }
+			font = "hoi_24header"
 			text = "bww1_fc_divider_val"
 			maxWidth = 30
-			maxHeight = 24
+			maxHeight = 30
 			format = center
 			fixedsize = yes
 			alwaystransparent = yes
@@ -37,11 +35,11 @@ guiTypes = {
 		# Enemy troop counter (right side of frontline)
 		instantTextboxType = {
 			name = "bww1_fc_enemy_box"
-			position = { x = 135 y = 0 }
-			font = "hoi_20bs"
+			position = { x = 175 y = 5 }
+			font = "hoi_24header"
 			text = "bww1_fc_enemy_val"
-			maxWidth = 105
-			maxHeight = 24
+			maxWidth = 145
+			maxHeight = 30
 			format = left
 			fixedsize = yes
 			alwaystransparent = yes
