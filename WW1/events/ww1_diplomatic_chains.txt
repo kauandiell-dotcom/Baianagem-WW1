@@ -11,7 +11,12 @@ country_event = {
 	desc = ww1_diplomacy.1.d
 	picture = GFX_report_event_german_speech
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = ww1_july_crisis_started
+	}
 
 	# Option A: Deliver the July Ultimatum to Serbia (Historical)
 	option = {
@@ -56,7 +61,12 @@ country_event = {
 	desc = ww1_diplomacy.2.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = serbia_ultimatum_received
+	}
 
 	# Option A: Reject the ultimatum — appeal to Russia (Historical)
 	option = {
@@ -69,9 +79,12 @@ country_event = {
 			AUS = {
 				declare_war_on = { target = SER type = annex_everything }
 			}
-			set_global_flag = ww1_super_event_outbreak_active
-			play_song = "maintheme"
-			news_event = { id = ww1_news.1914_great_war_outbreak days = 1 }
+			if = {
+				limit = { NOT = { has_global_flag = ww1_super_event_outbreak_active } }
+				set_global_flag = ww1_super_event_outbreak_active
+				play_song = "maintheme"
+				news_event = { id = ww1_news.1914_great_war_outbreak days = 1 }
+			}
 		}
 		if = {
 			limit = { country_exists = SOV }
@@ -103,6 +116,7 @@ country_event = {
 	desc = ww1_diplomacy.3.d
 	picture = GFX_report_event_german_troops
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -119,6 +133,7 @@ country_event = {
 	desc = ww1_diplomacy.4.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -135,6 +150,7 @@ country_event = {
 	desc = ww1_diplomacy.5.d
 	picture = GFX_report_event_russian_officers
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	# Option A: General Mobilization! Protect our Slavic brothers! (Historical)
@@ -175,6 +191,7 @@ country_event = {
 	desc = ww1_diplomacy.10.d
 	picture = GFX_report_event_german_speech
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	# Option A: Reject the German offer as suicidal (Historical)
@@ -221,6 +238,7 @@ country_event = {
 	desc = ww1_diplomacy.11.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -248,6 +266,7 @@ country_event = {
 	desc = ww1_diplomacy.20.d
 	picture = GFX_report_event_soviet_purge_speech
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -269,6 +288,7 @@ country_event = {
 	desc = ww1_diplomacy.30.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	# Option A: Dictate the Peace of Brest-Litovsk! (Historical)
@@ -317,6 +337,7 @@ country_event = {
 	desc = ww1_diplomacy.40.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	# Option A: Ratify the Björkö Alliance! (Continental League)
@@ -352,6 +373,7 @@ country_event = {
 	desc = ww1_diplomacy.50.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	# Option A: Join the Entente and liberate Transylvania!
@@ -390,6 +412,7 @@ country_event = {
 	desc = ww1_diplomacy.60.d
 	picture = GFX_report_event_russian_officers
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -411,6 +434,7 @@ country_event = {
 	desc = ww1_diplomacy.70.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	# Option A: Acknowledge Russia's historical right to Tsargrad
@@ -444,6 +468,7 @@ country_event = {
 	desc = ww1_diplomacy.71.d
 	picture = GFX_report_event_generic_conference
 
+	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -455,4 +480,3 @@ country_event = {
 		custom_effect_tooltip = SOV_constantinople_agreement_confirmed_tt
 	}
 }
-

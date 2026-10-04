@@ -29,7 +29,11 @@ news_event = {
 		set_global_flag = sarajevo_assassination_occurred
 		# Trigger Austrian July Crisis reaction
 		AUS = {
-			country_event = { id = ww1_diplomacy.1 days = 3 }
+			if = {
+				limit = { NOT = { has_country_flag = ww1_july_crisis_started } }
+				set_country_flag = ww1_july_crisis_started
+				country_event = { id = ww1_diplomacy.1 days = 3 }
+			}
 		}
 	}
 

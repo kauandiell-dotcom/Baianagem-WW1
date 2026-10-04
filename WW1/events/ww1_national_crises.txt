@@ -9,7 +9,13 @@ country_event = {
 	desc = ww1_crisis.1.d
 	picture = GFX_report_event_generic_strike
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = GER_crisis_triggered
+		set_country_flag = GER_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.1.a
@@ -28,7 +34,13 @@ country_event = {
 	desc = ww1_crisis.2.d
 	picture = GFX_report_event_merchant_ship_01
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = ENG_crisis_triggered
+		set_country_flag = ENG_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.2.a
@@ -47,7 +59,13 @@ country_event = {
 	desc = ww1_crisis.3.d
 	picture = GFX_report_event_soldiers_marching
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = FRA_crisis_triggered
+		set_country_flag = FRA_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.3.a
@@ -66,7 +84,13 @@ country_event = {
 	desc = ww1_crisis.4.d
 	picture = GFX_report_event_worker_protests
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = SOV_crisis_triggered
+		set_country_flag = SOV_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.4.a
@@ -85,7 +109,13 @@ country_event = {
 	desc = ww1_crisis.5.d
 	picture = GFX_report_event_gathering_protest
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = AUS_crisis_triggered
+		set_country_flag = AUS_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.5.a
@@ -104,7 +134,13 @@ country_event = {
 	desc = ww1_crisis.6.d
 	picture = GFX_report_event_generic_parliament
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = ITA_crisis_triggered
+		set_country_flag = ITA_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.6.a
@@ -123,7 +159,13 @@ country_event = {
 	desc = ww1_crisis.7.d
 	picture = GFX_report_event_ENG_middle_eastern_conflict
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = TUR_crisis_triggered
+		set_country_flag = TUR_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.7.a
@@ -142,7 +184,13 @@ country_event = {
 	desc = ww1_crisis.8.d
 	picture = GFX_report_event_generic_factory
 
+	fire_only_once = yes
 	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = USA_crisis_triggered
+		set_country_flag = USA_crisis_active
+	}
 
 	option = {
 		name = ww1_crisis.8.a

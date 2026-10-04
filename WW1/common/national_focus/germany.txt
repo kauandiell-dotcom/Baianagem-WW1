@@ -2399,7 +2399,11 @@ focus_tree = {
 					modifier = ger_blank_cheque_op
 				}
 				AUS = {
-					country_event = { id = ww1_diplomacy.1 days = 1 }
+					if = {
+						limit = { NOT = { has_country_flag = ww1_july_crisis_started } }
+						set_country_flag = ww1_july_crisis_started
+						country_event = { id = ww1_diplomacy.1 days = 1 }
+					}
 				}
 			}
 		}
