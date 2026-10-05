@@ -12,6 +12,7 @@ focus_tree = {
 	}
 	default = no
 	reset_on_civilwar = no
+	continuous_focus_position = { x = 30 y = 3300 }
 
 	focus = {
 		id = SOV_the_empire_of_nicholas_ii
@@ -19,7 +20,7 @@ focus_tree = {
 		x = 13
 		y = 0
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 				completion_reward = {
 			add_political_power = 150
@@ -44,7 +45,7 @@ focus_tree = {
 		x = 7
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_empire_of_nicholas_ii
@@ -70,7 +71,7 @@ focus_tree = {
 		x = 7
 		y = 2
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_stolypin_conundrum
@@ -86,7 +87,7 @@ focus_tree = {
 		x = 5
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_kiev_opera_gala_1911
@@ -107,7 +108,7 @@ focus_tree = {
 		x = 5
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_stolypin_martyrdom
@@ -125,7 +126,7 @@ focus_tree = {
 		x = 5
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_kokovtsov_premiership
@@ -142,7 +143,7 @@ focus_tree = {
 		x = 5
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_reactionary_resurgence
@@ -160,7 +161,7 @@ focus_tree = {
 		x = 5
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_goremykin_stagnation
@@ -177,7 +178,7 @@ focus_tree = {
 		x = 9
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_kiev_opera_gala_1911
@@ -198,7 +199,7 @@ focus_tree = {
 		x = 9
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_stolypin_survives_the_bullet
@@ -215,7 +216,7 @@ focus_tree = {
 		x = 9
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_stolypins_twenty_years
@@ -234,7 +235,7 @@ focus_tree = {
 		x = 9
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_curb_gentry_privileges
@@ -252,7 +253,7 @@ focus_tree = {
 		x = 9
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_zemstvo_reform_expansion
@@ -269,7 +270,7 @@ focus_tree = {
 		x = 16
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_empire_of_nicholas_ii
@@ -287,7 +288,7 @@ focus_tree = {
 		x = 14
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_third_state_duma
@@ -305,7 +306,7 @@ focus_tree = {
 		x = 18
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_third_state_duma
@@ -323,7 +324,7 @@ focus_tree = {
 		x = 16
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_guchkov_and_the_octobrists
@@ -342,7 +343,7 @@ focus_tree = {
 		x = 14
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_fourth_state_duma_1912
@@ -359,7 +360,7 @@ focus_tree = {
 		x = 18
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_fourth_state_duma_1912
@@ -377,7 +378,7 @@ focus_tree = {
 		x = 16
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_curb_socialist_deputies
@@ -395,7 +396,7 @@ focus_tree = {
 		x = 14
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_progressive_bloc_1915
@@ -423,7 +424,7 @@ focus_tree = {
 		x = 18
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_progressive_bloc_1915
@@ -449,7 +450,7 @@ focus_tree = {
 		x = 16
 		y = 7
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_ministry_of_national_confidence
@@ -467,7 +468,7 @@ focus_tree = {
 		x = 11
 		y = 8
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_rasputin_court_influence
@@ -484,7 +485,7 @@ focus_tree = {
 		x = 11
 		y = 9
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_february_bread_riots_1917
@@ -520,7 +521,7 @@ focus_tree = {
 		x = 11
 		y = 10
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_mutiny_of_petrograd_garrison
@@ -536,7 +537,7 @@ focus_tree = {
 		x = 8
 		y = 11
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_abdication_at_pskov
@@ -553,7 +554,7 @@ focus_tree = {
 		x = 14
 		y = 11
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_abdication_at_pskov
@@ -571,7 +572,7 @@ focus_tree = {
 		x = 8
 		y = 12
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_provisional_government_formed
@@ -589,7 +590,7 @@ focus_tree = {
 		x = 14
 		y = 12
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_petrograd_soviet_order_no_1
@@ -606,7 +607,7 @@ focus_tree = {
 		x = 11
 		y = 13
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_prince_lvov_coalition
@@ -623,7 +624,7 @@ focus_tree = {
 		x = 9
 		y = 14
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_kerensky_ministry
@@ -641,7 +642,7 @@ focus_tree = {
 		x = 13
 		y = 14
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_kerensky_ministry
@@ -657,7 +658,7 @@ focus_tree = {
 		x = 3
 		y = 15
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_kornilov_affair
@@ -673,7 +674,7 @@ focus_tree = {
 		x = 3
 		y = 16
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_all_power_to_the_soviets
@@ -691,7 +692,7 @@ focus_tree = {
 		x = 1
 		y = 17
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_storming_of_winter_palace
@@ -709,7 +710,7 @@ focus_tree = {
 		x = 5
 		y = 17
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_storming_of_winter_palace
@@ -729,7 +730,7 @@ focus_tree = {
 		x = 1
 		y = 18
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_decree_on_peace
@@ -747,7 +748,7 @@ focus_tree = {
 		x = 5
 		y = 18
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_decree_on_land
@@ -764,7 +765,7 @@ focus_tree = {
 		x = 3
 		y = 19
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_founding_of_the_cheka
@@ -783,7 +784,7 @@ focus_tree = {
 		x = 3
 		y = 20
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_war_communism_decrees
@@ -802,7 +803,7 @@ focus_tree = {
 		x = 9
 		y = 15
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_kornilov_affair
@@ -820,7 +821,7 @@ focus_tree = {
 		x = 9
 		y = 16
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_kornilov_iron_dictatorship
@@ -837,7 +838,7 @@ focus_tree = {
 		x = 7
 		y = 17
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_martial_law_in_petrograd
@@ -854,7 +855,7 @@ focus_tree = {
 		x = 11
 		y = 17
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_martial_law_in_petrograd
@@ -872,7 +873,7 @@ focus_tree = {
 		x = 9
 		y = 18
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_purge_the_soviets
@@ -891,7 +892,7 @@ focus_tree = {
 		x = 9
 		y = 19
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_national_salvation_directory
@@ -909,7 +910,7 @@ focus_tree = {
 		x = 9
 		y = 20
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_total_frontline_discipline
@@ -926,7 +927,7 @@ focus_tree = {
 		x = 16
 		y = 15
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_kerensky_ministry
@@ -943,7 +944,7 @@ focus_tree = {
 		x = 14
 		y = 16
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_convene_constituent_assembly
@@ -960,7 +961,7 @@ focus_tree = {
 		x = 18
 		y = 16
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_convene_constituent_assembly
@@ -977,7 +978,7 @@ focus_tree = {
 		x = 16
 		y = 17
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_chernov_and_sr_plurality
@@ -995,7 +996,7 @@ focus_tree = {
 		x = 14
 		y = 18
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_federal_democratic_republic
@@ -1013,7 +1014,7 @@ focus_tree = {
 		x = 18
 		y = 18
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_federal_democratic_republic
@@ -1031,7 +1032,7 @@ focus_tree = {
 		x = 16
 		y = 19
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_legal_land_distribution
@@ -1050,7 +1051,7 @@ focus_tree = {
 		x = 16
 		y = 20
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_democratic_war_effort
@@ -1067,7 +1068,7 @@ focus_tree = {
 		x = 23
 		y = 10
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_mutiny_of_petrograd_garrison
@@ -1084,7 +1085,7 @@ focus_tree = {
 		x = 21
 		y = 11
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_tsar_refuses_abdication
@@ -1102,7 +1103,7 @@ focus_tree = {
 		x = 25
 		y = 11
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_tsar_refuses_abdication
@@ -1136,7 +1137,7 @@ focus_tree = {
 		x = 23
 		y = 12
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_summon_frontline_cavalry
@@ -1164,7 +1165,7 @@ focus_tree = {
 		x = 23
 		y = 13
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_dissolve_the_rebellious_duma
@@ -1181,7 +1182,7 @@ focus_tree = {
 		x = 21
 		y = 14
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_reinforce_fundamental_laws
@@ -1208,7 +1209,7 @@ focus_tree = {
 		x = 25
 		y = 14
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_reinforce_fundamental_laws
@@ -1226,7 +1227,7 @@ focus_tree = {
 		x = 23
 		y = 15
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_absolutist_restoration
@@ -1244,7 +1245,7 @@ focus_tree = {
 		x = 39
 		y = 0
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
 			add_offsite_building = { type = industrial_complex level = 2 }
@@ -1258,7 +1259,7 @@ focus_tree = {
 		x = 29
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_modernizing_the_colossus
@@ -1276,7 +1277,7 @@ focus_tree = {
 		x = 29
 		y = 2
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_peasant_land_bank
@@ -1293,7 +1294,7 @@ focus_tree = {
 		x = 27
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_dissolution_of_the_obshchina
@@ -1310,7 +1311,7 @@ focus_tree = {
 		x = 31
 		y = 3
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_dissolution_of_the_obshchina
@@ -1327,7 +1328,7 @@ focus_tree = {
 		x = 29
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_dissolution_of_the_obshchina
@@ -1346,7 +1347,7 @@ focus_tree = {
 		x = 27
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_consolidate_khutor_farms
@@ -1363,7 +1364,7 @@ focus_tree = {
 		x = 31
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_siberian_resettlement_program
@@ -1381,7 +1382,7 @@ focus_tree = {
 		x = 29
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_zemstvo_agronomists
@@ -1398,7 +1399,7 @@ focus_tree = {
 		x = 29
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_modern_agricultural_machinery
@@ -1417,7 +1418,7 @@ focus_tree = {
 		x = 27
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_grain_export_monopoly
@@ -1433,7 +1434,7 @@ focus_tree = {
 		x = 31
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_grain_export_monopoly
@@ -1449,7 +1450,7 @@ focus_tree = {
 		x = 29
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_state_grain_elevators
@@ -1468,7 +1469,7 @@ focus_tree = {
 		x = 29
 		y = 8
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_cooperative_credit_societies
@@ -1486,7 +1487,7 @@ focus_tree = {
 		x = 36
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_modernizing_the_colossus
@@ -1502,7 +1503,7 @@ focus_tree = {
 		x = 36
 		y = 2
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_putilov_works_expansion
@@ -1518,7 +1519,7 @@ focus_tree = {
 		x = 34
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_putilov_works_expansion
@@ -1534,7 +1535,7 @@ focus_tree = {
 		x = 34
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_donbass_coal_and_iron_basin
@@ -1550,7 +1551,7 @@ focus_tree = {
 		x = 38
 		y = 3
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_donbass_coal_and_iron_basin
@@ -1566,7 +1567,7 @@ focus_tree = {
 		x = 36
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_donbass_coal_and_iron_basin
@@ -1582,7 +1583,7 @@ focus_tree = {
 		x = 34
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_krivoy_rog_iron_mines
@@ -1598,7 +1599,7 @@ focus_tree = {
 		x = 38
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_baku_black_gold_monopoly
@@ -1616,7 +1617,7 @@ focus_tree = {
 		x = 36
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_makeyevka_metallurgical_works
@@ -1632,7 +1633,7 @@ focus_tree = {
 		x = 36
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_urals_heavy_smelters
@@ -1650,7 +1651,7 @@ focus_tree = {
 		x = 36
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_saint_petersburg_heavy_engineering
@@ -1666,7 +1667,7 @@ focus_tree = {
 		x = 36
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_moscow_textile_and_rubber_mills
@@ -1683,7 +1684,7 @@ focus_tree = {
 		x = 36
 		y = 8
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_domestic_machine_tool_production
@@ -1700,7 +1701,7 @@ focus_tree = {
 		x = 45
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_modernizing_the_colossus
@@ -1718,7 +1719,7 @@ focus_tree = {
 		x = 43
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_trans_siberian_double_tracking
@@ -1735,7 +1736,7 @@ focus_tree = {
 		x = 47
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_trans_siberian_double_tracking
@@ -1759,7 +1760,7 @@ focus_tree = {
 		x = 45
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_trans_siberian_double_tracking
@@ -1779,7 +1780,7 @@ focus_tree = {
 		x = 45
 		y = 3
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_circum_baikal_engineering
@@ -1798,7 +1799,7 @@ focus_tree = {
 		x = 43
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_murmansk_ice_free_port_lifeline
@@ -1814,7 +1815,7 @@ focus_tree = {
 		x = 47
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_murmansk_ice_free_port_lifeline
@@ -1830,7 +1831,7 @@ focus_tree = {
 		x = 45
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_murmansk_ice_free_port_lifeline
@@ -1848,7 +1849,7 @@ focus_tree = {
 		x = 45
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_arkhangelsk_broad_gauge_conversion
@@ -1868,7 +1869,7 @@ focus_tree = {
 		x = 45
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_military_railway_battalions
@@ -1887,7 +1888,7 @@ focus_tree = {
 		x = 45
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_broad_gauge_streamlining
@@ -1903,7 +1904,7 @@ focus_tree = {
 		x = 51
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_modernizing_the_colossus
@@ -1921,7 +1922,7 @@ focus_tree = {
 		x = 51
 		y = 3
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_special_council_for_defense
@@ -1939,7 +1940,7 @@ focus_tree = {
 		x = 51
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_war_industry_committees_zemgor
@@ -1957,7 +1958,7 @@ focus_tree = {
 		x = 49
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_war_industry_committees_zemgor
@@ -1975,7 +1976,7 @@ focus_tree = {
 		x = 51
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_convert_civilian_foundries
@@ -2011,7 +2012,7 @@ focus_tree = {
 		x = 49
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_female_ammunition_workers
@@ -2028,7 +2029,7 @@ focus_tree = {
 		x = 51
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_centralized_grain_procurement
@@ -2046,7 +2047,7 @@ focus_tree = {
 		x = 51
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_end_the_shell_shortage
@@ -2064,7 +2065,7 @@ focus_tree = {
 		x = 47
 		y = 8
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_strategic_reserve_depots
@@ -2083,7 +2084,7 @@ focus_tree = {
 		x = 64
 		y = 0
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
 			add_offsite_building = { type = dockyard level = 3 }
@@ -2098,7 +2099,7 @@ focus_tree = {
 		x = 57
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_rebuilding_the_empires_shields
@@ -2114,7 +2115,7 @@ focus_tree = {
 		x = 55
 		y = 2
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_baltic_fleet_resurgence
@@ -2132,7 +2133,7 @@ focus_tree = {
 		x = 59
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_baltic_fleet_resurgence
@@ -2149,7 +2150,7 @@ focus_tree = {
 		x = 57
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_gangut_class_dreadnoughts
@@ -2166,7 +2167,7 @@ focus_tree = {
 		x = 55
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_kronstadt_and_reval_fortresses
@@ -2182,7 +2183,7 @@ focus_tree = {
 		x = 59
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_kronstadt_and_reval_fortresses
@@ -2198,7 +2199,7 @@ focus_tree = {
 		x = 59
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_bars_class_submarines
@@ -2214,7 +2215,7 @@ focus_tree = {
 		x = 55
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_novik_class_fast_destroyers
@@ -2231,7 +2232,7 @@ focus_tree = {
 		x = 57
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_novik_class_fast_destroyers
@@ -2248,7 +2249,7 @@ focus_tree = {
 		x = 57
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_borodino_battlecruisers_laid_down
@@ -2265,7 +2266,7 @@ focus_tree = {
 		x = 55
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_baltic_mine_offensive
@@ -2281,7 +2282,7 @@ focus_tree = {
 		x = 57
 		y = 8
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_moonsund_archipelago_defenses
@@ -2299,7 +2300,7 @@ focus_tree = {
 		x = 65
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_rebuilding_the_empires_shields
@@ -2315,7 +2316,7 @@ focus_tree = {
 		x = 63
 		y = 2
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_black_sea_fleet_supremacy
@@ -2331,7 +2332,7 @@ focus_tree = {
 		x = 67
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_black_sea_fleet_supremacy
@@ -2348,7 +2349,7 @@ focus_tree = {
 		x = 65
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_imperatritsa_mariya_battleships
@@ -2365,7 +2366,7 @@ focus_tree = {
 		x = 63
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_sevastopol_naval_bastion
@@ -2388,7 +2389,7 @@ focus_tree = {
 		x = 67
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_sevastopol_naval_bastion
@@ -2411,7 +2412,7 @@ focus_tree = {
 		x = 65
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_cut_anatolia_coal_lines
@@ -2472,7 +2473,7 @@ focus_tree = {
 		x = 65
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_trabzon_amphibious_landing
@@ -2492,7 +2493,7 @@ focus_tree = {
 		x = 65
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_prepare_for_tsargrad_landing
@@ -2523,7 +2524,7 @@ focus_tree = {
 		x = 73
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_rebuilding_the_empires_shields
@@ -2540,7 +2541,7 @@ focus_tree = {
 		x = 73
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_imperial_russian_air_service
@@ -2557,7 +2558,7 @@ focus_tree = {
 		x = 71
 		y = 3
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_kacha_military_flying_school
@@ -2575,7 +2576,7 @@ focus_tree = {
 		x = 75
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_kacha_military_flying_school
@@ -2592,7 +2593,7 @@ focus_tree = {
 		x = 71
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_sikorsky_ilya_muromets
@@ -2610,7 +2611,7 @@ focus_tree = {
 		x = 75
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_lebed_reconnaissance_corps
@@ -2627,7 +2628,7 @@ focus_tree = {
 		x = 73
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_heavy_bombing_squadron_evok
@@ -2644,7 +2645,7 @@ focus_tree = {
 		x = 75
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_nesterov_aerial_ramming_tactics
@@ -2661,7 +2662,7 @@ focus_tree = {
 		x = 71
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_heavy_bombing_squadron_evok
@@ -2678,7 +2679,7 @@ focus_tree = {
 		x = 75
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_kazakov_ace_fighter_groups
@@ -2695,7 +2696,7 @@ focus_tree = {
 		x = 73
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_anatra_anasal_fighter_fleet
@@ -2713,7 +2714,7 @@ focus_tree = {
 		x = 73
 		y = 8
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_strategic_air_bombardment_doctrine
@@ -2731,7 +2732,7 @@ focus_tree = {
 		x = 92
 		y = 0
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		completion_reward = {
 			add_manpower = 150000
@@ -2745,7 +2746,7 @@ focus_tree = {
 		x = 83
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -2763,7 +2764,7 @@ focus_tree = {
 		x = 87
 		y = 1
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -2781,7 +2782,7 @@ focus_tree = {
 		x = 81
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_sukhomlinov_reforms
@@ -2797,7 +2798,7 @@ focus_tree = {
 		x = 85
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_sukhomlinov_reforms
@@ -2816,7 +2817,7 @@ focus_tree = {
 		x = 89
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_grand_duke_nicholas_stavka
@@ -2834,7 +2835,7 @@ focus_tree = {
 		x = 79
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_cossack_hosts_mobilization
@@ -2852,7 +2853,7 @@ focus_tree = {
 		x = 83
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_modernize_mosin_nagant_1891
@@ -2871,7 +2872,7 @@ focus_tree = {
 		x = 87
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_cossack_hosts_mobilization
@@ -2889,7 +2890,7 @@ focus_tree = {
 		x = 81
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_standing_corps_readiness
@@ -2907,7 +2908,7 @@ focus_tree = {
 		x = 85
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_standing_corps_readiness
@@ -2927,7 +2928,7 @@ focus_tree = {
 		x = 89
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_telegraph_and_wireless_corps
@@ -2944,7 +2945,7 @@ focus_tree = {
 		x = 85
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_imperial_guard_regiments
@@ -2964,7 +2965,7 @@ focus_tree = {
 		x = 93
 		y = 3
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -2980,7 +2981,7 @@ focus_tree = {
 		x = 91
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_shell_shortage_crisis
@@ -2999,7 +3000,7 @@ focus_tree = {
 		x = 95
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_shell_shortage_crisis
@@ -3015,7 +3016,7 @@ focus_tree = {
 		x = 91
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_great_retreat_to_the_dvina
@@ -3032,7 +3033,7 @@ focus_tree = {
 		x = 95
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_tula_and_izhevsk_arms_surge
@@ -3049,7 +3050,7 @@ focus_tree = {
 		x = 89
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_scovill_and_vickers_foreign_shells
@@ -3066,7 +3067,7 @@ focus_tree = {
 		x = 93
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_scovill_and_vickers_foreign_shells
@@ -3084,7 +3085,7 @@ focus_tree = {
 		x = 97
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_schneider_and_putilov_heavy_howitzers
@@ -3102,7 +3103,7 @@ focus_tree = {
 		x = 93
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_m1902_76mm_putilov_divisional_gun
@@ -3122,7 +3123,7 @@ focus_tree = {
 		x = 93
 		y = 8
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_massed_artillery_preparation
@@ -3140,7 +3141,7 @@ focus_tree = {
 		x = 103
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -3160,7 +3161,7 @@ focus_tree = {
 		x = 101
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_brusilov_breakthrough_1916
@@ -3177,7 +3178,7 @@ focus_tree = {
 		x = 105
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_brusilov_breakthrough_1916
@@ -3194,7 +3195,7 @@ focus_tree = {
 		x = 99
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_deep_echelon_surprise_assault
@@ -3211,7 +3212,7 @@ focus_tree = {
 		x = 101
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_deep_echelon_surprise_assault
@@ -3228,7 +3229,7 @@ focus_tree = {
 		x = 105
 		y = 6
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_shock_battalions_of_death
@@ -3270,7 +3271,7 @@ focus_tree = {
 		x = 107
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_shock_battalions_of_death
@@ -3288,7 +3289,7 @@ focus_tree = {
 		x = 103
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_garford_putilov_armored_cars
@@ -3309,7 +3310,7 @@ focus_tree = {
 		x = 103
 		y = 8
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_vezdekhod_and_tsar_tank_experiments
@@ -3328,7 +3329,7 @@ focus_tree = {
 		x = 103
 		y = 9
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_inelastic_trench_fortifications
@@ -3346,7 +3347,7 @@ focus_tree = {
 		x = 122
 		y = 0
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 				completion_reward = {
 			add_war_support = 0.15
@@ -3376,7 +3377,7 @@ focus_tree = {
 		x = 114
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_third_rome_foreign_policy
@@ -3396,7 +3397,7 @@ focus_tree = {
 		x = 112
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_pan_slavic_protectorate
@@ -3413,7 +3414,7 @@ focus_tree = {
 		x = 116
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_pan_slavic_protectorate
@@ -3431,7 +3432,7 @@ focus_tree = {
 		x = 112
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_the_balkan_league_architect
@@ -3457,7 +3458,7 @@ focus_tree = {
 		x = 116
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_sacred_guarantee_to_serbia
@@ -3474,7 +3475,7 @@ focus_tree = {
 		x = 112
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_first_balkan_war_mediation
@@ -3493,7 +3494,7 @@ focus_tree = {
 		x = 114
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_first_balkan_war_mediation
@@ -3512,7 +3513,7 @@ focus_tree = {
 		x = 115
 		y = 5
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_sacred_guarantee_to_serbia
@@ -3531,7 +3532,7 @@ focus_tree = {
 		x = 115
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_the_july_crisis_mobilization
@@ -3548,7 +3549,7 @@ focus_tree = {
 		x = 115
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_pan_slavic_triumph
@@ -3572,7 +3573,7 @@ focus_tree = {
 		x = 121
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_third_rome_foreign_policy
@@ -3589,7 +3590,7 @@ focus_tree = {
 		x = 125
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_third_rome_foreign_policy
@@ -3606,7 +3607,7 @@ focus_tree = {
 		x = 121
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_reaffirm_franco_russian_alliance
@@ -3624,7 +3625,7 @@ focus_tree = {
 		x = 125
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_anglo_russian_entente_in_persia
@@ -3640,7 +3641,7 @@ focus_tree = {
 		x = 127
 		y = 2
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_anglo_russian_entente_in_persia
@@ -3657,7 +3658,7 @@ focus_tree = {
 		x = 121
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_french_strategic_loans
@@ -3674,7 +3675,7 @@ focus_tree = {
 		x = 125
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_persian_corridor_security
@@ -3692,7 +3693,7 @@ focus_tree = {
 		x = 119
 		y = 3
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_french_strategic_loans
@@ -3710,7 +3711,7 @@ focus_tree = {
 		x = 119
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_sarikamish_counter_encirclement
@@ -3728,7 +3729,7 @@ focus_tree = {
 		x = 121
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_plan_19_galicia_variant
@@ -3756,7 +3757,7 @@ focus_tree = {
 		x = 123
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_plan_19_galicia_variant
@@ -3784,7 +3785,7 @@ focus_tree = {
 		x = 121
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_claim_tsargrad_and_the_straits
@@ -3801,7 +3802,7 @@ focus_tree = {
 		x = 125
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_claim_tsargrad_and_the_straits
@@ -3819,7 +3820,7 @@ focus_tree = {
 		x = 123
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_liberate_galician_ruthenians
@@ -3838,7 +3839,7 @@ focus_tree = {
 		x = 123
 		y = 7
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_cross_over_the_carpathians
@@ -3864,7 +3865,7 @@ focus_tree = {
 		x = 123
 		y = 8
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_storm_the_bosphorus_and_dardanelles
@@ -3882,7 +3883,7 @@ focus_tree = {
 		x = 131
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_third_rome_foreign_policy
@@ -3900,7 +3901,7 @@ focus_tree = {
 		x = 129
 		y = 2
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_willy_nicky_secret_correspondence
@@ -3920,7 +3921,7 @@ focus_tree = {
 		x = 133
 		y = 2
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_willy_nicky_secret_correspondence
@@ -3940,7 +3941,7 @@ focus_tree = {
 		x = 129
 		y = 3
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_bjorko_treaty_reborn
@@ -3974,7 +3975,7 @@ focus_tree = {
 		x = 129
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_continental_league_against_britain
@@ -3992,7 +3993,7 @@ focus_tree = {
 		x = 129
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_partition_persia_and_india
@@ -4010,7 +4011,7 @@ focus_tree = {
 		x = 129
 		y = 6
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_treaty_of_berlin_rapprochement
@@ -4027,7 +4028,7 @@ focus_tree = {
 		x = 133
 		y = 3
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_peace_of_brest_litovsk
@@ -4044,7 +4045,7 @@ focus_tree = {
 		x = 133
 		y = 4
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_brest_demobilization_and_losses
@@ -4063,7 +4064,7 @@ focus_tree = {
 		x = 133
 		y = 5
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_reconstruction_from_the_ashes
@@ -4081,7 +4082,7 @@ focus_tree = {
 		x = 11
 		y = 14
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_the_kerensky_ministry
@@ -4099,7 +4100,7 @@ focus_tree = {
 		x = 7
 		y = 19
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_purge_the_soviets
@@ -4117,7 +4118,7 @@ focus_tree = {
 		x = 5
 		y = 20
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_creation_of_the_red_army
@@ -4135,7 +4136,7 @@ focus_tree = {
 		x = 9
 		y = 21
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_one_and_indivisible_russia
@@ -4153,7 +4154,7 @@ focus_tree = {
 		x = 11
 		y = 21
 		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_one_and_indivisible_russia
@@ -4171,7 +4172,7 @@ focus_tree = {
 		x = 39
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_modernizing_the_colossus
@@ -4189,7 +4190,7 @@ focus_tree = {
 		x = 38
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_nobel_and_rothschild_refineries
@@ -4206,7 +4207,7 @@ focus_tree = {
 		x = 34
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_urals_heavy_smelters
@@ -4223,7 +4224,7 @@ focus_tree = {
 		x = 34
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_ural_platinum_reserves
@@ -4240,7 +4241,7 @@ focus_tree = {
 		x = 31
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_altai_grain_harvests
@@ -4283,7 +4284,7 @@ focus_tree = {
 		x = 55
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		prerequisite = {
 			focus = SOV_borodino_battlecruisers_laid_down
@@ -4300,7 +4301,7 @@ focus_tree = {
 		x = 67
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_caucasian_amphibious_raids
@@ -4318,7 +4319,7 @@ focus_tree = {
 		x = 77
 		y = 4
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
 		prerequisite = {
 			focus = SOV_lebed_reconnaissance_corps
@@ -4335,7 +4336,7 @@ focus_tree = {
 		x = 89
 		y = 5
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_the_great_retreat_to_the_dvina
@@ -4352,7 +4353,7 @@ focus_tree = {
 		x = 89
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_osowiec_and_novogeorgievsk_forts
@@ -4370,7 +4371,7 @@ focus_tree = {
 		x = 99
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_fedorov_avtomat_early_rifle
@@ -4388,7 +4389,7 @@ focus_tree = {
 		x = 97
 		y = 7
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 
 		prerequisite = {
 			focus = SOV_railway_heavy_guns
@@ -4405,7 +4406,7 @@ focus_tree = {
 		x = 127
 		y = 1
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_third_rome_foreign_policy
@@ -4423,7 +4424,7 @@ focus_tree = {
 		x = 127
 		y = 6
 		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_gold_transfers_for_credit
@@ -4440,7 +4441,7 @@ focus_tree = {
 		x = 125
 		y = 7
 		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
 		prerequisite = {
 			focus = SOV_slavic_charity_and_red_cross

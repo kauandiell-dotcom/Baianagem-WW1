@@ -286,5 +286,99 @@ FRENCH_IDEAS = {
             "land_reinforce_rate": 0.25,
             "army_core_defence_factor": 0.10,
         }
+    },
+    "FRA_1914_fiscal_solvency": {
+        "name": "1914 Income Tax Solvency",
+        "desc": "Joseph Caillaux's progressive income tax reform enacted in July 1914 modernizes the French treasury, providing stable fiscal revenue to sustain prolonged mobilization.",
+        "sprite": "GFX_idea_FRA_crdit_lyonnais-45149",
+        "file_icon": "FRA_crdit_lyonnais-45149.png",
+        "modifier": {
+            "consumer_goods_factor": -0.03,
+            "production_speed_industrial_complex_factor": 0.05,
+            "political_power_gain": 0.15,
+        }
+    },
+    "FRA_horizon_blue_uniforms_idea": {
+        "name": "Bleu Horizon & Adrian Helmets",
+        "desc": "Abandoning the fatal red trousers, French troops don camouflage Bleu Horizon coats and Louis Adrian's stamped steel helmets, drastically slashing shrapnel head trauma.",
+        "sprite": "GFX_idea_FRA_horizon_blue_uniforms-69197",
+        "file_icon": "FRA_horizon_blue_uniforms-69197.png",
+        "modifier": {
+            "army_defence_factor": 0.08,
+            "casualty_trickleback": 0.05,
+        }
+    },
+    "FRA_lyautey_moroccan_order": {
+        "name": "Lyautey's Moroccan Pacification",
+        "desc": "General Hubert Lyautey combines political tact with surgical military columns to pacify tribal unrest, creating a stable protectorate and recruiting loyal colonial battalions.",
+        "sprite": "GFX_idea_FRA_hubert_lyautey",
+        "file_icon": "idea_FRA_hubert_lyautey.png",
+        "modifier": {
+            "non_core_manpower": 0.04,
+            "stability_factor": 0.05,
+            "resistance_decay": 0.10,
+        }
+    },
+    "FRA_supreme_allied_command": {
+        "name": "Supreme Allied War Council",
+        "desc": "Established at Versailles to synchronize British, French, Italian, and American strategy, preventing fragmented national efforts in the face of German unified offensives.",
+        "sprite": "GFX_idea_FRA_supreme_allied_command-46517",
+        "file_icon": "FRA_supreme_allied_command-46517.png",
+        "modifier": {
+            "planning_speed": 0.15,
+            "max_planning": 0.10,
+            "army_org_factor": 0.05,
+        }
+    },
+    "FRA_they_shall_not_pass": {
+        "name": "'Ils Ne Passeront Pas!'",
+        "desc": "The sacred vow of the poilus at Verdun. No German division shall breach the ring of forts, no matter the sacrifice demanded.",
+        "sprite": "GFX_idea_FRA_they_shall_not_pass",
+        "file_icon": "FRA_they_shall_not_pass.png",
+        "modifier": {
+            "army_core_defence_factor": 0.15,
+            "army_morale_factor": 0.10,
+            "entrenchment_speed_factor": 0.20,
+        }
+    },
+    "FRA_russian_steamroller_pledge": {
+        "name": "Russian Steamroller M+15 Commitment",
+        "desc": "Under the Joffre-Zhilinsky staff protocols, the Imperial Russian Army pledges an immediate general invasion of East Prussia by the 15th day of mobilization, forcing Germany to divide its forces.",
+        "sprite": "GFX_idea_FRA_investment_in_russia-45149",
+        "file_icon": "FRA_investment_in_russia-45149.png",
+        "modifier": {
+            "army_morale_factor": 0.08,
+            "planning_speed": 0.10,
+        }
+    },
+    "FRA_british_naval_entente": {
+        "name": "Anglo-French Naval Partition",
+        "desc": "The Royal Navy guards the North Sea and English Channel, allowing the Marine Nationale to secure absolute dominance across the Western Mediterranean and French African sea lanes.",
+        "sprite": "GFX_idea_FRA_entente_cordiale-45115",
+        "file_icon": "FRA_entente_cordiale-45115.png",
+        "modifier": {
+            "naval_coordination": 0.20,
+            "convoy_escort_efficiency": 0.15,
+        }
+    },
+    "FRA_us_financial_pipeline": {
+        "name": "J.P. Morgan Credit Pipeline",
+        "desc": "American investment banking houses open multi-billion dollar credit lines for French munitions purchases, raw materials, and agricultural food shipments.",
+        "sprite": "GFX_idea_FRA_crdit_lyonnais-45149",
+        "file_icon": "FRA_crdit_lyonnais-45149.png",
+        "modifier": {
+            "consumer_goods_factor": -0.04,
+            "industrial_capacity_factory": 0.05,
+        }
+    },
+    "FRA_republican_vigilance": {
+        "name": "Republican Vigilance",
+        "desc": "Defending secular civic institutions against anti-republican agitation and reactionary factions.",
+        "sprite": "GFX_idea_FRA_parliamentary_mutiny_turmoil",
+        "file_icon": "FRA_parliamentary_mutiny_turmoil.png",
+        "modifier": {
+            "stability_factor": 0.05,
+            "political_power_gain": 0.10,
+        }
     }
 }

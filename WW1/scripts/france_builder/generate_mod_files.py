@@ -7,6 +7,7 @@ from france_builder.data_foci import FRENCH_FOCI
 from france_builder.data_ideas import FRENCH_IDEAS
 from france_builder.data_decisions import FRENCH_CATEGORIES, FRENCH_DECISIONS_CODE
 from france_builder.data_events import FRENCH_EVENTS_CODE
+from france_builder.data_event_loc import EVENTS_LOC_EN, EVENTS_LOC_PT
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
@@ -30,7 +31,7 @@ def generate_focus_tree():
         out.write("\t}\n")
         out.write("\tdefault = no\n")
         out.write("\treset_on_civilwar = no\n")
-        out.write("\tcontinuous_focus_position = { x = 60 y = 1800 }\n\n")
+        out.write("\tcontinuous_focus_position = { x = 40 y = 4300 }\n\n")
 
         for f in FRENCH_FOCI:
             out.write("\tfocus = {\n")
@@ -201,75 +202,7 @@ def generate_localisation():
         content_en.append("\n # ========================================================================\n")
         content_en.append(" # FRENCH EVENTS LOCALISATION\n")
         content_en.append(" # ========================================================================\n")
-        events_loc_en = {
-            "ww1_france.1.t": "Agadir Crisis: The Panther in Agadir",
-            "ww1_france.1.d": "On July 1, 1911, the German gunboat SMS Panther cast anchor off the Moroccan port of Agadir under the pretext of defending German commercial interests. Berlin seeks to challenge French paramountcy in Morocco.",
-            "ww1_france.1.a": "Stand firm and consult our British allies",
-            "ww1_france.1.b": "Negotiate a bilateral colonial compromise directly",
-            "ww1_france.2.t": "British Support: The Mansion House Speech",
-            "ww1_france.2.d": "Chancellor David Lloyd George delivers a resolute speech at Mansion House: Britain will not allow its allies to be treated as of no account when European peace is at stake.",
-            "ww1_france.2.a": "The Entente Cordiale stands unbreakable",
-            "ww1_france.3.t": "German Territorial Demands over Equatorial Africa",
-            "ww1_france.3.d": "Berlin demands vast territories across French Congo and Oubangui-Chari in exchange for recognizing French claims in Morocco.",
-            "ww1_france.3.a": "Accede to territory swap for recognition in Morocco",
-            "ww1_france.3.b": "Reject all German blackmail!",
-            "ww1_france.4.t": "The Franco-German Accord of 1911",
-            "ww1_france.4.d": "After months of tense negotiations, France cedes a corridor in the Congo to German Cameroon in return for undisputed French protectorate rights over Morocco.",
-            "ww1_france.4.a": "A bitter compromise, but peace is preserved",
-            "ww1_france.10.t": "Treaty of Fez: The French Protectorate",
-            "ww1_france.10.d": "Sultan Abdelhafid signs the Treaty of Fez establishing the French Protectorate in Morocco under General Hubert Lyautey.",
-            "ww1_france.10.a": "France expands its civilizing mission",
-            "ww1_france.20.t": "Passage of the Three-Year Conscription Law",
-            "ww1_france.20.d": "The National Assembly votes to extend compulsory military service from two to three years, countering Germany's growing demographic dominance.",
-            "ww1_france.20.a": "France stands ready to defend herself",
-            "ww1_france.30.t": "Election of Raymond Poincaré as President",
-            "ww1_france.30.d": "Conservative statesman Raymond Poincaré is elected President of the Third Republic, pledging unwavering resolve against German aggression.",
-            "ww1_france.30.a": "A president of resolute resolve",
-            "ww1_france.40.t": "The Assassination of Jean Jaurès",
-            "ww1_france.40.d": "July 31, 1914: Nationalist fanatic Raoul Villain shoots socialist peace leader Jean Jaurès at Café du Croissant. France loses its greatest voice for peace on the eve of catastrophe.",
-            "ww1_france.40.a": "Our last voice for peace has been silenced...",
-            "ww1_france.41.t": "Order for General Mobilization: August 1, 1914",
-            "ww1_france.41.d": "Church bells ring across every village in France. Over three million reservists take their rifles and march to the railway stations with flowers in their gun barrels.",
-            "ww1_france.41.a": "L'Union Sacrée! Pour la Patrie!",
-            "ww1_france.50.t": "Battle of the Frontiers: Carnage in Alsace-Lorraine",
-            "ww1_france.50.d": "August 1914: Charging against fortified German machine guns in red trousers, French armies suffer catastrophic casualties. The offensive doctrine collapses under lead and shrapnel.",
-            "ww1_france.50.a": "Order the fighting retreat to save the armies!",
-            "ww1_france.51.t": "Plan XVII Triumphs: Alsace and Lorraine Liberated!",
-            "ww1_france.51.d": "Against all odds, French armies rupture the German front and march into Strasbourg and Metz! The tricolor flies once more across the Rhine!",
-            "ww1_france.51.a": "The lost provinces are redeemed!",
-            "ww1_france.52.t": "Plan XVII Repulsed: The Frontier Stalemate",
-            "ww1_france.52.d": "Heavy German counter-attacks halt the French advance with severe losses. Both sides dig in for a war of attrition.",
-            "ww1_france.52.a": "Consolidate defensive lines along the Meuse",
-            "ww1_france.61.t": "The Miracle of the Marne: Taxis Save Paris",
-            "ww1_france.61.d": "General Gallieni requisitions 600 Parisian taxis to rush 6,000 reserves to the Ourcq. Joffre strikes von Kluck's exposed flank, halting the German march on Paris.",
-            "ww1_france.61.a": "Paris is saved! The invader is thrown back!",
-            "ww1_france.71.t": "The Furnace of Verdun: Falkenhayn Strikes",
-            "ww1_france.71.d": "February 21, 1916: 1,400 German guns unleash hell on the Meuse forts to bleed France white. Verdun becomes the sacred altar of French defiance.",
-            "ww1_france.71.a": "Ils ne passeront pas! Verdun will hold!",
-            "ww1_france.81.t": "Catastrophe on the Chemin des Dames",
-            "ww1_france.81.d": "April 1917: General Nivelle's promised rupture is pulverized on the limestone slopes of Craonne. Over 100,000 casualties in days break the army's endurance.",
-            "ww1_france.81.a": "Relieve Nivelle immediately before total collapse!",
-            "ww1_france.91.t": "The Poilus Mutinies of 1917",
-            "ww1_france.91.d": "Sixty-eight divisions mutiny. The soldiers refuse suicidal butchery while swearing to defend their trenches against any German advance.",
-            "ww1_france.91.a": "Appoint Pétain to restore discipline through compassion",
-            "ww1_france.91.b": "Crush the mutineers with iron military tribunals!",
-            "ww1_france.92.t": "Pétain Restores Hope to the Frontline",
-            "ww1_france.92.d": "Guaranteed leaves, warm food, and elastic defense restore the morale of the French Army: 'I am waiting for the tanks and the Americans.'",
-            "ww1_france.92.a": "Order and faith are restored",
-            "ww1_france.101.t": "Georges Clemenceau: 'Je fais la guerre!'",
-            "ww1_france.101.d": "November 1917: 'Le Tigre' takes power as Prime Minister, weeding out defeatists and inspiring the nation to victory: 'Domestic policy: I wage war. Foreign policy: I wage war. Always, I wage war!'",
-            "ww1_france.101.a": "Victory at all costs!",
-            "ww1_france.111.t": "The Yanks are Coming: First US Troops in France",
-            "ww1_france.111.d": "General John J. Pershing arrives in Paris: 'Lafayette, we are here!' Doughboys begin rigorous training with French equipment.",
-            "ww1_france.111.a": "Welcome to the sons of Washington!",
-            "ww1_france.131.t": "The Armistice of Rethondes: Victory in the West!",
-            "ww1_france.131.d": "November 11, 1918: In Marshal Foch's railway carriage in the Forest of Compiègne, Germany signs the unconditional armistice. The guns fall silent.",
-            "ww1_france.131.a": "Vive la France! Vive la République!",
-            "ww1_france.132.t": "The Sacred Return of Alsace-Lorraine",
-            "ww1_france.132.d": "After 47 years of grief and yearning, the lost provinces of Alsace and Lorraine return home to the motherland. The nightmare of 1870 is finally erased.",
-            "ww1_france.132.a": "The tricolor flies forever over Strasbourg and Metz!",
-        }
-        for ekey, etext in events_loc_en.items():
+        for ekey, etext in EVENTS_LOC_EN.items():
             content_en.append(f' {ekey}:0 "{etext}"\n')
 
         f_en.write("".join(content_en).encode("utf-8"))
@@ -336,75 +269,7 @@ def generate_localisation():
         content_pt.append("\n # ========================================================================\n")
         content_pt.append(" # EVENTOS FRANCESES (PORTUGUÊS)\n")
         content_pt.append(" # ========================================================================\n")
-        events_loc_pt = {
-            "ww1_france.1.t": "Crise de Agadir: O Panther em Agadir",
-            "ww1_france.1.d": "Em 1 de julho de 1911, a canhoneira alemã SMS Panther ancorou no porto marroquino de Agadir sob o pretexto de defender interesses comerciais alemães. Berlim desafia a supremacia francesa no Marrocos.",
-            "ww1_france.1.a": "Manter firmeza e consultar os aliados britânicos",
-            "ww1_france.1.b": "Negociar diretamente um compromisso colonial bilateral",
-            "ww1_france.2.t": "Apoio Britânico: O Discurso de Mansion House",
-            "ww1_france.2.d": "O Chanceler David Lloyd George profere um discurso resoluto em Mansion House: a Grã-Bretanha não permitirá que seus aliados sejam tratados como insignificantes quando a paz europeia estiver em jogo.",
-            "ww1_france.2.a": "A Entente Cordiale permanece inabalável",
-            "ww1_france.3.t": "Demandas Territoriais Alemãs sobre a África Equatorial",
-            "ww1_france.3.d": "Berlim exige vastos territórios no Congo Francês e em Oubangui-Chari em troca de reconhecer as reivindicações francesas no Marrocos.",
-            "ww1_france.3.a": "Aceitar troca territorial em troca do reconhecimento no Marrocos",
-            "ww1_france.3.b": "Rejeitar toda chantagem alemã!",
-            "ww1_france.4.t": "O Acordo Franco-Alemão de 1911",
-            "ww1_france.4.d": "Após meses de negociações tensas, a França cede um corredor no Congo ao Camarões Alemão em troca de direitos incontestados de protetorado sobre o Marrocos.",
-            "ww1_france.4.a": "Um compromisso amargo, mas a paz é preservada",
-            "ww1_france.10.t": "Tratado de Fez: O Protetorado Francês",
-            "ww1_france.10.d": "O Sultão Abdelhafid assina o Tratado de Fez estabelecendo o Protetorado Francês no Marrocos sob a administração do General Hubert Lyautey.",
-            "ww1_france.10.a": "A França expande sua missão civilizadora",
-            "ww1_france.20.t": "Aprovação da Lei dos Três Anos de Serviço Militar",
-            "ww1_france.20.d": "A Assembleia Nacional vota para estender o serviço militar obrigatório de dois para três anos, equilibrando o crescimento demográfico da Alemanha.",
-            "ww1_france.20.a": "A França está pronta para se defender",
-            "ww1_france.30.t": "Eleição de Raymond Poincaré para a Presidência",
-            "ww1_france.30.d": "O estadista conservador Raymond Poincaré é eleito Presidente da Terceira República, prometendo firmeza inabalável contra a agressão alemã.",
-            "ww1_france.30.a": "Um presidente de firme determinação",
-            "ww1_france.40.t": "O Assassinato de Jean Jaurès",
-            "ww1_france.40.d": "31 de julho de 1914: O fanático nacionalista Raoul Villain atira no líder socialista e pacifista Jean Jaurès no Café du Croissant. A França perde sua maior voz pela paz às vésperas do abismo.",
-            "ww1_france.40.a": "Nossa última voz pela paz foi silenciada...",
-            "ww1_france.41.t": "Ordem de Mobilização Geral: 1 de Agosto de 1914",
-            "ww1_france.41.d": "Os sinos das igrejas dobram por todas as aldeias da França. Mais de três milhões de reservistas pegam seus fuzis e marcham para as estações de trem.",
-            "ww1_france.41.a": "L'Union Sacrée! Pela Pátria!",
-            "ww1_france.50.t": "Batalha das Fronteiras: Carnificina na Alsácia-Lorena",
-            "ww1_france.50.d": "Agosto de 1914: Avançando contra metralhadoras alemãs entrincheiradas de calças vermelhas, os exércitos franceses sofrem perdas estarrecedoras. A doutrina da ofensiva desmorona.",
-            "ww1_france.50.a": "Ordenar o recuo de combate para salvar os exércitos!",
-            "ww1_france.51.t": "Vitória do Plano XVII: Alsácia e Lorena Libertadas!",
-            "ww1_france.51.d": "Contra todas as probabilidades, os exércitos franceses rompem o front alemão e marcham em Estrasburgo e Metz! O tricolor volta a tremular sobre o Reno!",
-            "ww1_france.51.a": "As províncias perdidas foram redimidas!",
-            "ww1_france.52.t": "Plano XVII Repelido: O Impasse da Fronteira",
-            "ww1_france.52.d": "Fortes contra-ataques alemães contêm o avanço francês com pesadas baixas. Ambos os lados cavam trincheiras para uma guerra de atrito.",
-            "ww1_france.52.a": "Consolidar linhas defensivas ao longo do Mosa",
-            "ww1_france.61.t": "O Milagre do Marne: Os Táxis Salvam Paris",
-            "ww1_france.61.d": "O General Gallieni requisita 600 táxis parisienses para transportar 6.000 soldados de infantaria ao Ourcq. Joffre contra-ataca o flanco de von Kluck, salvando a capital.",
-            "ww1_france.61.a": "Paris está salva! O invasor foi repelido!",
-            "ww1_france.71.t": "A Fornalha de Verdun: O Ataque de Falkenhayn",
-            "ww1_france.71.d": "21 de fevereiro de 1916: 1.400 canhões alemães despejam fogo sobre os fortes do Mosa para sangrar a França até a morte. Verdun se torna o altar do sacrifício francês.",
-            "ww1_france.71.a": "Ils ne passeront pas! Verdun resistirá!",
-            "ww1_france.81.t": "Catástrofe no Chemin des Dames",
-            "ww1_france.81.d": "Abril de 1917: A grande ofensiva de ruptura do General Robert Nivelle é pulverizada nas encostas rochosas de Craonne. Mais de 100.000 baixas em poucos dias quebram o limite das tropas.",
-            "ww1_france.81.a": "Exonerar Nivelle imediatamente antes do colapso total!",
-            "ww1_france.91.t": "Os Motins dos Poilus de 1917",
-            "ww1_france.91.d": "Sessenta e oito divisões se amotinam. Os soldados recusam investidas suicidas, prometendo contudo defender as trincheiras contra qualquer ataque alemão.",
-            "ww1_france.91.a": "Nomear Pétain para restaurar a disciplina através da compaixão",
-            "ww1_france.91.b": "Esmagar os amotinados com tribunais militares implacáveis!",
-            "ww1_france.92.t": "Pétain Restaura a Esperança no Front",
-            "ww1_france.92.d": "Licenças garantidas, refeições quentes e defesa elástica restauram a moral do Exército Francês: 'Espero pelos tanques e pelos americanos.'",
-            "ww1_france.92.a": "A ordem e a fé estão restauradas",
-            "ww1_france.101.t": "Georges Clemenceau: 'Je fais la guerre!'",
-            "ww1_france.101.d": "Novembro de 1917: 'O Tigre' assume como Primeiro-Ministro, expurgando derrotistas e inspirando a nação: 'Política interna: eu faço a guerra. Política externa: eu faço a guerra. Sempre, eu faço a guerra!'",
-            "ww1_france.101.a": "Vitória a qualquer custo!",
-            "ww1_france.111.t": "Os Americanos Chegam: Primeiras Tropas dos EUA na França",
-            "ww1_france.111.d": "O General John J. Pershing desembarca em Paris: 'Lafayette, nous voilà!' As tropas americanas iniciam treinamento rigoroso com equipamento francês.",
-            "ww1_france.111.a": "Bem-vindos aos filhos de Washington!",
-            "ww1_france.131.t": "O Armistício de Rethondes: Vitória no Ocidente!",
-            "ww1_france.131.d": "11 de novembro de 1918: No vagão do Marechal Foch na floresta de Compiègne, a Alemanha assina os termos do armistício incondicional. As armas silenciam.",
-            "ww1_france.131.a": "Viva a França! Viva a República!",
-            "ww1_france.132.t": "O Retorno Sagrado da Alsácia-Lorena",
-            "ww1_france.132.d": "Após 47 anos de luto e espera, as províncias da Alsácia e Lorena retornam à mãe-pátria. A mancha de 1870 está finalmente apagada.",
-            "ww1_france.132.a": "O tricolor tremula para sempre sobre Estrasburgo e Metz!",
-        }
-        for ekey, etext in events_loc_pt.items():
+        for ekey, etext in EVENTS_LOC_PT.items():
             content_pt.append(f' {ekey}:0 "{etext}"\n')
 
         f_pt.write("".join(content_pt).encode("utf-8"))

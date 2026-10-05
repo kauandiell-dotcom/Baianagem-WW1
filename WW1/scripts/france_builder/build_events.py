@@ -1,0 +1,1545 @@
+# Script to generate data_events.py and data_event_loc.py with complete bilateral chains and bilingual localisation
+
+import os
+
+EVENTS_CODE = '''# =========================================================================
+# FRENCH REPUBLIC — EVENT NARRATIVE & BILATERAL DIPLOMATIC ENGINE (1911–1918)
+# Total Events: 65
+# =========================================================================
+
+add_namespace = ww1_france
+
+# -------------------------------------------------------------------------
+# ww1_france.1: The Agadir Crisis — German Gunboat Panther Arrives
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.1
+	title = ww1_france.1.t
+	desc = ww1_france.1.d
+	picture = GFX_report_event_report_event_british_blockade
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Stand firm & consult our British allies (Historical)
+	option = {
+		name = ww1_france.1.a
+		ai_chance = { base = 90 }
+		add_political_power = 25
+		add_war_support = 0.05
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { country_event = { id = ww1_france.2 days = 2 } }
+		}
+	}
+
+	# Option B: Seek bilateral settlement with Germany directly
+	option = {
+		name = ww1_france.1.b
+		ai_chance = { base = 10 }
+		add_political_power = -25
+		if = {
+			limit = { country_exists = GER }
+			GER = { country_event = { id = ww1_france.3 days = 2 } }
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.2: British Reaction to Agadir (Mansion House Speech)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.2
+	title = ww1_france.2.t
+	desc = ww1_france.2.d
+	picture = GFX_report_event_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.2.a
+		add_war_support = 0.05
+		FRA = {
+			country_event = { id = ww1_france.4 days = 2 }
+			add_opinion_modifier = {
+				target = ENG
+				modifier = FRA_entente_support_opinion
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.3: German Demands over Equatorial Africa (Agadir)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.3
+	title = ww1_france.3.t
+	desc = ww1_france.3.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Offer moderate border rectifications in Congo
+	option = {
+		name = ww1_france.3.a
+		ai_chance = { base = 85 }
+		FRA = { country_event = { id = ww1_france.4 days = 2 } }
+	}
+
+	# Option B: Demand entire French Congo or threaten war
+	option = {
+		name = ww1_france.3.b
+		ai_chance = { base = 15 }
+		add_war_support = 0.05
+		FRA = { country_event = { id = ww1_france.5 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.4: Franco-German Accord on Morocco & Congo
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.4
+	title = ww1_france.4.t
+	desc = ww1_france.4.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Sign the Treaty (Cede Congo territory for Morocco Protectorate)
+	option = {
+		name = ww1_france.4.a
+		ai_chance = { base = 95 }
+		add_political_power = 50
+		set_country_flag = FRA_agadir_resolved_diplomatically
+		if = {
+			limit = { country_exists = GER }
+			GER = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = FRA_colonial_settlement_opinion
+				}
+			}
+		}
+	}
+
+	# Option B: Refuse any territorial cession to Germany
+	option = {
+		name = ww1_france.4.b
+		ai_chance = { base = 5 }
+		add_war_support = 0.10
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.5: Germany Threatens War over Agadir Breakdown
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.5
+	title = ww1_france.5.t
+	desc = ww1_france.5.d
+	picture = GFX_report_event_news_event_german_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.5.a
+		add_war_support = 0.15
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.10: The Treaty of Fez — French Protectorate in Morocco
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.10
+	title = ww1_france.10.t
+	desc = ww1_france.10.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.10.a
+		add_political_power = 50
+		add_stability = 0.05
+		set_country_flag = FRA_protectorate_of_morocco_established
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.20: The Three-Year Law Debate of 1913
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.20
+	title = ww1_france.20.t
+	desc = ww1_france.20.d
+	picture = GFX_report_event_generic_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Pass the Three-Year Law firmly (Historical)
+	option = {
+		name = ww1_france.20.a
+		ai_chance = { base = 85 }
+		swap_ideas = {
+			remove_idea = FRA_demographic_stagnation
+			add_idea = FRA_three_year_conscription
+		}
+		add_stability = -0.05
+		add_war_support = 0.10
+		set_country_flag = FRA_three_year_law_passed
+	}
+
+	# Option B: Compromise on Two-and-a-half Years
+	option = {
+		name = ww1_france.20.b
+		ai_chance = { base = 15 }
+		add_stability = 0.05
+		add_manpower = 75000
+		set_country_flag = FRA_two_half_year_compromise
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.30: Presidential Election of 1913
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.30
+	title = ww1_france.30.t
+	desc = ww1_france.30.d
+	picture = GFX_report_event_generic_parliament
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Raymond Poincaré elected President (Historical)
+	option = {
+		name = ww1_france.30.a
+		ai_chance = { base = 85 }
+		swap_ideas = {
+			remove_idea = FRA_third_republic_instability
+			add_idea = FRA_poincare_national_firmness
+		}
+		promote_character = FRA_raymond_poincare
+		set_country_flag = FRA_poincare_president
+	}
+
+	# Option B: Jules Pams elected President (Left-Radical Moderation)
+	option = {
+		name = ww1_france.30.b
+		ai_chance = { base = 15 }
+		add_stability = 0.10
+		add_war_support = -0.05
+		promote_character = FRA_jules_pams
+		set_country_flag = FRA_pams_president
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.40: The Assassination of Jean Jaurès (July 31, 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.40
+	title = ww1_france.40.t
+	desc = ww1_france.40.d
+	picture = GFX_report_event_gathering_protest
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.40.a
+		add_war_support = 0.10
+		add_stability = -0.05
+		set_country_flag = FRA_jaures_martyrdom
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.41: General Mobilization Order (August 1, 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.41
+	title = ww1_france.41.t
+	desc = ww1_france.41.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.41.a
+		swap_ideas = {
+			remove_idea = FRA_wound_of_1870
+			add_idea = FRA_union_sacree_spirit
+		}
+		add_war_support = 0.20
+		add_stability = 0.10
+		set_country_flag = FRA_mobilization_complete
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.50: Battle of the Frontiers (August 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.50
+	title = ww1_france.50.t
+	desc = ww1_france.50.d
+	picture = GFX_report_event_soldiers_marching
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Shock of the frontier clashes
+	option = {
+		name = ww1_france.50.a
+		add_war_support = 0.05
+		add_stability = -0.05
+		swap_ideas = {
+			remove_idea = FRA_elan_vital_doctrine
+			add_idea = FRA_lessons_of_the_frontiers
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.51: Plan XVII Triumphs (Alsace-Lorraine Liberated)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.51
+	title = ww1_france.51.t
+	desc = ww1_france.51.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.51.a
+		add_stability = 0.15
+		add_war_support = 0.15
+		add_political_power = 100
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.52: Plan XVII Repulsed (Trench Stalemate Begins)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.52
+	title = ww1_france.52.t
+	desc = ww1_france.52.d
+	picture = GFX_report_event_soldiers_marching
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.52.a
+		add_stability = -0.05
+		add_war_support = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.61: The Miracle of the Marne (September 1914)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.61
+	title = ww1_france.61.t
+	desc = ww1_france.61.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.61.a
+		add_war_support = 0.15
+		add_stability = 0.10
+		add_political_power = 75
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.71: The Furnace of Verdun (February 1916)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.71
+	title = ww1_france.71.t
+	desc = ww1_france.71.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.71.a
+		add_war_support = 0.15
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.81: Catastrophe on the Chemin des Dames (April 1917)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.81
+	title = ww1_france.81.t
+	desc = ww1_france.81.d
+	picture = GFX_report_event_gathering_protest
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.81.a
+		add_stability = -0.15
+		add_war_support = -0.10
+		swap_ideas = {
+			remove_idea = FRA_union_sacree_spirit
+			add_idea = FRA_wearing_union_sacree
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.91: The Poilus Mutinies (May 1917)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.91
+	title = ww1_france.91.t
+	desc = ww1_france.91.d
+	picture = GFX_report_event_gathering_protest
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.91.a
+		add_ideas = FRA_parliamentary_mutiny_turmoil
+		add_stability = -0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.92: Pétain Restores Order (June 1917)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.92
+	title = ww1_france.92.t
+	desc = ww1_france.92.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.92.a
+		swap_ideas = {
+			remove_idea = FRA_parliamentary_mutiny_turmoil
+			add_idea = FRA_petain_elastic_defense
+		}
+		add_stability = 0.10
+		add_war_support = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.101: Clemenceau "Le Tigre" Takes Power (November 1917)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.101
+	title = ww1_france.101.t
+	desc = ww1_france.101.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.101.a
+		swap_ideas = {
+			remove_idea = FRA_wearing_union_sacree
+			add_idea = FRA_clemenceau_iron_resolve
+		}
+		promote_character = FRA_georges_clemenceau
+		set_country_flag = FRA_clemenceau_premier
+		add_war_support = 0.15
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.111: Arrival of General Pershing & The American Doughboys
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.111
+	title = ww1_france.111.t
+	desc = ww1_france.111.d
+	picture = GFX_report_event_us_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.111.a
+		add_war_support = 0.15
+		add_stability = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.131: The Armistice of Compiègne (November 11, 1918)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.131
+	title = ww1_france.131.t
+	desc = ww1_france.131.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.131.a
+		add_stability = 0.20
+		add_war_support = 0.10
+		set_country_flag = FRA_armistice_signed
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.132: The Reintegration of Alsace and Lorraine
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.132
+	title = ww1_france.132.t
+	desc = ww1_france.132.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.132.a
+		swap_ideas = {
+			remove_idea = FRA_clemenceau_iron_resolve
+			add_idea = FRA_revanche_accomplished
+		}
+		transfer_state = 28 # Alsace
+		transfer_state = 42 # Lorraine
+		add_core_state = 28
+		add_core_state = 42
+		add_political_power = 150
+	}
+}
+
+# =========================================================================
+# BILATERAL DIPLOMATIC CHAINS (FRANCE & FOREIGN POWERS)
+# =========================================================================
+
+# -------------------------------------------------------------------------
+# ww1_france.201: Strategic Railway Loans to Russia (fires for SOV)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.201
+	title = ww1_france.201.t
+	desc = ww1_france.201.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Accept French Gold & Double-Track Western Rails (Historical)
+	option = {
+		name = ww1_france.201.a
+		ai_chance = { base = 90 }
+		add_building_construction = { type = railway level = 2 instant_build = yes province = 9345 }
+		add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+		add_opinion_modifier = { target = FRA modifier = FRA_russian_railway_accord }
+		FRA = { country_event = { id = ww1_france.202 days = 2 } }
+	}
+
+	# Option B: Refuse Foreign Capital & Strategic Ties
+	option = {
+		name = ww1_france.201.b
+		ai_chance = { base = 10 }
+		add_political_power = 40
+		FRA = { country_event = { id = ww1_france.203 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.202: Russia Accepts Strategic Railway Loans (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.202
+	title = ww1_france.202.t
+	desc = ww1_france.202.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.202.a
+		add_political_power = 30
+		add_stability = 0.05
+		add_opinion_modifier = { target = SOV modifier = FRA_sacred_alliance_opinion }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.203: Russia Refuses Railway Loan Conditions (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.203
+	title = ww1_france.203.t
+	desc = ww1_france.203.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.203.a
+		add_political_power = -20
+		add_stability = -0.03
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.204: Joffre-Zhilinsky Protocols: Day 15 Commitment (fires for SOV)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.204
+	title = ww1_france.204.t
+	desc = ww1_france.204.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Pledge Day 15 General Invasion of East Prussia (Historical)
+	option = {
+		name = ww1_france.204.a
+		ai_chance = { base = 85 }
+		planning_speed = 0.15
+		army_morale_factor = 0.05
+		add_opinion_modifier = { target = FRA modifier = FRA_russian_day15_pledge }
+		FRA = { country_event = { id = ww1_france.205 days = 2 } }
+	}
+
+	# Option B: Stavka Retains Strategic Freedom (Prioritize Austria)
+	option = {
+		name = ww1_france.204.b
+		ai_chance = { base = 15 }
+		army_defence_factor = 0.05
+		FRA = { country_event = { id = ww1_france.206 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.205: Russia Pledges Day 15 Offensive (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.205
+	title = ww1_france.205.t
+	desc = ww1_france.205.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.205.a
+		add_ideas = FRA_russian_steamroller_pledge
+		add_war_support = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.206: Russia Declines Fixed M+15 Timetable (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.206
+	title = ww1_france.206.t
+	desc = ww1_france.206.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.206.a
+		add_war_support = -0.05
+		add_ideas = FRA_lessons_of_the_frontiers
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.210: Anglo-French Naval Distribution of 1912 (fires for ENG)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.210
+	title = ww1_france.210.t
+	desc = ww1_france.210.d
+	picture = GFX_report_event_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Accept Mediterranean-Channel Partition (Historical)
+	option = {
+		name = ww1_france.210.a
+		ai_chance = { base = 90 }
+		naval_coordination = 0.15
+		add_opinion_modifier = { target = FRA modifier = FRA_entente_cordiale_opinion }
+		FRA = { country_event = { id = ww1_france.211 days = 2 } }
+	}
+
+	# Option B: Maintain Splendid Isolation
+	option = {
+		name = ww1_france.210.b
+		ai_chance = { base = 10 }
+		add_political_power = 25
+		FRA = { country_event = { id = ww1_france.212 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.211: Britain Ratifies Naval Convention (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.211
+	title = ww1_france.211.t
+	desc = ww1_france.211.d
+	picture = GFX_report_event_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.211.a
+		add_ideas = FRA_british_naval_entente
+		add_war_support = 0.08
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.212: Britain Declines Naval Partition (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.212
+	title = ww1_france.212.t
+	desc = ww1_france.212.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.212.a
+		add_political_power = -25
+		add_war_support = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.213: General Wilson's BEF Timetables (fires for ENG)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.213
+	title = ww1_france.213.t
+	desc = ww1_france.213.d
+	picture = GFX_report_event_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Ratify BEF Deployment Plans to Mons (Historical)
+	option = {
+		name = ww1_france.213.a
+		ai_chance = { base = 90 }
+		give_military_access = FRA
+		add_opinion_modifier = { target = FRA modifier = FRA_joint_offensive_opinion }
+		FRA = { country_event = { id = ww1_france.214 days = 2 } }
+	}
+
+	# Option B: Retain BEF on Home Territory
+	option = {
+		name = ww1_france.213.b
+		ai_chance = { base = 10 }
+		add_stability = 0.05
+		FRA = { country_event = { id = ww1_france.215 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.214: British Cabinet Approves BEF Deployment (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.214
+	title = ww1_france.214.t
+	desc = ww1_france.214.d
+	picture = GFX_report_event_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.214.a
+		add_war_support = 0.10
+		add_stability = 0.05
+		give_military_access = ENG
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.215: British Cabinet Withholds Ground Commitments (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.215
+	title = ww1_france.215.t
+	desc = ww1_france.215.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.215.a
+		add_war_support = -0.05
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.216: Supreme War Council at Versailles (fires for ENG / USA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.216
+	title = ww1_france.216.t
+	desc = ww1_france.216.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.216.a
+		add_ideas = FRA_supreme_allied_command
+		add_war_support = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.220: Secret Treaty of London Proposal (fires for ITA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.220
+	title = ww1_france.220.t
+	desc = ww1_france.220.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Sign the Treaty of London! Enter Entente (Historical)
+	option = {
+		name = ww1_france.220.a
+		ai_chance = { base = 85 }
+		add_war_support = 0.15
+		add_opinion_modifier = { target = FRA modifier = FRA_treaty_of_londres_opinion }
+		if = {
+			limit = { country_exists = AUS }
+			create_wargoal = {
+				type = take_state
+				target = AUS
+				generator = { 39 736 } # Trentino & Trieste
+			}
+		}
+		FRA = { country_event = { id = ww1_france.221 days = 2 } }
+	}
+
+	# Option B: Sacro Egoismo: Strict Neutrality
+	option = {
+		name = ww1_france.220.b
+		ai_chance = { base = 10 }
+		add_stability = 0.10
+		add_political_power = 60
+		FRA = { country_event = { id = ww1_france.222 days = 2 } }
+	}
+
+	# Option C: Demand French Mediterranean Possessions!
+	option = {
+		name = ww1_france.220.c
+		ai_chance = { base = 5 }
+		add_war_support = 0.10
+		FRA = { country_event = { id = ww1_france.223 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.221: Italy Joins the Entente Under Treaty of London (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.221
+	title = ww1_france.221.t
+	desc = ww1_france.221.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.221.a
+		add_war_support = 0.15
+		add_stability = 0.10
+		add_opinion_modifier = { target = ITA modifier = FRA_treaty_of_londres_opinion }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.222: Italy Chooses Strict Neutrality (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.222
+	title = ww1_france.222.t
+	desc = ww1_france.222.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.222.a
+		add_stability = -0.03
+		add_political_power = -20
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.223: Italy Demands French Mediterranean Possessions! (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.223
+	title = ww1_france.223.t
+	desc = ww1_france.223.d
+	picture = GFX_report_event_gathering_protest
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.223.a
+		add_war_support = 0.10
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.230: Reorganization of the Serbian Army at Corfu (fires for SER)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.230
+	title = ww1_france.230.t
+	desc = ww1_france.230.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.230.a
+		ai_chance = { base = 100 }
+		load_oob = "SER_corfu_reinforcements"
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 }
+		add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 }
+		add_manpower = 30000
+		add_opinion_modifier = { target = FRA modifier = FRA_serbian_corfu_rescue }
+		FRA = { country_event = { id = ww1_france.231 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.231: The Serbian Army Resurrected at Corfu (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.231
+	title = ww1_france.231.t
+	desc = ww1_france.231.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.231.a
+		add_war_support = 0.08
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.232: General Berthelot's Romanian Military Mission (fires for ROM)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.232
+	title = ww1_france.232.t
+	desc = ww1_france.232.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.232.a
+		ai_chance = { base = 100 }
+		load_oob = "ROM_berthelot_reinforcements"
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15000 }
+		add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 50 }
+		add_tech_bonus = { name = land_doc_bonus bonus = 1.0 uses = 1 category = land_doctrine }
+		add_opinion_modifier = { target = FRA modifier = FRA_berthelot_mission_opinion }
+		FRA = { country_event = { id = ww1_france.233 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.233: General Berthelot Reorganizes the Romanian Army (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.233
+	title = ww1_france.233.t
+	desc = ww1_france.233.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.233.a
+		add_war_support = 0.05
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.234: Allied Disembarkation at Salonika (fires for GRE)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.234
+	title = ww1_france.234.t
+	desc = ww1_france.234.d
+	picture = GFX_report_event_report_event_british_inspect_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A (Venizelos): Welcome Allied Forces to Salonika
+	option = {
+		name = ww1_france.234.a
+		ai_chance = { base = 80 }
+		give_military_access = FRA
+		if = { limit = { country_exists = ENG } give_military_access = ENG }
+		add_opinion_modifier = { target = FRA modifier = FRA_greek_salonika_accord }
+		FRA = { country_event = { id = ww1_france.235 days = 2 } }
+	}
+
+	# Option B (King Constantine): Protest Neutrality Violation
+	option = {
+		name = ww1_france.234.b
+		ai_chance = { base = 20 }
+		add_stability = -0.10
+		FRA = { country_event = { id = ww1_france.236 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.235: Greece Grants Salonika Base (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.235
+	title = ww1_france.235.t
+	desc = ww1_france.235.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.235.a
+		add_war_support = 0.08
+		add_command_power = 25
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.236: Greek National Schism over Salonika (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.236
+	title = ww1_france.236.t
+	desc = ww1_france.236.d
+	picture = GFX_report_event_gathering_protest
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.236.a
+		add_political_power = -25
+		add_command_power = 15
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.237: Franchet d'Espèrey's Breakthrough: Armistice of Salonika (fires for BUL)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.237
+	title = ww1_france.237.t
+	desc = ww1_france.237.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.237.a
+		ai_chance = { base = 100 }
+		surrender = yes
+		add_stability = -0.20
+		FRA = { country_event = { id = ww1_france.238 days = 1 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.238: Bulgaria Capitulates at Salonika! (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.238
+	title = ww1_france.238.t
+	desc = ww1_france.238.d
+	picture = GFX_report_event_french_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.238.a
+		add_war_support = 0.15
+		add_stability = 0.10
+		add_political_power = 100
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.250: J.P. Morgan War Credits Authorization (fires for USA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.250
+	title = ww1_france.250.t
+	desc = ww1_france.250.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Authorize Wall Street Credits (Historical)
+	option = {
+		name = ww1_france.250.a
+		ai_chance = { base = 90 }
+		add_opinion_modifier = { target = FRA modifier = FRA_us_morgan_loans }
+		FRA = { country_event = { id = ww1_france.251 days = 2 } }
+	}
+
+	# Option B: Preserve Strict Financial Neutrality
+	option = {
+		name = ww1_france.250.b
+		ai_chance = { base = 10 }
+		add_stability = 0.05
+		FRA = { country_event = { id = ww1_france.252 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.251: Wall Street Credits Open for France (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.251
+	title = ww1_france.251.t
+	desc = ww1_france.251.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.251.a
+		add_ideas = FRA_us_financial_pipeline
+		add_political_power = 80
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.252: Washington Imposes Financial Embargo (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.252
+	title = ww1_france.252.t
+	desc = ww1_france.252.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.252.a
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.253: Equipping Pershing's American Doughboys (fires for USA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.253
+	title = ww1_france.253.t
+	desc = ww1_france.253.d
+	picture = GFX_report_event_us_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.253.a
+		ai_chance = { base = 100 }
+		add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 400 }
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 }
+		add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 80 }
+		army_artillery_attack_factor = 0.08
+		FRA = { country_event = { id = ww1_france.254 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.254: American Doughboys Equipped with French Arms (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.254
+	title = ww1_france.254.t
+	desc = ww1_france.254.d
+	picture = GFX_report_event_us_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.254.a
+		add_war_support = 0.10
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.260: Caillaux's Franco-German Rapprochement Initiative (fires for GER)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.260
+	title = ww1_france.260.t
+	desc = ww1_france.260.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Accept Historic Reconciliation! (Briey-Ruhr Pact)
+	option = {
+		name = ww1_france.260.a
+		ai_chance = { base = 60 }
+		add_opinion_modifier = { target = FRA modifier = FRA_coal_steel_pact_opinion }
+		add_stability = 0.05
+		FRA = { country_event = { id = ww1_france.261 days = 2 } }
+		if = { limit = { country_exists = SOV } SOV = { country_event = { id = ww1_france.262 days = 3 } } }
+		if = { limit = { country_exists = ENG } ENG = { country_event = { id = ww1_france.263 days = 3 } } }
+	}
+
+	# Option B: Spurn French Weakness
+	option = {
+		name = ww1_france.260.b
+		ai_chance = { base = 40 }
+		add_war_support = 0.05
+		FRA = { country_event = { id = ww1_france.264 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.261: Germany Accepts Historic Reconciliation! (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.261
+	title = ww1_france.261.t
+	desc = ww1_france.261.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.261.a
+		add_opinion_modifier = { target = GER modifier = FRA_coal_steel_pact_opinion }
+		add_stability = 0.15
+		add_political_power = 100
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.262: Russia Denounces Franco-German Détente (fires for SOV)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.262
+	title = ww1_france.262.t
+	desc = ww1_france.262.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.262.a
+		add_stability = -0.10
+		add_opinion_modifier = { target = FRA modifier = FRA_colonial_settlement_opinion }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.263: Britain Alarmed by Franco-German Accord (fires for ENG)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.263
+	title = ww1_france.263.t
+	desc = ww1_france.263.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.263.a
+		add_stability = -0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.264: Berlin Spurns the Olive Branch (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.264
+	title = ww1_france.264.t
+	desc = ww1_france.264.d
+	picture = GFX_report_event_news_event_german_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.264.a
+		add_stability = -0.05
+		add_war_support = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.265: Proposal for Condominium of Alsace-Lorraine (fires for GER)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.265
+	title = ww1_france.265.t
+	desc = ww1_france.265.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Agree to Neutral Autonomous Condominium
+	option = {
+		name = ww1_france.265.a
+		ai_chance = { base = 50 }
+		add_stability = 0.10
+		FRA = { country_event = { id = ww1_france.266 days = 2 } }
+	}
+
+	# Option B: Never! Elsaß-Lothringen is German!
+	option = {
+		name = ww1_france.265.b
+		ai_chance = { base = 50 }
+		add_war_support = 0.05
+		FRA = { country_event = { id = ww1_france.267 days = 2 } }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.266: Condominium Accord Signed in Strasbourg! (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.266
+	title = ww1_france.266.t
+	desc = ww1_france.266.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.266.a
+		add_stability = 0.20
+		add_political_power = 120
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.267: Germany Refuses Compromise over Reichsland (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.267
+	title = ww1_france.267.t
+	desc = ww1_france.267.d
+	picture = GFX_report_event_news_event_german_soldiers
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.267.a
+		add_stability = -0.05
+		add_war_support = 0.10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.268: Continental Non-Aggression Pact Proposal (fires for GER)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.268
+	title = ww1_france.268.t
+	desc = ww1_france.268.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Sign Continental Non-Aggression Pact
+	option = {
+		name = ww1_france.268.a
+		ai_chance = { base = 75 }
+		diplomatic_relation = { country = FRA relation = non_aggression_pact }
+		add_stability = 0.15
+		FRA = { country_event = { id = ww1_france.269 days = 2 } }
+	}
+
+	# Option B: Refuse
+	option = {
+		name = ww1_france.268.b
+		ai_chance = { base = 25 }
+		add_war_support = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.269: Continental Non-Aggression Pact Ratified! (fires for FRA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.269
+	title = ww1_france.269.t
+	desc = ww1_france.269.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.269.a
+		diplomatic_relation = { country = GER relation = non_aggression_pact }
+		add_stability = 0.20
+		add_political_power = 150
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.270: The Latin Mediterranean Entente (fires for ITA)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.270
+	title = ww1_france.270.t
+	desc = ww1_france.270.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Join the Latin Entente
+	option = {
+		name = ww1_france.270.a
+		ai_chance = { base = 80 }
+		FRA = { add_to_faction = ITA }
+		add_opinion_modifier = { target = FRA modifier = FRA_latin_entente_pact }
+		add_stability = 0.10
+	}
+
+	# Option B: Decline
+	option = {
+		name = ww1_france.270.b
+		ai_chance = { base = 20 }
+		add_stability = 0.05
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.271: The Latin Mediterranean Entente (fires for SPR)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.271
+	title = ww1_france.271.t
+	desc = ww1_france.271.d
+	picture = GFX_report_event_report_event_generic_sign_treaty3
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	# Option A: Join the Latin Entente
+	option = {
+		name = ww1_france.271.a
+		ai_chance = { base = 80 }
+		FRA = { add_to_faction = SPR }
+		add_opinion_modifier = { target = FRA modifier = FRA_latin_entente_pact }
+		add_stability = 0.10
+	}
+
+	# Option B: Decline (Maintain Traditional Neutrality)
+	option = {
+		name = ww1_france.271.b
+		ai_chance = { base = 20 }
+		add_stability = 0.05
+	}
+}
+'''
+
+# Write data_events.py
+with open('scripts/france_builder/data_events.py', 'w', encoding='utf-8') as out:
+    out.write("# Data for French Narrative & Bilateral Events\n")
+    out.write("FRENCH_EVENTS_CODE = '''" + EVENTS_CODE + "'''\\n")
+
+print("Successfully wrote scripts/france_builder/data_events.py")
