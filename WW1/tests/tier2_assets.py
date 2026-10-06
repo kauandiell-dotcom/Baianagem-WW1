@@ -218,6 +218,9 @@ class TestTier2Assets(unittest.TestCase):
 
         # Load sprites from GFX
         sprites = parse_gfx_sprites(self.gfx_path)
+        extra_gfx = os.path.join(MOD_ROOT, "interface", "ww1_germany_focus_art.gfx")
+        if os.path.exists(extra_gfx):
+            sprites.extend(parse_gfx_sprites(extra_gfx))
         sprite_names = {s["name"] for s in sprites}
 
         missing_icons = []
@@ -228,7 +231,7 @@ class TestTier2Assets(unittest.TestCase):
         self.assertEqual(
             missing_icons,
             [],
-            f"The following focus icons in germany.txt are missing from {self.gfx_path}: {missing_icons}"
+            f"The following focus icons in germany.txt are missing from GFX definitions: {missing_icons}"
         )
 
 

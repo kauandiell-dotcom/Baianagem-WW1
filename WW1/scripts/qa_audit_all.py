@@ -166,8 +166,8 @@ def audit_balance_defines() -> List[str]:
         "LAND_COMBAT_STR_DAMAGE_MODIFIER": "0.065",
         "COMBAT_STACKING_START": "6",
         "COMBAT_STACKING_PENALTY": "-0.06",
-        "OUT_OF_SUPPLY_ATTRITION": "0.40",
-        "OUT_OF_SUPPLY_ORG_FACTOR": "-0.65",
+        "OUT_OF_SUPPLY_ATTRITION": "0.20",
+        "SUPPLY_ORG_MAX_CAP": "0.35",
         "SPECIAL_FORCES_CAP_BASE": "0.05",
         "SPECIAL_FORCES_CAP_MIN": "24",
     }
@@ -319,7 +319,7 @@ def audit_balkan_minors() -> List[str]:
 def audit_deinflation_and_timed_ideas() -> List[str]:
     errors = []
 
-    # 1. Russian Brusilov offensive must be timed (days = 180)
+    # 1. Russian Brusilov offensive unlocks operations plan or event
     sov_focus_path = os.path.join(MOD_ROOT, "common", "national_focus", "soviet.txt")
     if os.path.isfile(sov_focus_path):
         with open(sov_focus_path, "r", encoding="utf-8", errors="replace") as f:
@@ -327,8 +327,8 @@ def audit_deinflation_and_timed_ideas() -> List[str]:
         b_match = re.search(r"id\s*=\s*SOV_brusilov_breakthrough_1916.*?\bcompletion_reward\s*=\s*\{(.*?)\n\t\}", sov_txt, re.DOTALL)
         if b_match:
             b_block = b_match.group(1)
-            if "add_timed_idea" not in b_block or "days = 180" not in b_block:
-                errors.append("SOV_brusilov_breakthrough_1916 is not a 180-day timed idea")
+            if "SOV_southwestern_plan_ready" not in b_block and "ww1_russia.100" not in b_block:
+                errors.append("SOV_brusilov_breakthrough_1916 does not unlock Southwestern offensive plan or event")
         else:
             errors.append("SOV_brusilov_breakthrough_1916 completion_reward not found in soviet.txt")
 
@@ -356,14 +356,12 @@ def audit_deinflation_and_timed_ideas() -> List[str]:
         else:
             errors.append("GER_the_kaiserschlacht_1918 completion_reward not found in germany.txt")
 
-        # OHL silent dictatorship removes Moltke general staff doctrine
+        # OHL silent dictatorship triggers transition event
         ohl_match = re.search(r"id\s*=\s*GER_silent_dictatorship_ohl.*?\bcompletion_reward\s*=\s*\{(.*?)\n\t\}", ger_f_txt, re.DOTALL)
         if ohl_match:
             ohl_block = ohl_match.group(1)
-            if "remove_ideas = GER_moltke_generalstab_doctrine" not in ohl_block:
-                errors.append("GER_silent_dictatorship_ohl does not remove GER_moltke_generalstab_doctrine")
-            if "add_ideas = GER_silent_dictatorship_ohl" not in ohl_block:
-                errors.append("GER_silent_dictatorship_ohl does not add GER_silent_dictatorship_ohl idea")
+            if "ww1_germany_events.100" not in ohl_block and "GER_silent_dictatorship_ohl" not in ohl_block:
+                errors.append("GER_silent_dictatorship_ohl does not trigger OHL transition event ww1_germany_events.100")
         else:
             errors.append("GER_silent_dictatorship_ohl completion_reward not found in germany.txt")
 

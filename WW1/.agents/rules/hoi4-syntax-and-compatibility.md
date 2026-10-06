@@ -8,10 +8,9 @@
 
 ## 2. Modifiers Modernos vs Legados
 - **Bens de Consumo**:
-  - PROIBIDO: `consumer_goods_factor = X` (obsoleto).
-  - OBRIGATÓRIO: `consumer_goods_expected_value = X` (padrão moderno do HOI4).
+  - Utilizar `consumer_goods_expected_value = X` (padrão moderno HOI4) ou `consumer_goods_factor = X` conforme suporte do motor.
 - **Penalidades e Bônus**:
-  - Verificar se o modifier ainda opera com multiplicador ou valor absoluto na versão 1.19.3.
+  - Verificar se o modifier opera com multiplicador ou valor absoluto na versão 1.19.3.
 
 ## 3. Sistema de Personagens (Characters)
 - O sistema clássico de líderes em `history/countries/` via `create_country_leader` é obsoleto para mecânicas profundas.
@@ -20,17 +19,17 @@
   - Recrutar via `recruit_character = [TAG_token]` na história do país ou por efeito.
   - Não deixar referências a personagens não declarados.
 
-## 4. Arquivos de Localização
+## 4. Arquivos de Localização e Sobrescrita
 - Todos os arquivos `.yml` devem:
-  - Ficar exclusivamente na subpasta do idioma: `localisation/english/` (ou `braz_por/`).
-  - Ter a primeira linha contendo exatamente a tag de linguagem (`l_english:`).
-  - Ser salvos em **UTF-8 com BOM** (Byte Order Mark: `0xEF, 0xBB, 0xBF`).
+  - Ficar em `localisation/english/`, `localisation/braz_por/` ou `localisation/replace/` (quando prefixados com `zz_` para garantir precedência sobre chaves do jogo base).
+  - Ter a primeira linha contendo exatamente a tag de linguagem (`l_english:` ou `l_braz_por:`).
+  - Ser salvos obrigatoriamente em **UTF-8 com BOM** (Byte Order Mark: `0xEF, 0xBB, 0xBF`).
   - Nunca usar extensão `.txt` para arquivos de localização.
 
 ## 5. Interface Gráfica e Texturas (GFX & GUI)
 - Cada sprite referenciado em um arquivo `.gui` ou em script (`picture = "..."`, `icon = "..."`) deve ter um `spriteType` registrado em `interface/*.gfx`.
-- Texturas devem ser mantidas em formato DDS (DXT1 para opacos, DXT5 para transparência) ou TGA para bandeiras, ou PNG 32-bit quando compatível.
-- Evitar caminhos de arquivos contendo espaços em branco (ex.: evitar pastas como `gfx/host tool/`).
+- Texturas devem ser mantidas em formato DDS (DXT1 para opacos, DXT5 para transparência) ou PNG 32-bit com canal alfa limpo.
+- Evitar caminhos de arquivos contendo espaços em branco.
 
 ## 6. Comentários em Scripts
 - Em arquivos de script do Paradox (`.txt`, `.gui`, `.gfx`), comentários devem começar estritamente com `#`.

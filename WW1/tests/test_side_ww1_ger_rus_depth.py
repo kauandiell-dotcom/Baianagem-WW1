@@ -218,7 +218,8 @@ class CountryDepth(unittest.TestCase):
         self.assertIn('SOV_crisis_active', c.flags)
 
     def test_new_ui_has_bilingual_texts_and_registered_idea_art(self):
-        texts = [read(ROOT / f'localisation/replace/zz_side_ww1_ger_rus_depth_l_{lang}.yml')
+        texts = [read(ROOT / f'localisation/replace/zz_side_ww1_ger_rus_depth_l_{lang}.yml') +
+                 read(ROOT / f'localisation/{lang}/ww1_ger_rus_rework_l_{lang}.yml')
                  for lang in ['english', 'braz_por']]
         gfx = read(ROOT / 'interface/side_ww1_ger_rus_depth.gfx')
         for n in walk(parse(read(ROOT / 'common/ideas/side_ww1_ger_rus_depth.txt'))):
