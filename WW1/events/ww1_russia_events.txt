@@ -1,4 +1,4 @@
-add_namespace = ww1_russia
+﻿add_namespace = ww1_russia
 
 # -------------------------------------------------------------
 # 1. Atentado contra Pyotr Stolypin na Ópera de Kiev (Setembro de 1911)
@@ -168,17 +168,72 @@ country_event = {
 	id = ww1_russia.40
 	title = ww1_russia.40.t
 	desc = ww1_russia.40.d
-	picture = GFX_report_event_generic_parliament
-
+	picture = GFX_event_ww1_rus_eastern_armistice
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	option = {
 		name = ww1_russia.40.a
-		add_stability = -0.15
-		white_peace = GER
-		white_peace = AUS
-		white_peace = TUR
-		white_peace = BUL
+
+		if = { limit = { country_exists = GER has_war_with = GER } GER = { country_event = { id = ww1_diplomacy.30 days = 1 } } }
+		custom_effect_tooltip = SOV_eastern_armistice_request_tt
 	}
+
+}
+
+country_event = {
+	id = ww1_russia.100
+	title = ww1_russia.100.t
+	desc = ww1_russia.100.d
+	picture = GFX_event_ww1_rus_brusilov_council
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_russia.100.a
+
+		custom_effect_tooltip = SOV_southwestern_preparation_tt
+	}
+
+}
+country_event = {
+	id = ww1_russia.101
+	title = ww1_russia.101.t
+	desc = ww1_russia.101.d
+	picture = GFX_event_ww1_rus_galician_advance
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_russia.101.a
+
+
+	}
+
+}
+country_event = {
+	id = ww1_russia.102
+	title = ww1_russia.102.t
+	desc = ww1_russia.102.d
+	picture = GFX_event_ww1_rus_offensive_exhaustion
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_russia.102.a
+
+
+	}
+
+}
+country_event = {
+	id = ww1_russia.103
+	title = ww1_russia.103.t
+	desc = ww1_russia.103.d
+	picture = GFX_event_ww1_rus_serbian_medical_mission
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_russia.103.a
+
+		add_opinion_modifier = { target = SOV modifier = SOV_slavic_brother_opinion }
+		add_timed_idea = { idea = SOV_serbian_medical_mission days = 120 }
+	}
+
 }

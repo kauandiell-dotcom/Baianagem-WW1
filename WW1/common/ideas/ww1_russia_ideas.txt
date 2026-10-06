@@ -1,4 +1,4 @@
-ideas = {
+﻿ideas = {
 	country = {
 
 		# =========================================================================
@@ -110,41 +110,25 @@ ideas = {
 		SOV_war_industry_mobilization = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.15
-				production_speed_arms_factory_factor = 0.15
-				consumer_goods_factor = -0.03
-			}
+			modifier = { industrial_capacity_factory = .03 production_speed_arms_factory_factor = .05 consumer_goods_factor = .02 }
 		}
 
 		SOV_zemgor_mobilization = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.10
-				supply_consumption_factor = -0.05
-			}
+			modifier = { industrial_capacity_factory = .04 production_factory_efficiency_gain_factor = .03 political_power_gain = -.05 }
 		}
 
 		SOV_war_communism_regime = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.20
-				war_support_factor = 0.15
-				consumer_goods_factor = -0.05
-				stability_factor = -0.15
-			}
+			modifier = { industrial_capacity_factory = .07 consumer_goods_factor = .03 stability_factor = -.06 }
 		}
 
 		SOV_war_communism_economy = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.25
-				consumer_goods_factor = -0.07
-				stability_factor = -0.10
-			}
+			modifier = { industrial_capacity_factory = .07 production_factory_efficiency_gain_factor = .03 consumer_goods_factor = .04 stability_factor = -.05 }
 		}
 
 		SOV_denikin_free_market = {
@@ -172,11 +156,7 @@ ideas = {
 		SOV_great_military_program_spirit = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				army_org_factor = 0.05
-				planning_speed = 0.10
-				conscription_factor = 0.05
-			}
+			modifier = { army_org_factor = .03 planning_speed = .08 conscription_factor = .03 }
 		}
 
 		SOV_sukhomlinov_administration = {
@@ -191,11 +171,7 @@ ideas = {
 		SOV_stavka_operational_clarity = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				max_planning = 0.10
-				planning_speed = 0.10
-				army_org_factor = 0.05
-			}
+			modifier = { max_planning = .06 planning_speed = .10 army_org_factor = .04 }
 		}
 
 		SOV_shell_shortage_crisis = {
@@ -231,33 +207,19 @@ ideas = {
 		SOV_unbreakable_steamroller = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				conscription_factor = 0.10
-				army_org_factor = 0.05
-				army_morale_factor = 0.08
-			}
+			modifier = { army_org_factor = .05 army_morale_factor = .05 supply_consumption_factor = .03 }
 		}
 
 		SOV_reborn_red_army = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				army_morale_factor = 0.20
-				conscription_factor = 0.15
-				army_org_factor = 0.10
-				war_support_factor = 0.15
-			}
+			modifier = { army_morale_factor = .06 army_org_factor = .04 training_time_army_factor = .05 }
 		}
 
 		SOV_white_martial_law = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				army_attack_factor = 0.10
-				breakthrough_factor = 0.15
-				stability_factor = 0.10
-				political_power_cost = 0.15
-			}
+			modifier = { stability_factor = .04 political_power_gain = -.15 army_org_factor = .02 }
 		}
 
 		SOV_draconian_discipline = {
@@ -272,10 +234,7 @@ ideas = {
 		SOV_vsyur_high_command = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				planning_speed = 0.20
-				max_planning = 0.15
-			}
+			modifier = { planning_speed = .10 max_planning = .07 political_power_gain = -.05 }
 		}
 
 		SOV_supreme_ruler_regime = {
@@ -323,21 +282,13 @@ ideas = {
 		SOV_dual_power_dvoevlastie = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				stability_factor = -0.25
-				political_power_gain = -0.50
-				army_org_factor = -0.20
-			}
+			modifier = { stability_factor = -.12 political_power_gain = -.20 army_org_factor = -.05 }
 		}
 
 		SOV_petrograd_order_no_1 = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				army_org_factor = -0.30
-				army_attack_factor = -0.20
-				stability_factor = -0.10
-			}
+			modifier = { army_org_factor = -.10 planning_speed = -.10 stability_factor = -.04 }
 		}
 
 		SOV_dictatorship_of_the_proletariat = {
@@ -439,10 +390,7 @@ ideas = {
 		SOV_arsenal_of_the_russian_state = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.08
-				production_speed_arms_factory_factor = 0.10
-			}
+			modifier = { industrial_capacity_factory = .06 production_speed_arms_factory_factor = .06 consumer_goods_factor = .02 }
 		}
 
 		SOV_triumph_of_pan_slavism = {
@@ -579,10 +527,7 @@ ideas = {
 		SOV_grain_procurement_system = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				supply_consumption_factor = -0.05
-				factory_output_factor = 0.05
-			}
+			modifier = { production_factory_efficiency_gain_factor = .03 consumer_goods_factor = .02 }
 		}
 
 		SOV_defender_of_orthodox_christendom = {
@@ -598,11 +543,7 @@ ideas = {
 		SOV_shield_of_the_slavs = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				army_attack_against_major_factor = 0.05
-				reinforce_rate = 0.15
-				war_support_factor = 0.05
-			}
+			modifier = { land_reinforce_rate = .02 war_support_factor = .03 }
 		}
 
 		SOV_pan_slavic_patronage = {
@@ -615,7 +556,76 @@ ideas = {
 			}
 		}
 
+		SOV_aviation_school_program = {
+			picture = SOV_aviation_school_program
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { air_ace_generation_chance_factor = 0.10 experience_gain_air_factor = 0.05 }
+
+		}
+		SOV_aviation_combat_school = {
+			picture = SOV_aviation_combat_school
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { air_ace_generation_chance_factor = 0.15 experience_gain_air_factor = 0.10 air_accidents_factor = 0.05 }
+
+		}
+		SOV_ace_training_system = {
+			picture = SOV_ace_training_system
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { air_ace_generation_chance_factor = 0.20 experience_gain_air_factor = 0.15 air_accidents_factor = -0.05 }
+
+		}
+		SOV_aerial_recon_network = {
+			picture = SOV_aerial_recon_network
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { air_detection = 0.05 }
+
+		}
+		SOV_air_naval_coordination = {
+			picture = SOV_air_naval_coordination
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { air_detection = 0.05 spotting_chance = 0.05 }
+
+		}
+		SOV_integrated_air_service = {
+			picture = SOV_integrated_air_service
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { air_mission_efficiency = 0.05 spotting_chance = 0.05 }
+
+		}
+		SOV_southwestern_preparation = {
+			picture = SOV_southwestern_preparation
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { industrial_capacity_factory = -0.05 supply_consumption_factor = 0.05 }
+
+		}
+		SOV_southwestern_offensive = {
+			picture = SOV_southwestern_offensive
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { supply_consumption_factor = 0.08 }
+			targeted_modifier = { tag = AUS breakthrough_bonus_against = 0.06 }
+		}
+		SOV_southwestern_exhaustion = {
+			picture = SOV_southwestern_exhaustion
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { army_org_regain = -0.05 }
+
+		}
+		SOV_serbian_medical_mission = {
+			picture = SOV_serbian_medical_mission
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = { experience_loss_factor = -0.05 }
+
+		}
+
 	}
 }
-
-

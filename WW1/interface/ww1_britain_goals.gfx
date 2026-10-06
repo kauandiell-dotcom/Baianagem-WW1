@@ -1,0 +1,1048 @@
+﻿# Reviewed Workshop sources; identity and provenance in docs/britain_focus_art.json.
+spriteTypes = {
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_parliament_act" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_parliament_act.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_parliament_act_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_parliament_act.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_parliament_act.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_national_insurance" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_national_insurance.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_national_insurance_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_national_insurance.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_national_insurance.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_liberal_cabinet" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_liberal_cabinet.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_liberal_cabinet_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_liberal_cabinet.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_liberal_cabinet.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_lords_and_the_commons" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_lords_and_the_commons.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_lords_and_the_commons_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_lords_and_the_commons.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_lords_and_the_commons.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_irish_parliamentary_support" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_irish_parliamentary_support.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_irish_parliamentary_support_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_irish_parliamentary_support.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_irish_parliamentary_support.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_home_rule_bill" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_home_rule_bill.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_home_rule_bill_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_home_rule_bill.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_home_rule_bill.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_ulster_conference" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_ulster_conference.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_ulster_conference_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_ulster_conference.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_ulster_conference.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_electoral_registration" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_electoral_registration.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_electoral_registration_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_electoral_registration.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_electoral_registration.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_defence_of_the_realm" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_defence_of_the_realm.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_defence_of_the_realm_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_defence_of_the_realm.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_defence_of_the_realm.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_wartime_parliamentary_scrutiny" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_wartime_parliamentary_scrutiny.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_wartime_parliamentary_scrutiny_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_wartime_parliamentary_scrutiny.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_wartime_parliamentary_scrutiny.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_coalition_cabinet" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_coalition_cabinet.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_coalition_cabinet_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_coalition_cabinet.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_coalition_cabinet.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_military_service_act" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_military_service_act.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_military_service_act_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_military_service_act.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_military_service_act.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_reserved_civilian_occupations" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_reserved_civilian_occupations.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_reserved_civilian_occupations_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_reserved_civilian_occupations.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_reserved_civilian_occupations.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_war_cabinet" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_war_cabinet.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_war_cabinet_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_war_cabinet.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_war_cabinet.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_franchise_debate" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_franchise_debate.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_franchise_debate_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_franchise_debate.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_franchise_debate.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_representation_of_the_people" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_representation_of_the_people.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_representation_of_the_people_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_representation_of_the_people.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_representation_of_the_people.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_liberal_reconstruction" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_liberal_reconstruction.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_liberal_reconstruction_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_liberal_reconstruction.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_liberal_reconstruction.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_labour_alternative" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_labour_alternative.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_labour_alternative_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_labour_alternative.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_labour_alternative.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_conservative_settlement" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_conservative_settlement.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_conservative_settlement_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_conservative_settlement.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_conservative_settlement.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_edward_grey_and_the_entente" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_edward_grey_and_the_entente.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_edward_grey_and_the_entente_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_edward_grey_and_the_entente.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_edward_grey_and_the_entente.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_french_naval_understanding" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_french_naval_understanding.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_french_naval_understanding_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_french_naval_understanding.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_french_naval_understanding.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_french_staff_conversations" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_french_staff_conversations.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_french_staff_conversations_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_french_staff_conversations.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_french_staff_conversations.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_continental_commitment" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_continental_commitment.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_continental_commitment_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_continental_commitment.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_continental_commitment.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_armed_neutrality" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_armed_neutrality.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_armed_neutrality_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_armed_neutrality.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_armed_neutrality.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_belgian_treaty_obligations" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_belgian_treaty_obligations.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_belgian_treaty_obligations_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_belgian_treaty_obligations.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_belgian_treaty_obligations.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_american_credit_negotiations" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_american_credit_negotiations.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_american_credit_negotiations_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_american_credit_negotiations.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_american_credit_negotiations.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_supreme_war_council" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_supreme_war_council.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_supreme_war_council_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_supreme_war_council.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_supreme_war_council.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_canadian_defence_consultation" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_canadian_defence_consultation.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_canadian_defence_consultation_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_canadian_defence_consultation.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_canadian_defence_consultation.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_australian_defence_consultation" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_australian_defence_consultation.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_australian_defence_consultation_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_australian_defence_consultation.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_australian_defence_consultation.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_new_zealand_naval_consultation" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_new_zealand_naval_consultation.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_new_zealand_naval_consultation_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_new_zealand_naval_consultation.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_new_zealand_naval_consultation.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_south_african_cooperation" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_south_african_cooperation.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_south_african_cooperation_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_south_african_cooperation.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_south_african_cooperation.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_indian_army_liaison" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_indian_army_liaison.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_indian_army_liaison_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_indian_army_liaison.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_indian_army_liaison.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_colonial_medical_services" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_colonial_medical_services.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_colonial_medical_services_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_colonial_medical_services.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_colonial_medical_services.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_imperial_conference" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_imperial_conference.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_imperial_conference_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_imperial_conference.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_imperial_conference.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_singapore_maritime_coordination" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_singapore_maritime_coordination.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_singapore_maritime_coordination_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_singapore_maritime_coordination.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_singapore_maritime_coordination.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_haldane_establishment" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_haldane_establishment.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_haldane_establishment_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_haldane_establishment.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_haldane_establishment.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_officer_training_corps" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_officer_training_corps.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_officer_training_corps_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_officer_training_corps.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_officer_training_corps.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_kitchener_new_armies" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_kitchener_new_armies.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_kitchener_new_armies_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_kitchener_new_armies.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_kitchener_new_armies.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_gas_protection_training" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_gas_protection_training.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_gas_protection_training_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_gas_protection_training.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_gas_protection_training.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_tank_committee_experiments" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_tank_committee_experiments.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_tank_committee_experiments_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_tank_committee_experiments.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_tank_committee_experiments.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_admiralty_fleet_survey" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_admiralty_fleet_survey.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_admiralty_fleet_survey_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_admiralty_fleet_survey.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_admiralty_fleet_survey.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_dreadnought_construction_planning" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_dreadnought_construction_planning.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_dreadnought_construction_planning_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_dreadnought_construction_planning.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_dreadnought_construction_planning.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_naval_estimates" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_naval_estimates.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_naval_estimates_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_naval_estimates.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_naval_estimates.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_convoy_system_organisation" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_convoy_system_organisation.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_convoy_system_organisation_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_convoy_system_organisation.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_convoy_system_organisation.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_grand_fleet_maintenance" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_grand_fleet_maintenance.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_grand_fleet_maintenance_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_grand_fleet_maintenance.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_grand_fleet_maintenance.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_military_pilot_instruction" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_military_pilot_instruction.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_military_pilot_instruction_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_military_pilot_instruction.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_military_pilot_instruction.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_royal_air_force_unification" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_royal_air_force_unification.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_royal_air_force_unification_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_royal_air_force_unification.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_royal_air_force_unification.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_treasury_estimates" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_treasury_estimates.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_treasury_estimates_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_treasury_estimates.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_treasury_estimates.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_debt_service_commission" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_debt_service_commission.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_debt_service_commission_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_debt_service_commission.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_debt_service_commission.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_housing_and_civilian_employment" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_housing_and_civilian_employment.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_housing_and_civilian_employment_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_housing_and_civilian_employment.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_housing_and_civilian_employment.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_ministry_of_munitions" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_ministry_of_munitions.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_ministry_of_munitions_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_ministry_of_munitions.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_ministry_of_munitions.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_the_shop_stewards_agreement" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_shop_stewards_agreement.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_the_shop_stewards_agreement_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_shop_stewards_agreement.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_the_shop_stewards_agreement.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_emergency_factory_controls" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_emergency_factory_controls.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_emergency_factory_controls_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_emergency_factory_controls.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_emergency_factory_controls.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_railway_freight_coordination" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_railway_freight_coordination.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_railway_freight_coordination_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_railway_freight_coordination.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_railway_freight_coordination.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+ spriteType = { name = "GFX_goal_ww1_ENG_ww1_tyne_steel_and_ordnance" texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_tyne_steel_and_ordnance.png" }
+ spriteType = {
+  name = "GFX_goal_ww1_ENG_ww1_tyne_steel_and_ordnance_shine"
+  texturefile = "gfx/interface/goals/ww1_britain/ENG_ww1_tyne_steel_and_ordnance.png"
+  effectFile = "gfx/FX/buttonstate.lua"
+  animation = {
+   animationmaskfile = "gfx/interface/goals/ww1_britain/ENG_ww1_tyne_steel_and_ordnance.png"
+   animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+   animationrotation = -90.0
+   animationlooping = no
+   animationtime = .75
+   animationdelay = 0
+   animationblendmode = "add"
+   animationtype = "scrolling"
+   animationrotationoffset = { x = 0.0 y = 0.0 }
+   animationtexturescale = { x = 1.0 y = 1.0 }
+  }
+  legacy_lazy_load = no
+ }
+}

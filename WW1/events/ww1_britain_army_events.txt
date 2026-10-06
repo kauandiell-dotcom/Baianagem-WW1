@@ -1,0 +1,218 @@
+add_namespace = ww1_britain_mil
+
+country_event = {
+ id = ww1_britain_mil.2 title = ww1_britain_mil.2.t desc = ww1_britain_mil.2.d
+ picture = GFX_event_ww1_britain_dardanelles_decision
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_mil.2.a
+  ai_chance = { base = 40 }
+  navy_experience = 3
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+  set_country_flag = ENG_ww1_dardanelles_naval
+  if = { limit = { country_exists = TUR NOT = { is_in_faction_with = TUR } } TUR = { country_event = { id = ww1_britain_mil.11 } } }
+ }
+ option = {
+  name = ww1_britain_mil.2.b
+  ai_chance = { base = 40 }
+  army_experience = 4
+  navy_experience = 2
+  add_stability = -0.01
+  set_country_flag = ENG_ww1_dardanelles_landing
+  if = { limit = { country_exists = TUR NOT = { is_in_faction_with = TUR } } TUR = { country_event = { id = ww1_britain_mil.11 } } }
+ }
+ option = {
+  name = ww1_britain_mil.2.c
+  ai_chance = { base = 20 }
+  add_political_power = 10
+  set_country_flag = ENG_ww1_dardanelles_shelved
+ }
+}
+country_event = {
+ id = ww1_britain_mil.3 title = ww1_britain_mil.3.t desc = ww1_britain_mil.3.d
+ picture = GFX_event_ww1_britain_kut_siege
+ mean_time_to_happen = { days = 10 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1916.4.1 date < 1917.1.1 has_war_with = TUR }
+ option = {
+  name = ww1_britain_mil.3.a
+  ai_chance = { base = 55 }
+  add_political_power = -10
+  army_experience = 4
+  if = { limit = { has_country_flag = ENG_ww1_mesopotamian_review } add_war_support = -0.01 }
+  else = { add_war_support = -0.02 }
+ }
+ option = {
+  name = ww1_britain_mil.3.b
+  ai_chance = { base = 45 }
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+  add_war_support = -0.01
+  set_country_flag = ENG_ww1_kut_fallen
+ }
+}
+country_event = {
+ id = ww1_britain_mil.4 title = ww1_britain_mil.4.t desc = ww1_britain_mil.4.d
+ picture = GFX_event_ww1_britain_somme_first_day
+ mean_time_to_happen = { days = 5 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1916.6.29 date < 1917.6.1 has_war_with = GER }
+ option = {
+  name = ww1_britain_mil.4.a
+  ai_chance = { base = 60 }
+  army_experience = 6
+  add_war_support = -0.03
+  set_country_flag = ENG_ww1_somme_pressed
+ }
+ option = {
+  name = ww1_britain_mil.4.b
+  ai_chance = { base = 40 }
+  remove_ideas = ENG_ww1_pals_battalions
+  add_stability = 0.01
+  add_war_support = -0.01
+  army_experience = 2
+  set_country_flag = ENG_ww1_pals_disbanded
+ }
+}
+country_event = {
+ id = ww1_britain_mil.5 title = ww1_britain_mil.5.t desc = ww1_britain_mil.5.d
+ picture = GFX_event_ww1_britain_demobilisation
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_mil.5.a
+  ai_chance = { base = 60 }
+  add_stability = 0.02
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+  add_to_variable = { ww1_britain_labour_support = 3 }
+  set_country_flag = ENG_ww1_fast_demobilisation
+ }
+ option = {
+  name = ww1_britain_mil.5.b
+  ai_chance = { base = 40 }
+  add_stability = -0.01
+  add_to_variable = { ww1_britain_labour_support = -3 }
+  add_to_variable = { ww1_britain_debt_burden = -1 }
+  set_country_flag = ENG_ww1_slow_demobilisation
+ }
+}
+country_event = {
+ id = ww1_britain_mil.6 title = ww1_britain_mil.6.t desc = ww1_britain_mil.6.d
+ picture = GFX_event_ww1_britain_spring_offensive
+ mean_time_to_happen = { days = 3 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1918.3.20 date < 1918.6.1 has_war_with = GER }
+ option = {
+  name = ww1_britain_mil.6.a
+  ai_chance = { base = 65 }
+  add_political_power = -10
+  army_experience = 6
+  if = { limit = { has_country_flag = ENG_ww1_spring_defence_plan } add_war_support = -0.005 }
+  else = { add_war_support = -0.02 }
+ }
+ option = {
+  name = ww1_britain_mil.6.b
+  ai_chance = { base = 35 }
+  army_experience = 3
+  add_war_support = -0.03
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+ }
+}
+country_event = {
+ id = ww1_britain_mil.7 title = ww1_britain_mil.7.t desc = ww1_britain_mil.7.d
+ picture = GFX_event_ww1_britain_amiens_black_day
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_mil.7.a
+  ai_chance = { base = 60 }
+  army_experience = 8
+  add_war_support = 0.03
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+  if = { limit = { country_exists = GER has_war_with = GER } GER = { country_event = { id = ww1_britain_mil.12 } } }
+ }
+ option = {
+  name = ww1_britain_mil.7.b
+  ai_chance = { base = 40 }
+  army_experience = 4
+  add_political_power = 10
+ }
+}
+country_event = {
+ id = ww1_britain_mil.8 title = ww1_britain_mil.8.t desc = ww1_britain_mil.8.d
+ picture = GFX_event_ww1_britain_calais_mutinies
+ mean_time_to_happen = { days = 20 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1919.1.1 date < 1919.6.1 has_country_flag = ENG_ww1_slow_demobilisation }
+ option = {
+  name = ww1_britain_mil.8.a
+  ai_chance = { base = 65 }
+  add_stability = 0.01
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+ }
+ option = {
+  name = ww1_britain_mil.8.b
+  ai_chance = { base = 35 }
+  add_stability = -0.02
+  add_political_power = 10
+  add_to_variable = { ww1_britain_labour_support = -4 }
+ }
+}
+country_event = {
+ id = ww1_britain_mil.10 title = ww1_britain_mil.10.t desc = ww1_britain_mil.10.d
+ picture = GFX_event_ww1_britain_bef_arrives
+ is_triggered_only = yes
+ trigger = { tag = FRA }
+ option = {
+  name = ww1_britain_mil.10.a
+  ai_chance = { base = 100 }
+  add_war_support = 0.02
+  add_stability = 0.01
+ }
+}
+country_event = {
+ id = ww1_britain_mil.11 title = ww1_britain_mil.11.t desc = ww1_britain_mil.11.d
+ picture = GFX_event_ww1_britain_straits_fleet
+ is_triggered_only = yes
+ trigger = { tag = TUR }
+ option = {
+  name = ww1_britain_mil.11.a
+  ai_chance = { base = 100 }
+  add_war_support = 0.03
+  add_stability = 0.02
+ }
+}
+country_event = {
+ id = ww1_britain_mil.12 title = ww1_britain_mil.12.t desc = ww1_britain_mil.12.d
+ picture = GFX_event_ww1_britain_german_black_day
+ is_triggered_only = yes
+ trigger = { tag = GER }
+ option = {
+  name = ww1_britain_mil.12.a
+  ai_chance = { base = 65 }
+  add_war_support = -0.02
+  add_stability = -0.01
+ }
+ option = {
+  name = ww1_britain_mil.12.b
+  ai_chance = { base = 35 }
+  add_war_support = -0.03
+  add_stability = -0.02
+ }
+}
+country_event = {
+ id = ww1_britain_mil.13 title = ww1_britain_mil.13.t desc = ww1_britain_mil.13.d
+ picture = GFX_event_ww1_britain_liaison_officers
+ is_triggered_only = yes
+ trigger = { NOT = { tag = ENG } is_in_faction_with = ENG }
+ option = {
+  name = ww1_britain_mil.13.a
+  ai_chance = { base = 70 }
+  army_experience = 2
+  FROM = { army_experience = 2 }
+ }
+ option = {
+  name = ww1_britain_mil.13.b
+  ai_chance = { base = 30 }
+ }
+}

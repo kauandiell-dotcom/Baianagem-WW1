@@ -1,0 +1,33 @@
+ENG_ww1_services_policy = {
+ ENG_ww1_tighten_the_blockade = {
+  icon = GFX_decision_ENG_ww1_tighten_the_blockade
+  visible = { has_country_flag = ENG_ww1_blockade }
+  available = { has_war_with = GER has_capitulated = no country_exists = GER check_variable = { ww1_britain_blockade_level < 3 } }
+  cost = 25 days_re_enable = 240
+  complete_effect = {
+   add_to_variable = { ww1_britain_blockade_level = 1 }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   navy_experience = 1
+   GER = { country_event = { id = ww1_britain_nav.10 } }
+  }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_lend_escort_flotillas = {
+  icon = GFX_decision_ENG_ww1_lend_escort_flotillas
+  visible = { has_country_flag = ENG_ww1_med_liaison }
+  available = { has_war = yes has_capitulated = no }
+  cost = 20 days_re_enable = 300
+  complete_effect = {
+   every_other_country = { limit = { is_in_faction_with = ROOT } country_event = { id = ww1_britain_nav.12 } }
+  }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_fund_home_air_defence = {
+  icon = GFX_decision_ENG_ww1_fund_home_air_defence
+  visible = { has_country_flag = ENG_ww1_home_air_defence }
+  available = { has_war = yes has_capitulated = no }
+  cost = 30 days_re_enable = 365
+  complete_effect = { add_war_support = 0.01 add_to_variable = { ww1_britain_debt_burden = 1 } air_experience = 2 }
+  ai_will_do = { base = 1 }
+ }
+}

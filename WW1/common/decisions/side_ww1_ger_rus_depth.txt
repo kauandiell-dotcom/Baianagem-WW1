@@ -1,0 +1,138 @@
+﻿side_ww1_GER_administration = {
+ side_ww1_GER_armaments_priority_project = {
+  icon = generic_factory
+  allowed = { original_tag = GER } visible = { has_country_flag = side_ww1_GER_industry_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_GER_priority_preparing } NOT = { has_country_flag = side_ww1_GER_priority_active } }
+  cost = 40 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = side_ww1_GER_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_GER_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_apply_GER_armaments_priority = yes country_event = { id = side_ww1_ger_rus.5 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_GER_priority_preparing }
+  ai_will_do = { base = 3 }
+ }
+ side_ww1_GER_naval_priority_project = {
+  icon = generic_naval
+  allowed = { original_tag = GER } visible = { has_country_flag = side_ww1_GER_industry_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_GER_priority_preparing } NOT = { has_country_flag = side_ww1_GER_priority_active } }
+  cost = 40 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = side_ww1_GER_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_GER_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_apply_GER_naval_priority = yes country_event = { id = side_ww1_ger_rus.5 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_GER_priority_preparing }
+  ai_will_do = { base = 1 }
+ }
+ side_ww1_GER_distribution_priority_project = {
+  icon = generic_construction
+  allowed = { original_tag = GER } visible = { has_country_flag = side_ww1_GER_industry_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_GER_priority_preparing } NOT = { has_country_flag = side_ww1_GER_priority_active } }
+  cost = 40 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = side_ww1_GER_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_GER_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_apply_GER_distribution_priority = yes country_event = { id = side_ww1_ger_rus.5 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_GER_priority_preparing }
+  ai_will_do = { base = 1 }
+ }
+ side_ww1_GER_reconversion_project = { icon = generic_construction allowed = { original_tag = GER }
+  visible = { has_country_flag = side_ww1_GER_has_fought NOT = { has_country_flag = side_ww1_GER_reconversion_complete } }
+  available = { has_war = no has_capitulated = no num_of_civilian_factories_available_for_projects > 1 }
+  cost = 40 days_remove = 90 fire_only_once = yes modifier = { civilian_factory_use = 2 }
+  remove_effect = { if = { limit = { has_war = no has_capitulated = no } side_ww1_reconvert_GER = yes country_event = { id = side_ww1_ger_rus.7 days = 1 } } }
+  cancel_trigger = { OR = { has_war = yes has_capitulated = yes } } ai_will_do = { base = 3 }
+ }
+ side_ww1_GER_hindenburg_conversion = { icon = generic_factory allowed = { original_tag = GER }
+  visible = { has_country_flag = side_ww1_GER_hindenburg_authorised NOT = { has_country_flag = side_ww1_GER_hindenburg_delivered } }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_GER_priority_preparing } NOT = { has_country_flag = side_ww1_GER_priority_active } }
+  cost = 50 days_remove = 120 fire_only_once = yes modifier = { civilian_factory_use = 2 industrial_capacity_factory = -.03 }
+  complete_effect = { set_country_flag = side_ww1_GER_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_GER_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_set_GER_hindenburg_program_victory = yes set_country_flag = side_ww1_GER_hindenburg_delivered country_event = { id = side_ww1_ger_rus.11 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_GER_priority_preparing } ai_will_do = { base = 2 }
+ }
+ side_ww1_GER_request_danubian_grain = { icon = generic_welfare allowed = { original_tag = GER }
+  visible = { has_country_flag = side_ww1_GER_danubian_request_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 0 NOT = { has_country_flag = side_ww1_GER_grain_pending } NOT = { has_idea = side_ww1_GER_danubian_distribution } AUS = { exists = yes has_capitulated = no is_in_faction_with = ROOT is_neighbor_of = ROOT } }
+  cost = 35 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 1 }
+  complete_effect = { set_country_flag = { flag = side_ww1_GER_grain_pending days = 60 } AUS = { country_event = { id = side_ww1_ger_rus.30 days = 1 } } }
+  remove_effect = { clr_country_flag = side_ww1_GER_grain_pending }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_GER_grain_pending } ai_will_do = { base = 2 }
+ }
+}
+side_ww1_SOV_administration = {
+ side_ww1_SOV_state_contracts_project = {
+  icon = generic_factory
+  allowed = { original_tag = SOV } visible = { has_country_flag = side_ww1_SOV_industry_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_SOV_priority_preparing } NOT = { has_country_flag = side_ww1_SOV_priority_active } }
+  cost = 40 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = side_ww1_SOV_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_SOV_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_apply_SOV_state_contracts = yes country_event = { id = side_ww1_ger_rus.6 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_SOV_priority_preparing }
+  ai_will_do = { base = 3 }
+ }
+ side_ww1_SOV_civic_contracts_project = {
+  icon = generic_factory
+  allowed = { original_tag = SOV } visible = { has_country_flag = side_ww1_SOV_industry_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_SOV_priority_preparing } NOT = { has_country_flag = side_ww1_SOV_priority_active } }
+  cost = 40 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = side_ww1_SOV_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_SOV_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_apply_SOV_civic_contracts = yes country_event = { id = side_ww1_ger_rus.6 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_SOV_priority_preparing }
+  ai_will_do = { base = 1 }
+ }
+ side_ww1_SOV_railway_priority_project = {
+  icon = generic_construction
+  allowed = { original_tag = SOV } visible = { has_country_flag = side_ww1_SOV_industry_open }
+  available = { has_war = yes has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_SOV_priority_preparing } NOT = { has_country_flag = side_ww1_SOV_priority_active } }
+  cost = 40 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = side_ww1_SOV_priority_preparing }
+  remove_effect = { clr_country_flag = side_ww1_SOV_priority_preparing if = { limit = { has_war = yes has_capitulated = no } side_ww1_apply_SOV_railway_priority = yes country_event = { id = side_ww1_ger_rus.6 days = 1 } } }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } } cancel_effect = { clr_country_flag = side_ww1_SOV_priority_preparing }
+  ai_will_do = { base = 1 }
+ }
+ side_ww1_SOV_reconversion_project = { icon = generic_construction allowed = { original_tag = SOV }
+  visible = { has_country_flag = side_ww1_SOV_has_fought NOT = { has_country_flag = side_ww1_SOV_reconversion_complete } }
+  available = { has_war = no has_capitulated = no num_of_civilian_factories_available_for_projects > 1 }
+  cost = 40 days_remove = 90 fire_only_once = yes modifier = { civilian_factory_use = 2 }
+  remove_effect = { if = { limit = { has_war = no has_capitulated = no } side_ww1_reconvert_SOV = yes country_event = { id = side_ww1_ger_rus.8 days = 1 } } }
+  cancel_trigger = { OR = { has_war = yes has_capitulated = yes } } ai_will_do = { base = 3 }
+ }
+ side_ww1_SOV_request_FRA_arms = { icon = generic_army allowed = { original_tag = SOV }
+  visible = { has_country_flag = side_ww1_SOV_imports_open FRA = { exists = yes } }
+  available = { has_war = yes has_capitulated = no side_ww1_SOV_import_port_open = yes num_of_civilian_factories_available_for_projects > 0 NOT = { has_country_flag = side_ww1_SOV_import_active } check_variable = { side_ww1_SOV_supply_debt < 6 } FRA = { has_capitulated = no is_in_faction_with = ROOT NOT = { has_war_with = ROOT } } }
+  cost = 35 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 1 }
+  complete_effect = { set_country_flag = { flag = side_ww1_SOV_import_active days = 60 } set_country_flag = { flag = side_ww1_SOV_import_FRA days = 60 } FRA = { country_event = { id = side_ww1_ger_rus.20 days = 1 } } }
+  remove_effect = { clr_country_flag = side_ww1_SOV_import_active clr_country_flag = side_ww1_SOV_import_FRA }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes NOT = { side_ww1_SOV_import_port_open = yes } } }
+  cancel_effect = { clr_country_flag = side_ww1_SOV_import_active clr_country_flag = side_ww1_SOV_import_FRA }
+  ai_will_do = { base = 2 modifier = { factor = 0 FRA = { NOT = { has_equipment = { infantry_equipment > 11999 artillery_equipment > 239 } } } } }
+ }
+ side_ww1_SOV_request_ENG_arms = { icon = generic_army allowed = { original_tag = SOV }
+  visible = { has_country_flag = side_ww1_SOV_imports_open ENG = { exists = yes } }
+  available = { has_war = yes has_capitulated = no side_ww1_SOV_import_port_open = yes num_of_civilian_factories_available_for_projects > 0 NOT = { has_country_flag = side_ww1_SOV_import_active } check_variable = { side_ww1_SOV_supply_debt < 6 } ENG = { has_capitulated = no is_in_faction_with = ROOT NOT = { has_war_with = ROOT } } }
+  cost = 35 days_remove = 60 days_re_enable = 180 modifier = { civilian_factory_use = 1 }
+  complete_effect = { set_country_flag = { flag = side_ww1_SOV_import_active days = 60 } set_country_flag = { flag = side_ww1_SOV_import_ENG days = 60 } ENG = { country_event = { id = side_ww1_ger_rus.20 days = 1 } } }
+  remove_effect = { clr_country_flag = side_ww1_SOV_import_active clr_country_flag = side_ww1_SOV_import_ENG }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes NOT = { side_ww1_SOV_import_port_open = yes } } }
+  cancel_effect = { clr_country_flag = side_ww1_SOV_import_active clr_country_flag = side_ww1_SOV_import_ENG }
+  ai_will_do = { base = 2 modifier = { factor = 0 ENG = { NOT = { has_equipment = { infantry_equipment > 11999 artillery_equipment > 239 } } } } }
+ }
+ side_ww1_SOV_supply_audit = { icon = generic_research allowed = { original_tag = SOV }
+  visible = { has_country_flag = side_ww1_SOV_supply_audit_open NOT = { has_country_flag = side_ww1_SOV_supply_certified } }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 NOT = { ww1_sov_crisis_pressure = yes } has_equipment = { infantry_equipment > 2999 artillery_equipment > 99 } }
+  cost = 30 days_remove = 90 days_re_enable = 180 modifier = { civilian_factory_use = 1 }
+  remove_effect = { side_ww1_SOV_measure_supply = yes if = { limit = { side_ww1_SOV_supply_certifiable = yes has_capitulated = no } remove_ideas = SOV_rifle_famine_scar set_country_flag = side_ww1_SOV_supply_certified country_event = { id = side_ww1_ger_rus.9 days = 1 } } else = { country_event = { id = side_ww1_ger_rus.10 days = 1 } } }
+  cancel_trigger = { has_capitulated = yes } ai_will_do = { base = 3 }
+ }
+ side_ww1_SOV_settle_supply_credit = {
+ icon = generic_welfare allowed = { original_tag = SOV }
+ visible = { has_idea = side_ww1_SOV_allied_supply_credit }
+ available = { has_war = no has_capitulated = no num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = side_ww1_SOV_credit_settling } }
+ cost = 40 days_remove = 90 days_re_enable = 90 modifier = { civilian_factory_use = 2 }
+ complete_effect = { set_country_flag = side_ww1_SOV_credit_settling }
+ remove_effect = {
+  clr_country_flag = side_ww1_SOV_credit_settling
+  add_to_variable = { side_ww1_SOV_supply_debt = -1 }
+  clamp_variable = { var = side_ww1_SOV_supply_debt min = 0 max = 6 }
+  if = { limit = { check_variable = { side_ww1_SOV_supply_debt < 1 } } remove_ideas = side_ww1_SOV_allied_supply_credit }
+  country_event = { id = side_ww1_ger_rus.22 days = 1 }
+ }
+ cancel_trigger = { OR = { has_war = yes has_capitulated = yes } }
+ cancel_effect = { clr_country_flag = side_ww1_SOV_credit_settling }
+ ai_will_do = { base = 3 }
+ }
+}

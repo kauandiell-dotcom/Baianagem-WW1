@@ -1,4 +1,4 @@
-add_namespace = ww1_crisis
+﻿add_namespace = ww1_crisis
 
 # -------------------------------------------------------------
 # ALEMANHA: Inverno dos Nabos & O Bloqueio da Entente
@@ -7,19 +7,19 @@ country_event = {
 	id = ww1_crisis.1
 	title = ww1_crisis.1.t
 	desc = ww1_crisis.1.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_event_ww1_crisis_ger
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = GER_crisis_triggered
+		add_ideas = GER_turnip_winter_crisis_1
 		set_country_flag = GER_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.1.a
-		add_ideas = GER_turnip_winter_crisis_3
+
 		set_country_flag = GER_crisis_active
 		custom_effect_tooltip = ww1_crisis_ger_tooltip
 	}
@@ -32,19 +32,19 @@ country_event = {
 	id = ww1_crisis.2
 	title = ww1_crisis.2.t
 	desc = ww1_crisis.2.d
-	picture = GFX_report_event_merchant_ship_01
+	picture = GFX_event_ww1_crisis_eng
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = ENG_crisis_triggered
+		add_ideas = ENG_submarine_blockade_crisis_1
 		set_country_flag = ENG_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.2.a
-		add_ideas = ENG_submarine_blockade_crisis_3
+
 		set_country_flag = ENG_crisis_active
 		custom_effect_tooltip = ww1_crisis_eng_tooltip
 	}
@@ -57,19 +57,19 @@ country_event = {
 	id = ww1_crisis.3
 	title = ww1_crisis.3.t
 	desc = ww1_crisis.3.d
-	picture = GFX_report_event_soldiers_marching
+	picture = GFX_event_ww1_crisis_fra
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = FRA_crisis_triggered
+		add_ideas = FRA_trench_mutiny_crisis_1
 		set_country_flag = FRA_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.3.a
-		add_ideas = FRA_trench_mutiny_crisis_3
+
 		set_country_flag = FRA_crisis_active
 		custom_effect_tooltip = ww1_crisis_fra_tooltip
 	}
@@ -82,19 +82,19 @@ country_event = {
 	id = ww1_crisis.4
 	title = ww1_crisis.4.t
 	desc = ww1_crisis.4.d
-	picture = GFX_report_event_worker_protests
+	picture = GFX_event_ww1_crisis_sov
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = SOV_crisis_triggered
+		add_ideas = SOV_rifle_famine_crisis_1
 		set_country_flag = SOV_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.4.a
-		add_ideas = SOV_rifle_famine_crisis_3
+
 		set_country_flag = SOV_crisis_active
 		custom_effect_tooltip = ww1_crisis_sov_tooltip
 	}
@@ -107,19 +107,19 @@ country_event = {
 	id = ww1_crisis.5
 	title = ww1_crisis.5.t
 	desc = ww1_crisis.5.d
-	picture = GFX_report_event_gathering_protest
+	picture = GFX_event_ww1_crisis_aus
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = AUS_crisis_triggered
+		add_ideas = AUS_nationalities_fracture_crisis_1
 		set_country_flag = AUS_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.5.a
-		add_ideas = AUS_nationalities_fracture_crisis_3
+
 		set_country_flag = AUS_crisis_active
 		custom_effect_tooltip = ww1_crisis_aus_tooltip
 	}
@@ -132,19 +132,19 @@ country_event = {
 	id = ww1_crisis.6
 	title = ww1_crisis.6.t
 	desc = ww1_crisis.6.d
-	picture = GFX_report_event_generic_parliament
+	picture = GFX_event_ww1_crisis_ita
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = ITA_crisis_triggered
+		add_ideas = ITA_isonzo_attrition_crisis_1
 		set_country_flag = ITA_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.6.a
-		add_ideas = ITA_isonzo_attrition_crisis_3
+
 		set_country_flag = ITA_crisis_active
 		custom_effect_tooltip = ww1_crisis_ita_tooltip
 	}
@@ -157,19 +157,19 @@ country_event = {
 	id = ww1_crisis.7
 	title = ww1_crisis.7.t
 	desc = ww1_crisis.7.d
-	picture = GFX_report_event_ENG_middle_eastern_conflict
+	picture = GFX_event_ww1_crisis_tur
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = TUR_crisis_triggered
+		add_ideas = TUR_desert_supply_collapse_crisis_1
 		set_country_flag = TUR_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.7.a
-		add_ideas = TUR_desert_supply_collapse_crisis_3
+
 		set_country_flag = TUR_crisis_active
 		custom_effect_tooltip = ww1_crisis_tur_tooltip
 	}
@@ -182,19 +182,19 @@ country_event = {
 	id = ww1_crisis.8
 	title = ww1_crisis.8.t
 	desc = ww1_crisis.8.d
-	picture = GFX_report_event_generic_factory
+	picture = GFX_event_ww1_crisis_usa
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	immediate = {
 		set_country_flag = USA_crisis_triggered
+		add_ideas = USA_mobilization_bottleneck_crisis_1
 		set_country_flag = USA_crisis_active
 	}
 
 	option = {
 		name = ww1_crisis.8.a
-		add_ideas = USA_mobilization_bottleneck_crisis_3
+
 		set_country_flag = USA_crisis_active
 		custom_effect_tooltip = ww1_crisis_usa_tooltip
 	}

@@ -1,0 +1,972 @@
+[
+  {
+    "kind": "focus",
+    "id": "GER_prussian_franchise_reform",
+    "sprite": "GFX_goal_ww1_GER_prussian_franchise_reform",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GER/GER_prussian_suffrage.png",
+    "subject": "Country-specific period subject: GER_prussian_franchise_reform",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_prussian_franchise_reform"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_oust_bethmann_hollweg",
+    "sprite": "GFX_goal_ww1_GER_oust_bethmann_hollweg",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/GER_theobald_von_bethmann_hollweg_war.png",
+    "subject": "Country-specific period subject: GER_oust_bethmann_hollweg",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_oust_bethmann_hollweg"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_prince_max_von_baden_cabinet",
+    "sprite": "GFX_goal_ww1_GER_prince_max_von_baden_cabinet",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/idea_GER_maximilian_von_baden.png",
+    "subject": "Country-specific period subject: GER_prince_max_von_baden_cabinet",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_prince_max_von_baden_cabinet"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_chancellor_michaelis_puppet",
+    "sprite": "GFX_goal_ww1_GER_chancellor_michaelis_puppet",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/idea_GER_georg_michaelis.png",
+    "subject": "Country-specific period subject: GER_chancellor_michaelis_puppet",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_chancellor_michaelis_puppet"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_repeal_anti_socialist_heritage",
+    "sprite": "GFX_goal_ww1_GER_repeal_anti_socialist_heritage",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GER/GER_social_democracy_icon.png",
+    "subject": "Country-specific period subject: GER_repeal_anti_socialist_heritage",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_repeal_anti_socialist_heritage"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_hohenzollern_imperial_hegemony",
+    "sprite": "GFX_goal_ww1_GER_hohenzollern_imperial_hegemony",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Crown_World.png",
+    "subject": "Country-specific period subject: GER_hohenzollern_imperial_hegemony",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_hohenzollern_imperial_hegemony"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_alliance_with_soviet_russia",
+    "sprite": "GFX_goal_ww1_GER_alliance_with_soviet_russia",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Rapprochement_Communists.png",
+    "subject": "Country-specific period subject: GER_alliance_with_soviet_russia",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_alliance_with_soviet_russia"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_world_proletarian_revolution",
+    "sprite": "GFX_goal_ww1_GER_world_proletarian_revolution",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Communism_Marches_Through_Planet.png",
+    "subject": "Country-specific period subject: GER_world_proletarian_revolution",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_world_proletarian_revolution"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_federal_constitutional_monarchy",
+    "sprite": "GFX_goal_ww1_GER_federal_constitutional_monarchy",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Rhenish_Vanguard_Federalism.png",
+    "subject": "Country-specific period subject: GER_federal_constitutional_monarchy",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_federal_constitutional_monarchy"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_unconditional_victory_or_ruin",
+    "sprite": "GFX_goal_ww1_GER_unconditional_victory_or_ruin",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GER/GER_german_victory.png",
+    "subject": "Country-specific period subject: GER_unconditional_victory_or_ruin",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_unconditional_victory_or_ruin"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_heartland_of_the_ruhr",
+    "sprite": "GFX_goal_ww1_GER_heartland_of_the_ruhr",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Feudal_Industrial_Scheme.png",
+    "subject": "Country-specific period subject: GER_heartland_of_the_ruhr",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_heartland_of_the_ruhr"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_krupp_heavy_ordnance_contracts",
+    "sprite": "GFX_goal_ww1_GER_krupp_heavy_ordnance_contracts",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Smoke_Plumes_Krupp_Weapons_Forge.png",
+    "subject": "Country-specific period subject: GER_krupp_heavy_ordnance_contracts",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_krupp_heavy_ordnance_contracts"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_reichsbahn_strategic_network",
+    "sprite": "GFX_goal_ww1_GER_reichsbahn_strategic_network",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_forest_railway.png",
+    "subject": "Country-specific period subject: GER_reichsbahn_strategic_network",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_reichsbahn_strategic_network"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_electrical_giants_siemens_aeg",
+    "sprite": "GFX_goal_ww1_GER_electrical_giants_siemens_aeg",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Siemens.png",
+    "subject": "Country-specific period subject: GER_electrical_giants_siemens_aeg",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_electrical_giants_siemens_aeg"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_rathenau_war_raw_materials_board",
+    "sprite": "GFX_goal_ww1_GER_rathenau_war_raw_materials_board",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/idea_GER_Walther_Rathenau.png",
+    "subject": "Country-specific period subject: GER_rathenau_war_raw_materials_board",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_rathenau_war_raw_materials_board"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_sussex_pledge_cruiser_rules_choice",
+    "sprite": "GFX_goal_ww1_GER_sussex_pledge_cruiser_rules_choice",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Firm_Yet_Fair_Stances.png",
+    "subject": "Country-specific period subject: GER_sussex_pledge_cruiser_rules_choice",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_sussex_pledge_cruiser_rules_choice"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_smash_liege_forts",
+    "sprite": "GFX_goal_ww1_GER_smash_liege_forts",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/GER/GER_field_gun_3.png",
+    "subject": "Country-specific period subject: GER_smash_liege_forts",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_smash_liege_forts"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_kiel_sailors_mutiny",
+    "sprite": "GFX_goal_ww1_GER_kiel_sailors_mutiny",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Hochseeflotte_Leadership.png",
+    "subject": "Country-specific period subject: GER_kiel_sailors_mutiny",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_kiel_sailors_mutiny"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_das_grosse_hauptquartier",
+    "sprite": "GFX_goal_ww1_GER_das_grosse_hauptquartier",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/GER_paul_von_hindenburg.png",
+    "subject": "Country-specific period subject: GER_das_grosse_hauptquartier",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_das_grosse_hauptquartier"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_the_miracle_of_tannenberg",
+    "sprite": "GFX_goal_ww1_GER_the_miracle_of_tannenberg",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/idea_GER_hermann_francois.png",
+    "subject": "Country-specific period subject: GER_the_miracle_of_tannenberg",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_the_miracle_of_tannenberg"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_battle_of_the_frontiers",
+    "sprite": "GFX_goal_ww1_GER_battle_of_the_frontiers",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/GER/GER_infantry_equipment_0.png",
+    "subject": "Country-specific period subject: GER_battle_of_the_frontiers",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_battle_of_the_frontiers"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_haber_bosch_nitrogen_miracle",
+    "sprite": "GFX_goal_ww1_GER_haber_bosch_nitrogen_miracle",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Chemists_Go_Upstream.png",
+    "subject": "Country-specific period subject: GER_haber_bosch_nitrogen_miracle",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_haber_bosch_nitrogen_miracle"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_swiss_neutral_financial_corridor",
+    "sprite": "GFX_goal_ww1_GER_swiss_neutral_financial_corridor",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Clamping_Reichsbanks_Generosity.png",
+    "subject": "Country-specific period subject: GER_swiss_neutral_financial_corridor",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_swiss_neutral_financial_corridor"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_greek_royalist_support_treaty",
+    "sprite": "GFX_goal_ww1_GER_greek_royalist_support_treaty",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GRE_constantine.png",
+    "subject": "Country-specific period subject: GER_greek_royalist_support_treaty",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_greek_royalist_support_treaty"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_crossing_the_marne",
+    "sprite": "GFX_goal_ww1_GER_crossing_the_marne",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_revenge_soldier.png",
+    "subject": "Country-specific period subject: GER_crossing_the_marne",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_crossing_the_marne"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_battle_of_caporetto_breakthrough",
+    "sprite": "GFX_goal_ww1_GER_battle_of_caporetto_breakthrough",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/idea_GER_otto_below.png",
+    "subject": "Country-specific period subject: GER_battle_of_caporetto_breakthrough",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_battle_of_caporetto_breakthrough"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_ambassador_bernstorff_us_lobby",
+    "sprite": "GFX_goal_ww1_GER_ambassador_bernstorff_us_lobby",
+    "donor_id": "2716194283",
+    "source_relative": "gfx/interface/goals/German_American_Flags.dds",
+    "subject": "Country-specific period subject: GER_ambassador_bernstorff_us_lobby",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_ambassador_bernstorff_us_lobby"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_race_to_the_sea",
+    "sprite": "GFX_goal_ww1_GER_race_to_the_sea",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/ww1_landdoctrine/entrenchment.png",
+    "subject": "Country-specific period subject: GER_race_to_the_sea",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_race_to_the_sea"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_the_great_retreat_of_1915",
+    "sprite": "GFX_goal_ww1_GER_the_great_retreat_of_1915",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/GER/GER_field_gun_1.png",
+    "subject": "Country-specific period subject: GER_the_great_retreat_of_1915",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_the_great_retreat_of_1915"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_arras_and_vimy_ridge_stand",
+    "sprite": "GFX_goal_ww1_GER_arras_and_vimy_ridge_stand",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Stachelschwein_Schema.png",
+    "subject": "Country-specific period subject: GER_arras_and_vimy_ridge_stand",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_arras_and_vimy_ridge_stand"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_treaty_of_brest_litovsk",
+    "sprite": "GFX_goal_ww1_GER_treaty_of_brest_litovsk",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_More_Well_Oiled_Reichspakt.png",
+    "subject": "Country-specific period subject: GER_treaty_of_brest_litovsk",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_treaty_of_brest_litovsk"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_caucasian_intervention_georgia",
+    "sprite": "GFX_goal_ww1_GER_caucasian_intervention_georgia",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Detangle_Ourselves_Caucasian_Clashes.png",
+    "subject": "Country-specific period subject: GER_caucasian_intervention_georgia",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_caucasian_intervention_georgia"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_operation_blucher_yorck",
+    "sprite": "GFX_goal_ww1_GER_operation_blucher_yorck",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/GER/GER_infantry_equipment_2.png",
+    "subject": "Country-specific period subject: GER_operation_blucher_yorck",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_operation_blucher_yorck"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_baltic_german_colonization_order",
+    "sprite": "GFX_goal_ww1_GER_baltic_german_colonization_order",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GER/GER_german_immigration.png",
+    "subject": "Country-specific period subject: GER_baltic_german_colonization_order",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_baltic_german_colonization_order"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_seek_armistice_fourteen_points",
+    "sprite": "GFX_goal_ww1_GER_seek_armistice_fourteen_points",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_socialist_appeasement.png",
+    "subject": "Country-specific period subject: GER_seek_armistice_fourteen_points",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_seek_armistice_fourteen_points"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_asienkorps_palestine_expedition",
+    "sprite": "GFX_goal_ww1_GER_asienkorps_palestine_expedition",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_tur_asien_korps.png",
+    "subject": "Country-specific period subject: GER_asienkorps_palestine_expedition",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_asienkorps_palestine_expedition"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_zimmermann_telegram_proposal",
+    "sprite": "GFX_goal_ww1_GER_zimmermann_telegram_proposal",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GRE_destroy_classified_documents_german_embassy.png",
+    "subject": "Country-specific period subject: GER_zimmermann_telegram_proposal",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_zimmermann_telegram_proposal"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_siege_of_kut_al_amara_aid",
+    "sprite": "GFX_goal_ww1_GER_siege_of_kut_al_amara_aid",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_tur_prepare_for_the_greatest_siege.png",
+    "subject": "Country-specific period subject: GER_siege_of_kut_al_amara_aid",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_siege_of_kut_al_amara_aid"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_holy_war_on_the_suez_canal",
+    "sprite": "GFX_goal_ww1_GER_holy_war_on_the_suez_canal",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_tur_reclaim_mediterranean.png",
+    "subject": "Country-specific period subject: GER_holy_war_on_the_suez_canal",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_holy_war_on_the_suez_canal"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_caucasus_baku_expedition",
+    "sprite": "GFX_goal_ww1_GER_caucasus_baku_expedition",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Energy_Security_Petrochemicals.png",
+    "subject": "Country-specific period subject: GER_caucasus_baku_expedition",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_caucasus_baku_expedition"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_incorporate_bohemia_and_austria",
+    "sprite": "GFX_goal_ww1_GER_incorporate_bohemia_and_austria",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_auh_austrian_empire.png",
+    "subject": "Country-specific period subject: GER_incorporate_bohemia_and_austria",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_incorporate_bohemia_and_austria"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_falkenhayn_dismissal_third_ohl",
+    "sprite": "GFX_goal_ww1_GER_falkenhayn_dismissal_third_ohl",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/GER_erich_von_falkenhayn.png",
+    "subject": "Country-specific period subject: GER_falkenhayn_dismissal_third_ohl",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_falkenhayn_dismissal_third_ohl"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_elastic_defense_in_depth",
+    "sprite": "GFX_goal_ww1_GER_elastic_defense_in_depth",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/ww1_landdoctrine/lead_by_task.png",
+    "subject": "Country-specific period subject: GER_elastic_defense_in_depth",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_elastic_defense_in_depth"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_bruchmueller_feuerwalze_doctrine",
+    "sprite": "GFX_goal_ww1_GER_bruchmueller_feuerwalze_doctrine",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/ww1_landdoctrine/lead_by_order.png",
+    "subject": "Country-specific period subject: GER_bruchmueller_feuerwalze_doctrine",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_bruchmueller_feuerwalze_doctrine"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_paris_gun_super_battery",
+    "sprite": "GFX_goal_ww1_GER_paris_gun_super_battery",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_railway_gun.png",
+    "subject": "Country-specific period subject: GER_paris_gun_super_battery",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_paris_gun_super_battery"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_gotha_raids_on_london",
+    "sprite": "GFX_goal_ww1_GER_gotha_raids_on_london",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/GER_design_gotha.png",
+    "subject": "Country-specific period subject: GER_gotha_raids_on_london",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_gotha_raids_on_london"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_fokker_d_vii_air_supremacy",
+    "sprite": "GFX_goal_ww1_GER_fokker_d_vii_air_supremacy",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/GER/GER_fighter3.png",
+    "subject": "Country-specific period subject: GER_fokker_d_vii_air_supremacy",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_fokker_d_vii_air_supremacy"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_treaty_of_bucharest_1918",
+    "sprite": "GFX_goal_ww1_GER_treaty_of_bucharest_1918",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_ger_romanian_pact.png",
+    "subject": "Country-specific period subject: GER_treaty_of_bucharest_1918",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_treaty_of_bucharest_1918"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_operation_michael_st_quentin",
+    "sprite": "GFX_goal_ww1_GER_operation_michael_st_quentin",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/GER/GER_machine_gun_equipment_2.png",
+    "subject": "Country-specific period subject: GER_operation_michael_st_quentin",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_operation_michael_st_quentin"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_spanish_flu_epidemic_crisis",
+    "sprite": "GFX_goal_ww1_GER_spanish_flu_epidemic_crisis",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/GER_Benevolent_Food_Dictatorship.png",
+    "subject": "Country-specific period subject: GER_spanish_flu_epidemic_crisis",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_spanish_flu_epidemic_crisis"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_collapse_of_central_allies",
+    "sprite": "GFX_goal_ww1_GER_collapse_of_central_allies",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_AUH_collapse.png",
+    "subject": "Country-specific period subject: GER_collapse_of_central_allies",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_collapse_of_central_allies"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_fleet_sortie_order_mutiny",
+    "sprite": "GFX_goal_ww1_GER_fleet_sortie_order_mutiny",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/GER/GER_naval_arms_race.png",
+    "subject": "Country-specific period subject: GER_fleet_sortie_order_mutiny",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_fleet_sortie_order_mutiny"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_kaiser_abdication_amerongen",
+    "sprite": "GFX_goal_ww1_GER_kaiser_abdication_amerongen",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_GER_Kaiser_Asshole_Chained.png",
+    "subject": "Country-specific period subject: GER_kaiser_abdication_amerongen",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_kaiser_abdication_amerongen"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_armistice_at_compiegne",
+    "sprite": "GFX_goal_ww1_GER_armistice_at_compiegne",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_economic_self_reliance.png",
+    "subject": "Country-specific period subject: GER_armistice_at_compiegne",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_armistice_at_compiegne"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_the_stab_in_the_back_myth",
+    "sprite": "GFX_goal_ww1_GER_the_stab_in_the_back_myth",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_ger_backstab.png",
+    "subject": "Country-specific period subject: GER_the_stab_in_the_back_myth",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_the_stab_in_the_back_myth"
+  },
+  {
+    "kind": "focus",
+    "id": "GER_siegfrieden_peace_with_france",
+    "sprite": "GFX_goal_ww1_GER_siegfrieden_peace_with_france",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/GER/GER_victoronomics.png",
+    "subject": "Country-specific period subject: GER_siegfrieden_peace_with_france",
+    "bind_file": "common/national_focus/germany.txt",
+    "bind_focus": "GER_siegfrieden_peace_with_france"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_the_iron_prime_minister",
+    "sprite": "GFX_goal_ww1_SOV_the_iron_prime_minister",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/RUS/idea_RUS_pyotr_stolypin.png",
+    "subject": "Country-specific period subject: SOV_the_iron_prime_minister",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_the_iron_prime_minister"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_rodzianko_ultimatum",
+    "sprite": "GFX_goal_ww1_SOV_rodzianko_ultimatum",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Find_Support_In_Duma.png",
+    "subject": "Country-specific period subject: SOV_rodzianko_ultimatum",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_rodzianko_ultimatum"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_murder_of_rasputin",
+    "sprite": "GFX_goal_ww1_SOV_murder_of_rasputin",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/RUS/idea_RUS_grigori_rasputin.png",
+    "subject": "Country-specific period subject: SOV_murder_of_rasputin",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_murder_of_rasputin"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_mutiny_of_petrograd_garrison",
+    "sprite": "GFX_goal_ww1_SOV_mutiny_of_petrograd_garrison",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Panic_In_Petrograd.png",
+    "subject": "Country-specific period subject: SOV_mutiny_of_petrograd_garrison",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_mutiny_of_petrograd_garrison"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_prince_lvov_coalition",
+    "sprite": "GFX_goal_ww1_SOV_prince_lvov_coalition",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/RUS/idea_RUS_georgy_lvov.png",
+    "subject": "Country-specific period subject: SOV_prince_lvov_coalition",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_prince_lvov_coalition"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_the_kerensky_ministry",
+    "sprite": "GFX_goal_ww1_SOV_the_kerensky_ministry",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/RUS/idea_RUS_alexander_kerensky_army.png",
+    "subject": "Country-specific period subject: SOV_the_kerensky_ministry",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_the_kerensky_ministry"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_storming_of_winter_palace",
+    "sprite": "GFX_goal_ww1_SOV_storming_of_winter_palace",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Celebrate_Proletarian_Dictatorship.png",
+    "subject": "Country-specific period subject: SOV_storming_of_winter_palace",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_storming_of_winter_palace"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_decree_on_land",
+    "sprite": "GFX_goal_ww1_SOV_decree_on_land",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_agrarian_socialism.png",
+    "subject": "Country-specific period subject: SOV_decree_on_land",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_decree_on_land"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_founding_of_the_cheka",
+    "sprite": "GFX_goal_ww1_SOV_founding_of_the_cheka",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Recreate_Cheka.png",
+    "subject": "Country-specific period subject: SOV_founding_of_the_cheka",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_founding_of_the_cheka"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_national_salvation_directory",
+    "sprite": "GFX_goal_ww1_SOV_national_salvation_directory",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Transitional_Council.png",
+    "subject": "Country-specific period subject: SOV_national_salvation_directory",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_national_salvation_directory"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_total_frontline_discipline",
+    "sprite": "GFX_goal_ww1_SOV_total_frontline_discipline",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Supreme_Rulership_Act.png",
+    "subject": "Country-specific period subject: SOV_total_frontline_discipline",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_total_frontline_discipline"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_convene_constituent_assembly",
+    "sprite": "GFX_goal_ww1_SOV_convene_constituent_assembly",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_RUS_constitutional_assembly.png",
+    "subject": "Country-specific period subject: SOV_convene_constituent_assembly",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_convene_constituent_assembly"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_federal_democratic_republic",
+    "sprite": "GFX_goal_ww1_SOV_federal_democratic_republic",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Establish_Federal_Autonomies.png",
+    "subject": "Country-specific period subject: SOV_federal_democratic_republic",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_federal_democratic_republic"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_dissolve_the_rebellious_duma",
+    "sprite": "GFX_goal_ww1_SOV_dissolve_the_rebellious_duma",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Dissolve_Duma.png",
+    "subject": "Country-specific period subject: SOV_dissolve_the_rebellious_duma",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_dissolve_the_rebellious_duma"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_cooperative_credit_societies",
+    "sprite": "GFX_goal_ww1_SOV_cooperative_credit_societies",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Agricultural_Committee.png",
+    "subject": "Country-specific period subject: SOV_cooperative_credit_societies",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_cooperative_credit_societies"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_baku_black_gold_monopoly",
+    "sprite": "GFX_goal_ww1_SOV_baku_black_gold_monopoly",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_CAN_oil.png",
+    "subject": "Country-specific period subject: SOV_baku_black_gold_monopoly",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_baku_black_gold_monopoly"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_motovilikha_artillery_plant",
+    "sprite": "GFX_goal_ww1_SOV_motovilikha_artillery_plant",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/RUS/RUS_field_gun_2.png",
+    "subject": "Country-specific period subject: SOV_motovilikha_artillery_plant",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_motovilikha_artillery_plant"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_circum_baikal_engineering",
+    "sprite": "GFX_goal_ww1_SOV_circum_baikal_engineering",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/industry/railway_maintenance.png",
+    "subject": "Country-specific period subject: SOV_circum_baikal_engineering",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_circum_baikal_engineering"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_caucasus_mountain_lines",
+    "sprite": "GFX_goal_ww1_SOV_caucasus_mountain_lines",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_caucasus.png",
+    "subject": "Country-specific period subject: SOV_caucasus_mountain_lines",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_caucasus_mountain_lines"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_broad_gauge_streamlining",
+    "sprite": "GFX_goal_ww1_SOV_broad_gauge_streamlining",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/RUS/train.png",
+    "subject": "Country-specific period subject: SOV_broad_gauge_streamlining",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_broad_gauge_streamlining"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_convert_civilian_foundries",
+    "sprite": "GFX_goal_ww1_SOV_convert_civilian_foundries",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Industrial_Draft_Scheme.png",
+    "subject": "Country-specific period subject: SOV_convert_civilian_foundries",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_convert_civilian_foundries"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_emergency_coal_allotment",
+    "sprite": "GFX_goal_ww1_SOV_emergency_coal_allotment",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/industry/tech_metallurgical_casting.dds",
+    "subject": "Country-specific period subject: SOV_emergency_coal_allotment",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_emergency_coal_allotment"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_end_the_shell_shortage",
+    "sprite": "GFX_goal_ww1_SOV_end_the_shell_shortage",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/industry/ammo1.png",
+    "subject": "Country-specific period subject: SOV_end_the_shell_shortage",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_end_the_shell_shortage"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_british_baltic_submarine_flotilla",
+    "sprite": "GFX_goal_ww1_SOV_british_baltic_submarine_flotilla",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/ww1_nationalfocus_baltikrus.png",
+    "subject": "Country-specific period subject: SOV_british_baltic_submarine_flotilla",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_british_baltic_submarine_flotilla"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_imperatritsa_mariya_battleships",
+    "sprite": "GFX_goal_ww1_SOV_imperatritsa_mariya_battleships",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/idea_RUS_generic_navy_2.png",
+    "subject": "Country-specific period subject: SOV_imperatritsa_mariya_battleships",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_imperatritsa_mariya_battleships"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_heavy_bombing_squadron_evok",
+    "sprite": "GFX_goal_ww1_SOV_heavy_bombing_squadron_evok",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/RUS/RUS_heavy_bomber.png",
+    "subject": "Country-specific period subject: SOV_heavy_bombing_squadron_evok",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_heavy_bombing_squadron_evok"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_nesterov_aerial_ramming_tactics",
+    "sprite": "GFX_goal_ww1_SOV_nesterov_aerial_ramming_tactics",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/ww1_airdoctrine/flying_aces.png",
+    "subject": "Country-specific period subject: SOV_nesterov_aerial_ramming_tactics",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_nesterov_aerial_ramming_tactics"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_anatra_anasal_fighter_fleet",
+    "sprite": "GFX_goal_ww1_SOV_anatra_anasal_fighter_fleet",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/RUS/RUS_fighter2.png",
+    "subject": "Country-specific period subject: SOV_anatra_anasal_fighter_fleet",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_anatra_anasal_fighter_fleet"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_seaplane_carriers_in_the_black_sea",
+    "sprite": "GFX_goal_ww1_SOV_seaplane_carriers_in_the_black_sea",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/ww1_nationalfocus_blackrus.png",
+    "subject": "Country-specific period subject: SOV_seaplane_carriers_in_the_black_sea",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_seaplane_carriers_in_the_black_sea"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_integrated_air_naval_reconnaissance",
+    "sprite": "GFX_goal_ww1_SOV_integrated_air_naval_reconnaissance",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/ww1_airdoctrine/naval_aviation.png",
+    "subject": "Country-specific period subject: SOV_integrated_air_naval_reconnaissance",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_integrated_air_naval_reconnaissance"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_telegraph_and_wireless_corps",
+    "sprite": "GFX_goal_ww1_SOV_telegraph_and_wireless_corps",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_Telegraphic_Communication_With_Regions.png",
+    "subject": "Country-specific period subject: SOV_telegraph_and_wireless_corps",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_telegraph_and_wireless_corps"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_the_great_retreat_to_the_dvina",
+    "sprite": "GFX_goal_ww1_SOV_the_great_retreat_to_the_dvina",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_rus_local_barracks.png",
+    "subject": "Country-specific period subject: SOV_the_great_retreat_to_the_dvina",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_the_great_retreat_to_the_dvina"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_sokolov_wheeled_maxim_mounts",
+    "sprite": "GFX_goal_ww1_SOV_sokolov_wheeled_maxim_mounts",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/RUS/RUS_infantry_equipment_3.png",
+    "subject": "Country-specific period subject: SOV_sokolov_wheeled_maxim_mounts",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_sokolov_wheeled_maxim_mounts"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_brusilov_breakthrough_1916",
+    "sprite": "GFX_goal_ww1_SOV_brusilov_breakthrough_1916",
+    "donor_id": "2076426030",
+    "source_relative": "gfx/interface/goals/RUS_The_Might_Of_Russian_Army.png",
+    "subject": "Country-specific period subject: SOV_brusilov_breakthrough_1916",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_brusilov_breakthrough_1916"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_garford_putilov_armored_cars",
+    "sprite": "GFX_goal_ww1_SOV_garford_putilov_armored_cars",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/technologies/RUS/RUS_ww1_armored_car_2.png",
+    "subject": "Country-specific period subject: SOV_garford_putilov_armored_cars",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_garford_putilov_armored_cars"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_steel_breastplates_shock",
+    "sprite": "GFX_goal_ww1_SOV_steel_breastplates_shock",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_rus_white_guard.png",
+    "subject": "Country-specific period subject: SOV_steel_breastplates_shock",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_steel_breastplates_shock"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_sarikamish_counter_encirclement",
+    "sprite": "GFX_goal_ww1_SOV_sarikamish_counter_encirclement",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/ideas/RUS/idea_RUS_nicholas_yudenich.png",
+    "subject": "Country-specific period subject: SOV_sarikamish_counter_encirclement",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_sarikamish_counter_encirclement"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_storming_of_erzurum",
+    "sprite": "GFX_goal_ww1_SOV_storming_of_erzurum",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_RUS_Constantinople_Agreement.png",
+    "subject": "Country-specific period subject: SOV_storming_of_erzurum",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_storming_of_erzurum"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_liberate_galician_ruthenians",
+    "sprite": "GFX_goal_ww1_SOV_liberate_galician_ruthenians",
+    "donor_id": "2716194283",
+    "source_relative": "gfx/interface/goals/kaiserreich/RUS_liberation_march.dds",
+    "subject": "Country-specific period subject: SOV_liberate_galician_ruthenians",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_liberate_galician_ruthenians"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_osowiec_and_novogeorgievsk_forts",
+    "sprite": "GFX_goal_ww1_SOV_osowiec_and_novogeorgievsk_forts",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_gasmask.png",
+    "subject": "Country-specific period subject: SOV_osowiec_and_novogeorgievsk_forts",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_osowiec_and_novogeorgievsk_forts"
+  },
+  {
+    "kind": "focus",
+    "id": "SOV_red_cross_missions_to_serbia",
+    "sprite": "GFX_goal_ww1_SOV_red_cross_missions_to_serbia",
+    "donor_id": "3365515312",
+    "source_relative": "gfx/interface/goals/focus_deal_with_serbia.png",
+    "subject": "Country-specific period subject: SOV_red_cross_missions_to_serbia",
+    "bind_file": "common/national_focus/soviet.txt",
+    "bind_focus": "SOV_red_cross_missions_to_serbia"
+  }
+]

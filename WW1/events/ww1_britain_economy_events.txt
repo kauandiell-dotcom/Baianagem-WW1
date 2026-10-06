@@ -1,0 +1,110 @@
+add_namespace = ww1_britain_eco
+
+country_event = {
+ id = ww1_britain_eco.1 title = ww1_britain_eco.1.t desc = ww1_britain_eco.1.d
+ picture = GFX_event_ww1_britain_clydeside_strike
+ mean_time_to_happen = { days = 20 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_war = yes date > 1915.10.1 date < 1916.3.1 }
+ option = {
+  name = ww1_britain_eco.1.a
+  ai_chance = { base = 60 }
+  add_to_variable = { ww1_britain_labour_support = 5 }
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+  add_stability = 0.01
+  set_country_flag = ENG_ww1_rent_restriction
+ }
+ option = {
+  name = ww1_britain_eco.1.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_labour_support = -6 }
+  add_stability = -0.02
+  add_political_power = 10
+  set_country_flag = ENG_ww1_clyde_strike_broken
+ }
+}
+country_event = {
+ id = ww1_britain_eco.3 title = ww1_britain_eco.3.t desc = ww1_britain_eco.3.d
+ picture = GFX_event_ww1_britain_food_rationing
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ENG_ww1_ministry_of_food }
+ option = {
+  name = ww1_britain_eco.3.a
+  ai_chance = { base = 60 }
+  add_ideas = ENG_ww1_food_control
+  add_stability = 0.01
+ }
+ option = {
+  name = ww1_britain_eco.3.b
+  ai_chance = { base = 40 }
+  add_ideas = ENG_ww1_food_control
+  add_stability = -0.01
+  add_political_power = 10
+ }
+}
+country_event = {
+ id = ww1_britain_eco.5 title = ww1_britain_eco.5.t desc = ww1_britain_eco.5.d
+ picture = GFX_event_ww1_britain_geddes_axe
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ENG_ww1_cabinet_1922 }
+ option = {
+  name = ww1_britain_eco.5.a
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_debt_burden = -6 }
+  add_to_variable = { ww1_britain_labour_support = -5 }
+  add_political_power = 15
+  add_stability = -0.01
+  set_country_flag = ENG_ww1_geddes_axe_full
+ }
+ option = {
+  name = ww1_britain_eco.5.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_debt_burden = -3 }
+  add_to_variable = { ww1_britain_labour_support = -2 }
+  set_country_flag = ENG_ww1_geddes_axe_half
+ }
+ option = {
+  name = ww1_britain_eco.5.c
+  ai_chance = { base = 20 }
+  add_to_variable = { ww1_britain_labour_support = 3 }
+  add_political_power = -10
+ }
+}
+country_event = {
+ id = ww1_britain_eco.6 title = ww1_britain_eco.6.t desc = ww1_britain_eco.6.d
+ picture = GFX_event_ww1_britain_miners_lockout
+ mean_time_to_happen = { days = 15 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_war = no date > 1921.3.1 date < 1921.8.1 }
+ option = {
+  name = ww1_britain_eco.6.a
+  ai_chance = { base = 55 }
+  add_to_variable = { ww1_britain_labour_support = -8 }
+  add_stability = -0.02
+  add_to_variable = { ww1_britain_debt_burden = -1 }
+  set_country_flag = ENG_ww1_miners_lockout
+ }
+ option = {
+  name = ww1_britain_eco.6.b
+  ai_chance = { base = 45 }
+  add_to_variable = { ww1_britain_debt_burden = 4 }
+  add_to_variable = { ww1_britain_labour_support = 4 }
+  set_country_flag = ENG_ww1_miners_subsidy
+ }
+}
+country_event = {
+ id = ww1_britain_eco.10 title = ww1_britain_eco.10.t desc = ww1_britain_eco.10.d
+ picture = GFX_event_ww1_britain_coal_for_allies
+ is_triggered_only = yes
+ trigger = { NOT = { tag = ENG } }
+ option = {
+  name = ww1_britain_eco.10.a
+  ai_chance = { base = 80 }
+  add_stability = 0.02
+  FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } }
+ }
+ option = {
+  name = ww1_britain_eco.10.b
+  ai_chance = { base = 20 }
+ }
+}

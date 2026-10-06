@@ -1,0 +1,154 @@
+# WW1 component baseline; no radar, sonar, aircraft catapults or anti-air equipment.
+equipment_modules = {
+	ww1_1911_old_heavy = {
+		category = ship_heavy_battery
+		add_equipment_type = capital_ship
+		add_stats = {
+			hg_attack = 8
+			lg_attack = 2
+			build_cost_ic = 250
+		}
+		add_average_stats = {
+			hg_armor_piercing = 10
+			lg_armor_piercing = 3
+		}
+	}
+	ww1_1911_mixed_heavy = {
+		category = ship_heavy_battery
+		add_equipment_type = capital_ship
+		add_stats = {
+			hg_attack = 12
+			lg_attack = 5
+			build_cost_ic = 500
+		}
+		add_average_stats = {
+			hg_armor_piercing = 15
+			lg_armor_piercing = 5
+		}
+	}
+	ww1_1911_uniform_heavy = {
+		category = ship_heavy_battery
+		add_equipment_type = capital_ship
+		add_stats = {
+			hg_attack = 28
+			build_cost_ic = 1000
+		}
+		add_average_stats = {
+			hg_armor_piercing = 20
+		}
+	}
+	ww1_1911_medium = {
+		category = ship_medium_battery
+		add_equipment_type = capital_ship
+		add_stats = {
+			hg_attack = 8
+			lg_attack = 6
+			build_cost_ic = 500
+		}
+		add_average_stats = {
+			hg_armor_piercing = 10
+			lg_armor_piercing = 6
+		}
+	}
+	ww1_1911_light_medium = {
+		category = ship_light_medium_battery
+		add_equipment_type = screen_ship
+		add_stats = {
+			lg_attack = 8
+			build_cost_ic = 250
+		}
+		add_average_stats = {
+			lg_armor_piercing = 6
+		}
+	}
+	ww1_1911_light = {
+		category = ship_light_battery
+		add_stats = {
+			lg_attack = 3
+			build_cost_ic = 80
+		}
+		add_average_stats = {
+			lg_armor_piercing = 3
+		}
+	}
+	ww1_1911_old_belt = {
+		category = ship_heavy_armor
+		add_stats = {
+			armor_value = 5
+			build_cost_ic = 180
+		}
+	}
+	ww1_1911_pre_belt = {
+		category = ship_heavy_armor
+		add_stats = {
+			armor_value = 10
+			build_cost_ic = 350
+		}
+	}
+	ww1_1911_dread_belt = {
+		category = ship_heavy_armor
+		add_stats = {
+			armor_value = 18
+			build_cost_ic = 550
+		}
+	}
+	ww1_1911_battlecruiser_belt = {
+		category = ship_heavy_armor
+		add_stats = {
+			armor_value = 12
+			build_cost_ic = 350
+		}
+	}
+	ww1_1911_cruiser_belt = {
+		category = ship_cruiser_armor
+		add_stats = {
+			armor_value = 6
+			build_cost_ic = 200
+		}
+	}
+	ww1_1911_protected_deck = {
+		category = ship_cruiser_armor
+		add_stats = {
+			armor_value = 2
+			build_cost_ic = 80
+		}
+	}
+	ww1_1911_heavy_coal = {
+		category = heavy_ship_engine
+		add_stats = {
+			build_cost_ic = 200
+		}
+	}
+	ww1_1911_cruiser_coal = {
+		category = cruiser_ship_engine
+		add_stats = {
+			build_cost_ic = 100
+		}
+	}
+	ww1_1911_light_coal = {
+		category = light_ship_engine
+		add_stats = {
+			build_cost_ic = 60
+		}
+	}
+	ww1_1911_sub_engine = {
+		category = sub_ship_engine
+		add_stats = {
+			build_cost_ic = 60
+		}
+	}
+	ww1_1911_torpedoes = {
+		category = ship_torpedo
+		add_stats = {
+			torpedo_attack = 12
+			build_cost_ic = 100
+		}
+	}
+	ww1_1911_sub_torpedoes = {
+		category = ship_torpedo
+		add_stats = {
+			torpedo_attack = 12
+			build_cost_ic = 100
+		}
+	}
+}

@@ -1,0 +1,69 @@
+# Country scope: UK policy changes. No automatic war or material grant.
+ww1_britain_open_budget_review = {
+ if = { limit = { NOT = { has_country_flag = ENG_ww1_budget_review_pending } }
+  set_country_flag = ENG_ww1_budget_review_pending
+  country_event = { id = ww1_britain.1 }
+ }
+}
+ww1_britain_apply_continental_policy = {
+ clr_country_flag = ENG_ww1_armed_neutrality_selected
+ set_country_flag = ENG_ww1_continental_commitment_selected
+ if = { limit = { country_exists = BEL } give_guarantee = BEL }
+}
+ww1_britain_apply_armed_neutrality = {
+ if = {
+  limit = { has_war = no }
+  # Hand leadership to an actual ally before leaving; keep French/Russian cooperation.
+  if = { limit = { is_faction_leader = yes }
+   if = { limit = { FRA = { exists = yes is_in_faction_with = ROOT has_capitulated = no } }
+    FRA = { set_faction_leader = yes }
+   }
+   else_if = { limit = { SOV = { exists = yes is_in_faction_with = ROOT has_capitulated = no } }
+    SOV = { set_faction_leader = yes }
+   }
+   else_if = { limit = { RUS = { exists = yes is_in_faction_with = ROOT has_capitulated = no } }
+    RUS = { set_faction_leader = yes }
+   }
+  }
+  if = { limit = { is_in_faction = yes } leave_faction = yes }
+  if = { limit = { country_exists = BEL }
+   diplomatic_relation = { country = BEL relation = guarantee active = no }
+  }
+  clr_country_flag = ENG_ww1_continental_commitment_selected
+  set_country_flag = ENG_ww1_armed_neutrality_selected
+  set_country_flag = ENG_ww1_armed_neutrality_implemented
+  add_stability = -.01
+ }
+}
+ww1_britain_open_policy_review = {
+ if = { limit = { NOT = { has_country_flag = ENG_ww1_policy_review_pending } }
+  set_country_flag = ENG_ww1_policy_review_pending
+  country_event = { id = ww1_britain.7 }
+ }
+}
+ww1_britain_clear_rejoin_offer = {
+ clr_country_flag = ENG_ww1_rejoin_pending
+ clr_country_flag = ENG_ww1_rejoin_to_FRA
+ clr_country_flag = ENG_ww1_rejoin_to_SOV
+ clr_country_flag = ENG_ww1_rejoin_to_RUS
+}
+ww1_britain_request_entente_admission = {
+ if = { limit = { NOT = { has_country_flag = ENG_ww1_rejoin_pending } is_in_faction = no }
+  if = { limit = { FRA = { exists = yes is_faction_leader = yes has_capitulated = no NOT = { has_war_with = ROOT } } }
+   set_country_flag = { flag = ENG_ww1_rejoin_pending days = 30 }
+   set_country_flag = { flag = ENG_ww1_rejoin_to_FRA days = 30 }
+   FRA = { country_event = { id = ww1_britain.8 days = 1 } }
+  }
+  else_if = { limit = { SOV = { exists = yes is_faction_leader = yes has_capitulated = no NOT = { has_war_with = ROOT } } }
+   set_country_flag = { flag = ENG_ww1_rejoin_pending days = 30 }
+   set_country_flag = { flag = ENG_ww1_rejoin_to_SOV days = 30 }
+   SOV = { country_event = { id = ww1_britain.8 days = 1 } }
+  }
+  else_if = { limit = { RUS = { exists = yes is_faction_leader = yes has_capitulated = no NOT = { has_war_with = ROOT } } }
+   set_country_flag = { flag = ENG_ww1_rejoin_pending days = 30 }
+   set_country_flag = { flag = ENG_ww1_rejoin_to_RUS days = 30 }
+   RUS = { country_event = { id = ww1_britain.8 days = 1 } }
+  }
+  else = { country_event = { id = ww1_britain.12 } }
+ }
+}

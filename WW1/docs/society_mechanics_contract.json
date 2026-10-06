@@ -1,0 +1,23 @@
+{
+  "participants": [
+    "GER",
+    "ENG",
+    "FRA",
+    "SOV",
+    "AUS",
+    "TUR",
+    "ITA",
+    "USA"
+  ],
+  "pressure_inputs": "native losses, war support, stability, occupation, convoy pressure, infantry present/required ratio",
+  "minimum_war_weeks": 26,
+  "consecutive_pressure_weeks": 4,
+  "escalation_weeks": [
+    12,
+    24
+  ],
+  "natural_recovery_weeks_per_tier": 6,
+  "relief_project_days": 90,
+  "civilian_factories_reserved": 2,
+  "runtime_verified": false
+}

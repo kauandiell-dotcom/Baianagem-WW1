@@ -1,4 +1,4 @@
-technologies = {
+﻿technologies = {
 
 	 ##  ###  #   #  ##  #   # ### #  # ###  ##
 	#  # #  # ## ## #  # ## ## #   ## #  #  #
@@ -675,10 +675,11 @@ technologies = {
 	}
 
 	basic_dp_light_battery = {
+ allow = {  date > 1934.12.31 }
 
 		research_cost = 1
 
-		start_year = 1914
+		start_year = 1939
 
 		enable_equipment_modules = {
 			dp_light_battery_2
@@ -727,10 +728,11 @@ technologies = {
 	}
 
 	improved_dp_light_battery = {
+ allow = {  date > 1934.12.31 }
 
 		research_cost = 1
 
-		start_year = 1915
+		start_year = 1940
 
 		enable_equipment_modules = {
 			dp_light_battery_3
@@ -777,10 +779,11 @@ technologies = {
 	}
 
 	advanced_dp_light_battery = {
+ allow = {  date > 1934.12.31 }
 
 		research_cost = 1
 
-		start_year = 1919
+		start_year = 1944
 
 		enable_equipment_modules = {
 			dp_light_battery_4
@@ -885,13 +888,14 @@ technologies = {
 	}
 
 	magnetic_detonator = {
+ allow = {  date > 1934.12.31 }
 
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
 		research_cost = 2.5
 
-		start_year = 1911
+		start_year = 1936
 
 		#path = {
 		#	leads_to_tech = homing_torpedo
@@ -961,6 +965,7 @@ technologies = {
 	}
 
 	homing_torpedo = {
+ allow = {  date > 1934.12.31 }
 
 		xp_research_type = navy
 		xp_boost_cost = 50
@@ -970,7 +975,7 @@ technologies = {
 			leads_to_tech = modern_ship_torpedo_launcher
 			research_cost_coeff = 1
 		}
-		start_year = 1917
+		start_year = 1942
 		destroyer = {
 			naval_torpedo_hit_chance_factor = 0.1
 		}
@@ -1752,10 +1757,11 @@ technologies = {
 	}
 
 	degaussing = {
+ allow = {  date > 1934.12.31 }
 
 		research_cost = 1
 
-		start_year = 1913
+		start_year = 1938
 
 		naval_mines_effect_reduction = 0.5
 

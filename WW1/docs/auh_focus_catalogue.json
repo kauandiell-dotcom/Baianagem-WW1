@@ -1,0 +1,2877 @@
+[
+  {
+    "id": "AUH_ww1_crown_council",
+    "parent": null,
+    "x": 5,
+    "y": 0,
+    "effect": "country_event = { id = ww1_auh.1 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_delegations",
+    "parent": [
+      "crown_council"
+    ],
+    "x": 5,
+    "y": 1,
+    "effect": "set_country_flag = auh_ww1_delegations_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_constitutional_audit",
+    "parent": [
+      "delegations"
+    ],
+    "x": 5,
+    "y": 2,
+    "effect": "country_event = { id = ww1_auh.2 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_crownland_hearings",
+    "parent": [
+      "constitutional_audit"
+    ],
+    "x": 4,
+    "y": 3,
+    "effect": "set_country_flag = auh_ww1_hearings_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_dualism",
+    "parent": [
+      "constitutional_audit"
+    ],
+    "x": 2,
+    "y": 3,
+    "effect": "country_event = { id = ww1_auh.3 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [
+      "trialism",
+      "federalism"
+    ],
+    "ai": 8,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_budapest_compact",
+    "parent": [
+      "dualism"
+    ],
+    "x": 2,
+    "y": 4,
+    "effect": "add_to_variable = { auh_ww1_consent = 8 } add_to_variable = { auh_ww1_cohesion = -2 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_joint_budget",
+    "parent": [
+      "budapest_compact"
+    ],
+    "x": 0,
+    "y": 5,
+    "effect": "auh_ww1_set_budget_negotiated = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_honved_safeguards",
+    "parent": [
+      "budapest_compact"
+    ],
+    "x": 2,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_honved_contract_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_crown_arbitration",
+    "parent": [
+      "joint_budget"
+    ],
+    "x": 1,
+    "y": 6,
+    "effect": "country_event = { id = ww1_auh.4 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "honved_safeguards"
+    ]
+  },
+  {
+    "id": "AUH_ww1_quota_revision",
+    "parent": [
+      "crown_arbitration"
+    ],
+    "x": 0,
+    "y": 7,
+    "effect": "auh_ww1_set_budget_settled = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_provincial_petitions",
+    "parent": [
+      "crown_arbitration"
+    ],
+    "x": 2,
+    "y": 7,
+    "effect": "add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = -40",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_dual_war_cabinet",
+    "parent": [
+      "quota_revision"
+    ],
+    "x": 1,
+    "y": 8,
+    "effect": "set_country_flag = auh_ww1_civil_cabinet_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "provincial_petitions"
+    ]
+  },
+  {
+    "id": "AUH_ww1_trialism",
+    "parent": [
+      "constitutional_audit"
+    ],
+    "x": 6,
+    "y": 3,
+    "effect": "country_event = { id = ww1_auh.5 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [
+      "dualism",
+      "federalism"
+    ],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_croatian_diet",
+    "parent": [
+      "trialism"
+    ],
+    "x": 6,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_project_sabor_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_bosnian_guarantees",
+    "parent": [
+      "croatian_diet"
+    ],
+    "x": 4,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_bosnia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_trialist_compensation",
+    "parent": [
+      "croatian_diet"
+    ],
+    "x": 6,
+    "y": 5,
+    "effect": "add_to_variable = { auh_ww1_consent = 12 } add_political_power = -60",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_third_crown_charter",
+    "parent": [
+      "bosnian_guarantees"
+    ],
+    "x": 5,
+    "y": 6,
+    "effect": "country_event = { id = ww1_auh.6 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "trialist_compensation"
+    ]
+  },
+  {
+    "id": "AUH_ww1_common_customs",
+    "parent": [
+      "third_crown_charter"
+    ],
+    "x": 4,
+    "y": 7,
+    "effect": "auh_ww1_set_budget_trialist = yes",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_trialist_constitution",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_slavic_officer_school",
+    "parent": [
+      "third_crown_charter"
+    ],
+    "x": 6,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = infantry_tech } add_to_variable = { auh_ww1_cohesion = 3 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_trialist_war_cabinet",
+    "parent": [
+      "common_customs"
+    ],
+    "x": 5,
+    "y": 8,
+    "effect": "set_country_flag = auh_ww1_civil_cabinet_unlocked",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_trialist_constitution",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "slavic_officer_school"
+    ]
+  },
+  {
+    "id": "AUH_ww1_federalism",
+    "parent": [
+      "constitutional_audit"
+    ],
+    "x": 8,
+    "y": 3,
+    "effect": "country_event = { id = ww1_auh.7 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [
+      "dualism",
+      "trialism"
+    ],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_constitutional_convention",
+    "parent": [
+      "federalism"
+    ],
+    "x": 8,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_convention_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_language_rights",
+    "parent": [
+      "constitutional_convention"
+    ],
+    "x": 8,
+    "y": 5,
+    "effect": "add_to_variable = { auh_ww1_cohesion = 8 } add_to_variable = { auh_ww1_consent = -5 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_federal_tax_compact",
+    "parent": [
+      "constitutional_convention"
+    ],
+    "x": 10,
+    "y": 5,
+    "effect": "country_event = { id = ww1_auh.8 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_council_of_peoples",
+    "parent": [
+      "language_rights"
+    ],
+    "x": 9,
+    "y": 6,
+    "effect": "auh_ww1_set_council = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "federal_tax_compact"
+    ]
+  },
+  {
+    "id": "AUH_ww1_federal_constitution",
+    "parent": [
+      "council_of_peoples"
+    ],
+    "x": 8,
+    "y": 7,
+    "effect": "country_event = { id = ww1_auh.9 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_federal_common_army",
+    "parent": [
+      "council_of_peoples"
+    ],
+    "x": 10,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_federal_service_unlocked",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_federal_constitution",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_federal_war_cabinet",
+    "parent": [
+      "federal_constitution"
+    ],
+    "x": 9,
+    "y": 8,
+    "effect": "set_country_flag = auh_ww1_civil_cabinet_unlocked",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_federal_constitution",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "federal_common_army"
+    ]
+  },
+  {
+    "id": "AUH_ww1_bohemian_landtag",
+    "parent": [
+      "dual_war_cabinet",
+      "trialist_war_cabinet",
+      "federal_war_cabinet"
+    ],
+    "x": 2,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_project_bohemia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_moravian_compromise",
+    "parent": [
+      "bohemian_landtag"
+    ],
+    "x": 2,
+    "y": 10,
+    "effect": "set_country_flag = auh_ww1_project_moravia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_silesian_municipalities",
+    "parent": [
+      "moravian_compromise"
+    ],
+    "x": 2,
+    "y": 11,
+    "effect": "set_country_flag = auh_ww1_project_silesia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_galician_autonomy",
+    "parent": [
+      "dual_war_cabinet",
+      "trialist_war_cabinet",
+      "federal_war_cabinet"
+    ],
+    "x": 4,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_project_galicia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_ruthenian_schools",
+    "parent": [
+      "galician_autonomy"
+    ],
+    "x": 4,
+    "y": 10,
+    "effect": "set_country_flag = auh_ww1_project_ruthenia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_bukovina_compact",
+    "parent": [
+      "ruthenian_schools"
+    ],
+    "x": 4,
+    "y": 11,
+    "effect": "set_country_flag = auh_ww1_project_bukovina_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_slovak_petitions",
+    "parent": [
+      "dual_war_cabinet",
+      "trialist_war_cabinet",
+      "federal_war_cabinet"
+    ],
+    "x": 6,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_project_slovakia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_transylvanian_guarantees",
+    "parent": [
+      "slovak_petitions"
+    ],
+    "x": 6,
+    "y": 10,
+    "effect": "set_country_flag = auh_ww1_project_transylvania_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_banat_council",
+    "parent": [
+      "transylvanian_guarantees"
+    ],
+    "x": 6,
+    "y": 11,
+    "effect": "set_country_flag = auh_ww1_project_banat_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_dalmatian_services",
+    "parent": [
+      "dual_war_cabinet",
+      "trialist_war_cabinet",
+      "federal_war_cabinet"
+    ],
+    "x": 8,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_project_dalmatia_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_trentino_council",
+    "parent": [
+      "dalmatian_services"
+    ],
+    "x": 8,
+    "y": 10,
+    "effect": "set_country_flag = auh_ww1_project_trentino_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_provincial_ombudsman",
+    "parent": [
+      "trentino_council"
+    ],
+    "x": 8,
+    "y": 11,
+    "effect": "set_country_flag = auh_ww1_ombudsman_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_economic_inventory",
+    "parent": null,
+    "x": 27,
+    "y": 0,
+    "effect": "country_event = { id = ww1_auh.10 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_economic_coordination",
+    "parent": [
+      "economic_inventory"
+    ],
+    "x": 27,
+    "y": 1,
+    "effect": "set_country_flag = auh_ww1_economic_coordination_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_common_statistics",
+    "parent": [
+      "economic_coordination"
+    ],
+    "x": 27,
+    "y": 2,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.15 uses = 1 category = industry }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_investment_board",
+    "parent": [
+      "common_statistics"
+    ],
+    "x": 27,
+    "y": 3,
+    "effect": "set_country_flag = auh_ww1_investments_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_skoda_contracts",
+    "parent": [
+      "investment_board"
+    ],
+    "x": 22,
+    "y": 4,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = artillery }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_pilsen_tooling",
+    "parent": [
+      "skoda_contracts"
+    ],
+    "x": 16,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_pilsen_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_vitkovice_steel",
+    "parent": [
+      "skoda_contracts"
+    ],
+    "x": 18,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_vitkovice_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_steyr_small_arms",
+    "parent": [
+      "pilsen_tooling"
+    ],
+    "x": 17,
+    "y": 6,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = infantry_weapons }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "vitkovice_steel"
+    ]
+  },
+  {
+    "id": "AUH_ww1_weiss_csepel",
+    "parent": [
+      "steyr_small_arms"
+    ],
+    "x": 16,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_project_csepel_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_arsenal_standards",
+    "parent": [
+      "steyr_small_arms"
+    ],
+    "x": 18,
+    "y": 7,
+    "effect": "auh_ww1_set_arsenals_standardised = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_hungarian_harvest",
+    "parent": [
+      "investment_board"
+    ],
+    "x": 24,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_grain_agreement_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_granaries",
+    "parent": [
+      "hungarian_harvest"
+    ],
+    "x": 20,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_granaries_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_agricultural_tools",
+    "parent": [
+      "hungarian_harvest"
+    ],
+    "x": 22,
+    "y": 5,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.15 uses = 1 category = industry } add_to_variable = { auh_ww1_provisions = 4 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_rural_exemptions",
+    "parent": [
+      "granaries"
+    ],
+    "x": 21,
+    "y": 6,
+    "effect": "set_country_flag = auh_ww1_harvest_leave_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "agricultural_tools"
+    ]
+  },
+  {
+    "id": "AUH_ww1_common_food_board",
+    "parent": [
+      "rural_exemptions"
+    ],
+    "x": 20,
+    "y": 7,
+    "effect": "country_event = { id = ww1_auh.11 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_fair_rationing",
+    "parent": [
+      "rural_exemptions"
+    ],
+    "x": 22,
+    "y": 7,
+    "effect": "auh_ww1_set_rationing = yes set_country_flag = auh_ww1_rationing_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_vienna_budapest_rail",
+    "parent": [
+      "investment_board"
+    ],
+    "x": 26,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_project_vienna_budapest_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_prague_vienna_rail",
+    "parent": [
+      "vienna_budapest_rail"
+    ],
+    "x": 24,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_prague_vienna_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_galician_rail",
+    "parent": [
+      "vienna_budapest_rail"
+    ],
+    "x": 26,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_galician_rail_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_bosnian_rail",
+    "parent": [
+      "prague_vienna_rail"
+    ],
+    "x": 25,
+    "y": 6,
+    "effect": "set_country_flag = auh_ww1_project_bosnian_rail_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "galician_rail"
+    ]
+  },
+  {
+    "id": "AUH_ww1_adriatic_rail",
+    "parent": [
+      "bosnian_rail"
+    ],
+    "x": 24,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_project_adriatic_rail_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_railway_dispatch",
+    "parent": [
+      "bosnian_rail"
+    ],
+    "x": 26,
+    "y": 7,
+    "effect": "auh_ww1_set_logistics_organised = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_factory_inspection",
+    "parent": [
+      "investment_board"
+    ],
+    "x": 28,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.12 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_workers_housing",
+    "parent": [
+      "factory_inspection"
+    ],
+    "x": 28,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_workers_housing_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_women_in_industry",
+    "parent": [
+      "factory_inspection"
+    ],
+    "x": 30,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_industrial_labour_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_labour_arbitration",
+    "parent": [
+      "workers_housing"
+    ],
+    "x": 29,
+    "y": 6,
+    "effect": "auh_ww1_set_labour_compact = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "women_in_industry"
+    ]
+  },
+  {
+    "id": "AUH_ww1_factory_canteens",
+    "parent": [
+      "labour_arbitration"
+    ],
+    "x": 28,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_project_canteens_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_strike_settlement",
+    "parent": [
+      "labour_arbitration"
+    ],
+    "x": 30,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_labour_mediation_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_common_bank",
+    "parent": [
+      "investment_board"
+    ],
+    "x": 30,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_bond_issue_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_public_accounts",
+    "parent": [
+      "common_bank"
+    ],
+    "x": 32,
+    "y": 5,
+    "effect": "add_to_variable = { auh_ww1_consent = 4 } add_political_power = -35",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_wartime_credit",
+    "parent": [
+      "common_bank"
+    ],
+    "x": 34,
+    "y": 5,
+    "effect": "country_event = { id = ww1_auh.13 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_price_inspection",
+    "parent": [
+      "public_accounts"
+    ],
+    "x": 33,
+    "y": 6,
+    "effect": "set_country_flag = auh_ww1_price_inspection_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "wartime_credit"
+    ]
+  },
+  {
+    "id": "AUH_ww1_municipal_taxation",
+    "parent": [
+      "price_inspection"
+    ],
+    "x": 32,
+    "y": 7,
+    "effect": "add_to_variable = { auh_ww1_consent = 5 } add_to_variable = { auh_ww1_cohesion = 2 } add_political_power = -50",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_fiscal_reserve",
+    "parent": [
+      "price_inspection"
+    ],
+    "x": 34,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_debt_repayment_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_polytechnic_network",
+    "parent": [
+      "investment_board"
+    ],
+    "x": 32,
+    "y": 4,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = industry }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_technical_apprentices",
+    "parent": [
+      "polytechnic_network"
+    ],
+    "x": 36,
+    "y": 5,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = maintenance_company_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_danube_services",
+    "parent": [
+      "polytechnic_network"
+    ],
+    "x": 38,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_danube_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_galician_oil",
+    "parent": [
+      "technical_apprentices"
+    ],
+    "x": 37,
+    "y": 6,
+    "effect": "set_country_flag = auh_ww1_project_galician_oil_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "danube_services"
+    ]
+  },
+  {
+    "id": "AUH_ww1_electrical_workshops",
+    "parent": [
+      "galician_oil"
+    ],
+    "x": 36,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = electronics }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_civilian_conversion",
+    "parent": [
+      "galician_oil"
+    ],
+    "x": 38,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_project_civilian_conversion_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_common_army_review",
+    "parent": null,
+    "x": 53,
+    "y": 0,
+    "effect": "country_event = { id = ww1_auh.14 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_staff_college",
+    "parent": [
+      "common_army_review"
+    ],
+    "x": 53,
+    "y": 1,
+    "effect": "army_experience = 8",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_regimental_languages",
+    "parent": [
+      "staff_college"
+    ],
+    "x": 52,
+    "y": 2,
+    "effect": "auh_ww1_set_languages_trained = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_mobilisation_tables",
+    "parent": [
+      "staff_college"
+    ],
+    "x": 54,
+    "y": 2,
+    "effect": "set_country_flag = auh_ww1_reserve_training_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_military_programme",
+    "parent": [
+      "regimental_languages"
+    ],
+    "x": 53,
+    "y": 3,
+    "effect": "country_event = { id = ww1_auh.15 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "mobilisation_tables"
+    ]
+  },
+  {
+    "id": "AUH_ww1_mannlicher_standards",
+    "parent": [
+      "military_programme"
+    ],
+    "x": 49,
+    "y": 4,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = infantry_weapons }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_landwehr_training",
+    "parent": [
+      "mannlicher_standards"
+    ],
+    "x": 44,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_landwehr_training_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_honved_training",
+    "parent": [
+      "mannlicher_standards"
+    ],
+    "x": 46,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_honved_training_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_reserve_template",
+    "parent": [
+      "landwehr_training"
+    ],
+    "x": 45,
+    "y": 6,
+    "effect": "load_oob = ww1_auh_reserve_templates",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "honved_training"
+    ]
+  },
+  {
+    "id": "AUH_ww1_machine_gun_sections",
+    "parent": [
+      "reserve_template"
+    ],
+    "x": 44,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = infantry_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_junior_officers",
+    "parent": [
+      "reserve_template"
+    ],
+    "x": 46,
+    "y": 7,
+    "effect": "auh_ww1_set_languages_staff = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_trench_rotation",
+    "parent": [
+      "machine_gun_sections"
+    ],
+    "x": 45,
+    "y": 8,
+    "effect": "set_country_flag = auh_ww1_rest_rotation_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "junior_officers"
+    ]
+  },
+  {
+    "id": "AUH_ww1_infantry_field_manual",
+    "parent": [
+      "trench_rotation"
+    ],
+    "x": 44,
+    "y": 9,
+    "effect": "army_experience = 8",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_replacement_depots",
+    "parent": [
+      "trench_rotation"
+    ],
+    "x": 46,
+    "y": 9,
+    "effect": "auh_ww1_set_languages_reformed = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_siege_school",
+    "parent": [
+      "military_programme"
+    ],
+    "x": 51,
+    "y": 4,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = artillery }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_battery_survey",
+    "parent": [
+      "siege_school"
+    ],
+    "x": 48,
+    "y": 5,
+    "effect": "army_experience = 6",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_ammunition_inspection",
+    "parent": [
+      "siege_school"
+    ],
+    "x": 50,
+    "y": 5,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = artillery }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_pack_artillery",
+    "parent": [
+      "battery_survey"
+    ],
+    "x": 49,
+    "y": 6,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = mountaineers_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "ammunition_inspection"
+    ]
+  },
+  {
+    "id": "AUH_ww1_observation_sections",
+    "parent": [
+      "pack_artillery"
+    ],
+    "x": 48,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = recon_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_counter_battery",
+    "parent": [
+      "pack_artillery"
+    ],
+    "x": 50,
+    "y": 7,
+    "effect": "army_experience = 8",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_artillery_reserves",
+    "parent": [
+      "observation_sections"
+    ],
+    "x": 49,
+    "y": 8,
+    "effect": "set_country_flag = auh_ww1_artillery_supply_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "counter_battery"
+    ]
+  },
+  {
+    "id": "AUH_ww1_fire_control",
+    "parent": [
+      "artillery_reserves"
+    ],
+    "x": 48,
+    "y": 9,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = signal_company_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_siege_logistics",
+    "parent": [
+      "artillery_reserves"
+    ],
+    "x": 50,
+    "y": 9,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = logistics_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_carpathian_survey",
+    "parent": [
+      "military_programme"
+    ],
+    "x": 53,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_carpathian_defence_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_alpine_routes",
+    "parent": [
+      "carpathian_survey"
+    ],
+    "x": 52,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_alpine_routes_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_winter_equipment",
+    "parent": [
+      "carpathian_survey"
+    ],
+    "x": 54,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_winter_stores_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_sapper_school",
+    "parent": [
+      "alpine_routes"
+    ],
+    "x": 53,
+    "y": 6,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = engineers_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "winter_equipment"
+    ]
+  },
+  {
+    "id": "AUH_ww1_medical_services",
+    "parent": [
+      "sapper_school"
+    ],
+    "x": 52,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = hospital_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_transport_columns",
+    "parent": [
+      "sapper_school"
+    ],
+    "x": 54,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = logistics_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_defensive_manual",
+    "parent": [
+      "medical_services"
+    ],
+    "x": 53,
+    "y": 8,
+    "effect": "auh_ww1_set_defensive_staff = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "transport_columns"
+    ]
+  },
+  {
+    "id": "AUH_ww1_przemysl_supply",
+    "parent": [
+      "defensive_manual"
+    ],
+    "x": 52,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_project_przemysl_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_regional_defence",
+    "parent": [
+      "defensive_manual"
+    ],
+    "x": 54,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_defensive_sectors_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_balkan_plan",
+    "parent": [
+      "military_programme"
+    ],
+    "x": 55,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_serbia_operation_unlocked",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_galician_plan",
+    "parent": [
+      "balkan_plan"
+    ],
+    "x": 56,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_galicia_operation_unlocked",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_isonzo_plan",
+    "parent": [
+      "balkan_plan"
+    ],
+    "x": 58,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_isonzo_operation_unlocked",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_offensive_audit",
+    "parent": [
+      "galician_plan"
+    ],
+    "x": 57,
+    "y": 6,
+    "effect": "country_event = { id = ww1_auh.16 days = 1 }",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "isonzo_plan"
+    ]
+  },
+  {
+    "id": "AUH_ww1_combined_staff",
+    "parent": [
+      "offensive_audit"
+    ],
+    "x": 56,
+    "y": 7,
+    "effect": "army_experience = 10",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_field_telephones",
+    "parent": [
+      "offensive_audit"
+    ],
+    "x": 58,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = signal_company_tech }",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_reconnaissance_cavalry",
+    "parent": [
+      "combined_staff"
+    ],
+    "x": 57,
+    "y": 8,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = recon_tech }",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "field_telephones"
+    ]
+  },
+  {
+    "id": "AUH_ww1_doctrine_lessons",
+    "parent": [
+      "reconnaissance_cavalry"
+    ],
+    "x": 56,
+    "y": 9,
+    "effect": "army_experience = 12 add_mastery_bonus = { name = AUH_ww1_operational_lessons bonus = .10 days = 180 folder = land }",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_war_staff_review",
+    "parent": [
+      "reconnaissance_cavalry"
+    ],
+    "x": 58,
+    "y": 9,
+    "effect": "set_country_flag = auh_ww1_staff_review_unlocked",
+    "cost": 5,
+    "available": "has_war = yes has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_luftfahrtruppen",
+    "parent": [
+      "military_programme"
+    ],
+    "x": 57,
+    "y": 4,
+    "effect": "air_experience = 5",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_pilot_school",
+    "parent": [
+      "luftfahrtruppen"
+    ],
+    "x": 60,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_pilot_training_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_lohner_workshops",
+    "parent": [
+      "luftfahrtruppen"
+    ],
+    "x": 62,
+    "y": 5,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = air_equipment }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_aerial_observation",
+    "parent": [
+      "pilot_school"
+    ],
+    "x": 61,
+    "y": 6,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = cat_scout_plane }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "lohner_workshops"
+    ]
+  },
+  {
+    "id": "AUH_ww1_aviatik_contracts",
+    "parent": [
+      "aerial_observation"
+    ],
+    "x": 60,
+    "y": 7,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = light_fighter }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_airfield_services",
+    "parent": [
+      "aerial_observation"
+    ],
+    "x": 62,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_project_airfield_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_air_artillery_liaison",
+    "parent": [
+      "aviatik_contracts"
+    ],
+    "x": 61,
+    "y": 8,
+    "effect": "air_experience = 6",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "airfield_services"
+    ]
+  },
+  {
+    "id": "AUH_ww1_aeronautical_testing",
+    "parent": [
+      "air_artillery_liaison"
+    ],
+    "x": 60,
+    "y": 9,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = plane_modules_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_air_service_manual",
+    "parent": [
+      "air_artillery_liaison"
+    ],
+    "x": 62,
+    "y": 9,
+    "effect": "air_experience = 8 add_mastery_bonus = { name = AUH_ww1_air_training bonus = .10 days = 180 folder = air }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_ballhausplatz",
+    "parent": null,
+    "x": 77,
+    "y": 0,
+    "effect": "country_event = { id = ww1_auh.17 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_consular_network",
+    "parent": [
+      "ballhausplatz"
+    ],
+    "x": 77,
+    "y": 1,
+    "effect": "set_country_flag = auh_ww1_consular_contacts_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_diplomatic_accounts",
+    "parent": [
+      "consular_network"
+    ],
+    "x": 76,
+    "y": 2,
+    "effect": "add_to_variable = { auh_ww1_consent = 3 } add_political_power = -30",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_dynastic_protocol",
+    "parent": [
+      "consular_network"
+    ],
+    "x": 78,
+    "y": 2,
+    "effect": "country_event = { id = ww1_auh.18 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_foreign_programme",
+    "parent": [
+      "diplomatic_accounts"
+    ],
+    "x": 77,
+    "y": 3,
+    "effect": "set_country_flag = auh_ww1_foreign_programme_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "dynastic_protocol"
+    ]
+  },
+  {
+    "id": "AUH_ww1_berlin_mission",
+    "parent": [
+      "foreign_programme"
+    ],
+    "x": 73,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.30 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_german_staff_exchange",
+    "parent": [
+      "berlin_mission"
+    ],
+    "x": 68,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_german_staff_exchange_unlocked",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_german_commission",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_german_supply_protocol",
+    "parent": [
+      "berlin_mission"
+    ],
+    "x": 70,
+    "y": 5,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = logistics_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_common_war_assessment",
+    "parent": [
+      "german_staff_exchange"
+    ],
+    "x": 69,
+    "y": 6,
+    "effect": "army_experience = 8",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "german_supply_protocol"
+    ]
+  },
+  {
+    "id": "AUH_ww1_alliance_independence",
+    "parent": [
+      "common_war_assessment"
+    ],
+    "x": 68,
+    "y": 7,
+    "effect": "country_event = { id = ww1_auh.19 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_central_power_liaison",
+    "parent": [
+      "common_war_assessment"
+    ],
+    "x": 70,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_allied_liaison_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_belgrade_channel",
+    "parent": [
+      "foreign_programme"
+    ],
+    "x": 75,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.32 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_bosnian_civil_security",
+    "parent": [
+      "belgrade_channel"
+    ],
+    "x": 72,
+    "y": 5,
+    "effect": "country_event = { id = ww1_auh.20 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_sarajevo_services",
+    "parent": [
+      "belgrade_channel"
+    ],
+    "x": 74,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_sarajevo_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_albanian_contacts",
+    "parent": [
+      "bosnian_civil_security"
+    ],
+    "x": 73,
+    "y": 6,
+    "effect": "country_event = { id = ww1_auh.34 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "sarajevo_services"
+    ]
+  },
+  {
+    "id": "AUH_ww1_montenegrin_channel",
+    "parent": [
+      "albanian_contacts"
+    ],
+    "x": 72,
+    "y": 7,
+    "effect": "country_event = { id = ww1_auh.36 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_balkan_restraint",
+    "parent": [
+      "albanian_contacts"
+    ],
+    "x": 74,
+    "y": 7,
+    "effect": "auh_ww1_set_diplomatic_restraint = yes",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_rome_channel",
+    "parent": [
+      "foreign_programme"
+    ],
+    "x": 77,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.38 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_italian_minorities",
+    "parent": [
+      "rome_channel"
+    ],
+    "x": 76,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_litorale_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_adriatic_consultation",
+    "parent": [
+      "rome_channel"
+    ],
+    "x": 78,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_italian_consultation_unlocked",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_italian_consultation",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_tyrolean_services",
+    "parent": [
+      "italian_minorities"
+    ],
+    "x": 77,
+    "y": 6,
+    "effect": "set_country_flag = auh_ww1_project_south_tyrol_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "adriatic_consultation"
+    ]
+  },
+  {
+    "id": "AUH_ww1_italian_contingency",
+    "parent": [
+      "tyrolean_services"
+    ],
+    "x": 76,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_italian_contingency_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_adriatic_civil_compact",
+    "parent": [
+      "tyrolean_services"
+    ],
+    "x": 78,
+    "y": 7,
+    "effect": "add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = -50",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_bucharest_channel",
+    "parent": [
+      "foreign_programme"
+    ],
+    "x": 79,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.40 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_romanian_grain",
+    "parent": [
+      "bucharest_channel"
+    ],
+    "x": 80,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_romanian_grain_unlocked",
+    "cost": 5,
+    "available": " has_country_flag = auh_ww1_romanian_grain",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_transylvanian_dialogue",
+    "parent": [
+      "bucharest_channel"
+    ],
+    "x": 82,
+    "y": 5,
+    "effect": "add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -35",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_russian_channel",
+    "parent": [
+      "romanian_grain"
+    ],
+    "x": 81,
+    "y": 6,
+    "effect": "country_event = { id = ww1_auh.42 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "transylvanian_dialogue"
+    ]
+  },
+  {
+    "id": "AUH_ww1_eastern_contingency",
+    "parent": [
+      "russian_channel"
+    ],
+    "x": 80,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_eastern_contingency_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_eastern_refugees",
+    "parent": [
+      "russian_channel"
+    ],
+    "x": 82,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_refugee_assistance_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_karl_foreign_review",
+    "parent": [
+      "foreign_programme"
+    ],
+    "x": 81,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.21 days = 1 }",
+    "cost": 5,
+    "available": "has_country_flag = auh_ww1_karl_accession",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_sixtus_channel",
+    "parent": [
+      "karl_foreign_review"
+    ],
+    "x": 84,
+    "y": 5,
+    "effect": "country_event = { id = ww1_auh.44 days = 1 }",
+    "cost": 5,
+    "available": "has_country_flag = auh_ww1_karl_accession",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_armistice_delegates",
+    "parent": [
+      "karl_foreign_review"
+    ],
+    "x": 86,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_armistice_proposal_unlocked",
+    "cost": 5,
+    "available": "has_country_flag = auh_ww1_karl_accession",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_renounce_annexations",
+    "parent": [
+      "sixtus_channel"
+    ],
+    "x": 85,
+    "y": 6,
+    "effect": "add_to_variable = { auh_ww1_cohesion = 5 } add_war_support = -.03",
+    "cost": 5,
+    "available": "has_country_flag = auh_ww1_karl_accession",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "armistice_delegates"
+    ]
+  },
+  {
+    "id": "AUH_ww1_conference_mandate",
+    "parent": [
+      "renounce_annexations"
+    ],
+    "x": 84,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_conference_unlocked",
+    "cost": 5,
+    "available": "has_country_flag = auh_ww1_karl_accession",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_peace_diplomacy",
+    "parent": [
+      "renounce_annexations"
+    ],
+    "x": 86,
+    "y": 7,
+    "effect": "set_country_flag = auh_ww1_postwar_diplomacy_unlocked",
+    "cost": 5,
+    "available": "has_country_flag = auh_ww1_karl_accession",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_admiralty_review",
+    "parent": null,
+    "x": 97,
+    "y": 0,
+    "effect": "country_event = { id = ww1_auh.22 days = 1 }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_naval_programme",
+    "parent": [
+      "admiralty_review"
+    ],
+    "x": 97,
+    "y": 1,
+    "effect": "set_country_flag = auh_ww1_naval_programme_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_pola_maintenance",
+    "parent": [
+      "naval_programme"
+    ],
+    "x": 95,
+    "y": 2,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.15 uses = 1 category = maintenance_company_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_naval_artillery",
+    "parent": [
+      "pola_maintenance"
+    ],
+    "x": 92,
+    "y": 3,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = naval_artillery }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_fleet_gunnery",
+    "parent": [
+      "pola_maintenance"
+    ],
+    "x": 94,
+    "y": 3,
+    "effect": "set_country_flag = auh_ww1_fleet_training_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_fleet_signalling",
+    "parent": [
+      "naval_artillery"
+    ],
+    "x": 93,
+    "y": 4,
+    "effect": "navy_experience = 8",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "fleet_gunnery"
+    ]
+  },
+  {
+    "id": "AUH_ww1_fleet_in_being",
+    "parent": [
+      "fleet_signalling"
+    ],
+    "x": 92,
+    "y": 5,
+    "effect": "auh_ww1_set_fleet_cautious = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_naval_lessons",
+    "parent": [
+      "fleet_signalling"
+    ],
+    "x": 94,
+    "y": 5,
+    "effect": "navy_experience = 10 add_mastery_bonus = { name = AUH_ww1_naval_training bonus = .10 days = 180 folder = naval }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_trieste_yards",
+    "parent": [
+      "naval_programme"
+    ],
+    "x": 97,
+    "y": 2,
+    "effect": "set_country_flag = auh_ww1_project_trieste_yards_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_torpedo_workshop",
+    "parent": [
+      "trieste_yards"
+    ],
+    "x": 96,
+    "y": 3,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = torpedo }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_escort_design",
+    "parent": [
+      "trieste_yards"
+    ],
+    "x": 98,
+    "y": 3,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = dd_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_submarine_school",
+    "parent": [
+      "torpedo_workshop"
+    ],
+    "x": 97,
+    "y": 4,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.25 uses = 1 category = ss_tech }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "escort_design"
+    ]
+  },
+  {
+    "id": "AUH_ww1_naval_repair",
+    "parent": [
+      "submarine_school"
+    ],
+    "x": 96,
+    "y": 5,
+    "effect": "auh_ww1_set_naval_repair = yes",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_naval_spares",
+    "parent": [
+      "submarine_school"
+    ],
+    "x": 98,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_naval_spares_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_dalmatian_ports",
+    "parent": [
+      "naval_programme"
+    ],
+    "x": 99,
+    "y": 2,
+    "effect": "set_country_flag = auh_ww1_project_dalmatian_ports_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_naval_patrols",
+    "parent": [
+      "dalmatian_ports"
+    ],
+    "x": 100,
+    "y": 3,
+    "effect": "navy_experience = 6",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_coastal_observation",
+    "parent": [
+      "dalmatian_ports"
+    ],
+    "x": 102,
+    "y": 3,
+    "effect": "set_country_flag = auh_ww1_coastal_observation_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_seaplane_trials",
+    "parent": [
+      "naval_patrols"
+    ],
+    "x": 101,
+    "y": 4,
+    "effect": "add_tech_bonus = { name = AUH_ww1_research_program bonus = 0.2 uses = 1 category = naval_air }",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "coastal_observation"
+    ]
+  },
+  {
+    "id": "AUH_ww1_merchant_training",
+    "parent": [
+      "seaplane_trials"
+    ],
+    "x": 100,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_merchant_training_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_adriatic_supply",
+    "parent": [
+      "seaplane_trials"
+    ],
+    "x": 102,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_project_adriatic_supply_unlocked",
+    "cost": 5,
+    "available": "",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_postwar_inventory",
+    "parent": null,
+    "x": 113,
+    "y": 0,
+    "effect": "country_event = { id = ww1_auh.23 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_veterans_registry",
+    "parent": [
+      "postwar_inventory"
+    ],
+    "x": 113,
+    "y": 1,
+    "effect": "set_country_flag = auh_ww1_veterans_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_reconstruction_board",
+    "parent": [
+      "veterans_registry"
+    ],
+    "x": 113,
+    "y": 2,
+    "effect": "set_country_flag = auh_ww1_reconstruction_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_demobilisation",
+    "parent": [
+      "reconstruction_board"
+    ],
+    "x": 111,
+    "y": 3,
+    "effect": "country_event = { id = ww1_auh.24 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_veterans_pensions",
+    "parent": [
+      "demobilisation"
+    ],
+    "x": 108,
+    "y": 4,
+    "effect": "auh_ww1_set_veterans = yes",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_rehabilitation_centres",
+    "parent": [
+      "demobilisation"
+    ],
+    "x": 110,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_project_rehabilitation_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_civilian_service",
+    "parent": [
+      "veterans_pensions"
+    ],
+    "x": 109,
+    "y": 5,
+    "effect": "auh_ww1_set_peace_administration = yes",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "rehabilitation_centres"
+    ]
+  },
+  {
+    "id": "AUH_ww1_regional_reconstruction",
+    "parent": [
+      "reconstruction_board"
+    ],
+    "x": 113,
+    "y": 3,
+    "effect": "set_country_flag = auh_ww1_project_galician_reconstruction_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_urban_reconstruction",
+    "parent": [
+      "regional_reconstruction"
+    ],
+    "x": 112,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_project_budapest_reconstruction_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_peace_credit",
+    "parent": [
+      "regional_reconstruction"
+    ],
+    "x": 114,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_peace_credit_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_balanced_accounts",
+    "parent": [
+      "urban_reconstruction"
+    ],
+    "x": 113,
+    "y": 5,
+    "effect": "set_country_flag = auh_ww1_peace_accounts_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "peace_credit"
+    ]
+  },
+  {
+    "id": "AUH_ww1_postwar_constitution",
+    "parent": [
+      "reconstruction_board"
+    ],
+    "x": 115,
+    "y": 3,
+    "effect": "country_event = { id = ww1_auh.25 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_peacetime_elections",
+    "parent": [
+      "postwar_constitution"
+    ],
+    "x": 116,
+    "y": 4,
+    "effect": "country_event = { id = ww1_auh.26 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_danubian_services",
+    "parent": [
+      "postwar_constitution"
+    ],
+    "x": 118,
+    "y": 4,
+    "effect": "set_country_flag = auh_ww1_danubian_services_unlocked",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": []
+  },
+  {
+    "id": "AUH_ww1_monarchy_future",
+    "parent": [
+      "peacetime_elections"
+    ],
+    "x": 117,
+    "y": 5,
+    "effect": "country_event = { id = ww1_auh.27 days = 1 }",
+    "cost": 5,
+    "available": "has_war = no has_capitulated = no has_country_flag = auh_ww1_fought_war",
+    "excludes": [],
+    "ai": 1,
+    "also": [
+      "danubian_services"
+    ]
+  }
+]

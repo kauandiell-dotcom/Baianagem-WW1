@@ -1,0 +1,168 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "I. Geschwader"
+		naval_base = 241
+		task_force = {
+			name = "I. Geschwader"
+			location = 241
+			ship = { name = "SMS Westfalen" definition = battleship start_experience_factor = 0.0 equipment = { ww1_1911_dreadnought_legacy = { amount = 1 owner = GER version_name = "Nassau" } } }
+			ship = { name = "SMS Nassau" definition = battleship start_experience_factor = 0.0 equipment = { ww1_1911_dreadnought_legacy = { amount = 1 owner = GER version_name = "Nassau" } } }
+			ship = { name = "SMS Schlesien" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Deutschland" } } }
+			ship = { name = "SMS Hannover" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Deutschland" } } }
+			ship = { name = "SMS Zähringen" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Wittelsbach" } } }
+			ship = { name = "SMS Wettin" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Wittelsbach" } } }
+			ship = { name = "SMS Mecklenburg" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Wittelsbach" } } }
+			ship = { name = "SMS Wittelsbach" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Wittelsbach" } } }
+			ship = { name = "SMS Blitz" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Blitz" } } }
+			ship = { name = "SMS Rheinland" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_dreadnought_legacy = { amount = 1 owner = GER version_name = "Nassau" } } }
+			ship = { name = "SMS Posen" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_dreadnought_legacy = { amount = 1 owner = GER version_name = "Nassau" } } }
+			ship = { name = "SMS Von der Tann" definition = battle_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_battlecruiser_legacy = { amount = 1 owner = GER version_name = "Von der Tann" } } }
+		}
+	}
+	fleet = {
+		name = "II. Geschwader"
+		naval_base = 241
+		task_force = {
+			name = "II. Geschwader"
+			location = 241
+			ship = { name = "SMS Preußen" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Braunschweig" } } }
+			ship = { name = "SMS Schleswig-Holstein" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Deutschland" } } }
+			ship = { name = "SMS Pommern" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Deutschland" } } }
+			ship = { name = "SMS Hessen" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Braunschweig" } } }
+			ship = { name = "SMS Elsaß" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Braunschweig" } } }
+			ship = { name = "SMS Lothringen" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Braunschweig" } } }
+			ship = { name = "SMS Braunschweig" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Braunschweig" } } }
+			ship = { name = "SMS Deutschland" definition = battleship start_experience_factor = 0.4 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = GER version_name = "Deutschland" } } }
+			ship = { name = "SMS Pfeil" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Blitz" } } }
+		}
+	}
+	fleet = {
+		name = "Aufklärungsschiffe"
+		naval_base = 241
+		task_force = {
+			name = "Aufklärungsschiffe"
+			location = 241
+			ship = { name = "SMS Blücher" definition = heavy_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = GER version_name = "Blücher" } } }
+			ship = { name = "SMS Gneisenau" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = GER version_name = "Scharnhorst" } } }
+			ship = { name = "SMS Mainz" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Kolberg" } } }
+			ship = { name = "SMS Königsberg" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Königsberg" } } }
+			ship = { name = "SMS Dresden" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Dresden" } } }
+			ship = { name = "SMS Roon" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = GER version_name = "Roon" } } }
+			ship = { name = "SMS Yorck" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = GER version_name = "Roon" } } }
+			ship = { name = "SMS Berlin" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bremen" } } }
+			ship = { name = "SMS Lübeck" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bremen" } } }
+			ship = { name = "SMS Stettin" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Königsberg" } } }
+			ship = { name = "SMS Hela" definition = light_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Hela" } } }
+		}
+	}
+	fleet = {
+		name = "Torpedobootsflottillen"
+		naval_base = 241
+		task_force = {
+			name = "Torpedobootsflottillen"
+			location = 241
+			ship = { name = "SMS S149" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S138" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S140" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S141" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S142" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S143" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S144" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S145" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S146" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S147" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S148" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V180" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V162" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V163" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V164" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V181" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V182" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS G169" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS G170" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS G171" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS G172" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS G173" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V161" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V151" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V152" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V153" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V154" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V155" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V156" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V157" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V158" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V159" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS V160" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S138" } } }
+			ship = { name = "SMS S125" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S114" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S115" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S116" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S117" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S119" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S120" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S121" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S122" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S123" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+			ship = { name = "SMS S124" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+		}
+	}
+	fleet = {
+		name = "Ostasiatisches Kreuzergeschwader"
+		naval_base = 10000
+		task_force = {
+			name = "Ostasiatisches Kreuzergeschwader"
+			location = 10000
+			ship = { name = "SMS Scharnhorst" definition = heavy_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = GER version_name = "Scharnhorst" } } }
+			ship = { name = "SMS Nürnberg" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Königsberg" } } }
+			ship = { name = "SMS Leipzig" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bremen" } } }
+			ship = { name = "SMS Emden" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Dresden" } } }
+			ship = { name = "SMS Taku" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "Hai-Lung" } } }
+			ship = { name = "SMS S90" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = GER version_name = "S90" } } }
+		}
+	}
+	fleet = {
+		name = "Australische Station"
+		naval_base = 12154
+		task_force = {
+			name = "Australische Station"
+			location = 12154
+			ship = { name = "SMS Condor" definition = light_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bussard" } } }
+			ship = { name = "SMS Cormoran" definition = light_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bussard" } } }
+		}
+	}
+	fleet = {
+		name = "Ostafrikanische Station"
+		naval_base = 2196
+		task_force = {
+			name = "Ostafrikanische Station"
+			location = 2196
+			ship = { name = "SMS Seeadler" definition = light_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bussard" } } }
+			ship = { name = "SMS Sperber" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Schwalbe" } } }
+		}
+	}
+	fleet = {
+		name = "Ost- und Westamerikanische Station"
+		naval_base = 1951
+		task_force = {
+			name = "Ost- und Westamerikanische Station"
+			location = 1951
+			ship = { name = "SMS Bremen" definition = light_cruiser start_experience_factor = 0.4 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = GER version_name = "Bremen" } } }
+		}
+	}
+	fleet = {
+		name = "Übungsflotte"
+		naval_base = 6389
+		task_force = {
+			name = "Übungsflotte"
+			location = 6389
+			ship = { name = "SM U-1" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = GER version_name = "U" } } }
+			ship = { name = "SM U-2" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = GER version_name = "U" } } }
+			ship = { name = "SM U-3" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = GER version_name = "U" } } }
+			ship = { name = "SM U-4" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = GER version_name = "U" } } }
+			ship = { name = "SM U-5" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-6" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = GER version_name = "U 5" } } }
+		}
+	}
+}

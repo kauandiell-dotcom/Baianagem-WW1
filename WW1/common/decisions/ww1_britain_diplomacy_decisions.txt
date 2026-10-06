@@ -1,0 +1,10 @@
+ENG_ww1_empire_policy = {
+ ENG_ww1_renew_american_credit = {
+  icon = GFX_decision_ENG_ww1_renew_american_credit
+  visible = { has_country_flag = ENG_ww1_american_credit }
+  available = { has_war = yes has_capitulated = no country_exists = USA }
+  cost = 20 days_re_enable = 300
+  complete_effect = { USA = { country_event = { id = ww1_britain_dip.10 } } }
+  ai_will_do = { base = 1 modifier = { factor = 4 check_variable = { ww1_britain_debt_burden > 50 } } }
+ }
+}

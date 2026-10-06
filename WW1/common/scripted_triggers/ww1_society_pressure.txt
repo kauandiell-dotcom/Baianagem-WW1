@@ -1,0 +1,32 @@
+ww1_ger_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { has_war_with = ENG OR = { convoy_threat > 0.35 has_convoys_war_support > 0.06 } } AND = { casualties > 150000 has_war_support < 0.40 has_stability < 0.45 } }
+}
+ww1_eng_crisis_pressure = {
+ has_war = yes
+ OR = { convoy_threat > 0.40 has_convoys_war_support > 0.08 AND = { casualties > 100000 has_war_support < 0.40 has_stability < 0.45 } }
+}
+ww1_fra_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { casualties > 200000 has_war_support < 0.45 } AND = { casualties > 100000 has_stability < 0.35 } AND = { surrender_progress > 0.35 has_manpower < 50000 } }
+}
+ww1_sov_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { casualties > 150000 check_variable = { ww1_infantry_equipment_ratio < 0.65 } } AND = { has_stability < 0.35 has_war_support < 0.45 } }
+}
+ww1_aus_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { casualties > 125000 has_stability < 0.40 } AND = { has_war_support < 0.35 check_variable = { ww1_infantry_equipment_ratio < 0.70 } } }
+}
+ww1_tur_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { surrender_progress > 0.25 has_stability < 0.45 } AND = { casualties > 50000 check_variable = { ww1_infantry_equipment_ratio < 0.65 } } }
+}
+ww1_ita_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { casualties > 100000 has_war_support < 0.40 } AND = { surrender_progress > 0.20 has_stability < 0.45 } }
+}
+ww1_usa_crisis_pressure = {
+ has_war = yes
+ OR = { AND = { casualties > 100000 has_war_support < 0.40 } AND = { convoy_threat > 0.40 has_stability < 0.40 } }
+}

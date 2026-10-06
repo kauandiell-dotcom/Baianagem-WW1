@@ -1,0 +1,50 @@
+add_namespace = ww1_escalation
+country_event = {
+ id = ww1_escalation.1
+ title = ww1_escalation.1.t
+ desc = ww1_escalation.1.d
+ picture = GFX_event_ww1_british_entry_debate
+ is_triggered_only = yes
+ trigger = { tag = ENG country_exists = GER country_exists = BEL BEL = { has_war_with = GER } NOT = { has_war_with = GER } has_capitulated = no }
+ option = {
+  name = ww1_escalation.1.a
+  trigger = { NOT = { has_country_flag = ENG_ww1_armed_neutrality_selected } }
+  ai_chance = { base = 95 }
+  set_country_flag = ENG_ww1_continental_commitment_selected
+  set_country_flag = ENG_ww1_belgian_intervention_authorised
+  if = { limit = { country_exists = GER country_exists = BEL BEL = { has_war_with = GER } NOT = { has_war_with = GER } NOT = { has_country_flag = ENG_ww1_armed_neutrality_selected } } declare_war_on = { target = GER type = annex_everything } }
+  if = { limit = { has_war_with = GER NOT = { has_global_flag = ww1_great_war_broadcast_seen } } news_event = { id = ww1_outbreak.2 days = 1 } }
+ }
+ option = {
+  name = ww1_escalation.1.b
+  ai_chance = { base = 5 modifier = { factor = 20 has_country_flag = ENG_ww1_armed_neutrality_selected } }
+  set_country_flag = ENG_ww1_belgian_intervention_declined
+  # Actual neutral route maintains preparedness; it does not print a stability bonus.
+ }
+}
+country_event = {
+ id = ww1_escalation.2
+ title = ww1_escalation.2.t
+ desc = ww1_escalation.2.d
+ picture = GFX_event_ww1_german_escalation_debate
+ is_triggered_only = yes
+ trigger = {
+  tag = GER
+  FROM = { exists = yes OR = { tag = SOV tag = RUS } has_war_with = AUS }
+  NOT = { has_war_with = FROM }
+ }
+ option = {
+  name = ww1_escalation.2.a
+  ai_chance = { base = 95 }
+  set_country_flag = GER_ww1_russian_intervention_contested
+  if = { limit = { FROM = { exists = yes OR = { tag = SOV tag = RUS } has_war_with = AUS } NOT = { has_war_with = FROM } } declare_war_on = { target = FROM type = annex_everything } }
+  if = { limit = { has_war_with = FROM NOT = { has_global_flag = ww1_great_war_broadcast_seen } } news_event = { id = ww1_outbreak.2 days = 1 } }
+ }
+ option = {
+  name = ww1_escalation.2.b
+  ai_chance = { base = 5 }
+  set_country_flag = GER_ww1_continental_mediation_chosen
+  add_stability = -0.01
+  # A Russian-Austrian war remains real; Germany has chosen mediation, not a magic peace.
+ }
+}

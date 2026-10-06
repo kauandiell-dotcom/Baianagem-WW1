@@ -1,0 +1,411 @@
+﻿# Institutions are exclusive within each family; later stages survive late focuses.
+side_ww1_set_GER_peacetime_industrial_giants = {
+ if = { limit = { NOT = { OR = { has_idea = GER_krupp_chemical_conglomerates has_idea = GER_rathenau_kra_coordination has_idea = GER_hindenburg_program_victory has_idea = GER_hindenburg_total_mobilization } } }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+  add_ideas = GER_peacetime_industrial_giants
+ }
+}
+side_ww1_set_GER_krupp_chemical_conglomerates = {
+ if = { limit = { NOT = { OR = { has_idea = GER_rathenau_kra_coordination has_idea = GER_hindenburg_program_victory has_idea = GER_hindenburg_total_mobilization } } }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+  add_ideas = GER_krupp_chemical_conglomerates
+ }
+}
+side_ww1_set_GER_rathenau_kra_coordination = {
+ if = { limit = { NOT = { OR = { has_idea = GER_hindenburg_program_victory has_idea = GER_hindenburg_total_mobilization } } }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+  add_ideas = GER_rathenau_kra_coordination
+ }
+}
+side_ww1_set_GER_hindenburg_program_victory = {
+ if = { limit = { NOT = { OR = { has_idea = GER_hindenburg_total_mobilization } } }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+  add_ideas = GER_hindenburg_program_victory
+ }
+}
+side_ww1_set_GER_hindenburg_total_mobilization = {
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+  add_ideas = GER_hindenburg_total_mobilization
+}
+side_ww1_normalize_GER_industry = {
+ if = { limit = { has_idea = GER_hindenburg_total_mobilization }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+ }
+ else_if = { limit = { has_idea = GER_hindenburg_program_victory }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_total_mobilization
+ }
+ else_if = { limit = { has_idea = GER_rathenau_kra_coordination }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+ }
+ else_if = { limit = { has_idea = GER_krupp_chemical_conglomerates }
+  remove_ideas = GER_peacetime_industrial_giants
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+ }
+ else_if = { limit = { has_idea = GER_peacetime_industrial_giants }
+  remove_ideas = GER_krupp_chemical_conglomerates
+  remove_ideas = GER_rathenau_kra_coordination
+  remove_ideas = GER_hindenburg_program_victory
+  remove_ideas = GER_hindenburg_total_mobilization
+ }
+}
+side_ww1_set_GER_grosser_generalstab = {
+ if = { limit = { NOT = { OR = { has_idea = GER_moltke_generalstab_doctrine has_idea = GER_falkenhayn_attrition_doctrine has_idea = GER_ludendorff_stormtrooper_assault has_idea = GER_veteran_kaiserheer } } }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+  add_ideas = GER_grosser_generalstab
+ }
+}
+side_ww1_set_GER_moltke_generalstab_doctrine = {
+ if = { limit = { NOT = { OR = { has_idea = GER_falkenhayn_attrition_doctrine has_idea = GER_ludendorff_stormtrooper_assault has_idea = GER_veteran_kaiserheer } } }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+  add_ideas = GER_moltke_generalstab_doctrine
+ }
+}
+side_ww1_set_GER_falkenhayn_attrition_doctrine = {
+ if = { limit = { NOT = { OR = { has_idea = GER_ludendorff_stormtrooper_assault has_idea = GER_veteran_kaiserheer } } }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+  add_ideas = GER_falkenhayn_attrition_doctrine
+ }
+}
+side_ww1_set_GER_ludendorff_stormtrooper_assault = {
+ if = { limit = { NOT = { OR = { has_idea = GER_veteran_kaiserheer } } }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+  add_ideas = GER_ludendorff_stormtrooper_assault
+ }
+}
+side_ww1_set_GER_veteran_kaiserheer = {
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+  add_ideas = GER_veteran_kaiserheer
+}
+side_ww1_normalize_GER_staff = {
+ if = { limit = { has_idea = GER_veteran_kaiserheer }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+ }
+ else_if = { limit = { has_idea = GER_ludendorff_stormtrooper_assault }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_veteran_kaiserheer
+ }
+ else_if = { limit = { has_idea = GER_falkenhayn_attrition_doctrine }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+ }
+ else_if = { limit = { has_idea = GER_moltke_generalstab_doctrine }
+  remove_ideas = GER_grosser_generalstab
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+ }
+ else_if = { limit = { has_idea = GER_grosser_generalstab }
+  remove_ideas = GER_moltke_generalstab_doctrine
+  remove_ideas = GER_falkenhayn_attrition_doctrine
+  remove_ideas = GER_ludendorff_stormtrooper_assault
+  remove_ideas = GER_veteran_kaiserheer
+ }
+}
+side_ww1_set_GER_total_war_labor_conscription = {
+  remove_ideas = GER_total_war_labor_conscription
+  remove_ideas = GER_vaterlandspartei_total_mobilization
+  add_ideas = GER_total_war_labor_conscription
+}
+side_ww1_set_GER_vaterlandspartei_total_mobilization = {
+  remove_ideas = GER_total_war_labor_conscription
+  remove_ideas = GER_vaterlandspartei_total_mobilization
+  add_ideas = GER_vaterlandspartei_total_mobilization
+}
+side_ww1_normalize_GER_labor = {
+ if = { limit = { has_idea = GER_vaterlandspartei_total_mobilization }
+  remove_ideas = GER_total_war_labor_conscription
+ }
+ else_if = { limit = { has_idea = GER_total_war_labor_conscription }
+  remove_ideas = GER_vaterlandspartei_total_mobilization
+ }
+}
+side_ww1_set_SOV_war_industry_mobilization = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_zemgor_mobilization has_idea = SOV_arsenal_of_the_russian_state has_idea = SOV_denikin_free_market has_idea = SOV_war_communism_regime has_idea = SOV_war_communism_economy } } }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+  add_ideas = SOV_war_industry_mobilization
+ }
+}
+side_ww1_set_SOV_zemgor_mobilization = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_arsenal_of_the_russian_state has_idea = SOV_denikin_free_market has_idea = SOV_war_communism_regime has_idea = SOV_war_communism_economy } } }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+  add_ideas = SOV_zemgor_mobilization
+ }
+}
+side_ww1_set_SOV_arsenal_of_the_russian_state = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_denikin_free_market has_idea = SOV_war_communism_regime has_idea = SOV_war_communism_economy } } }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+  add_ideas = SOV_arsenal_of_the_russian_state
+ }
+}
+side_ww1_set_SOV_denikin_free_market = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_war_communism_economy } } }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+  add_ideas = SOV_denikin_free_market
+ }
+}
+side_ww1_set_SOV_war_communism_regime = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_war_communism_economy } } }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+  add_ideas = SOV_war_communism_regime
+ }
+}
+side_ww1_set_SOV_war_communism_economy = {
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+  add_ideas = SOV_war_communism_economy
+}
+side_ww1_normalize_SOV_industry = {
+ if = { limit = { has_idea = SOV_war_communism_economy }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+ }
+ else_if = { limit = { has_idea = SOV_war_communism_regime }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_economy
+ }
+ else_if = { limit = { has_idea = SOV_denikin_free_market }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+ }
+ else_if = { limit = { has_idea = SOV_arsenal_of_the_russian_state }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+ }
+ else_if = { limit = { has_idea = SOV_zemgor_mobilization }
+  remove_ideas = SOV_war_industry_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+ }
+ else_if = { limit = { has_idea = SOV_war_industry_mobilization }
+  remove_ideas = SOV_zemgor_mobilization
+  remove_ideas = SOV_arsenal_of_the_russian_state
+  remove_ideas = SOV_denikin_free_market
+  remove_ideas = SOV_war_communism_regime
+  remove_ideas = SOV_war_communism_economy
+ }
+}
+side_ww1_set_SOV_the_steamroller = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_great_military_program_spirit has_idea = SOV_stavka_operational_clarity has_idea = SOV_unbreakable_steamroller has_idea = SOV_reborn_red_army has_idea = SOV_vsyur_high_command } } }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+  add_ideas = SOV_the_steamroller
+ }
+}
+side_ww1_set_SOV_great_military_program_spirit = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_stavka_operational_clarity has_idea = SOV_unbreakable_steamroller has_idea = SOV_reborn_red_army has_idea = SOV_vsyur_high_command } } }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+  add_ideas = SOV_great_military_program_spirit
+ }
+}
+side_ww1_set_SOV_stavka_operational_clarity = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_unbreakable_steamroller has_idea = SOV_reborn_red_army has_idea = SOV_vsyur_high_command } } }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+  add_ideas = SOV_stavka_operational_clarity
+ }
+}
+side_ww1_set_SOV_unbreakable_steamroller = {
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+  add_ideas = SOV_unbreakable_steamroller
+}
+side_ww1_set_SOV_reborn_red_army = {
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+  add_ideas = SOV_reborn_red_army
+}
+side_ww1_set_SOV_vsyur_high_command = {
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+  add_ideas = SOV_vsyur_high_command
+}
+side_ww1_normalize_SOV_staff = {
+ if = { limit = { has_idea = SOV_vsyur_high_command }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+ }
+ else_if = { limit = { has_idea = SOV_reborn_red_army }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_vsyur_high_command
+ }
+ else_if = { limit = { has_idea = SOV_unbreakable_steamroller }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+ }
+ else_if = { limit = { has_idea = SOV_stavka_operational_clarity }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+ }
+ else_if = { limit = { has_idea = SOV_great_military_program_spirit }
+  remove_ideas = SOV_the_steamroller
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+ }
+ else_if = { limit = { has_idea = SOV_the_steamroller }
+  remove_ideas = SOV_great_military_program_spirit
+  remove_ideas = SOV_stavka_operational_clarity
+  remove_ideas = SOV_unbreakable_steamroller
+  remove_ideas = SOV_reborn_red_army
+  remove_ideas = SOV_vsyur_high_command
+ }
+}
+side_ww1_set_SOV_stolypin_reforms_spirit = {
+ if = { limit = { NOT = { OR = { has_idea = SOV_stolypin_unbroken_reforms } } }
+  remove_ideas = SOV_stolypin_reforms_spirit
+  remove_ideas = SOV_stolypin_unbroken_reforms
+  add_ideas = SOV_stolypin_reforms_spirit
+ }
+}
+side_ww1_set_SOV_stolypin_unbroken_reforms = {
+  remove_ideas = SOV_stolypin_reforms_spirit
+  remove_ideas = SOV_stolypin_unbroken_reforms
+  add_ideas = SOV_stolypin_unbroken_reforms
+}
+side_ww1_normalize_SOV_agrarian = {
+ if = { limit = { has_idea = SOV_stolypin_unbroken_reforms }
+  remove_ideas = SOV_stolypin_reforms_spirit
+ }
+ else_if = { limit = { has_idea = SOV_stolypin_reforms_spirit }
+  remove_ideas = SOV_stolypin_unbroken_reforms
+ }
+}

@@ -1,0 +1,525 @@
+﻿# COUNTRY scope, called by ASW research. Supports both naval DLC modes.
+ww1_asw_design_programme = {
+ if = {
+  limit = { has_tech = ww1_1911_torpedo_craft_capability }
+ if = {
+  limit = { has_tech = advanced_sonar }
+  if = {
+   limit = { has_tech = advanced_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = improved_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_improved_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_improved_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = basic_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_basic_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_basic_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+  }
+  else = {
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_gun"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_advanced_sonar_gun"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1921_acoustic_detector
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+  }
+ }
+ else_if = {
+  limit = { has_tech = improved_sonar }
+  if = {
+   limit = { has_tech = advanced_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = improved_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_improved_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_improved_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = basic_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_basic_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_basic_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+  }
+  else = {
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_gun"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_improved_sonar_gun"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1918_hydrophone
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+  }
+ }
+ else_if = {
+  limit = { has_tech = sonar }
+  if = {
+   limit = { has_tech = advanced_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = improved_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_improved_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_improved_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = basic_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_basic_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_basic_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+  }
+  else = {
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_gun"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_sonar_gun"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = ww1_1915_hydrophone
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+  }
+ }
+ else = {
+  if = {
+   limit = { has_tech = advanced_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_advanced_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = ww1_1922_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = improved_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_improved_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_improved_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = ww1_1918_depth_charge
+     }
+    }
+   }
+  }
+  else_if = {
+   limit = { has_tech = basic_depth_charges }
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_basic_depth_charges"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_basic_depth_charges"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = ww1_1916_depth_charge
+     }
+    }
+   }
+  }
+  else = {
+   if = {
+    limit = { has_dlc = "Man the Guns" }
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_gun"
+     type = ww1_1911_torpedo_craft
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+   else = {
+    create_equipment_variant = {
+     name = "WW1_ASW_visual_gun"
+     type = ww1_1911_torpedo_craft_legacy
+     parent_version = 0
+     modules = {
+      fixed_ship_engine_slot = ww1_1911_light_coal
+      fixed_ship_battery_slot = ww1_1911_light
+      fixed_ship_torpedo_slot = ww1_1911_torpedoes
+      fixed_ship_sonar_slot = empty
+      rear_1_custom_slot = empty
+     }
+    }
+   }
+  }
+ }
+}
+}

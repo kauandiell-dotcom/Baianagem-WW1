@@ -1,0 +1,12 @@
+ideas = {
+ country = {
+  ENG_ww1_admiralty_war_staff = { picture = ENG_ww1_admiralty_war_staff allowed = { always = no } removal_cost = -1 modifier = { experience_gain_navy_factor = 0.1 } }
+  ENG_ww1_northern_patrol = { picture = ENG_ww1_northern_patrol allowed = { always = no } removal_cost = -1 modifier = { naval_detection = 0.1 } }
+  ENG_ww1_grand_fleet_anchorage = { picture = ENG_ww1_grand_fleet_anchorage allowed = { always = no } removal_cost = -1 modifier = { repair_speed_factor = 0.1 } }
+  ENG_ww1_convoy_system = { picture = ENG_ww1_convoy_system allowed = { always = no } removal_cost = -1 modifier = { convoy_escort_efficiency = 0.15 industrial_capacity_dockyard = -0.05 } }
+  ENG_ww1_royal_flying_corps = { picture = ENG_ww1_royal_flying_corps allowed = { always = no } removal_cost = -1 modifier = { experience_gain_air_factor = 0.1 } }
+  ENG_ww1_engine_reliability = { picture = ENG_ww1_engine_reliability allowed = { always = no } removal_cost = -1 modifier = { air_accidents_factor = -0.15 } }
+  ENG_ww1_home_air_defence = { picture = ENG_ww1_home_air_defence allowed = { always = no } removal_cost = -1 modifier = { air_defence_factor = 0.1 stability_factor = 0.01 } }
+  ENG_ww1_royal_air_force = { picture = ENG_ww1_royal_air_force allowed = { always = no } removal_cost = -1 modifier = { experience_gain_air_factor = 0.15 air_mission_efficiency = 0.05 } }
+ }
+}

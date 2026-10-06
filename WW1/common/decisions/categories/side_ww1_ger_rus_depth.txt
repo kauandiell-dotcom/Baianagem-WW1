@@ -1,0 +1,2 @@
+﻿side_ww1_GER_administration = { icon = generic_factory allowed = { original_tag = GER } visible = { OR = { has_country_flag = side_ww1_GER_industry_open has_country_flag = side_ww1_GER_has_fought  } } visible_when_empty = no }
+side_ww1_SOV_administration = { icon = generic_factory allowed = { original_tag = SOV } visible = { OR = { has_country_flag = side_ww1_SOV_industry_open has_country_flag = side_ww1_SOV_has_fought has_country_flag = side_ww1_SOV_imports_open } } visible_when_empty = no }

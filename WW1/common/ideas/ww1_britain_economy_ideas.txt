@@ -1,0 +1,11 @@
+ideas = {
+ country = {
+  ENG_ww1_railway_executive = { picture = ENG_ww1_railway_executive allowed = { always = no } removal_cost = -1 modifier = { supply_consumption_factor = -.02 civilian_factory_use = 1 } }
+  ENG_ww1_coal_allocation = { picture = ENG_ww1_coal_allocation allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .01 consumer_goods_factor = .005 } }
+  ENG_ww1_munitions_contracts = { picture = ENG_ww1_munitions_contracts allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .015 production_factory_efficiency_gain_factor = -.05 } }
+  ENG_ww1_shell_inspection = { picture = ENG_ww1_shell_inspection allowed = { always = no } removal_cost = -1 modifier = { production_factory_max_efficiency_factor = .02 industrial_capacity_factory = .01 } }
+  ENG_ww1_labour_dilution = { picture = ENG_ww1_labour_dilution allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .02 stability_weekly = -.0003 } }
+  ENG_ww1_food_control = { picture = ENG_ww1_food_control allowed = { always = no } removal_cost = -1 modifier = { stability_factor = .02 consumer_goods_factor = .01 } }
+  ENG_ww1_industrial_conversion = { picture = ENG_ww1_industrial_conversion allowed = { always = no } removal_cost = -1 modifier = { consumer_goods_factor = -.02 industrial_capacity_factory = -.015 } }
+ }
+}

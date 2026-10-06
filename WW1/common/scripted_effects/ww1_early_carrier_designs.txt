@@ -1,0 +1,19 @@
+﻿# Research creates producible designs, never completed ships.
+ww1_1917_carrier_design = {
+ if = {
+  limit = { has_dlc = "Man the Guns" }
+  create_equipment_variant = { name = "WW1_CARRIER_1917" type = ww1_1917_carrier parent_version = 0 modules = { fixed_ship_engine_slot = ww1_1917_carrier_machinery fixed_ship_deck_slot_1 = ww1_1917_flight_deck fixed_ship_secondaries_slot = ww1_1911_light } }
+ }
+ else = {
+  create_equipment_variant = { name = "WW1_CARRIER_1917" type = ww1_1917_carrier_legacy parent_version = 0 modules = { fixed_ship_engine_slot = ww1_1917_carrier_machinery fixed_ship_deck_slot_1 = ww1_1917_flight_deck fixed_ship_secondaries_slot = ww1_1911_light } }
+ }
+}
+ww1_1922_carrier_design = {
+ if = {
+  limit = { has_dlc = "Man the Guns" }
+  create_equipment_variant = { name = "WW1_CARRIER_1922" type = ww1_1922_carrier parent_version = 0 modules = { fixed_ship_engine_slot = ww1_1917_carrier_machinery fixed_ship_deck_slot_1 = ww1_1922_flight_deck fixed_ship_secondaries_slot = ww1_1911_light } }
+ }
+ else = {
+  create_equipment_variant = { name = "WW1_CARRIER_1922" type = ww1_1922_carrier_legacy parent_version = 0 modules = { fixed_ship_engine_slot = ww1_1917_carrier_machinery fixed_ship_deck_slot_1 = ww1_1922_flight_deck fixed_ship_secondaries_slot = ww1_1911_light } }
+ }
+}

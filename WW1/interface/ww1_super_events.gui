@@ -1,64 +1,63 @@
-guiTypes = {
-
+﻿guiTypes = {
 	containerWindowType = {
 		name = "ww1_super_event_outbreak_window"
 		position = { x = 0 y = 0 }
-		size = { width = 640 height = 520 }
+		size = { width = 720 height = 600 }
 		orientation = CENTER
 		origo = center
-		moveable = yes
+		moveable = no
 		fade_type = linear
-		fade_time = 300
+		fade_time = 250
 
-		# Background Frame
 		iconType = {
 			name = "Background"
 			spriteType = "GFX_ww1_super_event_frame"
 			position = { x = 0 y = 0 }
 			alwaystransparent = yes
 		}
-
-		# Large Super Event Artwork
+		instantTextBoxType = {
+			name = "Dispatch_Header"
+			position = { x = 20 y = 21 }
+			font = "hoi_16mbs"
+			text = "ww1_super_event_dispatch_header"
+			maxWidth = 680
+			maxHeight = 22
+			format = center
+			fixedsize = yes
+		}
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 20 y = 49 }
+			font = "hoi_24header"
+			text = "ww1_super_event_outbreak_title"
+			maxWidth = 680
+			maxHeight = 33
+			format = center
+			fixedsize = yes
+		}
 		iconType = {
 			name = "Super_Event_Image"
 			spriteType = "GFX_ww1_super_event_outbreak"
-			position = { x = 20 y = 55 }
+			position = { x = 20 y = 96 }
 			alwaystransparent = yes
 		}
-
-		# Title
-		instantTextBoxType = {
-			name = "Title"
-			position = { x = 20 y = 20 }
-			font = "hoi_24header"
-			text = "ww1_super_event_outbreak_title"
-			maxWidth = 600
-			maxHeight = 28
-			format = center
-			fixedsize = yes
-		}
-
-		# Historic Quote
 		instantTextBoxType = {
 			name = "Quote"
-			position = { x = 24 y = 422 }
+			position = { x = 35 y = 484 }
 			font = "hoi_16mbs"
 			text = "ww1_super_event_outbreak_quote"
-			maxWidth = 592
-			maxHeight = 44
+			maxWidth = 650
+			maxHeight = 47
 			format = center
 			fixedsize = yes
 		}
-
-		# Dismiss Button
 		buttonType = {
 			name = "dismiss_button"
-			position = { x = 200 y = 472 }
+			position = { x = 200 y = 547 }
 			quadTextureSprite = "GFX_ww1_super_event_btn"
 			buttonFont = "hoi_16mbs"
 			buttonText = "ww1_super_event_outbreak_button"
 			clicksound = click_default
 		}
 	}
-
 }

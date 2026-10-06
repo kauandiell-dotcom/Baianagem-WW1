@@ -1,18 +1,15 @@
-spriteTypes = {
-
+﻿spriteTypes = {
 	spriteType = {
 		name = "GFX_ww1_super_event_frame"
-		texturefile = "gfx/interface/super_events/super_event_frame.dds"
+		texturefile = "gfx/interface/super_events/super_event_frame_v2.dds"
 	}
-
 	spriteType = {
 		name = "GFX_ww1_super_event_outbreak"
-		texturefile = "gfx/interface/super_events/ww1_great_war_outbreak.dds"
+		texturefile = "gfx/interface/super_events/ww1_great_war_outbreak_v2.dds"
 	}
-
 	spriteType = {
 		name = "GFX_ww1_super_event_btn"
-		texturefile = "gfx/interface/super_events/super_event_btn.dds"
+		texturefile = "gfx/interface/super_events/super_event_btn_v2.dds"
+		noOfFrames = 3
 	}
-
 }

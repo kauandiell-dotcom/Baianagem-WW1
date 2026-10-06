@@ -1,0 +1,13 @@
+on_actions = {
+ on_startup = {
+  effect = {
+   if = {
+    limit = { country_exists = ENG }
+    ENG = { if = { limit = { NOT = { has_country_flag = ww1_britain_initialised } } ww1_britain_initialise = yes } }
+   }
+  }
+ }
+ on_weekly_ENG = {
+  effect = { if = { limit = { has_country_flag = ww1_britain_initialised } ww1_britain_weekly_administration = yes } }
+ }
+}

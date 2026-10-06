@@ -1,0 +1,19 @@
+﻿side_ww1_SOV_import_port_open = {
+ OR = {
+  AND = { owns_state = 213 controls_state = 213 }
+  AND = { owns_state = 214 controls_state = 214 }
+  AND = { owns_state = 408 controls_state = 408 }
+ }
+}
+side_ww1_SOV_supply_certifiable = {
+ check_variable = { side_ww1_SOV_rifle_target > 0 }
+ check_variable = { side_ww1_SOV_gun_target > 0 }
+ check_variable = { side_ww1_SOV_rifle_ratio >= .90 }
+ check_variable = { side_ww1_SOV_gun_ratio >= .85 }
+ has_equipment = { infantry_equipment > 2999 artillery_equipment > 99 }
+ NOT = { ww1_sov_crisis_pressure = yes }
+}
+side_ww1_AUS_postimperial_republic = {
+ exists = yes has_capitulated = no has_war = no owns_state = 4
+ all_owned_state = { OR = { state = 4 state = 152 state = 153 } }
+}

@@ -1,0 +1,260 @@
+AUH_ww1_diplomacy = {
+ AUH_ww1_romanian_purchase = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_romanian_grain_unlocked }
+  available = { has_capitulated = no has_country_flag = auh_ww1_romanian_grain country_exists = ROM NOT = { has_war_with = ROM } check_variable = { auh_ww1_provisions < 85 } num_of_civilian_factories_available_for_projects > 1 }
+  cost = 35
+  days_remove = 60
+  days_re_enable = 90
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 2
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 8 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = ROM NOT = { country_exists = ROM } } } }
+ }
+ AUH_ww1_serbian_trade = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_serbian_trade }
+  available = { has_capitulated = no country_exists = SER NOT = { has_war_with = SER } check_variable = { auh_ww1_provisions < 85 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 30
+  days_remove = 60
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = SER NOT = { country_exists = SER } } } }
+ }
+ AUH_ww1_german_exchange = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_german_staff_exchange_unlocked }
+  available = { has_capitulated = no has_country_flag = auh_ww1_german_commission country_exists = GER NOT = { has_war_with = GER } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 35
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { army_experience = 8 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = GER NOT = { country_exists = GER } } } }
+ }
+ AUH_ww1_italian_consultations = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_italian_consultation_unlocked }
+  available = { has_capitulated = no has_country_flag = auh_ww1_italian_consultation country_exists = ITA NOT = { has_war_with = ITA } check_variable = { auh_ww1_cohesion < 85 } }
+  cost = 35
+  days_remove = 60
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 3 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = ITA NOT = { country_exists = ITA } } } }
+ }
+ AUH_ww1_refugee_assistance = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_refugee_assistance_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 1 check_variable = { auh_ww1_cohesion < 85 } }
+  cost = 40
+  days_remove = 90
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 2
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 5 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_armistice_proposal = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_armistice_proposal_unlocked }
+  available = { has_capitulated = no has_war = yes has_country_flag = auh_ww1_sixtus_channel }
+  cost = 100
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { every_enemy_country = { country_event = { id = ww1_auh.46 days = 1 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
+ }
+ AUH_ww1_conclude_armistice = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_conference_unlocked }
+  available = { has_capitulated = no has_war = yes all_enemy_country = { has_country_flag = auh_ww1_armistice_consent } }
+  cost = 50
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.2 }
+  complete_effect = {  }
+  remove_effect = { if = { limit = { has_war = yes all_enemy_country = { has_country_flag = auh_ww1_armistice_consent } } leave_faction = yes every_enemy_country = { white_peace = AUS } set_country_flag = auh_ww1_negotiated_peace } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
+ }
+ AUH_ww1_renew_german_commission = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_berlin_mission }
+  available = { has_capitulated = no country_exists = GER NOT = { has_war_with = GER } NOT = { has_country_flag = auh_ww1_german_commission } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { GER = { country_event = { id = ww1_auh.31 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = GER } }
+ }
+ AUH_ww1_renew_serbian_trade = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_belgrade_channel }
+  available = { has_capitulated = no country_exists = SER NOT = { has_war_with = SER } NOT = { has_country_flag = auh_ww1_serbian_trade } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { SER = { country_event = { id = ww1_auh.33 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = SER } }
+ }
+ AUH_ww1_renew_albanian_assistance = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_albanian_contacts }
+  available = { has_capitulated = no country_exists = ALB NOT = { has_war_with = ALB } NOT = { has_country_flag = auh_ww1_albanian_assistance } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { ALB = { country_event = { id = ww1_auh.35 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = ALB } }
+ }
+ AUH_ww1_renew_montenegrin_pact = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_montenegrin_channel }
+  available = { has_capitulated = no country_exists = MNT NOT = { has_war_with = MNT } NOT = { has_country_flag = auh_ww1_montenegrin_pact } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { MNT = { country_event = { id = ww1_auh.37 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = MNT } }
+ }
+ AUH_ww1_renew_italian_consultation = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_rome_channel }
+  available = { has_capitulated = no country_exists = ITA NOT = { has_war_with = ITA } NOT = { has_country_flag = auh_ww1_italian_consultation } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { ITA = { country_event = { id = ww1_auh.39 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = ITA } }
+ }
+ AUH_ww1_renew_romanian_grain = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_bucharest_channel }
+  available = { has_capitulated = no country_exists = ROM NOT = { has_war_with = ROM } NOT = { has_country_flag = auh_ww1_romanian_grain } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { ROM = { country_event = { id = ww1_auh.41 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = ROM } }
+ }
+ AUH_ww1_renew_russian_consultation = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_russian_channel }
+  available = { has_capitulated = no country_exists = SOV NOT = { has_war_with = SOV } NOT = { has_country_flag = auh_ww1_russian_consultation } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { SOV = { country_event = { id = ww1_auh.43 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war_with = SOV } }
+ }
+ AUH_ww1_renew_sixtus_channel = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_consular_contacts_unlocked has_completed_focus = AUH_ww1_sixtus_channel }
+  available = { has_capitulated = no country_exists = FRA has_war_with = FRA NOT = { has_country_flag = auh_ww1_sixtus_channel } }
+  cost = 35
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 0.5 }
+  complete_effect = {  }
+  remove_effect = { FRA = { country_event = { id = ww1_auh.45 days = 3 } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = FRA } } }
+ }
+ AUH_ww1_service_allied_liaison = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_allied_liaison_unlocked }
+  available = { has_capitulated = no country_exists = GER has_war_together_with = GER has_country_flag = auh_ww1_german_commission num_of_civilian_factories_available_for_projects > 0 }
+  cost = 40
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { army_experience = 8 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_service_foreign_programme = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_foreign_programme_unlocked }
+  available = { has_capitulated = no check_variable = { auh_ww1_consent < 85 } }
+  cost = 40
+  days_remove = 60
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_consent = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_service_postwar_diplomacy = {
+  icon = GFX_decision_AUH_ww1_diplomacy
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_postwar_diplomacy_unlocked }
+  available = { has_capitulated = no has_war = no num_of_civilian_factories_available_for_projects > 0 }
+  cost = 40
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_consent = 3 } add_to_variable = { auh_ww1_provisions = 3 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+}

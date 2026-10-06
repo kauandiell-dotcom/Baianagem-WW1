@@ -1,0 +1,28 @@
+ideas = {
+ country = {
+  ENG_ww1_professional_service = { picture = ENG_ww1_professional_service allowed = { always = no } removal_cost = -1 modifier = { training_time_army_factor = .05 army_infantry_defence_factor = .025 } }
+  ENG_ww1_naval_estimates = { picture = ENG_ww1_naval_estimates allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_dockyard = .05 industrial_capacity_factory = -.04 civilian_factory_use = 1 } }
+  ENG_ww1_continental_estimates = { picture = ENG_ww1_continental_estimates allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .05 industrial_capacity_dockyard = -.04 civilian_factory_use = 1 } }
+  ENG_ww1_balanced_estimates = { picture = ENG_ww1_balanced_estimates allowed = { always = no } removal_cost = -1 modifier = { production_factory_max_efficiency_factor = .025 civilian_factory_use = 1 } }
+  ENG_ww1_territorial_establishment = { picture = ENG_ww1_territorial_establishment allowed = { always = no } removal_cost = -1 modifier = { training_time_army_factor = -.025 consumer_goods_factor = .01 } }
+  ENG_ww1_new_army_establishment = { picture = ENG_ww1_new_army_establishment allowed = { always = no } removal_cost = -1 modifier = { conscription = .003 training_time_army_factor = .075 civilian_factory_use = 1 } }
+  ENG_ww1_munitions_ministry = { picture = ENG_ww1_munitions_ministry allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .04 production_factory_max_efficiency_factor = .025 civilian_factory_use = 1 } }
+  ENG_ww1_labour_compact = { picture = ENG_ww1_labour_compact allowed = { always = no } removal_cost = -1 modifier = { stability_weekly = .0005 consumer_goods_factor = .01 } }
+  ENG_ww1_emergency_controls = { picture = ENG_ww1_emergency_controls allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .035 political_power_factor = -.05 stability_weekly = -.0005 } }
+  ENG_ww1_war_cabinet = { picture = ENG_ww1_war_cabinet allowed = { always = no } removal_cost = -1 modifier = { planning_speed = .05 political_power_factor = .05 consumer_goods_factor = .015 } }
+  ENG_ww1_convoy_service = { picture = ENG_ww1_convoy_service allowed = { always = no } removal_cost = -1 modifier = { convoy_escort_efficiency = .10 civilian_factory_use = 1 } }
+  ENG_ww1_army_service_corps = { picture = ENG_ww1_army_service_corps allowed = { always = no } removal_cost = -1 modifier = { supply_consumption_factor = -.03 civilian_factory_use = 1 } }
+  ENG_ww1_air_observation_service = { picture = ENG_ww1_air_observation_service allowed = { always = no } removal_cost = -1 modifier = { recon_factor = .035 air_detection = .025 } }
+  ENG_ww1_royal_air_force_service = { picture = ENG_ww1_royal_air_force_service allowed = { always = no } removal_cost = -1 modifier = { air_mission_efficiency = .04 air_detection = .025 consumer_goods_factor = .005 } }
+  ENG_ww1_irish_conciliation = { picture = ENG_ww1_irish_conciliation allowed = { always = no } removal_cost = -1 modifier = { stability_factor = .025 political_power_factor = -.025 } }
+  ENG_ww1_irish_repression = { picture = ENG_ww1_irish_repression allowed = { always = no } removal_cost = -1 modifier = { civilian_factory_use = 1 stability_factor = -.03 } }
+  ENG_ww1_unsanctioned_conscription = { picture = ENG_ww1_unsanctioned_conscription allowed = { always = no } removal_cost = -1 modifier = { stability_factor = -.04 political_power_factor = -.05 } }
+  ENG_ww1_debt_pressure_1 = { picture = ENG_ww1_debt_pressure_1 allowed = { always = no } removal_cost = -1 modifier = { consumer_goods_factor = .01 } }
+  ENG_ww1_debt_pressure_2 = { picture = ENG_ww1_debt_pressure_2 allowed = { always = no } removal_cost = -1 modifier = { consumer_goods_factor = .025 political_power_factor = -.025 } }
+  ENG_ww1_debt_pressure_3 = { picture = ENG_ww1_debt_pressure_3 allowed = { always = no } removal_cost = -1 modifier = { consumer_goods_factor = .04 political_power_factor = -.05 } }
+  ENG_ww1_veterans_settlement = { picture = ENG_ww1_veterans_settlement allowed = { always = no } removal_cost = -1 modifier = { stability_weekly = .0005 consumer_goods_factor = .01 } }
+  ENG_ww1_housing_programme = { picture = ENG_ww1_housing_programme allowed = { always = no } removal_cost = -1 modifier = { civilian_factory_use = 1 monthly_population = .025 } }
+  ENG_ww1_naval_economy = { picture = ENG_ww1_naval_economy allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_dockyard = -.05 consumer_goods_factor = -.01 } }
+  ENG_ww1_cabinet_consultation = { picture = ENG_ww1_cabinet_consultation allowed = { always = no } removal_cost = -1 modifier = { political_power_factor = -.025 } }
+ }
+}

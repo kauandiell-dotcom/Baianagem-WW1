@@ -1,0 +1,87 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "Dai-ichi Kantai"
+		naval_base = 9998
+		task_force = {
+			name = "Dai-ichi Kantai"
+			location = 9998
+			ship = { name = "IJN Satsuma" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Satsuma" } } }
+			ship = { name = "IJN Shikishima" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Shikishima" } } }
+			ship = { name = "IJN Asahi" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Asahi" } } }
+			ship = { name = "IJN Mikasa" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Mikasa" } } }
+			ship = { name = "IJN Otowa" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Otowa" } } }
+			ship = { name = "IJN Chitose" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Kasagi" } } }
+			ship = { name = "IJN Shirakumo" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Shirakumo" } } }
+			ship = { name = "IJN Asashio" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Shirakumo" } } }
+			ship = { name = "IJN Kasumi" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Akatsuki" } } }
+			ship = { name = "IJN Ikazuchi" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Ikazuchi" } } }
+			ship = { name = "IJN Oboro" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Ikazuchi" } } }
+			ship = { name = "IJN Akebono" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Ikazuchi" } } }
+			ship = { name = "IJN Usugumo" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Murakumo" } } }
+			ship = { name = "IJN Shinonome" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Murakumo" } } }
+			ship = { name = "IJN Sazanami" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Ikazuchi" } } }
+			ship = { name = "IJN Yamabiko" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Sokol" } } }
+		}
+	}
+	fleet = {
+		name = "Dai-ni Kantai"
+		naval_base = 1092
+		task_force = {
+			name = "Dai-ni Kantai"
+			location = 1092
+			ship = { name = "IJN Sagami" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Peresvet" } } }
+			ship = { name = "IJN Suwo" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Peresvet" } } }
+			ship = { name = "IJN Iwami" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Borodino" } } }
+			ship = { name = "IJN Tango" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Poltava" } } }
+			ship = { name = "IJN Hizen" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Retvizan" } } }
+			ship = { name = "IJN Okinoshima" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_ironclad = { amount = 1 owner = JAP version_name = "Admiral Ushakov" } } }
+			ship = { name = "IJN Mishima" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_ironclad = { amount = 1 owner = JAP version_name = "Admiral Ushakov" } } }
+			ship = { name = "IJN Chiyoda" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Chiyoda" } } }
+			ship = { name = "IJN Izumo" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Izumo" } } }
+			ship = { name = "IJN Azuma" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Azuma" } } }
+			ship = { name = "IJN Asama" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Asama" } } }
+			ship = { name = "IJN Yakumo" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Yakumo" } } }
+			ship = { name = "IJN Tokiwa" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Asama" } } }
+			ship = { name = "IJN Iwate" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Izumo" } } }
+			ship = { name = "IJN Kasuga" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Giuseppe Garibaldi" } } }
+			ship = { name = "IJN Nisshin" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Giuseppe Garibaldi" } } }
+			ship = { name = "IJN Naniwa" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Naniwa" } } }
+			ship = { name = "IJN Takachiho" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Naniwa" } } }
+			ship = { name = "IJN Akitsushima" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Akitsushima" } } }
+			ship = { name = "IJN Yodo" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Yodo Class - Yodo" } } }
+			ship = { name = "IJN Mogami" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Yodo Class - Mogami" } } }
+			ship = { name = "IJN Akashi" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Suma" } } }
+			ship = { name = "IJN Suma" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Suma" } } }
+			ship = { name = "IJN Chihaya" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Chihaya" } } }
+			ship = { name = "IJN Tatsuta" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Tatsuta" } } }
+			ship = { name = "IJN Harusame" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Harusame" } } }
+			ship = { name = "IJN Murasame" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Harusame" } } }
+			ship = { name = "IJN Asagiri" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Harusame" } } }
+			ship = { name = "IJN Ariake" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Harusame" } } }
+			ship = { name = "IJN Fubuki" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Harusame" } } }
+			ship = { name = "IJN Arare" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Harusame" } } }
+			ship = { name = "IJN Kagerō" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Murakumo" } } }
+			ship = { name = "IJN Murakumo" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Murakumo" } } }
+			ship = { name = "IJN Yūgiri" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Murakumo" } } }
+			ship = { name = "IJN Shiranui" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = JAP version_name = "Murakumo" } } }
+			ship = { name = "IJN No. 1" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = JAP version_name = "Holland" } } }
+			ship = { name = "IJN No. 2" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = JAP version_name = "Holland" } } }
+			ship = { name = "IJN No. 3" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = JAP version_name = "Holland" } } }
+			ship = { name = "IJN No. 4" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = JAP version_name = "Holland" } } }
+			ship = { name = "IJN No. 5" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = JAP version_name = "Holland" } } }
+			ship = { name = "IJN Aki" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = JAP version_name = "Satsuma" } } }
+			ship = { name = "IJN Ibuki" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = JAP version_name = "Ibuki" } } }
+		}
+	}
+	fleet = {
+		name = "Dai-san Kantai"
+		naval_base = 9950
+		task_force = {
+			name = "Dai-san Kantai"
+			location = 9950
+			ship = { name = "IJN Niitaka" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Niitaka" } } }
+			ship = { name = "IJN Tsushima" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = JAP version_name = "Niitaka" } } }
+		}
+	}
+}

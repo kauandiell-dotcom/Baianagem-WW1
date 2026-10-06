@@ -1,4 +1,4 @@
-technologies = {
+﻿technologies = {
 
 #   ###  ##  #  # ###      ## #  # ### ###   ##
 #    #  #    #  #  #      #   #  #  #  #  # #
@@ -307,11 +307,12 @@ technologies = {
 	basic_depth_charges = {
 
 		enable_equipment_modules = {
-			ship_depth_charge_1
+            ww1_1916_depth_charge
 		}
 
 		on_research_complete = {
-			custom_effect_tooltip = depth_charges_advice_tt
+            ww1_asw_design_programme = yes
+            custom_effect_tooltip = ww1_asw_research_tt
 		}
 
 		path = {
@@ -324,13 +325,14 @@ technologies = {
 		xp_research_bonus = 1.50
 		research_cost = 1.5
 
-		start_year = 1897
+		start_year = 1916
 
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 1 y = 4 }
 		}
 
+		folder = { name = naval_folder position = { x = 15 y = 2 } }
 		ai_will_do = {
 			factor = 4
 
@@ -357,10 +359,11 @@ technologies = {
 	improved_depth_charges = {
 
 		enable_equipment_modules = {
-			ship_depth_charge_2
+            ww1_1918_depth_charge
 		}
 		on_research_complete = {
-			custom_effect_tooltip = depth_charges_advice_tt
+            ww1_asw_design_programme = yes
+            custom_effect_tooltip = ww1_asw_research_tt
 		}
 		path = {
 			leads_to_tech = advanced_depth_charges
@@ -372,13 +375,14 @@ technologies = {
 		xp_research_bonus = 1.50
 		research_cost = 1.5
 
-		start_year = 1911
+		start_year = 1918
 
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 1 y = 8 }
 		}
 
+		folder = { name = naval_folder position = { x = 15 y = 6 } }
 		ai_will_do = {
 			factor = 4
 
@@ -405,10 +409,11 @@ technologies = {
 	advanced_depth_charges = {
 
 		enable_equipment_modules = {
-			ship_depth_charge_3
+            ww1_1922_depth_charge
 		}
 		on_research_complete = {
-			custom_effect_tooltip = depth_charges_advice_tt
+            ww1_asw_design_programme = yes
+            custom_effect_tooltip = ww1_asw_research_tt
 		}
 		path = {
 			leads_to_tech = modern_depth_charges
@@ -419,13 +424,14 @@ technologies = {
 		xp_research_bonus = 1.50
 		research_cost = 1.5
 
-		start_year = 1914
+		start_year = 1922
 
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 1 y = 14 }
 		}
 
+		folder = { name = naval_folder position = { x = 15 y = 10 } }
 		ai_will_do = {
 			factor = 2
 
@@ -465,9 +471,10 @@ technologies = {
 		xp_research_type = navy
 		xp_boost_cost = 50
 		xp_research_bonus = 1.50
+		allow = { date > 1934.12.31 }
 		research_cost = 1.5
 
-		start_year = 1918
+		start_year = 1935
 
 		folder = {
 			name = mtgnavalfolder
@@ -499,10 +506,11 @@ technologies = {
 	}
 	sonar = {
 		enable_equipment_modules = {
-			ship_sonar_1
+            ww1_1915_hydrophone
 		}
 		on_research_complete = {
-			custom_effect_tooltip = sonar_advice_tt
+            ww1_asw_design_programme = yes
+            custom_effect_tooltip = ww1_asw_research_tt
 		}
 		path = {
 			leads_to_tech = improved_sonar
@@ -510,13 +518,14 @@ technologies = {
 		}
 		research_cost = 1.5
 
-		start_year = 1897
+		start_year = 1915
 
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 2 y = 1 }
 		}
 
+		folder = { name = naval_folder position = { x = 14 y = 2 } }
 		ai_will_do = {
 			factor = 2
 
@@ -543,10 +552,11 @@ technologies = {
 
 	improved_sonar = {
 		enable_equipment_modules = {
-			ship_sonar_2
+            ww1_1918_hydrophone
 		}
 		on_research_complete = {
-			custom_effect_tooltip = sonar_advice_tt
+            ww1_asw_design_programme = yes
+            custom_effect_tooltip = ww1_asw_research_tt
 		}
 		path = {
 			leads_to_tech = advanced_sonar
@@ -554,13 +564,14 @@ technologies = {
 		}
 		research_cost = 1
 
-		start_year = 1911
+		start_year = 1918
 
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 2 y = 7 }
 		}
 
+		folder = { name = naval_folder position = { x = 14 y = 6 } }
 		ai_will_do = {
 			factor = 2
 
@@ -596,10 +607,11 @@ technologies = {
 
 	advanced_sonar = {
 		enable_equipment_modules = {
-			ship_sonar_3
+            ww1_1921_acoustic_detector
 		}
 		on_research_complete = {
-			custom_effect_tooltip = sonar_advice_tt
+            ww1_asw_design_programme = yes
+            custom_effect_tooltip = ww1_asw_research_tt
 		}
 		path = {
 			leads_to_tech = modern_sonar
@@ -607,13 +619,14 @@ technologies = {
 		}		
 		research_cost = 1
 
-		start_year = 1914
+		start_year = 1921
 
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 2 y = 13 }
 		}
 
+		folder = { name = naval_folder position = { x = 14 y = 10 } }
 		ai_will_do = {
 			factor = 2
 
@@ -645,9 +658,10 @@ technologies = {
 		on_research_complete = {
 			custom_effect_tooltip = sonar_advice_tt
 		}
+		allow = { date > 1934.12.31 }
 		research_cost = 1
 
-		start_year = 1918
+		start_year = 1935
 
 		folder = {
 			name = mtgnavalfolder
@@ -1129,12 +1143,10 @@ technologies = {
 		enable_equipment_modules = {
 			ship_armor_shbb
 		}
-		allow = { 
-			always = no
-		}
+		allow = { always = no date > 1934.12.31 }
 		research_cost = 1.5
 
-		start_year = 1911
+		start_year = 1936
 
 		ai_will_do = {
 			factor = 1
@@ -1374,17 +1386,11 @@ technologies = {
  ##  #  # #  # #  # ### ### #  # ##
 
 early_ship_hull_carrier = {
+ on_research_complete = { ww1_1917_carrier_design = yes custom_effect_tooltip = ww1_carrier_design_tt }
 
-		enable_equipments = {
-			ship_hull_carrier_conversion_bb
-			ship_hull_carrier_conversion_ca
-		}
+		enable_equipments = { ww1_1917_carrier ww1_1917_carrier_legacy }
 
-		enable_equipment_modules = {
-			ship_armor_carrier_deck
-			carrier_ship_engine_1
-			ship_deck_space
-		}
+		enable_equipment_modules = { ww1_1917_carrier_machinery ww1_1917_flight_deck ww1_1911_light }
 
 		path = {
 			leads_to_tech = basic_ship_hull_carrier
@@ -1393,7 +1399,7 @@ early_ship_hull_carrier = {
 
 		research_cost = 1.75
 
-		start_year = 1897
+		start_year = 1917
 
 		folder = {
 			name = mtgnavalfolder
@@ -1423,29 +1429,17 @@ early_ship_hull_carrier = {
 
 	basic_ship_hull_carrier = {
 
-		enable_equipments = {
-			ship_hull_carrier_1
-		}
-		enable_equipment_modules = {
-			carrier_ship_engine_2
-		}
+		enable_equipments = { ww1_1922_carrier ww1_1922_carrier_legacy }
+		enable_equipment_modules = { ww1_1917_carrier_machinery ww1_1922_flight_deck ww1_1911_light }
 		path = {
 			leads_to_tech = improved_ship_hull_carrier
 			research_cost_coeff = 1
 		}
-		on_research_complete = {
-			if = {
-				limit = {has_dlc = "No Compromise, No Surrender"}
-				custom_effect_tooltip = {
-					localization_key = SP_UNLOCK_PROJECT
-					PROJECT = sp_naval_escort_carrier	
-				}
-			}
-		}		
+		on_research_complete = { ww1_1922_carrier_design = yes custom_effect_tooltip = ww1_carrier_design_tt }		
 
 		research_cost = 1.5
 
-		start_year = 1911
+		start_year = 1922
 
 		folder = {
 			name = mtgnavalfolder
@@ -1474,6 +1468,7 @@ early_ship_hull_carrier = {
 	}
 
 	improved_ship_hull_carrier = {
+ allow = { date > 1934.12.31 }
 
 		enable_equipments = {
 			ship_hull_carrier_2
@@ -1512,7 +1507,7 @@ early_ship_hull_carrier = {
 
 		research_cost = 1.5
 
-		start_year = 1914
+		start_year = 1939
 
 		folder = {
 			name = mtgnavalfolder
@@ -1550,6 +1545,7 @@ early_ship_hull_carrier = {
 	}
 
 	advanced_ship_hull_carrier = {
+ allow = { date > 1934.12.31 }
 
 		enable_equipments = {
 			ship_hull_carrier_3
@@ -1568,7 +1564,7 @@ early_ship_hull_carrier = {
 		}
 		research_cost = 1.5
 
-		start_year = 1918
+		start_year = 1943
 
 		folder = {
 			name = mtgnavalfolder
@@ -1816,6 +1812,7 @@ early_ship_hull_carrier = {
 	}
 
 	basic_submarine_snorkel = {
+ allow = {  date > 1934.12.31 }
 
 		enable_equipment_modules = {
 			ship_sub_snorkel_1
@@ -1829,7 +1826,7 @@ early_ship_hull_carrier = {
 		}
 		research_cost = 1
 
-		start_year = 1914
+		start_year = 1939
 
 		folder = {
 			name = mtgnavalfolder
@@ -1865,6 +1862,7 @@ early_ship_hull_carrier = {
 	}
 
 	improved_submarine_snorkel = {
+ allow = {  date > 1934.12.31 }
 
 		enable_equipment_modules = {
 			ship_sub_snorkel_2
@@ -1878,7 +1876,7 @@ early_ship_hull_carrier = {
 		xp_research_bonus = 1.50
 		research_cost = 2
 
-		start_year = 1918
+		start_year = 1943
 
 		folder = {
 			name = mtgnavalfolder
@@ -1913,12 +1911,10 @@ early_ship_hull_carrier = {
 		}
 
 		research_cost = 1
-		start_year = 1911
+		start_year = 1936
 
 		#set at gamestart
-		allow = {
-			always = no
-		}
+		allow = { always = no date > 1934.12.31 }
 	}
 	torpedo_cruiser_mtg = {
 
@@ -1927,12 +1923,10 @@ early_ship_hull_carrier = {
 		}
 
 		research_cost = 1
-		start_year = 1911
+		start_year = 1936
 
 		#set at gamestart
-		allow = {
-			always = no
-		}
+		allow = { always = no date > 1934.12.31 }
 	}
 	pre_dreadnoughts = {
 
@@ -2000,11 +1994,7 @@ early_ship_hull_carrier = {
 			 	has_dlc = "Gotterdammerung"
 		}	
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_aip_engine
-			}
-		}
+		allow = { ROOT = { is_special_project_completed = sp:sp_naval_aip_engine } date > 1934.12.31 }
 
 		path = {
 			leads_to_tech = sp_aip_engine_advanced_tech
@@ -2018,7 +2008,7 @@ early_ship_hull_carrier = {
 		force_use_small_tech_layout = yes		
 		is_special_project_tech = yes
 		research_cost = 2
-		start_year = 1914
+		start_year = 1939
 		folder = {
 			name = mtgnavalfolder
 			position = {  x = 1 y = 13 }
@@ -2034,11 +2024,7 @@ early_ship_hull_carrier = {
 
 	sp_aip_engine_advanced_tech = {
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_aip_engine
-			}
-		}
+		allow = { ROOT = { is_special_project_completed = sp:sp_naval_aip_engine } date > 1934.12.31 }
 
 		enable_equipment_modules = {
 			ship_engine_sub_aip_3
@@ -2047,7 +2033,7 @@ early_ship_hull_carrier = {
 		force_use_small_tech_layout = yes		
 		is_special_project_tech = yes
 		research_cost = 2
-		start_year = 1918
+		start_year = 1943
 		folder = {
 			name = mtgnavalfolder
 			position = {  x = 1 y = 19 }
@@ -2071,11 +2057,7 @@ early_ship_hull_carrier = {
 			ship_armor_ice_carrier_deck_2
 		}
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_ice_carrier
-			}
-		}
+		allow = { ROOT = { is_special_project_completed = sp:sp_naval_ice_carrier } date > 1934.12.31 }
 		path = {
 			leads_to_tech = sp_ice_composite_runawayas
 			research_cost_coeff = 1
@@ -2084,7 +2066,7 @@ early_ship_hull_carrier = {
 		force_use_small_tech_layout = yes
 		is_special_project_tech = yes
 		research_cost = 1
-		start_year = 1917
+		start_year = 1942
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 0 y = 17 }
@@ -2105,16 +2087,12 @@ early_ship_hull_carrier = {
 			ship_armor_ice_carrier_deck_3
 		}
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_ice_carrier
-			}
-		}
+		allow = { ROOT = { is_special_project_completed = sp:sp_naval_ice_carrier } date > 1934.12.31 }
 
 		force_use_small_tech_layout = yes
 		is_special_project_tech = yes			
 		research_cost = 1
-		start_year = 1919
+		start_year = 1944
 		folder = {
 			name = mtgnavalfolder
 			position = { x = 0 y = 23 }

@@ -1,0 +1,153 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "5a Divisione Navale"
+		naval_base = 10074
+		task_force = {
+			name = "5a Divisione Navale"
+			location = 10074
+			ship = { name = "RN Enrico Dandalo" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Caio Duilio" } } }
+			ship = { name = "RN Italia" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Italia" } } }
+			ship = { name = "RN Lepanto" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Italia" } } }
+			ship = { name = "RN Ruggiero di Lauria" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Ruggiero di Lauria" } } }
+			ship = { name = "RN Andrea Doria" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Ruggiero di Lauria" } } }
+		}
+	}
+	fleet = {
+		name = "1o Gruppo di Reserva"
+		naval_base = 6973
+		task_force = {
+			name = "1o Gruppo di Reserva"
+			location = 6973
+			ship = { name = "RN Lampo" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Lampo" } } }
+			ship = { name = "RN Freccia" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Lampo" } } }
+			ship = { name = "RN Dardo" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Lampo" } } }
+			ship = { name = "RN Strale" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Lampo" } } }
+			ship = { name = "RN Euro" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Lampo" } } }
+			ship = { name = "RN Ostro" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Lampo" } } }
+			ship = { name = "RN Nembo" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Nembo" } } }
+			ship = { name = "RN Turbine" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Nembo" } } }
+			ship = { name = "RN Aquilone" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Nembo" } } }
+			ship = { name = "RN Borea" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Nembo" } } }
+			ship = { name = "RN Zeffiro" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Nembo" } } }
+			ship = { name = "RN Espero" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Nembo" } } }
+			ship = { name = "RN Artigliere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Bersagliere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Corazziere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Garibaldino" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Granatiere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Lanciere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Alpino" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Caribiniere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Fuciliere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+			ship = { name = "RN Pontiere" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = ITA version_name = "Soldato" } } }
+		}
+	}
+	fleet = {
+		name = "Divisione Marina Scuola"
+		naval_base = 11837
+		task_force = {
+			name = "Divisione Marina Scuola"
+			location = 11837
+			ship = { name = "RN Re Umberto" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Re Umberto" } } }
+			ship = { name = "RN Sardegna" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Re Umberto" } } }
+			ship = { name = "RN Sicilia" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad = { amount = 1 owner = ITA version_name = "Re Umberto" } } }
+			ship = { name = "RN Vettor Pisani" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Vettor Pisani" } } }
+			ship = { name = "RN Carlo Alberto" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Vettor Pisani" } } }
+		}
+	}
+	fleet = {
+		name = "1a Squadra Navale"
+		naval_base = 11837
+		task_force = {
+			name = "1a Squadra Navale"
+			location = 11837
+			ship = { name = "RN Napoli" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Regina Elena" } } }
+			ship = { name = "RN Regina Elena" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Regina Elena" } } }
+			ship = { name = "RN Roma" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Regina Elena" } } }
+			ship = { name = "RN Vittorio Emanuele" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Regina Elena" } } }
+			ship = { name = "RN Pisa" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Pisa" } } }
+			ship = { name = "RN Amalfi" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Pisa" } } }
+			ship = { name = "RN Tripoli" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "RN Tripoli" } } }
+			ship = { name = "RN Goito" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Goito" } } }
+			ship = { name = "RN Montebello" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Goito" } } }
+			ship = { name = "RN Aretusa" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Caprera" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Euridice" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Iride" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Minerva" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Partenope" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Urania" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Partenope" } } }
+			ship = { name = "RN Agordat" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Agordat" } } }
+			ship = { name = "RN Giovanni Bausan" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Giovanni Bausan" } } }
+		}
+	}
+	fleet = {
+		name = "2a Squadra Navale"
+		naval_base = 11837
+		task_force = {
+			name = "2a Squadra Navale"
+			location = 11837
+			ship = { name = "RN Ammiraglio di Saint Bon" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Ammiraglio di Saint Bon" } } }
+			ship = { name = "RN Emanuele Filiberto" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Ammiraglio di Saint Bon" } } }
+			ship = { name = "RN Benedetto Brin" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Regina Margherita" } } }
+			ship = { name = "RN Regina Margherita" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = ITA version_name = "Regina Margherita" } } }
+			ship = { name = "RN Giuseppe Garibaldi" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Giuseppe Garibaldi" } } }
+			ship = { name = "RN Varese" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Giuseppe Garibaldi" } } }
+			ship = { name = "RN Francesco Ferruccio" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Giuseppe Garibaldi" } } }
+			ship = { name = "RN Marco Polo" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = ITA version_name = "Marco Polo" } } }
+			ship = { name = "RN Coatit" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Agordat" } } }
+		}
+	}
+	fleet = {
+		name = "RN Calabria"
+		naval_base = 11837
+		task_force = {
+			name = "RN Calabria"
+			location = 11837
+			ship = { name = "RN Calabria" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Calabria" } } }
+		}
+	}
+	fleet = {
+		name = "RN Eruria"
+		naval_base = 11837
+		task_force = {
+			name = "RN Eruria"
+			location = 11837
+			ship = { name = "RN Etruria" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Regioni" } } }
+		}
+	}
+	fleet = {
+		name = "RN Umbria"
+		naval_base = 11837
+		task_force = {
+			name = "RN Umbria"
+			location = 11837
+			ship = { name = "RN Umbria" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Regioni" } } }
+		}
+	}
+	fleet = {
+		name = "RN Vesuvio"
+		naval_base = 11837
+		task_force = {
+			name = "RN Vesuvio"
+			location = 11837
+			ship = { name = "RN Vesuvio" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Etna" } } }
+		}
+	}
+	fleet = {
+		name = "Comando Navale Mar Rosso"
+		naval_base = 12766
+		task_force = {
+			name = "Comando Navale Mar Rosso"
+			location = 12766
+			ship = { name = "RN Elba" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Regioni" } } }
+			ship = { name = "RN Puglia" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Regioni" } } }
+			ship = { name = "RN Etna" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Etna" } } }
+			ship = { name = "RN Stromboli" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Etna" } } }
+			ship = { name = "RN Piemonte" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Piemonte" } } }
+			ship = { name = "RN Liguria" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Regioni" } } }
+			ship = { name = "RN Lombardia" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = ITA version_name = "Regioni" } } }
+		}
+	}
+}

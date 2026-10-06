@@ -1,0 +1,174 @@
+# French institutional reforms: bounded, non-duplicating effects.
+ideas = {
+ country = {
+  FRA_ww1_eight_hour_day = {
+   picture = ww1_fra_eight_hour_day
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    consumer_goods_factor = .02
+    stability_weekly = .001
+   }
+  }
+  FRA_ww1_workers_councils = {
+   picture = ww1_fra_workers_councils
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    industrial_capacity_factory = .04
+    production_factory_max_efficiency_factor = .03
+    political_power_factor = -.05
+   }
+  }
+  FRA_ww1_employer_compact = {
+   picture = ww1_fra_employer_compact
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    industrial_capacity_factory = .04
+    production_factory_max_efficiency_factor = .03
+    stability_factor = -.02
+   }
+  }
+  FRA_ww1_bank_credit = {
+   picture = ww1_fra_bank_credit
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    production_speed_buildings_factor = .03
+    consumer_goods_factor = .02
+   }
+  }
+  FRA_ww1_industrial_mobilisation = {
+   picture = ww1_fra_industrial_mobilisation
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    industrial_capacity_factory = .07
+    production_factory_max_efficiency_factor = .05
+    production_speed_industrial_complex_factor = -.04
+   }
+  }
+  FRA_ww1_rationing = {
+   picture = ww1_fra_rationing
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    consumer_goods_factor = -.025
+    stability_weekly = -.0005
+   }
+  }
+  FRA_ww1_colonial_service = {
+   picture = ww1_fra_colonial_service
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    non_core_manpower = .01
+    training_time_army_factor = .03
+   }
+  }
+  FRA_ww1_imperial_citizenship = {
+   picture = ww1_fra_imperial_citizenship
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    non_core_manpower = .015
+    consumer_goods_factor = .02
+    stability_weekly = .0005
+   }
+  }
+  FRA_ww1_naval_escorts = {
+   picture = ww1_fra_naval_escorts
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    convoy_escort_efficiency = .05
+    navy_screen_defence_factor = .03
+   }
+  }
+  FRA_ww1_salonika_transport = {
+   picture = ww1_fra_salonika_transport
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    naval_attrition = -.05
+    consumer_goods_factor = .01
+   }
+  }
+  FRA_ww1_observation_balloons = {
+   picture = ww1_fra_observation_balloons
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    recon_factor = .05
+    max_dig_in = 1
+   }
+  }
+  FRA_ww1_offensive_school = {
+   picture = ww1_fra_offensive_school
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    army_infantry_attack_factor = .025
+    army_defence_factor = -.025
+    supply_consumption_factor = .03
+   }
+  }
+  FRA_ww1_concentration = {
+   picture = ww1_fra_concentration
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    planning_speed = .05
+    max_planning = .05
+    consumer_goods_factor = .01
+   }
+  }
+  FRA_ww1_fighting_retreat = {
+   picture = ww1_fra_fighting_retreat
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    army_speed_factor = .03
+    army_defence_factor = .025
+    army_attack_factor = -.03
+   }
+  }
+  FRA_ww1_field_fortification = {
+   picture = ww1_fra_field_fortification
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    max_dig_in = 2
+    supply_consumption_factor = .02
+   }
+  }
+  FRA_ww1_division_rotation = {
+   picture = ww1_fra_division_rotation
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    army_morale_factor = .03
+    army_attack_factor = -.025
+   }
+  }
+  FRA_ww1_allied_staff = {
+   picture = ww1_fra_allied_staff
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    planning_speed = .05
+    max_planning = .025
+   }
+  }
+  FRA_ww1_infantry_training = {
+   picture = ww1_fra_infantry_training
+   allowed = { always = no }
+   removal_cost = -1
+   modifier = {
+    training_time_army_factor = -.05
+    consumer_goods_factor = .01
+   }
+  }
+ }
+}

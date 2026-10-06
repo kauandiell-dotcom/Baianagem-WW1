@@ -1,0 +1,20 @@
+ENG_ww1_services_policy = {
+ ENG_ww1_staff_college_course = {
+  icon = GFX_decision_ENG_ww1_staff_college_course
+  visible = { has_country_flag = ENG_ww1_combined_arms }
+  available = { has_war = yes has_capitulated = no }
+  cost = 25 days_re_enable = 365
+  complete_effect = { army_experience = 5 add_to_variable = { ww1_britain_debt_burden = 1 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_send_liaison_officers = {
+  icon = GFX_decision_ENG_ww1_send_liaison_officers
+  visible = { has_country_flag = ENG_ww1_bef_deployed }
+  available = { has_war = yes has_capitulated = no }
+  cost = 20 days_re_enable = 240
+  complete_effect = {
+   every_other_country = { limit = { is_in_faction_with = ROOT } country_event = { id = ww1_britain_mil.13 } }
+  }
+  ai_will_do = { base = 1 }
+ }
+}

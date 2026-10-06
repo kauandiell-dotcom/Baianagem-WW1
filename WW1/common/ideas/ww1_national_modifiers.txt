@@ -1,4 +1,4 @@
-ideas = {
+﻿ideas = {
 	country = {
 
 		# =======================================================
@@ -20,11 +20,7 @@ ideas = {
 		GER_krupp_chemical_conglomerates = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.08
-				production_speed_arms_factory_factor = 0.10
-				research_speed_factor = 0.05
-			}
+			modifier = { industrial_capacity_factory = .05 production_speed_arms_factory_factor = .05 }
 		}
 
 		# 1.3 A Corrida Naval de Tirpitz
@@ -96,11 +92,7 @@ ideas = {
 		GER_hindenburg_program_victory = {
 			allowed = { always = no }
 			removal_cost = -1
-			modifier = {
-				industrial_capacity_factory = 0.12
-				army_org_factor = 0.05
-				war_support_factor = 0.10
-			}
+			modifier = { industrial_capacity_factory = .08 production_factory_efficiency_gain_factor = -.05 consumer_goods_factor = .04 stability_factor = -.03 }
 		}
 
 		chemical_gas_disruption = {

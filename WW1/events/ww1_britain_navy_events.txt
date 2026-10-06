@@ -1,0 +1,155 @@
+add_namespace = ww1_britain_nav
+
+country_event = {
+ id = ww1_britain_nav.2 title = ww1_britain_nav.2.t desc = ww1_britain_nav.2.d
+ picture = GFX_event_ww1_britain_convoy_debate
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_nav.2.a
+  ai_chance = { base = 75 }
+  add_political_power = -10
+  add_ideas = ENG_ww1_convoy_system
+  set_country_flag = ENG_ww1_convoy_adopted
+ }
+ option = {
+  name = ww1_britain_nav.2.b
+  ai_chance = { base = 25 }
+  add_political_power = 10
+  navy_experience = 2
+  add_to_variable = { ww1_britain_debt_burden = 2 }
+  set_country_flag = ENG_ww1_convoy_rejected
+ }
+}
+country_event = {
+ id = ww1_britain_nav.3 title = ww1_britain_nav.3.t desc = ww1_britain_nav.3.d
+ picture = GFX_event_ww1_britain_jutland
+ mean_time_to_happen = { days = 20 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1916.5.29 date < 1917.1.1 has_war_with = GER }
+ option = {
+  name = ww1_britain_nav.3.a
+  ai_chance = { base = 50 }
+  navy_experience = 5
+  add_war_support = -0.01
+  set_country_flag = ENG_ww1_jutland_honest
+ }
+ option = {
+  name = ww1_britain_nav.3.b
+  ai_chance = { base = 50 }
+  add_political_power = 15
+  add_war_support = 0.01
+  set_country_flag = ENG_ww1_jutland_spin
+ }
+}
+country_event = {
+ id = ww1_britain_nav.4 title = ww1_britain_nav.4.t desc = ww1_britain_nav.4.d
+ picture = GFX_event_ww1_britain_zeppelins
+ mean_time_to_happen = { days = 30 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1915.1.18 date < 1916.9.1 has_war_with = GER }
+ option = {
+  name = ww1_britain_nav.4.a
+  ai_chance = { base = 50 }
+  add_war_support = -0.01
+  add_stability = -0.005
+ }
+ option = {
+  name = ww1_britain_nav.4.b
+  ai_chance = { base = 50 }
+  add_political_power = -10
+  air_experience = 2
+  set_country_flag = ENG_ww1_home_squadrons
+ }
+}
+country_event = {
+ id = ww1_britain_nav.5 title = ww1_britain_nav.5.t desc = ww1_britain_nav.5.d
+ picture = GFX_event_ww1_britain_gotha_raids
+ mean_time_to_happen = { days = 20 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no date > 1917.6.12 date < 1918.12.1 has_war_with = GER }
+ option = {
+  name = ww1_britain_nav.5.a
+  ai_chance = { base = 60 }
+  add_political_power = -15
+  if = { limit = { has_country_flag = ENG_ww1_home_air_defence } add_war_support = -0.005 }
+  else = { add_war_support = -0.02 }
+ }
+ option = {
+  name = ww1_britain_nav.5.b
+  ai_chance = { base = 40 }
+  add_political_power = -10
+  set_country_flag = ENG_ww1_smuts_commission
+ }
+}
+country_event = {
+ id = ww1_britain_nav.6 title = ww1_britain_nav.6.t desc = ww1_britain_nav.6.d
+ picture = GFX_event_ww1_britain_smuts_report
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_nav.6.a
+  ai_chance = { base = 65 }
+  add_political_power = -10
+  set_country_flag = ENG_ww1_air_independent
+  if = { limit = { has_country_flag = ENG_ww1_smuts_commission } add_war_support = 0.01 }
+ }
+ option = {
+  name = ww1_britain_nav.6.b
+  ai_chance = { base = 35 }
+  add_political_power = 10
+  set_country_flag = ENG_ww1_air_separate
+ }
+}
+country_event = {
+ id = ww1_britain_nav.10 title = ww1_britain_nav.10.t desc = ww1_britain_nav.10.d
+ picture = GFX_event_ww1_britain_hunger_blockade
+ is_triggered_only = yes
+ trigger = { tag = GER has_war_with = ENG }
+ option = {
+  name = ww1_britain_nav.10.a
+  ai_chance = { base = 65 }
+  add_stability = -0.01
+  add_war_support = -0.01
+ }
+ option = {
+  name = ww1_britain_nav.10.b
+  ai_chance = { base = 35 }
+  add_stability = -0.015
+  add_war_support = 0.01
+ }
+}
+country_event = {
+ id = ww1_britain_nav.11 title = ww1_britain_nav.11.t desc = ww1_britain_nav.11.d
+ picture = GFX_event_ww1_britain_orders_in_council
+ is_triggered_only = yes
+ trigger = { tag = USA NOT = { OR = { has_war_with = GER is_in_faction_with = ENG } } }
+ option = {
+  name = ww1_britain_nav.11.a
+  ai_chance = { base = 40 }
+  add_political_power = 10
+  FROM = { add_stability = -0.01 add_to_variable = { ww1_britain_debt_burden = 1 } }
+ }
+ option = {
+  name = ww1_britain_nav.11.b
+  ai_chance = { base = 60 }
+  add_stability = 0.01
+  FROM = { set_country_flag = ENG_ww1_us_trade_accepted }
+ }
+}
+country_event = {
+ id = ww1_britain_nav.12 title = ww1_britain_nav.12.t desc = ww1_britain_nav.12.d
+ picture = GFX_event_ww1_britain_med_escorts
+ is_triggered_only = yes
+ trigger = { OR = { tag = JAP tag = ITA tag = FRA tag = GRE } }
+ option = {
+  name = ww1_britain_nav.12.a
+  ai_chance = { base = 70 }
+  navy_experience = 2
+  FROM = { navy_experience = 2 }
+ }
+ option = {
+  name = ww1_britain_nav.12.b
+  ai_chance = { base = 30 }
+ }
+}

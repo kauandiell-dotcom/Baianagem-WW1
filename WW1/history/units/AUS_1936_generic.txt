@@ -1,5 +1,5 @@
-# Austro-Hungarian Empire (Österreichisch-Ungarische Monarchie) - Starting Order of Battle (1911)
-# Balanced, authentic historical composition with elite k.u.k. Gebirgsjäger & Honvéd Cavalry
+﻿# Austro-Hungarian Empire (Österreichisch-Ungarische Monarchie) - Starting Order of Battle (1911)
+# Territorial army opening: preserve division count, mixed mountain infantry, no elite custom battalion stacking.
 
 division_template = {
 	name = "k.u.k. Infanterie-Division"
@@ -38,15 +38,15 @@ division_template = {
 division_template = {
 	name = "k.u.k. Gebirgsjager-Division"
 	regiments = {
-		mountaineers = { x = 0 y = 0 }
-		mountaineers = { x = 0 y = 1 }
-		mountaineers = { x = 0 y = 2 }
-		mountaineers = { x = 1 y = 0 }
-		mountaineers = { x = 1 y = 1 }
-		mountaineers = { x = 1 y = 2 }
-		kuk_gebirgsjaeger = { x = 2 y = 0 }
-		kuk_gebirgsjaeger = { x = 2 y = 1 }
-		kuk_gebirgsjaeger = { x = 2 y = 2 }
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		mountaineers = { x = 2 y = 0 }
+		mountaineers = { x = 2 y = 1 }
+		mountaineers = { x = 2 y = 2 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }

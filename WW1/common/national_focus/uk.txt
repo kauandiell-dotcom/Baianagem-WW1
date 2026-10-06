@@ -1,1 +1,3995 @@
-# MBR 1911: intentionally empty; every country uses generic_focus.
+# British campaign: 200 nodes, branches and conditional programmes. Runtime verification pending.
+focus_tree = {
+ id = ENG_ww1_1911_1923
+ default = no
+ country = { factor = 0 modifier = { add = 100 original_tag = ENG } }
+ initial_show_position = { x = 10 y = 0 }
+ continuous_focus_position = { x = 0 y = 2200 }
+ shortcut = {
+  name = ENG_ww1_shortcut_politics
+  target = ENG_ww1_parliament_act
+  scroll_wheel_factor = 0.5
+ }
+ shortcut = {
+  name = ENG_ww1_shortcut_economy
+  target = ENG_ww1_the_treasury_estimates
+  scroll_wheel_factor = 0.5
+ }
+ shortcut = {
+  name = ENG_ww1_shortcut_diplomacy
+  target = ENG_ww1_edward_grey_and_the_entente
+  scroll_wheel_factor = 0.5
+ }
+ shortcut = {
+  name = ENG_ww1_shortcut_navy
+  target = ENG_ww1_admiralty_fleet_survey
+  scroll_wheel_factor = 0.5
+ }
+ shortcut = {
+  name = ENG_ww1_shortcut_army
+  target = ENG_ww1_the_haldane_establishment
+  scroll_wheel_factor = 0.5
+ }
+ focus = {
+  id = ENG_ww1_parliament_act
+  icon = GFX_goal_ww1_ENG_ww1_parliament_act
+  x = 10
+  y = 0
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 25
+   add_to_variable = { ww1_britain_irish_tension = -2 }
+   set_country_flag = ENG_ww1_parliament_act_passed
+  }
+ }
+ focus = {
+  id = ENG_ww1_national_insurance
+  icon = GFX_goal_ww1_ENG_ww1_national_insurance
+  x = 8
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_parliament_act }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_national_insurance
+   add_to_variable = { ww1_britain_labour_support = 5 }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_liberal_cabinet
+  icon = GFX_goal_ww1_ENG_ww1_the_liberal_cabinet
+  x = 10
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_parliament_act }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   set_country_flag = ENG_ww1_liberal_government
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_lords_and_the_commons
+  icon = GFX_goal_ww1_ENG_ww1_the_lords_and_the_commons
+  x = 12
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_parliament_act }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_lords_curbed
+  }
+ }
+ focus = {
+  id = ENG_ww1_irish_parliamentary_support
+  icon = GFX_goal_ww1_ENG_ww1_irish_parliamentary_support
+  x = 13
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_lords_and_the_commons }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   add_to_variable = { ww1_britain_irish_tension = -5 }
+   set_country_flag = ENG_ww1_irish_party_support
+   set_country_flag = ENG_ww1_home_rule_promised
+  }
+ }
+ focus = {
+  id = ENG_ww1_home_rule_bill
+  icon = GFX_goal_ww1_ENG_ww1_home_rule_bill
+  x = 15
+  y = 2
+  prerequisite = { focus = ENG_ww1_the_lords_and_the_commons }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   set_country_flag = ENG_ww1_home_rule_bill_introduced
+   country_event = { id = ww1_britain_pol.1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_ulster_conference
+  icon = GFX_goal_ww1_ENG_ww1_ulster_conference
+  x = 15
+  y = 3
+  prerequisite = { focus = ENG_ww1_irish_parliamentary_support }
+  prerequisite = { focus = ENG_ww1_home_rule_bill }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1912.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_pol.2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_electoral_registration
+  icon = GFX_goal_ww1_ENG_ww1_electoral_registration
+  x = 5
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_national_insurance }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_to_variable = { ww1_britain_labour_support = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_defence_of_the_realm
+  icon = GFX_goal_ww1_ENG_ww1_the_defence_of_the_realm
+  x = 9
+  y = 2
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_liberal_cabinet }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_defence_of_the_realm
+   set_country_flag = ENG_ww1_dora_enacted
+  }
+ }
+ focus = {
+  id = ENG_ww1_wartime_parliamentary_scrutiny
+  icon = GFX_goal_ww1_ENG_ww1_wartime_parliamentary_scrutiny
+  x = 7
+  y = 2
+  prerequisite = { focus = ENG_ww1_national_insurance }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_cabinet_consultation
+   add_stability = 0.02
+   add_to_variable = { ww1_britain_labour_support = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_coalition_cabinet
+  icon = GFX_goal_ww1_ENG_ww1_the_coalition_cabinet
+  x = 7
+  y = 3
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_defence_of_the_realm }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_pol.3 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_military_service_act
+  icon = GFX_goal_ww1_ENG_ww1_the_military_service_act
+  x = 6
+  y = 4
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_coalition_cabinet }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   set_country_flag = ENG_ww1_military_service_authorised
+   add_to_variable = { ww1_britain_labour_support = -6 }
+   add_to_variable = { ww1_britain_irish_tension = 4 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_reserved_civilian_occupations
+  icon = GFX_goal_ww1_ENG_ww1_reserved_civilian_occupations
+  x = 7
+  y = 5
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_military_service_act }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_reserved_occupations
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_war_cabinet
+  icon = GFX_goal_ww1_ENG_ww1_the_war_cabinet
+  x = 4
+  y = 4
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_coalition_cabinet }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_pol.4 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_franchise_debate
+  icon = GFX_goal_ww1_ENG_ww1_the_franchise_debate
+  x = 4
+  y = 3
+  prerequisite = { focus = ENG_ww1_electoral_registration }
+  prerequisite = { focus = ENG_ww1_wartime_parliamentary_scrutiny }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1916.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_to_variable = { ww1_britain_labour_support = 3 }
+   set_country_flag = ENG_ww1_franchise_debated
+  }
+ }
+ focus = {
+  id = ENG_ww1_representation_of_the_people
+  icon = GFX_goal_ww1_ENG_ww1_representation_of_the_people
+  x = 0
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_franchise_debate }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_enlarged_franchise
+   add_to_variable = { ww1_britain_labour_support = 8 }
+   set_country_flag = ENG_ww1_franchise_extended
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_coalition_election
+  icon = GFX_goal_ww1_ENG_ww1_the_coalition_election
+  x = 2
+  y = 4
+  prerequisite = { focus = ENG_ww1_the_franchise_debate }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_pol.5 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_liberal_reconstruction
+  icon = GFX_goal_ww1_ENG_ww1_liberal_reconstruction
+  x = 1
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_coalition_election }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 25
+   add_stability = 0.03
+   add_to_variable = { ww1_britain_debt_burden = 3 }
+   set_country_flag = ENG_ww1_liberal_reconstruction_programme
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_labour_alternative
+  icon = GFX_goal_ww1_ENG_ww1_the_labour_alternative
+  x = 3
+  y = 5
+  mutually_exclusive = { focus = ENG_ww1_the_conservative_settlement }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1922.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_coalition_election }
+  
+  ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
+  completion_reward = {
+   add_ideas = ENG_ww1_labour_compact
+   add_to_variable = { ww1_britain_labour_support = 10 }
+   add_stability = -0.02
+   add_political_power = 10
+   set_country_flag = ENG_ww1_labour_mandate
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_conservative_settlement
+  icon = GFX_goal_ww1_ENG_ww1_the_conservative_settlement
+  x = 5
+  y = 5
+  mutually_exclusive = { focus = ENG_ww1_the_labour_alternative }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1921.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_coalition_election }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 20
+   add_stability = 0.02
+   add_to_variable = { ww1_britain_labour_support = -8 }
+   add_to_variable = { ww1_britain_debt_burden = -4 }
+   set_country_flag = ENG_ww1_conservative_settlement
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_treasury_estimates
+  icon = GFX_goal_ww1_ENG_ww1_the_treasury_estimates
+  x = 31
+  y = 0
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = { set_country_flag = ENG_ww1_the_treasury_estimates_authorised add_political_power = -25 ww1_britain_open_budget_review = yes }
+ }
+ focus = {
+  id = ENG_ww1_industrial_district_surveys
+  icon = GFX_goal_ww1_ENG_ww1_industrial_district_surveys
+  x = 31
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_treasury_estimates }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   set_country_flag = ENG_ww1_district_surveys
+  }
+ }
+ focus = {
+  id = ENG_ww1_midlands_machine_shops
+  icon = GFX_goal_ww1_ENG_ww1_midlands_machine_shops
+  x = 29
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_industrial_district_surveys }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   128 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 } }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_clyde_shipyard_contracts
+  icon = GFX_goal_ww1_ENG_ww1_clyde_shipyard_contracts
+  x = 31
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_industrial_district_surveys }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   133 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 } }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_tyne_steel_and_ordnance
+  icon = GFX_goal_ww1_ENG_ww1_tyne_steel_and_ordnance
+  x = 33
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_industrial_district_surveys }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   131 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_lancashire_engineering
+  icon = GFX_goal_ww1_ENG_ww1_lancashire_engineering
+  x = 27
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_midlands_machine_shops }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   132 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 } }
+   add_to_variable = { ww1_britain_labour_support = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_city_credit_market
+  icon = GFX_goal_ww1_ENG_ww1_the_city_credit_market
+  x = 33
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_tyne_steel_and_ordnance }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -2 }
+   add_political_power = 10
+   set_country_flag = ENG_ww1_city_credit
+  }
+ }
+ focus = {
+  id = ENG_ww1_railway_freight_coordination
+  icon = GFX_goal_ww1_ENG_ww1_railway_freight_coordination
+  x = 31
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_clyde_shipyard_contracts }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_railway_executive
+   set_country_flag = ENG_ww1_railway_executive
+  }
+ }
+ focus = {
+  id = ENG_ww1_domestic_coal_allocation
+  icon = GFX_goal_ww1_ENG_ww1_domestic_coal_allocation
+  x = 29
+  y = 3
+  prerequisite = { focus = ENG_ww1_midlands_machine_shops }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_coal_allocation
+   set_country_flag = ENG_ww1_coal_allocation_done
+  }
+ }
+ focus = {
+  id = ENG_ww1_national_munitions_contracts
+  icon = GFX_goal_ww1_ENG_ww1_national_munitions_contracts
+  x = 35
+  y = 3
+  prerequisite = { focus = ENG_ww1_tyne_steel_and_ordnance }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_munitions_contracts
+   add_to_variable = { ww1_britain_debt_burden = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_ministry_of_munitions
+  icon = GFX_goal_ww1_ENG_ww1_the_ministry_of_munitions
+  x = 34
+  y = 4
+  prerequisite = { focus = ENG_ww1_the_city_credit_market }
+  prerequisite = { focus = ENG_ww1_national_munitions_contracts }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_munitions_ministry
+   remove_ideas = ENG_ww1_munitions_contracts
+   add_to_variable = { ww1_britain_labour_support = -3 }
+   set_country_flag = ENG_ww1_ministry_of_munitions
+  }
+ }
+ focus = {
+  id = ENG_ww1_shell_inspection_boards
+  icon = GFX_goal_ww1_ENG_ww1_shell_inspection_boards
+  x = 31
+  y = 4
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_railway_freight_coordination }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_shell_inspection
+   set_country_flag = ENG_ww1_shell_inspection
+  }
+ }
+ focus = {
+  id = ENG_ww1_wartime_labour_dilution
+  icon = GFX_goal_ww1_ENG_ww1_wartime_labour_dilution
+  x = 28
+  y = 4
+  prerequisite = { focus = ENG_ww1_lancashire_engineering }
+  prerequisite = { focus = ENG_ww1_domestic_coal_allocation }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_labour_dilution
+   add_to_variable = { ww1_britain_labour_support = -4 }
+   set_country_flag = ENG_ww1_labour_dilution
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_shop_stewards_agreement
+  icon = GFX_goal_ww1_ENG_ww1_the_shop_stewards_agreement
+  x = 29
+  y = 5
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_wartime_labour_dilution }
+  mutually_exclusive = { focus = ENG_ww1_emergency_factory_controls }
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_labour_compact
+   add_to_variable = { ww1_britain_labour_support = 6 }
+   set_country_flag = ENG_ww1_shop_stewards_agreement
+  }
+ }
+ focus = {
+  id = ENG_ww1_emergency_factory_controls
+  icon = GFX_goal_ww1_ENG_ww1_emergency_factory_controls
+  x = 27
+  y = 5
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_wartime_labour_dilution }
+  mutually_exclusive = { focus = ENG_ww1_the_shop_stewards_agreement }
+  ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
+  completion_reward = {
+   add_ideas = ENG_ww1_emergency_controls
+   add_to_variable = { ww1_britain_labour_support = -6 }
+   set_country_flag = ENG_ww1_emergency_factory_controls
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_ministry_of_food
+  icon = GFX_goal_ww1_ENG_ww1_the_ministry_of_food
+  x = 33
+  y = 5
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_ministry_of_munitions }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_ministry_of_food
+   country_event = { id = ww1_britain_eco.3 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_austerity_and_public_credit
+  icon = GFX_goal_ww1_ENG_ww1_austerity_and_public_credit
+  x = 29
+  y = 6
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1916.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_railway_freight_coordination focus = ENG_ww1_the_shop_stewards_agreement focus = ENG_ww1_emergency_factory_controls }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -3 }
+   add_to_variable = { ww1_britain_labour_support = -2 }
+   add_political_power = 10
+   set_country_flag = ENG_ww1_austerity_measures
+  }
+ }
+ focus = {
+  id = ENG_ww1_debt_service_commission
+  icon = GFX_goal_ww1_ENG_ww1_debt_service_commission
+  x = 27
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_austerity_and_public_credit }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -4 }
+   add_stability = -0.01
+   set_country_flag = ENG_ww1_debt_service_commission
+  }
+ }
+ focus = {
+  id = ENG_ww1_convert_the_war_plants
+  icon = GFX_goal_ww1_ENG_ww1_convert_the_war_plants
+  x = 29
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_austerity_and_public_credit }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   add_stability = 0.01
+   add_to_variable = { ww1_britain_labour_support = 2 }
+   set_country_flag = ENG_ww1_war_plants_converted
+  }
+ }
+ focus = {
+  id = ENG_ww1_housing_and_civilian_employment
+  icon = GFX_goal_ww1_ENG_ww1_housing_and_civilian_employment
+  x = 31
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_austerity_and_public_credit }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_housing_programme
+   add_to_variable = { ww1_britain_debt_burden = 3 }
+   add_to_variable = { ww1_britain_labour_support = 4 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_imperial_conference
+  icon = GFX_goal_ww1_ENG_ww1_the_imperial_conference
+  x = 11
+  y = 2
+  prerequisite = { focus = ENG_ww1_the_liberal_cabinet }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_to_variable = { ww1_britain_dominion_consent = 8 }
+   set_country_flag = ENG_ww1_imperial_conference_held
+   country_event = { id = ww1_britain_pol.6 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_canadian_defence_consultation
+  icon = GFX_goal_ww1_ENG_ww1_canadian_defence_consultation
+  x = 9
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_imperial_conference }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 3 }
+   if = { limit = { country_exists = CAN } CAN = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+   set_country_flag = ENG_ww1_consulted_canada
+  }
+ }
+ focus = {
+  id = ENG_ww1_australian_defence_consultation
+  icon = GFX_goal_ww1_ENG_ww1_australian_defence_consultation
+  x = 11
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_imperial_conference }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 3 }
+   if = { limit = { country_exists = AST } AST = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+   set_country_flag = ENG_ww1_consulted_australia
+  }
+ }
+ focus = {
+  id = ENG_ww1_new_zealand_naval_consultation
+  icon = GFX_goal_ww1_ENG_ww1_new_zealand_naval_consultation
+  x = 13
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_imperial_conference }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 3 }
+   if = { limit = { country_exists = NZL } NZL = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+   set_country_flag = ENG_ww1_consulted_new_zealand
+  }
+ }
+ focus = {
+  id = ENG_ww1_south_african_cooperation
+  icon = GFX_goal_ww1_ENG_ww1_south_african_cooperation
+  x = 8
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_canadian_defence_consultation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 3 }
+   if = { limit = { country_exists = SAF } SAF = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+   set_country_flag = ENG_ww1_consulted_south_africa
+  }
+ }
+ focus = {
+  id = ENG_ww1_indian_army_liaison
+  icon = GFX_goal_ww1_ENG_ww1_indian_army_liaison
+  x = 12
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_australian_defence_consultation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 2 }
+   set_country_flag = ENG_ww1_consulted_india
+  }
+ }
+ focus = {
+  id = ENG_ww1_colonial_medical_services
+  icon = GFX_goal_ww1_ENG_ww1_colonial_medical_services
+  x = 16
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_new_zealand_naval_consultation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.01
+   add_to_variable = { ww1_britain_dominion_consent = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_dominion_procurement_offices
+  icon = GFX_goal_ww1_ENG_ww1_dominion_procurement_offices
+  x = 10
+  y = 4
+  prerequisite = { focus = ENG_ww1_canadian_defence_consultation }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_dominion_procurement
+   add_to_variable = { ww1_britain_dominion_consent = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_mediterranean_stations
+  icon = GFX_goal_ww1_ENG_ww1_the_mediterranean_stations
+  x = 18
+  y = 4
+  prerequisite = { focus = ENG_ww1_new_zealand_naval_consultation }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 5
+   set_country_flag = ENG_ww1_mediterranean_stations
+  }
+ }
+ focus = {
+  id = ENG_ww1_singapore_maritime_coordination
+  icon = GFX_goal_ww1_ENG_ww1_singapore_maritime_coordination
+  x = 14
+  y = 4
+  prerequisite = { focus = ENG_ww1_australian_defence_consultation }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 4
+   add_to_variable = { ww1_britain_dominion_consent = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_imperial_troop_transport
+  icon = GFX_goal_ww1_ENG_ww1_imperial_troop_transport
+  x = 9
+  y = 5
+  prerequisite = { focus = ENG_ww1_south_african_cooperation }
+  prerequisite = { focus = ENG_ww1_dominion_procurement_offices }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_imperial_sealift
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_imperial_war_conference
+  icon = GFX_goal_ww1_ENG_ww1_the_imperial_war_conference
+  x = 12
+  y = 5
+  prerequisite = { focus = ENG_ww1_indian_army_liaison }
+  prerequisite = { focus = ENG_ww1_singapore_maritime_coordination }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1916.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 6 }
+   set_country_flag = ENG_ww1_imperial_war_conference_held
+   country_event = { id = ww1_britain_pol.8 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_dominion_war_cabinet_delegates
+  icon = GFX_goal_ww1_ENG_ww1_dominion_war_cabinet_delegates
+  x = 9
+  y = 6
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1916.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_imperial_troop_transport }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   add_to_variable = { ww1_britain_dominion_consent = 4 }
+   set_country_flag = ENG_ww1_dominion_delegates
+  }
+ }
+ focus = {
+  id = ENG_ww1_indian_constitutional_consultation
+  icon = GFX_goal_ww1_ENG_ww1_indian_constitutional_consultation
+  x = 12
+  y = 6
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1916.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_imperial_war_conference }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_dominion_consent = 3 }
+   if = { limit = { country_exists = RAJ } RAJ = { add_stability = 0.05 } }
+   set_country_flag = ENG_ww1_montagu_declaration
+  }
+ }
+ focus = {
+  id = ENG_ww1_colonial_labour_contracts
+  icon = GFX_goal_ww1_ENG_ww1_colonial_labour_contracts
+  x = 16
+  y = 5
+  prerequisite = { focus = ENG_ww1_colonial_medical_services }
+  prerequisite = { focus = ENG_ww1_the_mediterranean_stations }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_manpower = 12000
+   add_to_variable = { ww1_britain_dominion_consent = -1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_a_commonwealth_consultation_charter
+  icon = GFX_goal_ww1_ENG_ww1_a_commonwealth_consultation_charter
+  x = 12
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_dominion_war_cabinet_delegates focus = ENG_ww1_indian_constitutional_consultation focus = ENG_ww1_colonial_labour_contracts }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_commonwealth_consultation
+   add_to_variable = { ww1_britain_dominion_consent = 5 }
+   set_country_flag = ENG_ww1_commonwealth_charter
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_irish_settlement_conference
+  icon = GFX_goal_ww1_ENG_ww1_the_irish_settlement_conference
+  x = 11
+  y = 8
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_a_commonwealth_consultation_charter }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_pol.9 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_dominion_status_for_ireland
+  icon = GFX_goal_ww1_ENG_ww1_dominion_status_for_ireland
+  x = 11
+  y = 9
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1920.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_the_irish_settlement_conference }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_pol.10 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_egyptian_political_negotiations
+  icon = GFX_goal_ww1_ENG_ww1_egyptian_political_negotiations
+  x = 13
+  y = 8
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_a_commonwealth_consultation_charter }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   if = { limit = { country_exists = EGY } EGY = { add_stability = 0.03 } }
+   set_country_flag = ENG_ww1_egypt_negotiated
+  }
+ }
+ focus = {
+  id = ENG_ww1_imperial_defence_after_the_war
+  icon = GFX_goal_ww1_ENG_ww1_imperial_defence_after_the_war
+  x = 12
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1921.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_POLITICAL }
+  prerequisite = { focus = ENG_ww1_dominion_status_for_ireland focus = ENG_ww1_egyptian_political_negotiations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 5
+   add_political_power = 15
+   add_to_variable = { ww1_britain_dominion_consent = 3 }
+   set_country_flag = ENG_ww1_imperial_defence_review
+  }
+ }
+ focus = {
+  id = ENG_ww1_edward_grey_and_the_entente
+  icon = GFX_goal_ww1_ENG_ww1_edward_grey_and_the_entente
+  x = 50
+  y = 0
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   set_country_flag = ENG_ww1_grey_entente
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_french_naval_understanding
+  icon = GFX_goal_ww1_ENG_ww1_the_french_naval_understanding
+  x = 50
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_edward_grey_and_the_entente }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 4
+   if = { limit = { country_exists = FRA } FRA = { country_event = { id = ww1_britain_dip.14 } } }
+   set_country_flag = ENG_ww1_french_naval_understanding
+  }
+ }
+ focus = {
+  id = ENG_ww1_french_staff_conversations
+  icon = GFX_goal_ww1_ENG_ww1_french_staff_conversations
+  x = 52
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_edward_grey_and_the_entente }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   set_country_flag = ENG_ww1_staff_conversations
+  }
+ }
+ focus = {
+  id = ENG_ww1_continental_commitment
+  icon = GFX_goal_ww1_ENG_ww1_continental_commitment
+  x = 53
+  y = 2
+  cost = 4
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_french_staff_conversations }
+  mutually_exclusive = { focus = ENG_ww1_armed_neutrality }
+  ai_will_do = { factor = 1 modifier = { factor = 4 is_historical_focus_on = yes } }
+  completion_reward = { set_country_flag = ENG_ww1_continental_commitment_authorised add_political_power = -15 country_event = { id = ww1_britain.5 } }
+ }
+ focus = {
+  id = ENG_ww1_armed_neutrality
+  icon = GFX_goal_ww1_ENG_ww1_armed_neutrality
+  x = 51
+  y = 2
+  cost = 4
+  available_if_capitulated = no
+  available = { date > 1910.12.31  has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_the_french_naval_understanding }
+  mutually_exclusive = { focus = ENG_ww1_continental_commitment }
+  ai_will_do = { factor = .25 modifier = { factor = 0 is_historical_focus_on = yes } }
+  completion_reward = { set_country_flag = ENG_ww1_armed_neutrality_authorised add_political_power = -25 country_event = { id = ww1_britain.6 } }
+ }
+ focus = {
+  id = ENG_ww1_belgian_treaty_obligations
+  icon = GFX_goal_ww1_ENG_ww1_belgian_treaty_obligations
+  x = 55
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_continental_commitment focus = ENG_ww1_armed_neutrality }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_belgian_obligations
+   if = { limit = { country_exists = BEL has_country_flag = ENG_ww1_continental_commitment_selected } give_guarantee = BEL }
+  }
+ }
+ focus = {
+  id = ENG_ww1_reconsider_the_continental_policy
+  icon = GFX_goal_ww1_ENG_ww1_reconsider_the_continental_policy
+  x = 53
+  y = 3
+  cost = 4
+  available_if_capitulated = no
+  available = { date > 1910.12.31 has_country_flag = ENG_ww1_armed_neutrality_selected }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_armed_neutrality }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = { set_country_flag = ENG_ww1_reconsider_the_continental_policy_authorised add_political_power = -25 ww1_britain_open_policy_review = yes }
+ }
+ focus = {
+  id = ENG_ww1_channel_expeditionary_coordination
+  icon = GFX_goal_ww1_ENG_ww1_channel_expeditionary_coordination
+  x = 57
+  y = 4
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes has_country_flag = ENG_ww1_continental_commitment_selected }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_belgian_treaty_obligations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   set_country_flag = ENG_ww1_channel_coordination
+  }
+ }
+ focus = {
+  id = ENG_ww1_russian_procurement_liaison
+  icon = GFX_goal_ww1_ENG_ww1_russian_procurement_liaison
+  x = 57
+  y = 5
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_channel_expeditionary_coordination }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   if = { limit = { country_exists = SOV } SOV = { country_event = { id = ww1_britain_dip.13 } } }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_russian_liaison
+  }
+ }
+ focus = {
+  id = ENG_ww1_neutral_shipping_assurances
+  icon = GFX_goal_ww1_ENG_ww1_neutral_shipping_assurances
+  x = 53
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_reconsider_the_continental_policy focus = ENG_ww1_belgian_treaty_obligations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -1 }
+   add_political_power = 5
+   set_country_flag = ENG_ww1_neutral_shipping
+  }
+ }
+ focus = {
+  id = ENG_ww1_american_credit_negotiations
+  icon = GFX_goal_ww1_ENG_ww1_american_credit_negotiations
+  x = 53
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_neutral_shipping_assurances }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   if = { limit = { country_exists = USA } USA = { country_event = { id = ww1_britain_dip.10 } } }
+   set_country_flag = ENG_ww1_credit_requested
+  }
+ }
+ focus = {
+  id = ENG_ww1_italian_coalition_talks
+  icon = GFX_goal_ww1_ENG_ww1_italian_coalition_talks
+  x = 55
+  y = 4
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_belgian_treaty_obligations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   if = { limit = { country_exists = ITA } ITA = { country_event = { id = ww1_britain_dip.11 } } }
+   set_country_flag = ENG_ww1_italy_talks
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_portuguese_connection
+  icon = GFX_goal_ww1_ENG_ww1_the_portuguese_connection
+  x = 55
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_italian_coalition_talks }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   if = { limit = { country_exists = POR } POR = { country_event = { id = ww1_britain_dip.12 } } }
+   set_country_flag = ENG_ww1_portugal_talks
+  }
+ }
+ focus = {
+  id = ENG_ww1_balkan_allied_coordination
+  icon = GFX_goal_ww1_ENG_ww1_balkan_allied_coordination
+  x = 57
+  y = 6
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_russian_procurement_liaison }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   if = { limit = { country_exists = SER } SER = { country_event = { id = ww1_britain_dip.15 } } }
+   if = { limit = { country_exists = GRE } GRE = { country_event = { id = ww1_britain_dip.15 } } }
+   if = { limit = { country_exists = ROM } ROM = { country_event = { id = ww1_britain_dip.15 } } }
+   set_country_flag = ENG_ww1_balkan_coordination
+  }
+ }
+ focus = {
+  id = ENG_ww1_coalition_shipping_priorities
+  icon = GFX_goal_ww1_ENG_ww1_coalition_shipping_priorities
+  x = 54
+  y = 7
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_american_credit_negotiations focus = ENG_ww1_the_portuguese_connection focus = ENG_ww1_balkan_allied_coordination }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -1 }
+   navy_experience = 3
+   set_country_flag = ENG_ww1_shipping_pool
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_supreme_war_council
+  icon = GFX_goal_ww1_ENG_ww1_the_supreme_war_council
+  x = 54
+  y = 8
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1916.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_coalition_shipping_priorities }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_dip.2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_armistice_consultations
+  icon = GFX_goal_ww1_ENG_ww1_armistice_consultations
+  x = 54
+  y = 9
+  cost = 4
+  available_if_capitulated = no
+  available = { date > 1916.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_the_supreme_war_council }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_dip.3 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_reconstruction_credit_negotiations
+  icon = GFX_goal_ww1_ENG_ww1_reconstruction_credit_negotiations
+  x = 52
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_armistice_consultations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   if = { limit = { has_country_flag = ENG_ww1_american_credit } add_to_variable = { ww1_britain_debt_burden = -3 } }
+   if = { limit = { NOT = { has_country_flag = ENG_ww1_american_credit } } add_to_variable = { ww1_britain_debt_burden = 2 } }
+   add_political_power = 10
+   set_country_flag = ENG_ww1_reconstruction_credit
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_naval_disarmament_conference
+  icon = GFX_goal_ww1_ENG_ww1_the_naval_disarmament_conference
+  x = 54
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1920.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_armistice_consultations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_dip.4 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_a_european_security_settlement
+  icon = GFX_goal_ww1_ENG_ww1_a_european_security_settlement
+  x = 56
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ANNEXATION }
+  prerequisite = { focus = ENG_ww1_armistice_consultations }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 20
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_european_settlement
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_haldane_establishment
+  icon = GFX_goal_ww1_ENG_ww1_the_haldane_establishment
+  x = 95
+  y = 0
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   army_experience = 3
+   add_ideas = ENG_ww1_haldane_reforms
+   set_country_flag = ENG_ww1_haldane_reforms
+  }
+ }
+ focus = {
+  id = ENG_ww1_territorial_force_camps
+  icon = GFX_goal_ww1_ENG_ww1_territorial_force_camps
+  x = 93
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_haldane_establishment }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 2
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_territorial_camps
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_special_reserve
+  icon = GFX_goal_ww1_ENG_ww1_the_special_reserve
+  x = 95
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_haldane_establishment }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_manpower = 15000
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_special_reserve
+  }
+ }
+ focus = {
+  id = ENG_ww1_officer_training_corps
+  icon = GFX_goal_ww1_ENG_ww1_officer_training_corps
+  x = 97
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_haldane_establishment }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 4
+   set_country_flag = ENG_ww1_officer_training_corps
+  }
+ }
+ focus = {
+  id = ENG_ww1_regular_army_mobilisation
+  icon = GFX_goal_ww1_ENG_ww1_regular_army_mobilisation
+  x = 95
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_special_reserve }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   army_experience = 3
+   set_country_flag = ENG_ww1_mobilisation_tables
+  }
+ }
+ focus = {
+  id = ENG_ww1_army_service_corps_offices
+  icon = GFX_goal_ww1_ENG_ww1_army_service_corps_offices
+  x = 91
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_territorial_force_camps }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_army_service_corps_offices bonus = 0.25 uses = 1 category = logistics_tech }
+   set_country_flag = ENG_ww1_army_service_corps
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_expeditionary_establishment
+  icon = GFX_goal_ww1_ENG_ww1_the_expeditionary_establishment
+  x = 95
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_regular_army_mobilisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   add_political_power = 10
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_expeditionary_establishment
+  }
+ }
+ focus = {
+  id = ENG_ww1_kitchener_new_armies
+  icon = GFX_goal_ww1_ENG_ww1_kitchener_new_armies
+  x = 97
+  y = 2
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_officer_training_corps }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_kitchener_armies
+   add_manpower = 25000
+   add_to_variable = { ww1_britain_labour_support = -2 }
+   set_country_flag = ENG_ww1_kitchener_armies
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_pals_battalion_system
+  icon = GFX_goal_ww1_ENG_ww1_the_pals_battalion_system
+  x = 99
+  y = 2
+  prerequisite = { focus = ENG_ww1_officer_training_corps }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_pals_battalions
+   add_manpower = 10000
+   set_country_flag = ENG_ww1_pals_battalions
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_rifle_training_depots
+  icon = GFX_goal_ww1_ENG_ww1_the_rifle_training_depots
+  x = 93
+  y = 2
+  prerequisite = { focus = ENG_ww1_territorial_force_camps }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_the_rifle_training_depots bonus = 0.25 uses = 1 category = infantry_weapons }
+   army_experience = 2
+   set_country_flag = ENG_ww1_rifle_depots
+  }
+ }
+ focus = {
+  id = ENG_ww1_field_medical_organisation
+  icon = GFX_goal_ww1_ENG_ww1_field_medical_organisation
+  x = 92
+  y = 3
+  prerequisite = { focus = ENG_ww1_army_service_corps_offices }
+  prerequisite = { focus = ENG_ww1_the_rifle_training_depots }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_field_medical_organisation bonus = 0.25 uses = 1 category = hospital_tech }
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_field_medical
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_artillery_observation_school
+  icon = GFX_goal_ww1_ENG_ww1_the_artillery_observation_school
+  x = 94
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_expeditionary_establishment }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_the_artillery_observation_school bonus = 0.25 uses = 1 category = recon_tech }
+   army_experience = 2
+   set_country_flag = ENG_ww1_artillery_school
+  }
+ }
+ focus = {
+  id = ENG_ww1_machine_gun_corps_formation
+  icon = GFX_goal_ww1_ENG_ww1_machine_gun_corps_formation
+  x = 98
+  y = 3
+  prerequisite = { focus = ENG_ww1_kitchener_new_armies }
+  prerequisite = { focus = ENG_ww1_the_pals_battalion_system }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_machine_gun_corps
+  }
+ }
+ focus = {
+  id = ENG_ww1_trench_mortar_sections
+  icon = GFX_goal_ww1_ENG_ww1_trench_mortar_sections
+  x = 94
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_artillery_observation_school }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_trench_mortar_sections bonus = 0.25 uses = 1 category = artillery }
+   army_experience = 2
+   set_country_flag = ENG_ww1_trench_mortars
+  }
+ }
+ focus = {
+  id = ENG_ww1_gas_protection_training
+  icon = GFX_goal_ww1_ENG_ww1_gas_protection_training
+  x = 91
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_field_medical_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 3
+   add_war_support = 0.01
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_gas_discipline
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_infantry_training_directorate
+  icon = GFX_goal_ww1_ENG_ww1_the_infantry_training_directorate
+  x = 98
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1915.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_machine_gun_corps_formation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_training_directorate
+   add_political_power = 10
+   set_country_flag = ENG_ww1_training_directorate
+  }
+ }
+ focus = {
+  id = ENG_ww1_combined_arms_staff_courses
+  icon = GFX_goal_ww1_ENG_ww1_combined_arms_staff_courses
+  x = 94
+  y = 6
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1915.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_trench_mortar_sections focus = ENG_ww1_gas_protection_training focus = ENG_ww1_the_infantry_training_directorate }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_combined_arms_staff
+   army_experience = 6
+   set_country_flag = ENG_ww1_combined_arms
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_demobilisation_register
+  icon = GFX_goal_ww1_ENG_ww1_the_demobilisation_register
+  x = 93
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_combined_arms_staff_courses }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_mil.5 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_a_smaller_professional_force
+  icon = GFX_goal_ww1_ENG_ww1_a_smaller_professional_force
+  x = 89
+  y = 8
+  mutually_exclusive = { focus = ENG_ww1_territorial_defence_renewal }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_combined_arms_staff_courses focus = ENG_ww1_the_demobilisation_register }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -3 }
+   add_political_power = 15
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_smaller_army
+  }
+ }
+ focus = {
+  id = ENG_ww1_territorial_defence_renewal
+  icon = GFX_goal_ww1_ENG_ww1_territorial_defence_renewal
+  x = 91
+  y = 8
+  mutually_exclusive = { focus = ENG_ww1_a_smaller_professional_force }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_combined_arms_staff_courses focus = ENG_ww1_the_demobilisation_register }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   add_stability = 0.01
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   add_political_power = 10
+   set_country_flag = ENG_ww1_territorial_army
+  }
+ }
+ focus = {
+  id = ENG_ww1_admiralty_fleet_survey
+  icon = GFX_goal_ww1_ENG_ww1_admiralty_fleet_survey
+  x = 72
+  y = 0
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_ideas = ENG_ww1_admiralty_war_staff
+   set_country_flag = ENG_ww1_fleet_survey
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_naval_estimates
+  icon = GFX_goal_ww1_ENG_ww1_the_naval_estimates
+  x = 71
+  y = 1
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_admiralty_fleet_survey }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   navy_experience = 3
+   set_country_flag = ENG_ww1_naval_estimates
+  }
+ }
+ focus = {
+  id = ENG_ww1_dreadnought_construction_planning
+  icon = GFX_goal_ww1_ENG_ww1_dreadnought_construction_planning
+  x = 69
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_the_naval_estimates }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_dreadnought_construction_planning bonus = 0.25 uses = 1 category = bb_tech }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_super_dreadnoughts
+  }
+ }
+ focus = {
+  id = ENG_ww1_battlecruiser_squadron_planning
+  icon = GFX_goal_ww1_ENG_ww1_battlecruiser_squadron_planning
+  x = 71
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_the_naval_estimates }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_battlecruiser_squadron_planning bonus = 0.25 uses = 1 category = bc_tech }
+   navy_experience = 2
+   set_country_flag = ENG_ww1_battlecruiser_squadron
+  }
+ }
+ focus = {
+  id = ENG_ww1_destroyer_flotilla_planning
+  icon = GFX_goal_ww1_ENG_ww1_destroyer_flotilla_planning
+  x = 73
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_the_naval_estimates }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_destroyer_flotilla_planning bonus = 0.25 uses = 1 category = dd_tech }
+   navy_experience = 2
+   set_country_flag = ENG_ww1_destroyer_flotillas
+  }
+ }
+ focus = {
+  id = ENG_ww1_submarine_service_development
+  icon = GFX_goal_ww1_ENG_ww1_submarine_service_development
+  x = 71
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_destroyer_flotilla_planning }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_submarine_service_development bonus = 0.25 uses = 1 category = ss_tech }
+   navy_experience = 1
+   set_country_flag = ENG_ww1_submarine_service
+  }
+ }
+ focus = {
+  id = ENG_ww1_naval_gunnery_calibration
+  icon = GFX_goal_ww1_ENG_ww1_naval_gunnery_calibration
+  x = 65
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_dreadnought_construction_planning }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_naval_gunnery_calibration bonus = 0.25 uses = 1 category = naval_artillery }
+   navy_experience = 3
+   set_country_flag = ENG_ww1_fire_control_tables
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_north_sea_watch
+  icon = GFX_goal_ww1_ENG_ww1_the_north_sea_watch
+  x = 67
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_battlecruiser_squadron_planning }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_northern_patrol
+   navy_experience = 2
+   set_country_flag = ENG_ww1_north_sea_watch
+  }
+ }
+ focus = {
+  id = ENG_ww1_grand_fleet_maintenance
+  icon = GFX_goal_ww1_ENG_ww1_grand_fleet_maintenance
+  x = 63
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_naval_gunnery_calibration }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_grand_fleet_anchorage
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_scapa_flow
+  }
+ }
+ focus = {
+  id = ENG_ww1_merchant_shipping_register
+  icon = GFX_goal_ww1_ENG_ww1_merchant_shipping_register
+  x = 73
+  y = 3
+  prerequisite = { focus = ENG_ww1_destroyer_flotilla_planning }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 2
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_merchant_register
+  }
+ }
+ focus = {
+  id = ENG_ww1_maritime_blockade_coordination
+  icon = GFX_goal_ww1_ENG_ww1_maritime_blockade_coordination
+  x = 69
+  y = 3
+  prerequisite = { focus = ENG_ww1_battlecruiser_squadron_planning }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes has_war_with = GER }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 3
+   set_country_flag = ENG_ww1_blockade
+   if = { limit = { country_exists = GER has_war_with = GER } GER = { country_event = { id = ww1_britain_nav.10 } } }
+   if = { limit = { country_exists = USA } USA = { country_event = { id = ww1_britain_nav.11 } } }
+  }
+ }
+ focus = {
+  id = ENG_ww1_hydrophone_trials
+  icon = GFX_goal_ww1_ENG_ww1_hydrophone_trials
+  x = 70
+  y = 4
+  prerequisite = { focus = ENG_ww1_submarine_service_development }
+  prerequisite = { focus = ENG_ww1_merchant_shipping_register }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_hydrophone_trials bonus = 0.25 uses = 1 category = asw_tech }
+   navy_experience = 1
+   set_country_flag = ENG_ww1_hydrophones
+  }
+ }
+ focus = {
+  id = ENG_ww1_depth_charge_trials
+  icon = GFX_goal_ww1_ENG_ww1_depth_charge_trials
+  x = 70
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1915.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_hydrophone_trials }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_depth_charge_trials bonus = 0.25 uses = 1 category = dd_tech }
+   navy_experience = 2
+   set_country_flag = ENG_ww1_depth_charges
+  }
+ }
+ focus = {
+  id = ENG_ww1_convoy_system_organisation
+  icon = GFX_goal_ww1_ENG_ww1_convoy_system_organisation
+  x = 66
+  y = 4
+  prerequisite = { focus = ENG_ww1_the_north_sea_watch }
+  prerequisite = { focus = ENG_ww1_maritime_blockade_coordination }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_nav.2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_escort_refit_contracts
+  icon = GFX_goal_ww1_ENG_ww1_escort_refit_contracts
+  x = 72
+  y = 5
+  prerequisite = { focus = ENG_ww1_hydrophone_trials }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_escort_refit_contracts bonus = 0.25 uses = 1 category = dd_tech }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   if = { limit = { has_idea = ENG_ww1_convoy_system } navy_experience = 4 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_naval_signals_and_direction_finding
+  icon = GFX_goal_ww1_ENG_ww1_naval_signals_and_direction_finding
+  x = 63
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_grand_fleet_maintenance }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_tech_bonus = { name = ENG_ww1_naval_signals_and_direction_finding bonus = 0.25 uses = 1 category = decryption_tech }
+   set_country_flag = ENG_ww1_direction_finding
+  }
+ }
+ focus = {
+  id = ENG_ww1_mediterranean_convoy_liaison
+  icon = GFX_goal_ww1_ENG_ww1_mediterranean_convoy_liaison
+  x = 63
+  y = 6
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_naval_signals_and_direction_finding }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 2
+   set_country_flag = ENG_ww1_med_liaison
+   if = { limit = { country_exists = JAP is_in_faction_with = JAP } JAP = { country_event = { id = ww1_britain_nav.12 } } }
+   if = { limit = { country_exists = ITA is_in_faction_with = ITA } ITA = { country_event = { id = ww1_britain_nav.12 } } }
+   if = { limit = { country_exists = FRA is_in_faction_with = FRA } FRA = { country_event = { id = ww1_britain_nav.12 } } }
+   if = { limit = { country_exists = GRE is_in_faction_with = GRE } GRE = { country_event = { id = ww1_britain_nav.12 } } }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_postwar_fleet_review
+  icon = GFX_goal_ww1_ENG_ww1_the_postwar_fleet_review
+  x = 66
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_grand_fleet_maintenance focus = ENG_ww1_escort_refit_contracts focus = ENG_ww1_mediterranean_convoy_liaison }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   navy_experience = 2
+   set_country_flag = ENG_ww1_postwar_fleet_review
+  }
+ }
+ focus = {
+  id = ENG_ww1_naval_budget_retrenchment
+  icon = GFX_goal_ww1_ENG_ww1_naval_budget_retrenchment
+  x = 65
+  y = 8
+  mutually_exclusive = { focus = ENG_ww1_naval_technical_lessons }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_the_postwar_fleet_review }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -3 }
+   add_political_power = 15
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_naval_retrenchment
+  }
+ }
+ focus = {
+  id = ENG_ww1_naval_technical_lessons
+  icon = GFX_goal_ww1_ENG_ww1_naval_technical_lessons
+  x = 67
+  y = 8
+  mutually_exclusive = { focus = ENG_ww1_naval_budget_retrenchment }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_NAVY }
+  prerequisite = { focus = ENG_ww1_the_postwar_fleet_review }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 8
+   add_tech_bonus = { name = ENG_ww1_naval_technical_lessons bonus = 0.25 uses = 1 category = naval_equipment }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_naval_lessons
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_air_battalion_experiments
+  icon = GFX_goal_ww1_ENG_ww1_the_air_battalion_experiments
+  x = 73
+  y = 1
+  prerequisite = { focus = ENG_ww1_admiralty_fleet_survey }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_the_air_battalion_experiments bonus = 0.25 uses = 1 category = air_equipment }
+   air_experience = 2
+   set_country_flag = ENG_ww1_air_battalion
+  }
+ }
+ focus = {
+  id = ENG_ww1_royal_flying_corps_organisation
+  icon = GFX_goal_ww1_ENG_ww1_royal_flying_corps_organisation
+  x = 75
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_the_air_battalion_experiments }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_royal_flying_corps
+   air_experience = 2
+   set_country_flag = ENG_ww1_royal_flying_corps
+  }
+ }
+ focus = {
+  id = ENG_ww1_military_pilot_instruction
+  icon = GFX_goal_ww1_ENG_ww1_military_pilot_instruction
+  x = 75
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_royal_flying_corps_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   air_experience = 5
+   add_political_power = 5
+   set_country_flag = ENG_ww1_pilot_instruction
+  }
+ }
+ focus = {
+  id = ENG_ww1_aerial_reconnaissance_reports
+  icon = GFX_goal_ww1_ENG_ww1_aerial_reconnaissance_reports
+  x = 73
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_military_pilot_instruction }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 3
+   air_experience = 2
+   set_country_flag = ENG_ww1_aerial_reports
+  }
+ }
+ focus = {
+  id = ENG_ww1_royal_naval_air_service_organisation
+  icon = GFX_goal_ww1_ENG_ww1_royal_naval_air_service_organisation
+  x = 79
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_royal_flying_corps_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 2
+   air_experience = 3
+   set_country_flag = ENG_ww1_rnas
+  }
+ }
+ focus = {
+  id = ENG_ww1_wireless_and_aircraft_observation
+  icon = GFX_goal_ww1_ENG_ww1_wireless_and_aircraft_observation
+  x = 77
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1911.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_royal_flying_corps_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_wireless_and_aircraft_observation bonus = 0.25 uses = 1 category = electronics }
+   air_experience = 2
+  }
+ }
+ focus = {
+  id = ENG_ww1_bristol_scout_trials
+  icon = GFX_goal_ww1_ENG_ww1_bristol_scout_trials
+  x = 75
+  y = 4
+  prerequisite = { focus = ENG_ww1_military_pilot_instruction }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_bristol_scout_trials bonus = 0.25 uses = 1 category = light_air }
+   air_experience = 2
+   set_country_flag = ENG_ww1_bristol_scout
+  }
+ }
+ focus = {
+  id = ENG_ww1_naval_seaplane_stations
+  icon = GFX_goal_ww1_ENG_ww1_naval_seaplane_stations
+  x = 81
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1912.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_royal_naval_air_service_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   navy_experience = 2
+   air_experience = 2
+   set_country_flag = ENG_ww1_seaplane_stations
+  }
+ }
+ focus = {
+  id = ENG_ww1_aircraft_production_contracts
+  icon = GFX_goal_ww1_ENG_ww1_aircraft_production_contracts
+  x = 77
+  y = 4
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1912.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_wireless_and_aircraft_observation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_aircraft_production_contracts bonus = 0.25 uses = 1 category = air_equipment }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   add_political_power = 5
+  }
+ }
+ focus = {
+  id = ENG_ww1_fighter_squadron_instruction
+  icon = GFX_goal_ww1_ENG_ww1_fighter_squadron_instruction
+  x = 74
+  y = 5
+  prerequisite = { focus = ENG_ww1_aerial_reconnaissance_reports }
+  prerequisite = { focus = ENG_ww1_bristol_scout_trials }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   air_experience = 4
+   add_tech_bonus = { name = ENG_ww1_fighter_squadron_instruction bonus = 0.25 uses = 1 category = light_fighter }
+   set_country_flag = ENG_ww1_fighter_instruction
+  }
+ }
+ focus = {
+  id = ENG_ww1_artillery_spotting_liaison
+  icon = GFX_goal_ww1_ENG_ww1_artillery_spotting_liaison
+  x = 79
+  y = 4
+  prerequisite = { focus = ENG_ww1_wireless_and_aircraft_observation }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 3
+   air_experience = 3
+   set_country_flag = ENG_ww1_artillery_spotting
+  }
+ }
+ focus = {
+  id = ENG_ww1_night_flying_experiments
+  icon = GFX_goal_ww1_ENG_ww1_night_flying_experiments
+  x = 83
+  y = 4
+  prerequisite = { focus = ENG_ww1_royal_naval_air_service_organisation }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   air_experience = 4
+   add_political_power = 5
+   set_country_flag = ENG_ww1_night_flying
+  }
+ }
+ focus = {
+  id = ENG_ww1_bomber_range_experiments
+  icon = GFX_goal_ww1_ENG_ww1_bomber_range_experiments
+  x = 82
+  y = 5
+  prerequisite = { focus = ENG_ww1_naval_seaplane_stations }
+  prerequisite = { focus = ENG_ww1_night_flying_experiments }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_bomber_range_experiments bonus = 0.25 uses = 1 category = tactical_bomber }
+   air_experience = 2
+   set_country_flag = ENG_ww1_bomber_range
+  }
+ }
+ focus = {
+  id = ENG_ww1_aircraft_engine_reliability
+  icon = GFX_goal_ww1_ENG_ww1_aircraft_engine_reliability
+  x = 78
+  y = 5
+  prerequisite = { focus = ENG_ww1_aircraft_production_contracts }
+  prerequisite = { focus = ENG_ww1_artillery_spotting_liaison }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_engine_reliability
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_engine_reliability
+  }
+ }
+ focus = {
+  id = ENG_ww1_home_air_defence_coordination
+  icon = GFX_goal_ww1_ENG_ww1_home_air_defence_coordination
+  x = 74
+  y = 6
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_fighter_squadron_instruction }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_home_air_defence
+   add_political_power = 5
+   set_country_flag = ENG_ww1_home_air_defence
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_independent_air_service_debate
+  icon = GFX_goal_ww1_ENG_ww1_the_independent_air_service_debate
+  x = 82
+  y = 6
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1916.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_bomber_range_experiments }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_nav.6 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_royal_air_force_unification
+  icon = GFX_goal_ww1_ENG_ww1_royal_air_force_unification
+  x = 78
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_completed_focus = ENG_ww1_royal_flying_corps_organisation has_completed_focus = ENG_ww1_royal_naval_air_service_organisation }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_aircraft_engine_reliability focus = ENG_ww1_home_air_defence_coordination focus = ENG_ww1_the_independent_air_service_debate }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   remove_ideas = ENG_ww1_royal_flying_corps
+   add_ideas = ENG_ww1_royal_air_force
+   set_country_flag = ENG_ww1_raf_formed
+   if = { limit = { has_country_flag = ENG_ww1_air_independent } air_experience = 10 add_political_power = -10 }
+   else = { air_experience = 4 add_political_power = 10 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_postwar_aircraft_demobilisation
+  icon = GFX_goal_ww1_ENG_ww1_postwar_aircraft_demobilisation
+  x = 77
+  y = 8
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_royal_air_force_unification }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -2 }
+   add_political_power = 10
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_aircraft_demobilised
+  }
+ }
+ focus = {
+  id = ENG_ww1_civil_aviation_research
+  icon = GFX_goal_ww1_ENG_ww1_civil_aviation_research
+  x = 76
+  y = 9
+  mutually_exclusive = { focus = ENG_ww1_a_sustainable_air_establishment }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_postwar_aircraft_demobilisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_civil_aviation_research bonus = 0.25 uses = 1 category = air_equipment }
+   add_stability = 0.01
+   add_to_variable = { ww1_britain_debt_burden = -1 }
+   set_country_flag = ENG_ww1_civil_aviation
+  }
+ }
+ focus = {
+  id = ENG_ww1_a_sustainable_air_establishment
+  icon = GFX_goal_ww1_ENG_ww1_a_sustainable_air_establishment
+  x = 78
+  y = 9
+  mutually_exclusive = { focus = ENG_ww1_civil_aviation_research }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_AIRFORCE }
+  prerequisite = { focus = ENG_ww1_postwar_aircraft_demobilisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   air_experience = 10
+   add_political_power = 15
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_trenchard_memorandum
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_channel_mobilisation_timetable
+  icon = GFX_goal_ww1_ENG_ww1_the_channel_mobilisation_timetable
+  x = 96
+  y = 4
+  prerequisite = { focus = ENG_ww1_the_expeditionary_establishment }
+  cost = 4
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   army_experience = 3
+   set_country_flag = ENG_ww1_channel_timetable
+  }
+ }
+ focus = {
+  id = ENG_ww1_embarkation_depot_preparation
+  icon = GFX_goal_ww1_ENG_ww1_embarkation_depot_preparation
+  x = 96
+  y = 5
+  cost = 4
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_channel_mobilisation_timetable }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_embarkation_depot_preparation bonus = 0.25 uses = 1 category = train_tech }
+   set_country_flag = ENG_ww1_embarkation_depots
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_bef_deployment_plan
+  icon = GFX_goal_ww1_ENG_ww1_the_bef_deployment_plan
+  x = 96
+  y = 6
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes has_country_flag = ENG_ww1_continental_commitment_selected }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_embarkation_depot_preparation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   set_country_flag = ENG_ww1_bef_deployed
+   if = { limit = { country_exists = FRA is_in_faction_with = FRA } FRA = { country_event = { id = ww1_britain_mil.10 } } }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_flanders_supply_organisation
+  icon = GFX_goal_ww1_ENG_ww1_the_flanders_supply_organisation
+  x = 95
+  y = 7
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_bef_deployment_plan }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_flanders_supply
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_flanders_supply
+  }
+ }
+ focus = {
+  id = ENG_ww1_holding_the_continental_line
+  icon = GFX_goal_ww1_ENG_ww1_holding_the_continental_line
+  x = 97
+  y = 7
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_bef_deployment_plan }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 6
+   add_war_support = -0.01
+   set_country_flag = ENG_ww1_held_the_line
+  }
+ }
+ focus = {
+  id = ENG_ww1_artillery_ammunition_concentration
+  icon = GFX_goal_ww1_ENG_ww1_artillery_ammunition_concentration
+  x = 99
+  y = 7
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_bef_deployment_plan }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 3
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_ammo_concentration
+  }
+ }
+ focus = {
+  id = ENG_ww1_a_limited_offensive_doctrine
+  icon = GFX_goal_ww1_ENG_ww1_a_limited_offensive_doctrine
+  x = 97
+  y = 8
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_holding_the_continental_line }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 4
+   add_political_power = 10
+   set_country_flag = ENG_ww1_limited_offensive
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_dardanelles_staff_study
+  icon = GFX_goal_ww1_ENG_ww1_the_dardanelles_staff_study
+  x = 93
+  y = 8
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_flanders_supply_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_mil.2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_mediterranean_landing_preparation
+  icon = GFX_goal_ww1_ENG_ww1_mediterranean_landing_preparation
+  x = 95
+  y = 8
+  prerequisite = { focus = ENG_ww1_the_flanders_supply_organisation }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 3
+   navy_experience = 2
+   set_country_flag = ENG_ww1_med_landing_prep
+  }
+ }
+ focus = {
+  id = ENG_ww1_mesopotamian_supply_review
+  icon = GFX_goal_ww1_ENG_ww1_mesopotamian_supply_review
+  x = 94
+  y = 9
+  prerequisite = { focus = ENG_ww1_the_dardanelles_staff_study }
+  prerequisite = { focus = ENG_ww1_mediterranean_landing_preparation }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1913.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_mesopotamian_supply_review bonus = 0.25 uses = 1 category = maintenance_company_tech }
+   set_country_flag = ENG_ww1_mesopotamian_review
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_western_offensive_staff_study
+  icon = GFX_goal_ww1_ENG_ww1_the_western_offensive_staff_study
+  x = 101
+  y = 8
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_artillery_ammunition_concentration }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 4
+   add_political_power = 10
+   set_country_flag = ENG_ww1_loos_study
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_creeping_barrage_school
+  icon = GFX_goal_ww1_ENG_ww1_the_creeping_barrage_school
+  x = 103
+  y = 8
+  prerequisite = { focus = ENG_ww1_artillery_ammunition_concentration }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_creeping_barrage
+   add_tech_bonus = { name = ENG_ww1_the_creeping_barrage_school bonus = 0.25 uses = 1 category = artillery }
+   set_country_flag = ENG_ww1_creeping_barrage
+  }
+ }
+ focus = {
+  id = ENG_ww1_tank_committee_experiments
+  icon = GFX_goal_ww1_ENG_ww1_tank_committee_experiments
+  x = 99
+  y = 8
+  prerequisite = { focus = ENG_ww1_holding_the_continental_line }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_tank_committee_experiments bonus = 0.25 uses = 1 category = armor }
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_tank_corps
+  }
+ }
+ focus = {
+  id = ENG_ww1_assault_coordination_exercises
+  icon = GFX_goal_ww1_ENG_ww1_assault_coordination_exercises
+  x = 98
+  y = 9
+  prerequisite = { focus = ENG_ww1_a_limited_offensive_doctrine }
+  prerequisite = { focus = ENG_ww1_tank_committee_experiments }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1914.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 4
+   if = { limit = { has_country_flag = ENG_ww1_tank_corps } army_experience = 2 }
+   set_country_flag = ENG_ww1_assault_coordination
+  }
+ }
+ focus = {
+  id = ENG_ww1_palestine_railway_liaison
+  icon = GFX_goal_ww1_ENG_ww1_palestine_railway_liaison
+  x = 94
+  y = 10
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1915.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_mesopotamian_supply_review }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_palestine_railway_liaison bonus = 0.25 uses = 1 category = train_tech }
+   army_experience = 3
+   add_political_power = 10
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_spring_defence_plan
+  icon = GFX_goal_ww1_ENG_ww1_the_spring_defence_plan
+  x = 102
+  y = 9
+  prerequisite = { focus = ENG_ww1_the_western_offensive_staff_study }
+  prerequisite = { focus = ENG_ww1_the_creeping_barrage_school }
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1916.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   army_experience = 3
+   set_country_flag = ENG_ww1_spring_defence_plan
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_allied_counteroffensive_plan
+  icon = GFX_goal_ww1_ENG_ww1_the_allied_counteroffensive_plan
+  x = 102
+  y = 10
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1916.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_spring_defence_plan }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   country_event = { id = ww1_britain_mil.7 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_operational_reserve_restoration
+  icon = GFX_goal_ww1_ENG_ww1_operational_reserve_restoration
+  x = 98
+  y = 10
+  cost = 5
+  available_if_capitulated = no
+  available = { date > 1916.12.31 has_war = yes }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_assault_coordination_exercises }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_manpower = 15000
+   add_to_variable = { ww1_britain_labour_support = -2 }
+   army_experience = 3
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_armistice_stand_down_plan
+  icon = GFX_goal_ww1_ENG_ww1_the_armistice_stand_down_plan
+  x = 98
+  y = 11
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_palestine_railway_liaison focus = ENG_ww1_the_allied_counteroffensive_plan focus = ENG_ww1_operational_reserve_restoration }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_armistice_stand_down
+  }
+ }
+ focus = {
+  id = ENG_ww1_lessons_for_the_general_staff
+  icon = GFX_goal_ww1_ENG_ww1_lessons_for_the_general_staff
+  x = 98
+  y = 12
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_ARMY }
+  prerequisite = { focus = ENG_ww1_the_armistice_stand_down_plan }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 10
+   add_political_power = 15
+   add_ideas = ENG_ww1_general_staff_lessons
+   set_country_flag = ENG_ww1_staff_lessons
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_peace_administration_office
+  icon = GFX_goal_ww1_ENG_ww1_the_peace_administration_office
+  x = 29
+  y = 8
+  prerequisite = { focus = ENG_ww1_convert_the_war_plants }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   set_country_flag = ENG_ww1_peace_administration
+  }
+ }
+ focus = {
+  id = ENG_ww1_military_demobilisation_planning
+  icon = GFX_goal_ww1_ENG_ww1_military_demobilisation_planning
+  x = 29
+  y = 9
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_peace_administration_office }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_demobilisation_planned
+  }
+ }
+ focus = {
+  id = ENG_ww1_shipping_repatriation_coordination
+  icon = GFX_goal_ww1_ENG_ww1_shipping_repatriation_coordination
+  x = 27
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_military_demobilisation_planning }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_repatriation_shipping
+  }
+ }
+ focus = {
+  id = ENG_ww1_veterans_welfare_register
+  icon = GFX_goal_ww1_ENG_ww1_veterans_welfare_register
+  x = 29
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_military_demobilisation_planning }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_veterans_settlement
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_disability_pension_administration
+  icon = GFX_goal_ww1_ENG_ww1_disability_pension_administration
+  x = 31
+  y = 10
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_military_demobilisation_planning }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = 2 }
+   add_stability = 0.02
+   add_to_variable = { ww1_britain_labour_support = 3 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_civilian_training_for_returning_soldiers
+  icon = GFX_goal_ww1_ENG_ww1_civilian_training_for_returning_soldiers
+  x = 28
+  y = 11
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_veterans_welfare_register }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_to_variable = { ww1_britain_labour_support = 2 }
+   set_country_flag = ENG_ww1_soldier_retraining
+  }
+ }
+ focus = {
+  id = ENG_ww1_public_housing_contracts
+  icon = GFX_goal_ww1_ENG_ww1_public_housing_contracts
+  x = 32
+  y = 11
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_disability_pension_administration }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = 2 }
+   add_to_variable = { ww1_britain_labour_support = 3 }
+   add_stability = 0.01
+  }
+ }
+ focus = {
+  id = ENG_ww1_industrial_conversion_planning
+  icon = GFX_goal_ww1_ENG_ww1_industrial_conversion_planning
+  x = 24
+  y = 11
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_shipping_repatriation_coordination }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_industrial_conversion
+   set_country_flag = ENG_ww1_industrial_conversion_planned
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_employment_exchanges
+  icon = GFX_goal_ww1_ENG_ww1_the_employment_exchanges
+  x = 30
+  y = 11
+  prerequisite = { focus = ENG_ww1_veterans_welfare_register }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_labour_support = 3 }
+   add_stability = 0.01
+   set_country_flag = ENG_ww1_employment_exchanges
+  }
+ }
+ focus = {
+  id = ENG_ww1_restore_civilian_railway_traffic
+  icon = GFX_goal_ww1_ENG_ww1_restore_civilian_railway_traffic
+  x = 26
+  y = 11
+  prerequisite = { focus = ENG_ww1_shipping_repatriation_coordination }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1917.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.01
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   remove_ideas = ENG_ww1_railway_executive
+   set_country_flag = ENG_ww1_railways_restored
+  }
+ }
+ focus = {
+  id = ENG_ww1_public_debt_repayment
+  icon = GFX_goal_ww1_ENG_ww1_public_debt_repayment
+  x = 25
+  y = 12
+  prerequisite = { focus = ENG_ww1_industrial_conversion_planning }
+  prerequisite = { focus = ENG_ww1_restore_civilian_railway_traffic }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -5 }
+   add_to_variable = { ww1_britain_labour_support = -2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_treasury_expenditure_review
+  icon = GFX_goal_ww1_ENG_ww1_treasury_expenditure_review
+  x = 29
+  y = 12
+  prerequisite = { focus = ENG_ww1_civilian_training_for_returning_soldiers }
+  prerequisite = { focus = ENG_ww1_the_employment_exchanges }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -3 }
+   add_political_power = 10
+   add_to_variable = { ww1_britain_labour_support = -2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_merchant_marine_renewal
+  icon = GFX_goal_ww1_ENG_ww1_merchant_marine_renewal
+  x = 34
+  y = 11
+  prerequisite = { focus = ENG_ww1_disability_pension_administration }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   133 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 } }
+   add_to_variable = { ww1_britain_debt_burden = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_public_health_settlement
+  icon = GFX_goal_ww1_ENG_ww1_the_public_health_settlement
+  x = 33
+  y = 12
+  prerequisite = { focus = ENG_ww1_public_housing_contracts }
+  prerequisite = { focus = ENG_ww1_merchant_marine_renewal }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.02
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   add_to_variable = { ww1_britain_labour_support = 2 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_education_reconstruction_programme
+  icon = GFX_goal_ww1_ENG_ww1_the_education_reconstruction_programme
+  x = 29
+  y = 13
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_treasury_expenditure_review }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.01
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_fisher_act
+  }
+ }
+ focus = {
+  id = ENG_ww1_local_government_finance
+  icon = GFX_goal_ww1_ENG_ww1_local_government_finance
+  x = 33
+  y = 13
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_public_health_settlement }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_debt_burden = -1 }
+   add_political_power = 10
+   add_to_variable = { ww1_britain_labour_support = -1 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_industrial_relations_conference
+  icon = GFX_goal_ww1_ENG_ww1_the_industrial_relations_conference
+  x = 25
+  y = 13
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_public_debt_repayment }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_to_variable = { ww1_britain_labour_support = 4 }
+   add_political_power = 10
+   set_country_flag = ENG_ww1_industrial_conference
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_postwar_parliamentary_mandate
+  icon = GFX_goal_ww1_ENG_ww1_the_postwar_parliamentary_mandate
+  x = 29
+  y = 14
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_education_reconstruction_programme focus = ENG_ww1_local_government_finance focus = ENG_ww1_the_industrial_relations_conference }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.02
+   add_political_power = 25
+   set_country_flag = ENG_ww1_postwar_mandate
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_nineteen_twenty_two_cabinet
+  icon = GFX_goal_ww1_ENG_ww1_the_nineteen_twenty_two_cabinet
+  x = 28
+  y = 15
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1921.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_postwar_parliamentary_mandate }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   set_country_flag = ENG_ww1_cabinet_1922
+   country_event = { id = ww1_britain_eco.5 }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_nineteen_twenty_three_settlement
+  icon = GFX_goal_ww1_ENG_ww1_the_nineteen_twenty_three_settlement
+  x = 30
+  y = 15
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1922.12.31 has_war = no }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = ENG_ww1_the_postwar_parliamentary_mandate }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   add_to_variable = { ww1_britain_debt_burden = -2 }
+   set_country_flag = ENG_ww1_settlement_1923
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_national_physical_laboratory
+  icon = GFX_goal_ww1_ENG_ww1_the_national_physical_laboratory
+  x = 48
+  y = 1
+  prerequisite = { focus = ENG_ww1_edward_grey_and_the_entente }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_the_national_physical_laboratory bonus = 0.25 uses = 1 category = industry }
+   set_country_flag = ENG_ww1_npl
+  }
+ }
+ focus = {
+  id = ENG_ww1_university_military_contracts
+  icon = GFX_goal_ww1_ENG_ww1_university_military_contracts
+  x = 45
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_the_national_physical_laboratory }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_tech_bonus = { name = ENG_ww1_university_military_contracts bonus = 0.25 uses = 1 category = electronics }
+  }
+ }
+ focus = {
+  id = ENG_ww1_ordnance_metallurgy_research
+  icon = GFX_goal_ww1_ENG_ww1_ordnance_metallurgy_research
+  x = 47
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_the_national_physical_laboratory }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_ordnance_metallurgy_research bonus = 0.25 uses = 1 category = artillery }
+  }
+ }
+ focus = {
+  id = ENG_ww1_machine_tool_standards
+  icon = GFX_goal_ww1_ENG_ww1_machine_tool_standards
+  x = 49
+  y = 2
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_the_national_physical_laboratory }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_machine_tool_standards bonus = 0.25 uses = 1 category = engineers_tech }
+  }
+ }
+ focus = {
+  id = ENG_ww1_railway_engineering_standards
+  icon = GFX_goal_ww1_ENG_ww1_railway_engineering_standards
+  x = 49
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_machine_tool_standards }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_railway_engineering_standards bonus = 0.25 uses = 1 category = logistics_tech }
+  }
+ }
+ focus = {
+  id = ENG_ww1_naval_architecture_research
+  icon = GFX_goal_ww1_ENG_ww1_naval_architecture_research
+  x = 41
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_university_military_contracts }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_naval_architecture_research bonus = 0.25 uses = 1 category = dd_tech }
+  }
+ }
+ focus = {
+  id = ENG_ww1_explosive_safety_research
+  icon = GFX_goal_ww1_ENG_ww1_explosive_safety_research
+  x = 45
+  y = 3
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_ordnance_metallurgy_research }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.01
+   add_tech_bonus = { name = ENG_ww1_explosive_safety_research bonus = 0.25 uses = 1 category = infantry_weapons }
+  }
+ }
+ focus = {
+  id = ENG_ww1_field_wireless_research
+  icon = GFX_goal_ww1_ENG_ww1_field_wireless_research
+  x = 43
+  y = 3
+  prerequisite = { focus = ENG_ww1_university_military_contracts }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_field_wireless_research bonus = 0.25 uses = 1 category = signal_company_tech }
+  }
+ }
+ focus = {
+  id = ENG_ww1_signals_intelligence_organisation
+  icon = GFX_goal_ww1_ENG_ww1_signals_intelligence_organisation
+  x = 41
+  y = 4
+  prerequisite = { focus = ENG_ww1_naval_architecture_research }
+  prerequisite = { focus = ENG_ww1_field_wireless_research }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   set_country_flag = ENG_ww1_sigint_organisation
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_room_forty_office
+  icon = GFX_goal_ww1_ENG_ww1_the_room_forty_office
+  x = 41
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_signals_intelligence_organisation }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_ideas = ENG_ww1_room_forty
+   set_country_flag = ENG_ww1_room_forty
+  }
+ }
+ focus = {
+  id = ENG_ww1_aerial_photography_research
+  icon = GFX_goal_ww1_ENG_ww1_aerial_photography_research
+  x = 51
+  y = 3
+  prerequisite = { focus = ENG_ww1_machine_tool_standards }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_aerial_photography_research bonus = 0.25 uses = 1 category = recon_tech }
+  }
+ }
+ focus = {
+  id = ENG_ww1_artillery_survey_mathematics
+  icon = GFX_goal_ww1_ENG_ww1_artillery_survey_mathematics
+  x = 47
+  y = 3
+  prerequisite = { focus = ENG_ww1_ordnance_metallurgy_research }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1910.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   set_country_flag = ENG_ww1_artillery_survey
+  }
+ }
+ focus = {
+  id = ENG_ww1_chemical_protection_research
+  icon = GFX_goal_ww1_ENG_ww1_chemical_protection_research
+  x = 45
+  y = 4
+  prerequisite = { focus = ENG_ww1_explosive_safety_research }
+  prerequisite = { focus = ENG_ww1_artillery_survey_mathematics }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_chemical_protection_research bonus = 0.25 uses = 1 category = hospital_tech }
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_landships_technical_committee
+  icon = GFX_goal_ww1_ENG_ww1_the_landships_technical_committee
+  x = 49
+  y = 4
+  prerequisite = { focus = ENG_ww1_railway_engineering_standards }
+  prerequisite = { focus = ENG_ww1_aerial_photography_research }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   army_experience = 5
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_landships_committee
+  }
+ }
+ focus = {
+  id = ENG_ww1_aircraft_engine_research
+  icon = GFX_goal_ww1_ENG_ww1_aircraft_engine_research
+  x = 49
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_the_landships_technical_committee }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_aircraft_engine_research bonus = 0.25 uses = 1 category = air_equipment }
+  }
+ }
+ focus = {
+  id = ENG_ww1_hydrophone_analysis_laboratory
+  icon = GFX_goal_ww1_ENG_ww1_hydrophone_analysis_laboratory
+  x = 43
+  y = 5
+  prerequisite = { focus = ENG_ww1_signals_intelligence_organisation }
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1914.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_tech_bonus = { name = ENG_ww1_hydrophone_analysis_laboratory bonus = 0.25 uses = 1 category = torpedo }
+  }
+ }
+ focus = {
+  id = ENG_ww1_production_quality_standards
+  icon = GFX_goal_ww1_ENG_ww1_production_quality_standards
+  x = 45
+  y = 5
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1913.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_chemical_protection_research }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.01
+   add_political_power = 10
+   set_country_flag = ENG_ww1_quality_standards
+  }
+ }
+ focus = {
+  id = ENG_ww1_the_postwar_research_council
+  icon = GFX_goal_ww1_ENG_ww1_the_postwar_research_council
+  x = 44
+  y = 6
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_hydrophone_analysis_laboratory focus = ENG_ww1_production_quality_standards }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 15
+   add_to_variable = { ww1_britain_debt_burden = 1 }
+   set_country_flag = ENG_ww1_research_council
+  }
+ }
+ focus = {
+  id = ENG_ww1_industrial_patent_exchanges
+  icon = GFX_goal_ww1_ENG_ww1_industrial_patent_exchanges
+  x = 43
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_the_postwar_research_council }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_political_power = 10
+   add_to_variable = { ww1_britain_debt_burden = -1 }
+   set_country_flag = ENG_ww1_patent_exchanges
+  }
+ }
+ focus = {
+  id = ENG_ww1_technical_education_for_reconstruction
+  icon = GFX_goal_ww1_ENG_ww1_technical_education_for_reconstruction
+  x = 45
+  y = 7
+  cost = 6
+  available_if_capitulated = no
+  available = { date > 1918.12.31 }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  search_filters = { FOCUS_FILTER_RESEARCH }
+  prerequisite = { focus = ENG_ww1_the_postwar_research_council }
+  
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+   add_stability = 0.01
+   add_political_power = 10
+   set_country_flag = ENG_ww1_technical_education
+  }
+ }
+}

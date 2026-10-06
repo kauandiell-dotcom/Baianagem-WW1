@@ -268,7 +268,7 @@ country_event = {
 	id = ww1_france.41
 	title = ww1_france.41.t
 	desc = ww1_france.41.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_general_mobilisation
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -316,7 +316,7 @@ country_event = {
 	id = ww1_france.51
 	title = ww1_france.51.t
 	desc = ww1_france.51.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_plan_xvii
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -355,7 +355,7 @@ country_event = {
 	id = ww1_france.61
 	title = ww1_france.61.t
 	desc = ww1_france.61.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_marne_taxis
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -375,7 +375,7 @@ country_event = {
 	id = ww1_france.71
 	title = ww1_france.71.t
 	desc = ww1_france.71.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_verdun_defence
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -436,7 +436,7 @@ country_event = {
 	id = ww1_france.92
 	title = ww1_france.92.t
 	desc = ww1_france.92.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_petain_recovery
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -459,7 +459,7 @@ country_event = {
 	id = ww1_france.101
 	title = ww1_france.101.t
 	desc = ww1_france.101.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_clemenceau_cabinet
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -483,7 +483,7 @@ country_event = {
 	id = ww1_france.111
 	title = ww1_france.111.t
 	desc = ww1_france.111.d
-	picture = GFX_report_event_us_soldiers
+	picture = GFX_event_ww1_fra_pershing_arrival
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -504,13 +504,14 @@ country_event = {
 	desc = ww1_france.131.d
 	picture = GFX_report_event_report_event_generic_sign_treaty3
 
+	trigger = { has_war = no }
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
 		name = ww1_france.131.a
-		add_stability = 0.20
-		add_war_support = 0.10
+		add_stability = 0.02
+		set_country_flag = ww1_reconstruction_available
 		set_country_flag = FRA_armistice_signed
 	}
 }
@@ -522,8 +523,9 @@ country_event = {
 	id = ww1_france.132
 	title = ww1_france.132.t
 	desc = ww1_france.132.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_alsace_return
 
+	trigger = { has_war = no owns_state = 28 }
 	fire_only_once = yes
 	is_triggered_only = yes
 
@@ -533,11 +535,10 @@ country_event = {
 			remove_idea = FRA_clemenceau_iron_resolve
 			add_idea = FRA_revanche_accomplished
 		}
-		transfer_state = 28 # Alsace
-		transfer_state = 42 # Lorraine
-		add_core_state = 28
-		add_core_state = 42
-		add_political_power = 150
+		if = { limit = { 28 = { is_owned_by = FRA } } add_core_state = 28 } # Alsace
+
+
+		add_political_power = 25
 	}
 }
 
@@ -561,8 +562,8 @@ country_event = {
 	option = {
 		name = ww1_france.201.a
 		ai_chance = { base = 90 }
-		add_building_construction = { type = railway level = 2 instant_build = yes province = 9345 }
-		add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+		build_railway = { level = 2 start_state = 195 target_state = 219 build_only_on_allied = yes }
+		if = { limit = { 219 = { is_owned_and_controlled_by = ROOT } } 219 = { add_building_construction = { type = industrial_complex level = 1 instant_build = no } } }
 		add_opinion_modifier = { target = FRA modifier = FRA_russian_railway_accord }
 		FRA = { country_event = { id = ww1_france.202 days = 2 } }
 	}
@@ -631,8 +632,8 @@ country_event = {
 	option = {
 		name = ww1_france.204.a
 		ai_chance = { base = 85 }
-		planning_speed = 0.15
-		army_morale_factor = 0.05
+		set_country_flag = ww1_franco_russian_staff_accord
+		add_mastery_bonus = { name = ww1_france.204.t bonus = 0.10 days = 120 folder = land }
 		add_opinion_modifier = { target = FRA modifier = FRA_russian_day15_pledge }
 		FRA = { country_event = { id = ww1_france.205 days = 2 } }
 	}
@@ -641,7 +642,7 @@ country_event = {
 	option = {
 		name = ww1_france.204.b
 		ai_chance = { base = 15 }
-		army_defence_factor = 0.05
+		add_mastery_bonus = { name = ww1_france.204.t bonus = 0.05 days = 90 folder = land }
 		FRA = { country_event = { id = ww1_france.206 days = 2 } }
 	}
 }
@@ -653,7 +654,7 @@ country_event = {
 	id = ww1_france.205
 	title = ww1_france.205.t
 	desc = ww1_france.205.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_russian_pledge
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -700,7 +701,7 @@ country_event = {
 	option = {
 		name = ww1_france.210.a
 		ai_chance = { base = 90 }
-		naval_coordination = 0.15
+		add_mastery_bonus = { name = ww1_france.210.t bonus = 0.10 days = 120 folder = naval }
 		add_opinion_modifier = { target = FRA modifier = FRA_entente_cordiale_opinion }
 		FRA = { country_event = { id = ww1_france.211 days = 2 } }
 	}
@@ -894,7 +895,7 @@ country_event = {
 	id = ww1_france.221
 	title = ww1_france.221.t
 	desc = ww1_france.221.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_italian_entry
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -952,7 +953,7 @@ country_event = {
 	id = ww1_france.230
 	title = ww1_france.230.t
 	desc = ww1_france.230.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_serbian_corfu
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -976,7 +977,7 @@ country_event = {
 	id = ww1_france.231
 	title = ww1_france.231.t
 	desc = ww1_france.231.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_serbian_reorganisation
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -995,7 +996,7 @@ country_event = {
 	id = ww1_france.232
 	title = ww1_france.232.t
 	desc = ww1_france.232.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_romanian_mission
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1019,7 +1020,7 @@ country_event = {
 	id = ww1_france.233
 	title = ww1_france.233.t
 	desc = ww1_france.233.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_romanian_staff
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1069,7 +1070,7 @@ country_event = {
 	id = ww1_france.235
 	title = ww1_france.235.t
 	desc = ww1_france.235.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_salonika_bridgehead
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1128,7 +1129,7 @@ country_event = {
 	id = ww1_france.238
 	title = ww1_france.238.t
 	desc = ww1_france.238.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_fra_salonika_armistice
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1215,7 +1216,7 @@ country_event = {
 	id = ww1_france.253
 	title = ww1_france.253.t
 	desc = ww1_france.253.d
-	picture = GFX_report_event_us_soldiers
+	picture = GFX_event_ww1_fra_american_equipment
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1223,10 +1224,10 @@ country_event = {
 	option = {
 		name = ww1_france.253.a
 		ai_chance = { base = 100 }
-		add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 400 }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 }
-		add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 80 }
-		army_artillery_attack_factor = 0.08
+		if = { limit = { country_exists = FRA has_equipment = { artillery_equipment > 399 } } send_equipment = { type = artillery_equipment amount = 400 target = FRA } }
+		if = { limit = { country_exists = FRA has_equipment = { infantry_equipment > 2999 } } send_equipment = { type = infantry_equipment amount = 3000 target = FRA } }
+		set_country_flag = ww1_american_supply_offer_authorised
+		add_mastery_bonus = { name = ww1_france.253.t bonus = 0.10 days = 90 folder = land }
 		FRA = { country_event = { id = ww1_france.254 days = 2 } }
 	}
 }
@@ -1238,7 +1239,7 @@ country_event = {
 	id = ww1_france.254
 	title = ww1_france.254.t
 	desc = ww1_france.254.d
-	picture = GFX_report_event_us_soldiers
+	picture = GFX_event_ww1_fra_american_deliveries
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1530,4 +1531,24 @@ country_event = {
 		ai_chance = { base = 20 }
 		add_stability = 0.05
 	}
+}
+
+country_event = {
+ id = ww1_france.93
+ title = ww1_france.93.t
+ desc = ww1_france.93.d
+ picture = GFX_event_ww1_french_military_justice
+ is_triggered_only = yes
+ option = {
+  name = ww1_france.93.a
+  ai_chance = { base = 20 }
+  add_stability = -0.025
+  set_country_flag = FRA_military_justice_hardline
+ }
+ option = {
+  name = ww1_france.93.b
+  ai_chance = { base = 80 }
+  add_political_power = -25
+  add_timed_idea = { idea = FRA_ww1_division_rotation days = 90 }
+ }
 }

@@ -1,5 +1,5 @@
 # British Empire (United Kingdom) - Starting Order of Battle (1911)
-# Balanced, professional British Expeditionary Force (BEF) with elite ANZAC & Dominion Corps
+# Balanced, professional British Expeditionary Force (BEF) with regular overseas detachments
 
 division_template = {
 	name = "Regular Infantry Division"
@@ -51,7 +51,7 @@ division_template = {
 }
 
 division_template = {
-	name = "ANZAC & Dominion Expeditionary Corps"
+	name = "Overseas Infantry Division"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -59,9 +59,9 @@ division_template = {
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
-		anzac_corps = { x = 2 y = 0 }
-		anzac_corps = { x = 2 y = 1 }
-		anzac_corps = { x = 2 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
@@ -76,12 +76,12 @@ units = {
 	division = { name = "1st Infantry Division" location = 6103 division_template = "Regular Infantry Division" start_experience_factor = 0.3 }
 	division = { name = "2nd Infantry Division" location = 6103 division_template = "Regular Infantry Division" start_experience_factor = 0.3 }
 	division = { name = "Household Cavalry Division" location = 6103 division_template = "Household Cavalry Division" start_experience_factor = 0.35 }
-	division = { name = "1st ANZAC Expeditionary Corps" location = 6103 division_template = "ANZAC & Dominion Expeditionary Corps" start_experience_factor = 0.4 }
+	division = { name = "1st ANZAC Expeditionary Corps" location = 6103 division_template = "Overseas Infantry Division" start_experience_factor = 0.4 }
 
 	division = { name = "3rd Infantry Division" location = 507 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
 	division = { name = "4th Infantry Division" location = 507 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
 	division = { name = "2nd Cavalry Division" location = 507 division_template = "Household Cavalry Division" start_experience_factor = 0.25 }
-	division = { name = "2nd ANZAC Expeditionary Corps" location = 507 division_template = "ANZAC & Dominion Expeditionary Corps" start_experience_factor = 0.4 }
+	division = { name = "2nd ANZAC Expeditionary Corps" location = 507 division_template = "Overseas Infantry Division" start_experience_factor = 0.4 }
 
 	division = { name = "5th Infantry Division" location = 159 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
 	division = { name = "6th Infantry Division" location = 159 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
@@ -89,12 +89,12 @@ units = {
 
 	division = { name = "51st (Highland) Division" location = 3273 division_template = "Regular Infantry Division" start_experience_factor = 0.3 }
 	division = { name = "52nd (Lowland) Division" location = 3273 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
-	division = { name = "3rd ANZAC Expeditionary Corps" location = 3273 division_template = "ANZAC & Dominion Expeditionary Corps" start_experience_factor = 0.4 }
+	division = { name = "3rd ANZAC Expeditionary Corps" location = 3273 division_template = "Overseas Infantry Division" start_experience_factor = 0.4 }
 
 	# --- Mediterranean & Strategic Chokepoints (Egypt & Suez Canal) ---
 	division = { name = "7th Division (Meerut)" location = 1155 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
 	division = { name = "8th Division (Lahore)" location = 1155 division_template = "Regular Infantry Division" start_experience_factor = 0.25 }
-	division = { name = "4th ANZAC Desert Corps" location = 1155 division_template = "ANZAC & Dominion Expeditionary Corps" start_experience_factor = 0.4 }
+	division = { name = "4th Overseas Infantry Division" location = 1155 division_template = "Overseas Infantry Division" start_experience_factor = 0.4 }
 	division = { name = "1st Egyptian Garrison Brigade" location = 1155 division_template = "Colonial Garrison Division" start_experience_factor = 0.2 }
 	division = { name = "2nd Egyptian Garrison Brigade" location = 1155 division_template = "Colonial Garrison Division" start_experience_factor = 0.2 }
 	division = { name = "Suez Canal Defence Brigade" location = 1155 division_template = "Colonial Garrison Division" start_experience_factor = 0.25 }
