@@ -1,0 +1,48 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "Çanakkale Filosu"
+		naval_base = 849
+		task_force = {
+			name = "Çanakkale Filosu"
+			location = 849
+			ship = { name = "Mesudiye" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad_legacy = { amount = 1 owner = TUR version_name = "Mesudiye" } } }
+			ship = { name = "Âsâr-ı Tevfik" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad_legacy = { amount = 1 owner = TUR version_name = "Âsâr-ı Tevfik" } } }
+			ship = { name = "Mecidiye" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = TUR version_name = "Mecidiye" } } }
+			ship = { name = "Basra" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = TUR version_name = "Samsun" } } }
+			ship = { name = "Samsun" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = TUR version_name = "Samsun" } } }
+			ship = { name = "Yarhisar" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = TUR version_name = "Samsun" } } }
+		}
+	}
+	fleet = {
+		name = "Konstantiniyye Filosu"
+		naval_base = 9833
+		task_force = {
+			name = "Konstantiniyye Filosu"
+			location = 9833
+			ship = { name = "Hamidiye" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = TUR version_name = "Hamidiye" } } }
+			ship = { name = "Berk-i Satvet" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = TUR version_name = "Peyk-i Şevket" } } }
+			ship = { name = "Taşoz" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = TUR version_name = "Samsun" } } }
+			ship = { name = "Barbaros Hayreddin" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = TUR version_name = "Brandenburg" } } }
+			ship = { name = "Turgut Reis" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = TUR version_name = "Brandenburg" } } }
+		}
+	}
+	fleet = {
+		name = "Selanik Müfreze"
+		naval_base = 9833
+		task_force = {
+			name = "Selanik Müfreze"
+			location = 9833
+			ship = { name = "Feth-i Bülend" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad_legacy = { amount = 1 owner = TUR version_name = "Feth-i Bülend" } } }
+		}
+	}
+	fleet = {
+		name = "Kızıl Deniz Müfreze"
+		naval_base = 12883
+		task_force = {
+			name = "Kızıl Deniz Müfreze"
+			location = 12883
+			ship = { name = "Peyk-i Şevket" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = TUR version_name = "Peyk-i Şevket" } } }
+		}
+	}
+}

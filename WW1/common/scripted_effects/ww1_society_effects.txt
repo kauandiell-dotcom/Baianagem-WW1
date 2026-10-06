@@ -1,0 +1,873 @@
+# Consecutive material pressure, recovery and episode cleanup. COUNTRY scope.
+
+ww1_GER_close_crisis_episode = {
+ remove_ideas = GER_turnip_winter_crisis_1
+ remove_ideas = GER_turnip_winter_crisis_2
+ remove_ideas = GER_turnip_winter_crisis_3
+ clr_country_flag = GER_crisis_active
+ clr_country_flag = GER_crisis_triggered
+ clr_country_flag = GER_crisis_resolved
+ clr_country_flag = GER_relief_step_1_done
+ clr_country_flag = GER_relief_step_2_done
+ clr_country_flag = GER_relief_step_3_done
+ set_country_flag = { flag = GER_crisis_recovery_grace days = 180 }
+ set_variable = { GER_pressure_weeks = 0 }
+ set_variable = { GER_recovery_weeks = 0 }
+}
+
+ww1_GER_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { GER_war_weeks = 0 }
+  set_variable = { GER_pressure_weeks = 0 }
+  set_variable = { GER_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { GER_war_weeks = 1 }
+  if = {
+   limit = { ww1_ger_crisis_pressure = yes }
+   add_to_variable = { GER_pressure_weeks = 1 }
+   set_variable = { GER_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { GER_war_weeks > 25 }
+     check_variable = { GER_pressure_weeks > 3 }
+     NOT = { has_country_flag = GER_crisis_active }
+     NOT = { has_country_flag = GER_crisis_recovery_grace }
+    }
+    clr_country_flag = GER_relief_step_1_done
+    clr_country_flag = GER_relief_step_2_done
+    clr_country_flag = GER_relief_step_3_done
+    set_variable = { GER_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.1 }
+   }
+   if = {
+    limit = { has_country_flag = GER_crisis_active check_variable = { GER_pressure_weeks > 23 } NOT = { has_idea = GER_turnip_winter_crisis_3 } }
+    remove_ideas = GER_turnip_winter_crisis_1
+    remove_ideas = GER_turnip_winter_crisis_2
+    add_ideas = GER_turnip_winter_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = GER_crisis_active check_variable = { GER_pressure_weeks > 11 } has_idea = GER_turnip_winter_crisis_1 }
+    remove_ideas = GER_turnip_winter_crisis_1
+    add_ideas = GER_turnip_winter_crisis_2
+   }
+  }
+  else = {
+   set_variable = { GER_pressure_weeks = 0 }
+   add_to_variable = { GER_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = GER_crisis_active check_variable = { GER_recovery_weeks > 5 } }
+    set_variable = { GER_recovery_weeks = 0 }
+    if = { limit = { has_idea = GER_turnip_winter_crisis_3 } swap_ideas = { remove_idea = GER_turnip_winter_crisis_3 add_idea = GER_turnip_winter_crisis_2 } }
+    else_if = { limit = { has_idea = GER_turnip_winter_crisis_2 } swap_ideas = { remove_idea = GER_turnip_winter_crisis_2 add_idea = GER_turnip_winter_crisis_1 } }
+    else = { ww1_GER_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = GER_crisis_active } ww1_GER_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { GER_war_weeks = 0 }
+  set_variable = { GER_pressure_weeks = 0 }
+  set_variable = { GER_recovery_weeks = 0 }
+ }
+}
+
+ww1_ENG_close_crisis_episode = {
+ remove_ideas = ENG_submarine_blockade_crisis_1
+ remove_ideas = ENG_submarine_blockade_crisis_2
+ remove_ideas = ENG_submarine_blockade_crisis_3
+ clr_country_flag = ENG_crisis_active
+ clr_country_flag = ENG_crisis_triggered
+ clr_country_flag = ENG_crisis_resolved
+ clr_country_flag = ENG_relief_step_1_done
+ clr_country_flag = ENG_relief_step_2_done
+ clr_country_flag = ENG_relief_step_3_done
+ set_country_flag = { flag = ENG_crisis_recovery_grace days = 180 }
+ set_variable = { ENG_pressure_weeks = 0 }
+ set_variable = { ENG_recovery_weeks = 0 }
+}
+
+ww1_ENG_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { ENG_war_weeks = 0 }
+  set_variable = { ENG_pressure_weeks = 0 }
+  set_variable = { ENG_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { ENG_war_weeks = 1 }
+  if = {
+   limit = { ww1_eng_crisis_pressure = yes }
+   add_to_variable = { ENG_pressure_weeks = 1 }
+   set_variable = { ENG_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { ENG_war_weeks > 25 }
+     check_variable = { ENG_pressure_weeks > 3 }
+     NOT = { has_country_flag = ENG_crisis_active }
+     NOT = { has_country_flag = ENG_crisis_recovery_grace }
+    }
+    clr_country_flag = ENG_relief_step_1_done
+    clr_country_flag = ENG_relief_step_2_done
+    clr_country_flag = ENG_relief_step_3_done
+    set_variable = { ENG_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.2 }
+   }
+   if = {
+    limit = { has_country_flag = ENG_crisis_active check_variable = { ENG_pressure_weeks > 23 } NOT = { has_idea = ENG_submarine_blockade_crisis_3 } }
+    remove_ideas = ENG_submarine_blockade_crisis_1
+    remove_ideas = ENG_submarine_blockade_crisis_2
+    add_ideas = ENG_submarine_blockade_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = ENG_crisis_active check_variable = { ENG_pressure_weeks > 11 } has_idea = ENG_submarine_blockade_crisis_1 }
+    remove_ideas = ENG_submarine_blockade_crisis_1
+    add_ideas = ENG_submarine_blockade_crisis_2
+   }
+  }
+  else = {
+   set_variable = { ENG_pressure_weeks = 0 }
+   add_to_variable = { ENG_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = ENG_crisis_active check_variable = { ENG_recovery_weeks > 5 } }
+    set_variable = { ENG_recovery_weeks = 0 }
+    if = { limit = { has_idea = ENG_submarine_blockade_crisis_3 } swap_ideas = { remove_idea = ENG_submarine_blockade_crisis_3 add_idea = ENG_submarine_blockade_crisis_2 } }
+    else_if = { limit = { has_idea = ENG_submarine_blockade_crisis_2 } swap_ideas = { remove_idea = ENG_submarine_blockade_crisis_2 add_idea = ENG_submarine_blockade_crisis_1 } }
+    else = { ww1_ENG_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = ENG_crisis_active } ww1_ENG_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { ENG_war_weeks = 0 }
+  set_variable = { ENG_pressure_weeks = 0 }
+  set_variable = { ENG_recovery_weeks = 0 }
+ }
+}
+
+ww1_FRA_close_crisis_episode = {
+ remove_ideas = FRA_trench_mutiny_crisis_1
+ remove_ideas = FRA_trench_mutiny_crisis_2
+ remove_ideas = FRA_trench_mutiny_crisis_3
+ clr_country_flag = FRA_crisis_active
+ clr_country_flag = FRA_crisis_triggered
+ clr_country_flag = FRA_crisis_resolved
+ clr_country_flag = FRA_relief_step_1_done
+ clr_country_flag = FRA_relief_step_2_done
+ clr_country_flag = FRA_relief_step_3_done
+ set_country_flag = { flag = FRA_crisis_recovery_grace days = 180 }
+ set_variable = { FRA_pressure_weeks = 0 }
+ set_variable = { FRA_recovery_weeks = 0 }
+}
+
+ww1_FRA_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { FRA_war_weeks = 0 }
+  set_variable = { FRA_pressure_weeks = 0 }
+  set_variable = { FRA_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { FRA_war_weeks = 1 }
+  if = {
+   limit = { ww1_fra_crisis_pressure = yes }
+   add_to_variable = { FRA_pressure_weeks = 1 }
+   set_variable = { FRA_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { FRA_war_weeks > 25 }
+     check_variable = { FRA_pressure_weeks > 3 }
+     NOT = { has_country_flag = FRA_crisis_active }
+     NOT = { has_country_flag = FRA_crisis_recovery_grace }
+    }
+    clr_country_flag = FRA_relief_step_1_done
+    clr_country_flag = FRA_relief_step_2_done
+    clr_country_flag = FRA_relief_step_3_done
+    set_variable = { FRA_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.3 }
+   }
+   if = {
+    limit = { has_country_flag = FRA_crisis_active check_variable = { FRA_pressure_weeks > 23 } NOT = { has_idea = FRA_trench_mutiny_crisis_3 } }
+    remove_ideas = FRA_trench_mutiny_crisis_1
+    remove_ideas = FRA_trench_mutiny_crisis_2
+    add_ideas = FRA_trench_mutiny_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = FRA_crisis_active check_variable = { FRA_pressure_weeks > 11 } has_idea = FRA_trench_mutiny_crisis_1 }
+    remove_ideas = FRA_trench_mutiny_crisis_1
+    add_ideas = FRA_trench_mutiny_crisis_2
+   }
+  }
+  else = {
+   set_variable = { FRA_pressure_weeks = 0 }
+   add_to_variable = { FRA_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = FRA_crisis_active check_variable = { FRA_recovery_weeks > 5 } }
+    set_variable = { FRA_recovery_weeks = 0 }
+    if = { limit = { has_idea = FRA_trench_mutiny_crisis_3 } swap_ideas = { remove_idea = FRA_trench_mutiny_crisis_3 add_idea = FRA_trench_mutiny_crisis_2 } }
+    else_if = { limit = { has_idea = FRA_trench_mutiny_crisis_2 } swap_ideas = { remove_idea = FRA_trench_mutiny_crisis_2 add_idea = FRA_trench_mutiny_crisis_1 } }
+    else = { ww1_FRA_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = FRA_crisis_active } ww1_FRA_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { FRA_war_weeks = 0 }
+  set_variable = { FRA_pressure_weeks = 0 }
+  set_variable = { FRA_recovery_weeks = 0 }
+ }
+}
+
+ww1_SOV_close_crisis_episode = {
+ remove_ideas = SOV_rifle_famine_crisis_1
+ remove_ideas = SOV_rifle_famine_crisis_2
+ remove_ideas = SOV_rifle_famine_crisis_3
+ clr_country_flag = SOV_crisis_active
+ clr_country_flag = SOV_crisis_triggered
+ clr_country_flag = SOV_crisis_resolved
+ clr_country_flag = SOV_relief_step_1_done
+ clr_country_flag = SOV_relief_step_2_done
+ clr_country_flag = SOV_relief_step_3_done
+ set_country_flag = { flag = SOV_crisis_recovery_grace days = 180 }
+ set_variable = { SOV_pressure_weeks = 0 }
+ set_variable = { SOV_recovery_weeks = 0 }
+}
+
+ww1_SOV_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { SOV_war_weeks = 0 }
+  set_variable = { SOV_pressure_weeks = 0 }
+  set_variable = { SOV_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { SOV_war_weeks = 1 }
+  if = {
+   limit = { ww1_sov_crisis_pressure = yes }
+   add_to_variable = { SOV_pressure_weeks = 1 }
+   set_variable = { SOV_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { SOV_war_weeks > 25 }
+     check_variable = { SOV_pressure_weeks > 3 }
+     NOT = { has_country_flag = SOV_crisis_active }
+     NOT = { has_country_flag = SOV_crisis_recovery_grace }
+    }
+    clr_country_flag = SOV_relief_step_1_done
+    clr_country_flag = SOV_relief_step_2_done
+    clr_country_flag = SOV_relief_step_3_done
+    set_variable = { SOV_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.4 }
+   }
+   if = {
+    limit = { has_country_flag = SOV_crisis_active check_variable = { SOV_pressure_weeks > 23 } NOT = { has_idea = SOV_rifle_famine_crisis_3 } }
+    remove_ideas = SOV_rifle_famine_crisis_1
+    remove_ideas = SOV_rifle_famine_crisis_2
+    add_ideas = SOV_rifle_famine_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = SOV_crisis_active check_variable = { SOV_pressure_weeks > 11 } has_idea = SOV_rifle_famine_crisis_1 }
+    remove_ideas = SOV_rifle_famine_crisis_1
+    add_ideas = SOV_rifle_famine_crisis_2
+   }
+  }
+  else = {
+   set_variable = { SOV_pressure_weeks = 0 }
+   add_to_variable = { SOV_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = SOV_crisis_active check_variable = { SOV_recovery_weeks > 5 } }
+    set_variable = { SOV_recovery_weeks = 0 }
+    if = { limit = { has_idea = SOV_rifle_famine_crisis_3 } swap_ideas = { remove_idea = SOV_rifle_famine_crisis_3 add_idea = SOV_rifle_famine_crisis_2 } }
+    else_if = { limit = { has_idea = SOV_rifle_famine_crisis_2 } swap_ideas = { remove_idea = SOV_rifle_famine_crisis_2 add_idea = SOV_rifle_famine_crisis_1 } }
+    else = { ww1_SOV_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = SOV_crisis_active } ww1_SOV_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { SOV_war_weeks = 0 }
+  set_variable = { SOV_pressure_weeks = 0 }
+  set_variable = { SOV_recovery_weeks = 0 }
+ }
+}
+
+ww1_AUS_close_crisis_episode = {
+ remove_ideas = AUS_nationalities_fracture_crisis_1
+ remove_ideas = AUS_nationalities_fracture_crisis_2
+ remove_ideas = AUS_nationalities_fracture_crisis_3
+ clr_country_flag = AUS_crisis_active
+ clr_country_flag = AUS_crisis_triggered
+ clr_country_flag = AUS_crisis_resolved
+ clr_country_flag = AUS_relief_step_1_done
+ clr_country_flag = AUS_relief_step_2_done
+ clr_country_flag = AUS_relief_step_3_done
+ set_country_flag = { flag = AUS_crisis_recovery_grace days = 180 }
+ set_variable = { AUS_pressure_weeks = 0 }
+ set_variable = { AUS_recovery_weeks = 0 }
+}
+
+ww1_AUS_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { AUS_war_weeks = 0 }
+  set_variable = { AUS_pressure_weeks = 0 }
+  set_variable = { AUS_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { AUS_war_weeks = 1 }
+  if = {
+   limit = { ww1_aus_crisis_pressure = yes }
+   add_to_variable = { AUS_pressure_weeks = 1 }
+   set_variable = { AUS_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { AUS_war_weeks > 25 }
+     check_variable = { AUS_pressure_weeks > 3 }
+     NOT = { has_country_flag = AUS_crisis_active }
+     NOT = { has_country_flag = AUS_crisis_recovery_grace }
+    }
+    clr_country_flag = AUS_relief_step_1_done
+    clr_country_flag = AUS_relief_step_2_done
+    clr_country_flag = AUS_relief_step_3_done
+    set_variable = { AUS_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.5 }
+   }
+   if = {
+    limit = { has_country_flag = AUS_crisis_active check_variable = { AUS_pressure_weeks > 23 } NOT = { has_idea = AUS_nationalities_fracture_crisis_3 } }
+    remove_ideas = AUS_nationalities_fracture_crisis_1
+    remove_ideas = AUS_nationalities_fracture_crisis_2
+    add_ideas = AUS_nationalities_fracture_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = AUS_crisis_active check_variable = { AUS_pressure_weeks > 11 } has_idea = AUS_nationalities_fracture_crisis_1 }
+    remove_ideas = AUS_nationalities_fracture_crisis_1
+    add_ideas = AUS_nationalities_fracture_crisis_2
+   }
+  }
+  else = {
+   set_variable = { AUS_pressure_weeks = 0 }
+   add_to_variable = { AUS_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = AUS_crisis_active check_variable = { AUS_recovery_weeks > 5 } }
+    set_variable = { AUS_recovery_weeks = 0 }
+    if = { limit = { has_idea = AUS_nationalities_fracture_crisis_3 } swap_ideas = { remove_idea = AUS_nationalities_fracture_crisis_3 add_idea = AUS_nationalities_fracture_crisis_2 } }
+    else_if = { limit = { has_idea = AUS_nationalities_fracture_crisis_2 } swap_ideas = { remove_idea = AUS_nationalities_fracture_crisis_2 add_idea = AUS_nationalities_fracture_crisis_1 } }
+    else = { ww1_AUS_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = AUS_crisis_active } ww1_AUS_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { AUS_war_weeks = 0 }
+  set_variable = { AUS_pressure_weeks = 0 }
+  set_variable = { AUS_recovery_weeks = 0 }
+ }
+}
+
+ww1_TUR_close_crisis_episode = {
+ remove_ideas = TUR_desert_supply_collapse_crisis_1
+ remove_ideas = TUR_desert_supply_collapse_crisis_2
+ remove_ideas = TUR_desert_supply_collapse_crisis_3
+ clr_country_flag = TUR_crisis_active
+ clr_country_flag = TUR_crisis_triggered
+ clr_country_flag = TUR_crisis_resolved
+ clr_country_flag = TUR_relief_step_1_done
+ clr_country_flag = TUR_relief_step_2_done
+ clr_country_flag = TUR_relief_step_3_done
+ set_country_flag = { flag = TUR_crisis_recovery_grace days = 180 }
+ set_variable = { TUR_pressure_weeks = 0 }
+ set_variable = { TUR_recovery_weeks = 0 }
+}
+
+ww1_TUR_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { TUR_war_weeks = 0 }
+  set_variable = { TUR_pressure_weeks = 0 }
+  set_variable = { TUR_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { TUR_war_weeks = 1 }
+  if = {
+   limit = { ww1_tur_crisis_pressure = yes }
+   add_to_variable = { TUR_pressure_weeks = 1 }
+   set_variable = { TUR_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { TUR_war_weeks > 25 }
+     check_variable = { TUR_pressure_weeks > 3 }
+     NOT = { has_country_flag = TUR_crisis_active }
+     NOT = { has_country_flag = TUR_crisis_recovery_grace }
+    }
+    clr_country_flag = TUR_relief_step_1_done
+    clr_country_flag = TUR_relief_step_2_done
+    clr_country_flag = TUR_relief_step_3_done
+    set_variable = { TUR_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.7 }
+   }
+   if = {
+    limit = { has_country_flag = TUR_crisis_active check_variable = { TUR_pressure_weeks > 23 } NOT = { has_idea = TUR_desert_supply_collapse_crisis_3 } }
+    remove_ideas = TUR_desert_supply_collapse_crisis_1
+    remove_ideas = TUR_desert_supply_collapse_crisis_2
+    add_ideas = TUR_desert_supply_collapse_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = TUR_crisis_active check_variable = { TUR_pressure_weeks > 11 } has_idea = TUR_desert_supply_collapse_crisis_1 }
+    remove_ideas = TUR_desert_supply_collapse_crisis_1
+    add_ideas = TUR_desert_supply_collapse_crisis_2
+   }
+  }
+  else = {
+   set_variable = { TUR_pressure_weeks = 0 }
+   add_to_variable = { TUR_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = TUR_crisis_active check_variable = { TUR_recovery_weeks > 5 } }
+    set_variable = { TUR_recovery_weeks = 0 }
+    if = { limit = { has_idea = TUR_desert_supply_collapse_crisis_3 } swap_ideas = { remove_idea = TUR_desert_supply_collapse_crisis_3 add_idea = TUR_desert_supply_collapse_crisis_2 } }
+    else_if = { limit = { has_idea = TUR_desert_supply_collapse_crisis_2 } swap_ideas = { remove_idea = TUR_desert_supply_collapse_crisis_2 add_idea = TUR_desert_supply_collapse_crisis_1 } }
+    else = { ww1_TUR_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = TUR_crisis_active } ww1_TUR_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { TUR_war_weeks = 0 }
+  set_variable = { TUR_pressure_weeks = 0 }
+  set_variable = { TUR_recovery_weeks = 0 }
+ }
+}
+
+ww1_ITA_close_crisis_episode = {
+ remove_ideas = ITA_isonzo_attrition_crisis_1
+ remove_ideas = ITA_isonzo_attrition_crisis_2
+ remove_ideas = ITA_isonzo_attrition_crisis_3
+ clr_country_flag = ITA_crisis_active
+ clr_country_flag = ITA_crisis_triggered
+ clr_country_flag = ITA_crisis_resolved
+ clr_country_flag = ITA_relief_step_1_done
+ clr_country_flag = ITA_relief_step_2_done
+ clr_country_flag = ITA_relief_step_3_done
+ set_country_flag = { flag = ITA_crisis_recovery_grace days = 180 }
+ set_variable = { ITA_pressure_weeks = 0 }
+ set_variable = { ITA_recovery_weeks = 0 }
+}
+
+ww1_ITA_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { ITA_war_weeks = 0 }
+  set_variable = { ITA_pressure_weeks = 0 }
+  set_variable = { ITA_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { ITA_war_weeks = 1 }
+  if = {
+   limit = { ww1_ita_crisis_pressure = yes }
+   add_to_variable = { ITA_pressure_weeks = 1 }
+   set_variable = { ITA_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { ITA_war_weeks > 25 }
+     check_variable = { ITA_pressure_weeks > 3 }
+     NOT = { has_country_flag = ITA_crisis_active }
+     NOT = { has_country_flag = ITA_crisis_recovery_grace }
+    }
+    clr_country_flag = ITA_relief_step_1_done
+    clr_country_flag = ITA_relief_step_2_done
+    clr_country_flag = ITA_relief_step_3_done
+    set_variable = { ITA_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.6 }
+   }
+   if = {
+    limit = { has_country_flag = ITA_crisis_active check_variable = { ITA_pressure_weeks > 23 } NOT = { has_idea = ITA_isonzo_attrition_crisis_3 } }
+    remove_ideas = ITA_isonzo_attrition_crisis_1
+    remove_ideas = ITA_isonzo_attrition_crisis_2
+    add_ideas = ITA_isonzo_attrition_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = ITA_crisis_active check_variable = { ITA_pressure_weeks > 11 } has_idea = ITA_isonzo_attrition_crisis_1 }
+    remove_ideas = ITA_isonzo_attrition_crisis_1
+    add_ideas = ITA_isonzo_attrition_crisis_2
+   }
+  }
+  else = {
+   set_variable = { ITA_pressure_weeks = 0 }
+   add_to_variable = { ITA_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = ITA_crisis_active check_variable = { ITA_recovery_weeks > 5 } }
+    set_variable = { ITA_recovery_weeks = 0 }
+    if = { limit = { has_idea = ITA_isonzo_attrition_crisis_3 } swap_ideas = { remove_idea = ITA_isonzo_attrition_crisis_3 add_idea = ITA_isonzo_attrition_crisis_2 } }
+    else_if = { limit = { has_idea = ITA_isonzo_attrition_crisis_2 } swap_ideas = { remove_idea = ITA_isonzo_attrition_crisis_2 add_idea = ITA_isonzo_attrition_crisis_1 } }
+    else = { ww1_ITA_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = ITA_crisis_active } ww1_ITA_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { ITA_war_weeks = 0 }
+  set_variable = { ITA_pressure_weeks = 0 }
+  set_variable = { ITA_recovery_weeks = 0 }
+ }
+}
+
+ww1_USA_close_crisis_episode = {
+ remove_ideas = USA_mobilization_bottleneck_crisis_1
+ remove_ideas = USA_mobilization_bottleneck_crisis_2
+ remove_ideas = USA_mobilization_bottleneck_crisis_3
+ clr_country_flag = USA_crisis_active
+ clr_country_flag = USA_crisis_triggered
+ clr_country_flag = USA_crisis_resolved
+ clr_country_flag = USA_relief_step_1_done
+ clr_country_flag = USA_relief_step_2_done
+ clr_country_flag = USA_relief_step_3_done
+ set_country_flag = { flag = USA_crisis_recovery_grace days = 180 }
+ set_variable = { USA_pressure_weeks = 0 }
+ set_variable = { USA_recovery_weeks = 0 }
+}
+
+ww1_USA_update_crisis = {
+ if = {
+  limit = { NOT = { has_country_flag = ww1_society_initialized } }
+  set_country_flag = ww1_society_initialized
+  set_variable = { USA_war_weeks = 0 }
+  set_variable = { USA_pressure_weeks = 0 }
+  set_variable = { USA_recovery_weeks = 0 }
+ }
+ # Native country dynamic variables: equipment actually present/required in deployed armies.
+ set_variable = { ww1_required_infantry_equipment = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { ww1_infantry_equipment_ratio = 1 }
+ if = {
+  limit = { check_variable = { ww1_required_infantry_equipment > 0 } }
+  set_variable = { ww1_infantry_equipment_ratio = num_equipment_in_armies@infantry_equipment }
+  divide_variable = { ww1_infantry_equipment_ratio = ww1_required_infantry_equipment }
+  clamp_variable = { var = ww1_infantry_equipment_ratio min = 0 max = 1 }
+ }
+ if = {
+  limit = { has_war = yes any_enemy_country = { is_major = yes } }
+  add_to_variable = { USA_war_weeks = 1 }
+  if = {
+   limit = { ww1_usa_crisis_pressure = yes }
+   add_to_variable = { USA_pressure_weeks = 1 }
+   set_variable = { USA_recovery_weeks = 0 }
+   if = {
+    limit = {
+     check_variable = { USA_war_weeks > 25 }
+     check_variable = { USA_pressure_weeks > 3 }
+     NOT = { has_country_flag = USA_crisis_active }
+     NOT = { has_country_flag = USA_crisis_recovery_grace }
+    }
+    clr_country_flag = USA_relief_step_1_done
+    clr_country_flag = USA_relief_step_2_done
+    clr_country_flag = USA_relief_step_3_done
+    set_variable = { USA_pressure_weeks = 0 }
+    country_event = { id = ww1_crisis.8 }
+   }
+   if = {
+    limit = { has_country_flag = USA_crisis_active check_variable = { USA_pressure_weeks > 23 } NOT = { has_idea = USA_mobilization_bottleneck_crisis_3 } }
+    remove_ideas = USA_mobilization_bottleneck_crisis_1
+    remove_ideas = USA_mobilization_bottleneck_crisis_2
+    add_ideas = USA_mobilization_bottleneck_crisis_3
+   }
+   else_if = {
+    limit = { has_country_flag = USA_crisis_active check_variable = { USA_pressure_weeks > 11 } has_idea = USA_mobilization_bottleneck_crisis_1 }
+    remove_ideas = USA_mobilization_bottleneck_crisis_1
+    add_ideas = USA_mobilization_bottleneck_crisis_2
+   }
+  }
+  else = {
+   set_variable = { USA_pressure_weeks = 0 }
+   add_to_variable = { USA_recovery_weeks = 1 }
+   if = {
+    limit = { has_country_flag = USA_crisis_active check_variable = { USA_recovery_weeks > 5 } }
+    set_variable = { USA_recovery_weeks = 0 }
+    if = { limit = { has_idea = USA_mobilization_bottleneck_crisis_3 } swap_ideas = { remove_idea = USA_mobilization_bottleneck_crisis_3 add_idea = USA_mobilization_bottleneck_crisis_2 } }
+    else_if = { limit = { has_idea = USA_mobilization_bottleneck_crisis_2 } swap_ideas = { remove_idea = USA_mobilization_bottleneck_crisis_2 add_idea = USA_mobilization_bottleneck_crisis_1 } }
+    else = { ww1_USA_close_crisis_episode = yes }
+   }
+  }
+ }
+ else = {
+  if = { limit = { has_country_flag = USA_crisis_active } ww1_USA_close_crisis_episode = yes set_country_flag = ww1_reconstruction_available }
+  set_variable = { USA_war_weeks = 0 }
+  set_variable = { USA_pressure_weeks = 0 }
+  set_variable = { USA_recovery_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_GER_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = GER_turnip_winter_crisis_3 }
+  swap_ideas = { remove_idea = GER_turnip_winter_crisis_3 add_idea = GER_turnip_winter_crisis_2 }
+  set_variable = { GER_pressure_weeks = 0 }
+  set_variable = { GER_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = GER_turnip_winter_crisis_2 }
+  swap_ideas = { remove_idea = GER_turnip_winter_crisis_2 add_idea = GER_turnip_winter_crisis_1 }
+  set_variable = { GER_pressure_weeks = 0 }
+  set_variable = { GER_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = GER_turnip_winter_crisis_1 NOT = { ww1_ger_crisis_pressure = yes } }
+  ww1_GER_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = GER_turnip_winter_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { GER_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_ENG_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = ENG_submarine_blockade_crisis_3 }
+  swap_ideas = { remove_idea = ENG_submarine_blockade_crisis_3 add_idea = ENG_submarine_blockade_crisis_2 }
+  set_variable = { ENG_pressure_weeks = 0 }
+  set_variable = { ENG_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = ENG_submarine_blockade_crisis_2 }
+  swap_ideas = { remove_idea = ENG_submarine_blockade_crisis_2 add_idea = ENG_submarine_blockade_crisis_1 }
+  set_variable = { ENG_pressure_weeks = 0 }
+  set_variable = { ENG_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = ENG_submarine_blockade_crisis_1 NOT = { ww1_eng_crisis_pressure = yes } }
+  ww1_ENG_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = ENG_submarine_blockade_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { ENG_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_FRA_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = FRA_trench_mutiny_crisis_3 }
+  swap_ideas = { remove_idea = FRA_trench_mutiny_crisis_3 add_idea = FRA_trench_mutiny_crisis_2 }
+  set_variable = { FRA_pressure_weeks = 0 }
+  set_variable = { FRA_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = FRA_trench_mutiny_crisis_2 }
+  swap_ideas = { remove_idea = FRA_trench_mutiny_crisis_2 add_idea = FRA_trench_mutiny_crisis_1 }
+  set_variable = { FRA_pressure_weeks = 0 }
+  set_variable = { FRA_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = FRA_trench_mutiny_crisis_1 NOT = { ww1_fra_crisis_pressure = yes } }
+  ww1_FRA_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = FRA_trench_mutiny_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { FRA_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_SOV_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = SOV_rifle_famine_crisis_3 }
+  swap_ideas = { remove_idea = SOV_rifle_famine_crisis_3 add_idea = SOV_rifle_famine_crisis_2 }
+  set_variable = { SOV_pressure_weeks = 0 }
+  set_variable = { SOV_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = SOV_rifle_famine_crisis_2 }
+  swap_ideas = { remove_idea = SOV_rifle_famine_crisis_2 add_idea = SOV_rifle_famine_crisis_1 }
+  set_variable = { SOV_pressure_weeks = 0 }
+  set_variable = { SOV_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = SOV_rifle_famine_crisis_1 NOT = { ww1_sov_crisis_pressure = yes } }
+  ww1_SOV_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = SOV_rifle_famine_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { SOV_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_AUS_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = AUS_nationalities_fracture_crisis_3 }
+  swap_ideas = { remove_idea = AUS_nationalities_fracture_crisis_3 add_idea = AUS_nationalities_fracture_crisis_2 }
+  set_variable = { AUS_pressure_weeks = 0 }
+  set_variable = { AUS_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = AUS_nationalities_fracture_crisis_2 }
+  swap_ideas = { remove_idea = AUS_nationalities_fracture_crisis_2 add_idea = AUS_nationalities_fracture_crisis_1 }
+  set_variable = { AUS_pressure_weeks = 0 }
+  set_variable = { AUS_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = AUS_nationalities_fracture_crisis_1 NOT = { ww1_aus_crisis_pressure = yes } }
+  ww1_AUS_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = AUS_nationalities_fracture_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { AUS_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_TUR_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = TUR_desert_supply_collapse_crisis_3 }
+  swap_ideas = { remove_idea = TUR_desert_supply_collapse_crisis_3 add_idea = TUR_desert_supply_collapse_crisis_2 }
+  set_variable = { TUR_pressure_weeks = 0 }
+  set_variable = { TUR_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = TUR_desert_supply_collapse_crisis_2 }
+  swap_ideas = { remove_idea = TUR_desert_supply_collapse_crisis_2 add_idea = TUR_desert_supply_collapse_crisis_1 }
+  set_variable = { TUR_pressure_weeks = 0 }
+  set_variable = { TUR_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = TUR_desert_supply_collapse_crisis_1 NOT = { ww1_tur_crisis_pressure = yes } }
+  ww1_TUR_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = TUR_desert_supply_collapse_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { TUR_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_ITA_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = ITA_isonzo_attrition_crisis_3 }
+  swap_ideas = { remove_idea = ITA_isonzo_attrition_crisis_3 add_idea = ITA_isonzo_attrition_crisis_2 }
+  set_variable = { ITA_pressure_weeks = 0 }
+  set_variable = { ITA_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = ITA_isonzo_attrition_crisis_2 }
+  swap_ideas = { remove_idea = ITA_isonzo_attrition_crisis_2 add_idea = ITA_isonzo_attrition_crisis_1 }
+  set_variable = { ITA_pressure_weeks = 0 }
+  set_variable = { ITA_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = ITA_isonzo_attrition_crisis_1 NOT = { ww1_ita_crisis_pressure = yes } }
+  ww1_ITA_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = ITA_isonzo_attrition_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { ITA_pressure_weeks = 0 }
+ }
+}
+
+# Apply delivered relief to the current crisis stage, including natural recovery during the project.
+ww1_USA_apply_delivered_relief = {
+ if = {
+  limit = { has_idea = USA_mobilization_bottleneck_crisis_3 }
+  swap_ideas = { remove_idea = USA_mobilization_bottleneck_crisis_3 add_idea = USA_mobilization_bottleneck_crisis_2 }
+  set_variable = { USA_pressure_weeks = 0 }
+  set_variable = { USA_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = USA_mobilization_bottleneck_crisis_2 }
+  swap_ideas = { remove_idea = USA_mobilization_bottleneck_crisis_2 add_idea = USA_mobilization_bottleneck_crisis_1 }
+  set_variable = { USA_pressure_weeks = 0 }
+  set_variable = { USA_recovery_weeks = 0 }
+ }
+ else_if = {
+  limit = { has_idea = USA_mobilization_bottleneck_crisis_1 NOT = { ww1_usa_crisis_pressure = yes } }
+  ww1_USA_close_crisis_episode = yes
+ }
+ else_if = {
+  limit = { has_idea = USA_mobilization_bottleneck_crisis_1 }
+  # Supplies can delay escalation, but do not erase a still-present material cause.
+  set_variable = { USA_pressure_weeks = 0 }
+ }
+}

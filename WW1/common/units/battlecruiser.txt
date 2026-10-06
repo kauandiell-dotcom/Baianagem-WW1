@@ -1,0 +1,28 @@
+# Native 1.19.3 classifier extended for WW1 armour. Native doctrine coupling retained.
+sub_units = {
+	battle_cruiser = {
+		sprite = battle_cruiser
+		map_icon_category = ship
+		priority = 8
+		active = yes
+		type = { capital_ship }
+		need_equipment = { ship_hull_heavy = 1 }
+		need_equipment_modules = {
+			any = {
+				ww1_1911_battlecruiser_belt = 1
+				ship_armor_bc_1 = 1
+				ship_armor_bc_2 = 1
+				ship_armor_bc_3 = 1
+			}
+		}
+
+		max_organisation = 50
+
+		supply_consumption = 0.32
+		
+		critical_parts = { rudder_jammed destroyed_ammo_storage broken_propeller on_fire }
+		critical_part_damage_chance_mult = 1
+		
+		hit_profile_mult = 1.0
+	}
+}

@@ -1,17 +1,5 @@
+# A territorial claim and occupation compliance do not create a national core.
+# Historically justified integration is handled by the relevant country chain.
+# No automatic monthly conversion of claimed states is applied.
 on_actions = {
-	on_monthly = {
-		effect = {
-			every_country = {
-				limit = { is_ai = no }
-				every_controlled_state = {
-					limit = {
-						is_claimed_by = PREV
-						NOT = { is_core_of = PREV }
-						compliance > 65
-					}
-					add_core_of = PREV
-				}
-			}
-		}
-	}
 }

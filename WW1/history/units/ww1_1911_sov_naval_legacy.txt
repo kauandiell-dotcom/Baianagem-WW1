@@ -1,0 +1,245 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "Baltiyskiy Otryad"
+		naval_base = 11105
+		task_force = {
+			name = "Baltiyskiy Otryad"
+			location = 11105
+			ship = { name = "Tsesarevich" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = SOV version_name = "Tsesarevich" } } }
+			ship = { name = "Slava" definition = battleship start_experience_factor = 0.1 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = SOV version_name = "Borodino" } } }
+			ship = { name = "Rurik" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = SOV version_name = "Rurik" } } }
+			ship = { name = "Admiral Makarov" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = SOV version_name = "Bayan" } } }
+			ship = { name = "Bogatyr" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Bogatyr" } } }
+			ship = { name = "Oleg" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Bogatyr" } } }
+		}
+	}
+	fleet = {
+		name = "Rezervniy Otryad"
+		naval_base = 11105
+		task_force = {
+			name = "Rezervniy Otryad"
+			location = 11105
+			ship = { name = "Rossiya" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = SOV version_name = "Rossiya" } } }
+			ship = { name = "Gromoboi" definition = heavy_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = SOV version_name = "Gromoboi" } } }
+			ship = { name = "Diana" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Pallada" } } }
+			ship = { name = "Avrora" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Pallada" } } }
+		}
+	}
+	fleet = {
+		name = "1-ya Minnaya Diviziya"
+		naval_base = 11105
+		task_force = {
+			name = "1-ya Minnaya Diviziya"
+			location = 11105
+			ship = { name = "Okhotnik" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Okhotnik" } } }
+			ship = { name = "General Kondratenko" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Okhotnik" } } }
+			ship = { name = "Sibirsky Strelok" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Okhotnik" } } }
+			ship = { name = "Pogranichnik" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Okhotnik" } } }
+			ship = { name = "Vsadnik" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Gaydamak" } } }
+			ship = { name = "Amurets" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Gaydamak" } } }
+			ship = { name = "Gaydamak" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Gaydamak" } } }
+			ship = { name = "Ussuriets" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Gaydamak" } } }
+			ship = { name = "Vidniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Grozniy" } } }
+			ship = { name = "Iskusniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Ispolnitelniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Krepkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Lyogkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Leytenant Burakov" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Letuchiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Likhoy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Lovkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Metkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Molodetskiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Moshchniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Burakov" } } }
+			ship = { name = "Bditelniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Boevoy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Burniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Vnimatelniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Vnushitelniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Vinosliviy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Inzhener-mekhanik Dmitriev" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Inzhener-mekhanik Zverev" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Podvizhniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Porazhayushchiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Poslushniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Prozorliviy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Prochnyi" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Rezviy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Retiviy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Ryaniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+		}
+	}
+	fleet = {
+		name = "2-ya Minnaya Diviziya"
+		naval_base = 11105
+		task_force = {
+			name = "2-ya Minnaya Diviziya"
+			location = 11105
+			ship = { name = "Emir Bukharsky" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Emir Bukharsky" } } }
+			ship = { name = "Finn" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Emir Bukharsky" } } }
+			ship = { name = "Moskvitianin" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Emir Bukharsky" } } }
+			ship = { name = "Dobrovolets" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Emir Bukharsky" } } }
+			ship = { name = "Ukraina" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Voiskovoy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Turkmenets-Stavropolsky" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Kazanets" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Steregushchiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Strashny" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Donskoi Kazak" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Zabaikalets" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Ukraina" } } }
+			ship = { name = "Prytkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Gromyashchiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Grozniy" } } }
+			ship = { name = "Silniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Storozhevoy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Stroiniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Razyashchiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Rastoropniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Delniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Deyatelniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+			ship = { name = "Dostoiniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Deyatelniy" } } }
+		}
+	}
+	fleet = {
+		name = "Brigada Podvodnikh Lodok"
+		naval_base = 11105
+		task_force = {
+			name = "Brigada Podvodnikh Lodok"
+			location = 11105
+			ship = { name = "Makrel" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Kasatka" } } }
+			ship = { name = "Okun" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Kasatka" } } }
+			ship = { name = "Sig" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Osyotr" } } }
+			ship = { name = "Minoga" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Minoga" } } }
+		}
+	}
+	fleet = {
+		name = "Libavskiy Uchebniy Otryad Podvodnovo Plavaniya"
+		naval_base = 9262
+		task_force = {
+			name = "Libavskiy Uchebniy Otryad Podvodnovo Plavaniya"
+			location = 9262
+			ship = { name = "Beluga" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+			ship = { name = "Peskar" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+			ship = { name = "Sterlyad" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+		}
+	}
+	fleet = {
+		name = "Diviziya Lineynich Korabley"
+		naval_base = 3686
+		task_force = {
+			name = "Diviziya Lineynich Korabley"
+			location = 3686
+			ship = { name = "Dvenadsat Apostolov" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = SOV version_name = "Dvenadsat Apostolov" } } }
+			ship = { name = "Panteleimon" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = SOV version_name = "Potemkin" } } }
+			ship = { name = "Tri Sviatitelia" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = SOV version_name = "Tri Sviatitelia" } } }
+			ship = { name = "Rostislav" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = SOV version_name = "Rostislav" } } }
+			ship = { name = "Pamiat Merkuria" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Bogatyr" } } }
+			ship = { name = "Kagul" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Bogatyr" } } }
+		}
+	}
+	fleet = {
+		name = "Diviziya Minonostsev"
+		naval_base = 3686
+		task_force = {
+			name = "Diviziya Minonostsev"
+			location = 3686
+			ship = { name = "Svirepiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Smetliviy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Stremitelniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Strogiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Zharkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zhivoi" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zhutkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zavetniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zavidniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Leytenant Pushchin" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zvonkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zorkiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Zhivuchiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Pushchin" } } }
+			ship = { name = "Leytenant Shestakov" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Shestakov" } } }
+			ship = { name = "Kapitan-Leytenant Baranov" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Shestakov" } } }
+			ship = { name = "Leytenant Zatsarenniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Shestakov" } } }
+			ship = { name = "Kapitan Saken" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Leytenant Shestakov" } } }
+		}
+	}
+	fleet = {
+		name = "Otdelniy Divizion Podvodnikh Lodok"
+		naval_base = 3686
+		task_force = {
+			name = "Otdelniy Divizion Podvodnikh Lodok"
+			location = 3686
+			ship = { name = "Karp" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Karp" } } }
+			ship = { name = "Karas" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Karp" } } }
+			ship = { name = "Losos" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+			ship = { name = "Sudak" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+		}
+	}
+	fleet = {
+		name = "Bronebalubniye Kreysera"
+		naval_base = 957
+		task_force = {
+			name = "Bronebalubniye Kreysera"
+			location = 957
+			ship = { name = "Askold" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Askold" } } }
+			ship = { name = "Zhemchug" definition = light_cruiser start_experience_factor = 0.1 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = SOV version_name = "Zhemchug" } } }
+		}
+	}
+	fleet = {
+		name = "Diviziya Minonostsev"
+		naval_base = 957
+		task_force = {
+			name = "Diviziya Minonostsev"
+			location = 957
+			ship = { name = "Besposhchadniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Kit" } } }
+			ship = { name = "Besstrashniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Kit" } } }
+			ship = { name = "Besshumniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Kit" } } }
+			ship = { name = "Vlastniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Forel" } } }
+			ship = { name = "Grozovoi" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Forel" } } }
+			ship = { name = "Bodriy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Buiniy" } } }
+			ship = { name = "Boykiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Buiniy" } } }
+			ship = { name = "Braviy" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Buiniy" } } }
+			ship = { name = "Grozniy" definition = destroyer start_experience_factor = 0.1 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Grozniy" } } }
+			ship = { name = "Serditiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Skoriy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Smeliy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Statniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol" } } }
+			ship = { name = "Tvyordiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Tvyordiy" } } }
+			ship = { name = "Tochniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Tvyordiy" } } }
+			ship = { name = "Trevozhniy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Tvyordiy" } } }
+			ship = { name = "Inzhener-Mekhanik Anastasov" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Tvyordiy" } } }
+			ship = { name = "Leytenant Maleyev" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Tvyordiy" } } }
+			ship = { name = "Kapitan Yurasovskiy" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+			ship = { name = "Leytenant Sergeyev" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Inzhener-Mekhanik Zverev" } } }
+		}
+	}
+	fleet = {
+		name = "Divizion Podvodnikh Lodok"
+		naval_base = 957
+		task_force = {
+			name = "Divizion Podvodnikh Lodok"
+			location = 957
+			ship = { name = "Skat" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Kasatka" } } }
+			ship = { name = "Nalim" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Kasatka" } } }
+			ship = { name = "Shchuka" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+			ship = { name = "Feldmarshal Graf Sheremetyev" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Kasatka" } } }
+			ship = { name = "Som" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Som" } } }
+			ship = { name = "Kasatka" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Kasatka" } } }
+			ship = { name = "Delfin" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Delfin" } } }
+			ship = { name = "Osyotr" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Osyotr" } } }
+			ship = { name = "Bychok" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Osyotr" } } }
+			ship = { name = "Kefal" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Osyotr" } } }
+			ship = { name = "Plotva" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Osyotr" } } }
+			ship = { name = "Paltus" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = SOV version_name = "Osyotr" } } }
+		}
+	}
+	fleet = {
+		name = "Okhrana Kaspiyskovo Morya"
+		naval_base = 3686
+		task_force = {
+			name = "Okhrana Kaspiyskovo Morya"
+			location = 3686
+			ship = { name = "Astrakhan" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol Class Kaspiy Edition" } } }
+			ship = { name = "Baku" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = SOV version_name = "Sokol Class Kaspiy Edition" } } }
+		}
+	}
+}

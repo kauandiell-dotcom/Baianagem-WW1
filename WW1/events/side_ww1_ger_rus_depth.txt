@@ -1,0 +1,124 @@
+﻿add_namespace = side_ww1_ger_rus
+country_event = { id = side_ww1_ger_rus.1 title = side_ww1_ger_rus.1.t desc = side_ww1_ger_rus.1.d picture = GFX_event_ww1_ger_ohl_council is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.1.a trigger = { has_war = yes has_country_flag = side_ww1_GER_hindenburg_proposal_pending } ai_chance = { factor = 70 } clr_country_flag = side_ww1_GER_hindenburg_proposal_pending set_country_flag = side_ww1_GER_hindenburg_authorised custom_effect_tooltip = side_ww1_hindenburg_project_tt }
+ option = { name = side_ww1_ger_rus.1.b ai_chance = { factor = 30 } clr_country_flag = side_ww1_GER_hindenburg_authorised }
+}
+country_event = { id = side_ww1_ger_rus.2 title = side_ww1_ger_rus.2.t desc = side_ww1_ger_rus.2.d picture = GFX_event_ww1_ger_verdun_plan is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.2.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.3 title = side_ww1_ger_rus.3.t desc = side_ww1_ger_rus.3.d picture = GFX_event_ww1_rus_brusilov_council is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.3.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.5 title = side_ww1_ger_rus.5.t desc = side_ww1_ger_rus.5.d picture = GFX_event_ww1_ger_ohl_council is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.5.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.6 title = side_ww1_ger_rus.6.t desc = side_ww1_ger_rus.6.d picture = GFX_event_ww1_rus_brusilov_council is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.6.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.7 title = side_ww1_ger_rus.7.t desc = side_ww1_ger_rus.7.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.7.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.8 title = side_ww1_ger_rus.8.t desc = side_ww1_ger_rus.8.d picture = GFX_event_ww1_rus_eastern_armistice is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.8.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.9 title = side_ww1_ger_rus.9.t desc = side_ww1_ger_rus.9.d picture = GFX_event_ww1_rus_brusilov_council is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.9.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.10 title = side_ww1_ger_rus.10.t desc = side_ww1_ger_rus.10.d picture = GFX_event_ww1_crisis_sov is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.10.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.11 title = side_ww1_ger_rus.11.t desc = side_ww1_ger_rus.11.d picture = GFX_event_ww1_ger_ohl_council is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.11.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.20 title = side_ww1_ger_rus.20.t desc = side_ww1_ger_rus.20.d picture = GFX_event_ww1_fra_russian_pledge is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.20.a trigger = { FROM = { exists = yes original_tag = SOV has_country_flag = side_ww1_SOV_import_active
+ OR = { AND = { has_country_flag = side_ww1_SOV_import_FRA ROOT = { tag = FRA } }
+        AND = { has_country_flag = side_ww1_SOV_import_ENG ROOT = { tag = ENG } } } } has_capitulated = no is_in_faction_with = FROM NOT = { has_war_with = FROM } FROM = { has_capitulated = no has_war = yes side_ww1_SOV_import_port_open = yes NOT = { has_country_flag = side_ww1_SOV_import_dispatched } } has_equipment = { infantry_equipment > 11999 artillery_equipment > 239 } } ai_chance = { factor = 60 } if = { limit = { FROM = { exists = yes original_tag = SOV has_country_flag = side_ww1_SOV_import_active
+ OR = { AND = { has_country_flag = side_ww1_SOV_import_FRA ROOT = { tag = FRA } }
+        AND = { has_country_flag = side_ww1_SOV_import_ENG ROOT = { tag = ENG } } } } has_capitulated = no is_in_faction_with = FROM NOT = { has_war_with = FROM } FROM = { has_capitulated = no has_war = yes side_ww1_SOV_import_port_open = yes NOT = { has_country_flag = side_ww1_SOV_import_dispatched } } has_equipment = { infantry_equipment > 11999 artillery_equipment > 239 } } FROM = { set_country_flag = { flag = side_ww1_SOV_import_dispatched days = 60 } country_event = { id = side_ww1_ger_rus.21 days = 30 } } } }
+ option = { name = side_ww1_ger_rus.20.b ai_chance = { factor = 40 } if = { limit = { FROM = { exists = yes original_tag = SOV has_country_flag = side_ww1_SOV_import_active
+ OR = { AND = { has_country_flag = side_ww1_SOV_import_FRA ROOT = { tag = FRA } }
+        AND = { has_country_flag = side_ww1_SOV_import_ENG ROOT = { tag = ENG } } } } } FROM = { clr_country_flag = side_ww1_SOV_import_active clr_country_flag = side_ww1_SOV_import_FRA clr_country_flag = side_ww1_SOV_import_ENG country_event = { id = side_ww1_ger_rus.23 days = 1 } } } }
+}
+country_event = { id = side_ww1_ger_rus.21 title = side_ww1_ger_rus.21.t desc = side_ww1_ger_rus.21.d picture = GFX_event_ww1_crisis_sov is_triggered_only = yes
+ immediate = { if = { limit = { has_country_flag = side_ww1_SOV_import_active has_country_flag = side_ww1_SOV_import_dispatched
+ has_capitulated = no has_war = yes side_ww1_SOV_import_port_open = yes
+ OR = { AND = { has_country_flag = side_ww1_SOV_import_FRA FROM = { tag = FRA } }
+        AND = { has_country_flag = side_ww1_SOV_import_ENG FROM = { tag = ENG } } }
+ FROM = { exists = yes has_capitulated = no is_in_faction_with = ROOT NOT = { has_war_with = ROOT } has_equipment = { infantry_equipment > 11999 artillery_equipment > 239 } } }
+ FROM = {
+  send_equipment = { equipment = infantry_equipment amount = 6000 target = ROOT }
+  send_equipment = { equipment = artillery_equipment amount = 120 target = ROOT }
+ }
+ set_country_flag = side_ww1_SOV_import_delivered
+ add_to_variable = { side_ww1_SOV_supply_debt = 1 }
+ add_ideas = side_ww1_SOV_allied_supply_credit
+}
+else = { set_country_flag = side_ww1_SOV_import_failed }
+clr_country_flag = side_ww1_SOV_import_active
+clr_country_flag = side_ww1_SOV_import_dispatched
+clr_country_flag = side_ww1_SOV_import_FRA
+clr_country_flag = side_ww1_SOV_import_ENG }
+ option = { name = side_ww1_ger_rus.21.a trigger = { has_country_flag = side_ww1_SOV_import_delivered } ai_chance = { factor = 100 } clr_country_flag = side_ww1_SOV_import_delivered }
+ option = { name = side_ww1_ger_rus.21.b trigger = { has_country_flag = side_ww1_SOV_import_failed } ai_chance = { factor = 100 } clr_country_flag = side_ww1_SOV_import_failed }
+}
+country_event = { id = side_ww1_ger_rus.22 title = side_ww1_ger_rus.22.t desc = side_ww1_ger_rus.22.d picture = GFX_event_ww1_rus_eastern_armistice is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.22.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.23 title = side_ww1_ger_rus.23.t desc = side_ww1_ger_rus.23.d picture = GFX_event_ww1_fra_russian_pledge is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.23.a ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.30 title = side_ww1_ger_rus.30.t desc = side_ww1_ger_rus.30.d picture = GFX_event_ww1_ger_auh_staff is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.30.a trigger = { FROM = { exists = yes original_tag = GER has_country_flag = side_ww1_GER_grain_pending has_war = yes has_capitulated = no } has_capitulated = no is_in_faction_with = FROM is_neighbor_of = FROM NOT = { has_country_flag = AUS_crisis_active } num_of_civilian_factories_available_for_projects > 0 } ai_chance = { factor = 55 } if = { limit = { FROM = { exists = yes original_tag = GER has_country_flag = side_ww1_GER_grain_pending has_war = yes has_capitulated = no } has_capitulated = no is_in_faction_with = FROM is_neighbor_of = FROM NOT = { has_country_flag = AUS_crisis_active } num_of_civilian_factories_available_for_projects > 0 } add_timed_idea = { idea = side_ww1_AUS_export_commitment days = 90 } FROM = { country_event = { id = side_ww1_ger_rus.31 days = 30 } } } }
+ option = { name = side_ww1_ger_rus.30.b ai_chance = { factor = 45 } if = { limit = { FROM = { has_country_flag = side_ww1_GER_grain_pending } } FROM = { clr_country_flag = side_ww1_GER_grain_pending country_event = { id = side_ww1_ger_rus.32 days = 1 } } } }
+}
+country_event = { id = side_ww1_ger_rus.31 title = side_ww1_ger_rus.31.t desc = side_ww1_ger_rus.31.d picture = GFX_event_ww1_crisis_ger is_triggered_only = yes
+ immediate = { if = { limit = { has_country_flag = side_ww1_GER_grain_pending has_war = yes has_capitulated = no FROM = { tag = AUS exists = yes has_capitulated = no is_in_faction_with = ROOT is_neighbor_of = ROOT NOT = { has_country_flag = AUS_crisis_active } } } add_timed_idea = { idea = side_ww1_GER_danubian_distribution days = 180 } set_country_flag = { flag = side_ww1_GER_grain_delivered days = 30 } } clr_country_flag = side_ww1_GER_grain_pending }
+ option = { name = side_ww1_ger_rus.31.a trigger = { has_country_flag = side_ww1_GER_grain_delivered } ai_chance = { factor = 100 } clr_country_flag = side_ww1_GER_grain_delivered }
+ option = { name = side_ww1_ger_rus.31.b trigger = { NOT = { has_country_flag = side_ww1_GER_grain_delivered } } ai_chance = { factor = 100 }  }
+}
+country_event = { id = side_ww1_ger_rus.32 title = side_ww1_ger_rus.32.t desc = side_ww1_ger_rus.32.d picture = GFX_event_ww1_crisis_ger is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.32.a ai_chance = { factor = 100 }  }
+}
+
+country_event = { id = side_ww1_ger_rus.50 title = side_ww1_ger_rus.50.t desc = side_ww1_ger_rus.50.d picture = GFX_event_ww1_fra_russian_pledge is_triggered_only = yes
+ trigger = { OR = { tag = SOV tag = RUS } FROM = { tag = GER } }
+ option = { name = side_ww1_ger_rus.50.a trigger = { FROM = { tag = GER exists = yes has_capitulated = no OR = { AND = { has_country_flag = side_ww1_GER_bloc_pending_SOV ROOT = { tag = SOV } } AND = { has_country_flag = side_ww1_GER_bloc_pending_RUS ROOT = { tag = RUS } } } } has_government = communism has_capitulated = no NOT = { is_faction_leader = yes } NOT = { has_war_with = FROM } NOT = { any_enemy_country = { is_in_faction_with = FROM } } FROM = { has_government = communism has_country_flag = side_ww1_GER_bloc_red OR = { is_faction_leader = yes is_in_faction = no } } } ai_chance = { factor = 15 modifier = { factor = 0 is_historical_focus_on = yes } } if = { limit = { FROM = { tag = GER exists = yes has_capitulated = no OR = { AND = { has_country_flag = side_ww1_GER_bloc_pending_SOV ROOT = { tag = SOV } } AND = { has_country_flag = side_ww1_GER_bloc_pending_RUS ROOT = { tag = RUS } } } } has_government = communism has_capitulated = no NOT = { is_faction_leader = yes } NOT = { has_war_with = FROM } NOT = { any_enemy_country = { is_in_faction_with = FROM } } FROM = { has_government = communism has_country_flag = side_ww1_GER_bloc_red OR = { is_faction_leader = yes is_in_faction = no } } } if = { limit = { is_in_faction = yes } faction_leader = { remove_from_faction = ROOT } } add_political_power = -50 add_stability = -.05 FROM = { if = { limit = { is_in_faction = no } create_faction = "Red_Internationale" } add_to_faction = ROOT clr_country_flag = side_ww1_GER_bloc_pending_SOV clr_country_flag = side_ww1_GER_bloc_pending_RUS country_event = { id = side_ww1_ger_rus.52 days = 1 } } FRA = { if = { limit = { exists = yes NOT = { is_in_faction_with = ROOT } } add_opinion_modifier = { target = ROOT modifier = side_ww1_bloc_abandonment } } } ENG = { if = { limit = { exists = yes NOT = { is_in_faction_with = ROOT } } add_opinion_modifier = { target = ROOT modifier = side_ww1_bloc_abandonment } } } } }
+ option = { name = side_ww1_ger_rus.50.b ai_chance = { factor = 85  } if = { limit = { FROM = { tag = GER exists = yes has_capitulated = no OR = { AND = { has_country_flag = side_ww1_GER_bloc_pending_SOV ROOT = { tag = SOV } } AND = { has_country_flag = side_ww1_GER_bloc_pending_RUS ROOT = { tag = RUS } } } } } FROM = { clr_country_flag = side_ww1_GER_bloc_pending_SOV clr_country_flag = side_ww1_GER_bloc_pending_RUS country_event = { id = side_ww1_ger_rus.55 days = 1 } } } }
+}
+
+country_event = { id = side_ww1_ger_rus.51 title = side_ww1_ger_rus.51.t desc = side_ww1_ger_rus.51.d picture = GFX_event_ww1_fra_russian_pledge is_triggered_only = yes
+ trigger = { OR = { tag = SOV tag = RUS } FROM = { tag = GER } }
+ option = { name = side_ww1_ger_rus.51.a trigger = { FROM = { tag = GER exists = yes has_capitulated = no OR = { AND = { has_country_flag = side_ww1_GER_bloc_pending_SOV ROOT = { tag = SOV } } AND = { has_country_flag = side_ww1_GER_bloc_pending_RUS ROOT = { tag = RUS } } } } has_government = neutrality has_capitulated = no NOT = { is_faction_leader = yes } NOT = { has_war_with = FROM } NOT = { any_enemy_country = { is_in_faction_with = FROM } } FROM = { has_government = neutrality has_country_flag = side_ww1_GER_bloc_continental OR = { is_faction_leader = yes is_in_faction = no } } } ai_chance = { factor = 15 modifier = { factor = 0 is_historical_focus_on = yes } } if = { limit = { FROM = { tag = GER exists = yes has_capitulated = no OR = { AND = { has_country_flag = side_ww1_GER_bloc_pending_SOV ROOT = { tag = SOV } } AND = { has_country_flag = side_ww1_GER_bloc_pending_RUS ROOT = { tag = RUS } } } } has_government = neutrality has_capitulated = no NOT = { is_faction_leader = yes } NOT = { has_war_with = FROM } NOT = { any_enemy_country = { is_in_faction_with = FROM } } FROM = { has_government = neutrality has_country_flag = side_ww1_GER_bloc_continental OR = { is_faction_leader = yes is_in_faction = no } } } if = { limit = { is_in_faction = yes } faction_leader = { remove_from_faction = ROOT } } add_political_power = -50 add_stability = -.05 FROM = { if = { limit = { is_in_faction = no } create_faction = "Continental_League" } add_to_faction = ROOT clr_country_flag = side_ww1_GER_bloc_pending_SOV clr_country_flag = side_ww1_GER_bloc_pending_RUS country_event = { id = side_ww1_ger_rus.52 days = 1 } } FRA = { if = { limit = { exists = yes NOT = { is_in_faction_with = ROOT } } add_opinion_modifier = { target = ROOT modifier = side_ww1_bloc_abandonment } } } ENG = { if = { limit = { exists = yes NOT = { is_in_faction_with = ROOT } } add_opinion_modifier = { target = ROOT modifier = side_ww1_bloc_abandonment } } } } }
+ option = { name = side_ww1_ger_rus.51.b ai_chance = { factor = 85  } if = { limit = { FROM = { tag = GER exists = yes has_capitulated = no OR = { AND = { has_country_flag = side_ww1_GER_bloc_pending_SOV ROOT = { tag = SOV } } AND = { has_country_flag = side_ww1_GER_bloc_pending_RUS ROOT = { tag = RUS } } } } } FROM = { clr_country_flag = side_ww1_GER_bloc_pending_SOV clr_country_flag = side_ww1_GER_bloc_pending_RUS country_event = { id = side_ww1_ger_rus.55 days = 1 } } } }
+}
+
+country_event = { id = side_ww1_ger_rus.52 title = side_ww1_ger_rus.52.t desc = side_ww1_ger_rus.52.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.52.a ai_chance = { factor = 100  }  }
+}
+
+country_event = { id = side_ww1_ger_rus.55 title = side_ww1_ger_rus.55.t desc = side_ww1_ger_rus.55.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.55.a ai_chance = { factor = 100  }  }
+}
+
+country_event = { id = side_ww1_ger_rus.56 title = side_ww1_ger_rus.56.t desc = side_ww1_ger_rus.56.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.56.a ai_chance = { factor = 100  }  }
+}
+
+country_event = { id = side_ww1_ger_rus.57 title = side_ww1_ger_rus.57.t desc = side_ww1_ger_rus.57.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.57.a ai_chance = { factor = 100  }  }
+}
+
+country_event = { id = side_ww1_ger_rus.60 title = side_ww1_ger_rus.60.t desc = side_ww1_ger_rus.60.d picture = GFX_event_ww1_ger_auh_staff is_triggered_only = yes
+ trigger = { tag = AUS FROM = { tag = GER } }
+ option = { name = side_ww1_ger_rus.60.a trigger = { tag = AUS side_ww1_AUS_postimperial_republic = yes date > 1918.10.31 FROM = { tag = GER exists = yes has_capitulated = no has_war = no has_country_flag = side_ww1_GER_austrian_union_offer } } ai_chance = { factor = 10 modifier = { factor = 0 is_historical_focus_on = yes } } if = { limit = { tag = AUS side_ww1_AUS_postimperial_republic = yes date > 1918.10.31 FROM = { tag = GER exists = yes has_capitulated = no has_war = no has_country_flag = side_ww1_GER_austrian_union_offer } } FROM = { clr_country_flag = side_ww1_GER_austrian_union_offer set_country_flag = side_ww1_GER_austrian_union_accepted add_stability = -.03 add_timed_idea = { idea = side_ww1_GER_austrian_integration days = 180 } annex_country = { target = ROOT transfer_troops = no } country_event = { id = side_ww1_ger_rus.61 days = 1 } } } }
+ option = { name = side_ww1_ger_rus.60.b ai_chance = { factor = 90  } FROM = { if = { limit = { exists = yes has_country_flag = side_ww1_GER_austrian_union_offer } clr_country_flag = side_ww1_GER_austrian_union_offer country_event = { id = side_ww1_ger_rus.62 days = 1 } } } }
+}
+
+country_event = { id = side_ww1_ger_rus.61 title = side_ww1_ger_rus.61.t desc = side_ww1_ger_rus.61.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.61.a ai_chance = { factor = 100  }  }
+}
+
+country_event = { id = side_ww1_ger_rus.62 title = side_ww1_ger_rus.62.t desc = side_ww1_ger_rus.62.d picture = GFX_event_ww1_ger_reichstag_peace is_triggered_only = yes
+ option = { name = side_ww1_ger_rus.62.a ai_chance = { factor = 100  }  }
+}

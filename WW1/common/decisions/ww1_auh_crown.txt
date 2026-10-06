@@ -1,0 +1,146 @@
+AUH_ww1_crown = {
+ AUH_ww1_delegation_session = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_delegations_unlocked }
+  available = { has_capitulated = no check_variable = { auh_ww1_consent < 85 } }
+  cost = 40
+  days_remove = 60
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_consent = 6 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_provincial_hearings = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_hearings_unlocked }
+  available = { has_capitulated = no check_variable = { auh_ww1_cohesion < 85 } }
+  cost = 40
+  days_remove = 60
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 5 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_constitutional_session = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_convention_unlocked }
+  available = { has_capitulated = no check_variable = { auh_ww1_consent < 80 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 4 } add_to_variable = { auh_ww1_consent = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_ratify_trialism = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_completed_focus = AUH_ww1_third_crown_charter NOT = { has_country_flag = auh_ww1_trialist_constitution } }
+  available = { has_capitulated = no check_variable = { auh_ww1_consent > 44 } check_variable = { auh_ww1_cohesion > 49 } }
+  cost = 20
+  days_remove = 1
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { country_event = { id = ww1_auh.6 days = 1 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_ratify_federation = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_completed_focus = AUH_ww1_federal_constitution NOT = { has_country_flag = auh_ww1_federal_constitution } }
+  available = { has_capitulated = no check_variable = { auh_ww1_consent > 49 } check_variable = { auh_ww1_cohesion > 59 } }
+  cost = 20
+  days_remove = 1
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { country_event = { id = ww1_auh.9 days = 1 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_ombudsman_hearing = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_ombudsman_unlocked }
+  available = { has_capitulated = no check_variable = { auh_ww1_cohesion < 85 } }
+  cost = 30
+  days_remove = 90
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_civil_war_cabinet = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_civil_cabinet_unlocked }
+  available = { has_capitulated = no has_war = yes check_variable = { auh_ww1_consent > 39 } NOT = { has_idea = AUH_ww1_civil_cabinet } }
+  cost = 60
+  days_remove = 1
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = { add_timed_idea = { idea = AUH_ww1_civil_cabinet days = 180 } }
+  remove_effect = {  auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_veteran_assistance = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_veterans_unlocked }
+  available = { has_capitulated = no has_war = no num_of_civilian_factories_available_for_projects > 0 check_variable = { auh_ww1_cohesion < 85 } }
+  cost = 30
+  days_remove = 90
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = yes } }
+ }
+ AUH_ww1_danubian_reconciliation = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_danubian_services_unlocked }
+  available = { has_capitulated = no has_war = no num_of_civilian_factories_available_for_projects > 0 check_variable = { auh_ww1_consent < 85 } }
+  cost = 40
+  days_remove = 90
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_consent = 4 } add_to_variable = { auh_ww1_cohesion = 3 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = yes } }
+ }
+ AUH_ww1_service_reconstruction = {
+  icon = GFX_decision_AUH_ww1_crown
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_reconstruction_unlocked }
+  available = { has_capitulated = no has_war = no check_variable = { auh_ww1_cohesion < 85 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 40
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+}

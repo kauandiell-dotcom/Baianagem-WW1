@@ -1,0 +1,395 @@
+AUH_ww1_military = {
+ AUH_ww1_reserve_training = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_reserve_training_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 19 infantry_equipment > 399 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } add_equipment_to_stockpile = { type = infantry_equipment amount = -400 } }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_landwehr_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_landwehr_training_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 19 infantry_equipment > 299 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
+  remove_effect = { army_experience = 5 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_honved_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_honved_training_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 19 infantry_equipment > 299 } check_variable = { auh_ww1_consent > 39 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
+  remove_effect = { army_experience = 5 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_honved_contract = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_honved_contract_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 29 infantry_equipment > 299 } check_variable = { auh_ww1_consent > 39 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_federal_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_federal_service_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 29 infantry_equipment > 299 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_pilot_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_pilot_training_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 29 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } }
+  remove_effect = { air_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_fleet_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_fleet_training_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 39 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -40 } }
+  remove_effect = { navy_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_merchant_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_merchant_training_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 19 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } }
+  remove_effect = { navy_experience = 4 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_naval_spares_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_naval_spares_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 29 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } }
+  remove_effect = { navy_experience = 4 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_coastal_course = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_coastal_observation_unlocked }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 19 } }
+  cost = 25
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } }
+  remove_effect = { navy_experience = 4 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_rest_rotation = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_rest_rotation_unlocked }
+  available = { has_capitulated = no has_war = yes check_variable = { auh_ww1_cohesion < 85 } num_of_civilian_factories_available_for_projects > 1 }
+  cost = 30
+  days_remove = 60
+  days_re_enable = 120
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 2
+  complete_effect = { add_timed_idea = { idea = AUH_ww1_rotation days = 60 } }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 5 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
+ }
+ AUH_ww1_winter_stores = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_winter_stores_unlocked }
+  available = { has_capitulated = no has_war = yes num_of_civilian_factories_available_for_projects > 0 has_equipment = { support_equipment > 59 } }
+  cost = 25
+  days_remove = 60
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -60 } }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
+ }
+ AUH_ww1_staff_priority_review = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_staff_review_unlocked }
+  available = { has_capitulated = no has_war = yes }
+  cost = 50
+  days_remove = 30
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  complete_effect = {  }
+  remove_effect = { country_event = { id = ww1_auh.16 days = 1 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
+ }
+
+ AUH_ww1_prepare_serbia = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_serbia_operation_unlocked }
+  available = { has_capitulated = no has_war_with = SER NOT = { controls_state = 107 }
+   command_power > 29 has_equipment = { artillery_equipment > 29 support_equipment > 49 }
+   NOT = { has_country_flag = auh_ww1_serbia_active }
+   NOT = { has_country_flag = auh_ww1_operation_cooldown }
+  }
+  cost = 40 days_re_enable = 180
+  complete_effect = { add_command_power = -30
+   add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
+   add_equipment_to_stockpile = { type = support_equipment amount = -50 }
+   set_country_flag = auh_ww1_serbia_active
+   set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
+   add_timed_idea = { idea = AUH_ww1_operation_serbia days = 90 } activate_mission = AUH_ww1_mission_serbia
+  }
+  ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
+ }
+ AUH_ww1_mission_serbia = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  activation = { has_country_flag = auh_ww1_serbia_active }
+  visible = { has_country_flag = auh_ww1_serbia_active }
+  available = { controls_state = 107 }
+  days_mission_timeout = 90 is_good = no
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SER } } }
+  cancel_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia }
+  complete_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 107 } clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+ }
+
+
+ AUH_ww1_prepare_galicia = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_galicia_operation_unlocked }
+  available = { has_capitulated = no has_war_with = SOV NOT = { controls_state = 91 }
+   command_power > 29 has_equipment = { artillery_equipment > 29 support_equipment > 49 }
+   NOT = { has_country_flag = auh_ww1_galicia_active }
+   NOT = { has_country_flag = auh_ww1_operation_cooldown }
+  }
+  cost = 40 days_re_enable = 180
+  complete_effect = { add_command_power = -30
+   add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
+   add_equipment_to_stockpile = { type = support_equipment amount = -50 }
+   set_country_flag = auh_ww1_galicia_active
+   set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
+   add_timed_idea = { idea = AUH_ww1_operation_galicia days = 90 } activate_mission = AUH_ww1_mission_galicia
+  }
+  ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
+ }
+ AUH_ww1_mission_galicia = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  activation = { has_country_flag = auh_ww1_galicia_active }
+  visible = { has_country_flag = auh_ww1_galicia_active }
+  available = { controls_state = 91 }
+  days_mission_timeout = 90 is_good = no
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SOV } } }
+  cancel_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia }
+  complete_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 91 } clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+ }
+
+
+ AUH_ww1_prepare_isonzo = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_isonzo_operation_unlocked }
+  available = { has_capitulated = no has_war_with = ITA controls_state = 736
+   command_power > 29 has_equipment = { artillery_equipment > 29 support_equipment > 49 }
+   NOT = { has_country_flag = auh_ww1_isonzo_active }
+   NOT = { has_country_flag = auh_ww1_operation_cooldown }
+  }
+  cost = 40 days_re_enable = 180
+  complete_effect = { add_command_power = -30
+   add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
+   add_equipment_to_stockpile = { type = support_equipment amount = -50 }
+   set_country_flag = auh_ww1_isonzo_active
+   set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
+   add_timed_idea = { idea = AUH_ww1_operation_isonzo days = 90 } activate_mission = AUH_ww1_mission_isonzo
+  }
+  ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
+ }
+ AUH_ww1_mission_isonzo = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  activation = { has_country_flag = auh_ww1_isonzo_active }
+  visible = { has_country_flag = auh_ww1_isonzo_active }
+  available = { always = no }
+  days_mission_timeout = 90 is_good = no
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = ITA } NOT = { controls_state = 736 } } }
+  cancel_effect = { if = { limit = { has_capitulated = no has_war_with = ITA NOT = { controls_state = 736 } } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo } }
+  complete_effect = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 736 } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+ }
+
+
+ AUH_ww1_prepare_carpathians = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_carpathian_defence_unlocked }
+  available = { has_capitulated = no has_war_with = SOV controls_state = 73
+   command_power > 29 has_equipment = { artillery_equipment > 29 support_equipment > 49 }
+   NOT = { has_country_flag = auh_ww1_carpathians_active }
+   NOT = { has_country_flag = auh_ww1_operation_cooldown }
+  }
+  cost = 40 days_re_enable = 180
+  complete_effect = { add_command_power = -30
+   add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
+   add_equipment_to_stockpile = { type = support_equipment amount = -50 }
+   set_country_flag = auh_ww1_carpathians_active
+   set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
+   add_timed_idea = { idea = AUH_ww1_operation_carpathians days = 90 } activate_mission = AUH_ww1_mission_carpathians
+  }
+  ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
+ }
+ AUH_ww1_mission_carpathians = {
+  icon = GFX_decision_AUH_ww1_military allowed = { original_tag = AUS }
+  activation = { has_country_flag = auh_ww1_carpathians_active }
+  visible = { has_country_flag = auh_ww1_carpathians_active }
+  available = { always = no }
+  days_mission_timeout = 90 is_good = no
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SOV } NOT = { controls_state = 73 } } }
+  cancel_effect = { if = { limit = { has_capitulated = no has_war_with = SOV NOT = { controls_state = 73 } } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians } }
+  complete_effect = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 73 } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+ }
+
+ AUH_ww1_service_artillery_supply = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_artillery_supply_unlocked }
+  available = { has_capitulated = no has_equipment = { artillery_equipment > 19 support_equipment > 29 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 35
+  days_remove = 60
+  days_re_enable = 180
+  fire_only_once = yes
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = { add_equipment_to_stockpile = { type = artillery_equipment amount = -20 } add_equipment_to_stockpile = { type = support_equipment amount = -30 } }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_service_defensive_sectors = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_defensive_sectors_unlocked }
+  available = { has_capitulated = no has_war = yes num_of_civilian_factories_available_for_projects > 0 }
+  cost = 40
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = no
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { army_experience = 6 add_mastery_bonus = { name = AUH_ww1_sector_training bonus = .08 days = 90 folder = land } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_service_italian_contingency = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_italian_contingency_unlocked }
+  available = { has_capitulated = no has_war_with = ITA num_of_civilian_factories_available_for_projects > 0 }
+  cost = 35
+  days_remove = 60
+  days_re_enable = 180
+  fire_only_once = yes
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_service_eastern_contingency = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_eastern_contingency_unlocked }
+  available = { has_capitulated = no has_war_with = SOV num_of_civilian_factories_available_for_projects > 0 }
+  cost = 35
+  days_remove = 60
+  days_re_enable = 180
+  fire_only_once = yes
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+ AUH_ww1_service_naval_programme = {
+  icon = GFX_decision_AUH_ww1_military
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = auh_ww1_naval_programme_unlocked }
+  available = { has_capitulated = no  num_of_civilian_factories_available_for_projects > 0 }
+  cost = 35
+  days_remove = 90
+  days_re_enable = 180
+  fire_only_once = yes
+  ai_will_do = { base = 1 }
+  civilian_factory_use = 1
+  complete_effect = {  }
+  remove_effect = { navy_experience = 5 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  cancel_trigger = { OR = { has_capitulated = yes  } }
+ }
+}

@@ -1,17 +1,5 @@
+# Research capacity and starting experience come from country history.
+# Human and AI countries use the same campaign rules. Explicit opt-in host
+# tools remain in their own on_actions and GUI files.
 on_actions = {
-	on_startup = {
-		effect = {
-			every_country = {
-				limit = { is_ai = no }
-				# 4 slots de pesquisa exclusivos para jogadores humanos
-				set_research_slots = 4
-				
-
-				# Experiência militar para templates e módulos grátis
-				army_experience = 500
-				navy_experience = 500
-				air_experience = 500
-			}
-		}
-	}
 }

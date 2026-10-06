@@ -6,13 +6,13 @@ capital = 2 # Rome
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
 }
 oob = "ITA_1936_generic"
 
-ETH_set_up_lon_arms_resolution_effect = yes 
+ETH_set_up_lon_arms_resolution_effect = yes
 
 if = {
 	limit = {
@@ -250,7 +250,6 @@ add_breakthrough_progress = {
 }
 
 set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_fleet_in_being
 
 set_convoys = 200
 
@@ -351,3 +350,300 @@ recruit_character = ITA_pier_angelo_brandimarte
 recruit_character = ITA_paolo_boselli
 recruit_character = ITA_duca_degli_abruzzi
 recruit_character = ITA_luigi_facta
+
+# BEGIN WW1_1911_NAVAL_OPENING
+set_technology = {
+	gw_artillery = 1
+	basic_train = 1
+	ww1_1911_armoured_cruiser_capability = 1
+	ww1_1911_ironclad_capability = 1
+	ww1_1911_pre_dreadnought_capability = 1
+	ww1_1911_protected_cruiser_capability = 1
+	ww1_1911_torpedo_craft_capability = 1
+}
+set_grand_doctrine = new_fleet_in_being
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Giuseppe Garibaldi"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Marco Polo"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Pisa"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Vettor Pisani"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Caio Duilio"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Italia"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Re Umberto"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Ruggiero di Lauria"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Ammiraglio di Saint Bon"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Regina Elena"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Regina Margherita"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Agordat"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Calabria"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Etna"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Giovanni Bausan"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Goito"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Partenope"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Piemonte"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "RN Tripoli"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Regioni"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Lampo"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Nembo"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Soldato"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_ita_naval"
+}
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	create_equipment_variant = {
+		name = "Giuseppe Garibaldi"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Marco Polo"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Pisa"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Vettor Pisani"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Caio Duilio"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Italia"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Re Umberto"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Ruggiero di Lauria"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Ammiraglio di Saint Bon"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Regina Elena"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Regina Margherita"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Agordat"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Calabria"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Etna"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Giovanni Bausan"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Goito"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Partenope"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Piemonte"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "RN Tripoli"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Regioni"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Lampo"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Nembo"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Soldato"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_ita_naval_legacy"
+}
+# END WW1_1911_NAVAL_OPENING

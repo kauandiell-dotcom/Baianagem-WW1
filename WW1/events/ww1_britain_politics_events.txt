@@ -1,0 +1,325 @@
+add_namespace = ww1_britain_pol
+
+country_event = {
+ id = ww1_britain_pol.1 title = ww1_britain_pol.1.t desc = ww1_britain_pol.1.d
+ picture = GFX_event_ww1_britain_home_rule_bill
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.1.a
+  ai_chance = { base = 35 }
+  add_to_variable = { ww1_britain_irish_tension = -8 }
+  add_to_variable = { ww1_britain_ulster_tension = 15 }
+  set_country_flag = ENG_ww1_home_rule_unamended
+  country_event = { id = ww1_britain_pol.7 days = 120 }
+ }
+ option = {
+  name = ww1_britain_pol.1.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_irish_tension = 3 }
+  add_to_variable = { ww1_britain_ulster_tension = 4 }
+  set_country_flag = ENG_ww1_home_rule_amended
+ }
+ option = {
+  name = ww1_britain_pol.1.c
+  ai_chance = { base = 25 }
+  add_to_variable = { ww1_britain_irish_tension = 8 }
+  add_to_variable = { ww1_britain_ulster_tension = -5 }
+  add_political_power = 10
+  set_country_flag = ENG_ww1_home_rule_deferred
+ }
+}
+country_event = {
+ id = ww1_britain_pol.2 title = ww1_britain_pol.2.t desc = ww1_britain_pol.2.d
+ picture = GFX_event_ww1_britain_palace_conference
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ENG_ww1_home_rule_bill_introduced }
+ option = {
+  name = ww1_britain_pol.2.a
+  ai_chance = { base = 55 }
+  add_to_variable = { ww1_britain_ulster_tension = -20 }
+  add_to_variable = { ww1_britain_irish_tension = 10 }
+  set_country_flag = ENG_ww1_ulster_exclusion_accepted
+ }
+ option = {
+  name = ww1_britain_pol.2.b
+  ai_chance = { base = 45 }
+  add_to_variable = { ww1_britain_ulster_tension = 10 }
+  add_to_variable = { ww1_britain_irish_tension = -5 }
+  set_country_flag = ENG_ww1_home_rule_unamended
+ }
+}
+country_event = {
+ id = ww1_britain_pol.3 title = ww1_britain_pol.3.t desc = ww1_britain_pol.3.d
+ picture = GFX_event_ww1_britain_shell_crisis
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.3.a
+  ai_chance = { base = 70 }
+  add_political_power = 25
+  add_stability = 0.02
+  add_to_variable = { ww1_britain_labour_support = 3 }
+  set_country_flag = ENG_ww1_coalition_government
+ }
+ option = {
+  name = ww1_britain_pol.3.b
+  ai_chance = { base = 30 }
+  add_political_power = 10
+  add_stability = -0.02
+  set_country_flag = ENG_ww1_liberal_only_government
+ }
+}
+country_event = {
+ id = ww1_britain_pol.4 title = ww1_britain_pol.4.t desc = ww1_britain_pol.4.d
+ picture = GFX_event_ww1_britain_december_crisis
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.4.a
+  ai_chance = { base = 75 }
+  add_ideas = ENG_ww1_war_cabinet
+  add_political_power = 20
+  add_to_variable = { ww1_britain_labour_support = -2 }
+  set_country_flag = ENG_ww1_lloyd_george_premiership
+  set_country_flag = ENG_ww1_liberal_split
+ }
+ option = {
+  name = ww1_britain_pol.4.b
+  ai_chance = { base = 25 }
+  add_political_power = 10
+  add_stability = 0.02
+  set_country_flag = ENG_ww1_asquith_retained
+ }
+}
+country_event = {
+ id = ww1_britain_pol.5 title = ww1_britain_pol.5.t desc = ww1_britain_pol.5.d
+ picture = GFX_event_ww1_britain_coupon_election
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.5.a
+  ai_chance = { base = 55 }
+  add_political_power = 25
+  add_stability = 0.02
+  add_to_variable = { ww1_britain_labour_support = -6 }
+  set_country_flag = ENG_ww1_coupon_election
+ }
+ option = {
+  name = ww1_britain_pol.5.b
+  ai_chance = { base = 30 }
+  add_political_power = 5
+  add_stability = -0.01
+  add_to_variable = { ww1_britain_labour_support = 3 }
+  set_country_flag = ENG_ww1_separate_parties_election
+ }
+ option = {
+  name = ww1_britain_pol.5.c
+  ai_chance = { base = 15 }
+  add_political_power = -20
+  add_stability = -0.03
+  set_country_flag = ENG_ww1_election_delayed
+ }
+}
+country_event = {
+ id = ww1_britain_pol.6 title = ww1_britain_pol.6.t desc = ww1_britain_pol.6.d
+ picture = GFX_event_ww1_britain_imperial_conference
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.6.a
+  ai_chance = { base = 30 }
+  add_to_variable = { ww1_britain_dominion_consent = -2 }
+  add_to_variable = { ww1_britain_debt_burden = -1 }
+ }
+ option = {
+  name = ww1_britain_pol.6.b
+  ai_chance = { base = 70 }
+  add_to_variable = { ww1_britain_dominion_consent = 4 }
+  add_to_variable = { ww1_britain_debt_burden = 1 }
+ }
+}
+country_event = {
+ id = ww1_britain_pol.7 title = ww1_britain_pol.7.t desc = ww1_britain_pol.7.d
+ picture = GFX_event_ww1_britain_ulster_volunteers
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ENG_ww1_home_rule_unamended }
+ option = {
+  name = ww1_britain_pol.7.a
+  ai_chance = { base = 40 }
+  add_political_power = -25
+  add_stability = -0.02
+  add_to_variable = { ww1_britain_ulster_tension = -10 }
+  add_to_variable = { ww1_britain_irish_tension = -3 }
+ }
+ option = {
+  name = ww1_britain_pol.7.b
+  ai_chance = { base = 60 }
+  add_to_variable = { ww1_britain_ulster_tension = -15 }
+  add_to_variable = { ww1_britain_irish_tension = 10 }
+  add_political_power = -5
+  set_country_flag = ENG_ww1_ulster_assured
+ }
+}
+country_event = {
+ id = ww1_britain_pol.8 title = ww1_britain_pol.8.t desc = ww1_britain_pol.8.d
+ picture = GFX_event_ww1_britain_imperial_war_cabinet
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.8.a
+  ai_chance = { base = 55 }
+  add_to_variable = { ww1_britain_dominion_consent = 8 }
+  add_political_power = -10
+  set_country_flag = ENG_ww1_imperial_war_cabinet_full
+ }
+ option = {
+  name = ww1_britain_pol.8.b
+  ai_chance = { base = 45 }
+  add_to_variable = { ww1_britain_dominion_consent = 2 }
+  add_political_power = 10
+ }
+}
+country_event = {
+ id = ww1_britain_pol.9 title = ww1_britain_pol.9.t desc = ww1_britain_pol.9.d
+ picture = GFX_event_ww1_britain_irish_convention
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.9.a
+  ai_chance = { base = 35 }
+  add_to_variable = { ww1_britain_irish_tension = -15 }
+  add_to_variable = { ww1_britain_ulster_tension = 12 }
+  set_country_flag = ENG_ww1_home_rule_devolved
+  set_country_flag = ENG_ww1_irish_dominion_track
+ }
+ option = {
+  name = ww1_britain_pol.9.b
+  ai_chance = { base = 45 }
+  add_to_variable = { ww1_britain_irish_tension = 5 }
+  add_to_variable = { ww1_britain_ulster_tension = -10 }
+  set_country_flag = ENG_ww1_irish_partition_act
+ }
+ option = {
+  name = ww1_britain_pol.9.c
+  ai_chance = { base = 20 }
+  add_to_variable = { ww1_britain_irish_tension = 10 }
+  add_ideas = ENG_ww1_irish_repression
+  set_country_flag = ENG_ww1_irish_coercion
+ }
+}
+country_event = {
+ id = ww1_britain_pol.10 title = ww1_britain_pol.10.t desc = ww1_britain_pol.10.d
+ picture = GFX_event_ww1_britain_anglo_irish_treaty
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_pol.10.a
+  ai_chance = { base = 65 }
+  if = { limit = { NOT = { country_exists = IRE } } release_autonomy = { target = IRE autonomy_state = autonomy_dominion freedom_level = 0.5 } }
+  119 = { if = { limit = { is_owned_by = IRE } transfer_state_to = ENG } }
+  set_variable = { ww1_britain_irish_tension = 20 }
+  add_to_variable = { ww1_britain_dominion_consent = 5 }
+  set_country_flag = ENG_ww1_irish_free_state
+ }
+ option = {
+  name = ww1_britain_pol.10.b
+  ai_chance = { base = 35 }
+  add_to_variable = { ww1_britain_irish_tension = 15 }
+  add_political_power = -20
+  set_country_flag = ENG_ww1_irish_war_continues
+ }
+}
+country_event = {
+ id = ww1_britain_pol.11 title = ww1_britain_pol.11.t desc = ww1_britain_pol.11.d
+ picture = GFX_event_ww1_britain_easter_rising
+ mean_time_to_happen = { days = 15 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_war = yes date > 1916.4.23 date < 1916.8.1 113 = { is_owned_by = ENG } }
+ option = {
+  name = ww1_britain_pol.11.a
+  ai_chance = { base = 60 }
+  add_to_variable = { ww1_britain_irish_tension = 20 }
+  add_political_power = 10
+  set_country_flag = ENG_ww1_easter_rising_suppressed
+ }
+ option = {
+  name = ww1_britain_pol.11.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_irish_tension = 8 }
+  add_political_power = -20
+  set_country_flag = ENG_ww1_easter_rising_inquiry
+ }
+}
+country_event = {
+ id = ww1_britain_pol.12 title = ww1_britain_pol.12.t desc = ww1_britain_pol.12.d
+ picture = GFX_event_ww1_britain_conscription_crisis
+ mean_time_to_happen = { days = 10 }
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_war = yes has_country_flag = ENG_ww1_military_service_authorised date > 1918.3.20 date < 1918.7.1 }
+ option = {
+  name = ww1_britain_pol.12.a
+  ai_chance = { base = 30 }
+  add_to_variable = { ww1_britain_irish_tension = 25 }
+  set_country_flag = ENG_ww1_irish_conscription_authorised
+ }
+ option = {
+  name = ww1_britain_pol.12.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_irish_tension = 8 }
+  add_political_power = -10
+ }
+ option = {
+  name = ww1_britain_pol.12.c
+  ai_chance = { base = 30 }
+  add_to_variable = { ww1_britain_irish_tension = -5 }
+  add_political_power = -15
+ }
+}
+country_event = {
+ id = ww1_britain_pol.20 title = ww1_britain_pol.20.t desc = ww1_britain_pol.20.d
+ picture = GFX_event_ww1_britain_dominion_call
+ is_triggered_only = yes
+ trigger = { OR = { tag = CAN tag = AST tag = NZL tag = SAF } }
+ option = {
+  name = ww1_britain_pol.20.a
+  ai_chance = { base = 60 }
+  add_manpower = -15000
+  FROM = { add_manpower = 15000 add_to_variable = { ww1_britain_dominion_consent = 2 } }
+ }
+ option = {
+  name = ww1_britain_pol.20.b
+  ai_chance = { base = 40 }
+  FROM = { add_to_variable = { ww1_britain_dominion_consent = -3 } }
+  add_stability = 0.01
+ }
+}
+add_namespace = ww1_britain
+country_event = {
+ id = ww1_britain.3 title = ww1_britain.3.t desc = ww1_britain.3.d
+ picture = GFX_event_ww1_britain_irish_unrest
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no }
+ option = {
+  name = ww1_britain.3.a
+  ai_chance = { base = 40 }
+  add_political_power = -30
+  set_variable = { ww1_britain_irish_tension = 45 }
+  remove_ideas = ENG_ww1_irish_repression
+  if = { limit = { NOT = { has_idea = ENG_ww1_irish_conciliation } } add_ideas = ENG_ww1_irish_conciliation }
+ }
+ option = {
+  name = ww1_britain.3.b
+  ai_chance = { base = 30 }
+  set_variable = { ww1_britain_irish_tension = 55 }
+  remove_ideas = ENG_ww1_irish_conciliation
+  if = { limit = { NOT = { has_idea = ENG_ww1_irish_repression } } add_ideas = ENG_ww1_irish_repression }
+  add_stability = -0.02
+ }
+ option = {
+  name = ww1_britain.3.c
+  ai_chance = { base = 30 }
+  add_to_variable = { ww1_britain_irish_tension = 4 }
+  add_political_power = 10
+ }
+}

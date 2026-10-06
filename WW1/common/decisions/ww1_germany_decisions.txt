@@ -418,7 +418,9 @@ GER_weltpolitik_diplomacy = {
 	ger_weltpolitik_zimmermann_telegram = {
 		icon = generic_intelligence
 		available = {
-			has_country_flag = GER_unrestricted_sub_warfare_active
+			has_country_flag = unrestricted_u_boats_active
+			has_war_with = ENG
+			date > 1915.1.1
 			NOT = { has_war_with = USA }
 			USA = { exists = yes }
 			MEX = { exists = yes }

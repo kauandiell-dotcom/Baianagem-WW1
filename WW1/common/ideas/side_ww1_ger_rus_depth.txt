@@ -1,0 +1,18 @@
+﻿ideas = { country = {
+ side_ww1_GER_armaments_priority = { picture = side_ww1_GER_armaments_priority allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .06 production_speed_industrial_complex_factor = -.10 consumer_goods_factor = .03 } }
+ side_ww1_GER_naval_priority = { picture = side_ww1_GER_naval_priority allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_dockyard = .08 industrial_capacity_factory = -.04 consumer_goods_factor = .02 } }
+ side_ww1_GER_distribution_priority = { picture = side_ww1_GER_distribution_priority allowed = { always = no } removal_cost = -1 modifier = { production_speed_rail_way_factor = .12 industrial_capacity_factory = -.03 stability_factor = .02 } }
+ side_ww1_SOV_state_contracts = { picture = side_ww1_SOV_state_contracts allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .05 production_factory_efficiency_gain_factor = .04 consumer_goods_factor = .03 } }
+ side_ww1_SOV_civic_contracts = { picture = side_ww1_SOV_civic_contracts allowed = { always = no } removal_cost = -1 modifier = { industrial_capacity_factory = .03 stability_factor = .02 political_power_gain = -.05 } }
+ side_ww1_SOV_railway_priority = { picture = side_ww1_SOV_railway_priority allowed = { always = no } removal_cost = -1 modifier = { production_speed_rail_way_factor = .12 industrial_capacity_factory = -.02 supply_consumption_factor = -.02 } }
+ side_ww1_GER_gas_drills = { picture = side_ww1_GER_gas_drills allowed = { always = no } removal_cost = -1 modifier = { experience_loss_factor = -.02 supply_consumption_factor = .02 } }
+ side_ww1_GER_danubian_distribution = { picture = side_ww1_GER_danubian_distribution allowed = { always = no } removal_cost = -1 modifier = { consumer_goods_factor = .02 stability_factor = .03 } }
+ side_ww1_AUS_export_commitment = { picture = side_ww1_AUS_export_commitment allowed = { always = no } removal_cost = -1 modifier = { civilian_factory_use = 1 industrial_capacity_factory = -.02 } }
+ side_ww1_GER_reconversion = { picture = side_ww1_GER_reconversion allowed = { always = no } removal_cost = -1 modifier = { repair_speed_factor = .10 production_speed_industrial_complex_factor = .04 } }
+ side_ww1_SOV_reconversion = { picture = side_ww1_SOV_reconversion allowed = { always = no } removal_cost = -1 modifier = { repair_speed_factor = .12 production_speed_rail_way_factor = .06 } }
+ side_ww1_SOV_allied_supply_credit = {
+ picture = side_ww1_SOV_allied_supply_credit allowed = { always = no } removal_cost = -1
+ modifier = { consumer_goods_factor = .03 political_power_gain = -.05 }
+ }
+side_ww1_GER_austrian_integration = { picture = side_ww1_GER_austrian_integration allowed = { always = no } removal_cost = -1 modifier = { political_power_gain = -.10 consumer_goods_factor = .02 } }
+} }

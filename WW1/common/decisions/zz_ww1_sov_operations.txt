@@ -1,0 +1,87 @@
+# Prepared operations: actual territorial success, limited enemy-specific advantages.
+SOV_southwestern_front = {
+ SOV_prepare_southwestern_offensive = {
+  icon = GFX_decision_SOV_prepare_southwestern_offensive
+  allowed = { original_tag = SOV }
+  visible = { has_country_flag = SOV_southwestern_plan_ready }
+  available = {
+   has_war_with = AUS
+   has_capitulated = no
+   command_power > 39
+   has_equipment = { support_equipment > 49 artillery_equipment > 39 }
+   NOT = { AND = { controls_state = 89 controls_state = 91 } }
+  }
+  cost = 30
+  fire_only_once = yes
+  complete_effect = {
+   clr_country_flag = SOV_southwestern_plan_ready
+   set_country_flag = SOV_southwestern_preparing
+   add_command_power = -40
+   add_equipment_to_stockpile = { type = support_equipment amount = -50 }
+   add_timed_idea = { idea = SOV_southwestern_preparation days = 35 }
+   activate_mission = SOV_southwestern_preparation_mission
+   custom_effect_tooltip = SOV_southwestern_preparation_tt
+  }
+  ai_will_do = {
+   base = 2
+   modifier = { factor = 0 strength_ratio = { tag = AUS ratio < 0.75 } }
+  }
+ }
+ SOV_southwestern_preparation_mission = {
+  icon = GFX_decision_SOV_prepare_southwestern_offensive
+  allowed = { original_tag = SOV }
+  activation = { has_country_flag = SOV_southwestern_preparing }
+  visible = { has_country_flag = SOV_southwestern_preparing }
+  available = { always = no }
+  days_mission_timeout = 35
+  is_good = yes
+  fire_only_once = yes
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = AUS } } }
+  cancel_effect = {
+   clr_country_flag = SOV_southwestern_preparing
+   remove_ideas = SOV_southwestern_preparation
+  }
+  timeout_effect = {
+   clr_country_flag = SOV_southwestern_preparing
+   remove_ideas = SOV_southwestern_preparation
+   if = {
+    limit = { has_war_with = AUS has_capitulated = no NOT = { AND = { controls_state = 89 controls_state = 91 } } }
+    set_country_flag = SOV_southwestern_active
+    add_timed_idea = { idea = SOV_southwestern_offensive days = 60 }
+    activate_mission = SOV_southwestern_objective
+   }
+  }
+ }
+ SOV_southwestern_objective = {
+  icon = GFX_decision_SOV_southwestern_objective
+  allowed = { original_tag = SOV }
+  activation = { has_country_flag = SOV_southwestern_active }
+  visible = { has_country_flag = SOV_southwestern_active }
+  available = { controls_state = 89 controls_state = 91 }
+  days_mission_timeout = 60
+  is_good = no
+  fire_only_once = yes
+  cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = AUS } } }
+  cancel_effect = {
+   clr_country_flag = SOV_southwestern_active
+   remove_ideas = SOV_southwestern_offensive
+  }
+  complete_effect = {
+   clr_country_flag = SOV_southwestern_active
+   set_country_flag = SOV_southwestern_succeeded
+   remove_ideas = SOV_southwestern_offensive
+   army_experience = 15
+   add_war_support = 0.025
+   add_mastery_bonus = { name = SOV_brusilov_breakthrough_1916 bonus = 0.10 days = 180 folder = land }
+   country_event = { id = ww1_russia.101 days = 1 }
+  }
+  timeout_effect = {
+   clr_country_flag = SOV_southwestern_active
+   set_country_flag = SOV_southwestern_failed
+   remove_ideas = SOV_southwestern_offensive
+   add_timed_idea = { idea = SOV_southwestern_exhaustion days = 30 }
+   add_war_support = -0.025
+   country_event = { id = ww1_russia.102 days = 1 }
+  }
+ }
+}

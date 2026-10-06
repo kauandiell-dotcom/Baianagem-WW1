@@ -5,7 +5,7 @@ capital = 4 # Vienna
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
 }
@@ -45,10 +45,10 @@ IF = {
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "AUS_1936_air_bba"
-		
+
 	else = {
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "AUS_1936_air_legacy"
-		
+
 	}
 }
 
@@ -63,11 +63,11 @@ every_owned_state = {
 
 
 IF = {
-	limit = { 
+	limit = {
 		has_dlc = "Gotterdammerung"
 	}
 
-	
+
 
 	#setting up all the dynamic modifiers
 
@@ -87,14 +87,14 @@ IF = {
 
 	#National spirits are set here
 
-	
+
 
 
 
 	add_opinion_modifier = {
 		target = GER
 		modifier = AUS_austrofascism_opm
-	}	
+	}
 
 	# rules are set here
 
@@ -102,7 +102,7 @@ IF = {
 	country_lock_all_division_template = no
 
 
-	
+
 
 	#########################
 	##DLC-LOCKED CHARACTERS##
@@ -201,16 +201,16 @@ add_ideas = {
 
 IF = {
 	limit = { has_dlc = "No Step Back" }
-	
+
 
 	ELSE = {
-		
+
 	}
 }
 
 IF = {
 	limit = { has_dlc = "La Resistance" }
-		
+
 }
 
 
@@ -315,3 +315,290 @@ recruit_character = AUS_AUH_gabor_ugron
 recruit_character = AUS_AUH_leon_von_bilinski
 recruit_character = AUS_AUH_eugen_hordliczka
 recruit_character = AUS_charles_i
+
+# BEGIN WW1_1911_NAVAL_OPENING
+set_technology = {
+	gw_artillery = 1
+	basic_train = 1
+	ww1_1911_armoured_cruiser_capability = 1
+	ww1_1911_ironclad_capability = 1
+	ww1_1911_pre_dreadnought_capability = 1
+	ww1_1911_protected_cruiser_capability = 1
+	ww1_1911_submarine_capability = 1
+	ww1_1911_torpedo_craft_capability = 1
+}
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = grand_battleplan
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Kaiser Franz Joseph I"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kaiser Karl VI"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kaiserin und Königin Maria Theresia"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Sankt Georg"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_WW1_1911_AUS_sankt_georg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Monarch"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Erzherzog Karl"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_WW1_1911_AUS_erzherzog_karl"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Habsburg"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kronprinz Erzherzog Rudolf"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Radetzky"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_WW1_1911_AUS_radetzky"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Admiral Spaun"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kaiser Franz Joseph I"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Panther"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_AUS_panther"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Zenta"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_AUS_zenta"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U-3"
+		type = ww1_1911_submarine
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U-5"
+		type = ww1_1911_submarine
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Blitz"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Huszár"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_WW1_1911_AUS_huszar"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Magnet"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Meteor"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Planet"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Satellit"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Trabant"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_aus_naval"
+}
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	create_equipment_variant = {
+		name = "Kaiser Franz Joseph I"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kaiser Karl VI"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kaiserin und Königin Maria Theresia"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Sankt Georg"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_WW1_1911_AUS_sankt_georg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Monarch"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Erzherzog Karl"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_WW1_1911_AUS_erzherzog_karl"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Habsburg"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kronprinz Erzherzog Rudolf"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Radetzky"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_WW1_1911_AUS_radetzky"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Admiral Spaun"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kaiser Franz Joseph I"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Panther"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_AUS_panther"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Zenta"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_AUS_zenta"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U-3"
+		type = ww1_1911_submarine_legacy
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U-5"
+		type = ww1_1911_submarine_legacy
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Blitz"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Huszár"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_WW1_1911_AUS_huszar"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Magnet"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Meteor"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Planet"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Satellit"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Trabant"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_aus_naval_legacy"
+}
+# END WW1_1911_NAVAL_OPENING

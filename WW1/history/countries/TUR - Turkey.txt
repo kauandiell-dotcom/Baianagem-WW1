@@ -6,7 +6,7 @@ set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	gw_artillery = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
 }
@@ -48,10 +48,10 @@ if = {
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "TUR_1936_air_bba"
-		
+
 	else = {
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "TUR_1936_air_legacy"
-		
+
 	}
 }
 
@@ -71,21 +71,21 @@ if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
-	
+
 }
 if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
-	
+
 }
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
-	
+
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
-	
+
 }
 set_politics = {
 	ruling_party = neutrality
@@ -182,148 +182,23 @@ if = {
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	### Ship Variants ###
-	create_equipment_variant = {
-		name = "Kocatepe Class"
-		type = destroyer_1
-		upgrades = {
-			ship_torpedo_upgrade = 2
-			destroyer_engine_upgrade = 2
-			ship_ASW_upgrade = 1
-			ship_anti_air_upgrade = 1
-		}
-	}
-	create_equipment_variant = {
-		name = "Tinaztepe Class"
-		type = destroyer_1
-		obsolete = yes
-		upgrades = {
-			ship_torpedo_upgrade = 1
-			destroyer_engine_upgrade = 1
-			ship_ASW_upgrade = 1
-			ship_anti_air_upgrade = 1
-		}
-	}
-	create_equipment_variant = {
-		name = "Dumlupinar Class"
-		type = submarine_1
-		upgrades = {
-			ship_reliability_upgrade = 2
-			sub_engine_upgrade = 2
-			sub_stealth_upgrade = 2
-			sub_torpedo_upgrade = 2
-		}
-	}
+
+
+
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	# Submarines #
-	create_equipment_variant = {
-		name = "Birinci Inönü Class"				
-		type = ship_hull_submarine_1
-		name_group = TUR_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Dumlupinar Class"				
-		type = ship_hull_submarine_2
-		name_group = TUR_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_2
-			rear_1_custom_slot = ship_mine_layer_sub
-		}
-	}
-	create_equipment_variant = {
-		name = "Sakarya Class"								# represents Sakarya and Gur classes
-		type = ship_hull_submarine_1
-		name_group = TUR_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_2
-			fixed_ship_engine_slot = sub_ship_engine_2
-			rear_1_custom_slot = empty
-		}
-	}
+
+
+
 	# Destroyers #
-	create_equipment_variant = {
-		name = "Peyk Class"									# large torpedo boats		
-		type = ship_hull_light_1
-		name_group = TUR_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Kocatepe Class"								# represents Kocatepe and Zafer classes
-		type = ship_hull_light_1
-		name_group = TUR_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-	}
+
+
 	# Cruisers #
-	create_equipment_variant = {
-		name = "Mecidiye Class"								# represents Mecidiye and Hamidiye protected cruisers		
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = TUR_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = empty
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = ship_torpedo_1
-		}
-	}
+
 	# Battlecruiser #
-	create_equipment_variant = {
-		name = "Yavuz Class"	
-		type = ship_hull_heavy_1
-		name_group = TUR_BC_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bc_1
-			front_1_custom_slot = ship_heavy_battery_1
-			mid_1_custom_slot = ship_secondaries_1
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-	}
+
 }
 
 # 1939 Start #
@@ -397,3 +272,120 @@ recruit_character = TUR_talaat_pasha
 recruit_character = TUR_mehemmed_naby
 recruit_character = TUR_mehmed_said_pasha
 recruit_character = TUR_nazim_pasha
+
+# BEGIN WW1_1911_NAVAL_OPENING
+set_technology = {
+	gw_artillery = 1
+	basic_train = 1
+	ww1_1911_ironclad_capability = 1
+	ww1_1911_pre_dreadnought_capability = 1
+	ww1_1911_protected_cruiser_capability = 1
+	ww1_1911_torpedo_craft_capability = 1
+}
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = grand_battleplan
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Feth-i Bülend"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Mesudiye"
+		type = ww1_1911_ironclad
+		icon = "GFX_WW1_1911_TUR_mesudiye"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Âsâr-ı Tevfik"
+		type = ww1_1911_ironclad
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Brandenburg"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_WW1_1911_TUR_brandenburg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Hamidiye"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_TUR_hamidiye"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Mecidiye"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_TUR_mecidiye"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Peyk-i Şevket"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Samsun"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_tur_naval"
+}
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	create_equipment_variant = {
+		name = "Feth-i Bülend"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Mesudiye"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_WW1_1911_TUR_mesudiye"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Âsâr-ı Tevfik"
+		type = ww1_1911_ironclad_legacy
+		icon = "GFX_ww1_1911_ironclad_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Brandenburg"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_WW1_1911_TUR_brandenburg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Hamidiye"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_TUR_hamidiye"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Mecidiye"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_TUR_mecidiye"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Peyk-i Şevket"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Samsun"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_tur_naval_legacy"
+}
+# END WW1_1911_NAVAL_OPENING

@@ -1,0 +1,159 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "Escadre de la Méditerranée"
+		naval_base = 911
+		task_force = {
+			name = "Escadre de la Méditerranée"
+			location = 911
+			ship = { name = "Liberté" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Liberté" } } }
+			ship = { name = "Justice" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Liberté" } } }
+			ship = { name = "Vérité" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Liberté" } } }
+			ship = { name = "Démocratie" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Liberté" } } }
+			ship = { name = "République" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "République" } } }
+			ship = { name = "Patrie" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "République" } } }
+			ship = { name = "Suffren" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Suffren" } } }
+			ship = { name = "Bouvet" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Bouvet" } } }
+			ship = { name = "Masséna" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Masséna" } } }
+			ship = { name = "Jauréguiberry" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Jauréguiberry" } } }
+			ship = { name = "Carnot" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Carnot" } } }
+			ship = { name = "Charles Martel" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Charles Martel" } } }
+			ship = { name = "Ernest Renan" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Ernest Renan" } } }
+			ship = { name = "Jules Michelet" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Jules Michelet" } } }
+			ship = { name = "Léon Gambetta" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Léon Gambetta" } } }
+			ship = { name = "Jules Ferry" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Léon Gambetta" } } }
+			ship = { name = "Victor Hugo" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Léon Gambetta" } } }
+			ship = { name = "Gloire" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gloire" } } }
+			ship = { name = "Marseillaise" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gloire" } } }
+			ship = { name = "Condé" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gloire" } } }
+			ship = { name = "Kléber" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Dupleix" } } }
+			ship = { name = "Amiral Charner" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Amiral Charner" } } }
+			ship = { name = "Jurien de la Gravière" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Jurien de la Gravière" } } }
+			ship = { name = "Alger" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Alger" } } }
+			ship = { name = "Châteaurenault" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Châteaurenault" } } }
+			ship = { name = "D'Entrecasteaux" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "D'Entrecasteaux" } } }
+			ship = { name = "D'Assas" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "D'Assas" } } }
+			ship = { name = "Cassard" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "D'Assas" } } }
+			ship = { name = "Du Chayla" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "D'Assas" } } }
+			ship = { name = "Galilée" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Linois" } } }
+			ship = { name = "Lalande" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Troude" } } }
+			ship = { name = "Cosmao" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Troude" } } }
+			ship = { name = "Amiral Cécille" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Amiral Cécille" } } }
+			ship = { name = "Voltigeur" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Voltigeur" } } }
+			ship = { name = "Carabinier" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Spahi" } } }
+			ship = { name = "Branlebas" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Étendard" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Fanfare" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Gabion" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Glaive" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Oriflamme" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Poignard" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Sabretache" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Sape" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Branlebas" } } }
+			ship = { name = "Stylet" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Tromblon" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Obusier" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Claymore" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Mortier" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Fleuret" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Coutelas" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Pierrer" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Carquois" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Cognée" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Trident" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Hache" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Massue" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Claymore" } } }
+			ship = { name = "Carabine" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Mousquet" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Dard" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Javeline" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Harpon" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Mousqueton" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Arquebuse" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Sagaie" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Fronde" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Épieu" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Sarbacane" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Catapulte" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Arbalète" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Bélier" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Pistolet" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Bombarde" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Baliste" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Arc" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Francisque" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Sabre" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Arquebuse" } } }
+			ship = { name = "Pertuisane" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Pertuisane" } } }
+			ship = { name = "Escopette" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Pertuisane" } } }
+			ship = { name = "Flamberge" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Pertuisane" } } }
+			ship = { name = "Rapière" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Pertuisane" } } }
+			ship = { name = "Yatagan" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Framée" } } }
+			ship = { name = "Pique" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Framée" } } }
+			ship = { name = "Épée" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Framée" } } }
+			ship = { name = "Durandal" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Durandal" } } }
+			ship = { name = "Hallebarde" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Durandal" } } }
+			ship = { name = "Fauconneau" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft = { amount = 1 owner = FRA version_name = "Durandal" } } }
+			ship = { name = "Berthelot" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Floréal" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Germinal" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Messidor" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Papin" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Prairial" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Ventôse" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Watt" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Pluviôse" } } }
+			ship = { name = "Calypso" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Circé" } } }
+			ship = { name = "Circé" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Circé" } } }
+			ship = { name = "Émeraude" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Émeraude" } } }
+			ship = { name = "Opale" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Émeraude" } } }
+			ship = { name = "Rubis" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Émeraude" } } }
+			ship = { name = "Saphir" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Émeraude" } } }
+			ship = { name = "Topaze" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Émeraude" } } }
+			ship = { name = "Aigrette" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Aigrette" } } }
+			ship = { name = "Cigogne" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Aigrette" } } }
+			ship = { name = "Sirène" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Sirène" } } }
+			ship = { name = "Triton" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Sirène" } } }
+			ship = { name = "Espadon" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Sirène" } } }
+			ship = { name = "Silure" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine = { amount = 1 owner = FRA version_name = "Sirène" } } }
+		}
+	}
+	fleet = {
+		name = "Escadre du Nord"
+		naval_base = 3552
+		task_force = {
+			name = "Escadre du Nord"
+			location = 3552
+			ship = { name = "Charlemagne" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Charlemagne" } } }
+			ship = { name = "Saint Louis" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Charlemagne" } } }
+			ship = { name = "Gaulois" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Charlemagne" } } }
+			ship = { name = "Henri IV" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "Henri IV" } } }
+			ship = { name = "Amiral Aube" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gloire" } } }
+			ship = { name = "Desaix" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Dupleix" } } }
+			ship = { name = "Dupetit-Thouars" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gueydon" } } }
+			ship = { name = "Jeanne d'Arc" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Jeanne d'Arc" } } }
+			ship = { name = "Pothuau" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Pothuau" } } }
+			ship = { name = "Latouche-Tréville" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Amiral Charner" } } }
+			ship = { name = "D'Estrées" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "D'Estrées" } } }
+			ship = { name = "Infernet" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "D'Estrées" } } }
+			ship = { name = "Guichen" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Guichen" } } }
+			ship = { name = "Descartes" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Descartes" } } }
+			ship = { name = "Chasseloup-Laubat" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Linois" } } }
+			ship = { name = "Forbin" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Forbin" } } }
+			ship = { name = "Surcouf" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Forbin" } } }
+		}
+	}
+	fleet = {
+		name = "Escadre d'Extrême-Orient"
+		naval_base = 4401
+		task_force = {
+			name = "Escadre d'Extrême-Orient"
+			location = 4401
+			ship = { name = "Dupleix" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Dupleix" } } }
+			ship = { name = "Gueydon" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gueydon" } } }
+			ship = { name = "Montcalm" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Gueydon" } } }
+			ship = { name = "Bruix" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Amiral Charner" } } }
+			ship = { name = "Chanzy" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser = { amount = 1 owner = FRA version_name = "Amiral Charner" } } }
+			ship = { name = "Pascal" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Descartes" } } }
+			ship = { name = "Friant" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = FRA version_name = "Friant" } } }
+		}
+	}
+}

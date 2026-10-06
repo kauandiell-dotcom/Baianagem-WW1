@@ -1,0 +1,58 @@
+ENG_ww1_empire_policy = {
+ ENG_ww1_request_dominion_contingent_CAN = {
+  icon = GFX_decision_ENG_ww1_request_dominion_contingent_CAN
+  visible = { has_country_flag = ENG_ww1_consulted_canada }
+  available = { has_war = yes has_capitulated = no country_exists = CAN check_variable = { ww1_britain_dominion_consent > 29 } }
+  cost = 20 days_re_enable = 270
+  complete_effect = { CAN = { country_event = { id = ww1_britain_pol.20 } } }
+  ai_will_do = { base = 2 modifier = { factor = 0 check_variable = { ww1_britain_dominion_consent < 40 } } }
+ }
+ ENG_ww1_request_dominion_contingent_AST = {
+  icon = GFX_decision_ENG_ww1_request_dominion_contingent_AST
+  visible = { has_country_flag = ENG_ww1_consulted_australia }
+  available = { has_war = yes has_capitulated = no country_exists = AST check_variable = { ww1_britain_dominion_consent > 29 } }
+  cost = 20 days_re_enable = 270
+  complete_effect = { AST = { country_event = { id = ww1_britain_pol.20 } } }
+  ai_will_do = { base = 2 modifier = { factor = 0 check_variable = { ww1_britain_dominion_consent < 40 } } }
+ }
+ ENG_ww1_request_dominion_contingent_NZL = {
+  icon = GFX_decision_ENG_ww1_request_dominion_contingent_NZL
+  visible = { has_country_flag = ENG_ww1_consulted_new_zealand }
+  available = { has_war = yes has_capitulated = no country_exists = NZL check_variable = { ww1_britain_dominion_consent > 29 } }
+  cost = 20 days_re_enable = 270
+  complete_effect = { NZL = { country_event = { id = ww1_britain_pol.20 } } }
+  ai_will_do = { base = 2 modifier = { factor = 0 check_variable = { ww1_britain_dominion_consent < 40 } } }
+ }
+ ENG_ww1_request_dominion_contingent_SAF = {
+  icon = GFX_decision_ENG_ww1_request_dominion_contingent_SAF
+  visible = { has_country_flag = ENG_ww1_consulted_south_africa }
+  available = { has_war = yes has_capitulated = no country_exists = SAF check_variable = { ww1_britain_dominion_consent > 29 } }
+  cost = 20 days_re_enable = 270
+  complete_effect = { SAF = { country_event = { id = ww1_britain_pol.20 } } }
+  ai_will_do = { base = 2 modifier = { factor = 0 check_variable = { ww1_britain_dominion_consent < 40 } } }
+ }
+ ENG_ww1_reconvene_imperial_conference = {
+  icon = GFX_decision_ENG_ww1_reconvene_imperial_conference
+  visible = { has_country_flag = ENG_ww1_imperial_conference_held }
+  available = { has_capitulated = no }
+  cost = 30 days_re_enable = 365
+  complete_effect = { add_to_variable = { ww1_britain_dominion_consent = 6 } add_to_variable = { ww1_britain_debt_burden = 1 } }
+  ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { ww1_britain_dominion_consent > 70 } } }
+ }
+ ENG_ww1_release_irish_prisoners = {
+  icon = GFX_decision_ENG_ww1_release_irish_prisoners
+  visible = { check_variable = { ww1_britain_irish_tension > 30 } }
+  available = { has_capitulated = no check_variable = { ww1_britain_irish_tension > 40 } }
+  cost = 20 days_re_enable = 150
+  complete_effect = { add_to_variable = { ww1_britain_irish_tension = -8 } add_to_variable = { ww1_britain_ulster_tension = 4 } }
+  ai_will_do = { base = 1 modifier = { factor = 3 check_variable = { ww1_britain_irish_tension > 60 } } }
+ }
+ ENG_ww1_emergency_suppression = {
+  icon = GFX_decision_ENG_ww1_emergency_suppression
+  visible = { check_variable = { ww1_britain_irish_tension > 40 } }
+  available = { has_capitulated = no check_variable = { ww1_britain_irish_tension > 50 } }
+  cost = 15 days_re_enable = 120
+  complete_effect = { add_to_variable = { ww1_britain_irish_tension = -5 } add_to_variable = { ww1_britain_ulster_tension = -3 } add_stability = -0.01 }
+  ai_will_do = { base = 1 modifier = { factor = 2 check_variable = { ww1_britain_irish_tension > 75 } } }
+ }
+}

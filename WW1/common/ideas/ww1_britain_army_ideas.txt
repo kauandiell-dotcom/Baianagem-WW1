@@ -1,0 +1,12 @@
+ideas = {
+ country = {
+  ENG_ww1_haldane_reforms = { picture = ENG_ww1_haldane_reforms allowed = { always = no } removal_cost = -1 modifier = { training_time_factor = -0.1 } }
+  ENG_ww1_kitchener_armies = { picture = ENG_ww1_kitchener_armies allowed = { always = no } removal_cost = -1 modifier = { army_morale_factor = 0.05 industrial_capacity_factory = -0.03 } }
+  ENG_ww1_pals_battalions = { picture = ENG_ww1_pals_battalions allowed = { always = no } removal_cost = -1 modifier = { army_org_factor = 0.05 } }
+  ENG_ww1_flanders_supply = { picture = ENG_ww1_flanders_supply allowed = { always = no } removal_cost = -1 modifier = { supply_consumption_factor = -0.05 } }
+  ENG_ww1_training_directorate = { picture = ENG_ww1_training_directorate allowed = { always = no } removal_cost = -1 modifier = { training_time_factor = -0.1 experience_gain_army_factor = 0.05 } }
+  ENG_ww1_combined_arms_staff = { picture = ENG_ww1_combined_arms_staff allowed = { always = no } removal_cost = -1 modifier = { planning_speed = 0.1 } }
+  ENG_ww1_creeping_barrage = { picture = ENG_ww1_creeping_barrage allowed = { always = no } removal_cost = -1 modifier = { army_artillery_attack_factor = 0.05 } }
+  ENG_ww1_general_staff_lessons = { picture = ENG_ww1_general_staff_lessons allowed = { always = no } removal_cost = -1 modifier = { experience_gain_army_factor = 0.1 } }
+ }
+}

@@ -1,0 +1,161 @@
+add_namespace = ww1_britain_dip
+
+country_event = {
+ id = ww1_britain_dip.2 title = ww1_britain_dip.2.t desc = ww1_britain_dip.2.d
+ picture = GFX_event_ww1_britain_supreme_war_council
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_dip.2.a
+  ai_chance = { base = 60 }
+  add_political_power = -10
+  add_war_support = 0.02
+  set_country_flag = ENG_ww1_unified_command
+ }
+ option = {
+  name = ww1_britain_dip.2.b
+  ai_chance = { base = 40 }
+  add_political_power = 10
+  set_country_flag = ENG_ww1_national_command
+ }
+}
+country_event = {
+ id = ww1_britain_dip.3 title = ww1_britain_dip.3.t desc = ww1_britain_dip.3.d
+ picture = GFX_event_ww1_britain_armistice_terms
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_dip.3.a
+  ai_chance = { base = 50 }
+  add_political_power = 10
+  add_stability = 0.01
+  set_country_flag = ENG_ww1_moderate_armistice
+ }
+ option = {
+  name = ww1_britain_dip.3.b
+  ai_chance = { base = 50 }
+  add_political_power = 15
+  add_stability = -0.01
+  set_country_flag = ENG_ww1_strict_armistice
+ }
+}
+country_event = {
+ id = ww1_britain_dip.4 title = ww1_britain_dip.4.t desc = ww1_britain_dip.4.d
+ picture = GFX_event_ww1_britain_washington_conference
+ is_triggered_only = yes
+ trigger = { tag = ENG has_capitulated = no  }
+ option = {
+  name = ww1_britain_dip.4.a
+  ai_chance = { base = 60 }
+  add_to_variable = { ww1_britain_debt_burden = -3 }
+  add_political_power = -10
+  set_country_flag = ENG_ww1_naval_parity
+ }
+ option = {
+  name = ww1_britain_dip.4.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_debt_burden = 2 }
+  add_political_power = 10
+  set_country_flag = ENG_ww1_naval_race
+ }
+}
+country_event = {
+ id = ww1_britain_dip.10 title = ww1_britain_dip.10.t desc = ww1_britain_dip.10.d
+ picture = GFX_event_ww1_britain_american_credit
+ is_triggered_only = yes
+ trigger = { tag = USA }
+ option = {
+  name = ww1_britain_dip.10.a
+  ai_chance = { base = 65 }
+  add_political_power = 20
+  FROM = { add_to_variable = { ww1_britain_debt_burden = -5 } set_country_flag = ENG_ww1_american_credit }
+ }
+ option = {
+  name = ww1_britain_dip.10.b
+  ai_chance = { base = 35 }
+  FROM = { add_to_variable = { ww1_britain_debt_burden = 2 } add_stability = -0.01 }
+ }
+}
+country_event = {
+ id = ww1_britain_dip.11 title = ww1_britain_dip.11.t desc = ww1_britain_dip.11.d
+ picture = GFX_event_ww1_britain_london_offer
+ is_triggered_only = yes
+ trigger = { tag = ITA }
+ option = {
+  name = ww1_britain_dip.11.a
+  ai_chance = { base = 50 }
+  set_country_flag = ITA_ww1_london_terms_open
+  FROM = { set_country_flag = ENG_ww1_italy_terms_open }
+ }
+ option = {
+  name = ww1_britain_dip.11.b
+  ai_chance = { base = 50 }
+  set_country_flag = ITA_ww1_london_terms_refused
+  FROM = { set_country_flag = ENG_ww1_italy_terms_refused }
+ }
+}
+country_event = {
+ id = ww1_britain_dip.12 title = ww1_britain_dip.12.t desc = ww1_britain_dip.12.d
+ picture = GFX_event_ww1_britain_old_alliance
+ is_triggered_only = yes
+ trigger = { tag = POR }
+ option = {
+  name = ww1_britain_dip.12.a
+  ai_chance = { base = 60 }
+  add_stability = 0.02
+  FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } set_country_flag = ENG_ww1_portugal_renewed }
+ }
+ option = {
+  name = ww1_britain_dip.12.b
+  ai_chance = { base = 40 }
+  set_country_flag = POR_ww1_declined_london
+ }
+}
+country_event = {
+ id = ww1_britain_dip.13 title = ww1_britain_dip.13.t desc = ww1_britain_dip.13.d
+ picture = GFX_event_ww1_britain_russian_credit
+ is_triggered_only = yes
+ trigger = { tag = SOV }
+ option = {
+  name = ww1_britain_dip.13.a
+  ai_chance = { base = 70 }
+  add_political_power = 10
+  FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } set_country_flag = ENG_ww1_russian_credit }
+ }
+ option = {
+  name = ww1_britain_dip.13.b
+  ai_chance = { base = 30 }
+ }
+}
+country_event = {
+ id = ww1_britain_dip.14 title = ww1_britain_dip.14.t desc = ww1_britain_dip.14.d
+ picture = GFX_event_ww1_britain_anglo_french_naval
+ is_triggered_only = yes
+ trigger = { tag = FRA }
+ option = {
+  name = ww1_britain_dip.14.a
+  ai_chance = { base = 70 }
+  add_stability = 0.01
+  FROM = { navy_experience = 3 set_country_flag = ENG_ww1_french_naval_agreed }
+ }
+ option = {
+  name = ww1_britain_dip.14.b
+  ai_chance = { base = 30 }
+ }
+}
+country_event = {
+ id = ww1_britain_dip.15 title = ww1_britain_dip.15.t desc = ww1_britain_dip.15.d
+ picture = GFX_event_ww1_britain_balkan_coordination
+ is_triggered_only = yes
+ trigger = { OR = { tag = SER tag = GRE tag = ROM } }
+ option = {
+  name = ww1_britain_dip.15.a
+  ai_chance = { base = 65 }
+  add_stability = 0.02
+  FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } }
+ }
+ option = {
+  name = ww1_britain_dip.15.b
+  ai_chance = { base = 35 }
+ }
+}

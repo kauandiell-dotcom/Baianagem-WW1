@@ -1,0 +1,9 @@
+on_actions = {
+ on_startup = { effect = {
+  if = { limit = { country_exists = AUS } AUS = {
+   if = { limit = { NOT = { has_country_flag = auh_ww1_initialised } } auh_ww1_initialise = yes }
+  } }
+ } }
+ # Country-specific native weekly callback, no global tag loop.
+ on_weekly_AUS = { effect = { if = { limit = { has_country_flag = auh_ww1_initialised } auh_ww1_weekly = yes } } }
+}

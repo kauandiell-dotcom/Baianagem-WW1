@@ -1,0 +1,82 @@
+technologies = {
+	ww1_1911_ironclad_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1880
+		enable_equipments = { ww1_1911_ironclad ww1_1911_ironclad_legacy }
+		enable_equipment_modules = { ww1_1911_heavy_coal ww1_1911_old_belt ww1_1911_old_heavy }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_pre_dreadnought_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1895
+		enable_equipments = { ww1_1911_pre_dreadnought ww1_1911_pre_dreadnought_legacy }
+		enable_equipment_modules = { ww1_1911_heavy_coal ww1_1911_mixed_heavy ww1_1911_pre_belt }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_dreadnought_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1906
+		enable_equipments = { ww1_1911_dreadnought ww1_1911_dreadnought_legacy }
+		enable_equipment_modules = { ww1_1911_dread_belt ww1_1911_heavy_coal ww1_1911_uniform_heavy }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_battlecruiser_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1908
+		enable_equipments = { ww1_1911_battlecruiser ww1_1911_battlecruiser_legacy }
+		enable_equipment_modules = { ww1_1911_battlecruiser_belt ww1_1911_heavy_coal ww1_1911_uniform_heavy }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_armoured_cruiser_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1895
+		enable_equipments = { ww1_1911_armoured_cruiser ww1_1911_armoured_cruiser_legacy }
+		enable_equipment_modules = { ww1_1911_cruiser_belt ww1_1911_cruiser_coal ww1_1911_medium }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_protected_cruiser_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1895
+		enable_equipments = { ww1_1911_protected_cruiser ww1_1911_protected_cruiser_legacy }
+		enable_equipment_modules = { ww1_1911_cruiser_coal ww1_1911_light_medium ww1_1911_protected_deck }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_torpedo_craft_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1897
+		enable_equipments = { ww1_1911_torpedo_craft ww1_1911_torpedo_craft_legacy }
+		enable_equipment_modules = { ww1_1911_light ww1_1911_light_coal ww1_1911_torpedoes }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+	ww1_1911_submarine_capability = {
+		# Initial institutional knowledge: granted by history/future country programmes.
+		# No research folder: this is not a free repeatable research shortcut.
+		research_cost = 1
+		start_year = 1900
+		enable_equipments = { ww1_1911_submarine ww1_1911_submarine_legacy }
+		enable_equipment_modules = { ww1_1911_sub_engine ww1_1911_sub_torpedoes }
+		categories = { naval_equipment }
+		ai_will_do = { factor = 0 }
+	}
+}

@@ -1,603 +1,460 @@
-# National Crisis Relief Decisions (Every 6 months / 180 days cooldown)
+# Relief projects commit two civilian factories for 90 days.
 
-# =======================================================
-# ALEMANHA (GER)
-# =======================================================
 ww1_crisis_management_ger = {
-
-	GER_relief_step_1 = {
-		icon = generic_factory
-		available = {
-			has_idea = GER_turnip_winter_crisis_3
-			NOT = { has_country_flag = GER_relief_step_1_done }
-		}
-		visible = {
-			has_idea = GER_turnip_winter_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = GER_turnip_winter_crisis_3
-				add_idea = GER_turnip_winter_crisis_2
-			}
-			set_country_flag = GER_relief_step_1_done
-		}
-	}
-
-	GER_relief_step_2 = {
-		icon = generic_research
-		available = {
-			has_idea = GER_turnip_winter_crisis_2
-			NOT = { has_country_flag = GER_relief_step_2_done }
-		}
-		visible = {
-			has_idea = GER_turnip_winter_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = GER_turnip_winter_crisis_2
-				add_idea = GER_turnip_winter_crisis_1
-			}
-			set_country_flag = GER_relief_step_2_done
-		}
-	}
-
-	GER_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = GER_turnip_winter_crisis_1
-			NOT = { has_country_flag = GER_relief_step_3_done }
-		}
-		visible = {
-			has_idea = GER_turnip_winter_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = GER_turnip_winter_crisis_1
-				add_idea = GER_hindenburg_program_victory
-			}
-			clr_country_flag = GER_crisis_active
-			set_country_flag = GER_crisis_resolved
-			set_country_flag = GER_relief_step_3_done
-		}
-	}
+ GER_relief_step_1 = {
+  icon = generic_factory
+  allowed = { original_tag = GER }
+  visible = { has_country_flag = GER_crisis_active }
+  available = { has_idea = GER_turnip_winter_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = GER_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = GER_relief_project_active }
+  remove_effect = {
+   clr_country_flag = GER_relief_project_active
+   ww1_GER_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = GER_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ GER_relief_step_2 = {
+  icon = generic_research
+  allowed = { original_tag = GER }
+  visible = { has_country_flag = GER_crisis_active }
+  available = { has_idea = GER_turnip_winter_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = GER_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = GER_relief_project_active }
+  remove_effect = {
+   clr_country_flag = GER_relief_project_active
+   ww1_GER_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = GER_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ GER_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = GER }
+  visible = { has_country_flag = GER_crisis_active }
+  available = { has_idea = GER_turnip_winter_crisis_1 NOT = { ww1_ger_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = GER_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = GER_relief_project_active }
+  remove_effect = {
+   clr_country_flag = GER_relief_project_active
+   ww1_GER_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = GER_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# REINO UNIDO (ENG)
-# =======================================================
 ww1_crisis_management_eng = {
-
-	ENG_relief_step_1 = {
-		icon = generic_naval
-		available = {
-			has_idea = ENG_submarine_blockade_crisis_3
-			NOT = { has_country_flag = ENG_relief_step_1_done }
-		}
-		visible = {
-			has_idea = ENG_submarine_blockade_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = ENG_submarine_blockade_crisis_3
-				add_idea = ENG_submarine_blockade_crisis_2
-			}
-			set_country_flag = ENG_relief_step_1_done
-		}
-	}
-
-	ENG_relief_step_2 = {
-		icon = generic_factory
-		available = {
-			has_idea = ENG_submarine_blockade_crisis_2
-			NOT = { has_country_flag = ENG_relief_step_2_done }
-		}
-		visible = {
-			has_idea = ENG_submarine_blockade_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = ENG_submarine_blockade_crisis_2
-				add_idea = ENG_submarine_blockade_crisis_1
-			}
-			set_country_flag = ENG_relief_step_2_done
-		}
-	}
-
-	ENG_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = ENG_submarine_blockade_crisis_1
-			NOT = { has_country_flag = ENG_relief_step_3_done }
-		}
-		visible = {
-			has_idea = ENG_submarine_blockade_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = ENG_submarine_blockade_crisis_1
-				add_idea = ENG_arsenal_of_the_empire
-			}
-			clr_country_flag = ENG_crisis_active
-			set_country_flag = ENG_crisis_resolved
-			set_country_flag = ENG_relief_step_3_done
-		}
-	}
+ ENG_relief_step_1 = {
+  icon = generic_naval
+  allowed = { original_tag = ENG }
+  visible = { has_country_flag = ENG_crisis_active }
+  available = { has_idea = ENG_submarine_blockade_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = ENG_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = ENG_relief_project_active }
+  remove_effect = {
+   clr_country_flag = ENG_relief_project_active
+   ww1_ENG_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = ENG_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ ENG_relief_step_2 = {
+  icon = generic_factory
+  allowed = { original_tag = ENG }
+  visible = { has_country_flag = ENG_crisis_active }
+  available = { has_idea = ENG_submarine_blockade_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = ENG_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = ENG_relief_project_active }
+  remove_effect = {
+   clr_country_flag = ENG_relief_project_active
+   ww1_ENG_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = ENG_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ ENG_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = ENG }
+  visible = { has_country_flag = ENG_crisis_active }
+  available = { has_idea = ENG_submarine_blockade_crisis_1 NOT = { ww1_eng_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = ENG_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = ENG_relief_project_active }
+  remove_effect = {
+   clr_country_flag = ENG_relief_project_active
+   ww1_ENG_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = ENG_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# FRANÃ‡A (FRA)
-# =======================================================
 ww1_crisis_management_fra = {
-
-	FRA_relief_step_1 = {
-		icon = generic_military
-		available = {
-			has_idea = FRA_trench_mutiny_crisis_3
-			NOT = { has_country_flag = FRA_relief_step_1_done }
-		}
-		visible = {
-			has_idea = FRA_trench_mutiny_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = FRA_trench_mutiny_crisis_3
-				add_idea = FRA_trench_mutiny_crisis_2
-			}
-			set_country_flag = FRA_relief_step_1_done
-		}
-	}
-
-	FRA_relief_step_2 = {
-		icon = generic_speech
-		available = {
-			has_idea = FRA_trench_mutiny_crisis_2
-			NOT = { has_country_flag = FRA_relief_step_2_done }
-		}
-		visible = {
-			has_idea = FRA_trench_mutiny_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = FRA_trench_mutiny_crisis_2
-				add_idea = FRA_trench_mutiny_crisis_1
-			}
-			set_country_flag = FRA_relief_step_2_done
-		}
-	}
-
-	FRA_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = FRA_trench_mutiny_crisis_1
-			NOT = { has_country_flag = FRA_relief_step_3_done }
-		}
-		visible = {
-			has_idea = FRA_trench_mutiny_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = FRA_trench_mutiny_crisis_1
-				add_idea = FRA_union_sacree_victory
-			}
-			clr_country_flag = FRA_crisis_active
-			set_country_flag = FRA_crisis_resolved
-			set_country_flag = FRA_relief_step_3_done
-		}
-	}
+ FRA_relief_step_1 = {
+  icon = generic_military
+  allowed = { original_tag = FRA }
+  visible = { has_country_flag = FRA_crisis_active }
+  available = { has_idea = FRA_trench_mutiny_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = FRA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = FRA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = FRA_relief_project_active
+   ww1_FRA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = FRA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ FRA_relief_step_2 = {
+  icon = generic_speech
+  allowed = { original_tag = FRA }
+  visible = { has_country_flag = FRA_crisis_active }
+  available = { has_idea = FRA_trench_mutiny_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = FRA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = FRA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = FRA_relief_project_active
+   ww1_FRA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = FRA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ FRA_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = FRA }
+  visible = { has_country_flag = FRA_crisis_active }
+  available = { has_idea = FRA_trench_mutiny_crisis_1 NOT = { ww1_fra_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = FRA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = FRA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = FRA_relief_project_active
+   ww1_FRA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = FRA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# RÃšSSIA (SOV)
-# =======================================================
 ww1_crisis_management_sov = {
-
-	SOV_relief_step_1 = {
-		icon = generic_factory
-		available = {
-			has_idea = SOV_rifle_famine_crisis_3
-			NOT = { has_country_flag = SOV_relief_step_1_done }
-		}
-		visible = {
-			has_idea = SOV_rifle_famine_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = SOV_rifle_famine_crisis_3
-				add_idea = SOV_rifle_famine_crisis_2
-			}
-			set_country_flag = SOV_relief_step_1_done
-		}
-	}
-
-	SOV_relief_step_2 = {
-		icon = generic_train
-		available = {
-			has_idea = SOV_rifle_famine_crisis_2
-			NOT = { has_country_flag = SOV_relief_step_2_done }
-		}
-		visible = {
-			has_idea = SOV_rifle_famine_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = SOV_rifle_famine_crisis_2
-				add_idea = SOV_rifle_famine_crisis_1
-			}
-			set_country_flag = SOV_relief_step_2_done
-		}
-	}
-
-	SOV_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = SOV_rifle_famine_crisis_1
-			NOT = { has_country_flag = SOV_relief_step_3_done }
-		}
-		visible = {
-			has_idea = SOV_rifle_famine_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = SOV_rifle_famine_crisis_1
-				add_idea = SOV_unbreakable_union_victory
-			}
-			clr_country_flag = SOV_crisis_active
-			set_country_flag = SOV_crisis_resolved
-			set_country_flag = SOV_relief_step_3_done
-		}
-	}
+ SOV_relief_step_1 = {
+  icon = generic_factory
+  allowed = { original_tag = SOV }
+  visible = { has_country_flag = SOV_crisis_active }
+  available = { has_idea = SOV_rifle_famine_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = SOV_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = SOV_relief_project_active }
+  remove_effect = {
+   clr_country_flag = SOV_relief_project_active
+   ww1_SOV_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = SOV_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ SOV_relief_step_2 = {
+  icon = generic_train
+  allowed = { original_tag = SOV }
+  visible = { has_country_flag = SOV_crisis_active }
+  available = { has_idea = SOV_rifle_famine_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = SOV_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = SOV_relief_project_active }
+  remove_effect = {
+   clr_country_flag = SOV_relief_project_active
+   ww1_SOV_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = SOV_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ SOV_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = SOV }
+  visible = { has_country_flag = SOV_crisis_active }
+  available = { has_idea = SOV_rifle_famine_crisis_1 NOT = { ww1_sov_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = SOV_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = SOV_relief_project_active }
+  remove_effect = {
+   clr_country_flag = SOV_relief_project_active
+   ww1_SOV_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = SOV_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# ÃUSTRIA-HUNGRIA (AUS)
-# =======================================================
 ww1_crisis_management_aus = {
-
-	AUS_relief_step_1 = {
-		icon = generic_speech
-		available = {
-			has_idea = AUS_nationalities_fracture_crisis_3
-			NOT = { has_country_flag = AUS_relief_step_1_done }
-		}
-		visible = {
-			has_idea = AUS_nationalities_fracture_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = AUS_nationalities_fracture_crisis_3
-				add_idea = AUS_nationalities_fracture_crisis_2
-			}
-			set_country_flag = AUS_relief_step_1_done
-		}
-	}
-
-	AUS_relief_step_2 = {
-		icon = generic_political_address
-		available = {
-			has_idea = AUS_nationalities_fracture_crisis_2
-			NOT = { has_country_flag = AUS_relief_step_2_done }
-		}
-		visible = {
-			has_idea = AUS_nationalities_fracture_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = AUS_nationalities_fracture_crisis_2
-				add_idea = AUS_nationalities_fracture_crisis_1
-			}
-			set_country_flag = AUS_relief_step_2_done
-		}
-	}
-
-	AUS_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = AUS_nationalities_fracture_crisis_1
-			NOT = { has_country_flag = AUS_relief_step_3_done }
-		}
-		visible = {
-			has_idea = AUS_nationalities_fracture_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = AUS_nationalities_fracture_crisis_1
-				add_idea = AUS_danubian_triumph
-			}
-			clr_country_flag = AUS_crisis_active
-			set_country_flag = AUS_crisis_resolved
-			set_country_flag = AUS_relief_step_3_done
-		}
-	}
+ AUS_relief_step_1 = {
+  icon = generic_speech
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = AUS_crisis_active }
+  available = { has_idea = AUS_nationalities_fracture_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = AUS_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = AUS_relief_project_active }
+  remove_effect = {
+   clr_country_flag = AUS_relief_project_active
+   ww1_AUS_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = AUS_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ AUS_relief_step_2 = {
+  icon = generic_political_address
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = AUS_crisis_active }
+  available = { has_idea = AUS_nationalities_fracture_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = AUS_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = AUS_relief_project_active }
+  remove_effect = {
+   clr_country_flag = AUS_relief_project_active
+   ww1_AUS_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = AUS_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ AUS_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = AUS }
+  visible = { has_country_flag = AUS_crisis_active }
+  available = { has_idea = AUS_nationalities_fracture_crisis_1 NOT = { ww1_aus_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = AUS_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = AUS_relief_project_active }
+  remove_effect = {
+   clr_country_flag = AUS_relief_project_active
+   ww1_AUS_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = AUS_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# ITÃLIA (ITA)
-# =======================================================
 ww1_crisis_management_ita = {
-
-	ITA_relief_step_1 = {
-		icon = generic_military
-		available = {
-			has_idea = ITA_isonzo_attrition_crisis_3
-			NOT = { has_country_flag = ITA_relief_step_1_done }
-		}
-		visible = {
-			has_idea = ITA_isonzo_attrition_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = ITA_isonzo_attrition_crisis_3
-				add_idea = ITA_isonzo_attrition_crisis_2
-			}
-			set_country_flag = ITA_relief_step_1_done
-		}
-	}
-
-	ITA_relief_step_2 = {
-		icon = generic_factory
-		available = {
-			has_idea = ITA_isonzo_attrition_crisis_2
-			NOT = { has_country_flag = ITA_relief_step_2_done }
-		}
-		visible = {
-			has_idea = ITA_isonzo_attrition_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = ITA_isonzo_attrition_crisis_2
-				add_idea = ITA_isonzo_attrition_crisis_1
-			}
-			set_country_flag = ITA_relief_step_2_done
-		}
-	}
-
-	ITA_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = ITA_isonzo_attrition_crisis_1
-			NOT = { has_country_flag = ITA_relief_step_3_done }
-		}
-		visible = {
-			has_idea = ITA_isonzo_attrition_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = ITA_isonzo_attrition_crisis_1
-				add_idea = ITA_vittorio_veneto_triumph
-			}
-			clr_country_flag = ITA_crisis_active
-			set_country_flag = ITA_crisis_resolved
-			set_country_flag = ITA_relief_step_3_done
-		}
-	}
+ ITA_relief_step_1 = {
+  icon = generic_military
+  allowed = { original_tag = ITA }
+  visible = { has_country_flag = ITA_crisis_active }
+  available = { has_idea = ITA_isonzo_attrition_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = ITA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = ITA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = ITA_relief_project_active
+   ww1_ITA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = ITA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ ITA_relief_step_2 = {
+  icon = generic_factory
+  allowed = { original_tag = ITA }
+  visible = { has_country_flag = ITA_crisis_active }
+  available = { has_idea = ITA_isonzo_attrition_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = ITA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = ITA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = ITA_relief_project_active
+   ww1_ITA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = ITA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ ITA_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = ITA }
+  visible = { has_country_flag = ITA_crisis_active }
+  available = { has_idea = ITA_isonzo_attrition_crisis_1 NOT = { ww1_ita_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = ITA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = ITA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = ITA_relief_project_active
+   ww1_ITA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = ITA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# IMPÃ‰RIO OTOMANO (TUR)
-# =======================================================
 ww1_crisis_management_tur = {
-
-	TUR_relief_step_1 = {
-		icon = generic_military
-		available = {
-			has_idea = TUR_desert_supply_collapse_crisis_3
-			NOT = { has_country_flag = TUR_relief_step_1_done }
-		}
-		visible = {
-			has_idea = TUR_desert_supply_collapse_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = TUR_desert_supply_collapse_crisis_3
-				add_idea = TUR_desert_supply_collapse_crisis_2
-			}
-			set_country_flag = TUR_relief_step_1_done
-		}
-	}
-
-	TUR_relief_step_2 = {
-		icon = generic_speech
-		available = {
-			has_idea = TUR_desert_supply_collapse_crisis_2
-			NOT = { has_country_flag = TUR_relief_step_2_done }
-		}
-		visible = {
-			has_idea = TUR_desert_supply_collapse_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = TUR_desert_supply_collapse_crisis_2
-				add_idea = TUR_desert_supply_collapse_crisis_1
-			}
-			set_country_flag = TUR_relief_step_2_done
-		}
-	}
-
-	TUR_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = TUR_desert_supply_collapse_crisis_1
-			NOT = { has_country_flag = TUR_relief_step_3_done }
-		}
-		visible = {
-			has_idea = TUR_desert_supply_collapse_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = TUR_desert_supply_collapse_crisis_1
-				add_idea = TUR_anatolian_sovereignty_victory
-			}
-			clr_country_flag = TUR_crisis_active
-			set_country_flag = TUR_crisis_resolved
-			set_country_flag = TUR_relief_step_3_done
-		}
-	}
+ TUR_relief_step_1 = {
+  icon = generic_military
+  allowed = { original_tag = TUR }
+  visible = { has_country_flag = TUR_crisis_active }
+  available = { has_idea = TUR_desert_supply_collapse_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = TUR_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = TUR_relief_project_active }
+  remove_effect = {
+   clr_country_flag = TUR_relief_project_active
+   ww1_TUR_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = TUR_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ TUR_relief_step_2 = {
+  icon = generic_speech
+  allowed = { original_tag = TUR }
+  visible = { has_country_flag = TUR_crisis_active }
+  available = { has_idea = TUR_desert_supply_collapse_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = TUR_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = TUR_relief_project_active }
+  remove_effect = {
+   clr_country_flag = TUR_relief_project_active
+   ww1_TUR_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = TUR_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ TUR_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = TUR }
+  visible = { has_country_flag = TUR_crisis_active }
+  available = { has_idea = TUR_desert_supply_collapse_crisis_1 NOT = { ww1_tur_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = TUR_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = TUR_relief_project_active }
+  remove_effect = {
+   clr_country_flag = TUR_relief_project_active
+   ww1_TUR_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = TUR_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# ESTADOS UNIDOS (USA)
-# =======================================================
 ww1_crisis_management_usa = {
-
-	USA_relief_step_1 = {
-		icon = generic_factory
-		available = {
-			has_idea = USA_mobilization_bottleneck_crisis_3
-			NOT = { has_country_flag = USA_relief_step_1_done }
-		}
-		visible = {
-			has_idea = USA_mobilization_bottleneck_crisis_3
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = USA_mobilization_bottleneck_crisis_3
-				add_idea = USA_mobilization_bottleneck_crisis_2
-			}
-			set_country_flag = USA_relief_step_1_done
-		}
-	}
-
-	USA_relief_step_2 = {
-		icon = generic_consumer_goods
-		available = {
-			has_idea = USA_mobilization_bottleneck_crisis_2
-			NOT = { has_country_flag = USA_relief_step_2_done }
-		}
-		visible = {
-			has_idea = USA_mobilization_bottleneck_crisis_2
-		}
-		cost = 50
-		days_remove = 180
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = USA_mobilization_bottleneck_crisis_2
-				add_idea = USA_mobilization_bottleneck_crisis_1
-			}
-			set_country_flag = USA_relief_step_2_done
-		}
-	}
-
-	USA_relief_step_3 = {
-		icon = generic_welfare
-		available = {
-			has_idea = USA_mobilization_bottleneck_crisis_1
-			NOT = { has_country_flag = USA_relief_step_3_done }
-		}
-		visible = {
-			has_idea = USA_mobilization_bottleneck_crisis_1
-		}
-		cost = 50
-		fire_only_once = yes
-
-		complete_effect = {
-			swap_ideas = {
-				remove_idea = USA_mobilization_bottleneck_crisis_1
-				add_idea = USA_arsenal_of_democracy_unleashed
-			}
-			clr_country_flag = USA_crisis_active
-			set_country_flag = USA_crisis_resolved
-			set_country_flag = USA_relief_step_3_done
-		}
-	}
+ USA_relief_step_1 = {
+  icon = generic_factory
+  allowed = { original_tag = USA }
+  visible = { has_country_flag = USA_crisis_active }
+  available = { has_idea = USA_mobilization_bottleneck_crisis_3 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = USA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = USA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = USA_relief_project_active
+   ww1_USA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = USA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ USA_relief_step_2 = {
+  icon = generic_consumer_goods
+  allowed = { original_tag = USA }
+  visible = { has_country_flag = USA_crisis_active }
+  available = { has_idea = USA_mobilization_bottleneck_crisis_2 num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = USA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = USA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = USA_relief_project_active
+   ww1_USA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = USA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
+ USA_relief_step_3 = {
+  icon = generic_welfare
+  allowed = { original_tag = USA }
+  visible = { has_country_flag = USA_crisis_active }
+  available = { has_idea = USA_mobilization_bottleneck_crisis_1 NOT = { ww1_usa_crisis_pressure = yes } num_of_civilian_factories_available_for_projects > 1 NOT = { has_country_flag = USA_relief_project_active } }
+  cost = 50
+  days_remove = 90
+  days_re_enable = 180
+  modifier = { civilian_factory_use = 2 }
+  complete_effect = { set_country_flag = USA_relief_project_active }
+  remove_effect = {
+   clr_country_flag = USA_relief_project_active
+   ww1_USA_apply_delivered_relief = yes
+  }
+  cancel_trigger = { OR = { has_war = no has_capitulated = yes } }
+  cancel_effect = { clr_country_flag = USA_relief_project_active }
+  ai_will_do = { base = 5 modifier = { factor = 2 has_stability < 0.40 } }
+ }
 }
 
-# =======================================================
-# WW1 MECHANICS & LOGISTICS GUIDE
-# =======================================================
 ww1_mechanics_guide = {
-
-	ww1_guide_stacking_and_logistics_decision = {
-		icon = generic_propaganda
-		available = {
-			always = no
-		}
-		visible = {
-			always = yes
-		}
-		cost = 0
-		fire_only_once = no
-	}
 }

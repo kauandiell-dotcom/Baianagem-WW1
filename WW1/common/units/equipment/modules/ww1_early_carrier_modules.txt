@@ -1,0 +1,6 @@
+﻿# One physical deck; small native carrier_size units avoid modern air groups.
+equipment_modules = {
+ ww1_1917_carrier_machinery = { category = carrier_ship_engine add_stats = { build_cost_ic = 450 } }
+ ww1_1917_flight_deck = { category = ship_deck_space add_equipment_type = capital_ship add_stats = { carrier_size = 1 build_cost_ic = 350 } manpower = 100 }
+ ww1_1922_flight_deck = { category = ship_deck_space add_equipment_type = capital_ship add_stats = { carrier_size = 2 build_cost_ic = 500 } manpower = 150 }
+}

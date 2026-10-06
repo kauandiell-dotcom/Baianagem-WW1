@@ -18,6 +18,7 @@ country_event = {
 
 	immediate = {
 		set_global_flag = agadir_crisis_happened
+		clr_global_flag = ww1_agadir_dispatch_pending
 	}
 
 	option = {
@@ -40,7 +41,7 @@ country_event = {
 	id = ww1_agadir.2
 	title = ww1_agadir.2.t
 	desc = ww1_agadir.2.d
-	picture = GFX_report_event_french_soldiers
+	picture = GFX_event_ww1_agadir_panther
 
 	fire_only_once = yes
 	is_triggered_only = yes

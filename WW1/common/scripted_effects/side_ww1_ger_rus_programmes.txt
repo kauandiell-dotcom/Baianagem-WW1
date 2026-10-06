@@ -1,0 +1,87 @@
+﻿side_ww1_clear_GER_priorities = {
+ remove_ideas = side_ww1_GER_armaments_priority
+ remove_ideas = side_ww1_GER_naval_priority
+ remove_ideas = side_ww1_GER_distribution_priority
+ clr_country_flag = side_ww1_GER_priority_active
+}
+side_ww1_apply_GER_armaments_priority = {
+ side_ww1_clear_GER_priorities = yes
+ set_country_flag = { flag = side_ww1_GER_priority_active days = 180 }
+ add_timed_idea = { idea = side_ww1_GER_armaments_priority days = 180 }
+}
+side_ww1_apply_GER_naval_priority = {
+ side_ww1_clear_GER_priorities = yes
+ set_country_flag = { flag = side_ww1_GER_priority_active days = 180 }
+ add_timed_idea = { idea = side_ww1_GER_naval_priority days = 180 }
+}
+side_ww1_apply_GER_distribution_priority = {
+ side_ww1_clear_GER_priorities = yes
+ set_country_flag = { flag = side_ww1_GER_priority_active days = 180 }
+ add_timed_idea = { idea = side_ww1_GER_distribution_priority days = 180 }
+}
+side_ww1_reconvert_GER = {
+ side_ww1_clear_GER_priorities = yes
+ remove_ideas = GER_peacetime_industrial_giants
+ remove_ideas = GER_krupp_chemical_conglomerates
+ remove_ideas = GER_rathenau_kra_coordination
+ remove_ideas = GER_hindenburg_program_victory
+ remove_ideas = GER_hindenburg_total_mobilization
+ remove_ideas = GER_total_war_labor_conscription
+ remove_ideas = GER_vaterlandspartei_total_mobilization
+ side_ww1_set_GER_peacetime_industrial_giants = yes
+ set_country_flag = side_ww1_GER_reconversion_complete
+ add_timed_idea = { idea = side_ww1_GER_reconversion days = 180 }
+ add_stability = .02
+}
+side_ww1_clear_SOV_priorities = {
+ remove_ideas = side_ww1_SOV_state_contracts
+ remove_ideas = side_ww1_SOV_civic_contracts
+ remove_ideas = side_ww1_SOV_railway_priority
+ clr_country_flag = side_ww1_SOV_priority_active
+}
+side_ww1_apply_SOV_state_contracts = {
+ side_ww1_clear_SOV_priorities = yes
+ set_country_flag = { flag = side_ww1_SOV_priority_active days = 180 }
+ add_timed_idea = { idea = side_ww1_SOV_state_contracts days = 180 }
+}
+side_ww1_apply_SOV_civic_contracts = {
+ side_ww1_clear_SOV_priorities = yes
+ set_country_flag = { flag = side_ww1_SOV_priority_active days = 180 }
+ add_timed_idea = { idea = side_ww1_SOV_civic_contracts days = 180 }
+}
+side_ww1_apply_SOV_railway_priority = {
+ side_ww1_clear_SOV_priorities = yes
+ set_country_flag = { flag = side_ww1_SOV_priority_active days = 180 }
+ add_timed_idea = { idea = side_ww1_SOV_railway_priority days = 180 }
+}
+side_ww1_reconvert_SOV = {
+ side_ww1_clear_SOV_priorities = yes
+ remove_ideas = SOV_war_industry_mobilization
+ remove_ideas = SOV_zemgor_mobilization
+ remove_ideas = SOV_arsenal_of_the_russian_state
+ remove_ideas = SOV_denikin_free_market
+ remove_ideas = SOV_war_communism_regime
+ remove_ideas = SOV_war_communism_economy
+ set_country_flag = side_ww1_SOV_reconversion_complete
+ add_timed_idea = { idea = side_ww1_SOV_reconversion days = 180 }
+ add_stability = .02
+}
+side_ww1_SOV_measure_supply = {
+ set_variable = { side_ww1_SOV_rifle_target = num_target_equipment_in_armies@infantry_equipment }
+ set_variable = { side_ww1_SOV_gun_target = num_target_equipment_in_armies@artillery_equipment }
+ set_variable = { side_ww1_SOV_rifle_ratio = num_equipment_in_armies@infantry_equipment }
+ set_variable = { side_ww1_SOV_gun_ratio = num_equipment_in_armies@artillery_equipment }
+ if = { limit = { check_variable = { side_ww1_SOV_rifle_target > 0 } } divide_variable = { side_ww1_SOV_rifle_ratio = side_ww1_SOV_rifle_target } }
+ else = { set_variable = { side_ww1_SOV_rifle_ratio = 0 } }
+ if = { limit = { check_variable = { side_ww1_SOV_gun_target > 0 } } divide_variable = { side_ww1_SOV_gun_ratio = side_ww1_SOV_gun_target } }
+ else = { set_variable = { side_ww1_SOV_gun_ratio = 0 } }
+}
+
+side_ww1_GER_offer_red_bloc = {
+ if = { limit = { SOV = { exists = yes has_government = communism has_capitulated = no NOT = { has_war_with = ROOT } } } set_country_flag = { flag = side_ww1_GER_bloc_pending_SOV days = 60 } set_country_flag = { flag = side_ww1_GER_bloc_red days = 60 } add_political_power = -30 SOV = { country_event = { id = side_ww1_ger_rus.50 days = 1 } } }
+ else_if = { limit = { RUS = { exists = yes has_government = communism has_capitulated = no NOT = { has_war_with = ROOT } } } set_country_flag = { flag = side_ww1_GER_bloc_pending_RUS days = 60 } set_country_flag = { flag = side_ww1_GER_bloc_red days = 60 } add_political_power = -30 RUS = { country_event = { id = side_ww1_ger_rus.50 days = 1 } } }
+}
+side_ww1_GER_offer_continental_bloc = {
+ if = { limit = { SOV = { exists = yes has_government = neutrality has_capitulated = no NOT = { has_war_with = ROOT } } } set_country_flag = { flag = side_ww1_GER_bloc_pending_SOV days = 60 } set_country_flag = { flag = side_ww1_GER_bloc_continental days = 60 } add_political_power = -30 SOV = { country_event = { id = side_ww1_ger_rus.51 days = 1 } } }
+ else_if = { limit = { RUS = { exists = yes has_government = neutrality has_capitulated = no NOT = { has_war_with = ROOT } } } set_country_flag = { flag = side_ww1_GER_bloc_pending_RUS days = 60 } set_country_flag = { flag = side_ww1_GER_bloc_continental days = 60 } add_political_power = -30 RUS = { country_event = { id = side_ww1_ger_rus.51 days = 1 } } }
+}

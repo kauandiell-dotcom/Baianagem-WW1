@@ -1,0 +1,112 @@
+# 1911 operational roster. References and exclusions: docs/1911_naval_roster.json.
+units = {
+	fleet = {
+		name = "II. Abteilung"
+		naval_base = 6626
+		task_force = {
+			name = "II. Abteilung"
+			location = 6626
+			ship = { name = "SMS Habsburg" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Habsburg" } } }
+			ship = { name = "SMS Árpád" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Habsburg" } } }
+			ship = { name = "SMS Babenberg" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Habsburg" } } }
+			ship = { name = "SMS Radetzky" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Radetzky" } } }
+			ship = { name = "SMS Erzherzog Franz Ferdinand" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Radetzky" } } }
+			ship = { name = "SMS Admiral Spaun" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Admiral Spaun" } } }
+		}
+	}
+	fleet = {
+		name = "III. Abteilung"
+		naval_base = 6626
+		task_force = {
+			name = "III. Abteilung"
+			location = 6626
+			ship = { name = "SMS Erzherzog Karl" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Erzherzog Karl" } } }
+			ship = { name = "SMS Erzherzog Friedrich" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Erzherzog Karl" } } }
+			ship = { name = "SMS Erzherzog Ferdinand Max" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Erzherzog Karl" } } }
+		}
+	}
+	fleet = {
+		name = "IV. Division"
+		naval_base = 6626
+		task_force = {
+			name = "IV. Division"
+			location = 6626
+			ship = { name = "SMS Monarch" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad_legacy = { amount = 1 owner = AUS version_name = "Monarch" } } }
+			ship = { name = "SMS Wien" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad_legacy = { amount = 1 owner = AUS version_name = "Monarch" } } }
+			ship = { name = "SMS Budapest" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_ironclad_legacy = { amount = 1 owner = AUS version_name = "Monarch" } } }
+		}
+	}
+	fleet = {
+		name = "1. Kreuzerabteilung"
+		naval_base = 6626
+		task_force = {
+			name = "1. Kreuzerabteilung"
+			location = 6626
+			ship = { name = "SMS Kaiserin und Königin Maria Theresia" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = AUS version_name = "Kaiserin und Königin Maria Theresia" } } }
+		}
+	}
+	fleet = {
+		name = "Torpedoboot Flottille"
+		naval_base = 6626
+		task_force = {
+			name = "Torpedoboot Flottille"
+			location = 6626
+			ship = { name = "SMS Zenta" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Zenta" } } }
+			ship = { name = "SMS Aspern" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Zenta" } } }
+			ship = { name = "SMS Szigetvár" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Zenta" } } }
+			ship = { name = "SMS Panther" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Panther" } } }
+			ship = { name = "SMS Ulan" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Streiter" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Wildfang" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Scharfschutze" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Uskoke" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Huszár" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Turul" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Pandur" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Csikós" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Reke" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Dinara" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Velebit" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Huszár" } } }
+			ship = { name = "SMS Magnet" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Magnet" } } }
+			ship = { name = "SMS Satellit" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Satellit" } } }
+			ship = { name = "SMS Trabant" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Trabant" } } }
+			ship = { name = "SMS Planet" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Planet" } } }
+			ship = { name = "SMS Blitz" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Blitz" } } }
+			ship = { name = "SMS Meteor" definition = destroyer start_experience_factor = 0.2 equipment = { ww1_1911_torpedo_craft_legacy = { amount = 1 owner = AUS version_name = "Meteor" } } }
+		}
+	}
+	fleet = {
+		name = "Minenlegenkommando II"
+		naval_base = 6626
+		task_force = {
+			name = "Minenlegenkommando II"
+			location = 6626
+			ship = { name = "SMS Kronprinz Erzherzog Rudolf" definition = battleship start_experience_factor = 0.2 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = AUS version_name = "Kronprinz Erzherzog Rudolf" } } }
+		}
+	}
+	fleet = {
+		name = "China Kraft"
+		naval_base = 6626
+		task_force = {
+			name = "China Kraft"
+			location = 6626
+			ship = { name = "SMS Kaiserin Elizabeth" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = AUS version_name = "Kaiser Franz Joseph I" } } }
+		}
+	}
+	fleet = {
+		name = "Reservegeschwader"
+		naval_base = 6626
+		task_force = {
+			name = "Reservegeschwader"
+			location = 6626
+			ship = { name = "SMS Sankt Georg" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = AUS version_name = "Sankt Georg" } } }
+			ship = { name = "SMS Kaiser Karl VI" definition = heavy_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_armoured_cruiser_legacy = { amount = 1 owner = AUS version_name = "Kaiser Karl VI" } } }
+			ship = { name = "SMS Leopard" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Panther" } } }
+			ship = { name = "SMS Kaiser Franz Joseph I" definition = light_cruiser start_experience_factor = 0.2 equipment = { ww1_1911_protected_cruiser_legacy = { amount = 1 owner = AUS version_name = "Kaiser Franz Joseph I" } } }
+			ship = { name = "SM U-5" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = AUS version_name = "U-5" } } }
+			ship = { name = "SM U-6" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = AUS version_name = "U-5" } } }
+			ship = { name = "SM U-3" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = AUS version_name = "U-3" } } }
+			ship = { name = "SM U-4" definition = submarine start_experience_factor = 0.2 equipment = { ww1_1911_submarine_legacy = { amount = 1 owner = AUS version_name = "U-3" } } }
+		}
+	}
+}

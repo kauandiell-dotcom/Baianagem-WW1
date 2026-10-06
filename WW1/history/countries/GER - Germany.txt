@@ -9,7 +9,7 @@ capital = 64 # Berlin/Brandeburg
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	tech_recon = 1
 }
@@ -47,16 +47,14 @@ add_breakthrough_progress = {
 }
 
 set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_convoy_raiding
-set_grand_doctrine = new_battlefield_support
 
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "GER_1936_air_bba"
-		
+
 	else = {
 		# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_air_oob = "GER_1936_air_legacy"
-		
+
 	}
 }
 if = {
@@ -64,7 +62,7 @@ if = {
 		has_dlc = "La Resistance"
 		has_dlc = "By Blood Alone"
 	}
-	
+
 }
 
 starting_train_buffer = 2
@@ -99,37 +97,37 @@ if = {
 	limit = {
 		NOT = { has_dlc = "No Step Back" }
 	}
-	
+
 }
 if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
-	
+
 }
 if = {
 	limit = {
 		not = { has_dlc = "Man the Guns" }
 	}
-	
+
 	# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "GER_1936_naval"
 }
 if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
-	
+
 	# MBR: generic 1936 OOB is already loaded; disabled incompatible vanilla OOB. set_naval_oob = "GER_1936_naval_mtg"
 }
 if = {
 	limit = {
 		has_dlc = "La Resistance"
 	}
-	
+
 }
 
 #CONSUMER GOODS INCREASE AND PENALTIES VARIABLES
-set_variable = { GER_monthly_consumer_goods_start = 0.03 } #Starting amount of monthly increasing CG for MEFO Bills 
+set_variable = { GER_monthly_consumer_goods_start = 0.03 } #Starting amount of monthly increasing CG for MEFO Bills
 set_variable = { GER_change_monthly_CG_vichy_france = 0.005 } #Changing monthly CG when capitulating FRance
 set_variable = { GER_change_monthly_CG_price_controls = 0.005 } #Changing monthly CG when taking Price Controls focus
 set_variable = { GER_change_monthly_CG_occupied_states = 0.005 } #Changing monthly CG based on none-core states
@@ -509,29 +507,8 @@ if = {
 	### Ship Variants ###
 	## 1936 Start ##
 	# Light Cruisers #
-	create_equipment_variant = {
-		name = "Königsberg"
-		type = light_cruiser_1
-		parent_version = 0
-		upgrades = {
-			ship_reliability_upgrade = 2
-			ship_engine_upgrade = 2
-			ship_gun_upgrade = 2
-			ship_anti_air_upgrade = 2
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Deutschland"
-		type = heavy_cruiser_1
-		parent_version = 0
-		upgrades = {
-			ship_reliability_upgrade = 1
-			ship_engine_upgrade = 1
-			ship_armor_upgrade = 1
-			ship_gun_upgrade = 2
-		}
-	}
+
+
 }
 if = {
 	limit = {
@@ -656,221 +633,19 @@ if = {
 }
 if = {
 	limit = { has_dlc = "Man the Guns" }
-	create_equipment_variant = {
-		name = "Deutschland"
-		type = ship_hull_cruiser_panzerschiff
-		name_group = GER_PZ_HISTORICAL
-		parent_version = 0
-		modules = {
-        	fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_battery_slot = ship_heavy_battery_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			rear_1_custom_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_airplane_launcher_1
-    	}
-	}
-	create_equipment_variant = {
-		name = "Type 24"
-		type = ship_hull_light_1
-		name_group = GER_TB_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_mine_layer_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Zerstörer 1934"
-		type = ship_hull_light_2
-		name_group = GER_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_mine_layer_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Zerstörer 1934A"
-		type = ship_hull_light_2
-		name_group = GER_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
-		}
-	}
-	create_equipment_variant = {
-		name = "Type II"
-		type = ship_hull_submarine_1
-		name_group = GER_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Type VII"
-		type = ship_hull_submarine_2
-		name_group = GER_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_2
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = empty
-		}
-	}
-	create_equipment_variant = {
-		name = "Königsberg"
-		type = ship_hull_cruiser_1
-		name_group = GER_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = ship_light_medium_battery_1
-			rear_1_custom_slot = ship_mine_layer_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Emden"
-		type = ship_hull_cruiser_1
-		name_group = GER_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = empty
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			mid_1_custom_slot = ship_light_medium_battery_1
-			mid_2_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Bremse"
-		type = ship_hull_cruiser_1
-		name_group = GER_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			mid_1_custom_slot = ship_anti_air_1
-			mid_2_custom_slot = ship_mine_layer_1
-			rear_1_custom_slot = ship_mine_layer_1
-		}
-		obsolete = yes
-	}
-	create_equipment_variant = {
-		name = "Leipzig"
-		type = ship_hull_cruiser_2
-		name_group = GER_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = ship_anti_air_1
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = ship_light_medium_battery_1
-			rear_1_custom_slot = ship_airplane_launcher_1
-		}
-	}
-	create_equipment_variant = {
-		name = "Admiral Hipper"
-		type = ship_hull_cruiser_2
-		name_group = GER_CA_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			front_1_custom_slot = ship_anti_air_1
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = ship_airplane_launcher_1
-			rear_1_custom_slot = ship_medium_battery_2
-		}
-	}
-	create_equipment_variant = {
-		name = "Scharnhorst"
-		type = ship_hull_heavy_2
-		name_group = GER_BB_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bc_1
-			front_1_custom_slot = ship_anti_air_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_secondaries_1
-			rear_1_custom_slot = ship_heavy_battery_2
-		}
-	}
-	create_equipment_variant = {
-		name = "Deutschland"
-		type = ship_hull_pre_dreadnought
-		name_group = GER_PZ_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bb_1
-			front_1_custom_slot = ship_anti_air_1
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = empty
-		}
-		obsolete = yes
-	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 if = {
 	limit = {
@@ -891,7 +666,7 @@ if = {
 		obsolete = yes
 		icon = GFX_GER_early_bomber_medium
 	}
-	
+
 	create_equipment_variant = {
 		name = "Do 17"
 		type = tac_bomber_equipment_0
@@ -964,7 +739,7 @@ if = {
 		}
 		icon = "GFX_GER_tactical_bomber1_medium"
 	}
-	
+
 	create_equipment_variant = {
 		name = "Do 17"
 		type = medium_plane_airframe_1
@@ -1140,3 +915,278 @@ recruit_character = GER_clemens_von_delbruck
 recruit_character = GER_bernhard_von_bulow
 recruit_character = GER_gottlieb_von_jagow
 recruit_character = GER_arthur_zimmermann
+
+# BEGIN WW1_1911_NAVAL_OPENING
+set_technology = {
+	gw_artillery = 1
+	basic_train = 1
+	ww1_1911_armoured_cruiser_capability = 1
+	ww1_1911_battlecruiser_capability = 1
+	ww1_1911_dreadnought_capability = 1
+	ww1_1911_pre_dreadnought_capability = 1
+	ww1_1911_protected_cruiser_capability = 1
+	ww1_1911_submarine_capability = 1
+	ww1_1911_torpedo_craft_capability = 1
+}
+set_grand_doctrine = new_fleet_in_being
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Blücher"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Roon"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Scharnhorst"
+		type = ww1_1911_armoured_cruiser
+		icon = "GFX_WW1_1911_GER_scharnhorst"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Von der Tann"
+		type = ww1_1911_battlecruiser
+		icon = "GFX_WW1_1911_GER_von_der_tann"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Nassau"
+		type = ww1_1911_dreadnought
+		icon = "GFX_WW1_1911_GER_nassau"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Braunschweig"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_WW1_1911_GER_braunschweig"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Deutschland"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Wittelsbach"
+		type = ww1_1911_pre_dreadnought
+		icon = "GFX_WW1_1911_GER_wittelsbach"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Blitz"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Bremen"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Bussard"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_GER_bussard"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Dresden"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_GER_dresden"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Hela"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kolberg"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_GER_kolberg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Königsberg"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_WW1_1911_GER_konigsberg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Schwalbe"
+		type = ww1_1911_protected_cruiser
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U"
+		type = ww1_1911_submarine
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U 5"
+		type = ww1_1911_submarine
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Hai-Lung"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "S138"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "S90"
+		type = ww1_1911_torpedo_craft
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_ger_naval"
+}
+if = {
+	limit = { NOT = { has_dlc = "Man the Guns" } }
+	create_equipment_variant = {
+		name = "Blücher"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Roon"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_ww1_1911_armoured_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Scharnhorst"
+		type = ww1_1911_armoured_cruiser_legacy
+		icon = "GFX_WW1_1911_GER_scharnhorst"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Von der Tann"
+		type = ww1_1911_battlecruiser_legacy
+		icon = "GFX_WW1_1911_GER_von_der_tann"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Nassau"
+		type = ww1_1911_dreadnought_legacy
+		icon = "GFX_WW1_1911_GER_nassau"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Braunschweig"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_WW1_1911_GER_braunschweig"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Deutschland"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_ww1_1911_pre_dreadnought_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Wittelsbach"
+		type = ww1_1911_pre_dreadnought_legacy
+		icon = "GFX_WW1_1911_GER_wittelsbach"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Blitz"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Bremen"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Bussard"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_GER_bussard"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Dresden"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_GER_dresden"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Hela"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Kolberg"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_GER_kolberg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Königsberg"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_WW1_1911_GER_konigsberg"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Schwalbe"
+		type = ww1_1911_protected_cruiser_legacy
+		icon = "GFX_ww1_1911_protected_cruiser_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U"
+		type = ww1_1911_submarine_legacy
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "U 5"
+		type = ww1_1911_submarine_legacy
+		icon = "GFX_ww1_1911_submarine_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Hai-Lung"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "S138"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "S90"
+		type = ww1_1911_torpedo_craft_legacy
+		icon = "GFX_ww1_1911_torpedo_craft_medium"
+		parent_version = 0
+	}
+	set_naval_oob = "ww1_1911_ger_naval_legacy"
+}
+# END WW1_1911_NAVAL_OPENING

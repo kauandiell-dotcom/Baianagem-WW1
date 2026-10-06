@@ -1,0 +1,33 @@
+ENG_ww1_cabinet_policy = {
+ ENG_ww1_review_defence_estimates = {
+  icon = GFX_idea_ENG_ww1_balanced_estimates
+  visible = { has_country_flag = ENG_ww1_the_treasury_estimates_implemented }
+  available = { has_capitulated = no NOT = { has_country_flag = ENG_ww1_budget_review_pending } NOT = { has_country_flag = ENG_ww1_budget_revision_cooldown } }
+  cost = 25 days_re_enable = 180
+  complete_effect = { ww1_britain_open_budget_review = yes }
+  ai_will_do = { base = .1 modifier = { factor = 20 has_war_with = GER has_idea = ENG_ww1_naval_estimates } }
+ }
+ ENG_ww1_review_continental_policy = {
+  icon = GFX_goal_ww1_ENG_ww1_armed_neutrality
+  visible = { has_country_flag = ENG_ww1_reconsider_the_continental_policy_implemented has_country_flag = ENG_ww1_armed_neutrality_selected }
+  available = { has_war = no has_capitulated = no NOT = { has_country_flag = ENG_ww1_policy_review_pending } NOT = { has_country_flag = ENG_ww1_policy_review_cooldown } }
+  cost = 25 days_re_enable = 90
+  complete_effect = { ww1_britain_open_policy_review = yes }
+  ai_will_do = { base = .2 modifier = { factor = 10 GER = { has_war_with = FRA } } }
+ }
+ ENG_ww1_renew_allied_admission_request = {
+  icon = GFX_goal_ww1_ENG_ww1_continental_commitment
+  visible = { has_country_flag = ENG_ww1_reconsider_the_continental_policy_implemented has_country_flag = ENG_ww1_continental_commitment_selected is_in_faction = no }
+  available = {
+   has_capitulated = no NOT = { has_country_flag = ENG_ww1_rejoin_pending }
+   OR = {
+    FRA = { exists = yes is_faction_leader = yes has_capitulated = no NOT = { has_war_with = ROOT } }
+    SOV = { exists = yes is_faction_leader = yes has_capitulated = no NOT = { has_war_with = ROOT } }
+    RUS = { exists = yes is_faction_leader = yes has_capitulated = no NOT = { has_war_with = ROOT } }
+   }
+  }
+  cost = 20 days_re_enable = 90
+  complete_effect = { ww1_britain_request_entente_admission = yes }
+  ai_will_do = { base = 3 }
+ }
+}

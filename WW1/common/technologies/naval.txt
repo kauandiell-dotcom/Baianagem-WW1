@@ -1,4 +1,4 @@
-technologies = {
+﻿technologies = {
 
 	early_destroyer = {
 
@@ -734,7 +734,7 @@ technologies = {
 		#}
 		
 		research_cost = 2
-		start_year = 1911
+		start_year = 1936
 		
 		#folder = {
 			#name = naval_folder
@@ -744,9 +744,7 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 		}
-		allow = {
-			always = no
-		}
+		allow = { always = no date > 1934.12.31 }
 
 		categories = {
 			naval_equipment
@@ -758,11 +756,7 @@ technologies = {
 	
 	heavy_battleship2 = {
 
-		allow = {
-	 		ROOT = {
-				is_special_project_completed = sp:sp_naval_super_heavy_battleship
-			}
-		}
+		allow = { ROOT = { is_special_project_completed = sp:sp_naval_super_heavy_battleship } date > 1934.12.31 }
 		enable_equipments = { 
 			SH_battleship_2
 		}
@@ -773,7 +767,7 @@ technologies = {
 		research_cost = 2
 
 		is_special_project_tech = yes
-		start_year = 1919
+		start_year = 1944
 		
 		folder = {
 			name = naval_folder
@@ -986,10 +980,10 @@ technologies = {
 	}
 	
 	early_carrier = {
+ on_research_complete = { ww1_1917_carrier_design = yes custom_effect_tooltip = ww1_carrier_design_tt }
+ enable_equipment_modules = { ww1_1917_carrier_machinery ww1_1917_flight_deck ww1_1911_light }
 
-		enable_equipments = { 
-			carrier_1
-		}
+		enable_equipments = { ww1_1917_carrier ww1_1917_carrier_legacy }
 		
 		path = {
 			leads_to_tech = basic_carrier 
@@ -998,7 +992,7 @@ technologies = {
 		
 		research_cost = 1.5
 
-		start_year = 1897
+		start_year = 1917
 		
 		folder = {
 			name = naval_folder
@@ -1028,10 +1022,10 @@ technologies = {
 	}
 	
 	basic_carrier = {
+ on_research_complete = { ww1_1922_carrier_design = yes custom_effect_tooltip = ww1_carrier_design_tt }
+ enable_equipment_modules = { ww1_1917_carrier_machinery ww1_1922_flight_deck ww1_1911_light }
 
-		enable_equipments = { 
-			carrier_2
-		}
+		enable_equipments = { ww1_1922_carrier ww1_1922_carrier_legacy }
 		
 		path = {
 			leads_to_tech = improved_carrier 
@@ -1039,7 +1033,7 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 1911
+		start_year = 1922
 		
 		folder = {
 			name = naval_folder
@@ -1069,6 +1063,7 @@ technologies = {
 	}
 	
 	improved_carrier = {
+ allow = { date > 1934.12.31 }
 
 		enable_equipments = { 
 			carrier_3
@@ -1092,7 +1087,7 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 1915
+		start_year = 1940
 
 		on_research_complete = {
 			if = { 
@@ -1132,6 +1127,7 @@ technologies = {
 	}
 	
 	advanced_carrier = {
+ allow = { date > 1934.12.31 }
 
 		enable_equipments = { 
 			carrier_4
@@ -1140,7 +1136,7 @@ technologies = {
 		
 		research_cost = 2
 
-		start_year = 1919
+		start_year = 1944
 		
 		on_research_complete = {
 			if = {
@@ -1355,12 +1351,10 @@ technologies = {
 		}
 
 		research_cost = 1
-		start_year = 1911
+		start_year = 1936
 
 		# only from focus!!! #####
-		allow = {
-			always = no
-		}
+		allow = { always = no date > 1934.12.31 }
 	}
 
 	fleet_submarines = {

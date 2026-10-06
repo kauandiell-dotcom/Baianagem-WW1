@@ -1,0 +1,10 @@
+# COUNTRY scope: signed terms remain bound to the original Russian interlocutor.
+ww1_eastern_terms_valid = {
+ OR = { tag = SOV tag = RUS }
+ has_war_with = GER
+ GER = { exists = yes has_country_flag = ww1_eastern_terms_authorised }
+ OR = {
+  AND = { tag = SOV GER = { has_country_flag = ww1_eastern_terms_for_SOV } }
+  AND = { tag = RUS GER = { has_country_flag = ww1_eastern_terms_for_RUS } }
+ }
+}

@@ -1,0 +1,27 @@
+# Calibrated period hardware; research does not equip ships automatically.
+equipment_modules = {
+ ww1_1915_hydrophone = {
+  category = ship_sonar
+  add_stats = { sub_detection = 4 build_cost_ic = 40 }
+ }
+ ww1_1918_hydrophone = {
+  category = ship_sonar
+  add_stats = { sub_detection = 7 build_cost_ic = 70 }
+ }
+ ww1_1921_acoustic_detector = {
+  category = ship_sonar
+  add_stats = { sub_detection = 9 build_cost_ic = 100 }
+ }
+ ww1_1916_depth_charge = {
+  category = ship_depth_charge
+  add_stats = { sub_attack = 4 build_cost_ic = 80 }
+ }
+ ww1_1918_depth_charge = {
+  category = ship_depth_charge
+  add_stats = { sub_attack = 7 build_cost_ic = 120 }
+ }
+ ww1_1922_depth_charge = {
+  category = ship_depth_charge
+  add_stats = { sub_attack = 9 build_cost_ic = 150 }
+ }
+}

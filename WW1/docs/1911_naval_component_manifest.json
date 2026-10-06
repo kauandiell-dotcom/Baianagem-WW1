@@ -1,0 +1,568 @@
+{
+  "roles": {
+    "ironclad": {
+      "label": [
+        "Coastal ironclad",
+        "Encouraçado de defesa costeira"
+      ],
+      "year": 1880,
+      "archetype": "ship_hull_heavy",
+      "definition": "battleship",
+      "hp": 160,
+      "speed": 15,
+      "cost": 1200,
+      "crew": 500,
+      "range": 1800,
+      "fuel": 6,
+      "reliability": 0.6,
+      "visibility": 24,
+      "gun": "old_heavy",
+      "armor": "old_belt",
+      "engine": "heavy_coal",
+      "art": "TUR/mesudiye.png"
+    },
+    "pre_dreadnought": {
+      "label": [
+        "Pre-dreadnought battleship",
+        "Couraçado pré-dreadnought"
+      ],
+      "year": 1895,
+      "archetype": "ship_hull_heavy",
+      "definition": "battleship",
+      "hp": 260,
+      "speed": 18,
+      "cost": 1700,
+      "crew": 750,
+      "range": 2500,
+      "fuel": 10,
+      "reliability": 0.72,
+      "visibility": 28,
+      "gun": "mixed_heavy",
+      "armor": "pre_belt",
+      "engine": "heavy_coal",
+      "art": "GER/kaiser_friedrich_iii.png"
+    },
+    "dreadnought": {
+      "label": [
+        "Early dreadnought",
+        "Dreadnought inicial"
+      ],
+      "year": 1906,
+      "archetype": "ship_hull_heavy",
+      "definition": "battleship",
+      "hp": 330,
+      "speed": 21,
+      "cost": 2600,
+      "crew": 900,
+      "range": 3500,
+      "fuel": 15,
+      "reliability": 0.8,
+      "visibility": 30,
+      "gun": "uniform_heavy",
+      "armor": "dread_belt",
+      "engine": "heavy_coal",
+      "art": "GER/nassau.png"
+    },
+    "battlecruiser": {
+      "label": [
+        "Early battlecruiser",
+        "Cruzador de batalha inicial"
+      ],
+      "year": 1908,
+      "archetype": "ship_hull_heavy",
+      "definition": "battle_cruiser",
+      "hp": 260,
+      "speed": 26,
+      "cost": 2400,
+      "crew": 850,
+      "range": 3500,
+      "fuel": 18,
+      "reliability": 0.75,
+      "visibility": 28,
+      "gun": "uniform_heavy",
+      "armor": "battlecruiser_belt",
+      "engine": "heavy_coal",
+      "art": "ENG/indefatigable.png"
+    },
+    "armoured_cruiser": {
+      "label": [
+        "Armoured cruiser",
+        "Cruzador blindado"
+      ],
+      "year": 1895,
+      "archetype": "ship_hull_cruiser",
+      "definition": "heavy_cruiser",
+      "hp": 160,
+      "speed": 21,
+      "cost": 1300,
+      "crew": 600,
+      "range": 3500,
+      "fuel": 7,
+      "reliability": 0.75,
+      "visibility": 20,
+      "gun": "medium",
+      "armor": "cruiser_belt",
+      "engine": "cruiser_coal",
+      "art": "AUS/sankt_georg.png"
+    },
+    "protected_cruiser": {
+      "label": [
+        "Protected and scout cruiser",
+        "Cruzador protegido e de reconhecimento"
+      ],
+      "year": 1895,
+      "archetype": "ship_hull_cruiser",
+      "definition": "light_cruiser",
+      "hp": 100,
+      "speed": 23,
+      "cost": 750,
+      "crew": 350,
+      "range": 3000,
+      "fuel": 4,
+      "reliability": 0.78,
+      "visibility": 16,
+      "gun": "light_medium",
+      "armor": "protected_deck",
+      "engine": "cruiser_coal",
+      "art": "GER/dresden.png"
+    },
+    "torpedo_craft": {
+      "label": [
+        "Ocean-going torpedo-boat destroyer",
+        "Contratorpedeiro oceânico"
+      ],
+      "year": 1897,
+      "archetype": "ship_hull_light",
+      "definition": "destroyer",
+      "hp": 32,
+      "speed": 28,
+      "cost": 300,
+      "crew": 110,
+      "range": 1800,
+      "fuel": 1.5,
+      "reliability": 0.75,
+      "visibility": 8,
+      "gun": "light",
+      "armor": null,
+      "engine": "light_coal",
+      "art": "AUS/huszar.png"
+    },
+    "submarine": {
+      "label": [
+        "Coastal submarine",
+        "Submarino costeiro"
+      ],
+      "year": 1900,
+      "archetype": "ship_hull_submarine",
+      "definition": "submarine",
+      "hp": 18,
+      "speed": 10,
+      "cost": 250,
+      "crew": 30,
+      "range": 1200,
+      "fuel": 0.6,
+      "reliability": 0.65,
+      "visibility": 4,
+      "gun": null,
+      "armor": null,
+      "engine": "sub_engine",
+      "art": "RUS/akula.png"
+    }
+  },
+  "modules": {
+    "old_heavy": [
+      "ship_heavy_battery",
+      {
+        "hg_attack": 8,
+        "lg_attack": 2,
+        "build_cost_ic": 250
+      },
+      {
+        "hg_armor_piercing": 10,
+        "lg_armor_piercing": 3
+      },
+      [
+        "Early mixed heavy battery",
+        "Bateria pesada mista inicial"
+      ]
+    ],
+    "mixed_heavy": [
+      "ship_heavy_battery",
+      {
+        "hg_attack": 12,
+        "lg_attack": 5,
+        "build_cost_ic": 500
+      },
+      {
+        "hg_armor_piercing": 15,
+        "lg_armor_piercing": 5
+      },
+      [
+        "Mixed-calibre capital battery",
+        "Bateria principal de calibres mistos"
+      ]
+    ],
+    "uniform_heavy": [
+      "ship_heavy_battery",
+      {
+        "hg_attack": 28,
+        "build_cost_ic": 1000
+      },
+      {
+        "hg_armor_piercing": 20
+      },
+      [
+        "All-big-gun battery",
+        "Bateria uniforme de canhões pesados"
+      ]
+    ],
+    "medium": [
+      "ship_medium_battery",
+      {
+        "hg_attack": 8,
+        "lg_attack": 6,
+        "build_cost_ic": 500
+      },
+      {
+        "hg_armor_piercing": 10,
+        "lg_armor_piercing": 6
+      },
+      [
+        "Armoured-cruiser battery",
+        "Bateria de cruzador blindado"
+      ]
+    ],
+    "light_medium": [
+      "ship_light_medium_battery",
+      {
+        "lg_attack": 8,
+        "build_cost_ic": 250
+      },
+      {
+        "lg_armor_piercing": 6
+      },
+      [
+        "Quick-firing cruiser battery",
+        "Bateria de tiro rápido para cruzadores"
+      ]
+    ],
+    "light": [
+      "ship_light_battery",
+      {
+        "lg_attack": 3,
+        "build_cost_ic": 80
+      },
+      {
+        "lg_armor_piercing": 3
+      },
+      [
+        "Destroyer gun battery",
+        "Bateria de canhões de contratorpedeiro"
+      ]
+    ],
+    "old_belt": [
+      "ship_heavy_armor",
+      {
+        "armor_value": 5,
+        "build_cost_ic": 180
+      },
+      {},
+      [
+        "Early armour belt",
+        "Cinturão blindado inicial"
+      ]
+    ],
+    "pre_belt": [
+      "ship_heavy_armor",
+      {
+        "armor_value": 10,
+        "build_cost_ic": 350
+      },
+      {},
+      [
+        "Pre-dreadnought armour belt",
+        "Cinturão blindado de pré-dreadnought"
+      ]
+    ],
+    "dread_belt": [
+      "ship_heavy_armor",
+      {
+        "armor_value": 18,
+        "build_cost_ic": 550
+      },
+      {},
+      [
+        "Dreadnought armour belt",
+        "Cinturão blindado de dreadnought"
+      ]
+    ],
+    "battlecruiser_belt": [
+      "ship_heavy_armor",
+      {
+        "armor_value": 12,
+        "build_cost_ic": 350
+      },
+      {},
+      [
+        "Battlecruiser armour belt",
+        "Cinturão blindado de cruzador de batalha"
+      ]
+    ],
+    "cruiser_belt": [
+      "ship_cruiser_armor",
+      {
+        "armor_value": 6,
+        "build_cost_ic": 200
+      },
+      {},
+      [
+        "Armoured-cruiser belt",
+        "Cinturão de cruzador blindado"
+      ]
+    ],
+    "protected_deck": [
+      "ship_cruiser_armor",
+      {
+        "armor_value": 2,
+        "build_cost_ic": 80
+      },
+      {},
+      [
+        "Protected cruiser deck",
+        "Convés protegido de cruzador"
+      ]
+    ],
+    "heavy_coal": [
+      "heavy_ship_engine",
+      {
+        "build_cost_ic": 200
+      },
+      {},
+      [
+        "Capital-ship coal machinery",
+        "Máquinas a carvão para navios capitais"
+      ]
+    ],
+    "cruiser_coal": [
+      "cruiser_ship_engine",
+      {
+        "build_cost_ic": 100
+      },
+      {},
+      [
+        "Cruiser coal machinery",
+        "Máquinas a carvão para cruzadores"
+      ]
+    ],
+    "light_coal": [
+      "light_ship_engine",
+      {
+        "build_cost_ic": 60
+      },
+      {},
+      [
+        "Destroyer coal machinery",
+        "Máquinas a carvão para contratorpedeiros"
+      ]
+    ],
+    "sub_engine": [
+      "sub_ship_engine",
+      {
+        "build_cost_ic": 60
+      },
+      {},
+      [
+        "Early petrol-electric machinery",
+        "Máquinas iniciais a gasolina e eletricidade"
+      ]
+    ],
+    "torpedoes": [
+      "ship_torpedo",
+      {
+        "torpedo_attack": 12,
+        "build_cost_ic": 100
+      },
+      {},
+      [
+        "Single-tube Whitehead launchers",
+        "Lançadores simples de torpedos Whitehead"
+      ]
+    ],
+    "sub_torpedoes": [
+      "ship_torpedo",
+      {
+        "torpedo_attack": 12,
+        "build_cost_ic": 100
+      },
+      {},
+      [
+        "Early submarine torpedo tubes",
+        "Tubos lançadores iniciais de submarino"
+      ]
+    ]
+  },
+  "asset_provenance": {
+    "donor": "E:\\SteamLibrary\\steamapps\\workshop\\content\\394360\\3365515312",
+    "workshop_id": "3365515312",
+    "source": "https://steamcommunity.com/sharedfiles/filedetails/?id=3365515312",
+    "assets": [
+      {
+        "sprite": "GFX_ww1_1911_ironclad_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\TUR\\mesudiye.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/ironclad.png",
+        "sha256": "edc3969a630541325b85a0f3064e0ccea2857a4f04bbfdbda2d91d10bf14e12d"
+      },
+      {
+        "sprite": "GFX_ww1_1911_pre_dreadnought_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\GER\\kaiser_friedrich_iii.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/pre_dreadnought.png",
+        "sha256": "d79b26d75d4d362a4008c86190d4797d7c10005af3205c8d622d7db77a07f977"
+      },
+      {
+        "sprite": "GFX_ww1_1911_dreadnought_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\GER\\nassau.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/dreadnought.png",
+        "sha256": "52d4dc3c318b78f5672e473d1bef8ce9f4edcfc624c91b7b9e88682ec452aef4"
+      },
+      {
+        "sprite": "GFX_ww1_1911_battlecruiser_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\ENG\\indefatigable.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/battlecruiser.png",
+        "sha256": "f935e0fa7d404fd007c0a1aff900b747cdcdeda5bd5179807ea5fc1cc9053304"
+      },
+      {
+        "sprite": "GFX_ww1_1911_armoured_cruiser_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\AUS\\sankt_georg.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/armoured_cruiser.png",
+        "sha256": "df94b60283517d7c8f39298bcd6acc79419e888a50223fe9ba880ae2b2ac1571"
+      },
+      {
+        "sprite": "GFX_ww1_1911_protected_cruiser_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\GER\\dresden.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/protected_cruiser.png",
+        "sha256": "abe046dd03fd32113d348883bf93ef6d62e9b1e275e36764f67d8ed02f327ecc"
+      },
+      {
+        "sprite": "GFX_ww1_1911_torpedo_craft_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\AUS\\huszar.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/torpedo_craft.png",
+        "sha256": "85a094dda7e3f2a629a09c9f56c9e1c6f41e4fe3652295a2885151e8d87b5c05"
+      },
+      {
+        "sprite": "GFX_ww1_1911_submarine_medium",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\designer\\RUS\\akula.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/submarine.png",
+        "sha256": "1a36a76a534998e12d95851c406b1bb248040dea4cb7c19ed97eedb07c9a5864"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_old_heavy",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\heavy_battery_early.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_old_heavy.png",
+        "sha256": "4e34423ea3508cc3a3b2c1e0af2196b497662b764c07be8faaaab083cfaa0e77"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_mixed_heavy",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\heavy_battery_early.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_mixed_heavy.png",
+        "sha256": "4e34423ea3508cc3a3b2c1e0af2196b497662b764c07be8faaaab083cfaa0e77"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_uniform_heavy",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\heavy_battery_early.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_uniform_heavy.png",
+        "sha256": "4e34423ea3508cc3a3b2c1e0af2196b497662b764c07be8faaaab083cfaa0e77"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_medium",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\medium_battery_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_medium.dds",
+        "sha256": "2808b493b4eb4f1e4ebcb4a7351a0caf37e37ab8ec2a1c1d688259764e5f1614"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_light_medium",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\medium_light_battery_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_light_medium.dds",
+        "sha256": "9c235ccac141089d5238b629f4217168ee80cb78f414ab014b937cc0c75e2660"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_light",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\light_battery_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_light.dds",
+        "sha256": "fd6dad11ecfa6b49c874f16502758cb5fa9fd3f742a7d3474b4da6121edbaae6"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_old_belt",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\armor_thick_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_old_belt.dds",
+        "sha256": "09c591e64ba06e0200f05639e67238bb2b75c88fad178bb7f8cb8d8891cb1336"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_pre_belt",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\armor_thick_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_pre_belt.dds",
+        "sha256": "09c591e64ba06e0200f05639e67238bb2b75c88fad178bb7f8cb8d8891cb1336"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_dread_belt",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\armor_thick_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_dread_belt.dds",
+        "sha256": "09c591e64ba06e0200f05639e67238bb2b75c88fad178bb7f8cb8d8891cb1336"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_battlecruiser_belt",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\armor_thick_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_battlecruiser_belt.dds",
+        "sha256": "09c591e64ba06e0200f05639e67238bb2b75c88fad178bb7f8cb8d8891cb1336"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_cruiser_belt",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\armor_thick_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_cruiser_belt.dds",
+        "sha256": "09c591e64ba06e0200f05639e67238bb2b75c88fad178bb7f8cb8d8891cb1336"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_protected_deck",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\armor_thin_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_protected_deck.dds",
+        "sha256": "6439721f33a463116c5b642183eafcd112946317424db9433d8015b9f15d15d9"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_heavy_coal",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\steamengine_3.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_heavy_coal.png",
+        "sha256": "10d5f33383752528ef87fa2f07a8a3a017f7789e121bdc908febc9e8f8246365"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_cruiser_coal",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\steamengine_2.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_cruiser_coal.png",
+        "sha256": "75234bda37096c9edb828b0c523af945e88da2b0a5e7385f7628e106d23ce183"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_light_coal",
+        "source": "gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\steamengine_1.png",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_light_coal.png",
+        "sha256": "a24296958f28f3358fd22cf4ac14926374ce7fa7322b0986b4f1c8ca952db975"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_sub_engine",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\engine_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_sub_engine.dds",
+        "sha256": "9cfc00e1775f05d659c2e6759c6602a7ecdf889264d774c1b034a1dab5a8c5c8"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_torpedoes",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\ship_torpedo_launcher_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_torpedoes.dds",
+        "sha256": "1a24ec34879e2d30930b4f836a7f962c790a5d7ae7102ae8f561a61bbfe77234"
+      },
+      {
+        "sprite": "GFX_SMI_ww1_1911_sub_torpedoes",
+        "source": "HOI4:gfx\\interface\\equipmentdesigner\\naval\\modules\\icons\\ship_torpedo_launcher_icn.dds",
+        "destination": "gfx/interface/equipment/ww1_1911_naval/module_sub_torpedoes.dds",
+        "sha256": "1a24ec34879e2d30930b4f836a7f962c790a5d7ae7102ae8f561a61bbfe77234"
+      }
+    ],
+    "pending_class_art": []
+  }
+}

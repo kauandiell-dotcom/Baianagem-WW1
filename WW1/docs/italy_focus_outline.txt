@@ -1,0 +1,203 @@
+# Italy (ITA) focus outline — slice 0: structure only (no effects yet).
+# wing | id (without ITA_ww1_) | year | parents (a,b = all required; a/b = any one; - = root) | mutually exclusive ids | EN title | PT-BR title
+# Wings: pol = Politics & Society, eco = Economy & Mezzogiorno, dip = Diplomacy & Alignment, mil = Armed Forces, war = Campaigns & Postwar
+pol|giolitti_ministry|1911|-|-|The Giolitti Ministry|O ministério Giolitti
+pol|suffrage_law|1911|giolitti_ministry|-|Universal Male Suffrage|Sufrágio masculino universal
+pol|southern_inquiry|1911|giolitti_ministry|-|Inquiry into the South|Inquérito sobre o Sul
+pol|insurance_institute|1912|giolitti_ministry|-|National Insurance Institute|Instituto Nacional de Seguros
+pol|nationalist_association|1911|giolitti_ministry|-|The Nationalist Association|A Associação Nacionalista
+pol|socialist_congress|1912|suffrage_law|-|Congress of Reggio Emilia|O Congresso de Reggio Emilia
+pol|trade_union_recognition|1912|insurance_institute|-|Recognise the Labour Confederation|Reconhecer a Confederação do Trabalho
+pol|gentiloni_pact|1913|suffrage_law|-|The Gentiloni Pact|O Pacto Gentiloni
+pol|catholic_social_action|1913|gentiloni_pact|-|Catholic Social Action|Ação social católica
+pol|red_week|1914|socialist_congress,trade_union_recognition|-|Red Week|A Semana Vermelha
+pol|public_order_measures|1914|red_week|-|Restore Public Order|Restaurar a ordem pública
+pol|salandra_cabinet|1914|gentiloni_pact|-|The Salandra Cabinet|O gabinete Salandra
+pol|interventionist_press|1914|salandra_cabinet|neutralist_coalition|The Interventionist Press|A imprensa intervencionista
+pol|neutralist_coalition|1914|salandra_cabinet|interventionist_press|The Neutralist Coalition|A coalizão neutralista
+pol|popolo_ditalia|1914|interventionist_press|-|A Newspaper for the War|Um jornal para a guerra
+pol|quarto_rally|1915|interventionist_press|-|The Quarto Speech|O discurso de Quarto
+pol|giolitti_parecchio|1915|neutralist_coalition|-|Giolitti's "Parecchio"|O "parecchio" de Giolitti
+pol|parliament_against_street|1915|neutralist_coalition|-|Parliament Against the Street|O Parlamento contra a rua
+pol|radiant_may|1915|quarto_rally/parliament_against_street|-|The Radiant May|O Maio Radiante
+pol|war_censorship|1915|radiant_may|-|Wartime Censorship Law|Lei de censura de guerra
+pol|boselli_national_unity|1916|radiant_may/giolitti_parecchio|-|The Boselli National Unity Cabinet|O gabinete de união nacional de Boselli
+pol|women_war_economy|1916|boselli_national_unity|-|Women in the War Economy|As mulheres na economia de guerra
+pol|propaganda_service|1917|boselli_national_unity|-|The Propaganda Service|O Serviço de Propaganda
+pol|land_for_soldiers|1917|propaganda_service|-|Land for the Peasant-Soldiers|Terra para os soldados-camponeses
+pol|caporetto_inquiry|1917|boselli_national_unity|-|The Caporetto Inquiry|O inquérito de Caporetto
+pol|orlando_government|1917|caporetto_inquiry|-|The Orlando Government|O governo Orlando
+pol|combatants_opera|1917|orlando_government|-|National Veterans' Organisation|Obra Nacional dos Combatentes
+pol|mutilated_victory|1919|orlando_government|-|The Mutilated Victory|A Vitória Mutilada
+pol|nitti_cabinet|1919|mutilated_victory|-|The Nitti Cabinet|O gabinete Nitti
+pol|proportional_representation|1919|nitti_cabinet|-|Proportional Representation|Representação proporcional
+pol|popular_party|1919|nitti_cabinet|-|The Italian People's Party|O Partido Popular Italiano
+pol|fasci_di_combattimento|1919|mutilated_victory|-|The Combat Leagues|As ligas de combate
+pol|biennio_rosso|1920|nitti_cabinet|-|The Red Biennium|O Biênio Vermelho
+pol|factory_occupations|1920|biennio_rosso|-|The Factory Occupations|A ocupação das fábricas
+pol|third_giolitti|1920|factory_occupations|-|The Last Giolitti Ministry|O último ministério Giolitti
+pol|liberal_restoration|1921|third_giolitti|nationalist_order,socialist_turn|Liberal Restoration|Restauração liberal
+pol|nationalist_order|1921|fasci_di_combattimento|liberal_restoration,socialist_turn|The Nationalist Order|A ordem nacionalista
+pol|socialist_turn|1921|biennio_rosso|liberal_restoration,nationalist_order|The Socialist Turn|A guinada socialista
+pol|facta_coalition|1922|liberal_restoration|-|The Facta Coalition|A coalizão Facta
+pol|constitutional_reform|1923|facta_coalition|-|Constitutional Reform|Reforma constitucional
+pol|squadrist_mobilisation|1921|nationalist_order|-|Mobilise the Squads|Mobilizar os esquadrões
+pol|national_party|1921|nationalist_order|-|The National Party|O Partido Nacional
+pol|march_on_rome|1922|squadrist_mobilisation,national_party|-|The March on Rome|A Marcha sobre Roma
+pol|workers_councils|1921|socialist_turn|-|The Workers' Councils|Os conselhos operários
+pol|legalitarian_strike|1922|workers_councils|-|The Legalitarian Strike|A greve legalitária
+eco|industrial_triangle|1911|-|-|The Industrial Triangle|O Triângulo Industrial
+eco|turin_motor_industry|1911|industrial_triangle|-|Turin and the Motor Industry|Turim e a indústria automobilística
+eco|genoa_shipyards|1911|industrial_triangle|-|The Genoa Shipyards|Os estaleiros de Gênova
+eco|milan_banking|1911|industrial_triangle|-|Milan Banking|Os bancos de Milão
+eco|hydroelectric_power|1911|industrial_triangle|-|Alpine Hydroelectric Power|Hidrelétricas alpinas
+eco|mezzogiorno_programme|1912|industrial_triangle|-|The Mezzogiorno Programme|Programa para o Mezzogiorno
+eco|tariff_protection|1912|turin_motor_industry|free_trade_opening|Protective Tariffs|Tarifas protecionistas
+eco|free_trade_opening|1912|milan_banking|tariff_protection|Open the Markets|Abrir os mercados
+eco|ilva_steel_consortium|1912|tariff_protection|-|The Steel Consortium|O consórcio do aço
+eco|emigrant_remittances|1912|mezzogiorno_programme|-|Emigrant Remittances|Remessas dos emigrantes
+eco|apulian_aqueduct|1912|mezzogiorno_programme|-|The Apulian Aqueduct|O aqueduto da Apúlia
+eco|sicilian_sulphur|1912|mezzogiorno_programme|-|Sicilian Sulphur|O enxofre siciliano
+eco|land_reclamation|1913|apulian_aqueduct|-|Land Reclamation|Recuperação de terras
+eco|merchant_marine_subsidies|1912|genoa_shipyards|-|Merchant Marine Subsidies|Subsídios à marinha mercante
+eco|libya_colonisation|1913|emigrant_remittances|-|Settle the Fourth Shore|Colonizar a Quarta Margem
+eco|industrial_mobilisation_committee|1915|turin_motor_industry,genoa_shipyards|-|Industrial Mobilisation Committee|Comitê de Mobilização Industrial
+eco|munitions_undersecretariat|1915|industrial_mobilisation_committee|-|The Munitions Undersecretariat|A Subsecretaria de Munições
+eco|ansaldo_expansion|1915|munitions_undersecretariat|-|Expand the Ansaldo Works|Ampliar a Ansaldo
+eco|aero_engine_contracts|1916|munitions_undersecretariat|-|Aero-Engine Contracts|Contratos de motores aeronáuticos
+eco|war_loans|1915|milan_banking|-|National War Loans|Empréstimos nacionais de guerra
+eco|british_coal|1915|merchant_marine_subsidies|-|Secure British Coal|Garantir o carvão britânico
+eco|war_hydropower|1916|hydroelectric_power|-|Hydropower for the War|Energia hidrelétrica para a guerra
+eco|bread_rationing|1917|munitions_undersecretariat,british_coal|-|Bread Rationing|Racionamento do pão
+eco|price_controls|1917|bread_rationing|-|Price Controls|Controle de preços
+eco|grain_requisition|1917|land_reclamation|-|Grain Requisition|Requisição de grãos
+eco|refugee_relief|1917|bread_rationing|-|Relief for the Refugees|Auxílio aos refugiados
+eco|inflation_management|1918|war_loans|-|Manage Inflation|Conter a inflação
+eco|war_profiteers_inquiry|1918|price_controls|-|The Profiteers' Inquiry|O inquérito dos "tubarões"
+eco|industrial_demobilisation|1919|ansaldo_expansion,aero_engine_contracts|-|Industrial Demobilisation|Desmobilização industrial
+eco|veterans_land_settlement|1919|land_reclamation/grain_requisition|-|Veterans' Land Settlement|Assentamento de veteranos
+eco|public_works_programme|1920|industrial_demobilisation|-|Public Works Programme|Programa de obras públicas
+eco|discount_bank_crisis|1921|inflation_management,industrial_demobilisation|-|The Discount Bank Crisis|A crise do Banco de Desconto
+eco|bank_rescue_consortium|1922|discount_bank_crisis|-|Bank Rescue Consortium|Consórcio de salvamento bancário
+eco|southern_development_charter|1922|public_works_programme,veterans_land_settlement|-|Southern Development Charter|Carta de desenvolvimento do Sul
+eco|budget_balancing|1923|bank_rescue_consortium|-|Balance the Budget|Equilibrar o orçamento
+dip|triple_alliance|1911|-|-|The Triple Alliance|A Tríplice Aliança
+dip|renew_triple_alliance|1912|triple_alliance|mediterranean_balance,armed_neutrality_doctrine|Renew the Triple Alliance|Renovar a Tríplice Aliança
+dip|mediterranean_balance|1912|triple_alliance|renew_triple_alliance,armed_neutrality_doctrine|The Mediterranean Balance|O equilíbrio no Mediterrâneo
+dip|armed_neutrality_doctrine|1912|triple_alliance|renew_triple_alliance,mediterranean_balance|Armed Independence|Independência armada
+dip|albanian_question|1912|triple_alliance|-|The Albanian Question|A questão albanesa
+dip|balkan_league_crisis|1912|albanian_question|-|The Balkan League Crisis|A crise da Liga Balcânica
+dip|london_conference|1913|balkan_league_crisis|-|The London Conference|A Conferência de Londres
+dip|naval_convention_vienna|1913|renew_triple_alliance|-|Naval Convention with Vienna|Convenção naval com Viena
+dip|franco_italian_agreement|1913|mediterranean_balance|-|Franco-Italian Understanding|Entendimento franco-italiano
+dip|british_friendship|1913|mediterranean_balance|-|British Friendship|Amizade britânica
+dip|sarajevo_crisis|1914|naval_convention_vienna/franco_italian_agreement/armed_neutrality_doctrine|-|The July Crisis|A crise de julho
+dip|declare_neutrality|1914|sarajevo_crisis|honour_alliance|Declare Neutrality|Declarar neutralidade
+dip|honour_alliance|1914|sarajevo_crisis|declare_neutrality|Honour the Alliance|Honrar a aliança
+dip|vienna_compensation_talks|1914|declare_neutrality|entente_overtures|Compensation Talks with Vienna|Negociar compensações com Viena
+dip|entente_overtures|1914|declare_neutrality|vienna_compensation_talks|Overtures to the Entente|Aproximação com a Entente
+dip|treaty_of_london|1915|entente_overtures|central_concessions_accord,continued_neutrality|The Treaty of London|O Tratado de Londres
+dip|central_concessions_accord|1915|vienna_compensation_talks|treaty_of_london,continued_neutrality|Accept Vienna's Concessions|Aceitar as concessões de Viena
+dip|continued_neutrality|1915|declare_neutrality|treaty_of_london,central_concessions_accord|Maintain Neutrality|Manter a neutralidade
+dip|denounce_triple_alliance|1915|treaty_of_london|-|Denounce the Triple Alliance|Denunciar a Tríplice Aliança
+dip|declare_war_on_austria|1915|denounce_triple_alliance|-|War on Austria-Hungary|Guerra à Áustria-Hungria
+dip|central_powers_entry|1915|honour_alliance/central_concessions_accord|-|Enter the War Beside Berlin and Vienna|Entrar na guerra ao lado de Berlim e Viena
+dip|central_joint_command|1915|central_powers_entry|-|Joint Command with Vienna|Comando conjunto com Viena
+dip|central_adriatic_fleet|1916|central_joint_command|-|The Combined Adriatic Fleet|A frota adriática combinada
+dip|nice_and_tunisia_claims|1916|central_powers_entry|-|Claims on Nice and Tunisia|Reivindicações sobre Nice e a Tunísia
+dip|armed_mediator|1916|continued_neutrality|-|Mediate for Peace|Mediar a paz
+dip|declare_war_on_germany|1916|declare_war_on_austria|-|War on Germany|Guerra à Alemanha
+dip|salonika_contingent|1916|declare_war_on_germany|-|The Salonika Contingent|O contingente de Salônica
+dip|albanian_protectorate|1917|declare_war_on_austria|-|The Albanian Protectorate|O protetorado da Albânia
+dip|saint_jean_de_maurienne|1917|declare_war_on_austria|-|Saint-Jean-de-Maurienne|Saint-Jean-de-Maurienne
+dip|supreme_war_council|1917|declare_war_on_germany|-|The Supreme War Council|O Conselho Supremo de Guerra
+dip|oppressed_peoples_congress|1918|supreme_war_council|-|Congress of Oppressed Peoples|Congresso dos povos oprimidos
+dip|vatican_peace_note|1917|declare_war_on_austria|-|The Vatican Peace Note|A nota de paz do Vaticano
+dip|neutral_peace_conference|1917|armed_mediator|-|Host a Neutral Peace Conference|Sediar uma conferência de paz neutra
+dip|wilsonian_conflict|1919|oppressed_peoples_congress|-|Wilson and the Adriatic|Wilson e o Adriático
+dip|paris_delegation|1919|wilsonian_conflict|-|The Paris Delegation|A delegação em Paris
+dip|treaty_of_saint_germain|1919|paris_delegation|-|The Treaty of Saint-Germain|O Tratado de Saint-Germain
+dip|dalmatian_claims|1919|paris_delegation|-|The Dalmatian Claims|As reivindicações dálmatas
+dip|treaty_of_rapallo|1920|dalmatian_claims|-|The Treaty of Rapallo|O Tratado de Rapallo
+dip|washington_conference|1922|treaty_of_rapallo|-|The Washington Conference|A Conferência de Washington
+dip|corfu_incident|1923|washington_conference|-|The Corfu Incident|O incidente de Corfu
+mil|army_staff_reorganisation|1911|-|-|Reorganise the General Staff|Reorganizar o Estado-Maior
+mil|libya_lessons|1912|army_staff_reorganisation|-|Lessons of the Libyan War|Lições da Guerra da Líbia
+mil|cadorna_chief_of_staff|1914|army_staff_reorganisation|-|Cadorna Takes the Staff|Cadorna assume o Estado-Maior
+mil|alpini_expansion|1911|army_staff_reorganisation|-|Expand the Alpini|Ampliar os Alpini
+mil|artillery_modernisation|1912|army_staff_reorganisation|-|Artillery Modernisation|Modernização da artilharia
+mil|mountain_artillery|1913|alpini_expansion|-|Mountain Artillery|Artilharia de montanha
+mil|heavy_guns|1914|artillery_modernisation|-|Heavy Guns|Canhões pesados
+mil|machine_guns|1914|artillery_modernisation|-|Machine-Gun Companies|Companhias de metralhadoras
+mil|north_east_mobilisation|1914|cadorna_chief_of_staff|-|The North-East Mobilisation Plan|Plano de mobilização do Nordeste
+mil|frontier_fortifications|1914|alpini_expansion|-|Frontier Fortifications|Fortificações de fronteira
+mil|offensive_doctrine|1915|north_east_mobilisation|war_of_position|The Offensive Doctrine|A doutrina ofensiva
+mil|war_of_position|1915|north_east_mobilisation|offensive_doctrine|The War of Position|A guerra de posição
+mil|trench_mortars|1915|heavy_guns|-|Trench Mortars|Morteiros de trincheira
+mil|gas_defence|1916|trench_mortars|-|Gas Defence|Defesa contra gases
+mil|reserve_officer_schools|1916|offensive_doctrine/war_of_position|-|Reserve Officer Schools|Escolas de oficiais da reserva
+mil|dismounted_cavalry|1916|machine_guns|-|Dismounted Cavalry|Cavalaria desmontada
+mil|assault_units|1917|reserve_officer_schools|-|Assault Units|Unidades de assalto
+mil|diaz_takes_command|1917|offensive_doctrine/war_of_position|-|Diaz Takes Command|Diaz assume o comando
+mil|elastic_defence|1917|diaz_takes_command|offensive_pressure|Elastic Defence|Defesa elástica
+mil|offensive_pressure|1918|diaz_takes_command|elastic_defence|Sustained Offensive Pressure|Pressão ofensiva contínua
+mil|motor_transport|1917|gas_defence|-|Motor Transport Corps|Corpo de transporte motorizado
+mil|army_demobilisation|1919|elastic_defence/offensive_pressure|-|Army Demobilisation|Desmobilização do exército
+mil|carabinieri_reinforcement|1919|army_demobilisation|-|Reinforce the Carabinieri|Reforçar os Carabineiros
+mil|postwar_army_reform|1920|army_demobilisation|-|Postwar Army Reform|Reforma do exército no pós-guerra
+mil|army_budget_cuts|1922|postwar_army_reform|-|Army Budget Cuts|Cortes no orçamento do exército
+mil|naval_estimates|1911|-|-|The Naval Estimates|O orçamento naval
+mil|cavour_class|1911|naval_estimates|-|The Cavour-Class Battleships|Os couraçados classe Cavour
+mil|andrea_doria_class|1912|cavour_class|-|The Andrea Doria Class|A classe Andrea Doria
+mil|fast_cruisers|1912|naval_estimates|-|Fast Scout Cruisers|Cruzadores de reconhecimento
+mil|taranto_base|1913|naval_estimates|-|The Taranto Base|A base de Taranto
+mil|brindisi_venice_bases|1913|taranto_base|-|Brindisi and Venice|Brindisi e Veneza
+mil|submarine_programme|1913|naval_estimates|-|The Submarine Programme|O programa de submarinos
+mil|torpedo_boats|1913|fast_cruisers|-|Torpedo Boat Flotillas|Flotilhas de torpedeiros
+mil|adriatic_watch|1914|brindisi_venice_bases|-|The Adriatic Watch|A vigilância do Adriático
+mil|otranto_barrage|1915|adriatic_watch|-|The Otranto Barrage|A barragem de Otranto
+mil|battleship_fleet_in_being|1915|andrea_doria_class|flotilla_warfare|Fleet in Being|Frota em potencial
+mil|flotilla_warfare|1915|torpedo_boats|battleship_fleet_in_being|Flotilla Warfare|Guerra de flotilhas
+mil|mas_boats|1915|flotilla_warfare|-|The MAS Boats|Os barcos MAS
+mil|adriatic_convoys|1916|otranto_barrage|-|Adriatic Convoys|Comboios no Adriático
+mil|anti_submarine_patrols|1917|adriatic_convoys|-|Anti-Submarine Patrols|Patrulhas antissubmarino
+mil|human_torpedoes|1918|mas_boats|-|The Human Torpedoes|Os torpedos tripulados
+mil|postwar_fleet_review|1919|anti_submarine_patrols/battleship_fleet_in_being/human_torpedoes|-|The Postwar Fleet Review|Revisão da frota do pós-guerra
+mil|capital_ship_modernisation|1922|postwar_fleet_review|-|Capital Ship Modernisation|Modernização dos couraçados
+mil|aviators_battalion|1911|-|-|The Aviators' Battalion|O Batalhão de Aviadores
+mil|pilot_schools|1912|aviators_battalion|-|Pilot Schools|Escolas de pilotagem
+mil|caproni_bombers|1914|pilot_schools|-|The Caproni Bombers|Os bombardeiros Caproni
+mil|aeronautical_corps|1915|pilot_schools|-|The Military Aeronautical Corps|O Corpo Aeronáutico Militar
+mil|isotta_engines|1915|aeronautical_corps|-|Isotta Fraschini Engines|Motores Isotta Fraschini
+mil|flying_boats|1915|aeronautical_corps|-|Flying Boats|Hidroaviões
+mil|sva_reconnaissance|1916|isotta_engines|-|SVA Reconnaissance Aircraft|Aviões de reconhecimento SVA
+mil|fighter_squadrons|1916|isotta_engines|-|Fighter Squadrons|Esquadrilhas de caça
+mil|ace_squadrons|1917|fighter_squadrons|-|The Elite Squadrons|As esquadrilhas de elite
+mil|strategic_bombing|1917|caproni_bombers,isotta_engines|-|Strategic Bombing|Bombardeio estratégico
+mil|vienna_flight|1918|sva_reconnaissance|-|The Flight over Vienna|O voo sobre Viena
+mil|air_autonomy_debate|1919|strategic_bombing,ace_squadrons|-|The Air Autonomy Debate|O debate sobre a autonomia aérea
+war|libyan_question|1911|-|-|The Libyan Question|A Questão Líbia
+war|ultimatum_to_the_porte|1911|libyan_question|-|Ultimatum to the Porte|Ultimato à Sublime Porta
+war|tripoli_landing|1911|ultimatum_to_the_porte|-|The Tripoli Landing|O desembarque em Trípoli
+war|first_aerial_bombing|1911|tripoli_landing|-|The First Aerial Bombing|O primeiro bombardeio aéreo
+war|inland_oases_campaign|1912|tripoli_landing|-|The Inland Oases Campaign|A campanha dos oásis
+war|dodecanese_occupation|1912|tripoli_landing|-|Occupy the Dodecanese|Ocupar o Dodecaneso
+war|treaty_of_ouchy|1912|inland_oases_campaign,dodecanese_occupation|-|The Treaty of Ouchy|O Tratado de Ouchy
+war|cyrenaica_pacification|1913|treaty_of_ouchy|-|Pacify Cyrenaica|Pacificar a Cirenaica
+war|isonzo_offensives|1915|-|french_alpine_front|The Isonzo Offensives|As ofensivas do Isonzo
+war|french_alpine_front|1915|-|isonzo_offensives|The Alpine Front Against France|A frente alpina contra a França
+war|riviera_offensive|1916|french_alpine_front|-|The Riviera Offensive|A ofensiva da Riviera
+war|tunisian_landing|1917|riviera_offensive|-|The Tunisian Landing|O desembarque na Tunísia
+war|trentino_defence|1916|isonzo_offensives|-|Defend the Trentino|Defender o Trentino
+war|gorizia|1916|isonzo_offensives|-|The Capture of Gorizia|A tomada de Gorízia
+war|bainsizza|1917|gorizia|-|The Bainsizza Plateau|O planalto de Bainsizza
+war|caporetto|1917|bainsizza|-|Caporetto|Caporetto
+war|piave_line|1917|caporetto|-|The Piave Line|A linha do Piave
+war|solstice_battle|1918|piave_line|-|The Battle of the Solstice|A Batalha do Solstício
+war|vittorio_veneto|1918|solstice_battle,trentino_defence|-|Vittorio Veneto|Vittorio Veneto
+war|villa_giusti_armistice|1918|vittorio_veneto|-|The Villa Giusti Armistice|O armistício de Villa Giusti
+war|trento_trieste_integration|1919|villa_giusti_armistice|-|Integrate Trento and Trieste|Integrar Trento e Trieste
+war|fiume_regency|1919|villa_giusti_armistice|-|The Fiume Enterprise|A Empresa de Fiume
+war|christmas_of_blood|1920|fiume_regency|-|The Christmas of Blood|O Natal de Sangue
+war|unknown_soldier|1921|trento_trieste_integration|-|The Unknown Soldier|O Soldado Desconhecido
+war|libyan_reconquest|1922|cyrenaica_pacification|-|The Reconquest of Libya|A reconquista da Líbia

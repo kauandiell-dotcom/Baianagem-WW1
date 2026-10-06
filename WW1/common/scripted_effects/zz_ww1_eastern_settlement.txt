@@ -1,0 +1,58 @@
+# COUNTRY scope: Russia accepts verified German terms.
+# Annexation is limited to German-occupied Polish/Baltic districts; no interior or unoccupied states are transferred.
+ww1_conclude_eastern_settlement = {
+ if = {
+  limit = { ww1_eastern_terms_valid = yes }
+
+ custom_effect_tooltip = ww1_eastern_territorial_terms_tt
+ if = { limit = { 10 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 10 } }
+ if = { limit = { 11 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 11 } }
+ if = { limit = { 12 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 12 } }
+ if = { limit = { 13 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 13 } }
+ if = { limit = { 87 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 87 } }
+ if = { limit = { 90 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 90 } }
+ if = { limit = { 92 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 92 } }
+ if = { limit = { 95 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 95 } }
+ if = { limit = { 97 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 97 } }
+ if = { limit = { 98 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 98 } }
+ if = { limit = { 189 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 189 } }
+ if = { limit = { 190 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 190 } }
+ if = { limit = { 191 = { is_owned_by = ROOT is_controlled_by = GER } } GER = { transfer_state = 191 } }
+ if = { limit = { is_in_faction = yes } faction_leader = { remove_from_faction = ROOT } }
+ if = { limit = { has_war_with = GER } white_peace = GER }
+ if = { limit = { country_exists = AUS has_war_with = AUS AUS = { is_in_faction_with = GER } } white_peace = AUS }
+ if = { limit = { country_exists = TUR has_war_with = TUR TUR = { is_in_faction_with = GER } } white_peace = TUR }
+ if = { limit = { country_exists = BUL has_war_with = BUL BUL = { is_in_faction_with = GER } } white_peace = BUL }
+ clr_country_flag = ww1_eastern_negotiations_started
+ set_country_flag = ww1_eastern_settlement_signed
+ GER = {
+  clr_country_flag = ww1_eastern_terms_authorised
+  clr_country_flag = ww1_eastern_terms_for_SOV
+  clr_country_flag = ww1_eastern_terms_for_RUS
+  set_country_flag = ww1_eastern_settlement_signed
+  country_event = { id = ww1_eastern.2 days = 1 }
+ }
+ # No economic crisis is erased: recovery is governed by actual conditions.
+
+ }
+}
+
+# COUNTRY scope GER, once weekly. No stale terms survive peace, disappearance or a changed interlocutor.
+ww1_GER_update_eastern_negotiations = {
+ if = {
+  limit = {
+   has_country_flag = ww1_eastern_terms_authorised
+   NOT = {
+    OR = {
+     AND = { has_country_flag = ww1_eastern_terms_for_SOV country_exists = SOV has_war_with = SOV }
+     AND = { has_country_flag = ww1_eastern_terms_for_RUS country_exists = RUS has_war_with = RUS }
+    }
+   }
+  }
+  clr_country_flag = ww1_eastern_terms_authorised
+  clr_country_flag = ww1_eastern_terms_for_SOV
+  clr_country_flag = ww1_eastern_terms_for_RUS
+ }
+ if = { limit = { country_exists = SOV NOT = { has_war_with = SOV } } SOV = { clr_country_flag = ww1_eastern_negotiations_started } }
+ if = { limit = { country_exists = RUS NOT = { has_war_with = RUS } } RUS = { clr_country_flag = ww1_eastern_negotiations_started } }
+}

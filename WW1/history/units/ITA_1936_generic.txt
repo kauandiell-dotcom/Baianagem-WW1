@@ -1,5 +1,5 @@
 # Kingdom of Italy (Regno d'Italia) - Starting Order of Battle (1911)
-# Balanced, authentic historical composition with elite Arditi Shock Troops, Alpini & Bersaglieri
+# Balanced, authentic historical composition with Alpini and Bersaglieri; assault formations are not yet present
 
 division_template = {
 	name = "Divisione di Fanteria"
@@ -52,7 +52,7 @@ division_template = {
 }
 
 division_template = {
-	name = "Reparto d'Assalto Arditi"
+	name = "Brigata Bersaglieri"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -60,9 +60,9 @@ division_template = {
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
-		italian_arditi = { x = 2 y = 0 }
-		italian_arditi = { x = 2 y = 1 }
-		italian_arditi = { x = 2 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
 	}
 	support = {
 		engineer = { x = 0 y = 0 }
@@ -78,10 +78,10 @@ units = {
 	division = { name = "3a Divisione Alpina (Julia)" location = 782 division_template = "Divisione Alpina" start_experience_factor = 0.35 }
 	division = { name = "4a Divisione Alpina (Cuneense)" location = 603 division_template = "Divisione Alpina" start_experience_factor = 0.3 }
 
-	division = { name = "1° Reparto d'Assalto Arditi" location = 782 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
-	division = { name = "2° Reparto d'Assalto Arditi" location = 782 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
-	division = { name = "3° Reparto d'Assalto Arditi" location = 611 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
-	division = { name = "4° Reparto d'Assalto Arditi" location = 603 division_template = "Reparto d'Assalto Arditi" start_experience_factor = 0.4 }
+	division = { name = "1° Brigata Bersaglieri" location = 782 division_template = "Brigata Bersaglieri" start_experience_factor = 0.4 }
+	division = { name = "2° Brigata Bersaglieri" location = 782 division_template = "Brigata Bersaglieri" start_experience_factor = 0.4 }
+	division = { name = "3° Brigata Bersaglieri" location = 611 division_template = "Brigata Bersaglieri" start_experience_factor = 0.4 }
+	division = { name = "4° Brigata Bersaglieri" location = 603 division_template = "Brigata Bersaglieri" start_experience_factor = 0.4 }
 
 	division = { name = "1a Divisione di Fanteria (Superga)" location = 782 division_template = "Divisione di Fanteria" start_experience_factor = 0.25 }
 	division = { name = "2a Divisione di Fanteria (Sforzesca)" location = 782 division_template = "Divisione di Fanteria" start_experience_factor = 0.25 }

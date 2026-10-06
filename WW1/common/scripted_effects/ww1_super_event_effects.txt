@@ -1,0 +1,13 @@
+﻿# Presentation only. Diplomacy declares wars and pays their actual costs.
+# Called by ww1_outbreak.2. Global guard prevents duplicate broadcasts/audio.
+ww1_activate_great_war_super_event = {
+	if = {
+		limit = { NOT = { has_global_flag = ww1_great_war_broadcast_seen } }
+		set_global_flag = ww1_great_war_broadcast_seen
+		every_country = {
+			limit = { is_ai = no }
+			set_country_flag = { flag = ww1_super_event_outbreak_active days = 30 }
+			scoped_play_song = "ww1_great_war_dispatch"
+		}
+	}
+}

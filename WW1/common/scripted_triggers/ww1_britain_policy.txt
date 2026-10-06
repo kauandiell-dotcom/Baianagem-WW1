@@ -1,0 +1,12 @@
+# Scope of the receiving allied faction leader; FROM is the British applicant.
+ww1_britain_rejoin_offer_valid = {
+ is_faction_leader = yes
+ has_capitulated = no
+ FROM = { exists = yes tag = ENG has_capitulated = no is_in_faction = no has_country_flag = ENG_ww1_rejoin_pending }
+ NOT = { has_war_with = FROM }
+ OR = {
+  AND = { tag = FRA FROM = { has_country_flag = ENG_ww1_rejoin_to_FRA } }
+  AND = { tag = SOV FROM = { has_country_flag = ENG_ww1_rejoin_to_SOV } }
+  AND = { tag = RUS FROM = { has_country_flag = ENG_ww1_rejoin_to_RUS } }
+ }
+}

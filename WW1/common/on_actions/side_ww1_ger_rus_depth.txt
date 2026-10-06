@@ -1,0 +1,16 @@
+﻿on_actions = {
+ on_weekly_GER = { effect = { if = { limit = { original_tag = GER }
+ side_ww1_normalize_GER_industry = yes
+ side_ww1_normalize_GER_staff = yes
+ side_ww1_normalize_GER_labor = yes
+ if = { limit = { has_war = yes } set_country_flag = side_ww1_GER_has_fought }
+ if = { limit = { has_war = no } side_ww1_clear_GER_priorities = yes }
+ } } }
+ on_weekly_SOV = { effect = { if = { limit = { original_tag = SOV }
+ side_ww1_normalize_SOV_industry = yes
+ side_ww1_normalize_SOV_staff = yes
+ side_ww1_normalize_SOV_agrarian = yes
+ if = { limit = { has_war = yes } set_country_flag = side_ww1_SOV_has_fought }
+ if = { limit = { has_war = no } side_ww1_clear_SOV_priorities = yes }
+ } } }
+}

@@ -1,0 +1,11 @@
+ww1_britain_irish_devolution = {
+ icon = GFX_idea_ENG_ww1_irish_conciliation
+ enable = { always = yes }
+ local_resources_factor = -.05
+ local_building_slots_factor = .05
+}
+ww1_britain_irish_exemption = {
+ icon = GFX_idea_ENG_ww1_territorial_establishment
+ enable = { always = yes }
+ recruitable_population_factor = ENG.ww1_britain_irish_exemption_factor
+}

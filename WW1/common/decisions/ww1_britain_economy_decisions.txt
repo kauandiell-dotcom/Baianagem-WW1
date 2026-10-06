@@ -1,0 +1,18 @@
+ENG_ww1_empire_policy = {
+ ENG_ww1_coal_to_allies = {
+  icon = GFX_decision_ENG_ww1_coal_to_allies
+  visible = { has_country_flag = ENG_ww1_coal_allocation_done }
+  available = { has_war = yes has_capitulated = no is_in_faction = yes }
+  cost = 15 days_re_enable = 180
+  complete_effect = { every_other_country = { limit = { is_in_faction_with = ROOT } country_event = { id = ww1_britain_eco.10 } } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_war_savings_drive = {
+  icon = GFX_decision_ENG_ww1_war_savings_drive
+  visible = { has_country_flag = ENG_ww1_austerity_measures }
+  available = { has_war = yes has_capitulated = no }
+  cost = 20 days_re_enable = 240
+  complete_effect = { add_to_variable = { ww1_britain_debt_burden = -2 } add_to_variable = { ww1_britain_labour_support = -1 } }
+  ai_will_do = { base = 1 modifier = { factor = 3 check_variable = { ww1_britain_debt_burden > 40 } } }
+ }
+}

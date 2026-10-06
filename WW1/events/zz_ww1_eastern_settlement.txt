@@ -1,0 +1,83 @@
+# Eastern negotiations: both sides must agree; only already occupied border districts are conceded.
+add_namespace = ww1_eastern
+country_event = {
+ id = ww1_diplomacy.31
+ title = ww1_diplomacy.31.t
+ desc = ww1_diplomacy.31.d
+ picture = GFX_event_ww1_eastern_invitation
+ is_triggered_only = yes
+ trigger = { OR = { tag = SOV tag = RUS } has_war_with = GER }
+ option = {
+  name = ww1_diplomacy.31.a
+  ai_chance = { base = 25 modifier = { factor = 4 has_war_support < 0.35 } modifier = { factor = 3 surrender_progress > 0.25 } }
+  set_country_flag = { flag = ww1_eastern_negotiations_started days = 45 }
+  GER = { country_event = { id = ww1_diplomacy.30 days = 2 } }
+ }
+ option = {
+  name = ww1_diplomacy.31.b
+  ai_chance = { base = 75 }
+  GER = { country_event = { id = ww1_eastern.1 days = 2 } }
+ }
+}
+country_event = {
+ id = ww1_diplomacy.32
+ title = ww1_diplomacy.32.t
+ desc = ww1_diplomacy.32.d
+ picture = GFX_event_ww1_eastern_settlement
+ is_triggered_only = yes
+ trigger = { OR = { tag = SOV tag = RUS } has_war_with = GER FROM = { exists = yes tag = GER has_country_flag = ww1_eastern_terms_authorised }
+  OR = { AND = { tag = SOV GER = { has_country_flag = ww1_eastern_terms_for_SOV } } AND = { tag = RUS GER = { has_country_flag = ww1_eastern_terms_for_RUS } } } }
+ option = {
+  name = ww1_diplomacy.32.a
+  ai_chance = { base = 20 modifier = { factor = 5 surrender_progress > 0.30 } modifier = { factor = 4 has_war_support < 0.25 } }
+  if = { limit = { ww1_eastern_terms_valid = yes } ww1_conclude_eastern_settlement = yes }
+  else = { clr_country_flag = ww1_eastern_negotiations_started custom_effect_tooltip = ww1_eastern_terms_expired_tt }
+ }
+ option = {
+  name = ww1_diplomacy.32.b
+  ai_chance = { base = 80 }
+  if = {
+   limit = { ww1_eastern_terms_valid = yes }
+   GER = { clr_country_flag = ww1_eastern_terms_authorised clr_country_flag = ww1_eastern_terms_for_SOV clr_country_flag = ww1_eastern_terms_for_RUS country_event = { id = ww1_eastern.1 days = 2 } }
+  }
+  clr_country_flag = ww1_eastern_negotiations_started
+ }
+}
+country_event = {
+ id = ww1_diplomacy.33
+ title = ww1_diplomacy.33.t
+ desc = ww1_diplomacy.33.d
+ picture = GFX_event_ww1_eastern_refusal
+ is_triggered_only = yes
+ immediate = { clr_country_flag = ww1_eastern_negotiations_started }
+ option = { name = ww1_diplomacy.33.a }
+}
+country_event = {
+ id = ww1_eastern.1
+ title = ww1_eastern.1.t
+ desc = ww1_eastern.1.d
+ picture = GFX_event_ww1_eastern_deadlock
+ is_triggered_only = yes
+ immediate = {
+  if = {
+   limit = {
+    OR = {
+     AND = { FROM = { exists = yes tag = SOV } has_country_flag = ww1_eastern_terms_for_SOV }
+     AND = { FROM = { exists = yes tag = RUS } has_country_flag = ww1_eastern_terms_for_RUS }
+    }
+   }
+   clr_country_flag = ww1_eastern_terms_authorised
+   clr_country_flag = ww1_eastern_terms_for_SOV
+   clr_country_flag = ww1_eastern_terms_for_RUS
+  }
+ }
+ option = { name = ww1_eastern.1.a }
+}
+country_event = {
+ id = ww1_eastern.2
+ title = ww1_eastern.2.t
+ desc = ww1_eastern.2.d
+ picture = GFX_event_ww1_eastern_armistice
+ is_triggered_only = yes
+ option = { name = ww1_eastern.2.a }
+}

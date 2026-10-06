@@ -1,0 +1,964 @@
+add_namespace = ww1_auh
+country_event = {
+ id = ww1_auh.1
+ title = ww1_auh.1.t
+ desc = ww1_auh.1.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.1.a
+  ai_chance = { base = 80 }
+  add_to_variable = { auh_ww1_consent = 4 } add_political_power = -25
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.1.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -25
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.2
+ title = ww1_auh.2.t
+ desc = ww1_auh.2.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.2.a
+  ai_chance = { base = 70 }
+  add_to_variable = { auh_ww1_consent = 5 } add_to_variable = { auh_ww1_cohesion = -2 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.2.b
+  ai_chance = { base = 30 }
+  add_to_variable = { auh_ww1_cohesion = 5 } add_to_variable = { auh_ww1_consent = -2 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.3
+ title = ww1_auh.3.t
+ desc = ww1_auh.3.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.3.a
+  ai_chance = { base = 80 }
+  add_to_variable = { auh_ww1_consent = 6 } add_to_variable = { auh_ww1_cohesion = -3 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.3.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_cohesion = 3 } add_political_power = -40
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.4
+ title = ww1_auh.4.t
+ desc = ww1_auh.4.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.4.a
+  ai_chance = { base = 80 }
+  add_to_variable = { auh_ww1_consent = 4 } add_political_power = -35
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.4.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_consent = -5 } add_political_power = 20
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.5
+ title = ww1_auh.5.t
+ desc = ww1_auh.5.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.5.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = -8 } add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = -40
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.6
+ title = ww1_auh.6.t
+ desc = ww1_auh.6.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.6.a
+  ai_chance = { base = 90 }
+  trigger = { check_variable = { auh_ww1_consent > 44 } check_variable = { auh_ww1_cohesion > 49 } }
+  auh_ww1_ratify_trialism = yes
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.6.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 2 } add_political_power = -20
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.7
+ title = ww1_auh.7.t
+ desc = ww1_auh.7.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.7.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = -10 } add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = -50
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.8
+ title = ww1_auh.8.t
+ desc = ww1_auh.8.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.8.a
+  ai_chance = { base = 60 }
+  add_to_variable = { auh_ww1_cohesion = 6 } add_to_variable = { auh_ww1_consent = -3 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.8.b
+  ai_chance = { base = 40 }
+  add_to_variable = { auh_ww1_consent = 6 } add_to_variable = { auh_ww1_cohesion = -3 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.9
+ title = ww1_auh.9.t
+ desc = ww1_auh.9.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.9.a
+  ai_chance = { base = 90 }
+  trigger = { check_variable = { auh_ww1_consent > 49 } check_variable = { auh_ww1_cohesion > 59 } }
+  auh_ww1_ratify_federation = yes
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.9.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 2 } add_political_power = -25
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.10
+ title = ww1_auh.10.t
+ desc = ww1_auh.10.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.10.a
+  ai_chance = { base = 80 }
+  add_to_variable = { auh_ww1_consent = 3 } add_political_power = -25
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.10.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_provisions = 4 } add_political_power = -30
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.11
+ title = ww1_auh.11.t
+ desc = ww1_auh.11.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.11.a
+  ai_chance = { base = 85 }
+  add_to_variable = { auh_ww1_provisions = 8 } add_political_power = -50
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.11.b
+  ai_chance = { base = 15 }
+  add_to_variable = { auh_ww1_provisions = 12 } add_to_variable = { auh_ww1_consent = -10 } add_to_variable = { auh_ww1_cohesion = -3 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.12
+ title = ww1_auh.12.t
+ desc = ww1_auh.12.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.12.a
+  ai_chance = { base = 75 }
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -40
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.12.b
+  ai_chance = { base = 25 }
+  trigger = { has_war = yes }
+  add_timed_idea = { idea = AUH_ww1_emergency_shifts days = 90 } add_to_variable = { auh_ww1_cohesion = -4 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.13
+ title = ww1_auh.13.t
+ desc = ww1_auh.13.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.13.a
+  ai_chance = { base = 35 }
+  trigger = { has_war = yes check_variable = { auh_ww1_debt < 6 } NOT = { has_idea = AUH_ww1_credit_expansion } }
+  add_timed_idea = { idea = AUH_ww1_credit_expansion days = 180 } add_to_variable = { auh_ww1_debt = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.13.b
+  ai_chance = { base = 65 }
+  add_to_variable = { auh_ww1_consent = 3 } add_political_power = -20
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.14
+ title = ww1_auh.14.t
+ desc = ww1_auh.14.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.14.a
+  ai_chance = { base = 80 }
+  army_experience = 5 add_political_power = -20
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.14.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_consent = 3 } add_political_power = -25
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.15
+ title = ww1_auh.15.t
+ desc = ww1_auh.15.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.15.a
+  ai_chance = { base = 50 }
+  add_tech_bonus = { name = AUH_ww1_research_program bonus = .20 uses = 1 category = artillery }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.15.b
+  ai_chance = { base = 50 }
+  army_experience = 8
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.16
+ title = ww1_auh.16.t
+ desc = ww1_auh.16.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.16.a
+  ai_chance = { base = 70 }
+  auh_ww1_set_defensive_staff = yes
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.16.b
+  ai_chance = { base = 30 }
+  auh_ww1_set_offensive_staff = yes
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.17
+ title = ww1_auh.17.t
+ desc = ww1_auh.17.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.17.a
+  ai_chance = { base = 60 }
+  add_to_variable = { auh_ww1_cohesion = 3 } add_political_power = -30
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.17.b
+  ai_chance = { base = 40 }
+  add_war_support = .03 add_to_variable = { auh_ww1_cohesion = -4 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.18
+ title = ww1_auh.18.t
+ desc = ww1_auh.18.d
+ picture = GFX_event_AUH_ww1_karl
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.18.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = 3 } add_political_power = -25
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.19
+ title = ww1_auh.19.t
+ desc = ww1_auh.19.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.19.a
+  ai_chance = { base = 70 }
+  add_to_variable = { auh_ww1_consent = 3 } add_political_power = -30
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.19.b
+  ai_chance = { base = 30 }
+  trigger = { has_country_flag = auh_ww1_german_commission }
+  army_experience = 8 add_political_power = -50
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.20
+ title = ww1_auh.20.t
+ desc = ww1_auh.20.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.20.a
+  ai_chance = { base = 80 }
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -40
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.20.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_cohesion = -6 } add_political_power = 20
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.21
+ title = ww1_auh.21.t
+ desc = ww1_auh.21.d
+ picture = GFX_event_AUH_ww1_karl
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.21.a
+  ai_chance = { base = 75 }
+  add_to_variable = { auh_ww1_cohesion = 4 } add_war_support = -.025
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.21.b
+  ai_chance = { base = 25 }
+  add_to_variable = { auh_ww1_consent = 3 } add_to_variable = { auh_ww1_cohesion = -2 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.22
+ title = ww1_auh.22.t
+ desc = ww1_auh.22.d
+ picture = GFX_event_AUH_ww1_naval
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.22.a
+  ai_chance = { base = 30 }
+  add_tech_bonus = { name = AUH_ww1_research_program bonus = .20 uses = 1 category = bb_tech }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.22.b
+  ai_chance = { base = 70 }
+  add_tech_bonus = { name = AUH_ww1_research_program bonus = .20 uses = 1 category = dd_tech }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.23
+ title = ww1_auh.23.t
+ desc = ww1_auh.23.d
+ picture = GFX_event_AUH_ww1_reconstruction
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.23.a
+  ai_chance = { base = 70 }
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -35
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.23.b
+  ai_chance = { base = 30 }
+  add_to_variable = { auh_ww1_consent = 4 } add_political_power = -35
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.24
+ title = ww1_auh.24.t
+ desc = ww1_auh.24.d
+ picture = GFX_event_AUH_ww1_reconstruction
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.24.a
+  ai_chance = { base = 80 }
+  add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = -60
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.24.b
+  ai_chance = { base = 20 }
+  add_to_variable = { auh_ww1_cohesion = 3 } add_political_power = -30
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.25
+ title = ww1_auh.25.t
+ desc = ww1_auh.25.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.25.a
+  ai_chance = { base = 70 }
+  add_to_variable = { auh_ww1_consent = 3 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.25.b
+  ai_chance = { base = 30 }
+  trigger = { NOT = { has_country_flag = auh_ww1_republic } check_variable = { auh_ww1_consent > 49 } check_variable = { auh_ww1_cohesion > 59 } }
+  auh_ww1_ratify_federation = yes
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.26
+ title = ww1_auh.26.t
+ desc = ww1_auh.26.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.26.a
+  ai_chance = { base = 85 }
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -40
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.26.b
+  ai_chance = { base = 15 }
+  trigger = { has_war = no check_variable = { auh_ww1_cohesion > 59 } NOT = { has_country_flag = auh_ww1_republic } }
+  auh_ww1_establish_republic = yes
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.27
+ title = ww1_auh.27.t
+ desc = ww1_auh.27.d
+ picture = GFX_event_AUH_ww1_reconstruction
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.27.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = 4 } add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -60
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.28
+ title = ww1_auh.28.t
+ desc = ww1_auh.28.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.28.a
+  ai_chance = { base = 85 }
+  add_to_variable = { auh_ww1_cohesion = 8 } add_to_variable = { auh_ww1_consent = -4 } add_political_power = -80
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.28.b
+  ai_chance = { base = 15 }
+  add_to_variable = { auh_ww1_cohesion = -3 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.29
+ title = ww1_auh.29.t
+ desc = ww1_auh.29.d
+ picture = GFX_event_AUH_ww1_food
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.29.a
+  ai_chance = { base = 85 }
+  trigger = { controls_state = 43 controls_state = 154 }
+  add_to_variable = { auh_ww1_provisions = 8 } add_political_power = -60
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.29.b
+  ai_chance = { base = 15 }
+  add_to_variable = { auh_ww1_cohesion = -2 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.30
+ title = ww1_auh.30.t
+ desc = ww1_auh.30.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.30.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = GER NOT = { has_war_with = GER } }
+  add_political_power = -35 GER = { country_event = { id = ww1_auh.31 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.30.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.31
+ title = ww1_auh.31.t
+ desc = ww1_auh.31.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.31.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_german_commission country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.31.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.32
+ title = ww1_auh.32.t
+ desc = ww1_auh.32.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.32.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = SER NOT = { has_war_with = SER } }
+  add_political_power = -35 SER = { country_event = { id = ww1_auh.33 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.32.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.33
+ title = ww1_auh.33.t
+ desc = ww1_auh.33.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.33.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_serbian_trade country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.33.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.34
+ title = ww1_auh.34.t
+ desc = ww1_auh.34.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.34.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = ALB NOT = { has_war_with = ALB } }
+  add_political_power = -35 ALB = { country_event = { id = ww1_auh.35 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.34.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.35
+ title = ww1_auh.35.t
+ desc = ww1_auh.35.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.35.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_albanian_assistance country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement } add_political_power = 15 AUS = { add_political_power = -20 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.35.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.36
+ title = ww1_auh.36.t
+ desc = ww1_auh.36.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.36.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = MNT NOT = { has_war_with = MNT } }
+  add_political_power = -35 MNT = { country_event = { id = ww1_auh.37 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.36.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.37
+ title = ww1_auh.37.t
+ desc = ww1_auh.37.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.37.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_montenegrin_pact country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement } set_country_flag = { flag = auh_ww1_consultation_authorised days = 365 } diplomatic_relation = { country = AUS relation = non_aggression_pact active = yes }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.37.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.38
+ title = ww1_auh.38.t
+ desc = ww1_auh.38.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.38.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = ITA NOT = { has_war_with = ITA } }
+  add_political_power = -35 ITA = { country_event = { id = ww1_auh.39 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.38.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.39
+ title = ww1_auh.39.t
+ desc = ww1_auh.39.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.39.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_italian_consultation country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement } set_country_flag = { flag = auh_ww1_consultation_authorised days = 365 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.39.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.40
+ title = ww1_auh.40.t
+ desc = ww1_auh.40.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.40.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = ROM NOT = { has_war_with = ROM } }
+  add_political_power = -35 ROM = { country_event = { id = ww1_auh.41 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.40.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.41
+ title = ww1_auh.41.t
+ desc = ww1_auh.41.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.41.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_romanian_grain country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.41.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.42
+ title = ww1_auh.42.t
+ desc = ww1_auh.42.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.42.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = SOV NOT = { has_war_with = SOV } }
+  add_political_power = -35 SOV = { country_event = { id = ww1_auh.43 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.42.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.43
+ title = ww1_auh.43.t
+ desc = ww1_auh.43.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.43.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS NOT = { has_war_with = AUS } }
+  AUS = { set_country_flag = auh_ww1_russian_consultation country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement } set_country_flag = { flag = auh_ww1_consultation_authorised days = 365 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.43.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.44
+ title = ww1_auh.44.t
+ desc = ww1_auh.44.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.44.a
+  ai_chance = { base = 90 }
+  trigger = { country_exists = FRA has_war_with = FRA }
+  add_political_power = -35 FRA = { country_event = { id = ww1_auh.45 days = 3 } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.44.b
+  ai_chance = { base = 10 }
+  add_to_variable = { auh_ww1_consent = 1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.45
+ title = ww1_auh.45.t
+ desc = ww1_auh.45.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.45.a
+  ai_chance = { base = 60 }
+  trigger = { country_exists = AUS has_war_with = AUS }
+  AUS = { set_country_flag = auh_ww1_sixtus_channel country_event = { id = ww1_auh.48 days = 1 } } add_opinion_modifier = { target = AUS modifier = AUH_ww1_agreement } set_country_flag = { flag = auh_ww1_mediation_authorised days = 180 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.45.b
+  ai_chance = { base = 40 }
+  if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.46
+ title = ww1_auh.46.t
+ desc = ww1_auh.46.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.46.a
+  ai_chance = { base = 20 }
+  trigger = { country_exists = AUS has_war_with = AUS }
+  set_country_flag = { flag = auh_ww1_armistice_consent days = 120 } if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.48 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+ option = {
+  name = ww1_auh.46.b
+  ai_chance = { base = 80 }
+  clr_country_flag = auh_ww1_armistice_consent if = { limit = { country_exists = AUS } AUS = { country_event = { id = ww1_auh.49 days = 1 } } }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.48
+ title = ww1_auh.48.t
+ desc = ww1_auh.48.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.48.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = 2 } add_political_power = -10
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.49
+ title = ww1_auh.49.t
+ desc = ww1_auh.49.d
+ picture = GFX_event_AUH_ww1_council
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.49.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = -1 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
+country_event = {
+ id = ww1_auh.50
+ title = ww1_auh.50.t
+ desc = ww1_auh.50.d
+ picture = GFX_event_AUH_ww1_karl
+ is_triggered_only = yes
+ fire_only_once = no
+ option = {
+  name = ww1_auh.50.a
+  ai_chance = { base = 100 }
+  add_to_variable = { auh_ww1_consent = 2 }
+  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+ }
+}
