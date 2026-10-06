@@ -1,1 +1,3263 @@
-# MBR 1911: intentionally empty; every country uses generic_focus.
+# Kingdom of Italy (ITA) WW1 Focus Tree (1911-1923)
+# Generated deterministically by scripts/build_ww1_italy.py
+focus_tree = {
+	id = ITA_ww1_1911_1923
+	country = { factor = 0 modifier = { add = 100 original_tag = ITA } }
+	default = no
+	initial_show_position = { focus = ITA_ww1_giolitti_ministry }
+	continuous_focus_position = { x = 50 y = 1800 }
+
+	shortcut = {
+		name = ITA_ww1_shortcut_pol
+		target = ITA_ww1_giolitti_ministry
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = ITA_ww1_shortcut_eco
+		target = ITA_ww1_industrial_triangle
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = ITA_ww1_shortcut_dip
+		target = ITA_ww1_triple_alliance
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = ITA_ww1_shortcut_mil
+		target = ITA_ww1_army_staff_reorganisation
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = ITA_ww1_shortcut_war
+		target = ITA_ww1_libyan_question
+		scroll_wheel_factor = 0.5
+	}
+
+	focus = {
+		id = ITA_ww1_giolitti_ministry
+		icon = GFX_goal_ww1_ITA_ww1_giolitti_ministry
+		x = 4
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 50 add_ideas = ITA_ww1_trasformismo_politics add_to_variable = { ita_ww1_interventionism = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_suffrage_law
+		icon = GFX_goal_ww1_ITA_ww1_suffrage_law
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_giolitti_ministry }
+		available = { has_capitulated = no date > 1911.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_stability = 0.02 add_ideas = ITA_ww1_universal_suffrage add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_southern_inquiry
+		icon = GFX_goal_ww1_ITA_ww1_southern_inquiry
+		x = 3
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_giolitti_ministry }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_insurance_institute
+		icon = GFX_goal_ww1_ITA_ww1_insurance_institute
+		x = 5
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_giolitti_ministry }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_nationalist_association
+		icon = GFX_goal_ww1_ITA_ww1_nationalist_association
+		x = 7
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_giolitti_ministry }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_to_variable = { ita_ww1_irredentism = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_socialist_congress
+		icon = GFX_goal_ww1_ITA_ww1_socialist_congress
+		x = 1
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_suffrage_law }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = -15 country_event = { id = ww1_italy.4 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_trade_union_recognition
+		icon = GFX_goal_ww1_ITA_ww1_trade_union_recognition
+		x = 5
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_insurance_institute }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_gentiloni_pact
+		icon = GFX_goal_ww1_ITA_ww1_gentiloni_pact
+		x = 3
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_suffrage_law }
+		available = { has_capitulated = no date > 1913.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_stability = 0.02 add_political_power = 30 add_ideas = ITA_ww1_gentiloni_compact ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_catholic_social_action
+		icon = GFX_goal_ww1_ITA_ww1_catholic_social_action
+		x = 3
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_gentiloni_pact }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { country_event = { id = ww1_italy.6 days = 1 } add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_red_week
+		icon = GFX_goal_ww1_ITA_ww1_red_week
+		x = 1
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_socialist_congress }
+		prerequisite = { focus = ITA_ww1_trade_union_recognition }
+		available = { has_capitulated = no date > 1914.5.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.7 days = 1 } add_to_variable = { ita_ww1_social_tension = 15 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_public_order_measures
+		icon = GFX_goal_ww1_ITA_ww1_public_order_measures
+		x = 0
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_red_week }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 30 country_event = { id = ww1_italy.8 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_salandra_cabinet
+		icon = GFX_goal_ww1_ITA_ww1_salandra_cabinet
+		x = 5
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_gentiloni_pact }
+		available = { has_capitulated = no date > 1914.3.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 35 country_event = { id = ww1_italy.9 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_interventionist_press
+		icon = GFX_goal_ww1_ITA_ww1_interventionist_press
+		x = 4
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_salandra_cabinet }
+		mutually_exclusive = { focus = ITA_ww1_neutralist_coalition }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { add_to_variable = { ita_ww1_interventionism = 10 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_neutralist_coalition
+		icon = GFX_goal_ww1_ITA_ww1_neutralist_coalition
+		x = 6
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_salandra_cabinet }
+		mutually_exclusive = { focus = ITA_ww1_interventionist_press }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { add_to_variable = { ita_ww1_interventionism = -15 } add_political_power = 40 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_popolo_ditalia
+		icon = GFX_goal_ww1_ITA_ww1_popolo_ditalia
+		x = 2
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_interventionist_press }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.10 days = 1 } add_to_variable = { ita_ww1_interventionism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_quarto_rally
+		icon = GFX_goal_ww1_ITA_ww1_quarto_rally
+		x = 4
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_interventionist_press }
+		available = { has_capitulated = no date > 1915.4.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { add_war_support = 0.02 add_to_variable = { ita_ww1_interventionism = 15 } country_event = { id = ww1_italy.11 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_giolitti_parecchio
+		icon = GFX_goal_ww1_ITA_ww1_giolitti_parecchio
+		x = 6
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_neutralist_coalition }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { country_event = { id = ww1_italy.12 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_parliament_against_street
+		icon = GFX_goal_ww1_ITA_ww1_parliament_against_street
+		x = 8
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_neutralist_coalition }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = 10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_radiant_may
+		icon = GFX_goal_ww1_ITA_ww1_radiant_may
+		x = 6
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_quarto_rally focus = ITA_ww1_parliament_against_street }
+		available = { has_capitulated = no date > 1915.5.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { add_war_support = 0.02 add_ideas = ITA_ww1_radiant_may_fervor country_event = { id = ww1_italy.13 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_war_censorship
+		icon = GFX_goal_ww1_ITA_ww1_war_censorship
+		x = 5
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_radiant_may }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 25 country_event = { id = ww1_italy.14 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_boselli_national_unity
+		icon = GFX_goal_ww1_ITA_ww1_boselli_national_unity
+		x = 7
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_radiant_may focus = ITA_ww1_giolitti_parecchio }
+		available = { has_capitulated = no date > 1916.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 35 country_event = { id = ww1_italy.15 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_women_war_economy
+		icon = GFX_goal_ww1_ITA_ww1_women_war_economy
+		x = 5
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_boselli_national_unity }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.16 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_propaganda_service
+		icon = GFX_goal_ww1_ITA_ww1_propaganda_service
+		x = 7
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_boselli_national_unity }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_ideas = ITA_ww1_propaganda_service_spirit country_event = { id = ww1_italy.17 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_land_for_soldiers
+		icon = GFX_goal_ww1_ITA_ww1_land_for_soldiers
+		x = 7
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_propaganda_service }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_army_morale = 5 } country_event = { id = ww1_italy.18 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_caporetto_inquiry
+		icon = GFX_goal_ww1_ITA_ww1_caporetto_inquiry
+		x = 9
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_boselli_national_unity }
+		available = { has_capitulated = no has_country_flag = ita_ww1_caporetto_shock }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.19 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_orlando_government
+		icon = GFX_goal_ww1_ITA_ww1_orlando_government
+		x = 9
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_caporetto_inquiry }
+		available = { has_capitulated = no date > 1917.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { add_political_power = 40 country_event = { id = ww1_italy.20 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_combatants_opera
+		icon = GFX_goal_ww1_ITA_ww1_combatants_opera
+		x = 8
+		y = 10
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_orlando_government }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_ideas = ITA_ww1_opera_nazionale_combattenti add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_mutilated_victory
+		icon = GFX_goal_ww1_ITA_ww1_mutilated_victory
+		x = 10
+		y = 10
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_orlando_government }
+		available = { has_capitulated = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.21 days = 1 } add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_nitti_cabinet
+		icon = GFX_goal_ww1_ITA_ww1_nitti_cabinet
+		x = 9
+		y = 11
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_mutilated_victory }
+		available = { has_capitulated = no date > 1919.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 30 country_event = { id = ww1_italy.22 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_proportional_representation
+		icon = GFX_goal_ww1_ITA_ww1_proportional_representation
+		x = 7
+		y = 12
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_nitti_cabinet }
+		available = { has_capitulated = no date > 1919.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_popular_party
+		icon = GFX_goal_ww1_ITA_ww1_popular_party
+		x = 8
+		y = 12
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_nitti_cabinet }
+		available = { has_capitulated = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.23 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_fasci_di_combattimento
+		icon = GFX_goal_ww1_ITA_ww1_fasci_di_combattimento
+		x = 11
+		y = 11
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_mutilated_victory }
+		available = { has_capitulated = no date > 1919.3.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = 5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_biennio_rosso
+		icon = GFX_goal_ww1_ITA_ww1_biennio_rosso
+		x = 10
+		y = 12
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_nitti_cabinet }
+		available = { has_capitulated = no date > 1919.9.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = 15 } add_political_power = -20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_factory_occupations
+		icon = GFX_goal_ww1_ITA_ww1_factory_occupations
+		x = 8
+		y = 13
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_biennio_rosso }
+		available = { has_capitulated = no date > 1920.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.24 days = 1 } add_to_variable = { ita_ww1_social_tension = 10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_third_giolitti
+		icon = GFX_goal_ww1_ITA_ww1_third_giolitti
+		x = 8
+		y = 14
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_factory_occupations }
+		available = { has_capitulated = no date > 1920.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_liberal_restoration
+		icon = GFX_goal_ww1_ITA_ww1_liberal_restoration
+		x = 8
+		y = 15
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_third_giolitti }
+		mutually_exclusive = { focus = ITA_ww1_nationalist_order focus = ITA_ww1_socialist_turn }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_nationalist_order
+		icon = GFX_goal_ww1_ITA_ww1_nationalist_order
+		x = 12
+		y = 12
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_fasci_di_combattimento }
+		mutually_exclusive = { focus = ITA_ww1_liberal_restoration focus = ITA_ww1_socialist_turn }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_socialist_turn
+		icon = GFX_goal_ww1_ITA_ww1_socialist_turn
+		x = 10
+		y = 13
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_biennio_rosso }
+		mutually_exclusive = { focus = ITA_ww1_liberal_restoration focus = ITA_ww1_nationalist_order }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_political_power = -25 add_to_variable = { ita_ww1_social_tension = 15 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_facta_coalition
+		icon = GFX_goal_ww1_ITA_ww1_facta_coalition
+		x = 8
+		y = 16
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_liberal_restoration }
+		available = { has_capitulated = no date > 1922.2.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_constitutional_reform
+		icon = GFX_goal_ww1_ITA_ww1_constitutional_reform
+		x = 8
+		y = 17
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_facta_coalition }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_stability = 0.02 add_political_power = 35 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_squadrist_mobilisation
+		icon = GFX_goal_ww1_ITA_ww1_squadrist_mobilisation
+		x = 12
+		y = 13
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_nationalist_order }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_ideas = ITA_ww1_squadrist_violence add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_national_party
+		icon = GFX_goal_ww1_ITA_ww1_national_party
+		x = 14
+		y = 13
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_nationalist_order }
+		available = { has_capitulated = no date > 1921.11.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_march_on_rome
+		icon = GFX_goal_ww1_ITA_ww1_march_on_rome
+		x = 14
+		y = 14
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_squadrist_mobilisation }
+		prerequisite = { focus = ITA_ww1_national_party }
+		available = { has_capitulated = no date > 1922.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.25 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_workers_councils
+		icon = GFX_goal_ww1_ITA_ww1_workers_councils
+		x = 10
+		y = 14
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_socialist_turn }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_ideas = ITA_ww1_pci_workers_councils add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_legalitarian_strike
+		icon = GFX_goal_ww1_ITA_ww1_legalitarian_strike
+		x = 10
+		y = 15
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_workers_councils }
+		available = { has_capitulated = no date > 1922.7.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = -20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_industrial_triangle
+		icon = GFX_goal_ww1_ITA_ww1_industrial_triangle
+		x = 27
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_tech_bonus = { name = ITA_ww1_industry_prog_1 bonus = 0.25 uses = 1 category = industry } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_turin_motor_industry
+		icon = GFX_goal_ww1_ITA_ww1_turin_motor_industry
+		x = 23
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_triangle }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_genoa_shipyards
+		icon = GFX_goal_ww1_ITA_ww1_genoa_shipyards
+		x = 25
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_triangle }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 } navy_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_milan_banking
+		icon = GFX_goal_ww1_ITA_ww1_milan_banking
+		x = 27
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_triangle }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_hydroelectric_power
+		icon = GFX_goal_ww1_ITA_ww1_hydroelectric_power
+		x = 29
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_triangle }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 159 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_tech_bonus = { name = ITA_ww1_hydro_tech bonus = 0.25 uses = 1 category = industry } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_mezzogiorno_programme
+		icon = GFX_goal_ww1_ITA_ww1_mezzogiorno_programme
+		x = 31
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_triangle }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_southern_gap = -10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_tariff_protection
+		icon = GFX_goal_ww1_ITA_ww1_tariff_protection
+		x = 20
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_turin_motor_industry }
+		mutually_exclusive = { focus = ITA_ww1_free_trade_opening }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_social_tension = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_free_trade_opening
+		icon = GFX_goal_ww1_ITA_ww1_free_trade_opening
+		x = 26
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_milan_banking }
+		mutually_exclusive = { focus = ITA_ww1_tariff_protection }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_ilva_steel_consortium
+		icon = GFX_goal_ww1_ITA_ww1_ilva_steel_consortium
+		x = 20
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_tariff_protection }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_tech_bonus = { name = ITA_ww1_steel_tech bonus = 0.25 uses = 1 category = industry } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_emigrant_remittances
+		icon = GFX_goal_ww1_ITA_ww1_emigrant_remittances
+		x = 32
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_mezzogiorno_programme }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.69 days = 1 } add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_apulian_aqueduct
+		icon = GFX_goal_ww1_ITA_ww1_apulian_aqueduct
+		x = 34
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_mezzogiorno_programme }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 157 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_southern_gap = -10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_sicilian_sulphur
+		icon = GFX_goal_ww1_ITA_ww1_sicilian_sulphur
+		x = 36
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_mezzogiorno_programme }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { 114 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_land_reclamation
+		icon = GFX_goal_ww1_ITA_ww1_land_reclamation
+		x = 34
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_apulian_aqueduct }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { 2 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_merchant_marine_subsidies
+		icon = GFX_goal_ww1_ITA_ww1_merchant_marine_subsidies
+		x = 24
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_genoa_shipyards }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { navy_experience = 15 add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_libya_colonisation
+		icon = GFX_goal_ww1_ITA_ww1_libya_colonisation
+		x = 32
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_emigrant_remittances }
+		available = { has_capitulated = no has_country_flag = ita_ww1_libya_acquired }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 448 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_industrial_mobilisation_committee
+		icon = GFX_goal_ww1_ITA_ww1_industrial_mobilisation_committee
+		x = 22
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_turin_motor_industry }
+		prerequisite = { focus = ITA_ww1_genoa_shipyards }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { add_political_power = 30 country_event = { id = ww1_italy.70 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_munitions_undersecretariat
+		icon = GFX_goal_ww1_ITA_ww1_munitions_undersecretariat
+		x = 22
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_mobilisation_committee }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { add_tech_bonus = { name = ITA_ww1_munitions_tech bonus = 0.25 uses = 1 category = weapons } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_ansaldo_expansion
+		icon = GFX_goal_ww1_ITA_ww1_ansaldo_expansion
+		x = 21
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_munitions_undersecretariat }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 } add_tech_bonus = { name = ITA_ww1_artillery_prod bonus = 0.25 uses = 1 category = artillery } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_aero_engine_contracts
+		icon = GFX_goal_ww1_ITA_ww1_aero_engine_contracts
+		x = 23
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_munitions_undersecretariat }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_tech_bonus = { name = ITA_ww1_aero_engine bonus = 0.25 uses = 1 category = air_equipment } air_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_war_loans
+		icon = GFX_goal_ww1_ITA_ww1_war_loans
+		x = 28
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_milan_banking }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 50 add_to_variable = { ita_ww1_social_tension = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_british_coal
+		icon = GFX_goal_ww1_ITA_ww1_british_coal
+		x = 24
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_merchant_marine_subsidies }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.71 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_war_hydropower
+		icon = GFX_goal_ww1_ITA_ww1_war_hydropower
+		x = 30
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_hydroelectric_power }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 159 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_tech_bonus = { name = ITA_ww1_elec_tech bonus = 0.25 uses = 1 category = industry } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_bread_rationing
+		icon = GFX_goal_ww1_ITA_ww1_bread_rationing
+		x = 25
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_munitions_undersecretariat }
+		prerequisite = { focus = ITA_ww1_british_coal }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_price_controls
+		icon = GFX_goal_ww1_ITA_ww1_price_controls
+		x = 24
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_bread_rationing }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_grain_requisition
+		icon = GFX_goal_ww1_ITA_ww1_grain_requisition
+		x = 33
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_land_reclamation }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_refugee_relief
+		icon = GFX_goal_ww1_ITA_ww1_refugee_relief
+		x = 26
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_bread_rationing }
+		available = { has_capitulated = no has_country_flag = ita_ww1_caporetto_shock }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.73 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_inflation_management
+		icon = GFX_goal_ww1_ITA_ww1_inflation_management
+		x = 28
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_war_loans }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_war_profiteers_inquiry
+		icon = GFX_goal_ww1_ITA_ww1_war_profiteers_inquiry
+		x = 24
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_price_controls }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.74 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_industrial_demobilisation
+		icon = GFX_goal_ww1_ITA_ww1_industrial_demobilisation
+		x = 21
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_ansaldo_expansion }
+		prerequisite = { focus = ITA_ww1_aero_engine_contracts }
+		available = { has_capitulated = no NOT = { has_war = yes } }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_veterans_land_settlement
+		icon = GFX_goal_ww1_ITA_ww1_veterans_land_settlement
+		x = 33
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_land_reclamation focus = ITA_ww1_grain_requisition }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_southern_gap = -10 } add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_public_works_programme
+		icon = GFX_goal_ww1_ITA_ww1_public_works_programme
+		x = 21
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_industrial_demobilisation }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { 115 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_social_tension = -10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_discount_bank_crisis
+		icon = GFX_goal_ww1_ITA_ww1_discount_bank_crisis
+		x = 26
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_inflation_management }
+		prerequisite = { focus = ITA_ww1_industrial_demobilisation }
+		available = { has_capitulated = no date > 1921.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.76 days = 1 } add_political_power = -20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_bank_rescue_consortium
+		icon = GFX_goal_ww1_ITA_ww1_bank_rescue_consortium
+		x = 25
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_discount_bank_crisis }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_southern_development_charter
+		icon = GFX_goal_ww1_ITA_ww1_southern_development_charter
+		x = 27
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_public_works_programme }
+		prerequisite = { focus = ITA_ww1_veterans_land_settlement }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_southern_gap = -15 } add_stability = 0.02 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_budget_balancing
+		icon = GFX_goal_ww1_ITA_ww1_budget_balancing
+		x = 25
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_INDUSTRY
+		prerequisite = { focus = ITA_ww1_bank_rescue_consortium }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 50 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_triple_alliance
+		icon = GFX_goal_ww1_ITA_ww1_triple_alliance
+		x = 51
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.26 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_renew_triple_alliance
+		icon = GFX_goal_ww1_ITA_ww1_renew_triple_alliance
+		x = 48
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_triple_alliance }
+		mutually_exclusive = { focus = ITA_ww1_mediterranean_balance focus = ITA_ww1_armed_neutrality_doctrine }
+		available = { has_capitulated = no date > 1912.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.27 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_mediterranean_balance
+		icon = GFX_goal_ww1_ITA_ww1_mediterranean_balance
+		x = 50
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_triple_alliance }
+		mutually_exclusive = { focus = ITA_ww1_renew_triple_alliance focus = ITA_ww1_armed_neutrality_doctrine }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { add_political_power = 30 add_opinion_modifier = { target = ENG modifier = ITA_ww1_mediterranean_naval_cooperation } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_armed_neutrality_doctrine
+		icon = GFX_goal_ww1_ITA_ww1_armed_neutrality_doctrine
+		x = 52
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_triple_alliance }
+		mutually_exclusive = { focus = ITA_ww1_renew_triple_alliance focus = ITA_ww1_mediterranean_balance }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { add_ideas = ITA_ww1_sacro_egoismo add_political_power = 40 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_albanian_question
+		icon = GFX_goal_ww1_ITA_ww1_albanian_question
+		x = 54
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_triple_alliance }
+		available = { has_capitulated = no date > 1912.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.30 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_balkan_league_crisis
+		icon = GFX_goal_ww1_ITA_ww1_balkan_league_crisis
+		x = 53
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_albanian_question }
+		available = { has_capitulated = no date > 1912.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 25 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_london_conference
+		icon = GFX_goal_ww1_ITA_ww1_london_conference
+		x = 53
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_balkan_league_crisis }
+		available = { has_capitulated = no date > 1913.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.31 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_naval_convention_vienna
+		icon = GFX_goal_ww1_ITA_ww1_naval_convention_vienna
+		x = 47
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_renew_triple_alliance }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { navy_experience = 15 add_opinion_modifier = { target = AUS modifier = ITA_ww1_mediterranean_naval_cooperation } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_franco_italian_agreement
+		icon = GFX_goal_ww1_ITA_ww1_franco_italian_agreement
+		x = 49
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_mediterranean_balance }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.29 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_british_friendship
+		icon = GFX_goal_ww1_ITA_ww1_british_friendship
+		x = 51
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_mediterranean_balance }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.28 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_sarajevo_crisis
+		icon = GFX_goal_ww1_ITA_ww1_sarajevo_crisis
+		x = 50
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_naval_convention_vienna focus = ITA_ww1_franco_italian_agreement focus = ITA_ww1_armed_neutrality_doctrine }
+		available = { has_capitulated = no date > 1914.7.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.32 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_declare_neutrality
+		icon = GFX_goal_ww1_ITA_ww1_declare_neutrality
+		x = 49
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_sarajevo_crisis }
+		mutually_exclusive = { focus = ITA_ww1_honour_alliance }
+		available = { has_capitulated = no date > 1914.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.33 days = 1 } add_political_power = 35 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_honour_alliance
+		icon = GFX_goal_ww1_ITA_ww1_honour_alliance
+		x = 51
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_sarajevo_crisis }
+		mutually_exclusive = { focus = ITA_ww1_declare_neutrality }
+		available = { has_capitulated = no date > 1914.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_political_power = 30 army_experience = 15 GER = { add_opinion_modifier = { target = ITA modifier = ITA_ww1_treaty_of_london_solidarity } } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_vienna_compensation_talks
+		icon = GFX_goal_ww1_ITA_ww1_vienna_compensation_talks
+		x = 47
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_neutrality }
+		mutually_exclusive = { focus = ITA_ww1_entente_overtures }
+		available = { has_capitulated = no country_exists = AUS }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.34 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_entente_overtures
+		icon = GFX_goal_ww1_ITA_ww1_entente_overtures
+		x = 49
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_neutrality }
+		mutually_exclusive = { focus = ITA_ww1_vienna_compensation_talks }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { add_to_variable = { ita_ww1_interventionism = 15 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_treaty_of_london
+		icon = GFX_goal_ww1_ITA_ww1_treaty_of_london
+		x = 49
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_entente_overtures }
+		mutually_exclusive = { focus = ITA_ww1_central_concessions_accord focus = ITA_ww1_continued_neutrality }
+		available = { has_capitulated = no date > 1915.4.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { add_war_support = 0.03 country_event = { id = ww1_italy.35 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_central_concessions_accord
+		icon = GFX_goal_ww1_ITA_ww1_central_concessions_accord
+		x = 47
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_vienna_compensation_talks }
+		mutually_exclusive = { focus = ITA_ww1_treaty_of_london focus = ITA_ww1_continued_neutrality }
+		available = { has_capitulated = no country_exists = AUS }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { country_event = { id = ww1_italy.49 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_continued_neutrality
+		icon = GFX_goal_ww1_ITA_ww1_continued_neutrality
+		x = 51
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_neutrality }
+		mutually_exclusive = { focus = ITA_ww1_treaty_of_london focus = ITA_ww1_central_concessions_accord }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -20 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_denounce_triple_alliance
+		icon = GFX_goal_ww1_ITA_ww1_denounce_triple_alliance
+		x = 47
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_treaty_of_london }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.36 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_declare_war_on_austria
+		icon = GFX_goal_ww1_ITA_ww1_declare_war_on_austria
+		x = 47
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_denounce_triple_alliance }
+		available = { has_capitulated = no country_exists = AUS }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 25 }
+		completion_reward = { add_war_support = 0.04 country_event = { id = ww1_italy.37 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_central_powers_entry
+		icon = GFX_goal_ww1_ITA_ww1_central_powers_entry
+		x = 49
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_honour_alliance focus = ITA_ww1_central_concessions_accord }
+		available = { has_capitulated = no has_country_flag = ita_ww1_triple_alliance_renewed }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { army_experience = 20 if = { limit = { country_exists = FRA } declare_war_on = { target = FRA type = take_state } } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_central_joint_command
+		icon = GFX_goal_ww1_ITA_ww1_central_joint_command
+		x = 49
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_central_powers_entry }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { army_experience = 20 add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_central_adriatic_fleet
+		icon = GFX_goal_ww1_ITA_ww1_central_adriatic_fleet
+		x = 51
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_central_joint_command }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { navy_experience = 20 add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_nice_and_tunisia_claims
+		icon = GFX_goal_ww1_ITA_ww1_nice_and_tunisia_claims
+		x = 51
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_central_powers_entry }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { add_to_variable = { ita_ww1_irredentism = 15 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_armed_mediator
+		icon = GFX_goal_ww1_ITA_ww1_armed_mediator
+		x = 51
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_continued_neutrality }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_declare_war_on_germany
+		icon = GFX_goal_ww1_ITA_ww1_declare_war_on_germany
+		x = 43
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_war_on_austria }
+		available = { has_capitulated = no date > 1916.8.1 country_exists = GER }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.38 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_salonika_contingent
+		icon = GFX_goal_ww1_ITA_ww1_salonika_contingent
+		x = 42
+		y = 10
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_war_on_germany }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.39 days = 1 } army_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_albanian_protectorate
+		icon = GFX_goal_ww1_ITA_ww1_albanian_protectorate
+		x = 45
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_war_on_austria }
+		available = { has_capitulated = no date > 1917.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_political_power = 25 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_saint_jean_de_maurienne
+		icon = GFX_goal_ww1_ITA_ww1_saint_jean_de_maurienne
+		x = 47
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_war_on_austria }
+		available = { has_capitulated = no date > 1917.4.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.40 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_supreme_war_council
+		icon = GFX_goal_ww1_ITA_ww1_supreme_war_council
+		x = 44
+		y = 10
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_war_on_germany }
+		available = { has_capitulated = no has_country_flag = ita_ww1_caporetto_shock }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { army_experience = 15 add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_oppressed_peoples_congress
+		icon = GFX_goal_ww1_ITA_ww1_oppressed_peoples_congress
+		x = 44
+		y = 11
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_supreme_war_council }
+		available = { has_capitulated = no date > 1918.4.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.42 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_vatican_peace_note
+		icon = GFX_goal_ww1_ITA_ww1_vatican_peace_note
+		x = 49
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_declare_war_on_austria }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 5 }
+		completion_reward = { country_event = { id = ww1_italy.41 days = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_neutral_peace_conference
+		icon = GFX_goal_ww1_ITA_ww1_neutral_peace_conference
+		x = 51
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_armed_mediator }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 2 }
+		completion_reward = { add_political_power = 50 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_wilsonian_conflict
+		icon = GFX_goal_ww1_ITA_ww1_wilsonian_conflict
+		x = 44
+		y = 12
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_oppressed_peoples_congress }
+		available = { has_capitulated = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.43 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_paris_delegation
+		icon = GFX_goal_ww1_ITA_ww1_paris_delegation
+		x = 44
+		y = 13
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_wilsonian_conflict }
+		available = { has_capitulated = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.44 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_treaty_of_saint_germain
+		icon = GFX_goal_ww1_ITA_ww1_treaty_of_saint_germain
+		x = 43
+		y = 14
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_paris_delegation }
+		available = { has_capitulated = no date > 1919.9.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.45 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_dalmatian_claims
+		icon = GFX_goal_ww1_ITA_ww1_dalmatian_claims
+		x = 45
+		y = 14
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_paris_delegation }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_irredentism = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_treaty_of_rapallo
+		icon = GFX_goal_ww1_ITA_ww1_treaty_of_rapallo
+		x = 45
+		y = 15
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_dalmatian_claims }
+		available = { has_capitulated = no date > 1920.11.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.46 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_washington_conference
+		icon = GFX_goal_ww1_ITA_ww1_washington_conference
+		x = 45
+		y = 16
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_treaty_of_rapallo }
+		available = { has_capitulated = no date > 1921.11.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.47 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_corfu_incident
+		icon = GFX_goal_ww1_ITA_ww1_corfu_incident
+		x = 45
+		y = 17
+		cost = 5
+		search_filters = FOCUS_FILTER_POLITICAL
+		prerequisite = { focus = ITA_ww1_washington_conference }
+		available = { has_capitulated = no date > 1923.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { country_event = { id = ww1_italy.48 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_army_staff_reorganisation
+		icon = GFX_goal_ww1_ITA_ww1_army_staff_reorganisation
+		x = 64
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		available = { has_capitulated = no date > 1911.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 100 }
+		completion_reward = { army_experience = 10 add_ideas = ITA_ww1_general_staff_corps add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_libya_lessons
+		icon = GFX_goal_ww1_ITA_ww1_libya_lessons
+		x = 61
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_army_staff_reorganisation }
+		available = { has_capitulated = no date > 1912.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_colonial_infantry_tactics bonus = 0.25 uses = 1 category = infantry_weapons } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_cadorna_chief_of_staff
+		icon = GFX_goal_ww1_ITA_ww1_cadorna_chief_of_staff
+		x = 63
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_army_staff_reorganisation }
+		available = { has_capitulated = no date > 1914.7.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 90 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_cadorna_discipline add_to_variable = { ita_ww1_army_morale = -5 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_alpini_expansion
+		icon = GFX_goal_ww1_ITA_ww1_alpini_expansion
+		x = 65
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_army_staff_reorganisation }
+		available = { has_capitulated = no date > 1911.3.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_alpini_mountaineers bonus = 0.25 uses = 1 category = special_forces } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_artillery_modernisation
+		icon = GFX_goal_ww1_ITA_ww1_artillery_modernisation
+		x = 67
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_army_staff_reorganisation }
+		available = { has_capitulated = no date > 1912.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_field_artillery_program bonus = 0.25 uses = 1 category = artillery } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_mountain_artillery
+		icon = GFX_goal_ww1_ITA_ww1_mountain_artillery
+		x = 63
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_alpini_expansion }
+		available = { has_capitulated = no date > 1913.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { army_experience = 10 add_ideas = ITA_ww1_mountain_howitzers ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_heavy_guns
+		icon = GFX_goal_ww1_ITA_ww1_heavy_guns
+		x = 67
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_artillery_modernisation }
+		available = { has_capitulated = no date > 1914.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_siege_howitzers bonus = 0.25 uses = 1 category = artillery } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_machine_guns
+		icon = GFX_goal_ww1_ITA_ww1_machine_guns
+		x = 69
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_artillery_modernisation }
+		available = { has_capitulated = no date > 1914.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_revelli_gun bonus = 0.25 uses = 1 category = infantry_weapons } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_north_east_mobilisation
+		icon = GFX_goal_ww1_ITA_ww1_north_east_mobilisation
+		x = 61
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_cadorna_chief_of_staff }
+		available = { has_capitulated = no date > 1914.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_railway_mobilisation_plan add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_frontier_fortifications
+		icon = GFX_goal_ww1_ITA_ww1_frontier_fortifications
+		x = 65
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_alpini_expansion }
+		available = { has_capitulated = no date > 1914.9.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 70 }
+		completion_reward = { army_experience = 10 add_ideas = ITA_ww1_frontier_fortress_belt ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_offensive_doctrine
+		icon = GFX_goal_ww1_ITA_ww1_offensive_doctrine
+		x = 60
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_north_east_mobilisation }
+		mutually_exclusive = { focus = ITA_ww1_war_of_position }
+		available = { has_capitulated = no date > 1915.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 70 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_cadornian_offensive_cult add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_war_of_position
+		icon = GFX_goal_ww1_ITA_ww1_war_of_position
+		x = 62
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_north_east_mobilisation }
+		mutually_exclusive = { focus = ITA_ww1_offensive_doctrine }
+		available = { has_capitulated = no date > 1915.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 30 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_methodical_firepower_doctrine add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_trench_mortars
+		icon = GFX_goal_ww1_ITA_ww1_trench_mortars
+		x = 66
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_heavy_guns }
+		available = { has_capitulated = no date > 1915.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_bombarda_trench_mortar bonus = 0.25 uses = 1 category = artillery } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_gas_defence
+		icon = GFX_goal_ww1_ITA_ww1_gas_defence
+		x = 66
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_trench_mortars }
+		available = { has_capitulated = no date > 1916.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { army_experience = 10 add_ideas = ITA_ww1_gas_respirators ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_reserve_officer_schools
+		icon = GFX_goal_ww1_ITA_ww1_reserve_officer_schools
+		x = 61
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_offensive_doctrine focus = ITA_ww1_war_of_position }
+		available = { has_capitulated = no date > 1916.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_complimentary_officer_academies add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_dismounted_cavalry
+		icon = GFX_goal_ww1_ITA_ww1_dismounted_cavalry
+		x = 68
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_machine_guns }
+		available = { has_capitulated = no date > 1916.3.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 65 }
+		completion_reward = { army_experience = 10 add_ideas = ITA_ww1_dismounted_cavalry_regiments ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_assault_units
+		icon = GFX_goal_ww1_ITA_ww1_assault_units
+		x = 60
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_reserve_officer_schools }
+		available = { has_capitulated = no date > 1917.7.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 95 }
+		completion_reward = { army_experience = 20 add_ideas = ITA_ww1_arditi_shock_troops add_tech_bonus = { name = ITA_ww1_arditi_assault_tactics bonus = 0.25 uses = 1 category = special_forces } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_diaz_takes_command
+		icon = GFX_goal_ww1_ITA_ww1_diaz_takes_command
+		x = 63
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_offensive_doctrine focus = ITA_ww1_war_of_position }
+		available = { has_capitulated = no date > 1917.11.9 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 98 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_diaz_humane_leadership add_to_variable = { ita_ww1_army_morale = 15 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_elastic_defence
+		icon = GFX_goal_ww1_ITA_ww1_elastic_defence
+		x = 62
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_diaz_takes_command }
+		mutually_exclusive = { focus = ITA_ww1_offensive_pressure }
+		available = { has_capitulated = no has_completed_focus = ITA_ww1_diaz_takes_command }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_defence_in_depth_piave add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_offensive_pressure
+		icon = GFX_goal_ww1_ITA_ww1_offensive_pressure
+		x = 64
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_diaz_takes_command }
+		mutually_exclusive = { focus = ITA_ww1_elastic_defence }
+		available = { has_capitulated = no has_completed_focus = ITA_ww1_diaz_takes_command }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 20 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_continuous_offensive_pressure add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_motor_transport
+		icon = GFX_goal_ww1_ITA_ww1_motor_transport
+		x = 66
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_gas_defence }
+		available = { has_capitulated = no date > 1917.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_army_demobilisation
+		icon = GFX_goal_ww1_ITA_ww1_army_demobilisation
+		x = 63
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_elastic_defence focus = ITA_ww1_offensive_pressure }
+		available = { has_capitulated = no has_war = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -10 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_carabinieri_reinforcement
+		icon = GFX_goal_ww1_ITA_ww1_carabinieri_reinforcement
+		x = 62
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_army_demobilisation }
+		available = { has_capitulated = no date > 1919.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { add_to_variable = { ita_ww1_social_tension = -5 } add_ideas = ITA_ww1_strengthened_carabinieri add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_postwar_army_reform
+		icon = GFX_goal_ww1_ITA_ww1_postwar_army_reform
+		x = 64
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_army_demobilisation }
+		available = { has_capitulated = no date > 1920.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 70 }
+		completion_reward = { army_experience = 15 add_ideas = ITA_ww1_badoglio_standing_army add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_army_budget_cuts
+		icon = GFX_goal_ww1_ITA_ww1_army_budget_cuts
+		x = 64
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_postwar_army_reform }
+		available = { has_capitulated = no date > 1922.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 60 }
+		completion_reward = { add_political_power = 50 add_ideas = ITA_ww1_peacetime_military_economy ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_naval_estimates
+		icon = GFX_goal_ww1_ITA_ww1_naval_estimates
+		x = 78
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		available = { has_capitulated = no date > 1911.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 90 }
+		completion_reward = { navy_experience = 10 add_ideas = ITA_ww1_regia_marina_cadres add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_cavour_class
+		icon = GFX_goal_ww1_ITA_ww1_cavour_class
+		x = 75
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_naval_estimates }
+		available = { has_capitulated = no date > 1911.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { navy_experience = 15 add_tech_bonus = { name = ITA_ww1_dreadnought_armour bonus = 0.25 uses = 1 category = heavy_armor } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_andrea_doria_class
+		icon = GFX_goal_ww1_ITA_ww1_andrea_doria_class
+		x = 75
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_cavour_class }
+		available = { has_capitulated = no date > 1912.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { navy_experience = 15 add_tech_bonus = { name = ITA_ww1_doria_battleship_design bonus = 0.25 uses = 1 category = naval_equipment } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_fast_cruisers
+		icon = GFX_goal_ww1_ITA_ww1_fast_cruisers
+		x = 77
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_naval_estimates }
+		available = { has_capitulated = no date > 1912.4.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { navy_experience = 10 add_tech_bonus = { name = ITA_ww1_scout_cruisers bonus = 0.25 uses = 1 category = cl_tech } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_taranto_base
+		icon = GFX_goal_ww1_ITA_ww1_taranto_base
+		x = 79
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_naval_estimates }
+		available = { has_capitulated = no date > 1913.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { navy_experience = 10 add_ideas = ITA_ww1_taranto_naval_arsenal add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_brindisi_venice_bases
+		icon = GFX_goal_ww1_ITA_ww1_brindisi_venice_bases
+		x = 79
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_taranto_base }
+		available = { has_capitulated = no date > 1913.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { navy_experience = 10 add_ideas = ITA_ww1_adriatic_naval_stations ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_submarine_programme
+		icon = GFX_goal_ww1_ITA_ww1_submarine_programme
+		x = 81
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_naval_estimates }
+		available = { has_capitulated = no date > 1913.3.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { navy_experience = 10 add_tech_bonus = { name = ITA_ww1_laurenti_submarines bonus = 0.25 uses = 1 category = ss_tech } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_torpedo_boats
+		icon = GFX_goal_ww1_ITA_ww1_torpedo_boats
+		x = 77
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_fast_cruisers }
+		available = { has_capitulated = no date > 1913.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { navy_experience = 10 add_tech_bonus = { name = ITA_ww1_torpedo_destroyers bonus = 0.25 uses = 1 category = dd_tech } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_adriatic_watch
+		icon = GFX_goal_ww1_ITA_ww1_adriatic_watch
+		x = 79
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_brindisi_venice_bases }
+		available = { has_capitulated = no date > 1914.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { navy_experience = 15 add_ideas = ITA_ww1_adriatic_patrol_network add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_otranto_barrage
+		icon = GFX_goal_ww1_ITA_ww1_otranto_barrage
+		x = 79
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_adriatic_watch }
+		available = { has_capitulated = no date > 1915.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { navy_experience = 15 add_ideas = ITA_ww1_otranto_barrage_net ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_battleship_fleet_in_being
+		icon = GFX_goal_ww1_ITA_ww1_battleship_fleet_in_being
+		x = 75
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_andrea_doria_class }
+		mutually_exclusive = { focus = ITA_ww1_flotilla_warfare }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 70 }
+		completion_reward = { navy_experience = 15 add_ideas = ITA_ww1_dreadnought_fleet_in_being add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_flotilla_warfare
+		icon = GFX_goal_ww1_ITA_ww1_flotilla_warfare
+		x = 77
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_torpedo_boats }
+		mutually_exclusive = { focus = ITA_ww1_battleship_fleet_in_being }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 30 }
+		completion_reward = { navy_experience = 15 add_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_mas_boats
+		icon = GFX_goal_ww1_ITA_ww1_mas_boats
+		x = 77
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_flotilla_warfare }
+		available = { has_capitulated = no date > 1915.9.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 90 }
+		completion_reward = { navy_experience = 20 add_ideas = ITA_ww1_mas_motor_torpedo_boats add_tech_bonus = { name = ITA_ww1_mas_boat_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_adriatic_convoys
+		icon = GFX_goal_ww1_ITA_ww1_adriatic_convoys
+		x = 79
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_otranto_barrage }
+		available = { has_capitulated = no date > 1916.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { navy_experience = 10 add_ideas = ITA_ww1_albanian_convoy_routes ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_anti_submarine_patrols
+		icon = GFX_goal_ww1_ITA_ww1_anti_submarine_patrols
+		x = 79
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_adriatic_convoys }
+		available = { has_capitulated = no date > 1917.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { navy_experience = 15 add_tech_bonus = { name = ITA_ww1_depth_charges bonus = 0.25 uses = 1 category = naval_equipment } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_human_torpedoes
+		icon = GFX_goal_ww1_ITA_ww1_human_torpedoes
+		x = 77
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_mas_boats }
+		available = { has_capitulated = no date > 1918.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { navy_experience = 20 add_ideas = ITA_ww1_mignatta_special_raiders navy_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_postwar_fleet_review
+		icon = GFX_goal_ww1_ITA_ww1_postwar_fleet_review
+		x = 77
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_anti_submarine_patrols focus = ITA_ww1_battleship_fleet_in_being focus = ITA_ww1_human_torpedoes }
+		available = { has_capitulated = no has_war = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { navy_experience = 15 add_political_power = 40 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_capital_ship_modernisation
+		icon = GFX_goal_ww1_ITA_ww1_capital_ship_modernisation
+		x = 77
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_postwar_fleet_review }
+		available = { has_capitulated = no date > 1922.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 65 }
+		completion_reward = { navy_experience = 20 add_ideas = ITA_ww1_capital_fleet_modernisation ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_aviators_battalion
+		icon = GFX_goal_ww1_ITA_ww1_aviators_battalion
+		x = 89
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		available = { has_capitulated = no date > 1911.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 90 }
+		completion_reward = { air_experience = 15 add_ideas = ITA_ww1_battaglione_aviatori add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_pilot_schools
+		icon = GFX_goal_ww1_ITA_ww1_pilot_schools
+		x = 89
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_aviators_battalion }
+		available = { has_capitulated = no date > 1912.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { air_experience = 15 add_ideas = ITA_ww1_military_flight_schools ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_caproni_bombers
+		icon = GFX_goal_ww1_ITA_ww1_caproni_bombers
+		x = 88
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_pilot_schools }
+		available = { has_capitulated = no date > 1914.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { air_experience = 20 add_tech_bonus = { name = ITA_ww1_caproni_heavy_bombers bonus = 0.25 uses = 1 category = heavy_air } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_aeronautical_corps
+		icon = GFX_goal_ww1_ITA_ww1_aeronautical_corps
+		x = 90
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_pilot_schools }
+		available = { has_capitulated = no date > 1915.1.7 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { air_experience = 15 add_ideas = ITA_ww1_corpo_aeronautico_militare add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_isotta_engines
+		icon = GFX_goal_ww1_ITA_ww1_isotta_engines
+		x = 89
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_aeronautical_corps }
+		available = { has_capitulated = no date > 1915.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { air_experience = 10 add_tech_bonus = { name = ITA_ww1_aero_engines bonus = 0.25 uses = 1 category = air_equipment } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_flying_boats
+		icon = GFX_goal_ww1_ITA_ww1_flying_boats
+		x = 91
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_aeronautical_corps }
+		available = { has_capitulated = no date > 1915.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { air_experience = 15 add_tech_bonus = { name = ITA_ww1_macchi_flying_boats bonus = 0.25 uses = 1 category = naval_air } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_sva_reconnaissance
+		icon = GFX_goal_ww1_ITA_ww1_sva_reconnaissance
+		x = 89
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_isotta_engines }
+		available = { has_capitulated = no date > 1916.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { air_experience = 15 add_tech_bonus = { name = ITA_ww1_ansaldo_sva_aircraft bonus = 0.25 uses = 1 category = air_equipment } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_fighter_squadrons
+		icon = GFX_goal_ww1_ITA_ww1_fighter_squadrons
+		x = 91
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_isotta_engines }
+		available = { has_capitulated = no date > 1916.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 80 }
+		completion_reward = { air_experience = 15 add_tech_bonus = { name = ITA_ww1_fighter_interception bonus = 0.25 uses = 1 category = light_fighter } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_ace_squadrons
+		icon = GFX_goal_ww1_ITA_ww1_ace_squadrons
+		x = 91
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_fighter_squadrons }
+		available = { has_capitulated = no date > 1917.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { air_experience = 20 add_ideas = ITA_ww1_baracca_ace_tradition air_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_strategic_bombing
+		icon = GFX_goal_ww1_ITA_ww1_strategic_bombing
+		x = 87
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_caproni_bombers }
+		prerequisite = { focus = ITA_ww1_isotta_engines }
+		available = { has_capitulated = no date > 1917.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { air_experience = 20 add_ideas = ITA_ww1_douhet_air_doctrine add_tech_bonus = { name = ITA_ww1_strategic_bombing_theory bonus = 0.25 uses = 1 category = air_doctrine } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_vienna_flight
+		icon = GFX_goal_ww1_ITA_ww1_vienna_flight
+		x = 89
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_sva_reconnaissance }
+		available = { has_capitulated = no date > 1918.8.9 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 85 }
+		completion_reward = { air_experience = 25 add_political_power = 40 country_event = { id = ww1_italy.60 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_air_autonomy_debate
+		icon = GFX_goal_ww1_ITA_ww1_air_autonomy_debate
+		x = 89
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_ARMY_XP
+		prerequisite = { focus = ITA_ww1_strategic_bombing }
+		prerequisite = { focus = ITA_ww1_ace_squadrons }
+		available = { has_capitulated = no date > 1919.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = base = 75 }
+		completion_reward = { air_experience = 15 add_ideas = ITA_ww1_independent_air_force_charter add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_libyan_question
+		icon = GFX_goal_ww1_ITA_ww1_libyan_question
+		x = 99
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { add_to_variable = { ita_ww1_irredentism = 5 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_ultimatum_to_the_porte
+		icon = GFX_goal_ww1_ITA_ww1_ultimatum_to_the_porte
+		x = 99
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_libyan_question }
+		available = { has_capitulated = no date > 1911.9.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.51 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_tripoli_landing
+		icon = GFX_goal_ww1_ITA_ww1_tripoli_landing
+		x = 99
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_ultimatum_to_the_porte }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { navy_experience = 10 army_experience = 10 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_first_aerial_bombing
+		icon = GFX_goal_ww1_ITA_ww1_first_aerial_bombing
+		x = 97
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_tripoli_landing }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { air_experience = 15 add_tech_bonus = { name = ITA_ww1_early_air_recon bonus = 0.25 uses = 1 category = air_doctrine } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_inland_oases_campaign
+		icon = GFX_goal_ww1_ITA_ww1_inland_oases_campaign
+		x = 99
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_tripoli_landing }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { army_experience = 15 add_political_power = 20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_dodecanese_occupation
+		icon = GFX_goal_ww1_ITA_ww1_dodecanese_occupation
+		x = 101
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_tripoli_landing }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { navy_experience = 15 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_treaty_of_ouchy
+		icon = GFX_goal_ww1_ITA_ww1_treaty_of_ouchy
+		x = 100
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_inland_oases_campaign }
+		prerequisite = { focus = ITA_ww1_dodecanese_occupation }
+		available = { has_capitulated = no date > 1912.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.52 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_cyrenaica_pacification
+		icon = GFX_goal_ww1_ITA_ww1_cyrenaica_pacification
+		x = 100
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_treaty_of_ouchy }
+		available = { has_capitulated = no has_country_flag = ita_ww1_libya_acquired }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { army_experience = 10 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_isonzo_offensives
+		icon = GFX_goal_ww1_ITA_ww1_isonzo_offensives
+		x = 108
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		mutually_exclusive = { focus = ITA_ww1_french_alpine_front }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { army_experience = 20 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_french_alpine_front
+		icon = GFX_goal_ww1_ITA_ww1_french_alpine_front
+		x = 115
+		y = 0
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		mutually_exclusive = { focus = ITA_ww1_isonzo_offensives }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { army_experience = 20 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_riviera_offensive
+		icon = GFX_goal_ww1_ITA_ww1_riviera_offensive
+		x = 115
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_french_alpine_front }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { army_experience = 15 add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_tunisian_landing
+		icon = GFX_goal_ww1_ITA_ww1_tunisian_landing
+		x = 115
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_riviera_offensive }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 1 }
+		completion_reward = { navy_experience = 15 army_experience = 15 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_trentino_defence
+		icon = GFX_goal_ww1_ITA_ww1_trentino_defence
+		x = 107
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_isonzo_offensives }
+		available = { has_capitulated = no has_war = yes }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { army_experience = 15 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_gorizia
+		icon = GFX_goal_ww1_ITA_ww1_gorizia
+		x = 109
+		y = 1
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_isonzo_offensives }
+		available = { has_capitulated = no date > 1916.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.54 days = 1 } army_experience = 15 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_bainsizza
+		icon = GFX_goal_ww1_ITA_ww1_bainsizza
+		x = 109
+		y = 2
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_gorizia }
+		available = { has_capitulated = no date > 1917.8.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.55 days = 1 } army_experience = 15 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_caporetto
+		icon = GFX_goal_ww1_ITA_ww1_caporetto
+		x = 109
+		y = 3
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_bainsizza }
+		available = { has_capitulated = no date > 1917.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.56 days = 1 } add_political_power = -20 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_piave_line
+		icon = GFX_goal_ww1_ITA_ww1_piave_line
+		x = 109
+		y = 4
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_caporetto }
+		available = { has_capitulated = no has_country_flag = ita_ww1_caporetto_shock }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { country_event = { id = ww1_italy.57 days = 1 } add_to_variable = { ita_ww1_army_morale = 15 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_solstice_battle
+		icon = GFX_goal_ww1_ITA_ww1_solstice_battle
+		x = 109
+		y = 5
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_piave_line }
+		available = { has_capitulated = no date > 1918.6.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { add_war_support = 0.03 country_event = { id = ww1_italy.59 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_vittorio_veneto
+		icon = GFX_goal_ww1_ITA_ww1_vittorio_veneto
+		x = 108
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_solstice_battle }
+		prerequisite = { focus = ITA_ww1_trentino_defence }
+		available = { has_capitulated = no date > 1918.10.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 25 }
+		completion_reward = { add_war_support = 0.03 country_event = { id = ww1_italy.60 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_villa_giusti_armistice
+		icon = GFX_goal_ww1_ITA_ww1_villa_giusti_armistice
+		x = 108
+		y = 7
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_vittorio_veneto }
+		available = { has_capitulated = no has_country_flag = ita_ww1_vittorio_veneto_won }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 25 }
+		completion_reward = { add_stability = 0.03 country_event = { id = ww1_italy.61 days = 1 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_trento_trieste_integration
+		icon = GFX_goal_ww1_ITA_ww1_trento_trieste_integration
+		x = 107
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_villa_giusti_armistice }
+		available = { has_capitulated = no }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 20 }
+		completion_reward = { add_stability = 0.03 add_to_variable = { ita_ww1_irredentism = -15 } ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_fiume_regency
+		icon = GFX_goal_ww1_ITA_ww1_fiume_regency
+		x = 109
+		y = 8
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_villa_giusti_armistice }
+		available = { has_capitulated = no date > 1919.9.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.62 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_christmas_of_blood
+		icon = GFX_goal_ww1_ITA_ww1_christmas_of_blood
+		x = 109
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_fiume_regency }
+		available = { has_capitulated = no date > 1920.12.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.64 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_unknown_soldier
+		icon = GFX_goal_ww1_ITA_ww1_unknown_soldier
+		x = 107
+		y = 9
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_trento_trieste_integration }
+		available = { has_capitulated = no date > 1921.11.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 15 }
+		completion_reward = { country_event = { id = ww1_italy.65 days = 1 } add_political_power = 35 ita_ww1_clamp_counters = yes }
+	}
+
+	focus = {
+		id = ITA_ww1_libyan_reconquest
+		icon = GFX_goal_ww1_ITA_ww1_libyan_reconquest
+		x = 100
+		y = 6
+		cost = 5
+		search_filters = FOCUS_FILTER_WAR_SUPPORT
+		prerequisite = { focus = ITA_ww1_cyrenaica_pacification }
+		available = { has_capitulated = no date > 1922.1.1 }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		ai_will_do = { factor = 10 }
+		completion_reward = { army_experience = 15 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+	}
+
+}

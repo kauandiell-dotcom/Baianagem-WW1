@@ -1,0 +1,543 @@
+# Italy (ITA) WW1 Decisions
+
+ITA_ww1_internal_politics_category = {
+	ITA_ww1_grant_universal_suffrage_amnesty = {
+		icon = generic_political_actions
+		cost = 25
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_suffrage_law
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.02
+			add_to_variable = { ita_ww1_social_tension = -5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_contain_socialist_agitation = {
+		icon = generic_strike
+		cost = 30
+		days_remove = 60
+		available = {
+			check_variable = { ita_ww1_social_tension > 40 }
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.01
+			add_to_variable = { ita_ww1_social_tension = -10 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_subsidise_catholic_schools = {
+		icon = generic_faith
+		cost = 25
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_gentiloni_pact
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.02
+			add_opinion_modifier = { target = ITA modifier = ITA_ww1_gentiloni_reconciliation }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_emergency_police_decrees = {
+		icon = generic_constitutional_guarantees
+		cost = 50
+		days_remove = 120
+		available = {
+			has_war = yes
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_war_support = 0.02
+			add_to_variable = { ita_ww1_social_tension = -5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_repress_squadrist_violence = {
+		icon = generic_police_action
+		cost = 40
+		days_remove = 90
+		available = {
+			check_variable = { ita_ww1_social_tension > 50 }
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.02
+			add_to_variable = { ita_ww1_social_tension = -8 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_negotiate_factory_arbitration = {
+		icon = generic_agreement
+		cost = 30
+		days_remove = 60
+		available = {
+			has_completed_focus = ITA_ww1_trade_union_recognition
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_to_variable = { ita_ww1_social_tension = -10 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+ITA_ww1_diplomatic_initiatives_category = {
+	ITA_ww1_diplomatic_pressure_tripoli = {
+		icon = generic_diplomacy
+		cost = 50
+		days_remove = 180
+		available = {
+			has_completed_focus = ITA_ww1_libyan_question
+			country_exists = TUR
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			TUR = { country_event = { id = ww1_italy.51 days = 1 } }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_adriatic_naval_patrols = {
+		icon = generic_naval
+		cost = 25
+		days_remove = 120
+		available = {
+			has_completed_focus = ITA_ww1_adriatic_watch
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			navy_experience = 10
+			add_to_variable = { ita_ww1_irredentism = 5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_reassure_berlin_and_vienna = {
+		icon = generic_treaty
+		cost = 25
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_renew_triple_alliance
+			country_exists = GER
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_opinion_modifier = { target = GER modifier = ITA_ww1_treaty_of_london_solidarity }
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_secret_contacts_with_paris = {
+		icon = generic_intel_bonus
+		cost = 30
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_franco_italian_agreement
+			country_exists = FRA
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_opinion_modifier = { target = FRA modifier = ITA_ww1_latin_sisterhood }
+			add_to_variable = { ita_ww1_interventionism = 5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_vatican_reconciliation_talks = {
+		icon = generic_faith
+		cost = 25
+		days_remove = 120
+		available = {
+			has_completed_focus = ITA_ww1_vatican_peace_note
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.03
+			add_to_variable = { ita_ww1_social_tension = -5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_oppressed_nationalities_liaison = {
+		icon = generic_nationalism
+		cost = 30
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_oppressed_peoples_congress
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_war_support = 0.02
+			if = {
+				limit = { country_exists = AUS }
+				AUS = { add_opinion_modifier = { target = ITA modifier = ITA_ww1_adriatic_dispute } }
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+ITA_ww1_economic_mobilisation_category = {
+	ITA_ww1_expand_ansaldo_artillery_works = {
+		icon = generic_industry
+		cost = 35
+		days_remove = 180
+		days_re_enable = 180
+		modifier = {
+			civilian_factory_use = 2
+		}
+		available = {
+			has_completed_focus = ITA_ww1_ansaldo_expansion
+		}
+		visible = {
+			original_tag = ITA
+		}
+		cancel_effect = {
+			add_political_power = 15
+		}
+		remove_effect = {
+			158 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant = yes
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_fiat_lorry_expansion = {
+		icon = generic_industry
+		cost = 35
+		days_remove = 180
+		days_re_enable = 180
+		modifier = {
+			civilian_factory_use = 2
+		}
+		available = {
+			has_completed_focus = ITA_ww1_turin_motor_industry
+		}
+		visible = {
+			original_tag = ITA
+		}
+		cancel_effect = {
+			add_political_power = 15
+		}
+		remove_effect = {
+			117 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant = yes
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_alpine_hydroelectric_dam = {
+		icon = generic_industry
+		cost = 40
+		days_remove = 180
+		days_re_enable = 180
+		modifier = {
+			civilian_factory_use = 2
+		}
+		available = {
+			has_completed_focus = ITA_ww1_hydroelectric_power
+		}
+		visible = {
+			original_tag = ITA
+		}
+		cancel_effect = {
+			add_political_power = 15
+		}
+		remove_effect = {
+			159 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant = yes
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_apulian_aqueduct_expansion = {
+		icon = generic_construction
+		cost = 30
+		days_remove = 180
+		days_re_enable = 180
+		modifier = {
+			civilian_factory_use = 1
+		}
+		available = {
+			has_completed_focus = ITA_ww1_apulian_aqueduct
+		}
+		visible = {
+			original_tag = ITA
+		}
+		cancel_effect = {
+			add_political_power = 15
+		}
+		remove_effect = {
+			157 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant = yes
+				}
+			}
+			add_to_variable = { ita_ww1_southern_gap = -10 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_mezzogiorno_grain_subsidies = {
+		icon = generic_agrarian_reform
+		cost = 25
+		days_remove = 120
+		available = {
+			has_completed_focus = ITA_ww1_mezzogiorno_programme
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_to_variable = { ita_ww1_southern_gap = -5 }
+			add_to_variable = { ita_ww1_social_tension = -5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_ration_civilian_coal = {
+		icon = generic_economic_increase
+		cost = 30
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_british_coal
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_war_support = 0.02
+			add_to_variable = { ita_ww1_social_tension = 5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+}
+
+ITA_ww1_military_readiness_category = {
+	ITA_ww1_train_alpini_mountain_battalions = {
+		icon = generic_infantry_bonus
+		cost = 30
+		days_remove = 120
+		available = {
+			has_completed_focus = ITA_ww1_alpini_expansion
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			army_experience = 15
+			add_to_variable = { ita_ww1_army_morale = 5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_arditi_assault_schools = {
+		icon = generic_morale_bonus
+		cost = 40
+		days_remove = 120
+		available = {
+			has_completed_focus = ITA_ww1_assault_units
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			army_experience = 20
+			add_to_variable = { ita_ww1_army_morale = 8 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_fortify_carso_plateau = {
+		icon = generic_fort
+		cost = 35
+		days_remove = 180
+		modifier = {
+			civilian_factory_use = 1
+		}
+		available = {
+			has_completed_focus = ITA_ww1_frontier_fortifications
+			controls_state = 782
+		}
+		visible = {
+			original_tag = ITA
+		}
+		cancel_effect = {
+			add_political_power = 15
+		}
+		remove_effect = {
+			782 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 6626
+					instant = yes
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_expand_taranto_naval_arsenal = {
+		icon = generic_naval
+		cost = 35
+		days_remove = 180
+		modifier = {
+			civilian_factory_use = 1
+		}
+		available = {
+			has_completed_focus = ITA_ww1_taranto_base
+		}
+		visible = {
+			original_tag = ITA
+		}
+		cancel_effect = {
+			add_political_power = 15
+		}
+		remove_effect = {
+			156 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant = yes
+				}
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_commission_caproni_heavy_bombers = {
+		icon = generic_air
+		cost = 30
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_caproni_bombers
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			air_experience = 15
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_mas_stealth_patrols = {
+		icon = generic_naval
+		cost = 25
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_mas_boats
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			navy_experience = 15
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_propaganda_trench_newspapers = {
+		icon = generic_propaganda
+		cost = 20
+		days_remove = 60
+		available = {
+			has_completed_focus = ITA_ww1_propaganda_service
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_to_variable = { ita_ww1_army_morale = 5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_veteran_resettlement_parcels = {
+		icon = generic_welfare
+		cost = 30
+		days_remove = 120
+		available = {
+			has_completed_focus = ITA_ww1_combatants_opera
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.02
+			add_to_variable = { ita_ww1_social_tension = -5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+}

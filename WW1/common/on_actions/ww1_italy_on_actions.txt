@@ -1,0 +1,16 @@
+# Italy (ITA) WW1 On-Actions: Startup Initialisation and Weekly Gauge Updates
+
+on_startup = {
+	effect = {
+		if = {
+			limit = { tag = ITA }
+			ita_ww1_initialise = yes
+		}
+	}
+}
+
+on_weekly_ITA = {
+	effect = {
+		ita_ww1_weekly = yes
+	}
+}

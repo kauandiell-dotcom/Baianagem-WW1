@@ -1,0 +1,716 @@
+# Italy (ITA) WW1 Politics and Society Events
+
+add_namespace = ww1_italy
+
+# ww1_italy.1: The Electoral Reform of 1912 (Suffrage)
+country_event = {
+	id = ww1_italy.1
+	title = ww1_italy.1.t
+	desc = ww1_italy.1.d
+	picture = GFX_event_ww1_italy_1
+	trigger = {
+		tag = ITA
+		date > 1912.5.1
+		NOT = { has_country_flag = ita_ww1_suffrage_enacted }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.1.a
+		ai_chance = { base = 80 }
+		add_political_power = 25
+		add_stability = 0.02
+		set_country_flag = ita_ww1_suffrage_enacted
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.1.b
+		ai_chance = { base = 20 }
+		add_political_power = 40
+		add_stability = -0.02
+		set_country_flag = ita_ww1_suffrage_enacted
+		add_to_variable = { ita_ww1_social_tension = 10 }
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.2: The National Insurance Institute (INA)
+country_event = {
+	id = ww1_italy.2
+	title = ww1_italy.2.t
+	desc = ww1_italy.2.d
+	picture = GFX_event_ww1_italy_2
+	trigger = {
+		tag = ITA
+		date > 1912.4.1
+		NOT = { has_country_flag = ita_ww1_ina_created }
+	}
+	mean_time_to_happen = { days = 20 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.2.a
+		ai_chance = { base = 75 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_ina_created
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.2.b
+		ai_chance = { base = 25 }
+		add_political_power = 30
+		set_country_flag = ita_ww1_ina_created
+	}
+}
+
+# ww1_italy.3: The Nationalist Congress in Florence (ANI)
+country_event = {
+	id = ww1_italy.3
+	title = ww1_italy.3.t
+	desc = ww1_italy.3.d
+	picture = GFX_event_ww1_italy_3
+	trigger = {
+		tag = ITA
+		date > 1911.12.1
+		NOT = { has_country_flag = ita_ww1_ani_florence }
+	}
+	mean_time_to_happen = { days = 30 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.3.a
+		ai_chance = { base = 70 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_irredentism = 10 }
+		set_country_flag = ita_ww1_ani_florence
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.3.b
+		ai_chance = { base = 30 }
+		add_stability = 0.01
+		add_to_variable = { ita_ww1_irredentism = -5 }
+		set_country_flag = ita_ww1_ani_florence
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.4: Congress of Reggio Emilia (PSI Radical Turn)
+country_event = {
+	id = ww1_italy.4
+	title = ww1_italy.4.t
+	desc = ww1_italy.4.d
+	picture = GFX_event_ww1_italy_4
+	trigger = {
+		tag = ITA
+		date > 1912.7.7
+		NOT = { has_country_flag = ita_ww1_reggio_emilia_done }
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.4.a
+		ai_chance = { base = 85 }
+		add_political_power = -15
+		add_to_variable = { ita_ww1_social_tension = 10 }
+		set_country_flag = ita_ww1_reggio_emilia_done
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.4.b
+		ai_chance = { base = 15 }
+		add_stability = -0.02
+		add_to_variable = { ita_ww1_social_tension = 15 }
+		set_country_flag = ita_ww1_reggio_emilia_done
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.5: The Gentiloni Pact
+country_event = {
+	id = ww1_italy.5
+	title = ww1_italy.5.t
+	desc = ww1_italy.5.d
+	picture = GFX_event_ww1_italy_5
+	trigger = {
+		tag = ITA
+		date > 1913.10.1
+		NOT = { has_country_flag = ita_ww1_gentiloni_signed }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.5.a
+		ai_chance = { base = 80 }
+		add_stability = 0.03
+		add_political_power = 20
+		set_country_flag = ita_ww1_gentiloni_signed
+		add_ideas = ITA_ww1_gentiloni_compact
+	}
+	option = {
+		name = ww1_italy.5.b
+		ai_chance = { base = 20 }
+		add_political_power = 40
+		add_stability = -0.02
+		set_country_flag = ita_ww1_gentiloni_signed
+	}
+}
+
+# ww1_italy.6: Catholic Social Action
+country_event = {
+	id = ww1_italy.6
+	title = ww1_italy.6.t
+	desc = ww1_italy.6.d
+	picture = GFX_event_ww1_italy_6
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.6.a
+		ai_chance = { base = 70 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_southern_gap = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.6.b
+		ai_chance = { base = 30 }
+		add_political_power = 25
+	}
+}
+
+# ww1_italy.7: Red Week (Settimana Rossa - Ancona Riots, June 1914)
+country_event = {
+	id = ww1_italy.7
+	title = ww1_italy.7.t
+	desc = ww1_italy.7.d
+	picture = GFX_event_ww1_italy_7
+	trigger = {
+		tag = ITA
+		date > 1914.6.7
+		NOT = { has_country_flag = ita_ww1_red_week_happened }
+	}
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.7.a
+		ai_chance = { base = 70 }
+		add_stability = -0.05
+		add_to_variable = { ita_ww1_social_tension = 20 }
+		set_country_flag = ita_ww1_red_week_happened
+		add_ideas = ITA_ww1_red_week_aftermath
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.7.b
+		ai_chance = { base = 30 }
+		add_political_power = -30
+		add_to_variable = { ita_ww1_social_tension = 10 }
+		set_country_flag = ita_ww1_red_week_happened
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.8: Restoring Public Order
+country_event = {
+	id = ww1_italy.8
+	title = ww1_italy.8.t
+	desc = ww1_italy.8.d
+	picture = GFX_event_ww1_italy_8
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.8.a
+		ai_chance = { base = 80 }
+		add_stability = 0.03
+		remove_ideas = ITA_ww1_red_week_aftermath
+		add_to_variable = { ita_ww1_social_tension = -15 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.8.b
+		ai_chance = { base = 20 }
+		add_political_power = 30
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.9: The Salandra Ministry Takes Office
+country_event = {
+	id = ww1_italy.9
+	title = ww1_italy.9.t
+	desc = ww1_italy.9.d
+	picture = GFX_event_ww1_italy_9
+	trigger = {
+		tag = ITA
+		date > 1914.3.21
+		NOT = { has_country_flag = ita_ww1_salandra_pm }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.9.a
+		ai_chance = { base = 85 }
+		add_political_power = 25
+		set_country_flag = ita_ww1_salandra_pm
+		add_ideas = ITA_ww1_salandra_emergency_cabinet
+	}
+	option = {
+		name = ww1_italy.9.b
+		ai_chance = { base = 15 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_salandra_pm
+	}
+}
+
+# ww1_italy.10: Mussolini Founds "Il Popolo d'Italia"
+country_event = {
+	id = ww1_italy.10
+	title = ww1_italy.10.t
+	desc = ww1_italy.10.d
+	picture = GFX_event_ww1_italy_10
+	trigger = {
+		tag = ITA
+		date > 1914.11.15
+		NOT = { has_country_flag = ita_ww1_popolo_ditalia_founded }
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.10.a
+		ai_chance = { base = 75 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_interventionism = 10 }
+		set_country_flag = ita_ww1_popolo_ditalia_founded
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.10.b
+		ai_chance = { base = 25 }
+		add_political_power = 20
+		add_to_variable = { ita_ww1_interventionism = 5 }
+		set_country_flag = ita_ww1_popolo_ditalia_founded
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.11: D'Annunzio's Quarto Speech
+country_event = {
+	id = ww1_italy.11
+	title = ww1_italy.11.t
+	desc = ww1_italy.11.d
+	picture = GFX_event_ww1_italy_11
+	trigger = {
+		tag = ITA
+		date > 1915.5.5
+		NOT = { has_country_flag = ita_ww1_quarto_rally_done }
+	}
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.11.a
+		ai_chance = { base = 85 }
+		add_war_support = 0.03
+		add_to_variable = { ita_ww1_interventionism = 15 }
+		set_country_flag = ita_ww1_quarto_rally_done
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.11.b
+		ai_chance = { base = 15 }
+		add_stability = 0.01
+		add_to_variable = { ita_ww1_interventionism = 5 }
+		set_country_flag = ita_ww1_quarto_rally_done
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.12: Giolitti's "Parecchio" Proposition
+country_event = {
+	id = ww1_italy.12
+	title = ww1_italy.12.t
+	desc = ww1_italy.12.d
+	picture = GFX_event_ww1_italy_12
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.12.a
+		ai_chance = { base = 60 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_interventionism = -15 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.12.b
+		ai_chance = { base = 40 }
+		add_political_power = 30
+		add_to_variable = { ita_ww1_interventionism = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.13: The Radiant May (Maggio Radioso)
+country_event = {
+	id = ww1_italy.13
+	title = ww1_italy.13.t
+	desc = ww1_italy.13.d
+	picture = GFX_event_ww1_italy_13
+	trigger = {
+		tag = ITA
+		date > 1915.5.15
+		check_variable = { ita_ww1_interventionism > 40 }
+		NOT = { has_country_flag = ita_ww1_radiant_may_done }
+	}
+	mean_time_to_happen = { days = 4 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.13.a
+		ai_chance = { base = 90 }
+		add_war_support = 0.03
+		add_ideas = ITA_ww1_radiant_may_fervor
+		set_country_flag = ita_ww1_radiant_may_done
+		add_to_variable = { ita_ww1_interventionism = 20 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.13.b
+		ai_chance = { base = 10 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_radiant_may_done
+		add_to_variable = { ita_ww1_interventionism = -10 }
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.14: Wartime Press Censorship
+country_event = {
+	id = ww1_italy.14
+	title = ww1_italy.14.t
+	desc = ww1_italy.14.d
+	picture = GFX_event_ww1_italy_14
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.14.a
+		ai_chance = { base = 75 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.14.b
+		ai_chance = { base = 25 }
+		add_political_power = 25
+	}
+}
+
+# ww1_italy.15: The Boselli National Unity Cabinet
+country_event = {
+	id = ww1_italy.15
+	title = ww1_italy.15.t
+	desc = ww1_italy.15.d
+	picture = GFX_event_ww1_italy_15
+	trigger = {
+		tag = ITA
+		date > 1916.6.18
+		NOT = { has_country_flag = ita_ww1_boselli_cabinet }
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.15.a
+		ai_chance = { base = 85 }
+		add_stability = 0.02
+		add_political_power = 30
+		set_country_flag = ita_ww1_boselli_cabinet
+	}
+	option = {
+		name = ww1_italy.15.b
+		ai_chance = { base = 15 }
+		add_war_support = 0.02
+		set_country_flag = ita_ww1_boselli_cabinet
+	}
+}
+
+# ww1_italy.16: Female Labour in the Industrial Mobilisation
+country_event = {
+	id = ww1_italy.16
+	title = ww1_italy.16.t
+	desc = ww1_italy.16.d
+	picture = GFX_event_ww1_italy_16
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.16.a
+		ai_chance = { base = 80 }
+		add_stability = 0.01
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.16.b
+		ai_chance = { base = 20 }
+		add_political_power = 20
+	}
+}
+
+# ww1_italy.17: Servizio P (Propaganda and Soldier Welfare)
+country_event = {
+	id = ww1_italy.17
+	title = ww1_italy.17.t
+	desc = ww1_italy.17.d
+	picture = GFX_event_ww1_italy_17
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.17.a
+		ai_chance = { base = 85 }
+		add_war_support = 0.02
+		add_ideas = ITA_ww1_propaganda_service_spirit
+		add_to_variable = { ita_ww1_army_morale = 10 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.17.b
+		ai_chance = { base = 15 }
+		add_political_power = 25
+	}
+}
+
+# ww1_italy.18: The Promise of Land to Peasant-Soldiers
+country_event = {
+	id = ww1_italy.18
+	title = ww1_italy.18.t
+	desc = ww1_italy.18.d
+	picture = GFX_event_ww1_italy_18
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.18.a
+		ai_chance = { base = 75 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_army_morale = 5 }
+		add_to_variable = { ita_ww1_southern_gap = -5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.18.b
+		ai_chance = { base = 25 }
+		add_stability = 0.01
+	}
+}
+
+# ww1_italy.19: The Caporetto Commission of Inquiry
+country_event = {
+	id = ww1_italy.19
+	title = ww1_italy.19.t
+	desc = ww1_italy.19.d
+	picture = GFX_event_ww1_italy_19
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.19.a
+		ai_chance = { base = 80 }
+		add_political_power = -20
+		add_to_variable = { ita_ww1_army_morale = 5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.19.b
+		ai_chance = { base = 20 }
+		add_stability = 0.01
+	}
+}
+
+# ww1_italy.20: Orlando's Cabinet of National Resistance
+country_event = {
+	id = ww1_italy.20
+	title = ww1_italy.20.t
+	desc = ww1_italy.20.d
+	picture = GFX_event_ww1_italy_20
+	trigger = {
+		tag = ITA
+		date > 1917.10.30
+		NOT = { has_country_flag = ita_ww1_orlando_pm }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.20.a
+		ai_chance = { base = 90 }
+		add_war_support = 0.03
+		add_ideas = ITA_ww1_orlando_victory_cabinet
+		set_country_flag = ita_ww1_orlando_pm
+		add_to_variable = { ita_ww1_army_morale = 10 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.20.b
+		ai_chance = { base = 10 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_orlando_pm
+	}
+}
+
+# ww1_italy.21: The "Mutilated Victory" Resentment
+country_event = {
+	id = ww1_italy.21
+	title = ww1_italy.21.t
+	desc = ww1_italy.21.d
+	picture = GFX_event_ww1_italy_21
+	trigger = {
+		tag = ITA
+		date > 1919.1.15
+		has_country_flag = ita_ww1_fought_war
+		NOT = { has_country_flag = ita_ww1_mutilated_victory_fired }
+	}
+	mean_time_to_happen = { days = 20 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.21.a
+		ai_chance = { base = 80 }
+		add_ideas = ITA_ww1_mutilated_victory_syndrome
+		add_to_variable = { ita_ww1_irredentism = 15 }
+		set_country_flag = ita_ww1_mutilated_victory_fired
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.21.b
+		ai_chance = { base = 20 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_mutilated_victory_fired
+	}
+}
+
+# ww1_italy.22: Nitti Takes Power Amid Turmoil
+country_event = {
+	id = ww1_italy.22
+	title = ww1_italy.22.t
+	desc = ww1_italy.22.d
+	picture = GFX_event_ww1_italy_22
+	trigger = {
+		tag = ITA
+		date > 1919.6.23
+		NOT = { has_country_flag = ita_ww1_nitti_pm }
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.22.a
+		ai_chance = { base = 75 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_nitti_pm
+	}
+	option = {
+		name = ww1_italy.22.b
+		ai_chance = { base = 25 }
+		add_political_power = 25
+		set_country_flag = ita_ww1_nitti_pm
+	}
+}
+
+# ww1_italy.23: The Foundation of PPI (Don Sturzo)
+country_event = {
+	id = ww1_italy.23
+	title = ww1_italy.23.t
+	desc = ww1_italy.23.d
+	picture = GFX_event_ww1_italy_23
+	trigger = {
+		tag = ITA
+		date > 1919.1.18
+		NOT = { has_country_flag = ita_ww1_ppi_founded }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.23.a
+		ai_chance = { base = 80 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_ppi_founded
+	}
+	option = {
+		name = ww1_italy.23.b
+		ai_chance = { base = 20 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_ppi_founded
+	}
+}
+
+# ww1_italy.24: The Factory Occupations of Turin (Sept 1920)
+country_event = {
+	id = ww1_italy.24
+	title = ww1_italy.24.t
+	desc = ww1_italy.24.d
+	picture = GFX_event_ww1_italy_24
+	trigger = {
+		tag = ITA
+		date > 1920.9.1
+		check_variable = { ita_ww1_social_tension > 50 }
+		NOT = { has_country_flag = ita_ww1_turin_occupations }
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.24.a
+		ai_chance = { base = 70 }
+		add_ideas = ITA_ww1_biennio_rosso_strikes
+		add_to_variable = { ita_ww1_social_tension = 15 }
+		set_country_flag = ita_ww1_turin_occupations
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.24.b
+		ai_chance = { base = 30 }
+		add_political_power = -35
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		set_country_flag = ita_ww1_turin_occupations
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.25: The March on Rome Crisis (Oct 1922)
+country_event = {
+	id = ww1_italy.25
+	title = ww1_italy.25.t
+	desc = ww1_italy.25.d
+	picture = GFX_event_ww1_italy_25
+	trigger = {
+		tag = ITA
+		date > 1922.10.27
+		has_country_flag = ita_ww1_mutilated_victory_fired
+		NOT = { has_country_flag = ita_ww1_march_on_rome_resolved }
+	}
+	mean_time_to_happen = { days = 2 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.25.a
+		ai_chance = { base = 85 }
+		set_country_flag = ita_ww1_march_on_rome_resolved
+		add_ideas = ITA_ww1_squadrist_violence
+		add_stability = -0.05
+	}
+	option = {
+		name = ww1_italy.25.b
+		ai_chance = { base = 15 }
+		set_country_flag = ita_ww1_march_on_rome_resolved
+		add_stability = 0.03
+		add_political_power = -50
+	}
+}

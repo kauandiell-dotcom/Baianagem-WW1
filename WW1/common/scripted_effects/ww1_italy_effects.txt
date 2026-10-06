@@ -1,0 +1,179 @@
+# Italy (ITA) WW1 Scripted Effects: Gauges, Initialisation, and Weekly Logic
+# Ensures strictly bounded internal national variables (0 to 100) and consequences.
+
+ita_ww1_clamp_counters = {
+	clamp_variable = { var = ita_ww1_interventionism min = 0 max = 100 }
+	clamp_variable = { var = ita_ww1_social_tension min = 0 max = 100 }
+	clamp_variable = { var = ita_ww1_army_morale min = 0 max = 100 }
+	clamp_variable = { var = ita_ww1_southern_gap min = 0 max = 100 }
+	clamp_variable = { var = ita_ww1_irredentism min = 0 max = 100 }
+}
+
+ita_ww1_initialise = {
+	if = {
+		limit = { NOT = { has_country_flag = ita_ww1_initialised } }
+		set_country_flag = ita_ww1_initialised
+		set_variable = { ita_ww1_interventionism = 20 }
+		set_variable = { ita_ww1_social_tension = 35 }
+		set_variable = { ita_ww1_army_morale = 50 }
+		set_variable = { ita_ww1_southern_gap = 60 }
+		set_variable = { ita_ww1_irredentism = 40 }
+		ita_ww1_clamp_counters = yes
+		ita_ww1_update_gauges = yes
+	}
+}
+
+ita_ww1_update_gauges = {
+	# 1. Interventionism dynamic spirits
+	if = {
+		limit = { check_variable = { ita_ww1_interventionism < 30 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_neutralist_predominance } }
+			add_ideas = ITA_ww1_neutralist_predominance
+			remove_ideas = ITA_ww1_divided_public_opinion
+			remove_ideas = ITA_ww1_radiant_fever
+		}
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_interventionism > 60 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_radiant_fever } }
+			add_ideas = ITA_ww1_radiant_fever
+			remove_ideas = ITA_ww1_neutralist_predominance
+			remove_ideas = ITA_ww1_divided_public_opinion
+		}
+	}
+	else = {
+		if = { limit = { NOT = { has_idea = ITA_ww1_divided_public_opinion } }
+			add_ideas = ITA_ww1_divided_public_opinion
+			remove_ideas = ITA_ww1_neutralist_predominance
+			remove_ideas = ITA_ww1_radiant_fever
+		}
+	}
+
+	# 2. Social Tension dynamic spirits
+	if = {
+		limit = { check_variable = { ita_ww1_social_tension < 30 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_social_truce } }
+			add_ideas = ITA_ww1_social_truce
+			remove_ideas = ITA_ww1_labour_friction
+			remove_ideas = ITA_ww1_revolutionary_ferment
+		}
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_social_tension > 70 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_revolutionary_ferment } }
+			add_ideas = ITA_ww1_revolutionary_ferment
+			remove_ideas = ITA_ww1_social_truce
+			remove_ideas = ITA_ww1_labour_friction
+		}
+	}
+	else = {
+		if = { limit = { NOT = { has_idea = ITA_ww1_labour_friction } }
+			add_ideas = ITA_ww1_labour_friction
+			remove_ideas = ITA_ww1_social_truce
+			remove_ideas = ITA_ww1_revolutionary_ferment
+		}
+	}
+
+	# 3. Army Morale dynamic spirits
+	if = {
+		limit = { check_variable = { ita_ww1_army_morale < 30 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_shattered_discipline } }
+			add_ideas = ITA_ww1_shattered_discipline
+			remove_ideas = ITA_ww1_stoic_endurance
+			remove_ideas = ITA_ww1_victorious_ardor
+		}
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_army_morale > 70 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_victorious_ardor } }
+			add_ideas = ITA_ww1_victorious_ardor
+			remove_ideas = ITA_ww1_shattered_discipline
+			remove_ideas = ITA_ww1_stoic_endurance
+		}
+	}
+	else = {
+		if = { limit = { NOT = { has_idea = ITA_ww1_stoic_endurance } }
+			add_ideas = ITA_ww1_stoic_endurance
+			remove_ideas = ITA_ww1_shattered_discipline
+			remove_ideas = ITA_ww1_victorious_ardor
+		}
+	}
+
+	# 4. Southern Gap dynamic spirits
+	if = {
+		limit = { check_variable = { ita_ww1_southern_gap < 35 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_integrated_mezzogiorno } }
+			add_ideas = ITA_ww1_integrated_mezzogiorno
+			remove_ideas = ITA_ww1_southern_disparity
+			remove_ideas = ITA_ww1_acute_agrarian_crisis
+		}
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_southern_gap > 70 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_acute_agrarian_crisis } }
+			add_ideas = ITA_ww1_acute_agrarian_crisis
+			remove_ideas = ITA_ww1_integrated_mezzogiorno
+			remove_ideas = ITA_ww1_southern_disparity
+		}
+	}
+	else = {
+		if = { limit = { NOT = { has_idea = ITA_ww1_southern_disparity } }
+			add_ideas = ITA_ww1_southern_disparity
+			remove_ideas = ITA_ww1_integrated_mezzogiorno
+			remove_ideas = ITA_ww1_acute_agrarian_crisis
+		}
+	}
+
+	# 5. Irredentism dynamic spirits
+	if = {
+		limit = { check_variable = { ita_ww1_irredentism < 30 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_subdued_claims } }
+			add_ideas = ITA_ww1_subdued_claims
+			remove_ideas = ITA_ww1_unredeemed_lands_call
+			remove_ideas = ITA_ww1_irredentist_fervor
+		}
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_irredentism > 70 } }
+		if = { limit = { NOT = { has_idea = ITA_ww1_irredentist_fervor } }
+			add_ideas = ITA_ww1_irredentist_fervor
+			remove_ideas = ITA_ww1_subdued_claims
+			remove_ideas = ITA_ww1_unredeemed_lands_call
+		}
+	}
+	else = {
+		if = { limit = { NOT = { has_idea = ITA_ww1_unredeemed_lands_call } }
+			add_ideas = ITA_ww1_unredeemed_lands_call
+			remove_ideas = ITA_ww1_subdued_claims
+			remove_ideas = ITA_ww1_irredentist_fervor
+		}
+	}
+}
+
+ita_ww1_weekly = {
+	if = {
+		limit = { has_capitulated = no }
+		ita_ww1_initialise = yes
+		
+		# In wartime: social tension drifts upward slowly, morale affected by front
+		if = {
+			limit = { has_war = yes }
+			add_to_variable = { ita_ww1_social_tension = 0.15 }
+			if = {
+				limit = { surrender_progress > 0.15 }
+				add_to_variable = { ita_ww1_army_morale = -0.30 }
+				add_to_variable = { ita_ww1_social_tension = 0.25 }
+			}
+		}
+		else = {
+			# In peacetime: gradual relaxation of interventionist fever
+			if = {
+				limit = { check_variable = { ita_ww1_interventionism > 25 } }
+				add_to_variable = { ita_ww1_interventionism = -0.10 }
+			}
+		}
+		
+		ita_ww1_clamp_counters = yes
+		ita_ww1_update_gauges = yes
+	}
+}

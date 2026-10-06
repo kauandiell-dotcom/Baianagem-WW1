@@ -100,7 +100,8 @@ def audit():
         if ("trigger" in keys or "mean_time_to_happen" in keys) and (ev.get("is_triggered_only") != "yes" or "trigger" in keys):
             spontaneous += 1
         for opt in opts:
-            opt_keys = {x.key for x in walk(opt)}
+            opt_nodes = opt.value if isinstance(opt.value, list) else [opt]
+            opt_keys = {x.key for x in walk(opt_nodes)}
             if any(k in ["GER", "AUS", "ENG", "FRA", "TUR", "SER", "GRE"] for k in opt_keys):
                 third_party += 1
                 break

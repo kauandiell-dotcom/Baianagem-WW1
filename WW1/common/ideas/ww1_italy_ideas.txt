@@ -1,0 +1,211 @@
+# Italy (ITA) WW1 Ideas and National Spirits
+
+ideas = {
+	country = {
+		# --- GAUGE 1: INTERVENTIONISM ---
+		ITA_ww1_neutralist_predominance = {
+			picture = generic_neutrality_drift_bonus
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.10
+			}
+		}
+		ITA_ww1_divided_public_opinion = {
+			picture = generic_disjointed_gov
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.05
+				mobilization_speed = 0.10
+			}
+		}
+		ITA_ww1_radiant_fever = {
+			picture = generic_war_support
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = -0.05
+				mobilization_speed = 0.20
+			}
+		}
+
+		# --- GAUGE 2: SOCIAL TENSION ---
+		ITA_ww1_social_truce = {
+			picture = generic_victors_of_ww1
+			modifier = {
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		ITA_ww1_labour_friction = {
+			picture = generic_strike
+			modifier = {
+				industrial_capacity_factory = -0.05
+			}
+		}
+		ITA_ww1_revolutionary_ferment = {
+			picture = generic_communism_drift_bonus
+			modifier = {
+				stability_factor = -0.10
+				industrial_capacity_factory = -0.15
+			}
+		}
+
+		# --- GAUGE 3: ARMY MORALE ---
+		ITA_ww1_shattered_discipline = {
+			picture = generic_morale_bonus
+			modifier = {
+				army_org_factor = -0.15
+				army_morale_factor = -0.10
+			}
+		}
+		ITA_ww1_stoic_endurance = {
+			picture = generic_infantry_bonus
+			modifier = {
+				army_morale_factor = 0.05
+			}
+		}
+		ITA_ww1_victorious_ardor = {
+			picture = generic_volunteer_expedition_bonus
+			modifier = {
+				army_org_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+
+		# --- GAUGE 4: SOUTHERN GAP ---
+		ITA_ww1_integrated_mezzogiorno = {
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		ITA_ww1_southern_disparity = {
+			picture = generic_economic_increase
+			modifier = {
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		ITA_ww1_acute_agrarian_crisis = {
+			picture = generic_agrarian_reform
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.10
+			}
+		}
+
+		# --- GAUGE 5: IRREDENTISM ---
+		ITA_ww1_subdued_claims = {
+			picture = generic_treaty
+			modifier = {
+				political_power_factor = 0.05
+			}
+		}
+		ITA_ww1_unredeemed_lands_call = {
+			picture = generic_fascism_drift_bonus
+			modifier = {
+				war_support_factor = 0.05
+			}
+		}
+		ITA_ww1_irredentist_fervor = {
+			picture = generic_nationalism
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = -0.05
+			}
+		}
+
+		# --- POLITICAL AND WING SPIRITS ---
+		ITA_ww1_trasformismo_politics = {
+			picture = generic_constitutional_guarantees
+			modifier = {
+				political_power_factor = 0.15
+			}
+		}
+		ITA_ww1_universal_suffrage = {
+			picture = generic_democratic_drift_bonus
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		ITA_ww1_gentiloni_compact = {
+			picture = generic_faith
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		ITA_ww1_red_week_aftermath = {
+			picture = generic_strike
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		ITA_ww1_radiant_may_fervor = {
+			picture = generic_war_support
+			modifier = {
+				war_support_factor = 0.05
+				mobilization_speed = 0.10
+			}
+		}
+		ITA_ww1_sacro_egoismo = {
+			picture = generic_intel_bonus
+			modifier = {
+				stability_factor = 0.05
+			}
+		}
+		ITA_ww1_mutilated_victory_syndrome = {
+			picture = generic_nationalism
+			modifier = {
+				war_support_factor = 0.10
+				stability_factor = -0.05
+			}
+		}
+		ITA_ww1_biennio_rosso_strikes = {
+			picture = generic_communism_drift_bonus
+			modifier = {
+				industrial_capacity_factory = -0.10
+				stability_factor = -0.05
+			}
+		}
+		ITA_ww1_squadrist_violence = {
+			picture = generic_fascism_drift_bonus
+			modifier = {
+				stability_factor = -0.05
+				surrender_limit = 0.05
+			}
+		}
+		ITA_ww1_pci_workers_councils = {
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.10
+				stability_factor = -0.05
+			}
+		}
+		ITA_ww1_opera_nazionale_combattenti = {
+			picture = generic_welfare
+			modifier = {
+				stability_factor = 0.05
+				conscription_factor = 0.05
+			}
+		}
+		ITA_ww1_propaganda_service_spirit = {
+			picture = generic_morale_bonus
+			modifier = {
+				war_support_factor = 0.05
+				army_morale_factor = 0.05
+			}
+		}
+		ITA_ww1_salandra_emergency_cabinet = {
+			picture = generic_political_advisor
+			modifier = {
+				political_power_factor = 0.10
+			}
+		}
+		ITA_ww1_orlando_victory_cabinet = {
+			picture = generic_victors_of_ww1
+			modifier = {
+				war_support_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+	}
+}

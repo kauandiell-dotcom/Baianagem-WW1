@@ -1,0 +1,4402 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_giolitti_ministry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_giolitti_ministry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_giolitti_ministry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_giolitti_ministry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_giolitti_ministry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_suffrage_law"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_suffrage_law.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_suffrage_law_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_suffrage_law.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_suffrage_law.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_southern_inquiry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_southern_inquiry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_southern_inquiry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_southern_inquiry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_southern_inquiry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_insurance_institute"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_insurance_institute.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_insurance_institute_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_insurance_institute.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_insurance_institute.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nationalist_association"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nationalist_association.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nationalist_association_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nationalist_association.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_nationalist_association.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_socialist_congress"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_socialist_congress.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_socialist_congress_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_socialist_congress.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_socialist_congress.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trade_union_recognition"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trade_union_recognition.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trade_union_recognition_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trade_union_recognition.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_trade_union_recognition.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_gentiloni_pact"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_gentiloni_pact.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_gentiloni_pact_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_gentiloni_pact.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_gentiloni_pact.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_catholic_social_action"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_catholic_social_action.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_catholic_social_action_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_catholic_social_action.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_catholic_social_action.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_red_week"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_red_week.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_red_week_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_red_week.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_red_week.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_public_order_measures"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_public_order_measures.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_public_order_measures_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_public_order_measures.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_public_order_measures.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_salandra_cabinet"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_salandra_cabinet.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_salandra_cabinet_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_salandra_cabinet.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_salandra_cabinet.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_interventionist_press"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_interventionist_press.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_interventionist_press_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_interventionist_press.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_interventionist_press.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_neutralist_coalition"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_neutralist_coalition.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_neutralist_coalition_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_neutralist_coalition.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_neutralist_coalition.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_popolo_ditalia"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_popolo_ditalia.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_popolo_ditalia_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_popolo_ditalia.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_popolo_ditalia.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_quarto_rally"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_quarto_rally.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_quarto_rally_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_quarto_rally.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_quarto_rally.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_giolitti_parecchio"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_giolitti_parecchio.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_giolitti_parecchio_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_giolitti_parecchio.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_giolitti_parecchio.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_parliament_against_street"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_parliament_against_street.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_parliament_against_street_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_parliament_against_street.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_parliament_against_street.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_radiant_may"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_radiant_may.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_radiant_may_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_radiant_may.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_radiant_may.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_censorship"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_censorship.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_censorship_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_censorship.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_censorship.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_boselli_national_unity"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_boselli_national_unity.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_boselli_national_unity_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_boselli_national_unity.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_boselli_national_unity.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_women_war_economy"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_women_war_economy.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_women_war_economy_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_women_war_economy.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_women_war_economy.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_propaganda_service"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_propaganda_service.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_propaganda_service_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_propaganda_service.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_propaganda_service.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_land_for_soldiers"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_land_for_soldiers.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_land_for_soldiers_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_land_for_soldiers.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_land_for_soldiers.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_caporetto_inquiry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_caporetto_inquiry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_caporetto_inquiry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_caporetto_inquiry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_caporetto_inquiry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_orlando_government"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_orlando_government.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_orlando_government_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_orlando_government.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_orlando_government.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_combatants_opera"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_combatants_opera.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_combatants_opera_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_combatants_opera.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_combatants_opera.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mutilated_victory"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mutilated_victory.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mutilated_victory_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mutilated_victory.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_mutilated_victory.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nitti_cabinet"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nitti_cabinet.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nitti_cabinet_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nitti_cabinet.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_nitti_cabinet.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_proportional_representation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_proportional_representation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_proportional_representation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_proportional_representation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_proportional_representation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_popular_party"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_popular_party.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_popular_party_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_popular_party.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_popular_party.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fasci_di_combattimento"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fasci_di_combattimento.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fasci_di_combattimento_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fasci_di_combattimento.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_fasci_di_combattimento.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_biennio_rosso"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_biennio_rosso.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_biennio_rosso_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_biennio_rosso.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_biennio_rosso.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_factory_occupations"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_factory_occupations.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_factory_occupations_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_factory_occupations.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_factory_occupations.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_third_giolitti"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_third_giolitti.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_third_giolitti_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_third_giolitti.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_third_giolitti.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_liberal_restoration"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_liberal_restoration.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_liberal_restoration_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_liberal_restoration.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_liberal_restoration.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nationalist_order"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nationalist_order.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nationalist_order_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nationalist_order.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_nationalist_order.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_socialist_turn"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_socialist_turn.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_socialist_turn_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_socialist_turn.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_socialist_turn.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_facta_coalition"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_facta_coalition.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_facta_coalition_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_facta_coalition.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_facta_coalition.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_constitutional_reform"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_constitutional_reform.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_constitutional_reform_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_constitutional_reform.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_constitutional_reform.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_squadrist_mobilisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_squadrist_mobilisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_squadrist_mobilisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_squadrist_mobilisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_squadrist_mobilisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_national_party"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_national_party.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_national_party_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_national_party.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_national_party.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_march_on_rome"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_march_on_rome.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_march_on_rome_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_march_on_rome.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_march_on_rome.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_workers_councils"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_workers_councils.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_workers_councils_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_workers_councils.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_workers_councils.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_legalitarian_strike"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_legalitarian_strike.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_legalitarian_strike_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_legalitarian_strike.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_legalitarian_strike.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_industrial_triangle"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_triangle.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_industrial_triangle_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_triangle.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_triangle.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_turin_motor_industry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_turin_motor_industry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_turin_motor_industry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_turin_motor_industry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_turin_motor_industry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_genoa_shipyards"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_genoa_shipyards.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_genoa_shipyards_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_genoa_shipyards.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_genoa_shipyards.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_milan_banking"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_milan_banking.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_milan_banking_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_milan_banking.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_milan_banking.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_hydroelectric_power"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_hydroelectric_power.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_hydroelectric_power_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_hydroelectric_power.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_hydroelectric_power.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mezzogiorno_programme"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mezzogiorno_programme.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mezzogiorno_programme_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mezzogiorno_programme.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_mezzogiorno_programme.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_tariff_protection"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_tariff_protection.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_tariff_protection_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_tariff_protection.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_tariff_protection.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_free_trade_opening"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_free_trade_opening.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_free_trade_opening_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_free_trade_opening.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_free_trade_opening.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ilva_steel_consortium"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ilva_steel_consortium.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ilva_steel_consortium_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ilva_steel_consortium.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_ilva_steel_consortium.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_emigrant_remittances"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_emigrant_remittances.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_emigrant_remittances_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_emigrant_remittances.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_emigrant_remittances.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_apulian_aqueduct"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_apulian_aqueduct.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_apulian_aqueduct_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_apulian_aqueduct.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_apulian_aqueduct.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_sicilian_sulphur"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_sicilian_sulphur.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_sicilian_sulphur_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_sicilian_sulphur.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_sicilian_sulphur.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_land_reclamation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_land_reclamation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_land_reclamation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_land_reclamation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_land_reclamation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_merchant_marine_subsidies"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_merchant_marine_subsidies.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_merchant_marine_subsidies_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_merchant_marine_subsidies.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_merchant_marine_subsidies.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libya_colonisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libya_colonisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libya_colonisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libya_colonisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_libya_colonisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_industrial_mobilisation_committee"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_mobilisation_committee.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_industrial_mobilisation_committee_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_mobilisation_committee.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_mobilisation_committee.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_munitions_undersecretariat"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_munitions_undersecretariat.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_munitions_undersecretariat_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_munitions_undersecretariat.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_munitions_undersecretariat.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ansaldo_expansion"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ansaldo_expansion.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ansaldo_expansion_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ansaldo_expansion.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_ansaldo_expansion.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_aero_engine_contracts"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_aero_engine_contracts.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_aero_engine_contracts_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_aero_engine_contracts.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_aero_engine_contracts.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_loans"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_loans.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_loans_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_loans.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_loans.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_british_coal"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_british_coal.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_british_coal_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_british_coal.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_british_coal.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_hydropower"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_hydropower.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_hydropower_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_hydropower.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_hydropower.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_bread_rationing"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_bread_rationing.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_bread_rationing_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_bread_rationing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_bread_rationing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_price_controls"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_price_controls.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_price_controls_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_price_controls.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_price_controls.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_grain_requisition"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_grain_requisition.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_grain_requisition_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_grain_requisition.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_grain_requisition.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_refugee_relief"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_refugee_relief.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_refugee_relief_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_refugee_relief.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_refugee_relief.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_inflation_management"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_inflation_management.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_inflation_management_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_inflation_management.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_inflation_management.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_profiteers_inquiry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_profiteers_inquiry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_profiteers_inquiry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_profiteers_inquiry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_profiteers_inquiry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_industrial_demobilisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_demobilisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_industrial_demobilisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_demobilisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_industrial_demobilisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_veterans_land_settlement"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_veterans_land_settlement.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_veterans_land_settlement_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_veterans_land_settlement.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_veterans_land_settlement.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_public_works_programme"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_public_works_programme.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_public_works_programme_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_public_works_programme.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_public_works_programme.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_discount_bank_crisis"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_discount_bank_crisis.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_discount_bank_crisis_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_discount_bank_crisis.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_discount_bank_crisis.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_bank_rescue_consortium"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_bank_rescue_consortium.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_bank_rescue_consortium_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_bank_rescue_consortium.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_bank_rescue_consortium.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_southern_development_charter"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_southern_development_charter.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_southern_development_charter_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_southern_development_charter.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_southern_development_charter.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_budget_balancing"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_budget_balancing.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_budget_balancing_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_budget_balancing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_budget_balancing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_triple_alliance"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_triple_alliance.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_triple_alliance_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_triple_alliance.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_triple_alliance.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_renew_triple_alliance"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_renew_triple_alliance.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_renew_triple_alliance_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_renew_triple_alliance.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_renew_triple_alliance.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mediterranean_balance"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mediterranean_balance.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mediterranean_balance_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mediterranean_balance.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_mediterranean_balance.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_armed_neutrality_doctrine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_armed_neutrality_doctrine.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_armed_neutrality_doctrine_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_armed_neutrality_doctrine.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_armed_neutrality_doctrine.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_albanian_question"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_albanian_question.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_albanian_question_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_albanian_question.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_albanian_question.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_balkan_league_crisis"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_balkan_league_crisis.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_balkan_league_crisis_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_balkan_league_crisis.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_balkan_league_crisis.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_london_conference"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_london_conference.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_london_conference_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_london_conference.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_london_conference.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_naval_convention_vienna"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_naval_convention_vienna.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_naval_convention_vienna_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_naval_convention_vienna.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_naval_convention_vienna.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_franco_italian_agreement"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_franco_italian_agreement.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_franco_italian_agreement_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_franco_italian_agreement.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_franco_italian_agreement.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_british_friendship"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_british_friendship.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_british_friendship_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_british_friendship.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_british_friendship.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_sarajevo_crisis"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_sarajevo_crisis.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_sarajevo_crisis_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_sarajevo_crisis.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_sarajevo_crisis.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_declare_neutrality"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_neutrality.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_declare_neutrality_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_neutrality.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_neutrality.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_honour_alliance"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_honour_alliance.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_honour_alliance_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_honour_alliance.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_honour_alliance.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vienna_compensation_talks"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vienna_compensation_talks.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vienna_compensation_talks_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vienna_compensation_talks.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_vienna_compensation_talks.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_entente_overtures"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_entente_overtures.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_entente_overtures_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_entente_overtures.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_entente_overtures.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_london"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_london.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_london_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_london.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_london.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_concessions_accord"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_concessions_accord.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_concessions_accord_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_concessions_accord.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_concessions_accord.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_continued_neutrality"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_continued_neutrality.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_continued_neutrality_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_continued_neutrality.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_continued_neutrality.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_denounce_triple_alliance"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_denounce_triple_alliance.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_denounce_triple_alliance_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_denounce_triple_alliance.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_denounce_triple_alliance.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_declare_war_on_austria"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_war_on_austria.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_declare_war_on_austria_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_war_on_austria.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_war_on_austria.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_powers_entry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_powers_entry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_powers_entry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_powers_entry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_powers_entry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_joint_command"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_joint_command.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_joint_command_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_joint_command.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_joint_command.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_adriatic_fleet"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_adriatic_fleet.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_central_adriatic_fleet_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_adriatic_fleet.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_central_adriatic_fleet.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nice_and_tunisia_claims"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nice_and_tunisia_claims.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_nice_and_tunisia_claims_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_nice_and_tunisia_claims.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_nice_and_tunisia_claims.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_armed_mediator"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_armed_mediator.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_armed_mediator_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_armed_mediator.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_armed_mediator.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_declare_war_on_germany"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_war_on_germany.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_declare_war_on_germany_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_war_on_germany.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_declare_war_on_germany.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_salonika_contingent"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_salonika_contingent.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_salonika_contingent_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_salonika_contingent.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_salonika_contingent.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_albanian_protectorate"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_albanian_protectorate.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_albanian_protectorate_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_albanian_protectorate.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_albanian_protectorate.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_saint_jean_de_maurienne"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_saint_jean_de_maurienne.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_saint_jean_de_maurienne_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_saint_jean_de_maurienne.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_saint_jean_de_maurienne.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_supreme_war_council"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_supreme_war_council.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_supreme_war_council_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_supreme_war_council.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_supreme_war_council.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_oppressed_peoples_congress"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_oppressed_peoples_congress.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_oppressed_peoples_congress_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_oppressed_peoples_congress.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_oppressed_peoples_congress.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vatican_peace_note"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vatican_peace_note.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vatican_peace_note_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vatican_peace_note.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_vatican_peace_note.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_neutral_peace_conference"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_neutral_peace_conference.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_neutral_peace_conference_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_neutral_peace_conference.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_neutral_peace_conference.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_wilsonian_conflict"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_wilsonian_conflict.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_wilsonian_conflict_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_wilsonian_conflict.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_wilsonian_conflict.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_paris_delegation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_paris_delegation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_paris_delegation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_paris_delegation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_paris_delegation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_saint_germain"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_saint_germain.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_saint_germain_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_saint_germain.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_saint_germain.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_dalmatian_claims"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_dalmatian_claims.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_dalmatian_claims_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_dalmatian_claims.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_dalmatian_claims.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_rapallo"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_rapallo.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_rapallo_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_rapallo.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_rapallo.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_washington_conference"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_washington_conference.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_washington_conference_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_washington_conference.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_washington_conference.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_corfu_incident"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_corfu_incident.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_corfu_incident_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_corfu_incident.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_corfu_incident.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_army_staff_reorganisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_staff_reorganisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_army_staff_reorganisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_staff_reorganisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_staff_reorganisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libya_lessons"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libya_lessons.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libya_lessons_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libya_lessons.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_libya_lessons.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_cadorna_chief_of_staff"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_cadorna_chief_of_staff.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_cadorna_chief_of_staff_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_cadorna_chief_of_staff.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_cadorna_chief_of_staff.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_alpini_expansion"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_alpini_expansion.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_alpini_expansion_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_alpini_expansion.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_alpini_expansion.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_artillery_modernisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_artillery_modernisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_artillery_modernisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_artillery_modernisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_artillery_modernisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mountain_artillery"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mountain_artillery.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mountain_artillery_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mountain_artillery.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_mountain_artillery.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_heavy_guns"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_heavy_guns.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_heavy_guns_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_heavy_guns.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_heavy_guns.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_machine_guns"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_machine_guns.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_machine_guns_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_machine_guns.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_machine_guns.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_north_east_mobilisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_north_east_mobilisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_north_east_mobilisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_north_east_mobilisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_north_east_mobilisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_frontier_fortifications"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_frontier_fortifications.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_frontier_fortifications_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_frontier_fortifications.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_frontier_fortifications.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_offensive_doctrine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_offensive_doctrine.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_offensive_doctrine_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_offensive_doctrine.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_offensive_doctrine.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_of_position"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_of_position.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_war_of_position_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_of_position.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_war_of_position.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trench_mortars"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trench_mortars.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trench_mortars_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trench_mortars.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_trench_mortars.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_gas_defence"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_gas_defence.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_gas_defence_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_gas_defence.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_gas_defence.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_reserve_officer_schools"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_reserve_officer_schools.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_reserve_officer_schools_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_reserve_officer_schools.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_reserve_officer_schools.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_dismounted_cavalry"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_dismounted_cavalry.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_dismounted_cavalry_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_dismounted_cavalry.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_dismounted_cavalry.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_assault_units"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_assault_units.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_assault_units_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_assault_units.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_assault_units.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_diaz_takes_command"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_diaz_takes_command.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_diaz_takes_command_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_diaz_takes_command.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_diaz_takes_command.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_elastic_defence"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_elastic_defence.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_elastic_defence_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_elastic_defence.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_elastic_defence.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_offensive_pressure"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_offensive_pressure.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_offensive_pressure_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_offensive_pressure.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_offensive_pressure.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_motor_transport"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_motor_transport.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_motor_transport_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_motor_transport.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_motor_transport.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_army_demobilisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_demobilisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_army_demobilisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_demobilisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_demobilisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_carabinieri_reinforcement"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_carabinieri_reinforcement.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_carabinieri_reinforcement_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_carabinieri_reinforcement.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_carabinieri_reinforcement.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_postwar_army_reform"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_postwar_army_reform.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_postwar_army_reform_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_postwar_army_reform.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_postwar_army_reform.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_army_budget_cuts"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_budget_cuts.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_army_budget_cuts_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_budget_cuts.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_army_budget_cuts.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_naval_estimates"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_naval_estimates.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_naval_estimates_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_naval_estimates.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_naval_estimates.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_cavour_class"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_cavour_class.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_cavour_class_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_cavour_class.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_cavour_class.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_andrea_doria_class"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_andrea_doria_class.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_andrea_doria_class_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_andrea_doria_class.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_andrea_doria_class.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fast_cruisers"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fast_cruisers.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fast_cruisers_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fast_cruisers.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_fast_cruisers.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_taranto_base"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_taranto_base.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_taranto_base_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_taranto_base.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_taranto_base.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_brindisi_venice_bases"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_brindisi_venice_bases.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_brindisi_venice_bases_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_brindisi_venice_bases.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_brindisi_venice_bases.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_submarine_programme"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_submarine_programme.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_submarine_programme_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_submarine_programme.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_submarine_programme.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_torpedo_boats"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_torpedo_boats.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_torpedo_boats_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_torpedo_boats.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_torpedo_boats.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_adriatic_watch"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_adriatic_watch.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_adriatic_watch_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_adriatic_watch.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_adriatic_watch.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_otranto_barrage"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_otranto_barrage.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_otranto_barrage_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_otranto_barrage.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_otranto_barrage.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_battleship_fleet_in_being"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_battleship_fleet_in_being.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_battleship_fleet_in_being_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_battleship_fleet_in_being.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_battleship_fleet_in_being.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_flotilla_warfare"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_flotilla_warfare.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_flotilla_warfare_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_flotilla_warfare.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_flotilla_warfare.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mas_boats"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mas_boats.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_mas_boats_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_mas_boats.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_mas_boats.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_adriatic_convoys"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_adriatic_convoys.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_adriatic_convoys_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_adriatic_convoys.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_adriatic_convoys.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_anti_submarine_patrols"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_anti_submarine_patrols.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_anti_submarine_patrols_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_anti_submarine_patrols.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_anti_submarine_patrols.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_human_torpedoes"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_human_torpedoes.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_human_torpedoes_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_human_torpedoes.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_human_torpedoes.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_postwar_fleet_review"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_postwar_fleet_review.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_postwar_fleet_review_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_postwar_fleet_review.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_postwar_fleet_review.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_capital_ship_modernisation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_capital_ship_modernisation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_capital_ship_modernisation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_capital_ship_modernisation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_capital_ship_modernisation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_aviators_battalion"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_aviators_battalion.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_aviators_battalion_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_aviators_battalion.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_aviators_battalion.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_pilot_schools"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_pilot_schools.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_pilot_schools_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_pilot_schools.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_pilot_schools.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_caproni_bombers"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_caproni_bombers.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_caproni_bombers_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_caproni_bombers.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_caproni_bombers.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_aeronautical_corps"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_aeronautical_corps.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_aeronautical_corps_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_aeronautical_corps.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_aeronautical_corps.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_isotta_engines"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_isotta_engines.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_isotta_engines_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_isotta_engines.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_isotta_engines.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_flying_boats"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_flying_boats.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_flying_boats_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_flying_boats.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_flying_boats.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_sva_reconnaissance"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_sva_reconnaissance.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_sva_reconnaissance_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_sva_reconnaissance.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_sva_reconnaissance.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fighter_squadrons"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fighter_squadrons.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fighter_squadrons_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fighter_squadrons.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_fighter_squadrons.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ace_squadrons"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ace_squadrons.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ace_squadrons_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ace_squadrons.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_ace_squadrons.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_strategic_bombing"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_strategic_bombing.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_strategic_bombing_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_strategic_bombing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_strategic_bombing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vienna_flight"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vienna_flight.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vienna_flight_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vienna_flight.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_vienna_flight.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_air_autonomy_debate"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_air_autonomy_debate.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_air_autonomy_debate_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_air_autonomy_debate.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_air_autonomy_debate.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libyan_question"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libyan_question.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libyan_question_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libyan_question.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_libyan_question.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ultimatum_to_the_porte"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ultimatum_to_the_porte.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_ultimatum_to_the_porte_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_ultimatum_to_the_porte.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_ultimatum_to_the_porte.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_tripoli_landing"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_tripoli_landing.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_tripoli_landing_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_tripoli_landing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_tripoli_landing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_first_aerial_bombing"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_first_aerial_bombing.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_first_aerial_bombing_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_first_aerial_bombing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_first_aerial_bombing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_inland_oases_campaign"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_inland_oases_campaign.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_inland_oases_campaign_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_inland_oases_campaign.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_inland_oases_campaign.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_dodecanese_occupation"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_dodecanese_occupation.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_dodecanese_occupation_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_dodecanese_occupation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_dodecanese_occupation.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_ouchy"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_ouchy.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_treaty_of_ouchy_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_ouchy.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_treaty_of_ouchy.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_cyrenaica_pacification"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_cyrenaica_pacification.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_cyrenaica_pacification_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_cyrenaica_pacification.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_cyrenaica_pacification.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_isonzo_offensives"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_isonzo_offensives.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_isonzo_offensives_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_isonzo_offensives.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_isonzo_offensives.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_french_alpine_front"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_french_alpine_front.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_french_alpine_front_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_french_alpine_front.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_french_alpine_front.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_riviera_offensive"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_riviera_offensive.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_riviera_offensive_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_riviera_offensive.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_riviera_offensive.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_tunisian_landing"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_tunisian_landing.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_tunisian_landing_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_tunisian_landing.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_tunisian_landing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trentino_defence"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trentino_defence.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trentino_defence_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trentino_defence.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_trentino_defence.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_gorizia"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_gorizia.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_gorizia_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_gorizia.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_gorizia.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_bainsizza"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_bainsizza.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_bainsizza_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_bainsizza.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_bainsizza.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_caporetto"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_caporetto.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_caporetto_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_caporetto.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_caporetto.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_piave_line"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_piave_line.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_piave_line_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_piave_line.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_piave_line.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_solstice_battle"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_solstice_battle.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_solstice_battle_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_solstice_battle.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_solstice_battle.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vittorio_veneto"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vittorio_veneto.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_vittorio_veneto_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_vittorio_veneto.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_vittorio_veneto.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_villa_giusti_armistice"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_villa_giusti_armistice.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_villa_giusti_armistice_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_villa_giusti_armistice.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_villa_giusti_armistice.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trento_trieste_integration"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trento_trieste_integration.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_trento_trieste_integration_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_trento_trieste_integration.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_trento_trieste_integration.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fiume_regency"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fiume_regency.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_fiume_regency_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_fiume_regency.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_fiume_regency.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_christmas_of_blood"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_christmas_of_blood.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_christmas_of_blood_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_christmas_of_blood.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_christmas_of_blood.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_unknown_soldier"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_unknown_soldier.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_unknown_soldier_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_unknown_soldier.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_unknown_soldier.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libyan_reconquest"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libyan_reconquest.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_ww1_ITA_ww1_libyan_reconquest_shine"
+		texturefile = "gfx/interface/goals/ww1_italy/ITA_ww1_libyan_reconquest.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_italy/ITA_ww1_libyan_reconquest.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+}

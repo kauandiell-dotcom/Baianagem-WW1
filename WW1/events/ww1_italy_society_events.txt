@@ -1,0 +1,395 @@
+# Italy (ITA) WW1 Economy, Society, and Labour Events
+
+# ww1_italy.66: The Inquiry into Southern Agriculture
+country_event = {
+	id = ww1_italy.66
+	title = ww1_italy.66.t
+	desc = ww1_italy.66.d
+	picture = GFX_event_ww1_italy_66
+	trigger = {
+		tag = ITA
+		date > 1911.10.15
+		NOT = { has_country_flag = ita_ww1_southern_inquiry_done }
+	}
+	mean_time_to_happen = { days = 20 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.66.a
+		ai_chance = { base = 75 }
+		add_political_power = 20
+		add_to_variable = { ita_ww1_southern_gap = -5 }
+		set_country_flag = ita_ww1_southern_inquiry_done
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.66.b
+		ai_chance = { base = 25 }
+		add_stability = 0.01
+		set_country_flag = ita_ww1_southern_inquiry_done
+	}
+}
+
+# ww1_italy.67: The Turin Automobile Boom
+country_event = {
+	id = ww1_italy.67
+	title = ww1_italy.67.t
+	desc = ww1_italy.67.d
+	picture = GFX_event_ww1_italy_67
+	trigger = {
+		tag = ITA
+		date > 1912.2.1
+		NOT = { has_country_flag = ita_ww1_turin_boom_done }
+	}
+	mean_time_to_happen = { days = 25 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.67.a
+		ai_chance = { base = 80 }
+		add_political_power = 15
+		set_country_flag = ita_ww1_turin_boom_done
+	}
+	option = {
+		name = ww1_italy.67.b
+		ai_chance = { base = 20 }
+		add_stability = 0.01
+		set_country_flag = ita_ww1_turin_boom_done
+	}
+}
+
+# ww1_italy.68: Apulian Aqueduct Milestone
+country_event = {
+	id = ww1_italy.68
+	title = ww1_italy.68.t
+	desc = ww1_italy.68.d
+	picture = GFX_event_ww1_italy_68
+	trigger = {
+		tag = ITA
+		date > 1913.4.15
+		NOT = { has_country_flag = ita_ww1_aqueduct_milestone }
+	}
+	mean_time_to_happen = { days = 20 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.68.a
+		ai_chance = { base = 85 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_southern_gap = -8 }
+		set_country_flag = ita_ww1_aqueduct_milestone
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.68.b
+		ai_chance = { base = 15 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_aqueduct_milestone
+	}
+}
+
+# ww1_italy.69: Emigrant Remittances and the Banco di Napoli
+country_event = {
+	id = ww1_italy.69
+	title = ww1_italy.69.t
+	desc = ww1_italy.69.d
+	picture = GFX_event_ww1_italy_69
+	trigger = {
+		tag = ITA
+		date > 1913.9.1
+		NOT = { has_country_flag = ita_ww1_remittances_event }
+	}
+	mean_time_to_happen = { days = 30 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.69.a
+		ai_chance = { base = 80 }
+		add_political_power = 25
+		add_to_variable = { ita_ww1_southern_gap = -5 }
+		set_country_flag = ita_ww1_remittances_event
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.69.b
+		ai_chance = { base = 20 }
+		add_stability = 0.01
+		set_country_flag = ita_ww1_remittances_event
+	}
+}
+
+# ww1_italy.70: Industrial Mobilisation Decree
+country_event = {
+	id = ww1_italy.70
+	title = ww1_italy.70.t
+	desc = ww1_italy.70.d
+	picture = GFX_event_ww1_italy_70
+	trigger = {
+		tag = ITA
+		date > 1915.6.26
+		has_war = yes
+		NOT = { has_country_flag = ita_ww1_ind_mob_decree }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.70.a
+		ai_chance = { base = 90 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_social_tension = 5 }
+		set_country_flag = ita_ww1_ind_mob_decree
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.70.b
+		ai_chance = { base = 10 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_ind_mob_decree
+	}
+}
+
+# ww1_italy.71: The Coal Supply Crisis
+country_event = {
+	id = ww1_italy.71
+	title = ww1_italy.71.t
+	desc = ww1_italy.71.d
+	picture = GFX_event_ww1_italy_71
+	trigger = {
+		tag = ITA
+		date > 1916.1.10
+		has_war = yes
+		NOT = { has_country_flag = ita_ww1_coal_crisis_event }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.71.a
+		ai_chance = { base = 75 }
+		add_political_power = -20
+		add_to_variable = { ita_ww1_social_tension = 5 }
+		set_country_flag = ita_ww1_coal_crisis_event
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.71.b
+		ai_chance = { base = 25 }
+		add_stability = -0.02
+		set_country_flag = ita_ww1_coal_crisis_event
+	}
+}
+
+# ww1_italy.72: The Turin Bread Riots (August 1917)
+country_event = {
+	id = ww1_italy.72
+	title = ww1_italy.72.t
+	desc = ww1_italy.72.d
+	picture = GFX_event_ww1_italy_72
+	trigger = {
+		tag = ITA
+		date > 1917.8.22
+		has_war = yes
+		NOT = { has_country_flag = ita_ww1_turin_bread_riots }
+	}
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.72.a
+		ai_chance = { base = 80 }
+		add_stability = -0.03
+		add_to_variable = { ita_ww1_social_tension = 15 }
+		set_country_flag = ita_ww1_turin_bread_riots
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.72.b
+		ai_chance = { base = 20 }
+		add_political_power = -30
+		set_country_flag = ita_ww1_turin_bread_riots
+	}
+}
+
+# ww1_italy.73: The Venetian Refugee Influx
+country_event = {
+	id = ww1_italy.73
+	title = ww1_italy.73.t
+	desc = ww1_italy.73.d
+	picture = GFX_event_ww1_italy_73
+	trigger = {
+		tag = ITA
+		date > 1917.11.10
+		has_country_flag = ita_ww1_caporetto_shock
+		NOT = { has_country_flag = ita_ww1_refugee_event_done }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.73.a
+		ai_chance = { base = 85 }
+		add_stability = 0.01
+		add_to_variable = { ita_ww1_social_tension = 5 }
+		set_country_flag = ita_ww1_refugee_event_done
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.73.b
+		ai_chance = { base = 15 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_refugee_event_done
+	}
+}
+
+# ww1_italy.74: The Parliamentary Commission on War Profiteering
+country_event = {
+	id = ww1_italy.74
+	title = ww1_italy.74.t
+	desc = ww1_italy.74.d
+	picture = GFX_event_ww1_italy_74
+	trigger = {
+		tag = ITA
+		date > 1918.7.1
+		has_war = yes
+		NOT = { has_country_flag = ita_ww1_profiteers_done }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.74.a
+		ai_chance = { base = 80 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_social_tension = -5 }
+		set_country_flag = ita_ww1_profiteers_done
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.74.b
+		ai_chance = { base = 20 }
+		add_political_power = 25
+		set_country_flag = ita_ww1_profiteers_done
+	}
+}
+
+# ww1_italy.75: The Postwar Strike Wave
+country_event = {
+	id = ww1_italy.75
+	title = ww1_italy.75.t
+	desc = ww1_italy.75.d
+	picture = GFX_event_ww1_italy_75
+	trigger = {
+		tag = ITA
+		date > 1919.7.15
+		NOT = { has_war = yes }
+		NOT = { has_country_flag = ita_ww1_postwar_strikes }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.75.a
+		ai_chance = { base = 75 }
+		add_stability = -0.03
+		add_to_variable = { ita_ww1_social_tension = 15 }
+		set_country_flag = ita_ww1_postwar_strikes
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.75.b
+		ai_chance = { base = 25 }
+		add_political_power = -25
+		set_country_flag = ita_ww1_postwar_strikes
+	}
+}
+
+# ww1_italy.76: Failure of the Banca Italiana di Sconto
+country_event = {
+	id = ww1_italy.76
+	title = ww1_italy.76.t
+	desc = ww1_italy.76.d
+	picture = GFX_event_ww1_italy_76
+	trigger = {
+		tag = ITA
+		date > 1921.12.29
+		NOT = { has_country_flag = ita_ww1_bis_collapse }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.76.a
+		ai_chance = { base = 85 }
+		add_political_power = -30
+		add_to_variable = { ita_ww1_social_tension = 10 }
+		set_country_flag = ita_ww1_bis_collapse
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.76.b
+		ai_chance = { base = 15 }
+		add_stability = -0.02
+		set_country_flag = ita_ww1_bis_collapse
+	}
+}
+
+# ww1_italy.77: National Industrial Conciliation Pact
+country_event = {
+	id = ww1_italy.77
+	title = ww1_italy.77.t
+	desc = ww1_italy.77.d
+	picture = GFX_event_ww1_italy_77
+	trigger = {
+		tag = ITA
+		date > 1922.3.1
+		NOT = { has_country_flag = ita_ww1_cgl_pact }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.77.a
+		ai_chance = { base = 75 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_social_tension = -10 }
+		set_country_flag = ita_ww1_cgl_pact
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.77.b
+		ai_chance = { base = 25 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_cgl_pact
+	}
+}
+
+# ww1_italy.78: The Arditi Veterans' Congress
+country_event = {
+	id = ww1_italy.78
+	title = ww1_italy.78.t
+	desc = ww1_italy.78.d
+	picture = GFX_event_ww1_italy_78
+	trigger = {
+		tag = ITA
+		date > 1920.4.1
+		NOT = { has_country_flag = ita_ww1_arditi_congress }
+	}
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.78.a
+		ai_chance = { base = 80 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_irredentism = 10 }
+		set_country_flag = ita_ww1_arditi_congress
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.78.b
+		ai_chance = { base = 20 }
+		add_stability = 0.01
+		set_country_flag = ita_ww1_arditi_congress
+	}
+}

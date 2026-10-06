@@ -1,0 +1,440 @@
+# Italy (ITA) WW1 War, Libyan Settlement, and Campaign Events
+
+# ww1_italy.51: Ottoman Response to Tripoli Claims (Fires for TUR)
+country_event = {
+	id = ww1_italy.51
+	title = ww1_italy.51.t
+	desc = ww1_italy.51.d
+	picture = GFX_event_ww1_italy_51
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.51.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 3.0
+				date > 1912.10.1
+			}
+		}
+		add_political_power = 50
+		ITA = { country_event = { id = ww1_italy.52 days = 1 } }
+	}
+	option = {
+		name = ww1_italy.51.b
+		ai_chance = {
+			base = 70
+			modifier = {
+				factor = 0.3
+				date > 1912.10.1
+			}
+		}
+		add_political_power = 25
+		ITA = { country_event = { id = ww1_italy.53 days = 1 } }
+	}
+}
+
+# ww1_italy.52: The Treaty of Ouchy: Turkey Cedes Libya and Dodecanese
+country_event = {
+	id = ww1_italy.52
+	title = ww1_italy.52.t
+	desc = ww1_italy.52.d
+	picture = GFX_event_ww1_italy_52
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.52.a
+		ai_chance = { base = 95 }
+		add_stability = 0.03
+		add_war_support = 0.02
+		set_country_flag = ita_ww1_libya_acquired
+		# Transfer Libyan states and Dodecanese
+		448 = { transfer_state_to = ITA }
+		449 = { transfer_state_to = ITA }
+		450 = { transfer_state_to = ITA }
+		451 = { transfer_state_to = ITA }
+		661 = { transfer_state_to = ITA }
+		662 = { transfer_state_to = ITA }
+		663 = { transfer_state_to = ITA }
+		1095 = { transfer_state_to = ITA }
+		273 = { transfer_state_to = ITA }
+		164 = { transfer_state_to = ITA }
+	}
+	option = {
+		name = ww1_italy.52.b
+		ai_chance = { base = 5 }
+		add_political_power = 40
+	}
+}
+
+# ww1_italy.53: Sublime Porte Refuses Italian Demands
+country_event = {
+	id = ww1_italy.53
+	title = ww1_italy.53.t
+	desc = ww1_italy.53.d
+	picture = GFX_event_ww1_italy_53
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.53.a
+		ai_chance = { base = 80 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_irredentism = 10 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.53.b
+		ai_chance = { base = 20 }
+		add_political_power = 20
+	}
+}
+
+# ww1_italy.54: The Capture of Gorizia (Sixth Battle of the Isonzo)
+country_event = {
+	id = ww1_italy.54
+	title = ww1_italy.54.t
+	desc = ww1_italy.54.d
+	picture = GFX_event_ww1_italy_54
+	trigger = {
+		tag = ITA
+		date > 1916.8.9
+		has_war_with = AUS
+		NOT = { has_country_flag = ita_ww1_gorizia_captured }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.54.a
+		ai_chance = { base = 90 }
+		army_experience = 15
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_army_morale = 10 }
+		set_country_flag = ita_ww1_gorizia_captured
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.54.b
+		ai_chance = { base = 10 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_gorizia_captured
+	}
+}
+
+# ww1_italy.55: The Bainsizza Plateau Offensive
+country_event = {
+	id = ww1_italy.55
+	title = ww1_italy.55.t
+	desc = ww1_italy.55.d
+	picture = GFX_event_ww1_italy_55
+	trigger = {
+		tag = ITA
+		date > 1917.8.20
+		has_war_with = AUS
+		NOT = { has_country_flag = ita_ww1_bainsizza_done }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.55.a
+		ai_chance = { base = 85 }
+		army_experience = 15
+		add_to_variable = { ita_ww1_army_morale = 5 }
+		set_country_flag = ita_ww1_bainsizza_done
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.55.b
+		ai_chance = { base = 15 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_bainsizza_done
+	}
+}
+
+# ww1_italy.56: The Crisis of Caporetto (October 1917)
+country_event = {
+	id = ww1_italy.56
+	title = ww1_italy.56.t
+	desc = ww1_italy.56.d
+	picture = GFX_event_ww1_italy_56
+	trigger = {
+		tag = ITA
+		date > 1917.10.24
+		has_war = yes
+		NOT = { has_country_flag = ita_ww1_caporetto_shock }
+	}
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.56.a
+		ai_chance = { base = 85 }
+		add_stability = -0.05
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_army_morale = -25 }
+		set_country_flag = ita_ww1_caporetto_shock
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.56.b
+		ai_chance = { base = 15 }
+		add_political_power = -30
+		add_to_variable = { ita_ww1_army_morale = -15 }
+		set_country_flag = ita_ww1_caporetto_shock
+		ita_ww1_clamp_counters = yes
+	}
+}
+
+# ww1_italy.57: Stand on the Piave Line
+country_event = {
+	id = ww1_italy.57
+	title = ww1_italy.57.t
+	desc = ww1_italy.57.d
+	picture = GFX_event_ww1_italy_57
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.57.a
+		ai_chance = { base = 90 }
+		add_war_support = 0.03
+		add_to_variable = { ita_ww1_army_morale = 15 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.57.b
+		ai_chance = { base = 10 }
+		add_stability = 0.02
+	}
+}
+
+# ww1_italy.58: Armando Diaz Assumes Supreme Command
+country_event = {
+	id = ww1_italy.58
+	title = ww1_italy.58.t
+	desc = ww1_italy.58.d
+	picture = GFX_event_ww1_italy_58
+	trigger = {
+		tag = ITA
+		date > 1917.11.8
+		has_country_flag = ita_ww1_caporetto_shock
+		NOT = { has_country_flag = ita_ww1_diaz_appointed }
+	}
+	mean_time_to_happen = { days = 2 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.58.a
+		ai_chance = { base = 95 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_army_morale = 20 }
+		set_country_flag = ita_ww1_diaz_appointed
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.58.b
+		ai_chance = { base = 5 }
+		add_political_power = 20
+		set_country_flag = ita_ww1_diaz_appointed
+	}
+}
+
+# ww1_italy.59: The Battle of the Solstice (Battaglia del Solstizio)
+country_event = {
+	id = ww1_italy.59
+	title = ww1_italy.59.t
+	desc = ww1_italy.59.d
+	picture = GFX_event_ww1_italy_59
+	trigger = {
+		tag = ITA
+		date > 1918.6.15
+		has_war_with = AUS
+		NOT = { has_country_flag = ita_ww1_solstice_repulsed }
+	}
+	mean_time_to_happen = { days = 4 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.59.a
+		ai_chance = { base = 90 }
+		army_experience = 20
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_army_morale = 15 }
+		set_country_flag = ita_ww1_solstice_repulsed
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.59.b
+		ai_chance = { base = 10 }
+		add_political_power = 25
+		set_country_flag = ita_ww1_solstice_repulsed
+	}
+}
+
+# ww1_italy.60: The Triumph of Vittorio Veneto
+country_event = {
+	id = ww1_italy.60
+	title = ww1_italy.60.t
+	desc = ww1_italy.60.d
+	picture = GFX_event_ww1_italy_60
+	trigger = {
+		tag = ITA
+		date > 1918.10.24
+		has_war_with = AUS
+		NOT = { has_country_flag = ita_ww1_vittorio_veneto_won }
+	}
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.60.a
+		ai_chance = { base = 95 }
+		add_stability = 0.03
+		add_war_support = 0.03
+		add_to_variable = { ita_ww1_army_morale = 25 }
+		set_country_flag = ita_ww1_vittorio_veneto_won
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.60.b
+		ai_chance = { base = 5 }
+		add_political_power = 40
+		set_country_flag = ita_ww1_vittorio_veneto_won
+	}
+}
+
+# ww1_italy.61: The Armistice of Villa Giusti (Nov 3, 1918)
+country_event = {
+	id = ww1_italy.61
+	title = ww1_italy.61.t
+	desc = ww1_italy.61.d
+	picture = GFX_event_ww1_italy_61
+	trigger = {
+		tag = ITA
+		date > 1918.11.3
+		has_country_flag = ita_ww1_vittorio_veneto_won
+		NOT = { has_country_flag = ita_ww1_villa_giusti_signed }
+	}
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.61.a
+		ai_chance = { base = 95 }
+		add_stability = 0.03
+		if = {
+			limit = { country_exists = AUS has_war_with = AUS }
+			white_peace = AUS
+		}
+		set_country_flag = ita_ww1_villa_giusti_signed
+	}
+	option = {
+		name = ww1_italy.61.b
+		ai_chance = { base = 5 }
+		add_war_support = 0.02
+		set_country_flag = ita_ww1_villa_giusti_signed
+	}
+}
+
+# ww1_italy.62: D'Annunzio's Legion Enters Fiume
+country_event = {
+	id = ww1_italy.62
+	title = ww1_italy.62.t
+	desc = ww1_italy.62.d
+	picture = GFX_event_ww1_italy_62
+	trigger = {
+		tag = ITA
+		date > 1919.9.12
+		NOT = { has_country_flag = ita_ww1_fiume_occupied }
+	}
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.62.a
+		ai_chance = { base = 80 }
+		add_war_support = 0.02
+		add_to_variable = { ita_ww1_irredentism = 15 }
+		set_country_flag = ita_ww1_fiume_occupied
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.62.b
+		ai_chance = { base = 20 }
+		add_stability = 0.02
+		set_country_flag = ita_ww1_fiume_occupied
+	}
+}
+
+# ww1_italy.63: The Italian Regency of Carnaro
+country_event = {
+	id = ww1_italy.63
+	title = ww1_italy.63.t
+	desc = ww1_italy.63.d
+	picture = GFX_event_ww1_italy_63
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.63.a
+		ai_chance = { base = 75 }
+		add_political_power = 20
+		add_to_variable = { ita_ww1_irredentism = 5 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.63.b
+		ai_chance = { base = 25 }
+		add_stability = 0.01
+	}
+}
+
+# ww1_italy.64: The Bloody Christmas (Natale di Sangue, Dec 1920)
+country_event = {
+	id = ww1_italy.64
+	title = ww1_italy.64.t
+	desc = ww1_italy.64.d
+	picture = GFX_event_ww1_italy_64
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.64.a
+		ai_chance = { base = 85 }
+		add_stability = 0.02
+		add_to_variable = { ita_ww1_irredentism = -10 }
+		ita_ww1_clamp_counters = yes
+	}
+	option = {
+		name = ww1_italy.64.b
+		ai_chance = { base = 15 }
+		add_political_power = 25
+	}
+}
+
+# ww1_italy.65: The Unknown Soldier at the Vittoriano
+country_event = {
+	id = ww1_italy.65
+	title = ww1_italy.65.t
+	desc = ww1_italy.65.d
+	picture = GFX_event_ww1_italy_65
+	trigger = {
+		tag = ITA
+		date > 1921.11.4
+		NOT = { has_country_flag = ita_ww1_unknown_soldier_done }
+	}
+	mean_time_to_happen = { days = 2 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_italy.65.a
+		ai_chance = { base = 90 }
+		add_stability = 0.03
+		add_war_support = 0.02
+		set_country_flag = ita_ww1_unknown_soldier_done
+	}
+	option = {
+		name = ww1_italy.65.b
+		ai_chance = { base = 10 }
+		add_political_power = 30
+		set_country_flag = ita_ww1_unknown_soldier_done
+	}
+}

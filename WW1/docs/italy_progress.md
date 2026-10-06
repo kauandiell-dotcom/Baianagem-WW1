@@ -91,9 +91,26 @@ Critérios de pronto mínimos:
   - Portão de Entendimento e ganchos catalogados.
   - Suite de testes inicial `tests/test_ww1_italy.py` e script `scripts/italy_audit.py` criados.
   - Construtor `scripts/build_ww1_italy.py` e módulos de dados estruturados.
-- [ ] **Fatia 1: Asa Política e Sociedade (`pol`, 45 focos) + Medidores Internos**
-- [ ] **Fatia 2: Asa Diplomacia e Alinhamento (`dip`, 40 focos) + Integrações**
-- [ ] **Fatia 3: Asa Campanhas e Pós-guerra (`war`, 25 focos)**
-- [ ] **Fatia 4: Asa Forças Armadas (`mil`, 55 focos)**
-- [ ] **Fatia 5: Asa Economia e Mezzogiorno (`eco`, 35 focos)**
-- [ ] **Fatia 6: Fechamento, Arte, Balanceamento e Verificação Final**
+- [x] **Fatia 1: Asa Política e Sociedade (`pol`, 45 focos) + Medidores Internos**
+  - 45 focos políticos implementados e balanceados.
+  - 5 medidores internos (`ita_ww1_interventionism`, `ita_ww1_social_tension`, `ita_ww1_army_morale`, `ita_ww1_southern_gap`, `ita_ww1_irredentism`) com clamp [0-100] semanal em `common/scripted_effects/ww1_italy_effects.txt` e gatilhos em `common/on_actions/ww1_italy_on_actions.txt`.
+- [x] **Fatia 2: Asa Diplomacia e Alinhamento (`dip`, 40 focos) + Integrações**
+  - 40 focos diplomáticos com ramificações históricas e alternativas (Tratado de Londres, Tríplice Aliança, neutralidade armada).
+  - Resolução pacífica da questão líbia/Dodecaneso via Tratado de Ouchy sem guerra direta.
+  - Integrações completas com Reino Unido, França, Áustria-Hungria, Alemanha e Império Otomano.
+- [x] **Fatia 3: Asa Campanhas e Pós-guerra (`war`, 25 focos)**
+  - 25 focos de campanhas e crise pós-guerra (Isonzo, Piave, Solstício, Vittorio Veneto, Fiume, D'Annunzio).
+- [x] **Fatia 4: Asa Forças Armadas (`mil`, 55 focos)**
+  - 55 focos de Exército, Marinha e Aviação (Alpini, Arditi, MAS, Luigi Rizzo, Caproni, Baracca, Giulio Douhet).
+- [x] **Fatia 5: Asa Economia e Mezzogiorno (`eco`, 35 focos)**
+  - 35 focos de economia, indústria, questão meridional, carência de carvão/ferro e reconversão pós-guerra.
+- [x] **Fatia 6: Fechamento, Arte, Balanceamento e Verificação Final**
+  - 200 ícones de foco únicos com `_shine` registrados em `interface/ww1_italy_goals.gfx`.
+  - 80 imagens de eventos únicas registradas em `interface/ww1_italy_events.gfx`.
+  - 32 ícones de ideias únicas registrados em `interface/ww1_italy_ideas.gfx`.
+  - 32 ícones de decisões únicas registrados em `interface/ww1_italy_decisions.gfx`.
+  - 843 chaves de localização 100% espelhadas em inglês e português com UTF-8 BOM.
+  - Painel de auditoria `scripts/italy_audit.py`: 19/19 metas cumpridas (100% OK).
+  - 147 testes unitários do mod executados e aprovados (`test_ww1_*.py`).
+  - Linha de base estática rigorosamente mantida: 1596 erros / 115 warnings (zero novos erros).
+

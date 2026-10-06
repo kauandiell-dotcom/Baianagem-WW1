@@ -1,0 +1,25 @@
+# Italy (ITA) WW1 Decision Categories
+
+ITA_ww1_internal_politics_category = {
+	icon = generic_political_actions
+	priority = 90
+	allowed = { original_tag = ITA }
+}
+
+ITA_ww1_diplomatic_initiatives_category = {
+	icon = generic_diplomacy
+	priority = 80
+	allowed = { original_tag = ITA }
+}
+
+ITA_ww1_economic_mobilisation_category = {
+	icon = generic_industry
+	priority = 70
+	allowed = { original_tag = ITA }
+}
+
+ITA_ww1_military_readiness_category = {
+	icon = generic_army
+	priority = 60
+	allowed = { original_tag = ITA }
+}

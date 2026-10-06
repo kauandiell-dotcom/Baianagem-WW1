@@ -208,7 +208,8 @@ class TestItalyEventsAndDecisions(unittest.TestCase):
                 spontaneous += 1
             # Check options for third-party dispatches
             for opt in opts:
-                opt_keys = {x.key for x in walk(opt)}
+                opt_nodes = opt.value if isinstance(opt.value, list) else [opt]
+                opt_keys = {x.key for x in walk(opt_nodes)}
                 if any(k in ["GER", "AUS", "ENG", "FRA", "TUR", "SER", "GRE"] for k in opt_keys):
                     third_party_events += 1
 
