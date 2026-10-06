@@ -1,4 +1,4 @@
-﻿add_namespace = ww1_russia
+add_namespace = ww1_russia
 
 # -------------------------------------------------------------
 # 1. Atentado contra Pyotr Stolypin na Ópera de Kiev (Setembro de 1911)
@@ -130,6 +130,7 @@ country_event = {
 
 	option = {
 		name = ww1_russia.20.a
+		set_country_flag = SOV_path_bolshevik
 		ai_chance = { factor = 70 }
 		set_country_flag = SOV_bolshevik_path_open
 		custom_effect_tooltip = SOV_kornilov_fails_tt
@@ -137,9 +138,17 @@ country_event = {
 
 	option = {
 		name = ww1_russia.20.b
+		set_country_flag = SOV_path_kornilov
 		ai_chance = { factor = 30 }
 		set_country_flag = SOV_kornilov_path_open
 		custom_effect_tooltip = SOV_kornilov_succeeds_tt
+	}
+
+	option = {
+		name = ww1_russia.20.c
+		ai_chance = { factor = 30 }
+		set_country_flag = SOV_path_democratic
+		add_popularity = { ideology = democratic popularity = 0.10 }
 	}
 }
 
@@ -203,8 +212,9 @@ country_event = {
 
 	option = {
 		name = ww1_russia.101.a
-
-
+		add_war_support = 0.03
+		army_experience = 10
+		add_to_variable = { SOV_army_loyalty = 3 }
 	}
 
 }
@@ -217,8 +227,9 @@ country_event = {
 
 	option = {
 		name = ww1_russia.102.a
-
-
+		add_war_support = -0.03
+		add_stability = -0.02
+		add_to_variable = { SOV_army_loyalty = -3 }
 	}
 
 }

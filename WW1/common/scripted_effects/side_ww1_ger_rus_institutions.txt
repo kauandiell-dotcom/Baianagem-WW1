@@ -1,4 +1,4 @@
-﻿# Institutions are exclusive within each family; later stages survive late focuses.
+# Institutions are exclusive within each family; later stages survive late focuses.
 side_ww1_set_GER_peacetime_industrial_giants = {
  if = { limit = { NOT = { OR = { has_idea = GER_krupp_chemical_conglomerates has_idea = GER_rathenau_kra_coordination has_idea = GER_hindenburg_program_victory has_idea = GER_hindenburg_total_mobilization } } }
   remove_ideas = GER_peacetime_industrial_giants

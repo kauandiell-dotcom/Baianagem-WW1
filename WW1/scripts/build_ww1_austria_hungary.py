@@ -326,7 +326,7 @@ chain([
  ("torpedo_workshop","Oficinas de torpedos","Torpedo Workshops",tech("torpedo"),"O torpedo será pesquisado, fabricado e usado pela frota existente.","Torpedoes are researched, manufactured and used by the existing fleet."),
  ("escort_design","Projetos de escolta","Escort Designs",tech("dd_tech"),"Projetos de navios leves competem com a pesquisa dos grandes cascos.","Light-ship designs compete with research into larger hulls."),
  ("submarine_school","A escola de submarinos","The Submarine School",tech("ss_tech"),"A formação submarina não cria embarcações ou alcance oceânico impossível.","Submarine training creates neither vessels nor impossible oceanic range."),
- ("naval_repair","Organizar as oficinas navais","Organise Naval Workshops",idea("naval_repair"),"A reequipagem ganha uma melhora limitada, à custa de parte da capacidade de construção naval.","Refitting receives a limited improvement at the cost of part of shipbuilding capacity."),
+ ("naval_repair","Organizar as oficinas navais","Organise Naval Workshops",idea("naval_refit_priority"),"A reequipagem ganha uma melhora limitada, à custa de parte da capacidade de construção naval.","Refitting receives a limited improvement at the cost of part of shipbuilding capacity."),
  ("naval_spares","Reservas de peças navais","Naval Spare Parts",unlock("naval_spares"),"Cursos de manutenção dependem de material retirado dos estoques.","Maintenance courses depend on material drawn from stocks.")
 ],"naval_programme",118,4)
 chain([
@@ -364,6 +364,10 @@ chain([
 ],"reconstruction_board",144,6,common=POST)
 
 assert len(FOCI)==200, len(FOCI)
+
+# Immediate, bounded rewards for the focuses that previously only set an unlock flag.
+from auh_focus_effects import apply as apply_focus_effects
+apply_focus_effects(FOCI, LOC, P)
 
 def write(path, text, bom=False):
     target=ROOT/path
@@ -433,6 +437,8 @@ if __name__ == "__main__":
     # Remaining build functions are defined in the country support module.
     from auh_country_support import build_support
     build_support(ROOT,FOCI,PROJECTS,LOC)
+    from auh_content_extra import build_extra
+    extra=build_extra(ROOT,LOC)
     build_focuses()
     write("docs/auh_focus_catalogue.json",json.dumps(FOCI,ensure_ascii=False,indent=2))
     for lang,index in [("braz_por",0),("english",1)]:
@@ -441,4 +447,4 @@ if __name__ == "__main__":
             v=values[index].replace('\\','\\\\').replace('"','\\"').replace('\n','\\n')
             lines.append(f' {key}:0 "{v}"')
         write(f"localisation/{lang}/ww1_austria_hungary_l_{lang}.yml","\n".join(lines),bom=True)
-    print(f"Built {len(FOCI)} AUH focuses, {len(PROJECTS)} projects and {len(LOC)} bilingual keys.")
+    print(f"Built {len(FOCI)} AUH focuses, {len(PROJECTS)} projects and {len(LOC)} bilingual keys; extra content: {extra}.")

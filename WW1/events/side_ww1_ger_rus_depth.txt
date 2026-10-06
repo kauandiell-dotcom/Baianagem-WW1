@@ -1,4 +1,4 @@
-﻿add_namespace = side_ww1_ger_rus
+add_namespace = side_ww1_ger_rus
 country_event = { id = side_ww1_ger_rus.1 title = side_ww1_ger_rus.1.t desc = side_ww1_ger_rus.1.d picture = GFX_event_ww1_ger_ohl_council is_triggered_only = yes
  option = { name = side_ww1_ger_rus.1.a trigger = { has_war = yes has_country_flag = side_ww1_GER_hindenburg_proposal_pending } ai_chance = { factor = 70 } clr_country_flag = side_ww1_GER_hindenburg_proposal_pending set_country_flag = side_ww1_GER_hindenburg_authorised custom_effect_tooltip = side_ww1_hindenburg_project_tt }
  option = { name = side_ww1_ger_rus.1.b ai_chance = { factor = 30 } clr_country_flag = side_ww1_GER_hindenburg_authorised }

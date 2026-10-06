@@ -149,7 +149,7 @@ def import_requests(request_file, workshop, game):
     definitions.extend(["\tspriteType = {", '\t\tname = "GFX_event_ww1_great_war_dispatch"',
                         '\t\ttexturefile = "gfx/event_pictures/ww1_alpha/great_war_dispatch.png"', "\t}"])
     definitions.append("}")
-    (ROOT / "interface/ww1_alpha_content_assets.gfx").write_text("\n".join(definitions) + "\n", encoding="utf-8-sig")
+    (ROOT / "interface/ww1_alpha_content_assets.gfx").write_text("\n".join(definitions) + "\n", encoding="utf-8")
     (ROOT / "docs/visual_asset_manifest.json").write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(records)} distinct reviewed source images; focus shine sprites registered.")
 

@@ -1,8 +1,8 @@
-﻿ideas = {
+ideas = {
 	country = {
 
 		# =======================================================
-		# 1. IMPÃ‰RIO ALEMÃƒO (GER)
+		# 1. IMPÉRIO ALEMÃO (GER)
 		# =======================================================
 
 		# 1.1 O Grande Estado-Maior Prussiano
@@ -53,7 +53,7 @@
 			}
 		}
 
-		# Crises AlemÃ£s & VitÃ³ria
+		# Crises Alemãs & Vitória
 		GER_turnip_winter_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -111,7 +111,7 @@
 			modifier = {
 				surrender_limit = -0.35
 				army_org_factor = 0.15
-				division_speed = 0.15
+				army_speed_factor = 0.15
 				conscription_factor = 0.20
 				planning_speed = 0.25
 			}
@@ -123,7 +123,7 @@
 			modifier = {
 				army_morale_factor = 0.15
 				conscription = 0.03
-				recovery_rate_factor = 0.10
+				army_org_regain = 0.10
 			}
 		}
 
@@ -143,7 +143,7 @@
 			modifier = {
 				trade_laws_cost_factor = -0.25
 				consumer_goods_factor = -0.03
-				production_speed_railway_factor = 0.20
+				production_speed_rail_way_factor = 0.20
 			}
 		}
 
@@ -191,7 +191,7 @@
 			removal_cost = -1
 			modifier = {
 				army_defence_factor = 0.15
-				entrenchment = 10
+				max_dig_in_factor = 0.10
 				max_dig_in = 5
 			}
 		}
@@ -202,7 +202,7 @@
 			modifier = {
 				army_core_defence_factor = 0.15
 				out_of_supply_factor = -0.15
-				recovery_rate_factor = 0.10
+				army_org_regain = 0.10
 			}
 		}
 
@@ -210,7 +210,7 @@
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				artillery_attack_factor = 0.10
+				army_artillery_attack_factor = 0.10
 				breakthrough_factor = 0.05
 				planning_speed = 0.15
 			}
@@ -230,7 +230,7 @@
 			removal_cost = -1
 			modifier = {
 				army_attack_factor = 0.10
-				attrition_for_enemy = 0.15
+				enemy_attrition = 0.15
 			}
 		}
 
@@ -239,7 +239,7 @@
 			removal_cost = -1
 			modifier = {
 				army_org_factor = -0.15
-				recovery_rate_factor = -0.20
+				army_org_regain = -0.20
 				industrial_capacity_factory = -0.15
 				stability_factor = -0.10
 			}
@@ -283,7 +283,7 @@
 		# 2. REINO UNIDO (ENG)
 		# =======================================================
 
-		# 2.1 O PadrÃ£o das Duas PotÃªncias Navais
+		# 2.1 O Padrão das Duas Potências Navais
 		ENG_two_power_standard = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -305,7 +305,7 @@
 			}
 		}
 
-		# 2.3 ExÃ©rcito Profissional de VoluntÃ¡rios (BEF)
+		# 2.3 Exército Profissional de Voluntários (BEF)
 		ENG_professional_bef = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -316,7 +316,7 @@
 			}
 		}
 
-		# 2.4 A Malha do ImpÃ©rio Global
+		# 2.4 A Malha do Império Global
 		ENG_the_imperial_web = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -326,7 +326,7 @@
 			}
 		}
 
-		# 2.5 A QuestÃ£o do Home Rule IrlandÃªs
+		# 2.5 A Questão do Home Rule Irlandês
 		ENG_irish_home_rule_tension = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -335,7 +335,7 @@
 			}
 		}
 
-		# Crises BritÃ¢nicas & VitÃ³ria
+		# Crises Britânicas & Vitória
 		ENG_submarine_blockade_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -420,7 +420,7 @@
 			}
 		}
 
-		# 3.4 EstagnaÃ§Ã£o DemogrÃ¡fica
+		# 3.4 Estagnação Demográfica
 		FRA_demographic_stagnation = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -429,7 +429,7 @@
 			}
 		}
 
-		# 3.5 Instabilidade da Terceira RepÃºblica
+		# 3.5 Instabilidade da Terceira República
 		FRA_third_republic_instability = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -438,7 +438,7 @@
 			}
 		}
 
-		# Crises Francesas & VitÃ³ria
+		# Crises Francesas & Vitória
 		FRA_trench_mutiny_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -525,7 +525,7 @@
 			}
 		}
 
-		# 4.4 A Bitola Larga e as DistÃ¢ncias das Estepes
+		# 4.4 A Bitola Larga e as Distâncias das Estepes
 		SOV_broad_gauge_vastness = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -535,7 +535,7 @@
 			}
 		}
 
-		# 4.5 O Protetor dos Eslavos e dos BÃ¡lcÃ£s
+		# 4.5 O Protetor dos Eslavos e dos Bálcãs
 		SOV_pan_slavic_protector = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -545,7 +545,7 @@
 			}
 		}
 
-		# Crises Russas & VitÃ³ria
+		# Crises Russas & Vitória
 		SOV_rifle_famine_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -635,7 +635,7 @@
 			}
 		}
 
-		# 5.4 O Baluarte dos Alpes e CÃ¡rpatos
+		# 5.4 O Baluarte dos Alpes e Cárpatos
 		AUS_alpine_carpathian_bastion = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -645,7 +645,7 @@
 			}
 		}
 
-		# 5.5 A AmbiÃ§Ã£o Imperial nos BÃ¡lcÃ£s
+		# 5.5 A Ambição Imperial nos Bálcãs
 		AUS_balkan_destiny = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -655,7 +655,7 @@
 			}
 		}
 
-		# Crises Austro-HÃºngaras & VitÃ³ria
+		# Crises Austro-Húngaras & Vitória
 		AUS_nationalities_fracture_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -731,7 +731,7 @@
 			}
 		}
 
-		# 6.3 A Escassez de CarvÃ£o e MinÃ©rio Nacional
+		# 6.3 A Escassez de Carvão e Minério Nacional
 		ITA_coal_iron_scarcity = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -740,7 +740,7 @@
 			}
 		}
 
-		# 6.4 A DivisÃ£o Norte-Sul da ItÃ¡lia
+		# 6.4 A Divisão Norte-Sul da Itália
 		ITA_southern_question_gap = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -749,7 +749,7 @@
 			}
 		}
 
-		# 6.5 O "Sacro Egoismo" DiplomÃ¡tico
+		# 6.5 O "Sacro Egoismo" Diplomático
 		ITA_sacro_egoismo_policy = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -759,7 +759,7 @@
 			}
 		}
 
-		# Crises Italianas & VitÃ³ria
+		# Crises Italianas & Vitória
 		ITA_isonzo_attrition_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -849,7 +849,7 @@
 			}
 		}
 
-		# 7.4 O Triunvirato dos TrÃªs PaxÃ¡s
+		# 7.4 O Triunvirato dos Três Paxás
 		TUR_three_pashas_dictatorship = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -859,7 +859,7 @@
 			}
 		}
 
-		# 7.5 O Estandarte do Califado IslÃ¢mico
+		# 7.5 O Estandarte do Califado Islâmico
 		TUR_caliphate_global_banner = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -869,7 +869,7 @@
 			}
 		}
 
-		# Crises Otomanas & VitÃ³ria
+		# Crises Otomanas & Vitória
 		TUR_desert_supply_collapse_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -926,7 +926,7 @@
 		# 8. ESTADOS UNIDOS (USA)
 		# =======================================================
 
-		# 8.1 O Milagre da ProduÃ§Ã£o Fordista
+		# 8.1 O Milagre da Produção Fordista
 		USA_fordist_industrial_miracle = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -936,7 +936,7 @@
 			}
 		}
 
-		# 8.2 Isolacionismo HistÃ³rico & Doutrina Monroe
+		# 8.2 Isolacionismo Histórico & Doutrina Monroe
 		USA_monroe_isolationism = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -957,7 +957,7 @@
 			}
 		}
 
-		# 8.4 A HeranÃ§a da Grande Frota Branca
+		# 8.4 A Herança da Grande Frota Branca
 		USA_great_white_fleet_heritage = {
 			allowed = { always = no }
 			removal_cost = -1
@@ -976,7 +976,7 @@
 			}
 		}
 
-		# Crises Americanas & VitÃ³ria
+		# Crises Americanas & Vitória
 		USA_mobilization_bottleneck_crisis_3 = {
 			allowed = { always = no }
 			removal_cost = -1

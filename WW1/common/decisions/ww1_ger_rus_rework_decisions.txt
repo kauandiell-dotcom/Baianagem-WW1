@@ -1,0 +1,460 @@
+SOV_imperial_crisis = {
+
+	SOV_dec_convene_duma = {
+		icon = generic_political_rally
+		cost = 25
+		days_re_enable = 150
+		available = {
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_duma_tension = -15 }
+			add_stability = 0.02
+			add_to_variable = { SOV_tsar_prestige = -2 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 20 check_variable = { SOV_duma_tension > 60 } }
+		}
+	}
+
+	SOV_dec_prorogue_duma = {
+		icon = generic_break_treaty
+		cost = 20
+		days_re_enable = 150
+		available = {
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_duma_tension = 15 }
+			add_political_power = 30
+			add_to_variable = { SOV_unrest = 3 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 0 always = no }
+		}
+	}
+
+	SOV_dec_fix_bread_prices = {
+		icon = generic_fundraising
+		cost = 30
+		days_re_enable = 90
+		available = {
+			check_variable = { SOV_hunger > 20 }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+		}
+		complete_effect = {
+			add_to_variable = { SOV_hunger = -10 }
+			add_stability = -0.01
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 30 check_variable = { SOV_hunger > 45 } }
+		}
+	}
+
+	SOV_dec_grain_requisition = {
+		icon = generic_colonial_administration
+		cost = 20
+		days_re_enable = 90
+		available = {
+			has_war = yes
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			has_war = yes
+		}
+		complete_effect = {
+			add_to_variable = { SOV_hunger = -7 }
+			add_to_variable = { SOV_unrest = 5 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 15 check_variable = { SOV_hunger > 60 } }
+		}
+	}
+
+	SOV_dec_visit_the_front = {
+		icon = generic_army_support
+		cost = 25
+		days_re_enable = 120
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			has_war = yes
+		}
+		complete_effect = {
+			add_to_variable = { SOV_army_loyalty = 6 }
+			add_to_variable = { SOV_tsar_prestige = 3 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 25 check_variable = { SOV_army_loyalty < 55 } }
+		}
+	}
+
+	SOV_dec_okhrana_crackdown = {
+		icon = generic_police_action
+		cost = 40
+		days_re_enable = 90
+		available = {
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_unrest = -10 }
+			add_stability = -0.03
+			add_to_variable = { SOV_tsar_prestige = -2 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 20 check_variable = { SOV_unrest > 60 } }
+		}
+	}
+
+	SOV_dec_conciliation_boards = {
+		icon = generic_decision
+		cost = 35
+		days_re_enable = 120
+		available = {
+			check_variable = { SOV_unrest > 25 }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+		}
+		complete_effect = {
+			add_to_variable = { SOV_unrest = -8 }
+			add_stability = 0.01
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 25 check_variable = { SOV_unrest > 45 } }
+		}
+	}
+
+	SOV_dec_field_courts = {
+		icon = generic_disband_irregulars
+		cost = 30
+		days_re_enable = 90
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			has_war = yes
+		}
+		complete_effect = {
+			add_to_variable = { SOV_army_loyalty = 4 }
+			add_to_variable = { SOV_unrest = 3 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 15 check_variable = { SOV_army_loyalty < 45 } }
+		}
+	}
+
+	SOV_dec_patriotic_campaign = {
+		icon = generic_brainwash
+		cost = 20
+		days_re_enable = 120
+		available = {
+			has_war = yes
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			has_war = yes
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			add_to_variable = { SOV_unrest = -3 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 20 has_war_support < 0.40 }
+		}
+	}
+
+}
+
+SOV_civil_war_front = {
+
+	SOV_dec_mobilise_the_rear = {
+		icon = generic_reorganize_irregulars
+		cost = 30
+		days_re_enable = 90
+		available = {
+			always = yes
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			has_country_flag = SOV_civil_war_started
+		}
+		complete_effect = {
+			army_experience = 10
+			add_to_variable = { SOV_unrest = 4 }
+			add_to_variable = { SOV_hunger = 4 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 25 always = yes }
+		}
+	}
+
+	SOV_dec_political_commissars = {
+		icon = generic_intelligence_operation
+		cost = 40
+		days_re_enable = 120
+		available = {
+			has_government = communism
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			has_government = communism
+		}
+		complete_effect = {
+			add_to_variable = { SOV_army_loyalty = 8 }
+			add_stability = -0.01
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 25 check_variable = { SOV_army_loyalty < 55 } }
+		}
+	}
+
+	SOV_dec_amnesty_officers = {
+		icon = generic_protection
+		cost = 30
+		days_re_enable = 150
+		available = {
+			always = yes
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_rework_init
+			always = yes
+		}
+		complete_effect = {
+			add_to_variable = { SOV_army_loyalty = 5 }
+			add_to_variable = { SOV_unrest = -4 }
+			add_political_power = -30
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 15 always = yes }
+		}
+	}
+
+}
+
+GER_home_front = {
+
+	GER_dec_war_loans = {
+		icon = generic_electricity
+		cost = 25
+		days_re_enable = 120
+		available = {
+			has_war = yes
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_war = yes
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			add_to_variable = { GER_social_peace = -1 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 20 has_war_support < 0.45 }
+		}
+	}
+
+	GER_dec_turnip_relief = {
+		icon = generic_forestry
+		cost = 35
+		days_re_enable = 90
+		available = {
+			check_variable = { GER_hunger > 20 }
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+		}
+		complete_effect = {
+			add_to_variable = { GER_hunger = -9 }
+			add_stability = -0.01
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 30 check_variable = { GER_hunger > 45 } }
+		}
+	}
+
+	GER_dec_censor_press = {
+		icon = generic_wreckers
+		cost = 25
+		days_re_enable = 90
+		available = {
+			has_war = yes
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_war = yes
+		}
+		complete_effect = {
+			add_to_variable = { GER_discontent = -8 }
+			add_to_variable = { GER_social_peace = -3 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 20 check_variable = { GER_discontent > 60 } }
+		}
+	}
+
+	GER_dec_court_the_spd = {
+		icon = generic_monarchy
+		cost = 30
+		days_re_enable = 120
+		available = {
+			always = yes
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+		}
+		complete_effect = {
+			add_to_variable = { GER_social_peace = 8 }
+			add_to_variable = { GER_discontent = -4 }
+			add_war_support = -0.01
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 25 check_variable = { GER_social_peace < 45 } }
+		}
+	}
+
+	GER_dec_kaiser_visits_front = {
+		icon = generic_pickelhaube
+		cost = 25
+		days_re_enable = 120
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = GER_republic_proclaimed }
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_war = yes
+			NOT = { has_country_flag = GER_republic_proclaimed }
+		}
+		complete_effect = {
+			add_war_support = 0.02
+			add_to_variable = { GER_kaiser_prestige = 4 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 15 check_variable = { GER_kaiser_prestige < 50 } }
+		}
+	}
+
+	GER_dec_eastern_requisition = {
+		icon = generic_scorched_earth
+		cost = 30
+		days_re_enable = 120
+		available = {
+			has_country_flag = brest_litovsk_concluded
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_country_flag = brest_litovsk_concluded
+		}
+		complete_effect = {
+			add_to_variable = { GER_hunger = -6 }
+			add_stability = -0.01
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 25 check_variable = { GER_hunger > 40 } }
+		}
+	}
+
+	GER_dec_support_republic = {
+		icon = generic_planted_spear
+		cost = 40
+		days_re_enable = 120
+		available = {
+			has_country_flag = GER_republic_proclaimed
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_country_flag = GER_republic_proclaimed
+		}
+		complete_effect = {
+			add_stability = 0.03
+			add_to_variable = { GER_discontent = -6 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 30 always = yes }
+		}
+	}
+
+	GER_dec_curb_freikorps = {
+		icon = generic_fortification
+		cost = 35
+		days_re_enable = 150
+		available = {
+			has_country_flag = GER_republic_proclaimed
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_country_flag = GER_republic_proclaimed
+		}
+		complete_effect = {
+			remove_ideas = GER_freikorps_menace
+			add_stability = 0.01
+			army_experience = -5
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 20 has_idea = GER_freikorps_menace }
+		}
+	}
+
+	GER_dec_stabilise_mark = {
+		icon = generic_independence
+		cost = 60
+		days_re_enable = 90
+		available = {
+			has_idea = GER_hyperinflation
+		}
+		visible = {
+			original_tag = GER
+			has_country_flag = GER_rework_init
+			has_idea = GER_hyperinflation
+		}
+		complete_effect = {
+			remove_ideas = GER_hyperinflation
+			add_stability = 0.04
+			add_to_variable = { GER_discontent = -6 }
+		}
+		ai_will_do = { base = 0
+			modifier = { add = 50 always = yes }
+		}
+	}
+
+}

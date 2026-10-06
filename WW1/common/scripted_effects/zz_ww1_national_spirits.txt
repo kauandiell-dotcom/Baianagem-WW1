@@ -1,0 +1,41 @@
+# Safety net for the starting national spirits.
+# history/countries already grants these; this only re-applies a spirit that is missing at game start.
+# AUS, ENG, FRA, GER and SOV are excluded on purpose: their own startup scripts replace or remove some starting spirits.
+ww1_ensure_starting_spirits = {
+	if = { limit = { tag = BEL }
+		if = { limit = { NOT = { has_idea = BEL_fortress_belgium } } add_ideas = BEL_fortress_belgium }
+	}
+	if = { limit = { tag = BUL }
+		if = { limit = { NOT = { has_idea = BUL_prussia_of_the_balkans } } add_ideas = BUL_prussia_of_the_balkans }
+	}
+	if = { limit = { tag = GRE }
+		if = { limit = { NOT = { has_idea = GRE_hellenic_megali_ambition } } add_ideas = GRE_hellenic_megali_ambition }
+	}
+	if = { limit = { tag = ITA }
+		if = { limit = { NOT = { has_idea = ITA_terre_irredente_dream } } add_ideas = ITA_terre_irredente_dream }
+		if = { limit = { NOT = { has_idea = ITA_alpini_tradition } } add_ideas = ITA_alpini_tradition }
+		if = { limit = { NOT = { has_idea = ITA_coal_iron_scarcity } } add_ideas = ITA_coal_iron_scarcity }
+		if = { limit = { NOT = { has_idea = ITA_southern_question_gap } } add_ideas = ITA_southern_question_gap }
+		if = { limit = { NOT = { has_idea = ITA_sacro_egoismo_policy } } add_ideas = ITA_sacro_egoismo_policy }
+	}
+	if = { limit = { tag = ROM }
+		if = { limit = { NOT = { has_idea = ROM_danubian_granary_and_oil } } add_ideas = ROM_danubian_granary_and_oil }
+	}
+	if = { limit = { tag = SER }
+		if = { limit = { NOT = { has_idea = SER_balkan_defiance } } add_ideas = SER_balkan_defiance }
+	}
+	if = { limit = { tag = TUR }
+		if = { limit = { NOT = { has_idea = TUR_straits_fortress_cannons } } add_ideas = TUR_straits_fortress_cannons }
+		if = { limit = { NOT = { has_idea = TUR_sick_man_debt } } add_ideas = TUR_sick_man_debt }
+		if = { limit = { NOT = { has_idea = TUR_mehmetcik_tenacity } } add_ideas = TUR_mehmetcik_tenacity }
+		if = { limit = { NOT = { has_idea = TUR_three_pashas_dictatorship } } add_ideas = TUR_three_pashas_dictatorship }
+		if = { limit = { NOT = { has_idea = TUR_caliphate_global_banner } } add_ideas = TUR_caliphate_global_banner }
+	}
+	if = { limit = { tag = USA }
+		if = { limit = { NOT = { has_idea = USA_fordist_industrial_miracle } } add_ideas = USA_fordist_industrial_miracle }
+		if = { limit = { NOT = { has_idea = USA_monroe_isolationism } } add_ideas = USA_monroe_isolationism }
+		if = { limit = { NOT = { has_idea = USA_wall_street_credit } } add_ideas = USA_wall_street_credit }
+		if = { limit = { NOT = { has_idea = USA_great_white_fleet_heritage } } add_ideas = USA_great_white_fleet_heritage }
+		if = { limit = { NOT = { has_idea = USA_firearms_pioneer_culture } } add_ideas = USA_firearms_pioneer_culture }
+	}
+}

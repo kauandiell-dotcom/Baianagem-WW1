@@ -1,0 +1,1630 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_focus_GER_ww1_oust_bethmann_hollweg"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_oust_bethmann_hollweg.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_oust_bethmann_hollweg_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_oust_bethmann_hollweg.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_oust_bethmann_hollweg.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_prince_max_von_baden_cabinet"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_prince_max_von_baden_cabinet.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_prince_max_von_baden_cabinet_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_prince_max_von_baden_cabinet.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_prince_max_von_baden_cabinet.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_repeal_anti_socialist_heritage"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_repeal_anti_socialist_heritage.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_repeal_anti_socialist_heritage_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_repeal_anti_socialist_heritage.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_repeal_anti_socialist_heritage.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_hohenzollern_imperial_hegemony"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_hohenzollern_imperial_hegemony.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_hohenzollern_imperial_hegemony_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_hohenzollern_imperial_hegemony.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_hohenzollern_imperial_hegemony.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_alliance_with_soviet_russia"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_alliance_with_soviet_russia.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_alliance_with_soviet_russia_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_alliance_with_soviet_russia.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_alliance_with_soviet_russia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_world_proletarian_revolution"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_world_proletarian_revolution.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_world_proletarian_revolution_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_world_proletarian_revolution.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_world_proletarian_revolution.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_federal_constitutional_monarchy"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_federal_constitutional_monarchy.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_federal_constitutional_monarchy_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_federal_constitutional_monarchy.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_federal_constitutional_monarchy.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_unconditional_victory_or_ruin"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_unconditional_victory_or_ruin.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_unconditional_victory_or_ruin_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_unconditional_victory_or_ruin.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_unconditional_victory_or_ruin.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_kiel_sailors_mutiny"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_kiel_sailors_mutiny.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_kiel_sailors_mutiny_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_kiel_sailors_mutiny.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_kiel_sailors_mutiny.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_battle_of_the_frontiers"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_battle_of_the_frontiers.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_battle_of_the_frontiers_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_battle_of_the_frontiers.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_battle_of_the_frontiers.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_swiss_neutral_financial_corridor"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_swiss_neutral_financial_corridor.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_swiss_neutral_financial_corridor_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_swiss_neutral_financial_corridor.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_swiss_neutral_financial_corridor.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_crossing_the_marne"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_crossing_the_marne.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_crossing_the_marne_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_crossing_the_marne.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_crossing_the_marne.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_ambassador_bernstorff_us_lobby"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_ambassador_bernstorff_us_lobby.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_ambassador_bernstorff_us_lobby_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_ambassador_bernstorff_us_lobby.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_ambassador_bernstorff_us_lobby.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_race_to_the_sea"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_race_to_the_sea.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_race_to_the_sea_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_race_to_the_sea.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_race_to_the_sea.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_treaty_of_brest_litovsk"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_treaty_of_brest_litovsk.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_treaty_of_brest_litovsk_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_treaty_of_brest_litovsk.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_treaty_of_brest_litovsk.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_caucasian_intervention_georgia"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_caucasian_intervention_georgia.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_caucasian_intervention_georgia_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_caucasian_intervention_georgia.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_caucasian_intervention_georgia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_baltic_german_colonization_order"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_baltic_german_colonization_order.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_baltic_german_colonization_order_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_baltic_german_colonization_order.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_baltic_german_colonization_order.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_caucasus_baku_expedition"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_caucasus_baku_expedition.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_caucasus_baku_expedition_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_caucasus_baku_expedition.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_caucasus_baku_expedition.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_falkenhayn_dismissal_third_ohl"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_falkenhayn_dismissal_third_ohl.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_falkenhayn_dismissal_third_ohl_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_falkenhayn_dismissal_third_ohl.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_falkenhayn_dismissal_third_ohl.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_elastic_defense_in_depth"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_elastic_defense_in_depth.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_elastic_defense_in_depth_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_elastic_defense_in_depth.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_elastic_defense_in_depth.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_paris_gun_super_battery"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_paris_gun_super_battery.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_paris_gun_super_battery_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_paris_gun_super_battery.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_paris_gun_super_battery.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_gotha_raids_on_london"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_gotha_raids_on_london.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_gotha_raids_on_london_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_gotha_raids_on_london.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_gotha_raids_on_london.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_fokker_d_vii_air_supremacy"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_fokker_d_vii_air_supremacy.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_fokker_d_vii_air_supremacy_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_fokker_d_vii_air_supremacy.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_fokker_d_vii_air_supremacy.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_treaty_of_bucharest_1918"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_treaty_of_bucharest_1918.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_treaty_of_bucharest_1918_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_treaty_of_bucharest_1918.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_treaty_of_bucharest_1918.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_operation_michael_st_quentin"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_operation_michael_st_quentin.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_operation_michael_st_quentin_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_operation_michael_st_quentin.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_operation_michael_st_quentin.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_spanish_flu_epidemic_crisis"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_spanish_flu_epidemic_crisis.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_spanish_flu_epidemic_crisis_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_spanish_flu_epidemic_crisis.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_spanish_flu_epidemic_crisis.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_collapse_of_central_allies"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_collapse_of_central_allies.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_collapse_of_central_allies_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_collapse_of_central_allies.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_collapse_of_central_allies.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_fleet_sortie_order_mutiny"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_fleet_sortie_order_mutiny.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_fleet_sortie_order_mutiny_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_fleet_sortie_order_mutiny.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_fleet_sortie_order_mutiny.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_kaiser_abdication_amerongen"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_kaiser_abdication_amerongen.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_kaiser_abdication_amerongen_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_kaiser_abdication_amerongen.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_kaiser_abdication_amerongen.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_armistice_at_compiegne"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_armistice_at_compiegne.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_armistice_at_compiegne_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_armistice_at_compiegne.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_armistice_at_compiegne.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_the_stab_in_the_back_myth"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_the_stab_in_the_back_myth.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_the_stab_in_the_back_myth_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_the_stab_in_the_back_myth.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_the_stab_in_the_back_myth.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_siegfrieden_peace_with_france"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_siegfrieden_peace_with_france.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_siegfrieden_peace_with_france_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_siegfrieden_peace_with_france.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_siegfrieden_peace_with_france.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_krupp_heavy_ordnance_contracts"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_krupp_heavy_ordnance_contracts.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_krupp_heavy_ordnance_contracts_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_krupp_heavy_ordnance_contracts.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_krupp_heavy_ordnance_contracts.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_smash_liege_forts"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_smash_liege_forts.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_smash_liege_forts_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_smash_liege_forts.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_smash_liege_forts.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_the_great_retreat_of_1915"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_the_great_retreat_of_1915.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_the_great_retreat_of_1915_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_the_great_retreat_of_1915.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_the_great_retreat_of_1915.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_zimmermann_telegram_proposal"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_zimmermann_telegram_proposal.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_zimmermann_telegram_proposal_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_zimmermann_telegram_proposal.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_zimmermann_telegram_proposal.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_bruchmueller_feuerwalze_doctrine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_bruchmueller_feuerwalze_doctrine.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_bruchmueller_feuerwalze_doctrine_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_bruchmueller_feuerwalze_doctrine.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_bruchmueller_feuerwalze_doctrine.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_chancellor_michaelis_puppet"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_chancellor_michaelis_puppet.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_chancellor_michaelis_puppet_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_chancellor_michaelis_puppet.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_chancellor_michaelis_puppet.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_das_grosse_hauptquartier"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_das_grosse_hauptquartier.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_das_grosse_hauptquartier_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_das_grosse_hauptquartier.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_das_grosse_hauptquartier.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_reichsbahn_strategic_network"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_reichsbahn_strategic_network.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_reichsbahn_strategic_network_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_reichsbahn_strategic_network.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_reichsbahn_strategic_network.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_rathenau_war_raw_materials_board"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_rathenau_war_raw_materials_board.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_rathenau_war_raw_materials_board_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_rathenau_war_raw_materials_board.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_rathenau_war_raw_materials_board.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_electrical_giants_siemens_aeg"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_electrical_giants_siemens_aeg.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_electrical_giants_siemens_aeg_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_electrical_giants_siemens_aeg.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_electrical_giants_siemens_aeg.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_haber_bosch_nitrogen_miracle"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_haber_bosch_nitrogen_miracle.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_haber_bosch_nitrogen_miracle_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_haber_bosch_nitrogen_miracle.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_haber_bosch_nitrogen_miracle.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_battle_of_verdun_attrition"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_battle_of_verdun_attrition.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_battle_of_verdun_attrition_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_battle_of_verdun_attrition.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_battle_of_verdun_attrition.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_arras_and_vimy_ridge_stand"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_arras_and_vimy_ridge_stand.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_arras_and_vimy_ridge_stand_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_arras_and_vimy_ridge_stand.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_arras_and_vimy_ridge_stand.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_siege_of_kut_al_amara_aid"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_siege_of_kut_al_amara_aid.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_siege_of_kut_al_amara_aid_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_siege_of_kut_al_amara_aid.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_siege_of_kut_al_amara_aid.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_asienkorps_palestine_expedition"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_asienkorps_palestine_expedition.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_asienkorps_palestine_expedition_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_asienkorps_palestine_expedition.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_asienkorps_palestine_expedition.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_incorporate_bohemia_and_austria"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_incorporate_bohemia_and_austria.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_incorporate_bohemia_and_austria_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_incorporate_bohemia_and_austria.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_incorporate_bohemia_and_austria.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_battle_of_caporetto_breakthrough"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_battle_of_caporetto_breakthrough.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_battle_of_caporetto_breakthrough_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_battle_of_caporetto_breakthrough.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_battle_of_caporetto_breakthrough.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_operation_blucher_yorck"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_operation_blucher_yorck.png"
+	}
+	spriteType = {
+		name = "GFX_focus_GER_ww1_operation_blucher_yorck_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/ger_operation_blucher_yorck.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/ger_operation_blucher_yorck.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_the_iron_prime_minister"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_the_iron_prime_minister.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_the_iron_prime_minister_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_the_iron_prime_minister.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_the_iron_prime_minister.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_dissolve_the_rebellious_duma"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_dissolve_the_rebellious_duma.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_dissolve_the_rebellious_duma_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_dissolve_the_rebellious_duma.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_dissolve_the_rebellious_duma.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_the_great_retreat_to_the_dvina"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_the_great_retreat_to_the_dvina.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_the_great_retreat_to_the_dvina_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_the_great_retreat_to_the_dvina.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_the_great_retreat_to_the_dvina.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_murder_of_rasputin"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_murder_of_rasputin.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_murder_of_rasputin_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_murder_of_rasputin.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_murder_of_rasputin.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_prince_lvov_coalition"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_prince_lvov_coalition.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_prince_lvov_coalition_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_prince_lvov_coalition.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_prince_lvov_coalition.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_storming_of_winter_palace"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_storming_of_winter_palace.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_storming_of_winter_palace_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_storming_of_winter_palace.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_storming_of_winter_palace.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_convene_constituent_assembly"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_convene_constituent_assembly.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_convene_constituent_assembly_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_convene_constituent_assembly.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_convene_constituent_assembly.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_federal_democratic_republic"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_federal_democratic_republic.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_federal_democratic_republic_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_federal_democratic_republic.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_federal_democratic_republic.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_rodzianko_ultimatum"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_rodzianko_ultimatum.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_rodzianko_ultimatum_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_rodzianko_ultimatum.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_rodzianko_ultimatum.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_the_kerensky_ministry"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_the_kerensky_ministry.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_the_kerensky_ministry_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_the_kerensky_ministry.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_the_kerensky_ministry.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_mutiny_of_petrograd_garrison"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_mutiny_of_petrograd_garrison.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_mutiny_of_petrograd_garrison_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_mutiny_of_petrograd_garrison.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_mutiny_of_petrograd_garrison.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_total_frontline_discipline"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_total_frontline_discipline.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_total_frontline_discipline_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_total_frontline_discipline.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_total_frontline_discipline.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_decree_on_land"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_decree_on_land.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_decree_on_land_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_decree_on_land.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_decree_on_land.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_national_salvation_directory"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_national_salvation_directory.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_national_salvation_directory_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_national_salvation_directory.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_national_salvation_directory.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_founding_of_the_cheka"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_founding_of_the_cheka.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_founding_of_the_cheka_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_founding_of_the_cheka.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_founding_of_the_cheka.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_steel_breastplates_shock"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_steel_breastplates_shock.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_steel_breastplates_shock_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_steel_breastplates_shock.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_steel_breastplates_shock.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_liberate_galician_ruthenians"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_liberate_galician_ruthenians.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_liberate_galician_ruthenians_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_liberate_galician_ruthenians.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_liberate_galician_ruthenians.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_garford_putilov_armored_cars"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_garford_putilov_armored_cars.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_garford_putilov_armored_cars_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_garford_putilov_armored_cars.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_garford_putilov_armored_cars.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_broad_gauge_streamlining"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_broad_gauge_streamlining.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_broad_gauge_streamlining_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_broad_gauge_streamlining.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_broad_gauge_streamlining.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_brusilov_breakthrough_1916"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_brusilov_breakthrough_1916.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_brusilov_breakthrough_1916_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_brusilov_breakthrough_1916.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_brusilov_breakthrough_1916.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_sarikamish_counter_encirclement"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_sarikamish_counter_encirclement.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_sarikamish_counter_encirclement_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_sarikamish_counter_encirclement.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_sarikamish_counter_encirclement.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_sokolov_wheeled_maxim_mounts"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_sokolov_wheeled_maxim_mounts.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_sokolov_wheeled_maxim_mounts_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_sokolov_wheeled_maxim_mounts.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_sokolov_wheeled_maxim_mounts.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_osowiec_and_novogeorgievsk_forts"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_osowiec_and_novogeorgievsk_forts.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_osowiec_and_novogeorgievsk_forts_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_osowiec_and_novogeorgievsk_forts.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_osowiec_and_novogeorgievsk_forts.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_red_cross_missions_to_serbia"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_red_cross_missions_to_serbia.png"
+	}
+	spriteType = {
+		name = "GFX_focus_SOV_ww1_red_cross_missions_to_serbia_shine"
+		texturefile = "gfx/interface/goals/ww1_germany/sov_red_cross_missions_to_serbia.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/ww1_germany/sov_red_cross_missions_to_serbia.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+}

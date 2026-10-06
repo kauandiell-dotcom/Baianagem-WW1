@@ -20,7 +20,7 @@ FX={n.key:n.value for n in nodes('common/scripted_effects/ww1_austria_hungary_ef
 FOCUS=node(nodes('common/national_focus/austria.txt'),'focus_tree').value
 FOCI={n.get('id'):n for n in FOCUS if n.key=='focus'}
 DECISIONS={d.key:d for p in (ROOT/'common/decisions').glob('ww1_auh*.txt') for c in parse(read(p)) for d in c.value}
-EVENTS={n.get('id'):n for n in nodes('events/ww1_austria_hungary_events.txt') if n.key=='country_event'}
+EVENTS={n.get('id'):n for p in sorted((ROOT/'events').glob('ww1_austria_hungary*.txt')) for n in nodes('events/'+p.name) if n.key=='country_event'}
 
 class Administration:
     """Small interpreter for the verified administration subset of PDX script."""
@@ -115,7 +115,7 @@ class ContentContracts(unittest.TestCase):
                 if n.key=='country_event' and isinstance(n.value,list):self.assertIn(n.get('id'),EVENTS)
     def test_only_registered_native_effects(self):
         api=set(re.findall(r'^## (\w+)',(GAME/'documentation/effects_documentation.md').read_text(encoding='utf-8-sig'),re.M))
-        scoped={'AUS','GER','SER','MNT','ALB','ROM','ITA','SOV','FRA','AUS_conrad_von_hotzendorf'}
+        scoped={'AUS','GER','SER','MNT','ALB','ROM','ITA','SOV','FRA','BUL','TUR','AUS_conrad_von_hotzendorf'}
         def check(ns):
             for n in ns:
                 if n.key in ['name','ai_chance','trigger','limit']:continue
@@ -131,7 +131,7 @@ class ContentContracts(unittest.TestCase):
                 if n.key=='option':check(n.value)
     def test_native_modifiers_and_bounded_reinforcement(self):
         api=set(re.findall(r'^## (\w+)',(GAME/'documentation/modifiers_documentation.md').read_text(encoding='utf-8-sig'),re.M))
-        for n in walk(nodes('common/ideas/ww1_austria_hungary_ideas.txt')):
+        for n in list(walk(nodes('common/ideas/ww1_austria_hungary_ideas.txt')))+list(walk(nodes('common/ideas/ww1_austria_hungary_extra_ideas.txt'))):
             if n.key=='modifier':
                 for m in n.value:
                     self.assertIn(m.key,api)
@@ -198,6 +198,60 @@ class ContentContracts(unittest.TestCase):
                 if n.key=='add_tech_bonus':
                     self.assertIsNone(n.get('ahead_reduction'));self.assertEqual(n.get('uses'),'1');names.append(n.get('name'))
         self.assertEqual(len(names),len(set(names)))
+
+class ExtraContentContracts(unittest.TestCase):
+    """Rewards for every focus, the dated events, institutions, decisions and their art/localisation."""
+    REAL={'country_event','add_political_power','add_stability','add_war_support','army_experience','navy_experience','air_experience',
+          'add_tech_bonus','add_to_variable','add_ideas','load_oob','add_command_power','add_mastery_bonus'}
+    def test_every_focus_has_a_real_reward(self):
+        for fid,n in FOCI.items():
+            keys={x.key for x in walk(n.get('completion_reward'))}
+            self.assertTrue(keys&self.REAL or any(k.startswith('auh_ww1_set_') for k in keys),fid)
+    def test_focus_descriptions_state_their_immediate_effect(self):
+        texts={}
+        for lang,marker in [('english','Immediate effect:'),('braz_por','Efeito imediato:')]:
+            s=read(ROOT/f'localisation/{lang}/ww1_austria_hungary_l_{lang}.yml')
+            texts[lang]={k:v for k,v in re.findall(r'^ ([\w.]+):0 "(.*)"$',s,re.M)}
+            with_effect=[k for k,v in texts[lang].items() if k.endswith('_desc') and marker in v]
+            self.assertGreaterEqual(len(with_effect),110,lang)
+    def test_rewards_stay_small_and_cost_something(self):
+        totals=defaultdict(float)
+        for n in FOCI.values():
+            for x in walk(n.get('completion_reward')):
+                if x.key in ('add_stability','add_war_support'):totals[x.key]+=float(x.value)
+                if x.key=='add_political_power':self.assertLessEqual(abs(float(x.value)),60)
+        self.assertLessEqual(totals['add_stability'],.15)
+        self.assertLessEqual(totals['add_war_support'],.20)
+    def test_extra_events_are_dated_or_triggered_and_localised(self):
+        extra={k:e for k,e in EVENTS.items() if int(k.split('.')[1])>=100}
+        self.assertGreaterEqual(len(extra),19)
+        registry=sprites(GAME)|sprites(ROOT);pictures=set()
+        for k,e in extra.items():
+            keys={x.key for x in e.value}
+            self.assertTrue('is_triggered_only' in keys or {'trigger','mean_time_to_happen'}<=keys,k)
+            self.assertGreaterEqual(len([x for x in e.value if x.key=='option']),2,k)
+            pic=e.get('picture');self.assertIn(pic,registry,k);self.assertNotIn(pic,pictures,k);pictures.add(pic)
+            im=Image.open(registry[pic]);self.assertEqual(im.size,(450,250))
+    def test_extra_ideas_and_decisions_have_unique_art_and_text(self):
+        registry=sprites(GAME)|sprites(ROOT);hashes={}
+        ideas=[n for n in nodes('common/ideas/ww1_austria_hungary_extra_ideas.txt')[0].value[0].value]
+        self.assertEqual(len(ideas),11)
+        extra_decisions=[d for c in parse(read(ROOT/'common/decisions/ww1_auh_extra.txt')) for d in c.value]
+        self.assertEqual(len(extra_decisions),9)
+        loc=read(ROOT/'localisation/english/ww1_austria_hungary_l_english.yml')+read(ROOT/'localisation/braz_por/ww1_austria_hungary_l_braz_por.yml')
+        for kind,items,sprite in [('idea',ideas,lambda n:'GFX_idea_'+n.get('picture')),('decision',extra_decisions,lambda n:n.get('icon'))]:
+            for n in items:
+                s=sprite(n);self.assertIn(s,registry,n.key)
+                raw=hashlib.sha256(Image.open(registry[s]).convert('RGBA').tobytes()).hexdigest()
+                self.assertNotIn(raw,hashes,n.key);hashes[raw]=n.key
+                self.assertEqual(loc.count(f' {n.key}:0 '),2,n.key);self.assertEqual(loc.count(f' {n.key}_desc:0 '),2,n.key)
+    def test_extra_decisions_reference_real_focuses_ideas_and_opinions(self):
+        opinions={n.key for n in nodes('common/opinion_modifiers/ww1_austria_hungary_extra_opinions.txt')[0].value}
+        ideas={n.key for n in nodes('common/ideas/ww1_austria_hungary_extra_ideas.txt')[0].value[0].value}|{n.key for n in nodes('common/ideas/ww1_austria_hungary_ideas.txt')[0].value[0].value}
+        text=read(ROOT/'common/decisions/ww1_auh_extra.txt')+read(ROOT/'events/ww1_austria_hungary_extra_events.txt')+read(ROOT/'common/national_focus/austria.txt')
+        for f in re.findall(r'has_completed_focus = (\w+)',text):self.assertIn(f,FOCI,f)
+        for m in re.findall(r'modifier = (AUH_ww1_\w+)',text):self.assertIn(m,opinions,m)
+        for i in re.findall(r'(?:idea = |add_ideas = )(AUH_ww1_\w+)',text):self.assertIn(i,ideas,i)
 
 class AdministrationScenarios(unittest.TestCase):
     def test_opening_replaces_legacy_buffs_without_factory_or_division_changes(self):

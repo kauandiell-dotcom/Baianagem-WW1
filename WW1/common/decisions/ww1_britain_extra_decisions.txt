@@ -1,0 +1,158 @@
+ENG_ww1_services_policy = {
+ ENG_ww1_x_call_indian_corps = {
+  icon = GFX_decision_ENG_ww1_x_call_indian_corps
+  visible = { has_country_flag = ENG_ww1_consulted_india }
+  available = { has_capitulated = no has_war = yes NOT = { has_idea = ENG_ww1_x_indian_corps } }
+  cost = 35 days_re_enable = 270
+  complete_effect = { add_timed_idea = { idea = ENG_ww1_x_indian_corps days = 120 } add_to_variable = { ww1_britain_dominion_consent = -1 } add_to_variable = { ww1_britain_debt_burden = 1 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_place_district_contracts = {
+  icon = GFX_decision_ENG_ww1_x_place_district_contracts
+  visible = { has_country_flag = ENG_ww1_district_surveys }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 }
+  cost = 30 days_re_enable = 240
+  days_remove = 60
+  civilian_factory_use = 1
+  remove_effect = { add_timed_idea = { idea = ENG_ww1_x_district_contracts days = 180 } add_to_variable = { ww1_britain_debt_burden = 1 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_rehearse_mobilisation = {
+  icon = GFX_decision_ENG_ww1_x_rehearse_mobilisation
+  visible = { has_country_flag = ENG_ww1_mobilisation_tables }
+  available = { has_capitulated = no has_war = no }
+  cost = 30 days_re_enable = 300
+  days_remove = 45
+  remove_effect = { army_experience = 3 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_summer_camp_season = {
+  icon = GFX_decision_ENG_ww1_x_summer_camp_season
+  visible = { has_country_flag = ENG_ww1_territorial_camps }
+  available = { has_capitulated = no has_war = no }
+  cost = 25 days_re_enable = 330
+  days_remove = 60
+  remove_effect = { army_experience = 3 add_stability = 0.005 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_officer_courses = {
+  icon = GFX_decision_ENG_ww1_x_officer_courses
+  visible = { has_country_flag = ENG_ww1_officer_training_corps }
+  available = { has_capitulated = no num_of_civilian_factories_available_for_projects > 0 NOT = { has_idea = ENG_ww1_x_officer_courses } }
+  cost = 40 days_re_enable = 365
+  days_remove = 60
+  civilian_factory_use = 1
+  remove_effect = { add_timed_idea = { idea = ENG_ww1_x_officer_courses days = 240 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_aerial_sorties = {
+  icon = GFX_decision_ENG_ww1_x_aerial_sorties
+  visible = { has_country_flag = ENG_ww1_aerial_reports }
+  available = { has_capitulated = no has_war = yes }
+  cost = 25 days_re_enable = 120
+  days_remove = 45
+  remove_effect = { army_experience = 2 air_experience = 2 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_night_patrols = {
+  icon = GFX_decision_ENG_ww1_x_night_patrols
+  visible = { has_country_flag = ENG_ww1_night_flying }
+  available = { has_capitulated = no has_war = yes }
+  cost = 30 days_re_enable = 150
+  days_remove = 60
+  remove_effect = { air_experience = 3 add_stability = 0.005 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_shipping_audit = {
+  icon = GFX_decision_ENG_ww1_x_shipping_audit
+  visible = { has_country_flag = ENG_ww1_merchant_register }
+  available = { has_capitulated = no  }
+  cost = 25 days_re_enable = 200
+  days_remove = 45
+  remove_effect = { navy_experience = 2 add_to_variable = { ww1_britain_debt_burden = -1 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_seaplane_rota = {
+  icon = GFX_decision_ENG_ww1_x_seaplane_rota
+  visible = { has_country_flag = ENG_ww1_seaplane_stations }
+  available = { has_capitulated = no has_war = yes NOT = { has_idea = ENG_ww1_x_seaplane_patrols } }
+  cost = 30 days_re_enable = 200
+  days_remove = 60
+  remove_effect = { add_timed_idea = { idea = ENG_ww1_x_seaplane_patrols days = 150 } navy_experience = 1 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_gas_drill = {
+  icon = GFX_decision_ENG_ww1_x_gas_drill
+  visible = { has_country_flag = ENG_ww1_gas_discipline }
+  available = { has_capitulated = no has_war = yes }
+  cost = 30 days_re_enable = 180
+  days_remove = 45
+  remove_effect = { army_experience = 3 add_to_variable = { ww1_britain_debt_burden = 1 } }
+  ai_will_do = { base = 1 }
+ }
+}
+ENG_ww1_empire_policy = {
+ ENG_ww1_x_cargo_priorities = {
+  icon = GFX_decision_ENG_ww1_x_cargo_priorities
+  visible = { has_country_flag = ENG_ww1_shipping_pool }
+  available = { has_capitulated = no has_war = yes is_in_faction = yes }
+  cost = 40 days_re_enable = 240
+  days_remove = 30
+  remove_effect = { add_to_variable = { ww1_britain_debt_burden = -2 } navy_experience = 1 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_city_bills = {
+  icon = GFX_decision_ENG_ww1_x_city_bills
+  visible = { has_country_flag = ENG_ww1_city_credit }
+  available = { has_capitulated = no NOT = { has_idea = ENG_ww1_x_city_credit_line } }
+  cost = 25 days_re_enable = 300
+  complete_effect = { add_timed_idea = { idea = ENG_ww1_x_city_credit_line days = 150 } add_to_variable = { ww1_britain_debt_burden = 2 } }
+  ai_will_do = { base = 0.3 }
+ }
+ ENG_ww1_x_reconstruction_commission = {
+  icon = GFX_decision_ENG_ww1_x_reconstruction_commission
+  visible = { has_country_flag = ENG_ww1_peace_administration }
+  available = { has_capitulated = no has_war = no num_of_civilian_factories_available_for_projects > 0 }
+  cost = 35 days_re_enable = 365
+  days_remove = 90
+  civilian_factory_use = 1
+  remove_effect = { add_to_variable = { ww1_britain_labour_support = 3 } add_stability = 0.01 add_to_variable = { ww1_britain_debt_burden = 1 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_service_the_debt = {
+  icon = GFX_decision_ENG_ww1_x_service_the_debt
+  visible = { has_country_flag = ENG_ww1_debt_service_commission }
+  available = { has_capitulated = no check_variable = { ww1_britain_debt_burden > 25 } }
+  cost = 50 days_re_enable = 240
+  complete_effect = { add_to_variable = { ww1_britain_debt_burden = -3 } add_to_variable = { ww1_britain_labour_support = -1 } }
+  ai_will_do = { base = 0.5 }
+ }
+ ENG_ww1_x_demob_schedule = {
+  icon = GFX_decision_ENG_ww1_x_demob_schedule
+  visible = { has_country_flag = ENG_ww1_demobilisation_planned }
+  available = { has_capitulated = no has_war = no }
+  cost = 30
+  fire_only_once = yes
+  days_remove = 60
+  remove_effect = { add_to_variable = { ww1_britain_labour_support = 3 } add_stability = 0.01 add_to_variable = { ww1_britain_debt_burden = -1 } }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_industrial_council = {
+  icon = GFX_decision_ENG_ww1_x_industrial_council
+  visible = { has_country_flag = ENG_ww1_industrial_conference }
+  available = { has_capitulated = no has_war = no }
+  cost = 30 days_re_enable = 300
+  days_remove = 60
+  remove_effect = { add_to_variable = { ww1_britain_labour_support = 3 } add_stability = 0.005 }
+  ai_will_do = { base = 1 }
+ }
+ ENG_ww1_x_imperial_defence_committee = {
+  icon = GFX_decision_ENG_ww1_x_imperial_defence_committee
+  visible = { has_country_flag = ENG_ww1_imperial_defence_review }
+  available = { has_capitulated = no has_war = no }
+  cost = 30 days_re_enable = 300
+  days_remove = 45
+  remove_effect = { add_to_variable = { ww1_britain_dominion_consent = 3 } navy_experience = 1 }
+  ai_will_do = { base = 1 }
+ }
+}

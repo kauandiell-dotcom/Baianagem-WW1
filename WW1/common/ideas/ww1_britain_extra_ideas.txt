@@ -1,0 +1,9 @@
+ideas = {
+ country = {
+  ENG_ww1_x_indian_corps = { picture = ENG_ww1_x_indian_corps allowed = { original_tag = ENG } removal_cost = -1 modifier = { army_org_factor = .03 supply_consumption_factor = .02 } }
+  ENG_ww1_x_district_contracts = { picture = ENG_ww1_x_district_contracts allowed = { original_tag = ENG } removal_cost = -1 modifier = { production_factory_efficiency_gain_factor = .05 consumer_goods_factor = .01 } }
+  ENG_ww1_x_officer_courses = { picture = ENG_ww1_x_officer_courses allowed = { original_tag = ENG } removal_cost = -1 modifier = { training_time_army_factor = -.05 experience_gain_army_factor = .03 } }
+  ENG_ww1_x_city_credit_line = { picture = ENG_ww1_x_city_credit_line allowed = { original_tag = ENG } removal_cost = -1 modifier = { industrial_capacity_factory = .03 consumer_goods_factor = .01 } }
+  ENG_ww1_x_seaplane_patrols = { picture = ENG_ww1_x_seaplane_patrols allowed = { original_tag = ENG } removal_cost = -1 modifier = { naval_detection = .08 experience_gain_air_factor = .02 } }
+ }
+}

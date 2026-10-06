@@ -1,0 +1,13 @@
+ideas = { country = {
+ AUH_ww1_inst_staff_college = { picture = AUH_ww1_inst_staff_college allowed = { original_tag = AUS } removal_cost = -1 modifier = { experience_gain_army_factor = .05 planning_speed = .03 } }
+ AUH_ww1_inst_sapper_school = { picture = AUH_ww1_inst_sapper_school allowed = { original_tag = AUS } removal_cost = -1 modifier = { max_dig_in_factor = .05 consumer_goods_factor = .005 } }
+ AUH_ww1_inst_pilot_school = { picture = AUH_ww1_inst_pilot_school allowed = { original_tag = AUS } removal_cost = -1 modifier = { experience_gain_air_factor = .05 } }
+ AUH_ww1_inst_investment_board = { picture = AUH_ww1_inst_investment_board allowed = { original_tag = AUS } removal_cost = -1 modifier = { industrial_capacity_factory = .02 consumer_goods_factor = .01 } }
+ AUH_ww1_subsidised_arsenals = { picture = AUH_ww1_subsidised_arsenals allowed = { original_tag = AUS } removal_cost = -1 modifier = { production_factory_efficiency_gain_factor = .04 consumer_goods_factor = .02 } }
+ AUH_ww1_replanned_deployment = { picture = AUH_ww1_replanned_deployment allowed = { original_tag = AUS } removal_cost = -1 modifier = { planning_speed = -.06 dig_in_speed_factor = .04 } }
+ AUH_ww1_fortress_inspection = { picture = AUH_ww1_fortress_inspection allowed = { original_tag = AUS } removal_cost = -1 modifier = { dig_in_speed_factor = .06 supply_consumption_factor = .02 } }
+ AUH_ww1_front_crisis = { picture = AUH_ww1_front_crisis allowed = { original_tag = AUS } removal_cost = -1 modifier = { army_org_factor = -.05 planning_speed = -.05 } }
+ AUH_ww1_strike_wave = { picture = AUH_ww1_strike_wave allowed = { original_tag = AUS } removal_cost = -1 modifier = { industrial_capacity_factory = -.04 } }
+ AUH_ww1_naval_unrest = { picture = AUH_ww1_naval_unrest allowed = { original_tag = AUS } removal_cost = -1 modifier = { naval_speed_factor = -.05 refit_speed = -.10 } }
+ AUH_ww1_winter_training = { picture = AUH_ww1_winter_training allowed = { original_tag = AUS } removal_cost = -1 modifier = { training_time_army_factor = -.05 consumer_goods_factor = .01 } }
+} }

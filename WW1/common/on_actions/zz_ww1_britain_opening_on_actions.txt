@@ -1,4 +1,4 @@
-﻿on_actions = {
+on_actions = {
  on_startup = { effect = { if = { limit = { country_exists = ENG } ENG = { if = { limit = { NOT = { has_country_flag = ww1_britain_opening_calibrated } } ww1_britain_calibrate_opening = yes } } } } }
  on_weekly_ENG = { effect = { ww1_britain_update_constitutional_costs = yes } }
 }

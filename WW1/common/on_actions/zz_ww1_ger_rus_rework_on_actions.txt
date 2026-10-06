@@ -1,0 +1,12 @@
+on_actions = {
+	on_weekly_SOV = {
+		effect = {
+			if = { limit = { original_tag = SOV } ww1_sov_rework_weekly = yes }
+		}
+	}
+	on_weekly_GER = {
+		effect = {
+			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
+		}
+	}
+}

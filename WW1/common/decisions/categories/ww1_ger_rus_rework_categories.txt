@@ -1,0 +1,20 @@
+SOV_imperial_crisis = {
+	icon = generic_crisis
+	allowed = { original_tag = SOV }
+	visible = { original_tag = SOV has_country_flag = SOV_rework_init }
+	visible_when_empty = no
+}
+
+SOV_civil_war_front = {
+	icon = generic_civil_support
+	allowed = { original_tag = SOV }
+	visible = { original_tag = SOV has_country_flag = SOV_civil_war_started NOT = { has_country_flag = SOV_civil_war_won } }
+	visible_when_empty = no
+}
+
+GER_home_front = {
+	icon = generic_crisis
+	allowed = { original_tag = GER }
+	visible = { original_tag = GER has_country_flag = GER_rework_init }
+	visible_when_empty = no
+}
