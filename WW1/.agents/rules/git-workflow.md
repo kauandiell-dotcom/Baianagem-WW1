@@ -12,7 +12,8 @@ Antes de iniciar qualquer alteração em arquivos:
 - **NUNCA TOCAR NA PASTA DE MODS DO USUÁRIO:** Não criar descritores locais ou backups em `Documents/Paradox Interactive/Hearts of Iron IV/mod`.
 - **PROIBIÇÃO DE `git push` AUTÔNOMO:** Nunca executar `git push`. Todos os commits ficam exclusivamente no repositório Git local. O fluxo do usuário define que um colaborador externo puxa as alterações do GitHub, testa e publica na Steam Workshop, enquanto o usuário baixa a versão oficial pela Steam.
 
-## 3. Granularidade de Commits
+## 3. Branch e Granularidade de Commits
+- **SEMPRE COMMITAR NA BRANCH `main`:** Todo commit deve ser feito diretamente na branch `main` local. Não criar branches separadas sem solicitação explícita do usuário.
 - Cada commit deve ter escopo único, atômico e claro.
 - Mensagens de commit no padrão Conventional Commits (`feat(...)`, `fix(...)`, `refactor(...)`, `chore(...)`).
 - Nunca misturar alterações de múltiplos subsistemas independentes em um único commit monstruoso.
@@ -20,3 +21,4 @@ Antes de iniciar qualquer alteração em arquivos:
 ## 4. Prevenção de Ações Destrutivas
 - Proibido executar `git reset --hard` ou deleções em lote sem salvaguarda explícita.
 - Ao refatorar ou remover arquivos herdados em desuso, garantir que não existam dependências ativas em `common/`, `events/` ou `interface/`.
+

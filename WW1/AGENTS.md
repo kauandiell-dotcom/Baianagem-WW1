@@ -165,9 +165,10 @@ Se você perceber que está entregando algo raso, **diga isso para si mesmo e vo
 
 ## 9. Git
 
-- Trabalhe num ramo próprio (ex.: `feat/<pais>-focus-tree`). **Nunca** faça push na `main`/`master`.
-- Um commit por fatia, mensagem clara. Não use `git add -A` às cegas: confira `git status` para não levar lixo (`_scratch*`, logs).
-- Push do ramo só se o usuário pedir.
+- **Sempre commite diretamente na branch `main` local.** Não crie branches paralelas.
+- **Nunca** faça push (`git push` é terminantemente proibido). Todos os commits ficam exclusivamente locais.
+- Um commit por fatia, com mensagem clara e atômica. Não use `git add -A` às cegas: confira `git status` para não levar lixo (`_scratch*`, logs).
+
 
 ---
 
