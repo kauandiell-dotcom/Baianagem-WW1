@@ -1,0 +1,485 @@
+# Gerado por scripts/build_ger_rus_content.py - motor de instabilidade da Russia Imperial.
+ww1_sov_rework_init = {
+	set_country_flag = SOV_rework_init
+	set_variable = { SOV_army_loyalty = 68 }
+	set_variable = { SOV_hunger = 12 }
+	set_variable = { SOV_unrest = 22 }
+	set_variable = { SOV_tsar_prestige = 60 }
+	set_variable = { SOV_duma_tension = 30 }
+	set_variable = { SOV_separatism = 15 }
+	set_variable = { SOV_repression_count = 0 }
+}
+
+ww1_sov_rework_weekly = {
+	if = { limit = { NOT = { has_country_flag = SOV_rework_init } } ww1_sov_rework_init = yes }
+	# ---------------- deriva semanal ----------------
+	if = {
+		limit = { has_war = yes any_enemy_country = { is_major = yes } }
+		add_to_variable = { SOV_unrest = 0.22 }
+		add_to_variable = { SOV_army_loyalty = -0.12 }
+		add_to_variable = { SOV_hunger = 0.10 }
+		add_to_variable = { SOV_tsar_prestige = -0.05 }
+		if = { limit = { has_war_support < 0.40 } add_to_variable = { SOV_unrest = 0.15 } }
+		if = { limit = { has_stability < 0.40 } add_to_variable = { SOV_unrest = 0.15 } }
+		if = {
+			limit = { check_variable = { ww1_infantry_equipment_ratio > 0.01 } check_variable = { ww1_infantry_equipment_ratio < 0.65 } }
+			add_to_variable = { SOV_army_loyalty = -0.25 }
+			add_to_variable = { SOV_unrest = 0.10 }
+		}
+		if = { limit = { surrender_progress > 0.15 } add_to_variable = { SOV_army_loyalty = -0.20 } }
+	}
+	else = {
+		add_to_variable = { SOV_unrest = -0.15 }
+		add_to_variable = { SOV_army_loyalty = 0.10 }
+		add_to_variable = { SOV_hunger = -0.20 }
+		add_to_variable = { SOV_tsar_prestige = 0.03 }
+	}
+	if = { limit = { check_variable = { SOV_duma_tension > 50 } } add_to_variable = { SOV_unrest = 0.05 } }
+	if = { limit = { has_country_flag = SOV_tsar_abdicated has_country_flag = SOV_provisional_gov_in_power has_war = yes } add_to_variable = { SOV_separatism = 0.20 } }
+	if = { limit = { has_country_flag = SOV_civil_war_started NOT = { has_country_flag = SOV_civil_war_won } } add_to_variable = { SOV_hunger = 0.15 } add_to_variable = { SOV_unrest = 0.08 } }
+	clamp_variable = { var = SOV_unrest min = 0 max = 100 }
+	clamp_variable = { var = SOV_army_loyalty min = 0 max = 100 }
+	clamp_variable = { var = SOV_hunger min = 0 max = 100 }
+	clamp_variable = { var = SOV_tsar_prestige min = 0 max = 100 }
+	clamp_variable = { var = SOV_duma_tension min = 0 max = 100 }
+	clamp_variable = { var = SOV_separatism min = 0 max = 100 }
+	# ---------------- espiritos por nivel ----------------
+	if = {
+		limit = { check_variable = { SOV_hunger > 65 } }
+		if = { limit = { NOT = { has_idea = SOV_hungry_cities_2 } } remove_ideas = SOV_hungry_cities_1 add_ideas = SOV_hungry_cities_2 }
+	}
+	else_if = {
+		limit = { check_variable = { SOV_hunger > 35 } }
+		if = { limit = { NOT = { has_idea = SOV_hungry_cities_1 } } remove_ideas = SOV_hungry_cities_2 add_ideas = SOV_hungry_cities_1 }
+	}
+	else = { remove_ideas = SOV_hungry_cities_1 remove_ideas = SOV_hungry_cities_2 }
+	if = {
+		limit = { check_variable = { SOV_unrest > 70 } }
+		if = { limit = { NOT = { has_idea = SOV_restless_workers_2 } } remove_ideas = SOV_restless_workers_1 add_ideas = SOV_restless_workers_2 }
+	}
+	else_if = {
+		limit = { check_variable = { SOV_unrest > 45 } }
+		if = { limit = { NOT = { has_idea = SOV_restless_workers_1 } } remove_ideas = SOV_restless_workers_2 add_ideas = SOV_restless_workers_1 }
+	}
+	else = { remove_ideas = SOV_restless_workers_1 remove_ideas = SOV_restless_workers_2 }
+	if = {
+		limit = { check_variable = { SOV_army_loyalty < 30 } }
+		if = { limit = { NOT = { has_idea = SOV_wavering_army_2 } } remove_ideas = SOV_wavering_army_1 add_ideas = SOV_wavering_army_2 }
+	}
+	else_if = {
+		limit = { check_variable = { SOV_army_loyalty < 50 } }
+		if = { limit = { NOT = { has_idea = SOV_wavering_army_1 } } remove_ideas = SOV_wavering_army_2 add_ideas = SOV_wavering_army_1 }
+	}
+	else = { remove_ideas = SOV_wavering_army_1 remove_ideas = SOV_wavering_army_2 }
+	if = {
+		limit = { check_variable = { SOV_separatism > 60 } }
+		if = { limit = { NOT = { has_idea = SOV_separatist_fever } } add_ideas = SOV_separatist_fever }
+	}
+	else = { remove_ideas = SOV_separatist_fever }
+	# ---------------- Janela da Revolucao de Fevereiro ----------------
+	if = {
+		limit = {
+			NOT = { has_country_flag = SOV_tsar_abdicated }
+			NOT = { has_country_flag = SOV_revolution_window_open }
+			NOT = { has_country_flag = SOV_revolution_cooldown }
+			NOT = { has_country_flag = SOV_path_tsarist }
+			has_war = yes
+			date > 1916.10.1
+			OR = {
+				check_variable = { SOV_unrest > 78 }
+				AND = { check_variable = { SOV_hunger > 50 } check_variable = { SOV_army_loyalty < 42 } }
+				AND = { date > 1917.2.15 check_variable = { SOV_unrest > 62 } }
+				AND = { check_variable = { SOV_repression_count > 1 } check_variable = { SOV_unrest > 55 } }
+			}
+		}
+		set_country_flag = SOV_revolution_window_open
+		if = {
+			limit = { check_variable = { SOV_repression_count > 0 } }
+			country_event = { id = ww1_russia.211 days = 4 }
+		}
+		else = { country_event = { id = ww1_russia.210 days = 2 } }
+	}
+	# ---------------- Calendario historico ----------------
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_lena } date > 1912.4.4 }
+		set_country_flag = SOV_ev_lena
+		
+		country_event = { id = ww1_russia.200 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_army_programme } date > 1913.3.1 }
+		set_country_flag = SOV_ev_army_programme
+		
+		country_event = { id = ww1_russia.208 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_stolypin_harvest } date > 1913.6.1 }
+		set_country_flag = SOV_ev_stolypin_harvest
+		
+		country_event = { id = ww1_russia.207 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_putilov } date > 1914.7.8 }
+		set_country_flag = SOV_ev_putilov
+		
+		country_event = { id = ww1_russia.201 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_great_retreat } has_war = yes date > 1915.7.20 }
+		set_country_flag = SOV_ev_great_retreat
+		
+		country_event = { id = ww1_russia.203 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_supreme_command } has_war = yes date > 1915.9.5 NOT = { has_country_flag = SOV_tsar_abdicated } }
+		set_country_flag = SOV_ev_supreme_command
+		
+		country_event = { id = ww1_russia.202 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_duma } has_war = yes date > 1915.9.3 }
+		set_country_flag = SOV_ev_duma
+		
+		country_event = { id = ww1_russia.204 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_bread_lines } has_war = yes date > 1916.11.20 NOT = { has_country_flag = SOV_tsar_abdicated } }
+		set_country_flag = SOV_ev_bread_lines
+		
+		country_event = { id = ww1_russia.209 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_army_wavers } has_war = yes check_variable = { SOV_army_loyalty < 48 } }
+		set_country_flag = SOV_ev_army_wavers
+		
+		country_event = { id = ww1_russia.206 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_rasputin } has_war = yes date > 1916.12.17 NOT = { has_completed_focus = SOV_murder_of_rasputin } }
+		set_country_flag = SOV_ev_rasputin
+		
+		country_event = { id = ww1_russia.205 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_april } has_country_flag = SOV_provisional_gov_in_power date > 1917.4.3 }
+		set_country_flag = SOV_ev_april
+		
+		country_event = { id = ww1_russia.213 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_july } has_country_flag = SOV_provisional_gov_in_power date > 1917.7.3 }
+		set_country_flag = SOV_ev_july
+		
+		country_event = { id = ww1_russia.214 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_kornilov } has_country_flag = SOV_provisional_gov_in_power date > 1917.8.25 NOT = { has_completed_focus = SOV_the_kornilov_affair } }
+		set_country_flag = SOV_ev_kornilov
+		
+		country_event = { id = ww1_russia.215 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_church } has_country_flag = SOV_tsar_abdicated date > 1917.8.28 }
+		set_country_flag = SOV_ev_church
+		
+		country_event = { id = ww1_russia.228 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_finland } has_country_flag = SOV_tsar_abdicated date > 1917.11.15 }
+		set_country_flag = SOV_ev_finland
+		
+		country_event = { id = ww1_russia.230 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_ukraine } has_country_flag = SOV_tsar_abdicated date > 1917.11.20 }
+		set_country_flag = SOV_ev_ukraine
+		
+		country_event = { id = ww1_russia.231 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_baltic } has_country_flag = SOV_tsar_abdicated date > 1918.2.1 }
+		set_country_flag = SOV_ev_baltic
+		
+		country_event = { id = ww1_russia.232 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_caucasus } has_country_flag = SOV_tsar_abdicated date > 1918.4.1 }
+		set_country_flag = SOV_ev_caucasus
+		
+		country_event = { id = ww1_russia.233 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_poland } has_country_flag = SOV_tsar_abdicated date > 1918.11.11 }
+		set_country_flag = SOV_ev_poland
+		
+		country_event = { id = ww1_russia.234 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_czech } has_country_flag = SOV_civil_war_started date > 1918.5.14 }
+		set_country_flag = SOV_ev_czech
+		
+		country_event = { id = ww1_russia.221 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_kolchak } has_country_flag = SOV_civil_war_started date > 1918.11.18 }
+		set_country_flag = SOV_ev_kolchak
+		
+		country_event = { id = ww1_russia.222 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_romanovs } has_country_flag = SOV_tsar_abdicated has_government = communism date > 1918.7.10 }
+		set_country_flag = SOV_ev_romanovs
+		
+		country_event = { id = ww1_russia.227 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_wrangel } has_country_flag = SOV_civil_war_started date > 1920.4.1 }
+		set_country_flag = SOV_ev_wrangel
+		
+		country_event = { id = ww1_russia.223 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_kronstadt } has_country_flag = SOV_civil_war_started has_government = communism date > 1921.3.1 }
+		set_country_flag = SOV_ev_kronstadt
+		
+		country_event = { id = ww1_russia.224 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_nep } has_country_flag = SOV_civil_war_started has_government = communism date > 1921.3.16 }
+		set_country_flag = SOV_ev_nep
+		
+		country_event = { id = ww1_russia.225 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = SOV_ev_ussr } has_government = communism date > 1922.12.29 }
+		set_country_flag = SOV_ev_ussr
+		
+		country_event = { id = ww1_russia.226 days = 2 }
+	}
+}
+
+# Gerado por scripts/build_ger_rus_content.py - frente interna do Imperio Alemao.
+ww1_ger_rework_init = {
+	set_country_flag = GER_rework_init
+	set_variable = { GER_social_peace = 74 }
+	set_variable = { GER_hunger = 6 }
+	set_variable = { GER_discontent = 12 }
+	set_variable = { GER_kaiser_prestige = 68 }
+	set_variable = { GER_revolution_count = 0 }
+}
+
+ww1_ger_rework_weekly = {
+	if = { limit = { NOT = { has_country_flag = GER_rework_init } } ww1_ger_rework_init = yes }
+	if = {
+		limit = { has_war = yes any_enemy_country = { is_major = yes } }
+		add_to_variable = { GER_social_peace = -0.09 }
+		add_to_variable = { GER_discontent = 0.14 }
+		add_to_variable = { GER_hunger = 0.06 }
+		add_to_variable = { GER_kaiser_prestige = -0.03 }
+		if = { limit = { has_war_with = ENG date > 1915.3.1 } add_to_variable = { GER_hunger = 0.09 } }
+		if = { limit = { has_war_support < 0.40 } add_to_variable = { GER_discontent = 0.12 } }
+		if = { limit = { has_stability < 0.40 } add_to_variable = { GER_discontent = 0.12 } }
+		if = { limit = { surrender_progress > 0.10 } add_to_variable = { GER_discontent = 0.15 } add_to_variable = { GER_kaiser_prestige = -0.10 } }
+	}
+	else = {
+		add_to_variable = { GER_social_peace = 0.15 }
+		add_to_variable = { GER_discontent = -0.15 }
+		add_to_variable = { GER_hunger = -0.20 }
+		add_to_variable = { GER_kaiser_prestige = 0.03 }
+	}
+	if = { limit = { has_country_flag = GER_revolutionary_unrest } add_to_variable = { GER_discontent = 0.08 } }
+	if = { limit = { has_country_flag = GER_reichstag_peace_resolution_rejected } add_to_variable = { GER_discontent = 0.03 } }
+	if = { limit = { has_country_flag = GER_reichstag_peace_resolution_passed } add_to_variable = { GER_social_peace = 0.03 } }
+	if = { limit = { has_idea = GER_ukraine_grain_relief } add_to_variable = { GER_hunger = -0.10 } }
+	if = { limit = { has_country_flag = brest_litovsk_concluded NOT = { has_country_flag = GER_ev_ukraine_relief } }
+		set_country_flag = GER_ev_ukraine_relief
+		add_timed_idea = { idea = GER_ukraine_grain_relief days = 365 } }
+	if = { limit = { has_country_flag = ger_schlieffen_failed NOT = { has_country_flag = GER_ev_schlieffen_failed } }
+		set_country_flag = GER_ev_schlieffen_failed
+		add_timed_idea = { idea = GER_schlieffen_plan_failed days = 180 } }
+	clamp_variable = { var = GER_social_peace min = 0 max = 100 }
+	clamp_variable = { var = GER_discontent min = 0 max = 100 }
+	clamp_variable = { var = GER_hunger min = 0 max = 100 }
+	clamp_variable = { var = GER_kaiser_prestige min = 0 max = 100 }
+	if = {
+		limit = { check_variable = { GER_social_peace < 45 } }
+		if = { limit = { NOT = { has_idea = GER_social_peace_frayed } } add_ideas = GER_social_peace_frayed }
+	}
+	else = { remove_ideas = GER_social_peace_frayed }
+	if = {
+		limit = { check_variable = { GER_hunger > 65 } }
+		if = { limit = { NOT = { has_idea = GER_turnip_winter_crisis } } remove_ideas = GER_kriegsbrot_rationing add_ideas = GER_turnip_winter_crisis }
+	}
+	else_if = {
+		limit = { check_variable = { GER_hunger > 35 } }
+		if = { limit = { NOT = { has_idea = GER_kriegsbrot_rationing } } remove_ideas = GER_turnip_winter_crisis add_ideas = GER_kriegsbrot_rationing }
+	}
+	else = { remove_ideas = GER_kriegsbrot_rationing remove_ideas = GER_turnip_winter_crisis }
+	if = {
+		limit = { check_variable = { GER_discontent > 80 } }
+		if = { limit = { NOT = { has_idea = GER_revolutionary_mood } } remove_ideas = GER_reichstag_strike_unrest add_ideas = GER_revolutionary_mood }
+	}
+	else_if = {
+		limit = { check_variable = { GER_discontent > 60 } }
+		if = { limit = { NOT = { has_idea = GER_reichstag_strike_unrest } } remove_ideas = GER_revolutionary_mood add_ideas = GER_reichstag_strike_unrest }
+	}
+	else = { remove_ideas = GER_reichstag_strike_unrest remove_ideas = GER_revolutionary_mood }
+	# ---------------- Motim de Kiel / Revolucao de Novembro ----------------
+	if = {
+		limit = {
+			NOT = { has_country_flag = GER_republic_proclaimed }
+			NOT = { has_country_flag = GER_kiel_mutiny_underway }
+			NOT = { has_country_flag = GER_kiel_cooldown }
+			has_war = yes
+			date > 1918.10.25
+			OR = {
+				surrender_progress > 0.20
+				has_war_support < 0.30
+				check_variable = { GER_discontent > 70 }
+			}
+		}
+		set_country_flag = GER_kiel_window_open
+		if = {
+			limit = { check_variable = { GER_revolution_count > 0 } }
+			country_event = { id = ww1_germany_events.215 days = 4 }
+		}
+		else = { country_event = { id = ww1_germany_events.214 days = 2 } }
+	}
+	if = {
+		limit = { has_country_flag = GER_kiel_mutiny_underway NOT = { has_country_flag = GER_republic_proclaimed } NOT = { has_country_flag = GER_kiel_window_open } }
+		clr_country_flag = GER_kiel_mutiny_underway
+	}
+	# ---------------- Calendario historico ----------------
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_1912 } date > 1912.1.14 }
+		set_country_flag = GER_ev_1912
+		
+		country_event = { id = ww1_germany_events.200 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_zabern } date > 1913.11.25 }
+		set_country_flag = GER_ev_zabern
+		
+		country_event = { id = ww1_germany_events.201 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_burgfrieden } has_war = yes date > 1914.8.3 }
+		set_country_flag = GER_ev_burgfrieden
+		
+		country_event = { id = ww1_germany_events.202 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_moltke } has_war_with = FRA date > 1914.9.14 }
+		set_country_flag = GER_ev_moltke
+		
+		country_event = { id = ww1_germany_events.203 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_lusitania } has_war_with = ENG date > 1915.5.8 }
+		set_country_flag = GER_ev_lusitania
+		
+		country_event = { id = ww1_germany_events.204 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_third_ohl } has_war = yes date > 1916.8.29 }
+		set_country_flag = GER_ev_third_ohl
+		
+		country_event = { id = ww1_germany_events.205 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_berlin_strike } has_war = yes date > 1916.5.1 }
+		set_country_flag = GER_ev_berlin_strike
+		
+		country_event = { id = ww1_germany_events.206 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_turnip } has_war = yes date > 1916.11.1 }
+		set_country_flag = GER_ev_turnip
+		
+		country_event = { id = ww1_germany_events.207 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_zimmermann } has_war_with = ENG date > 1917.1.17 }
+		set_country_flag = GER_ev_zimmermann
+		
+		country_event = { id = ww1_germany_events.208 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_peace_resolution } has_war = yes date > 1917.7.10 }
+		set_country_flag = GER_ev_peace_resolution
+		
+		country_event = { id = ww1_germany_events.209 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_hertling } has_war = yes date > 1917.10.31 }
+		set_country_flag = GER_ev_hertling
+		
+		country_event = { id = ww1_germany_events.210 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_jan_strikes } has_war = yes date > 1918.1.28 }
+		set_country_flag = GER_ev_jan_strikes
+		
+		country_event = { id = ww1_germany_events.212 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_michael } has_war = yes date > 1918.3.21 }
+		set_country_flag = GER_ev_michael
+		
+		country_event = { id = ww1_germany_events.211 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_october } has_war = yes date > 1918.9.30 NOT = { has_country_flag = GER_republic_proclaimed } OR = { surrender_progress > 0.15 check_variable = { GER_discontent > 60 } has_war_support < 0.30 } }
+		set_country_flag = GER_ev_october
+		
+		country_event = { id = ww1_germany_events.213 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_christmas } has_country_flag = GER_republic_proclaimed date > 1918.12.23 }
+		set_country_flag = GER_ev_christmas
+		
+		country_event = { id = ww1_germany_events.224 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_spartacists } has_country_flag = GER_republic_proclaimed date > 1919.1.5 }
+		set_country_flag = GER_ev_spartacists
+		
+		country_event = { id = ww1_germany_events.218 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_weimar } has_country_flag = GER_republic_proclaimed date > 1919.2.6 }
+		set_country_flag = GER_ev_weimar
+		
+		country_event = { id = ww1_germany_events.219 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_scapa } has_country_flag = GER_republic_proclaimed has_war = no date > 1919.6.21 }
+		set_country_flag = GER_ev_scapa
+		
+		country_event = { id = ww1_germany_events.225 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_kapp } has_country_flag = GER_republic_proclaimed date > 1920.3.12 }
+		set_country_flag = GER_ev_kapp
+		
+		country_event = { id = ww1_germany_events.220 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_rathenau } has_country_flag = GER_republic_proclaimed date > 1922.6.24 }
+		set_country_flag = GER_ev_rathenau
+		
+		country_event = { id = ww1_germany_events.221 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_ruhr } has_country_flag = GER_republic_proclaimed date > 1923.1.11 }
+		set_country_flag = GER_ev_ruhr
+		
+		country_event = { id = ww1_germany_events.222 days = 2 }
+	}
+	if = {
+		limit = { NOT = { has_country_flag = GER_ev_inflation } has_country_flag = GER_republic_proclaimed date > 1923.7.1 }
+		set_country_flag = GER_ev_inflation
+		
+		country_event = { id = ww1_germany_events.223 days = 2 }
+	}
+}

@@ -1,4 +1,5 @@
-﻿focus_tree = {
+# GR_PATCH_V1
+focus_tree = {
 	id = russian_empire_focus
 	country = {
 		factor = 0
@@ -13,12 +14,44 @@
 	default = no
 	reset_on_civilwar = no
 	continuous_focus_position = { x = 30 y = 3300 }
+	initial_show_position = { x = 5 y = 0 }
+	shortcut = {
+		name = SOV_ww1_shortcut_politics
+		target = SOV_the_empire_of_nicholas_ii
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_revolution
+		target = SOV_february_bread_riots_1917
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_economy
+		target = SOV_modernizing_the_colossus
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_army
+		target = SOV_the_great_military_program
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_navy_air
+		target = SOV_rebuilding_the_empires_shields
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_foreign
+		target = SOV_third_rome_foreign_policy
+		scroll_wheel_factor = 0.5
+	}
 
 	focus = {
 		id = SOV_the_empire_of_nicholas_ii
 		icon = GFX_SOV_duma_and_crown
-		x = 13
+		x = 5
 		y = 0
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -42,8 +75,9 @@
 	focus = {
 		id = SOV_the_stolypin_conundrum
 		icon = GFX_focus_RUS_stolypin
-		x = 7
+		x = 4
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -65,8 +99,10 @@
 	focus = {
 		id = SOV_kiev_opera_gala_1911
 		icon = GFX_focus_RUS_stolypin_shot
-		x = 7
+		x = 4
 		y = 2
+		ai_will_do = { factor = 10 }
+		available = { date > 1911.8.31 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -81,8 +117,9 @@
 	focus = {
 		id = SOV_stolypin_martyrdom
 		icon = GFX_focus_RUS_stolypin_dead
-		x = 5
+		x = 3
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -102,8 +139,9 @@
 	focus = {
 		id = SOV_kokovtsov_premiership
 		icon = GFX_focus_RUS_kokovtsov
-		x = 5
+		x = 2
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -120,8 +158,9 @@
 	focus = {
 		id = SOV_reactionary_resurgence
 		icon = GFX_RUS_Monarchist_Propaganda
-		x = 5
+		x = 0
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -137,14 +176,13 @@
 	focus = {
 		id = SOV_goremykin_stagnation
 		icon = GFX_focus_RUS_elderly_minister
-		x = 5
-		y = 6
+		x = 2
+		y = 5
+		ai_will_do = { factor = 10 }
+		prerequisite = { focus = SOV_kokovtsov_premiership }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		prerequisite = {
-			focus = SOV_reactionary_resurgence
-		}
 				completion_reward = {
 			add_stability = -0.05
 			add_political_power = -50
@@ -155,14 +193,14 @@
 	focus = {
 		id = SOV_rasputin_court_influence
 		icon = GFX_focus_RUS_rasputin
-		x = 5
-		y = 7
+		x = 0
+		y = 6
+		ai_will_do = { factor = 10 }
+		prerequisite = { focus = SOV_reactionary_resurgence }
+		prerequisite = { focus = SOV_goremykin_stagnation }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		prerequisite = {
-			focus = SOV_goremykin_stagnation
-		}
 		completion_reward = {
 			add_ideas = SOV_rasputin_court_intrigues
 			add_stability = -0.10
@@ -172,8 +210,9 @@
 	focus = {
 		id = SOV_stolypin_survives_the_bullet
 		icon = GFX_focus_RUS_stolypin_victory
-		x = 9
+		x = 5
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -193,8 +232,9 @@
 	focus = {
 		id = SOV_stolypins_twenty_years
 		icon = GFX_RUS_Bring_Prosperity_To_Peasants
-		x = 9
+		x = 4
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -210,8 +250,9 @@
 	focus = {
 		id = SOV_curb_gentry_privileges
 		icon = GFX_focus_RUS_duma_compromise
-		x = 9
+		x = 4
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -229,14 +270,13 @@
 	focus = {
 		id = SOV_zemstvo_reform_expansion
 		icon = GFX_RUS_Peasant_Councils
-		x = 9
-		y = 6
+		x = 6
+		y = 5
+		ai_will_do = { factor = 10 }
+		prerequisite = { focus = SOV_stolypins_twenty_years }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		prerequisite = {
-			focus = SOV_curb_gentry_privileges
-		}
 		completion_reward = {
 			add_political_power = 75
 			add_stability = 0.05
@@ -246,15 +286,15 @@
 
 	focus = {
 		id = SOV_the_iron_prime_minister
-		icon = GFX_focus_RUS_iron_hand
-		x = 9
-		y = 7
+		icon = GFX_focus_SOV_ww1_the_iron_prime_minister
+		x = 5
+		y = 6
+		ai_will_do = { factor = 10 }
+		prerequisite = { focus = SOV_curb_gentry_privileges }
+		prerequisite = { focus = SOV_zemstvo_reform_expansion }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
-		prerequisite = {
-			focus = SOV_zemstvo_reform_expansion
-		}
 		completion_reward = {
 			swap_ideas = { remove_idea = SOV_tsarist_autocracy add_idea = SOV_enlightened_constitutional_autocracy }
 			add_stability = 0.15
@@ -264,8 +304,9 @@
 	focus = {
 		id = SOV_the_third_state_duma
 		icon = GFX_SOV_taurida_palace
-		x = 16
+		x = 6
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -282,8 +323,9 @@
 	focus = {
 		id = SOV_guchkov_and_the_octobrists
 		icon = GFX_focus_RUS_guchkov
-		x = 14
+		x = 6
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -300,8 +342,9 @@
 	focus = {
 		id = SOV_milyukov_and_the_kadets
 		icon = GFX_focus_RUS_milyukov
-		x = 18
+		x = 8
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -318,8 +361,10 @@
 	focus = {
 		id = SOV_the_fourth_state_duma_1912
 		icon = GFX_focus_rus_duma_elections
-		x = 16
+		x = 7
 		y = 3
+		ai_will_do = { factor = 10 }
+		available = { date > 1912.10.15 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -337,8 +382,9 @@
 	focus = {
 		id = SOV_curb_socialist_deputies
 		icon = GFX_RUS_Anti_Speculation_Laws
-		x = 14
+		x = 6
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -354,8 +400,9 @@
 	focus = {
 		id = SOV_pass_public_health_acts
 		icon = GFX_RUS_A_Fair_Salary
-		x = 18
+		x = 8
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -372,8 +419,10 @@
 	focus = {
 		id = SOV_progressive_bloc_1915
 		icon = GFX_focus_RUS_progressive_bloc
-		x = 16
+		x = 8
 		y = 5
+		ai_will_do = { factor = 10 }
+		available = { date > 1915.8.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -390,8 +439,9 @@
 	focus = {
 		id = SOV_ministry_of_national_confidence
 		icon = GFX_SOV_entrust_the_kadets
-		x = 14
+		x = 8
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -417,9 +467,11 @@
 
 	focus = {
 		id = SOV_rodzianko_ultimatum
-		icon = GFX_focus_RUS_rodzianko_speech
-		x = 18
+		icon = GFX_focus_SOV_ww1_rodzianko_ultimatum
+		x = 10
 		y = 6
+		ai_will_do = { factor = 10 }
+		available = { date > 1916.11.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -443,9 +495,12 @@
 
 	focus = {
 		id = SOV_murder_of_rasputin
-		icon = GFX_focus_RUS_rasputin_murder
-		x = 16
+		icon = GFX_focus_SOV_ww1_murder_of_rasputin
+		x = 8
 		y = 7
+		ai_will_do = { factor = 0 }
+		bypass = { has_country_flag = SOV_rasputin_dead }
+		available = { date > 1916.12.1 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -462,8 +517,11 @@
 	focus = {
 		id = SOV_february_bread_riots_1917
 		icon = GFX_focus_RUS_bread_riots
-		x = 11
-		y = 8
+		x = 23
+		y = 7
+		ai_will_do = { factor = 0 }
+		bypass = { has_country_flag = SOV_tsar_abdicated }
+		available = { OR = { has_country_flag = SOV_revolution_window_open date > 1917.2.20 } }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -478,9 +536,12 @@
 
 	focus = {
 		id = SOV_mutiny_of_petrograd_garrison
-		icon = GFX_focus_RUS_garrison_mutiny
-		x = 11
-		y = 9
+		icon = GFX_focus_SOV_ww1_mutiny_of_petrograd_garrison
+		x = 23
+		y = 8
+		ai_will_do = { factor = 0 }
+		bypass = { has_country_flag = SOV_tsar_abdicated }
+		available = { OR = { has_country_flag = SOV_revolution_window_open date > 1917.2.20 } }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -515,8 +576,12 @@
 	focus = {
 		id = SOV_abdication_at_pskov
 		icon = GFX_focus_RUS_tsar_abdication
-		x = 11
-		y = 10
+		x = 22
+		y = 9
+		mutually_exclusive = { focus = SOV_the_tsar_refuses_abdication }
+		ai_will_do = { factor = 0 }
+		bypass = { has_country_flag = SOV_tsar_abdicated }
+		available = { OR = { has_country_flag = SOV_revolution_window_open date > 1917.2.20 } }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -531,15 +596,18 @@
 	focus = {
 		id = SOV_provisional_government_formed
 		icon = GFX_focus_RUS_provisional_gov
-		x = 8
-		y = 11
+		x = 20
+		y = 10
+		mutually_exclusive = { focus = SOV_the_tsar_refuses_abdication }
+		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_provisional_gov_open } }
+		bypass = { has_country_flag = SOV_provisional_gov_in_power }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		prerequisite = {
 			focus = SOV_abdication_at_pskov
 		}
-		completion_reward = {
+		completion_reward = { set_country_flag = SOV_provisional_gov_in_power 
 			set_politics = { ruling_party = democratic elections_allowed = yes }
 			swap_ideas = { remove_idea = SOV_tsarist_autocracy add_idea = SOV_dual_power_dvoevlastie }
 		}
@@ -548,8 +616,9 @@
 	focus = {
 		id = SOV_petrograd_soviet_order_no_1
 		icon = GFX_focus_SOV_first_decrees
-		x = 14
-		y = 11
+		x = 22
+		y = 10
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -565,9 +634,10 @@
 
 	focus = {
 		id = SOV_prince_lvov_coalition
-		icon = GFX_focus_RUS_lvov_cabinet
-		x = 8
-		y = 12
+		icon = GFX_focus_SOV_ww1_prince_lvov_coalition
+		x = 20
+		y = 11
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -584,8 +654,9 @@
 	focus = {
 		id = SOV_executive_committee_ispolkom
 		icon = GFX_focus_SOV_the_supreme_soviet
-		x = 14
-		y = 12
+		x = 22
+		y = 11
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -600,9 +671,10 @@
 
 	focus = {
 		id = SOV_the_kerensky_ministry
-		icon = GFX_focus_RUS_kerensky_speech
-		x = 11
-		y = 13
+		icon = GFX_focus_SOV_ww1_the_kerensky_ministry
+		x = 21
+		y = 12
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -618,8 +690,10 @@
 	focus = {
 		id = SOV_the_july_days_crisis
 		icon = GFX_focus_SOV_july_days
-		x = 9
-		y = 14
+		x = 17
+		y = 13
+		ai_will_do = { factor = 10 }
+		available = { date > 1917.7.1 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -636,8 +710,11 @@
 	focus = {
 		id = SOV_the_kornilov_affair
 		icon = GFX_focus_RUS_kornilov
-		x = 13
-		y = 14
+		x = 21
+		y = 13
+		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_provisional_gov_in_power } }
+		available = { has_country_flag = SOV_provisional_gov_in_power }
+		bypass = { OR = { has_country_flag = SOV_path_bolshevik has_country_flag = SOV_path_kornilov has_country_flag = SOV_path_democratic } }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -652,8 +729,11 @@
 	focus = {
 		id = SOV_all_power_to_the_soviets
 		icon = GFX_focus_SOV_party
-		x = 3
-		y = 15
+		x = 19
+		y = 14
+		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_bolshevik } }
+		mutually_exclusive = { focus = SOV_kornilov_iron_dictatorship focus = SOV_convene_constituent_assembly }
+		available = { has_country_flag = SOV_path_bolshevik }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -667,9 +747,10 @@
 
 	focus = {
 		id = SOV_storming_of_winter_palace
-		icon = GFX_focus_SOV_storming_winter_palace
-		x = 3
-		y = 16
+		icon = GFX_focus_SOV_ww1_storming_of_winter_palace
+		x = 19
+		y = 15
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -686,8 +767,9 @@
 	focus = {
 		id = SOV_decree_on_peace
 		icon = GFX_focus_SOV_decree_peace
-		x = 1
-		y = 17
+		x = 16
+		y = 16
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -703,9 +785,10 @@
 
 	focus = {
 		id = SOV_decree_on_land
-		icon = GFX_focus_SOV_decree_land
-		x = 5
-		y = 17
+		icon = GFX_focus_SOV_ww1_decree_on_land
+		x = 18
+		y = 16
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -723,9 +806,10 @@
 
 	focus = {
 		id = SOV_founding_of_the_cheka
-		icon = GFX_SOV_Peace_Commisar
-		x = 1
-		y = 18
+		icon = GFX_focus_SOV_ww1_founding_of_the_cheka
+		x = 16
+		y = 17
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -742,8 +826,9 @@
 	focus = {
 		id = SOV_creation_of_the_red_army
 		icon = GFX_focus_SOV_red_army
-		x = 5
-		y = 18
+		x = 18
+		y = 17
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -759,8 +844,9 @@
 	focus = {
 		id = SOV_war_communism_decrees
 		icon = GFX_focus_SOV_labor
-		x = 3
-		y = 19
+		x = 17
+		y = 18
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -778,8 +864,9 @@
 	focus = {
 		id = SOV_crush_the_white_armies
 		icon = GFX_focus_SOV_international_union_of_soviet_republics
-		x = 3
-		y = 20
+		x = 17
+		y = 19
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -797,8 +884,11 @@
 	focus = {
 		id = SOV_kornilov_iron_dictatorship
 		icon = GFX_RUS_Bring_Officer_Corps_Under_Control
-		x = 9
-		y = 15
+		x = 21
+		y = 14
+		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_kornilov } }
+		mutually_exclusive = { focus = SOV_all_power_to_the_soviets focus = SOV_convene_constituent_assembly }
+		available = { has_country_flag = SOV_path_kornilov }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -815,8 +905,9 @@
 	focus = {
 		id = SOV_martial_law_in_petrograd
 		icon = GFX_RUS_Subordinate_Army
-		x = 9
-		y = 16
+		x = 21
+		y = 15
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -832,8 +923,9 @@
 	focus = {
 		id = SOV_purge_the_soviets
 		icon = GFX_focus_anti_soviet_pact
-		x = 7
-		y = 17
+		x = 20
+		y = 16
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -849,8 +941,9 @@
 	focus = {
 		id = SOV_restore_capital_punishment
 		icon = GFX_focus_RUS_firing_squad
-		x = 11
-		y = 17
+		x = 22
+		y = 16
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -866,9 +959,10 @@
 
 	focus = {
 		id = SOV_national_salvation_directory
-		icon = GFX_focus_RUS_Kaledin_Alekseev_Kornilov_triumvirate
-		x = 9
-		y = 18
+		icon = GFX_focus_SOV_ww1_national_salvation_directory
+		x = 22
+		y = 17
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -885,9 +979,10 @@
 
 	focus = {
 		id = SOV_total_frontline_discipline
-		icon = GFX_RUS_Combat_Army_Mutiny
-		x = 9
-		y = 19
+		icon = GFX_focus_SOV_ww1_total_frontline_discipline
+		x = 22
+		y = 18
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -904,8 +999,9 @@
 	focus = {
 		id = SOV_one_and_indivisible_russia
 		icon = GFX_focus_RUS_for_united_russia
-		x = 9
-		y = 20
+		x = 22
+		y = 19
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -920,9 +1016,12 @@
 
 	focus = {
 		id = SOV_convene_constituent_assembly
-		icon = GFX_RUS_An_Example_Of_Liberal_Democracy
-		x = 16
-		y = 15
+		icon = GFX_focus_SOV_ww1_convene_constituent_assembly
+		x = 23
+		y = 13
+		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_democratic } }
+		mutually_exclusive = { focus = SOV_all_power_to_the_soviets focus = SOV_kornilov_iron_dictatorship }
+		available = { has_country_flag = SOV_path_democratic }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -938,8 +1037,9 @@
 	focus = {
 		id = SOV_chernov_and_sr_plurality
 		icon = GFX_focus_RUS_chernov
-		x = 14
-		y = 16
+		x = 23
+		y = 14
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -955,8 +1055,9 @@
 	focus = {
 		id = SOV_defend_the_tauride_palace
 		icon = GFX_RUS_Appease_Duma
-		x = 18
-		y = 16
+		x = 25
+		y = 14
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -971,9 +1072,10 @@
 
 	focus = {
 		id = SOV_federal_democratic_republic
-		icon = GFX_focus_RUS_democratic_coat_of_arms
-		x = 16
-		y = 17
+		icon = GFX_focus_SOV_ww1_federal_democratic_republic
+		x = 24
+		y = 15
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -990,8 +1092,9 @@
 	focus = {
 		id = SOV_legal_land_distribution
 		icon = GFX_RUS_Peasant_Land_Commissions
-		x = 14
-		y = 18
+		x = 24
+		y = 16
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1008,8 +1111,9 @@
 	focus = {
 		id = SOV_autonomy_to_minority_nations
 		icon = GFX_focus_RUS_federal_autonomy
-		x = 18
-		y = 18
+		x = 26
+		y = 16
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1026,8 +1130,9 @@
 	focus = {
 		id = SOV_democratic_war_effort
 		icon = GFX_focus_RUS_citizens_army
-		x = 16
-		y = 19
+		x = 25
+		y = 17
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1045,8 +1150,9 @@
 	focus = {
 		id = SOV_social_democracy_victorious
 		icon = GFX_focus_RUS_victory_cross
-		x = 16
-		y = 20
+		x = 25
+		y = 18
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1062,8 +1168,11 @@
 	focus = {
 		id = SOV_the_tsar_refuses_abdication
 		icon = GFX_focus_RUS_tsar_resolute
-		x = 23
-		y = 10
+		x = 24
+		y = 9
+		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_tsarist } }
+		mutually_exclusive = { focus = SOV_abdication_at_pskov focus = SOV_provisional_government_formed }
+		available = { has_country_flag = SOV_path_tsarist }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1079,8 +1188,9 @@
 	focus = {
 		id = SOV_summon_frontline_cavalry
 		icon = GFX_RUS_Aristocratic_Army
-		x = 21
-		y = 11
+		x = 24
+		y = 10
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1097,8 +1207,9 @@
 	focus = {
 		id = SOV_unleash_the_black_hundreds
 		icon = GFX_RUS_Legalize_Blackhundredist_Movement
-		x = 25
-		y = 11
+		x = 26
+		y = 10
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1130,9 +1241,10 @@
 
 	focus = {
 		id = SOV_dissolve_the_rebellious_duma
-		icon = GFX_focus_rus_resist_the_duma
-		x = 23
-		y = 12
+		icon = GFX_focus_SOV_ww1_dissolve_the_rebellious_duma
+		x = 25
+		y = 11
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1159,8 +1271,9 @@
 	focus = {
 		id = SOV_reinforce_fundamental_laws
 		icon = GFX_RUS_Adjust_Constitution
-		x = 23
-		y = 13
+		x = 25
+		y = 12
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1176,8 +1289,9 @@
 	focus = {
 		id = SOV_absolutist_restoration
 		icon = GFX_SOV_faith_tsar_fatherland
-		x = 21
-		y = 14
+		x = 25
+		y = 13
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1203,8 +1317,9 @@
 	focus = {
 		id = SOV_purification_of_the_empire
 		icon = GFX_SOV_okhrana
-		x = 25
-		y = 14
+		x = 27
+		y = 13
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1221,8 +1336,9 @@
 	focus = {
 		id = SOV_divine_right_unbroken
 		icon = GFX_focus_RUS_imperial_eagle
-		x = 23
-		y = 15
+		x = 27
+		y = 14
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -1239,8 +1355,9 @@
 	focus = {
 		id = SOV_modernizing_the_colossus
 		icon = GFX_RUS_Begin_Industrialization
-		x = 39
+		x = 43
 		y = 0
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1253,8 +1370,9 @@
 	focus = {
 		id = SOV_peasant_land_bank
 		icon = GFX_RUS_Bring_Up_Peasant_Owners
-		x = 29
+		x = 39
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1271,8 +1389,9 @@
 	focus = {
 		id = SOV_dissolution_of_the_obshchina
 		icon = GFX_RUS_Bet_On_Apolitical_Peasantry
-		x = 29
+		x = 37
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1288,8 +1407,9 @@
 	focus = {
 		id = SOV_consolidate_khutor_farms
 		icon = GFX_RUS_A_Russian_Farmer
-		x = 27
+		x = 34
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1305,8 +1425,9 @@
 	focus = {
 		id = SOV_siberian_resettlement_program
 		icon = GFX_TRM_For_Siberian_Freedom
-		x = 31
+		x = 38
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1322,8 +1443,9 @@
 	focus = {
 		id = SOV_zemstvo_agronomists
 		icon = GFX_RUS_Agricultural_Committee
-		x = 29
+		x = 36
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1341,8 +1463,9 @@
 	focus = {
 		id = SOV_modern_agricultural_machinery
 		icon = GFX_RUS_Agricultural_Mechanization
-		x = 27
+		x = 33
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1358,8 +1481,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_altai_grain_harvests
 		icon = GFX_TRM_Beauty_Siberia
-		x = 31
+		x = 37
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1376,8 +1500,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_ukrainian_sugar_refineries
 		icon = GFX_agricultural_aid
-		x = 29
+		x = 35
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1393,8 +1518,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_grain_export_monopoly
 		icon = GFX_SOV_grain_take
-		x = 29
+		x = 35
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1412,8 +1538,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_state_grain_elevators
 		icon = GFX_BAS_Grandees_of_grain
-		x = 27
+		x = 35
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1428,8 +1555,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_rural_electrification_initiatives
 		icon = GFX_GER_Power_Electrification
-		x = 31
+		x = 37
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1444,8 +1572,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_cooperative_credit_societies
 		icon = GFX_generic_banking_legislation
-		x = 29
+		x = 36
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1463,8 +1592,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_flourishing_rural_middle_class
 		icon = GFX_RUS_Emergence_Of_Farmers
-		x = 29
+		x = 36
 		y = 8
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1481,8 +1611,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_putilov_works_expansion
 		icon = GFX_focus_RUS_putilov
-		x = 36
+		x = 41
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1497,8 +1628,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_donbass_coal_and_iron_basin
 		icon = GFX_DKB_grab_donbass
-		x = 36
+		x = 41
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1513,8 +1645,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_obukhov_ordnance_works
 		icon = GFX_focus_RUS_Tsar_Cannon
-		x = 34
+		x = 39
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1529,8 +1662,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_krivoy_rog_iron_mines
 		icon = GFX_goal_NFL_supply_of_iron_ore
-		x = 34
+		x = 40
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1545,8 +1679,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_baku_black_gold_monopoly
 		icon = GFX_generic_pipeline
-		x = 38
+		x = 44
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1561,8 +1696,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_makeyevka_metallurgical_works
 		icon = GFX_SOV_steel_casting_industry
-		x = 36
+		x = 42
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1577,8 +1713,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_urals_heavy_smelters
 		icon = GFX_focus_industry_steel
-		x = 34
+		x = 39
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1593,8 +1730,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_nobel_and_rothschild_refineries
 		icon = GFX_Basic_Oil
-		x = 38
+		x = 43
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1611,8 +1749,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_motovilikha_artillery_plant
 		icon = GFX_generic_artillery_antitank_antiair
-		x = 36
+		x = 41
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1627,8 +1766,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_saint_petersburg_heavy_engineering
 		icon = GFX_RUS_Bet_On_Large_Industrialists
-		x = 36
+		x = 41
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1645,8 +1785,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_moscow_textile_and_rubber_mills
 		icon = GFX_RUS_Industrial_Democracy
-		x = 36
+		x = 41
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1661,8 +1802,9 @@ add_tech_bonus = { name = SOV_modern_agricultural_machinery bonus = 0.50 uses = 
 	focus = {
 		id = SOV_domestic_machine_tool_production
 		icon = GFX_construction_engineering
-		x = 36
+		x = 41
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1678,8 +1820,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_electrification_of_heavy_industry
 		icon = GFX_ARM_Damadians_Redemption
-		x = 36
+		x = 41
 		y = 8
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1697,6 +1840,7 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 		icon = GFX_DKB_Chart_Trans_Siberian_Privatization
 		x = 45
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1714,6 +1858,7 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 		icon = GFX_focus_generic_train
 		x = 43
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1731,6 +1876,7 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 		icon = GFX_focus_forest_railway
 		x = 47
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1748,6 +1894,7 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 		icon = GFX_SOV_improve_railway_network
 		x = 45
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1762,8 +1909,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_murmansk_ice_free_port_lifeline
 		icon = GFX_focus_RUS_murmansk_rail
-		x = 45
+		x = 46
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1782,8 +1930,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_arkhangelsk_broad_gauge_conversion
 		icon = GFX_focus_railway_contracts
-		x = 43
+		x = 45
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1799,8 +1948,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_caucasus_mountain_lines
 		icon = GFX_focus_generic_train_red
-		x = 47
+		x = 49
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1815,8 +1965,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_white_sea_icebreaker_fleet
 		icon = GFX_ALA_snowcruiser
-		x = 45
+		x = 47
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1833,8 +1984,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_military_railway_battalions
 		icon = GFX_focus_sun_railway_plans
-		x = 45
+		x = 47
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1852,9 +2004,10 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 
 	focus = {
 		id = SOV_broad_gauge_streamlining
-		icon = GFX_RUS_Privatize_Railroad
-		x = 45
+		icon = GFX_focus_SOV_ww1_broad_gauge_streamlining
+		x = 47
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1872,8 +2025,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_strategic_reserve_depots
 		icon = GFX_SOV_a_sustainable_economy
-		x = 45
+		x = 47
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1888,8 +2042,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_special_council_for_defense
 		icon = GFX_SOV_administrative_reforms
-		x = 51
-		y = 2
+		x = 47
+		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1900,14 +2055,15 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 			set_country_flag = side_ww1_SOV_industry_open
 			country_event = { id = side_ww1_ger_rus.3 days = 1 }
 		}
-			available = { has_war = yes }
+			available = { date > 1915.8.1  has_war = yes }
 	}
 
 	focus = {
 		id = SOV_war_industry_committees_zemgor
 		icon = GFX_RUS_All_Russian_Regency_Council
-		x = 51
-		y = 3
+		x = 49
+		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1924,8 +2080,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_convert_civilian_foundries
 		icon = GFX_generic_artillery_factories
-		x = 51
-		y = 4
+		x = 50
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1942,8 +2099,10 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_female_ammunition_workers
 		icon = GFX_ENG_maximist_women
-		x = 49
-		y = 4
+		x = 48
+		y = 3
+		ai_will_do = { factor = 10 }
+		available = { date > 1915.3.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1960,8 +2119,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_centralized_grain_procurement
 		icon = GFX_RUS_Bread_Monopoly
-		x = 51
-		y = 5
+		x = 53
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -1996,8 +2156,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_emergency_coal_allotment
 		icon = GFX_generic_coal_mining
-		x = 49
-		y = 5
+		x = 51
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2013,8 +2174,10 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_end_the_shell_shortage
 		icon = GFX_focus_generic_munitions
-		x = 51
-		y = 6
+		x = 52
+		y = 5
+		ai_will_do = { factor = 10 }
+		available = { date > 1915.9.1 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2031,8 +2194,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_arsenal_of_the_russian_empire
 		icon = GFX_RUS_A_New_Russian_Worker
-		x = 51
-		y = 7
+		x = 52
+		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2049,8 +2213,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_integrated_war_production
 		icon = GFX_RUS_All_For_Needs_Front
-		x = 47
+		x = 49
 		y = 8
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2068,8 +2233,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_rebuilding_the_empires_shields
 		icon = GFX_SOV_pc_of_the_ussr_navy
-		x = 64
+		x = 91
 		y = 0
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2083,8 +2249,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_baltic_fleet_resurgence
 		icon = GFX_RUS_navy
-		x = 57
+		x = 89
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2099,8 +2266,9 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 	focus = {
 		id = SOV_gangut_class_dreadnoughts
 		icon = GFX_CRO_battleship_commission
-		x = 55
+		x = 87
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2118,8 +2286,9 @@ add_tech_bonus = { name = SOV_gangut_class_dreadnoughts bonus = 0.50 uses = 1 ca
 	focus = {
 		id = SOV_gulf_of_finland_minefields
 		icon = GFX_AUS_whitehead_torpedo
-		x = 59
+		x = 89
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2135,8 +2304,9 @@ add_tech_bonus = { name = SOV_gangut_class_dreadnoughts bonus = 0.50 uses = 1 ca
 	focus = {
 		id = SOV_kronstadt_and_reval_fortresses
 		icon = GFX_goal_IRE_coastal_fortifications
-		x = 57
+		x = 87
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2152,8 +2322,9 @@ add_tech_bonus = { name = SOV_gangut_class_dreadnoughts bonus = 0.50 uses = 1 ca
 	focus = {
 		id = SOV_novik_class_fast_destroyers
 		icon = GFX_CRO_destroyer_enterprise
-		x = 55
+		x = 86
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2168,8 +2339,9 @@ add_tech_bonus = { name = SOV_gangut_class_dreadnoughts bonus = 0.50 uses = 1 ca
 	focus = {
 		id = SOV_bars_class_submarines
 		icon = GFX_RUS_Submarines_Kamchatka
-		x = 59
+		x = 88
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2184,8 +2356,9 @@ add_tech_bonus = { name = SOV_gangut_class_dreadnoughts bonus = 0.50 uses = 1 ca
 	focus = {
 		id = SOV_krab_minelaying_submarine
 		icon = GFX_SOV_submarine_warfare
-		x = 59
+		x = 88
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2200,8 +2373,9 @@ add_tech_bonus = { name = SOV_gangut_class_dreadnoughts bonus = 0.50 uses = 1 ca
 	focus = {
 		id = SOV_british_baltic_submarine_flotilla
 		icon = GFX_generic_submarine_base
-		x = 55
+		x = 84
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2217,8 +2391,9 @@ add_tech_bonus = { name = SOV_british_baltic_submarine_flotilla bonus = 0.50 use
 	focus = {
 		id = SOV_borodino_battlecruisers_laid_down
 		icon = GFX_CRO_battlecruiser_commission
-		x = 57
+		x = 86
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2234,8 +2409,9 @@ add_tech_bonus = { name = SOV_british_baltic_submarine_flotilla bonus = 0.50 use
 	focus = {
 		id = SOV_baltic_mine_offensive
 		icon = GFX_SOV_mine_warfare
-		x = 57
+		x = 88
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2251,8 +2427,9 @@ add_mastery_bonus = { name = SOV_baltic_mine_offensive bonus = 0.10 days = 180 f
 	focus = {
 		id = SOV_moonsund_archipelago_defenses
 		icon = GFX_focus_fortification
-		x = 55
+		x = 88
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -2267,8 +2444,9 @@ add_mastery_bonus = { name = SOV_baltic_mine_offensive bonus = 0.10 days = 180 f
 	focus = {
 		id = SOV_baltic_sea_denial
 		icon = GFX_focus_battleship_renewed
-		x = 57
+		x = 88
 		y = 8
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2285,8 +2463,9 @@ add_mastery_bonus = { name = SOV_baltic_sea_denial bonus = 0.10 days = 180 folde
 	focus = {
 		id = SOV_black_sea_fleet_supremacy
 		icon = GFX_SOV_expand_the_red_fleet
-		x = 65
+		x = 91
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2301,8 +2480,9 @@ add_mastery_bonus = { name = SOV_baltic_sea_denial bonus = 0.10 days = 180 folde
 	focus = {
 		id = SOV_imperatritsa_mariya_battleships
 		icon = GFX_focus_generic_navy_battleship2
-		x = 63
+		x = 91
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2317,8 +2497,9 @@ add_mastery_bonus = { name = SOV_baltic_sea_denial bonus = 0.10 days = 180 folde
 	focus = {
 		id = SOV_bosphorus_raid_doctrine
 		icon = GFX_focus_battlefleet
-		x = 67
+		x = 93
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2334,8 +2515,9 @@ add_mastery_bonus = { name = SOV_bosphorus_raid_doctrine bonus = 0.10 days = 180
 	focus = {
 		id = SOV_sevastopol_naval_bastion
 		icon = GFX_SOV_reinforce_southern_naval_bases
-		x = 65
+		x = 91
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2351,8 +2533,9 @@ add_mastery_bonus = { name = SOV_bosphorus_raid_doctrine bonus = 0.10 days = 180
 	focus = {
 		id = SOV_cut_anatolia_coal_lines
 		icon = GFX_BAS_Examine_Cantabrian_Sea_Fleet
-		x = 63
+		x = 90
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2369,8 +2552,9 @@ add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180
 	focus = {
 		id = SOV_caucasian_amphibious_raids
 		icon = GFX_SOV_naval_infantry
-		x = 67
+		x = 92
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2392,8 +2576,10 @@ add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180
 	focus = {
 		id = SOV_trabzon_amphibious_landing
 		icon = GFX_SOV_an_oceangoing_navy
-		x = 65
+		x = 90
 		y = 5
+		ai_will_do = { factor = 10 }
+		available = { date > 1916.4.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2453,8 +2639,9 @@ add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180
 	focus = {
 		id = SOV_prepare_for_tsargrad_landing
 		icon = GFX_focus_BUL_supremacy_on_the_bosporus
-		x = 65
+		x = 90
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2473,8 +2660,9 @@ add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180
 	focus = {
 		id = SOV_black_sea_command_secured
 		icon = GFX_focus_battleship_production
-		x = 65
+		x = 90
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2499,8 +2687,9 @@ add_mastery_bonus = { name = SOV_black_sea_command_secured bonus = 0.10 days = 1
 	focus = {
 		id = SOV_imperial_russian_air_service
 		icon = GFX_SOV_airforce
-		x = 73
+		x = 93
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2516,8 +2705,9 @@ add_mastery_bonus = { name = SOV_black_sea_command_secured bonus = 0.10 days = 1
 	focus = {
 		id = SOV_kacha_military_flying_school
 		icon = GFX_SOV_intensify_pilot_training_program
-		x = 73
+		x = 95
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2533,8 +2723,9 @@ add_mastery_bonus = { name = SOV_black_sea_command_secured bonus = 0.10 days = 1
 	focus = {
 		id = SOV_sikorsky_ilya_muromets
 		icon = GFX_focus_RUS_sikorsky_bomber
-		x = 71
+		x = 94
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2551,8 +2742,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_lebed_reconnaissance_corps
 		icon = GFX_focus_CAN_pilots
-		x = 75
+		x = 96
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2568,8 +2760,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_heavy_bombing_squadron_evok
 		icon = GFX_goal_generic_air_bomber
-		x = 71
+		x = 94
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2586,8 +2779,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_nesterov_aerial_ramming_tactics
 		icon = GFX_goal_generic_air_fighter
-		x = 75
+		x = 96
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2607,8 +2801,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_anatra_anasal_fighter_fleet
 		icon = GFX_goal_generic_air_fighter2
-		x = 73
+		x = 96
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2624,8 +2819,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_kazakov_ace_fighter_groups
 		icon = GFX_SOV_raskovas_aviation_group
-		x = 75
+		x = 98
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2645,8 +2841,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_strategic_air_bombardment_doctrine
 		icon = GFX_SOV_long_range_aircraft
-		x = 71
-		y = 6
+		x = 94
+		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2667,8 +2864,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_seaplane_carriers_in_the_black_sea
 		icon = GFX_focus_generic_seaplane_tender
-		x = 75
+		x = 98
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2684,8 +2882,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_integrated_air_naval_reconnaissance
 		icon = GFX_focus_generic_seaplane
-		x = 73
+		x = 97
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2702,8 +2901,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_mastery_of_the_imperial_skies
 		icon = GFX_SOV_expand_aviation_institutes
-		x = 73
+		x = 95
 		y = 8
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2724,10 +2924,11 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_the_great_military_program
 		icon = GFX_SOV_an_adaptable_army
-		x = 92
+		x = 67
 		y = 0
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		completion_reward = {
 			add_manpower = 150000
@@ -2738,8 +2939,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_sukhomlinov_reforms
 		icon = GFX_RUS_Court_General_Staff
-		x = 83
+		x = 64
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2756,10 +2958,11 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_grand_duke_nicholas_stavka
 		icon = GFX_focus_RUS_grand_duke
-		x = 87
+		x = 66
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -2774,8 +2977,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_modernize_mosin_nagant_1891
 		icon = GFX_GER_Modern_Soldiers_Modern_Rifles
-		x = 81
+		x = 62
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2790,8 +2994,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_cossack_hosts_mobilization
 		icon = GFX_RUS_Cossack_Bedrock
-		x = 85
+		x = 64
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2809,10 +3014,11 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_reorganize_military_districts
 		icon = GFX_focus_military_districts_reorg
-		x = 89
+		x = 66
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_grand_duke_nicholas_stavka
@@ -2827,8 +3033,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_savage_division_cavalry
 		icon = GFX_BKN_cossacks
-		x = 79
+		x = 62
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2845,8 +3052,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_standing_corps_readiness
 		icon = GFX_SOV_advanced_training
-		x = 83
+		x = 60
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2864,10 +3072,11 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_telegraph_and_wireless_corps
 		icon = GFX_generic_infantry_radio
-		x = 87
+		x = 64
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_cossack_hosts_mobilization
@@ -2882,8 +3091,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_praporshchik_accelerated_officers
 		icon = GFX_AFG_Hiring_Western_Officers
-		x = 81
+		x = 59
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2900,8 +3110,9 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_imperial_guard_regiments
 		icon = GFX_SOV_imperial_guard
-		x = 85
+		x = 61
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2920,10 +3131,11 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 	focus = {
 		id = SOV_general_staff_academy_doctrine
 		icon = GFX_CAL_field_artillery_schools
-		x = 89
+		x = 63
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_telegraph_and_wireless_corps
@@ -2937,8 +3149,9 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 	focus = {
 		id = SOV_general_headquarters_baranovichi
 		icon = GFX_BAT_officers
-		x = 85
+		x = 61
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -2957,10 +3170,11 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 	focus = {
 		id = SOV_the_shell_shortage_crisis
 		icon = GFX_focus_RUS_shell_famine
-		x = 93
-		y = 3
+		x = 68
+		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 5
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -2970,16 +3184,18 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 			set_country_flag = side_ww1_SOV_supply_audit_open
 			custom_effect_tooltip = side_ww1_supply_audit_tt
 		}
-			available = { has_war = yes }
+			available = { date > 1915.1.1  has_war = yes }
 	}
 
 	focus = {
 		id = SOV_the_great_retreat_to_the_dvina
-		icon = GFX_focus_RUS_great_retreat
-		x = 91
-		y = 4
+		icon = GFX_focus_SOV_ww1_the_great_retreat_to_the_dvina
+		x = 68
+		y = 2
+		ai_will_do = { factor = 10 }
+		available = { date > 1915.7.1 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_shell_shortage_crisis
@@ -2995,10 +3211,11 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 	focus = {
 		id = SOV_tula_and_izhevsk_arms_surge
 		icon = GFX_SOV_tula_arms_plant-45144
-		x = 95
-		y = 4
+		x = 70
+		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_shell_shortage_crisis
@@ -3011,10 +3228,11 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 	focus = {
 		id = SOV_scovill_and_vickers_foreign_shells
 		icon = GFX_arms_export
-		x = 91
-		y = 5
+		x = 68
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_great_retreat_to_the_dvina
@@ -3023,16 +3241,17 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 			set_country_flag = side_ww1_SOV_imports_open
 			custom_effect_tooltip = side_ww1_import_contract_tt
 		}
-			available = { has_war = yes }
+			available = { date > 1915.6.1  has_war = yes }
 	}
 
 	focus = {
 		id = SOV_schneider_and_putilov_heavy_howitzers
 		icon = GFX_SOV_soviet_artillery
-		x = 95
-		y = 5
+		x = 70
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_tula_and_izhevsk_arms_surge
@@ -3045,11 +3264,12 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 
 	focus = {
 		id = SOV_sokolov_wheeled_maxim_mounts
-		icon = GFX_BRY_Every_Hand_A_Rifle
-		x = 89
-		y = 6
+		icon = GFX_focus_SOV_ww1_sokolov_wheeled_maxim_mounts
+		x = 67
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_scovill_and_vickers_foreign_shells
@@ -3063,10 +3283,11 @@ add_tech_bonus = { name = SOV_sokolov_wheeled_maxim_mounts bonus = 0.50 uses = 1
 	focus = {
 		id = SOV_m1902_76mm_putilov_divisional_gun
 		icon = GFX_artillery
-		x = 93
-		y = 6
+		x = 69
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_scovill_and_vickers_foreign_shells
@@ -3081,10 +3302,11 @@ add_tech_bonus = { name = SOV_m1902_76mm_putilov_divisional_gun bonus = 0.50 use
 	focus = {
 		id = SOV_railway_heavy_guns
 		icon = GFX_focus_railway_gun
-		x = 97
-		y = 6
+		x = 71
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_schneider_and_putilov_heavy_howitzers
@@ -3099,10 +3321,11 @@ add_tech_bonus = { name = SOV_m1902_76mm_putilov_divisional_gun bonus = 0.50 use
 	focus = {
 		id = SOV_massed_artillery_preparation
 		icon = GFX_GER_prussian_artillery
-		x = 93
-		y = 7
+		x = 69
+		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_m1902_76mm_putilov_divisional_gun
@@ -3119,10 +3342,11 @@ add_tech_bonus = { name = SOV_m1902_76mm_putilov_divisional_gun bonus = 0.50 use
 	focus = {
 		id = SOV_gas_warfare_and_zelinsky_masks
 		icon = GFX_focus_RUS_zelinsky_mask
-		x = 93
-		y = 8
+		x = 69
+		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_massed_artillery_preparation
@@ -3136,11 +3360,12 @@ add_tech_bonus = { name = SOV_gas_warfare_and_zelinsky_masks bonus = 0.50 uses =
 
 	focus = {
 		id = SOV_brusilov_breakthrough_1916
-		icon = GFX_focus_RUS_brusilov
-		x = 103
-		y = 4
+		icon = GFX_focus_SOV_ww1_brusilov_breakthrough_1916
+		x = 70
+		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_great_military_program
@@ -3160,10 +3385,11 @@ add_tech_bonus = { name = SOV_gas_warfare_and_zelinsky_masks bonus = 0.50 uses =
 	focus = {
 		id = SOV_deep_echelon_surprise_assault
 		icon = GFX_focus_sap_trenches_assault
-		x = 101
-		y = 5
+		x = 72
+		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_brusilov_breakthrough_1916
@@ -3177,10 +3403,12 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 	focus = {
 		id = SOV_shock_battalions_of_death
 		icon = GFX_focus_RUS_shock_battalion
-		x = 105
-		y = 5
+		x = 74
+		y = 2
+		ai_will_do = { factor = 10 }
+		available = { date > 1917.5.1 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_brusilov_breakthrough_1916
@@ -3194,10 +3422,11 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 	focus = {
 		id = SOV_fedorov_avtomat_early_rifle
 		icon = GFX_BUL_citizen_rifles
-		x = 99
-		y = 6
+		x = 72
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_deep_echelon_surprise_assault
@@ -3211,11 +3440,12 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 
 	focus = {
 		id = SOV_garford_putilov_armored_cars
-		icon = GFX_focus_RUS_Garford_Putilov_armoured_car
-		x = 101
-		y = 6
+		icon = GFX_focus_SOV_ww1_garford_putilov_armored_cars
+		x = 74
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_deep_echelon_surprise_assault
@@ -3229,10 +3459,12 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 	focus = {
 		id = SOV_bochkareva_womens_battalion
 		icon = GFX_focus_RUS_womens_battalion
-		x = 105
-		y = 6
+		x = 76
+		y = 3
+		ai_will_do = { factor = 10 }
+		available = { date > 1917.5.1 }
 		cost = 5
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_shock_battalions_of_death
@@ -3270,11 +3502,12 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 
 	focus = {
 		id = SOV_steel_breastplates_shock
-		icon = GFX_RUS_Ingraining_Combat_Squads
-		x = 107
-		y = 6
+		icon = GFX_focus_SOV_ww1_steel_breastplates_shock
+		x = 78
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
 
 		prerequisite = {
 			focus = SOV_shock_battalions_of_death
@@ -3289,10 +3522,11 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 	focus = {
 		id = SOV_vezdekhod_and_tsar_tank_experiments
 		icon = GFX_focus_RUS_Tsar_Tank
-		x = 103
-		y = 7
+		x = 75
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_garford_putilov_armored_cars
@@ -3309,10 +3543,11 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 	focus = {
 		id = SOV_inelastic_trench_fortifications
 		icon = GFX_SOV_impregnable_forts
-		x = 103
-		y = 8
+		x = 75
+		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_vezdekhod_and_tsar_tank_experiments
@@ -3328,10 +3563,11 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_the_unbreakable_steamroller
 		icon = GFX_SOV_russian_miracle
-		x = 103
-		y = 9
+		x = 75
+		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_inelastic_trench_fortifications
@@ -3346,8 +3582,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_third_rome_foreign_policy
 		icon = GFX_RUS_Orthodox_Church_Influence
-		x = 122
+		x = 114
 		y = 0
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3376,8 +3613,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_pan_slavic_protectorate
 		icon = GFX_RUS_incorporate_panslavism
-		x = 114
+		x = 110
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3396,8 +3634,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_the_balkan_league_architect
 		icon = GFX_focus_BUL_bulgarian_serbian_treaty
-		x = 112
+		x = 106
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3413,8 +3652,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_sacred_guarantee_to_serbia
 		icon = GFX_focus_RUS_serbia_shield
-		x = 116
+		x = 108
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3431,8 +3671,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_first_balkan_war_mediation
 		icon = GFX_focus_bul_balkan_prussia
-		x = 112
+		x = 105
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3457,8 +3698,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_aid_to_serbian_army
 		icon = GFX_focus_attack_serbia
-		x = 116
+		x = 107
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3474,8 +3716,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_prevent_second_balkan_war
 		icon = GFX_focus_anti_serbian_crusade
-		x = 112
+		x = 104
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3493,8 +3736,10 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_bring_romania_into_the_war
 		icon = GFX_focus_germany_romania_yugoslavia
-		x = 114
+		x = 106
 		y = 4
+		ai_will_do = { factor = 10 }
+		available = { date > 1916.8.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3512,8 +3757,10 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_the_july_crisis_mobilization
 		icon = GFX_focus_RUS_mobilization_order
-		x = 115
+		x = 106
 		y = 5
+		ai_will_do = { factor = 10 }
+		available = { date > 1914.7.20 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3531,8 +3778,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_pan_slavic_triumph
 		icon = GFX_focus_rus_panslavism
-		x = 115
+		x = 106
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3548,8 +3796,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_liberate_south_slavs
 		icon = GFX_RUS_panslavic_eurasia
-		x = 115
+		x = 106
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3572,8 +3821,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_reaffirm_franco_russian_alliance
 		icon = GFX_focus_RUS_france_alliance
-		x = 121
+		x = 112
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3589,8 +3839,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_anglo_russian_entente_in_persia
 		icon = GFX_SOV_the_triple_entente
-		x = 125
+		x = 114
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3606,8 +3857,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_french_strategic_loans
 		icon = GFX_RUS_franco_russian_treaty
-		x = 121
+		x = 112
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3624,8 +3876,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_persian_corridor_security
 		icon = GFX_focus_crush_arabia
-		x = 125
+		x = 114
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3640,8 +3893,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_gold_transfers_for_credit
 		icon = GFX_focus_rus_ruble
-		x = 127
+		x = 116
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3657,8 +3911,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 	focus = {
 		id = SOV_plan_19_galicia_variant
 		icon = GFX_SOV_advanced_maneuvers
-		x = 121
+		x = 113
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3674,8 +3929,9 @@ add_mastery_bonus = { name = SOV_plan_19_galicia_variant bonus = 0.10 days = 180
 	focus = {
 		id = SOV_plan_19_east_prussia_variant
 		icon = GFX_focus_attack_russia
-		x = 125
+		x = 115
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3691,9 +3947,11 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 
 	focus = {
 		id = SOV_sarikamish_counter_encirclement
-		icon = GFX_focus_RUS_army
-		x = 119
+		icon = GFX_focus_SOV_ww1_sarikamish_counter_encirclement
+		x = 111
 		y = 3
+		ai_will_do = { factor = 10 }
+		available = { date > 1914.12.15 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3710,8 +3968,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_storming_of_erzurum
 		icon = GFX_generic_mountain_artillery
-		x = 119
+		x = 110
 		y = 4
+		ai_will_do = { factor = 10 }
+		available = { date > 1916.1.20 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3728,8 +3988,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_expeditionary_corps_to_france
 		icon = GFX_FRA_franco_soviet_treaty
-		x = 121
+		x = 112
 		y = 4
+		ai_will_do = { factor = 10 }
+		available = { date > 1916.4.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3756,8 +4018,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_claim_tsargrad_and_the_straits
 		icon = GFX_RUS_True_Heirs_Of_Constantinople
-		x = 123
+		x = 114
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3783,9 +4046,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 
 	focus = {
 		id = SOV_liberate_galician_ruthenians
-		icon = GFX_RUS_Imperial_Benevolence
-		x = 121
+		icon = GFX_focus_SOV_ww1_liberate_galician_ruthenians
+		x = 114
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3801,8 +4065,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_restore_congress_poland_under_crown
 		icon = GFX_RUS_All_Russian_Movement
-		x = 125
+		x = 116
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3819,8 +4084,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_cross_over_the_carpathians
 		icon = GFX_DKB_ties_mountain
-		x = 123
+		x = 115
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3838,8 +4104,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_storm_the_bosphorus_and_dardanelles
 		icon = GFX_focus_GRE_stage_an_incident_in_the_bosporus
-		x = 123
+		x = 115
 		y = 7
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3864,8 +4131,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_hagia_sophia_cross_restored
 		icon = GFX_focus_RUS_orthodox_cross
-		x = 123
+		x = 115
 		y = 8
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3882,8 +4150,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_willy_nicky_secret_correspondence
 		icon = GFX_RUS_Russo_German_Diplomacy
-		x = 131
+		x = 118
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3900,8 +4169,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_bjorko_treaty_reborn
 		icon = GFX_focus_befriend_white_russia
-		x = 129
+		x = 118
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3920,8 +4190,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_peace_of_brest_litovsk
 		icon = GFX_GER_restore_the_brest_litovsk_borders
-		x = 133
+		x = 120
 		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3943,8 +4214,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_continental_league_against_britain
 		icon = GFX_focus_crusade_against_britain
-		x = 129
+		x = 119
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3977,8 +4249,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_partition_persia_and_india
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		x = 129
+		x = 118
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -3995,14 +4268,13 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_treaty_of_berlin_rapprochement
 		icon = GFX_SOV_the_berlin_moscow_axis
-		x = 129
-		y = 5
+		x = 120
+		y = 4
+		ai_will_do = { factor = 10 }
+		prerequisite = { focus = SOV_continental_league_against_britain }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
-		prerequisite = {
-			focus = SOV_partition_persia_and_india
-		}
 		completion_reward = {
 			add_political_power = 150
 			add_stability = 0.10
@@ -4013,14 +4285,14 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_eurasian_imperial_hegemony
 		icon = GFX_RUS_Black_Tsar_2
-		x = 129
-		y = 6
+		x = 119
+		y = 5
+		ai_will_do = { factor = 10 }
+		prerequisite = { focus = SOV_partition_persia_and_india }
+		prerequisite = { focus = SOV_treaty_of_berlin_rapprochement }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
-		prerequisite = {
-			focus = SOV_treaty_of_berlin_rapprochement
-		}
 		completion_reward = {
 			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
 			add_stability = 0.20
@@ -4030,8 +4302,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_brest_demobilization_and_losses
 		icon = GFX_AUS_brest_litovsk
-		x = 133
+		x = 121
 		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -4047,8 +4320,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_reconstruction_from_the_ashes
 		icon = GFX_SOV_romanov_reconstruction
-		x = 133
+		x = 122
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -4066,8 +4340,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_prepare_for_inevitable_reckoning
 		icon = GFX_SOV_addressing_internal_affairs
-		x = 133
+		x = 122
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -4084,8 +4359,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_moscow_state_conference
 		icon = GFX_RUS_Connections_In_Senate
-		x = 11
-		y = 14
+		x = 19
+		y = 13
+		ai_will_do = { factor = 10 }
+		available = { date > 1917.8.1 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -4102,8 +4379,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_czech_legion_transsiberian_revolt
 		icon = GFX_focus_rusian_civil_war
-		x = 7
-		y = 19
+		x = 20
+		y = 17
+		ai_will_do = { factor = 10 }
+		available = { date > 1918.5.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -4120,8 +4399,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_tambov_peasant_rebellion
 		icon = GFX_SOV_legacy_of_green_armies
-		x = 5
-		y = 20
+		x = 19
+		y = 18
+		ai_will_do = { factor = 10 }
+		available = { date > 1920.8.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -4138,8 +4419,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_armed_forces_of_south_russia
 		icon = GFX_RUS_Convince_Republican_Generals
-		x = 9
-		y = 21
+		x = 21
+		y = 20
+		ai_will_do = { factor = 10 }
+		available = { date > 1918.1.1 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -4156,8 +4439,10 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_omsk_siberian_government
 		icon = GFX_TRM_Legacy_First_Middle_Siberian_Corps
-		x = 11
-		y = 21
+		x = 23
+		y = 20
+		ai_will_do = { factor = 10 }
+		available = { date > 1918.11.1 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
@@ -4174,8 +4459,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_ruble_gold_standard_preservation
 		icon = GFX_RUS_Abandon_Golden_Chervonets
-		x = 39
+		x = 43
 		y = 1
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4192,8 +4478,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_baku_batumi_pipeline_expansion
 		icon = GFX_AUS_boryslaw_oil
-		x = 38
+		x = 43
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4209,8 +4496,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_ural_platinum_reserves
 		icon = GFX_RUS_Strong_Currency
-		x = 34
+		x = 39
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4226,8 +4514,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	focus = {
 		id = SOV_sevkabel_factory_complex
 		icon = GFX_SOV_modernize_aircraft_facilities
-		x = 34
+		x = 39
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4243,8 +4532,9 @@ add_tech_bonus = { name = SOV_sevkabel_factory_complex bonus = 0.50 uses = 1 cat
 	focus = {
 		id = SOV_siberian_fur_trade_treasury
 		icon = GFX_SOV_ruble_bloc
-		x = 31
+		x = 37
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
@@ -4286,10 +4576,11 @@ add_tech_bonus = { name = SOV_sevkabel_factory_complex bonus = 0.50 uses = 1 cat
 	focus = {
 		id = SOV_moonsund_mine_barrage
 		icon = GFX_focus_irben_mine_trap
-		x = 55
+		x = 86
 		y = 6
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_NAVY }
+		search_filters = { FOCUS_FILTER_NAVY_XP }
 
 		prerequisite = {
 			focus = SOV_borodino_battlecruisers_laid_down
@@ -4304,8 +4595,9 @@ add_tech_bonus = { name = SOV_sevkabel_factory_complex bonus = 0.50 uses = 1 cat
 	focus = {
 		id = SOV_rioni_river_torpedo_station
 		icon = GFX_CRO_anti_submarine_warfare
-		x = 67
+		x = 92
 		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -4322,8 +4614,9 @@ add_tech_bonus = { name = SOV_rioni_river_torpedo_station bonus = 0.50 uses = 1 
 	focus = {
 		id = SOV_synchronized_aerial_machine_guns
 		icon = GFX_SOV_increase_aircraft_production
-		x = 77
+		x = 98
 		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_MANPOWER }
 
@@ -4338,11 +4631,13 @@ add_tech_bonus = { name = SOV_synchronized_aerial_machine_guns bonus = 0.50 uses
 
 	focus = {
 		id = SOV_osowiec_and_novogeorgievsk_forts
-		icon = GFX_SOV_far_east_fortification
-		x = 89
-		y = 5
+		icon = GFX_focus_SOV_ww1_osowiec_and_novogeorgievsk_forts
+		x = 66
+		y = 3
+		ai_will_do = { factor = 10 }
+		available = { date > 1915.7.1 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_the_great_retreat_to_the_dvina
@@ -4356,10 +4651,12 @@ add_tech_bonus = { name = SOV_synchronized_aerial_machine_guns bonus = 0.50 uses
 	focus = {
 		id = SOV_attack_of_the_dead_men_1915
 		icon = GFX_RUS_Better_Death_Than_Slavery
-		x = 89
-		y = 7
+		x = 65
+		y = 4
+		ai_will_do = { factor = 10 }
+		available = { date > 1915.8.6 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_osowiec_and_novogeorgievsk_forts
@@ -4374,10 +4671,11 @@ add_tech_bonus = { name = SOV_synchronized_aerial_machine_guns bonus = 0.50 uses
 	focus = {
 		id = SOV_russian_chemical_flamethrowers
 		icon = GFX_AUS_red_green_flames
-		x = 99
-		y = 7
+		x = 73
+		y = 4
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_fedorov_avtomat_early_rifle
@@ -4392,10 +4690,11 @@ add_tech_bonus = { name = SOV_russian_chemical_flamethrowers bonus = 0.50 uses =
 	focus = {
 		id = SOV_optical_rangefinders_and_periscopes
 		icon = GFX_TUR_continuing_ottomanism_efforts
-		x = 97
-		y = 7
+		x = 71
+		y = 5
+		ai_will_do = { factor = 10 }
 		cost = 7
-		search_filters = { FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
 
 		prerequisite = {
 			focus = SOV_railway_heavy_guns
@@ -4409,8 +4708,10 @@ add_tech_bonus = { name = SOV_optical_rangefinders_and_periscopes bonus = 0.50 u
 	focus = {
 		id = SOV_motono_sazonov_treaty_1916
 		icon = GFX_JAP_non_aggression_pact_with_the_soviet_union
-		x = 127
+		x = 116
 		y = 1
+		ai_will_do = { factor = 10 }
+		available = { date > 1916.7.1 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -4427,8 +4728,9 @@ add_tech_bonus = { name = SOV_optical_rangefinders_and_periscopes bonus = 0.50 u
 	focus = {
 		id = SOV_murmansk_convoys_arrival
 		icon = GFX_USA_Implement_Convoys_System
-		x = 127
-		y = 6
+		x = 117
+		y = 3
+		ai_will_do = { factor = 10 }
 		cost = 7
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 
@@ -4439,14 +4741,15 @@ add_tech_bonus = { name = SOV_optical_rangefinders_and_periscopes bonus = 0.50 u
 			set_country_flag = side_ww1_SOV_imports_open
 			custom_effect_tooltip = side_ww1_import_contract_tt
 		}
-			available = { has_war = yes }
+			available = { date > 1915.10.1  has_war = yes }
 	}
 
 	focus = {
 		id = SOV_red_cross_missions_to_serbia
-		icon = GFX_focus_RUS_aid_serbia
-		x = 125
-		y = 7
+		icon = GFX_focus_SOV_ww1_red_cross_missions_to_serbia
+		x = 110
+		y = 2
+		ai_will_do = { factor = 10 }
 		cost = 5
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
 

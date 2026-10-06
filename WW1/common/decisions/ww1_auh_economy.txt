@@ -14,7 +14,7 @@ AUH_ww1_economy = {
   remove_effect = { add_to_variable = { auh_ww1_provisions = 10 } add_to_variable = { auh_ww1_consent = -2 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { NOT = { controls_state = 43 } NOT = { controls_state = 154 } } } }
  }
- AUH_ww1_harvest_leave = {
+ AUH_ww1_harvest_leave_grant = {
   icon = GFX_decision_AUH_ww1_economy
   allowed = { original_tag = AUS }
   visible = { has_country_flag = auh_ww1_harvest_leave_unlocked }
@@ -116,7 +116,7 @@ AUH_ww1_economy = {
   remove_effect = { add_to_variable = { auh_ww1_cohesion = 3 } add_tech_bonus = { name = AUH_ww1_research_program bonus = .15 uses = 1 category = industry } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
- AUH_ww1_peace_credit = {
+ AUH_ww1_peace_credit_line = {
   icon = GFX_decision_AUH_ww1_economy
   allowed = { original_tag = AUS }
   visible = { has_country_flag = auh_ww1_peace_credit_unlocked }

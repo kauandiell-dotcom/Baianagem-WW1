@@ -1,0 +1,1910 @@
+# Gerado por scripts/build_ger_rus_content.py (nao editar a mao).
+
+country_event = {
+	id = ww1_russia.200
+	title = ww1_russia.200.t
+	desc = ww1_russia.200.d
+	picture = GFX_event_WW1_sov_lena
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.200.a
+		ai_chance = { factor = 60 }
+		add_to_variable = { SOV_unrest = 9 }
+		add_to_variable = { SOV_tsar_prestige = -3 }
+		add_political_power = 20
+		add_timed_idea = { idea = SOV_lena_shadow days = 540 }
+	}
+
+	option = {
+		name = ww1_russia.200.b
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_duma_tension = -8 }
+		add_political_power = -25
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = ww1_russia.201
+	title = ww1_russia.201.t
+	desc = ww1_russia.201.d
+	picture = GFX_event_WW1_sov_putilov
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.201.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { SOV_unrest = -4 }
+		add_to_variable = { SOV_tsar_prestige = -2 }
+		add_stability = -0.02
+	}
+
+	option = {
+		name = ww1_russia.201.b
+		ai_chance = { factor = 45 }
+		add_to_variable = { SOV_unrest = 4 }
+		add_war_support = 0.02
+	}
+}
+
+country_event = {
+	id = ww1_russia.202
+	title = ww1_russia.202.t
+	desc = ww1_russia.202.d
+	picture = GFX_event_WW1_sov_supreme_command
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.202.a
+		ai_chance = { factor = 70 }
+		add_to_variable = { SOV_tsar_prestige = -8 }
+		add_to_variable = { SOV_army_loyalty = 4 }
+		add_ideas = SOV_supreme_command_burden
+	}
+
+	option = {
+		name = ww1_russia.202.b
+		ai_chance = { factor = 30 }
+		add_to_variable = { SOV_duma_tension = 5 }
+		add_to_variable = { SOV_army_loyalty = -3 }
+		add_political_power = -30
+		army_experience = 5
+	}
+}
+
+country_event = {
+	id = ww1_russia.203
+	title = ww1_russia.203.t
+	desc = ww1_russia.203.d
+	picture = GFX_event_WW1_sov_great_retreat
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.203.a
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_hunger = 8 }
+		add_to_variable = { SOV_unrest = 6 }
+		army_experience = 10
+		add_timed_idea = { idea = SOV_refugee_flood days = 240 }
+	}
+
+	option = {
+		name = ww1_russia.203.b
+		ai_chance = { factor = 25 }
+		add_to_variable = { SOV_army_loyalty = -6 }
+		army_experience = 15
+		add_timed_idea = { idea = SOV_shell_shortage_crisis days = 200 }
+	}
+
+	option = {
+		name = ww1_russia.203.c
+		ai_chance = { factor = 35 }
+		add_to_variable = { SOV_duma_tension = -10 }
+		add_political_power = -40
+		add_timed_idea = { idea = SOV_society_mobilised days = 300 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.204
+	title = ww1_russia.204.t
+	desc = ww1_russia.204.d
+	picture = GFX_event_WW1_sov_duma_prorogued
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_russia.204.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { SOV_duma_tension = 25 }
+		add_to_variable = { SOV_unrest = 5 }
+		add_political_power = 25
+		add_stability = -0.02
+	}
+
+	option = {
+		name = ww1_russia.204.b
+		ai_chance = { factor = 45 }
+		add_to_variable = { SOV_duma_tension = -15 }
+		add_to_variable = { SOV_tsar_prestige = -5 }
+		add_stability = 0.03
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = ww1_russia.205
+	title = ww1_russia.205.t
+	desc = ww1_russia.205.d
+	picture = GFX_event_WW1_sov_rasputin_murder
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.205.a
+		ai_chance = { factor = 60 }
+		set_country_flag = SOV_rasputin_dead
+		remove_ideas = SOV_rasputin_court_intrigues
+		add_to_variable = { SOV_tsar_prestige = -6 }
+		add_to_variable = { SOV_duma_tension = -10 }
+		add_stability = 0.02
+	}
+
+	option = {
+		name = ww1_russia.205.b
+		ai_chance = { factor = 40 }
+		set_country_flag = SOV_rasputin_dead
+		remove_ideas = SOV_rasputin_court_intrigues
+		add_to_variable = { SOV_tsar_prestige = -3 }
+		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_army_loyalty = 2 }
+		add_political_power = 30
+	}
+}
+
+country_event = {
+	id = ww1_russia.206
+	title = ww1_russia.206.t
+	desc = ww1_russia.206.d
+	picture = GFX_event_WW1_sov_army_wavers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.206.a
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_army_loyalty = 5 }
+		add_to_variable = { SOV_unrest = 4 }
+		add_stability = -0.02
+		add_war_support = -0.01
+	}
+
+	option = {
+		name = ww1_russia.206.b
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_army_loyalty = 4 }
+		add_political_power = -20
+		add_war_support = 0.02
+	}
+
+	option = {
+		name = ww1_russia.206.c
+		ai_chance = { factor = 20 }
+		add_to_variable = { SOV_army_loyalty = 7 }
+		add_political_power = -35
+		add_war_support = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_russia.207
+	title = ww1_russia.207.t
+	desc = ww1_russia.207.d
+	picture = GFX_event_WW1_sov_stolypin_harvest
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.207.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { SOV_hunger = -4 }
+		add_to_variable = { SOV_unrest = 3 }
+		add_stability = 0.01
+		add_political_power = 20
+	}
+
+	option = {
+		name = ww1_russia.207.b
+		ai_chance = { factor = 45 }
+		add_to_variable = { SOV_unrest = -3 }
+		add_to_variable = { SOV_hunger = 2 }
+		add_political_power = -10
+	}
+}
+
+country_event = {
+	id = ww1_russia.208
+	title = ww1_russia.208.t
+	desc = ww1_russia.208.d
+	picture = GFX_event_WW1_sov_army_programme
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.208.a
+		ai_chance = { factor = 55 }
+		army_experience = 15
+		add_political_power = -25
+		add_stability = -0.01
+		add_war_support = 0.03
+	}
+
+	option = {
+		name = ww1_russia.208.b
+		ai_chance = { factor = 45 }
+		army_experience = 5
+		add_political_power = 15
+	}
+}
+
+country_event = {
+	id = ww1_russia.209
+	title = ww1_russia.209.t
+	desc = ww1_russia.209.d
+	picture = GFX_event_WW1_sov_bread_lines
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	immediate = {
+		add_to_variable = { SOV_hunger = 12 }
+		add_to_variable = { SOV_unrest = 8 }
+	}
+
+	option = {
+		name = ww1_russia.209.a
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_hunger = -8 }
+		add_to_variable = { SOV_unrest = 2 }
+		add_political_power = -30
+		add_stability = -0.01
+	}
+
+	option = {
+		name = ww1_russia.209.b
+		ai_chance = { factor = 25 }
+		add_to_variable = { SOV_unrest = 6 }
+		add_to_variable = { SOV_hunger = 5 }
+		add_stability = -0.03
+	}
+
+	option = {
+		name = ww1_russia.209.c
+		ai_chance = { factor = 35 }
+		add_to_variable = { SOV_hunger = -5 }
+		add_to_variable = { SOV_duma_tension = -5 }
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = ww1_russia.210
+	title = ww1_russia.210.t
+	desc = ww1_russia.210.d
+	picture = GFX_event_WW1_sov_petrograd_uprising
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = SOV_tsar_abdicated }
+	}
+
+	immediate = {
+		set_country_flag = SOV_february_crisis_underway
+	}
+
+	option = {
+		name = ww1_russia.210.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { SOV_unrest = 5 }
+		country_event = { id = ww1_russia.211 days = 3 }
+	}
+
+	option = {
+		name = ww1_russia.210.b
+		trigger = {
+			check_variable = { SOV_repression_count < 3 }
+		}
+		ai_chance = { factor = 45 }
+		add_to_variable = { SOV_repression_count = 1 }
+		add_to_variable = { SOV_unrest = -15 }
+		add_to_variable = { SOV_army_loyalty = -12 }
+		add_stability = -0.05
+		clr_country_flag = SOV_revolution_window_open
+		set_country_flag = { flag = SOV_revolution_cooldown days = 60 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.213
+	title = ww1_russia.213.t
+	desc = ww1_russia.213.d
+	picture = GFX_event_WW1_sov_april_theses
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_provisional_gov_in_power
+	}
+
+	option = {
+		name = ww1_russia.213.a
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_unrest = 3 }
+		add_popularity = { ideology = communism popularity = 0.02 }
+		add_war_support = 0.02
+	}
+
+	option = {
+		name = ww1_russia.213.b
+		ai_chance = { factor = 30 }
+		add_political_power = -30
+		add_to_variable = { SOV_unrest = 8 }
+		add_stability = -0.03
+		add_popularity = { ideology = communism popularity = 0.01 }
+		set_country_flag = SOV_lenin_arrested
+	}
+
+	option = {
+		name = ww1_russia.213.c
+		ai_chance = { factor = 30 }
+		add_to_variable = { SOV_unrest = -6 }
+		add_popularity = { ideology = democratic popularity = 0.02 }
+		add_popularity = { ideology = communism popularity = 0.03 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.211
+	title = ww1_russia.211.t
+	desc = ww1_russia.211.d
+	picture = GFX_event_WW1_sov_abdication
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = SOV_tsar_abdicated }
+	}
+
+	option = {
+		name = ww1_russia.211.a
+		ai_chance = { factor = 90 }
+		set_country_flag = SOV_tsar_abdicated
+		set_country_flag = SOV_provisional_gov_open
+		set_country_flag = SOV_provisional_gov_in_power
+		clr_country_flag = SOV_revolution_window_open
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		remove_ideas = SOV_tsarist_autocracy
+		remove_ideas = SOV_supreme_command_burden
+		add_ideas = SOV_dual_power_dvoevlastie
+		add_popularity = { ideology = democratic popularity = 0.15 }
+		add_popularity = { ideology = communism popularity = 0.05 }
+		add_to_variable = { SOV_tsar_prestige = -100 }
+		add_to_variable = { SOV_duma_tension = -30 }
+		add_to_variable = { SOV_unrest = -20 }
+		add_to_variable = { SOV_army_loyalty = -8 }
+		country_event = { id = ww1_russia.212 days = 20 }
+		if = { limit = { country_exists = GER } GER = { country_event = { id = ww1_germany_events.230 days = 2 } } }
+	}
+
+	option = {
+		name = ww1_russia.211.b
+		trigger = {
+			check_variable = { SOV_army_loyalty > 44 }
+		}
+		ai_chance = { factor = 10 }
+		set_country_flag = SOV_tsarist_path_open
+		set_country_flag = SOV_path_tsarist
+		clr_country_flag = SOV_revolution_window_open
+		add_to_variable = { SOV_army_loyalty = -5 }
+		add_to_variable = { SOV_unrest = 10 }
+		add_stability = -0.05
+		add_ideas = SOV_divine_autocracy
+	}
+}
+
+country_event = {
+	id = ww1_russia.212
+	title = ww1_russia.212.t
+	desc = ww1_russia.212.d
+	picture = GFX_event_WW1_sov_dual_power
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.212.a
+		ai_chance = { factor = 60 }
+		add_to_variable = { SOV_army_loyalty = -6 }
+		add_to_variable = { SOV_unrest = -5 }
+		add_political_power = 30
+	}
+
+	option = {
+		name = ww1_russia.212.b
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_army_loyalty = 4 }
+		add_to_variable = { SOV_unrest = -10 }
+		add_stability = -0.03
+		add_popularity = { ideology = communism popularity = 0.04 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.214
+	title = ww1_russia.214.t
+	desc = ww1_russia.214.d
+	picture = GFX_event_WW1_sov_july_days
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_provisional_gov_in_power
+	}
+
+	option = {
+		name = ww1_russia.214.a
+		ai_chance = { factor = 50 }
+		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_army_loyalty = -5 }
+		add_popularity = { ideology = communism popularity = -0.02 }
+		add_stability = -0.02
+		set_country_flag = SOV_july_crushed
+	}
+
+	option = {
+		name = ww1_russia.214.b
+		ai_chance = { factor = 50 }
+		add_to_variable = { SOV_unrest = -5 }
+		add_political_power = 25
+		add_popularity = { ideology = communism popularity = 0.03 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.215
+	title = ww1_russia.215.t
+	desc = ww1_russia.215.d
+	picture = GFX_event_WW1_sov_kornilov_crisis
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_provisional_gov_in_power
+		NOT = { has_country_flag = SOV_path_bolshevik }
+		NOT = { has_country_flag = SOV_path_kornilov }
+		NOT = { has_country_flag = SOV_path_democratic }
+	}
+
+	option = {
+		name = ww1_russia.215.a
+		ai_chance = { factor = 40 }
+		set_country_flag = SOV_path_bolshevik
+		set_country_flag = SOV_bolshevik_path_open
+		add_to_variable = { SOV_army_loyalty = -8 }
+		add_to_variable = { SOV_unrest = 10 }
+		add_popularity = { ideology = communism popularity = 0.12 }
+		country_event = { id = ww1_russia.216 days = 50 }
+	}
+
+	option = {
+		name = ww1_russia.215.b
+		ai_chance = { factor = 25 }
+		set_country_flag = SOV_path_kornilov
+		set_country_flag = SOV_kornilov_path_open
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		country_event = { id = ww1_russia.217 days = 10 }
+	}
+
+	option = {
+		name = ww1_russia.215.c
+		ai_chance = { factor = 35 }
+		set_country_flag = SOV_path_democratic
+		add_to_variable = { SOV_unrest = 5 }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		country_event = { id = ww1_russia.218 days = 70 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.216
+	title = ww1_russia.216.t
+	desc = ww1_russia.216.d
+	picture = GFX_event_WW1_sov_october
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_path_bolshevik
+	}
+
+	option = {
+		name = ww1_russia.216.a
+		ai_chance = { factor = 100 }
+		set_politics = { ruling_party = communism elections_allowed = no }
+		remove_ideas = SOV_dual_power_dvoevlastie
+		add_ideas = SOV_dictatorship_of_the_proletariat
+		set_country_flag = SOV_bolshevik_path_chosen
+		clr_country_flag = SOV_provisional_gov_in_power
+		add_popularity = { ideology = communism popularity = 0.4 }
+		add_to_variable = { SOV_unrest = -20 }
+		add_to_variable = { SOV_army_loyalty = -10 }
+		add_political_power = 100
+		country_event = { id = ww1_russia.220 days = 45 }
+		if = { limit = { country_exists = GER } GER = { country_event = { id = ww1_germany_events.231 days = 3 } } }
+	}
+}
+
+country_event = {
+	id = ww1_russia.217
+	title = ww1_russia.217.t
+	desc = ww1_russia.217.d
+	picture = GFX_event_WW1_sov_kornilov_power
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_path_kornilov
+	}
+
+	option = {
+		name = ww1_russia.217.a
+		ai_chance = { factor = 100 }
+		set_politics = { ruling_party = fascism elections_allowed = no }
+		remove_ideas = SOV_dual_power_dvoevlastie
+		add_ideas = SOV_salvation_directory_rule
+		set_country_flag = SOV_kornilov_path_chosen
+		clr_country_flag = SOV_provisional_gov_in_power
+		add_popularity = { ideology = fascism popularity = 0.3 }
+		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_army_loyalty = 10 }
+		country_event = { id = ww1_russia.220 days = 30 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.218
+	title = ww1_russia.218.t
+	desc = ww1_russia.218.d
+	picture = GFX_event_WW1_sov_assembly_election
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_path_democratic
+	}
+
+	option = {
+		name = ww1_russia.218.a
+		ai_chance = { factor = 60 }
+		add_popularity = { ideology = democratic popularity = 0.05 }
+		country_event = { id = ww1_russia.219 days = 45 }
+	}
+
+	option = {
+		name = ww1_russia.218.b
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_unrest = 8 }
+		add_popularity = { ideology = communism popularity = 0.06 }
+		set_country_flag = SOV_assembly_postponed
+		country_event = { id = ww1_russia.219 days = 45 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.219
+	title = ww1_russia.219.t
+	desc = ww1_russia.219.d
+	picture = GFX_event_WW1_sov_assembly_dispersal
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_path_democratic
+	}
+
+	option = {
+		name = ww1_russia.219.a
+		trigger = {
+			check_variable = { SOV_army_loyalty > 39 }
+			NOT = { has_country_flag = SOV_assembly_postponed }
+		}
+		ai_chance = { factor = 100 }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		remove_ideas = SOV_dual_power_dvoevlastie
+		add_ideas = SOV_russian_federal_republic
+		clr_country_flag = SOV_provisional_gov_in_power
+		add_popularity = { ideology = democratic popularity = 0.2 }
+		add_stability = 0.05
+		add_to_variable = { SOV_unrest = -8 }
+	}
+
+	option = {
+		name = ww1_russia.219.b
+		trigger = {
+			OR = { check_variable = { SOV_army_loyalty < 40 } has_country_flag = SOV_assembly_postponed }
+		}
+		ai_chance = { factor = 100 }
+		set_country_flag = SOV_path_bolshevik
+		country_event = { id = ww1_russia.216 days = 5 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.220
+	title = ww1_russia.220.t
+	desc = ww1_russia.220.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = SOV_civil_war_started }
+	}
+
+	option = {
+		name = ww1_russia.220.a
+		ai_chance = { factor = 100 }
+		set_country_flag = SOV_civil_war_started
+		add_political_power = 50
+		add_to_variable = { SOV_unrest = 10 }
+		add_ideas = SOV_civil_war_exhaustion
+		if = { limit = { has_government = communism } start_civil_war = { ideology = neutrality size = 0.40 } }
+		else_if = { limit = { has_government = fascism } start_civil_war = { ideology = communism size = 0.35 } }
+	}
+}
+
+country_event = {
+	id = ww1_russia.221
+	title = ww1_russia.221.t
+	desc = ww1_russia.221.d
+	picture = GFX_event_WW1_sov_czech_legion
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_civil_war_started
+	}
+
+	option = {
+		name = ww1_russia.221.a
+		ai_chance = { factor = 50 }
+		add_to_variable = { SOV_unrest = 5 }
+		army_experience = 10
+		add_stability = -0.03
+	}
+
+	option = {
+		name = ww1_russia.221.b
+		ai_chance = { factor = 50 }
+		add_political_power = -30
+		add_to_variable = { SOV_army_loyalty = 2 }
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = ww1_russia.222
+	title = ww1_russia.222.t
+	desc = ww1_russia.222.d
+	picture = GFX_event_WW1_sov_kolchak
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_civil_war_started
+	}
+
+	option = {
+		name = ww1_russia.222.a
+		ai_chance = { factor = 60 }
+		army_experience = 15
+		add_to_variable = { SOV_army_loyalty = 3 }
+		add_political_power = -50
+	}
+
+	option = {
+		name = ww1_russia.222.b
+		ai_chance = { factor = 40 }
+		add_to_variable = { SOV_unrest = 4 }
+		army_experience = 5
+		add_political_power = 20
+	}
+}
+
+country_event = {
+	id = ww1_russia.223
+	title = ww1_russia.223.t
+	desc = ww1_russia.223.d
+	picture = GFX_event_WW1_sov_wrangel
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_civil_war_started
+	}
+
+	option = {
+		name = ww1_russia.223.a
+		ai_chance = { factor = 60 }
+		army_experience = 20
+		add_to_variable = { SOV_army_loyalty = -3 }
+		add_stability = -0.02
+		set_country_flag = SOV_civil_war_won
+		remove_ideas = SOV_civil_war_exhaustion
+	}
+
+	option = {
+		name = ww1_russia.223.b
+		ai_chance = { factor = 40 }
+		add_political_power = -30
+		add_to_variable = { SOV_army_loyalty = 2 }
+		set_country_flag = SOV_civil_war_won
+		remove_ideas = SOV_civil_war_exhaustion
+	}
+}
+
+country_event = {
+	id = ww1_russia.224
+	title = ww1_russia.224.t
+	desc = ww1_russia.224.d
+	picture = GFX_event_WW1_sov_kronstadt
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_government = communism
+		has_country_flag = SOV_civil_war_started
+	}
+
+	option = {
+		name = ww1_russia.224.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { SOV_unrest = -10 }
+		add_stability = -0.05
+		add_to_variable = { SOV_army_loyalty = 3 }
+	}
+
+	option = {
+		name = ww1_russia.224.b
+		ai_chance = { factor = 45 }
+		add_to_variable = { SOV_unrest = 5 }
+		add_political_power = -40
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = ww1_russia.225
+	title = ww1_russia.225.t
+	desc = ww1_russia.225.d
+	picture = GFX_event_WW1_sov_nep
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_government = communism
+		has_country_flag = SOV_civil_war_started
+	}
+
+	option = {
+		name = ww1_russia.225.a
+		ai_chance = { factor = 65 }
+		add_to_variable = { SOV_hunger = -15 }
+		add_to_variable = { SOV_unrest = -10 }
+		add_ideas = SOV_nep_recovery
+		remove_ideas = SOV_civil_war_exhaustion
+		add_stability = 0.03
+	}
+
+	option = {
+		name = ww1_russia.225.b
+		ai_chance = { factor = 35 }
+		add_to_variable = { SOV_hunger = 6 }
+		add_to_variable = { SOV_unrest = 6 }
+		add_political_power = 40
+	}
+}
+
+country_event = {
+	id = ww1_russia.226
+	title = ww1_russia.226.t
+	desc = ww1_russia.226.d
+	picture = GFX_event_WW1_sov_ussr
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_government = communism
+	}
+
+	option = {
+		name = ww1_russia.226.a
+		ai_chance = { factor = 100 }
+		add_ideas = SOV_ussr_union
+		add_stability = 0.05
+		add_political_power = 100
+		set_country_flag = SOV_ussr_formed
+	}
+}
+
+country_event = {
+	id = ww1_russia.227
+	title = ww1_russia.227.t
+	desc = ww1_russia.227.d
+	picture = GFX_event_WW1_sov_tsar_family
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_tsar_abdicated
+		has_government = communism
+	}
+
+	option = {
+		name = ww1_russia.227.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { SOV_tsar_prestige = -100 }
+		add_to_variable = { SOV_army_loyalty = 2 }
+		add_stability = -0.02
+		set_country_flag = SOV_romanovs_executed
+	}
+
+	option = {
+		name = ww1_russia.227.b
+		ai_chance = { factor = 45 }
+		add_political_power = -30
+		add_to_variable = { SOV_unrest = 3 }
+		set_country_flag = SOV_romanovs_tried
+	}
+}
+
+country_event = {
+	id = ww1_russia.228
+	title = ww1_russia.228.t
+	desc = ww1_russia.228.d
+	picture = GFX_event_WW1_sov_church_council
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = SOV_tsar_abdicated
+	}
+
+	option = {
+		name = ww1_russia.228.a
+		ai_chance = { factor = 50 }
+		add_stability = 0.02
+		add_to_variable = { SOV_unrest = -3 }
+		add_political_power = -20
+	}
+
+	option = {
+		name = ww1_russia.228.b
+		ai_chance = { factor = 50 }
+		add_political_power = 25
+		add_to_variable = { SOV_unrest = 3 }
+		add_stability = -0.01
+	}
+}
+
+country_event = {
+	id = ww1_russia.230
+	title = ww1_russia.230.t
+	desc = ww1_russia.230.d
+	picture = GFX_event_WW1_sov_finland
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_state = { is_core_of = FIN }
+	}
+
+	option = {
+		name = ww1_russia.230.a
+		ai_chance = { factor = 35 }
+		release = FIN
+		add_to_variable = { SOV_separatism = -10 }
+	}
+
+	option = {
+		name = ww1_russia.230.b
+		ai_chance = { factor = 30 }
+		release_puppet = FIN
+		add_to_variable = { SOV_separatism = -5 }
+	}
+
+	option = {
+		name = ww1_russia.230.c
+		ai_chance = { factor = 35 }
+		add_to_variable = { SOV_separatism = 10 }
+		add_to_variable = { SOV_unrest = 5 }
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_russia.231
+	title = ww1_russia.231.t
+	desc = ww1_russia.231.d
+	picture = GFX_event_WW1_sov_ukraine
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_state = { is_core_of = UKR }
+	}
+
+	option = {
+		name = ww1_russia.231.a
+		ai_chance = { factor = 35 }
+		release = UKR
+		add_to_variable = { SOV_separatism = -10 }
+		add_to_variable = { SOV_hunger = 8 }
+	}
+
+	option = {
+		name = ww1_russia.231.b
+		ai_chance = { factor = 25 }
+		release_puppet = UKR
+		add_to_variable = { SOV_separatism = -5 }
+		add_to_variable = { SOV_hunger = 4 }
+	}
+
+	option = {
+		name = ww1_russia.231.c
+		ai_chance = { factor = 40 }
+		army_experience = 10
+		add_to_variable = { SOV_separatism = 8 }
+		add_to_variable = { SOV_army_loyalty = -4 }
+		add_to_variable = { SOV_unrest = 4 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.232
+	title = ww1_russia.232.t
+	desc = ww1_russia.232.d
+	picture = GFX_event_WW1_sov_baltic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_state = { is_core_of = EST }
+	}
+
+	option = {
+		name = ww1_russia.232.a
+		ai_chance = { factor = 35 }
+		release = EST
+		release = LAT
+		release = LIT
+		add_to_variable = { SOV_separatism = -10 }
+	}
+
+	option = {
+		name = ww1_russia.232.b
+		ai_chance = { factor = 65 }
+		add_to_variable = { SOV_separatism = 10 }
+		add_to_variable = { SOV_unrest = 5 }
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_russia.233
+	title = ww1_russia.233.t
+	desc = ww1_russia.233.d
+	picture = GFX_event_WW1_sov_caucasus
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_state = { is_core_of = GEO }
+	}
+
+	option = {
+		name = ww1_russia.233.a
+		ai_chance = { factor = 40 }
+		release = GEO
+		release = ARM
+		release = AZR
+		add_to_variable = { SOV_separatism = -8 }
+	}
+
+	option = {
+		name = ww1_russia.233.b
+		ai_chance = { factor = 60 }
+		add_to_variable = { SOV_separatism = 10 }
+		add_to_variable = { SOV_unrest = 5 }
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_russia.234
+	title = ww1_russia.234.t
+	desc = ww1_russia.234.d
+	picture = GFX_event_WW1_sov_poland
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_owned_state = { is_core_of = POL }
+	}
+
+	option = {
+		name = ww1_russia.234.a
+		ai_chance = { factor = 50 }
+		release = POL
+		add_to_variable = { SOV_separatism = -8 }
+	}
+
+	option = {
+		name = ww1_russia.234.b
+		ai_chance = { factor = 50 }
+		add_to_variable = { SOV_separatism = 10 }
+		add_to_variable = { SOV_unrest = 5 }
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.200
+	title = ww1_germany_events.200.t
+	desc = ww1_germany_events.200.d
+	picture = GFX_event_WW1_ger_elections_1912
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_events.200.a
+		ai_chance = { factor = 40 }
+		add_popularity = { ideology = democratic popularity = 0.06 }
+		add_popularity = { ideology = communism popularity = 0.04 }
+		add_to_variable = { GER_social_peace = 3 }
+		add_political_power = -20
+	}
+
+	option = {
+		name = ww1_germany_events.200.b
+		ai_chance = { factor = 60 }
+		add_to_variable = { GER_discontent = 5 }
+		add_to_variable = { GER_kaiser_prestige = -2 }
+		add_political_power = 30
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.201
+	title = ww1_germany_events.201.t
+	desc = ww1_germany_events.201.d
+	picture = GFX_event_WW1_ger_zabern
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_events.201.a
+		ai_chance = { factor = 65 }
+		army_experience = 10
+		add_to_variable = { GER_discontent = 6 }
+		add_to_variable = { GER_kaiser_prestige = -3 }
+		add_timed_idea = { idea = GER_zabern_distrust days = 540 }
+	}
+
+	option = {
+		name = ww1_germany_events.201.b
+		ai_chance = { factor = 35 }
+		add_political_power = -30
+		add_to_variable = { GER_discontent = -3 }
+		add_to_variable = { GER_social_peace = 3 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.202
+	title = ww1_germany_events.202.t
+	desc = ww1_germany_events.202.d
+	picture = GFX_event_WW1_ger_burgfrieden
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.202.a
+		ai_chance = { factor = 70 }
+		add_to_variable = { GER_social_peace = 20 }
+		add_war_support = 0.08
+	}
+
+	option = {
+		name = ww1_germany_events.202.b
+		ai_chance = { factor = 30 }
+		add_to_variable = { GER_social_peace = 5 }
+		add_political_power = 25
+		add_to_variable = { GER_discontent = 3 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.203
+	title = ww1_germany_events.203.t
+	desc = ww1_germany_events.203.d
+	picture = GFX_event_WW1_ger_moltke
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war_with = FRA
+	}
+
+	option = {
+		name = ww1_germany_events.203.a
+		ai_chance = { factor = 70 }
+		army_experience = 10
+		add_to_variable = { GER_kaiser_prestige = -2 }
+	}
+
+	option = {
+		name = ww1_germany_events.203.b
+		ai_chance = { factor = 30 }
+		army_experience = 5
+		add_war_support = -0.01
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.204
+	title = ww1_germany_events.204.t
+	desc = ww1_germany_events.204.d
+	picture = GFX_event_WW1_ger_lusitania
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war_with = ENG
+	}
+
+	option = {
+		name = ww1_germany_events.204.a
+		ai_chance = { factor = 40 }
+		add_war_support = 0.02
+		add_to_variable = { GER_kaiser_prestige = -2 }
+		set_country_flag = ger_lusitania_defended
+	}
+
+	option = {
+		name = ww1_germany_events.204.b
+		ai_chance = { factor = 60 }
+		set_country_flag = ger_respected_sussex_pledge
+		add_stability = 0.01
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.205
+	title = ww1_germany_events.205.t
+	desc = ww1_germany_events.205.d
+	picture = GFX_event_WW1_ger_third_ohl
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.205.a
+		ai_chance = { factor = 65 }
+		add_timed_idea = { idea = GER_defense_in_depth_doctrine days = 720 }
+		add_to_variable = { GER_kaiser_prestige = -4 }
+		add_to_variable = { GER_social_peace = -4 }
+		add_war_support = 0.03
+	}
+
+	option = {
+		name = ww1_germany_events.205.b
+		ai_chance = { factor = 35 }
+		add_stability = 0.02
+		add_to_variable = { GER_social_peace = 4 }
+		add_political_power = -25
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.206
+	title = ww1_germany_events.206.t
+	desc = ww1_germany_events.206.d
+	picture = GFX_event_WW1_ger_berlin_strike
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.206.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { GER_discontent = 8 }
+		add_to_variable = { GER_social_peace = -3 }
+		add_stability = -0.02
+		add_popularity = { ideology = communism popularity = 0.03 }
+	}
+
+	option = {
+		name = ww1_germany_events.206.b
+		ai_chance = { factor = 45 }
+		add_to_variable = { GER_discontent = -2 }
+		add_to_variable = { GER_social_peace = 3 }
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.207
+	title = ww1_germany_events.207.t
+	desc = ww1_germany_events.207.d
+	picture = GFX_event_WW1_ger_hunger
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	immediate = {
+		add_to_variable = { GER_hunger = 14 }
+		add_timed_idea = { idea = GER_naval_blockade_strain days = 400 }
+	}
+
+	option = {
+		name = ww1_germany_events.207.a
+		ai_chance = { factor = 40 }
+		add_to_variable = { GER_hunger = -6 }
+		add_political_power = -30
+	}
+
+	option = {
+		name = ww1_germany_events.207.b
+		ai_chance = { factor = 25 }
+		add_to_variable = { GER_hunger = 4 }
+		add_to_variable = { GER_discontent = 4 }
+		add_war_support = 0.02
+	}
+
+	option = {
+		name = ww1_germany_events.207.c
+		ai_chance = { factor = 35 }
+		add_to_variable = { GER_hunger = -4 }
+		add_to_variable = { GER_discontent = -2 }
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.208
+	title = ww1_germany_events.208.t
+	desc = ww1_germany_events.208.d
+	picture = GFX_event_WW1_ger_zimmermann
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war_with = ENG
+	}
+
+	option = {
+		name = ww1_germany_events.208.a
+		ai_chance = { factor = 50 }
+		set_country_flag = GER_zimmermann_sent
+		add_political_power = 25
+	}
+
+	option = {
+		name = ww1_germany_events.208.b
+		ai_chance = { factor = 50 }
+		add_to_variable = { GER_kaiser_prestige = 1 }
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.209
+	title = ww1_germany_events.209.t
+	desc = ww1_germany_events.209.d
+	picture = GFX_event_WW1_ger_peace_resolution
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.209.a
+		ai_chance = { factor = 40 }
+		set_country_flag = GER_reichstag_peace_resolution_passed
+		add_to_variable = { GER_social_peace = 8 }
+		add_war_support = -0.03
+		add_popularity = { ideology = democratic popularity = 0.04 }
+	}
+
+	option = {
+		name = ww1_germany_events.209.b
+		ai_chance = { factor = 60 }
+		set_country_flag = GER_reichstag_peace_resolution_rejected
+		add_to_variable = { GER_discontent = 6 }
+		add_timed_idea = { idea = GER_vaterlandspartei_iron_fist days = 540 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.210
+	title = ww1_germany_events.210.t
+	desc = ww1_germany_events.210.d
+	picture = GFX_event_WW1_ger_hertling
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.210.a
+		ai_chance = { factor = 60 }
+		add_to_variable = { GER_kaiser_prestige = 2 }
+		add_political_power = -20
+	}
+
+	option = {
+		name = ww1_germany_events.210.b
+		ai_chance = { factor = 40 }
+		add_to_variable = { GER_social_peace = 6 }
+		add_popularity = { ideology = democratic popularity = 0.04 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.211
+	title = ww1_germany_events.211.t
+	desc = ww1_germany_events.211.d
+	picture = GFX_event_WW1_ger_spring_offensive
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.211.a
+		ai_chance = { factor = 60 }
+		army_experience = 20
+		add_timed_idea = { idea = GER_bruchmueller_artillery days = 120 }
+		add_to_variable = { GER_discontent = 6 }
+	}
+
+	option = {
+		name = ww1_germany_events.211.b
+		ai_chance = { factor = 40 }
+		army_experience = 8
+		add_to_variable = { GER_discontent = 2 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.212
+	title = ww1_germany_events.212.t
+	desc = ww1_germany_events.212.d
+	picture = GFX_event_WW1_ger_january_strikes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.212.a
+		ai_chance = { factor = 55 }
+		add_to_variable = { GER_discontent = -6 }
+		add_stability = -0.03
+		add_popularity = { ideology = communism popularity = 0.03 }
+	}
+
+	option = {
+		name = ww1_germany_events.212.b
+		ai_chance = { factor = 45 }
+		add_to_variable = { GER_social_peace = 6 }
+		add_to_variable = { GER_discontent = -4 }
+		add_war_support = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.213
+	title = ww1_germany_events.213.t
+	desc = ww1_germany_events.213.d
+	picture = GFX_event_WW1_ger_max_von_baden
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_war = yes
+	}
+
+	option = {
+		name = ww1_germany_events.213.a
+		ai_chance = { factor = 65 }
+		set_country_flag = GER_october_reforms
+		add_to_variable = { GER_social_peace = 10 }
+		add_popularity = { ideology = democratic popularity = 0.1 }
+		add_stability = 0.03
+	}
+
+	option = {
+		name = ww1_germany_events.213.b
+		ai_chance = { factor = 35 }
+		set_country_flag = GER_october_refused
+		add_to_variable = { GER_discontent = 10 }
+		add_war_support = 0.03
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.214
+	title = ww1_germany_events.214.t
+	desc = ww1_germany_events.214.d
+	picture = GFX_event_WW1_ger_kiel
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = GER_republic_proclaimed }
+	}
+
+	immediate = {
+		set_country_flag = GER_kiel_mutiny_underway
+	}
+
+	option = {
+		name = ww1_germany_events.214.a
+		ai_chance = { factor = 50 }
+		add_to_variable = { GER_discontent = -5 }
+		add_stability = -0.05
+		set_country_flag = GER_kiel_negotiated
+		country_event = { id = ww1_germany_events.215 days = 8 }
+	}
+
+	option = {
+		name = ww1_germany_events.214.b
+		trigger = {
+			check_variable = { GER_revolution_count < 1 }
+		}
+		ai_chance = { factor = 50 }
+		add_to_variable = { GER_revolution_count = 1 }
+		add_to_variable = { GER_discontent = 10 }
+		add_stability = -0.08
+		clr_country_flag = GER_kiel_window_open
+		set_country_flag = { flag = GER_kiel_cooldown days = 25 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.215
+	title = ww1_germany_events.215.t
+	desc = ww1_germany_events.215.d
+	picture = GFX_event_WW1_ger_republic
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_country_flag = GER_republic_proclaimed }
+	}
+
+	option = {
+		name = ww1_germany_events.215.a
+		ai_chance = { factor = 85 }
+		set_country_flag = GER_republic_proclaimed
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		remove_ideas = GER_burgfrieden_social_peace
+		add_popularity = { ideology = democratic popularity = 0.25 }
+		add_to_variable = { GER_kaiser_prestige = -100 }
+		country_event = { id = ww1_germany_events.216 days = 2 }
+	}
+
+	option = {
+		name = ww1_germany_events.215.b
+		trigger = {
+			check_variable = { GER_discontent > 70 }
+		}
+		ai_chance = { factor = 15 }
+		set_country_flag = GER_republic_proclaimed
+		set_country_flag = GER_red_revolution
+		add_popularity = { ideology = communism popularity = 0.2 }
+		country_event = { id = ww1_germany_events.51 days = 2 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.216
+	title = ww1_germany_events.216.t
+	desc = ww1_germany_events.216.d
+	picture = GFX_event_WW1_ger_abdication
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_events.216.a
+		ai_chance = { factor = 100 }
+		set_country_flag = GER_kaiser_abdicated
+		add_ideas = GER_stab_in_the_back_myth
+		add_war_support = -0.10
+		country_event = { id = ww1_germany_events.217 days = 2 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.217
+	title = ww1_germany_events.217.t
+	desc = ww1_germany_events.217.d
+	picture = GFX_event_WW1_ger_ebert_groener
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_events.217.a
+		ai_chance = { factor = 70 }
+		add_to_variable = { GER_discontent = -10 }
+		add_stability = 0.03
+		army_experience = 10
+		add_popularity = { ideology = communism popularity = -0.03 }
+		set_country_flag = GER_ebert_groener
+	}
+
+	option = {
+		name = ww1_germany_events.217.b
+		ai_chance = { factor = 30 }
+		add_popularity = { ideology = communism popularity = 0.08 }
+		add_to_variable = { GER_discontent = 4 }
+		add_political_power = -20
+		set_country_flag = GER_councils_trusted
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.218
+	title = ww1_germany_events.218.t
+	desc = ww1_germany_events.218.d
+	picture = GFX_event_WW1_ger_spartacists
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.218.a
+		ai_chance = { factor = 70 }
+		add_to_variable = { GER_discontent = -15 }
+		add_stability = -0.03
+		add_popularity = { ideology = communism popularity = -0.05 }
+		add_timed_idea = { idea = GER_freikorps_menace days = 720 }
+	}
+
+	option = {
+		name = ww1_germany_events.218.b
+		ai_chance = { factor = 30 }
+		add_to_variable = { GER_discontent = 5 }
+		add_popularity = { ideology = communism popularity = 0.05 }
+		add_political_power = -30
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.219
+	title = ww1_germany_events.219.t
+	desc = ww1_germany_events.219.d
+	picture = GFX_event_WW1_ger_weimar
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.219.a
+		ai_chance = { factor = 100 }
+		set_politics = { ruling_party = democratic elections_allowed = yes }
+		add_ideas = GER_weimar_fragile
+		add_stability = 0.05
+		add_to_variable = { GER_social_peace = 15 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.220
+	title = ww1_germany_events.220.t
+	desc = ww1_germany_events.220.d
+	picture = GFX_event_WW1_ger_kapp
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.220.a
+		ai_chance = { factor = 60 }
+		add_to_variable = { GER_discontent = -5 }
+		add_popularity = { ideology = democratic popularity = 0.03 }
+		add_political_power = 25
+	}
+
+	option = {
+		name = ww1_germany_events.220.b
+		ai_chance = { factor = 40 }
+		add_popularity = { ideology = fascism popularity = 0.04 }
+		add_to_variable = { GER_discontent = 5 }
+		add_stability = -0.03
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.221
+	title = ww1_germany_events.221.t
+	desc = ww1_germany_events.221.d
+	picture = GFX_event_WW1_ger_rathenau
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.221.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.02
+		add_to_variable = { GER_discontent = -5 }
+		add_popularity = { ideology = fascism popularity = -0.03 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.222
+	title = ww1_germany_events.222.t
+	desc = ww1_germany_events.222.d
+	picture = GFX_event_WW1_ger_ruhr
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.222.a
+		ai_chance = { factor = 60 }
+		add_timed_idea = { idea = GER_ruhr_passive_resistance days = 240 }
+		add_to_variable = { GER_hunger = 8 }
+		add_to_variable = { GER_discontent = 3 }
+	}
+
+	option = {
+		name = ww1_germany_events.222.b
+		ai_chance = { factor = 40 }
+		add_political_power = -50
+		add_to_variable = { GER_discontent = 8 }
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.223
+	title = ww1_germany_events.223.t
+	desc = ww1_germany_events.223.d
+	picture = GFX_event_WW1_ger_inflation
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.223.a
+		ai_chance = { factor = 100 }
+		add_ideas = GER_hyperinflation
+		add_to_variable = { GER_discontent = 6 }
+		set_country_flag = GER_hyperinflation_active
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.224
+	title = ww1_germany_events.224.t
+	desc = ww1_germany_events.224.d
+	picture = GFX_event_WW1_ger_volksmarine
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.224.a
+		ai_chance = { factor = 60 }
+		add_to_variable = { GER_discontent = -5 }
+		army_experience = 5
+		add_popularity = { ideology = communism popularity = 0.04 }
+	}
+
+	option = {
+		name = ww1_germany_events.224.b
+		ai_chance = { factor = 40 }
+		add_political_power = -40
+		add_to_variable = { GER_discontent = 3 }
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.225
+	title = ww1_germany_events.225.t
+	desc = ww1_germany_events.225.d
+	picture = GFX_event_WW1_ger_scuttling
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = GER_republic_proclaimed
+	}
+
+	option = {
+		name = ww1_germany_events.225.a
+		ai_chance = { factor = 100 }
+		navy_experience = 10
+		add_war_support = 0.02
+		add_political_power = -15
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.230
+	title = ww1_germany_events.230.t
+	desc = ww1_germany_events.230.d
+	picture = GFX_event_WW1_ger_russian_opportunity
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_events.230.a
+		ai_chance = { factor = 60 }
+		set_country_flag = GER_sealed_train_supported
+		add_war_support = 0.02
+		add_political_power = -20
+	}
+
+	option = {
+		name = ww1_germany_events.230.b
+		ai_chance = { factor = 40 }
+		army_experience = 8
+		add_political_power = 20
+	}
+}
+
+country_event = {
+	id = ww1_germany_events.231
+	title = ww1_germany_events.231.t
+	desc = ww1_germany_events.231.d
+	picture = GFX_event_WW1_sov_sovnarkom
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_events.231.a
+		ai_chance = { factor = 65 }
+		add_political_power = -10
+		if = { limit = { has_war_with = SOV } SOV = { country_event = { id = ww1_diplomacy.31 days = 2 } } }
+	}
+
+	option = {
+		name = ww1_germany_events.231.b
+		ai_chance = { factor = 35 }
+		army_experience = 10
+		add_to_variable = { GER_discontent = 3 }
+	}
+}

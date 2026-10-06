@@ -1,0 +1,222 @@
+add_namespace = ww1_britain_x
+
+country_event = {
+ id = ww1_britain_x.1 title = ww1_britain_x.1.t desc = ww1_britain_x.1.d
+ picture = GFX_event_ww1_britain_x_agadir
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1911.6.20 date < 1912.1.1 has_war = no }
+ mean_time_to_happen = { days = 8 }
+ option = {
+  name = ww1_britain_x.1.a
+  ai_chance = { base = 40 }
+  add_war_support = 0.01 add_political_power = -15 army_experience = 2
+ }
+ option = {
+  name = ww1_britain_x.1.b
+  ai_chance = { base = 30 }
+  army_experience = 3 add_political_power = -20
+ }
+ option = {
+  name = ww1_britain_x.1.c
+  ai_chance = { base = 30 }
+  add_political_power = 15 add_stability = 0.005
+ }
+}
+country_event = {
+ id = ww1_britain_x.2 title = ww1_britain_x.2.t desc = ww1_britain_x.2.d
+ picture = GFX_event_ww1_britain_x_naval_scare
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1912.3.1 date < 1912.11.1 has_war = no }
+ mean_time_to_happen = { days = 10 }
+ option = {
+  name = ww1_britain_x.2.a
+  ai_chance = { base = 40 }
+  navy_experience = 3 add_to_variable = { ww1_britain_debt_burden = 1 }
+ }
+ option = {
+  name = ww1_britain_x.2.b
+  ai_chance = { base = 30 }
+  navy_experience = 2 add_political_power = -20
+ }
+ option = {
+  name = ww1_britain_x.2.c
+  ai_chance = { base = 30 }
+  add_political_power = 15 add_to_variable = { ww1_britain_debt_burden = -1 }
+ }
+}
+country_event = {
+ id = ww1_britain_x.3 title = ww1_britain_x.3.t desc = ww1_britain_x.3.d
+ picture = GFX_event_ww1_britain_x_suffragettes
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1913.4.1 date < 1914.3.1 has_war = no }
+ mean_time_to_happen = { days = 12 }
+ option = {
+  name = ww1_britain_x.3.a
+  ai_chance = { base = 30 }
+  add_stability = -0.01 add_political_power = 20 add_to_variable = { ww1_britain_labour_support = -2 }
+ }
+ option = {
+  name = ww1_britain_x.3.b
+  ai_chance = { base = 40 }
+  add_to_variable = { ww1_britain_labour_support = 3 } add_political_power = -25
+ }
+ option = {
+  name = ww1_britain_x.3.c
+  ai_chance = { base = 30 }
+  add_stability = -0.005 add_political_power = 10
+ }
+}
+country_event = {
+ id = ww1_britain_x.4 title = ww1_britain_x.4.t desc = ww1_britain_x.4.d
+ picture = GFX_event_ww1_britain_x_curragh
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1914.3.18 date < 1914.7.1 has_war = no check_variable = { ww1_britain_ulster_tension > 9 } }
+ mean_time_to_happen = { days = 3 }
+ option = {
+  name = ww1_britain_x.4.a
+  ai_chance = { base = 35 }
+  add_to_variable = { ww1_britain_irish_tension = 6 } add_to_variable = { ww1_britain_ulster_tension = -4 } army_experience = 2
+ }
+ option = {
+  name = ww1_britain_x.4.b
+  ai_chance = { base = 20 }
+  add_to_variable = { ww1_britain_irish_tension = -3 } add_to_variable = { ww1_britain_ulster_tension = 6 } add_stability = -0.01 add_political_power = -20
+ }
+ option = {
+  name = ww1_britain_x.4.c
+  ai_chance = { base = 45 }
+  add_political_power = -15 add_stability = 0.005
+ }
+}
+country_event = {
+ id = ww1_britain_x.5 title = ww1_britain_x.5.t desc = ww1_britain_x.5.d
+ picture = GFX_event_ww1_britain_x_lusitania
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1915.5.6 date < 1915.9.1 has_war = yes }
+ mean_time_to_happen = { days = 2 }
+ option = {
+  name = ww1_britain_x.5.a
+  ai_chance = { base = 40 }
+  add_war_support = 0.02 add_political_power = -20
+ }
+ option = {
+  name = ww1_britain_x.5.b
+  ai_chance = { base = 35 }
+  add_political_power = 10 add_war_support = 0.005
+ }
+ option = {
+  name = ww1_britain_x.5.c
+  ai_chance = { base = 25 }
+  navy_experience = 2 add_political_power = -15
+ }
+}
+country_event = {
+ id = ww1_britain_x.6 title = ww1_britain_x.6.t desc = ww1_britain_x.6.d
+ picture = GFX_event_ww1_britain_x_passchendaele
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1917.7.25 date < 1917.12.1 has_war = yes }
+ mean_time_to_happen = { days = 3 }
+ option = {
+  name = ww1_britain_x.6.a
+  ai_chance = { base = 40 }
+  army_experience = 6 add_war_support = -0.02 add_to_variable = { ww1_britain_labour_support = -2 } add_to_variable = { ww1_britain_debt_burden = 1 }
+ }
+ option = {
+  name = ww1_britain_x.6.b
+  ai_chance = { base = 30 }
+  add_political_power = 15 army_experience = 2
+ }
+ option = {
+  name = ww1_britain_x.6.c
+  ai_chance = { base = 30 }
+  army_experience = 3 add_political_power = -10 add_war_support = -0.005
+ }
+}
+country_event = {
+ id = ww1_britain_x.7 title = ww1_britain_x.7.t desc = ww1_britain_x.7.d
+ picture = GFX_event_ww1_britain_x_cambrai
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1917.11.15 date < 1918.3.1 has_war = yes }
+ mean_time_to_happen = { days = 3 }
+ option = {
+  name = ww1_britain_x.7.a
+  ai_chance = { base = 40 }
+  army_experience = 4 add_war_support = 0.01 add_to_variable = { ww1_britain_debt_burden = 1 }
+ }
+ option = {
+  name = ww1_britain_x.7.b
+  ai_chance = { base = 35 }
+  army_experience = 6 add_political_power = -20
+ }
+ option = {
+  name = ww1_britain_x.7.c
+  ai_chance = { base = 25 }
+  add_political_power = 10
+ }
+}
+country_event = {
+ id = ww1_britain_x.8 title = ww1_britain_x.8.t desc = ww1_britain_x.8.d
+ picture = GFX_event_ww1_britain_x_influenza
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1918.9.1 date < 1919.4.1 }
+ mean_time_to_happen = { days = 15 }
+ option = {
+  name = ww1_britain_x.8.a
+  ai_chance = { base = 45 }
+  add_to_variable = { ww1_britain_debt_burden = 1 } add_stability = 0.01 add_political_power = -15
+ }
+ option = {
+  name = ww1_britain_x.8.b
+  ai_chance = { base = 30 }
+  add_political_power = 10 add_stability = -0.015 add_to_variable = { ww1_britain_labour_support = -1 }
+ }
+ option = {
+  name = ww1_britain_x.8.c
+  ai_chance = { base = 25 }
+  add_stability = -0.02 add_war_support = 0.01
+ }
+}
+country_event = {
+ id = ww1_britain_x.9 title = ww1_britain_x.9.t desc = ww1_britain_x.9.d
+ picture = GFX_event_ww1_britain_x_amritsar
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1919.4.10 date < 1919.10.1 }
+ mean_time_to_happen = { days = 5 }
+ option = {
+  name = ww1_britain_x.9.a
+  ai_chance = { base = 40 }
+  add_political_power = -20 add_to_variable = { ww1_britain_dominion_consent = 2 } add_to_variable = { ww1_britain_labour_support = 1 } add_stability = 0.005
+ }
+ option = {
+  name = ww1_britain_x.9.b
+  ai_chance = { base = 15 }
+  add_political_power = 10 add_to_variable = { ww1_britain_dominion_consent = -4 } add_stability = -0.01
+ }
+ option = {
+  name = ww1_britain_x.9.c
+  ai_chance = { base = 45 }
+  add_political_power = -5 add_to_variable = { ww1_britain_dominion_consent = 1 }
+ }
+}
+country_event = {
+ id = ww1_britain_x.10 title = ww1_britain_x.10.t desc = ww1_britain_x.10.d
+ picture = GFX_event_ww1_britain_x_chanak
+ fire_only_once = yes
+ trigger = { tag = ENG has_capitulated = no has_country_flag = ww1_britain_initialised date > 1922.9.10 date < 1923.1.1 has_war = no }
+ mean_time_to_happen = { days = 3 }
+ option = {
+  name = ww1_britain_x.10.a
+  ai_chance = { base = 25 }
+  add_war_support = 0.01 add_political_power = -25 add_to_variable = { ww1_britain_dominion_consent = -5 } navy_experience = 2
+ }
+ option = {
+  name = ww1_britain_x.10.b
+  ai_chance = { base = 50 }
+  add_political_power = 15 add_to_variable = { ww1_britain_dominion_consent = 2 }
+ }
+ option = {
+  name = ww1_britain_x.10.c
+  ai_chance = { base = 25 }
+  add_to_variable = { ww1_britain_dominion_consent = -2 } add_political_power = -5
+ }
+}

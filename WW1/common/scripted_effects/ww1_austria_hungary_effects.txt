@@ -17,7 +17,7 @@ auh_ww1_set_rationing = {  if = { limit = { NOT = { has_idea = AUH_ww1_rationing
 auh_ww1_set_labour_compact = {  if = { limit = { NOT = { has_idea = AUH_ww1_labour_compact } } add_ideas = AUH_ww1_labour_compact } }
 auh_ww1_set_diplomatic_restraint = {  if = { limit = { NOT = { has_idea = AUH_ww1_diplomatic_restraint } } add_ideas = AUH_ww1_diplomatic_restraint } }
 auh_ww1_set_fleet_cautious = {  if = { limit = { NOT = { has_idea = AUH_ww1_fleet_cautious } } add_ideas = AUH_ww1_fleet_cautious } }
-auh_ww1_set_naval_repair = {  if = { limit = { NOT = { has_idea = AUH_ww1_naval_repair } } add_ideas = AUH_ww1_naval_repair } }
+auh_ww1_set_naval_refit_priority = {  if = { limit = { NOT = { has_idea = AUH_ww1_naval_refit_priority } } add_ideas = AUH_ww1_naval_refit_priority } }
 auh_ww1_set_veterans = {  if = { limit = { NOT = { has_idea = AUH_ww1_veterans } } add_ideas = AUH_ww1_veterans } }
 auh_ww1_set_peace_administration = {  if = { limit = { NOT = { has_idea = AUH_ww1_peace_administration } } add_ideas = AUH_ww1_peace_administration } }
 auh_ww1_set_civil_cabinet = {  if = { limit = { NOT = { has_idea = AUH_ww1_civil_cabinet } } add_ideas = AUH_ww1_civil_cabinet } }

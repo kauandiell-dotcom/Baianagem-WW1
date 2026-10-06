@@ -145,7 +145,7 @@ def main():
     if a.dry_run:
         print("dry run OK: no file written")
         return
-    (ROOT / "interface/ww1_britain_art.gfx").write_text("\n".join(sprites) + "\n", encoding="utf-8-sig")
+    (ROOT / "interface/ww1_britain_art.gfx").write_text("\n".join(sprites) + "\n", encoding="utf-8")
     (ROOT / "docs/britain_art_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("written interface/ww1_britain_art.gfx and docs/britain_art_manifest.json")
 

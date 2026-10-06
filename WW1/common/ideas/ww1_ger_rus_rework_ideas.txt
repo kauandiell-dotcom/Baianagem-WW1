@@ -1,0 +1,229 @@
+ideas = {
+	country = {
+
+		SOV_hungry_cities_1 = {
+			picture = generic_agrarian_society
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.04
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		SOV_hungry_cities_2 = {
+			picture = generic_economic_crisis
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.06
+				consumer_goods_factor = 0.06
+			}
+		}
+
+		SOV_restless_workers_1 = {
+			picture = generic_democratic_opposition
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.1
+				industrial_capacity_factory = -0.04
+			}
+		}
+
+		SOV_restless_workers_2 = {
+			picture = generic_guerilla_warfare
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.08
+				industrial_capacity_factory = -0.1
+				political_power_gain = -0.15
+			}
+		}
+
+		SOV_wavering_army_1 = {
+			picture = generic_army_problems
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = -0.08
+				army_org_factor = -0.03
+			}
+		}
+
+		SOV_wavering_army_2 = {
+			picture = generic_disjointed_gov
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = -0.18
+				army_org_factor = -0.08
+				army_attack_factor = -0.05
+			}
+		}
+
+		SOV_supreme_command_burden = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.03
+				political_power_gain = -0.1
+				stability_factor = -0.03
+			}
+		}
+
+		SOV_refugee_flood = {
+			picture = generic_immigration
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.04
+				stability_factor = -0.03
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		SOV_society_mobilised = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = 0.03
+				stability_factor = 0.02
+			}
+		}
+
+		SOV_lena_shadow = {
+			picture = generic_exploit_mines
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = -0.02
+			}
+		}
+
+		SOV_separatist_fever = {
+			picture = generic_local_self_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.05
+				resistance_target = 0.05
+			}
+		}
+
+		SOV_civil_war_exhaustion = {
+			picture = generic_monarchist_uprising
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.1
+				political_power_gain = -0.1
+			}
+		}
+
+		SOV_nep_recovery = {
+			picture = generic_economic_recovery
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		SOV_ussr_union = {
+			picture = generic_flexible_foreign_policy
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.1
+				resistance_target = -0.1
+			}
+		}
+
+		GER_social_peace_frayed = {
+			picture = generic_king_handled
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.04
+			}
+		}
+
+		GER_revolutionary_mood = {
+			picture = generic_communism_banned
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.1
+				army_morale_factor = -0.08
+				political_power_gain = -0.1
+			}
+		}
+
+		GER_zabern_distrust = {
+			picture = generic_commission
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = -0.02
+			}
+		}
+
+		GER_weimar_fragile = {
+			picture = generic_conference
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.05
+			}
+		}
+
+		GER_hyperinflation = {
+			picture = generic_devalue_currency
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.15
+				stability_factor = -0.1
+				industrial_capacity_factory = -0.1
+			}
+		}
+
+		GER_ruhr_passive_resistance = {
+			picture = generic_energy_concern
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = -0.08
+				consumer_goods_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		GER_freikorps_menace = {
+			picture = generic_fascist_workers
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.03
+				political_power_gain = 0.05
+			}
+		}
+
+	}
+}

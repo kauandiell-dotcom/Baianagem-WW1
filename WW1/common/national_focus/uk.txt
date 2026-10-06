@@ -1601,7 +1601,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   
   ai_will_do = { factor = 1 }
@@ -1622,7 +1622,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_haldane_establishment }
   
   ai_will_do = { factor = 1 }
@@ -1642,7 +1642,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_haldane_establishment }
   
   ai_will_do = { factor = 1 }
@@ -1662,7 +1662,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_haldane_establishment }
   
   ai_will_do = { factor = 1 }
@@ -1681,7 +1681,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_special_reserve }
   
   ai_will_do = { factor = 1 }
@@ -1701,7 +1701,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_territorial_force_camps }
   
   ai_will_do = { factor = 1 }
@@ -1720,7 +1720,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_regular_army_mobilisation }
   
   ai_will_do = { factor = 1 }
@@ -1741,7 +1741,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_officer_training_corps }
   
   ai_will_do = { factor = 1 }
@@ -1763,7 +1763,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -1783,7 +1783,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -1804,7 +1804,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -1823,7 +1823,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_expeditionary_establishment }
   
   ai_will_do = { factor = 1 }
@@ -1845,7 +1845,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -1864,7 +1864,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_artillery_observation_school }
   
   ai_will_do = { factor = 1 }
@@ -1884,7 +1884,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_field_medical_organisation }
   
   ai_will_do = { factor = 1 }
@@ -1905,7 +1905,7 @@ focus_tree = {
   available = { date > 1915.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_machine_gun_corps_formation }
   
   ai_will_do = { factor = 1 }
@@ -1925,7 +1925,7 @@ focus_tree = {
   available = { date > 1915.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_trench_mortar_sections focus = ENG_ww1_gas_protection_training focus = ENG_ww1_the_infantry_training_directorate }
   
   ai_will_do = { factor = 1 }
@@ -1945,7 +1945,7 @@ focus_tree = {
   available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_combined_arms_staff_courses }
   
   ai_will_do = { factor = 1 }
@@ -1964,7 +1964,7 @@ focus_tree = {
   available = { date > 1918.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_combined_arms_staff_courses focus = ENG_ww1_the_demobilisation_register }
   
   ai_will_do = { factor = 1 }
@@ -1986,7 +1986,7 @@ focus_tree = {
   available = { date > 1918.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_combined_arms_staff_courses focus = ENG_ww1_the_demobilisation_register }
   
   ai_will_do = { factor = 1 }
@@ -2008,7 +2008,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   
   
   ai_will_do = { factor = 1 }
@@ -2028,7 +2028,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_admiralty_fleet_survey }
   
   ai_will_do = { factor = 1 }
@@ -2048,7 +2048,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_the_naval_estimates }
   
   ai_will_do = { factor = 1 }
@@ -2068,7 +2068,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_the_naval_estimates }
   
   ai_will_do = { factor = 1 }
@@ -2088,7 +2088,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_the_naval_estimates }
   
   ai_will_do = { factor = 1 }
@@ -2108,7 +2108,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_destroyer_flotilla_planning }
   
   ai_will_do = { factor = 1 }
@@ -2128,7 +2128,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_dreadnought_construction_planning }
   
   ai_will_do = { factor = 1 }
@@ -2148,7 +2148,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_battlecruiser_squadron_planning }
   
   ai_will_do = { factor = 1 }
@@ -2168,7 +2168,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_naval_gunnery_calibration }
   
   ai_will_do = { factor = 1 }
@@ -2189,7 +2189,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2209,7 +2209,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes has_war_with = GER }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2231,7 +2231,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2250,7 +2250,7 @@ focus_tree = {
   available = { date > 1915.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_hydrophone_trials }
   
   ai_will_do = { factor = 1 }
@@ -2272,7 +2272,7 @@ focus_tree = {
   available = { date > 1915.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2290,7 +2290,7 @@ focus_tree = {
   available = { date > 1915.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2309,7 +2309,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_grand_fleet_maintenance }
   
   ai_will_do = { factor = 1 }
@@ -2329,7 +2329,7 @@ focus_tree = {
   available = { date > 1914.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_naval_signals_and_direction_finding }
   
   ai_will_do = { factor = 1 }
@@ -2352,7 +2352,7 @@ focus_tree = {
   available = { date > 1917.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_grand_fleet_maintenance focus = ENG_ww1_escort_refit_contracts focus = ENG_ww1_mediterranean_convoy_liaison }
   
   ai_will_do = { factor = 1 }
@@ -2373,7 +2373,7 @@ focus_tree = {
   available = { date > 1918.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_the_postwar_fleet_review }
   
   ai_will_do = { factor = 1 }
@@ -2395,7 +2395,7 @@ focus_tree = {
   available = { date > 1918.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_NAVY }
+  search_filters = { FOCUS_FILTER_NAVY_XP }
   prerequisite = { focus = ENG_ww1_the_postwar_fleet_review }
   
   ai_will_do = { factor = 1 }
@@ -2417,7 +2417,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   
   ai_will_do = { factor = 1 }
@@ -2437,7 +2437,7 @@ focus_tree = {
   available = { date > 1911.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_the_air_battalion_experiments }
   
   ai_will_do = { factor = 1 }
@@ -2457,7 +2457,7 @@ focus_tree = {
   available = { date > 1911.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_royal_flying_corps_organisation }
   
   ai_will_do = { factor = 1 }
@@ -2477,7 +2477,7 @@ focus_tree = {
   available = { date > 1911.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_military_pilot_instruction }
   
   ai_will_do = { factor = 1 }
@@ -2497,7 +2497,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_royal_flying_corps_organisation }
   
   ai_will_do = { factor = 1 }
@@ -2517,7 +2517,7 @@ focus_tree = {
   available = { date > 1911.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_royal_flying_corps_organisation }
   
   ai_will_do = { factor = 1 }
@@ -2537,7 +2537,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2556,7 +2556,7 @@ focus_tree = {
   available = { date > 1912.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_royal_naval_air_service_organisation }
   
   ai_will_do = { factor = 1 }
@@ -2576,7 +2576,7 @@ focus_tree = {
   available = { date > 1912.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_wireless_and_aircraft_observation }
   
   ai_will_do = { factor = 1 }
@@ -2598,7 +2598,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2618,7 +2618,7 @@ focus_tree = {
   available = { date > 1913.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2638,7 +2638,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2659,7 +2659,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2680,7 +2680,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -2699,7 +2699,7 @@ focus_tree = {
   available = { date > 1914.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_fighter_squadron_instruction }
   
   ai_will_do = { factor = 1 }
@@ -2719,7 +2719,7 @@ focus_tree = {
   available = { date > 1916.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_bomber_range_experiments }
   
   ai_will_do = { factor = 1 }
@@ -2737,7 +2737,7 @@ focus_tree = {
   available = { date > 1917.12.31 has_completed_focus = ENG_ww1_royal_flying_corps_organisation has_completed_focus = ENG_ww1_royal_naval_air_service_organisation }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_aircraft_engine_reliability focus = ENG_ww1_home_air_defence_coordination focus = ENG_ww1_the_independent_air_service_debate }
   
   ai_will_do = { factor = 1 }
@@ -2759,7 +2759,7 @@ focus_tree = {
   available = { date > 1917.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_royal_air_force_unification }
   
   ai_will_do = { factor = 1 }
@@ -2781,7 +2781,7 @@ focus_tree = {
   available = { date > 1918.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_postwar_aircraft_demobilisation }
   
   ai_will_do = { factor = 1 }
@@ -2803,7 +2803,7 @@ focus_tree = {
   available = { date > 1918.12.31 has_war = no }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_AIRFORCE }
+  search_filters = { FOCUS_FILTER_AIR_XP }
   prerequisite = { focus = ENG_ww1_postwar_aircraft_demobilisation }
   
   ai_will_do = { factor = 1 }
@@ -2825,7 +2825,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   
   ai_will_do = { factor = 1 }
@@ -2845,7 +2845,7 @@ focus_tree = {
   available = { date > 1910.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_channel_mobilisation_timetable }
   
   ai_will_do = { factor = 1 }
@@ -2864,7 +2864,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes has_country_flag = ENG_ww1_continental_commitment_selected }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_embarkation_depot_preparation }
   
   ai_will_do = { factor = 1 }
@@ -2884,7 +2884,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_bef_deployment_plan }
   
   ai_will_do = { factor = 1 }
@@ -2904,7 +2904,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_bef_deployment_plan }
   
   ai_will_do = { factor = 1 }
@@ -2924,7 +2924,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_bef_deployment_plan }
   
   ai_will_do = { factor = 1 }
@@ -2944,7 +2944,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_holding_the_continental_line }
   
   ai_will_do = { factor = 1 }
@@ -2964,7 +2964,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_flanders_supply_organisation }
   
   ai_will_do = { factor = 1 }
@@ -2983,7 +2983,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -3004,7 +3004,7 @@ focus_tree = {
   available = { date > 1913.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -3022,7 +3022,7 @@ focus_tree = {
   available = { date > 1914.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_artillery_ammunition_concentration }
   
   ai_will_do = { factor = 1 }
@@ -3043,7 +3043,7 @@ focus_tree = {
   available = { date > 1914.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -3063,7 +3063,7 @@ focus_tree = {
   available = { date > 1914.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -3084,7 +3084,7 @@ focus_tree = {
   available = { date > 1914.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -3103,7 +3103,7 @@ focus_tree = {
   available = { date > 1915.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_mesopotamian_supply_review }
   
   ai_will_do = { factor = 1 }
@@ -3125,7 +3125,7 @@ focus_tree = {
   available = { date > 1916.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   
   ai_will_do = { factor = 1 }
   completion_reward = {
@@ -3144,7 +3144,7 @@ focus_tree = {
   available = { date > 1916.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_spring_defence_plan }
   
   ai_will_do = { factor = 1 }
@@ -3162,7 +3162,7 @@ focus_tree = {
   available = { date > 1916.12.31 has_war = yes }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_assault_coordination_exercises }
   
   ai_will_do = { factor = 1 }
@@ -3182,7 +3182,7 @@ focus_tree = {
   available = { date > 1917.12.31 has_war = no has_country_flag = ENG_ww1_war_participated }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_palestine_railway_liaison focus = ENG_ww1_the_allied_counteroffensive_plan focus = ENG_ww1_operational_reserve_restoration }
   
   ai_will_do = { factor = 1 }
@@ -3202,7 +3202,7 @@ focus_tree = {
   available = { date > 1917.12.31 }
   cancel_if_invalid = yes
   continue_if_invalid = no
-  search_filters = { FOCUS_FILTER_ARMY }
+  search_filters = { FOCUS_FILTER_ARMY_XP }
   prerequisite = { focus = ENG_ww1_the_armistice_stand_down_plan }
   
   ai_will_do = { factor = 1 }
