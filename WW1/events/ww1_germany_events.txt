@@ -1832,19 +1832,19 @@ country_event = {
 # =========================================================================
 
 # =========================================================================
-# REWORKED POLITICS & EXPANSION EVENTS (ww1_germany_events.201 - 242)
+# REWORKED POLITICS & EXPANSION EVENTS (ww1_germany_events.301 - 242)
 # =========================================================================
 
 # 1912 Reichstag Elections
 country_event = {
-	id = ww1_germany_events.201
-	title = ww1_germany_events.201.t
-	desc = ww1_germany_events.201.d
+	id = ww1_germany_events.301
+	title = ww1_germany_events.301.t
+	desc = ww1_germany_events.301.d
 	picture = GFX_event_WW1_ger_republic
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.201.a # Compromise with the SPD majority
+		name = ww1_germany_events.301.a # Compromise with the SPD majority
 		ai_chance = { factor = 50 }
 		add_political_power = 40
 		add_stability = 0.05
@@ -1852,7 +1852,7 @@ country_event = {
 	}
 
 	option = {
-		name = ww1_germany_events.201.b # Form an imperial conservative-clerical bloc
+		name = ww1_germany_events.301.b # Form an imperial conservative-clerical bloc
 		ai_chance = { factor = 50 }
 		add_political_power = 75
 		add_stability = -0.05
@@ -1862,21 +1862,21 @@ country_event = {
 
 # Crisis of the Prussian Franchise
 country_event = {
-	id = ww1_germany_events.202
-	title = ww1_germany_events.202.t
-	desc = ww1_germany_events.202.d
+	id = ww1_germany_events.302
+	title = ww1_germany_events.302.t
+	desc = ww1_germany_events.302.d
 	picture = GFX_event_WW1_ger_berlin_strike
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.202.a # Promise electoral reform after victory
+		name = ww1_germany_events.302.a # Promise electoral reform after victory
 		ai_chance = { factor = 70 }
 		add_political_power = 50
 		add_stability = 0.03
 	}
 
 	option = {
-		name = ww1_germany_events.202.b # Reject reform: Prussian order must stand!
+		name = ww1_germany_events.302.b # Reject reform: Prussian order must stand!
 		ai_chance = { factor = 30 }
 		add_political_power = 80
 		add_stability = -0.05
@@ -1886,14 +1886,14 @@ country_event = {
 
 # The Spartakusbund Rises
 country_event = {
-	id = ww1_germany_events.210
-	title = ww1_germany_events.210.t
-	desc = ww1_germany_events.210.d
+	id = ww1_germany_events.310
+	title = ww1_germany_events.310.t
+	desc = ww1_germany_events.310.d
 	picture = GFX_event_WW1_ger_january_strikes
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.210.a # All power to the workers' councils!
+		name = ww1_germany_events.310.a # All power to the workers' councils!
 		ai_chance = { factor = 100 }
 		add_political_power = 50
 		add_war_support = 0.10
@@ -1903,14 +1903,14 @@ country_event = {
 
 # Mutiny in the High Seas Fleet
 country_event = {
-	id = ww1_germany_events.211
-	title = ww1_germany_events.211.t
-	desc = ww1_germany_events.211.d
+	id = ww1_germany_events.311
+	title = ww1_germany_events.311.t
+	desc = ww1_germany_events.311.d
 	picture = GFX_event_WW1_ger_berlin_strike
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.211.a # Hoist the red flag on every dreadnought!
+		name = ww1_germany_events.311.a # Hoist the red flag on every dreadnought!
 		ai_chance = { factor = 100 }
 		navy_experience = 25
 		add_war_support = 0.05
@@ -1919,14 +1919,14 @@ country_event = {
 
 # Proclamation of the Free Socialist Republic
 country_event = {
-	id = ww1_germany_events.212
-	title = ww1_germany_events.212.t
-	desc = ww1_germany_events.212.d
+	id = ww1_germany_events.312
+	title = ww1_germany_events.312.t
+	desc = ww1_germany_events.312.d
 	picture = GFX_event_WW1_ger_republic
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.212.a # Long live the socialist world revolution!
+		name = ww1_germany_events.312.a # Long live the socialist world revolution!
 		ai_chance = { factor = 100 }
 		add_political_power = 100
 		add_stability = 0.10
@@ -1935,14 +1935,14 @@ country_event = {
 
 # The Treaty of Red Berlin
 country_event = {
-	id = ww1_germany_events.213
-	title = ww1_germany_events.213.t
-	desc = ww1_germany_events.213.d
+	id = ww1_germany_events.313
+	title = ww1_germany_events.313.t
+	desc = ww1_germany_events.313.d
 	picture = GFX_event_WW1_sov_poland
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.213.a # Ratify the fraternal socialist alliance!
+		name = ww1_germany_events.313.a # Ratify the fraternal socialist alliance!
 		ai_chance = { factor = 100 }
 		add_political_power = 80
 		if = {
@@ -1955,14 +1955,14 @@ country_event = {
 
 # The Danubian Socialist Federation
 country_event = {
-	id = ww1_germany_events.214
-	title = ww1_germany_events.214.t
-	desc = ww1_germany_events.214.d
+	id = ww1_germany_events.314
+	title = ww1_germany_events.314.t
+	desc = ww1_germany_events.314.d
 	picture = GFX_event_WW1_sov_ukraine
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.214.a # Integrate our Danubian comrades!
+		name = ww1_germany_events.314.a # Integrate our Danubian comrades!
 		ai_chance = { factor = 100 }
 		add_political_power = 75
 		if = {
@@ -1982,14 +1982,14 @@ country_event = {
 
 # Proclamation of the German Republic
 country_event = {
-	id = ww1_germany_events.220
-	title = ww1_germany_events.220.t
-	desc = ww1_germany_events.220.d
+	id = ww1_germany_events.320
+	title = ww1_germany_events.320.t
+	desc = ww1_germany_events.320.d
 	picture = GFX_event_WW1_ger_republic
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.220.a # Long live the German Republic!
+		name = ww1_germany_events.320.a # Long live the German Republic!
 		ai_chance = { factor = 100 }
 		add_political_power = 100
 		add_stability = 0.10
@@ -1998,14 +1998,14 @@ country_event = {
 
 # Negotiations on Wilson's Fourteen Points
 country_event = {
-	id = ww1_germany_events.221
-	title = ww1_germany_events.221.t
-	desc = ww1_germany_events.221.d
+	id = ww1_germany_events.321
+	title = ww1_germany_events.321.t
+	desc = ww1_germany_events.321.d
 	picture = GFX_event_WW1_ger_peace_resolution
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.221.a # Accept the 14 Points as basis for peace
+		name = ww1_germany_events.321.a # Accept the 14 Points as basis for peace
 		ai_chance = { factor = 80 }
 		add_political_power = 75
 		add_war_support = -0.05
@@ -2013,7 +2013,7 @@ country_event = {
 	}
 
 	option = {
-		name = ww1_germany_events.221.b # Demand colonial guarantees in return
+		name = ww1_germany_events.321.b # Demand colonial guarantees in return
 		ai_chance = { factor = 20 }
 		add_political_power = 50
 		add_war_support = 0.05
@@ -2022,14 +2022,14 @@ country_event = {
 
 # The Plebiscite in Alsace-Lorraine
 country_event = {
-	id = ww1_germany_events.222
-	title = ww1_germany_events.222.t
-	desc = ww1_germany_events.222.d
+	id = ww1_germany_events.322
+	title = ww1_germany_events.322.t
+	desc = ww1_germany_events.322.d
 	picture = GFX_event_WW1_ger_republic
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.222.a # Respect the popular mandate!
+		name = ww1_germany_events.322.a # Respect the popular mandate!
 		ai_chance = { factor = 100 }
 		add_political_power = 60
 		add_stability = 0.05
@@ -2038,14 +2038,14 @@ country_event = {
 
 # The Silent Dictatorship Assumes Control
 country_event = {
-	id = ww1_germany_events.230
-	title = ww1_germany_events.230.t
-	desc = ww1_germany_events.230.d
+	id = ww1_germany_events.330
+	title = ww1_germany_events.330.t
+	desc = ww1_germany_events.330.d
 	picture = GFX_event_WW1_ger_third_ohl
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.230.a # All authority to the Supreme War Command!
+		name = ww1_germany_events.330.a # All authority to the Supreme War Command!
 		ai_chance = { factor = 100 }
 		add_war_support = 0.10
 		add_political_power = 50
@@ -2054,14 +2054,14 @@ country_event = {
 
 # The Declaration of Unrestricted Submarine Warfare
 country_event = {
-	id = ww1_germany_events.231
-	title = ww1_germany_events.231.t
-	desc = ww1_germany_events.231.d
+	id = ww1_germany_events.331
+	title = ww1_germany_events.331.t
+	desc = ww1_germany_events.331.d
 	picture = GFX_event_WW1_ger_third_ohl
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.231.a # Sink all shipping bound for Britain!
+		name = ww1_germany_events.331.a # Sink all shipping bound for Britain!
 		ai_chance = { factor = 85 }
 		navy_experience = 35
 		add_war_support = 0.08
@@ -2072,7 +2072,7 @@ country_event = {
 	}
 
 	option = {
-		name = ww1_germany_events.231.b # Adhere strictly to cruiser prize rules
+		name = ww1_germany_events.331.b # Adhere strictly to cruiser prize rules
 		ai_chance = { factor = 15 }
 		add_political_power = 50
 		add_war_support = -0.05
@@ -2081,14 +2081,14 @@ country_event = {
 
 # The Dismemberment of the Russian Empire
 country_event = {
-	id = ww1_germany_events.232
-	title = ww1_germany_events.232.t
-	desc = ww1_germany_events.232.d
+	id = ww1_germany_events.332
+	title = ww1_germany_events.332.t
+	desc = ww1_germany_events.332.d
 	picture = GFX_event_WW1_sov_baltic
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.232.a # Enforce the German imperial sphere in the East!
+		name = ww1_germany_events.332.a # Enforce the German imperial sphere in the East!
 		ai_chance = { factor = 100 }
 		add_political_power = 120
 		add_war_support = 0.10
@@ -2097,14 +2097,14 @@ country_event = {
 
 # Founding of the Deutsche Vaterlandspartei
 country_event = {
-	id = ww1_germany_events.240
-	title = ww1_germany_events.240.t
-	desc = ww1_germany_events.240.d
+	id = ww1_germany_events.340
+	title = ww1_germany_events.340.t
+	desc = ww1_germany_events.340.d
 	picture = GFX_event_WW1_ger_third_ohl
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.240.a # For Kaiser, Volk and Total Victory!
+		name = ww1_germany_events.340.a # For Kaiser, Volk and Total Victory!
 		ai_chance = { factor = 100 }
 		add_war_support = 0.15
 		add_political_power = 80
@@ -2113,14 +2113,14 @@ country_event = {
 
 # The Dissolution of the Reichstag
 country_event = {
-	id = ww1_germany_events.241
-	title = ww1_germany_events.241.t
-	desc = ww1_germany_events.241.d
+	id = ww1_germany_events.341
+	title = ww1_germany_events.341.t
+	desc = ww1_germany_events.341.d
 	picture = GFX_event_WW1_ger_berlin_strike
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.241.a # Parliament is dissolved. The nation is at war!
+		name = ww1_germany_events.341.a # Parliament is dissolved. The nation is at war!
 		ai_chance = { factor = 100 }
 		add_political_power = 100
 		add_stability = -0.05
@@ -2130,14 +2130,14 @@ country_event = {
 
 # The Ultimatum to the Low Countries
 country_event = {
-	id = ww1_germany_events.242
-	title = ww1_germany_events.242.t
-	desc = ww1_germany_events.242.d
+	id = ww1_germany_events.342
+	title = ww1_germany_events.342.t
+	desc = ww1_germany_events.342.d
 	picture = GFX_event_WW1_ger_third_ohl
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_germany_events.242.a # Surrender your ports or face iron and fire!
+		name = ww1_germany_events.342.a # Surrender your ports or face iron and fire!
 		ai_chance = { factor = 100 }
 		add_war_support = 0.08
 		add_political_power = 50

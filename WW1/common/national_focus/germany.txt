@@ -86,7 +86,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.201 }
+			country_event = { id = ww1_germany_events.301 }
 			add_political_power = 60
 			add_popularity = { ideology = democratic popularity = 0.05 }
 		}
@@ -157,7 +157,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.202 }
+			country_event = { id = ww1_germany_events.302 }
 			add_political_power = 50
 		}
 	}
@@ -189,7 +189,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.210 }
+			country_event = { id = ww1_germany_events.310 }
 			set_country_flag = GER_spartakus_revolution_unleashed
 			add_popularity = { ideology = communism popularity = 0.20 }
 			add_stability = -0.10
@@ -206,7 +206,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.211 }
+			country_event = { id = ww1_germany_events.311 }
 			add_war_support = 0.05
 			navy_experience = 25
 			random_owned_controlled_state = {
@@ -229,7 +229,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.212 }
+			country_event = { id = ww1_germany_events.312 }
 			set_politics = {
 			ruling_party = communism
 			elections_allowed = no
@@ -400,7 +400,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.213 }
+			country_event = { id = ww1_germany_events.313 }
 			if = {
 			limit = { country_exists = SOV }
 			add_opinion_modifier = { target = SOV modifier = ger_sov_revolutionary_alliance }
@@ -510,7 +510,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.214 }
+			country_event = { id = ww1_germany_events.314 }
 			add_political_power = 75
 		}
 	}
@@ -623,7 +623,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.220 }
+			country_event = { id = ww1_germany_events.320 }
 			set_politics = {
 			ruling_party = democratic
 			elections_allowed = yes
@@ -813,7 +813,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.221 }
+			country_event = { id = ww1_germany_events.321 }
 			add_political_power = 60
 			if = {
 			limit = { country_exists = USA }
@@ -834,7 +834,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.222 }
+			country_event = { id = ww1_germany_events.322 }
 			add_stability = 0.05
 			add_political_power = 75
 		}
@@ -982,7 +982,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.230 }
+			country_event = { id = ww1_germany_events.330 }
 			add_ideas = GER_silent_dictatorship_ohl
 			add_war_support = 0.10
 			army_experience = 25
@@ -1162,7 +1162,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.231 }
+			country_event = { id = ww1_germany_events.331 }
 			navy_experience = 40
 			add_ideas = GER_unrestricted_submarine_warfare_spirit
 		}
@@ -1224,7 +1224,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.232 }
+			country_event = { id = ww1_germany_events.332 }
 			add_political_power = 100
 			add_war_support = 0.05
 		}
@@ -1276,7 +1276,7 @@ focus_tree = {
 
 	focus = {
 		id = GER_carve_ukrainian_breadbasket
-		icon = GFX_GER_a7v
+		icon = GFX_SOV_stolypins_land_reform
 		cost = 7
 		x = 14
 		y = 11
@@ -1362,7 +1362,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.240 }
+			country_event = { id = ww1_germany_events.340 }
 			add_ideas = GER_vaterlandspartei_movement
 			add_war_support = 0.10
 			add_popularity = { ideology = fascism popularity = 0.20 }
@@ -1412,7 +1412,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.241 }
+			country_event = { id = ww1_germany_events.341 }
 			set_politics = {
 			ruling_party = fascism
 			elections_allowed = no
@@ -1455,7 +1455,7 @@ focus_tree = {
 
 	focus = {
 		id = GER_siegfrieden_manifesto
-		icon = GFX_GER_adriatic_sea_reinforcement
+		icon = GFX_focus_ger_kaiserreich
 		cost = 7
 		x = 19
 		y = 8
@@ -1535,7 +1535,7 @@ focus_tree = {
 
 	focus = {
 		id = GER_colonize_the_eastern_frontier_strip
-		icon = GFX_GER_asienkorps_units
+		icon = GFX_focus_GER_ostwall
 		cost = 7
 		x = 17
 		y = 10
@@ -1583,7 +1583,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			country_event = { id = ww1_germany_events.242 }
+			country_event = { id = ww1_germany_events.342 }
 			if = {
 			limit = { country_exists = HOL }
 			create_wargoal = {
@@ -1613,7 +1613,7 @@ focus_tree = {
 
 	focus = {
 		id = GER_subjugate_scandinavia
-		icon = GFX_GER_asienkorps_units-86387.png
+		icon = GFX_GER_asienkorps_units
 		cost = 7
 		x = 19
 		y = 11

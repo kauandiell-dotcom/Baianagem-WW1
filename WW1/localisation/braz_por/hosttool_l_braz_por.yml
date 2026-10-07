@@ -1,0 +1,99 @@
+﻿l_braz_por:
+ 
+ ST_STATE_MARK_FOR_TRANSFER:0 "§HMarcar Estado para Transferência§!\nMarca o estado selecionado para ser transferido\n"
+ ST_STATE_UNMARK_FOR_TRANSFER:0 "§HDesmarcar Estado§!\nDesmarca o estado selecionado\n"
+ mark_state_yes:0 ""
+ mark_state_no:0 "\n  §RMarcado!§!"
+ 
+ OBSERVER:0 "§HObservar§!\nMove o jogador para o modo observador\n\n"
+ OBSERVER_DELAYED:0 ""
+
+ WHITEPEACE:0 "§HPaz Branca§!\nO país entrará em paz branca com todos os seus inimigos\n\n"
+ WHITEPEACE_DELAYED:0 ""
+  
+ CLEAR_ALL_MARKINGS:0 "§HLimpar Todas as Marcações§!\nRemove todas as marcações no mapa\n\n"
+ CLEAR_ALL_MARKINGS_DELAYED:0 ""
+
+ TRANSFER_STATES:0 "§HTransferir Estados§!\nTransfere os estados marcados para este país\n\n"
+ TRANSFER_STATES_DELAYED:0 ""
+
+ FREE_COUNTRY:0 "§HLibertar País§!\nO país selecionado é libertado de qualquer suserano\n\n"
+ FREE_COUNTRY_DELAYED:0 ""
+ 
+ ADD_CORES:0 "§HAdicionar Cores§!\nAdiciona cores (núcleos) nos estados marcados para este país\n\n"
+ ADD_CORES_DELAYED:0 ""
+
+ REMOVE_CORES:0 "§HRemover Cores§!\nRemove cores (núcleos) dos estados marcados para este país\n\n"
+ REMOVE_CORES_DELAYED:0 ""
+ 
+ ANNEX_COUNTRY:0 "§HAnexar§!\nO proprietário do estado marcado é anexado ao país selecionado\n\n"
+ ANNEX_COUNTRY_DELAYED:0 ""
+ 
+ PUPPET_COUNTRY:0 "§HFantonizar§!\nO proprietário do estado marcado se torna fantoche do país selecionado\n\n"
+ PUPPET_COUNTRY_DELAYED:0 ""
+ 
+ ADD_CHEAT:0 "§HCheat§!\nA opção selecionada é concedida ao país escolhido\n\n"
+ ADD_CHEAT_DELAYED:0 ""
+
+ TRANSFER_HOSTOOL:0 "§HTransferir Host Tool§!\nO país selecionado recebe a ferramenta de host\n\n"
+ TRANSFER_HOSTOOL_DELAYED:0 ""
+
+ GIVE_COMMAND_POWER_BUTTON:0 "§HConceder Poder de Comando§!\nTodos os países recebem o máximo de £command_power Poder de Comando\n\n"
+ GIVE_COMMAND_POWER_BUTTON_DELAYED:0 ""
+
+ PINGTOOL:0 "§HReativador de IA§!\nMarque e clique (em desenvolvimento)\n\n"
+ PINGTOOL_DELAYED:0 ""
+
+ CIVADD:0 "§HAdicionar 1 Fábrica Civil§!\nAdiciona uma fábrica civil ao estado selecionado.\n\n"
+ CIVADD_DELAYED:0 ""
+
+ CIVREMOVE:0 "§HRemover 1 Fábrica Civil§!\nRemove uma fábrica civil do estado selecionado.\n\n"
+ CIVREMOVE_DELAYED:0 ""
+
+ ADDPP:0 "§HAdicionar 50 Poder Político§!\nAdiciona poder político ao proprietário do estado selecionado.\n\n"
+ 
+ ST_TOOLTIP_on:0 "§HAtivar 'Host Tool'§!"
+ ST_TOOLTIP_off:0 "§HDesativar 'Host Tool'§!"
+ host_transfer_states_on:0 "Host Tool: £trigger_no"
+ host_transfer_states_off:0 "Host Tool: £trigger_yes"
+ hosttool_efficency:0 "Eficiência Temporária"
+
+ CHEAT_SELECT:0   "Selecionar cheat"
+ CHEAT1:0   "Genérico - 100%"
+ CHEAT2:0   "Genérico - 300% "
+ CHEAT3:0   "Genérico - 2 anos"
+ CHEAT4:0   "Genérico - 99900%"
+ CHEAT5:0 "50 Poder Político"
+ CHEAT6:0   "Adicionar 1 Fábrica Militar Externa"
+ CHEAT7:0   "Remover 1 Fábrica Militar Externa"
+ CHEAT8:0   "Adicionar 1 Fábrica Civil Externa"
+ CHEAT9:0   "Remover 1 Fábrica Civil Externa"
+ CHEAT10:0   "Adicionar 100 XP Terrestre"
+ CHEAT11:0   "Adicionar 100 XP Aéreo"
+ CHEAT12:0   "Adicionar 100 XP Naval"
+ CHEAT13:0   "Adicionar 10% Estabilidade"
+ CHEAT14:0   "Adicionar 10% Apoio à Guerra"
+ CHEAT15:0   "Adicionar 5 Alumínio"
+ CHEAT16:0   "Adicionar 5 Borracha"
+ CHEAT17:0   "Adicionar 5 Tungstênio"
+ CHEAT18:0   "Adicionar 5 Aço"
+ CHEAT19:0   "Adicionar 5 Cromo"
+ CHEAT20:0   "Adicionar 5 Petróleo"
+ CHEAT21:0   "Ideia de Eficiência"
+  
+ mark_status_marked:0   "     Desmarcar Estado "
+ mark_status_unmarked:0 "      Marcar Estado  "
+ 
+ horsthelp.2.t:0 "Ajuda com a Hosttool"
+ horsthelp.2.d:0 "O sistema Hosttool foi criado para os hosts gerenciarem suas partidas mais facilmente sem perder tempo com reconexões manuais e problemas de equilíbrio. Funções:\n\n1. Alterar fronteiras (Anexar, transferir estados, adicionar cores).\n2. Adicionar bônus tecnológicos.\n3. Colocar jogadores como observadores.\n4. Paz branca entre países."
+ horsthelp.2.a:0 "Muito obrigado, Host!"
+
+ pause_blocker_block_all_tt:0 "§HBloquear Pausa para Todas as Nações§!"
+ pause_blocker_block_all_delayed_tt:0 "Revoga os direitos de pausar de todas as nações"
+ pause_blocker_unblock_all_tt:0 "§HDesbloquear Pausa para Todas as Nações§!"
+ pause_blocker_unblock_all_delayed_tt:0 "Concede os direitos de pausar a todas as nações"
+ pause_blocker_country_block_tt:0 "Direitos de Pausa do País:"
+ pause_blocker_block_country_tt:0 "§HBloquear Pausa do País Selecionado§!"
+ pause_blocker_block_country_delayed_tt:0 "O país selecionado perde o direito de pausar"
+ pause_blocker_unblock_country_tt:0 "§HDesbloquear Pausa do País Selecionado§!"
+ pause_blocker_unblock_country_delayed_tt:0 "O país selecionado ganha o direito de pausar"
