@@ -275,6 +275,10 @@ PixelShader =
 			vNewUV.y = saturate(vNewUV.y * 4 - 3);
 		
 			float3 waterColor = tex2D( WaterColor, Input.vWorldUV ).rgb;
+			float riverLum = dot( waterColor, float3( 0.2126f, 0.7152f, 0.0722f ) );
+			float3 deepRiverColor = float3( 0.015f, 0.045f, 0.110f );
+			float3 shallowRiverColor = float3( 0.035f, 0.105f, 0.210f );
+			waterColor = lerp( deepRiverColor, shallowRiverColor, saturate( riverLum * 2.0f ) ) * ( 0.60f + 0.55f * riverLum );
 		#ifdef LOW_END_GFX
 			float4 diffuseColor = float4( waterColor, 1.0f );
 			float2 waterSideAlpha = float2( 0, ( 1.0f - vNewUV.y ) * 0.8f );
@@ -350,11 +354,11 @@ PixelShader =
 			
 			float3 vEyeDir = normalize( Input.vPrePos_Fade.xyz - vCamPos.xyz );
 			float3 reflection = reflect( vEyeDir, normal );
-			float3 reflectiveColor = texCUBE( ReflectionCubeMap, reflection ).rgb * 1.3;
+			float3 reflectiveColor = texCUBE( ReflectionCubeMap, reflection ).rgb * float3( 0.24f, 0.36f, 0.58f );
 
-			float fresnelBias = 0.5f;
+			float fresnelBias = 0.18f;
 			float fresnel = saturate( dot( -vEyeDir, normal ) ) * 0.5f;
-			fresnel = saturate( fresnelBias + ( 1.0f - fresnelBias ) * pow( 1.0f - fresnel, 10.0) );
+			fresnel = saturate( fresnelBias + ( 1.0f - fresnelBias ) * pow( 1.0f - fresnel, 6.0) );
 			waterColor = waterColor * ( 1.0f - fresnel ) + reflectiveColor * fresnel;
 
 			float3 diffuse = lerp( waterColor, diffuseColor.rgb, waterSideAlpha.x );

@@ -403,7 +403,9 @@ PixelShader =
 
 		#ifndef LOW_END_GFX
 			float3 CityLights = tex2D( CityLightsAndSnowNoise, Input.prepos.xz * CITY_LIGHTS_TILING ).rgb;
-			vOut += CityLights * CITY_LIGHTS_INTENSITY * CityLightsMask * vNightFactor;
+			// 1914 historical warm gas & incandescent filament amber light
+			float3 vintageGasLight = float3( 1.22f, 0.88f, 0.44f );
+			vOut += CityLights * vintageGasLight * CITY_LIGHTS_INTENSITY * CityLightsMask * vNightFactor;
 		#endif
 
 			float3 vFOW = ApplyFOW( vOut, ShadowMap, Input.vScreenCoord );
@@ -414,6 +416,10 @@ PixelShader =
 		#endif
 			
 			vOut = DayNightWithBlend( vOut, vGlobeNormal, lerp(BORDER_NIGHT_DESATURATION_MAX, 1.0f, vBloomAlpha) );
+			
+			// Historical cartographic tone curve: rich, serious, deep contrast
+			float3 sCurve = pow( max( vOut, 0.0f ), 1.07f );
+			vOut = lerp( vOut, sCurve, 0.45f );
 			
 			DebugReturn(vOut, lightingProperties, fShadowTerm);
 
@@ -440,6 +446,8 @@ PixelShader =
 			//offset -= vec3(0.5);
 			
 			float3 waterColorTint = tex2D( TerrainColorTint, Input.uv2 /*+ offset.xy * WATER_RIPPLE_EFFECT*/ ).rgb;		
+			float tintLum = dot( waterColorTint, float3( 0.2126f, 0.7152f, 0.0722f ) );
+			waterColorTint = lerp( float3( 0.012f, 0.038f, 0.095f ), float3( 0.038f, 0.115f, 0.220f ), saturate( tintLum * 2.0f ) );
 			waterColorTint *= WATER_COLOR_LIGHTNESS;
 			
 			float vMin = 5.3f; //5.3f; Depthfog ish for bottom

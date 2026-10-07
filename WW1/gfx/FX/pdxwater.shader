@@ -310,22 +310,32 @@ PixelShader =
 			float3 vEyeDir = normalize( Input.pos - vCamPos.xyz );
 			float3 reflection = reflect( vEyeDir, normal );
 
-			float vSpecularIntensity = 0.010f;
+			float vSpecularIntensity = 0.007f;
 			float vGlossiness = (spec/9.0f) * (1-vSpecMap); 
-			//float CubeMipmapIndex = GetEnvmapMipLevel(saturate(1.0f-vSpecMap)); 
 			
-			//float3 reflectiveColor = texCUBElod( ReflectionCubeMap, float4(reflection, CubeMipmapIndex) ).rgb;// * CubemapIntensity;
 			float3 reflectiveColor = texCUBE( ReflectionCubeMap, reflection ).rgb;
+			reflectiveColor *= float3( 0.22f, 0.35f, 0.58f );
 		
 		#ifdef NO_REFRACTIONS
-			float3 refractiveColor = float3( 0, 0.1f, 0.2f );
+			float3 refractiveColor = float3( 0.012f, 0.038f, 0.095f );
 		#else
 			float3 refractiveColor = tex2D( WaterRefraction, refractiveUV.xy - vRefractionDistortion ).rgb;
+			
+			// Deep dark navy blue oceanic color grading
+			float waterLum = dot( refractiveColor, float3( 0.2126f, 0.7152f, 0.0722f ) );
+			float3 deepNavyColor = float3( 0.012f, 0.038f, 0.095f );     // Abyssal deep ocean
+			float3 midNavyColor  = float3( 0.022f, 0.065f, 0.155f );     // Open sea
+			float3 coastalColor  = float3( 0.040f, 0.125f, 0.240f );     // Continental shelf & shallow coast
+			
+			float depthFactor = saturate( waterLum * 2.2f );
+			float3 oceanTone = lerp( deepNavyColor, midNavyColor, saturate( depthFactor * 1.6f ) );
+			oceanTone = lerp( oceanTone, coastalColor, smoothstep( 0.35f, 0.95f, depthFactor ) );
+			refractiveColor = oceanTone * ( 0.55f + 0.60f * waterLum );
 		#endif
 
-			float fresnelBias = 0.5f; // CUBEMAP INTENSITY
+			float fresnelBias = 0.18f; // CUBEMAP INTENSITY
 			float fresnel = saturate( dot( -vEyeDir, normal ) ) * 1.0f;
-			fresnel = saturate( fresnelBias + ( 1.0f - fresnelBias ) * pow( 1.0f - fresnel, 10.0) );
+			fresnel = saturate( fresnelBias + ( 1.0f - fresnelBias ) * pow( 1.0f - fresnel, 6.0) );
 			refractiveColor = refractiveColor * ( 1.0f - fresnel ) + reflectiveColor * fresnel;
 			
 			float vIceFade = 0.0f;
