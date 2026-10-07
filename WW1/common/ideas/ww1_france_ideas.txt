@@ -978,6 +978,16 @@ ideas = {
 			}
 		}
 
+		FRA_verdun_exhaustion = {
+			picture = FRA_verdun_resilience
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = -0.08
+				org_loss_when_moving = 0.05
+			}
+		}
+
 		FRA_versailles_supreme_guarantor = {
 			picture = FRA_versailles_supreme_guarantor
 			allowed = { always = no }

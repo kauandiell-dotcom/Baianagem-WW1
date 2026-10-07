@@ -5,7 +5,7 @@ focus_tree = {
 	country = { factor = 0 modifier = { add = 100 original_tag = ITA } }
 	default = no
 	initial_show_position = { focus = ITA_ww1_giolitti_ministry }
-	continuous_focus_position = { x = 50 y = 1800 }
+	continuous_focus_position = { x = 50 y = 2400 }
 
 	shortcut = {
 		name = ITA_ww1_shortcut_pol
@@ -502,7 +502,7 @@ focus_tree = {
 	focus = {
 		id = ITA_ww1_proportional_representation
 		icon = GFX_goal_ww1_ITA_ww1_proportional_representation
-		x = 7
+		x = 6
 		y = 12
 		cost = 5
 		search_filters = FOCUS_FILTER_POLITICAL
@@ -518,11 +518,11 @@ focus_tree = {
 	focus = {
 		id = ITA_ww1_popular_party
 		icon = GFX_goal_ww1_ITA_ww1_popular_party
-		x = 8
-		y = 12
+		x = 6
+		y = 13
 		cost = 5
 		search_filters = FOCUS_FILTER_POLITICAL
-		prerequisite = { focus = ITA_ww1_nitti_cabinet }
+		prerequisite = { focus = ITA_ww1_proportional_representation }
 		available = { has_capitulated = no date > 1919.1.1 }
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -787,7 +787,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -803,7 +803,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 } navy_experience = 10 ita_ww1_clamp_counters = yes }
+		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } } navy_experience = 15 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -874,7 +874,7 @@ focus_tree = {
 	focus = {
 		id = ITA_ww1_free_trade_opening
 		icon = GFX_goal_ww1_ITA_ww1_free_trade_opening
-		x = 26
+		x = 19
 		y = 2
 		cost = 5
 		search_filters = FOCUS_FILTER_INDUSTRY
@@ -901,7 +901,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_tech_bonus = { name = ITA_ww1_steel_tech bonus = 0.25 uses = 1 category = industry } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } } add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -933,7 +933,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { 157 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_southern_gap = -10 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 843 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } 2 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_southern_gap = -10 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1046,7 +1046,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 } add_tech_bonus = { name = ITA_ww1_artillery_prod bonus = 0.25 uses = 1 category = artillery } ita_ww1_clamp_counters = yes }
+		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } } add_equipment_to_stockpile = { type = artillery_equipment amount = 120 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1062,7 +1062,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_tech_bonus = { name = ITA_ww1_aero_engine bonus = 0.25 uses = 1 category = air_equipment } air_experience = 10 ita_ww1_clamp_counters = yes }
+		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } } air_experience = 20 add_tech_bonus = { name = ITA_ww1_aero_tech bonus = 0.25 uses = 1 category = air_equipment } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {

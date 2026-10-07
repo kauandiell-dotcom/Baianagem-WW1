@@ -1,0 +1,195 @@
+# =========================================================================
+# WW1 COMPREHENSIVE REPORT EVENT PICTURES DEFINITIONS
+# Registers all historical report event pictures across majors and minors
+# =========================================================================
+
+spriteTypes = {
+
+	# --- France Historical Events ---
+	spriteType = {
+		name = "GFX_report_event_generic_diplomacy_1"
+		texturefile = "gfx/event_pictures/ww1_alpha/eastern_invitation.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_american_doughboys_parade"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_pershing_arrival.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_italian_troops_ww1"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_italian_entry.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_versailles_hall_of_mirrors"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_alsace_return.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_funeral_procession"
+		texturefile = "gfx/event_pictures/ww1_alpha/sarajevo_assassination.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_train_ww1"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/ger_russian_opportunity.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_bef_disembarking"
+		texturefile = "gfx/event_pictures/ww1_britain/bef_arrives.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_courtroom"
+		texturefile = "gfx/event_pictures/ww1_alpha/french_military_justice.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_munitions_shipment"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_american_deliveries.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_romanian_generals"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_romanian_mission.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_allied_staff_meeting"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_romanian_staff.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_british_fleet_review"
+		texturefile = "gfx/event_pictures/report_event_british_artillery.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_german_troops_ww1"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_belgian_ultimatum.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_russian_troops_ww1"
+		texturefile = "gfx/event_pictures/ww1_alpha/rus_galician_advance.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_compiegne_wagon_armistice"
+		texturefile = "gfx/event_pictures/news_event_salonika_armistice.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_joffre_in_washington"
+		texturefile = "gfx/event_pictures/ww1_britain/washington_conference.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_french_mutiny_poilus"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_petain_recovery.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_crisis"
+		texturefile = "gfx/event_pictures/ww1_alpha/crisis_fra.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_clemenceau_speech"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_clemenceau_cabinet.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_diplomacy_reject"
+		texturefile = "gfx/event_pictures/ww1_alpha/eastern_refusal.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_parliament"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_reichstag_elections.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_french_soldiers_parade"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_general_mobilisation.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_salonica_harbor"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_salonika_bridgehead.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_tsar_inspects_troops"
+		texturefile = "gfx/event_pictures/ww1_alpha/rus_serbian_guarantee.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_bulgarian_armistice"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_salonika_armistice.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_allied_war_council"
+		texturefile = "gfx/event_pictures/ww1_britain/supreme_war_council.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_italian_diplomats"
+		texturefile = "gfx/event_pictures/news_event_italian_kingdom.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_belgian_defense_yser"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_belgian_ultimatum.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_serbian_retreat_corfu"
+		texturefile = "gfx/event_pictures/ww1_alpha/fra_serbian_corfu.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_communist_crowd"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/ger_spartacists.dds"
+	}
+
+	# --- Germany Historical Events ---
+	spriteType = {
+		name = "GFX_report_event_german_speech"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_sarajevo_response.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_british_inspect_troops"
+		texturefile = "gfx/event_pictures/report_event_british_inspect_troops.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_german_troops"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_belgian_ultimatum.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_soviet_purge_speech"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/sov_sovnarkom.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_conference"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_auh_staff.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_dead_soldiers"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_verdun_exhaustion.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_merchant_ship_01"
+		texturefile = "gfx/event_pictures/report_event_merchant_ship_01.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_generic_strike"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/ger_january_strikes.dds"
+	}
+
+	# --- Russia Historical Events ---
+	spriteType = {
+		name = "GFX_report_event_worker_protests"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/sov_petrograd_uprising.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_gathering_protest"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/sov_bread_lines.dds"
+	}
+
+	# --- Generic / Other Events ---
+	spriteType = {
+		name = "GFX_report_event_generic_read_write"
+		texturefile = "gfx/event_pictures/report_event_generic_read_write.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_election_vote"
+		texturefile = "gfx/event_pictures/ww1_ger_rus/ger_elections_1912.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_fascists_posing"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_kapp_tirpitz_coup.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_military_planning"
+		texturefile = "gfx/event_pictures/ww1_alpha/ger_ohl_council.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_001"
+		texturefile = "gfx/event_pictures/ww1_alpha/great_war_dispatch.png"
+	}
+}

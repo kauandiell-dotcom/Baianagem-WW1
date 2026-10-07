@@ -11,7 +11,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } add_equipment_to_stockpile = { type = infantry_equipment amount = -400 } }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_landwehr_course = {
@@ -26,7 +26,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
-  remove_effect = { army_experience = 5 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 15 add_command_power = 10 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_honved_course = {
@@ -41,7 +41,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -20 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
-  remove_effect = { army_experience = 5 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 15 add_command_power = 10 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_honved_contract = {
@@ -56,7 +56,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_federal_course = {

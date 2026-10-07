@@ -185,10 +185,12 @@ focus_tree = {
 		x = 2
 		y = 6
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
-		mutually_exclusive = { focus = GER_prussian_franchise_reform focus = GER_silent_dictatorship_ohl focus = GER_found_vaterlandspartei }
+		mutually_exclusive = { focus = GER_prussian_franchise_reform }
 		available_if_capitulated = no
+		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			set_country_flag = GER_chose_post_burgfrieden_path
 			country_event = { id = ww1_germany_events.310 }
 			set_country_flag = GER_spartakus_revolution_unleashed
 			add_popularity = { ideology = communism popularity = 0.20 }
@@ -586,10 +588,12 @@ focus_tree = {
 		x = 7
 		y = 6
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
-		mutually_exclusive = { focus = GER_spartakusbund_proletarian_revolt focus = GER_silent_dictatorship_ohl focus = GER_found_vaterlandspartei }
+		mutually_exclusive = { focus = GER_spartakusbund_proletarian_revolt focus = GER_silent_dictatorship_ohl }
 		available_if_capitulated = no
+		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			set_country_flag = GER_chose_post_burgfrieden_path
 			add_stability = 0.05
 			add_popularity = { ideology = democratic popularity = 0.20 }
 			add_political_power = 75
@@ -978,10 +982,12 @@ focus_tree = {
 		x = 12
 		y = 6
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
-		mutually_exclusive = { focus = GER_spartakusbund_proletarian_revolt focus = GER_prussian_franchise_reform focus = GER_found_vaterlandspartei }
+		mutually_exclusive = { focus = GER_prussian_franchise_reform focus = GER_found_vaterlandspartei }
 		available_if_capitulated = no
+		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
+			set_country_flag = GER_chose_post_burgfrieden_path
 			country_event = { id = ww1_germany_events.330 }
 			add_ideas = GER_silent_dictatorship_ohl
 			add_war_support = 0.10
@@ -1358,10 +1364,12 @@ focus_tree = {
 		x = 17
 		y = 6
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
-		mutually_exclusive = { focus = GER_spartakusbund_proletarian_revolt focus = GER_prussian_franchise_reform focus = GER_silent_dictatorship_ohl }
+		mutually_exclusive = { focus = GER_silent_dictatorship_ohl }
 		available_if_capitulated = no
+		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			set_country_flag = GER_chose_post_burgfrieden_path
 			country_event = { id = ww1_germany_events.340 }
 			add_ideas = GER_vaterlandspartei_movement
 			add_war_support = 0.10
@@ -3152,7 +3160,6 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		id = GER_the_blank_cheque
 		icon = GFX_focus_ger_support_austrian_claims
 		prerequisite = { focus = GER_expand_heavy_howitzers }
-		mutually_exclusive = { focus = GER_willy_nicky_telegrams_bjorko }
 		cost = 5
 		x = 103
 		y = 3
@@ -3160,6 +3167,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = no
 		available = {
+			NOT = { has_completed_focus = GER_willy_nicky_telegrams_bjorko }
 			has_completed_focus = GER_tirpitz_fourth_naval_bill
 			OR = {
 				has_global_flag = sarajevo_assassination_occurred
@@ -3234,6 +3242,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		id = GER_proclaim_state_of_war_danger
 		icon = GFX_GER_militarism
 		prerequisite = { focus = GER_the_blank_cheque }
+		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
 		cost = 3
 		x = 102
 		y = 4
@@ -3292,7 +3301,6 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		id = GER_ultimatum_to_belgium
 		icon = GFX_ww1_mex_upca_conquer
 		prerequisite = { focus = GER_proclaim_state_of_war_danger }
-		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
 		cost = 3
 		x = 101
 		y = 5
@@ -4180,7 +4188,6 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 	focus = {
 		id = GER_the_kaiserschlacht_1918
 		icon = GFX_focus_GER_the_kaiserschlacht_1918
-		prerequisite = { focus = GER_light_machine_guns_mg08_15 }
 		cost = 10
 		x = 117
 		y = 13
@@ -4189,6 +4196,7 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		available_if_capitulated = no
 		available = {
 			has_war_with = FRA
+			has_completed_focus = GER_light_machine_guns_mg08_15
 			OR = {
 				has_completed_focus = GER_treaty_of_brest_litovsk
 				RUS = { has_capitulated = yes }
@@ -4444,7 +4452,6 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 	focus = {
 		id = GER_willy_nicky_telegrams_bjorko
 		icon = GFX_focus_GER_willy_nicky_telegrams_bjorko
-		mutually_exclusive = { focus = GER_the_blank_cheque }
 		cost = 10
 		x = 84
 		y = 0
@@ -4454,6 +4461,7 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		allow_branch = {
 			NOT = { has_country_flag = ger_blank_cheque_given }
 			NOT = { has_country_flag = GER_historical_path_chosen }
+			NOT = { has_completed_focus = GER_the_blank_cheque }
 		}
 
 		completion_reward = {
@@ -4672,10 +4680,10 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 	focus = {
 		id = GER_asienkorps_palestine_expedition
 		icon = GFX_focus_GER_ww1_asienkorps_palestine_expedition
-		prerequisite = { focus = GER_ottoman_military_mission_sanders }
+		prerequisite = { focus = GER_hajj_wilhelm_pan_islamic_crusade }
 		cost = 5
-		x = 55
-		y = 2
+		x = 60
+		y = 3
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = no
@@ -4692,7 +4700,7 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		icon = GFX_focus_IRQ_demand_palestine
 		prerequisite = { focus = GER_max_von_oppenheim_memorandum }
 		cost = 7
-		x = 61
+		x = 62
 		y = 4
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		ai_will_do = { factor = 90 }
@@ -4732,8 +4740,8 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		icon = GFX_focus_GER_ww1_siege_of_kut_al_amara_aid
 		prerequisite = { focus = GER_asienkorps_palestine_expedition }
 		cost = 5
-		x = 55
-		y = 3
+		x = 60
+		y = 4
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -4748,7 +4756,7 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		id = GER_holy_war_on_the_suez_canal
 		icon = GFX_focus_generic_the_suez
 		cost = 10
-		x = 63
+		x = 64
 		y = 4
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = GER_max_von_oppenheim_memorandum }

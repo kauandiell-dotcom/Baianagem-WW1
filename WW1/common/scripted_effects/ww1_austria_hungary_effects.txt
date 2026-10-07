@@ -59,21 +59,31 @@ auh_ww1_initialise = {
  }
 }
 auh_ww1_update_pressure = {
- # Mutually exclusive food tiers. Existing multinational war-crisis tiers are not duplicated.
- if = { limit = { check_variable = { auh_ww1_provisions < 15 } }
-  auh_ww1_set_food_pressure_3 = yes
+ hidden_effect = {
+  # Mutually exclusive food tiers. Existing multinational war-crisis tiers are not duplicated.
+  if = { limit = { check_variable = { auh_ww1_provisions < 15 } }
+   auh_ww1_set_food_pressure_3 = yes
+  }
+  else_if = { limit = { check_variable = { auh_ww1_provisions < 30 } }
+   auh_ww1_set_food_pressure_2 = yes
+  }
+  else_if = { limit = { check_variable = { auh_ww1_provisions < 45 } }
+   auh_ww1_set_food_pressure_1 = yes
+  }
+  else = {
+   if = { limit = { has_idea = AUH_ww1_food_pressure_1 } remove_ideas = AUH_ww1_food_pressure_1 }
+   if = { limit = { has_idea = AUH_ww1_food_pressure_2 } remove_ideas = AUH_ww1_food_pressure_2 }
+   if = { limit = { has_idea = AUH_ww1_food_pressure_3 } remove_ideas = AUH_ww1_food_pressure_3 }
+  }
+  if = { limit = { check_variable = { auh_ww1_debt > 3 } } auh_ww1_set_debt_3 = yes }
+  else_if = { limit = { check_variable = { auh_ww1_debt > 1 } } auh_ww1_set_debt_2 = yes }
+  else_if = { limit = { check_variable = { auh_ww1_debt > 0 } } auh_ww1_set_debt_1 = yes }
+  else = {
+   if = { limit = { has_idea = AUH_ww1_debt_1 } remove_ideas = AUH_ww1_debt_1 }
+   if = { limit = { has_idea = AUH_ww1_debt_2 } remove_ideas = AUH_ww1_debt_2 }
+   if = { limit = { has_idea = AUH_ww1_debt_3 } remove_ideas = AUH_ww1_debt_3 }
+  }
  }
- else_if = { limit = { check_variable = { auh_ww1_provisions < 30 } }
-  auh_ww1_set_food_pressure_2 = yes
- }
- else_if = { limit = { check_variable = { auh_ww1_provisions < 45 } }
-  auh_ww1_set_food_pressure_1 = yes
- }
- else = { remove_ideas = AUH_ww1_food_pressure_1 remove_ideas = AUH_ww1_food_pressure_2 remove_ideas = AUH_ww1_food_pressure_3 }
- if = { limit = { check_variable = { auh_ww1_debt > 3 } } auh_ww1_set_debt_3 = yes }
- else_if = { limit = { check_variable = { auh_ww1_debt > 1 } } auh_ww1_set_debt_2 = yes }
- else_if = { limit = { check_variable = { auh_ww1_debt > 0 } } auh_ww1_set_debt_1 = yes }
- else = { remove_ideas = AUH_ww1_debt_1 remove_ideas = AUH_ww1_debt_2 remove_ideas = AUH_ww1_debt_3 }
 }
 auh_ww1_weekly = {
  if = { limit = { has_capitulated = no }

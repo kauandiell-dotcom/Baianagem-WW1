@@ -75,7 +75,8 @@ class Administration:
                 a=v[0];self.vars[a.key]=float(a.value) if k=='set_variable' else self.vars[a.key]+float(a.value)
             elif k=='clamp_variable':
                 a=n.get('var');self.vars[a]=max(float(n.get('min')),min(float(n.get('max')),self.vars[a]))
-            elif k=='set_country_flag':self.flags.add(v if isinstance(v,str) else n.get('flag'))
+            elif k=='hidden_effect':self.run(v)
+            elif k in ['set_country_flag','set_timed_country_flag']:self.flags.add(v if isinstance(v,str) else n.get('flag'))
             elif k=='clr_country_flag':self.flags.discard(v)
             elif k=='add_ideas':
                 self.ideas.update([x.key for x in v] if isinstance(v,list) else [v])

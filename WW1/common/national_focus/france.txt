@@ -16,6 +16,7 @@ focus_tree = {
 	}
 	default = no
 	reset_on_actions = { }
+	continuous_focus_position = { x = 45 y = 1700 }
 
 	focus = {
 		id = FRA_preserver_la_republique
@@ -494,8 +495,8 @@ focus_tree = {
 	focus = {
 		id = FRA_la_victoire_de_la_republique
 		icon = GFX_FRA_la_victoire_de_la_republique
-		x = 8
-		y = 11
+		x = 6
+		y = 12
 		cost = 10
 		prerequisite = { focus = FRA_maintien_du_parlementarisme_guerre }
 		prerequisite = { focus = FRA_je_fais_la_guerre }
@@ -805,7 +806,7 @@ focus_tree = {
 		id = FRA_ports_charbonniers_rouen
 		icon = GFX_FRA_importations_de_charbon_anglais
 		x = 16
-		y = 5
+		y = 6
 		cost = 8
 		prerequisite = { focus = FRA_perte_des_mines_du_nord_repli }
 		completion_reward = {
@@ -821,7 +822,7 @@ focus_tree = {
 		id = FRA_bassin_chimique_marseille
 		icon = GFX_FRA_chimie_industrielle_du_rhone
 		x = 28
-		y = 5
+		y = 6
 		cost = 8
 		prerequisite = { focus = FRA_importations_de_charbon_britannique }
 		completion_reward = {
@@ -3305,7 +3306,7 @@ focus_tree = {
 	focus = {
 		id = FRA_le_wagon_de_rethondes_a_compiegne
 		icon = GFX_FRA_greve_generale_insurrectionnelle
-		x = 90
+		x = 94
 		y = 11
 		cost = 5
 		prerequisite = { focus = FRA_arrivee_du_corps_expeditionnaire_americain }
@@ -3324,7 +3325,7 @@ focus_tree = {
 		id = FRA_retour_de_l_alsace_lorraine
 		icon = GFX_FRA_retour_de_l_alsace_lorraine
 		x = 94
-		y = 11
+		y = 12
 		cost = 8
 		prerequisite = { focus = FRA_le_wagon_de_rethondes_a_compiegne }
 		completion_reward = {
@@ -3343,8 +3344,8 @@ focus_tree = {
 	focus = {
 		id = FRA_la_paix_de_versailles_imposition
 		icon = GFX_FRA_guerre_des_mines_vauquois
-		x = 98
-		y = 11
+		x = 94
+		y = 13
 		cost = 10
 		prerequisite = { focus = FRA_retour_de_l_alsace_lorraine }
 		completion_reward = {
