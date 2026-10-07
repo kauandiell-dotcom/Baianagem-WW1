@@ -48,7 +48,7 @@ def build_support(root, focuses, projects, locs):
   "emergency_shifts":("Jornadas de emergência","Emergency Shifts","shifts", "industrial_capacity_factory = .04 stability_weekly = -.001"),
   "harvest_leave":("Contingentes liberados para a colheita","Contingents Released for Harvest","harvest", "mobilization_speed = -.05"),
   "rotation":("Rotação das unidades","Unit Rotation","rotation", "training_time_army_factor = .05"),
-  "operation_exhausted":("Preparação consumida sem resultado","Preparation Spent Without Results","exhausted", "planning_speed = -.05"),
+  "operation_exhausted":("Preparação consumida sem resultado","Preparation Spent Without Results","exhausted", "planning_speed = -.10 org_loss_when_moving = .10"),
   "food_pressure_1":("Reservas alimentares sob pressão","Food Reserves Under Pressure","food", "industrial_capacity_factory = -.025"),
   "food_pressure_2":("Abastecimento urbano crítico","Critical Urban Supply","food", "industrial_capacity_factory = -.05"),
   "food_pressure_3":("Ruptura do abastecimento urbano","Urban Supply Breakdown","food", "industrial_capacity_factory = -.08"),
@@ -58,9 +58,14 @@ def build_support(root, focuses, projects, locs):
   "credit_expansion":("Crédito industrial temporário","Temporary Industrial Credit","credit", "industrial_capacity_factory = .025"),
   "reconstruction_credit":("Crédito de reconstrução temporário","Temporary Reconstruction Credit","credit", "production_speed_buildings_factor = .03"),
  }
- for name in ["serbia","galicia","isonzo","carpathians"]:
-  mod="dig_in_speed_factor = .08" if name in ["isonzo","carpathians"] else "planning_speed = .08"
-  ideas["operation_"+name]=(dict(serbia="Preparação da frente sérvia",galicia="Preparação da frente galega",isonzo="Preparação do Isonzo",carpathians="Preparação dos Cárpatos")[name],dict(serbia="Serbian Front Preparation",galicia="Galician Front Preparation",isonzo="Isonzo Preparation",carpathians="Carpathian Preparation")[name],"operation",mod)
+ op_mods = {
+  "serbia": ("Preparação da frente sérvia", "Serbian Front Preparation", "army_infantry_attack_factor = .08 breakthrough_factor = .08 supply_consumption_factor = .05"),
+  "galicia": ("Preparação da frente galega", "Galician Front Preparation", "army_artillery_attack_factor = .10 breakthrough_factor = .08 planning_speed = .05"),
+  "isonzo": ("Preparação do Isonzo", "Isonzo Preparation", "army_infantry_defence_factor = .08 dig_in_speed_factor = .10"),
+  "carpathians": ("Preparação dos Cárpatos", "Carpathian Preparation", "winter_attrition_factor = -.20 max_dig_in = 3"),
+ }
+ for name, (pt, en, mod) in op_mods.items():
+  ideas["operation_"+name] = (pt, en, "operation", mod)
  ib=["ideas = { country = {"]
  effects=[]
  families={}
@@ -70,7 +75,7 @@ def build_support(root, focuses, projects, locs):
   loc(P+name+"_desc","Esta instituição aplica os custos e benefícios mostrados abaixo. Reformas da mesma instituição substituem o estágio anterior; despesas de serviços distintos continuam somando.","This institution applies the costs and benefits listed below. Reforms of the same institution replace its previous stage; spending on different services still adds up.")
   ib.append(f" {P+name} = {{ picture = AUH_ww1_{family} allowed = {{ original_tag = AUS }} removal_cost = -1 modifier = {{ {mod} }} }}")
   old=" ".join("remove_ideas = "+P+x for x in families[family] if x!=name)
-  legacy={"budget":"AUS_dual_monarchy_compromise","languages":"AUS_tower_of_babel_army","arsenals":"AUS_skoda_siege_arsenals"}.get(family)
+  legacy={"budget":"AUS_dual_monarchy_compromise","languages":"AUS_tower_of_babel_army","arsenals":"AUS_skoda_siege_arsenals","diplomacy":"AUS_balkan_destiny"}.get(family)
   if legacy:old+=" remove_ideas = "+legacy
   effects.append(f"auh_ww1_set_{name} = {{ {old} if = {{ limit = {{ NOT = {{ has_idea = {P+name} }} }} add_ideas = {P+name} }} }}")
  ib+= ["} }"];put("common/ideas/ww1_austria_hungary_ideas.txt","\n".join(ib))
@@ -103,11 +108,6 @@ auh_ww1_initialise = {
  set_variable = { auh_ww1_debt = 0 }
  set_variable = { auh_ww1_projects_active = 0 }
  set_country_flag = auh_ww1_dualist_constitution
- remove_ideas = AUS_alpine_carpathian_bastion
- remove_ideas = AUS_balkan_destiny
- auh_ww1_set_budget_unsettled = yes
- auh_ww1_set_languages_untrained = yes
- auh_ww1_set_arsenals_initial = yes
  set_grand_doctrine = grand_battleplan
  if = { limit = { has_character = AUS_conrad_von_hotzendorf }
   AUS_conrad_von_hotzendorf = { remove_unit_leader_trait = paratrooper }

@@ -15,7 +15,7 @@ auh_ww1_set_offensive_staff = { remove_ideas = AUH_ww1_defensive_staff if = { li
 auh_ww1_set_council = {  if = { limit = { NOT = { has_idea = AUH_ww1_council } } add_ideas = AUH_ww1_council } }
 auh_ww1_set_rationing = {  if = { limit = { NOT = { has_idea = AUH_ww1_rationing } } add_ideas = AUH_ww1_rationing } }
 auh_ww1_set_labour_compact = {  if = { limit = { NOT = { has_idea = AUH_ww1_labour_compact } } add_ideas = AUH_ww1_labour_compact } }
-auh_ww1_set_diplomatic_restraint = {  if = { limit = { NOT = { has_idea = AUH_ww1_diplomatic_restraint } } add_ideas = AUH_ww1_diplomatic_restraint } }
+auh_ww1_set_diplomatic_restraint = {  remove_ideas = AUS_balkan_destiny if = { limit = { NOT = { has_idea = AUH_ww1_diplomatic_restraint } } add_ideas = AUH_ww1_diplomatic_restraint } }
 auh_ww1_set_fleet_cautious = {  if = { limit = { NOT = { has_idea = AUH_ww1_fleet_cautious } } add_ideas = AUH_ww1_fleet_cautious } }
 auh_ww1_set_naval_refit_priority = {  if = { limit = { NOT = { has_idea = AUH_ww1_naval_refit_priority } } add_ideas = AUH_ww1_naval_refit_priority } }
 auh_ww1_set_veterans = {  if = { limit = { NOT = { has_idea = AUH_ww1_veterans } } add_ideas = AUH_ww1_veterans } }
@@ -53,11 +53,6 @@ auh_ww1_initialise = {
  set_variable = { auh_ww1_debt = 0 }
  set_variable = { auh_ww1_projects_active = 0 }
  set_country_flag = auh_ww1_dualist_constitution
- remove_ideas = AUS_alpine_carpathian_bastion
- remove_ideas = AUS_balkan_destiny
- auh_ww1_set_budget_unsettled = yes
- auh_ww1_set_languages_untrained = yes
- auh_ww1_set_arsenals_initial = yes
  set_grand_doctrine = grand_battleplan
  if = { limit = { has_character = AUS_conrad_von_hotzendorf }
   AUS_conrad_von_hotzendorf = { remove_unit_leader_trait = paratrooper }

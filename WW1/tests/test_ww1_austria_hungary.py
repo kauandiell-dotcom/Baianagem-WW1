@@ -25,7 +25,9 @@ EVENTS={n.get('id'):n for p in sorted((ROOT/'events').glob('ww1_austria_hungary*
 class Administration:
     """Small interpreter for the verified administration subset of PDX script."""
     def __init__(self):
-        self.vars=defaultdict(float);self.flags=set();self.ideas=set();self.events=[]
+        self.vars=defaultdict(float);self.flags=set()
+        self.ideas={'AUS_dual_monarchy_compromise','AUS_tower_of_babel_army','AUS_skoda_siege_arsenals','AUS_alpine_carpathian_bastion','AUS_balkan_destiny'}
+        self.events=[]
         self.war=False;self.capitulated=False;self.states={4,43,154,91,73,736}
         self.enemies=set();self.countries={'AUS','GER','SER','ITA','ROM','SOV','FRA','ALB'}
         self.date='1911.6.1';self.globals=set();self.characters={'AUS_franz_joseph_i','AUS_conrad_von_hotzendorf'}
@@ -202,7 +204,8 @@ class ContentContracts(unittest.TestCase):
 class ExtraContentContracts(unittest.TestCase):
     """Rewards for every focus, the dated events, institutions, decisions and their art/localisation."""
     REAL={'country_event','add_political_power','add_stability','add_war_support','army_experience','navy_experience','air_experience',
-          'add_tech_bonus','add_to_variable','add_ideas','load_oob','add_command_power','add_mastery_bonus'}
+          'add_tech_bonus','add_to_variable','add_ideas','load_oob','add_command_power','add_mastery_bonus',
+          'build_railway','add_building_construction','add_resource','add_extra_state_shared_building_slots'}
     def test_every_focus_has_a_real_reward(self):
         for fid,n in FOCI.items():
             keys={x.key for x in walk(n.get('completion_reward'))}
@@ -256,9 +259,11 @@ class ExtraContentContracts(unittest.TestCase):
 class AdministrationScenarios(unittest.TestCase):
     def test_opening_replaces_legacy_buffs_without_factory_or_division_changes(self):
         s=Administration()
-        self.assertIn('AUH_ww1_languages_untrained',s.ideas)
-        self.assertNotIn('AUS_alpine_carpathian_bastion',s.ideas)
-        self.assertNotIn('AUS_balkan_destiny',s.ideas)
+        self.assertIn('AUS_dual_monarchy_compromise',s.ideas)
+        self.assertIn('AUS_tower_of_babel_army',s.ideas)
+        self.assertIn('AUS_skoda_siege_arsenals',s.ideas)
+        self.assertIn('AUS_alpine_carpathian_bastion',s.ideas)
+        self.assertIn('AUS_balkan_destiny',s.ideas)
         self.assertEqual(s.vars['auh_ww1_consent'],45)
     def test_food_shortage_tiers_replace_and_recover(self):
         s=Administration()

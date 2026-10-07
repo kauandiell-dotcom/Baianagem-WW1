@@ -208,7 +208,7 @@ AUH_ww1_military = {
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
    set_country_flag = auh_ww1_serbia_active
    set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
-   add_timed_idea = { idea = AUH_ww1_operation_serbia days = 90 } activate_mission = AUH_ww1_mission_serbia
+   add_timed_idea = { idea = AUH_ww1_operation_serbia days = 45 } activate_mission = AUH_ww1_mission_serbia
   }
   ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
  }
@@ -217,7 +217,7 @@ AUH_ww1_military = {
   activation = { has_country_flag = auh_ww1_serbia_active }
   visible = { has_country_flag = auh_ww1_serbia_active }
   available = { controls_state = 107 }
-  days_mission_timeout = 90 is_good = no
+  days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SER } } }
   cancel_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia }
   complete_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
@@ -239,7 +239,7 @@ AUH_ww1_military = {
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
    set_country_flag = auh_ww1_galicia_active
    set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
-   add_timed_idea = { idea = AUH_ww1_operation_galicia days = 90 } activate_mission = AUH_ww1_mission_galicia
+   add_timed_idea = { idea = AUH_ww1_operation_galicia days = 45 } activate_mission = AUH_ww1_mission_galicia
   }
   ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
  }
@@ -248,7 +248,7 @@ AUH_ww1_military = {
   activation = { has_country_flag = auh_ww1_galicia_active }
   visible = { has_country_flag = auh_ww1_galicia_active }
   available = { controls_state = 91 }
-  days_mission_timeout = 90 is_good = no
+  days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SOV } } }
   cancel_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia }
   complete_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
@@ -270,7 +270,7 @@ AUH_ww1_military = {
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
    set_country_flag = auh_ww1_isonzo_active
    set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
-   add_timed_idea = { idea = AUH_ww1_operation_isonzo days = 90 } activate_mission = AUH_ww1_mission_isonzo
+   add_timed_idea = { idea = AUH_ww1_operation_isonzo days = 45 } activate_mission = AUH_ww1_mission_isonzo
   }
   ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
  }
@@ -279,7 +279,7 @@ AUH_ww1_military = {
   activation = { has_country_flag = auh_ww1_isonzo_active }
   visible = { has_country_flag = auh_ww1_isonzo_active }
   available = { always = no }
-  days_mission_timeout = 90 is_good = no
+  days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = ITA } NOT = { controls_state = 736 } } }
   cancel_effect = { if = { limit = { has_capitulated = no has_war_with = ITA NOT = { controls_state = 736 } } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo } }
   complete_effect = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
@@ -301,7 +301,7 @@ AUH_ww1_military = {
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
    set_country_flag = auh_ww1_carpathians_active
    set_country_flag = { flag = auh_ww1_operation_cooldown days = 180 }
-   add_timed_idea = { idea = AUH_ww1_operation_carpathians days = 90 } activate_mission = AUH_ww1_mission_carpathians
+   add_timed_idea = { idea = AUH_ww1_operation_carpathians days = 45 } activate_mission = AUH_ww1_mission_carpathians
   }
   ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { auh_ww1_provisions < 30 } } }
  }
@@ -310,7 +310,7 @@ AUH_ww1_military = {
   activation = { has_country_flag = auh_ww1_carpathians_active }
   visible = { has_country_flag = auh_ww1_carpathians_active }
   available = { always = no }
-  days_mission_timeout = 90 is_good = no
+  days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SOV } NOT = { controls_state = 73 } } }
   cancel_effect = { if = { limit = { has_capitulated = no has_war_with = SOV NOT = { controls_state = 73 } } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians } }
   complete_effect = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
