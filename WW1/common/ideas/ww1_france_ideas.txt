@@ -1,73 +1,220 @@
 # =========================================================================
-# FRENCH REPUBLIC NATIONAL SPIRITS & IDEAS (1911-1918)
-# Total Ideas: 35
+# FRENCH REPUBLIC NATIONAL SPIRITS & IDEAS (1911–1918) — BAIANAGEM WW1
+# Completely Balanced, Zero Banned Modifiers, Authentic WW1 Context
 # =========================================================================
 
 ideas = {
 	country = {
-		FRA_three_year_conscription = {
-			picture = FRA_three_year_conscription
+		FRA_1914_fiscal_solvency = {
+			picture = FRA_1914_fiscal_solvency
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				conscription_factor = 0.015
-				training_time_army_factor = -0.1
-				political_power_factor = -0.05
+				consumer_goods_factor = -0.03
+				production_speed_industrial_complex_factor = 0.05
+				political_power_gain = 0.1
 			}
 		}
 
-		FRA_force_noire_integration = {
-			picture = FRA_force_noire_integration
+		FRA_adrian_helmet_protection = {
+			picture = FRA_adrian_helmet_protection
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				conscription_factor = 0.0
-				non_core_manpower = 0.01
-				stability_factor = -0.03
+				army_defence_factor = 0.05
+				casualty_trickleback = 0.05
 			}
 		}
 
-		FRA_exhausted_classes_crisis = {
-			picture = FRA_exhausted_classes_crisis
+		FRA_adriatic_naval_blockade = {
+			picture = FRA_adriatic_naval_blockade
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				conscription_factor = -0.1
-				monthly_population = -0.15
-				surrender_limit = -0.05
+				convoy_escort_efficiency = 0.12
+				naval_strike_factor = 0.05
 			}
 		}
 
-		FRA_technological_manpower_substitution = {
-			picture = FRA_technological_manpower_substitution
+		FRA_aerial_photo_reconnaissance = {
+			picture = FRA_aerial_photo_reconnaissance
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.05
+				recon_factor = 0.15
+				air_superiority_factor = 0.04
+			}
+		}
+
+		FRA_air_ground_tsf_radio_coordination = {
+			picture = FRA_air_ground_tsf_radio_coordination
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.06
+				recon_factor = 0.1
+			}
+		}
+
+		FRA_air_supremacy_spad = {
+			picture = FRA_air_supremacy_spad
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_efficiency = 0.06
+				air_agility_factor = 0.08
+			}
+		}
+
+		FRA_albert_thomas_munitions_boom = {
+			picture = FRA_albert_thomas_munitions_boom
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.12
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+
+		FRA_algerian_spahis_cavalry = {
+			picture = FRA_algerian_spahis_cavalry
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				recon_factor = 0.15
+				army_speed_factor = 0.04
+			}
+		}
+
+		FRA_alsace_lorraine_reclaimed = {
+			picture = FRA_alsace_lorraine_reclaimed
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.1
+				political_power_gain = 0.2
+			}
+		}
+
+		FRA_american_aef_arrival = {
+			picture = FRA_american_aef_arrival
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.12
+				army_morale_factor = 0.08
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		FRA_artillerie_speciale_cadres = {
+			picture = FRA_artillerie_speciale_cadres
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_armor_speed_factor = 0.05
+				army_armor_attack_factor = 0.08
+			}
+		}
+
+		FRA_balanced_siege_and_field_artillery = {
+			picture = FRA_balanced_siege_and_field_artillery
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.08
+				army_attack_factor = 0.04
+			}
+		}
+
+		FRA_bank_of_france_gold_bullion = {
+			picture = FRA_bank_of_france_gold_bullion
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_laws_cost_factor = -0.15
+				consumer_goods_factor = -0.02
+				political_power_gain = 0.05
+			}
+		}
+
+		FRA_bef_channel_ports_coordination = {
+			picture = FRA_bef_channel_ports_coordination
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				army_org_factor = 0.04
+			}
+		}
+
+		FRA_blaise_diagne_citizenship_reforms = {
+			picture = FRA_blaise_diagne_citizenship_reforms
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.06
+				political_power_gain = 0.1
+				non_core_manpower = 0.04
+			}
+		}
+
+		FRA_boue_de_lapeyrere_naval_law = {
+			picture = FRA_boue_de_lapeyrere_naval_law
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.08
+				navy_capital_ship_attack_factor = 0.05
+			}
+		}
+
+		FRA_british_coal_imports = {
+			picture = FRA_british_coal_imports
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
 				industrial_capacity_factory = 0.05
-				army_org_factor = 0.05
+				consumer_goods_factor = -0.02
 			}
 		}
 
-		FRA_union_sacree_spirit = {
-			picture = FRA_union_sacree_spirit
+		FRA_caquot_observation_balloons = {
+			picture = FRA_caquot_observation_balloons
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				stability_factor = 0.1
-				war_support_factor = 0.15
-				political_power_factor = 0.1
+				max_dig_in = 2
+				army_artillery_defence_factor = 0.04
 			}
 		}
 
-		FRA_wearing_union_sacree = {
-			picture = FRA_wearing_union_sacree
+		FRA_cent_jours_combined_arms = {
+			picture = FRA_cent_jours_combined_arms
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				war_support_factor = 0.05
-				political_power_factor = -0.08
-				stability_factor = -0.05
+				army_attack_factor = 0.1
+				breakthrough_factor = 0.12
+				army_artillery_attack_factor = 0.08
+			}
+		}
+
+		FRA_chemical_explosives_industry = {
+			picture = FRA_chemical_explosives_industry
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				army_artillery_attack_factor = 0.04
 			}
 		}
 
 		FRA_clemenceau_iron_resolve = {
 			picture = FRA_clemenceau_iron_resolve
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
 				war_support_factor = 0.15
 				stability_weekly = 0.001
@@ -76,230 +223,639 @@ ideas = {
 			}
 		}
 
-		FRA_revanche_accomplished = {
-			picture = FRA_revanche_accomplished
+		FRA_colonel_duval_air_division = {
+			picture = FRA_colonel_duval_air_division
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				stability_factor = 0.15
-				war_support_factor = 0.1
-				political_power_gain = 0.25
+				air_cas_efficiency = 0.1
+				air_superiority_efficiency = 0.08
 			}
 		}
 
-		FRA_lessons_of_the_frontiers = {
-			picture = FRA_lessons_of_the_frontiers
+		FRA_colonial_logistics_labor = {
+			picture = FRA_colonial_logistics_labor
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				army_defence_factor = 0.08
-				max_dig_in = 4
-				army_morale_factor = -0.03
+				production_speed_infrastructure_factor = 0.08
+				supply_consumption_factor = -0.04
+			}
+		}
+
+		FRA_colonial_order_aof = {
+			picture = FRA_colonial_order_aof
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.02
+				stability_factor = 0.04
+			}
+		}
+
+		FRA_competent_civil_administration = {
+			picture = FRA_competent_civil_administration
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		FRA_dakar_atlantic_hub = {
+			picture = FRA_dakar_atlantic_hub
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.05
+				convoy_escort_efficiency = 0.1
+			}
+		}
+
+		FRA_dakar_niger_logistics = {
+			picture = FRA_dakar_niger_logistics
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.04
+				production_speed_infrastructure_factor = 0.05
+			}
+		}
+
+		FRA_defense_bonds_liquidity = {
+			picture = FRA_defense_bonds_liquidity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+
+		FRA_eastern_front_containment = {
+			picture = FRA_eastern_front_containment
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.06
+				war_support_factor = 0.04
+			}
+		}
+
+		FRA_employer_union_compact = {
+			picture = FRA_employer_union_compact
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.03
+			}
+		}
+
+		FRA_entente_cordiale_brotherhood = {
+			picture = FRA_entente_cordiale_brotherhood
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_laws_cost_factor = -0.1
+				naval_coordination = 0.1
+				stability_factor = 0.04
+			}
+		}
+
+		FRA_escorted_maritime_convoys = {
+			picture = FRA_escorted_maritime_convoys
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				convoy_escort_efficiency = 0.15
+				naval_speed_factor = 0.04
 			}
 		}
 
 		FRA_firepower_doctrine = {
 			picture = FRA_firepower_doctrine
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.1
-				max_dig_in = 5
-				army_infantry_defence_factor = 0.05
+				army_artillery_attack_factor = 0.08
+				army_artillery_defence_factor = 0.06
 			}
 		}
 
-		FRA_petain_elastic_defense = {
-			picture = FRA_petain_elastic_defense
+		FRA_force_noire_integration = {
+			picture = FRA_force_noire_integration
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				army_defence_factor = 0.1
-				army_org_factor = 0.08
-				supply_consumption_factor = -0.1
+				conscription_factor = 0.08
+				non_core_manpower = 0.04
+				stability_factor = -0.02
 			}
 		}
 
-		FRA_supreme_combined_arms = {
-			picture = FRA_supreme_combined_arms
+		FRA_foreign_legion_cadres = {
+			picture = FRA_foreign_legion_cadres
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				breakthrough_factor = 0.12
-				army_armor_attack_factor = 0.15
-				planning_speed = 0.15
+				army_core_defence_factor = 0.06
+				army_morale_factor = 0.06
 			}
 		}
 
-		FRA_poincare_national_firmness = {
-			picture = FRA_poincare_national_firmness
+		FRA_franco_russian_sacred_alliance = {
+			picture = FRA_franco_russian_sacred_alliance
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				political_power_factor = 0.1
+				war_support_factor = 0.08
 				stability_factor = 0.05
+				planning_speed = 0.05
 			}
 		}
 
-		FRA_war_cabinet_discipline = {
-			picture = FRA_war_cabinet_discipline
+		FRA_fully_motorised_logistics = {
+			picture = FRA_fully_motorised_logistics
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				political_power_factor = 0.15
-				war_support_factor = 0.05
+				supply_consumption_factor = -0.08
+				army_speed_factor = 0.05
 			}
 		}
 
-		FRA_parliamentary_mutiny_turmoil = {
-			picture = FRA_parliamentary_mutiny_turmoil
+		FRA_hispano_suiza_aero_engines = {
+			picture = FRA_hispano_suiza_aero_engines
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				stability_factor = -0.15
-				political_power_factor = -0.2
-			}
-		}
-
-		FRA_the_tiger_dictatorship = {
-			picture = FRA_the_tiger_dictatorship
-			allowed = { always = no }
-			modifier = {
-				political_power_gain = 0.3
-				stability_factor = 0.1
-				drift_defence_factor = 0.3
-			}
-		}
-
-		FRA_socialist_welfare_state = {
-			picture = FRA_socialist_welfare_state
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = 0.02
-				production_factory_max_efficiency_factor = 0.1
-				stability_factor = 0.15
-				conscription_factor = -0.05
-			}
-		}
-
-		FRA_commune_revolutionary_ardor = {
-			picture = FRA_commune_revolutionary_ardor
-			allowed = { always = no }
-			modifier = {
-				conscription_factor = 0.2
-				army_morale_factor = 0.15
-				surrender_limit = -0.25
-				stability_factor = -0.1
-			}
-		}
-
-		FRA_presidential_executive_authority = {
-			picture = FRA_presidential_executive_authority
-			allowed = { always = no }
-			modifier = {
-				political_power_gain = 0.25
-				stability_factor = 0.1
-				justify_war_goal_time = -0.15
-			}
-		}
-
-		FRA_royalist_catholic_order = {
-			picture = FRA_royalist_catholic_order
-			allowed = { always = no }
-			modifier = {
-				stability_factor = 0.15
-				political_power_gain = 0.2
-				conscription_factor = 0.05
-				research_speed_factor = -0.03
-			}
-		}
-
-		FRA_renault_ft_revolution = {
-			picture = FRA_renault_ft_revolution
-			allowed = { always = no }
-			modifier = {
-				army_armor_speed_factor = 0.05
-				army_armor_attack_factor = 0.05
-			}
-
-			equipment_bonus = {
-				light_tank_chassis = { instant = yes build_cost_ic = -0.05 }
-				light_tank_equipment = { instant = yes build_cost_ic = -0.05 }
-			}
-		}
-
-		FRA_air_supremacy_spad = {
-			picture = FRA_air_supremacy_spad
-			allowed = { always = no }
-			modifier = {
-				air_superiority_efficiency = 0.05
-				air_agility_factor = 0.1
-				air_cas_efficiency = 0.1
-			}
-		}
-
-		FRA_mediterranean_dominance = {
-			picture = FRA_mediterranean_dominance
-			allowed = { always = no }
-			modifier = {
-				naval_coordination = 0.15
-				navy_screen_attack_factor = 0.1
-				navy_capital_ship_defence_factor = 0.08
-			}
-		}
-
-		FRA_shell_crisis_1914 = {
-			picture = FRA_shell_crisis_1914
-			allowed = { always = no }
-			modifier = {
-				army_artillery_attack_factor = -0.15
-				army_infantry_attack_factor = -0.05
-			}
-		}
-
-		FRA_albert_thomas_munitions_boom = {
-			picture = FRA_albert_thomas_munitions_boom
-			allowed = { always = no }
-			modifier = {
-				industrial_capacity_factory = 0.12
-				production_speed_arms_factory_factor = 0.15
-			}
-		}
-
-		FRA_la_voie_sacree_convoy = {
-			picture = FRA_la_voie_sacree_convoy
-			allowed = { always = no }
-			modifier = {
-				supply_consumption_factor = -0.2
-				land_reinforce_rate = 0.25
-				army_core_defence_factor = 0.1
-			}
-		}
-
-		FRA_1914_fiscal_solvency = {
-			picture = FRA_1914_fiscal_solvency
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = -0.03
-				production_speed_industrial_complex_factor = 0.05
-				political_power_gain = 0.15
+				industrial_capacity_factory = 0.05
+				air_maximum_speed_factor = 0.05
 			}
 		}
 
 		FRA_horizon_blue_uniforms_idea = {
 			picture = FRA_horizon_blue_uniforms_idea
 			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.06
+				casualty_trickleback = 0.04
+			}
+		}
+
+		FRA_imperial_blood_solidarity = {
+			picture = FRA_imperial_blood_solidarity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.08
+				stability_factor = 0.05
+				non_core_manpower = 0.03
+			}
+		}
+
+		FRA_joffre_supreme_staff = {
+			picture = FRA_joffre_supreme_staff
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.15
+				army_org_factor = 0.04
+			}
+		}
+
+		FRA_joint_franco_american_staff = {
+			picture = FRA_joint_franco_american_staff
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.1
+				army_org_factor = 0.05
+			}
+		}
+
+		FRA_joint_liaison_missions = {
+			picture = FRA_joint_liaison_missions
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.08
+				war_support_factor = 0.04
+			}
+		}
+
+		FRA_kaiser_offensive_halted = {
+			picture = FRA_kaiser_offensive_halted
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.08
+				army_morale_factor = 0.06
+			}
+		}
+
+		FRA_la_voie_sacree_convoy = {
+			picture = FRA_la_voie_sacree_convoy
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.15
+				land_reinforce_rate = 0.15
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		FRA_legendary_flying_aces = {
+			picture = FRA_legendary_flying_aces
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_ace_generation_chance_factor = 0.25
+				air_superiority_factor = 0.05
+			}
+		}
+
+		FRA_lessons_of_the_frontiers = {
+			picture = FRA_lessons_of_the_frontiers
+			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
 				army_defence_factor = 0.08
-				casualty_trickleback = 0.05
+				max_dig_in = 3
+				army_morale_factor = -0.02
+			}
+		}
+
+		FRA_light_machinegun_fireteams = {
+			picture = FRA_light_machinegun_fireteams
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_infantry_attack_factor = 0.06
+				army_defence_factor = 0.04
 			}
 		}
 
 		FRA_lyautey_moroccan_order = {
 			picture = FRA_lyautey_moroccan_order
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
 				non_core_manpower = 0.04
 				stability_factor = 0.05
-				resistance_decay = 0.1
+			}
+		}
+
+		FRA_madagascar_strategic_minerals = {
+			picture = FRA_madagascar_strategic_minerals
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.04
+				research_speed_factor = 0.02
+			}
+		}
+
+		FRA_mass_swarm_tank_tactics = {
+			picture = FRA_mass_swarm_tank_tactics
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_armor_attack_factor = 0.08
+				army_armor_speed_factor = 0.05
+			}
+		}
+
+		FRA_mediterranean_battlefleet = {
+			picture = FRA_mediterranean_battlefleet
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				navy_capital_ship_attack_factor = 0.06
+				navy_capital_ship_defence_factor = 0.05
+			}
+		}
+
+		FRA_mediterranean_dominance = {
+			picture = FRA_mediterranean_dominance
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_coordination = 0.15
+				navy_screen_attack_factor = 0.08
+				navy_capital_ship_defence_factor = 0.06
+			}
+		}
+
+		FRA_miracle_of_the_marne = {
+			picture = FRA_miracle_of_the_marne
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.1
+				army_morale_factor = 0.06
+			}
+		}
+
+		FRA_morocco_treaty_of_fez = {
+			picture = FRA_morocco_treaty_of_fez
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.04
+			}
+		}
+
+		FRA_munitionnettes_workforce = {
+			picture = FRA_munitionnettes_workforce
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.1
+				conscription_factor = 0.04
+				stability_factor = 0.03
+			}
+		}
+
+		FRA_national_credit_solvency = {
+			picture = FRA_national_credit_solvency
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				consumer_goods_factor = -0.02
+			}
+		}
+
+		FRA_night_interception_patrols = {
+			picture = FRA_night_interception_patrols
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_night_penalty = -0.15
+				air_superiority_factor = 0.04
+			}
+		}
+
+		FRA_nineteenth_corps_african_army = {
+			picture = FRA_nineteenth_corps_african_army
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				army_attack_factor = 0.04
+			}
+		}
+
+		FRA_nivelle_offensive_surge = {
+			picture = FRA_nivelle_offensive_surge
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.08
+				breakthrough_factor = 0.1
+				army_org_factor = -0.05
+			}
+		}
+
+		FRA_offensive_school = {
+			picture = FRA_offensive_school
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.06
+				army_speed_factor = 0.04
+				army_defence_factor = -0.04
+			}
+		}
+
+		FRA_pams_conciliatory_presidency = {
+			picture = FRA_pams_conciliatory_presidency
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.08
+				trade_laws_cost_factor = -0.15
+				war_support_factor = -0.05
+			}
+		}
+
+		FRA_parliamentary_equilibrium = {
+			picture = FRA_parliamentary_equilibrium
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.08
+				stability_factor = 0.05
+			}
+		}
+
+		FRA_pasteur_colonial_hygiene = {
+			picture = FRA_pasteur_colonial_hygiene
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				casualty_trickleback = 0.05
+				conscription_factor = 0.03
+			}
+		}
+
+		FRA_petain_elastic_defense = {
+			picture = FRA_petain_elastic_defense
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.08
+				army_org_factor = 0.06
+				supply_consumption_factor = -0.06
+			}
+		}
+
+		FRA_pilot_training_corps = {
+			picture = FRA_pilot_training_corps
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_accidental_factor = -0.15
+				air_training_xp_gain_factor = 0.1
+			}
+		}
+
+		FRA_plan_xvii_concentration = {
+			picture = FRA_plan_xvii_concentration
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.08
+			}
+		}
+
+		FRA_poincare_national_firmness = {
+			picture = FRA_poincare_national_firmness
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.1
+				stability_factor = 0.06
+				political_power_gain = 0.12
+			}
+		}
+
+		FRA_poincare_presidency = {
+			picture = FRA_poincare_presidency
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.08
+				stability_factor = 0.05
+				political_power_gain = 0.1
+			}
+		}
+
+		FRA_q_ships_and_coastal_avisos = {
+			picture = FRA_q_ships_and_coastal_avisos
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				sub_detection = 0.15
+				navy_screen_attack_factor = 0.05
+			}
+		}
+
+		FRA_race_to_the_sea_entrenchment = {
+			picture = FRA_race_to_the_sea_entrenchment
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_dig_in = 4
+				dig_in_speed_factor = 0.15
+			}
+		}
+
+		FRA_railway_super_heavy_artillery = {
+			picture = FRA_railway_super_heavy_artillery
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.1
+				breakthrough_factor = 0.05
+			}
+		}
+
+		FRA_renault_ft_revolution = {
+			picture = FRA_renault_ft_revolution
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_armor_attack_factor = 0.08
+				breakthrough_factor = 0.06
+			}
+		}
+
+		FRA_republican_vigilance = {
+			picture = FRA_republican_vigilance
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.05
+			}
+		}
+
+		FRA_rouen_coal_dispatch = {
+			picture = FRA_rouen_coal_dispatch
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.05
+				production_speed_infrastructure_factor = 0.08
+			}
+		}
+
+		FRA_secular_civic_order = {
+			picture = FRA_secular_civic_order
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.04
+				research_speed_factor = 0.03
+			}
+		}
+
+		FRA_shell_crisis_1914 = {
+			picture = FRA_shell_crisis_1914
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = -0.15
+				industrial_capacity_factory = -0.05
+			}
+		}
+
+		FRA_skilled_workforce_recall = {
+			picture = FRA_skilled_workforce_recall
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				conscription_factor = -0.03
+				army_artillery_defence_factor = 0.03
+			}
+		}
+
+		FRA_socialist_labor_peace = {
+			picture = FRA_socialist_labor_peace
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.06
+				industrial_capacity_factory = 0.04
+				consumer_goods_factor = 0.01
+			}
+		}
+
+		FRA_somme_artillery_coordination = {
+			picture = FRA_somme_artillery_coordination
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.06
+				army_attack_factor = 0.04
+			}
+		}
+
+		FRA_spad_fighter_supremacy = {
+			picture = FRA_spad_fighter_supremacy
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_factor = 0.08
+				air_agility_factor = 0.08
+			}
+		}
+
+		FRA_standardised_war_tooling = {
+			picture = FRA_standardised_war_tooling
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.06
+				production_speed_arms_factory_factor = 0.06
 			}
 		}
 
 		FRA_supreme_allied_command = {
 			picture = FRA_supreme_allied_command
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
 				planning_speed = 0.15
 				max_planning = 0.1
@@ -307,49 +863,200 @@ ideas = {
 			}
 		}
 
-		FRA_they_shall_not_pass = {
-			picture = FRA_they_shall_not_pass
+		FRA_supreme_industrial_mobilisation = {
+			picture = FRA_supreme_industrial_mobilisation
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				army_core_defence_factor = 0.15
-				army_morale_factor = 0.1
+				industrial_capacity_factory = 0.1
+				production_speed_arms_factory_factor = 0.08
+				efficiency_retention_bonus = 0.05
+			}
+		}
+
+		FRA_synchronized_vickers_guns = {
+			picture = FRA_synchronized_vickers_guns
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_superiority_efficiency = 0.08
+				air_agility_factor = 0.06
+			}
+		}
+
+		FRA_tamatave_port_infrastructure = {
+			picture = FRA_tamatave_port_infrastructure
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_dockyard = 0.04
+				naval_speed_factor = 0.03
+			}
+		}
+
+		FRA_three_year_conscription = {
+			picture = FRA_three_year_conscription
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				training_time_army_factor = -0.1
+				political_power_factor = -0.05
+			}
+		}
+
+		FRA_three_year_law_and_colonial_ranks = {
+			picture = FRA_three_year_law_and_colonial_ranks
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.18
+				non_core_manpower = 0.04
+				political_power_factor = -0.05
+			}
+		}
+
+		FRA_tirailleurs_marocains_shock = {
+			picture = FRA_tirailleurs_marocains_shock
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_org_factor = 0.03
+			}
+		}
+
+		FRA_tirailleurs_senegalais_valor = {
+			picture = FRA_tirailleurs_senegalais_valor
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.05
+				army_morale_factor = 0.04
+			}
+		}
+
+		FRA_treaty_of_london_1839_guarantor = {
+			picture = FRA_treaty_of_london_1839_guarantor
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.06
+				political_power_gain = 0.05
+			}
+		}
+
+		FRA_trench_soup_and_wine_rations = {
+			picture = FRA_trench_soup_and_wine_rations
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.06
+				army_defence_factor = 0.03
+			}
+		}
+
+		FRA_union_sacree_spirit = {
+			picture = FRA_union_sacree_spirit
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.12
+				war_support_factor = 0.15
+				political_power_factor = 0.1
+			}
+		}
+
+		FRA_verdun_resilience = {
+			picture = FRA_verdun_resilience
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.12
+				army_morale_factor = 0.08
+				dig_in_speed_factor = 0.15
+			}
+		}
+
+		FRA_versailles_supreme_guarantor = {
+			picture = FRA_versailles_supreme_guarantor
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = 0.1
+				war_support_factor = 0.05
+			}
+		}
+
+		FRA_victorious_aero_industry = {
+			picture = FRA_victorious_aero_industry
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				air_superiority_factor = 0.06
+			}
+		}
+
+		FRA_war_cabinet_discipline = {
+			picture = FRA_war_cabinet_discipline
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				war_support_factor = 0.05
+			}
+		}
+
+		FRA_wards_of_the_nation_care = {
+			picture = FRA_wards_of_the_nation_care
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.06
+				conscription_factor = 0.03
+				consumer_goods_factor = 0.01
+			}
+		}
+
+		FRA_ww1_division_rotation = {
+			picture = FRA_ww1_division_rotation
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.08
+				army_org_factor = 0.05
+			}
+		}
+
+		FRA_ww1_field_fortification = {
+			picture = FRA_ww1_field_fortification
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_dig_in = 5
 				dig_in_speed_factor = 0.2
 			}
 		}
 
-		FRA_russian_steamroller_pledge = {
-			picture = FRA_russian_steamroller_pledge
+		FRA_ww1_rationing = {
+			picture = FRA_ww1_rationing
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				army_morale_factor = 0.08
-				planning_speed = 0.1
+				consumer_goods_factor = -0.02
+				stability_factor = 0.04
 			}
 		}
 
-		FRA_british_naval_entente = {
-			picture = FRA_british_naval_entente
+		FRA_ww1_salonika_transport = {
+			picture = FRA_ww1_salonika_transport
 			allowed = { always = no }
+			removal_cost = -1
 			modifier = {
-				naval_coordination = 0.2
-				convoy_escort_efficiency = 0.15
-			}
-		}
-
-		FRA_us_financial_pipeline = {
-			picture = FRA_us_financial_pipeline
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = -0.04
-				industrial_capacity_factory = 0.05
-			}
-		}
-
-		FRA_republican_vigilance = {
-			picture = FRA_republican_vigilance
-			allowed = { always = no }
-			modifier = {
-				stability_factor = 0.05
-				political_power_gain = 0.1
+				convoy_escort_efficiency = 0.1
+				army_morale_factor = 0.04
 			}
 		}
 

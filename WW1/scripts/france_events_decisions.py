@@ -1,4 +1,10 @@
-# =========================================================================
+# -*- coding: utf-8 -*-
+"""Events, Decisions, and Ideas compiler definitions for France WW1 Rework.
+All bilateral events use authentic WW1 tags: RUS (NOT SOV), ENG, ITA, BEL, SER, ROM, GRE, USA.
+Full ping-pong reciprocal dispatches for every foreign interaction.
+"""
+
+EVENTS_TEXT = """# =========================================================================
 # FRENCH REPUBLIC — EVENT NARRATIVE & BILATERAL DIPLOMATIC ENGINE (1911–1918)
 # All interactions use authentic WW1 tags: RUS, ENG, GER, ITA, BEL, SER, ROM, GRE, USA.
 # =========================================================================
@@ -727,3 +733,241 @@ country_event = {
 		add_stability = 0.10
 	}
 }
+"""
+
+DECISIONS_TEXT = """# =========================================================================
+# FRENCH REPUBLIC — OPERATIONAL MISSIONS & WARTIME DECISIONS (1911–1918)
+# Strict balance: Bounded 30-45 day operational missions, no infinite stacking.
+# =========================================================================
+
+FRA_western_front_operations = {
+	icon = generic_military
+
+	# ---------------------------------------------------------------------
+	# MISSION: DEFENSE OF VERDUN (45 Days Bounded Mission)
+	# ---------------------------------------------------------------------
+	FRA_verdun_resilience_mission = {
+		icon = generic_prepare_civil_war
+		allowed = { tag = FRA }
+		available = { always = yes }
+
+		days_mission_timeout = 45
+
+		fire_only_once = yes
+		is_good = yes
+
+		timeout_effect = {
+			custom_effect_tooltip = FRA_verdun_mission_timeout_tt
+			remove_ideas = FRA_verdun_resilience
+			add_timed_idea = { idea = FRA_verdun_exhaustion days = 60 }
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# MISSION: NIVELLE OFFENSIVE RUPTURE (30 Days Bounded Mission)
+	# ---------------------------------------------------------------------
+	FRA_nivelle_offensive_mission = {
+		icon = generic_offensive
+		allowed = { tag = FRA }
+		available = { always = yes }
+
+		days_mission_timeout = 30
+
+		fire_only_once = yes
+		is_good = yes
+
+		timeout_effect = {
+			remove_ideas = FRA_nivelle_offensive_surge
+			country_event = { id = ww1_france.210 days = 1 }
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# MISSION: FOCH'S HUNDRED DAYS FINAL OFFENSIVE (45 Days Bounded Mission)
+	# ---------------------------------------------------------------------
+	FRA_cent_jours_final_offensive = {
+		icon = generic_attack
+		allowed = { tag = FRA }
+		available = { always = yes }
+
+		days_mission_timeout = 45
+
+		fire_only_once = yes
+		is_good = yes
+
+		timeout_effect = {
+			remove_ideas = FRA_cent_jours_combined_arms
+			add_political_power = 50
+			add_war_support = 0.10
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# OPERATIONAL COMBAT DECISIONS
+	# ---------------------------------------------------------------------
+	FRA_activate_la_voie_sacree = {
+		icon = generic_logistics
+		allowed = { tag = FRA }
+		available = {
+			has_war_with = GER
+			has_idea = FRA_verdun_resilience
+		}
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_war_with = GER }
+
+		complete_effect = {
+			add_ideas = FRA_la_voie_sacree_convoy
+			18 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	FRA_rotate_frontline_divisions_noria = {
+		icon = generic_morale
+		allowed = { tag = FRA }
+		available = {
+			has_war_with = GER
+			has_idea = FRA_verdun_resilience
+		}
+		cost = 30
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_war_with = GER }
+
+		complete_effect = {
+			add_ideas = FRA_ww1_division_rotation
+			add_stability = 0.04
+		}
+	}
+
+	FRA_concentrate_heavy_artillery_meuse = {
+		icon = generic_artillery
+		allowed = { tag = FRA }
+		available = {
+			has_war_with = GER
+		}
+		cost = 35
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_war_with = GER }
+
+		complete_effect = {
+			add_tech_bonus = { name = art_tech bonus = 1.0 uses = 1 category = artillery }
+			add_army_experience = 20
+		}
+	}
+
+	FRA_petain_welfare_and_leave_reform = {
+		icon = generic_political_action
+		allowed = { tag = FRA }
+		available = {
+			has_idea = FRA_trench_mutiny_crisis_2
+		}
+		cost = 40
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_idea = FRA_trench_mutiny_crisis_2 }
+
+		complete_effect = {
+			remove_ideas = FRA_trench_mutiny_crisis_2
+			add_stability = 0.08
+			add_war_support = 0.05
+		}
+	}
+
+	FRA_improve_trench_soup_and_wine = {
+		icon = generic_food
+		allowed = { tag = FRA }
+		available = {
+			has_war = yes
+		}
+		cost = 25
+		days_remove = 180
+		ai_will_do = { factor = 10 }
+		visible = { has_war = yes }
+
+		complete_effect = {
+			add_ideas = FRA_trench_soup_and_wine_rations
+		}
+		remove_effect = {
+			remove_ideas = FRA_trench_soup_and_wine_rations
+		}
+	}
+
+	FRA_measured_justice_and_pardons = {
+		icon = generic_court
+		allowed = { tag = FRA }
+		available = {
+			has_war = yes
+		}
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_war = yes }
+
+		complete_effect = {
+			add_stability = 0.05
+			add_political_power = 30
+		}
+	}
+
+	FRA_issue_national_defense_bonds = {
+		icon = generic_economy
+		allowed = { tag = FRA }
+		available = {
+			has_war = yes
+		}
+		cost = 30
+		days_remove = 360
+		ai_will_do = { factor = 10 }
+		visible = { has_war = yes }
+
+		complete_effect = {
+			add_ideas = FRA_defense_bonds_liquidity
+			add_political_power = 50
+		}
+		remove_effect = {
+			remove_ideas = FRA_defense_bonds_liquidity
+		}
+	}
+
+	FRA_expand_munitionnettes_workforce = {
+		icon = generic_factory
+		allowed = { tag = FRA }
+		available = {
+			has_war = yes
+		}
+		cost = 35
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_war = yes }
+
+		complete_effect = {
+			add_ideas = FRA_munitionnettes_workforce
+			16 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	FRA_equip_doughboys_with_french_equipment = {
+		icon = generic_infantry_weapons
+		allowed = { tag = FRA }
+		available = {
+			has_war = yes
+			country_exists = USA
+		}
+		cost = 40
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = { has_war = yes country_exists = USA }
+
+		complete_effect = {
+			add_political_power = 60
+			add_war_support = 0.05
+			USA = { country_event = { id = ww1_france.265 days = 2 } }
+		}
+	}
+}
+"""
