@@ -437,3 +437,247 @@ GER_weltpolitik_diplomacy = {
 		ai_will_do = { factor = 60 }
 	}
 }
+
+# =========================================================================
+
+# =========================================================================
+
+# =========================================================================
+# REWORKED GERMAN POLITICS & EXPANSION DECISIONS
+# =========================================================================
+
+# Council Republic Decisions
+GER_council_republic_revolution = {
+	ger_council_nationalize_heavy_syndicates = {
+		icon = generic_industry
+		cost = 50
+		days_remove = 90
+		available = {
+			has_government = communism
+		}
+		visible = {
+			has_government = communism
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.05
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	ger_council_red_guard_militia_call = {
+		icon = generic_army
+		cost = 40
+		days_remove = 180
+		available = {
+			has_war = yes
+			has_government = communism
+		}
+		visible = {
+			has_government = communism
+		}
+		modifier = {
+			mobilization_speed = 0.05
+		}
+		complete_effect = {
+			add_manpower = 25000
+		}
+	}
+
+	ger_council_propaganda_austria = {
+		icon = generic_diplomacy
+		cost = 35
+		days_remove = 60
+		available = {
+			country_exists = AUS
+			has_government = communism
+		}
+		visible = {
+			has_government = communism
+		}
+		complete_effect = {
+			AUS = {
+				add_popularity = { ideology = communism popularity = 0.10 }
+			}
+		}
+	}
+}
+
+# Weimar Democratic Decisions
+GER_weimar_democratic_diplomacy = {
+	ger_weimar_frankfurt_peace_congress = {
+		icon = generic_diplomacy
+		cost = 50
+		days_remove = 120
+		available = {
+			has_government = democratic
+		}
+		visible = {
+			has_government = democratic
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.08
+			add_political_power = 60
+		}
+	}
+
+	ger_weimar_expand_customs_treaty = {
+		icon = generic_economy
+		cost = 40
+		days_remove = 360
+		available = {
+			has_government = democratic
+		}
+		visible = {
+			has_government = democratic
+		}
+		modifier = {
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	ger_weimar_rhineland_pacification = {
+		icon = generic_industry
+		cost = 30
+		days_remove = 90
+		available = {
+			has_government = democratic
+		}
+		visible = {
+			has_government = democratic
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.05
+			42 = { # Rhineland
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+# OHL Total Mobilization Decisions
+GER_ohl_total_mobilization = {
+	ger_ohl_requisition_civilian_workshops = {
+		icon = generic_industry
+		cost = 50
+		days_remove = 90
+		available = {
+			has_war = yes
+			has_country_flag = GER_third_ohl_established
+		}
+		visible = {
+			has_country_flag = GER_third_ohl_established
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = -0.03
+			57 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	ger_ohl_enforce_labor_quotas = {
+		icon = generic_economy
+		cost = 35
+		days_remove = 180
+		available = {
+			has_war = yes
+			has_country_flag = GER_third_ohl_established
+		}
+		visible = {
+			has_country_flag = GER_third_ohl_established
+		}
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.10
+		}
+	}
+
+	ger_ohl_deploy_sturmtruppen_spearhead = {
+		icon = generic_army
+		cost = 40
+		days_remove = 60
+		available = {
+			has_war = yes
+			has_country_flag = GER_third_ohl_established
+		}
+		visible = {
+			has_country_flag = GER_third_ohl_established
+		}
+		modifier = {
+			breakthrough_factor = 0.10
+		}
+	}
+}
+
+# Pan-German Annexation Decisions
+GER_pan_german_annexations = {
+	ger_pan_german_resettle_border_strip = {
+		icon = generic_nationalism
+		cost = 50
+		days_remove = 120
+		available = {
+			has_country_flag = GER_vaterlandspartei_founded
+		}
+		visible = {
+			has_country_flag = GER_vaterlandspartei_founded
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_manpower = 15000
+			add_stability = 0.05
+		}
+	}
+
+	ger_pan_german_annex_antwerp_harbor = {
+		icon = generic_navy
+		cost = 40
+		days_remove = 90
+		available = {
+			has_country_flag = GER_vaterlandspartei_founded
+		}
+		visible = {
+			has_country_flag = GER_vaterlandspartei_founded
+		}
+		fire_only_once = yes
+		complete_effect = {
+			navy_experience = 25
+			add_war_support = 0.05
+		}
+	}
+
+	ger_pan_german_caucasus_oil_concession = {
+		icon = generic_industry
+		cost = 60
+		days_remove = 120
+		available = {
+			has_country_flag = GER_caucasus_oil_conquest_active
+		}
+		visible = {
+			has_country_flag = GER_caucasus_oil_conquest_active
+		}
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			add_political_power = 60
+		}
+	}
+}

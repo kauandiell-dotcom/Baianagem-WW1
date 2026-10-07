@@ -60,7 +60,7 @@ NEW_FILES = ["events/ww1_ger_rus_rework_events.txt", "common/ideas/ww1_ger_rus_r
 
 
 class Trees(unittest.TestCase):
-    EXPECT = {"germany": (207, 7, "GER_ww1_shortcut_"), "soviet": (235, 6, "SOV_ww1_shortcut_")}
+    EXPECT = {"germany": (245, 7, "GER_ww1_shortcut_"), "soviet": (235, 6, "SOV_ww1_shortcut_")}
 
     def test_focus_counts_and_integrity(self):
         for name, (count, wings, _) in self.EXPECT.items():

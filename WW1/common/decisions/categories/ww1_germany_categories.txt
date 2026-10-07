@@ -73,3 +73,51 @@ GER_weltpolitik_diplomacy = {
 	}
 	visible_when_empty = no
 }
+
+GER_council_republic_revolution = {
+	icon = generic_revolution
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_government = communism
+	}
+	visible_when_empty = no
+}
+
+GER_weimar_democratic_diplomacy = {
+	icon = generic_diplomacy
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_government = democratic
+	}
+	visible_when_empty = no
+}
+
+GER_ohl_total_mobilization = {
+	icon = military_operation
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_third_ohl_established
+	}
+	visible_when_empty = no
+}
+
+GER_pan_german_annexations = {
+	icon = generic_nationalism
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_country_flag = GER_vaterlandspartei_founded
+	}
+	visible_when_empty = no
+}
