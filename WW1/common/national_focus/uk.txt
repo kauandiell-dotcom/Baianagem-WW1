@@ -86,9 +86,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   set_country_flag = ENG_ww1_liberal_government
-  }
+			add_political_power = 25
+			add_stability = 0.02
+			set_country_flag = ENG_ww1_liberal_government
+		}
  }
  focus = {
   id = ENG_ww1_the_lords_and_the_commons
@@ -125,11 +126,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   add_to_variable = { ww1_britain_irish_tension = -5 }
-   set_country_flag = ENG_ww1_irish_party_support
-   set_country_flag = ENG_ww1_home_rule_promised
-  }
+			add_political_power = 25
+			add_stability = 0.02
+			add_to_variable = { ww1_britain_irish_tension = -5 }
+			set_country_flag = ENG_ww1_irish_parliamentary_support
+		}
  }
  focus = {
   id = ENG_ww1_home_rule_bill
@@ -184,9 +185,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 10
-   add_to_variable = { ww1_britain_labour_support = 2 }
-  }
+			add_political_power = 20
+			add_stability = 0.02
+			add_to_variable = { ww1_britain_labour_support = 2 }
+		}
  }
  focus = {
   id = ENG_ww1_the_defence_of_the_realm
@@ -318,10 +320,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 10
-   add_to_variable = { ww1_britain_labour_support = 3 }
-   set_country_flag = ENG_ww1_franchise_debated
-  }
+			add_political_power = 20
+			add_stability = 0.02
+			add_to_variable = { ww1_britain_labour_support = 3 }
+			set_country_flag = ENG_ww1_franchise_debate
+		}
  }
  focus = {
   id = ENG_ww1_representation_of_the_people
@@ -442,7 +445,12 @@ focus_tree = {
   
   
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = ENG_ww1_the_treasury_estimates_authorised add_political_power = -25 ww1_britain_open_budget_review = yes }
+  completion_reward = {
+			set_country_flag = ENG_ww1_the_treasury_estimates_authorised
+			add_political_power = 25
+			123 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			ww1_britain_open_budget_vote = yes
+		}
  }
  focus = {
   id = ENG_ww1_industrial_district_surveys
@@ -459,9 +467,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 10
-   set_country_flag = ENG_ww1_district_surveys
-  }
+			add_political_power = 25
+			128 = { add_extra_state_shared_building_slots = 1 }
+			132 = { add_extra_state_shared_building_slots = 1 }
+			set_country_flag = ENG_ww1_district_surveys
+		}
  }
  focus = {
   id = ENG_ww1_midlands_machine_shops
@@ -554,10 +564,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_debt_burden = -2 }
-   add_political_power = 10
-   set_country_flag = ENG_ww1_city_credit
-  }
+			add_to_variable = { ww1_britain_debt_burden = -2 }
+			add_political_power = 25
+			123 = { add_extra_state_shared_building_slots = 1 }
+			set_country_flag = ENG_ww1_city_credit
+		}
  }
  focus = {
   id = ENG_ww1_railway_freight_coordination
@@ -757,11 +768,12 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_debt_burden = -3 }
-   add_to_variable = { ww1_britain_labour_support = -2 }
-   add_political_power = 10
-   set_country_flag = ENG_ww1_austerity_measures
-  }
+			add_to_variable = { ww1_britain_debt_burden = -3 }
+			add_to_variable = { ww1_britain_labour_support = -2 }
+			add_political_power = 25
+			add_stability = 0.02
+			set_country_flag = ENG_ww1_austerity_measures
+		}
  }
  focus = {
   id = ENG_ww1_debt_service_commission
@@ -862,10 +874,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_dominion_consent = 3 }
-   if = { limit = { country_exists = CAN } CAN = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
-   set_country_flag = ENG_ww1_consulted_canada
-  }
+			add_to_variable = { ww1_britain_dominion_consent = 3 }
+			army_experience = 10
+			if = { limit = { country_exists = CAN } CAN = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+			set_country_flag = ENG_ww1_consulted_canada
+		}
  }
  focus = {
   id = ENG_ww1_australian_defence_consultation
@@ -882,10 +895,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_dominion_consent = 3 }
-   if = { limit = { country_exists = AST } AST = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
-   set_country_flag = ENG_ww1_consulted_australia
-  }
+			add_to_variable = { ww1_britain_dominion_consent = 3 }
+			navy_experience = 10
+			if = { limit = { country_exists = AST } AST = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+			set_country_flag = ENG_ww1_consulted_australia
+		}
  }
  focus = {
   id = ENG_ww1_new_zealand_naval_consultation
@@ -902,10 +916,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_dominion_consent = 3 }
-   if = { limit = { country_exists = NZL } NZL = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
-   set_country_flag = ENG_ww1_consulted_new_zealand
-  }
+			add_to_variable = { ww1_britain_dominion_consent = 3 }
+			navy_experience = 10
+			if = { limit = { country_exists = NZL } NZL = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+			set_country_flag = ENG_ww1_consulted_new_zealand
+		}
  }
  focus = {
   id = ENG_ww1_south_african_cooperation
@@ -922,10 +937,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_dominion_consent = 3 }
-   if = { limit = { country_exists = SAF } SAF = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
-   set_country_flag = ENG_ww1_consulted_south_africa
-  }
+			add_to_variable = { ww1_britain_dominion_consent = 3 }
+			army_experience = 10
+			if = { limit = { country_exists = SAF } SAF = { add_autonomy_ratio = { value = 0.02 localization = ENG_ww1_autonomy_consultation } } }
+			set_country_flag = ENG_ww1_consulted_south_africa
+		}
  }
  focus = {
   id = ENG_ww1_indian_army_liaison
@@ -942,9 +958,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_dominion_consent = 2 }
-   set_country_flag = ENG_ww1_consulted_india
-  }
+			add_to_variable = { ww1_britain_dominion_consent = 2 }
+			army_experience = 15
+			set_country_flag = ENG_ww1_consulted_india
+		}
  }
  focus = {
   id = ENG_ww1_colonial_medical_services
@@ -1077,10 +1094,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   add_to_variable = { ww1_britain_dominion_consent = 4 }
-   set_country_flag = ENG_ww1_dominion_delegates
-  }
+			add_political_power = 25
+			add_war_support = 0.03
+			add_to_variable = { ww1_britain_dominion_consent = 4 }
+			set_country_flag = ENG_ww1_dominion_delegates
+		}
  }
  focus = {
   id = ENG_ww1_indian_constitutional_consultation
@@ -1234,9 +1252,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   set_country_flag = ENG_ww1_grey_entente
-  }
+			add_political_power = 30
+			add_stability = 0.02
+			set_country_flag = ENG_ww1_grey_entente
+		}
  }
  focus = {
   id = ENG_ww1_the_french_naval_understanding
@@ -1344,7 +1363,12 @@ focus_tree = {
   prerequisite = { focus = ENG_ww1_armed_neutrality }
   
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = ENG_ww1_reconsider_the_continental_policy_authorised add_political_power = -25 ww1_britain_open_policy_review = yes }
+  completion_reward = {
+			set_country_flag = ENG_ww1_reconsider_the_continental_policy_authorised
+			add_political_power = 25
+			add_war_support = 0.02
+			ww1_britain_open_policy_review = yes
+		}
  }
  focus = {
   id = ENG_ww1_channel_expeditionary_coordination
@@ -1401,10 +1425,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_debt_burden = -1 }
-   add_political_power = 5
-   set_country_flag = ENG_ww1_neutral_shipping
-  }
+			add_to_variable = { ww1_britain_debt_burden = -1 }
+			navy_experience = 10
+			add_political_power = 20
+			set_country_flag = ENG_ww1_neutral_shipping
+		}
  }
  focus = {
   id = ENG_ww1_american_credit_negotiations
@@ -1555,11 +1580,12 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   if = { limit = { has_country_flag = ENG_ww1_american_credit } add_to_variable = { ww1_britain_debt_burden = -3 } }
-   if = { limit = { NOT = { has_country_flag = ENG_ww1_american_credit } } add_to_variable = { ww1_britain_debt_burden = 2 } }
-   add_political_power = 10
-   set_country_flag = ENG_ww1_reconstruction_credit
-  }
+			if = { limit = { has_country_flag = ENG_ww1_american_credit } add_to_variable = { ww1_britain_debt_burden = -3 } }
+			if = { limit = { NOT = { has_country_flag = ENG_ww1_american_credit } } add_to_variable = { ww1_britain_debt_burden = 2 } }
+			127 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_political_power = 20
+			set_country_flag = ENG_ww1_reconstruction_credit
+		}
  }
  focus = {
   id = ENG_ww1_the_naval_disarmament_conference
@@ -3247,9 +3273,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   set_country_flag = ENG_ww1_peace_administration
-  }
+			add_political_power = 30
+			127 = { add_extra_state_shared_building_slots = 1 }
+			set_country_flag = ENG_ww1_peace_administration
+		}
  }
  focus = {
   id = ENG_ww1_military_demobilisation_planning
@@ -3345,10 +3372,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 10
-   add_to_variable = { ww1_britain_labour_support = 2 }
-   set_country_flag = ENG_ww1_soldier_retraining
-  }
+			add_political_power = 25
+			add_stability = 0.02
+			add_to_variable = { ww1_britain_labour_support = 2 }
+			set_country_flag = ENG_ww1_soldier_retraining
+		}
  }
  focus = {
   id = ENG_ww1_public_housing_contracts
@@ -3447,9 +3475,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_debt_burden = -5 }
-   add_to_variable = { ww1_britain_labour_support = -2 }
-  }
+			add_to_variable = { ww1_britain_debt_burden = -5 }
+			add_to_variable = { ww1_britain_labour_support = -2 }
+			add_stability = 0.02
+		}
  }
  focus = {
   id = ENG_ww1_treasury_expenditure_review
@@ -3467,10 +3496,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_debt_burden = -3 }
-   add_political_power = 10
-   add_to_variable = { ww1_britain_labour_support = -2 }
-  }
+			add_to_variable = { ww1_britain_debt_burden = -3 }
+			add_political_power = 25
+			add_stability = 0.02
+			add_to_variable = { ww1_britain_labour_support = -1 }
+		}
  }
  focus = {
   id = ENG_ww1_merchant_marine_renewal
@@ -3547,10 +3577,12 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_debt_burden = -1 }
-   add_political_power = 10
-   add_to_variable = { ww1_britain_labour_support = -1 }
-  }
+			add_to_variable = { ww1_britain_debt_burden = -1 }
+			add_political_power = 25
+			add_to_variable = { ww1_britain_labour_support = 2 }
+			124 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			121 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
  }
  focus = {
   id = ENG_ww1_the_industrial_relations_conference
@@ -3567,10 +3599,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_to_variable = { ww1_britain_labour_support = 4 }
-   add_political_power = 10
-   set_country_flag = ENG_ww1_industrial_conference
-  }
+			add_to_variable = { ww1_britain_labour_support = 4 }
+			add_political_power = 25
+			add_stability = 0.02
+			set_country_flag = ENG_ww1_industrial_conference
+		}
  }
  focus = {
   id = ENG_ww1_the_postwar_parliamentary_mandate
@@ -3626,10 +3659,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   add_to_variable = { ww1_britain_debt_burden = -2 }
-   set_country_flag = ENG_ww1_settlement_1923
-  }
+			add_political_power = 30
+			add_stability = 0.02
+			add_to_variable = { ww1_britain_debt_burden = -2 }
+			set_country_flag = ENG_ww1_settlement_1923
+		}
  }
  focus = {
   id = ENG_ww1_the_national_physical_laboratory
@@ -3796,9 +3830,10 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 10
-   set_country_flag = ENG_ww1_sigint_organisation
-  }
+			navy_experience = 15
+			add_political_power = 25
+			set_country_flag = ENG_ww1_sigint_organisation
+		}
  }
  focus = {
   id = ENG_ww1_the_room_forty_office
@@ -3967,10 +4002,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 15
-   add_to_variable = { ww1_britain_debt_burden = 1 }
-   set_country_flag = ENG_ww1_research_council
-  }
+			add_political_power = 25
+			123 = { add_extra_state_shared_building_slots = 1 }
+			add_to_variable = { ww1_britain_debt_burden = 1 }
+			set_country_flag = ENG_ww1_research_council
+		}
  }
  focus = {
   id = ENG_ww1_industrial_patent_exchanges
@@ -3987,10 +4023,11 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   add_political_power = 10
-   add_to_variable = { ww1_britain_debt_burden = -1 }
-   set_country_flag = ENG_ww1_patent_exchanges
-  }
+			132 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_political_power = 25
+			add_to_variable = { ww1_britain_debt_burden = -1 }
+			set_country_flag = ENG_ww1_patent_exchanges
+		}
  }
  focus = {
   id = ENG_ww1_technical_education_for_reconstruction
