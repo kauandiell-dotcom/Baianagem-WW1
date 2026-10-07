@@ -42,25 +42,25 @@ FOCI = {
     "A City de Londres financia o governo com títulos e aceita letras de câmbio de aliados. A dívida cai 2 e ganha 10 de poder político.",
     "The City of London finances the government through bonds and accepts bills from allies. Debt falls by 2 and it grants 10 political power."),
 "railway_freight_coordination": (
-    [idea("railway_executive"), flag("railway_executive")],
-    "O Comitê Executivo das Ferrovias coordena cargas e material rodante entre as companhias. Instituição Executivo Ferroviário: consumo de suprimento -2%, uso de fábricas civis +1.",
-    "The Railway Executive Committee coordinates freight and rolling stock between the companies. Railway Executive institution: supply consumption -2%, civilian factory use +1."),
+    [idea("railway_executive"), "build_railway = { level = 2 start_state = 126 target_state = 127 build_only_on_allied = yes }", flag("railway_executive")],
+    "O Comitê Executivo das Ferrovias coordena cargas e duplica a linha férrea de Londres a Southampton. Instituição Executivo Ferroviário (consumo de suprimento -2%, uso de fábricas civis +1) e ferrovia nível 2 construída.",
+    "The Railway Executive Committee coordinates freight and expands the railway link from London to Southampton. Railway Executive institution (supply consumption -2%, civilian factory use +1) and level 2 railway constructed."),
 "domestic_coal_allocation": (
-    [idea("coal_allocation"), flag("coal_allocation_done")],
-    "O carvão é a base da indústria, da frota e das exportações. A alocação interna dá à indústria preferência sobre o consumo doméstico. Instituição: capacidade industrial +1%, bens de consumo +0,5%. Abre a decisão de enviar carvão aos aliados.",
-    "Coal underpins industry, the fleet and exports. Domestic allocation gives industry priority over household use. Institution: industrial capacity +1%, consumer goods +0.5%. Unlocks the decision to ship coal to allies."),
+    [idea("coal_allocation"), "122 = { add_building_construction = { type = infrastructure level = 1 } }", flag("coal_allocation_done")],
+    "O carvão galês é a base da indústria, da frota e das exportações. Adiciona 1 nível de infraestrutura no País de Gales e a instituição Alocação do Carvão (capacidade industrial +1%, bens de consumo +0,5%). Abre a decisão de enviar carvão aos aliados.",
+    "Welsh coal underpins industry, the fleet and exports. Adds 1 infrastructure level in Wales and the Coal Allocation institution (industrial capacity +1%, consumer goods +0.5%). Unlocks the decision to ship coal to allies."),
 "national_munitions_contracts": (
-    [idea("munitions_contracts"), var("debt_burden", 2)],
-    "Contratos nacionais multiplicam os fornecedores de munição, mas a qualidade é desigual. Instituição Contratos de Munição: capacidade industrial +1,5%, ganho de eficiência -5%. A dívida sobe 2.",
-    "National contracts multiply munitions suppliers, but quality is uneven. Munitions Contracts institution: industrial capacity +1.5%, efficiency gain -5%. Debt rises by 2."),
+    [build(126, "arms_factory"), idea("munitions_contracts"), var("debt_burden", 2)],
+    "Contratos nacionais ampliam o Royal Arsenal de Woolwich com uma fábrica militar extra. Instituição Contratos de Munição (capacidade industrial +1,5%, ganho de eficiência -5%); a dívida sobe 2.",
+    "National contracts expand the Woolwich Royal Arsenal with an extra arms factory. Munitions Contracts institution (industrial capacity +1.5%, efficiency gain -5%); debt rises by 2."),
 "the_ministry_of_munitions": (
     [idea("munitions_ministry"), "remove_ideas = ENG_ww1_munitions_contracts", var("labour_support", -3), flag("ministry_of_munitions")],
     "Lloyd George assume a produção de guerra em maio de 1915. O Ministério substitui os contratos dispersos. Instituição Ministério de Munições (capacidade industrial +4%, eficiência máxima +2,5%, uso de fábricas civis +1); apoio trabalhista -3.",
     "Lloyd George takes charge of war production in May 1915. The Ministry replaces scattered contracts. Ministry of Munitions institution (industrial capacity +4%, maximum efficiency +2.5%, civilian factory use +1); labour support -3."),
 "shell_inspection_boards": (
-    [idea("shell_inspection"), flag("shell_inspection")],
-    "Inspetores de calibre e espoleta rejeitam lotes defeituosos antes do embarque. Instituição Inspeção de Projéteis: eficiência máxima +2%, capacidade industrial +1%.",
-    "Gauge and fuze inspectors reject defective lots before shipment. Shell Inspection institution: maximum efficiency +2%, industrial capacity +1%."),
+    [build(130, "arms_factory"), idea("shell_inspection"), flag("shell_inspection")],
+    "Inspetores de calibre e espoleta reorganizam a produção de projéteis em Sheffield, adicionando uma fábrica militar em Yorkshire. Instituição Inspeção de Projéteis: eficiência máxima +2%, capacidade industrial +1%.",
+    "Gauge and fuze inspectors reorganise shell production in Sheffield, adding an arms factory in Yorkshire. Shell Inspection institution: maximum efficiency +2%, industrial capacity +1%."),
 "wartime_labour_dilution": (
     [idea("labour_dilution"), var("labour_support", -4), flag("labour_dilution")],
     "O Acordo do Tesouro de março de 1915 permite que mulheres e operários sem ofício ocupem postos qualificados. Instituição Diluição da Mão de Obra: capacidade industrial +2%, estabilidade semanal -0,03 pontos. Apoio trabalhista -4.",
@@ -90,9 +90,9 @@ FOCI = {
     "Depois do armistício, fábricas de munição voltam a produzir máquinas, tecidos e locomotivas. Ganha 15 de poder político, 1% de estabilidade e apoio trabalhista +2.",
     "After the armistice, munition plants return to machines, textiles and locomotives. It grants 15 political power, 1% stability and labour support +2."),
 "housing_and_civilian_employment": (
-    [idea("housing_programme"), var("debt_burden", 3), var("labour_support", 4)],
-    "A Lei Addison promete casas para operários e veteranos. Programa de Habitação (uso de fábricas civis +1, população mensal +2,5%); a dívida sobe 3 e apoio trabalhista +4.",
-    "The Addison Act promises homes for workers and veterans. Housing Programme (civilian factory use +1, monthly population +2.5%); debt rises by 3 and labour support +4."),
+    [build(129, "industrial_complex"), idea("housing_programme"), var("debt_burden", 3), var("labour_support", 4)],
+    "A Lei Addison promete casas para operários e veteranos, gerando um complexo industrial nas Midlands Orientais. Programa de Habitação (uso de fábricas civis +1, população mensal +2,5%); a dívida sobe 3 e apoio trabalhista +4.",
+    "The Addison Act promises homes for workers and veterans, establishing an industrial complex in the East Midlands. Housing Programme (civilian factory use +1, monthly population +2.5%); debt rises by 3 and labour support +4."),
 # ------------------------------------------------------------------ reconstruction (20)
 "the_peace_administration_office": (
     [pp(15), flag("peace_administration")],
@@ -119,9 +119,9 @@ FOCI = {
     "Escolas técnicas e oficinas reciclam ex-soldados para empregos civis. Ganha 10 de poder político e apoio trabalhista +2.",
     "Technical schools and workshops retrain ex-soldiers for civilian jobs. It grants 10 political power and labour support +2."),
 "public_housing_contracts": (
-    [var("debt_burden", 2), var("labour_support", 3), stab(0.01)],
-    "Prefeituras assinam contratos para construir moradias populares com subsídio do Estado. A dívida sobe 2, apoio trabalhista +3 e 1% de estabilidade.",
-    "Local authorities sign contracts to build council housing with state subsidy. Debt rises by 2, labour support +3 and 1% stability."),
+    [var("debt_burden", 2), var("labour_support", 3), stab(0.01), "128 = { add_building_construction = { type = infrastructure level = 1 } }"],
+    "Prefeituras assinam contratos para construir moradias populares com subsídio do Estado, ampliando a infraestrutura das Midlands. A dívida sobe 2, apoio trabalhista +3 e 1% de estabilidade.",
+    "Local authorities sign contracts to build council housing with state subsidies, expanding infrastructure in the Midlands. Debt rises by 2, labour support +3 and 1% stability."),
 "industrial_conversion_planning": (
     [idea("industrial_conversion"), flag("industrial_conversion_planned")],
     "Planos para converter aço, químicos e motores para uso civil. Conversão Industrial: bens de consumo -2% (mais produção civil), capacidade industrial -1,5% enquanto a transição durar.",

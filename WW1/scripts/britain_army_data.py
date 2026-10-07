@@ -47,6 +47,11 @@ def tech(name, category, bonus=0.25):
     return f"add_tech_bonus = {{ name = ENG_ww1_{name} bonus = {bonus} uses = 1 category = {category} }}"
 
 
+def build(state, kind, slots=1):
+    return (f"{state} = {{ add_extra_state_shared_building_slots = {slots} "
+            f"add_building_construction = {{ type = {kind} level = 1 }} }}")
+
+
 FOCI = {
 # ------------------------------------------------------------------ army (20)
 "the_haldane_establishment": (
@@ -78,17 +83,17 @@ FOCI = {
     "A Força Expedicionária ganha seis divisões de infantaria e uma de cavalaria, prontas para cruzar o Canal. Ganha 5 de experiência de exército e 10 de poder político; a dívida sobe 1.",
     "The Expeditionary Force receives six infantry divisions and one cavalry division, ready to cross the Channel. It grants 5 army experience and 10 political power; debt rises by 1."),
 "kitchener_new_armies": (
-    [idea("kitchener_armies"), manpower(25000), var("labour_support", -2), flag("kitchener_armies")],
-    "Kitchener pede um milhão de voluntários, e eles vêm. Mas os homens saem das fábricas e das minas. Ganha 25.000 de mão de obra e a instituição Novos Exércitos (moral do exército +5%, capacidade industrial -3%); o apoio trabalhista cai 2.",
-    "Kitchener asks for a million volunteers, and they come. But the men leave the factories and mines. It grants 25,000 manpower and the New Armies institution (army morale +5%, industrial capacity -3%); labour support falls by 2."),
+    ["remove_ideas = ENG_professional_bef", idea("kitchener_armies"), manpower(25000), var("labour_support", -2), flag("kitchener_armies")],
+    "Kitchener pede um milhão de voluntários: o pequeno exército profissional cede lugar ao exército de massa. Remove a força voluntária restrita inicial, ganha 25.000 de mão de obra e a instituição Novos Exércitos (moral do exército +5%, capacidade industrial -3%); apoio trabalhista -2.",
+    "Kitchener asks for a million volunteers: the small regular force gives way to a mass army. Removes the original strict professional volunteer spirit, grants 25,000 manpower and the New Armies institution (army morale +5%, industrial capacity -3%); labour support falls by 2."),
 "the_pals_battalion_system": (
     [idea("pals_battalions"), manpower(10000), flag("pals_battalions")],
     "Amigos, vizinhos e colegas de trabalho se alistam juntos e servem juntos. Ganha 10.000 de mão de obra e a instituição Batalhões de Amigos (organização do exército +5%); uma só batalha pode destruir uma cidade inteira.",
     "Friends, neighbours and workmates enlist together and serve together. It grants 10,000 manpower and the Pals Battalions institution (army organisation +5%); a single battle can wipe out a whole town."),
 "the_rifle_training_depots": (
-    [tech("the_rifle_training_depots", "infantry_weapons"), army_xp(2), flag("rifle_depots")],
-    "A Escola de Mosquetaria de Hythe treina o tiro rápido e preciso, de quinze tiros por minuto. Ganha 2 de experiência de exército e bônus de pesquisa de 25% em armas de infantaria (uso único).",
-    "The Hythe School of Musketry trains rapid, accurate fire of fifteen rounds a minute. It grants 2 army experience and a one-use 25% research bonus on infantry weapons."),
+    [build(126, "arms_factory"), tech("the_rifle_training_depots", "infantry_weapons"), army_xp(2), flag("rifle_depots")],
+    "A Fábrica Real de Enfield e a Escola de Hythe ampliam a produção e o treino de tiro rápido. Enfileira 1 fábrica militar em Londres, ganha 2 de experiência de exército e bônus de 25% em armas de infantaria.",
+    "The Royal Small Arms Factory at Enfield and Hythe School expand rifle output and marksmanship. Queues 1 arms factory in London, grants 2 army experience and a 25% bonus on infantry weapons."),
 "field_medical_organisation": (
     [tech("field_medical_organisation", "hospital_tech"), stab(0.01), flag("field_medical")],
     "Postos de socorro, hospitais de evacuação e trens-hospital salvam feridos que antes morreriam. Ganha 1% de estabilidade e bônus de pesquisa de 25% em hospitais de campanha (uso único).",
@@ -102,9 +107,9 @@ FOCI = {
     "O Corpo de Metralhadoras concentra as armas em companhias próprias, com oficiais treinados para cada tiro. Ganha 5 de experiência de exército; a dívida sobe 1.",
     "The Machine Gun Corps gathers the weapons into companies of their own, with officers trained for every burst. It grants 5 army experience; debt rises by 1."),
 "trench_mortar_sections": (
-    [tech("trench_mortar_sections", "artillery"), army_xp(2), flag("trench_mortars")],
-    "O Stokes, barato e simples, dá à infantaria uma artilharia própria dentro da trincheira. Ganha 2 de experiência de exército e bônus de pesquisa de 25% em artilharia (uso único).",
-    "The Stokes mortar, cheap and simple, gives infantry an artillery of its own inside the trench. It grants 2 army experience and a one-use 25% research bonus on artillery."),
+    [build(128, "arms_factory"), tech("trench_mortar_sections", "artillery"), army_xp(2), flag("trench_mortars")],
+    "Oficinas em Birmingham produzem morteiros Stokes para dar artilharia de trincheira à infantaria. Enfileira 1 fábrica militar nas Midlands, ganha 2 de experiência de exército e bônus de 25% em artilharia.",
+    "Workshops in Birmingham produce Stokes mortars for trench artillery. Queues 1 arms factory in the Midlands, grants 2 army experience and a 25% bonus on artillery."),
 "gas_protection_training": (
     [army_xp(3), war_support(0.01), var("debt_burden", 1), flag("gas_discipline")],
     "Depois de Ypres, máscaras de flanela dão lugar ao respirador em caixa, e a disciplina de gás vira exercício diário. Ganha 3 de experiência de exército e 1% de apoio à guerra; a dívida sobe 1.",
@@ -135,9 +140,9 @@ FOCI = {
     "Depois de Agadir, o general Henry Wilson e o Estado-Maior fixam horários de trem e navios para o Canal. Ganha 10 de poder político e 3 de experiência de exército.",
     "After Agadir, General Henry Wilson and the Staff fix train and ship timetables for the Channel. It grants 10 political power and 3 army experience."),
 "embarkation_depot_preparation": (
-    [tech("embarkation_depot_preparation", "train_tech"), flag("embarkation_depots")],
-    "Southampton, Newhaven e Folkestone recebem depósitos, cais e ramais ferroviários. Ganha bônus de pesquisa de 25% em transporte ferroviário (uso único).",
-    "Southampton, Newhaven and Folkestone receive depots, quays and railway sidings. It grants a one-use 25% research bonus on rail transport."),
+    ["127 = { add_building_construction = { type = naval_base level = 1 } }", tech("embarkation_depot_preparation", "train_tech"), flag("embarkation_depots")],
+    "Southampton, Portsmouth e Folkestone recebem depósitos, cais e ampliação de base naval. Adiciona 1 nível de base naval no sudeste e bônus de pesquisa de 25% em transporte ferroviário.",
+    "Southampton, Portsmouth and Folkestone receive depots, quays and naval base expansions. Adds 1 naval base level in the South-East and a 25% bonus on rail transport."),
 "the_bef_deployment_plan": (
     [army_xp(5), flag("bef_deployed"), to_ally("FRA", 10)],
     "Em agosto de 1914, a Força Expedicionária Britânica cruza o Canal. A França recebe os ingleses com entusiasmo. Ganha 5 de experiência de exército; a França ganha apoio à guerra.",
@@ -187,9 +192,9 @@ FOCI = {
     "Infantaria, artilharia e tanques ensaiam o ataque em terreno marcado com fitas e estacas. Ganha 4 de experiência de exército, mais 2 se o programa de tanques existe.",
     "Infantry, artillery and tanks rehearse the attack on ground marked with tapes and pegs. It grants 4 army experience, plus 2 if the tank programme exists."),
 "palestine_railway_liaison": (
-    [tech("palestine_railway_liaison", "train_tech"), army_xp(3), pp(10)],
-    "Allenby precisa de uma ferrovia e de um oleoduto no Sinai para alcançar Gaza. Ganha 3 de experiência de exército, 10 de poder político e bônus de pesquisa de 25% em transporte ferroviário (uso único).",
-    "Allenby needs a railway and a pipeline across Sinai to reach Gaza. It grants 3 army experience, 10 political power and a one-use 25% research bonus on rail transport."),
+    ["447 = { add_building_construction = { type = infrastructure level = 1 } }", tech("palestine_railway_liaison", "train_tech"), army_xp(3), pp(10)],
+    "Allenby constrói ferrovia e canal de água potável no Sinai para alcançar Gaza. Adiciona 1 nível de infraestrutura no Sinai, ganha 3 de experiência de exército, 10 de poder político e bônus de pesquisa de 25% em ferrovias.",
+    "Allenby builds a railway and pipeline across Sinai to reach Gaza. Adds 1 infrastructure level in Sinai, grants 3 army experience, 10 political power and a one-use 25% research bonus on rail transport."),
 "the_spring_defence_plan": (
     [pp(10), army_xp(3), flag("spring_defence_plan")],
     "O estado-maior espera a grande ofensiva alemã de 1918 e prepara defesa em profundidade: zona avançada fraca, zona de batalha forte, reservas atrás. Ganha 10 de poder político e 3 de experiência de exército.",

@@ -46,6 +46,7 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    add_political_power = 25
+   add_stability = 0.01
    add_to_variable = { ww1_britain_irish_tension = -2 }
    set_country_flag = ENG_ww1_parliament_act_passed
   }
@@ -260,6 +261,7 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    set_country_flag = ENG_ww1_military_service_authorised
+   remove_ideas = ENG_professional_bef
    add_to_variable = { ww1_britain_labour_support = -6 }
    add_to_variable = { ww1_britain_irish_tension = 4 }
   }
@@ -573,6 +575,7 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    add_ideas = ENG_ww1_railway_executive
+   build_railway = { level = 2 start_state = 126 target_state = 127 build_only_on_allied = yes }
    set_country_flag = ENG_ww1_railway_executive
   }
  }
@@ -592,6 +595,7 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    add_ideas = ENG_ww1_coal_allocation
+   122 = { add_building_construction = { type = infrastructure level = 1 } }
    set_country_flag = ENG_ww1_coal_allocation_done
   }
  }
@@ -610,6 +614,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   126 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    add_ideas = ENG_ww1_munitions_contracts
    add_to_variable = { ww1_britain_debt_burden = 2 }
   }
@@ -651,6 +656,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   130 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    add_ideas = ENG_ww1_shell_inspection
    set_country_flag = ENG_ww1_shell_inspection
   }
@@ -813,6 +819,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   129 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 } }
    add_ideas = ENG_ww1_housing_programme
    add_to_variable = { ww1_britain_debt_burden = 3 }
    add_to_variable = { ww1_britain_labour_support = 4 }
@@ -1373,7 +1380,8 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   if = { limit = { country_exists = SOV } SOV = { country_event = { id = ww1_britain_dip.13 } } }
+   if = { limit = { country_exists = RUS } RUS = { country_event = { id = ww1_britain_dip.13 } } }
+   else_if = { limit = { country_exists = SOV } SOV = { country_event = { id = ww1_britain_dip.13 } } }
    add_to_variable = { ww1_britain_debt_burden = 1 }
    set_country_flag = ENG_ww1_russian_liaison
   }
@@ -1746,6 +1754,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   remove_ideas = ENG_professional_bef
    add_ideas = ENG_ww1_kitchener_armies
    add_manpower = 25000
    add_to_variable = { ww1_britain_labour_support = -2 }
@@ -1787,6 +1796,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   126 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    add_tech_bonus = { name = ENG_ww1_the_rifle_training_depots bonus = 0.25 uses = 1 category = infantry_weapons }
    army_experience = 2
    set_country_flag = ENG_ww1_rifle_depots
@@ -1869,6 +1879,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   128 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    add_tech_bonus = { name = ENG_ww1_trench_mortar_sections bonus = 0.25 uses = 1 category = artillery }
    army_experience = 2
    set_country_flag = ENG_ww1_trench_mortars
@@ -2033,6 +2044,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   132 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 } }
    add_to_variable = { ww1_britain_debt_burden = 1 }
    navy_experience = 3
    set_country_flag = ENG_ww1_naval_estimates
@@ -2093,6 +2105,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   119 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 } }
    add_tech_bonus = { name = ENG_ww1_destroyer_flotilla_planning bonus = 0.25 uses = 1 category = dd_tech }
    navy_experience = 2
    set_country_flag = ENG_ww1_destroyer_flotillas
@@ -2174,6 +2187,8 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    add_ideas = ENG_ww1_grand_fleet_anchorage
+   120 = { add_building_construction = { type = naval_base level = 1 province = 11064 } }
+   121 = { add_building_construction = { type = naval_base level = 1 province = 6300 } }
    add_to_variable = { ww1_britain_debt_burden = 1 }
    set_country_flag = ENG_ww1_scapa_flow
   }
@@ -2561,6 +2576,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   125 = { add_building_construction = { type = naval_base level = 1 } }
    navy_experience = 2
    air_experience = 2
    set_country_flag = ENG_ww1_seaplane_stations
@@ -2850,6 +2866,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   127 = { add_building_construction = { type = naval_base level = 1 } }
    add_tech_bonus = { name = ENG_ww1_embarkation_depot_preparation bonus = 0.25 uses = 1 category = train_tech }
    set_country_flag = ENG_ww1_embarkation_depots
   }
@@ -3108,6 +3125,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
+   447 = { add_building_construction = { type = infrastructure level = 1 } }
    add_tech_bonus = { name = ENG_ww1_palestine_railway_liaison bonus = 0.25 uses = 1 category = train_tech }
    army_experience = 3
    add_political_power = 10
@@ -3350,6 +3368,7 @@ focus_tree = {
    add_to_variable = { ww1_britain_debt_burden = 2 }
    add_to_variable = { ww1_britain_labour_support = 3 }
    add_stability = 0.01
+   128 = { add_building_construction = { type = infrastructure level = 1 } }
   }
  }
  focus = {
@@ -3703,6 +3722,7 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    add_tech_bonus = { name = ENG_ww1_railway_engineering_standards bonus = 0.25 uses = 1 category = logistics_tech }
+   build_railway = { level = 2 start_state = 128 target_state = 132 build_only_on_allied = yes }
   }
  }
  focus = {

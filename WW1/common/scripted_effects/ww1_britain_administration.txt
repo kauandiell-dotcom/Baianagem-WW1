@@ -1,16 +1,15 @@
 ww1_britain_initialise = {
- set_country_flag = ww1_britain_initialised
- set_variable = { ww1_britain_debt_burden = 10 }
- set_variable = { ww1_britain_irish_tension = 25 }
- set_variable = { ww1_britain_labour_support = 15 }
- set_variable = { ww1_britain_irish_exemption_factor = 0 }
- set_variable = { ww1_britain_ulster_tension = 10 }
- set_variable = { ww1_britain_dominion_consent = 50 }
- remove_ideas = ENG_professional_bef
- add_ideas = ENG_ww1_professional_service
- recruit_character = ENG_ww1_david_lloyd_george
- recruit_character = ENG_ww1_andrew_bonar_law
- recruit_character = ENG_ww1_ramsay_macdonald
+	set_country_flag = ww1_britain_initialised
+	set_variable = { ww1_britain_debt_burden = 10 }
+	set_variable = { ww1_britain_irish_tension = 25 }
+	set_variable = { ww1_britain_labour_support = 15 }
+	set_variable = { ww1_britain_irish_exemption_factor = 0 }
+	set_variable = { ww1_britain_ulster_tension = 10 }
+	set_variable = { ww1_britain_dominion_consent = 50 }
+	# ENG_professional_bef remains active from ENG - Britain.txt
+	recruit_character = ENG_ww1_david_lloyd_george
+	recruit_character = ENG_ww1_andrew_bonar_law
+	recruit_character = ENG_ww1_ramsay_macdonald
 }
 
 ww1_britain_recalculate_debt = {

@@ -1,22 +1,25 @@
 # Britain only, guarded by its own startup flag; does not edit other countries.
 ww1_britain_calibrate_opening = {
- set_country_flag = ww1_britain_opening_calibrated
- remove_ideas = ENG_two_power_standard
- remove_ideas = ENG_city_of_london_credit
- remove_ideas = ENG_the_imperial_web
- remove_ideas = ENG_irish_home_rule_tension
- add_ideas = { ENG_ww1_naval_establishment ENG_ww1_london_market ENG_ww1_imperial_administration ENG_ww1_irish_divisions }
+	set_country_flag = ww1_britain_opening_calibrated
+	# Historical starting spirits defined in ENG - Britain.txt remain active:
+	# ENG_two_power_standard, ENG_city_of_london_credit, ENG_the_imperial_web, ENG_irish_home_rule_tension
 }
 ww1_britain_update_constitutional_costs = {
- if = {
-  limit = {
-   has_idea = ENG_ww1_irish_divisions
-   OR = {
-    has_country_flag = ENG_ww1_home_rule_devolved
-    has_country_flag = ENG_ww1_dominion_status_for_ireland_implemented
-    NOT = { 113 = { is_owned_by = ENG } }
-   }
-  }
-  remove_ideas = ENG_ww1_irish_divisions
- }
+	if = {
+		limit = {
+			OR = {
+				has_idea = ENG_irish_home_rule_tension
+				has_idea = ENG_ww1_irish_divisions
+			}
+			OR = {
+				has_country_flag = ENG_ww1_home_rule_devolved
+				has_country_flag = ENG_ww1_dominion_status_for_ireland_implemented
+				has_country_flag = ENG_ww1_ulster_compromise_reached
+				NOT = { 113 = { is_owned_by = ENG } }
+			}
+		}
+		remove_ideas = ENG_irish_home_rule_tension
+		remove_ideas = ENG_ww1_irish_divisions
+	}
 }
+

@@ -50,7 +50,9 @@ FOCI = {
     "Portos, ferrovias e transportes são preparados para enviar a Força Expedicionária Britânica à França. Ganha 5 de experiência de exército.",
     "Ports, railways and transports are prepared to send the British Expeditionary Force to France. It grants 5 army experience."),
 "russian_procurement_liaison": (
-    [to("SOV", 13), var("debt_burden", 1), flag("russian_liaison")],
+    ["if = { limit = { country_exists = RUS } RUS = { country_event = { id = ww1_britain_dip.13 } } }",
+     "else_if = { limit = { country_exists = SOV } SOV = { country_event = { id = ww1_britain_dip.13 } } }",
+     var("debt_burden", 1), flag("russian_liaison")],
     "Londres oferece crédito e armas à Rússia, que paga em grãos e matérias-primas. A dívida sobe 1; a Rússia decide se aceita.",
     "London offers credit and arms to Russia, which pays in grain and raw materials. Debt rises by 1; Russia decides whether to accept."),
 "neutral_shipping_assurances": (
@@ -117,9 +119,9 @@ FOCI = {
     "Padrões de ferramentas e calibres permitem trocar peças entre fábricas. Bônus de pesquisa de 25% em engenharia (uso único).",
     "Tool and gauge standards let parts be swapped between factories. A one-use 25% research bonus on engineering."),
 "railway_engineering_standards": (
-    [tech("railway_engineering_standards", "logistics_tech")],
-    "Bitolas, pontes e locomotivas seguem padrões comuns. Bônus de pesquisa de 25% em logística (uso único).",
-    "Gauges, bridges and locomotives follow common standards. A one-use 25% research bonus on logistics."),
+    [tech("railway_engineering_standards", "logistics_tech"), "build_railway = { level = 2 start_state = 128 target_state = 132 build_only_on_allied = yes }"],
+    "Bitolas, pontes e locomotivas seguem padrões comuns, duplicando o tronco ferroviário entre Birmingham e Manchester. Bônus de 25% em logística e ferrovia nível 2 construída.",
+    "Gauges, bridges and locomotives follow common standards, expanding the railway trunk between Birmingham and Manchester. A 25% research bonus on logistics and level 2 railway built."),
 "naval_architecture_research": (
     [tech("naval_architecture_research", "dd_tech")],
     "O tanque de provas de Haslar testa cascos e hélices. Bônus de pesquisa de 25% em contratorpedeiros (uso único).",
@@ -244,14 +246,15 @@ EVENTS = [
    ("Renovar as obrigações da aliança. (estabilidade +2%; a dívida britânica sobe 1)", "Renew the alliance obligations. (stability +2%; British debt rises by 1)",
     ["add_stability = 0.02", "FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } set_country_flag = ENG_ww1_portugal_renewed }"], 60),
    ("Permanecer neutro. (sem efeitos)", "Remain neutral. (no effects)", ["set_country_flag = POR_ww1_declined_london"], 40)]),
- dict(id=13, mode="trigger", trigger_full="tag = SOV",
+ dict(id=13, mode="trigger", trigger_full="OR = { tag = RUS tag = SOV }",
   t=("Crédito britânico em munição", "British Munitions Credit"),
   d=("Londres oferece armas e crédito ao exército russo, que paga em trigo, linho e madeira. A entrega depende de portos no Báltico e no Ártico.",
      "London offers arms and credit to the Russian army, which pays in wheat, flax and timber. Delivery depends on ports on the Baltic and the Arctic."),
   options=[
    ("Aceitar o crédito. (+10 de poder político; a dívida britânica sobe 1)", "Accept the credit. (+10 political power; British debt rises by 1)",
     ["add_political_power = 10", "FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } set_country_flag = ENG_ww1_russian_credit }"], 70),
-   ("Recusar. (sem efeitos)", "Decline. (no effects)", [], 30)]),
+   ("Recusar. (a Grã-Bretanha nota a recusa russa)", "Decline. (Britain notes Russian refusal)",
+    ["FROM = { set_country_flag = ENG_ww1_russian_credit_refused }"], 30)]),
  dict(id=14, mode="trigger", trigger_full="tag = FRA",
   t=("O entendimento naval anglo-francês", "The Anglo-French Naval Understanding"),
   d=("Londres propõe que a Marinha Real proteja o Canal e o Mar do Norte, e a frota francesa o Mediterrâneo. Paris aceita, mas quer saber até onde vai o compromisso britânico.",
@@ -259,15 +262,17 @@ EVENTS = [
   options=[
    ("Aceitar a divisão de áreas. (estabilidade +1%; experiência naval britânica +3)", "Accept the division of areas. (stability +1%; British naval experience +3)",
     ["add_stability = 0.01", "FROM = { navy_experience = 3 set_country_flag = ENG_ww1_french_naval_agreed }"], 70),
-   ("Recusar o compromisso. (sem efeitos)", "Decline the commitment. (no effects)", [], 30)]),
+   ("Recusar o compromisso. (a Grã-Bretanha mantém patrulhas próprias)", "Decline the commitment. (Britain keeps independent patrols)",
+    ["FROM = { set_country_flag = ENG_ww1_french_naval_refused }"], 30)]),
  dict(id=15, mode="trigger", trigger_full="OR = { tag = SER tag = GRE tag = ROM }",
   t=("Suprimentos para os Bálcãs", "Supplies for the Balkans"),
   d=("Londres oferece coordenar transporte e suprimentos aliados para o exército local, usando portos gregos e ferrovias romenas e sérvias.",
      "London offers to coordinate allied transport and supply for the local army through Greek ports and Romanian and Serbian railways."),
   options=[
    ("Aceitar a coordenação. (estabilidade +2%; a dívida britânica sobe 1)", "Accept the coordination. (stability +2%; British debt rises by 1)",
-    ["add_stability = 0.02", "FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } }"], 65),
-   ("Recusar. (sem efeitos)", "Decline. (no effects)", [], 35)]),
+    ["add_stability = 0.02", "FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } set_country_flag = ENG_ww1_balkan_coordination_agreed }"], 65),
+   ("Recusar. (a Grã-Bretanha poupa suprimentos)", "Decline. (Britain spares supplies)",
+    ["FROM = { set_country_flag = ENG_ww1_balkan_coordination_refused }"], 35)]),
 ]
 
 DECISIONS = [

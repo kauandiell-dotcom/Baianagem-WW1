@@ -115,7 +115,7 @@ country_event = {
  id = ww1_britain_dip.13 title = ww1_britain_dip.13.t desc = ww1_britain_dip.13.d
  picture = GFX_event_ww1_britain_russian_credit
  is_triggered_only = yes
- trigger = { tag = SOV }
+ trigger = { OR = { tag = RUS tag = SOV } }
  option = {
   name = ww1_britain_dip.13.a
   ai_chance = { base = 70 }
@@ -125,6 +125,7 @@ country_event = {
  option = {
   name = ww1_britain_dip.13.b
   ai_chance = { base = 30 }
+  FROM = { set_country_flag = ENG_ww1_russian_credit_refused }
  }
 }
 country_event = {
@@ -141,6 +142,7 @@ country_event = {
  option = {
   name = ww1_britain_dip.14.b
   ai_chance = { base = 30 }
+  FROM = { set_country_flag = ENG_ww1_french_naval_refused }
  }
 }
 country_event = {
@@ -152,10 +154,11 @@ country_event = {
   name = ww1_britain_dip.15.a
   ai_chance = { base = 65 }
   add_stability = 0.02
-  FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } }
+  FROM = { add_to_variable = { ww1_britain_debt_burden = 1 } set_country_flag = ENG_ww1_balkan_coordination_agreed }
  }
  option = {
   name = ww1_britain_dip.15.b
   ai_chance = { base = 35 }
+  FROM = { set_country_flag = ENG_ww1_balkan_coordination_refused }
  }
 }

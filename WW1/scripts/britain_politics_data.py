@@ -46,9 +46,9 @@ def autonomy(tag, ratio):
 FOCI = {
 # ------------------------------------------------------------------ constitutional (20)
 "parliament_act": (
-    [pp(25), var("irish_tension", -2), flag("parliament_act_passed")],
-    "A Lei do Parlamento de 1911 tira dos Lordes o poder de barrar leis financeiras e limita o veto às demais leis a dois anos. O gabinete ganha 25 de poder político, a tensão irlandesa cai 2 pontos e o caminho da autonomia irlandesa se abre.",
-    "The Parliament Act of 1911 strips the Lords of their power over money bills and limits their veto on other bills to a two-year delay. The cabinet gains 25 political power, Irish tension falls by 2 and the road to Irish self-government opens."),
+    [pp(25), stab(0.01), var("irish_tension", -2), flag("parliament_act_passed")],
+    "A Lei do Parlamento de 1911 tira dos Lordes o poder de barrar leis financeiras e limita o veto às demais leis a dois anos. Ganha 25 de poder político, 1% de estabilidade, a tensão irlandesa cai 2 pontos e o caminho da autonomia irlandesa se abre.",
+    "The Parliament Act of 1911 strips the Lords of their power over money bills and limits their veto on other bills to a two-year delay. The cabinet gains 25 political power, 1% stability, Irish tension falls by 2 and the road to Irish self-government opens."),
 "national_insurance": (
     [idea("national_insurance"), var("labour_support", 5), var("debt_burden", 1)],
     "O Seguro Nacional de Lloyd George cobre saúde e desemprego de milhões de trabalhadores. Dá a instituição Seguro Nacional (estabilidade +2%, bens de consumo +1%), apoio trabalhista +5 e dívida +1.",
@@ -90,9 +90,9 @@ FOCI = {
     "A crise dos projéteis e a demissão de Fisher derrubam o gabinete liberal em maio de 1915. O governo precisa decidir se divide o poder com conservadores e trabalhistas.",
     "The shell crisis and Fisher's resignation bring down the Liberal cabinet in May 1915. The government must decide whether to share power with Conservatives and Labour."),
 "the_military_service_act": (
-    [flag("military_service_authorised"), var("labour_support", -6), var("irish_tension", 4)],
-    "A Lei do Serviço Militar de janeiro de 1916 encerra o voluntariado em toda a Grã-Bretanha. Autoriza a mudança para leis de recrutamento, mas apoio trabalhista cai 6 e a tensão irlandesa sobe 4. Sem este foco, mudar a lei de recrutamento gera penalidade.",
-    "The Military Service Act of January 1916 ends voluntary enlistment across Great Britain. It authorises moving to conscription laws, but labour support falls by 6 and Irish tension rises by 4. Without this focus, changing the conscription law carries a penalty."),
+    [flag("military_service_authorised"), "remove_ideas = ENG_professional_bef", var("labour_support", -6), var("irish_tension", 4)],
+    "A Lei do Serviço Militar de janeiro de 1916 encerra o voluntariado em toda a Grã-Bretanha e remove a antiga força profissional estrita. Autoriza leis de recrutamento geral, com apoio trabalhista -6 e tensão irlandesa +4.",
+    "The Military Service Act of January 1916 ends voluntary enlistment across Britain and retires the old professional service idea. Authorises conscription laws, labour support falls by 6 and Irish tension rises by 4."),
 "reserved_civilian_occupations": (
     [idea("reserved_occupations")],
     "Mineiros, operários de munição e ferroviários ficam fora do alistamento. Instituição Ofícios Reservados: capacidade industrial +2%, recrutamento -0,15%.",

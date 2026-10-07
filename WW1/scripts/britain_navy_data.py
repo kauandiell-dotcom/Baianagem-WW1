@@ -45,6 +45,11 @@ def tech(name, category, bonus=0.25):
     return f"add_tech_bonus = {{ name = ENG_ww1_{name} bonus = {bonus} uses = 1 category = {category} }}"
 
 
+def build(state, kind, slots=1):
+    return (f"{state} = {{ add_extra_state_shared_building_slots = {slots} "
+            f"add_building_construction = {{ type = {kind} level = 1 }} }}")
+
+
 FOCI = {
 # ------------------------------------------------------------------ naval (20)
 "admiralty_fleet_survey": (
@@ -52,9 +57,9 @@ FOCI = {
     "O Almirantado mede a prontidão da frota e admite o que todos sabem: não existe um estado-maior naval de verdade. O Estado-Maior de Guerra Naval nasce em 1912. Ganha 10 de poder político e a instituição Estado-Maior Naval (+10% de experiência naval ganha).",
     "The Admiralty measures the readiness of the fleet and admits what everyone knows: there is no real naval staff. The Admiralty War Staff is born in 1912. It grants 10 political power and the Admiralty War Staff institution (+10% naval experience gain)."),
 "the_naval_estimates": (
-    [var("debt_burden", 1), navy_xp(3), flag("naval_estimates")],
-    "O Almirantado quer mais couraçados e o Tesouro quer cortar. Os orçamentos navais de 1912 a 1914 fecham com a maior conta em tempo de paz. A dívida sobe 1 e ganha 3 de experiência naval.",
-    "The Admiralty wants more battleships and the Treasury wants cuts. The naval estimates of 1912 to 1914 close with the largest peacetime bill. Debt rises by 1 and it grants 3 naval experience."),
+    [build(132, "dockyard"), var("debt_burden", 1), navy_xp(3), flag("naval_estimates")],
+    "O Almirantado amplia os estaleiros de Birkenhead e Cammell Laird para a corrida de couraçados. Enfileira 1 estaleiro no noroeste; a dívida sobe 1 e ganha 3 de experiência naval.",
+    "The Admiralty expands the Birkenhead and Cammell Laird yards for the battleship race. It queues 1 dockyard in the North-West; debt rises by 1 and grants 3 naval experience."),
 "dreadnought_construction_planning": (
     [tech("dreadnought_construction_planning", "bb_tech"), var("debt_burden", 1), flag("super_dreadnoughts")],
     "A classe Queen Elizabeth troca os canhões de 13,5 por 15 polegadas e o carvão pelo óleo, uma aposta ousada. A dívida sobe 1 e ganha bônus de pesquisa de 25% em couraçados (uso único).",
@@ -64,9 +69,9 @@ FOCI = {
     "Beatty comanda uma esquadra rápida, de canhões grandes e casco fino, feita para caçar cruzadores alemães. Ganha 2 de experiência naval e bônus de pesquisa de 25% em cruzadores de batalha (uso único).",
     "Beatty commands a fast squadron of big guns and thin hulls, built to hunt German cruisers. It grants 2 naval experience and a one-use 25% research bonus on battlecruisers."),
 "destroyer_flotilla_planning": (
-    [tech("destroyer_flotilla_planning", "dd_tech"), navy_xp(2), flag("destroyer_flotillas")],
-    "Harwich, Dover e Rosyth recebem flotilhas de contratorpedeiros para escolta, patrulha e ataque com torpedos. Ganha 2 de experiência naval e bônus de pesquisa de 25% em contratorpedeiros (uso único).",
-    "Harwich, Dover and Rosyth receive destroyer flotillas for escort, patrol and torpedo attack. It grants 2 naval experience and a one-use 25% research bonus on destroyers."),
+    [build(119, "dockyard"), tech("destroyer_flotilla_planning", "dd_tech"), navy_xp(2), flag("destroyer_flotillas")],
+    "Harland & Wolff e estaleiros em Belfast recebem encomendas para contratorpedeiros. Enfileira 1 estaleiro na Irlanda do Norte, ganha 2 de experiência naval e bônus de pesquisa de 25% em contratorpedeiros (uso único).",
+    "Harland & Wolff and yards in Belfast receive orders for destroyers. It queues 1 dockyard in Northern Ireland, grants 2 naval experience and a one-use 25% research bonus on destroyers."),
 "submarine_service_development": (
     [tech("submarine_service_development", "ss_tech"), navy_xp(1), flag("submarine_service")],
     "Os submarinos classe E são pensados para a defesa costeira e a vigia da baía alemã, não para o comércio. Ganha 1 de experiência naval e bônus de pesquisa de 25% em submarinos (uso único).",
@@ -80,9 +85,9 @@ FOCI = {
     "Cruzadores velhos e navios mercantes armados fecham o espaço entre a Escócia e a Noruega. Ganha a instituição Patrulha do Norte (detecção naval +10%) e 2 de experiência naval.",
     "Old cruisers and armed merchant ships close the gap between Scotland and Norway. It grants the Northern Patrol institution (naval detection +10%) and 2 naval experience."),
 "grand_fleet_maintenance": (
-    [idea("grand_fleet_anchorage"), var("debt_burden", 1), flag("scapa_flow")],
-    "Scapa Flow e Rosyth ganham defesas, oficinas e carvoeiras para abrigar a Grande Frota. Ganha a instituição Fundeadouros da Grande Frota (reparo naval +10%); a dívida sobe 1.",
-    "Scapa Flow and Rosyth gain defences, workshops and coaling stages to shelter the Grand Fleet. It grants the Grand Fleet Anchorages institution (naval repair +10%); debt rises by 1."),
+    [idea("grand_fleet_anchorage"), "120 = { add_building_construction = { type = naval_base level = 1 province = 11064 } }", "121 = { add_building_construction = { type = naval_base level = 1 province = 6300 } }", var("debt_burden", 1), flag("scapa_flow")],
+    "Scapa Flow e Rosyth ganham defesas costeiras e expansão de bases navais para abrigar a Grande Frota. Amplia as bases navais nas Terras Altas e Baixas da Escócia, instituição Fundeadouros da Grande Frota (reparo naval +10%); a dívida sobe 1.",
+    "Scapa Flow and Rosyth gain coastal defences and naval base expansions to shelter the Grand Fleet. Expands naval bases in the Scottish Highlands and Lowlands, Grand Fleet Anchorages institution (naval repair +10%); debt rises by 1."),
 "merchant_shipping_register": (
     [navy_xp(2), stab(0.01), flag("merchant_register")],
     "O registro do Lloyd's e do Board of Trade lista os navios mercantes que podem virar transporte, escolta ou navio-hospital. Ganha 2 de experiência naval e 1% de estabilidade.",
@@ -158,9 +163,9 @@ FOCI = {
     "O Bristol Scout, pequeno e rápido, é a primeira aeronave britânica pensada para escoltar e caçar. Ganha 2 de experiência aérea e bônus de pesquisa de 25% em aviação leve (uso único).",
     "The Bristol Scout, small and fast, is the first British aircraft conceived to escort and hunt. It grants 2 air experience and a one-use 25% research bonus on light aircraft."),
 "naval_seaplane_stations": (
-    [navy_xp(2), air_xp(2), flag("seaplane_stations")],
-    "Estações de hidroaviões em Calshot, Felixstowe e Great Yarmouth vigiam o Mar do Norte. Ganha 2 de experiência naval e 2 de experiência aérea.",
-    "Seaplane stations at Calshot, Felixstowe and Great Yarmouth watch the North Sea. It grants 2 naval experience and 2 air experience."),
+    ["125 = { add_building_construction = { type = naval_base level = 1 } }", navy_xp(2), air_xp(2), flag("seaplane_stations")],
+    "Estações de hidroaviões e ancoradouros em Calshot, Felixstowe e Great Yarmouth vigiam o Mar do Norte. Adiciona 1 nível de base naval em East Anglia, ganha 2 de experiência naval e 2 de experiência aérea.",
+    "Seaplane stations and anchorages at Calshot, Felixstowe and Great Yarmouth watch the North Sea. Adds 1 naval base level in East Anglia, grants 2 naval experience and 2 air experience."),
 "aircraft_production_contracts": (
     [tech("aircraft_production_contracts", "air_equipment"), var("debt_burden", 1), pp(5)],
     "A Fábrica Real de Aeronaves e empresas privadas como Sopwith, Vickers e Bristol disputam contratos. A dívida sobe 1; ganha 5 de poder político e bônus de pesquisa de 25% em equipamento aéreo (uso único).",
