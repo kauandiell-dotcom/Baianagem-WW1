@@ -733,12 +733,12 @@ characters={
 					}
 			}
 		corps_commander={
-			traits={ brilliant_strategist cavalry_officer desert_fox cavalry_leader trickster commando expert_improviser engineer }
-			skill=4
+			traits={ cavalry_leader desert_fox brilliant_strategist }
+			skill=3
 			attack_skill=3
-			defense_skill=1
+			defense_skill=2
 			planning_skill=3
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=20001
 		}
 	}
@@ -749,13 +749,13 @@ characters={
 				large = "gfx/leaders/ENG/AST_John_Monash.png"
 			}
 		}
-		corps_commander = {
-			traits = { hill_fighter jungle_rat engineer }
-			skill = 4
-			attack_skill = 4
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 1
+		corps_commander={
+			traits={ engineer organizer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=1
 			legacy_id=13015
 		}
 	}
@@ -768,11 +768,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cautious engineer swamp_fox winter_specialist winter_expert }
-			skill=4
+			traits={ engineer thorough_planner }
+			skill=3
 			attack_skill=3
 			defense_skill=2
-			planning_skill=3
+			planning_skill=2
 			logistics_skill=2
 			legacy_id=13305
 		}
@@ -832,13 +832,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ offensive_doctrine aggressive_assaulter thorough_planner infantry_expert engineer paratrooper fortress_buster }
-			skill=4
-			attack_skill=4
+			traits={ offensive_doctrine thorough_planner inflexible_strategist }
+			skill=3
+			attack_skill=3
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=1
-			legacy_id=-1
 		}
 	}
 	ENG_hamilton_i.s.m.={
@@ -883,13 +882,12 @@ characters={
 					}
 			}
 		field_marshal={
-			traits={ old_guard inflexible_strategist politically_connected defensive_doctrine unyielding_defender }
-			skill=4
-			attack_skill=3
-			defense_skill=3
-			planning_skill=2
+			traits={ old_guard inflexible_strategist politically_connected }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
 			logistics_skill=2
-			legacy_id=-1
 		}
 	}
 		
@@ -902,13 +900,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ reckless naval_invader harsh_leader paratrooper }
+			traits={ reckless harsh_leader }
 			skill=2
 			attack_skill=2
-			defense_skill=2
+			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
 		}
 	}
 	ENG_sir_leslie_rundle={
@@ -920,13 +917,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ old_guard politically_connected engineer_officer commando defensive_doctrine }
-			skill=3
+			traits={ old_guard defensive_doctrine }
+			skill=2
 			attack_skill=2
 			defense_skill=2
-			planning_skill=2
-			logistics_skill=2
-			legacy_id=-1
+			planning_skill=1
+			logistics_skill=1
 		}
 	}
 	ENG_kitchener_h.h.={
@@ -953,13 +949,12 @@ characters={
 					}
 			}
 		field_marshal={
-			traits={ organizer logistics_wizard fast_planner organisational_leader infantry_leader infantry_expert jungle_rat fortress_buster }
+			traits={ organizer logistics_wizard inspirational_leader }
 			skill=4
 			attack_skill=2
 			defense_skill=3
-			planning_skill=1
-			logistics_skill=4
-			legacy_id=-1
+			planning_skill=2
+			logistics_skill=3
 		}
 	}
 	ENG_badenpowell={
@@ -970,13 +965,12 @@ characters={
 			}
 		}
 		corps_commander={
-		    traits = { old_guard inflexible_strategist infantry_officer irregulars_officer jaeger commando }
-			skill=3
+			traits={ old_guard commando }
+			skill=2
 			attack_skill=1
 			defense_skill=2
-			planning_skill=2
-			logistics_skill=3
-			legacy_id=-1
+			planning_skill=1
+			logistics_skill=2
 		}
 	}
 	ENG_elles={
@@ -988,13 +982,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cavalry_officer armor_officer panzer_leader brilliant_strategist }
+			traits={ organizer engineer }
 			skill=2
 			attack_skill=2
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
 		}
 	}
 	ENG_grierson={
@@ -1094,13 +1087,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ engineer infantry_leader ranger urban_assault_specialist }
-			skill=5
-			attack_skill=5
-			defense_skill=1
-			planning_skill=4
+			traits={ engineer infantry_leader thorough_planner }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
 		}
 	}
 	ENG_rawlinson_sir_h.={
@@ -1113,13 +1105,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer infantry_leader infantry_expert paratrooper }
+			traits={ infantry_leader organizer }
 			skill=3
 			attack_skill=3
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
 		}
 	}
 	ENG_snow={
@@ -1131,13 +1122,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer camouflage_expert trickster guerilla_fighter infantry_expert }
+			traits={ camouflage_expert trickster }
 			skill=2
 			attack_skill=1
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
 		}
 	}
 	ENG_hickie_w.b.={
@@ -1167,13 +1157,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ camouflage_expert panzer_leader }
+			traits={ camouflage_expert cautious }
 			skill=2
-			attack_skill=3
+			attack_skill=2
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
 		}
 	}
 	ENG_nugent_o.s.w.={

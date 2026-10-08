@@ -22,9 +22,7 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				politically_connected reckless harsh_leader paratrooper fortress_buster
-			}
+			traits={ politically_connected reckless harsh_leader }
 			skill=1
 			attack_skill=1
 			defense_skill=1
@@ -56,13 +54,9 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				cautious thorough_planner unyielding_defender
-				mountaineer hill_fighter winter_specialist winter_expert
-				engineer fortress_buster
-			}
-			skill=5
-			attack_skill=4
+			traits={ defensive_doctrine unyielding_defender mountaineer }
+			skill=3
+			attack_skill=3
 			defense_skill=4
 			planning_skill=2
 			logistics_skill=2
@@ -173,16 +167,13 @@ characters={
 				small="GFX_idea_rudolf_hess"
 			}
 		}
-		corps_commander = {
-			traits = {
-				brilliant_strategist reckless mountaineer hill_fighter urban_assault_specialist paratrooper
-				engineer infantry_expert
-			}
-			skill = 4
-			attack_skill = 5
-			defense_skill = 1
-			planning_skill = 3
-			logistics_skill = 1
+		corps_commander={
+			traits={ reckless mountaineer aggressive_assaulter }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
 		}
 		advisor={
 			slot = high_command
@@ -207,7 +198,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ old_guard infantry_officer ascari_officer paratrooper }
+			traits={ old_guard cautious }
 			skill=1
 			attack_skill=1
 			defense_skill=1
@@ -226,13 +217,10 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = {
-				infantry_officer mountaineer hill_fighter winter_specialist winter_expert
-				skilled_staffer ambusher
-			}
-			skill=3
+			traits={ mountaineer unyielding_defender }
+			skill=2
 			attack_skill=2
-			defense_skill=3
+			defense_skill=2
 			planning_skill=1
 			logistics_skill=2
 			legacy_id=46070
@@ -262,16 +250,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		corps_commander = {
-			traits = {
-				ranger expert_improviser engineer
-				infantry_leader infantry_expert commando trickster
-			}
-			skill = 4
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
+		corps_commander={
+			traits={ mountaineer infantry_leader }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
 		}
 	}
 	ITA_vittorio_camerana = {
@@ -282,13 +267,13 @@ characters={
 				small="gfx/interface/ideas/ITA/idea_ITA_Vittorio_Camerana.png"
 			}
 		}
-		corps_commander = {
-			traits = { desert_fox trickster expert_improviser commando ranger }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
+		corps_commander={
+			traits={ desert_fox commando }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
 		}
 	}
 	ITA_luca_montuori = {
@@ -313,13 +298,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		corps_commander = {
-			traits = { organizer skilled_staffer panzer_leader }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 1
+		corps_commander={
+			traits={ organizer skilled_staffer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
 		}
 	}
 	ITA_pietro_badoglio = {

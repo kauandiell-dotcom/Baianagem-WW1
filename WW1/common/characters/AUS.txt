@@ -65,11 +65,9 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				politically_connected inflexible_strategist reckless harsh_leader paratrooper infantry_expert
-			}
-			skill=2
-			attack_skill=2
+			traits={ politically_connected inflexible_strategist reckless }
+			skill=1
+			attack_skill=1
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
@@ -98,13 +96,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		field_marshal = {
-			traits = { politically_connected organizer thorough_planner expert_delegator adaptable engineer winter_specialist }
-			skill = 4
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 4
-			logistics_skill = 2
+		field_marshal={
+			traits={ politically_connected organizer thorough_planner }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
 		}
 	}
 	AUS_AUH_artur_arz_von_straussenberg={
@@ -131,13 +129,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		field_marshal = {
-			traits = { old_guard politically_connected skilled_staffer logistics_wizard camouflage_expert winter_expert }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
+		field_marshal={
+			traits={ skilled_staffer organizer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 	AUS_svetozar_borojevic_von_bojna={
@@ -163,13 +161,9 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				inflexible_strategist
-				mountaineer hill_fighter adaptable winter_specialist
-				infantry_leader trickster engineer fortress_buster
-			}
-			skill=5
-			attack_skill=3
+			traits={ unyielding_defender mountaineer engineer }
+			skill=4
+			attack_skill=2
 			defense_skill=5
 			planning_skill=2
 			logistics_skill=2
@@ -184,15 +178,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				reckless ranger adaptable winter_expert
-				infantry_expert expert_improviser engineer scavenger commando fortress_buster
-			}
-			skill=5
-			attack_skill=5
+			traits={ aggressive_assaulter hill_fighter }
+			skill=3
+			attack_skill=3
 			defense_skill=2
-			planning_skill=4
-			logistics_skill=1
+			planning_skill=2
+			logistics_skill=2
 			legacy_id=6139
 		}
 	}
@@ -219,12 +210,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ paratrooper urban_assault_specialist infantry_expert fortress_buster }
+			traits={ fortress_buster infantry_leader }
 			skill=2
-			attack_skill=3
-			defense_skill=1
+			attack_skill=2
+			defense_skill=2
 			planning_skill=1
-			logistics_skill=1
+			logistics_skill=2
 			legacy_id=6396
 		}
 	}
@@ -267,13 +258,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		corps_commander = {
-			traits = { cavalry_leader panzer_leader paratrooper ranger }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 2
+		corps_commander={
+			traits={ cavalry_leader ranger }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
 		}
 	}
 	AUS_karl_von_pflanzerbaltin={
@@ -284,7 +275,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer old_guard guerilla_fighter mountaineer hill_fighter }
+			traits={ mountaineer old_guard }
 			skill=2
 			attack_skill=2
 			defense_skill=2
@@ -332,12 +323,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer mountaineer hill_fighter ranger jaegers }
+			traits={ old_guard hill_fighter }
 			skill=2
 			attack_skill=1
-			defense_skill=1
+			defense_skill=2
 			planning_skill=1
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=6386
 		}
 	}

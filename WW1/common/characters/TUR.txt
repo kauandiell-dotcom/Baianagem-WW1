@@ -19,16 +19,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				logistics_wizard thorough_planner unyielding_defender inspirational_leader
-				trickster commando infantry_leader engineer fortress_buster
-				desert_fox adaptable
-			}
-			skill=5
+			traits={ unyielding_defender inspirational_leader desert_fox brilliant_strategist }
+			skill=4
 			attack_skill=3
 			defense_skill=4
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=90013
 		}
 		country_leader={
@@ -75,13 +71,13 @@ characters={
 				large = "gfx/leaders/TUR/TUR_kress_von_kressenstein.dds"
 			}
 		}
-		corps_commander = {
-			traits = { cavalry_officer desert_fox adaptable infantry_expert cavalry_leader expert_improviser engineer scavenger }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
+		corps_commander={
+			traits={ desert_fox cavalry_leader }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 	TUR_ismail_enver_pasha={
@@ -105,7 +101,7 @@ characters={
 			}
 		}
 		field_marshal={
-		    traits = { old_guard harsh_leader media_personality inflexible_strategist politically_connected paratrooper militias_officer guerilla_fighter }
+			traits={ politically_connected reckless harsh_leader }
 			skill=1
 			attack_skill=1
 			defense_skill=1
@@ -339,12 +335,12 @@ characters={
 			}
 		}
 		field_marshal={
-	        traits = { old_guard harsh_leader reckless politically_connected desert_fox }
-			skill=3
+			traits={ old_guard desert_fox }
+			skill=2
 			attack_skill=2
 			defense_skill=2
 			planning_skill=1
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=90515
 		}
 	}
@@ -403,14 +399,12 @@ characters={
 			}
 		}
 		corps_commander={
-	        traits = {
-				desert_fox urban_assault_specialist ranger swamp_fox engineer
-			}
-			skill=3
-			attack_skill=3
+			traits={ desert_fox fortress_buster }
+			skill=2
+			attack_skill=2
 			defense_skill=2
-			planning_skill=3
-			logistics_skill=2
+			planning_skill=2
+			logistics_skill=1
 			legacy_id=90517
 		}
 	}

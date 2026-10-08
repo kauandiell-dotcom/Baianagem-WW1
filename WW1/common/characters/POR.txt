@@ -9,11 +9,11 @@ characters={
 			}
 		}
 		corps_commander={
-		    traits={ infantry_expert desert_fox paratrooper engineer scavenger fortress_buster trickster }
-			skill=4
-			attack_skill=4
+			traits={ infantry_leader fortress_buster }
+			skill=3
+			attack_skill=3
 			defense_skill=2
-			planning_skill=2
+			planning_skill=1
 			logistics_skill=2
 			legacy_id=70006
 		}
@@ -38,12 +38,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ old_guard engineer_officer ambusher urban_assault_specialist jungle_rat }
+			traits={ old_guard ambusher }
 			skill=2
 			attack_skill=1
 			defense_skill=2
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=70004
 		}
 	}
@@ -55,7 +55,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cavalry_officer organizer cavalry_leader winter_specialist winter_expert }
+			traits={ cavalry_leader organizer }
 			skill=2
 			attack_skill=2
 			defense_skill=2
@@ -83,12 +83,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ armor_officer panzer_leader ascari_officer }
-			skill=3
-			attack_skill=3
+			traits={ organizer engineer }
+			skill=2
+			attack_skill=2
 			defense_skill=1
-			planning_skill=2
-			logistics_skill=2
+			planning_skill=1
+			logistics_skill=1
 			legacy_id=70009
 		}
 	}

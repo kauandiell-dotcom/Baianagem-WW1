@@ -22,11 +22,11 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ expert_delegator unyielding_defender logistics_wizard fast_planner expert_improviser engineer fortress_buster adaptable }
+			traits={ defensive_doctrine unyielding_defender expert_delegator }
 			skill=4
-			attack_skill=3
-			defense_skill=3
-			planning_skill=2
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
 			logistics_skill=2
 			legacy_id=82002
 		}
@@ -121,12 +121,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist commando trickster engineer expert_improviser infantry_leader infantry_expert naval_invader adaptable }
-			skill=5
+			traits={ brilliant_strategist infantry_leader hill_fighter }
+			skill=4
 			attack_skill=4
 			defense_skill=3
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=82004
 		}
 	}
@@ -186,10 +186,10 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_expert paratrooper naval_invader }
+			traits={ infantry_leader defensive_doctrine }
 			skill=3
-			attack_skill=3
-			defense_skill=2
+			attack_skill=2
+			defense_skill=3
 			planning_skill=1
 			logistics_skill=2
 			legacy_id=82006

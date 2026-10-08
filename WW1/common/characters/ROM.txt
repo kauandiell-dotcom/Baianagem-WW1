@@ -22,13 +22,9 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				engineer_officer
-				logistics_wizard thorough_planner offensive_doctrine scavenger trickster engineer
-				adaptable paratrooper 
-			}
-			skill=4
-			attack_skill=3
+			traits={ thorough_planner defensive_doctrine }
+			skill=3
+			attack_skill=2
 			defense_skill=3
 			planning_skill=2
 			logistics_skill=2
@@ -59,11 +55,11 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ old_guard unyielding_defender politically_connected inflexible_strategist commando trickster ambusher paratrooper }
+			traits={ politically_connected unyielding_defender }
 			skill=3
 			attack_skill=2
-			defense_skill=2
-			planning_skill=2
+			defense_skill=3
+			planning_skill=1
 			logistics_skill=2
 			legacy_id=92102
 		}
@@ -133,15 +129,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				brilliant_strategist
-				infantry_leader expert_improviser engineer fortress_buster
-				mountaineer hill_fighter swamp_fox ranger urban_assault_specialist winter_specialist winter_expert
-			}
-			skill=5
+			traits={ unyielding_defender infantry_leader hill_fighter }
+			skill=4
 			attack_skill=3
-			defense_skill=4
-			planning_skill=3
+			defense_skill=3
+			planning_skill=2
 			logistics_skill=2
 			legacy_id=92106
 		}
@@ -169,11 +161,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ harsh_leader cavalry_officer cavalry_leader panzer_leader engineer }
+			traits={ cavalry_leader old_guard }
 			skill=2
 			attack_skill=2
 			defense_skill=1
-			planning_skill=2
+			planning_skill=1
 			logistics_skill=1
 			legacy_id=92103
 		}
@@ -233,12 +225,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer ambusher urban_assault_specialist paratrooper }
-			skill=3
+			traits={ ambusher cautious }
+			skill=2
 			attack_skill=1
-			defense_skill=3
-			planning_skill=2
-			logistics_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
 			legacy_id=92105
 		}
 	}
@@ -265,12 +257,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer jaeger guerilla_fighter paratrooper }
-			skill=3
+			traits={ aggressive_assaulter hill_fighter }
+			skill=2
 			attack_skill=2
-			defense_skill=3
+			defense_skill=2
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=92107
 		}
 	}
@@ -297,7 +289,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer irregulars_officer ascari_officer jungle_rat camouflage_expert }
+			traits={ old_guard cautious }
 			skill=1
 			attack_skill=1
 			defense_skill=1
@@ -735,7 +727,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cheater fortress_buster winter_specialist winter_expert }
+			traits={ fortress_buster }
 			skill=1
 			attack_skill=1
 			defense_skill=1

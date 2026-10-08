@@ -55,12 +55,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_leader expert_improviser engineer desert_fox jungle_rat }
-			skill=4
+			traits={ organizer infantry_leader }
+			skill=3
 			attack_skill=2
 			defense_skill=3
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=32019
 		}
 	}
@@ -89,10 +89,10 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ politically_connected engineer_officer logistics_wizard unyielding_defender defensive_doctrine organisational_leader guerilla_fighter }
+			traits={ defensive_doctrine unyielding_defender politically_connected }
 			skill=3
 			attack_skill=2
-			defense_skill=2
+			defense_skill=3
 			planning_skill=2
 			logistics_skill=2
 			legacy_id=32007
@@ -123,9 +123,9 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { paratrooper urban_assault_specialist hill_fighter ranger organizer }
-			skill=3
-			attack_skill=4
+			traits={ reckless fortress_buster }
+			skill=2
+			attack_skill=3
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
@@ -157,11 +157,11 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ reckless brilliant_strategist offensive_doctrine adaptable organizer engineer fortress_buster }
+			traits={ offensive_doctrine aggressive_assaulter brilliant_strategist }
 			skill=4
 			attack_skill=3
-			defense_skill=1
-			planning_skill=4
+			defense_skill=2
+			planning_skill=3
 			logistics_skill=2
 			legacy_id=32006
 		}
@@ -359,12 +359,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cautious organizer trickster panzer_leader infantry_leader engineer commando }
-			skill=5
+			traits={ unyielding_defender cautious infantry_leader }
+			skill=4
 			attack_skill=2
 			defense_skill=5
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=32009
 		}
 	}
@@ -391,12 +391,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer skilled_staffer ambusher trickster scavenger }
-			skill=3
+			traits={ skilled_staffer organizer }
+			skill=2
 			attack_skill=2
-			defense_skill=3
-			planning_skill=1
-			logistics_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
 			legacy_id=78000
 		}
 	}
@@ -423,12 +423,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ mountaineer hill_fighter ranger winter_specialist adaptable }
+			traits={ aggressive_assaulter hill_fighter }
 			skill=3
-			attack_skill=2
-			defense_skill=1
-			planning_skill=3
-			logistics_skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
 			legacy_id=32003
 		}
 	}
@@ -487,12 +487,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer media_personality desert_fox jungle_rat commando cavalry_leader trickster }
+			traits={ desert_fox commando }
 			skill=2
 			attack_skill=1
-			defense_skill=1
+			defense_skill=2
 			planning_skill=1
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=32004
 		}
 	}

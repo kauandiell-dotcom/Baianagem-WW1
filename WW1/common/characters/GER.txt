@@ -222,11 +222,11 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ old_guard inflexible_strategist unyielding_defender defensive_doctrine trickster }
-			skill=4
+			traits={ defensive_doctrine unyielding_defender cautious }
+			skill=3
 			attack_skill=2
-			defense_skill=5
-			planning_skill=1
+			defense_skill=4
+			planning_skill=2
 			logistics_skill=2
 			legacy_id=34547
 		}
@@ -240,12 +240,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ old_guard defensive_doctrine ranger swamp_fox }
+			traits={ old_guard defensive_doctrine swamp_fox }
 			skill=3
 			attack_skill=2
 			defense_skill=2
-			planning_skill=1
-			logistics_skill=3
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 	GER_duke_albrecht_of_wurttemberg={
@@ -257,12 +257,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ old_guard defensive_doctrine guerilla_fighter hill_fighter mountaineer }
+			traits={ old_guard defensive_doctrine hill_fighter }
 			skill=3
 			attack_skill=1
-			defense_skill=2
+			defense_skill=3
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=34337
 		}
 	}
@@ -274,7 +274,7 @@ characters={
 			}
 		}
 		field_marshal={
-		    traits={ old_guard politically_connected media_personality militias_officer }
+			traits={ politically_connected media_personality }
 			skill=2
 			attack_skill=2
 			defense_skill=2
@@ -291,7 +291,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ old_guard infantry_officer cautious jaeger guerilla_fighter cavalry_leader }
+			traits={ old_guard cautious }
 			skill=1
 			attack_skill=1
 			defense_skill=1
@@ -308,12 +308,12 @@ characters={
 			}
 		}
 		corps_commander={
-		    traits = { reckless cavalry_officer organizer paratrooper expert_improviser engineer trickster }
-			skill=4
-			attack_skill=6
+			traits={ reckless cavalry_leader organizer }
+			skill=3
+			attack_skill=4
 			defense_skill=1
 			planning_skill=2
-			logistics_skill=1
+			logistics_skill=2
 			legacy_id=34029
 		}
 	}
@@ -326,7 +326,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer media_personality ranger camouflage_expert cavalry_leader }
+			traits={ reckless ranger }
 			skill=2
 			attack_skill=2
 			defense_skill=2
@@ -359,9 +359,9 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ cautious urban_assault_specialist hill_fighter expert_improviser engineer fortress_buster aggressive_assaulter thorough_planner }
-			skill=5
-			attack_skill=3
+			traits={ cautious inflexible_strategist defensive_doctrine thorough_planner }
+			skill=3
+			attack_skill=2
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=2
@@ -392,11 +392,11 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ organizer swamp_fox ranger expert_improviser engineer fortress_buster logistics_wizard fast_planner winter_specialist winter_expert }
-			skill=5
-			attack_skill=4
-			defense_skill=2
-			planning_skill=4
+			traits={ organizer offensive_doctrine swamp_fox thorough_planner }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
 			logistics_skill=2
 			legacy_id=34315
 		}
@@ -424,12 +424,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ reckless brilliant_strategist winter_specialist winter_expert ranger swamp_fox expert_improviser engineer infantry_expert adaptable }
-			skill=5
+			traits={ reckless brilliant_strategist organizer fast_planner }
+			skill=3
 			attack_skill=4
-			defense_skill=1
-			planning_skill=4
-			logistics_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
 			legacy_id=34046
 		}
 	}
@@ -456,12 +456,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ cavalry_officer brilliant_strategist hill_fighter urban_assault_specialist expert_improviser engineer infantry_expert adaptable }
-			skill=5
-			attack_skill=3
+			traits={ cavalry_leader brilliant_strategist aggressive_assaulter }
+			skill=4
+			attack_skill=4
 			defense_skill=2
-			planning_skill=4
-			logistics_skill=3
+			planning_skill=3
+			logistics_skill=2
 			legacy_id=34485
 		}
 	}
@@ -488,9 +488,9 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ naval_invader infantry_leader infantry_expert commando }
+			traits={ infantry_leader trickster }
 			skill=3
-			attack_skill=2
+			attack_skill=3
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
@@ -520,9 +520,9 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ inflexible_strategist engineer_officer logistics_wizard defensive_doctrine }
-			skill=4
-			attack_skill=3
+			traits={ defensive_doctrine engineer_officer }
+			skill=3
+			attack_skill=2
 			defense_skill=3
 			planning_skill=2
 			logistics_skill=2
@@ -537,11 +537,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer cavalry_officer jaeger engineer_officer guerilla_fighter }
+			traits={ cavalry_leader defensive_doctrine }
 			skill=3
 			attack_skill=2
-			defense_skill=4
-			planning_skill=1
+			defense_skill=3
+			planning_skill=2
 			logistics_skill=1
 			legacy_id=34048
 		}
@@ -569,8 +569,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist ascari_officer irregulars_officer commando trickster camouflage_expert guerilla_fighter jungle_rat expert_improviser engineer scavenger adaptable }
-			skill=4
+			traits={ commando trickster guerilla_fighter jungle_rat }
+			skill=3
 			attack_skill=3
 			defense_skill=3
 			planning_skill=1
@@ -601,7 +601,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { mountaineer hill_fighter engineer adaptable infantry_expert }
+			traits={ mountaineer hill_fighter engineer }
 			skill=4
 			attack_skill=3
 			defense_skill=2
@@ -695,16 +695,16 @@ characters={
 				army_chief_planning_3
 			}
 			ai_will_do = {
-				factor = 1.000
+				factor = 0.000
 			}
 		}
 		corps_commander={
-			traits={ logistics_wizard thorough_planner skilled_staffer expert_delegator }
-			skill=6
-			attack_skill=1
-			defense_skill=1
+			traits={ logistics_wizard thorough_planner skilled_staffer expert_delegator brilliant_strategist }
+			skill=1
+			attack_skill=3
+			defense_skill=3
 			planning_skill=10
-			logistics_skill=2
+			logistics_skill=4
 			legacy_id=34245
 		}
 	}

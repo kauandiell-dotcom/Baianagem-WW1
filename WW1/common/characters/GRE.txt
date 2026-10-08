@@ -22,17 +22,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				politically_connected media_personality
-				logistics_wizard inspirational_leader
-				trickster ambusher
-				mountaineer hill_fighter paratrooper
-			} 
-			skill=3
-			attack_skill=3
+			traits={ politically_connected mountaineer }
+			skill=2
+			attack_skill=2
 			defense_skill=2
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=35002
 		}
 		country_leader={
@@ -122,17 +117,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				inflexible_strategist
-				logistics_wizard thorough_planner unyielding_defender
-				expert_improviser engineer
-				mountaineer hill_fighter
-			}
-			skill=4
+			traits={ mountaineer inflexible_strategist }
+			skill=3
 			attack_skill=2
 			defense_skill=3
-			planning_skill=3
-			logistics_skill=2
+			planning_skill=2
+			logistics_skill=1
 			legacy_id=35004
 		}
 	}
@@ -160,17 +150,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		corps_commander = {
-			traits = {
-				engineer_officer
-				engineer infantry_leader infantry_expert commando skirmisher naval_invader
-				mountaineer hill_fighter ranger urban_assault_specialist
-			}
-			skill = 5
-			attack_skill = 3
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 2
+		corps_commander={
+			traits={ infantry_leader engineer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 	GRE_paraskevopoulos={
@@ -196,15 +182,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				cautious
-				fortress_buster expert_improviser engineer camouflage_expert
-				ranger urban_assault_specialist desert_fox jungle_rat adaptable
-			}
-			skill=4
-			attack_skill=5
-			defense_skill=1
-			planning_skill=2
+			traits={ fortress_buster camouflage_expert }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
 			logistics_skill=2
 			legacy_id=35022
 		}
@@ -232,11 +214,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { infantry_officer naval_invader commando trickster skirmisher }
-			skill=3
+			traits={ infantry_leader trickster }
+			skill=2
 			attack_skill=1
-			defense_skill=4
-			planning_skill=2
+			defense_skill=3
+			planning_skill=1
 			logistics_skill=1
 			legacy_id=35014
 		}
@@ -264,12 +246,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer engineer_officer organizer infantry_leader winter_specialist winter_expert }
-			skill=3
+			traits={ organizer infantry_leader }
+			skill=2
 			attack_skill=1
-			defense_skill=4
+			defense_skill=3
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=35016
 		}
 	}
@@ -362,12 +344,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer old_guard inflexible_strategist paratrooper }
+			traits={ old_guard inflexible_strategist }
 			skill=2
 			attack_skill=2
 			defense_skill=1
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=35019
 		}
 	}
@@ -394,10 +376,10 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_officer irregulars_officer cautious desert_fox jungle_rat urban_assault_specialist }
-			skill=2
-			attack_skill=2
-			defense_skill=2
+			traits={ cautious politically_connected }
+			skill=1
+			attack_skill=1
+			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
 			legacy_id=35028
@@ -459,11 +441,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ armor_officer panzer_leader expert_improviser engineer }
-			skill=3
+			traits={ organizer engineer }
+			skill=2
 			attack_skill=2
 			defense_skill=1
-			planning_skill=4
+			planning_skill=2
 			logistics_skill=1
 			legacy_id=35030
 		}

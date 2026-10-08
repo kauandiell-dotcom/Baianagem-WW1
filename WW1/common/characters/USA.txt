@@ -47,11 +47,9 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={
-				offensive_doctrine thorough_planner logistics_wizard organisational_leader engineer
-			}
-			skill=4
-			attack_skill=3
+			traits={ thorough_planner skilled_staffer }
+			skill=3
+			attack_skill=2
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=2
@@ -76,12 +74,12 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ old_guard politically_connected engineer_officer defensive_doctrine inspirational_leader }
-			skill=3
+			traits={ old_guard defensive_doctrine }
+			skill=2
 			attack_skill=2
 			defense_skill=2
 			planning_skill=1
-			logistics_skill=3
+			logistics_skill=2
 		}
 		advisor={
 			slot = theorist
@@ -105,15 +103,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				reckless fortress_buster expert_improviser engineer skirmisher camouflage_expert
-				paratrooper adaptable jungle_rat desert_fox
-			}
-			skill=5
-			attack_skill=4
-			defense_skill=1
-			planning_skill=2
-			logistics_skill=5
+			traits={ offensive_doctrine organizer aggressive_assaulter }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
 		}
 		advisor={
 			slot = high_command
@@ -164,14 +159,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				armor_officer cavalry_officer cavalry_leader panzer_leader engineer skilled_staffer combined_arms_expert
-			}
+			traits={ organizer skilled_staffer }
 			skill=3
-			attack_skill=1
+			attack_skill=2
 			defense_skill=2
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=2
 		}
 		advisor={
 			slot = army_chief
@@ -193,9 +186,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				infantry_officer reckless infantry_leader paratrooper ambusher
-			}
+			traits={ reckless infantry_leader }
 			skill=2
 			attack_skill=2
 			defense_skill=2
@@ -223,14 +214,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				infantry_officer cautious winter_specialist winter_expert camouflage_expert scavenger
-			}
+			traits={ cautious unyielding_defender }
 			skill=2
 			attack_skill=1
-			defense_skill=1
+			defense_skill=2
 			planning_skill=2
-			logistics_skill=2
+			logistics_skill=1
 		}
 		advisor={
 			slot = high_command
@@ -252,14 +241,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				brilliant_strategist naval_invader ranger urban_assault_specialist paratrooper commando invader_ii
-			}
+			traits={ commando naval_invader }
 			skill=2
 			attack_skill=2
-			defense_skill=1
+			defense_skill=2
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 		}
 		advisor={
 			slot = high_command

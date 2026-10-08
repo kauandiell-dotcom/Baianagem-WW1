@@ -166,17 +166,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		field_marshal = {
-			traits = {
-				old_guard politically_connected media_personality
-				unyielding_defender defensive_doctrine inspirational_leader
-				guerilla_fighter scavenger
-			}
-			skill = 4
-			attack_skill = 2
-			defense_skill = 5
-			planning_skill = 1
-			logistics_skill = 2
+		field_marshal={
+			traits={ inspirational_leader guerilla_fighter politically_connected }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
 		}
 		name="Józef Piłsudski"
 		portraits={
@@ -212,16 +208,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		field_marshal = {
-			traits={
-				logistics_wizard fast_planner unyielding_defender offensive_doctrine infantry_leader infantry_expert
-				ranger swamp_fox adaptable engineer winter_specialist winter_expert
-			}
-			skill=4
-			attack_skill=3
+		field_marshal={
+			traits={ defensive_doctrine unyielding_defender }
+			skill=3
+			attack_skill=2
 			defense_skill=3
 			planning_skill=2
-			logistics_skill=2
+			logistics_skill=1
 		}
 	}
 	POL_rozwadowski={
@@ -249,17 +242,13 @@ characters={
 				factor = 1.000
 			}
 		}
-		corps_commander = {
-			traits = {
-				brilliant_strategist
-				urban_assault_specialist hill_fighter winter_specialist
-				organizer engineer cavalry_leader trickster fortress_buster skirmisher
-			}
-			skill = 5
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 3
+		corps_commander={
+			traits={ cavalry_leader brilliant_strategist }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 	POL_smigly={
@@ -287,15 +276,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				ranger swamp_fox winter_expert
-				expert_improviser engineer cavalry_leader commando trickster fortress_buster skirmisher
-			}
-			skill=5
-			attack_skill=6
+			traits={ commando trickster }
+			skill=3
+			attack_skill=3
 			defense_skill=2
 			planning_skill=2
-			logistics_skill=2
+			logistics_skill=1
 		}
 	}
 	POL_jozef_haller={
@@ -345,12 +331,12 @@ characters={
 				}
 		}
 		corps_commander={
-			traits={ cavalry_officer cavalry_leader panzer_leader naval_invader camouflage_expert fortress_buster }
-			skill=3
+			traits={ cavalry_leader organizer }
+			skill=2
 			attack_skill=2
 			defense_skill=2
-			planning_skill=2
-			logistics_skill=2
+			planning_skill=1
+			logistics_skill=1
 		}
 	}
 	POL_sikorski={
@@ -400,12 +386,10 @@ characters={
 				}
 		}
 		corps_commander={
-			traits={
-				old_guard inflexible_strategist infantry_officer jaeger mountaineer hill_fighter
-			}
+			traits={ old_guard mountaineer }
 			skill=2
 			attack_skill=1
-			defense_skill=3
+			defense_skill=2
 			planning_skill=1
 			logistics_skill=1
 		}

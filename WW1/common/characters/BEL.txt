@@ -10,14 +10,12 @@ characters={
 			}
 		}
 		field_marshal={
+			traits={ unyielding_defender inspirational_leader }
 			skill=2
 			attack_skill=1
-			defense_skill=1
+			defense_skill=2
 			planning_skill=2
-			logistics_skill=2
-			traits = {
-				politically_connected cautious thorough_planner commando trickster swamp_fox winter_expert fortress_buster
-			}
+			logistics_skill=1
 			legacy_id=9009
 		}
 		country_leader={
@@ -51,14 +49,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				engineer_officer engineer paratrooper ranger urban_assault_specialist
-			}
-			skill=5
-			attack_skill=3
+			traits={ fortress_buster engineer }
+			skill=3
+			attack_skill=2
 			defense_skill=4
-			planning_skill=3
-			logistics_skill=2
+			planning_skill=1
+			logistics_skill=1
 			legacy_id=9008
 		}
 	}
@@ -85,14 +81,12 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={
-				cavalry_officer trickster cavalry_leader panzer_leader paratrooper
-			}
+			traits={ cavalry_leader trickster }
 			skill=2
-			attack_skill=3
+			attack_skill=2
 			defense_skill=2
 			planning_skill=1
-			logistics_skill=2
+			logistics_skill=1
 			legacy_id=9012
 		}
 	}
