@@ -621,7 +621,8 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				army_org_factor = -0.05
-				land_reinforce_rate = -0.03
+				land_reinforce_rate = -0.005
+				army_org_regain = -0.05
 			}
 		}
 
@@ -630,9 +631,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.10
-				army_artillery_defence_factor = 0.08
-				industrial_capacity_factory = 0.06
+				army_artillery_attack_factor = 0.12
+				army_artillery_defence_factor = 0.10
+				industrial_capacity_factory = 0.08
 			}
 		}
 

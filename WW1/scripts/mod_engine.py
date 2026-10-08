@@ -626,12 +626,18 @@ def analyze_focus(node: FocusNode) -> None:
 
     elif wing == 'DIPLOMACY':
         if len(events) > 0:
-            score += 2.0; strengths.append(f"Canal diplomático / negociação bilateral ({len(events)})")
+            score += 1.8; strengths.append(f"Canal diplomático / negociação bilateral ({len(events)})")
         if len(flags) > 0 or len(scripted_ideas) > 0:
             score += 1.2; strengths.append("Pacto geopolítico / alinhamento")
-        if pp_val >= 20:
+        if pp_val >= 10:
             score += 0.8; strengths.append(f"+{pp_val} Poder Político para influência")
-        if not (events or flags or scripted_ideas):
+        if len(vars_mod) > 0:
+            score += 1.2; strengths.append(f"Gestão de minorias e consenso ({len(vars_mod)})")
+        if civs > 0 or 'provisions' in reward:
+            score += 1.2; strengths.append("Tratado comercial / abastecimento bilateral")
+        if bunkers > 0 or mils > 0 or xp_val >= 15 or tech_bonuses > 0:
+            score += 1.2; strengths.append("Acordo militar / contingência de fronteira")
+        if not (events or flags or scripted_ideas or vars_mod or civs or 'provisions' in reward or bunkers or pp_val >= 10):
             score -= 1.5; fillers.append("Foco diplomático sem interação bilateral")
 
     else: # POSTWAR
