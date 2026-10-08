@@ -139,9 +139,9 @@ FOCI = {
     "Admiralty e War Office reúnem interceptações de rádio e cabo em um só escritório. Ganha 10 de poder político e abre o escritório da Sala 40.",
     "The Admiralty and War Office pool wireless and cable intercepts in one office. It grants 10 political power and opens the Room 40 office."),
 "the_room_forty_office": (
-    [idea("room_forty"), flag("room_forty")],
-    "A Sala 40 lê códigos navais alemães e, em 1917, o telegrama Zimmermann. Instituição Sala 40: velocidade de decifração +10%.",
-    "Room 40 reads German naval codes and, in 1917, the Zimmermann telegram. Room 40 institution: decryption speed +10%."),
+    ["remove_ideas = ENG_the_imperial_web", idea("room_forty"), flag("room_forty")],
+    "A Sala 40 lê códigos navais alemães e intercepta despachos globais. Substitui a teia imperial inicial pela instituição Sala 40 (velocidade de decifração +10%).",
+    "Room 40 reads German naval codes and global intercepts. Replaces early imperial web with Room 40 institution (decryption speed +10%)."),
 "aerial_photography_research": (
     [tech("aerial_photography_research", "recon_tech")],
     "Câmeras em aviões mapeiam trincheiras e baterias. Bônus de pesquisa de 25% em reconhecimento (uso único).",
@@ -171,17 +171,17 @@ FOCI = {
     "Padrões de qualidade reduzem refugo e acidentes nas fábricas de guerra. Ganha 10 de poder político e 1% de estabilidade.",
     "Quality standards reduce scrap and accidents in war factories. It grants 10 political power and 1% stability."),
 "the_postwar_research_council": (
-    [pp(15), var("debt_burden", 1), flag("research_council")],
-    "O Conselho de Pesquisa Científica e Industrial sobrevive à desmobilização. Ganha 15 de poder político; a dívida sobe 1.",
-    "The Department of Scientific and Industrial Research survives demobilisation. It grants 15 political power; debt rises by 1."),
+    [pp(15), tech("postwar_research_council", "industry"), var("debt_burden", 1), flag("research_council")],
+    "O Conselho de Pesquisa Científica e Industrial sobrevive à desmobilização. Ganha 15 de poder político e bônus de 25% em tecnologia industrial; dívida sobe 1.",
+    "The Department of Scientific and Industrial Research survives demobilisation. Grants 15 political power and a 25% bonus on industrial tech; debt rises by 1."),
 "industrial_patent_exchanges": (
-    [pp(10), var("debt_burden", -1), flag("patent_exchanges")],
-    "Patentes alemãs confiscadas são licenciadas a empresas britânicas. Ganha 10 de poder político e a dívida cai 1.",
-    "Confiscated German patents are licensed to British firms. It grants 10 political power and debt falls by 1."),
+    [pp(15), tech("industrial_patent_exchanges", "electronics"), var("debt_burden", -1), flag("patent_exchanges")],
+    "Patentes alemãs confiscadas são licenciadas a empresas britânicas. Ganha 15 de poder político, bônus de 25% em eletrônica e dívida cai 1.",
+    "Confiscated German patents are licensed to British firms. Grants 15 political power, 25% electronics bonus and debt falls by 1."),
 "technical_education_for_reconstruction": (
-    [stab(0.01), pp(10), flag("technical_education")],
-    "Escolas técnicas e noturnas qualificam operários para a paz. Ganha 10 de poder político e 1% de estabilidade.",
-    "Technical and evening schools qualify workers for peacetime. It grants 10 political power and 1% stability."),
+    [stab(0.02), pp(15), tech("technical_education_for_reconstruction", "engineers_tech"), flag("technical_education")],
+    "Escolas técnicas qualificam operários para a transição pacífica. Ganha 15 de poder político, 2% de estabilidade e bônus de 25% em tecnologia de engenharia.",
+    "Technical schools qualify workers for peaceful reconstruction. Grants 15 political power, 2% stability and a 25% engineering tech bonus."),
 }
 
 EXCLUSIVE = []

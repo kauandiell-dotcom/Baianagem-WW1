@@ -36,7 +36,7 @@ ENG_ww1_empire_policy = {
   visible = { has_country_flag = ENG_ww1_imperial_conference_held }
   available = { has_capitulated = no }
   cost = 30 days_re_enable = 365
-  complete_effect = { add_political_power = 50 add_stability = 0.03 add_to_variable = { ww1_britain_dominion_consent = 6 } add_to_variable = { ww1_britain_debt_burden = 1 } }
+  complete_effect = { add_to_variable = { ww1_britain_dominion_consent = 6 } add_to_variable = { ww1_britain_debt_burden = 1 } }
   ai_will_do = { base = 1 modifier = { factor = 0 check_variable = { ww1_britain_dominion_consent > 70 } } }
  }
  ENG_ww1_release_irish_prisoners = {

@@ -25,6 +25,10 @@ def idea(name):
     return f"add_ideas = ENG_ww1_{name}"
 
 
+def remove_idea(name):
+    return f"remove_ideas = ENG_ww1_{name}"
+
+
 def pp(n):
     return f"add_political_power = {n}"
 
@@ -50,9 +54,9 @@ FOCI = {
     "A Lei do Parlamento de 1911 tira dos Lordes o poder de barrar leis financeiras e limita o veto às demais leis a dois anos. Ganha 25 de poder político, 1% de estabilidade, a tensão irlandesa cai 2 pontos e o caminho da autonomia irlandesa se abre.",
     "The Parliament Act of 1911 strips the Lords of their power over money bills and limits their veto on other bills to a two-year delay. The cabinet gains 25 political power, 1% stability, Irish tension falls by 2 and the road to Irish self-government opens."),
 "national_insurance": (
-    [idea("national_insurance"), var("labour_support", 5), var("debt_burden", 1)],
-    "O Seguro Nacional de Lloyd George cobre saúde e desemprego de milhões de trabalhadores. Dá a instituição Seguro Nacional (estabilidade +2%, bens de consumo +1%), apoio trabalhista +5 e dívida +1.",
-    "Lloyd George's National Insurance covers sickness and unemployment for millions of workers. It grants the National Insurance institution (stability +2%, consumer goods +1%), labour support +5 and debt +1."),
+    ["remove_ideas = ENG_city_of_london_credit", idea("national_insurance"), var("labour_support", 5), var("debt_burden", 1)],
+    "O Seguro Nacional de Lloyd George cobre saúde e desemprego de milhões de trabalhadores. Substitui o crédito da City pela instituição Seguro Nacional (estabilidade +2%, bens de consumo +1%), apoio trabalhista +5 e dívida +1.",
+    "Lloyd George's National Insurance covers sickness and unemployment for millions of workers. Replaces City credit with the National Insurance institution (stability +2%, consumer goods +1%), labour support +5 and debt +1."),
 "the_liberal_cabinet": (
     [pp(15), flag("liberal_government")],
     "O gabinete liberal de Asquith depende dos votos irlandeses e trabalhistas para governar. Ganha 15 de poder político; as próximas reformas dependem dessa maioria apertada.",
@@ -78,13 +82,13 @@ FOCI = {
     "A reforma do registro eleitoral acaba com o voto plural e simplifica a inscrição. Ganha 10 de poder político e apoio trabalhista +2.",
     "Electoral registration reform ends plural voting and simplifies enrolment. It grants 10 political power and labour support +2."),
 "the_defence_of_the_realm": (
-    [idea("defence_of_the_realm"), flag("dora_enacted")],
-    "A Lei de Defesa do Reino, de agosto de 1914, dá ao governo poderes de emergência sobre imprensa, ofício e deslocamentos. Instituição: apoio à guerra +5%, estabilidade -2%, poder político -3%.",
-    "The Defence of the Realm Act of August 1914 gives the government emergency powers over the press, trades and movement. Institution: war support +5%, stability -2%, political power gain -3%."),
+    [remove_idea("national_insurance"), idea("defence_of_the_realm"), flag("dora_enacted")],
+    "A Lei de Defesa do Reino de agosto de 1914 dá poderes de emergência sobre imprensa e ofícios. Substitui o seguro social pela instituição Defesa do Reino (apoio à guerra +5%, estabilidade -2%, poder político -3%).",
+    "The Defence of the Realm Act of August 1914 gives emergency powers over press and trades. Replaces social insurance with Defence of the Realm institution (war support +5%, stability -2%, political power -3%)."),
 "wartime_parliamentary_scrutiny": (
-    [idea("cabinet_consultation"), stab(0.02), var("labour_support", 2)],
-    "Mesmo em guerra, o Parlamento mantém o direito de interpelar ministros. Ganha a instituição Consulta ao Gabinete (poder político -2,5%), estabilidade +2% e apoio trabalhista +2.",
-    "Even at war Parliament keeps the right to question ministers. It grants the Cabinet Consultation institution (political power gain -2.5%), stability +2% and labour support +2."),
+    [remove_idea("national_insurance"), idea("cabinet_consultation"), stab(0.02), var("labour_support", 2)],
+    "Mesmo em guerra, o Parlamento mantém o direito de interpelar ministros. Substitui o seguro pela instituição Consulta ao Gabinete (poder político -2,5%), estabilidade +2% e apoio trabalhista +2.",
+    "Even at war Parliament keeps the right to question ministers. Replaces insurance with Cabinet Consultation institution (political power -2.5%), stability +2% and labour support +2."),
 "the_coalition_cabinet": (
     [ev(3)],
     "A crise dos projéteis e a demissão de Fisher derrubam o gabinete liberal em maio de 1915. O governo precisa decidir se divide o poder com conservadores e trabalhistas.",
@@ -94,9 +98,9 @@ FOCI = {
     "A Lei do Serviço Militar de janeiro de 1916 encerra o voluntariado em toda a Grã-Bretanha e remove a antiga força profissional estrita. Autoriza leis de recrutamento geral, com apoio trabalhista -6 e tensão irlandesa +4.",
     "The Military Service Act of January 1916 ends voluntary enlistment across Britain and retires the old professional service idea. Authorises conscription laws, labour support falls by 6 and Irish tension rises by 4."),
 "reserved_civilian_occupations": (
-    [idea("reserved_occupations")],
-    "Mineiros, operários de munição e ferroviários ficam fora do alistamento. Instituição Ofícios Reservados: capacidade industrial +2%, recrutamento -0,15%.",
-    "Miners, munition workers and railwaymen are exempted from enlistment. Reserved Occupations institution: industrial capacity +2%, recruitment -0.15%."),
+    [remove_idea("defence_of_the_realm"), idea("reserved_occupations")],
+    "Mineiros, operários de munição e ferroviários ficam fora do alistamento militar. Substitui restrições gerais pela instituição Ofícios Reservados (capacidade industrial +2%, recrutamento -0,15%).",
+    "Miners, munition workers and railwaymen are exempted from military enlistment. Replaces general restrictions with Reserved Occupations institution (industrial capacity +2%, recruitment -0.15%)."),
 "the_war_cabinet": (
     [ev(4)],
     "Em dezembro de 1916 a crise de liderança opõe Asquith a Lloyd George. O país escolhe entre um pequeno gabinete de guerra e a reorganização de comitês.",
@@ -106,25 +110,25 @@ FOCI = {
     "A Conferência do Presidente da Câmara reúne todos os partidos para discutir o voto. Ganha 10 de poder político e apoio trabalhista +3.",
     "The Speaker's Conference brings every party together to discuss the vote. It grants 10 political power and labour support +3."),
 "representation_of_the_people": (
-    [idea("enlarged_franchise"), var("labour_support", 8), flag("franchise_extended")],
-    "A Lei da Representação do Povo de 1918 dá voto a todos os homens e às mulheres acima de 30 anos. Instituição Eleitorado Ampliado (estabilidade +2%, poder político -2%) e apoio trabalhista +8.",
-    "The Representation of the People Act of 1918 enfranchises all men and women over 30. Enlarged Electorate institution (stability +2%, political power gain -2%) and labour support +8."),
+    [remove_idea("defence_of_the_realm"), remove_idea("reserved_occupations"), idea("enlarged_franchise"), var("labour_support", 8), flag("franchise_extended")],
+    "A Lei da Representação do Povo de 1918 dá voto a todos os homens e mulheres acima de 30 anos. Substitui leis de emergência pela instituição Eleitorado Ampliado (estabilidade +2%, poder político -2%) e apoio trabalhista +8.",
+    "The Representation of the People Act of 1918 enfranchises all men and women over 30. Replaces emergency laws with Enlarged Electorate institution (stability +2%, political power -2%) and labour support +8."),
 "the_coalition_election": (
     [ev(5)],
     "A eleição de dezembro de 1918 põe à prova a coalizão de guerra: lançar o aval do governo aos candidatos ou disputar como partidos separados.",
     "The December 1918 election tests the wartime coalition: issue the government's coupon to its candidates or fight as separate parties."),
 "liberal_reconstruction": (
-    [pp(25), stab(0.03), var("debt_burden", 3), flag("liberal_reconstruction_programme")],
-    "Habitação, saúde e educação: o programa de reconstrução de 1919 promete 'uma terra digna dos heróis'. Ganha 25 de poder político e 3% de estabilidade, mas a dívida sobe 3.",
-    "Housing, health and education: the 1919 reconstruction programme promises 'a land fit for heroes'. It grants 25 political power and 3% stability, but debt rises by 3."),
+    [remove_idea("defence_of_the_realm"), remove_idea("reserved_occupations"), pp(25), stab(0.03), var("debt_burden", 3), flag("liberal_reconstruction_programme")],
+    "Habitação, saúde e educação: o programa de reconstrução de 1919 encerra restrições de guerra. Ganha 25 de poder político e 3% de estabilidade, mas a dívida sobe 3.",
+    "Housing, health and education: the 1919 reconstruction programme retires wartime restrictions. Grants 25 political power and 3% stability, but debt rises by 3."),
 "the_labour_alternative": (
-    [idea("labour_compact"), var("labour_support", 10), stab(-0.02), pp(10), flag("labour_mandate")],
-    "Sem maioria conservadora, o Partido Trabalhista aparece como alternativa de governo. Exclui o Acordo Conservador. Ganha o Pacto Trabalhista, apoio trabalhista +10, 10 de poder político e estabilidade -2%.",
-    "Without a Conservative majority, Labour appears as a government alternative. Excludes the Conservative Settlement. It grants the Labour Compact, labour support +10, 10 political power and stability -2%."),
+    [remove_idea("defence_of_the_realm"), remove_idea("reserved_occupations"), idea("labour_compact"), var("labour_support", 10), stab(-0.02), pp(15), flag("labour_mandate")],
+    "Sem maioria conservadora, o Partido Trabalhista assume como alternativa governamental. Substitui medidas de guerra pelo Pacto Trabalhista, apoio trabalhista +10, 15 de poder político e estabilidade -2%.",
+    "Without a Conservative majority, Labour assumes office as an alternative government. Replaces war measures with the Labour Compact, labour support +10, 15 political power and stability -2%."),
 "the_conservative_settlement": (
-    [pp(20), stab(0.02), var("labour_support", -8), var("debt_burden", -4), flag("conservative_settlement")],
-    "O fim da coalizão e a volta dos conservadores trazem cortes de gastos. Exclui a Alternativa Trabalhista. Ganha 20 de poder político e 2% de estabilidade; apoio trabalhista cai 8 e a dívida cai 4.",
-    "The end of the coalition and the return of the Conservatives bring spending cuts. Excludes the Labour Alternative. It grants 20 political power and 2% stability; labour support falls by 8 and debt falls by 4."),
+    [remove_idea("defence_of_the_realm"), remove_idea("reserved_occupations"), pp(25), stab(0.02), var("labour_support", -8), var("debt_burden", -4), flag("conservative_settlement")],
+    "O fim da coalizão e a volta dos conservadores encerram restrições de guerra com disciplina fiscal. Ganha 25 de poder político e 2% de estabilidade; apoio trabalhista cai 8 e a dívida cai 4.",
+    "The end of the coalition and the return of the Conservatives ends war restrictions with fiscal retrenchment. Grants 25 political power and 2% stability; labour support falls by 8 and debt falls by 4."),
 # ------------------------------------------------------------------ imperial (20)
 "the_imperial_conference": (
     [pp(10), var("dominion_consent", 8), flag("imperial_conference_held"), ev(6)],
@@ -155,9 +159,9 @@ FOCI = {
     "Médicos coloniais e hospitais de campanha compartilham experiência contra febres e feridas. Ganha 1% de estabilidade e consentimento +2.",
     "Colonial medical services share experience against fever and wounds. It grants 1% stability and consent +2."),
 "dominion_procurement_offices": (
-    [idea("dominion_procurement"), var("dominion_consent", 2)],
-    "Escritórios de compras nos domínios ligam a indústria de Londres a lã, trigo, metais e munições dos domínios. Instituição: capacidade industrial +1,5%, bens de consumo +0,5%. Consentimento +2.",
-    "Procurement offices in the Dominions link London's industry to wool, wheat, metal and munitions overseas. Institution: industrial capacity +1.5%, consumer goods +0.5%. Consent +2."),
+    ["remove_ideas = ENG_the_imperial_web", idea("dominion_procurement"), var("dominion_consent", 2)],
+    "Escritórios de compras ligam Londres a matérias-primas ultramarinas. Substitui teia imperial por Compras nos Domínios (capacidade industrial +1,5%); consentimento +2.",
+    "Procurement offices link London to overseas raw materials. Replaces imperial web with Dominion Procurement (industrial capacity +1.5%); consent +2."),
 "the_mediterranean_stations": (
     [navy_xp(5), flag("mediterranean_stations")],
     "Malta, Gibraltar, Chipre e Suez sustentam a frota do Mediterrâneo. Ganha 5 de experiência naval.",
@@ -167,9 +171,9 @@ FOCI = {
     "Singapura e Hong Kong coordenam a defesa marítima do Extremo Oriente com Austrália e Nova Zelândia. Ganha 4 de experiência naval e consentimento +1.",
     "Singapore and Hong Kong coordinate the maritime defence of the Far East with Australia and New Zealand. It grants 4 naval experience and consent +1."),
 "imperial_troop_transport": (
-    [idea("imperial_sealift")],
-    "Comboios de tropas trazem canadenses, australianos e indianos à Europa e ao Oriente Médio. Instituição Transporte Imperial: escolta de comboios +3%, uso de fábricas civis +1.",
-    "Troop convoys bring Canadians, Australians and Indians to Europe and the Middle East. Imperial Sealift institution: convoy escort efficiency +3%, civilian factory use +1."),
+    [remove_idea("dominion_procurement"), idea("imperial_sealift")],
+    "Comboios de tropas trazem soldados dos domínios à Europa. Substitui escritórios de compras pelo Transporte Imperial (escolta de comboios +3%).",
+    "Troop convoys bring Dominion soldiers to Europe. Replaces procurement offices with Imperial Sealift (convoy escort +3%)."),
 "the_imperial_war_conference": (
     [var("dominion_consent", 6), flag("imperial_war_conference_held"), ev(8)],
     "Em 1917 Londres convoca os domínios para decidir a direção da guerra. Consentimento +6; o formato da participação é decidido em evento.",
@@ -187,9 +191,9 @@ FOCI = {
     "Trabalhadores da Índia, China e Caribe cavam trincheiras e descarregam navios. Ganha 12.000 de mão de obra, mas o consentimento cai 1 pela forma dos contratos.",
     "Workers from India, China and the Caribbean dig trenches and unload ships. It grants 12,000 manpower, but consent falls by 1 because of the contract terms."),
 "a_commonwealth_consultation_charter": (
-    [idea("commonwealth_consultation"), var("dominion_consent", 5), flag("commonwealth_charter")],
-    "A Carta de Consulta transforma o império em uma comunidade de nações com voz própria. Instituição: poder político +3%, bens de consumo +0,5%. Consentimento +5.",
-    "The Consultation Charter turns the empire into a community of nations with their own voice. Institution: political power gain +3%, consumer goods +0.5%. Consent +5."),
+    ["remove_ideas = ENG_the_imperial_web", remove_idea("imperial_sealift"), remove_idea("dominion_procurement"), idea("commonwealth_consultation"), var("dominion_consent", 5), flag("commonwealth_charter")],
+    "A Carta de Consulta transforma o império em uma comunidade de nações, encerrando restrições coloniais. Instituição Carta de Consulta (ganho de PP +3%); consentimento +5.",
+    "The Consultation Charter turns empire into a commonwealth of nations, ending colonial restrictions. Consultation Charter institution (PP gain +3%); consent +5."),
 "the_irish_settlement_conference": (
     [ev(9)],
     "A Convenção Irlandesa reúne nacionalistas, unionistas e o governo. O resultado define o rumo da Irlanda: autonomia, partilha ou repressão.",

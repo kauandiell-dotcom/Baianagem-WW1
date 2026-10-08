@@ -724,7 +724,20 @@ def analyze_focus(node: FocusNode) -> None:
     cost = node.cost_days
     
     # 1. Determine Wing Role
-    if x <= 10:
+    if node.id.startswith('ENG_'):
+        if x <= 15:
+            wing = 'POLITICAL'
+        elif 16 <= x <= 38:
+            wing = 'ECONOMIC'
+        elif 44 <= x <= 62:
+            wing = 'DIPLOMACY'
+        elif 63 <= x <= 86:
+            wing = 'NAVY'
+        elif 87 <= x <= 104:
+            wing = 'ARMY'
+        else:
+            wing = 'POSTWAR'
+    elif x <= 10:
         wing = 'POLITICAL'
     elif 16 <= x <= 38:
         wing = 'ECONOMIC'
@@ -829,25 +842,29 @@ def analyze_focus(node: FocusNode) -> None:
             score -= 1.5; fillers.append("Foco político sem impacto no regime ou consenso")
 
     elif wing == 'ECONOMIC':
-        if civs > 0 or mils > 0:
-            score += 1.8; strengths.append(f"Expansão fabril (+{civs} civ, +{mils} mil)")
+        if civs > 0 or mils > 0 or docks > 0:
+            score += 1.8; strengths.append(f"Expansão fabril/estaleiros (+{civs} civ, +{mils} mil, +{docks} dock)")
         if resources > 0:
             score += 1.5; strengths.append(f"Prospecção de recursos ({resources})")
-        if infras > 0 or slots > 0:
-            score += 1.0; strengths.append(f"Logística e slots (+{infras} infra, +{slots} slots)")
+        if infras > 0 or slots > 0 or 'build_railway' in reward:
+            score += 1.0; strengths.append(f"Logística e infraestrutura (+{infras} infra, +{slots} slots)")
         if 'provisions' in reward:
             score += 1.5; strengths.append("Abastecimento alimentar / mitigação de fome")
         if tech_bonuses > 0:
             score += 1.0; strengths.append("Pesquisa de modernização industrial")
+        if len(ideas_add) > 0:
+            score += 1.2; strengths.append(f"Regime/Instituição Econômica ({', '.join(ideas_add)})")
+        if len(vars_mod) > 0:
+            score += 1.0; strengths.append(f"Gestão Fiscal e Dívida ({len(vars_mod)} ajustes)")
         
         # Check event-driven economic governance
-        ev_econ = [e for e in node_event_objs if e.has_economic_tradeoffs or e.has_provisions or e.options_count >= 2 or "economic" in e.id.lower() or "food" in e.id.lower() or "bread" in e.id.lower() or "factory" in e.id.lower()]
+        ev_econ = [e for e in node_event_objs if e.has_economic_tradeoffs or e.has_provisions or e.options_count >= 2 or "economic" in e.id.lower() or "eco" in e.id.lower() or "food" in e.id.lower() or "bread" in e.id.lower() or "factory" in e.id.lower()]
         if ev_econ:
             e_first = ev_econ[0]
             score += 1.8
             strengths.append(f"Governança Econômica via Evento '{e_first.id}' ({e_first.options_count} opções de gestão)")
         
-        if not (civs or mils or resources or infras or 'provisions' in reward or tech_bonuses or ev_econ):
+        if not (civs or mils or docks or resources or infras or slots or 'build_railway' in reward or 'provisions' in reward or tech_bonuses or ideas_add or vars_mod or ev_econ):
             score -= 1.5; fillers.append("Foco econômico sem impacto material tangível")
 
     elif wing == 'ARMY':
@@ -1709,7 +1726,20 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
             p3_nodes.append(node)
 
         # Classify by wing
-        if node.x <= 10:
+        if node.id.startswith('ENG_') or tag == 'ENG':
+            if node.x <= 15:
+                wing_map['Político'].append(node)
+            elif 16 <= node.x <= 38:
+                wing_map['Econômico'].append(node)
+            elif 44 <= node.x <= 62:
+                wing_map['Diplomacia'].append(node)
+            elif 63 <= node.x <= 86:
+                wing_map['Marinha'].append(node)
+            elif 87 <= node.x <= 104:
+                wing_map['Exército'].append(node)
+            else:
+                wing_map['Pós-Guerra'].append(node)
+        elif node.x <= 10:
             wing_map['Político'].append(node)
         elif 16 <= node.x <= 38:
             wing_map['Econômico'].append(node)
@@ -1747,7 +1777,12 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
             bool(re.search(r'add_to_variable', cr)),
             bool(re.search(r'set_country_flag', cr)),
             bool(re.search(r'(?:army|navy|air)_experience', cr)),
-            bool(re.search(r'auh_ww1_set_', cr))
+            bool(re.search(r'add_ideas', cr)),
+            bool(re.search(r'remove_ideas', cr)),
+            bool(re.search(r'add_political_power', cr)),
+            bool(re.search(r'add_stability', cr)),
+            bool(re.search(r'add_autonomy_ratio|build_railway', cr)),
+            bool(re.search(r'(?:auh|ENG)_ww1_set_', cr))
         )
         signatures.append(sig)
 
@@ -1771,7 +1806,16 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
             coords_seen[coord] = f_id
 
         if node.x <= 4 and node.y <= 6:
-            report.continuous_focus_hazard = True
+            has_relocated_cont = False
+            try:
+                with open(file_path, "r", encoding="utf-8", errors="ignore") as _f_cont:
+                    _m_cont = re.search(r'continuous_focus_position\s*=\s*\{\s*x\s*=\s*(\d+)\s*y\s*=\s*(\d+)', _f_cont.read())
+                    if _m_cont and int(_m_cont.group(2)) >= 2000:
+                        has_relocated_cont = True
+            except Exception:
+                pass
+            if not has_relocated_cont:
+                report.continuous_focus_hazard = True
 
     report.nodes = nodes
     report.total_focuses = len(nodes)
