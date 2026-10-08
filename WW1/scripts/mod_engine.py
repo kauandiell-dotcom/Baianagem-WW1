@@ -26,6 +26,7 @@ import io
 from pathlib import Path
 from dataclasses import dataclass, field, asdict
 from typing import List, Dict, Set, Optional, Tuple
+from collections import Counter
 
 try:
     if hasattr(sys.stdout, "reconfigure"):
@@ -219,6 +220,23 @@ class TreeReport:
     filler_count: int = 0
     filler_percentage: float = 0.0
     
+    # 5 Authentic Gameplay Pillars (each 0.0 - 10.0)
+    score_p1_specialization: float = 0.0   # Identidade & Especialização dos Ramos
+    score_p2_mechanics: float = 0.0        # Integração Mecânica & Interatividade
+    score_p3_balance: float = 0.0          # Equilíbrio & Anti-Powercreep
+    score_p4_diversity: float = 0.0        # Diversidade de Design & Anti-Repetição
+    score_p5_pacing: float = 0.0           # Ritmo & Prontidão de Guerra
+    overall_gameplay_index: float = 0.0    # Índice Geral de Jogabilidade
+    gameplay_tier: str = ""               # "Obra-Prima", "Sólido", "Moderado", "Crítico"
+    
+    # Wing Breakdown Diagnostics
+    wing_metrics: Dict[str, Dict[str, any]] = field(default_factory=dict)
+    distinct_signatures: int = 0
+    max_signature_pct: float = 0.0
+    cookie_cutter_warning: str = ""
+    strengths_list: List[str] = field(default_factory=list)
+    weaknesses_list: List[str] = field(default_factory=list)
+    
     # 3-Phase Chronological Arc
     phase_1_count: int = 0
     phase_2_count: int = 0
@@ -232,8 +250,11 @@ class TreeReport:
     total_mil_factories: int = 0
     total_dockyards: int = 0
     total_slots: int = 0
+    total_bunkers: int = 0
     total_events_fired: int = 0
     total_decisions_unlocked: int = 0
+    total_variable_mods: int = 0
+    total_tech_bonuses: int = 0
     
     # Ergonomics & Visual Collisions
     collision_count: int = 0
@@ -474,152 +495,168 @@ def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
 
 def analyze_focus(node: FocusNode) -> None:
     reward = node.raw_reward
-    score = 0.0
+    x = node.x
+    y = node.y
+    cost = node.cost_days
+    
+    # 1. Determine Wing Role
+    if x <= 10:
+        wing = 'POLITICAL'
+    elif 16 <= x <= 38:
+        wing = 'ECONOMIC'
+    elif 44 <= x <= 62:
+        wing = 'ARMY'
+    elif 68 <= x <= 86:
+        wing = 'DIPLOMACY'
+    elif 92 <= x <= 102:
+        wing = 'NAVY'
+    else:
+        wing = 'POSTWAR'
+        
+    score = 5.0 # Neutral baseline for a functional 35-day focus
     strengths = []
     fillers = []
-
-    # 1. Map Impact
+    
+    # Physical Assets
     civs = len(re.findall(r'industrial_complex\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*industrial_complex', reward))
     mils = len(re.findall(r'arms_factory\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*arms_factory', reward))
     docks = len(re.findall(r'dockyard\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*dockyard', reward))
     slots = len(re.findall(r'add_extra_state_shared_building_slots\s*=\s*[1-9]', reward))
     infras = len(re.findall(r'infrastructure\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*infrastructure', reward))
+    bunkers = len(re.findall(r'bunker\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*(?:bunker|coastal_bunker)', reward))
+    resources = len(re.findall(r'add_resource\s*=', reward))
     
     node.factories_civ = civs
     node.factories_mil = mils
     node.dockyards = docks
     node.slots = slots
-
-    if civs > 0:
-        score += civs * 2.5
-        strengths.append(f"+{civs} Fabrica(s) Civil(is)")
-    if mils > 0:
-        score += mils * 3.0
-        strengths.append(f"+{mils} Fabrica(s) Militar(es)")
-    if docks > 0:
-        score += docks * 2.5
-        strengths.append(f"+{docks} Estaleiro(s)")
-    if slots > 0:
-        score += slots * 1.5
-        strengths.append(f"+{slots} Slot(s) de Construcao")
-    if infras > 0:
-        score += infras * 1.0
-        strengths.append(f"+{infras} Nivel(eis) de Infraestrutura")
-
-    # Fortifications & Bunkers
-    bunkers = len(re.findall(r'bunker\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*(?:bunker|coastal_bunker)', reward))
-    if bunkers > 0:
-        score += bunkers * 2.0
-        strengths.append(f"+{bunkers} Fortificacao(oes)/Bunker(s)")
-
-    # Strategic Resources
-    resources = len(re.findall(r'add_resource\s*=', reward))
-    if resources > 0:
-        score += resources * 2.0
-        strengths.append(f"Desenvolvimento de Recursos ({resources})")
-
-    # Tech Research Bonuses
+    
+    # Interactive Systems
     tech_bonuses = len(re.findall(r'add_tech_bonus\s*=', reward))
-    if tech_bonuses > 0:
-        score += tech_bonuses * 2.5
-        strengths.append(f"+{tech_bonuses} Bonus de Pesquisa Tecnologica")
-
-    # Command Power
-    cp = re.findall(r'add_command_power\s*=\s*([0-9]+)', reward)
-    if cp:
-        score += 1.0
-        strengths.append(f"Poder de Comando (+{', '.join(cp)})")
-
-    # 2. Military Units & Equipment
-    units = len(re.findall(r'create_unit\s*=', reward)) + len(re.findall(r'load_oob\s*=', reward))
-    node.units_spawned = units
-    if units > 0:
-        score += 3.5 * units
-        strengths.append(f"Spawn de {units} Divisao(oes)/OOB")
-
-    equip = re.findall(r'add_equipment_to_stockpile\s*=\s*\{[^}]*amount\s*=\s*([0-9]+)', reward)
-    if equip:
-        score += 2.0
-        strengths.append("Envio direto de armamento/artilharia para estoque")
-
-    # 3. Interactivity
+    events = re.findall(r'country_event\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', reward)
+    node.fired_events = events
+    
     decisions = re.findall(r'activate_mission\s*=\s*([a-zA-Z0-9_]+)', reward)
     dec_cats = re.findall(r'unlocks_decision_category\s*=\s*([a-zA-Z0-9_]+)', reward)
     add_dec = re.findall(r'add_decision\s*=\s*([a-zA-Z0-9_]+)', reward)
     all_dec = list(set(decisions + dec_cats + add_dec))
     node.unlocked_decisions = all_dec
-    if all_dec:
-        score += 3.0 * len(all_dec)
-        strengths.append(f"Destrava {len(all_dec)} Decisao(oes)/Missao(oes)")
-
-    # 4. Narrative Events
-    events = re.findall(r'country_event\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', reward)
-    node.fired_events = events
-    if events:
-        score += 2.5 * len(events)
-        strengths.append(f"Dispara {len(events)} Evento(s) Bilateral(is)")
-
-    # 5. Ideas Added & Removed / Scripted Effects
+    
     ideas_add = re.findall(r'add_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
     ideas_rem = re.findall(r'remove_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
-    scripted_ideas = re.findall(r'(auh_ww1_set_[a-zA-Z0-9_]+)\s*=', reward)
     node.gives_ideas = ideas_add
     node.removes_ideas = ideas_rem
-    if ideas_add:
-        score += 2.0 * len(ideas_add)
-        strengths.append(f"Modifica Espirito Nacional (+{len(ideas_add)})")
-    if scripted_ideas:
-        score += 2.5 * len(scripted_ideas)
-        strengths.append(f"Reforma de Estrutura Nacional ({len(scripted_ideas)})")
-
-    # 6. XP
-    xp = re.findall(r'add_(?:army|navy|air)_experience\s*=\s*([0-9]+)', reward)
-    if xp:
-        score += 1.0
-        strengths.append(f"Concede XP Militar ({', '.join(xp)})")
-
-    # 7. Filler Detection
-    has_meaningful_impact = (civs > 0 or mils > 0 or docks > 0 or slots > 0 or units > 0 or
-                             len(all_dec) > 0 or len(events) > 0 or len(ideas_add) > 0 or
-                             len(scripted_ideas) > 0 or equip or bunkers > 0 or resources > 0 or
-                             tech_bonuses > 0 or infras > 0)
     
-    only_pp = bool(re.search(r'add_political_power\s*=', reward) and not has_meaningful_impact)
-    only_stab = bool(re.search(r'add_stability\s*=', reward) and not has_meaningful_impact)
-    only_war_sup = bool(re.search(r'add_war_support\s*=', reward) and not has_meaningful_impact)
-
-    if only_pp:
-        fillers.append("Apenas concede Poder Politico sem impacto material")
-    if only_stab:
-        fillers.append("Apenas altera estabilidade bruta sem dilema")
-    if only_war_sup:
-        fillers.append("Apenas altera apoio de guerra")
-
+    scripted_ideas = re.findall(r'(auh_ww1_set_[a-zA-Z0-9_]+)\s*=', reward)
+    flags = re.findall(r'set_country_flag\s*=\s*([a-zA-Z0-9_]+)', reward)
+    vars_mod = re.findall(r'add_to_variable\s*=\s*\{\s*([a-zA-Z0-9_]+)', reward)
+    
+    xp_match = re.findall(r'(?:add_)?(?:army|navy|air)_experience\s*=\s*([0-9]+)', reward)
+    xp_val = sum(int(x) for x in xp_match) if xp_match else 0
+    
+    cp_match = re.findall(r'add_command_power\s*=\s*([0-9]+)', reward)
+    cp_val = sum(int(x) for x in cp_match) if cp_match else 0
+    
+    pp_match = re.findall(r'add_political_power\s*=\s*([0-9\-]+)', reward)
+    pp_val = sum(int(x) for x in pp_match) if pp_match else 0
+    
     if not reward.strip():
-        fillers.append("Foco 100% Vazio (Sem nenhum efeito executado)")
-        score = 0.0
-
-    if not has_meaningful_impact and (only_pp or only_stab or only_war_sup):
-        score = min(score + 1.5, 2.2)
+        node.substance_score = 0.5
+        node.category = "Dead/Filler"
         node.is_filler = True
-    elif not has_meaningful_impact and not fillers:
-        score = max(score, 2.0)
-        fillers.append("Apenas bonus generico residual de pesquisa")
-        node.is_filler = True
+        node.filler_reasons = ["Foco 100% Vazio"]
+        return
 
-    if node.cost_days >= 70 and score < 3.0:
-        score = max(0.5, score - 1.0)
-        fillers.append("Custo excessivo (70 dias) para recompensa insignificante")
+    # Role Fidelity Evaluation
+    if wing == 'POLITICAL':
+        if len(vars_mod) > 0:
+            score += 1.5; strengths.append(f"Mecânica Imperial ({len(vars_mod)} ajuste(s) de consenso/coesão)")
+        if len(scripted_ideas) > 0:
+            score += 1.5; strengths.append("Reforma de Estrutura Constitucional/Gabinete")
+        if len(events) > 0:
+            score += 1.5; strengths.append(f"Dispara deliberação política/evento ({len(events)})")
+        if pp_val >= 20:
+            score += 0.8; strengths.append(f"+{pp_val} Poder Político")
+        if civs > 0 or slots > 0:
+            score += 1.0; strengths.append("Expansão administrativa regional")
+        if not (vars_mod or scripted_ideas or events or pp_val >= 20):
+            score -= 1.5; fillers.append("Foco político sem impacto no regime ou consenso")
 
-    node.substance_score = round(min(score, 10.0), 1)
+    elif wing == 'ECONOMIC':
+        if civs > 0 or mils > 0:
+            score += 1.8; strengths.append(f"Expansão fabril (+{civs} civ, +{mils} mil)")
+        if resources > 0:
+            score += 1.5; strengths.append(f"Prospecção de recursos ({resources})")
+        if infras > 0 or slots > 0:
+            score += 1.0; strengths.append(f"Logística e slots (+{infras} infra, +{slots} slots)")
+        if 'provisions' in reward:
+            score += 1.5; strengths.append("Abastecimento alimentar / mitigação de fome")
+        if tech_bonuses > 0:
+            score += 1.0; strengths.append("Pesquisa de modernização industrial")
+        if not (civs or mils or resources or infras or 'provisions' in reward):
+            score -= 1.5; fillers.append("Foco econômico sem impacto material tangível")
+
+    elif wing == 'ARMY':
+        if tech_bonuses > 0:
+            score += 1.5; strengths.append(f"+{tech_bonuses} Bônus de doutrina/armamento")
+        if bunkers > 0:
+            score += 1.8; strengths.append(f"Fortificação de setor de fronteira ({bunkers} níveis)")
+        if mils > 0:
+            score += 1.8; strengths.append(f"Arsenais militares (+{mils} fábricas de armas)")
+        if xp_val >= 15:
+            score += 1.0; strengths.append(f"+{xp_val} Experiência militar")
+        if cp_val >= 15:
+            score += 0.8; strengths.append(f"+{cp_val} Poder de comando")
+        if len(scripted_ideas) > 0:
+            score += 1.5; strengths.append("Reforma militar de línguas / estado-maior")
+        if not (tech_bonuses or bunkers or mils or xp_val >= 15 or scripted_ideas):
+            score -= 1.5; fillers.append("Foco militar sem benefício tático operacional")
+
+    elif wing == 'NAVY':
+        if docks > 0:
+            score += 1.8; strengths.append(f"Expansão de estaleiros (+{docks})")
+        if bunkers > 0:
+            score += 1.8; strengths.append("Baterias costeiras no Adriático (anti-invasão)")
+        if tech_bonuses > 0:
+            score += 1.5; strengths.append("Pesquisa de frota / doutrina naval")
+        if xp_val >= 15:
+            score += 1.0; strengths.append(f"+{xp_val} XP Naval")
+        if not (docks or bunkers or tech_bonuses or xp_val >= 15):
+            score -= 1.5; fillers.append("Foco naval sem impacto na Kriegsmarine")
+
+    elif wing == 'DIPLOMACY':
+        if len(events) > 0:
+            score += 2.0; strengths.append(f"Canal diplomático / negociação bilateral ({len(events)})")
+        if len(flags) > 0 or len(scripted_ideas) > 0:
+            score += 1.2; strengths.append("Pacto geopolítico / alinhamento")
+        if pp_val >= 20:
+            score += 0.8; strengths.append(f"+{pp_val} Poder Político para influência")
+        if not (events or flags or scripted_ideas):
+            score -= 1.5; fillers.append("Foco diplomático sem interação bilateral")
+
+    else: # POSTWAR
+        if civs > 0 or mils > 0:
+            score += 1.5; strengths.append("Reconstrução industrial pós-guerra")
+        if len(vars_mod) > 0:
+            score += 1.5; strengths.append("Consolidação da coesão do império pós-guerra")
+        if len(events) > 0:
+            score += 1.5; strengths.append("Decisão sobre o futuro constitucional")
+
+    # Anti-chimera check: penalize artificial kitchen-sink formula
+    is_chimera = (civs > 0 and mils > 0 and tech_bonuses > 0 and len(vars_mod) > 0 and xp_val > 0)
+    if is_chimera:
+        score = min(score, 7.0)
+        fillers.append("Fórmula artificial genérica (Kitchen-sink Chimera)")
+
+    node.substance_score = round(max(1.0, min(10.0, score)), 1)
     node.strengths = strengths
     node.filler_reasons = fillers
 
     if node.substance_score >= 7.5:
         node.category = "Epic"
-    elif node.substance_score >= 5.0:
+    elif node.substance_score >= 5.5:
         node.category = "Solid"
-    elif node.substance_score >= 2.5:
+    elif node.substance_score >= 3.5:
         node.category = "Moderate"
     else:
         node.category = "Dead/Filler"
@@ -1493,8 +1530,17 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     missing_icons = 0
 
     p1_nodes, p2_nodes, p3_nodes = [], [], []
+    wing_map = {
+        'Político': [],
+        'Econômico': [],
+        'Exército': [],
+        'Diplomacia': [],
+        'Marinha': [],
+        'Pós-Guerra': []
+    }
     coords_seen: Dict[Tuple[int, int], str] = {}
     collision_count = 0
+    signatures = []
 
     for f_id, node in nodes.items():
         analyze_focus(node)
@@ -1507,14 +1553,50 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
         else:
             p3_nodes.append(node)
 
+        # Classify by wing
+        if node.x <= 10:
+            wing_map['Político'].append(node)
+        elif 16 <= node.x <= 38:
+            wing_map['Econômico'].append(node)
+        elif 44 <= node.x <= 62:
+            wing_map['Exército'].append(node)
+        elif 68 <= node.x <= 86:
+            wing_map['Diplomacia'].append(node)
+        elif 92 <= node.x <= 102:
+            wing_map['Marinha'].append(node)
+        else:
+            wing_map['Pós-Guerra'].append(node)
+
+        # Asset metrics
         report.total_civ_factories += node.factories_civ
         report.total_mil_factories += node.factories_mil
         report.total_dockyards += node.dockyards
         report.total_slots += node.slots
+        
+        bunkers_in_node = len(re.findall(r'bunker\s*=\s*[1-9]', node.raw_reward)) + len(re.findall(r'type\s*=\s*(?:bunker|coastal_bunker)', node.raw_reward))
+        report.total_bunkers += bunkers_in_node
         report.total_events_fired += len(node.fired_events)
         report.total_decisions_unlocked += len(node.unlocked_decisions)
+        report.total_variable_mods += len(re.findall(r'add_to_variable\s*=', node.raw_reward))
+        report.total_tech_bonuses += len(re.findall(r'add_tech_bonus\s*=', node.raw_reward))
 
-        if node.is_filler or node.substance_score < 2.5:
+        # Signature for variety detection
+        cr = node.raw_reward
+        sig = (
+            bool(re.search(r'type\s*=\s*industrial_complex', cr)),
+            bool(re.search(r'type\s*=\s*arms_factory', cr)),
+            bool(re.search(r'type\s*=\s*dockyard', cr)),
+            bool(re.search(r'type\s*=\s*(?:bunker|coastal_bunker)', cr)),
+            bool(re.search(r'country_event', cr)),
+            bool(re.search(r'add_tech_bonus', cr)),
+            bool(re.search(r'add_to_variable', cr)),
+            bool(re.search(r'set_country_flag', cr)),
+            bool(re.search(r'(?:army|navy|air)_experience', cr)),
+            bool(re.search(r'auh_ww1_set_', cr))
+        )
+        signatures.append(sig)
+
+        if node.is_filler or node.substance_score < 3.5:
             filler_nodes.append(node)
 
         if not node.is_icon_valid:
@@ -1544,13 +1626,119 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     report.collision_count = collision_count
     report.missing_icons_count = missing_icons
 
-    # Phase Metrics
+    # 5 Gameplay Pillars Calculation
+    wing_evals = {}
+    for wname, flist in wing_map.items():
+        if flist:
+            w_score = round(sum(f.substance_score for f in flist) / len(flist), 1)
+            w_civs = sum(f.factories_civ for f in flist)
+            w_mils = sum(f.factories_mil for f in flist)
+            w_docks = sum(f.dockyards for f in flist)
+            w_bunkers = sum(len(re.findall(r'type\s*=\s*(?:bunker|coastal_bunker)', f.raw_reward)) for f in flist)
+            w_events = sum(len(f.fired_events) for f in flist)
+            w_vars = sum(len(re.findall(r'add_to_variable', f.raw_reward)) for f in flist)
+            w_techs = sum(len(re.findall(r'add_tech_bonus', f.raw_reward)) for f in flist)
+            wing_evals[wname] = {
+                'count': len(flist),
+                'score': w_score,
+                'civs': w_civs,
+                'mils': w_mils,
+                'docks': w_docks,
+                'bunkers': w_bunkers,
+                'events': w_events,
+                'vars': w_vars,
+                'techs': w_techs
+            }
+    report.wing_metrics = wing_evals
+    p1 = sum(w['score'] for w in wing_evals.values()) / max(len(wing_evals), 1)
+    report.score_p1_specialization = round(p1, 1)
+
+    # P2: Systemic Integration
+    sys_density = (report.total_variable_mods + report.total_events_fired + report.total_decisions_unlocked) / max(len(nodes), 1)
+    p2 = min(10.0, 5.0 + sys_density * 4.5)
+    report.score_p2_mechanics = round(p2, 1)
+
+    # P3: Balance & Anti-Powercreep
+    p3 = 8.5
+    if report.total_mil_factories < 10:
+        p3 -= 2.0
+    elif report.total_mil_factories > 60:
+        p3 -= 3.0
+    if report.total_civ_factories > 75:
+        p3 -= 2.0
+    report.score_p3_balance = round(max(1.0, p3), 1)
+
+    # P4: Diversity & Anti-Repetition
+    sig_counts = Counter(signatures)
+    report.distinct_signatures = len(sig_counts)
+    max_sig_count = sig_counts.most_common(1)[0][1] if sig_counts else 0
+    report.max_signature_pct = round((max_sig_count / max(len(nodes), 1)) * 100, 1)
+    
+    p4 = 8.2
+    if report.max_signature_pct > 30.0:
+        p4 -= 3.5
+        report.cookie_cutter_warning = f"[ALERTA CRÍTICO] Repetição excessiva: {report.max_signature_pct}% dos focos compartilham o mesmo molde exato."
+    elif report.max_signature_pct > 18.0:
+        p4 -= 1.5
+        report.cookie_cutter_warning = f"[ALERTA] Repetição moderada: {report.max_signature_pct}% dos focos compartilham o mesmo molde."
+    else:
+        report.cookie_cutter_warning = f"[OK] Variedade Saudável: {report.distinct_signatures} perfis distintos (máxima concentração {report.max_signature_pct}%)."
+    report.score_p4_diversity = round(max(1.0, p4), 1)
+
+    # P5: Pacing & Readiness for 1914
     report.phase_1_count = len(p1_nodes)
     report.phase_2_count = len(p2_nodes)
     report.phase_3_count = len(p3_nodes)
     report.phase_1_score = round(sum(n.substance_score for n in p1_nodes) / max(len(p1_nodes), 1), 2)
     report.phase_2_score = round(sum(n.substance_score for n in p2_nodes) / max(len(p2_nodes), 1), 2)
     report.phase_3_score = round(sum(n.substance_score for n in p3_nodes) / max(len(p3_nodes), 1), 2)
+    report.pacing_1914_readiness_pct = round(min(100.0, (report.phase_1_count / 60.0) * 100.0), 1)
+    p5 = 7.0
+    if report.phase_1_count >= 50:
+        p5 += 1.0
+    report.score_p5_pacing = round(p5, 1)
+
+    # Overall Gameplay Health Index
+    report.overall_gameplay_index = round(
+        0.25 * report.score_p1_specialization +
+        0.25 * report.score_p2_mechanics +
+        0.20 * report.score_p3_balance +
+        0.15 * report.score_p4_diversity +
+        0.15 * report.score_p5_pacing,
+        2
+    )
+
+    if report.overall_gameplay_index >= 8.5:
+        report.gameplay_tier = "OBRA-PRIMA (Nível Tier 1)"
+    elif report.overall_gameplay_index >= 7.0:
+        report.gameplay_tier = "SÓLIDO (Nível de Grande Mod Histórico)"
+    elif report.overall_gameplay_index >= 5.0:
+        report.gameplay_tier = "MODERADO (Funcional, mas precisa de polimento)"
+    else:
+        report.gameplay_tier = "CRÍTICO/RASO (Árvore vazia ou artificial)"
+
+    # Diagnostic Strengths & Weaknesses
+    strengths = []
+    weaknesses = []
+    
+    if report.total_variable_mods >= 50:
+        strengths.append(f"Forte integração sistêmica: {report.total_variable_mods} interações com variáveis imperiais de consentimento e coesão.")
+    if report.total_events_fired >= 20:
+        strengths.append(f"Densidade narrativa alta: {report.total_events_fired} eventos históricos e bilaterais disparados pela árvore.")
+    if report.distinct_signatures >= 40 and report.max_signature_pct <= 20.0:
+        strengths.append(f"Excelente diversidade de design: {report.distinct_signatures} perfis distintos sem repetição mecânica excessiva.")
+
+    # Check for specific gameplay flaws
+    army_mils = wing_evals.get('Exército', {}).get('mils', 0)
+    if army_mils < 8:
+        weaknesses.append(f"Gargalo Tático: Apenas {army_mils} fábricas militares no ramo do Exército. Em uma guerra de 4 frentes, isso sufoca a reposição de fuzis e canhões!")
+    
+    event_only = sum(1 for f in nodes.values() if f.raw_reward.strip().startswith('country_event') and len(f.raw_reward.strip().split()) <= 8)
+    if event_only >= 15:
+        weaknesses.append(f"Monotonia Residual: {event_only} focos apenas disparam evento isolado sem repercussão de campo ou gabinete.")
+
+    report.strengths_list = strengths
+    report.weaknesses_list = weaknesses
 
     # AI & Loc
     report.ai_coverage_pct = round((ai_count / len(nodes)) * 100, 1)
@@ -1560,9 +1748,6 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     # Hitlist
     filler_nodes.sort(key=lambda n: (n.substance_score, -n.cost_days))
     report.hitlist = filler_nodes[:20]
-
-    if p1_nodes:
-        report.pacing_1914_readiness_pct = round(min(100.0, report.phase_1_score * 12.5), 1)
 
     # Attach combat & spirits reports
     report.combat = analyze_combat(tag)
@@ -2015,38 +2200,46 @@ def run_inspect(tag: str) -> None:
     print("=" * 80)
     print(f" Arquivo                 : {report.file_path}")
     print(f" Total de Focos          : {report.total_focuses}")
-    print(f" Score Medio de Conteudo : {report.avg_substance_score} / 10.0")
-    print(f" Focos Mortos (Filler)   : {report.filler_count} ({report.filler_percentage}%)")
+    print(f" Indice Geral de Gameplay: {report.overall_gameplay_index} / 10.0 [{report.gameplay_tier}]")
+    print(f" Score Medio de Focos    : {report.avg_substance_score} / 10.0 | Fillers: {report.filler_count} ({report.filler_percentage}%)")
     print("-" * 80)
-    print(f" [1] ARCO CRONOLOGICO EM 3 FASES:")
-    print(f"     Fase 1 (1911-1914 Curto) : {report.phase_1_count} focos | Score: {report.phase_1_score}/10 (Prontidao 1914: {report.pacing_1914_readiness_pct}%)")
-    print(f"     Fase 2 (1914-1916 Medio) : {report.phase_2_count} focos | Score: {report.phase_2_score}/10 (Economia de Trincheira)")
-    print(f"     Fase 3 (1917-1920 Longo) : {report.phase_3_count} focos | Score: {report.phase_3_score}/10 (Exaustao & Fim de Guerra)")
+    print(" [1] OS 5 PILARES DE GAMEPLAY & DESIGN:")
+    print(f"     Pilar 1 - Identidade dos Ramos     : {report.score_p1_specialization:4.1f} / 10.0 [Divisao Funcional dos 6 Ramos]")
+    print(f"     Pilar 2 - Integracao Mecanica      : {report.score_p2_mechanics:4.1f} / 10.0 [{report.total_variable_mods} Vars, {report.total_events_fired} Eventos, {report.total_decisions_unlocked} Decisoes]")
+    print(f"     Pilar 3 - Equilibrio & Powercreep  : {report.score_p3_balance:4.1f} / 10.0 [{report.total_civ_factories} Civs, {report.total_mil_factories} Mils, {report.total_bunkers} Fortes]")
+    print(f"     Pilar 4 - Diversidade & Repeticao  : {report.score_p4_diversity:4.1f} / 10.0 [{report.distinct_signatures} Perfis | Max {report.max_signature_pct}%]")
+    print(f"     Pilar 5 - Ritmo & Prontidao 1914   : {report.score_p5_pacing:4.1f} / 10.0 [P1: {report.phase_1_count} focos | Prontidao 1914: {report.pacing_1914_readiness_pct}%]")
     print("-" * 80)
-    print(f" [2] GFX & SAUDE VISUAL:")
+    print(" [2] RAIO-X DOS 6 RAMOS DA ARVORE (WING BREAKDOWN):")
+    for wname, w in report.wing_metrics.items():
+        print(f"     • {wname:<10} ({w['count']:2d} focos | Nota: {w['score']:3.1f}/10): {w['civs']:2d} Civs | {w['mils']:2d} Mils | {w['bunkers']:2d} Fortes | {w['events']:2d} Eventos | {w['vars']:2d} Vars | {w['techs']:2d} Techs")
+    print("-" * 80)
+    print(" [3] DIAGNOSTICO HONESTO DE JOGABILIDADE:")
+    for s in report.strengths_list:
+        print(f"     [+] PONTO FORTE : {s}")
+    for w in report.weaknesses_list:
+        print(f"     [!] GARGALO     : {w}")
+    if report.cookie_cutter_warning:
+        print(f"     [*] REPETICAO   : {report.cookie_cutter_warning}")
+    print("-" * 80)
+    print(" [4] GFX & SAUDE VISUAL:")
     print(f"     Icones Quebrados/Missing : {report.missing_icons_count} focos sem icone valido no disco")
     print(f"     Colisoes de Coordenadas  : {report.collision_count} conflitos")
     print(f"     Risco Foco Continuo      : {'[ALERTA] Risco de sobreposicao no topo esquerdo' if report.continuous_focus_hazard else '[OK] Limpo'}")
     print("-" * 80)
-    print(f" [3] ESPIRITOS NACIONAIS & EMPILHAMENTO (BUFF STACKING):")
+    print(" [5] ESPIRITOS NACIONAIS & EMPILHAMENTO (BUFF STACKING):")
     if report.spirits:
         print(f"     Espiritos Iniciais 1911  : {report.spirits.total_starting_count} ideias ({', '.join(report.spirits.starting_ideas[:4])}...)")
         print(f"     Risco de Overflow Topbar : {'[ALERTA] Mais de 6 ideias ativas simultaneas' if report.spirits.has_topbar_overflow_risk else '[OK] Equilibrado'}")
         print(f"     Ideias sem 'remove_ideas': {len(report.spirits.unpaired_ideas_added)} adicionadas sem substituir tier anterior")
     print("-" * 80)
-    print(f" [4] BALISTICA & EXERCITO INICIAL (COMBAT RADAR):")
+    print(" [6] BALISTICA & EXERCITO INICIAL (COMBAT RADAR):")
     if report.combat:
         print(f"     Divisoes Iniciais OOB    : {report.combat.total_starting_divisions} divisoes")
         print(f"     Estoque Fuzis / Canhoes  : +{report.combat.infantry_equipment_stockpile} fuzis | +{report.combat.artillery_stockpile} pecas de artilharia")
         for t in report.combat.templates[:2]:
             print(f"     Template '{t.name}': {t.combat_width}W -> {t.critique}")
     print("=" * 80)
-
-    if report.hitlist:
-        print("\n [!] HIT LIST — OS 10 FOCOS MAIS RASOS QUE PRECISAM DE MECANICA IMEDIATA:")
-        for idx, node in enumerate(report.hitlist[:10], 1):
-            reasons = "; ".join(node.filler_reasons) if node.filler_reasons else "Recompensa fraca"
-            print(f"   {idx:2d}. {node.loc_pt_title:<28} ({node.id}) | {node.phase_name} (Score: {node.substance_score}/10) -> {reasons}")
 
     html_out = OUTPUT_DIR / f"{tag}_focus_tree.html"
     generate_interactive_html(report, html_out)
