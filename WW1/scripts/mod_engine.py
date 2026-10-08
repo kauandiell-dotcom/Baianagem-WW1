@@ -121,6 +121,7 @@ class FocusNode:
     units_spawned: int = 0
     unlocked_decisions: List[str] = field(default_factory=list)
     fired_events: List[str] = field(default_factory=list)
+    event_details: List[Dict[str, any]] = field(default_factory=list)
     gives_ideas: List[str] = field(default_factory=list)
     removes_ideas: List[str] = field(default_factory=list)
     is_filler: bool = False
@@ -183,9 +184,26 @@ class EventInspection:
     desc_length: int = 0
     is_text_overflow_risk: bool = False
     options_count: int = 0
-    options: List[Dict[str, str]] = field(default_factory=list)
+    options: List[Dict[str, any]] = field(default_factory=list)
     is_options_overflow_risk: bool = False
     warnings: List[str] = field(default_factory=list)
+    
+    # Event Substance & Gameplay Impact
+    has_provisions: bool = False
+    has_consent: bool = False
+    has_cohesion: bool = False
+    has_debt: bool = False
+    has_tech_bonus: bool = False
+    has_experience: bool = False
+    has_political_power: bool = False
+    has_timed_ideas: bool = False
+    has_ideas: bool = False
+    has_staff_effects: bool = False
+    has_economic_tradeoffs: bool = False
+    has_military_tradeoffs: bool = False
+    has_diplomatic_tradeoffs: bool = False
+    has_political_tradeoffs: bool = False
+    raw_block: str = ""
 
 
 @dataclass
@@ -398,6 +416,212 @@ def parse_bracket_content(text: str, start_pos: int) -> Tuple[str, int]:
     return "", len(text)
 
 
+class EventDatabase:
+    def __init__(self):
+        self.events: Dict[str, EventInspection] = {}
+        self.load_all()
+
+    def load_all(self):
+        if not EVENTS_DIR.exists():
+            return
+        e_pattern = re.compile(r'(country_event|news_event)\s*=\s*\{')
+        for f in sorted(EVENTS_DIR.glob("*.txt")):
+            if f.stat().st_size == 0:
+                continue
+            try:
+                with open(f, "r", encoding="utf-8", errors="ignore") as fp:
+                    text = fp.read()
+            except Exception:
+                continue
+
+            pos = 0
+            while True:
+                m = e_pattern.search(text, pos)
+                if not m:
+                    break
+                ev_type = m.group(1)
+                block, end_idx = parse_bracket_content(text, m.end() - 1)
+                pos = end_idx
+
+                id_match = re.search(r'\bid\s*=\s*([a-zA-Z0-9_\.]+)', block)
+                if not id_match:
+                    continue
+                ev_id = id_match.group(1)
+
+                pic_match = re.search(r'\bpicture\s*=\s*\"?([a-zA-Z0-9_]+)\"?', block)
+                pic_gfx = pic_match.group(1) if pic_match else ""
+
+                t_match = re.search(r'\btitle\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', block)
+                d_match = re.search(r'\bdesc\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', block)
+                title_key = t_match.group(1) if t_match else ""
+                desc_key = d_match.group(1) if d_match else ""
+
+                options = []
+                has_prov = False
+                has_cons = False
+                has_cohe = False
+                has_debt = False
+                has_tech = False
+                has_xp = False
+                has_pp = False
+                has_timed = False
+                has_id = False
+                has_staff = False
+
+                for opt_match in re.finditer(r'\boption\s*=\s*\{', block):
+                    o_block, _ = parse_bracket_content(block, opt_match.end() - 1)
+                    name_m = re.search(r'\bname\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', o_block)
+                    opt_key = name_m.group(1) if name_m else "Sem Nome"
+                    opt_text = GLOBAL_LOC.pt_keys.get(opt_key, opt_key)
+                    is_empty = not bool(re.search(r'[a-zA-Z0-9_]+\s*=', o_block))
+
+                    effects = []
+                    for var, val in re.findall(r'add_to_variable\s*=\s*\{\s*([a-zA-Z0-9_]+)\s*=\s*([0-9\.\-]+)', o_block):
+                        sign = "+" if not val.startswith("-") else ""
+                        if "provisions" in var:
+                            effects.append(f"{sign}{val} Provisões")
+                            has_prov = True
+                        elif "consent" in var:
+                            effects.append(f"{sign}{val} Consenso")
+                            has_cons = True
+                        elif "cohesion" in var:
+                            effects.append(f"{sign}{val} Coesão")
+                            has_cohe = True
+                        elif "debt" in var:
+                            effects.append(f"{sign}{val} Dívida")
+                            has_debt = True
+                        else:
+                            effects.append(f"{sign}{val} {var}")
+
+                    pp = re.findall(r'add_political_power\s*=\s*([0-9\-]+)', o_block)
+                    if pp:
+                        val = pp[0]
+                        sign = "+" if not val.startswith("-") else ""
+                        effects.append(f"{sign}{val} PP")
+                        has_pp = True
+
+                    xp = re.findall(r'(?:army|navy|air)_experience\s*=\s*([0-9]+)', o_block)
+                    if xp:
+                        effects.append(f"+{xp[0]} XP")
+                        has_xp = True
+
+                    tech = re.findall(r'category\s*=\s*([a-zA-Z0-9_]+)', o_block)
+                    if tech:
+                        effects.append(f"Pesquisa: {tech[0]}")
+                        has_tech = True
+                    elif "add_tech_bonus" in o_block:
+                        effects.append("Bônus Tecnológico")
+                        has_tech = True
+
+                    timed = re.findall(r'add_timed_idea\s*=\s*\{\s*idea\s*=\s*([a-zA-Z0-9_]+)', o_block)
+                    if timed:
+                        effects.append(f"Ideia temporária: {timed[0]}")
+                        has_timed = True
+
+                    ideas = re.findall(r'add_ideas\s*=\s*([a-zA-Z0-9_]+)', o_block)
+                    if ideas:
+                        effects.append(f"+Ideia: {ideas[0]}")
+                        has_id = True
+
+                    if "auh_ww1_set_defensive_staff" in o_block:
+                        effects.append("Estado-Maior Defensivo")
+                        has_staff = True
+                    elif "auh_ww1_set_offensive_staff" in o_block:
+                        effects.append("Estado-Maior Ofensivo")
+                        has_staff = True
+
+                    flags = re.findall(r'set_country_flag\s*=\s*([a-zA-Z0-9_]+)', o_block)
+                    if flags:
+                        effects.append(f"Flag: {flags[0]}")
+
+                    summary = ", ".join(effects) if effects else ("Efeito Diplomático/Narrativo" if o_block.strip() else "Vazia")
+                    options.append({
+                        "key": opt_key,
+                        "text": opt_text,
+                        "is_empty": is_empty,
+                        "summary": summary,
+                        "raw": o_block
+                    })
+
+                tag_hint = "AUS"
+                if "ger" in ev_id.lower() or "germany" in f.name.lower(): tag_hint = "GER"
+                elif "auh" in ev_id.lower() or "austria" in f.name.lower(): tag_hint = "AUS"
+                elif "fra" in ev_id.lower() or "france" in f.name.lower(): tag_hint = "FRA"
+                elif "ita" in ev_id.lower() or "italy" in f.name.lower(): tag_hint = "ITA"
+                elif "eng" in ev_id.lower() or "uk" in f.name.lower() or "britain" in f.name.lower(): tag_hint = "ENG"
+                elif "rus" in ev_id.lower() or "sov" in f.name.lower(): tag_hint = "RUS"
+                elif "tur" in ev_id.lower() or "turkey" in f.name.lower(): tag_hint = "TUR"
+
+                ev_obj = EventInspection(
+                    id=ev_id,
+                    file_name=f.name,
+                    event_type=ev_type,
+                    country_tag=tag_hint,
+                    picture_gfx=pic_gfx,
+                    title_key=title_key,
+                    desc_key=desc_key,
+                    title_pt=GLOBAL_LOC.pt_keys.get(title_key, title_key),
+                    desc_pt=GLOBAL_LOC.pt_keys.get(desc_key, desc_key),
+                    desc_length=len(GLOBAL_LOC.pt_keys.get(desc_key, desc_key)),
+                    options_count=len(options),
+                    options=options,
+                    has_provisions=has_prov,
+                    has_consent=has_cons,
+                    has_cohesion=has_cohe,
+                    has_debt=has_debt,
+                    has_tech_bonus=has_tech,
+                    has_experience=has_xp,
+                    has_political_power=has_pp,
+                    has_timed_ideas=has_timed,
+                    has_ideas=has_id,
+                    has_staff_effects=has_staff,
+                    has_economic_tradeoffs=(has_prov or has_debt or has_timed or "economic" in ev_id.lower() or "bread" in ev_id.lower() or "food" in ev_id.lower() or "factory" in ev_id.lower() or "trade" in ev_id.lower()),
+                    has_military_tradeoffs=(has_xp or has_tech or has_staff or "army" in ev_id.lower() or "military" in ev_id.lower() or "offensive" in ev_id.lower() or "corps" in ev_id.lower()),
+                    has_diplomatic_tradeoffs=("channel" in ev_id.lower() or "mission" in ev_id.lower() or "peace" in ev_id.lower() or "treaty" in ev_id.lower() or "diplomacy" in f.name.lower()),
+                    has_political_tradeoffs=(has_cons or has_cohe or has_pp or "council" in ev_id.lower() or "audit" in ev_id.lower() or "constitution" in ev_id.lower() or "reform" in ev_id.lower()),
+                    raw_block=block
+                )
+
+                # Validate Picture GFX
+                if pic_gfx:
+                    valid, path_or_msg = GLOBAL_GFX.resolve_sprite(pic_gfx)
+                    ev_obj.is_picture_valid = valid
+                    if valid:
+                        ev_obj.picture_file = path_or_msg
+                        dims = GLOBAL_GFX.get_image_dimensions(path_or_msg)
+                        ev_obj.picture_dims = dims
+                        if ev_obj.event_type == "news_event":
+                            aspect = (dims[0] / dims[1]) if dims[1] > 0 else 0
+                            if abs(aspect - 2.57) > 0.35 and dims != (0, 0):
+                                ev_obj.warnings.append(f"⚠️ Tarjas Pretas / Letterbox: Dimensões ({dims[0]}x{dims[1]}, proporção {aspect:.2f}:1). O visor de jornal espera ~2.57:1 (399x155px). Causará faixas pretas laterais no jogo!")
+                        else:
+                            if dims != (0, 0) and dims != (450, 250) and dims != (156, 210) and dims != (400, 160):
+                                ev_obj.warnings.append(f"Dimensões fora do padrão ({dims[0]}x{dims[1]}). Risco de barras pretas ou esticamento.")
+                    else:
+                        ev_obj.warnings.append(f"GFX da imagem inexistente: {path_or_msg}")
+                else:
+                    ev_obj.warnings.append("Evento sem imagem declarada ('picture = GFX_...')")
+
+                # Validate Text Length
+                max_char_limit = 750 if ev_type == "news_event" else 550
+                if ev_obj.desc_length > max_char_limit:
+                    ev_obj.is_text_overflow_risk = True
+                    ev_obj.warnings.append(f"Texto muito longo ({ev_obj.desc_length} chars).")
+
+                if ev_obj.options_count > 4:
+                    ev_obj.is_options_overflow_risk = True
+                    ev_obj.warnings.append(f"Muitas opções ({ev_obj.options_count}).")
+
+                for o in options:
+                    if o["is_empty"]:
+                        ev_obj.warnings.append(f"Opção '{o['key']}' sem efeito prático")
+
+                self.events[ev_id] = ev_obj
+
+
+GLOBAL_EVENTS = EventDatabase()
+
+
 def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
     if not file_path.exists():
         return {}
@@ -533,9 +757,28 @@ def analyze_focus(node: FocusNode) -> None:
     
     # Interactive Systems
     tech_bonuses = len(re.findall(r'add_tech_bonus\s*=', reward))
-    events = re.findall(r'country_event\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', reward)
+    raw_ev1 = re.findall(r'(?:country_event|news_event)\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', reward)
+    raw_ev2 = re.findall(r'(?:country_event|news_event)\s*=\s*([a-zA-Z0-9_\.]+)', reward)
+    events = []
+    for e in raw_ev1 + raw_ev2:
+        if e not in events and e not in ('{', 'id'):
+            events.append(e)
     node.fired_events = events
-    
+
+    # Resolve linked event models and gameplay impact
+    node.event_details = []
+    node_event_objs = []
+    for ev_id in events:
+        ev_obj = GLOBAL_EVENTS.events.get(ev_id)
+        if ev_obj:
+            node_event_objs.append(ev_obj)
+            node.event_details.append({
+                "id": ev_obj.id,
+                "title": ev_obj.title_pt or ev_obj.title_key,
+                "options_count": ev_obj.options_count,
+                "options": [{"text": o["text"], "summary": o.get("summary", "")} for o in ev_obj.options]
+            })
+
     decisions = re.findall(r'activate_mission\s*=\s*([a-zA-Z0-9_]+)', reward)
     dec_cats = re.findall(r'unlocks_decision_category\s*=\s*([a-zA-Z0-9_]+)', reward)
     add_dec = re.findall(r'add_decision\s*=\s*([a-zA-Z0-9_]+)', reward)
@@ -574,7 +817,10 @@ def analyze_focus(node: FocusNode) -> None:
         if len(scripted_ideas) > 0:
             score += 1.5; strengths.append("Reforma de Estrutura Constitucional/Gabinete")
         if len(events) > 0:
-            score += 1.5; strengths.append(f"Dispara deliberação política/evento ({len(events)})")
+            ev_first = node_event_objs[0] if node_event_objs else None
+            opt_info = f" ({ev_first.options_count} opções de deliberação)" if ev_first else ""
+            ev_title = f" '{ev_first.title_pt}'" if ev_first and ev_first.title_pt else f" '{events[0]}'"
+            score += 1.8; strengths.append(f"Deliberação Política via Evento{ev_title}{opt_info}")
         if pp_val >= 20:
             score += 0.8; strengths.append(f"+{pp_val} Poder Político")
         if civs > 0 or slots > 0:
@@ -593,7 +839,15 @@ def analyze_focus(node: FocusNode) -> None:
             score += 1.5; strengths.append("Abastecimento alimentar / mitigação de fome")
         if tech_bonuses > 0:
             score += 1.0; strengths.append("Pesquisa de modernização industrial")
-        if not (civs or mils or resources or infras or 'provisions' in reward):
+        
+        # Check event-driven economic governance
+        ev_econ = [e for e in node_event_objs if e.has_economic_tradeoffs or e.has_provisions or e.options_count >= 2 or "economic" in e.id.lower() or "food" in e.id.lower() or "bread" in e.id.lower() or "factory" in e.id.lower()]
+        if ev_econ:
+            e_first = ev_econ[0]
+            score += 1.8
+            strengths.append(f"Governança Econômica via Evento '{e_first.id}' ({e_first.options_count} opções de gestão)")
+        
+        if not (civs or mils or resources or infras or 'provisions' in reward or tech_bonuses or ev_econ):
             score -= 1.5; fillers.append("Foco econômico sem impacto material tangível")
 
     elif wing == 'ARMY':
@@ -609,7 +863,15 @@ def analyze_focus(node: FocusNode) -> None:
             score += 0.8; strengths.append(f"+{cp_val} Poder de comando")
         if len(scripted_ideas) > 0:
             score += 1.5; strengths.append("Reforma militar de línguas / estado-maior")
-        if not (tech_bonuses or bunkers or mils or xp_val >= 15 or scripted_ideas):
+        
+        # Check event-driven army review / war council
+        ev_army = [e for e in node_event_objs if e.has_military_tradeoffs or e.has_staff_effects or e.has_experience or e.has_tech_bonus or e.options_count >= 2 or "army" in e.id.lower() or "war" in e.id.lower() or "military" in e.id.lower()]
+        if ev_army:
+            e_first = ev_army[0]
+            score += 1.8
+            strengths.append(f"Conselho de Guerra / Auditoria Estratégica via Evento '{e_first.id}' ({e_first.options_count} opções)")
+        
+        if not (tech_bonuses or bunkers or mils or xp_val >= 15 or scripted_ideas or ev_army):
             score -= 1.5; fillers.append("Foco militar sem benefício tático operacional")
 
     elif wing == 'NAVY':
@@ -621,12 +883,21 @@ def analyze_focus(node: FocusNode) -> None:
             score += 1.5; strengths.append("Pesquisa de frota / doutrina naval")
         if xp_val >= 15:
             score += 1.0; strengths.append(f"+{xp_val} XP Naval")
-        if not (docks or bunkers or tech_bonuses or xp_val >= 15):
+        
+        ev_navy = [e for e in node_event_objs if e.has_tech_bonus or e.options_count >= 2 or "naval" in e.id.lower() or "fleet" in e.id.lower() or "admiralty" in e.id.lower() or "marine" in e.id.lower()]
+        if ev_navy:
+            e_first = ev_navy[0]
+            score += 1.8
+            strengths.append(f"Conselho da Armada / Programa Naval via Evento '{e_first.id}' ({e_first.options_count} opções)")
+
+        if not (docks or bunkers or tech_bonuses or xp_val >= 15 or ev_navy):
             score -= 1.5; fillers.append("Foco naval sem impacto na Kriegsmarine")
 
     elif wing == 'DIPLOMACY':
         if len(events) > 0:
-            score += 1.8; strengths.append(f"Canal diplomático / negociação bilateral ({len(events)})")
+            ev_first = node_event_objs[0] if node_event_objs else None
+            opt_info = f" ({ev_first.options_count} opções)" if ev_first else ""
+            score += 1.8; strengths.append(f"Canal Diplomático via Evento '{events[0]}'{opt_info}")
         if len(flags) > 0 or len(scripted_ideas) > 0:
             score += 1.2; strengths.append("Pacto geopolítico / alinhamento")
         if pp_val >= 10:
@@ -646,7 +917,9 @@ def analyze_focus(node: FocusNode) -> None:
         if len(vars_mod) > 0:
             score += 1.5; strengths.append("Consolidação da coesão do império pós-guerra")
         if len(events) > 0:
-            score += 1.5; strengths.append("Decisão sobre o futuro constitucional")
+            ev_first = node_event_objs[0] if node_event_objs else None
+            opt_info = f" ({ev_first.options_count} opções)" if ev_first else ""
+            score += 1.5; strengths.append(f"Decisão Constitucional Pós-Guerra via Evento '{events[0]}'{opt_info}")
 
     # Anti-chimera check: penalize artificial kitchen-sink formula
     is_chimera = (civs > 0 and mils > 0 and tech_bonuses > 0 and len(vars_mod) > 0 and xp_val > 0)
@@ -746,12 +1019,6 @@ def analyze_spirits(tag: str, tree_nodes: Dict[str, FocusNode]) -> SpiritStackin
 # EVENT VISUALIZER & LAYOUT INSPECTOR
 # =============================================================================
 
-def inspect_event(event_id: str) -> Optional[EventInspection]:
-    target_event = None
-
-    if not EVENTS_DIR.exists():
-        return None
-
 def load_asset_b64(filename: str) -> str:
     path = SCRIPTS_DIR / "visual_radar" / "assets" / filename
     if path.exists():
@@ -778,125 +1045,7 @@ def load_image_b64(rel_path: str) -> str:
 
 
 def inspect_event(event_id: str) -> Optional[EventInspection]:
-    target_event = None
-
-    if not EVENTS_DIR.exists():
-        return None
-
-    # Search across all event files
-    e_pattern = re.compile(r'(country_event|news_event)\s*=\s*\{', re.DOTALL)
-    for f in EVENTS_DIR.glob("*.txt"):
-        with open(f, "r", encoding="utf-8", errors="ignore") as fp:
-            text = fp.read()
-        
-        pos = 0
-        while True:
-            m = e_pattern.search(text, pos)
-            if not m:
-                break
-            ev_type = m.group(1)
-            block, end_idx = parse_bracket_content(text, m.end() - 1)
-            pos = end_idx
-
-            id_match = re.search(r'\bid\s*=\s*([a-zA-Z0-9_\.]+)', block)
-            if id_match and id_match.group(1) == event_id:
-                # Found the event!
-                pic_match = re.search(r'\bpicture\s*=\s*\"?([a-zA-Z0-9_]+)\"?', block)
-                pic_gfx = pic_match.group(1) if pic_match else ""
-
-                t_match = re.search(r'\btitle\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', block)
-                d_match = re.search(r'\bdesc\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', block)
-                
-                title_key = t_match.group(1) if t_match else ""
-                desc_key = d_match.group(1) if d_match else ""
-
-                # Parse options
-                options = []
-                for opt_match in re.finditer(r'\boption\s*=\s*\{', block):
-                    o_block, _ = parse_bracket_content(block, opt_match.end() - 1)
-                    opt_name_match = re.search(r'\bname\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', o_block)
-                    opt_key = opt_name_match.group(1) if opt_name_match else "Sem Nome"
-                    opt_text = GLOBAL_LOC.pt_keys.get(opt_key, opt_key)
-                    is_empty = not bool(re.search(r'[a-zA-Z0-9_]+\s*=', o_block))
-                    options.append({
-                        "key": opt_key,
-                        "text": opt_text,
-                        "is_empty": is_empty
-                    })
-
-                tag_hint = "AUS"
-                if "ger" in event_id.lower() or "germany" in f.name.lower():
-                    tag_hint = "GER"
-                elif "auh" in event_id.lower() or "austria" in f.name.lower():
-                    tag_hint = "AUS"
-                elif "fra" in event_id.lower() or "france" in f.name.lower():
-                    tag_hint = "FRA"
-                elif "ita" in event_id.lower() or "italy" in f.name.lower():
-                    tag_hint = "ITA"
-                elif "eng" in event_id.lower() or "uk" in f.name.lower() or "britain" in f.name.lower():
-                    tag_hint = "ENG"
-                elif "rus" in event_id.lower() or "sov" in f.name.lower():
-                    tag_hint = "RUS"
-                elif "tur" in event_id.lower() or "turkey" in f.name.lower():
-                    tag_hint = "TUR"
-
-                target_event = EventInspection(
-                    id=event_id,
-                    file_name=f.name,
-                    event_type=ev_type,
-                    country_tag=tag_hint,
-                    picture_gfx=pic_gfx,
-                    title_key=title_key,
-                    desc_key=desc_key,
-                    options_count=len(options),
-                    options=options
-                )
-                break
-        if target_event:
-            break
-
-    if not target_event:
-        return None
-
-    # Resolve GFX Picture & Dimensions
-    if target_event.picture_gfx:
-        valid, path_or_msg = GLOBAL_GFX.resolve_sprite(target_event.picture_gfx)
-        target_event.is_picture_valid = valid
-        if valid:
-            target_event.picture_file = path_or_msg
-            dims = GLOBAL_GFX.get_image_dimensions(path_or_msg)
-            target_event.picture_dims = dims
-            if target_event.event_type == "news_event":
-                aspect = (dims[0] / dims[1]) if dims[1] > 0 else 0
-                if abs(aspect - 2.57) > 0.35 and dims != (0, 0):
-                    target_event.warnings.append(f"⚠️ Tarjas Pretas / Letterbox: Dimensões ({dims[0]}x{dims[1]}, proporção {aspect:.2f}:1). O visor de jornal espera ~2.57:1 (399x155px). Causará faixas pretas laterais no jogo!")
-            else:
-                if dims != (0, 0) and dims != (450, 250) and dims != (156, 210) and dims != (400, 160):
-                    target_event.warnings.append(f"Dimensões fora do padrão ({dims[0]}x{dims[1]}). Risco de barras pretas ou esticamento.")
-        else:
-            target_event.warnings.append(f"GFX da imagem inexistente: {path_or_msg}")
-    else:
-        target_event.warnings.append("Evento sem imagem declarada ('picture = GFX_...')")
-
-    # Resolve Localized Texts
-    target_event.title_pt = GLOBAL_LOC.pt_keys.get(target_event.title_key, target_event.title_key)
-    target_event.desc_pt = GLOBAL_LOC.pt_keys.get(target_event.desc_key, target_event.desc_key)
-    target_event.desc_length = len(target_event.desc_pt)
-
-    max_char_limit = 750 if target_event.event_type == "news_event" else 550
-    if target_event.desc_length > max_char_limit:
-        target_event.is_text_overflow_risk = True
-        target_event.warnings.append(f"Texto muito longo ({target_event.desc_length} chars). Risco de quebrar a moldura de pergaminho ou jornal do jogo.")
-
-    if target_event.options_count > 4:
-        target_event.is_options_overflow_risk = True
-        target_event.warnings.append(f"Muitas opções ({target_event.options_count}). Risco de sobrepor o rodapé da janela.")
-
-    for o in target_event.options:
-        if o["is_empty"]:
-            target_event.warnings.append(f"Opção '{o['key']}' sem nenhum efeito prático (vazia)")
-
-    return target_event
+    return GLOBAL_EVENTS.events.get(event_id)
 
 
 def generate_event_preview_html(event: EventInspection, output_file: Path) -> None:
@@ -1739,9 +1888,15 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     if army_mils < 8:
         weaknesses.append(f"Gargalo Tático: Apenas {army_mils} fábricas militares no ramo do Exército. Em uma guerra de 4 frentes, isso sufoca a reposição de fuzis e canhões!")
     
-    event_only = sum(1 for f in nodes.values() if f.raw_reward.strip().startswith('country_event') and len(f.raw_reward.strip().split()) <= 8)
-    if event_only >= 15:
-        weaknesses.append(f"Monotonia Residual: {event_only} focos apenas disparam evento isolado sem repercussão de campo ou gabinete.")
+    hollow_events = sum(
+        1 for f in nodes.values()
+        if f.fired_events and not any(
+            ev.get("options_count", 0) >= 2 or any(o.get("summary") and o.get("summary") != "Vazia" for o in ev.get("options", []))
+            for ev in f.event_details
+        ) and len(f.raw_reward.strip().split()) <= 8
+    )
+    if hollow_events >= 10:
+        weaknesses.append(f"Monotonia Residual: {hollow_events} focos apenas disparam eventos ocos sem escolhas de gabinete ou impacto material.")
 
     report.strengths_list = strengths
     report.weaknesses_list = weaknesses
@@ -1799,6 +1954,7 @@ def generate_interactive_html(report: TreeReport, output_file: Path) -> None:
             "docks": n.dockyards,
             "slots": n.slots,
             "events": n.fired_events,
+            "event_details": n.event_details,
             "decisions": n.unlocked_decisions,
             "strengths": n.strengths,
             "fillers": n.filler_reasons,
@@ -2170,6 +2326,21 @@ def generate_interactive_html(report: TreeReport, output_file: Path) -> None:
                 html += '<div style="color: var(--solid); font-weight: 600; margin-top: 4px;">Impacto Mecanico:</div><ul style="padding-left: 16px; margin: 3px 0;">';
                 n.strengths.forEach(s => html += `<li>${{s}}</li>`);
                 html += '</ul>';
+            }}
+
+            if (n.event_details && n.event_details.length > 0) {{
+                html += '<div style="color: #58a6ff; font-weight: 600; margin-top: 8px;">📜 Eventos & Escolhas de Governança:</div>';
+                n.event_details.forEach(ev => {{
+                    html += `
+                        <div style="background: rgba(88, 166, 255, 0.08); border: 1px solid rgba(88, 166, 255, 0.25); border-left: 3px solid #58a6ff; border-radius: 4px; padding: 6px 8px; margin: 5px 0;">
+                            <div style="font-weight: 600; font-size: 0.78rem; color: #fff;">${{ev.title}} <span style="color: #8b949e; font-size: 0.7rem;">(${{ev.id}})</span></div>
+                            <div style="font-size: 0.72rem; color: #8b949e; margin-top: 3px; font-weight: 500;">Opções & Ramificações:</div>
+                            <ul style="padding-left: 14px; margin: 3px 0; font-size: 0.72rem;">`;
+                    ev.options.forEach(opt => {{
+                        html += `<li><b>${{opt.text}}</b>: <span style="color: #7ee787;">${{opt.summary}}</span></li>`;
+                    }});
+                    html += `</ul></div>`;
+                }});
             }}
 
             if (n.fillers.length > 0) {{
