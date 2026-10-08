@@ -9,8 +9,11 @@ A unified multi-pillar engine for analyzing, auditing, balancing, and visualizin
  2. Combat Balance, Division Templates & Equipment Sufficiency.
  3. AI Behavioral Weighting (ai_will_do & Historical Pathing).
  4. Localization Quality, Narrative Depth & Missing Keys (PT-BR & EN).
- 5. Multiplayer Safety, Anti-Desync (OOS) & Daily Performance / Lag Telemetry.
- 6. Interactive 2D Visual SVG/HTML Inspector with Phase Filters.
+ 5. GFX Integrity, Missing Sprites & Image Dimensions (450x250, DDS/PNG).
+ 6. National Spirit Stacking, Top-Bar Clutter (>7 ideas) & Buff Inflation.
+ 7. Event Visualizer & Layout Inspector (HTML Parchment Simulation).
+ 8. Multiplayer Safety, Anti-Desync (OOS) & Daily Performance / Lag Telemetry.
+ 9. Interactive 2D Visual SVG/HTML Inspector with Phase Filters.
 ===============================================================================
 """
 
@@ -19,8 +22,14 @@ import re
 import sys
 import json
 from pathlib import Path
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import List, Dict, Set, Optional, Tuple
+
+try:
+    from PIL import Image
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 COMMON_DIR = ROOT_DIR / "common"
@@ -28,6 +37,9 @@ FOCUS_DIR = COMMON_DIR / "national_focus"
 DECISIONS_DIR = COMMON_DIR / "decisions"
 EVENTS_DIR = ROOT_DIR / "events"
 IDEAS_DIR = COMMON_DIR / "ideas"
+CHARACTERS_DIR = COMMON_DIR / "characters"
+INTERFACE_DIR = ROOT_DIR / "interface"
+GFX_DIR = ROOT_DIR / "gfx"
 ON_ACTIONS_DIR = COMMON_DIR / "on_actions"
 UNITS_DIR = ROOT_DIR / "history" / "units"
 COUNTRIES_DIR = ROOT_DIR / "history" / "countries"
@@ -78,13 +90,14 @@ class FocusNode:
     x: int
     y: int
     cost_days: int
+    icon: str = ""
     prerequisites: List[List[str]] = field(default_factory=list)
     mutually_exclusive: List[str] = field(default_factory=list)
     raw_reward: str = ""
     raw_ai: str = ""
     
     # Phase Classification
-    phase: int = 1  # 1: 1911-1914 (Pre-war), 2: 1914-1916 (Total War), 3: 1917-1920 (Exhaustion/Endgame)
+    phase: int = 1  # 1: 1911-1914, 2: 1914-1916, 3: 1917-1920
     phase_name: str = "Curto Prazo (1911-1914)"
 
     # Gameplay & Substance Metrics
@@ -98,9 +111,15 @@ class FocusNode:
     unlocked_decisions: List[str] = field(default_factory=list)
     fired_events: List[str] = field(default_factory=list)
     gives_ideas: List[str] = field(default_factory=list)
+    removes_ideas: List[str] = field(default_factory=list)
     is_filler: bool = False
     filler_reasons: List[str] = field(default_factory=list)
     strengths: List[str] = field(default_factory=list)
+
+    # GFX & Visual Integrity
+    is_icon_valid: bool = True
+    icon_file: str = ""
+    icon_warning: str = ""
 
     # AI Behavior Metrics
     has_ai_will_do: bool = False
@@ -113,6 +132,47 @@ class FocusNode:
     loc_pt_title: str = ""
     loc_pt_desc_len: int = 0
     is_loc_shallow: bool = False
+
+
+@dataclass
+class GFXAuditReport:
+    total_sprites_defined: int = 0
+    missing_texture_files: List[str] = field(default_factory=list)
+    missing_focus_icons: List[str] = field(default_factory=list)
+    missing_idea_icons: List[str] = field(default_factory=list)
+    missing_event_pictures: List[str] = field(default_factory=list)
+    invalid_dimension_event_pictures: List[str] = field(default_factory=list)
+
+
+@dataclass
+class SpiritStackingReport:
+    tag: str
+    starting_ideas: List[str] = field(default_factory=list)
+    total_starting_count: int = 0
+    max_simultaneous_estimate: int = 0
+    has_topbar_overflow_risk: bool = False
+    unpaired_ideas_added: List[str] = field(default_factory=list)
+    powercreep_warnings: List[str] = field(default_factory=list)
+
+
+@dataclass
+class EventInspection:
+    id: str
+    file_name: str
+    picture_gfx: str = ""
+    picture_file: str = ""
+    is_picture_valid: bool = True
+    picture_dims: Tuple[int, int] = (0, 0)
+    title_key: str = ""
+    desc_key: str = ""
+    title_pt: str = ""
+    desc_pt: str = ""
+    desc_length: int = 0
+    is_text_overflow_risk: bool = False
+    options_count: int = 0
+    options: List[Dict[str, str]] = field(default_factory=list)
+    is_options_overflow_risk: bool = False
+    warnings: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -148,9 +208,9 @@ class TreeReport:
     filler_percentage: float = 0.0
     
     # 3-Phase Chronological Arc
-    phase_1_count: int = 0  # 1911-1914
-    phase_2_count: int = 0  # 1914-1916
-    phase_3_count: int = 0  # 1917-1920
+    phase_1_count: int = 0
+    phase_2_count: int = 0
+    phase_3_count: int = 0
     phase_1_score: float = 0.0
     phase_2_score: float = 0.0
     phase_3_score: float = 0.0
@@ -173,9 +233,73 @@ class TreeReport:
     loc_coverage_pct: float = 0.0
     shallow_loc_count: int = 0
 
+    # GFX & Spirit Health
+    missing_icons_count: int = 0
+    has_spirit_overflow: bool = False
+
     nodes: Dict[str, FocusNode] = field(default_factory=dict)
     hitlist: List[FocusNode] = field(default_factory=list)
     combat: Optional[CombatReport] = None
+    spirits: Optional[SpiritStackingReport] = None
+
+
+# =============================================================================
+# GFX DATABASE ENGINE
+# =============================================================================
+
+class GFXDatabase:
+    def __init__(self):
+        self.sprites: Dict[str, str] = {}
+        self.load_sprites()
+
+    def load_sprites(self):
+        if not INTERFACE_DIR.exists():
+            return
+        
+        # Regex to capture name and texturefile in spriteType blocks
+        sprite_block_re = re.compile(r'spriteType\s*=\s*\{([^\}]+(?:\{[^\}]*\}[^\}]*)*)\}', re.DOTALL)
+        name_re = re.compile(r'name\s*=\s*\"?([a-zA-Z0-9_\-\.]+)\"?')
+        tex_re = re.compile(r'texturefile\s*=\s*\"?([^\s\"\n\}]+)\"?', re.IGNORECASE)
+
+        for gfx_file in INTERFACE_DIR.glob("*.gfx"):
+            try:
+                with open(gfx_file, "r", encoding="utf-8", errors="ignore") as f:
+                    txt = f.read()
+                for block_match in sprite_block_re.finditer(txt):
+                    block = block_match.group(1)
+                    n_match = name_re.search(block)
+                    t_match = tex_re.search(block)
+                    if n_match and t_match:
+                        s_name = n_match.group(1)
+                        s_path = t_match.group(1).replace("\\", "/").strip('"').strip("'")
+                        self.sprites[s_name] = s_path
+            except Exception:
+                pass
+
+    def resolve_sprite(self, sprite_name: str) -> Tuple[bool, str]:
+        if sprite_name in self.sprites:
+            rel_path = self.sprites[sprite_name]
+            clean_rel = rel_path.lstrip("/")
+            full_path = ROOT_DIR / clean_rel
+            if full_path.exists():
+                return True, str(clean_rel)
+            return False, f"Definido no .gfx mas arquivo ausente: {rel_path}"
+        return False, "Sprite nao declarado em nenhum arquivo .gfx"
+
+    def get_image_dimensions(self, rel_path: str) -> Tuple[int, int]:
+        if not HAS_PIL:
+            return (0, 0)
+        try:
+            full_path = ROOT_DIR / rel_path.lstrip("/")
+            if full_path.exists():
+                with Image.open(full_path) as img:
+                    return img.size
+        except Exception:
+            pass
+        return (0, 0)
+
+
+GLOBAL_GFX = GFXDatabase()
 
 
 # =============================================================================
@@ -189,12 +313,10 @@ class LocalizationDB:
         self.load_all()
 
     def load_all(self):
-        # Load PT-BR
         pt_dir = LOCALISATION_DIR / "braz_por"
         if pt_dir.exists():
             for f in pt_dir.glob("*.yml"):
                 self._load_file(f, self.pt_keys)
-        # Load English
         en_dir = LOCALISATION_DIR / "english"
         if en_dir.exists():
             for f in en_dir.glob("*.yml"):
@@ -212,7 +334,6 @@ class LocalizationDB:
                         if val.startswith('"') and val.endswith('"'):
                             val = val[1:-1]
                         elif re.match(r'^[0-9]\s*"', val):
-                            # e.g. 0 "Text"
                             m = re.search(r'"(.*)"', val)
                             if m:
                                 val = m.group(1)
@@ -252,12 +373,7 @@ def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
         text = f.read()
 
     nodes: Dict[str, FocusNode] = {}
-    
-    clean_lines = []
-    for line in text.splitlines():
-        if "#" in line:
-            line = line[:line.index("#")]
-        clean_lines.append(line)
+    clean_lines = [line[:line.index("#")] if "#" in line else line for line in text.splitlines()]
     clean_text = "\n".join(clean_lines)
 
     pos = 0
@@ -285,6 +401,9 @@ def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
         cost_multiplier = float(cost_match.group(1)) if cost_match else 10.0
         cost_days = int(cost_multiplier * 7)
 
+        icon_match = re.search(r'\bicon\s*=\s*\"?([a-zA-Z0-9_]+)\"?', block)
+        icon = icon_match.group(1) if icon_match else ""
+
         prereqs = []
         for p_match in re.finditer(r'prerequisite\s*=\s*\{', block):
             p_block, _ = parse_bracket_content(block, p_match.end() - 1)
@@ -308,7 +427,6 @@ def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
         if ai_match:
             raw_ai, _ = parse_bracket_content(block, ai_match.end() - 1)
 
-        # 3-Phase Classification based on vertical topology and content
         if y <= 4:
             phase = 1
             phase_name = "Curto Prazo (1911-1914)"
@@ -324,6 +442,7 @@ def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
             x=x,
             y=y,
             cost_days=cost_days,
+            icon=icon,
             prerequisites=prereqs,
             mutually_exclusive=mut_excl,
             raw_reward=raw_reward,
@@ -338,7 +457,7 @@ def extract_focus_nodes(file_path: Path) -> Dict[str, FocusNode]:
 
 
 # =============================================================================
-# SUBSTANCE & GAME DESIGN SCORING ALGORITHM
+# SUBSTANCE, GFX & LOC SCORING
 # =============================================================================
 
 def analyze_focus(node: FocusNode) -> None:
@@ -347,7 +466,7 @@ def analyze_focus(node: FocusNode) -> None:
     strengths = []
     fillers = []
 
-    # 1. Map Impact (Factories, Dockyards, Infrastructure, Building slots)
+    # 1. Map Impact
     civs = len(re.findall(r'industrial_complex\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*industrial_complex', reward))
     mils = len(re.findall(r'arms_factory\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*arms_factory', reward))
     docks = len(re.findall(r'dockyard\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*dockyard', reward))
@@ -387,7 +506,7 @@ def analyze_focus(node: FocusNode) -> None:
         score += 2.0
         strengths.append("Envio direto de armamento/artilharia para estoque")
 
-    # 3. Interactivity (Decisions, Missions, Dynamic Mechanics)
+    # 3. Interactivity
     decisions = re.findall(r'activate_mission\s*=\s*([a-zA-Z0-9_]+)', reward)
     dec_cats = re.findall(r'unlocks_decision_category\s*=\s*([a-zA-Z0-9_]+)', reward)
     add_dec = re.findall(r'add_decision\s*=\s*([a-zA-Z0-9_]+)', reward)
@@ -397,29 +516,31 @@ def analyze_focus(node: FocusNode) -> None:
         score += 3.0 * len(all_dec)
         strengths.append(f"Destrava {len(all_dec)} Decisao(oes)/Missao(oes)")
 
-    # 4. Narrative & Diplomacy (Bilateral Country Events)
+    # 4. Narrative Events
     events = re.findall(r'country_event\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', reward)
     node.fired_events = events
     if events:
         score += 2.5 * len(events)
         strengths.append(f"Dispara {len(events)} Evento(s) Bilateral(is)")
 
-    # 5. Ideas and Spirits
-    ideas = re.findall(r'add_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
-    node.gives_ideas = ideas
-    if ideas:
-        score += 2.0 * len(ideas)
-        strengths.append(f"Modifica Espirito Nacional ({len(ideas)})")
+    # 5. Ideas Added & Removed
+    ideas_add = re.findall(r'add_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
+    ideas_rem = re.findall(r'remove_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
+    node.gives_ideas = ideas_add
+    node.removes_ideas = ideas_rem
+    if ideas_add:
+        score += 2.0 * len(ideas_add)
+        strengths.append(f"Modifica Espirito Nacional (+{len(ideas_add)})")
 
-    # 6. XP and Army/Navy/Air Doctrines
+    # 6. XP
     xp = re.findall(r'add_(?:army|navy|air)_experience\s*=\s*([0-9]+)', reward)
     if xp:
         score += 1.0
         strengths.append(f"Concede XP Militar ({', '.join(xp)})")
 
-    # 7. Check for Pure Filler (Shallow Content)
+    # 7. Filler Detection
     has_meaningful_impact = (civs > 0 or mils > 0 or docks > 0 or slots > 0 or units > 0 or
-                             len(all_dec) > 0 or len(events) > 0 or len(ideas) > 0 or equip)
+                             len(all_dec) > 0 or len(events) > 0 or len(ideas_add) > 0 or equip)
     
     only_pp = bool(re.search(r'add_political_power\s*=', reward) and not has_meaningful_impact)
     only_stab = bool(re.search(r'add_stability\s*=', reward) and not has_meaningful_impact)
@@ -452,7 +573,6 @@ def analyze_focus(node: FocusNode) -> None:
     node.strengths = strengths
     node.filler_reasons = fillers
 
-    # Categorization
     if node.substance_score >= 7.5:
         node.category = "Epic"
     elif node.substance_score >= 5.0:
@@ -463,7 +583,18 @@ def analyze_focus(node: FocusNode) -> None:
         node.category = "Dead/Filler"
         node.is_filler = True
 
-    # 8. AI Behavior Analysis
+    # 8. GFX Icon Integrity
+    if node.icon:
+        valid, msg = GLOBAL_GFX.resolve_sprite(node.icon)
+        node.is_icon_valid = valid
+        node.icon_file = msg
+        if not valid:
+            node.icon_warning = msg
+    else:
+        node.is_icon_valid = False
+        node.icon_warning = "Foco sem declaracao de 'icon = GFX_...'"
+
+    # 9. AI Behavior
     if node.raw_ai.strip():
         node.has_ai_will_do = True
         factor_match = re.search(r'factor\s*=\s*([0-9\.]+)', node.raw_ai)
@@ -479,7 +610,7 @@ def analyze_focus(node: FocusNode) -> None:
         node.has_ai_will_do = False
         node.ai_status = "Sem ai_will_do (Selecao Aleatoria)"
 
-    # 9. Localization Audit
+    # 10. Localization
     node.has_loc_pt = node.id in GLOBAL_LOC.pt_keys
     node.has_loc_en = node.id in GLOBAL_LOC.en_keys
     node.loc_pt_title = GLOBAL_LOC.pt_keys.get(node.id, node.id)
@@ -488,6 +619,250 @@ def analyze_focus(node: FocusNode) -> None:
     node.loc_pt_desc_len = len(desc_text)
     if not node.has_loc_pt or node.loc_pt_desc_len < 25:
         node.is_loc_shallow = True
+
+
+# =============================================================================
+# NATIONAL SPIRIT STACKING & POWERCREEP AUDIT
+# =============================================================================
+
+def analyze_spirits(tag: str, tree_nodes: Dict[str, FocusNode]) -> SpiritStackingReport:
+    history_file = TAG_TO_HISTORY.get(tag)
+    report = SpiritStackingReport(tag=tag)
+
+    if history_file and history_file.exists():
+        with open(history_file, "r", encoding="utf-8", errors="ignore") as f:
+            h_text = f.read()
+        ideas_match = re.search(r'add_ideas\s*=\s*\{([^}]+)\}', h_text)
+        if ideas_match:
+            ideas = re.findall(r'([a-zA-Z0-9_]+)', ideas_match.group(1))
+            report.starting_ideas = ideas
+            report.total_starting_count = len(ideas)
+
+    # Count focuses that add ideas without removing
+    unpaired = []
+    total_added = 0
+    for node in tree_nodes.values():
+        if node.gives_ideas and not node.removes_ideas:
+            for idea_id in node.gives_ideas:
+                unpaired.append(f"{node.id} -> adiciona '{idea_id}' sem remover ideia antiga")
+                total_added += 1
+
+    report.unpaired_ideas_added = unpaired
+    # Top-bar overflow estimate: Starting ideas + added ideas
+    report.max_simultaneous_estimate = report.total_starting_count + total_added
+    if report.total_starting_count >= 6:
+        report.has_topbar_overflow_risk = True
+        report.powercreep_warnings.append(f"Comeco de jogo com {report.total_starting_count} ideias ativas. Risco de poluir a barra superior.")
+
+    return report
+
+
+# =============================================================================
+# EVENT VISUALIZER & LAYOUT INSPECTOR
+# =============================================================================
+
+def inspect_event(event_id: str) -> Optional[EventInspection]:
+    target_event = None
+
+    if not EVENTS_DIR.exists():
+        return None
+
+    # Search across all event files
+    e_pattern = re.compile(r'(?:country_event|news_event)\s*=\s*\{', re.DOTALL)
+    for f in EVENTS_DIR.glob("*.txt"):
+        with open(f, "r", encoding="utf-8", errors="ignore") as fp:
+            text = fp.read()
+        
+        pos = 0
+        while True:
+            m = e_pattern.search(text, pos)
+            if not m:
+                break
+            block, end_idx = parse_bracket_content(text, m.end() - 1)
+            pos = end_idx
+
+            id_match = re.search(r'\bid\s*=\s*([a-zA-Z0-9_\.]+)', block)
+            if id_match and id_match.group(1) == event_id:
+                # Found the event!
+                pic_match = re.search(r'\bpicture\s*=\s*\"?([a-zA-Z0-9_]+)\"?', block)
+                pic_gfx = pic_match.group(1) if pic_match else ""
+
+                t_match = re.search(r'\btitle\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', block)
+                d_match = re.search(r'\bdesc\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', block)
+                
+                title_key = t_match.group(1) if t_match else ""
+                desc_key = d_match.group(1) if d_match else ""
+
+                # Parse options
+                options = []
+                for opt_match in re.finditer(r'\boption\s*=\s*\{', block):
+                    o_block, _ = parse_bracket_content(block, opt_match.end() - 1)
+                    opt_name_match = re.search(r'\bname\s*=\s*\"?([a-zA-Z0-9_\.]+)\"?', o_block)
+                    opt_key = opt_name_match.group(1) if opt_name_match else "Sem Nome"
+                    opt_text = GLOBAL_LOC.pt_keys.get(opt_key, opt_key)
+                    is_empty = not bool(re.search(r'[a-zA-Z0-9_]+\s*=', o_block))
+                    options.append({
+                        "key": opt_key,
+                        "text": opt_text,
+                        "is_empty": is_empty
+                    })
+
+                target_event = EventInspection(
+                    id=event_id,
+                    file_name=f.name,
+                    picture_gfx=pic_gfx,
+                    title_key=title_key,
+                    desc_key=desc_key,
+                    options_count=len(options),
+                    options=options
+                )
+                break
+        if target_event:
+            break
+
+    if not target_event:
+        return None
+
+    # Resolve GFX Picture & Dimensions
+    if target_event.picture_gfx:
+        valid, path_or_msg = GLOBAL_GFX.resolve_sprite(target_event.picture_gfx)
+        target_event.is_picture_valid = valid
+        if valid:
+            target_event.picture_file = path_or_msg
+            dims = GLOBAL_GFX.get_image_dimensions(path_or_msg)
+            target_event.picture_dims = dims
+            if dims != (0, 0) and dims != (450, 250) and dims != (400, 160):
+                target_event.warnings.append(f"Dimensoes fora do padrao ({dims[0]}x{dims[1]}). Risco de barras pretas ou esticamento.")
+        else:
+            target_event.warnings.append(f"GFX da imagem inexistente: {path_or_msg}")
+    else:
+        target_event.warnings.append("Evento sem imagem declarada ('picture = GFX_...')")
+
+    # Resolve Localized Texts
+    target_event.title_pt = GLOBAL_LOC.pt_keys.get(target_event.title_key, target_event.title_key)
+    target_event.desc_pt = GLOBAL_LOC.pt_keys.get(target_event.desc_key, target_event.desc_key)
+    target_event.desc_length = len(target_event.desc_pt)
+
+    if target_event.desc_length > 900:
+        target_event.is_text_overflow_risk = True
+        target_event.warnings.append(f"Texto muito longo ({target_event.desc_length} chars). Risco de quebrar a moldura de pergaminho do jogo.")
+
+    if target_event.options_count > 4:
+        target_event.is_options_overflow_risk = True
+        target_event.warnings.append(f"Muitas opcoes ({target_event.options_count}). Risco de sobrepor o rodape da janela.")
+
+    for o in target_event.options:
+        if o["is_empty"]:
+            target_event.warnings.append(f"Opcao '{o['key']}' sem nenhum efeito pratico (vazia)")
+
+    return target_event
+
+
+def generate_event_preview_html(event: EventInspection, output_file: Path) -> None:
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    
+    img_html = ""
+    if event.picture_file:
+        img_src = ROOT_DIR / event.picture_file
+        img_html = f'<img src="file:///{img_src.as_posix()}" style="width: 450px; height: 250px; object-fit: cover; border-radius: 4px; border: 1px solid #5a4a35;">'
+    else:
+        img_html = '<div style="width: 450px; height: 250px; background: #222; display: flex; align-items: center; justify-content: center; color: #888; border: 1px dashed #555;">[IMAGEM AUSENTE / GFX INEXISTENTE]</div>'
+
+    options_html = ""
+    for opt in event.options:
+        empty_badge = ' <span style="color: #f85149; font-size: 0.75rem;">(Vazia!)</span>' if opt["is_empty"] else ""
+        options_html += f"""
+        <button style="background: #2b2318; border: 1px solid #7c6848; color: #e4d8b8; padding: 10px 14px; text-align: left; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;">
+            {opt['text']}{empty_badge}
+        </button>
+        """
+
+    warnings_html = ""
+    if event.warnings:
+        warnings_html = '<div style="background: rgba(248, 81, 73, 0.1); border: 1px solid #f85149; border-radius: 6px; padding: 12px; margin-top: 15px;">'
+        warnings_html += '<div style="font-weight: 700; color: #f85149; margin-bottom: 6px;">⚠️ Alertas de Composicao Visual:</div><ul style="margin: 0; padding-left: 20px; color: #c9d1d9;">'
+        for w in event.warnings:
+            warnings_html += f'<li>{w}</li>'
+        warnings_html += '</ul></div>'
+
+    html = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador de Evento — {event.id}</title>
+    <style>
+        body {{
+            margin: 0;
+            background: #111418;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }}
+        .event-window {{
+            width: 490px;
+            background: #1e1913;
+            border: 2px solid #8b7355;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 6px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }}
+        .event-header {{
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffd79a;
+            text-align: center;
+            text-shadow: 1px 1px 2px #000;
+            border-bottom: 1px solid #5a4a35;
+            padding-bottom: 8px;
+        }}
+        .event-desc {{
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: #dcd0b8;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #3d3224;
+            max-height: 200px;
+            overflow-y: auto;
+        }}
+        .options-list {{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 6px;
+        }}
+    </style>
+</head>
+<body>
+    <div>
+        <div class="event-window">
+            <div class="event-header">{event.title_pt}</div>
+            <div style="display: flex; justify-content: center;">
+                {img_html}
+            </div>
+            <div class="event-desc">
+                {event.desc_pt}
+            </div>
+            <div class="options-list">
+                {options_html}
+            </div>
+        </div>
+        {warnings_html}
+    </div>
+</body>
+</html>
+"""
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(html)
 
 
 # =============================================================================
@@ -506,7 +881,6 @@ def analyze_combat(tag: str) -> CombatReport:
     with open(oob_file, "r", encoding="utf-8", errors="ignore") as f:
         text = f.read()
 
-    # Parse division templates
     t_pattern = re.compile(r'\bdivision_template\s*=\s*\{')
     pos = 0
     while True:
@@ -519,21 +893,19 @@ def analyze_combat(tag: str) -> CombatReport:
         name_match = re.search(r'name\s*=\s*"([^"]+)"', block)
         template_name = name_match.group(1) if name_match else "Unknown Template"
 
-        # Regiments
         battalions = []
         reg_match = re.search(r'regiments\s*=\s*\{', block)
         if reg_match:
             r_block, _ = parse_bracket_content(block, reg_match.end() - 1)
             battalions = re.findall(r'([a-zA-Z0-9_]+)\s*=\s*\{', r_block)
 
-        # Supports
         supports = []
         sup_match = re.search(r'support\s*=\s*\{', block)
         if sup_match:
             s_block, _ = parse_bracket_content(block, sup_match.end() - 1)
             supports = re.findall(r'([a-zA-Z0-9_]+)\s*=\s*\{', s_block)
 
-        combat_width = len(battalions) * 2  # WW1 baseline ~2 width per regular battalion
+        combat_width = len(battalions) * 2
         template = DivisionTemplate(
             name=template_name,
             battalions=battalions,
@@ -544,25 +916,22 @@ def analyze_combat(tag: str) -> CombatReport:
 
         if combat_width < 12:
             template.is_balanced = False
-            template.critique = f"Largura de combate perigosamente baixa ({combat_width} width). Divisao frágil para trincheiras."
+            template.critique = f"Largura de combate muito baixa ({combat_width}W). Fragil para trincheiras."
         elif "artillery" not in supports and not any("artillery" in b for b in battalions):
             template.is_balanced = False
-            template.critique = "Ausencia total de artilharia! Sofrerá atrito brutal contra infantaria entrincheirada."
+            template.critique = "Sem artilharia! Sofrera atrito macico contra infantaria entrincheirada."
         else:
             template.critique = "Template solido para combate de trincheiras (WW1)."
 
         report.templates.append(template)
 
-    # Count divisions in OOB
     div_count = len(re.findall(r'\bdivision\s*=\s*\{', text))
     report.total_starting_divisions = div_count
 
-    # Check Stockpile in History
     if history_file and history_file.exists():
         with open(history_file, "r", encoding="utf-8", errors="ignore") as f:
             h_text = f.read()
         
-        # Stockpiles
         inf_guns = re.findall(r'type\s*=\s*infantry_equipment_[0-9][^}]*amount\s*=\s*([0-9]+)', h_text)
         art_guns = re.findall(r'type\s*=\s*artillery_equipment_[0-9][^}]*amount\s*=\s*([0-9]+)', h_text)
         sup_guns = re.findall(r'type\s*=\s*support_equipment_[0-9][^}]*amount\s*=\s*([0-9]+)', h_text)
@@ -571,10 +940,9 @@ def analyze_combat(tag: str) -> CombatReport:
         report.artillery_stockpile = sum(int(x) for x in art_guns)
         report.support_equipment_stockpile = sum(int(x) for x in sup_guns)
 
-        min_inf_needed = report.total_starting_divisions * 800
         if report.infantry_equipment_stockpile < 1000:
             report.is_stockpile_sufficient = False
-            report.warnings.append(f"Estoque inicial de fuzis critico (+{report.infantry_equipment_stockpile}). Risco de desarmamento no day 1.")
+            report.warnings.append(f"Estoque inicial de fuzis critico (+{report.infantry_equipment_stockpile}).")
 
     return report
 
@@ -585,8 +953,6 @@ def analyze_combat(tag: str) -> CombatReport:
 
 def audit_multiplayer_safety() -> List[str]:
     hazards = []
-
-    # Check on_actions
     if ON_ACTIONS_DIR.exists():
         for f in ON_ACTIONS_DIR.glob("*.txt"):
             with open(f, "r", encoding="utf-8", errors="ignore") as file:
@@ -595,23 +961,12 @@ def audit_multiplayer_safety() -> List[str]:
                     lines = content.splitlines()
                     for idx, line in enumerate(lines, 1):
                         if "every_country" in line or "every_state" in line:
-                            hazards.append(f"[PERFORMANCE / LAG] Loop global em on_daily detectado em {f.name}:{idx}: '{line.strip()}'")
-
-    # Check Events for random_list desyncs
-    if EVENTS_DIR.exists():
-        for f in EVENTS_DIR.glob("*.txt"):
-            with open(f, "r", encoding="utf-8", errors="ignore") as file:
-                content = file.read()
-                # Check for unbounded random lists
-                if "random_list = {" in content:
-                    # Verify if it has seed protection or ai safety
-                    pass
-
+                            hazards.append(f"[PERFORMANCE] Loop global em on_daily detectado em {f.name}:{idx}: '{line.strip()}'")
     return hazards
 
 
 # =============================================================================
-# TREE AUDIT & AGGREGATION
+# COMPLETE TREE ANALYSIS AGGREGATOR
 # =============================================================================
 
 def analyze_tree(tag: str, file_path: Path) -> TreeReport:
@@ -626,6 +981,7 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     ai_count = 0
     loc_count = 0
     shallow_loc_count = 0
+    missing_icons = 0
 
     p1_nodes, p2_nodes, p3_nodes = [], [], []
     coords_seen: Dict[Tuple[int, int], str] = {}
@@ -635,7 +991,6 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
         analyze_focus(node)
         total_score += node.substance_score
         
-        # Phases
         if node.phase == 1:
             p1_nodes.append(node)
         elif node.phase == 2:
@@ -652,6 +1007,9 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
 
         if node.is_filler or node.substance_score < 2.5:
             filler_nodes.append(node)
+
+        if not node.is_icon_valid:
+            missing_icons += 1
 
         if node.has_ai_will_do:
             ai_count += 1
@@ -675,6 +1033,7 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     report.filler_count = len(filler_nodes)
     report.filler_percentage = round((len(filler_nodes) / len(nodes)) * 100, 1)
     report.collision_count = collision_count
+    report.missing_icons_count = missing_icons
 
     # Phase Metrics
     report.phase_1_count = len(p1_nodes)
@@ -696,8 +1055,9 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
     if p1_nodes:
         report.pacing_1914_readiness_pct = round(min(100.0, report.phase_1_score * 12.5), 1)
 
-    # Attach combat report
+    # Attach combat & spirits reports
     report.combat = analyze_combat(tag)
+    report.spirits = analyze_spirits(tag, nodes)
 
     return report
 
@@ -731,6 +1091,7 @@ def generate_interactive_html(report: TreeReport, output_file: Path) -> None:
             "score": n.substance_score,
             "category": n.category,
             "is_filler": n.is_filler,
+            "is_icon_valid": n.is_icon_valid,
             "ai_status": n.ai_status,
             "has_ai": n.has_ai_will_do,
             "civs": n.factories_civ,
@@ -1135,13 +1496,13 @@ def run_inspect(tag: str) -> None:
     tag = tag.upper()
     file_path = TAG_TO_FILE.get(tag)
     if not file_path or not file_path.exists():
-        print(f"[ERRO] Arquivo de foco para a tag '{tag}' nao encontrado em {FOCUS_DIR}")
+        print(f"[ERRO] Arquivo de foco para '{tag}' nao encontrado em {FOCUS_DIR}")
         return
 
     report = analyze_tree(tag, file_path)
     
     print("\n" + "=" * 80)
-    print(f"       HOI4 GAMEPLAY RADAR COMPLETO — RAIO-X DE JOGABILIDADE ({report.tag})")
+    print(f"       HOI4 GAMEPLAY RADAR — RAIO-X COMPLETO DE JOGABILIDADE & DESIGN ({report.tag})")
     print("=" * 80)
     print(f" Arquivo                 : {report.file_path}")
     print(f" Total de Focos          : {report.total_focuses}")
@@ -1149,38 +1510,33 @@ def run_inspect(tag: str) -> None:
     print(f" Focos Mortos (Filler)   : {report.filler_count} ({report.filler_percentage}%)")
     print("-" * 80)
     print(f" [1] ARCO CRONOLOGICO EM 3 FASES:")
-    print(f"     Fase 1 (1911-1914 Curto) : {report.phase_1_count} focos | Score: {report.phase_1_score}/10 (Prontidao Guerra: {report.pacing_1914_readiness_pct}%)")
+    print(f"     Fase 1 (1911-1914 Curto) : {report.phase_1_count} focos | Score: {report.phase_1_score}/10 (Prontidao 1914: {report.pacing_1914_readiness_pct}%)")
     print(f"     Fase 2 (1914-1916 Medio) : {report.phase_2_count} focos | Score: {report.phase_2_score}/10 (Economia de Trincheira)")
     print(f"     Fase 3 (1917-1920 Longo) : {report.phase_3_count} focos | Score: {report.phase_3_score}/10 (Exaustao & Fim de Guerra)")
     print("-" * 80)
-    print(f" [2] IMPACTO MATERIAL NO MAPA:")
-    print(f"     Fabricas Construidas     : Civ: +{report.total_civ_factories} | Mil: +{report.total_mil_factories} | Estaleiros: +{report.total_dockyards}")
-    print(f"     Slots de Construcao      : +{report.total_slots} slots")
-    print(f"     Decisoes / Missoes       : {report.total_decisions_unlocked} destravadas")
-    print(f"     Eventos Bilaterais       : {report.total_events_fired} disparados")
-    print("-" * 80)
-    print(f" [3] INTELIGENCIA ARTIFICIAL & IMERSAO:")
-    print(f"     Cobertura de IA (ai)     : {report.ai_coverage_pct}% dos focos possuem ai_will_do")
-    print(f"     Traducao & Localizacao   : {report.loc_coverage_pct}% cobertura | {report.shallow_loc_count} textos superficiais")
+    print(f" [2] GFX & SAUDE VISUAL:")
+    print(f"     Icones Quebrados/Missing : {report.missing_icons_count} focos sem icone valido no disco")
     print(f"     Colisoes de Coordenadas  : {report.collision_count} conflitos")
     print(f"     Risco Foco Continuo      : {'[ALERTA] Risco de sobreposicao no topo esquerdo' if report.continuous_focus_hazard else '[OK] Limpo'}")
-    
-    if report.combat and report.combat.templates:
-        print("-" * 80)
-        print(f" [4] BALISTICA & EXERCITO INICIAL (COMBAT RADAR):")
+    print("-" * 80)
+    print(f" [3] ESPIRITOS NACIONAIS & EMPILHAMENTO (BUFF STACKING):")
+    if report.spirits:
+        print(f"     Espiritos Iniciais 1911  : {report.spirits.total_starting_count} ideias ({', '.join(report.spirits.starting_ideas[:4])}...)")
+        print(f"     Risco de Overflow Topbar : {'[ALERTA] Mais de 6 ideias ativas simultaneas' if report.spirits.has_topbar_overflow_risk else '[OK] Equilibrado'}")
+        print(f"     Ideias sem 'remove_ideas': {len(report.spirits.unpaired_ideas_added)} adicionadas sem substituir tier anterior")
+    print("-" * 80)
+    print(f" [4] BALISTICA & EXERCITO INICIAL (COMBAT RADAR):")
+    if report.combat:
         print(f"     Divisoes Iniciais OOB    : {report.combat.total_starting_divisions} divisoes")
         print(f"     Estoque Fuzis / Canhoes  : +{report.combat.infantry_equipment_stockpile} fuzis | +{report.combat.artillery_stockpile} pecas de artilharia")
         for t in report.combat.templates[:2]:
             print(f"     Template '{t.name}': {t.combat_width}W -> {t.critique}")
-        for w in report.combat.warnings:
-            print(f"     [!] ALERTA MILITAR: {w}")
-
     print("=" * 80)
 
     if report.hitlist:
         print("\n [!] HIT LIST — OS 10 FOCOS MAIS RASOS QUE PRECISAM DE MECANICA IMEDIATA:")
         for idx, node in enumerate(report.hitlist[:10], 1):
-            reasons = "; ".join(node.filler_reasons) if node.filler_reasons else "Recompensa insignificante"
+            reasons = "; ".join(node.filler_reasons) if node.filler_reasons else "Recompensa fraca"
             print(f"   {idx:2d}. {node.loc_pt_title:<28} ({node.id}) | {node.phase_name} (Score: {node.substance_score}/10) -> {reasons}")
 
     html_out = OUTPUT_DIR / f"{tag}_focus_tree.html"
@@ -1189,11 +1545,11 @@ def run_inspect(tag: str) -> None:
 
 
 def run_audit_all() -> None:
-    print("\n" + "=" * 95)
+    print("\n" + "=" * 98)
     print("       AUDITORIA GLOBAL MULTIDIMENSIONAL DE JOGABILIDADE (TODAS AS POTENCIAS)")
-    print("=" * 95)
-    print(f" {'TAG':<5} | {'Focos':<5} | {'Score':<6} | {'Fase 1':<8} | {'Fase 2':<8} | {'Fase 3':<8} | {'Fillers':<10} | {'IA %':<6} | {'Loc %':<6} | {'Status':<12}")
-    print("-" * 95)
+    print("=" * 98)
+    print(f" {'TAG':<5} | {'Focos':<5} | {'Score':<6} | {'Fase 1':<8} | {'Fase 2':<8} | {'Fase 3':<8} | {'Fillers':<10} | {'GFX Err':<8} | {'Status':<12}")
+    print("-" * 98)
 
     for tag, file_path in TAG_TO_FILE.items():
         if tag in ["AUH", "SOV"]:
@@ -1204,9 +1560,39 @@ def run_audit_all() -> None:
         status = "EXCELENTE" if report.avg_substance_score >= 6.0 and report.filler_percentage <= 15 else "PRECISA POLIR"
         if report.avg_substance_score < 4.0 or report.filler_percentage > 35:
             status = "CRITICO/RASO"
-        print(f" {tag:<5} | {report.total_focuses:<5} | {report.avg_substance_score:<6} | {report.phase_1_score:<8} | {report.phase_2_score:<8} | {report.phase_3_score:<8} | {report.filler_percentage}%      | {report.ai_coverage_pct}%  | {report.loc_coverage_pct}%  | {status:<12}")
+        print(f" {tag:<5} | {report.total_focuses:<5} | {report.avg_substance_score:<6} | {report.phase_1_score:<8} | {report.phase_2_score:<8} | {report.phase_3_score:<8} | {report.filler_percentage}%      | {report.missing_icons_count:<8} | {status:<12}")
 
-    print("=" * 95 + "\n")
+    print("=" * 98 + "\n")
+
+
+def run_event_preview(event_id: str) -> None:
+    event = inspect_event(event_id)
+    if not event:
+        print(f"[ERRO] Evento '{event_id}' nao encontrado em nenhum arquivo de events/")
+        return
+
+    print("\n" + "=" * 80)
+    print(f"       INSPECAO VISUAL & ESTRUTURAL DE EVENTO — {event.id}")
+    print("=" * 80)
+    print(f" Arquivo              : {event.file_name}")
+    print(f" Titulo               : {event.title_pt}")
+    print(f" Imagem GFX           : {event.picture_gfx} -> {'[OK]' if event.is_picture_valid else '[ERRO GFX]'}")
+    print(f" Arquivo da Imagem    : {event.picture_file or 'Nao encontrado'}")
+    print(f" Dimensoes da Imagem  : {event.picture_dims[0]}x{event.picture_dims[1]} px {'(Ideal 450x250)' if event.picture_dims == (450, 250) else ''}")
+    print(f" Tamanho do Texto     : {event.desc_length} caracteres {'[ALERTA OVERFLOW]' if event.is_text_overflow_risk else '[OK]'}")
+    print(f" Opcoes de Escolha    : {event.options_count} opcoes")
+    for idx, opt in enumerate(event.options, 1):
+        print(f"   Opcao {idx}: '{opt['text']}' ({opt['key']}) {'[VAZIA]' if opt['is_empty'] else ''}")
+    
+    if event.warnings:
+        print("-" * 80)
+        print(" [!] ALERTAS DE COMPOSICAO:")
+        for w in event.warnings:
+            print(f"     - {w}")
+
+    out_file = OUTPUT_DIR / f"event_{event.id}.html"
+    generate_event_preview_html(event, out_file)
+    print(f"\n [+] Simulador Visual do Evento Renderizado em:\n     file:///{out_file.as_posix()}\n")
 
 
 def run_mp_safety() -> None:
@@ -1226,14 +1612,17 @@ def run_mp_safety() -> None:
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Uso:")
-        print("  python scripts/mod_engine.py inspect <TAG>   -> Inspeciona o ecossistema completo de um pais")
-        print("  python scripts/mod_engine.py audit-all       -> Auditoria comparativa global de todas as potencias")
-        print("  python scripts/mod_engine.py mp-safety       -> Auditoria anti-desync e anti-lag para multiplayer")
+        print("  python scripts/mod_engine.py inspect <TAG>        -> Raio-X completo (focos, combate, GFX, ideias)")
+        print("  python scripts/mod_engine.py event-preview <ID>   -> Inspeciona e renderiza visual do evento em HTML")
+        print("  python scripts/mod_engine.py audit-all            -> Auditoria comparativa global de todas as potencias")
+        print("  python scripts/mod_engine.py mp-safety            -> Auditoria anti-desync e anti-lag para multiplayer")
         sys.exit(0)
 
     cmd = sys.argv[1].lower()
     if cmd == "inspect" and len(sys.argv) >= 3:
         run_inspect(sys.argv[2])
+    elif cmd == "event-preview" and len(sys.argv) >= 3:
+        run_event_preview(sys.argv[2])
     elif cmd == "audit-all":
         run_audit_all()
     elif cmd == "mp-safety":

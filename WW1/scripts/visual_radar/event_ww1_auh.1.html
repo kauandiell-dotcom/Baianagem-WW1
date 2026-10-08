@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador de Evento — ww1_auh.1</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111418;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .event-window {
+            width: 490px;
+            background: #1e1913;
+            border: 2px solid #8b7355;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.5);
+            border-radius: 6px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .event-header {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffd79a;
+            text-align: center;
+            text-shadow: 1px 1px 2px #000;
+            border-bottom: 1px solid #5a4a35;
+            padding-bottom: 8px;
+        }
+        .event-desc {
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: #dcd0b8;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #3d3224;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="event-window">
+            <div class="event-header">Duas capitais, uma Coroa</div>
+            <div style="display: flex; justify-content: center;">
+                <img src="file:///C:/Users/Usuário/Pictures/Baianagem-WW1/WW1/gfx/event_pictures/ww1_auh/council.dds" style="width: 450px; height: 250px; object-fit: cover; border-radius: 4px; border: 1px solid #5a4a35;">
+            </div>
+            <div class="event-desc">
+                A monarquia entra em 1911 com recursos importantes e administrações que disputam suas prioridades. Devemos obter apoio sem prometer que todas as diferenças desaparecerão.
+            </div>
+            <div class="options-list">
+                
+        <button style="background: #2b2318; border: 1px solid #7c6848; color: #e4d8b8; padding: 10px 14px; text-align: left; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;">
+            Ouvir as duas delegações.
+        </button>
+        
+        <button style="background: #2b2318; border: 1px solid #7c6848; color: #e4d8b8; padding: 10px 14px; text-align: left; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;">
+            Convocar representantes provinciais.
+        </button>
+        
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
