@@ -483,7 +483,7 @@ def analyze_focus(node: FocusNode) -> None:
     mils = len(re.findall(r'arms_factory\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*arms_factory', reward))
     docks = len(re.findall(r'dockyard\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*dockyard', reward))
     slots = len(re.findall(r'add_extra_state_shared_building_slots\s*=\s*[1-9]', reward))
-    infras = len(re.findall(r'infrastructure\s*=\s*[1-9]', reward))
+    infras = len(re.findall(r'infrastructure\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*infrastructure', reward))
     
     node.factories_civ = civs
     node.factories_mil = mils
@@ -505,6 +505,30 @@ def analyze_focus(node: FocusNode) -> None:
     if infras > 0:
         score += infras * 1.0
         strengths.append(f"+{infras} Nivel(eis) de Infraestrutura")
+
+    # Fortifications & Bunkers
+    bunkers = len(re.findall(r'bunker\s*=\s*[1-9]', reward)) + len(re.findall(r'type\s*=\s*(?:bunker|coastal_bunker)', reward))
+    if bunkers > 0:
+        score += bunkers * 2.0
+        strengths.append(f"+{bunkers} Fortificacao(oes)/Bunker(s)")
+
+    # Strategic Resources
+    resources = len(re.findall(r'add_resource\s*=', reward))
+    if resources > 0:
+        score += resources * 2.0
+        strengths.append(f"Desenvolvimento de Recursos ({resources})")
+
+    # Tech Research Bonuses
+    tech_bonuses = len(re.findall(r'add_tech_bonus\s*=', reward))
+    if tech_bonuses > 0:
+        score += tech_bonuses * 2.5
+        strengths.append(f"+{tech_bonuses} Bonus de Pesquisa Tecnologica")
+
+    # Command Power
+    cp = re.findall(r'add_command_power\s*=\s*([0-9]+)', reward)
+    if cp:
+        score += 1.0
+        strengths.append(f"Poder de Comando (+{', '.join(cp)})")
 
     # 2. Military Units & Equipment
     units = len(re.findall(r'create_unit\s*=', reward)) + len(re.findall(r'load_oob\s*=', reward))
@@ -535,14 +559,18 @@ def analyze_focus(node: FocusNode) -> None:
         score += 2.5 * len(events)
         strengths.append(f"Dispara {len(events)} Evento(s) Bilateral(is)")
 
-    # 5. Ideas Added & Removed
+    # 5. Ideas Added & Removed / Scripted Effects
     ideas_add = re.findall(r'add_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
     ideas_rem = re.findall(r'remove_ideas\s*=\s*([a-zA-Z0-9_]+)', reward)
+    scripted_ideas = re.findall(r'(auh_ww1_set_[a-zA-Z0-9_]+)\s*=', reward)
     node.gives_ideas = ideas_add
     node.removes_ideas = ideas_rem
     if ideas_add:
         score += 2.0 * len(ideas_add)
         strengths.append(f"Modifica Espirito Nacional (+{len(ideas_add)})")
+    if scripted_ideas:
+        score += 2.5 * len(scripted_ideas)
+        strengths.append(f"Reforma de Estrutura Nacional ({len(scripted_ideas)})")
 
     # 6. XP
     xp = re.findall(r'add_(?:army|navy|air)_experience\s*=\s*([0-9]+)', reward)
@@ -552,7 +580,9 @@ def analyze_focus(node: FocusNode) -> None:
 
     # 7. Filler Detection
     has_meaningful_impact = (civs > 0 or mils > 0 or docks > 0 or slots > 0 or units > 0 or
-                             len(all_dec) > 0 or len(events) > 0 or len(ideas_add) > 0 or equip)
+                             len(all_dec) > 0 or len(events) > 0 or len(ideas_add) > 0 or
+                             len(scripted_ideas) > 0 or equip or bunkers > 0 or resources > 0 or
+                             tech_bonuses > 0 or infras > 0)
     
     only_pp = bool(re.search(r'add_political_power\s*=', reward) and not has_meaningful_impact)
     only_stab = bool(re.search(r'add_stability\s*=', reward) and not has_meaningful_impact)

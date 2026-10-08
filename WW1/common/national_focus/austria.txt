@@ -95,9 +95,10 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_hearings_unlocked
-			add_to_variable = { auh_ww1_cohesion = 3 }
-			add_political_power = 30
-			add_stability = 0.01
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 25
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			add_to_variable = { auh_ww1_consent = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -130,7 +131,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_to_variable = { auh_ww1_consent = 8 } add_to_variable = { auh_ww1_cohesion = -2 } add_stability = 0.005 add_political_power = 20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_budapest_unlocked
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_consent = 8 }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_set_budget_negotiated = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_joint_budget
@@ -167,7 +175,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_honved_contract_unlocked add_to_variable = { auh_ww1_consent = 3 } add_to_variable = { auh_ww1_cohesion = -1 } army_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_honved_contract_unlocked
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			army_experience = 15
+			add_to_variable = { auh_ww1_consent = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_crown_arbitration
@@ -183,7 +197,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.4 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_arbitration_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 30
+			add_to_variable = { auh_ww1_cohesion = 8 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_quota_revision
@@ -199,10 +219,10 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
+			set_country_flag = auh_ww1_quota_unlocked
+			4 = { add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			43 = { add_building_construction = { type = industrial_complex level = 1 instant = yes } }
 			auh_ww1_set_budget_settled = yes
-			add_to_variable = { auh_ww1_consent = 3 }
-			add_political_power = 50
-			4 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -219,7 +239,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { 69 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } 91 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = 20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_petitions_unlocked
+			69 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			add_political_power = 20
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_dual_war_cabinet
@@ -235,7 +261,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_civil_cabinet_unlocked add_war_support = 0.02 add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_civil_cabinet_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_war_support = 0.02
+			add_command_power = 20
+			auh_ww1_set_civil_cabinet = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_trialism
@@ -281,7 +314,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_bosnia_unlocked 104 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 3 } add_to_variable = { auh_ww1_consent = -1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_bosnia_unlocked
+			104 = { add_building_construction = { type = bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
+			add_political_power = 20
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_trialist_compensation
@@ -296,7 +335,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { 44 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant = yes } } add_to_variable = { auh_ww1_consent = 15 } add_political_power = 20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_compensation_unlocked
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_consent = 8 }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_third_crown_charter
@@ -312,7 +357,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.6 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_trialist_charter_unlocked
+			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			auh_ww1_set_budget_trialist = yes
+			add_to_variable = { auh_ww1_cohesion = 10 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_common_customs
@@ -327,7 +378,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { auh_ww1_set_budget_trialist = yes add_stability = 0.005 add_political_power = 20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_customs_unlocked
+			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 8 }
+			add_to_variable = { auh_ww1_consent = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_slavic_officer_school
@@ -342,7 +399,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_slavic_officer_school bonus = 0.25 uses = 1 category = infantry_tech } add_to_variable = { auh_ww1_cohesion = 3 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_slav_school_unlocked
+			army_experience = 20
+			add_command_power = 20
+			auh_ww1_set_languages_trained = yes
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_trialist_war_cabinet
@@ -358,7 +422,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_civil_cabinet_unlocked add_war_support = 0.02 add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_civil_cabinet_unlocked
+			103 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_war_support = 0.02
+			add_command_power = 20
+			auh_ww1_set_civil_cabinet = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_federalism
@@ -391,10 +462,9 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_convention_unlocked
-			add_to_variable = { auh_ww1_consent = 3 }
-			add_to_variable = { auh_ww1_cohesion = 2 }
-			add_political_power = 40
-			add_stability = 0.01
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 30
+			add_to_variable = { auh_ww1_consent = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -411,7 +481,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_to_variable = { auh_ww1_cohesion = 8 } add_to_variable = { auh_ww1_consent = -5 } add_stability = 0.01 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_languages_civil_unlocked
+			auh_ww1_set_languages_staff = yes
+			add_to_variable = { auh_ww1_cohesion = 10 }
+			add_to_variable = { auh_ww1_consent = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_federal_tax_compact
@@ -426,7 +502,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.8 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_tax_compact_unlocked
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			auh_ww1_set_budget_federal = yes
+			add_to_variable = { auh_ww1_consent = 8 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_council_of_peoples
@@ -443,10 +525,10 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			auh_ww1_set_council = yes
-			add_to_variable = { auh_ww1_cohesion = 3 }
-			add_political_power = 30
-			add_stability = 0.01
+			set_country_flag = auh_ww1_council_peoples_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 35
+			add_to_variable = { auh_ww1_cohesion = 10 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -463,7 +545,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.9 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_federal_constitution_unlocked
+			auh_ww1_set_languages_reformed = yes
+			add_to_variable = { auh_ww1_cohesion = 15 }
+			country_event = { id = ww1_auh.9 days = 1 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_federal_common_army
@@ -478,7 +566,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_federal_service_unlocked army_experience = 4 add_to_variable = { auh_ww1_cohesion = 2 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_federal_service_unlocked
+			army_experience = 25
+			add_command_power = 25
+			add_tech_bonus = { name = AUH_federal_army_standardization bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_federal_war_cabinet
@@ -494,7 +588,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_civil_cabinet_unlocked add_war_support = 0.02 add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_civil_cabinet_unlocked
+			4 = { add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_war_support = 0.02
+			add_command_power = 20
+			auh_ww1_set_civil_cabinet = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_bohemian_landtag
@@ -509,7 +610,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_bohemia_unlocked 9 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = 1 } add_tech_bonus = { name = AUH_ww1_bohemian_landtag bonus = 0.10 uses = 1 category = industry } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_bohemia_unlocked
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_moravian_compromise
@@ -524,7 +630,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_moravia_unlocked 75 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_moravia_unlocked
+			75 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_silesian_municipalities
@@ -539,7 +650,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_silesia_unlocked 74 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_silesia_unlocked
+			74 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 5 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_galician_autonomy
@@ -554,7 +670,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_galicia_unlocked 89 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_provisions = 2 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_galicia_unlocked
+			88 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_ruthenian_schools
@@ -569,7 +690,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_ruthenia_unlocked 73 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 3 } add_to_variable = { auh_ww1_consent = -1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_ruthenia_unlocked
+			73 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_bukovina_compact
@@ -584,7 +710,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_bukovina_unlocked 80 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_bukovina_unlocked
+			80 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_slovak_petitions
@@ -599,7 +730,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_slovakia_unlocked 70 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = -2 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_slovakia_unlocked
+			70 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_transylvanian_guarantees
@@ -614,7 +750,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_transylvania_unlocked 84 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = -1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_transylvania_unlocked
+			84 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_banat_council
@@ -629,7 +770,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_banat_unlocked 82 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_provisions = 2 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_banat_unlocked
+			82 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_dalmatian_services
@@ -644,7 +790,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_dalmatia_unlocked 163 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_dalmatia_unlocked
+			163 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_trentino_council
@@ -659,7 +810,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_trentino_unlocked 850 = { add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_cohesion = 2 } add_to_variable = { auh_ww1_consent = 1 } add_political_power = -10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_trentino_unlocked
+			850 = { add_building_construction = { type = bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_provincial_ombudsman
@@ -674,7 +830,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_ombudsman_unlocked add_to_variable = { auh_ww1_cohesion = 3 } add_stability = 0.01 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_ombudsman_unlocked
+			75 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 30
+			add_to_variable = { auh_ww1_cohesion = 8 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_economic_inventory
@@ -739,7 +901,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_investments_unlocked add_ideas = AUH_ww1_inst_investment_board add_political_power = -20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_investments_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			auh_ww1_set_labour_compact = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_skoda_contracts
@@ -754,7 +921,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { 9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } } add_equipment_to_stockpile = { type = artillery_equipment amount = 150 } add_tech_bonus = { name = AUH_ww1_skoda_contracts bonus = 0.50 uses = 1 category = artillery } army_experience = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_skoda_unlocked
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_tech_bonus = { name = AUH_skoda_heavy_artillery_contract bonus = 1.0 uses = 1 category = artillery }
+			auh_ww1_set_arsenals_standardised = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_pilsen_tooling
@@ -769,7 +942,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_pilsen_unlocked 9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } } add_tech_bonus = { name = AUH_ww1_pilsen_tooling bonus = 0.10 uses = 1 category = artillery } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_pilsen_unlocked
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_tech_bonus = { name = AUH_pilsen_machine_tooling bonus = 1.0 uses = 1 category = industry }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_vitkovice_steel
@@ -784,7 +962,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_vitkovice_unlocked 75 = { add_resource = { type = steel amount = 4 } } 75 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } } add_to_variable = { auh_ww1_cohesion = 1 } add_tech_bonus = { name = AUH_ww1_vitkovice_steel bonus = 0.10 uses = 1 category = industry } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_vitkovice_unlocked
+			75 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_resource = { type = steel amount = 10 state = 75 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_steyr_small_arms
@@ -800,7 +983,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { 4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } } add_equipment_to_stockpile = { type = infantry_equipment amount = 2500 } add_tech_bonus = { name = AUH_ww1_steyr_small_arms bonus = 0.50 uses = 1 category = infantry_weapons } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_steyr_unlocked
+			152 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_tech_bonus = { name = AUH_steyr_mannlicher_m95 bonus = 1.0 uses = 1 category = infantry_weapons }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_weiss_csepel
@@ -815,7 +1003,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_csepel_unlocked 43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } } add_to_variable = { auh_ww1_consent = 2 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_csepel_unlocked
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_tech_bonus = { name = AUH_weiss_manfred_munitions bonus = 1.0 uses = 1 category = artillery }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_arsenal_standards
@@ -852,7 +1045,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_grain_agreement_unlocked 43 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { auh_ww1_provisions = 10 } add_to_variable = { auh_ww1_consent = 2 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_grain_agreement_unlocked
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 12 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_granaries
@@ -867,7 +1065,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_granaries_unlocked 4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } } add_to_variable = { auh_ww1_provisions = 8 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_granaries_unlocked
+			154 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 12 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_agricultural_tools
@@ -882,7 +1085,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_agricultural_tools bonus = 0.15 uses = 1 category = industry } add_to_variable = { auh_ww1_provisions = 4 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_tools_unlocked
+			155 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 10 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_rural_exemptions
@@ -898,7 +1106,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_harvest_leave_unlocked add_to_variable = { auh_ww1_provisions = 3 } add_war_support = -0.01 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_harvest_leave_unlocked
+			154 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 10 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_common_food_board
@@ -945,11 +1158,10 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_project_vienna_budapest_unlocked
-			build_railway = { level = 2 start_state = 4 target_state = 43 build_only_on_allied = yes }
-			4 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			43 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_to_variable = { auh_ww1_consent = 2 }
-			add_political_power = 20
+			4 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			43 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			4 = { add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -968,10 +1180,10 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_project_prague_vienna_unlocked
-			build_railway = { level = 2 start_state = 9 target_state = 4 build_only_on_allied = yes }
-			9 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_to_variable = { auh_ww1_cohesion = 2 }
-			add_political_power = 20
+			9 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			4 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			9 = { add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1016,10 +1228,8 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_project_bosnian_rail_unlocked
-			build_railway = { level = 2 start_state = 43 target_state = 104 build_only_on_allied = yes }
-			104 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_to_variable = { auh_ww1_cohesion = 2 }
-			add_political_power = 20
+			104 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = bunker level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1097,7 +1307,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_workers_housing_unlocked 152 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { auh_ww1_cohesion = 3 } add_political_power = -15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_housing_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_consent = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_women_in_industry
@@ -1167,9 +1382,9 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_labour_mediation_unlocked
-			add_to_variable = { auh_ww1_cohesion = 3 }
-			add_political_power = 35
-			add_stability = 0.01
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 25
+			add_to_variable = { auh_ww1_consent = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1187,9 +1402,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_bond_issue_unlocked
-			add_political_power = 50
-			4 = { add_extra_state_shared_building_slots = 1 }
+			set_country_flag = auh_ww1_bank_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			auh_ww1_set_credit_expansion = yes
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1207,9 +1422,10 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			add_to_variable = { auh_ww1_consent = 4 }
-			add_political_power = 40
-			add_stability = 0.01
+			set_country_flag = auh_ww1_public_accounts_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 30
+			add_to_variable = { auh_ww1_consent = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1226,7 +1442,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.13 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_credit_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 }
+			43 = { add_extra_state_shared_building_slots = 1 }
+			add_political_power = 40
+			add_to_variable = { auh_ww1_consent = 8 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_price_inspection
@@ -1244,10 +1467,8 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_price_inspection_unlocked
-			add_to_variable = { auh_ww1_provisions = 3 }
-			add_to_variable = { auh_ww1_consent = 1 }
-			add_political_power = 30
-			add_stability = 0.01
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1287,9 +1508,9 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_debt_repayment_unlocked
-			add_to_variable = { auh_ww1_debt = -1 }
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
 			add_political_power = 40
-			4 = { add_extra_state_shared_building_slots = 1 }
+			add_to_variable = { auh_ww1_debt = -1 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1336,7 +1557,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_danube_unlocked 154 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { auh_ww1_provisions = 3 } add_to_variable = { auh_ww1_consent = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_danube_unlocked
+			43 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			45 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			navy_experience = 10
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_galician_oil
@@ -1352,7 +1579,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_galician_oil_unlocked 91 = { add_resource = { type = oil amount = 4 } } 91 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_political_power = 15 add_to_variable = { auh_ww1_cohesion = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_oil_unlocked
+			88 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_resource = { type = oil amount = 8 state = 88 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_electrical_workshops
@@ -1367,7 +1599,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_electrical_workshops bonus = 0.2 uses = 1 category = electronics } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_electric_unlocked
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_tech_bonus = { name = AUH_electrical_industrial_grid bonus = 1.0 uses = 1 category = industry }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_civilian_conversion
@@ -1382,7 +1619,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_civilian_conversion_unlocked add_stability = 0.005 add_political_power = -15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_conversion_unlocked
+			4 = { add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			auh_ww1_set_emergency_shifts = yes
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_common_army_review
@@ -1411,7 +1653,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 8 add_ideas = AUH_ww1_inst_staff_college auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 25
+			add_command_power = 25
+			add_tech_bonus = { name = AUH_kriegsschule_doctrine bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_regimental_languages
@@ -1426,7 +1673,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { auh_ww1_set_languages_trained = yes army_experience = 3 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_languages_military_unlocked
+			auh_ww1_set_languages_trained = yes
+			army_experience = 10
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_mobilisation_tables
@@ -1441,7 +1693,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_reserve_training_unlocked army_experience = 3 add_political_power = -15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_reserve_training_unlocked
+			army_experience = 20
+			add_command_power = 20
+			add_tech_bonus = { name = AUH_mobilization_timetables bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_military_programme
@@ -1487,7 +1745,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_landwehr_training_unlocked army_experience = 3 add_to_variable = { auh_ww1_consent = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_landwehr_training_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			army_experience = 20
+			add_command_power = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_honved_training
@@ -1502,7 +1766,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_honved_training_unlocked army_experience = 3 add_to_variable = { auh_ww1_consent = 2 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_honved_training_unlocked
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			army_experience = 20
+			add_command_power = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_reserve_template
@@ -1538,7 +1808,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_machine_gun_sections bonus = 0.2 uses = 1 category = infantry_tech } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_mg_unlocked
+			add_tech_bonus = { name = AUH_schwarzlose_m07_12 bonus = 1.0 uses = 1 category = infantry_weapons }
+			army_experience = 15
+			152 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_junior_officers
@@ -1569,7 +1845,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_rest_rotation_unlocked add_to_variable = { auh_ww1_cohesion = 2 } add_war_support = 0.01 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_rest_rotation_unlocked
+			army_experience = 20
+			add_tech_bonus = { name = AUH_trench_rotation_drill bonus = 1.0 uses = 1 category = land_doctrine }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_infantry_field_manual
@@ -1584,7 +1866,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 8 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 20
+			add_tech_bonus = { name = AUH_infantry_regulations bonus = 1.0 uses = 1 category = infantry_weapons }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_replacement_depots
@@ -1629,7 +1915,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 6 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 20
+			add_tech_bonus = { name = AUH_field_gun_survey bonus = 1.0 uses = 1 category = artillery }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_ammunition_inspection
@@ -1690,7 +1980,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 8 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 20
+			add_tech_bonus = { name = AUH_counter_battery_sound_ranging bonus = 1.0 uses = 1 category = artillery }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_artillery_reserves
@@ -1706,7 +2000,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_artillery_supply_unlocked add_political_power = -15 army_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_artillery_supply_unlocked
+			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			army_experience = 20
+			add_tech_bonus = { name = AUH_artillery_munitions_reserves bonus = 1.0 uses = 1 category = artillery }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_fire_control
@@ -1751,7 +2051,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_carpathian_defence_unlocked 91 = { add_building_construction = { type = bunker level = 2 instant = yes } } 154 = { add_building_construction = { type = bunker level = 2 instant = yes } } army_experience = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_carpathian_unlocked
+			auh_ww1_set_operation_carpathians = yes
+			army_experience = 15
+			88 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			89 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_alpine_routes
@@ -1766,7 +2073,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_alpine_routes_unlocked 153 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } army_experience = 2 add_political_power = -10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_alpine_unlocked
+			153 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			39 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			army_experience = 10
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_winter_equipment
@@ -1781,7 +2094,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_winter_stores_unlocked add_war_support = 0.01 army_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_winter_unlocked
+			add_tech_bonus = { name = AUH_alpine_winter_equipment bonus = 1.0 uses = 1 category = industry }
+			army_experience = 15
+			153 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_sapper_school
@@ -1797,7 +2116,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_sapper_school bonus = 0.25 uses = 1 category = engineers_tech } add_ideas = AUH_ww1_inst_sapper_school auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 20
+			add_command_power = 15
+			add_tech_bonus = { name = AUH_ww1_sapper_school bonus = 1.0 uses = 1 category = engineers_tech }
+			4 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_medical_services
@@ -1858,7 +2183,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_przemysl_unlocked 89 = { add_building_construction = { type = bunker level = 2 instant = yes } } add_political_power = -15 army_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_przemysl_unlocked
+			88 = { add_building_construction = { type = bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 10 }
+			army_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_regional_defence
@@ -1873,7 +2204,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_defensive_sectors_unlocked add_to_variable = { auh_ww1_cohesion = 2 } army_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_defensive_sectors_unlocked
+			88 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			736 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			army_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_balkan_plan
@@ -1888,7 +2225,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_serbia_operation_unlocked army_experience = 2 add_command_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_mission_serbia_unlocked
+			auh_ww1_set_operation_serbia = yes
+			army_experience = 15
+			104 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			45 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_galician_plan
@@ -1903,7 +2247,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_galicia_operation_unlocked army_experience = 2 add_command_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_mission_galicia_unlocked
+			auh_ww1_set_operation_galicia = yes
+			army_experience = 15
+			88 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_isonzo_plan
@@ -1918,7 +2268,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_isonzo_operation_unlocked army_experience = 2 add_command_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_isonzo_operation_unlocked
+			736 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			auh_ww1_set_operation_isonzo = yes
+			army_experience = 20
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_offensive_audit
@@ -1949,7 +2305,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			add_command_power = 25
+			army_experience = 20
+			add_tech_bonus = { name = AUH_joint_command_staff bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_field_telephones
@@ -1995,7 +2356,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 12 add_mastery_bonus = { name = AUH_ww1_operational_lessons bonus = .10 days = 180 folder = land } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 25
+			add_tech_bonus = { name = AUH_tactical_doctrine_revision bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_war_staff_review
@@ -2010,7 +2375,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_staff_review_unlocked army_experience = 3 add_political_power = -20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_staff_review_unlocked
+			army_experience = 20
+			add_command_power = 25
+			add_tech_bonus = { name = AUH_war_staff_operations bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_luftfahrtruppen
@@ -2025,7 +2396,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { air_experience = 5 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			4 = { add_building_construction = { type = air_base level = 1 instant = yes } }
+			air_experience = 20
+			add_tech_bonus = { name = AUH_k_u_k_luftfahrtruppen_corps bonus = 1.0 uses = 1 category = air_equipment }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_pilot_school
@@ -2040,7 +2416,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_pilot_training_unlocked add_ideas = AUH_ww1_inst_pilot_school air_experience = 3 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_pilot_training_unlocked
+			4 = { add_building_construction = { type = air_base level = 1 instant = yes } }
+			air_experience = 25
+			add_tech_bonus = { name = AUH_wiener_neustadt_pilot_school bonus = 1.0 uses = 1 category = air_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_lohner_workshops
@@ -2101,7 +2483,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_airfield_unlocked 4 = { add_building_construction = { type = air_base level = 1 instant = yes } } air_experience = 2 add_political_power = -10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_airfields_unlocked
+			88 = { add_building_construction = { type = air_base level = 1 instant = yes } }
+			736 = { add_building_construction = { type = air_base level = 1 instant = yes } }
+			air_experience = 25
+			add_tech_bonus = { name = AUH_airfield_ground_crew_services bonus = 1.0 uses = 1 category = air_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_air_artillery_liaison
@@ -2117,7 +2506,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { air_experience = 6 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 15
+			air_experience = 15
+			add_tech_bonus = { name = AUH_aerial_recon_spotting bonus = 1.0 uses = 1 category = artillery }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_aeronautical_testing
@@ -2147,7 +2541,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { air_experience = 8 add_mastery_bonus = { name = AUH_ww1_air_training bonus = .10 days = 180 folder = air } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			air_experience = 25
+			add_tech_bonus = { name = AUH_air_tactics_manual bonus = 1.0 uses = 1 category = air_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_ballhausplatz
@@ -2177,10 +2575,10 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_consular_contacts_unlocked
-			add_political_power = 40
-			add_to_variable = { auh_ww1_consent = 1 }
-			add_stability = 0.01
+			set_country_flag = auh_ww1_consular_reports_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 35
+			add_to_variable = { auh_ww1_consent = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2198,8 +2596,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			add_to_variable = { auh_ww1_consent = 3 }
-			add_political_power = 45
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 30
+			add_to_variable = { auh_ww1_consent = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2233,9 +2632,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_foreign_programme_unlocked
-			add_political_power = 40
-			if = { limit = { country_exists = GER } add_opinion_modifier = { target = GER modifier = auh_ww1_joint_strategy_pact } }
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 35
+			add_command_power = 20
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2267,7 +2666,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_german_staff_exchange_unlocked army_experience = 3 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 25
+			add_command_power = 20
+			add_tech_bonus = { name = AUH_german_military_mission bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_german_supply_protocol
@@ -2298,7 +2702,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { army_experience = 8 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			army_experience = 20
+			add_command_power = 20
+			add_tech_bonus = { name = AUH_strategic_war_planning bonus = 1.0 uses = 1 category = land_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_alliance_independence
@@ -2313,7 +2722,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.19 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_alliance_independence_unlocked
+			add_command_power = 25
+			army_experience = 20
+			add_tech_bonus = { name = AUH_independent_staff_doctrine bonus = 1.0 uses = 1 category = land_doctrine }
+			add_to_variable = { auh_ww1_consent = 10 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_central_power_liaison
@@ -2328,7 +2744,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_allied_liaison_unlocked add_to_variable = { auh_ww1_consent = 1 } add_war_support = 0.01 army_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_coalition_liaison_unlocked
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			army_experience = 25
+			add_command_power = 20
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_belgrade_channel
@@ -2373,7 +2795,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_sarajevo_unlocked 104 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { auh_ww1_cohesion = 3 } add_political_power = -15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_sarajevo_unlocked
+			104 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_albanian_contacts
@@ -2450,10 +2877,8 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_project_litorale_unlocked
-			add_to_variable = { auh_ww1_cohesion = 2 }
-			add_political_power = 25
-			if = { limit = { country_exists = ITA } add_opinion_modifier = { target = ITA modifier = auh_ww1_minority_appeasement } }
+			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2471,10 +2896,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_italian_consultation_unlocked
-			add_political_power = 30
-			add_to_variable = { auh_ww1_cohesion = 1 }
-			navy_experience = 10
+			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			navy_experience = 20
+			add_to_variable = { auh_ww1_cohesion = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2492,7 +2916,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_south_tyrol_unlocked 39 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { auh_ww1_cohesion = 2 } add_political_power = -10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_tyrol_unlocked
+			153 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			army_experience = 10
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_italian_contingency
@@ -2507,7 +2936,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_italian_contingency_unlocked army_experience = 3 add_war_support = 0.01 add_to_variable = { auh_ww1_cohesion = -1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_italian_border_unlocked
+			39 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			850 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			army_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_adriatic_civil_compact
@@ -2523,9 +2958,8 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			add_to_variable = { auh_ww1_cohesion = 5 }
-			add_political_power = 25
-			736 = { add_extra_state_shared_building_slots = 1 }
+			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2558,10 +2992,8 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_romanian_grain_unlocked
-			add_to_variable = { auh_ww1_provisions = 4 }
-			add_political_power = 30
-			if = { limit = { country_exists = ROM } add_opinion_modifier = { target = ROM modifier = auh_ww1_grain_contract_op } }
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 15 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2579,9 +3011,8 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			add_to_variable = { auh_ww1_cohesion = 4 }
-			add_political_power = 30
-			if = { limit = { country_exists = ROM } add_opinion_modifier = { target = ROM modifier = auh_ww1_transylvanian_pact } }
+			84 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2614,7 +3045,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_eastern_contingency_unlocked army_experience = 3 add_political_power = -15 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_galician_border_unlocked
+			88 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			80 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			army_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_eastern_refugees
@@ -2630,11 +3067,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_refugee_assistance_unlocked
-			add_to_variable = { auh_ww1_cohesion = 3 }
-			add_to_variable = { auh_ww1_provisions = -2 }
-			add_political_power = 25
-			4 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			88 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_provisions = 8 }
+			add_to_variable = { auh_ww1_cohesion = 6 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2681,7 +3116,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_armistice_proposal_unlocked add_political_power = 30 add_war_support = -0.01 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			4 = { add_extra_state_shared_building_slots = 1 }
+			add_political_power = 40
+			country_event = { id = ww1_auh.46 days = 1 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_renounce_annexations
@@ -2697,7 +3137,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_to_variable = { auh_ww1_cohesion = 5 } add_war_support = -.03 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			add_political_power = 40
+			add_to_variable = { auh_ww1_consent = 12 }
+			country_event = { id = ww1_auh.21 days = 1 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_conference_mandate
@@ -2713,9 +3158,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_conference_unlocked
-			add_political_power = 50
-			add_war_support = 0.02
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 40
+			add_to_variable = { auh_ww1_cohesion = 10 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2732,7 +3177,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_postwar_diplomacy_unlocked add_stability = 0.01 add_political_power = 25 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			auh_ww1_set_peace_administration = yes
+			add_political_power = 40
+			add_to_variable = { auh_ww1_consent = 10 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_admiralty_review
@@ -2761,7 +3211,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_naval_programme_unlocked navy_experience = 3 add_political_power = -20 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			navy_experience = 20
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_pola_maintenance
@@ -2776,7 +3230,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_pola_maintenance bonus = 0.15 uses = 1 category = maintenance_company_tech } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_pola_unlocked
+			736 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } }
+			auh_ww1_set_naval_refit_priority = yes
+			navy_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_naval_artillery
@@ -2806,7 +3266,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_fleet_training_unlocked navy_experience = 3 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = { name = AUH_naval_gunnery_fire_control bonus = 1.0 uses = 1 category = naval_equipment }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_fleet_signalling
@@ -2822,7 +3286,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { navy_experience = 8 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = { name = AUH_naval_wireless_signalling bonus = 1.0 uses = 1 category = naval_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_fleet_in_being
@@ -2852,7 +3320,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { navy_experience = 10 add_mastery_bonus = { name = AUH_ww1_naval_training bonus = .10 days = 180 folder = naval } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = { name = AUH_fleet_battle_tactics bonus = 1.0 uses = 1 category = naval_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_trieste_yards
@@ -2867,7 +3339,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_trieste_yards_unlocked 736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } } add_political_power = -15 navy_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_trieste_unlocked
+			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			navy_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_torpedo_workshop
@@ -2882,7 +3359,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_tech_bonus = { name = AUH_ww1_torpedo_workshop bonus = 0.25 uses = 1 category = torpedo } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_torpedo_unlocked
+			add_tech_bonus = { name = AUH_whitehead_fiume_torpedoes bonus = 1.0 uses = 1 category = naval_equipment }
+			852 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_escort_design
@@ -2943,7 +3425,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_naval_spares_unlocked navy_experience = 2 add_political_power = -10 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			navy_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_dalmatian_ports
@@ -2958,7 +3444,13 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_dalmatian_ports_unlocked 163 = { add_building_construction = { type = naval_base level = 1 instant = yes } } add_to_variable = { auh_ww1_cohesion = 2 } navy_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_dalmatian_ports_unlocked
+			103 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			163 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } }
+			navy_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_naval_patrols
@@ -2973,7 +3465,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { navy_experience = 6 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			736 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } }
+			navy_experience = 25
+			add_tech_bonus = { name = AUH_coastal_anti_submarine_patrols bonus = 1.0 uses = 1 category = naval_doctrine }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_coastal_observation
@@ -2988,7 +3485,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_coastal_observation_unlocked navy_experience = 3 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			103 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } }
+			163 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } }
+			navy_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_seaplane_trials
@@ -3019,7 +3521,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_merchant_training_unlocked navy_experience = 3 add_to_variable = { auh_ww1_provisions = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			navy_experience = 15
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_adriatic_supply
@@ -3034,7 +3540,12 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_adriatic_supply_unlocked add_to_variable = { auh_ww1_provisions = 2 } navy_experience = 2 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			736 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			navy_experience = 20
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_postwar_inventory
@@ -3065,9 +3576,8 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_veterans_unlocked
-			add_to_variable = { auh_ww1_cohesion = 2 }
-			add_political_power = 25
-			army_experience = 10
+			auh_ww1_set_veterans = yes
+			add_to_variable = { auh_ww1_consent = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -3086,9 +3596,9 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
 			set_country_flag = auh_ww1_reconstruction_unlocked
-			add_political_power = 50
-			add_to_variable = { auh_ww1_consent = 2 }
-			89 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			auh_ww1_set_peace_administration = yes
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -3141,7 +3651,11 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_rehabilitation_unlocked add_to_variable = { auh_ww1_cohesion = 3 } add_stability = 0.005 auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_consent = 8 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_civilian_service
@@ -3173,10 +3687,10 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_project_galician_reconstruction_unlocked
-			add_to_variable = { auh_ww1_cohesion = 3 }
-			add_to_variable = { auh_ww1_provisions = 3 }
-			88 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			set_country_flag = auh_ww1_regional_recon_unlocked
+			88 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			104 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 10 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -3236,10 +3750,9 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_peace_accounts_unlocked
-			add_to_variable = { auh_ww1_debt = -1 }
-			add_political_power = 50
-			4 = { add_extra_state_shared_building_slots = 1 }
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_political_power = 40
+			auh_ww1_set_budget_settled = yes
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -3287,12 +3800,8 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
-			set_country_flag = auh_ww1_danubian_services_unlocked
-			add_to_variable = { auh_ww1_consent = 3 }
-			add_to_variable = { auh_ww1_cohesion = 3 }
-			add_political_power = 35
-			4 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			43 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+			add_to_variable = { auh_ww1_cohesion = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }

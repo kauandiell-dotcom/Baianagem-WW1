@@ -610,8 +610,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				consumer_goods_factor = 0.08
-				political_power_factor = -0.10
+				consumer_goods_factor = 0.05
+				political_power_factor = -0.05
 			}
 		}
 
@@ -620,8 +620,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_org_factor = -0.12
-				land_reinforce_rate = -0.10
+				army_org_factor = -0.05
+				land_reinforce_rate = -0.03
 			}
 		}
 
@@ -630,8 +630,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_artillery_attack_factor = 0.08
-				industrial_capacity_factory = 0.05
+				army_artillery_attack_factor = 0.10
+				army_artillery_defence_factor = 0.08
+				industrial_capacity_factory = 0.06
 			}
 		}
 
@@ -640,8 +641,10 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_core_defence_factor = 0.15
-				max_dig_in = 5
+				army_core_defence_factor = 0.20
+				max_dig_in = 6
+				dig_in_speed_factor = 0.15
+				winter_attrition_factor = -0.15
 			}
 		}
 

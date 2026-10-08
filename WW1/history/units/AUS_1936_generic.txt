@@ -1,4 +1,4 @@
-﻿# Austro-Hungarian Empire (Österreichisch-Ungarische Monarchie) - Starting Order of Battle (1911)
+# Austro-Hungarian Empire (Österreichisch-Ungarische Monarchie) - Starting Order of Battle (1911)
 # Territorial army opening: preserve division count, mixed mountain infantry, no elite custom battalion stacking.
 
 division_template = {
@@ -32,6 +32,7 @@ division_template = {
 	}
 	support = {
 		recon = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
 	}
 }
 
@@ -56,45 +57,45 @@ division_template = {
 }
 
 units = {
-	# --- Galicia & Russian Frontier (Lemberg) ---
+	# --- Galicia & Russian Frontier (Lemberg & Przemyśl) ---
 	division = { name = "1. k.u.k. Infanterie-Division" location = 417 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
 	division = { name = "2. k.u.k. Infanterie-Division" location = 417 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
 	division = { name = "3. k.u.k. Infanterie-Division" location = 417 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "4. k.u.k. Infanterie-Division" location = 417 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "5. k.u.k. Infanterie-Division" location = 417 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "6. k.u.k. Infanterie-Division" location = 417 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "4. k.u.k. Infanterie-Division" location = 442 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "5. k.u.k. Infanterie-Division" location = 442 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "6. k.u.k. Infanterie-Division" location = 442 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
 	division = { name = "1. k.u.k. Gebirgsjäger-Division" location = 417 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
-	division = { name = "2. k.u.k. Gebirgsjäger-Division" location = 417 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
+	division = { name = "2. k.u.k. Gebirgsjäger-Division" location = 442 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
 	division = { name = "1. Honvéd-Kavallerie-Division" location = 417 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
-	division = { name = "2. Honvéd-Kavallerie-Division" location = 417 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
+	division = { name = "2. Honvéd-Kavallerie-Division" location = 442 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
 
-	# --- Alpine & Italian Frontier (Tyrol / Innsbruck) ---
+	# --- Alpine & Italian Frontier (Tyrol, Trentino & Isonzo) ---
 	division = { name = "3. k.u.k. Gebirgsjäger-Division (Tirol)" location = 668 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.4 }
 	division = { name = "4. k.u.k. Gebirgsjäger-Division (Kaiserjäger)" location = 668 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.4 }
-	division = { name = "5. k.u.k. Gebirgsjäger-Division" location = 668 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
-	division = { name = "6. k.u.k. Gebirgsjäger-Division" location = 668 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
-	division = { name = "7. k.u.k. Infanterie-Division" location = 668 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "8. k.u.k. Infanterie-Division" location = 668 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "5. k.u.k. Gebirgsjäger-Division" location = 656 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
+	division = { name = "6. k.u.k. Gebirgsjäger-Division" location = 9598 division_template = "k.u.k. Gebirgsjager-Division" start_experience_factor = 0.35 }
+	division = { name = "7. k.u.k. Infanterie-Division" location = 599 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "8. k.u.k. Infanterie-Division" location = 599 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
 
-	# --- Vienna District & Austrian Reserve ---
-	division = { name = "9. k.u.k. Infanterie-Division" location = 704 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.3 }
-	division = { name = "10. k.u.k. Infanterie-Division" location = 704 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
-	division = { name = "11. k.u.k. Infanterie-Division" location = 704 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "12. k.u.k. Infanterie-Division" location = 704 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "3. Honvéd-Kavallerie-Division" location = 704 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
+	# --- Balkan & Serbian Frontier (Bosnia & Syrmia / Sava) ---
+	division = { name = "9. k.u.k. Infanterie-Division" location = 11899 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.3 }
+	division = { name = "10. k.u.k. Infanterie-Division" location = 11899 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
+	division = { name = "11. k.u.k. Infanterie-Division" location = 6983 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "12. k.u.k. Infanterie-Division" location = 619 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "3. Honvéd-Kavallerie-Division" location = 6983 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
+	division = { name = "4. Honvéd-Kavallerie-Division" location = 619 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
 
-	# --- Budapest District & Hungarian Honvéd ---
-	division = { name = "1. Magyar Honvéd-Hadosztály" location = 688 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
-	division = { name = "2. Magyar Honvéd-Hadosztály" location = 688 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
-	division = { name = "3. Magyar Honvéd-Hadosztály" location = 688 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "4. Magyar Honvéd-Hadosztály" location = 688 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "4. Honvéd-Kavallerie-Division" location = 688 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
-	division = { name = "5. Honvéd-Kavallerie-Division" location = 688 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
+	# --- Adriatic Coastal Defense (Pola & Dalmatian Ports) ---
+	division = { name = "13. k.u.k. Infanterie-Division" location = 6626 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
+	division = { name = "14. k.u.k. Infanterie-Division" location = 11564 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "15. k.u.k. Infanterie-Division" location = 3924 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "16. k.u.k. Infanterie-Division" location = 6889 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
 
-	# --- Bohemia District (Prague) ---
-	division = { name = "13. k.u.k. Infanterie-Division" location = 445 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "14. k.u.k. Infanterie-Division" location = 445 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "15. k.u.k. Infanterie-Division" location = 445 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
-	division = { name = "16. k.u.k. Infanterie-Division" location = 445 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	# --- Central Reserve (Vienna, Budapest, Prague) ---
+	division = { name = "1. Magyar Honvéd-Hadosztály" location = 684 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
+	division = { name = "2. Magyar Honvéd-Hadosztály" location = 684 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.25 }
+	division = { name = "3. Magyar Honvéd-Hadosztály" location = 704 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "4. Magyar Honvéd-Hadosztály" location = 704 division_template = "k.u.k. Infanterie-Division" start_experience_factor = 0.2 }
+	division = { name = "5. Honvéd-Kavallerie-Division" location = 684 division_template = "Honved-Kavallerie" start_experience_factor = 0.25 }
 	division = { name = "6. Honvéd-Kavallerie-Division" location = 445 division_template = "Honved-Kavallerie" start_experience_factor = 0.2 }
 }
