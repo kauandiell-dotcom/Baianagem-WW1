@@ -21,9 +21,19 @@ import os
 import re
 import sys
 import json
+import base64
+import io
 from pathlib import Path
 from dataclasses import dataclass, field, asdict
 from typing import List, Dict, Set, Optional, Tuple
+
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 try:
     from PIL import Image
@@ -159,6 +169,8 @@ class SpiritStackingReport:
 class EventInspection:
     id: str
     file_name: str
+    event_type: str = "country_event"  # "country_event" or "news_event"
+    country_tag: str = ""
     picture_gfx: str = ""
     picture_file: str = ""
     is_picture_valid: bool = True
@@ -667,8 +679,39 @@ def inspect_event(event_id: str) -> Optional[EventInspection]:
     if not EVENTS_DIR.exists():
         return None
 
+def load_asset_b64(filename: str) -> str:
+    path = SCRIPTS_DIR / "visual_radar" / "assets" / filename
+    if path.exists():
+        with open(path, "rb") as f:
+            return "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
+    return ""
+
+
+def load_image_b64(rel_path: str) -> str:
+    if not rel_path:
+        return ""
+    full_path = ROOT_DIR / rel_path.lstrip("/")
+    if not full_path.exists():
+        return ""
+    try:
+        if HAS_PIL:
+            with Image.open(full_path) as im:
+                buf = io.BytesIO()
+                im.save(buf, format="PNG")
+                return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode("ascii")
+    except Exception:
+        pass
+    return ""
+
+
+def inspect_event(event_id: str) -> Optional[EventInspection]:
+    target_event = None
+
+    if not EVENTS_DIR.exists():
+        return None
+
     # Search across all event files
-    e_pattern = re.compile(r'(?:country_event|news_event)\s*=\s*\{', re.DOTALL)
+    e_pattern = re.compile(r'(country_event|news_event)\s*=\s*\{', re.DOTALL)
     for f in EVENTS_DIR.glob("*.txt"):
         with open(f, "r", encoding="utf-8", errors="ignore") as fp:
             text = fp.read()
@@ -678,6 +721,7 @@ def inspect_event(event_id: str) -> Optional[EventInspection]:
             m = e_pattern.search(text, pos)
             if not m:
                 break
+            ev_type = m.group(1)
             block, end_idx = parse_bracket_content(text, m.end() - 1)
             pos = end_idx
 
@@ -707,9 +751,27 @@ def inspect_event(event_id: str) -> Optional[EventInspection]:
                         "is_empty": is_empty
                     })
 
+                tag_hint = "AUS"
+                if "ger" in event_id.lower() or "germany" in f.name.lower():
+                    tag_hint = "GER"
+                elif "auh" in event_id.lower() or "austria" in f.name.lower():
+                    tag_hint = "AUS"
+                elif "fra" in event_id.lower() or "france" in f.name.lower():
+                    tag_hint = "FRA"
+                elif "ita" in event_id.lower() or "italy" in f.name.lower():
+                    tag_hint = "ITA"
+                elif "eng" in event_id.lower() or "uk" in f.name.lower() or "britain" in f.name.lower():
+                    tag_hint = "ENG"
+                elif "rus" in event_id.lower() or "sov" in f.name.lower():
+                    tag_hint = "RUS"
+                elif "tur" in event_id.lower() or "turkey" in f.name.lower():
+                    tag_hint = "TUR"
+
                 target_event = EventInspection(
                     id=event_id,
                     file_name=f.name,
+                    event_type=ev_type,
+                    country_tag=tag_hint,
                     picture_gfx=pic_gfx,
                     title_key=title_key,
                     desc_key=desc_key,
@@ -731,8 +793,13 @@ def inspect_event(event_id: str) -> Optional[EventInspection]:
             target_event.picture_file = path_or_msg
             dims = GLOBAL_GFX.get_image_dimensions(path_or_msg)
             target_event.picture_dims = dims
-            if dims != (0, 0) and dims != (450, 250) and dims != (400, 160):
-                target_event.warnings.append(f"Dimensoes fora do padrao ({dims[0]}x{dims[1]}). Risco de barras pretas ou esticamento.")
+            if target_event.event_type == "news_event":
+                aspect = (dims[0] / dims[1]) if dims[1] > 0 else 0
+                if abs(aspect - 2.57) > 0.35 and dims != (0, 0):
+                    target_event.warnings.append(f"⚠️ Tarjas Pretas / Letterbox: Dimensões ({dims[0]}x{dims[1]}, proporção {aspect:.2f}:1). O visor de jornal espera ~2.57:1 (399x155px). Causará faixas pretas laterais no jogo!")
+            else:
+                if dims != (0, 0) and dims != (450, 250) and dims != (156, 210) and dims != (400, 160):
+                    target_event.warnings.append(f"Dimensões fora do padrão ({dims[0]}x{dims[1]}). Risco de barras pretas ou esticamento.")
         else:
             target_event.warnings.append(f"GFX da imagem inexistente: {path_or_msg}")
     else:
@@ -743,17 +810,18 @@ def inspect_event(event_id: str) -> Optional[EventInspection]:
     target_event.desc_pt = GLOBAL_LOC.pt_keys.get(target_event.desc_key, target_event.desc_key)
     target_event.desc_length = len(target_event.desc_pt)
 
-    if target_event.desc_length > 900:
+    max_char_limit = 750 if target_event.event_type == "news_event" else 550
+    if target_event.desc_length > max_char_limit:
         target_event.is_text_overflow_risk = True
-        target_event.warnings.append(f"Texto muito longo ({target_event.desc_length} chars). Risco de quebrar a moldura de pergaminho do jogo.")
+        target_event.warnings.append(f"Texto muito longo ({target_event.desc_length} chars). Risco de quebrar a moldura de pergaminho ou jornal do jogo.")
 
     if target_event.options_count > 4:
         target_event.is_options_overflow_risk = True
-        target_event.warnings.append(f"Muitas opcoes ({target_event.options_count}). Risco de sobrepor o rodape da janela.")
+        target_event.warnings.append(f"Muitas opções ({target_event.options_count}). Risco de sobrepor o rodapé da janela.")
 
     for o in target_event.options:
         if o["is_empty"]:
-            target_event.warnings.append(f"Opcao '{o['key']}' sem nenhum efeito pratico (vazia)")
+            target_event.warnings.append(f"Opção '{o['key']}' sem nenhum efeito prático (vazia)")
 
     return target_event
 
@@ -761,102 +829,513 @@ def inspect_event(event_id: str) -> Optional[EventInspection]:
 def generate_event_preview_html(event: EventInspection, output_file: Path) -> None:
     output_file.parent.mkdir(parents=True, exist_ok=True)
     
-    img_html = ""
-    if event.picture_file:
-        img_src = ROOT_DIR / event.picture_file
-        img_html = f'<img src="file:///{img_src.as_posix()}" style="width: 450px; height: 250px; object-fit: cover; border-radius: 4px; border: 1px solid #5a4a35;">'
-    else:
-        img_html = '<div style="width: 450px; height: 250px; background: #222; display: flex; align-items: center; justify-content: center; color: #888; border: 1px dashed #555;">[IMAGEM AUSENTE / GFX INEXISTENTE]</div>'
+    # Load Clausewitz Textures
+    news_bg_b64 = load_asset_b64("event_news_bg.png")
+    news_overlay_b64 = load_asset_b64("event_news_pic_overlay.png")
+    top_win_b64 = load_asset_b64("event_report_top_win.png")
+    mid_win_b64 = load_asset_b64("event_report_tileable_midsection.png")
+    bot_win_b64 = load_asset_b64("event_report_bottom_win.png")
+    option_entry_b64 = load_asset_b64("event_option_entry.png")
+    pic_clip_b64 = load_asset_b64("event_pic_clip.png")
+    
+    # Load Event Picture
+    img_b64 = load_image_b64(event.picture_file)
 
-    options_html = ""
-    for opt in event.options:
-        empty_badge = ' <span style="color: #f85149; font-size: 0.75rem;">(Vazia!)</span>' if opt["is_empty"] else ""
-        options_html += f"""
-        <button style="background: #2b2318; border: 1px solid #7c6848; color: #e4d8b8; padding: 10px 14px; text-align: left; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background 0.15s ease;">
-            {opt['text']}{empty_badge}
-        </button>
-        """
-
+    # Format Warnings for HUD
     warnings_html = ""
     if event.warnings:
-        warnings_html = '<div style="background: rgba(248, 81, 73, 0.1); border: 1px solid #f85149; border-radius: 6px; padding: 12px; margin-top: 15px;">'
-        warnings_html += '<div style="font-weight: 700; color: #f85149; margin-bottom: 6px;">⚠️ Alertas de Composicao Visual:</div><ul style="margin: 0; padding-left: 20px; color: #c9d1d9;">'
+        warnings_html = '<div class="hud-warnings"><h4>⚠️ Alertas de Composição Visual</h4><ul>'
         for w in event.warnings:
             warnings_html += f'<li>{w}</li>'
         warnings_html += '</ul></div>'
+    else:
+        warnings_html = '<div class="hud-ok">✅ Nenhum bug de proporção, texto ou GFX detectado!</div>'
+
+    # Differentiate news_event vs country_event
+    if event.event_type == "news_event":
+        # Render News Event Window (Authentic "World News" folded newspaper)
+        img_tag = f'<img class="news-event-img" src="{img_b64}" alt="{event.picture_gfx}">' if img_b64 else '<div class="missing-img">[GFX AUSENTE]</div>'
+        
+        options_html = ""
+        for opt in event.options:
+            empty_badge = ' <span style="color: #ff6b6b; font-size: 0.75rem;">(Vazia!)</span>' if opt["is_empty"] else ""
+            options_html += f"""
+            <button class="news-btn">
+                <span>{opt['text']}{empty_badge}</span>
+            </button>
+            """
+
+        event_window_html = f"""
+        <div class="news-window" style="background-image: url('{news_bg_b64}');">
+            <div class="news-pic-wrapper">
+                {img_tag}
+                <img class="news-overlay-img" src="{news_overlay_b64}" alt="frame">
+            </div>
+            <div class="news-title">{event.title_pt}</div>
+            <div class="news-body">{event.desc_pt}</div>
+            <div class="news-options">
+                {options_html}
+            </div>
+        </div>
+        """
+    else:
+        # Render Country Event Window (Authentic Dispatch Clipboard / Pasta de Despacho)
+        img_tag = f'<img class="country-event-img" src="{img_b64}" alt="{event.picture_gfx}">' if img_b64 else '<div class="missing-img">[GFX AUSENTE]</div>'
+        
+        options_html = ""
+        for opt in event.options:
+            empty_badge = ' <span style="color: #ff6b6b; font-size: 0.72rem;">(Vazia!)</span>' if opt["is_empty"] else ""
+            options_html += f"""
+            <button class="country-btn" style="background-image: url('{option_entry_b64}');">
+                <span>{opt['text']}{empty_badge}</span>
+            </button>
+            """
+
+        event_window_html = f"""
+        <div class="country-window">
+            <div class="country-top" style="background-image: url('{top_win_b64}');">
+                <div class="country-title">{event.title_pt}</div>
+            </div>
+            <div class="country-mid" style="background-image: url('{mid_win_b64}');">
+                <div class="country-body">{event.desc_pt}</div>
+            </div>
+            <div class="country-bot" style="background-image: url('{bot_win_b64}');">
+                <div class="country-pic-container">
+                    <img class="country-clip" src="{pic_clip_b64}" alt="clip">
+                    {img_tag}
+                </div>
+                <div class="country-options">
+                    {options_html}
+                </div>
+            </div>
+        </div>
+        """
 
     html = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Visualizador de Evento — {event.id}</title>
+    <title>HoI4 In-Game Simulator — {event.id}</title>
     <style>
-        body {{
+        * {{
+            box-sizing: border-box;
             margin: 0;
-            background: #111418;
+            padding: 0;
+        }}
+        body {{
+            background: #0d1117;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }}
+
+        /* TOPBAR DO HOI4 */
+        .hoi4-topbar {{
+            height: 36px;
+            background: linear-gradient(180deg, #2b313a 0%, #171b21 100%);
+            border-bottom: 2px solid #4a3e2c;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-size: 0.8rem;
+            color: #dcd0b8;
+            gap: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            z-index: 10;
+        }}
+        .topbar-flag {{
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }}
+        .topbar-stat {{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }}
+        .stat-val {{
+            color: #79c0ff;
+            font-weight: 600;
+        }}
+
+        /* MAP VIEWPORT & EVENT STAGE */
+        .hoi4-viewport {{
+            flex: 1;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
+            padding: 40px 20px;
+            background: 
+                radial-gradient(circle at center, rgba(30, 41, 59, 0.4) 0%, rgba(10, 15, 22, 0.88) 100%),
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 40px),
+                #141923;
         }}
-        .event-window {{
-            width: 490px;
-            background: #1e1913;
-            border: 2px solid #8b7355;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.5);
-            border-radius: 6px;
-            padding: 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+
+        /* ======================================================== */
+        /* NEWS EVENT (WORLD NEWS FOLDED NEWSPAPER) */
+        /* ======================================================== */
+        .news-window {{
+            width: 528px;
+            height: 595px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 528px 595px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.92), 0 0 0 1px rgba(0,0,0,0.5);
+            user-select: none;
+            flex-shrink: 0;
         }}
-        .event-header {{
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #ffd79a;
+        .news-pic-wrapper {{
+            position: absolute;
+            left: 59px;
+            top: 91px;
+            width: 400px;
+            height: 155px;
+            background: #111;
+            overflow: hidden;
+        }}
+        .news-event-img {{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(80%) contrast(115%) sepia(15%);
+        }}
+        .news-overlay-img {{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 400px;
+            height: 155px;
+            pointer-events: none;
+        }}
+        .news-title {{
+            position: absolute;
+            left: 14px;
+            top: 256px;
+            width: 495px;
             text-align: center;
-            text-shadow: 1px 1px 2px #000;
-            border-bottom: 1px solid #5a4a35;
-            padding-bottom: 8px;
+            font-family: "Georgia", "Baskerville", "Times New Roman", serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: #17130f;
+            letter-spacing: 0.3px;
         }}
-        .event-desc {{
-            font-size: 0.88rem;
-            line-height: 1.45;
-            color: #dcd0b8;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #3d3224;
+        .news-body {{
+            position: absolute;
+            left: 39px;
+            top: 295px;
+            width: 450px;
             max-height: 200px;
             overflow-y: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 13.5px;
+            line-height: 1.45;
+            color: #241c14;
+            text-align: justify;
+            white-space: pre-line;
+            padding-right: 6px;
         }}
-        .options-list {{
+        .news-options {{
+            position: absolute;
+            left: 80px;
+            bottom: 25px;
+            width: 368px;
             display: flex;
             flex-direction: column;
+            gap: 6px;
+            align-items: center;
+        }}
+        .news-btn {{
+            width: 352px;
+            height: 48px;
+            background: url('{option_entry_b64}') no-repeat center;
+            background-size: 352px 48px;
+            border: none;
+            outline: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #e6dac0;
+            text-shadow: 0 2px 2px #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 16px;
+            transition: filter 0.1s ease, transform 0.05s ease;
+        }}
+        .news-btn:hover {{
+            filter: brightness(1.2);
+            transform: scale(1.01);
+        }}
+
+        /* ======================================================== */
+        /* COUNTRY EVENT (DOSSIER / DISPATCH CLIPBOARD) */
+        /* ======================================================== */
+        .country-window {{
+            width: 581px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(0,0,0,0.6);
+            user-select: none;
+            position: relative;
+            flex-shrink: 0;
+        }}
+        .country-top {{
+            width: 581px;
+            height: 121px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 581px 121px;
+            position: relative;
+            flex-shrink: 0;
+        }}
+        .country-title {{
+            position: absolute;
+            left: 14px;
+            top: 70px;
+            width: 551px;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 20px;
+            font-weight: 700;
+            color: #211912;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+        }}
+        .country-mid {{
+            width: 580px;
+            background-repeat: repeat-y;
+            background-position: center top;
+            background-size: 580px 66px;
+            box-sizing: border-box;
+            padding: 8px 36px 16px 36px;
+        }}
+        .country-body {{
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14.5px;
+            line-height: 1.45;
+            color: #261d15;
+            text-align: left;
+            white-space: pre-line;
+        }}
+        .country-bot {{
+            width: 581px;
+            height: 206px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 581px 206px;
+            position: relative;
+            flex-shrink: 0;
+        }}
+        .country-pic-container {{
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            width: 228px;
+            height: 165px;
+            background: #0f0d0b;
+            border: 2px solid #5a4b37;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            overflow: hidden;
+        }}
+        .country-event-img {{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(35%) contrast(108%) brightness(95%);
+        }}
+        .country-clip {{
+            position: absolute;
+            top: -2px;
+            left: 8px;
+            width: 45px;
+            z-index: 5;
+            pointer-events: none;
+        }}
+        .country-options {{
+            position: absolute;
+            left: 255px;
+            top: 15px;
+            width: 310px;
+            height: 175px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             gap: 8px;
-            margin-top: 6px;
+        }}
+        .country-btn {{
+            width: 295px;
+            height: 44px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 295px 44px;
+            border: none;
+            outline: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #dfd2af;
+            text-shadow: 0 2px 2px #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 14px;
+            transition: filter 0.1s ease, transform 0.05s ease;
+        }}
+        .country-btn:hover {{
+            filter: brightness(1.2);
+            transform: scale(1.01);
+        }}
+
+        .missing-img {{
+            width: 100%;
+            height: 100%;
+            background: #1c1510;
+            color: #a89476;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }}
+
+        /* HUD TELEMETRY SIDEBAR */
+        .hud-panel {{
+            position: absolute;
+            top: 50px;
+            right: 25px;
+            width: 340px;
+            background: rgba(18, 22, 28, 0.94);
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            padding: 16px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(8px);
+            z-index: 20;
+        }}
+        .hud-header {{
+            font-weight: 700;
+            color: #f0f6fc;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }}
+        .hud-badge {{
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            background: #238636;
+            color: #fff;
+        }}
+        .hud-row {{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            color: #8b949e;
+        }}
+        .hud-val {{
+            color: #c9d1d9;
+            font-weight: 600;
+        }}
+        .hud-warnings {{
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(248, 81, 73, 0.12);
+            border: 1px solid #f85149;
+            border-radius: 6px;
+        }}
+        .hud-warnings h4 {{
+            color: #f85149;
+            font-size: 0.82rem;
+            margin-bottom: 4px;
+        }}
+        .hud-warnings ul {{
+            padding-left: 16px;
+            margin: 0;
+            color: #e6edf3;
+            font-size: 0.75rem;
+        }}
+        .hud-ok {{
+            margin-top: 12px;
+            padding: 8px;
+            background: rgba(46, 160, 67, 0.12);
+            border: 1px solid #2ea043;
+            border-radius: 6px;
+            color: #3fb950;
+            font-weight: 600;
+            font-size: 0.78rem;
+            text-align: center;
         }}
     </style>
 </head>
 <body>
-    <div>
-        <div class="event-window">
-            <div class="event-header">{event.title_pt}</div>
-            <div style="display: flex; justify-content: center;">
-                {img_html}
-            </div>
-            <div class="event-desc">
-                {event.desc_pt}
-            </div>
-            <div class="options-list">
-                {options_html}
-            </div>
+    <!-- TOPBAR HOI4 -->
+    <div class="hoi4-topbar">
+        <div class="topbar-flag">
+            <span>{'🇦🇹' if event.country_tag == 'AUS' else '🇩🇪'}</span>
+            <span>{event.country_tag}</span>
         </div>
-        {warnings_html}
+        <div class="topbar-stat">📅 <span class="stat-val">12 Jul, 1914</span></div>
+        <div class="topbar-stat">⚖️ PP: <span class="stat-val">+414</span></div>
+        <div class="topbar-stat">🕊️ Estabilidade: <span class="stat-val">76%</span></div>
+        <div class="topbar-stat">⚔️ Guerra: <span class="stat-val">67%</span></div>
+        <div class="topbar-stat">🏭 Fábricas: <span class="stat-val">90</span></div>
+        <div class="topbar-stat">🎖️ Divisões: <span class="stat-val">58</span></div>
+        <div class="topbar-stat">🌐 Tensão: <span class="stat-val">0%</span></div>
+    </div>
+
+    <!-- VIEWPORT COM O EVENTO DO JOGO -->
+    <div class="hoi4-viewport">
+        {event_window_html}
+
+        <!-- HUD DE TELEMETRIA VISUAL -->
+        <div class="hud-panel">
+            <div class="hud-header">
+                <span>Raio-X de Evento HoI4</span>
+                <span class="hud-badge">{event.event_type}</span>
+            </div>
+            <div class="hud-row">
+                <span>ID do Evento:</span>
+                <span class="hud-val">{event.id}</span>
+            </div>
+            <div class="hud-row">
+                <span>Arquivo de Origem:</span>
+                <span class="hud-val">{event.file_name}</span>
+            </div>
+            <div class="hud-row">
+                <span>GFX da Imagem:</span>
+                <span class="hud-val">{event.picture_gfx or 'N/A'}</span>
+            </div>
+            <div class="hud-row">
+                <span>Resolução da Imagem:</span>
+                <span class="hud-val">{event.picture_dims[0]}x{event.picture_dims[1]} px</span>
+            </div>
+            <div class="hud-row">
+                <span>Comprimento do Texto:</span>
+                <span class="hud-val">{event.desc_length} caracteres</span>
+            </div>
+            <div class="hud-row">
+                <span>Quantidade de Opções:</span>
+                <span class="hud-val">{event.options_count} escolhas</span>
+            </div>
+            {warnings_html}
+        </div>
     </div>
 </body>
 </html>
@@ -1619,10 +2098,10 @@ if __name__ == "__main__":
         sys.exit(0)
 
     cmd = sys.argv[1].lower()
-    if cmd == "inspect" and len(sys.argv) >= 3:
-        run_inspect(sys.argv[2])
-    elif cmd == "event-preview" and len(sys.argv) >= 3:
+    if cmd in ("event", "event-preview", "event_preview") and len(sys.argv) >= 3:
         run_event_preview(sys.argv[2])
+    elif cmd == "inspect" and len(sys.argv) >= 3:
+        run_inspect(sys.argv[2])
     elif cmd == "audit-all":
         run_audit_all()
     elif cmd == "mp-safety":
