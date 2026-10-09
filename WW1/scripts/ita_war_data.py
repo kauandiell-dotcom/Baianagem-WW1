@@ -127,17 +127,17 @@ WAR_FOCI = {
         "cost": 5,
         "available": "date > 1917.10.1",
         "ai": "factor = 20",
-        "effect": "country_event = { id = ww1_italy.56 days = 1 } add_political_power = -20",
-        "desc_en": "Weathering the catastrophic breakthrough of German infiltration divisions at Caporetto. Immediate effect: Triggers the Caporetto Crisis event and costs 20 Political Power.",
-        "desc_pt": "Resistência ao rompimento catastrófico das divisões de assalto alemãs em Caporetto. Efeito imediato: Dispara o evento da Crise de Caporetto e custa 20 de Poder Político."
+        "effect": "remove_ideas = ITA_ww1_radiant_may_fervor add_ideas = ITA_isonzo_attrition_crisis_3 country_event = { id = ww1_italy.56 days = 1 } add_political_power = -20",
+        "desc_en": "Weathering the catastrophic breakthrough of German infiltration divisions at Caporetto. Immediate effect: Inflicts Caporetto Attrition Crisis national spirit, triggers crisis event and costs 20 Political Power.",
+        "desc_pt": "Resistência ao rompimento catastrófico das divisões de assalto alemãs em Caporetto. Efeito imediato: Impõe o espírito Crise do Colapso de Caporetto, dispara o evento da crise e custa 20 de Poder Político."
     },
     "piave_line": {
         "cost": 5,
         "available": "has_country_flag = ita_ww1_caporetto_shock",
         "ai": "factor = 20",
-        "effect": "country_event = { id = ww1_italy.57 days = 1 } add_to_variable = { ita_ww1_army_morale = 15 }",
-        "desc_en": "Rallying the shattered armies on the river Piave and Monte Grappa: 'Tutti eroi! O il Piave o tutti accoppati!'. Immediate effect: Triggers the Piave Line Stand event and raises Army Morale by 15.",
-        "desc_pt": "Reagrupamento dos exércitos no rio Piave e no Monte Grappa com determinação inabalável. Efeito imediato: Dispara o evento da Linha do Piave e eleva a Moral do Exército em 15."
+        "effect": "remove_ideas = ITA_isonzo_attrition_crisis_3 country_event = { id = ww1_italy.57 days = 1 } add_to_variable = { ita_ww1_army_morale = 15 }",
+        "desc_en": "Rallying the shattered armies on the river Piave and Monte Grappa: 'Tutti eroi! O il Piave o todos accoppati!'. Immediate effect: Removes Caporetto Attrition Crisis, triggers Piave Stand event and raises Army Morale by 15.",
+        "desc_pt": "Reagrupamento dos exércitos no rio Piave e no Monte Grappa com determinação inabalável. Efeito imediato: Remove a penalidade da Crise de Caporetto, dispara o evento do Piave e eleva o Moral do Exército em 15."
     },
     "solstice_battle": {
         "cost": 5,
@@ -151,23 +151,23 @@ WAR_FOCI = {
         "cost": 5,
         "available": "date > 1918.10.1",
         "ai": "factor = 25",
-        "effect": "add_war_support = 0.03 country_event = { id = ww1_italy.60 days = 1 }",
-        "desc_en": "The decisive general offensive shattering the Austro-Hungarian lines and liberating Trento and Trieste. Immediate effect: Grants +3% War Support and triggers the Victory of Vittorio Veneto event.",
-        "desc_pt": "A ofensiva geral decisiva que rompe as linhas austríacas e liberta Trento e Trieste. Efeito imediato: Concede +3% de Apoio à Guerra e dispara a vitória de Vittorio Veneto."
+        "effect": "remove_ideas = ITA_ww1_radiant_may_fervor add_ideas = ITA_vittorio_veneto_triumph add_war_support = 0.03 country_event = { id = ww1_italy.60 days = 1 }",
+        "desc_en": "The decisive general offensive shattering the Austro-Hungarian lines and liberating Trento and Trieste. Immediate effect: Grants Vittorio Veneto Triumph national spirit, +3% War Support and triggers victory event.",
+        "desc_pt": "A ofensiva geral decisiva que rompe as linhas austríacas e liberta Trento e Trieste. Efeito imediato: Concede o espírito nacional Triunfo de Vittorio Veneto, +3% de Apoio à Guerra e dispara o evento da vitória."
     },
     "villa_giusti_armistice": {
         "cost": 5,
         "available": "has_country_flag = ita_ww1_vittorio_veneto_won",
         "ai": "factor = 25",
-        "effect": "add_stability = 0.03 country_event = { id = ww1_italy.61 days = 1 }",
-        "desc_en": "Signing the armistice with defeated Austria-Hungary at Villa Giusti outside Padua on November 3, 1918. Immediate effect: Grants +3% Stability and triggers the Villa Giusti Armistice event.",
-        "desc_pt": "Assinatura do armistício com a Áustria-Hungria derrotada na Villa Giusti em 3 de novembro de 1918. Efeito imediato: Concede +3% de Estabilidade e dispara o armistício de Villa Giusti."
+        "effect": "remove_ideas = ITA_vittorio_veneto_triumph add_stability = 0.02 country_event = { id = ww1_italy.61 days = 1 }",
+        "desc_en": "Signing the armistice with defeated Austria-Hungary at Villa Giusti outside Padua on November 3, 1918. Immediate effect: Concludes the war, removes wartime triumph spirit, grants +3% Stability and triggers the armistice event.",
+        "desc_pt": "Assinatura do armistício com a Áustria-Hungria derrotada na Villa Giusti em 3 de novembro de 1918. Efeito imediato: Conclui o conflito, remove o bônus de triunfo bélico temporário, concede +3% de Estabilidade e dispara o armistício."
     },
     "trento_trieste_integration": {
         "cost": 5,
         "available": "",
         "ai": "factor = 20",
-        "effect": "add_stability = 0.03 add_to_variable = { ita_ww1_irredentism = -15 }",
+        "effect": "add_stability = 0.01 add_to_variable = { ita_ww1_irredentism = -15 }",
         "desc_en": "Full administrative, judicial, and linguistic integration of the redeemed provinces into the Kingdom of Italy. Immediate effect: Grants +3% Stability and satisfies Irredentism by 15.",
         "desc_pt": "Integração administrativa, jurídica e linguística plena das províncias redimidas ao Reino da Itália. Efeito imediato: Concede +3% de Estabilidade e reduz a pressão do Irredentismo em 15."
     },

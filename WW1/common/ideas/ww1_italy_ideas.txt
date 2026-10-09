@@ -207,5 +207,252 @@ ideas = {
 				stability_factor = 0.05
 			}
 		}
+
+		# --- MILITARY WING IDEAS ---
+		ITA_ww1_general_staff_corps = {
+			picture = ITA_ww1_idea_25
+			modifier = {
+				planning_speed = 0.05
+				max_planning = 0.05
+			}
+		}
+		ITA_ww1_cadorna_discipline = {
+			picture = ITA_ww1_idea_26
+			modifier = {
+				army_attack_factor = 0.05
+				land_reinforce_rate = -0.003
+			}
+		}
+		ITA_ww1_mountain_howitzers = {
+			picture = ITA_ww1_idea_27
+			modifier = {
+				army_artillery_attack_factor = 0.05
+				army_morale_factor = 0.03
+			}
+		}
+		ITA_ww1_railway_mobilisation_plan = {
+			picture = ITA_ww1_idea_28
+			modifier = {
+				army_speed_factor = 0.05
+				land_reinforce_rate = 0.05
+			}
+		}
+		ITA_ww1_frontier_fortress_belt = {
+			picture = ITA_ww1_idea_29
+			modifier = {
+				army_core_defence_factor = 0.08
+				max_dig_in = 2
+			}
+		}
+		ITA_ww1_cadornian_offensive_cult = {
+			picture = ITA_ww1_idea_30
+			modifier = {
+				army_attack_factor = 0.08
+				army_speed_factor = 0.03
+			}
+		}
+		ITA_ww1_methodical_firepower_doctrine = {
+			picture = ITA_ww1_idea_31
+			modifier = {
+				army_artillery_attack_factor = 0.08
+				army_core_defence_factor = 0.05
+			}
+		}
+		ITA_ww1_gas_respirators = {
+			picture = ITA_ww1_idea_32
+			modifier = {
+				attrition = -0.05
+				army_core_defence_factor = 0.03
+			}
+		}
+		ITA_ww1_complimentary_officer_academies = {
+			picture = ITA_ww1_idea_1
+			modifier = {
+				planning_speed = 0.05
+				experience_loss_factor = -0.05
+			}
+		}
+		ITA_ww1_dismounted_cavalry_regiments = {
+			picture = ITA_ww1_idea_2
+			modifier = {
+				cavalry_attack_factor = 0.05
+				cavalry_defence_factor = 0.05
+			}
+		}
+		ITA_ww1_arditi_shock_troops = {
+			picture = ITA_ww1_idea_3
+			modifier = {
+				special_forces_attack_factor = 0.15
+				breakthrough_factor = 0.10
+			}
+		}
+		ITA_ww1_diaz_humane_leadership = {
+			picture = ITA_ww1_idea_4
+			modifier = {
+				army_org_factor = 0.08
+				army_morale_factor = 0.08
+			}
+		}
+		ITA_ww1_defence_in_depth_piave = {
+			picture = ITA_ww1_idea_5
+			modifier = {
+				max_dig_in_factor = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+		ITA_ww1_continuous_offensive_pressure = {
+			picture = ITA_ww1_idea_6
+			modifier = {
+				army_attack_factor = 0.06
+				army_speed_factor = 0.05
+			}
+		}
+		ITA_ww1_strengthened_carabinieri = {
+			picture = ITA_ww1_idea_7
+			modifier = {
+				stability_factor = 0.05
+				foreign_subversive_activites = -0.15
+			}
+		}
+		ITA_ww1_badoglio_standing_army = {
+			picture = ITA_ww1_idea_8
+			modifier = {
+				army_org_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+		ITA_ww1_peacetime_military_economy = {
+			picture = ITA_ww1_idea_9
+			modifier = {
+				consumer_goods_factor = -0.02
+				political_power_factor = 0.05
+			}
+		}
+		ITA_ww1_regia_marina_cadres = {
+			picture = ITA_ww1_idea_10
+			modifier = {
+				navy_max_range_factor = 0.05
+				naval_hit_chance = 0.03
+			}
+		}
+		ITA_ww1_taranto_naval_arsenal = {
+			picture = ITA_ww1_idea_11
+			modifier = {
+				refit_speed = 0.10
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		ITA_ww1_adriatic_naval_stations = {
+			picture = ITA_ww1_idea_12
+			modifier = {
+				naval_coordination = 0.08
+				navy_submarine_detection_factor = 0.05
+			}
+		}
+		ITA_ww1_adriatic_patrol_network = {
+			picture = ITA_ww1_idea_13
+			modifier = {
+				naval_detection = 0.05
+				screening_efficiency = 0.05
+			}
+		}
+		ITA_ww1_otranto_barrage_net = {
+			picture = ITA_ww1_idea_14
+			modifier = {
+				navy_submarine_detection_factor = 0.10
+				sub_retreat_speed = -0.10
+			}
+		}
+		ITA_ww1_dreadnought_fleet_in_being = {
+			picture = ITA_ww1_idea_15
+			modifier = {
+				navy_capital_ship_defence_factor = 0.08
+				naval_enemy_fleet_size_ratio_penalty_factor = -0.10
+			}
+		}
+		ITA_ww1_insidious_flotilla_doctrine = {
+			picture = ITA_ww1_idea_16
+			modifier = {
+				navy_screen_attack_factor = 0.08
+				naval_torpedo_hit_chance_factor = 0.05
+			}
+		}
+		ITA_ww1_mas_motor_torpedo_boats = {
+			picture = ITA_ww1_idea_17
+			modifier = {
+				naval_torpedo_hit_chance_factor = 0.08
+				convoy_raiding_efficiency_factor = 0.10
+			}
+		}
+		ITA_ww1_albanian_convoy_routes = {
+			picture = ITA_ww1_idea_18
+			modifier = {
+				convoy_escort_efficiency = 0.10
+				navy_submarine_detection_factor = 0.05
+			}
+		}
+		ITA_ww1_mignatta_special_raiders = {
+			picture = ITA_ww1_idea_19
+			modifier = {
+				naval_critical_score_chance_factor = 0.10
+				navy_intel_to_others = -0.05
+			}
+		}
+		ITA_ww1_capital_fleet_modernisation = {
+			picture = ITA_ww1_idea_20
+			modifier = {
+				navy_capital_ship_attack_factor = 0.05
+				refit_speed = 0.08
+			}
+		}
+		ITA_ww1_battaglione_aviatori = {
+			picture = ITA_ww1_idea_21
+			modifier = {
+				air_ace_generation_chance_factor = 0.10
+				air_mission_efficiency = 0.05
+			}
+		}
+		ITA_ww1_military_flight_schools = {
+			picture = ITA_ww1_idea_22
+			modifier = {
+				air_accidents_factor = -0.10
+				air_training_xp_gain_factor = 0.05
+			}
+		}
+		ITA_ww1_corpo_aeronautico_militare = {
+			picture = ITA_ww1_idea_23
+			modifier = {
+				air_superiority_detect_factor = 0.05
+				air_superiority_efficiency = 0.05
+			}
+		}
+		ITA_ww1_baracca_ace_tradition = {
+			picture = ITA_ww1_idea_24
+			modifier = {
+				air_ace_generation_chance_factor = 0.20
+				air_attack_factor = 0.05
+			}
+		}
+		ITA_ww1_douhet_air_doctrine = {
+			picture = ITA_ww1_idea_25
+			modifier = {
+				air_strategic_bomber_bombing_factor = 0.10
+				air_bombing_targetting = 0.05
+			}
+		}
+		ITA_ww1_independent_air_force_charter = {
+			picture = ITA_ww1_idea_26
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				air_doctrine_cost_factor = -0.10
+			}
+		}
+		ITA_ww1_motorized_shock_cadres = {
+			picture = ITA_ww1_idea_27
+			modifier = {
+				motorized_attack_factor = 0.05
+				army_speed_factor = 0.03
+			}
+		}
 	}
 }

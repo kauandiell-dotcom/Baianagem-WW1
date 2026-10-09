@@ -31,7 +31,7 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 2",
-        "effect": "add_ideas = ITA_ww1_sacro_egoismo add_political_power = 40",
+        "effect": "remove_ideas = ITA_sacro_egoismo_policy add_ideas = ITA_ww1_sacro_egoismo add_political_power = 40",
         "desc_en": "Formulating the doctrine of 'Sacro Egoismo' to prioritize strict national self-interest. Immediate effect: Activates the Sacro Egoismo idea and grants 40 Political Power.",
         "desc_pt": "Formulação da doutrina do 'Sacro Egoismo', priorizando estritamente o interesse nacional. Efeito imediato: Ativa a ideia Sacro Egoismo e concede 40 de Poder Político."
     },
@@ -47,7 +47,7 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "date > 1912.10.1",
         "ai": "factor = 10",
-        "effect": "add_political_power = 25 add_to_variable = { ita_ww1_irredentism = 5 }",
+        "effect": "157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } add_political_power = 25 add_to_variable = { ita_ww1_irredentism = 5 }",
         "desc_en": "Monitoring the rapid collapse of Ottoman authority across Macedonia and Thrace. Immediate effect: Grants 25 Political Power and raises Irredentism by 5.",
         "desc_pt": "Monitoramento do colapso da autoridade otomana na Macedônia e Trácia. Efeito imediato: Concede 25 de Poder Político e eleva o Irredentismo em 5."
     },
@@ -143,7 +143,7 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 2",
-        "effect": "add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -20 }",
+        "effect": "set_country_flag = ita_ww1_permanent_neutrality add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -20 }",
         "desc_en": "Definitive commitment to maintain Italian neutrality throughout the Great War. Immediate effect: Grants 50 Political Power and reduces Interventionism by 20.",
         "desc_pt": "Compromisso definitivo de preservar a neutralidade italiana ao longo de toda a Grande Guerra. Efeito imediato: Concede 50 de Poder Político e reduz o Intervencionismo em 20."
     },
@@ -151,9 +151,9 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 20",
-        "effect": "country_event = { id = ww1_italy.36 days = 1 } add_political_power = 25",
-        "desc_en": "Formally abrogating the 1882 treaty of alliance with Germany and Austria-Hungary. Immediate effect: Triggers the Alliance Denunciation event and grants 25 Political Power.",
-        "desc_pt": "Denúncia formal do tratado de aliança de 1882 com a Alemanha e a Áustria-Hungria. Efeito imediato: Dispara o evento de Denúncia da Aliança e concede 25 de Poder Político."
+        "effect": "remove_ideas = ITA_sacro_egoismo_policy country_event = { id = ww1_italy.36 days = 1 } add_political_power = 25",
+        "desc_en": "Formally abrogating the 1882 treaty of alliance with Germany and Austria-Hungary. Immediate effect: Removes Sacro Egoismo diplomatic idea, triggers Alliance Denunciation event and grants 25 Political Power.",
+        "desc_pt": "Denúncia formal do tratado de aliança de 1882 com a Alemanha e a Áustria-Hungria. Efeito imediato: Remove o espírito diplomático do Sacro Egoismo, dispara a Denúncia da Aliança e concede 25 de Poder Político."
     },
     "declare_war_on_austria": {
         "cost": 5,
@@ -167,9 +167,9 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "has_country_flag = ita_ww1_triple_alliance_renewed",
         "ai": "factor = 1",
-        "effect": "army_experience = 20 if = { limit = { country_exists = FRA } declare_war_on = { target = FRA type = take_state } }",
-        "desc_en": "Honoring the alliance and entering the war alongside the Central Powers against France. Immediate effect: Grants +3% War Support and declares war on France.",
-        "desc_pt": "Honrando a aliança e entrando na guerra ao lado dos Impérios Centrais contra a França. Efeito imediato: Concede +3% de Apoio à Guerra e declara guerra à França."
+        "effect": "remove_ideas = ITA_sacro_egoismo_policy army_experience = 20 if = { limit = { country_exists = FRA } declare_war_on = { target = FRA type = take_state } }",
+        "desc_en": "Honoring the alliance and entering the war alongside the Central Powers against France. Immediate effect: Removes Sacro Egoismo diplomatic idea, grants +3% War Support and declares war on France.",
+        "desc_pt": "Honrando a aliança e entrando na guerra ao lado dos Impérios Centrais contra a França. Efeito imediato: Remove o espírito diplomático do Sacro Egoismo, concede +3% de Apoio à Guerra e declara guerra à França."
     },
     "central_joint_command": {
         "cost": 5,
@@ -191,7 +191,7 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 1",
-        "effect": "add_to_variable = { ita_ww1_irredentism = 15 } add_political_power = 25",
+        "effect": "set_country_flag = ita_ww1_tunisia_nice_claims add_to_variable = { ita_ww1_irredentism = 15 } add_political_power = 25",
         "desc_en": "Asserting historic Italian claims over Nice, Corsica, and the French protectorate of Tunisia. Immediate effect: Raises Irredentism by 15 and grants 25 Political Power.",
         "desc_pt": "Reivindicação de territórios históricos sobre Nice, Córsega e a Tunísia. Efeito imediato: Eleva o Irredentismo em 15 e concede 25 de Poder Político."
     },
@@ -223,7 +223,7 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "date > 1917.6.1",
         "ai": "factor = 10",
-        "effect": "add_political_power = 25 add_to_variable = { ita_ww1_irredentism = 5 }",
+        "effect": "157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } add_political_power = 25 add_to_variable = { ita_ww1_irredentism = 5 }",
         "desc_en": "General Ferrero proclaims the independence of Albania under the solemn protection of Italy at Gjirokastër. Immediate effect: Grants 25 Political Power and raises Irredentism by 5.",
         "desc_pt": "O General Ferrero proclama em Gjirokastër a independência da Albânia sob protetorado da Itália. Efeito imediato: Concede 25 de Poder Político e eleva o Irredentismo em 5."
     },
@@ -295,7 +295,7 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_to_variable = { ita_ww1_irredentism = 10 } add_political_power = 25",
+        "effect": "set_country_flag = ita_ww1_dalmatian_claims 163 = { add_claim_by = ITA } add_to_variable = { ita_ww1_irredentism = 10 } add_political_power = 25",
         "desc_en": "Maintaining Italian claims over Zara, Sebenico, and the offshore Dalmatian islands. Immediate effect: Raises Irredentism by 10 and grants 25 Political Power.",
         "desc_pt": "Manutenção das pretensões italianas sobre Zadar, Šibenik e ilhas dálmatas. Efeito imediato: Eleva o Irredentismo em 10 e concede 25 de Poder Político."
     },

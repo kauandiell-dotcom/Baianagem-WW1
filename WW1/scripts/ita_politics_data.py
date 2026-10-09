@@ -16,7 +16,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_political_power = 50 add_ideas = ITA_ww1_trasformismo_politics add_to_variable = { ita_ww1_interventionism = -5 }",
+        "effect": "remove_ideas = ITA_sacro_egoismo_policy add_ideas = ITA_ww1_trasformismo_politics add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -5 }",
         "desc_en": "Giovanni Giolitti's parliamentary mastery governs through shifting coalitions and pragmatic reform. Immediate effect: Grants 50 Political Power, establishes the Trasformismo political idea, and cools interventionist fervor by 5.",
         "desc_pt": "O domínio parlamentar de Giovanni Giolitti governa por coalizões fluidas e reformas pragmáticas. Efeito imediato: Concede 50 de Poder Político, estabelece a ideia Trasformismo e reduz a agitação intervencionista em 5."
     },
@@ -24,7 +24,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1911.6.1",
         "ai": "factor = 10",
-        "effect": "add_stability = 0.02 add_ideas = ITA_ww1_universal_suffrage add_to_variable = { ita_ww1_social_tension = -5 }",
+        "effect": "remove_ideas = ITA_ww1_trasformismo_politics add_ideas = ITA_ww1_universal_suffrage add_stability = 0.02 add_to_variable = { ita_ww1_social_tension = -5 }",
         "desc_en": "Expanding the franchise to all literate males aged 21 and all males aged 30 transforms Italian democracy. Immediate effect: Grants +2% Stability, introduces Universal Male Suffrage, and lowers Social Tension by 5.",
         "desc_pt": "A ampliação do voto a todos os homens alfabetizados maiores de 21 anos e a todos os homens de 30 anos transforma a democracia italiana. Efeito imediato: Concede +2% de Estabilidade, introduz o Sufrágio Universal Masculino e reduz a Tensão Social em 5."
     },
@@ -72,7 +72,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1913.1.1",
         "ai": "factor = 10",
-        "effect": "add_stability = 0.02 add_political_power = 30 add_ideas = ITA_ww1_gentiloni_compact",
+        "effect": "remove_ideas = ITA_ww1_universal_suffrage add_ideas = ITA_ww1_gentiloni_compact add_stability = 0.02 add_political_power = 25",
         "desc_en": "An agreement between the Catholic Electoral Union and liberal candidates secures religious votes against the socialists. Immediate effect: Grants +2% Stability, 30 Political Power, and the Gentiloni Compact national idea.",
         "desc_pt": "O acordo entre a União Eleitoral Católica e candidatos liberais assegura votos religiosos contra o avanço socialista. Efeito imediato: Concede +2% de Estabilidade, 30 de Poder Político e a ideia Pacto Gentiloni."
     },
@@ -96,7 +96,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_political_power = 30 country_event = { id = ww1_italy.8 days = 1 }",
+        "effect": "add_political_power = 30 add_to_variable = { ita_ww1_social_tension = -10 } country_event = { id = ww1_italy.8 days = 1 }",
         "desc_en": "Deployment of military garrisons and Carabinieri patrols restores civil order without provoking widespread insurrection. Immediate effect: Grants 30 Political Power and triggers the Public Order Restoration event.",
         "desc_pt": "O desdobramento de guarnições militares e patrulhas dos Carabineiros restaura a ordem civil. Efeito imediato: Concede 30 de Poder Político e dispara o evento de Restauração da Ordem."
     },
@@ -104,9 +104,9 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1914.3.1",
         "ai": "factor = 10",
-        "effect": "add_political_power = 35 country_event = { id = ww1_italy.9 days = 1 }",
-        "desc_en": "Antonio Salandra assumes leadership of a conservative cabinet determined to pursue an assertive foreign policy. Immediate effect: Grants 35 Political Power and triggers the Salandra Cabinet event.",
-        "desc_pt": "Antonio Salandra assume a liderança de um gabinete conservador determinado a seguir política externa assertiva. Efeito imediato: Concede 35 de Poder Político e dispara o evento do Gabinete Salandra."
+        "effect": "remove_ideas = ITA_ww1_gentiloni_compact add_ideas = ITA_ww1_salandra_emergency_cabinet add_political_power = 25 add_to_variable = { ita_ww1_interventionism = 10 } country_event = { id = ww1_italy.9 days = 1 }",
+        "desc_en": "Antonio Salandra assumes leadership of a conservative cabinet, bringing an end to Giolittian trasformismo. Immediate effect: Replaces Trasformismo politics, grants 35 Political Power and triggers the Salandra Cabinet event.",
+        "desc_pt": "Antonio Salandra assume a liderança de um gabinete conservador, encerrando o trasformismo giolittiano. Efeito imediato: Substitui a política do Trasformismo, concede 35 de Poder Político e dispara o evento do Gabinete Salandra."
     },
     "interventionist_press": {
         "cost": 5,
@@ -144,7 +144,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 5",
-        "effect": "country_event = { id = ww1_italy.12 days = 1 } add_political_power = 30",
+        "effect": "country_event = { id = ww1_italy.12 days = 1 } add_political_power = 30 add_to_variable = { ita_ww1_interventionism = -10 }",
         "desc_en": "Giolitti insists Italy can obtain parecchio (a great deal) through patient negotiation with Austria without bloodshed. Immediate effect: Triggers the Parecchio event and grants 30 Political Power.",
         "desc_pt": "Giolitti insiste que a Itália pode obter 'parecchio' (muita coisa) negociando com a Áustria sem derramamento de sangue. Efeito imediato: Dispara o evento do Parecchio e concede 30 de Poder Político."
     },
@@ -160,7 +160,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1915.5.1",
         "ai": "factor = 20",
-        "effect": "add_war_support = 0.02 add_ideas = ITA_ww1_radiant_may_fervor country_event = { id = ww1_italy.13 days = 1 }",
+        "effect": "remove_ideas = ITA_ww1_salandra_emergency_cabinet add_ideas = ITA_ww1_radiant_may_fervor add_war_support = 0.04 add_to_variable = { ita_ww1_interventionism = 25 } country_event = { id = ww1_italy.13 days = 1 }",
         "desc_en": "The intense days of Maggio Radioso force the King and Parliament to reject neutralism and embrace war. Immediate effect: Grants +2% War Support, activates the Radiant May Fervor idea, and triggers the Radiant May event.",
         "desc_pt": "Os dias febris do Maggio Radioso forçam o Rei e o Parlamento a repudiar a neutralidade e abraçar o conflito. Efeito imediato: Concede +2% de Apoio à Guerra, ativa o fervor do Maio Radiante e dispara o evento do Maio Radiante."
     },
@@ -168,7 +168,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "add_political_power = 25 country_event = { id = ww1_italy.14 days = 1 }",
+        "effect": "add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } country_event = { id = ww1_italy.14 days = 1 }",
         "desc_en": "Emergency wartime censorship suppresses defeatist propaganda and controls front-line reporting. Immediate effect: Grants 25 Political Power and triggers the War Censorship event.",
         "desc_pt": "Censura emergencial de tempos de guerra reprime propaganda derrotista e controla despachos do fronte. Efeito imediato: Concede 25 de Poder Político e dispara o evento da Censura de Guerra."
     },
@@ -176,7 +176,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1916.1.1",
         "ai": "factor = 10",
-        "effect": "add_political_power = 35 country_event = { id = ww1_italy.15 days = 1 }",
+        "effect": "add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -5 } country_event = { id = ww1_italy.15 days = 1 }",
         "desc_en": "Paolo Boselli forms a broad coalition cabinet of national unity encompassing interventionists of all colors. Immediate effect: Grants 35 Political Power and triggers the Boselli Cabinet event.",
         "desc_pt": "Paolo Boselli forma um ministério amplo de união nacional abrangendo intervencionistas de todos os matizes. Efeito imediato: Concede 35 de Poder Político e dispara o evento do Gabinete Boselli."
     },
@@ -184,7 +184,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "country_event = { id = ww1_italy.16 days = 1 } add_political_power = 20",
+        "effect": "158 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } country_event = { id = ww1_italy.16 days = 1 } add_political_power = 25",
         "desc_en": "Hundreds of thousands of women enter munitions plants, textile mills, and agricultural cooperatives. Immediate effect: Triggers the Female Labour Mobilisation event and grants 20 Political Power.",
         "desc_pt": "Centenas de milhares de mulheres assumem postos em fábricas de munição, tecelagens e lavouras. Efeito imediato: Dispara o evento do Trabalho Feminino e concede 20 de Poder Político."
     },
@@ -192,7 +192,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "add_ideas = ITA_ww1_propaganda_service_spirit country_event = { id = ww1_italy.17 days = 1 }",
+        "effect": "add_political_power = 30 add_to_variable = { ita_ww1_army_morale = 10 } country_event = { id = ww1_italy.17 days = 1 } ita_ww1_clamp_counters = yes",
         "desc_en": "Servizio P deploys trench illustrators, writers, and lecturers to sustain morale in the Alpine trenches. Immediate effect: Activates the Servizio P Propaganda idea and triggers the Propaganda Service event.",
         "desc_pt": "O Servizio P envia ilustradores, escritores e oradores para sustentar o ânimo nas trincheiras alpinas. Efeito imediato: Ativa a ideia Servizio P e dispara o evento do Serviço de Propaganda."
     },
@@ -208,7 +208,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "has_country_flag = ita_ww1_caporetto_shock",
         "ai": "factor = 20",
-        "effect": "country_event = { id = ww1_italy.19 days = 1 } add_political_power = 20",
+        "effect": "add_to_variable = { ita_ww1_army_morale = 5 } add_political_power = 20 country_event = { id = ww1_italy.19 days = 1 }",
         "desc_en": "A solemn parliamentary inquest investigates the command failures and logistical breakdown of the 12th Battle of the Isonzo. Immediate effect: Triggers the Caporetto Commission event and grants 20 Political Power.",
         "desc_pt": "Um inquérito parlamentar investiga as falhas de comando e o colapso logístico na 12ª Batalha do Isonzo. Efeito imediato: Dispara o evento da Comissão de Caporetto e concede 20 de Poder Político."
     },
@@ -216,7 +216,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1917.10.1",
         "ai": "factor = 20",
-        "effect": "add_political_power = 40 country_event = { id = ww1_italy.20 days = 1 }",
+        "effect": "add_to_variable = { ita_ww1_army_morale = 10 } add_political_power = 40 country_event = { id = ww1_italy.20 days = 1 }",
         "desc_en": "Vittorio Emanuele Orlando takes the helm with a single mandate: resistance on the Piave and total national mobilization. Immediate effect: Grants 40 Political Power and triggers the Orlando Government event.",
         "desc_pt": "Vittorio Emanuele Orlando assume a chefia do governo com mandato de ferro: resistência no Piave e vitória total. Efeito imediato: Concede 40 de Poder Político e dispara o evento do Governo Orlando."
     },
@@ -224,7 +224,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_ideas = ITA_ww1_opera_nazionale_combattenti add_political_power = 25",
+        "effect": "add_political_power = 30 add_stability = 0.02 add_to_variable = { ita_ww1_social_tension = -5 } country_event = { id = ww1_italy.18 days = 1 } ita_ww1_clamp_counters = yes",
         "desc_en": "The Opera Nazionale Combattenti assists returning veterans with vocational training, credit, and settlement land. Immediate effect: Activates the Opera Nazionale Combattenti idea and grants 25 Political Power.",
         "desc_pt": "A Opera Nazionale Combattenti apoia os veteranos com reintegração profissional, crédito e lotes rurais. Efeito imediato: Ativa a ideia Opera Nazionale Combattenti e concede 25 de Poder Político."
     },
@@ -232,15 +232,15 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1919.1.1",
         "ai": "factor = 15",
-        "effect": "country_event = { id = ww1_italy.21 days = 1 } add_to_variable = { ita_ww1_irredentism = 10 }",
-        "desc_en": "Disappointment over Dalmatia and Fiume at Versailles gives birth to the bitter myth of the Vittoria Mutilata. Immediate effect: Triggers the Mutilated Victory event and raises Irredentism by 10.",
-        "desc_pt": "O desapontamento em Versalhes quanto à Dalmácia e a Fiume gera o mito amargo da Vittoria Mutilata. Efeito imediato: Dispara o evento da Vitória Mutilada e eleva o Irredentismo em 10."
+        "effect": "remove_ideas = ITA_ww1_radiant_may_fervor country_event = { id = ww1_italy.21 days = 1 } add_to_variable = { ita_ww1_irredentism = 10 }",
+        "desc_en": "Disappointment over Dalmatia and Fiume at Versailles replaces wartime enthusiasm with the bitter Vittoria Mutilata myth. Immediate effect: Removes Radiant May Fervor, triggers Mutilated Victory event and raises Irredentism by 10.",
+        "desc_pt": "O desapontamento em Versalhes substitui o entusiasmo bélico pelo mito amargo da Vittoria Mutilata. Efeito imediato: Remove o fervor do Maio Radiante, dispara a Vitória Mutilada e eleva o Irredentismo em 10."
     },
     "nitti_cabinet": {
         "cost": 5,
         "available": "date > 1919.6.1",
         "ai": "factor = 10",
-        "effect": "add_political_power = 30 country_event = { id = ww1_italy.22 days = 1 }",
+        "effect": "add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 30 country_event = { id = ww1_italy.22 days = 1 }",
         "desc_en": "Francesco Saverio Nitti takes power seeking fiscal retrenchment, demobilization, and social reconciliation. Immediate effect: Grants 30 Political Power and triggers the Nitti Cabinet event.",
         "desc_pt": "Francesco Saverio Nitti assume o governo buscando austeridade fiscal, desmobilização e reconciliação social. Efeito imediato: Concede 30 de Poder Político e dispara o evento do Gabinete Nitti."
     },
@@ -296,9 +296,10 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 5",
-        "effect": "add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
-        "desc_en": "A concerted effort by constitutional liberals to preserve parliamentary democracy and legal order. Immediate effect: Grants 40 Political Power and lowers Social Tension by 5.",
-        "desc_pt": "Um esforço concentrado dos liberais constitucionais para preservar a democracia parlamentar e a ordem legal. Efeito imediato: Concede 40 de Poder Político e reduz a Tensão Social em 5."
+        "effect": "remove_ideas = ITA_ww1_squadrist_violence remove_ideas = ITA_ww1_pci_workers_councils add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
+        "desc_en": "A concerted effort by constitutional liberals to preserve parliamentary democracy and suppress extremist paramilitary violence. Immediate effect: Removes squadrist and workers council spirits, grants 40 PP.",
+        "desc_pt": "Esforço concentrado dos liberais constitucionais para preservar a ordem e reprimir a violência extremista. Efeito imediato: Remove a violência dos esquadrões e os conselhos de fábrica, concede 40 de PP.",
+        "ai": "base = 70"
     },
     "nationalist_order": {
         "cost": 5,
@@ -336,7 +337,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_ideas = ITA_ww1_squadrist_violence add_political_power = 20",
+        "effect": "remove_ideas = ITA_ww1_mutilated_victory_syndrome add_ideas = ITA_ww1_squadrist_violence add_political_power = 20 add_to_variable = { ita_ww1_social_tension = 10 }",
         "desc_en": "Blackshirt action squads systematically attack socialist printing presses, peasant leagues, and labor halls. Immediate effect: Activates the Squadrist Violence idea and grants 20 Political Power.",
         "desc_pt": "Esquadrões de camisas-negras atacam sistematicamente gráficas socialistas, ligas camponesas e sedes sindicais. Efeito imediato: Ativa a ideia Violência Esquadrista e concede 20 de Poder Político."
     },
@@ -352,17 +353,19 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1922.10.1",
         "ai": "factor = 15",
-        "effect": "country_event = { id = ww1_italy.25 days = 1 } add_political_power = 30",
-        "desc_en": "Four fascist quadrumvirs orchestrate armed columns marching on the capital, forcing the crown to concede power. Immediate effect: Triggers the March on Rome Crisis event and grants 30 Political Power.",
-        "desc_pt": "Quatro quadrunviros fascistas coordenam colunas armadas sobre a capital, forçando a coroa a ceder o poder. Efeito imediato: Dispara o evento da Crise da Marcha sobre Roma e concede 30 de Poder Político."
+        "effect": "remove_ideas = ITA_ww1_squadrist_violence country_event = { id = ww1_italy.25 days = 1 } add_political_power = 30",
+        "desc_en": "Four fascist quadrumvirs orchestrate armed columns marching on the capital, forcing the crown to concede power. Immediate effect: Squads become the state, removing street squadrist violence idea, triggers March on Rome event and grants 30 PP.",
+        "desc_pt": "Quatro quadrunviros coordenam colunas armadas sobre a capital, assumindo o poder. Efeito imediato: Os esquadrões assumem o controle do Estado, encerra a violência esquadrista de rua e concede 30 de PP.",
+        "ai": "base = 80"
     },
     "workers_councils": {
         "cost": 5,
         "available": "",
         "ai": "factor = 1",
-        "effect": "add_ideas = ITA_ww1_pci_workers_councils add_political_power = 20",
-        "desc_en": "Gramsci and the Ordine Nuovo group organize elected factory councils to direct industrial production and political life. Immediate effect: Activates the Workers' Councils idea and grants 20 Political Power.",
-        "desc_pt": "Gramsci e o grupo L'Ordine Nuovo organizam conselhos de fábrica eleitos para gerir a produção industrial e a vida política. Efeito imediato: Ativa a ideia Conselhos Operários e concede 20 de Poder Político."
+        "effect": "remove_ideas = ITA_ww1_squadrist_violence add_ideas = ITA_ww1_pci_workers_councils add_political_power = 20",
+        "desc_en": "Gramsci and the Ordine Nuovo group organize elected factory councils to direct industrial production, breaking fascist squad control. Immediate effect: Replaces squadrist violence with Workers' Councils idea and grants 20 PP.",
+        "desc_pt": "Gramsci e L'Ordine Nuovo organizam conselhos de fábrica que quebram o cerco esquadrista. Efeito imediato: Substitui a violência dos esquadrões pelos Conselhos Operários e concede 20 de PP.",
+        "ai": "base = 20"
     },
     "legalitarian_strike": {
         "cost": 5,

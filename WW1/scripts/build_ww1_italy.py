@@ -73,7 +73,7 @@ def build_tree():
         "	country = { factor = 0 modifier = { add = 100 original_tag = ITA } }",
         "	default = no",
         "	initial_show_position = { focus = ITA_ww1_giolitti_ministry }",
-        "	continuous_focus_position = { x = 50 y = 1800 }",
+        "	continuous_focus_position = { x = 50 y = 3500 }",
         ""
     ]
 
@@ -195,6 +195,14 @@ def build_localisation():
     from ita_support_loc import SUPPORT_LOC_PT, SUPPORT_LOC_EN
     LOC_PT.update(SUPPORT_LOC_PT)
     LOC_EN.update(SUPPORT_LOC_EN)
+
+    # Military Wing Ideas
+    import ita_military_data
+    for idea_id, idata in ita_military_data.IDEAS.items():
+        LOC_PT[idea_id] = idata["pt_name"]
+        LOC_EN[idea_id] = idata["en_name"]
+        LOC_PT[f"{idea_id}_desc"] = idata["pt_desc"]
+        LOC_EN[f"{idea_id}_desc"] = idata["en_desc"]
 
     # Ensure 100% key parity
     assert set(LOC_PT.keys()) == set(LOC_EN.keys()), f"Mismatch in keys: {set(LOC_PT.keys()) ^ set(LOC_EN.keys())}"

@@ -106,6 +106,24 @@ ITA_ww1_internal_politics_category = {
 		}
 		ai_will_do = { factor = 1 }
 	}
+
+	ITA_ww1_emergency_grain_rationing = {
+		icon = generic_agrarian_reform
+		cost = 30
+		days_remove = 90
+		available = {
+			check_variable = { ita_ww1_social_tension > 25 }
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			add_stability = 0.02
+			add_to_variable = { ita_ww1_social_tension = -10 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
 }
 
 ITA_ww1_diplomatic_initiatives_category = {
@@ -268,7 +286,7 @@ ITA_ww1_economic_mobilisation_category = {
 			add_political_power = 15
 		}
 		remove_effect = {
-			117 = {
+			158 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -424,7 +442,7 @@ ITA_ww1_military_readiness_category = {
 		}
 		available = {
 			has_completed_focus = ITA_ww1_frontier_fortifications
-			controls_state = 782
+			controls_state = 736
 		}
 		visible = {
 			original_tag = ITA
@@ -433,7 +451,7 @@ ITA_ww1_military_readiness_category = {
 			add_political_power = 15
 		}
 		remove_effect = {
-			782 = {
+			736 = {
 				add_building_construction = {
 					type = bunker
 					level = 1
@@ -462,7 +480,7 @@ ITA_ww1_military_readiness_category = {
 			add_political_power = 15
 		}
 		remove_effect = {
-			156 = {
+			157 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -536,6 +554,45 @@ ITA_ww1_military_readiness_category = {
 		remove_effect = {
 			add_stability = 0.02
 			add_to_variable = { ita_ww1_social_tension = -5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_guerra_bianca_alpine_sapping = {
+		icon = generic_infantry_bonus
+		cost = 35
+		days_remove = 120
+		available = {
+			has_war = yes
+			controls_state = 160
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			army_experience = 15
+			add_to_variable = { ita_ww1_army_morale = 5 }
+			ita_ww1_clamp_counters = yes
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	ITA_ww1_arditi_shock_raids = {
+		icon = generic_morale_bonus
+		cost = 25
+		days_remove = 90
+		available = {
+			has_completed_focus = ITA_ww1_assault_units
+			has_war = yes
+		}
+		visible = {
+			original_tag = ITA
+		}
+		remove_effect = {
+			army_experience = 10
+			add_war_support = 0.02
+			add_to_variable = { ita_ww1_army_morale = 5 }
 			ita_ww1_clamp_counters = yes
 		}
 		ai_will_do = { factor = 1 }

@@ -15,23 +15,23 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "117 = { add_extra_state_shared_building_slots = 1 } add_political_power = 20",
-        "desc_en": "Expanding FIAT, Lancia, and SCAT automotive engineering facilities in Piedmont. Immediate effect: Adds 1 building slot in Piedmont (Turin) and grants 20 Political Power.",
-        "desc_pt": "Expansão das instalações automobilísticas da FIAT, Lancia e SCAT no Piemonte. Efeito imediato: Adiciona 1 espaço para construção no Piemonte (Turim) e concede 20 de Poder Político."
+        "effect": "158 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_political_power = 20",
+        "desc_en": "Expanding FIAT, Lancia, and SCAT automotive engineering facilities in Piedmont. Immediate effect: Constructs 1 military factory in Piedmont (Turin) and grants 20 Political Power.",
+        "desc_pt": "Expansão das instalações automobilísticas da FIAT, Lancia e SCAT no Piemonte. Efeito imediato: Constrói 1 fábrica militar no Piemonte (Turim) e concede 20 de Poder Político."
     },
     "genoa_shipyards": {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "158 = { add_extra_state_shared_building_slots = 1 } navy_experience = 10",
-        "desc_en": "Upgrading naval ways and marine engine workshops in the Gulf of Genoa. Immediate effect: Adds 1 building slot in Liguria (Genoa) and grants 10 Navy Experience.",
-        "desc_pt": "Modernização de estaleiros navais e oficinas de motores marítimos no Golfo de Gênova. Efeito imediato: Adiciona 1 espaço para construção na Ligúria (Gênova) e concede 10 de Experiência Naval."
+        "effect": "158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } navy_experience = 15",
+        "desc_en": "Upgrading naval ways and marine engine workshops in the Gulf of Genoa. Immediate effect: Constructs 1 naval dockyard in Liguria (Genoa) and grants 15 Navy Experience.",
+        "desc_pt": "Modernização de estaleiros navais e oficinas de motores marítimos no Golfo de Gênova. Efeito imediato: Constrói 1 estaleiro naval na Ligúria (Gênova) e concede 15 de Experiência Naval."
     },
     "milan_banking": {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
+        "effect": "159 = { add_extra_state_shared_building_slots = 1 } add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
         "desc_en": "Banca Commerciale Italiana and Credito Italiano mobilize private capital for domestic manufacture. Immediate effect: Grants 40 Political Power and reduces Social Tension by 5.",
         "desc_pt": "A Banca Commerciale Italiana e o Credito Italiano mobilizam capital privado para a indústria nacional. Efeito imediato: Concede 40 de Poder Político e reduz a Tensão Social em 5."
     },
@@ -47,7 +47,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_to_variable = { ita_ww1_southern_gap = -10 } add_political_power = 25",
+        "effect": "117 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_to_variable = { ita_ww1_southern_gap = -10 } add_political_power = 25",
         "desc_en": "Special state investments, tax reliefs, and rural roads across Southern Italy. Immediate effect: Narrows the Southern Gap by 10 and grants 25 Political Power.",
         "desc_pt": "Investimentos estatais especiais, isenções fiscais e estradas rurais pelo Sul da Itália. Efeito imediato: Reduz a disparidade do Sul em 10 e concede 25 de Poder Político."
     },
@@ -71,9 +71,9 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_tech_bonus = { name = ITA_ww1_steel_tech bonus = 0.25 uses = 1 category = industry } add_political_power = 20",
-        "desc_en": "State-backed consolidation of steel blast furnaces at Bagnoli, Piombino, and Portoferraio. Immediate effect: Grants a 25% Industrial research bonus (1 use) and 20 Political Power.",
-        "desc_pt": "Consolidação dos altos-fornos siderúrgicos em Bagnoli, Piombino e Portoferraio com apoio estatal. Efeito imediato: Concede 25% de bônus de pesquisa Industrial (1 uso) e 20 de Poder Político."
+        "effect": "162 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_tech_bonus = { name = ITA_ww1_steel_tech bonus = 0.25 uses = 1 category = industry } add_political_power = 20",
+        "desc_en": "State-backed consolidation of steel blast furnaces at Bagnoli, Piombino, and Portoferraio. Immediate effect: Constructs 1 civilian factory in Tuscany (Piombino), grants 20 Political Power and 25% Industrial tech bonus.",
+        "desc_pt": "Consolidação dos altos-fornos siderúrgicos em Bagnoli, Piombino e Portoferraio com apoio estatal. Efeito imediato: Constrói 1 fábrica civil na Toscana (Piombino), concede 20 de Poder Político e 25% de bônus em Indústria."
     },
     "emigrant_remittances": {
         "cost": 5,
@@ -95,7 +95,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 5",
-        "effect": "114 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_political_power = 20",
+        "effect": "115 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_political_power = 20",
         "desc_en": "Reorganizing the Sicilian sulphur syndicate to sustain chemical and gunpowder manufacture. Immediate effect: Adds 1 Infrastructure in Sicily and grants 20 Political Power.",
         "desc_pt": "Reorganização do consórcio de enxofre da Sicília para abastecer indústrias químicas e de pólvora. Efeito imediato: Constrói 1 nível de Infraestrutura na Sicília e concede 20 de Poder Político."
     },
@@ -135,17 +135,17 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 15",
-        "effect": "add_tech_bonus = { name = ITA_ww1_munitions_tech bonus = 0.25 uses = 1 category = weapons } add_political_power = 25",
-        "desc_en": "A dedicated government undersecretariat centralizes shell and explosive procurement. Immediate effect: Grants a 25% Weapons research bonus (1 use) and 25 Political Power.",
-        "desc_pt": "Subsecretaria governamental exclusiva centraliza o fornecimento de projéteis e explosivos. Efeito imediato: Concede 25% de bônus de pesquisa em Armamentos (1 uso) e 25 de Poder Político."
+        "effect": "159 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_tech_bonus = { name = ITA_ww1_munitions_tech bonus = 0.25 uses = 1 category = weapons } add_political_power = 25",
+        "desc_en": "A dedicated government undersecretariat centralizes shell and explosive procurement. Immediate effect: Constructs 1 arms factory in Lombardy, grants 25 Political Power and 25% Weapons tech bonus.",
+        "desc_pt": "Subsecretaria governamental exclusiva centraliza o fornecimento de projéteis e explosivos. Efeito imediato: Constrói 1 fábrica militar na Lombardia, concede 25 de Poder Político e 25% de bônus em Armamentos."
     },
     "ansaldo_expansion": {
         "cost": 5,
         "available": "",
         "ai": "factor = 15",
-        "effect": "158 = { add_extra_state_shared_building_slots = 1 } add_tech_bonus = { name = ITA_ww1_artillery_prod bonus = 0.25 uses = 1 category = artillery }",
-        "desc_en": "Massive vertical expansion of the Perrone brothers' steel, shipbuilding, and artillery conglomerate. Immediate effect: Adds 1 building slot in Liguria and a 25% Artillery research bonus (1 use).",
-        "desc_pt": "Expansão vertical massiva do conglomerado siderúrgico, naval e bélico dos irmãos Perrone. Efeito imediato: Adiciona 1 espaço para construção na Ligúria e 25% de bônus em Artilharia (1 uso)."
+        "effect": "158 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_tech_bonus = { name = ITA_ww1_artillery_prod bonus = 0.25 uses = 1 category = artillery }",
+        "desc_en": "Massive vertical expansion of the Perrone brothers' steel, shipbuilding, and artillery conglomerate. Immediate effect: Constructs 1 arms factory in Liguria and a 25% Artillery research bonus (1 use).",
+        "desc_pt": "Expansão vertical massiva do conglomerado siderúrgico, naval e bélico dos irmãos Perrone. Efeito imediato: Constrói 1 fábrica militar na Ligúria e 25% de bônus em Artilharia (1 uso)."
     },
     "aero_engine_contracts": {
         "cost": 5,
@@ -167,9 +167,9 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 15",
-        "effect": "country_event = { id = ww1_italy.71 days = 1 } add_political_power = 25",
-        "desc_en": "Securing priority colliers and credit lines from London to keep Italian blast furnaces burning. Immediate effect: Triggers the British Coal event and grants 25 Political Power.",
-        "desc_pt": "Garantia de navios carvoeiros e linhas de crédito de Londres para manter os altos-fornos acesos. Efeito imediato: Dispara o evento do Carvão Britânico e concede 25 de Poder Político."
+        "effect": "remove_ideas = ITA_coal_iron_scarcity country_event = { id = ww1_italy.71 days = 1 } add_political_power = 25",
+        "desc_en": "Securing priority colliers and credit lines from London to keep Italian blast furnaces burning. Immediate effect: Removes Coal and Iron Scarcity national spirit, grants 25 Political Power and triggers the British Coal protocol.",
+        "desc_pt": "Garantia de navios carvoeiros e linhas de crédito de Londres para manter os altos-fornos acesos. Efeito imediato: Remove a penalidade de Escassez de Carvão e Minério, concede 25 de Poder Político e dispara o protocolo do Carvão Britânico."
     },
     "war_hydropower": {
         "cost": 5,
@@ -183,7 +183,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25",
+        "effect": "set_country_flag = ita_ww1_bread_rationing_decree add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25",
         "desc_en": "Instituting grain and bread rationing cards to manage dwindling wheat stocks during the conflict. Immediate effect: Increases Social Tension by 10 and grants 25 Political Power.",
         "desc_pt": "Instituição de cartões de racionamento de pão e cereais para gerir estoques escassos de trigo. Efeito imediato: Aumenta a Tensão Social em 10 e concede 25 de Poder Político."
     },
@@ -199,7 +199,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25",
+        "effect": "set_country_flag = ita_ww1_bread_rationing_decree add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25",
         "desc_en": "Mandatory agricultural quotas and state requisitions supply grain directly to front-line army depots. Immediate effect: Increases Social Tension by 10 and grants 25 Political Power.",
         "desc_pt": "Cotas agrícolas obrigatórias e requisições estatais abastecem diretamente os depósitos do exército. Efeito imediato: Aumenta a Tensão Social em 10 e concede 25 de Poder Político."
     },
@@ -231,7 +231,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "NOT = { has_war = yes }",
         "ai": "factor = 15",
-        "effect": "add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25",
+        "effect": "set_country_flag = ita_ww1_bread_rationing_decree add_to_variable = { ita_ww1_social_tension = 10 } add_political_power = 25",
         "desc_en": "Reconverting war factories to peacetime commercial manufacture triggers painful industrial restructuring. Immediate effect: Increases Social Tension by 10 and grants 25 Political Power.",
         "desc_pt": "Reconversão de fábricas bélicas para bens civis desencadeia dolorosa reestruturação industrial. Efeito imediato: Aumenta a Tensão Social em 10 e concede 25 de Poder Político."
     },
@@ -247,7 +247,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "115 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } add_to_variable = { ita_ww1_social_tension = -10 }",
+        "effect": "117 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_to_variable = { ita_ww1_social_tension = -10 }",
         "desc_en": "State-funded road construction, port repairs, and electrification absorb demobilized workers. Immediate effect: Adds 1 Infrastructure in Campania (Naples) and reduces Social Tension by 10.",
         "desc_pt": "Obras estatais em rodovias, portos e eletrificação absorvem trabalhadores desmobilizados. Efeito imediato: Constrói 1 nível de Infraestrutura na Campânia (Nápoles) e reduz a Tensão Social em 10."
     },
@@ -263,7 +263,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
+        "effect": "159 = { add_extra_state_shared_building_slots = 1 } add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
         "desc_en": "A state-orchestrated consortium stabilizes the banking sector and protects industrial accounts. Immediate effect: Grants 40 Political Power and reduces Social Tension by 5.",
         "desc_pt": "Um consórcio orquestrado pelo Estado estabiliza o setor bancário e protege contas industriais. Efeito imediato: Concede 40 de Poder Político e reduz a Tensão Social em 5."
     },

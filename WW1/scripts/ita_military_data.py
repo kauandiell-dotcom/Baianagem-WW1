@@ -21,7 +21,7 @@ FOCI = {
     # Army Branch (25 focuses)
     "army_staff_reorganisation": {
         "cost": 5, "year": 1911, "available": "date > 1911.1.1",
-        "effect": "army_experience = 10 add_ideas = ITA_ww1_general_staff_corps add_political_power = 20",
+        "effect": "remove_ideas = ITA_alpini_tradition add_ideas = ITA_ww1_general_staff_corps army_experience = 15 add_political_power = 20",
         "en_title": "Reorganise the General Staff",
         "pt_title": "Reorganizar o Estado-Maior",
         "en_desc": "Immediate effect: Reorganises staff sections under General Pollio; grants +10 army XP and General Staff idea.\n\nRestructuring operational planning, staff officer assignments, and railway mobilization schedules to modernize the Regio Esercito.",
@@ -39,7 +39,7 @@ FOCI = {
     },
     "cadorna_chief_of_staff": {
         "cost": 5, "year": 1914, "available": "date > 1914.7.1",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_cadorna_discipline add_to_variable = { ita_ww1_army_morale = -5 } ita_ww1_clamp_counters = yes",
+        "effect": "remove_ideas = ITA_ww1_general_staff_corps add_ideas = ITA_ww1_cadorna_discipline army_experience = 15 add_to_variable = { ita_ww1_army_morale = -5 } ita_ww1_clamp_counters = yes",
         "en_title": "Cadorna Takes the Staff",
         "pt_title": "Cadorna Assume o Estado-Maior",
         "en_desc": "Immediate effect: General Luigi Cadorna becomes Chief of Staff; imposes rigid offensive discipline (+15 army XP).\n\nLuigi Cadorna imposes unbending central control over division commanders, preparing strict offensive plans aimed directly toward Ljubljana and Vienna.",
@@ -57,43 +57,43 @@ FOCI = {
     },
     "artillery_modernisation": {
         "cost": 5, "year": 1912, "available": "date > 1912.1.1",
-        "effect": "army_experience = 10 add_tech_bonus = { name = ITA_ww1_field_artillery_program bonus = 0.25 uses = 1 category = artillery }",
+        "effect": "162 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_field_artillery_program bonus = 0.25 uses = 1 category = artillery }",
         "en_title": "Artillery Modernisation",
         "pt_title": "Modernização da Artilharia",
-        "en_desc": "Immediate effect: Procures modern 75mm Krupp and Schneider field guns; artillery tech bonus (25%).\n\nReplacing obsolete bronze cannons with quick-firing 75/27 Modello 1906 field guns equipped with modern recoil cylinders.",
-        "pt_desc": "Efeito imediato: Adquire canhões de tiro rápido 75/27 Modello 1906; bônus de pesquisa de artilharia (25%).\n\nSubstitui peças obsoletas por modernos canhões de campanha com freio de recuo hidráulico para apoiar a infantaria.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Terni (Tuscany), grants +10 army XP and 25% artillery tech bonus.\n\nReplacing obsolete bronze cannons with quick-firing 75/27 Modello 1906 field guns equipped with modern recoil cylinders.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar em Terni (Toscana), concede +10 de XP e bônus de artilharia (25%).\n\nSubstitui peças obsoletas por modernos canhões de campanha com freio de recuo hidráulico para apoiar a infantaria.",
         "ai": "base = 80"
     },
     "mountain_artillery": {
         "cost": 5, "year": 1913, "available": "date > 1913.1.1",
-        "effect": "army_experience = 10 add_ideas = ITA_ww1_mountain_howitzers",
+        "effect": "158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 15 add_tech_bonus = { name = ITA_ww1_mountain_artillery bonus = 0.25 uses = 1 category = artillery } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = ITA }",
         "en_title": "Mountain Artillery",
         "pt_title": "Artilharia de Montanha",
-        "en_desc": "Immediate effect: Introduces pack-mule transportable 65mm mountain guns; adds Mountain Howitzers idea (+10 army XP).\n\nMule-carried 65/17 mountain guns can be dismantled into pack loads and carried up sheer dolomite precipices to support Alpini assaults.",
-        "pt_desc": "Efeito imediato: Adota peças de montanha 65/17 transportadas por mulas; concede o espírito Obuseiros de Montanha (+10 de XP).\n\nCanhões desmontáveis conduzidos por muares sobem desfiladeiros íngremes para prestar apoio de fogo imediato aos Alpini.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Piedmont (Turin), adds Mountain Howitzers idea and +10 army XP.\n\nMule-carried 65/17 mountain guns can be dismantled into pack loads and carried up sheer dolomite precipices to support Alpini assaults.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar no Piemonte (Turim), concede o espírito Obuseiros de Montanha e +10 de XP.\n\nCanhões desmontáveis conduzidos por muares sobem desfiladeiros íngremes para prestar apoio de fogo imediato aos Alpini.",
         "ai": "base = 75"
     },
     "heavy_guns": {
         "cost": 5, "year": 1914, "available": "date > 1914.1.1",
-        "effect": "army_experience = 10 add_tech_bonus = { name = ITA_ww1_siege_howitzers bonus = 0.25 uses = 1 category = artillery }",
+        "effect": "158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_siege_howitzers bonus = 0.25 uses = 1 category = artillery }",
         "en_title": "Heavy Guns",
         "pt_title": "Canhões Pesados",
-        "en_desc": "Immediate effect: Contracts Ansaldo for 149mm and 210mm heavy siege howitzers; artillery bonus (25%).\n\nRealising that mountain forts and concrete caves require heavy ordnance to crack, the artillery directorate orders heavy siege batteries.",
-        "pt_desc": "Efeito imediato: Contrata obuseiros de sítio pesados de 149mm e 210mm com a Ansaldo; bônus de artilharia (25%).\n\nReconhecendo que fortalezas de montanha e casamatas exigem calibres pesados, o exército encomenda baterias pesadas de cerco.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Genoa (Ansaldo), grants +10 army XP and 25% artillery bonus.\n\nRealising that mountain forts and concrete caves require heavy ordnance to crack, the artillery directorate orders heavy siege batteries.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar em Gênova (Ansaldo), concede +10 de XP e bônus de artilharia (25%).\n\nReconhecendo que fortalezas de montanha e casamatas exigem calibres pesados, o exército encomenda baterias pesadas de cerco.",
         "ai": "base = 75"
     },
     "machine_guns": {
         "cost": 5, "year": 1914, "available": "date > 1914.6.1",
-        "effect": "army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_revelli_gun bonus = 0.25 uses = 1 category = infantry_weapons }",
+        "effect": "159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_revelli_gun bonus = 0.25 uses = 1 category = infantry_weapons }",
         "en_title": "Machine-Gun Companies",
         "pt_title": "Companhias de Metralhadoras",
-        "en_desc": "Immediate effect: Adopts the Fiat-Revelli Modello 1914 water-cooled machine gun; infantry tech bonus (25%).\n\nEquipping every infantry regiment with dedicated automatic fire sections to lay defensive swathes across barbed-wire perimeters.",
-        "pt_desc": "Efeito imediato: Adota a metralhadora refrigerada a água Fiat-Revelli Modello 1914; bônus de armas de infantaria (25%).\n\nCria companhias autônomas de metralhadoras em cada regimento de infantaria para cobrir arames farpados com fogo contínuo.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Lombardy (Brescia), grants +10 army XP and 25% infantry weapons tech bonus.\n\nEquipping every infantry regiment with dedicated automatic fire sections to lay defensive swathes across barbed-wire perimeters.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar na Lombardia (Brescia), concede +10 de XP e bônus de armas de infantaria (25%).\n\nCria companhias autônomas de metralhadoras em cada regimento de infantaria para cobrir arames farpados com fogo contínuo.",
         "ai": "base = 80"
     },
     "north_east_mobilisation": {
         "cost": 5, "year": 1914, "available": "date > 1914.8.1",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_railway_mobilisation_plan add_political_power = 20",
+        "effect": "160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 736 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } army_experience = 20 add_political_power = 30 add_command_power = 25",
         "en_title": "The North-East Mobilisation Plan",
         "pt_title": "O Plano de Mobilização do Nordeste",
         "en_desc": "Immediate effect: Completes railway timetables concentrating the Regio Esercito on the Venetian plain (+15 army XP).\n\nOrganising seventy-two trains per day across the Po Valley to marshal four field armies on the Austrian border in under twenty days.",
@@ -102,43 +102,43 @@ FOCI = {
     },
     "frontier_fortifications": {
         "cost": 5, "year": 1914, "available": "date > 1914.9.1",
-        "effect": "army_experience = 10 add_ideas = ITA_ww1_frontier_fortress_belt",
+        "effect": "160 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } 158 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } army_experience = 15 add_tech_bonus = { name = ITA_ww1_alpine_fortifications bonus = 0.25 uses = 1 category = engineering }",
         "en_title": "Frontier Fortifications",
         "pt_title": "Fortificações Fronteiriças",
-        "en_desc": "Immediate effect: Builds armored steel gun turrets and bunkers across the Asiago and Tagliamento barriers.\n\nArming armored fortress complexes (Forte Verena, Forte Campomolon) with rotating steel cupolas to dominate alpine valleys.",
-        "pt_desc": "Efeito imediato: Ergue cúpulas blindadas e casamatas no planalto de Asiago e na barreira do Tagliamento.\n\nEquipa fortalezas blindadas (Forte Verena e Campomolon) com cúpulas giratórias de aço para fechar os desfiladeiros alpinos.",
+        "en_desc": "Immediate effect: Builds 2 land forts in Veneto (Asiago) and 1 in Piedmont, adds Alpine Fortresses idea and +10 army XP.\n\nArming armored fortress complexes (Forte Verena, Forte Campomolon) with rotating steel cupolas to dominate alpine valleys.",
+        "pt_desc": "Efeito imediato: Constrói 2 fortes terrestres no Vêneto (Asiago) e 1 no Piemonte, concede Fortalezas Blindadas Alpinas e +10 de XP.\n\nEquipa fortalezas blindadas (Forte Verena e Campomolon) com cúpulas giratórias de aço para fechar os desfiladeiros alpinos.",
         "ai": "base = 70"
     },
     "offensive_doctrine": {
         "cost": 5, "year": 1915, "available": "date > 1915.1.1",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_cadornian_offensive_cult add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes",
+        "effect": "remove_ideas = ITA_ww1_cadorna_discipline army_experience = 15 add_ideas = ITA_ww1_cadornian_offensive_cult add_to_variable = { ita_ww1_army_morale = 5 }",
         "en_title": "The Offensive Doctrine",
         "pt_title": "A Doutrina Ofensiva",
-        "en_desc": "Immediate effect: Cadorna's 'Red Booklet' preaches mass assault and offensive spirit (+15 army XP).\n\nThe General Staff's official tactical doctrine insists that sheer moral willpower and infantry bayonets will overcome enemy machine guns.",
-        "pt_desc": "Efeito imediato: O 'Livreto Vermelho' de Cadorna prega o assalto em massa e o espírito agressivo (+15 de XP do exército).\n\nA doutrina oficial sustenta que a força moral e a baioneta do infante prevalecerão sobre as metralhadoras inimigas.",
+        "en_desc": "Immediate effect: Replaces Cadornian Discipline with Cult of the Offensive (+15 army XP, +5 morale).\n\nThe General Staff's official tactical doctrine insists that sheer moral willpower and infantry bayonets will overcome enemy machine guns.",
+        "pt_desc": "Efeito imediato: Substitui a Disciplina de Cadorna pelo Culto da Ofensiva (+15 de XP, +5 moral).\n\nA doutrina oficial sustenta que a força moral e a baioneta do infante prevalecerão sobre as metralhadoras inimigas.",
         "ai": "base = 70"
     },
     "war_of_position": {
         "cost": 5, "year": 1915, "available": "date > 1915.1.1",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_methodical_firepower_doctrine add_to_variable = { ita_ww1_army_morale = 5 }",
+        "effect": "remove_ideas = ITA_ww1_cadorna_discipline army_experience = 15 add_ideas = ITA_ww1_methodical_firepower_doctrine add_to_variable = { ita_ww1_army_morale = 5 }",
         "en_title": "The War of Position",
         "pt_title": "A Guerra de Posição",
-        "en_desc": "Immediate effect: Adopts methodical artillery preparation and deep entrenchment doctrine (+15 army XP, +2% stability).\n\nRejecting reckless bayonet charges, this doctrine mandates methodical artillery destruction before committing infantry to the assault.",
-        "pt_desc": "Efeito imediato: Adota preparação metódica de artilharia e entrincheiramento profundo (+15 de XP, +2% de estabilidade).\n\nRejeitando cargas frontais desprotegidas, prioriza a destruição metódica dos obstáculos por artilharia pesada antes do avanço.",
+        "en_desc": "Immediate effect: Replaces Cadornian Discipline with Methodical Firepower Doctrine (+15 army XP, +5 morale).\n\nRejecting reckless bayonet charges, this doctrine mandates methodical artillery destruction before committing infantry to the assault.",
+        "pt_desc": "Efeito imediato: Substitui a Disciplina de Cadorna pela Doutrina Metódica de Fogo (+15 de XP, +5 moral).\n\nRejeitando cargas frontais desprotegidas, prioriza a destruição metódica dos obstáculos por artilharia pesada antes do avanço.",
         "ai": "base = 30"
     },
     "trench_mortars": {
         "cost": 5, "year": 1915, "available": "date > 1915.6.1",
-        "effect": "army_experience = 10 add_tech_bonus = { name = ITA_ww1_bombarda_trench_mortar bonus = 0.25 uses = 1 category = artillery }",
+        "effect": "158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_bombarda_trench_mortar bonus = 0.25 uses = 1 category = artillery }",
         "en_title": "Trench Mortars",
         "pt_title": "Morteiros de Trincheira",
-        "en_desc": "Immediate effect: Deploys heavy Bombarda 240mm and 58mm trench mortars to blast enemy wire; artillery bonus (25%).\n\nShort-range mortars lobbing heavy charges of high explosive lobbed directly into enemy trenches clear barbed-wire mazes on the Carso.",
-        "pt_desc": "Efeito imediato: Introduz morteiros pesados Bombarda de 240mm para destroçar arames; bônus de artilharia (25%).\n\nMorteiros de tiro curvo lançam cargas pesadas de alto explosivo diretamente sobre as linhas inimigas nas rochas do Carso.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Piedmont, grants +10 army XP and 25% artillery tech bonus.\n\nShort-range mortars lobbing heavy charges of high explosive lobbed directly into enemy trenches clear barbed-wire mazes on the Carso.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar no Piemonte, concede +10 de XP e bônus de artilharia (25%).\n\nMorteiros de tiro curvo lançam cargas pesadas de alto explosivo diretamente sobre as linhas inimigas nas rochas do Carso.",
         "ai": "base = 80"
     },
     "gas_defence": {
         "cost": 5, "year": 1916, "available": "date > 1916.1.1",
-        "effect": "army_experience = 10 add_ideas = ITA_ww1_gas_respirators",
+        "effect": "army_experience = 15 add_tech_bonus = { name = ITA_ww1_chemical_defence bonus = 0.25 uses = 1 category = support_tech } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes",
         "en_title": "Gas Defence",
         "pt_title": "Defesa contra Gases",
         "en_desc": "Immediate effect: Issues British-designed box respirators and Polyvalent masks to frontline divisions (+10 army XP).\n\nFollowing deadly Austrian chemical gas attacks on Mount San Michele, the army distributes effective respirators and decontamination gear.",
@@ -147,16 +147,16 @@ FOCI = {
     },
     "reserve_officer_schools": {
         "cost": 5, "year": 1916, "available": "date > 1916.6.1",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_complimentary_officer_academies add_political_power = 20",
+        "effect": "161 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 25 add_command_power = 30 add_political_power = 30",
         "en_title": "Reserve Officer Schools",
         "pt_title": "Escolas de Oficiais da Reserva",
-        "en_desc": "Immediate effect: Trains thousands of young university and secondary school lieutenants (Sottotenenti di complemento).\n\nRapid training schools at Modena and Parma supply tens of thousands of enthusiastic junior officers to lead frontline platoons.",
-        "pt_desc": "Efeito imediato: Forma milhares de jovens tenentes de complemento oriundos das universidades (Sottotenenti).\n\nCursos rápidos em Módena e Parma preparam oficiais subalternos para liderar pelotões na linha de frente.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Emilia-Romagna (Modena), grants +15 army XP, +20 PP and Reserve Sublieutenants idea.\n\nRapid training schools at Modena and Parma supply tens of thousands of enthusiastic junior officers to lead frontline platoons.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar na Emília-Romanha (Módena), concede +15 de XP, +20 PP e o espírito Oficiais de Complemento.\n\nCursos rápidos em Módena e Parma preparam oficiais subalternos para liderar pelotões na linha de frente.",
         "ai": "base = 75"
     },
     "dismounted_cavalry": {
         "cost": 5, "year": 1916, "available": "date > 1916.3.1",
-        "effect": "army_experience = 10 add_ideas = ITA_ww1_dismounted_cavalry_regiments",
+        "effect": "army_experience = 20 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1500 producer = ITA } add_tech_bonus = { name = ITA_ww1_cavalry_recon bonus = 0.25 uses = 1 category = recon_tech }",
         "en_title": "Dismounted Cavalry",
         "pt_title": "Cavalaria Desmontada",
         "en_desc": "Immediate effect: Dismounts elite cavalry regiments to serve as heavy trench assault infantry (+10 army XP).\n\nPrestigious regiments like Genova Cavalleria and Lancieri di Novara fight dismounted on the Carso with carbines and bayonets.",
@@ -165,61 +165,61 @@ FOCI = {
     },
     "assault_units": {
         "cost": 5, "year": 1917, "available": "date > 1917.7.1",
-        "effect": "army_experience = 20 add_ideas = ITA_ww1_arditi_shock_troops add_tech_bonus = { name = ITA_ww1_arditi_assault_tactics bonus = 0.25 uses = 1 category = special_forces }",
+        "effect": "159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 25 add_tech_bonus = { name = ITA_ww1_arditi_assault_tactics bonus = 0.25 uses = 1 category = special_forces } add_equipment_to_stockpile = { type = support_equipment_1 amount = 50 producer = ITA }",
         "en_title": "Assault Units",
         "pt_title": "Unidades de Assalto (Arditi)",
-        "en_desc": "Immediate effect: Founds the famous Arditi stormtrooper corps; grants +20 army XP and special forces tech bonus (25%).\n\nArmed with daggers, Thevenot hand grenades, and Villar Perosa submachine guns, black-flamed Arditi stormtroops spearhead trench assaults.",
-        "pt_desc": "Efeito imediato: Funda o célebre corpo de tropas de assalto dos Arditi; concede +20 de XP e bônus de forças especiais (25%).\n\nArmados com punhais, granadas Thevenot e pistolas-metralhadoras Villar Perosa, os Arditi rompem as defesas inimigas com audácia.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Lombardy, grants Arditi Stormtrooper idea, +20 army XP and special forces tech bonus (25%).\n\nArmed with daggers, Thevenot hand grenades, and Villar Perosa submachine guns, black-flamed Arditi stormtroops spearhead trench assaults.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar na Lombardia, concede o espírito Arditi, +20 de XP e bônus de forças especiais (25%).\n\nArmados com punhais, granadas Thevenot e pistolas-metralhadoras Villar Perosa, os Arditi rompem as defesas inimigas com audácia.",
         "ai": "base = 95"
     },
     "diaz_takes_command": {
         "cost": 5, "year": 1917, "available": "date > 1917.11.9",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_diaz_humane_leadership add_to_variable = { ita_ww1_army_morale = 15 } ita_ww1_clamp_counters = yes",
+        "effect": "remove_ideas = ITA_ww1_cadornian_offensive_cult remove_ideas = ITA_ww1_methodical_firepower_doctrine army_experience = 15 add_ideas = ITA_ww1_diaz_humane_leadership add_to_variable = { ita_ww1_army_morale = 15 }",
         "en_title": "Diaz Takes Command",
         "pt_title": "Diaz Assume o Comando",
-        "en_desc": "Immediate effect: General Armando Diaz replaces Cadorna; boosts army morale by +15 and grants Humane Leadership idea.\n\nArmando Diaz abolishes summary decimation executions, improves soldier rations, grants regular home leave, and prioritises defensive preservation of lives.",
-        "pt_desc": "Efeito imediato: Armando Diaz substitui Cadorna; eleva o moral em +15 e concede o espírito Liderança Humanitária.\n\nArmando Diaz abole execuções sumárias, melhora a alimentação dos soldados, institui licenças regulares e prioriza poupar vidas.",
+        "en_desc": "Immediate effect: General Armando Diaz replaces Cadorna; removes offensive cult, boosts army morale by +15 and grants Humane Leadership idea.\n\nArmando Diaz abolishes summary decimation executions, improves soldier rations, grants regular home leave, and prioritises defensive preservation of lives.",
+        "pt_desc": "Efeito imediato: Armando Diaz substitui Cadorna; remove o culto ofensivo, eleva o moral em +15 e concede o espírito Liderança Humanitária.\n\nArmando Diaz abole execuções sumárias, melhora a alimentação dos soldados, institui licenças regulares e prioriza poupar vidas.",
         "ai": "base = 98"
     },
     "elastic_defence": {
         "cost": 5, "year": 1917, "available": "has_completed_focus = ITA_ww1_diaz_takes_command",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_defence_in_depth_piave add_to_variable = { ita_ww1_army_morale = 5 }",
+        "effect": "remove_ideas = ITA_ww1_diaz_humane_leadership army_experience = 15 add_ideas = ITA_ww1_defence_in_depth_piave add_to_variable = { ita_ww1_army_morale = 5 }",
         "en_title": "Elastic Defence",
         "pt_title": "Defesa Elástica",
-        "en_desc": "Immediate effect: Adopts defense-in-depth on the Piave River; grants +15 army XP and Defense in Depth idea.\n\nReplacing rigid trench lines with layered outpost zones, machine-gun nests, and pre-sighted artillery killing zones on the Montello.",
-        "pt_desc": "Efeito imediato: Adota a defesa em profundidade no rio Piave; concede +15 de XP e espírito Defesa em Profundidade.\n\nSubstitui linhas rígidas por zonas de postos avançados e bolsas de fogo de artilharia pré-reguladas nas encostas do Montello.",
+        "en_desc": "Immediate effect: Evolves command doctrine into Defense in Depth on the Piave (+15 army XP, +5 morale).\n\nReplacing rigid trench lines with layered outpost zones, machine-gun nests, and pre-sighted artillery killing zones on the Montello.",
+        "pt_desc": "Efeito imediato: Evolui a liderança para a Defesa em Profundidade no Piave (+15 de XP, +5 moral).\n\nSubstitui linhas rígidas por zonas de postos avançados e bolsas de fogo de artilharia pré-reguladas nas encostas do Montello.",
         "ai": "base = 80"
     },
     "offensive_pressure": {
         "cost": 5, "year": 1918, "available": "has_completed_focus = ITA_ww1_diaz_takes_command",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_continuous_offensive_pressure add_to_variable = { ita_ww1_army_morale = 5 }",
+        "effect": "remove_ideas = ITA_ww1_diaz_humane_leadership army_experience = 15 add_ideas = ITA_ww1_continuous_offensive_pressure add_to_variable = { ita_ww1_army_morale = 5 }",
         "en_title": "Sustained Offensive Pressure",
         "pt_title": "Pressão Ofensiva Sustentada",
-        "en_desc": "Immediate effect: Mounts persistent probing assaults to exhaust enemy reserves (+15 army XP, +2% war support).\n\nMaintaining constant raids across river sandbars to keep the Austro-Hungarian command under perpetual tension and force early deployment of reserves.",
-        "pt_desc": "Efeito imediato: Realiza incursões constantes para desgastar as reservas austríacas (+15 de XP militar, +2% apoio de guerra).\n\nAtaques localizados nos bancos de areia do rio mantêm o comando imperial sob tensão constante, forçando o esgotamento precoce de reservas.",
+        "en_desc": "Immediate effect: Replaces defensive posture with Aggressive River Probing (+15 army XP, +5 morale).\n\nMaintaining constant raids across river sandbars to keep the Austro-Hungarian command under perpetual tension and force early deployment of reserves.",
+        "pt_desc": "Efeito imediato: Substitui a postura defensiva pela Pressão Contínua nas Margens (+15 de XP, +5 moral).\n\nAtaques localizados nos bancos de areia do rio mantêm o comando imperial sob tensão constante, forçando o esgotamento precoce de reservas.",
         "ai": "base = 20"
     },
     "motor_transport": {
         "cost": 5, "year": 1917, "available": "date > 1917.1.1",
-        "effect": "army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment }",
+        "effect": "158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment }",
         "en_title": "Motor Transport Corps",
         "pt_title": "Corpo de Transporte Motorizado",
-        "en_desc": "Immediate effect: Deploys tens of thousands of FIAT 18 BL military trucks; motorized equipment tech bonus (25%).\n\nAutomotive convoys supply mountain armies with munitions, moving entire divisions between Trentino and Piave within forty-eight hours.",
-        "pt_desc": "Efeito imediato: Mobiliza milhares de caminhões FIAT 18 BL; bônus de pesquisa de equipamento motorizado (25%).\n\nColunas automobilísticas abastecem os exércitos alpinos e deslocam divisões inteiras entre o Trentino e o Piave em dois dias.",
+        "en_desc": "Immediate effect: Constructs 1 arms factory in Piedmont (FIAT lorries), grants +10 army XP and 25% motorized tech bonus.\n\nAutomotive convoys supply mountain armies with munitions, moving entire divisions between Trentino and Piave within forty-eight hours.",
+        "pt_desc": "Efeito imediato: Constrói 1 fábrica militar no Piemonte (caminhões FIAT), concede +10 de XP e bônus de motorizados (25%).\n\nColunas automobilísticas abastecem os exércitos alpinos e deslocam divisões inteiras entre o Trentino e o Piave em dois dias.",
         "ai": "base = 75"
     },
     "army_demobilisation": {
         "cost": 5, "year": 1919, "available": "has_war = no date > 1919.1.1",
-        "effect": "add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -10 } ita_ww1_clamp_counters = yes",
+        "effect": "remove_ideas = ITA_ww1_defence_in_depth_piave remove_ideas = ITA_ww1_continuous_offensive_pressure add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -10 }",
         "en_title": "Army Demobilisation",
         "pt_title": "Desmobilização do Exército",
-        "en_desc": "Immediate effect: Demobilises four million conscripted soldiers back into civilian life (+3% stability, +40 PP).\n\nReturning soldiers to farming and industrial workshops while avoiding runaway postwar unemployment through phased release schedules.",
-        "pt_desc": "Efeito imediato: Desmobiliza quatro milhões de recrutas de volta à vida civil (+3% de estabilidade, +40 de PP).\n\nReintegra os soldados às lavouras e oficinas fabris de forma escalonada para evitar o desemprego em massa.",
+        "en_desc": "Immediate effect: Removes wartime frontline combat doctrines, returns soldiers to civilian life (+40 PP, -10 social tension).\n\nReturning soldiers to farming and industrial workshops while avoiding runaway postwar unemployment through phased release schedules.",
+        "pt_desc": "Efeito imediato: Remove as doutrinas de combate de trincheira da guerra, devolve soldados à vida civil (+40 PP, -10 tensão social).\n\nReintegra os soldados às lavouras e oficinas fabris de forma escalonada para evitar o desemprego em massa.",
         "ai": "base = 80"
     },
     "carabinieri_reinforcement": {
         "cost": 5, "year": 1919, "available": "date > 1919.6.1",
-        "effect": "add_to_variable = { ita_ww1_social_tension = -5 } add_ideas = ITA_ww1_strengthened_carabinieri add_political_power = 25",
+        "effect": "add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = 40 add_stability = 0.02 ita_ww1_clamp_counters = yes",
         "en_title": "Reinforce the Carabinieri",
         "pt_title": "Reforçar os Carabinieri",
         "en_desc": "Immediate effect: Expands the Arma dei Carabinieri to police rural and urban unrest (+3% stability).\n\nStrengthening mobile legions of the royal gendarmerie to maintain public order amid postwar strike waves and ideological clashes.",
@@ -228,7 +228,7 @@ FOCI = {
     },
     "postwar_army_reform": {
         "cost": 5, "year": 1920, "available": "date > 1920.1.1",
-        "effect": "army_experience = 15 add_ideas = ITA_ww1_badoglio_standing_army add_political_power = 30",
+        "effect": "remove_ideas = ITA_alpini_tradition add_ideas = ITA_ww1_badoglio_standing_army army_experience = 20 add_political_power = 30",
         "en_title": "Postwar Army Reform",
         "pt_title": "Reforma do Exército no Pós-Guerra",
         "en_desc": "Immediate effect: General Badoglio reorganises the peacetime standing army into thirty modern divisions (+15 army XP).\n\nModernising artillery arsenals, retaining assault unit doctrines, and creating unified corps commands across the northern frontiers.",
@@ -237,18 +237,18 @@ FOCI = {
     },
     "army_budget_cuts": {
         "cost": 5, "year": 1922, "available": "date > 1922.1.1",
-        "effect": "add_political_power = 50 add_ideas = ITA_ww1_peacetime_military_economy",
+        "effect": "remove_ideas = ITA_ww1_badoglio_standing_army add_political_power = 50 add_ideas = ITA_ww1_peacetime_military_economy",
         "en_title": "Army Budget Cuts",
         "pt_title": "Cortes no Orçamento Militar",
-        "en_desc": "Immediate effect: Reduces military appropriations to balance the state treasury (+50 political power).\n\nRestricting annual conscription terms and mothballing heavy ordnance to rescue the national budget from catastrophic debt burdens.",
-        "pt_desc": "Efeito imediato: Reduz os gastos bélicos para restabelecer o equilíbrio das contas públicas (+50 de poder político).\n\nDiminui o tempo de serviço militar obrigatório e preserva material em depósito para sanear o orçamento nacional.",
+        "en_desc": "Immediate effect: Replaces standing army expansion with Peacetime Fiscal Realism (+50 political power).\n\nRestricting annual conscription terms and mothballing heavy ordnance to rescue the national budget from catastrophic debt burdens.",
+        "pt_desc": "Efeito imediato: Substitui a manutenção do exército pelo Realismo Fiscal em Tempo de Paz (+50 poder político).\n\nDiminui o tempo de serviço militar obrigatório e preserva material em depósito para sanear o orçamento nacional.",
         "ai": "base = 60"
     },
 
     # Naval Branch (18 focuses)
     "naval_estimates": {
         "cost": 5, "year": 1911, "available": "date > 1911.1.1",
-        "effect": "navy_experience = 10 add_ideas = ITA_ww1_regia_marina_cadres add_political_power = 20",
+        "effect": "remove_ideas = ITA_terre_irredente_dream add_ideas = ITA_ww1_regia_marina_cadres navy_experience = 15 add_political_power = 20",
         "en_title": "The Naval Estimates",
         "pt_title": "As Previsões Navais",
         "en_desc": "Immediate effect: Approves the 1911 naval estimates; grants +10 navy XP and Regia Marina Cadres idea.\n\nAdmiral Bettolo and the naval ministry secure parliament's blessing for long-term construction programmes to match Austro-Hungarian naval expansion.",
@@ -284,20 +284,20 @@ FOCI = {
     },
     "taranto_base": {
         "cost": 5, "year": 1913, "available": "date > 1913.1.1",
-        "effect": "navy_experience = 10 add_ideas = ITA_ww1_taranto_naval_arsenal add_political_power = 20",
+        "effect": "157 = { add_building_construction = { type = naval_base level = 2 instant_build = yes } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } } navy_experience = 20 add_political_power = 30 add_tech_bonus = { name = ITA_ww1_naval_repair bonus = 0.25 uses = 1 category = naval_equipment }",
         "en_title": "The Taranto Base",
         "pt_title": "A Base de Taranto",
-        "en_desc": "Immediate effect: Expands the Mar Grande and Mar Piccolo docks at Taranto into Italy's premier dreadnought base.\n\nDredging navigation channels, building dry docks, and erecting coastal battery fortifications to shelter the primary battle fleet.",
-        "pt_desc": "Efeito imediato: Expande os estaleiros de Taranto para abrigar a frota de encouraçados principais.\n\nDragagem de canais, construção de docas secas e baterias costeiras fortificadas no Mar Piccolo e Mar Grande.",
+        "en_desc": "Immediate effect: Expands Taranto naval base (+2 naval base, +1 coastal fort in Apulia), adds Taranto Arsenal idea and +10 navy XP.\n\nDredging navigation channels, building dry docks, and erecting coastal battery fortifications to shelter the primary battle fleet.",
+        "pt_desc": "Efeito imediato: Expande a base naval de Taranto (+2 base naval, +1 forte costeiro na Apúlia), concede Arsenal de Taranto e +10 de XP.\n\nDragagem de canais, construção de docas secas e baterias costeiras fortificadas no Mar Piccolo e Mar Grande.",
         "ai": "base = 80"
     },
     "brindisi_venice_bases": {
         "cost": 5, "year": 1913, "available": "date > 1913.6.1",
-        "effect": "navy_experience = 10 add_ideas = ITA_ww1_adriatic_naval_stations",
+        "effect": "160 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } 157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } navy_experience = 20 add_tech_bonus = { name = ITA_ww1_submarine_detection bonus = 0.25 uses = 1 category = dd_tech }",
         "en_title": "Brindisi and Venice",
         "pt_title": "Brindisi e Veneza",
-        "en_desc": "Immediate effect: Refits forward destroyer bases at Brindisi and the historic Venetian Arsenal (+10 navy XP).\n\nPositioning fast flotillas and submarine pens at Brindisi to interdict the Otranto straits and at Venice to guard the northern lagoons.",
-        "pt_desc": "Efeito imediato: Reaparelha as bases avançadas de contratorpedeiros em Brindisi e no histórico Arsenal de Veneza (+10 de XP naval).\n\nPosiciona flotilhas velozes e bases de submarinos em Brindisi para vigiar o estreito de Otranto e em Veneza para cobrir as lagoas.",
+        "en_desc": "Immediate effect: Constructs 1 dockyard in Veneto (Venetian Arsenal), adds Adriatic Naval Stations idea and +10 navy XP.\n\nPositioning fast flotillas and submarine pens at Brindisi to interdict the Otranto straits and at Venice to guard the northern lagoons.",
+        "pt_desc": "Efeito imediato: Constrói 1 estaleiro no Vêneto (Arsenal de Veneza), concede Estações Navais do Adriático e +10 de XP naval.\n\nPosiciona flotilhas velozes e bases de submarinos em Brindisi para vigiar o estreito de Otranto e em Veneza para cobrir as lagoas.",
         "ai": "base = 75"
     },
     "submarine_programme": {
@@ -320,7 +320,7 @@ FOCI = {
     },
     "adriatic_watch": {
         "cost": 5, "year": 1914, "available": "date > 1914.8.1",
-        "effect": "navy_experience = 15 add_ideas = ITA_ww1_adriatic_patrol_network add_to_variable = { ita_ww1_irredentism = 5 }",
+        "effect": "navy_experience = 25 add_to_variable = { ita_ww1_irredentism = 5 } add_tech_bonus = { name = ITA_ww1_patrol_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes",
         "en_title": "The Adriatic Watch",
         "pt_title": "A Vigilância do Adriático",
         "en_desc": "Immediate effect: Deploys permanent surface patrols and sea mine barriers along the Italian east coast (+15 navy XP).\n\nGuarding the exposed Italian coastline against Austro-Hungarian shore bombardments from Pola and Cattaro.",
@@ -329,7 +329,7 @@ FOCI = {
     },
     "otranto_barrage": {
         "cost": 5, "year": 1915, "available": "date > 1915.6.1",
-        "effect": "navy_experience = 15 add_ideas = ITA_ww1_otranto_barrage_net",
+        "effect": "navy_experience = 25 add_tech_bonus = { name = ITA_ww1_asw_barrage bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25",
         "en_title": "The Otranto Barrage",
         "pt_title": "A Barragem de Otranto",
         "en_desc": "Immediate effect: Installs submarine net barriers, hydrophones, and armed drifters across the Strait of Otranto.\n\nCooperating with British drifter trawlers, the barrage bottles up German and Austrian U-boats inside the Adriatic, preventing free egress into the Mediterranean.",
@@ -338,7 +338,7 @@ FOCI = {
     },
     "battleship_fleet_in_being": {
         "cost": 5, "year": 1915, "available": "has_war = yes",
-        "effect": "navy_experience = 15 add_ideas = ITA_ww1_dreadnought_fleet_in_being add_political_power = 25",
+        "effect": "remove_ideas = ITA_ww1_regia_marina_cadres add_ideas = ITA_ww1_dreadnought_fleet_in_being navy_experience = 20 add_political_power = 25",
         "en_title": "Fleet in Being",
         "pt_title": "Esquadra em Potência",
         "en_desc": "Immediate effect: Preserves the primary dreadnought squadrons intact at Taranto (+15 navy XP, +25 PP).\n\nAdmiral Thaon di Revel's doctrine avoids risking irreplaceable battleships against mines and submarines, pinning down the enemy through menacing potential power.",
@@ -347,7 +347,7 @@ FOCI = {
     },
     "flotilla_warfare": {
         "cost": 5, "year": 1915, "available": "has_war = yes",
-        "effect": "navy_experience = 15 add_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 10",
+        "effect": "remove_ideas = ITA_ww1_regia_marina_cadres add_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 20 add_tech_bonus = { name = ITA_ww1_light_forces bonus = 0.25 uses = 1 category = naval_doctrine }",
         "en_title": "Flotilla Warfare",
         "pt_title": "Guerra de Flotilhas",
         "en_desc": "Immediate effect: Focuses resources on light craft, submarines, and stealth torpedo boats (+15 navy XP).\n\nRejecting conventional line-of-battle clashes, Italy wages an insidious, aggressive war of ambushes in Dalmatian island channels.",
@@ -356,7 +356,7 @@ FOCI = {
     },
     "mas_boats": {
         "cost": 5, "year": 1915, "available": "date > 1915.9.1",
-        "effect": "navy_experience = 20 add_ideas = ITA_ww1_mas_motor_torpedo_boats add_tech_bonus = { name = ITA_ww1_mas_boat_doctrine bonus = 0.25 uses = 1 category = naval_doctrine }",
+        "effect": "navy_experience = 25 add_tech_bonus = { name = ITA_ww1_mas_boat_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25",
         "en_title": "The MAS Boats",
         "pt_title": "As Lanchas MAS",
         "en_desc": "Immediate effect: Builds Motobarca Armata SVAN (MAS) motor torpedo boats; naval doctrine bonus (25%).\n\nHigh-speed wooden motorboats armed with two torpedoes slip silently past harbor boom defenses, immortalized by D'Annunzio's motto 'Memento Audere Semper'.",
@@ -365,7 +365,7 @@ FOCI = {
     },
     "adriatic_convoys": {
         "cost": 5, "year": 1916, "available": "date > 1916.1.1",
-        "effect": "navy_experience = 10 add_ideas = ITA_ww1_albanian_convoy_routes",
+        "effect": "navy_experience = 20 add_equipment_to_stockpile = { type = convoy_1 amount = 30 producer = ITA } add_political_power = 25",
         "en_title": "Adriatic Convoys",
         "pt_title": "Comboios do Adriático",
         "en_desc": "Immediate effect: Safeguards transport convoys sustaining Italian garrisons in Albania and the Aegean (+10 navy XP).\n\nMoving over two hundred thousand Italian and Serbian soldiers across the Adriatic without losing a single major troopship.",
@@ -383,11 +383,11 @@ FOCI = {
     },
     "human_torpedoes": {
         "cost": 5, "year": 1918, "available": "date > 1918.6.1",
-        "effect": "navy_experience = 20 add_ideas = ITA_ww1_mignatta_special_raiders navy_experience = 10",
+        "effect": "navy_experience = 30 add_tech_bonus = { name = ITA_ww1_mignatta_special_ops bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 30",
         "en_title": "The Human Torpedoes",
         "pt_title": "Os Torpedos Humanos (Mignatta)",
-        "en_desc": "Immediate effect: Special operations assault swimmers Paolucci and Rossetti sink the Austrian flagship Viribus Unitis at Pola.\n\nInventing the Mignatta steerable torpedo, daring naval divers infiltrate heavily mined enemy anchorages to attach limpet mines to enemy hulls.",
-        "pt_desc": "Efeito imediato: Os mergulhadores Paolucci e Rossetti afundam o navio-almirante austríaco Viribus Unitis em Pola.\n\nCom o torpedo tripulado Mignatta, mergulhadores de combate penetram na base de Pola e afundam o grande encouraçado inimigo.",
+        "en_desc": "Immediate effect: Special operations assault swimmers Paolucci and Rossetti sink the Austrian flagship Viribus Unitis at Pola (+20 navy XP).\n\nInventing the Mignatta steerable torpedo, daring naval divers infiltrate heavily mined enemy anchorages to attach limpet mines to enemy hulls.",
+        "pt_desc": "Efeito imediato: Os mergulhadores Paolucci e Rossetti afundam o navio-almirante austríaco Viribus Unitis em Pola (+20 de XP naval).\n\nCom o torpedo tripulado Mignatta, mergulhadores de combate penetram na base de Pola e afundam o grande encouraçado inimigo.",
         "ai": "base = 85"
     },
     "postwar_fleet_review": {
@@ -401,18 +401,18 @@ FOCI = {
     },
     "capital_ship_modernisation": {
         "cost": 5, "year": 1922, "available": "date > 1922.1.1",
-        "effect": "navy_experience = 20 add_ideas = ITA_ww1_capital_fleet_modernisation",
+        "effect": "remove_ideas = ITA_ww1_dreadnought_fleet_in_being remove_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 20 add_ideas = ITA_ww1_capital_fleet_modernisation",
         "en_title": "Capital Ship Modernisation",
         "pt_title": "Modernização dos Navios Capitais",
-        "en_desc": "Immediate effect: Refits existing dreadnoughts with upgraded boilers, fire-control towers, and anti-aircraft guns (+20 navy XP).\n\nModernising Conte di Cavour and Andrea Doria classes to maintain operational readiness within Washington treaty limits.",
-        "pt_desc": "Efeito imediato: Reforma os encouraçados com novas caldeiras, torres de telemetria e artilharia antiaérea (+20 de XP naval).\n\nModerniza os navios das classes Cavour e Doria para manter capacidade de combate no padrão das potências do pós-guerra.",
+        "en_desc": "Immediate effect: Modernises capital fleet for peacetime, replacing wartime doctrines (+20 navy XP).\n\nModernising Conte di Cavour and Andrea Doria classes to maintain operational readiness within Washington treaty limits.",
+        "pt_desc": "Efeito imediato: Moderniza a esquadra de batalha para o pós-guerra, substituindo doutrinas de conflito (+20 de XP naval).\n\nModerniza os navios das classes Cavour e Doria para manter capacidade de combate no padrão das potências do pós-guerra.",
         "ai": "base = 65"
     },
 
     # Aviation Branch (12 focuses)
     "aviators_battalion": {
         "cost": 5, "year": 1911, "available": "date > 1911.1.1",
-        "effect": "air_experience = 15 add_ideas = ITA_ww1_battaglione_aviatori add_political_power = 20",
+        "effect": "air_experience = 25 add_tech_bonus = { name = ITA_ww1_early_aviation bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25",
         "en_title": "The Aviators' Battalion",
         "pt_title": "O Batalhão de Aviadores",
         "en_desc": "Immediate effect: Founds the Battaglione Aviatori under the Army Engineers; grants +15 air XP.\n\nFormed at the Centocelle aerodrome near Rome, Italy's first military aviation unit trains pilots and tests early monoplanes.",
@@ -421,11 +421,11 @@ FOCI = {
     },
     "pilot_schools": {
         "cost": 5, "year": 1912, "available": "date > 1912.1.1",
-        "effect": "air_experience = 15 add_ideas = ITA_ww1_military_flight_schools",
+        "effect": "air_experience = 25 add_tech_bonus = { name = ITA_ww1_flight_training bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 20",
         "en_title": "Pilot Schools",
         "pt_title": "Escolas de Pilotagem",
-        "en_desc": "Immediate effect: Establishes military aviation academies at Cascina Malpensa and Centocelle (+15 air XP).\n\nStandardising pilot training curricula, navigation, and aerobatics to graduate hundreds of qualified military fliers.",
-        "pt_desc": "Efeito imediato: Estabelece academias de voo militar em Malpensa e Centocelle (+15 de XP aérea).\n\nPadroniza o treinamento de navegação e manobras para formar centenas de pilotos aviadores militares.",
+        "en_desc": "Immediate effect: Replaces experimental aviation battalion with formal flight academies (+15 air XP).\n\nStandardising pilot training curricula, navigation, and aerobatics to graduate hundreds of qualified military fliers.",
+        "pt_desc": "Efeito imediato: Substitui o batalhão experimental por academias formais de voo (+15 de XP aérea).\n\nPadroniza o treinamento de navegação e manobras para formar centenas de pilotos aviadores militares.",
         "ai": "base = 80"
     },
     "caproni_bombers": {
@@ -439,11 +439,11 @@ FOCI = {
     },
     "aeronautical_corps": {
         "cost": 5, "year": 1915, "available": "date > 1915.1.7",
-        "effect": "air_experience = 15 add_ideas = ITA_ww1_corpo_aeronautico_militare add_political_power = 25",
+        "effect": "air_experience = 25 add_tech_bonus = { name = ITA_ww1_air_recon bonus = 0.25 uses = 1 category = scout_plane } add_political_power = 25",
         "en_title": "The Military Aeronautical Corps",
         "pt_title": "O Corpo Aeronáutico Militar",
-        "en_desc": "Immediate effect: Reorganises military aviation into an autonomous combat arm (+15 air XP, +25 PP).\n\nForming independent observation, fighter, and heavy bombardment squadrons directly responsive to General Headquarters.",
-        "pt_desc": "Efeito imediato: Reorganiza a aviação em uma arma militar autônoma (+15 de XP aérea, +25 de PP).\n\nEstrutura esquadrilhas autônomas de caça, observação de artilharia e bombardeio pesado respondendo ao Alto Comando.",
+        "en_desc": "Immediate effect: Founds the autonomous wartime air corps, replacing training schools (+15 air XP, +25 PP).\n\nForming independent observation, fighter, and heavy bombardment squadrons directly responsive to General Headquarters.",
+        "pt_desc": "Efeito imediato: Funda o corpo aeronáutico de guerra autônomo em substituição às escolas (+15 de XP aérea, +25 de PP).\n\nEstrutura esquadrilhas autônomas de caça, observação de artilharia e bombardeio pesado respondendo ao Alto Comando.",
         "ai": "base = 80"
     },
     "isotta_engines": {
@@ -484,7 +484,7 @@ FOCI = {
     },
     "ace_squadrons": {
         "cost": 5, "year": 1917, "available": "date > 1917.1.1",
-        "effect": "air_experience = 20 add_ideas = ITA_ww1_baracca_ace_tradition air_experience = 10",
+        "effect": "air_experience = 30 add_tech_bonus = { name = ITA_ww1_baracca_fighter_tactics bonus = 0.25 uses = 1 category = light_fighter } country_event = { id = ww1_italy.62 days = 1 }",
         "en_title": "The Elite Squadrons",
         "pt_title": "Os Esquadrões de Elite",
         "en_desc": "Immediate effect: Major Francesco Baracca's 91st Squadron (Squadriglia degli Assi) achieves legendary renown (+20 air XP).\n\nDecorated with the Prancing Horse emblem (Cavallino Rampante), Baracca, Ruffo di Calabria, and Piccio down dozens of enemy aircraft.",
@@ -493,7 +493,7 @@ FOCI = {
     },
     "strategic_bombing": {
         "cost": 5, "year": 1917, "available": "date > 1917.6.1",
-        "effect": "air_experience = 20 add_ideas = ITA_ww1_douhet_air_doctrine add_tech_bonus = { name = ITA_ww1_strategic_bombing_theory bonus = 0.25 uses = 1 category = air_doctrine }",
+        "effect": "air_experience = 25 add_tech_bonus = { name = ITA_ww1_douhet_strategic_theory bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 25",
         "en_title": "Strategic Bombing",
         "pt_title": "Bombardeio Estratégico",
         "en_desc": "Immediate effect: Implements Colonel Giulio Douhet's theories of independent strategic air power (+20 air XP).\n\nConcentrated Caproni bomber wings strike Austrian rail junctions, naval arsenals at Pola, and ammunition dumps in deep rear areas.",
@@ -511,13 +511,13 @@ FOCI = {
     },
     "air_autonomy_debate": {
         "cost": 5, "year": 1919, "available": "date > 1919.1.1",
-        "effect": "air_experience = 15 add_ideas = ITA_ww1_independent_air_force_charter add_political_power = 25",
+        "effect": "159 = { add_building_construction = { type = air_base level = 2 instant_build = yes } } air_experience = 30 add_political_power = 40",
         "en_title": "The Air Autonomy Debate",
         "pt_title": "O Debate da Autonomia da Aviação",
-        "en_desc": "Immediate effect: Lays legislative foundations for an independent Air Ministry and the future Regia Aeronautica.\n\nEstablishing independent air budget lines, specialized test centers at Guidonia, and professional aeronautical officer careers.",
-        "pt_desc": "Efeito imediato: Estabelece as bases legais para a autonomia da futura Regia Aeronautica (+15 de XP aérea).\n\nCria dotações orçamentárias próprias, centros de teste aeronáutico e uma carreira militar independente para a aviação.",
+        "en_desc": "Immediate effect: Establishes foundations for an independent Air Ministry, transitioning from wartime air corps (+15 air XP, +25 PP).\n\nEstablishing independent air budget lines, specialized test centers at Guidonia, and professional aeronautical officer careers.",
+        "pt_desc": "Efeito imediato: Estabelece as bases do Ministério da Aeronáutica, em transição do corpo aéreo de guerra (+15 de XP aérea, +25 de PP).\n\nCria dotações orçamentárias próprias, centros de teste aeronáutico e uma carreira militar independente para a aviação.",
         "ai": "base = 75"
-    }
+    },
 }
 
 # Military events (16 events, all with >= 2 options)
@@ -804,14 +804,14 @@ IDEAS = {
     },
     "ITA_ww1_mountain_howitzers": {
         "pic": "ITA_ww1_idea_27",
-        "modifier": "artillery_attack_factor = 0.05 army_morale_factor = 0.03",
+        "modifier": "army_artillery_attack_factor = 0.05 army_morale_factor = 0.03",
         "en_name": "Alpine Mountain Howitzers", "pt_name": "Obuseiros de Montanha Alpinos",
         "en_desc": "Mule-transportable artillery pieces providing direct fire support on rocky precipices.",
         "pt_desc": "Canhões desmontáveis transportados por mulas fornecendo apoio direto nas escarpas rochosas."
     },
     "ITA_ww1_railway_mobilisation_plan": {
         "pic": "ITA_ww1_idea_28",
-        "modifier": "army_speed_factor = 0.05 reinforcement_rate = 0.05",
+        "modifier": "army_speed_factor = 0.05 land_reinforce_rate = 0.05",
         "en_name": "Railway Mobilization Grids", "pt_name": "Malha Ferroviária de Mobilização",
         "en_desc": "Efficient railway timetables concentrating armies smoothly along the frontier.",
         "pt_desc": "Escalas ferroviárias eficientes concentrando as divisões na fronteira com agilidade."
@@ -832,7 +832,7 @@ IDEAS = {
     },
     "ITA_ww1_methodical_firepower_doctrine": {
         "pic": "ITA_ww1_idea_31",
-        "modifier": "artillery_attack_factor = 0.08 army_core_defence_factor = 0.05",
+        "modifier": "army_artillery_attack_factor = 0.08 army_core_defence_factor = 0.05",
         "en_name": "Methodical Firepower Doctrine", "pt_name": "Doutrina Metódica de Fogo",
         "en_desc": "Systematic artillery bombardment and deliberate infantry advances conserving lives.",
         "pt_desc": "Bombardeio metódico de artilharia e avanço calculado de infantaria poupando baixas."
@@ -874,7 +874,7 @@ IDEAS = {
     },
     "ITA_ww1_defence_in_depth_piave": {
         "pic": "ITA_ww1_idea_5",
-        "modifier": "entrenchment_factor = 0.10 army_core_defence_factor = 0.10",
+        "modifier": "max_dig_in_factor = 0.10 army_core_defence_factor = 0.10",
         "en_name": "Piave Defense in Depth", "pt_name": "Defesa em Profundidade no Piave",
         "en_desc": "Layered defensive redoubts and pre-ranged artillery curtains shattering enemy bridgeheads.",
         "pt_desc": "Redutos defensivos em camadas e cortinas de artilharia afogando as ofensivas inimigas."
@@ -916,14 +916,14 @@ IDEAS = {
     },
     "ITA_ww1_taranto_naval_arsenal": {
         "pic": "ITA_ww1_idea_11",
-        "modifier": "naval_refit_speed = 0.10 production_speed_dockyard_factor = 0.05",
+        "modifier": "refit_speed = 0.10 industrial_capacity_dockyard = 0.05",
         "en_name": "Taranto Naval Arsenal", "pt_name": "Arsenal Naval de Taranto",
         "en_desc": "First-class dry docks and repair installations maintaining the battle fleet at high readiness.",
         "pt_desc": "Grandes docas secas e instalações de reparo mantendo a esquadra de batalha em prontidão."
     },
     "ITA_ww1_adriatic_naval_stations": {
         "pic": "ITA_ww1_idea_12",
-        "modifier": "patrol_coordination = 0.08 sub_detection = 0.05",
+        "modifier": "naval_coordination = 0.08 navy_submarine_detection_factor = 0.05",
         "en_name": "Adriatic Naval Stations", "pt_name": "Estuturas Navais do Adriático",
         "en_desc": "Dispersed destroyer and torpedo pens at Venice and Brindisi dominating coastal waters.",
         "pt_desc": "Bases avançadas de contratorpedeiros em Veneza e Brindisi dominando a costa oriental."
@@ -937,7 +937,7 @@ IDEAS = {
     },
     "ITA_ww1_otranto_barrage_net": {
         "pic": "ITA_ww1_idea_14",
-        "modifier": "sub_detection = 0.10 sub_retreat_speed = -0.10",
+        "modifier": "navy_submarine_detection_factor = 0.10 sub_retreat_speed = -0.10",
         "en_name": "The Otranto Submarine Net", "pt_name": "A Rede de Bloqueio de Otranto",
         "en_desc": "Deep netting and hydrophone barriers trapping enemy U-boats within the Adriatic.",
         "pt_desc": "Redes profundas com hidrofones prendendo os submarinos inimigos no mar Adriático."
@@ -951,21 +951,21 @@ IDEAS = {
     },
     "ITA_ww1_insidious_flotilla_doctrine": {
         "pic": "ITA_ww1_idea_16",
-        "modifier": "navy_screen_attack_factor = 0.08 torpedo_hit_chance = 0.05",
+        "modifier": "navy_screen_attack_factor = 0.08 naval_torpedo_hit_chance_factor = 0.05",
         "en_name": "Insidious Flotilla Warfare", "pt_name": "Guerra Insidiosa de Flotilhas",
         "en_desc": "Aggressive nighttime raids and concealed torpedo boat strikes in narrow island straits.",
         "pt_desc": "Ataques noturnos agressivos e emboscadas de torpedeiros nos canais das ilhas."
     },
     "ITA_ww1_mas_motor_torpedo_boats": {
         "pic": "ITA_ww1_idea_17",
-        "modifier": "torpedo_hit_chance = 0.08 convoy_raiding_efficiency_factor = 0.10",
+        "modifier": "naval_torpedo_hit_chance_factor = 0.08 convoy_raiding_efficiency_factor = 0.10",
         "en_name": "MAS Motor Torpedo Flotillas", "pt_name": "Flotilhas de Lanchas Rápidas MAS",
         "en_desc": "Daring high-speed wooden torpedo boats piercing enemy harbors and sinking capital ships.",
         "pt_desc": "Lanchas torpedeiras velozes de madeira penetrando portos e afundando encouraçados."
     },
     "ITA_ww1_albanian_convoy_routes": {
         "pic": "ITA_ww1_idea_18",
-        "modifier": "convoy_escort_efficiency = 0.10 sub_detection = 0.05",
+        "modifier": "convoy_escort_efficiency = 0.10 navy_submarine_detection_factor = 0.05",
         "en_name": "Albanian Sea Lifelines", "pt_name": "Linhas de Comboio da Albânia",
         "en_desc": "Flawless transport coordination sustaining Italian overseas armies across the straits.",
         "pt_desc": "Coordenação impecável de comboios garantindo suprimentos às forças de além-mar."
@@ -979,7 +979,7 @@ IDEAS = {
     },
     "ITA_ww1_capital_fleet_modernisation": {
         "pic": "ITA_ww1_idea_20",
-        "modifier": "navy_capital_ship_attack_factor = 0.05 naval_refit_speed = 0.08",
+        "modifier": "navy_capital_ship_attack_factor = 0.05 refit_speed = 0.08",
         "en_name": "Capital Ship Modernisation", "pt_name": "Modernização dos Navios Capitais",
         "en_desc": "Continuous upgrades in armor, anti-aircraft guns, and propulsion preserving fleet power.",
         "pt_desc": "Atualizações contínuas de blindagem, canhões antiaéreos e propulsão na esquadra."
@@ -993,7 +993,7 @@ IDEAS = {
     },
     "ITA_ww1_military_flight_schools": {
         "pic": "ITA_ww1_idea_22",
-        "modifier": "air_training_accident_chance = -0.10 air_experience_gain_factor = 0.05",
+        "modifier": "air_accidents_factor = -0.10 air_training_xp_gain_factor = 0.05",
         "en_name": "Military Aviation Academies", "pt_name": "Academias de Aviação Militar",
         "en_desc": "Rigorous pilot training producing thousands of skilled combat fliers for the front.",
         "pt_desc": "Treinamento rigoroso formando milhares de pilotos de combate qualificados para o front."
@@ -1014,14 +1014,14 @@ IDEAS = {
     },
     "ITA_ww1_douhet_air_doctrine": {
         "pic": "ITA_ww1_idea_25",
-        "modifier": "strategic_bomb_effect = 0.10 air_bombing_targetting = 0.05",
+        "modifier": "air_strategic_bomber_bombing_factor = 0.10 air_bombing_targetting = 0.05",
         "en_name": "Douhet Strategic Air Doctrine", "pt_name": "Doutrina Aérea Estratégica de Douhet",
         "en_desc": "Independent strategic bombers destroying enemy industrial centers and communications.",
         "pt_desc": "Bombardeiros estratégicos independentes atingindo os centros industriais do adversário."
     },
     "ITA_ww1_independent_air_force_charter": {
         "pic": "ITA_ww1_idea_26",
-        "modifier": "production_speed_air_base_factor = 0.05 air_doctrine_cost_factor = -0.10",
+        "modifier": "production_speed_buildings_factor = 0.05 air_doctrine_cost_factor = -0.10",
         "en_name": "Regia Aeronautica Foundations", "pt_name": "Bases da Regia Aeronautica",
         "en_desc": "Legislative charter creating an independent third armed service for the skies.",
         "pt_desc": "Estatuto legal criando a terceira força armada independente para o domínio dos céus."
