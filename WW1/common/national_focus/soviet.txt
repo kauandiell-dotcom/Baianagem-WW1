@@ -626,6 +626,7 @@ focus_tree = {
 			focus = SOV_abdication_at_pskov
 		}
 		completion_reward = {
+			remove_ideas = SOV_petrograd_soviet_order_no_1
 			add_ideas = SOV_petrograd_order_no_1
 			add_stability = -0.15
 			add_war_support = -0.10
@@ -990,7 +991,8 @@ focus_tree = {
 			focus = SOV_national_salvation_directory
 		}
 		completion_reward = {
-			add_ideas = SOV_draconian_discipline
+			remove_ideas = SOV_salvation_directory_rule
+			add_command_power = 40
 			add_war_support = 0.15
 			army_experience = 35
 		}
@@ -1299,6 +1301,8 @@ focus_tree = {
 			focus = SOV_reinforce_fundamental_laws
 		}
 				completion_reward = {
+			remove_ideas = SOV_undivided_autocratic_will
+			remove_ideas = SOV_black_hundreds_paramilitaries
 			add_political_power = 120
 			add_war_support = 0.10
 			add_stability = 0.10
@@ -2988,6 +2992,7 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 		}
 		completion_reward = {
 			add_tech_bonus = { name = inf_bonus bonus = 1.0 uses = 1 category = infantry_weapons }
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 	}
 
@@ -3221,7 +3226,8 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 			focus = SOV_the_shell_shortage_crisis
 		}
 		completion_reward = {
-			random_owned_state = { limit = { state = 219 } add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			223 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3259,6 +3265,7 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 		completion_reward = {
 			add_tech_bonus = { name = art_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = artillery }
 			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 300 producer = SOV }
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 	}
 
@@ -3276,7 +3283,8 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 		}
 		completion_reward = {
 			add_equipment_to_stockpile = { type = support_equipment_1 amount = 1500 }
-add_tech_bonus = { name = SOV_sokolov_wheeled_maxim_mounts bonus = 0.50 uses = 1 category = infantry_weapons }
+			add_tech_bonus = { name = SOV_sokolov_wheeled_maxim_mounts bonus = 0.50 uses = 1 category = infantry_weapons }
+			223 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3295,7 +3303,8 @@ add_tech_bonus = { name = SOV_sokolov_wheeled_maxim_mounts bonus = 0.50 uses = 1
 		}
 		completion_reward = {
 			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 500 }
-add_tech_bonus = { name = SOV_m1902_76mm_putilov_divisional_gun bonus = 0.50 uses = 1 category = artillery }
+			add_tech_bonus = { name = SOV_m1902_76mm_putilov_divisional_gun bonus = 0.50 uses = 1 category = artillery }
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 	}
 
@@ -3315,6 +3324,7 @@ add_tech_bonus = { name = SOV_m1902_76mm_putilov_divisional_gun bonus = 0.50 use
 			add_tech_bonus = { name = art_tech bonus = 1.0 ahead_reduction = 1 uses = 1 category = artillery }
 			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 250 producer = SOV }
 			army_experience = 25
+			217 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3395,8 +3405,9 @@ add_tech_bonus = { name = SOV_gas_warfare_and_zelinsky_masks bonus = 0.50 uses =
 			focus = SOV_brusilov_breakthrough_1916
 		}
 		completion_reward = {
+			remove_ideas = SOV_sukhomlinov_administration
 			army_experience = 35
-add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days = 180 folder = land }
+			add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days = 180 folder = land }
 		}
 	}
 
@@ -3434,6 +3445,7 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 		completion_reward = {
 			add_tech_bonus = { name = SOV_fedorov_avtomat_early_rifle bonus = .30 uses = 1 category = infantry_weapons }
 			army_experience = 5
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 			available = { date > 1915.12.31 }
 	}
@@ -3453,6 +3465,7 @@ add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days
 		completion_reward = {
 			add_tech_bonus = { name = armor_bonus bonus = 1.0 uses = 1 category = armor }
 			add_equipment_to_stockpile = { type = armored_car_equipment_1 amount = 100 producer = SOV }
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3806,6 +3819,7 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 			focus = SOV_pan_slavic_triumph
 		}
 				completion_reward = {
+			remove_ideas = SOV_pan_slavic_patronage
 			add_stability = 0.10
 			add_war_support = 0.15
 			add_political_power = 100
@@ -4663,8 +4677,9 @@ add_tech_bonus = { name = SOV_synchronized_aerial_machine_guns bonus = 0.50 uses
 		}
 		completion_reward = {
 			add_war_support = 0.15
+			add_stability = 0.05
 			army_experience = 40
-			add_ideas = SOV_shock_battalions_spirit
+			add_command_power = 30
 		}
 	}
 

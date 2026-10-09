@@ -77,6 +77,7 @@ TAG_TO_OOB = {
     "ITA": UNITS_DIR / "ITA_1936_generic.txt",
     "ENG": UNITS_DIR / "ENG_1936_generic.txt",
     "RUS": UNITS_DIR / "SOV_1936_generic.txt",
+    "SOV": UNITS_DIR / "SOV_1936_generic.txt",
     "TUR": UNITS_DIR / "TUR_1936_generic.txt",
 }
 
@@ -86,7 +87,8 @@ TAG_TO_HISTORY = {
     "FRA": COUNTRIES_DIR / "FRA - France.txt",
     "ITA": COUNTRIES_DIR / "ITA - Italy.txt",
     "ENG": COUNTRIES_DIR / "ENG - Britain.txt",
-    "RUS": COUNTRIES_DIR / "SOV - Soviet.txt",
+    "RUS": COUNTRIES_DIR / "SOV - Soviet union.txt",
+    "SOV": COUNTRIES_DIR / "SOV - Soviet union.txt",
     "TUR": COUNTRIES_DIR / "TUR - Turkey.txt",
 }
 
@@ -776,6 +778,19 @@ def analyze_focus(node: FocusNode) -> None:
             wing = 'ARMY'
         else:
             wing = 'DIPLOMACY'
+    elif node.id.startswith('SOV_') or node.id.startswith('RUS_'):
+        if x <= 12:
+            wing = 'POLITICAL'
+        elif 13 <= x <= 32:
+            wing = 'POSTWAR'
+        elif 33 <= x <= 55:
+            wing = 'ECONOMIC'
+        elif 56 <= x <= 80:
+            wing = 'ARMY'
+        elif 81 <= x <= 100:
+            wing = 'NAVY'
+        else:
+            wing = 'DIPLOMACY'
     elif x <= 10:
         wing = 'POLITICAL'
     elif 16 <= x <= 38:
@@ -1064,7 +1079,7 @@ def analyze_spirits(tag: str, tree_nodes: Dict[str, FocusNode]) -> SpiritStackin
     report.unpaired_ideas_added = unpaired
     # Top-bar overflow estimate: Starting ideas + added ideas
     report.max_simultaneous_estimate = report.total_starting_count + total_added
-    if report.total_starting_count >= 6:
+    if report.total_starting_count > 6:
         report.has_topbar_overflow_risk = True
         report.powercreep_warnings.append(f"Comeco de jogo com {report.total_starting_count} ideias ativas. Risco de poluir a barra superior.")
 
@@ -1811,6 +1826,19 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
                 wing_map['Marinha'].append(node)
             elif 60 <= node.x <= 79:
                 wing_map['Exército'].append(node)
+            else:
+                wing_map['Diplomacia'].append(node)
+        elif node.id.startswith('SOV_') or node.id.startswith('RUS_') or tag in ('SOV', 'RUS'):
+            if node.x <= 12:
+                wing_map['Político'].append(node)
+            elif 13 <= node.x <= 32:
+                wing_map['Pós-Guerra'].append(node)
+            elif 33 <= node.x <= 55:
+                wing_map['Econômico'].append(node)
+            elif 56 <= node.x <= 80:
+                wing_map['Exército'].append(node)
+            elif 81 <= node.x <= 100:
+                wing_map['Marinha'].append(node)
             else:
                 wing_map['Diplomacia'].append(node)
         elif node.x <= 10:
