@@ -1,0 +1,189 @@
+# ==============================================================================
+# OTTOMAN EMPIRE HISTORICAL & NARRATIVE EVENTS (WW1 1911-1918)
+# ==============================================================================
+
+add_namespace = ww1_ottoman
+
+# ------------------------------------------------------------------------------
+# 1. A Crise da Requisição dos Dreadnoughts Britânicos
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.1
+	title = ww1_ottoman.1.t
+	desc = ww1_ottoman.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.1.a
+		ai_chance = { factor = 85 }
+		add_war_support = 0.15
+		add_political_power = 60
+		add_ideas = TUR_dreadnought_national_fervor
+		set_country_flag = TUR_dreadnoughts_confiscated_anger
+	}
+
+	option = {
+		name = ww1_ottoman.1.b
+		ai_chance = { factor = 15 }
+		add_political_power = 40
+		add_stability = 0.05
+		set_country_flag = TUR_dreadnoughts_protest_diplomatic
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 2. A Chegada do SMS Goeben e Breslau aos Dardanelos
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.10
+	title = ww1_ottoman.10.t
+	desc = ww1_ottoman.10.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.10.a
+		ai_chance = { factor = 90 }
+		add_ideas = TUR_yavuz_and_midilli_supremacy
+		add_war_support = 0.10
+		navy_experience = 30
+		set_country_flag = TUR_goeben_welcomed
+	}
+
+	option = {
+		name = ww1_ottoman.10.b
+		ai_chance = { factor = 10 }
+		add_stability = 0.10
+		add_political_power = 50
+		set_country_flag = TUR_goeben_interned
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 3. O Tratado Secreto Teuto-Otomano
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.12
+	title = ww1_ottoman.12.t
+	desc = ww1_ottoman.12.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.12.a
+		add_political_power = 80
+		add_opinion_modifier = { target = GER modifier = positive_75 }
+		set_country_flag = TUR_treaty_ratified
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 4. A Incursão de Souchon no Mar Negro
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.15
+	title = ww1_ottoman.15.t
+	desc = ww1_ottoman.15.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.15.a
+		ai_chance = { factor = 90 }
+		add_war_support = 0.15
+		declare_war_on = { target = RUS type = annex_everything }
+		set_country_flag = TUR_black_sea_raid_ratified
+	}
+
+	option = {
+		name = ww1_ottoman.15.b
+		ai_chance = { factor = 10 }
+		add_stability = -0.10
+		add_political_power = -50
+		set_country_flag = TUR_black_sea_raid_repudiated
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 5. A Proclamação da Guerra Santa (Cihad-ı Ekber)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.20
+	title = ww1_ottoman.20.t
+	desc = ww1_ottoman.20.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.20.a
+		add_war_support = 0.15
+		add_manpower = 25000
+		custom_effect_tooltip = TUR_tt_jihad_appeal_effect
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 6. O Triunfo Épico de Galípoli
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.25
+	title = ww1_ottoman.25.t
+	desc = ww1_ottoman.25.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.25.a
+		add_war_support = 0.15
+		add_stability = 0.15
+		army_experience = 40
+		add_ideas = TUR_canakkale_impenetrable_bastion
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 7. A Capitulação Britânica em Kut al-Amara
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.30
+	title = ww1_ottoman.30.t
+	desc = ww1_ottoman.30.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.30.a
+		add_war_support = 0.15
+		add_stability = 0.10
+		army_experience = 35
+		add_ideas = TUR_kut_al_amara_triumph
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 8. O Tratado de Brest-Litovsk & A Restituição do Cáucaso
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.35
+	title = ww1_ottoman.35.t
+	desc = ww1_ottoman.35.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.35.a
+		add_political_power = 100
+		add_stability = 0.10
+		add_war_support = 0.10
+		custom_effect_tooltip = TUR_tt_brest_litovsk_kars_ardahan
+	}
+}

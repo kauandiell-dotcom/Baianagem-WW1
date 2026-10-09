@@ -1,0 +1,253 @@
+# ==============================================================================
+# OTTOMAN EMPIRE DECISIONS (1911-1918)
+# ==============================================================================
+
+TUR_imperial_cohesion_category = {
+
+	# Subsidiar Logística de Grãos da Anatólia
+	TUR_subsidize_anatolian_grain = {
+		icon = GFX_decision_generic_agriculture
+		available = {
+			has_war = yes
+		}
+		visible = {
+			has_completed_focus = TUR_anatolian_grain_reserves
+		}
+		cost = 30
+		days_remove = 180
+		modifier = {
+			supply_factor = 0.10
+			stability_factor = 0.05
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Conceder Autonomia a Notáveis Árabes
+	TUR_concede_arab_autonomy_reform = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			NOT = { has_country_flag = TUR_arab_autonomy_granted }
+		}
+		visible = {
+			has_completed_focus = TUR_arab_congress_dialogue
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = TUR_arab_autonomy_granted
+			add_stability = 0.10
+			add_ideas = TUR_arab_ottoman_federal_compact
+			if = {
+				limit = { has_idea = TUR_arab_unrest_smoldering }
+				remove_ideas = TUR_arab_unrest_smoldering
+			}
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Desdobrar a Gendarmaria Contra Agitação Clandestina
+	TUR_deploy_gendarmerie_sweep = {
+		icon = GFX_decision_generic_police_action
+		available = {
+			has_completed_focus = TUR_gendarmerie_modernization_corps
+		}
+		visible = {
+			tag = TUR
+		}
+		cost = 25
+		days_remove = 120
+		modifier = {
+			resistance_target = -0.20
+			compliance_growth_focus_factor = 0.10
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+}
+
+TUR_debt_and_capitulations_category = {
+
+	# Confiscar Armazéns da Régie Francesa do Tabaco
+	TUR_confiscate_tobacco_regie = {
+		icon = GFX_decision_generic_factory
+		available = {
+			has_completed_focus = TUR_unilateral_abrogation_of_capitulations
+			NOT = { has_country_flag = TUR_regie_seized }
+		}
+		visible = {
+			has_completed_focus = TUR_unilateral_abrogation_of_capitulations
+		}
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = TUR_regie_seized
+			add_political_power = 60
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Emitir Títulos de Ouro da Lira Otomana
+	TUR_issue_gold_lira_war_bonds = {
+		icon = GFX_decision_generic_economy
+		available = {
+			has_completed_focus = TUR_national_bank_osmanli_itibar
+			has_war = yes
+		}
+		visible = {
+			has_completed_focus = TUR_national_bank_osmanli_itibar
+		}
+		cost = 35
+		days_remove = 365
+		modifier = {
+			consumer_goods_factor = -0.05
+			industrial_capacity_factory = 0.08
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Tarifas Protetivas nos Portos do Império
+	TUR_impose_protective_port_tariffs = {
+		icon = GFX_decision_generic_trade
+		available = {
+			has_completed_focus = TUR_protective_tariff_code
+		}
+		visible = {
+			has_completed_focus = TUR_protective_tariff_code
+		}
+		cost = 30
+		days_remove = 180
+		modifier = {
+			trade_opinion_factor = -0.15
+			production_speed_industrial_complex_factor = 0.10
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+}
+
+TUR_war_theaters_category = {
+
+	# Equipamento de Inverno para o 3º Exército no Cáucaso
+	TUR_supply_winter_gear_caucasus = {
+		icon = GFX_decision_generic_military_operation
+		available = {
+			has_war_with = RUS
+			NOT = { has_country_flag = TUR_winter_gear_supplied }
+		}
+		visible = {
+			has_completed_focus = TUR_caucasus_logistics_preparation
+		}
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = TUR_winter_gear_supplied
+			add_ideas = TUR_caucasus_alpine_preparations
+			army_experience = 20
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Caravana de Camelos com Água Potável pelo Sinai
+	TUR_organize_sinai_water_caravans = {
+		icon = GFX_decision_generic_cavalry
+		available = {
+			has_war_with = ENG
+			NOT = { has_country_flag = TUR_sinai_caravans_active }
+		}
+		visible = {
+			has_completed_focus = TUR_cross_the_sinai_desert
+		}
+		cost = 35
+		days_remove = 180
+		modifier = {
+			out_of_supply_factor = -0.20
+			attrition = -0.15
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Fortificar Redutos do Tigre em Kut al-Amara
+	TUR_fortify_tigris_redoubts_kut = {
+		icon = GFX_decision_generic_bunker
+		available = {
+			has_war_with = ENG
+		}
+		visible = {
+			has_completed_focus = TUR_defense_of_kut_al_amara
+		}
+		cost = 30
+		fire_only_once = yes
+		complete_effect = {
+			291 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+			army_experience = 15
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Escolta de Trens Blindados na Ferrovia de Hejaz
+	TUR_hejaz_armored_train_escorts = {
+		icon = GFX_decision_generic_railroads
+		available = {
+			has_completed_focus = TUR_protect_hejaz_railway_garrisons
+		}
+		visible = {
+			tag = TUR
+		}
+		cost = 25
+		days_remove = 180
+		modifier = {
+			supply_consumption_factor = -0.08
+			resistance_target = -0.15
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Apelo da Guerra Santa aos Muçulmanos do Egito e da Índia
+	TUR_proclaim_global_jihad_appeal = {
+		icon = GFX_decision_generic_propaganda
+		available = {
+			has_war = yes
+			has_completed_focus = TUR_proclamation_of_jihad_readiness
+			NOT = { has_country_flag = TUR_jihad_proclaimed }
+		}
+		visible = {
+			has_completed_focus = TUR_proclamation_of_jihad_readiness
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = TUR_jihad_proclaimed
+			country_event = { id = ww1_ottoman.20 }
+			add_war_support = 0.15
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+}

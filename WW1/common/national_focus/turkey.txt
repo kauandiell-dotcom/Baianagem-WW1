@@ -1,1 +1,3909 @@
-# MBR 1911: intentionally empty; every country uses generic_focus.
+# OTTOMAN EMPIRE (TUR) WW1 NATIONAL FOCUS TREE (1911-1918)
+# Reconstructed Major Nation content with 5 non-colliding visual wings.
+focus_tree = {
+	id = ottoman_focus
+	default = no
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+	continuous_focus_position = { x = 40 y = 3500 }
+	initial_show_position = { x = 8 y = 0 }
+	shortcut = {
+		name = TUR_ww1_shortcut_politics
+		target = TUR_second_constitutional_era_politics
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = TUR_ww1_shortcut_economy
+		target = TUR_economic_sovereignty_drive
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = TUR_ww1_shortcut_military
+		target = TUR_reorganizing_the_imperial_army
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = TUR_ww1_shortcut_diplomacy
+		target = TUR_sublime_porte_foreign_policy
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = TUR_ww1_shortcut_war_theaters
+		target = TUR_the_war_for_imperial_survival
+		scroll_wheel_factor = 0.5
+	}
+
+	focus = {
+		id = TUR_second_constitutional_era_politics
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 8
+		y = 0
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			set_country_flag = TUR_constitutional_reforms_begun
+		}
+	}
+
+	focus = {
+		id = TUR_cup_vanguard
+		icon = GFX_TUR_three_pashas
+		cost = 5
+		x = 3
+		y = 1
+		prerequisite = { focus = TUR_second_constitutional_era_politics }
+		mutually_exclusive = { focus = TUR_hurriyet_ve_itilaf_victory focus = TUR_imperial_prerogative_of_mehmed_v }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = TUR_cup_vanguard_centralization
+			remove_ideas = TUR_second_constitutional_era
+			add_popularity = { ideology = fascism popularity = 0.15 }
+		}
+	}
+
+	focus = {
+		id = TUR_talat_interior_ministry
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 2
+		y = 2
+		prerequisite = { focus = TUR_cup_vanguard }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_enver_military_drive
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 4
+		y = 2
+		prerequisite = { focus = TUR_cup_vanguard }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = TUR_cemal_public_order
+		icon = GFX_TUR_jandarma_genel_komutanlgi
+		cost = 5
+		x = 3
+		y = 3
+		prerequisite = { focus = TUR_talat_interior_ministry focus = TUR_enver_military_drive }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_curb_unrest
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_bab_i_ali_consolidation
+		icon = GFX_focus_generic_authoritarian
+		cost = 5
+		x = 3
+		y = 4
+		prerequisite = { focus = TUR_cemal_public_order }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_teskilat_i_mahsusa
+		icon = GFX_focus_generic_intelligence_agency
+		cost = 5
+		x = 1
+		y = 5
+		prerequisite = { focus = TUR_bab_i_ali_consolidation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INTELLIGENCE }
+		completion_reward = {
+			add_ideas = TUR_teskilat_i_mahsusa_network
+			create_operative_agent = yes
+		}
+	}
+
+	focus = {
+		id = TUR_centralist_provincial_governors
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 3
+		y = 5
+		prerequisite = { focus = TUR_bab_i_ali_consolidation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = TUR_paramilitary_youth_unions
+		icon = GFX_TUR_1914_law_of_military_obligation
+		cost = 5
+		x = 5
+		y = 5
+		prerequisite = { focus = TUR_bab_i_ali_consolidation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 25000
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_national_bourgeoisie_creation
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 2
+		y = 6
+		prerequisite = { focus = TUR_centralist_provincial_governors }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_secular_law_codes
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 4
+		y = 6
+		prerequisite = { focus = TUR_centralist_provincial_governors }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = -0.05
+		}
+	}
+
+	focus = {
+		id = TUR_turkification_of_trade
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 1
+		y = 7
+		prerequisite = { focus = TUR_national_bourgeoisie_creation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+			consumer_goods_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = TUR_milli_iktisat_policies
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 3
+		y = 7
+		prerequisite = { focus = TUR_national_bourgeoisie_creation focus = TUR_secular_law_codes }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_state_controlled_newspapers
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 5
+		y = 7
+		prerequisite = { focus = TUR_paramilitary_youth_unions }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_sublime_porte_war_council
+		icon = GFX_TUR_office_of_war_industry
+		cost = 5
+		x = 3
+		y = 8
+		prerequisite = { focus = TUR_milli_iktisat_policies }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			army_experience = 30
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = TUR_hurriyet_ve_itilaf_victory
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 7
+		y = 1
+		prerequisite = { focus = TUR_second_constitutional_era_politics }
+		mutually_exclusive = { focus = TUR_cup_vanguard focus = TUR_imperial_prerogative_of_mehmed_v }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = TUR_hurriyet_ve_itilaf_governance
+			remove_ideas = TUR_second_constitutional_era
+			add_popularity = { ideology = democratic popularity = 0.20 }
+		}
+	}
+
+	focus = {
+		id = TUR_prince_sabahaddin_doctrine
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 6
+		y = 2
+		prerequisite = { focus = TUR_hurriyet_ve_itilaf_victory }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_provincial_self_governance
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 8
+		y = 2
+		prerequisite = { focus = TUR_hurriyet_ve_itilaf_victory }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_provincial_autonomy
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_empower_minority_bourgeoisie
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 6
+		y = 3
+		prerequisite = { focus = TUR_prince_sabahaddin_doctrine }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_anglo_french_constitutionalism
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 8
+		y = 3
+		prerequisite = { focus = TUR_provincial_self_governance }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = positive_50 }
+			add_opinion_modifier = { target = FRA modifier = positive_50 }
+		}
+	}
+
+	focus = {
+		id = TUR_pluralistic_parliament
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 7
+		y = 4
+		prerequisite = { focus = TUR_empower_minority_bourgeoisie focus = TUR_anglo_french_constitutionalism }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			set_politics = { ruling_party = democratic elections_allowed = yes }
+			add_stability = 0.10
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = TUR_judicial_and_press_liberties
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 6
+		y = 5
+		prerequisite = { focus = TUR_pluralistic_parliament }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_millet_equality_charter
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 8
+		y = 5
+		prerequisite = { focus = TUR_pluralistic_parliament }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			custom_effect_tooltip = TUR_tt_millet_equality
+		}
+	}
+
+	focus = {
+		id = TUR_civic_ottomanism_restored
+		icon = GFX_TUR_continuing_ottomanism_efforts
+		cost = 5
+		x = 7
+		y = 6
+		prerequisite = { focus = TUR_judicial_and_press_liberties focus = TUR_millet_equality_charter }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = TUR_decentralized_tax_farming_abolition
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 7
+		y = 7
+		prerequisite = { focus = TUR_civic_ottomanism_restored }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			consumer_goods_factor = -0.03
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_liberal_parliamentary_hegemony
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 7
+		y = 8
+		prerequisite = { focus = TUR_decentralized_tax_farming_abolition }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_imperial_prerogative_of_mehmed_v
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 11
+		y = 1
+		prerequisite = { focus = TUR_second_constitutional_era_politics }
+		mutually_exclusive = { focus = TUR_cup_vanguard focus = TUR_hurriyet_ve_itilaf_victory }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = TUR_palace_autocracy_restored
+			remove_ideas = TUR_second_constitutional_era
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = TUR_loyal_viziers_cabinet
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 10
+		y = 2
+		prerequisite = { focus = TUR_imperial_prerogative_of_mehmed_v }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_traditional_ulema_alliance
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 12
+		y = 2
+		prerequisite = { focus = TUR_imperial_prerogative_of_mehmed_v }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_dissolve_fractious_assembly
+		icon = GFX_focus_generic_authoritarian
+		cost = 5
+		x = 11
+		y = 3
+		prerequisite = { focus = TUR_loyal_viziers_cabinet focus = TUR_traditional_ulema_alliance }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_imperial_bodyguard_regiments
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 10
+		y = 4
+		prerequisite = { focus = TUR_dissolve_fractious_assembly }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 20000
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = TUR_reinforce_the_porte
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 12
+		y = 4
+		prerequisite = { focus = TUR_dissolve_fractious_assembly }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = TUR_sultans_decree_prerogatives
+		icon = GFX_focus_generic_authoritarian
+		cost = 5
+		x = 11
+		y = 5
+		prerequisite = { focus = TUR_imperial_bodyguard_regiments focus = TUR_reinforce_the_porte }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 90
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_court_appointed_valis
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 11
+		y = 6
+		prerequisite = { focus = TUR_sultans_decree_prerogatives }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			conscription_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_divan_council_restored
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 11
+		y = 7
+		prerequisite = { focus = TUR_court_appointed_valis }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_absolute_caliphal_authority
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 11
+		y = 8
+		prerequisite = { focus = TUR_divan_council_restored }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			add_stability = 0.10
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = TUR_arab_congress_dialogue
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 14
+		y = 1
+		prerequisite = { focus = TUR_second_constitutional_era_politics }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = TUR_tt_arab_talks
+		}
+	}
+
+	focus = {
+		id = TUR_beirut_and_damascus_charters
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 13
+		y = 2
+		prerequisite = { focus = TUR_arab_congress_dialogue }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = TUR_arab_ottoman_federal_compact
+			remove_ideas = TUR_arab_unrest_smoldering
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_dual_monarchy_protocol
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 15
+		y = 2
+		prerequisite = { focus = TUR_arab_congress_dialogue }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_guaranteed_arab_cabinet_seats
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 14
+		y = 3
+		prerequisite = { focus = TUR_beirut_and_damascus_charters focus = TUR_dual_monarchy_protocol }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_loyal_tribal_federation
+		icon = GFX_focus_generic_cavalry
+		cost = 5
+		x = 13
+		y = 4
+		prerequisite = { focus = TUR_guaranteed_arab_cabinet_seats }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 30000
+			custom_effect_tooltip = TUR_tt_tribal_support
+		}
+	}
+
+	focus = {
+		id = TUR_caliphate_and_arab_solidarity
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 15
+		y = 4
+		prerequisite = { focus = TUR_guaranteed_arab_cabinet_seats }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_bilingual_imperial_administration
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 14
+		y = 5
+		prerequisite = { focus = TUR_loyal_tribal_federation focus = TUR_caliphate_and_arab_solidarity }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			compliance_growth_focus_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_sharifian_protectorate_accord
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 13
+		y = 6
+		prerequisite = { focus = TUR_bilingual_imperial_administration }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_sharif_loyalty
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_mesopotamian_notables_council
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 15
+		y = 6
+		prerequisite = { focus = TUR_bilingual_imperial_administration }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			291 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_syrian_economic_integration
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 14
+		y = 7
+		prerequisite = { focus = TUR_sharifian_protectorate_accord focus = TUR_mesopotamian_notables_council }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			554 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_pan_islamic_imperial_brotherhood
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 14
+		y = 8
+		prerequisite = { focus = TUR_syrian_economic_integration }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = TUR_shrine_of_eyup_pilgrimage
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 8
+		y = 9
+		prerequisite = { focus = TUR_sublime_porte_war_council focus = TUR_liberal_parliamentary_hegemony focus = TUR_absolute_caliphal_authority focus = TUR_pan_islamic_imperial_brotherhood }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_mobilize_sufi_brotherhoods
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 6
+		y = 10
+		prerequisite = { focus = TUR_shrine_of_eyup_pilgrimage }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			subversive_activites_upkeep = -0.20
+		}
+	}
+
+	focus = {
+		id = TUR_holy_cities_custodianship
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 10
+		y = 10
+		prerequisite = { focus = TUR_shrine_of_eyup_pilgrimage }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			679 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_proclamation_of_jihad_readiness
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 8
+		y = 11
+		prerequisite = { focus = TUR_mobilize_sufi_brotherhoods focus = TUR_holy_cities_custodianship }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			set_country_flag = TUR_ready_for_holy_war
+		}
+	}
+
+	focus = {
+		id = TUR_imperial_cohesion_ascendant
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 8
+		y = 12
+		prerequisite = { focus = TUR_proclamation_of_jihad_readiness }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			conscription_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_legacy_of_osman_eternal
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 8
+		y = 13
+		prerequisite = { focus = TUR_imperial_cohesion_ascendant }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			army_core_defence_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_economic_sovereignty_drive
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 25
+		y = 0
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 75
+			consumer_goods_factor = -0.02
+			set_country_flag = TUR_economy_program_begun
+		}
+	}
+
+	focus = {
+		id = TUR_audit_opda_administration
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 19
+		y = 1
+		prerequisite = { focus = TUR_economic_sovereignty_drive }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_renegotiate_creditor_coupons
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 19
+		y = 2
+		prerequisite = { focus = TUR_audit_opda_administration }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = TUR_debt_renegotiated
+			remove_ideas = TUR_sick_man_debt
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_unilateral_abrogation_of_capitulations
+		icon = GFX_TUR_abolished_the_capitulations
+		cost = 5
+		x = 19
+		y = 3
+		prerequisite = { focus = TUR_renegotiate_creditor_coupons }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = TUR_capitulations_abrogated
+			remove_ideas = TUR_debt_renegotiated
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_protective_tariff_code
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 18
+		y = 4
+		prerequisite = { focus = TUR_unilateral_abrogation_of_capitulations }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_protective_tariffs
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_national_bank_osmanli_itibar
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 20
+		y = 4
+		prerequisite = { focus = TUR_unilateral_abrogation_of_capitulations }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = TUR_financial_sovereignty
+			remove_ideas = TUR_capitulations_abrogated
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = TUR_confiscate_foreign_monopolies
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 18
+		y = 5
+		prerequisite = { focus = TUR_protective_tariff_code }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_monetary_autonomy_and_gold_lira
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 20
+		y = 5
+		prerequisite = { focus = TUR_national_bank_osmanli_itibar }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			consumer_goods_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = TUR_tobacco_regie_liquidation
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 19
+		y = 6
+		prerequisite = { focus = TUR_confiscate_foreign_monopolies focus = TUR_monetary_autonomy_and_gold_lira }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_salt_monopoly_nationalization
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 19
+		y = 7
+		prerequisite = { focus = TUR_tobacco_regie_liquidation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			consumer_goods_factor = -0.02
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_complete_fiscal_liberation
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 19
+		y = 8
+		prerequisite = { focus = TUR_salt_monopoly_nationalization }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 120
+			industrial_capacity_factory = 0.08
+		}
+	}
+
+	focus = {
+		id = TUR_taurus_and_amanus_tunnels
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 24
+		y = 1
+		prerequisite = { focus = TUR_economic_sovereignty_drive }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			799 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_ideas = TUR_baghdad_railway_artery
+		}
+	}
+
+	focus = {
+		id = TUR_konya_aleppo_trunk_line
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 23
+		y = 2
+		prerequisite = { focus = TUR_taurus_and_amanus_tunnels }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			677 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			343 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_aleppo_to_mosul_extension
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 25
+		y = 2
+		prerequisite = { focus = TUR_taurus_and_amanus_tunnels }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			676 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_mosul_baghdad_railhead
+		icon = GFX_TUR_baghdad_industrialization
+		cost = 5
+		x = 24
+		y = 3
+		prerequisite = { focus = TUR_konya_aleppo_trunk_line focus = TUR_aleppo_to_mosul_extension }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			291 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_basra_terminus_settlement
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 22
+		y = 4
+		prerequisite = { focus = TUR_mosul_baghdad_railhead }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1011 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			1011 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_hejaz_railway_expansion
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 26
+		y = 4
+		prerequisite = { focus = TUR_mosul_baghdad_railhead }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			679 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_ideas = TUR_hejaz_pilgrim_railway
+		}
+	}
+
+	focus = {
+		id = TUR_syrian_feeder_lines
+		icon = GFX_focus_generic_railroads
+		cost = 5
+		x = 23
+		y = 5
+		prerequisite = { focus = TUR_basra_terminus_settlement }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			553 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_medina_to_mecca_link
+		icon = GFX_focus_generic_railroads
+		cost = 5
+		x = 25
+		y = 5
+		prerequisite = { focus = TUR_hejaz_railway_expansion }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			856 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_jerusalem_jaffa_railway_upgrade
+		icon = GFX_focus_generic_railroads
+		cost = 5
+		x = 24
+		y = 6
+		prerequisite = { focus = TUR_syrian_feeder_lines focus = TUR_medina_to_mecca_link }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			454 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_anatolian_railway_loop
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 24
+		y = 7
+		prerequisite = { focus = TUR_jerusalem_jaffa_railway_upgrade }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			348 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			army_speed_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_railway_telegraph_integration
+		icon = GFX_TUR_civil_communitcations_improvements
+		cost = 5
+		x = 24
+		y = 8
+		prerequisite = { focus = TUR_anatolian_railway_loop }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			signal_company_factor = 0.15
+			reinforce_rate = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_zonguldak_coal_basin_drives
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 28
+		y = 1
+		prerequisite = { focus = TUR_economic_sovereignty_drive }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			344 = { add_resource = { type = steel amount = 12 } }
+			344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_ergani_copper_mines
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 27
+		y = 2
+		prerequisite = { focus = TUR_zonguldak_coal_basin_drives }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			354 = { add_resource = { type = steel amount = 8 } }
+			354 = { add_resource = { type = chromium amount = 6 } }
+		}
+	}
+
+	focus = {
+		id = TUR_tophane_ordnance_foundry
+		icon = GFX_TUR_imperial_arsenal
+		cost = 5
+		x = 29
+		y = 2
+		prerequisite = { focus = TUR_zonguldak_coal_basin_drives }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_bakirkoy_textile_mills
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 27
+		y = 3
+		prerequisite = { focus = TUR_ergani_copper_mines }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_zeytinburnu_munitions_complex
+		icon = GFX_TUR_arms_expansions
+		cost = 5
+		x = 29
+		y = 3
+		prerequisite = { focus = TUR_tophane_ordnance_foundry }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2000 producer = TUR }
+		}
+	}
+
+	focus = {
+		id = TUR_ankara_state_foundries
+		icon = GFX_TUR_ankara_industrialization
+		cost = 5
+		x = 28
+		y = 4
+		prerequisite = { focus = TUR_bakirkoy_textile_mills focus = TUR_zeytinburnu_munitions_complex }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			348 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_izmir_commercial_quays
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 27
+		y = 5
+		prerequisite = { focus = TUR_ankara_state_foundries }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			343 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_constantinople_electric_grid
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 29
+		y = 5
+		prerequisite = { focus = TUR_ankara_state_foundries }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_amasya_metal_smelters
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 28
+		y = 6
+		prerequisite = { focus = TUR_izmir_commercial_quays focus = TUR_constantinople_electric_grid }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			355 = { add_resource = { type = steel amount = 10 } }
+		}
+	}
+
+	focus = {
+		id = TUR_imperial_munitions_directorate
+		icon = GFX_TUR_office_of_war_industry
+		cost = 5
+		x = 28
+		y = 7
+		prerequisite = { focus = TUR_amasya_metal_smelters }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			industrial_capacity_factory = 0.10
+			production_speed_arms_factory_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_full_industrial_mobilization
+		icon = GFX_TUR_office_of_war_industry
+		cost = 5
+		x = 28
+		y = 8
+		prerequisite = { focus = TUR_imperial_munitions_directorate }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_anatolian_grain_reserves
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 31
+		y = 1
+		prerequisite = { focus = TUR_economic_sovereignty_drive }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = TUR_anatolian_grain_monopoly
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_willcocks_mesopotamia_irrigation
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 30
+		y = 2
+		prerequisite = { focus = TUR_anatolian_grain_reserves }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			291 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_cilicia_cotton_modernization
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 32
+		y = 2
+		prerequisite = { focus = TUR_anatolian_grain_reserves }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			799 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_anti_locust_campaigns
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 31
+		y = 3
+		prerequisite = { focus = TUR_willcocks_mesopotamia_irrigation focus = TUR_cilicia_cotton_modernization }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = TUR_state_silos_and_famine_relief
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 31
+		y = 4
+		prerequisite = { focus = TUR_anti_locust_campaigns }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = TUR_tt_famine_protection
+		}
+	}
+
+	focus = {
+		id = TUR_ziraat_bankasi_credit_expansion
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 30
+		y = 5
+		prerequisite = { focus = TUR_state_silos_and_famine_relief }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.05
+			consumer_goods_factor = -0.02
+		}
+	}
+
+	focus = {
+		id = TUR_mechanized_anatolian_farming
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 32
+		y = 5
+		prerequisite = { focus = TUR_state_silos_and_famine_relief }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+
+	focus = {
+		id = TUR_black_sea_timber_concessions
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 31
+		y = 6
+		prerequisite = { focus = TUR_ziraat_bankasi_credit_expansion focus = TUR_mechanized_anatolian_farming }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			production_speed_infrastructure_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_agrarian_surplus_storage
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 31
+		y = 7
+		prerequisite = { focus = TUR_black_sea_timber_concessions }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			war_support_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_breadbasket_of_the_empire
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 31
+		y = 8
+		prerequisite = { focus = TUR_agrarian_surplus_storage }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			supply_consumption_factor = -0.08
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_integrated_imperial_economy
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 25
+		y = 9
+		prerequisite = { focus = TUR_complete_fiscal_liberation focus = TUR_railway_telegraph_integration focus = TUR_full_industrial_mobilization focus = TUR_breadbasket_of_the_empire }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_anatolian_highway_system
+		icon = GFX_focus_generic_infrastructure
+		cost = 5
+		x = 23
+		y = 10
+		prerequisite = { focus = TUR_integrated_imperial_economy }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			348 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_petroleum_concessions_mosul
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 27
+		y = 10
+		prerequisite = { focus = TUR_integrated_imperial_economy }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			676 = { add_resource = { type = oil amount = 16 } }
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = TUR_sublime_porte_heavy_industry_board
+		icon = GFX_TUR_office_of_war_industry
+		cost = 5
+		x = 25
+		y = 11
+		prerequisite = { focus = TUR_anatolian_highway_system focus = TUR_petroleum_concessions_mosul }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			industrial_capacity_factory = 0.08
+			production_speed_industrial_complex_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_autarkic_imperial_foundation
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 25
+		y = 12
+		prerequisite = { focus = TUR_sublime_porte_heavy_industry_board }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			consumer_goods_factor = -0.05
+			add_stability = 0.05
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+
+	focus = {
+		id = TUR_modern_ottoman_economic_miracle
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 25
+		y = 13
+		prerequisite = { focus = TUR_autarkic_imperial_foundation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.10
+			industrial_capacity_factory = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_reorganizing_the_imperial_army
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 42
+		y = 0
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 35
+			add_command_power = 20
+			set_country_flag = TUR_army_reform_begun
+		}
+	}
+
+	focus = {
+		id = TUR_harbiye_academy_modernization
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 37
+		y = 1
+		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 25
+			add_ideas = TUR_army_modernization_struggle
+		}
+	}
+
+	focus = {
+		id = TUR_purge_inefficient_cadres
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 36
+		y = 2
+		prerequisite = { focus = TUR_harbiye_academy_modernization }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_political_power = -30
+			army_experience = 20
+			custom_effect_tooltip = TUR_tt_purge_incompetent
+		}
+	}
+
+	focus = {
+		id = TUR_standardize_mauser_rifles
+		icon = GFX_TUR_turkish_equipment_modernization
+		cost = 5
+		x = 38
+		y = 2
+		prerequisite = { focus = TUR_harbiye_academy_modernization }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 producer = TUR }
+			add_tech_bonus = { name = infantry_weapons bonus = 1.0 uses = 1 }
+		}
+	}
+
+	focus = {
+		id = TUR_krupp_quick_fire_artillery
+		icon = GFX_TUR_arms_deal_with_germany
+		cost = 5
+		x = 37
+		y = 3
+		prerequisite = { focus = TUR_purge_inefficient_cadres focus = TUR_standardize_mauser_rifles }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 producer = TUR }
+			add_tech_bonus = { name = artillery bonus = 1.0 uses = 1 }
+		}
+	}
+
+	focus = {
+		id = TUR_anatolian_infantry_doctrine
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 35
+		y = 4
+		prerequisite = { focus = TUR_krupp_quick_fire_artillery }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_doctrine_cost_reduction = { name = land_doctrine cost_reduction = 0.5 uses = 1 }
+			army_morale_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_desert_camel_corps_regiments
+		icon = GFX_focus_generic_cavalry
+		cost = 5
+		x = 37
+		y = 4
+		prerequisite = { focus = TUR_krupp_quick_fire_artillery }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 15000
+			cavalry_attack_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_caucasus_alpine_detachments
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 39
+		y = 4
+		prerequisite = { focus = TUR_krupp_quick_fire_artillery }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_ideas = TUR_caucasus_alpine_preparations
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = TUR_machine_gun_companies
+		icon = GFX_TUR_turkish_equipment_modernization
+		cost = 5
+		x = 37
+		y = 5
+		prerequisite = { focus = TUR_anatolian_infantry_doctrine focus = TUR_desert_camel_corps_regiments focus = TUR_caucasus_alpine_detachments }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2000 producer = TUR }
+			army_infantry_defence_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_field_medicine_red_crescent
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 36
+		y = 6
+		prerequisite = { focus = TUR_machine_gun_companies }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_morale_factor = 0.05
+			casualty_trickleback = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_gendarmerie_modernization_corps
+		icon = GFX_TUR_jandarma_genel_komutanlgi
+		cost = 5
+		x = 38
+		y = 6
+		prerequisite = { focus = TUR_machine_gun_companies }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			resistance_target = -0.15
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_heavy_siege_howitzers
+		icon = GFX_TUR_arms_expansions
+		cost = 5
+		x = 37
+		y = 7
+		prerequisite = { focus = TUR_field_medicine_red_crescent focus = TUR_gendarmerie_modernization_corps }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 producer = TUR }
+			army_artillery_attack_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_comprehensive_conscription_law
+		icon = GFX_TUR_1914_law_of_military_obligation
+		cost = 5
+		x = 37
+		y = 8
+		prerequisite = { focus = TUR_heavy_siege_howitzers }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			conscription_factor = 0.10
+			add_manpower = 50000
+		}
+	}
+
+	focus = {
+		id = TUR_foreign_mission_choice
+		icon = GFX_focus_generic_military_mission
+		cost = 5
+		x = 41
+		y = 1
+		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_german_military_mission_sanders
+		icon = GFX_TUR_german_five_year_mission
+		cost = 5
+		x = 40
+		y = 2
+		prerequisite = { focus = TUR_foreign_mission_choice }
+		mutually_exclusive = { focus = TUR_native_general_staff_kemal }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_ideas = TUR_german_military_mission
+			remove_ideas = TUR_army_modernization_struggle
+			add_opinion_modifier = { target = GER modifier = positive_50 }
+		}
+	}
+
+	focus = {
+		id = TUR_native_general_staff_kemal
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 42
+		y = 2
+		prerequisite = { focus = TUR_foreign_mission_choice }
+		mutually_exclusive = { focus = TUR_german_military_mission_sanders }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_ideas = TUR_kemalist_tactical_doctrine
+			remove_ideas = TUR_army_modernization_struggle
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_prusso_ottoman_doctrine
+		icon = GFX_TUR_schellendorf_plan
+		cost = 5
+		x = 40
+		y = 3
+		prerequisite = { focus = TUR_german_military_mission_sanders }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_doctrine_cost_reduction = { name = land_doctrine cost_reduction = 0.5 uses = 2 }
+			max_planning = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_independent_tactical_flexibility
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 42
+		y = 3
+		prerequisite = { focus = TUR_native_general_staff_kemal }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_core_defence_factor = 0.10
+			reinforce_rate = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_krupp_heavy_ordnance_contracts
+		icon = GFX_TUR_arms_deal_with_germany
+		cost = 5
+		x = 40
+		y = 4
+		prerequisite = { focus = TUR_prusso_ottoman_doctrine }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = artillery bonus = 1.0 uses = 1 }
+			army_artillery_attack_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_anatolian_guerrilla_tradition
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 42
+		y = 4
+		prerequisite = { focus = TUR_independent_tactical_flexibility }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			attrition = -0.10
+			out_of_supply_factor = -0.10
+		}
+	}
+
+	focus = {
+		id = TUR_joint_staff_operational_drills
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 41
+		y = 5
+		prerequisite = { focus = TUR_krupp_heavy_ordnance_contracts focus = TUR_anatolian_guerrilla_tradition }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			planning_speed = 0.10
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = TUR_officer_corps_intellectual_vigor
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 41
+		y = 6
+		prerequisite = { focus = TUR_joint_staff_operational_drills }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_org_factor = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_divisional_artillery_batteries
+		icon = GFX_TUR_arms_expansions
+		cost = 5
+		x = 41
+		y = 7
+		prerequisite = { focus = TUR_officer_corps_intellectual_vigor }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			army_artillery_attack_factor = 0.05
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = TUR }
+		}
+	}
+
+	focus = {
+		id = TUR_corps_level_reserves_doctrine
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 41
+		y = 8
+		prerequisite = { focus = TUR_divisional_artillery_batteries }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			max_planning = 0.05
+			reinforce_rate = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_rebuild_the_imperial_fleet
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 45
+		y = 1
+		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_experience = 25
+			set_country_flag = TUR_navy_expansion_begun
+		}
+	}
+
+	focus = {
+		id = TUR_the_dreadnought_contracts_uk
+		icon = GFX_TUR_complete_the_british_dreadnought_order
+		cost = 5
+		x = 44
+		y = 2
+		prerequisite = { focus = TUR_rebuild_the_imperial_fleet }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_ottoman.1 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_golden_horn_shipyards_expansion
+		icon = GFX_TUR_kostantiniye_dockyard_expansion
+		cost = 5
+		x = 46
+		y = 2
+		prerequisite = { focus = TUR_rebuild_the_imperial_fleet }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			797 = { add_building_construction = { type = dockyard level = 2 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_public_donation_drive_sultan_osman
+		icon = GFX_TUR_complete_the_british_dreadnought_order
+		cost = 5
+		x = 44
+		y = 3
+		prerequisite = { focus = TUR_the_dreadnought_contracts_uk }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			add_ideas = TUR_dreadnought_national_fervor
+		}
+	}
+
+	focus = {
+		id = TUR_torpedo_boat_flotillas
+		icon = GFX_TUR_fleet_expansion
+		cost = 5
+		x = 46
+		y = 3
+		prerequisite = { focus = TUR_golden_horn_shipyards_expansion }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = { name = naval_equipment bonus = 1.0 uses = 1 }
+		}
+	}
+
+	focus = {
+		id = TUR_welcome_goeben_and_breslau
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 44
+		y = 4
+		prerequisite = { focus = TUR_public_donation_drive_sultan_osman }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			country_event = { id = ww1_ottoman.10 }
+			add_ideas = TUR_yavuz_and_midilli_supremacy
+		}
+	}
+
+	focus = {
+		id = TUR_black_sea_submarine_patrols
+		icon = GFX_TUR_fleet_expansion
+		cost = 5
+		x = 46
+		y = 4
+		prerequisite = { focus = TUR_torpedo_boat_flotillas }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = ss_tech bonus = 1.0 uses = 1 }
+			sub_detection = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_coastal_minelayer_force
+		icon = GFX_TUR_fleet_expansion
+		cost = 5
+		x = 45
+		y = 5
+		prerequisite = { focus = TUR_welcome_goeben_and_breslau focus = TUR_black_sea_submarine_patrols }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			naval_mine_hit_chance_factor = 0.20
+			navy_experience = 15
+		}
+	}
+
+	focus = {
+		id = TUR_naval_gunnery_schools
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 45
+		y = 6
+		prerequisite = { focus = TUR_coastal_minelayer_force }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_capital_ship_attack_factor = 0.10
+			naval_hit_chance = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_cruiser_escort_squadrons
+		icon = GFX_TUR_fleet_expansion
+		cost = 5
+		x = 45
+		y = 7
+		prerequisite = { focus = TUR_naval_gunnery_schools }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_screen_ship_attack_factor = 0.10
+			navy_anti_air_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_sovereign_black_sea_fleet
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 45
+		y = 8
+		prerequisite = { focus = TUR_cruiser_escort_squadrons }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_capital_ship_attack_factor = 0.10
+			navy_experience = 30
+		}
+	}
+
+	focus = {
+		id = TUR_yesilkoy_aviation_school
+		icon = GFX_TUR_air_defense
+		cost = 5
+		x = 48
+		y = 1
+		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 25
+			add_ideas = TUR_ottoman_aviation_detachment
+		}
+	}
+
+	focus = {
+		id = TUR_strengthen_canakkale_batteries
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 49
+		y = 1
+		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_ideas = TUR_canakkale_impenetrable_bastion
+		}
+	}
+
+	focus = {
+		id = TUR_procure_bleriot_and_rumpler_monoplanes
+		icon = GFX_TUR_air_defense
+		cost = 5
+		x = 48
+		y = 2
+		prerequisite = { focus = TUR_yesilkoy_aviation_school }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = air_equipment bonus = 1.0 uses = 1 }
+			air_experience = 15
+		}
+	}
+
+	focus = {
+		id = TUR_underwater_minefields_straits
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 49
+		y = 2
+		prerequisite = { focus = TUR_strengthen_canakkale_batteries }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_straits_mines
+			navy_experience = 15
+		}
+	}
+
+	focus = {
+		id = TUR_aerial_reconnaissance_detachments
+		icon = GFX_TUR_air_defense
+		cost = 5
+		x = 48
+		y = 3
+		prerequisite = { focus = TUR_procure_bleriot_and_rumpler_monoplanes }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_recon_factor = 0.20
+			air_experience = 15
+		}
+	}
+
+	focus = {
+		id = TUR_searchlight_batteries_dardanelles
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 49
+		y = 3
+		prerequisite = { focus = TUR_underwater_minefields_straits }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			amphibious_invasion_defence = 0.20
+			naval_strike_defence_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_joint_command_supreme_staff
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 42
+		y = 9
+		prerequisite = { focus = TUR_comprehensive_conscription_law focus = TUR_corps_level_reserves_doctrine focus = TUR_sovereign_black_sea_fleet focus = TUR_aerial_reconnaissance_detachments focus = TUR_searchlight_batteries_dardanelles }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 30
+			navy_experience = 20
+			air_experience = 15
+			add_command_power = 30
+		}
+	}
+
+	focus = {
+		id = TUR_modern_field_communications
+		icon = GFX_TUR_civil_communitcations_improvements
+		cost = 5
+		x = 40
+		y = 10
+		prerequisite = { focus = TUR_joint_command_supreme_staff }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			reinforce_rate = 0.10
+			signal_company_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_logistics_motor_truck_corps
+		icon = GFX_TUR_turkish_equipment_modernization
+		cost = 5
+		x = 44
+		y = 10
+		prerequisite = { focus = TUR_joint_command_supreme_staff }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_speed_factor = 0.05
+			supply_consumption_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = TUR_imperial_arsenals_peak_output
+		icon = GFX_TUR_imperial_arsenal
+		cost = 5
+		x = 42
+		y = 11
+		prerequisite = { focus = TUR_modern_field_communications focus = TUR_logistics_motor_truck_corps }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			industrial_capacity_factory = 0.10
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = TUR }
+		}
+	}
+
+	focus = {
+		id = TUR_harbiye_tactical_doctrine_zenith
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 42
+		y = 12
+		prerequisite = { focus = TUR_imperial_arsenals_peak_output }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_org_factor = 0.05
+			army_morale_factor = 0.10
+			max_planning = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_invincible_mehmetcik_spirit
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 42
+		y = 13
+		prerequisite = { focus = TUR_harbiye_tactical_doctrine_zenith }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			army_core_defence_factor = 0.10
+			army_morale_factor = 0.10
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_sublime_porte_foreign_policy
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 59
+		y = 0
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			set_country_flag = TUR_diplomacy_path_begun
+		}
+	}
+
+	focus = {
+		id = TUR_western_thrace_border_vigilance
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 53
+		y = 1
+		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_edirne_fortress_complex
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 53
+		y = 2
+		prerequisite = { focus = TUR_western_thrace_border_vigilance }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_bulgarian_friendship_treaty
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 52
+		y = 3
+		prerequisite = { focus = TUR_edirne_fortress_complex }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = BUL modifier = positive_50 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_romanian_grain_accord
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 54
+		y = 3
+		prerequisite = { focus = TUR_edirne_fortress_complex }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = ROM modifier = positive_50 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_reaffirm_libyan_sovereignty
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 55
+		y = 1
+		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			448 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_sanusi_brotherhood_pact
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 55
+		y = 2
+		prerequisite = { focus = TUR_reaffirm_libyan_sovereignty }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_sanusi_pact
+			add_manpower = 15000
+		}
+	}
+
+	focus = {
+		id = TUR_tripoli_coastal_fortifications
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 55
+		y = 3
+		prerequisite = { focus = TUR_sanusi_brotherhood_pact }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			448 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_aegean_island_garrisons
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 53
+		y = 4
+		prerequisite = { focus = TUR_bulgarian_friendship_treaty focus = TUR_romanian_grain_accord }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			164 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_german_rapprochement
+		icon = GFX_TUR_secret_treaty_with_germany
+		cost = 5
+		x = 57
+		y = 1
+		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
+		mutually_exclusive = { focus = TUR_strict_armed_neutrality focus = TUR_entente_diplomatic_demands }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = GER modifier = positive_75 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_secret_alliance_august_1914
+		icon = GFX_TUR_secret_treaty_with_germany
+		cost = 5
+		x = 57
+		y = 2
+		prerequisite = { focus = TUR_german_rapprochement }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_country_flag = TUR_secret_treaty_signed
+			country_event = { id = ww1_ottoman.12 }
+		}
+	}
+
+	focus = {
+		id = TUR_german_gold_loans
+		icon = GFX_TUR_german_donation
+		cost = 5
+		x = 56
+		y = 3
+		prerequisite = { focus = TUR_secret_alliance_august_1914 }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_political_power = 60
+		}
+	}
+
+	focus = {
+		id = TUR_souchon_black_sea_raid
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 58
+		y = 3
+		prerequisite = { focus = TUR_secret_alliance_august_1914 }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_ottoman.15 }
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_join_central_powers_faction
+		icon = GFX_TUR_secret_treaty_with_germany
+		cost = 5
+		x = 57
+		y = 4
+		prerequisite = { focus = TUR_german_gold_loans focus = TUR_souchon_black_sea_raid }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_to_faction = GER
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_berlin_constantinople_axis
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 57
+		y = 5
+		prerequisite = { focus = TUR_join_central_powers_faction }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_ideas = TUR_german_military_mission
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = TUR_austro_hungarian_danubian_link
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 56
+		y = 6
+		prerequisite = { focus = TUR_berlin_constantinople_axis }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = AUS modifier = positive_50 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_bulgarian_transit_corridor
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 58
+		y = 6
+		prerequisite = { focus = TUR_berlin_constantinople_axis }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_central_powers_war_council
+		icon = GFX_TUR_office_of_war_industry
+		cost = 5
+		x = 57
+		y = 7
+		prerequisite = { focus = TUR_austro_hungarian_danubian_link focus = TUR_bulgarian_transit_corridor }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 30
+			add_command_power = 30
+		}
+	}
+
+	focus = {
+		id = TUR_shared_munitions_standardization
+		icon = GFX_TUR_arms_deal_with_germany
+		cost = 5
+		x = 57
+		y = 8
+		prerequisite = { focus = TUR_central_powers_war_council }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			industrial_capacity_factory = 0.08
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4000 producer = TUR }
+		}
+	}
+
+	focus = {
+		id = TUR_strict_armed_neutrality
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 61
+		y = 1
+		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
+		mutually_exclusive = { focus = TUR_german_rapprochement focus = TUR_entente_diplomatic_demands }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			set_country_flag = TUR_neutral_policy
+		}
+	}
+
+	focus = {
+		id = TUR_close_straits_to_all_belligerents
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 60
+		y = 2
+		prerequisite = { focus = TUR_strict_armed_neutrality }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_close_straits
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_demand_belligerent_transit_tolls
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 62
+		y = 2
+		prerequisite = { focus = TUR_strict_armed_neutrality }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			consumer_goods_factor = -0.05
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+
+	focus = {
+		id = TUR_internal_development_focus
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 61
+		y = 3
+		prerequisite = { focus = TUR_close_straits_to_all_belligerents focus = TUR_demand_belligerent_transit_tolls }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_profit_from_wartime_trade
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 61
+		y = 4
+		prerequisite = { focus = TUR_internal_development_focus }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_swiss_of_the_orient_neutrality
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 61
+		y = 5
+		prerequisite = { focus = TUR_profit_from_wartime_trade }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_diplomatic_mediation_summit
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 61
+		y = 6
+		prerequisite = { focus = TUR_swiss_of_the_orient_neutrality }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_neutral_sovereignty_guaranteed
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 61
+		y = 7
+		prerequisite = { focus = TUR_diplomatic_mediation_summit }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			army_core_defence_factor = 0.15
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_entente_diplomatic_demands
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 64
+		y = 1
+		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
+		mutually_exclusive = { focus = TUR_german_rapprochement focus = TUR_strict_armed_neutrality }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = positive_50 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_demand_dreadnought_deliveries
+		icon = GFX_TUR_complete_the_british_dreadnought_order
+		cost = 5
+		x = 63
+		y = 2
+		prerequisite = { focus = TUR_entente_diplomatic_demands }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_demand_dreadnoughts
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_territorial_integrity_guarantees
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 65
+		y = 2
+		prerequisite = { focus = TUR_entente_diplomatic_demands }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			give_guarantee = ENG
+		}
+	}
+
+	focus = {
+		id = TUR_anglo_ottoman_gulf_treaty
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 64
+		y = 3
+		prerequisite = { focus = TUR_demand_dreadnought_deliveries focus = TUR_territorial_integrity_guarantees }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_neutralize_russian_threat
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 64
+		y = 4
+		prerequisite = { focus = TUR_anglo_ottoman_gulf_treaty }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = RUS modifier = positive_50 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_french_syrian_economic_pact
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 64
+		y = 5
+		prerequisite = { focus = TUR_neutralize_russian_threat }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_entente_cooperation_treaty
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 64
+		y = 6
+		prerequisite = { focus = TUR_french_syrian_economic_pact }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = ENG modifier = positive_75 }
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = TUR_secured_ottoman_borders
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 64
+		y = 7
+		prerequisite = { focus = TUR_entente_cooperation_treaty }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+			consumer_goods_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = TUR_the_sovereign_straits_regime
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 59
+		y = 9
+		prerequisite = { focus = TUR_aegean_island_garrisons focus = TUR_shared_munitions_standardization focus = TUR_neutral_sovereignty_guaranteed focus = TUR_secured_ottoman_borders }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = TUR_dardanelles_maritime_hegemony
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 57
+		y = 10
+		prerequisite = { focus = TUR_the_sovereign_straits_regime }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_capital_ship_attack_factor = 0.10
+			naval_torpedo_hit_chance_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_levantine_coastal_security
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 61
+		y = 10
+		prerequisite = { focus = TUR_the_sovereign_straits_regime }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			554 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			454 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_sublime_porte_global_standing
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 59
+		y = 11
+		prerequisite = { focus = TUR_dardanelles_maritime_hegemony focus = TUR_levantine_coastal_security }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = TUR_destiny_of_the_near_east
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 59
+		y = 12
+		prerequisite = { focus = TUR_sublime_porte_global_standing }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			army_core_defence_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_pax_osmanica_reasserted
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 59
+		y = 13
+		prerequisite = { focus = TUR_destiny_of_the_near_east }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_the_war_for_imperial_survival
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 77
+		y = 0
+		available = { has_war = yes }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.15
+			add_political_power = 100
+			set_country_flag = TUR_total_war_mobilization
+		}
+	}
+
+	focus = {
+		id = TUR_caucasus_logistics_preparation
+		icon = GFX_TUR_turkish_equipment_modernization
+		cost = 5
+		x = 70
+		y = 1
+		prerequisite = { focus = TUR_the_war_for_imperial_survival }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_caucasus_winter_supplies
+			winter_attrition_factor = -0.30
+		}
+	}
+
+	focus = {
+		id = TUR_third_army_mountain_offensive
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 69
+		y = 2
+		prerequisite = { focus = TUR_caucasus_logistics_preparation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_attack_factor = 0.05
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = TUR_trabzon_supply_lifeline
+		icon = GFX_TUR_civil_communitcations_improvements
+		cost = 5
+		x = 71
+		y = 2
+		prerequisite = { focus = TUR_caucasus_logistics_preparation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			9932 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } }
+			supply_consumption_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = TUR_retake_kars_ardahan_batum
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 70
+		y = 3
+		prerequisite = { focus = TUR_third_army_mountain_offensive focus = TUR_trabzon_supply_lifeline }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.10
+			army_core_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_army_of_islam_caucasus
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 70
+		y = 4
+		prerequisite = { focus = TUR_retake_kars_ardahan_batum }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 35000
+			army_experience = 30
+			set_country_flag = TUR_army_of_islam_formed
+		}
+	}
+
+	focus = {
+		id = TUR_baku_petroleum_drive
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 70
+		y = 5
+		prerequisite = { focus = TUR_army_of_islam_caucasus }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 80
+			custom_effect_tooltip = TUR_tt_baku_oil
+		}
+	}
+
+	focus = {
+		id = TUR_caspian_flotilla_organization
+		icon = GFX_TUR_fleet_expansion
+		cost = 5
+		x = 70
+		y = 6
+		prerequisite = { focus = TUR_baku_petroleum_drive }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			navy_experience = 15
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_caucasian_tribal_auxiliaries
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 70
+		y = 7
+		prerequisite = { focus = TUR_caspian_flotilla_organization }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 20000
+			army_morale_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_transcaucasian_security_sphere
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 70
+		y = 8
+		prerequisite = { focus = TUR_caucasian_tribal_auxiliaries }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = TUR_cevat_pasha_artillery_defence
+		icon = GFX_TUR_air_defense
+		cost = 5
+		x = 73
+		y = 1
+		prerequisite = { focus = TUR_the_war_for_imperial_survival }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_ideas = TUR_canakkale_impenetrable_bastion
+		}
+	}
+
+	focus = {
+		id = TUR_chunuk_bair_counterattack
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 72
+		y = 2
+		prerequisite = { focus = TUR_cevat_pasha_artillery_defence }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			army_morale_factor = 0.15
+			army_core_defence_factor = 0.15
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_fifth_army_mobile_reserves
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 74
+		y = 2
+		prerequisite = { focus = TUR_cevat_pasha_artillery_defence }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			reinforce_rate = 0.15
+			dig_in_speed_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = TUR_drive_invaders_into_the_sea
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 73
+		y = 3
+		prerequisite = { focus = TUR_chunuk_bair_counterattack focus = TUR_fifth_army_mobile_reserves }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.10
+			country_event = { id = ww1_ottoman.25 }
+		}
+	}
+
+	focus = {
+		id = TUR_anafartalar_heroism_legacy
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 73
+		y = 4
+		prerequisite = { focus = TUR_drive_invaders_into_the_sea }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_core_defence_factor = 0.10
+			army_morale_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_fortress_canakkale_permanent
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 73
+		y = 5
+		prerequisite = { focus = TUR_anafartalar_heroism_legacy }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			341 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_tigris_river_flotilla
+		icon = GFX_TUR_osmanl_donanmas
+		cost = 5
+		x = 76
+		y = 1
+		prerequisite = { focus = TUR_the_war_for_imperial_survival }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			291 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			army_speed_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_defense_of_kut_al_amara
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 75
+		y = 2
+		prerequisite = { focus = TUR_tigris_river_flotilla }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			max_dig_in = 5
+			army_core_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_encirclement_of_townshend_army
+		icon = GFX_TUR_restructured_army_command
+		cost = 5
+		x = 77
+		y = 2
+		prerequisite = { focus = TUR_tigris_river_flotilla }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_encircle_kut
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = TUR_halil_kut_triumph
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 76
+		y = 3
+		prerequisite = { focus = TUR_defense_of_kut_al_amara focus = TUR_encirclement_of_townshend_army }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_ideas = TUR_kut_al_amara_triumph
+			country_event = { id = ww1_ottoman.30 }
+		}
+	}
+
+	focus = {
+		id = TUR_secure_basra_access
+		icon = GFX_TUR_baghdad_industrialization
+		cost = 5
+		x = 76
+		y = 4
+		prerequisite = { focus = TUR_halil_kut_triumph }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1011 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_shatt_al_arab_defensive_perimeter
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 76
+		y = 5
+		prerequisite = { focus = TUR_secure_basra_access }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			1011 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_cross_the_sinai_desert
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 79
+		y = 1
+		prerequisite = { focus = TUR_the_war_for_imperial_survival }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			attrition = -0.15
+			out_of_supply_factor = -0.10
+		}
+	}
+
+	focus = {
+		id = TUR_suez_canal_raids
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 78
+		y = 2
+		prerequisite = { focus = TUR_cross_the_sinai_desert }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_suez_raid
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_gaza_beersheba_defensive_line
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 80
+		y = 2
+		prerequisite = { focus = TUR_cross_the_sinai_desert }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			454 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_ideas = TUR_gaza_beersheba_defensive_wall
+		}
+	}
+
+	focus = {
+		id = TUR_defense_of_jerusalem
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 79
+		y = 3
+		prerequisite = { focus = TUR_suez_canal_raids focus = TUR_gaza_beersheba_defensive_line }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			454 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_damascus_bastion
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 79
+		y = 4
+		prerequisite = { focus = TUR_defense_of_jerusalem }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			554 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_core_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_levantine_supply_depots
+		icon = GFX_focus_generic_infrastructure
+		cost = 5
+		x = 79
+		y = 5
+		prerequisite = { focus = TUR_damascus_bastion }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			supply_consumption_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = TUR_protect_hejaz_railway_garrisons
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 81
+		y = 1
+		prerequisite = { focus = TUR_the_war_for_imperial_survival }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_protect_railway
+			supply_consumption_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = TUR_fakhri_pasha_medina_defense
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 82
+		y = 2
+		prerequisite = { focus = TUR_protect_hejaz_railway_garrisons }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			679 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_ideas = TUR_fakhri_pasha_desert_stand
+		}
+	}
+
+	focus = {
+		id = TUR_crush_or_reconcile_sharifians
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 81
+		y = 3
+		prerequisite = { focus = TUR_fakhri_pasha_medina_defense }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_sharif_revolt_containment
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_holy_relics_safeguard
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 82
+		y = 4
+		prerequisite = { focus = TUR_crush_or_reconcile_sharifians }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_red_sea_desert_patrols
+		icon = GFX_TUR_asienkorps
+		cost = 5
+		x = 81
+		y = 5
+		prerequisite = { focus = TUR_holy_relics_safeguard }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			attrition = -0.10
+			army_speed_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_war_bread_and_rationing
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 84
+		y = 1
+		prerequisite = { focus = TUR_the_war_for_imperial_survival }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = TUR_war_bread_and_rationing
+			consumer_goods_factor = -0.05
+		}
+	}
+
+	focus = {
+		id = TUR_requisition_imperial_resources
+		icon = GFX_TUR_office_of_war_industry
+		cost = 5
+		x = 83
+		y = 2
+		prerequisite = { focus = TUR_war_bread_and_rationing }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			industrial_capacity_factory = 0.10
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_teskilat_asymmetric_warfare
+		icon = GFX_focus_generic_intelligence_agency
+		cost = 5
+		x = 85
+		y = 2
+		prerequisite = { focus = TUR_war_bread_and_rationing }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INTELLIGENCE }
+		completion_reward = {
+			subversive_activites_upkeep = -0.30
+			recon_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_counter_the_blockade
+		icon = GFX_TUR_civil_communitcations_improvements
+		cost = 5
+		x = 84
+		y = 3
+		prerequisite = { focus = TUR_requisition_imperial_resources focus = TUR_teskilat_asymmetric_warfare }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_total_war_labour_mobilization
+		icon = GFX_TUR_law_for_encouraging_industry
+		cost = 5
+		x = 84
+		y = 4
+		prerequisite = { focus = TUR_counter_the_blockade }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			industrial_capacity_factory = 0.10
+			production_speed_arms_factory_factor = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_emergency_war_levies
+		icon = GFX_TUR_1914_law_of_military_obligation
+		cost = 5
+		x = 84
+		y = 5
+		prerequisite = { focus = TUR_total_war_labour_mobilization }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			conscription_factor = 0.10
+			add_manpower = 40000
+		}
+	}
+
+	focus = {
+		id = TUR_the_eastern_storm_survived
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 77
+		y = 9
+		prerequisite = { focus = TUR_transcaucasian_security_sphere focus = TUR_fortress_canakkale_permanent focus = TUR_shatt_al_arab_defensive_perimeter focus = TUR_levantine_supply_depots focus = TUR_red_sea_desert_patrols focus = TUR_emergency_war_levies }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.15
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = TUR_brest_litovsk_claims
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 74
+		y = 10
+		prerequisite = { focus = TUR_the_eastern_storm_survived }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_ottoman.35 }
+			add_political_power = 80
+		}
+	}
+
+	focus = {
+		id = TUR_middle_eastern_hegemon
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 80
+		y = 10
+		prerequisite = { focus = TUR_the_eastern_storm_survived }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_ideas = TUR_anatolian_sovereignty_victory
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_1918_total_victory_protocol
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 77
+		y = 11
+		prerequisite = { focus = TUR_brest_litovsk_claims focus = TUR_middle_eastern_hegemon }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.15
+			conscription_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_reborn_empire_destiny
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 75
+		y = 12
+		prerequisite = { focus = TUR_1918_total_victory_protocol }
+		mutually_exclusive = { focus = TUR_republican_renaissance_destiny }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = TUR_republican_renaissance_destiny
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 79
+		y = 12
+		prerequisite = { focus = TUR_1918_total_victory_protocol }
+		mutually_exclusive = { focus = TUR_reborn_empire_destiny }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.10
+			industrial_capacity_factory = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_eternal_sublime_destiny
+		icon = GFX_focus_generic_monarchy
+		cost = 5
+		x = 77
+		y = 13
+		prerequisite = { focus = TUR_reborn_empire_destiny focus = TUR_republican_renaissance_destiny }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.20
+			add_war_support = 0.20
+			add_political_power = 200
+		}
+	}
+
+	focus = {
+		id = TUR_macedonian_and_thracian_veterans
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 4
+		y = 9
+		prerequisite = { focus = TUR_sublime_porte_war_council }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 15000
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = TUR_constantinople_press_syndicate
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 2
+		y = 9
+		prerequisite = { focus = TUR_sublime_porte_war_council }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = TUR_al_fatat_secret_dialogue
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 13
+		y = 5
+		prerequisite = { focus = TUR_loyal_tribal_federation }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = TUR_tt_appease_fatat
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_arab_notables_chamber
+		icon = GFX_focus_generic_parliament
+		cost = 5
+		x = 15
+		y = 5
+		prerequisite = { focus = TUR_caliphate_and_arab_solidarity }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_pontic_coal_shipping
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 27
+		y = 7
+		prerequisite = { focus = TUR_amasya_metal_smelters }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			344 = { add_resource = { type = steel amount = 4 } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_cilicia_irrigation_canals
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 32
+		y = 6
+		prerequisite = { focus = TUR_mechanized_anatolian_farming }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			799 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_aleppo_commercial_hub
+		icon = GFX_TUR_industrialization_of_the_nation
+		cost = 5
+		x = 23
+		y = 6
+		prerequisite = { focus = TUR_syrian_feeder_lines }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			677 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_syrian_grain_storage
+		icon = GFX_TUR_1913_taxation_exemptions
+		cost = 5
+		x = 25
+		y = 7
+		prerequisite = { focus = TUR_jerusalem_jaffa_railway_upgrade }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			supply_consumption_factor = -0.03
+		}
+	}
+
+	focus = {
+		id = TUR_izmir_naval_seaplane_base
+		icon = GFX_TUR_air_defense
+		cost = 5
+		x = 47
+		y = 5
+		prerequisite = { focus = TUR_black_sea_submarine_patrols }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 15
+			navy_experience = 10
+		}
+	}
+
+	focus = {
+		id = TUR_marmara_anti_submarine_nets
+		icon = GFX_focus_generic_coastal_fort
+		cost = 5
+		x = 49
+		y = 5
+		prerequisite = { focus = TUR_searchlight_batteries_dardanelles }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_NAVY_XP }
+		completion_reward = {
+			sub_detection = 0.15
+			naval_mine_hit_chance_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_cavalry_reconnaissance_squadrons
+		icon = GFX_focus_generic_cavalry
+		cost = 5
+		x = 38
+		y = 5
+		prerequisite = { focus = TUR_desert_camel_corps_regiments }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			recon_factor = 0.15
+			cavalry_speed_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_harbiye_cadet_battalions
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 43
+		y = 5
+		prerequisite = { focus = TUR_anatolian_guerrilla_tradition }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 20
+			army_morale_factor = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_rome_mediterranean_dialogue
+		icon = GFX_focus_generic_diplomacy
+		cost = 5
+		x = 55
+		y = 5
+		prerequisite = { focus = TUR_tripoli_coastal_fortifications }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = ITA modifier = positive_50 }
+			add_political_power = 40
+		}
+	}
+
+	focus = {
+		id = TUR_paris_credit_negotiations
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 65
+		y = 5
+		prerequisite = { focus = TUR_neutralize_russian_threat }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = TUR_persian_border_security
+		icon = GFX_focus_generic_treaty
+		cost = 5
+		x = 53
+		y = 5
+		prerequisite = { focus = TUR_aegean_island_garrisons }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			291 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+		}
+	}
+
+	focus = {
+		id = TUR_cyrenaica_desert_posts
+		icon = GFX_focus_generic_propaganda
+		cost = 5
+		x = 55
+		y = 6
+		prerequisite = { focus = TUR_rome_mediterranean_dialogue }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			663 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_manpower = 10000
+		}
+	}
+
+	focus = {
+		id = TUR_erzurum_fortress_line
+		icon = GFX_TUR_osmanl_ordusu
+		cost = 5
+		x = 69
+		y = 4
+		prerequisite = { focus = TUR_retake_kars_ardahan_batum }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			9860 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_core_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_trench_warfare_drills_canakkale
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 73
+		y = 6
+		prerequisite = { focus = TUR_fortress_canakkale_permanent }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			max_dig_in = 5
+			dig_in_speed_factor = 0.20
+		}
+	}
+
+	focus = {
+		id = TUR_ctesiphon_defensive_stand
+		icon = GFX_focus_generic_war_industry
+		cost = 5
+		x = 76
+		y = 6
+		prerequisite = { focus = TUR_shatt_al_arab_defensive_perimeter }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			291 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_core_defence_factor = 0.10
+		}
+	}
+
+	focus = {
+		id = TUR_hejaz_armored_train_patrols
+		icon = GFX_TUR_baghdadberlin_railway
+		cost = 5
+		x = 82
+		y = 5
+		prerequisite = { focus = TUR_holy_relics_safeguard }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			supply_consumption_factor = -0.05
+			armored_train_efficiency = 0.15
+		}
+	}
+
+}
