@@ -566,4 +566,60 @@ characters={
 			}
 		}
 	}
+
+	SER_nikola_pasic={
+		name="Nikola Pašić"
+		portraits={
+			civilian={
+				large="gfx/leaders/SER/SER_nikola_pasic.dds"
+				small="GFX_idea_SER_stojan_protic"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits={ popular_figurehead pragmatic_statesman }
+			expire="1935.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_nikola_pasic
+			ledger = civilian
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	SER_alexander_i={
+		name="Alexander I"
+		portraits={
+			civilian={
+				large="gfx/leaders/SER/SER_alexander_i.dds"
+				small="GFX_idea_SER_petar_zivkovic_army"
+			}
+			army={
+				large="gfx/leaders/SER/SER_alexander_i.dds"
+				small="GFX_idea_SER_petar_zivkovic_army"
+			}
+		}
+		country_leader={
+			ideology=autocracy
+			traits={ warlord_trait nationalist_symbol }
+			expire="1935.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=despotism
+			traits={ warlord_trait nationalist_symbol }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
 }

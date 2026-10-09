@@ -1,0 +1,197 @@
+ideas = {
+	country = {
+		# ==============================================================================
+		# 1. POLITICAL & CIVIL-MILITARY IDEAS
+		# ==============================================================================
+
+		# Rivalidade Civil-Militar & A Sombra da Mão Negra (Situação Inicial em 1911)
+		SER_civil_military_rivalry = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.10
+				stability_factor = -0.10
+				command_power_gain_mult = -0.10
+			}
+		}
+
+		# Triunfo da Supremacia Civil e Constitucionalismo (Gabinete Pašić)
+		SER_civilian_supremacy_established = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.15
+				drift_defence_factor = 0.20
+				army_org_factor = 0.05
+			}
+		}
+
+		# Ascendência dos Oficiais Militares e da Mão Negra (Junta Militar Nacionalista)
+		SER_military_officer_ascendancy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				army_org_factor = 0.10
+				conscription_factor = 0.05
+				stability_factor = -0.05
+				political_power_gain = -0.05
+			}
+		}
+
+		# União Dinástica e Fraterna de Montenegro (Flavour Especial Montenegrino)
+		SER_montenegrin_dynastic_union = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.08
+				stability_factor = 0.05
+				non_core_manpower = 0.15
+				attrition = -0.10
+			}
+		}
+
+		# ==============================================================================
+		# 2. ECONOMIC & INDUSTRIAL REFORM IDEAS
+		# ==============================================================================
+
+		# Economia Agrária Subdesenvolvida (Início em 1911)
+		SER_underdeveloped_agrarian_economy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_industrial_complex_factor = -0.10
+				research_speed_factor = -0.05
+			}
+		}
+
+		# Expansão do Arsenal de Kragujevac (Etapa 2)
+		SER_kragujevac_arsenal_expansion = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_factor = 0.02
+			}
+		}
+
+		# Indústria Nacional Diversificada e Autônoma (Etapa 3)
+		SER_diversified_national_industry = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_arms_factory_factor = 0.10
+				consumer_goods_factor = -0.03
+				research_speed_factor = 0.05
+			}
+		}
+
+		# Acordo Comercial Franco-Sérvio (Financiamento e Armas)
+		SER_french_serbian_trade_accord = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.20
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		# Modus Vivendi e Acordo Comercial com a Áustria-Hungria (Caminho Alternativo)
+		SER_serbo_austrian_economic_pact = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.30
+				consumer_goods_factor = -0.05
+				stability_factor = 0.08
+			}
+		}
+
+		# ==============================================================================
+		# 3. MILITARY DOCTRINE & WARTIME CRISIS IDEAS
+		# ==============================================================================
+
+		# Doutrina Ofensiva da Glória de Cer (Timed: 28 dias)
+		SER_cer_counterstroke_glory = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.20
+				army_core_defence_factor = 0.15
+				army_org_factor = 0.10
+			}
+		}
+
+		# Maestria de Manobra de Kolubara de Mišić (Timed: 21 dias)
+		SER_kolubara_maneuver_mastery = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.25
+				breakthrough_factor = 0.15
+				army_attack_factor = 0.10
+			}
+		}
+
+		# Ruptura Ofensiva de Dobro Pole (Timed: 30 dias)
+		SER_dobro_pole_breakthrough = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.15
+				breakthrough_factor = 0.20
+				army_morale_factor = 0.15
+			}
+		}
+
+		# Crise Epidêmica de Tifo e Sobrecarga Médica (Timed: 180 dias)
+		SER_typhus_epidemic_crisis = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = -0.10
+				conscription_factor = -0.15
+				attrition = 0.15
+			}
+		}
+
+		# Corpos Reconstituídos na Frente de Salônica
+		SER_rebuilt_salonika_corps = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+				army_morale_factor = 0.10
+				planning_speed = 0.15
+				max_planning = 0.10
+			}
+		}
+
+		# Estratégia da Grande Sérvia (Velika Srbija)
+		SER_greater_serbia_ideal = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				army_core_defence_factor = 0.10
+				stability_factor = -0.05
+			}
+		}
+
+		# Carta da Fraternidade Iugoslava (Jugoslovenski Odbor)
+		SER_yugoslav_brotherhood_charter = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				non_core_manpower = 0.20
+				compliance_growth_focus_factor = 0.20
+			}
+		}
+	}
+}

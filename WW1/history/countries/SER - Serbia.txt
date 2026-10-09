@@ -13,9 +13,16 @@ set_technology = {
 oob = "SER_1936_generic"
 
 add_ideas = {
-	extensive_conscription
 	SER_balkan_defiance
+	SER_civil_military_rivalry
+	SER_underdeveloped_agrarian_economy
+	SER_montenegrin_dynastic_union
 }
+
+set_variable = { ser_civil_military_balance = 50 }
+set_variable = { ser_national_cohesion = 60 }
+set_variable = { ser_army_readiness = 65 }
+set_variable = { ser_balkan_influence = 40 }
 
 set_manpower = 85000
 
@@ -102,10 +109,9 @@ set_popularities = {
 }
 
 # 1911 Country Leaders
-# recruit_character = SER_andra_nikolic # Omitted non-WW1 character
 recruit_character = SER_peter_i
-# recruit_character = SER_jasa_prodanovic # Omitted non-WW1 character
-# recruit_character = SER_dragutin_dimitrijevic # Omitted non-WW1 character
+recruit_character = SER_nikola_pasic
+recruit_character = SER_alexander_i
 
 set_stability = 0.6
 

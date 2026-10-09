@@ -68,6 +68,7 @@ TAG_TO_FILE = {
     "RUS": FOCUS_DIR / "soviet.txt",
     "SOV": FOCUS_DIR / "soviet.txt",
     "TUR": FOCUS_DIR / "turkey.txt",
+    "SER": FOCUS_DIR / "serbia.txt",
 }
 
 TAG_TO_OOB = {
@@ -79,6 +80,7 @@ TAG_TO_OOB = {
     "RUS": UNITS_DIR / "SOV_1936_generic.txt",
     "SOV": UNITS_DIR / "SOV_1936_generic.txt",
     "TUR": UNITS_DIR / "TUR_1936_generic.txt",
+    "SER": UNITS_DIR / "SER_1936_generic.txt",
 }
 
 TAG_TO_HISTORY = {
@@ -90,6 +92,7 @@ TAG_TO_HISTORY = {
     "RUS": COUNTRIES_DIR / "SOV - Soviet union.txt",
     "SOV": COUNTRIES_DIR / "SOV - Soviet union.txt",
     "TUR": COUNTRIES_DIR / "TUR - Turkey.txt",
+    "SER": COUNTRIES_DIR / "SER - Serbia.txt",
 }
 
 
@@ -553,6 +556,7 @@ class EventDatabase:
                 elif "eng" in ev_id.lower() or "uk" in f.name.lower() or "britain" in f.name.lower(): tag_hint = "ENG"
                 elif "rus" in ev_id.lower() or "sov" in f.name.lower(): tag_hint = "RUS"
                 elif "tur" in ev_id.lower() or "turkey" in f.name.lower(): tag_hint = "TUR"
+                elif "ser" in ev_id.lower() or "serbia" in f.name.lower(): tag_hint = "SER"
 
                 ev_obj = EventInspection(
                     id=ev_id,
@@ -799,6 +803,17 @@ def analyze_focus(node: FocusNode) -> None:
         elif 34 <= x <= 50:
             wing = 'ARMY'
         elif 51 <= x <= 67:
+            wing = 'DIPLOMACY'
+        else:
+            wing = 'POSTWAR'
+    elif node.id.startswith('SER_'):
+        if x <= 6:
+            wing = 'ECONOMIC'
+        elif 7 <= x <= 14:
+            wing = 'ARMY'
+        elif 15 <= x <= 22:
+            wing = 'POLITICAL'
+        elif 23 <= x <= 30:
             wing = 'DIPLOMACY'
         else:
             wing = 'POSTWAR'
@@ -1860,6 +1875,17 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
             elif 34 <= node.x <= 50:
                 wing_map['Exército'].append(node)
             elif 51 <= node.x <= 67:
+                wing_map['Diplomacia'].append(node)
+            else:
+                wing_map['Pós-Guerra'].append(node)
+        elif node.id.startswith('SER_') or tag == 'SER':
+            if node.x <= 6:
+                wing_map['Econômico'].append(node)
+            elif 7 <= node.x <= 14:
+                wing_map['Exército'].append(node)
+            elif 15 <= node.x <= 22:
+                wing_map['Político'].append(node)
+            elif 23 <= node.x <= 30:
                 wing_map['Diplomacia'].append(node)
             else:
                 wing_map['Pós-Guerra'].append(node)

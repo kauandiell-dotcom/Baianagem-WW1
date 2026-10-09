@@ -1,0 +1,436 @@
+# ==============================================================================
+# KINGDOM OF SERBIA HISTORICAL & NARRATIVE EVENTS (WW1 1911-1918)
+# ==============================================================================
+
+add_namespace = ww1_serbia
+
+# ------------------------------------------------------------------------------
+# 1. O Gabinete Pašić e a Monarquia Constitucional (1911)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.1
+	title = ww1_serbia.1.t
+	desc = ww1_serbia.1.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.1.a
+		ai_chance = { factor = 70 }
+		add_political_power = 60
+		add_stability = 0.05
+		add_to_variable = { ser_civil_military_balance = -5 }
+		set_country_flag = SER_pasic_constitutional_line
+	}
+
+	option = {
+		name = ww1_serbia.1.b
+		ai_chance = { factor = 30 }
+		add_political_power = 30
+		army_experience = 15
+		add_to_variable = { ser_civil_military_balance = 5 }
+		set_country_flag = SER_officer_compromise_line
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 2. A Sombra da Mão Negra (Crna Ruka - Ujedinjenje ili Smrt)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.2
+	title = ww1_serbia.2.t
+	desc = ww1_serbia.2.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.2.a
+		ai_chance = { factor = 50 }
+		add_stability = 0.05
+		add_to_variable = { ser_civil_military_balance = -10 }
+		add_political_power = 40
+		set_country_flag = SER_curb_black_hand
+	}
+
+	option = {
+		name = ww1_serbia.2.b
+		ai_chance = { factor = 50 }
+		add_war_support = 0.08
+		add_to_variable = { ser_civil_military_balance = 10 }
+		army_experience = 20
+		set_country_flag = SER_coexist_black_hand
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 3. O Empréstimo Francês da Banque Franco-Serbe
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.3
+	title = ww1_serbia.3.t
+	desc = ww1_serbia.3.d
+	picture = GFX_report_event_generic_treaty
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.3.a
+		ai_chance = { factor = 80 }
+		107 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_political_power = 40
+		add_opinion_modifier = { target = FRA modifier = positive_50 }
+		set_country_flag = SER_french_capital_integrated
+	}
+
+	option = {
+		name = ww1_serbia.3.b
+		ai_chance = { factor = 20 }
+		add_political_power = 75
+		add_stability = 0.05
+		set_country_flag = SER_independent_fiscal_line
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 4. Diálogo Fronteiriço com a Bulgária (Sem Guerras Balcânicas)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.4
+	title = ww1_serbia.4.t
+	desc = ww1_serbia.4.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.4.a
+		ai_chance = { factor = 75 }
+		add_opinion_modifier = { target = BUL modifier = positive_50 }
+		add_to_variable = { ser_balkan_influence = 10 }
+		add_political_power = 50
+		set_country_flag = SER_bulgarian_friendship_pact
+	}
+
+	option = {
+		name = ww1_serbia.4.b
+		ai_chance = { factor = 25 }
+		add_war_support = 0.05
+		army_experience = 15
+		set_country_flag = SER_balkan_rivalry_posture
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 5. O Acordo Fraterno de Montenegro (União Dinástica)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.5
+	title = ww1_serbia.5.t
+	desc = ww1_serbia.5.d
+	picture = GFX_report_event_generic_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.5.a
+		ai_chance = { factor = 90 }
+		add_stability = 0.08
+		add_manpower = 15000
+		army_experience = 20
+		add_to_variable = { ser_national_cohesion = 10 }
+		set_country_flag = SER_montenegrin_accord_sealed
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 6. A Regência do Príncipe Herdeiro Alexandre (Junho de 1914)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.6
+	title = ww1_serbia.6.t
+	desc = ww1_serbia.6.d
+	picture = GFX_report_event_generic_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.6.a
+		ai_chance = { factor = 85 }
+		set_country_leader_ideology = despotism
+		add_political_power = 60
+		add_war_support = 0.05
+		set_country_flag = SER_alexander_regent_active
+	}
+
+	option = {
+		name = ww1_serbia.6.b
+		ai_chance = { factor = 15 }
+		add_stability = 0.05
+		add_political_power = 50
+		set_country_flag = SER_peter_retains_prerogatives
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 7. O Atentado de Sarajevo e a Conexão de Belgrado (Julho de 1914)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.7
+	title = ww1_serbia.7.t
+	desc = ww1_serbia.7.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.7.a
+		ai_chance = { factor = 70 }
+		add_stability = 0.05
+		add_political_power = 40
+		add_opinion_modifier = { target = AUS modifier = positive_25 }
+		set_country_flag = SER_inquiry_opened
+	}
+
+	option = {
+		name = ww1_serbia.7.b
+		ai_chance = { factor = 30 }
+		add_war_support = 0.10
+		army_experience = 15
+		set_country_flag = SER_national_defiance_posture
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 8. O Ultimato Austro-Húngaro de 23 de Julho de 1914
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.8
+	title = ww1_serbia.8.t
+	desc = ww1_serbia.8.d
+	picture = GFX_report_event_generic_treaty
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.8.a
+		ai_chance = { factor = 80 }
+		add_war_support = 0.20
+		add_stability = 0.10
+		add_political_power = 80
+		set_country_flag = SER_ultimatum_dignified_rejection
+	}
+
+	option = {
+		name = ww1_serbia.8.b
+		ai_chance = { factor = 20 }
+		add_stability = -0.10
+		add_political_power = -50
+		add_opinion_modifier = { target = AUS modifier = positive_50 }
+		set_country_flag = SER_ultimatum_humiliating_acceptance
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 9. A Mobilização Geral por Radomir Putnik (Julho de 1914)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.9
+	title = ww1_serbia.9.t
+	desc = ww1_serbia.9.d
+	picture = GFX_report_event_generic_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.9.a
+		ai_chance = { factor = 90 }
+		add_manpower = 40000
+		army_experience = 30
+		add_command_power = 25
+		add_to_variable = { ser_army_readiness = 25 }
+		set_country_flag = SER_general_mobilization_completed
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 10. A Batalha de Kolubara e a Lição do Exército Sérvio (Dezembro de 1914)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.10
+	title = ww1_serbia.10.t
+	desc = ww1_serbia.10.d
+	picture = GFX_report_event_generic_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.10.a
+		ai_chance = { factor = 85 }
+		add_timed_idea = { idea = SER_kolubara_maneuver_mastery days = 21 }
+		army_experience = 35
+		add_war_support = 0.15
+		set_country_flag = SER_kolubara_triumph_achieved
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 11. O Gólgota Albanês: A Grande Retirada nas Montanhas (1915)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.11
+	title = ww1_serbia.11.t
+	desc = ww1_serbia.11.d
+	picture = GFX_report_event_generic_soldier
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.11.a
+		ai_chance = { factor = 90 }
+		army_experience = 25
+		add_stability = 0.05
+		add_to_variable = { ser_national_cohesion = 15 }
+		set_country_flag = SER_army_evacuated_safely
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 12. O Renascimento em Corfu: Sobrevivência do Estado (1916)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.12
+	title = ww1_serbia.12.t
+	desc = ww1_serbia.12.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.12.a
+		ai_chance = { factor = 85 }
+		add_political_power = 60
+		add_stability = 0.10
+		add_opinion_modifier = { target = FRA modifier = positive_50 }
+		add_opinion_modifier = { target = ENG modifier = positive_50 }
+		set_country_flag = SER_corfu_government_active
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 13. O Julgamento de Salônica e o Fim da Mão Negra (1917)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.13
+	title = ww1_serbia.13.t
+	desc = ww1_serbia.13.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.13.a
+		ai_chance = { factor = 75 }
+		add_stability = 0.10
+		add_political_power = 50
+		remove_ideas = SER_civil_military_rivalry
+		add_ideas = SER_civilian_supremacy_established
+		set_country_flag = SER_apis_convicted
+	}
+
+	option = {
+		name = ww1_serbia.13.b
+		ai_chance = { factor = 25 }
+		add_war_support = 0.08
+		army_experience = 20
+		set_country_flag = SER_officer_amnesty_granted
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 14. A Declaração de Corfu e o Futuro Sul-Eslavo (1917)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.14
+	title = ww1_serbia.14.t
+	desc = ww1_serbia.14.d
+	picture = GFX_report_event_generic_treaty
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.14.a
+		ai_chance = { factor = 80 }
+		add_ideas = SER_yugoslav_brotherhood_charter
+		add_stability = 0.10
+		add_political_power = 75
+		set_country_flag = SER_corfu_declaration_signed
+	}
+
+	option = {
+		name = ww1_serbia.14.b
+		ai_chance = { factor = 20 }
+		add_ideas = SER_greater_serbia_ideal
+		add_war_support = 0.10
+		set_country_flag = SER_greater_serbian_pledge
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 15. A Ruptura de Dobro Pole: A Carga Final (1918)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.15
+	title = ww1_serbia.15.t
+	desc = ww1_serbia.15.d
+	picture = GFX_report_event_generic_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.15.a
+		ai_chance = { factor = 90 }
+		add_timed_idea = { idea = SER_dobro_pole_breakthrough days = 30 }
+		army_experience = 35
+		add_war_support = 0.15
+		set_country_flag = SER_dobro_pole_victorious
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 16. A Proclamação do Reino dos Sérvios, Croatas e Eslovenos (1918)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.16
+	title = ww1_serbia.16.t
+	desc = ww1_serbia.16.d
+	picture = GFX_report_event_generic_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_serbia.16.a
+		ai_chance = { factor = 85 }
+		add_stability = 0.20
+		add_political_power = 120
+		set_cosmetic_tag = YUG_kingdom
+		set_country_flag = SER_yugoslavia_proclaimed
+	}
+
+	option = {
+		name = ww1_serbia.16.b
+		ai_chance = { factor = 15 }
+		add_stability = 0.15
+		add_war_support = 0.15
+		add_political_power = 100
+		set_country_flag = SER_greater_serbia_restored
+	}
+}

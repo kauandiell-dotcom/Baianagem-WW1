@@ -1,0 +1,40 @@
+# Kingdom of Serbia Decision Categories (WW1 1911-1918)
+
+SER_black_hand_and_national_defense = {
+	icon = GFX_decision_category_generic_political_actions
+	priority = 100
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		tag = SER
+	}
+}
+
+SER_wartime_emergency_measures = {
+	icon = GFX_decision_category_military_operation
+	priority = 90
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		tag = SER
+		has_war = yes
+	}
+}
+
+SER_salonika_and_corfu_exile = {
+	icon = GFX_decision_category_generic_foreign_policy
+	priority = 85
+	allowed = {
+		tag = SER
+	}
+	visible = {
+		tag = SER
+		OR = {
+			has_completed_focus = SER_government_in_exile_corfu
+			has_completed_focus = SER_rebuild_army_in_salonika
+			NOT = { controls_state = 107 }
+		}
+	}
+}

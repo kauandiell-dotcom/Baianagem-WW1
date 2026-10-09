@@ -1,0 +1,272 @@
+# ==============================================================================
+# KINGDOM OF SERBIA DECISIONS (1911-1918)
+# ==============================================================================
+
+SER_black_hand_and_national_defense = {
+
+	# Monitorar Células Ultranacionalistas
+	SER_monitor_ultranationalist_cells = {
+		icon = GFX_decision_generic_police_action
+		available = {
+			NOT = { has_country_flag = SER_secret_police_active }
+		}
+		visible = {
+			tag = SER
+		}
+		cost = 30
+		days_remove = 120
+		modifier = {
+			stability_factor = 0.05
+			political_power_gain = -0.05
+		}
+		complete_effect = {
+			set_country_flag = {
+				flag = SER_secret_police_active
+				days = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Infiltração de Redes de Inteligência na Bósnia
+	SER_infiltrate_bosnian_intelligence_network = {
+		icon = GFX_decision_generic_intelligence_operation
+		available = {
+			command_power > 15
+		}
+		visible = {
+			has_completed_focus = SER_military_intelligence_network
+		}
+		cost = 40
+		custom_cost_trigger = {
+			command_power > 15
+		}
+		custom_cost_text = decision_cost_command_power_15
+		days_remove = 180
+		modifier = {
+			enemy_operative_detection_chance_factor = 0.15
+			decryption_factor = 0.05
+		}
+		complete_effect = {
+			add_command_power = -15
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Expurgar Oficiais Clandestinos do Exército
+	SER_purge_army_clandestine_officers = {
+		icon = GFX_decision_generic_purge
+		available = {
+			has_completed_focus = SER_curb_secret_societies
+		}
+		visible = {
+			has_completed_focus = SER_curb_secret_societies
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_stability = 0.10
+			add_command_power = -20
+			custom_effect_tooltip = SER_purge_army_clandestine_officers_tt
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Reforçar a Vigília de Fronteira no Sava e Drina
+	SER_strengthen_border_watch = {
+		icon = GFX_decision_generic_military_operation
+		available = {
+			has_manpower > 5000
+		}
+		visible = {
+			tag = SER
+		}
+		cost = 25
+		days_remove = 180
+		modifier = {
+			army_core_defence_factor = 0.05
+			reconnaissance_factor = 0.10
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+}
+
+SER_wartime_emergency_measures = {
+
+	# Triagem Médica e Quarentena Contra o Tifo
+	SER_typhus_quarantine_and_triage = {
+		icon = GFX_decision_generic_aid
+		available = {
+			has_idea = SER_typhus_epidemic_crisis
+		}
+		visible = {
+			has_idea = SER_typhus_epidemic_crisis
+		}
+		cost = 30
+		days_remove = 60
+		modifier = {
+			attrition = -0.10
+			casualty_trickleback = 0.05
+		}
+		complete_effect = {
+			if = {
+				limit = { has_idea = SER_typhus_epidemic_crisis }
+				remove_ideas = SER_typhus_epidemic_crisis
+			}
+		}
+		ai_will_do = {
+			factor = 2.0
+		}
+	}
+
+	# Prioridade Ferroviária de Munições para o Drina e Morava
+	SER_drina_railway_ammunition_priority = {
+		icon = GFX_decision_train
+		available = {
+			has_war = yes
+		}
+		visible = {
+			has_completed_focus = SER_morava_valley_logistics
+		}
+		cost = 25
+		days_remove = 90
+		modifier = {
+			supply_factor = 0.10
+			army_speed_factor = 0.05
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
+	# Requisição Emergencial de Grãos para a População Civil
+	SER_requisition_emergency_grain = {
+		icon = GFX_decision_generic_agriculture
+		available = {
+			has_war = yes
+		}
+		visible = {
+			tag = SER
+			has_war = yes
+		}
+		cost = 20
+		days_remove = 120
+		modifier = {
+			war_support_factor = 0.05
+			stability_factor = -0.03
+			consumer_goods_factor = -0.02
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Convocação dos Voluntários Montenegrinos de Lovćen
+	SER_montenegrin_mountain_levies = {
+		icon = GFX_decision_generic_form_nation
+		available = {
+			controls_state = 105
+			has_war = yes
+		}
+		visible = {
+			controls_state = 105
+			has_war = yes
+		}
+		cost = 35
+		fire_only_once = yes
+		complete_effect = {
+			add_manpower = 15000
+			add_war_support = 0.05
+			custom_effect_tooltip = SER_montenegrin_mountain_levies_tt
+		}
+		ai_will_do = {
+			factor = 2.0
+		}
+	}
+}
+
+SER_salonika_and_corfu_exile = {
+
+	# Recrutar Voluntários Sul-Eslavos entre Prisioneiros de Guerra
+	SER_recruit_south_slav_pow_volunteers = {
+		icon = GFX_decision_generic_form_nation
+		available = {
+			has_war = yes
+		}
+		visible = {
+			tag = SER
+			OR = {
+				has_completed_focus = SER_government_in_exile_corfu
+				has_completed_focus = SER_rebuild_army_in_salonika
+				NOT = { controls_state = 107 }
+			}
+		}
+		cost = 40
+		days_remove = 180
+		modifier = {
+			monthly_population = 0.15
+			conscription_factor = 0.10
+		}
+		complete_effect = {
+			add_manpower = 10000
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
+	# Coordenação de Intendência com o Exército Francês do Oriente
+	SER_french_logistical_coordination = {
+		icon = GFX_decision_generic_arms_factory
+		available = {
+			has_war = yes
+		}
+		visible = {
+			has_completed_focus = SER_rebuild_army_in_salonika
+		}
+		cost = 30
+		days_remove = 180
+		modifier = {
+			industrial_capacity_factory = 0.05
+			production_factory_max_efficiency_factor = 0.05
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 3000
+				producer = FRA
+			}
+		}
+		ai_will_do = {
+			factor = 1.5
+		}
+	}
+
+	# Apelo Diplomático e Financeiro de Corfu
+	SER_diplomatic_appeal_corfu = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			has_completed_focus = SER_government_in_exile_corfu
+		}
+		visible = {
+			has_completed_focus = SER_government_in_exile_corfu
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_political_power = 75
+			add_war_support = 0.10
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+}

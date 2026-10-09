@@ -1,0 +1,1608 @@
+focus_tree = {
+	id = serbian_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SER
+		}
+	}
+	default = no
+
+	focus = {
+		id = SER_agrarian_kingdom_finances
+		icon = GFX_SER_agrarian_kingdom_finances
+		x = 3
+		y = 0
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+			add_to_variable = { ser_national_cohesion = 5 }
+			set_country_flag = SER_agrarian_finances_settled
+		}
+	}
+
+	focus = {
+		id = SER_zadruga_cooperative_network
+		icon = GFX_SER_zadruga_cooperative_network
+		x = 1
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_agrarian_kingdom_finances }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 40
+			add_to_variable = { ser_national_cohesion = 5 }
+			107 = { add_extra_state_shared_building_slots = 1 }
+		}
+	}
+
+	focus = {
+		id = SER_expand_livestock_and_grain_trade
+		icon = GFX_SER_expand_livestock_and_grain_trade
+		x = 1
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_zadruga_cooperative_network }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 50
+			add_to_variable = { ser_national_cohesion = 5 }
+			108 = { add_extra_state_shared_building_slots = 1 }
+		}
+	}
+
+	focus = {
+		id = SER_belgrade_nis_rail_artery
+		icon = GFX_SER_belgrade_nis_rail_artery
+		x = 3
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_agrarian_kingdom_finances }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			107 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			108 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_morava_valley_logistics
+		icon = GFX_SER_morava_valley_logistics
+		x = 3
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_belgrade_nis_rail_artery }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			107 = { add_building_construction = { type = supply_node province = 11586 instant_build = yes } }
+			add_command_power = 15
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_bor_copper_and_rudnik_mines
+		icon = GFX_SER_bor_copper_and_rudnik_mines
+		x = 5
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_agrarian_kingdom_finances }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			108 = { add_resource = { type = steel amount = 4 } }
+			add_political_power = 30
+		}
+	}
+
+	focus = {
+		id = SER_modernize_trepca_prospects
+		icon = GFX_SER_modernize_trepca_prospects
+		x = 5
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_bor_copper_and_rudnik_mines }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			108 = { add_resource = { type = tungsten amount = 3 } }
+			add_stability = 0.03
+		}
+	}
+
+	focus = {
+		id = SER_kragujevac_military_workshops
+		icon = GFX_SER_kragujevac_military_workshops
+		x = 2
+		y = 3
+		cost = 6
+
+		prerequisite = { focus = SER_expand_livestock_and_grain_trade }
+		prerequisite = { focus = SER_morava_valley_logistics }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			107 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			107 = { add_extra_state_shared_building_slots = 1 }
+			add_to_variable = { ser_army_readiness = 5 }
+			if = { limit = { has_idea = SER_underdeveloped_agrarian_economy } remove_ideas = SER_underdeveloped_agrarian_economy add_ideas = SER_kragujevac_arsenal_expansion }
+		}
+	}
+
+	focus = {
+		id = SER_domestic_ammunition_lines
+		icon = GFX_SER_domestic_ammunition_lines
+		x = 1
+		y = 4
+		cost = 6
+
+		prerequisite = { focus = SER_kragujevac_military_workshops }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			107 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = SER }
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_creusot_schneider_contracts
+		icon = GFX_SER_creusot_schneider_contracts
+		x = 3
+		y = 4
+		cost = 6
+
+		prerequisite = { focus = SER_kragujevac_military_workshops }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = artillery_bonus bonus = 1.0 uses = 1 category = artillery }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = SER }
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_national_bank_monetary_stability
+		icon = GFX_SER_national_bank_monetary_stability
+		x = 5
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = SER_modernize_trepca_prospects }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_diversified_national_industry
+		icon = GFX_SER_diversified_national_industry
+		x = 2
+		y = 5
+		cost = 7
+
+		prerequisite = { focus = SER_domestic_ammunition_lines }
+		prerequisite = { focus = SER_creusot_schneider_contracts }
+		prerequisite = { focus = SER_national_bank_monetary_stability }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			107 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			108 = { add_extra_state_shared_building_slots = 1 }
+			add_to_variable = { ser_national_cohesion = 10 }
+			if = { limit = { has_idea = SER_kragujevac_arsenal_expansion } remove_ideas = SER_kragujevac_arsenal_expansion add_ideas = SER_diversified_national_industry }
+		}
+	}
+
+	focus = {
+		id = SER_radomir_putnik_doctrine
+		icon = GFX_SER_radomir_putnik_doctrine
+		x = 11
+		y = 0
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 25
+			add_command_power = 20
+			add_to_variable = { ser_army_readiness = 10 }
+			set_country_flag = SER_putnik_doctrine_established
+		}
+	}
+
+	focus = {
+		id = SER_three_ban_conscription_system
+		icon = GFX_SER_three_ban_conscription_system
+		x = 9
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_radomir_putnik_doctrine }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 25000
+			add_war_support = 0.05
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_mobilization_timetables
+		icon = GFX_SER_mobilization_timetables
+		x = 9
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_three_ban_conscription_system }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_command_power = 20
+			army_experience = 10
+			add_to_variable = { ser_army_readiness = 5 }
+			add_tech_bonus = { name = land_doc bonus = 1.0 uses = 1 category = land_doctrine }
+		}
+	}
+
+	focus = {
+		id = SER_peacetime_infantry_cadre
+		icon = GFX_SER_peacetime_infantry_cadre
+		x = 9
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = SER_mobilization_timetables }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			107 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4000 producer = SER }
+			army_experience = 15
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_artillery_park_reorganization
+		icon = GFX_SER_artillery_park_reorganization
+		x = 13
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_radomir_putnik_doctrine }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			army_experience = 20
+			add_to_variable = { ser_army_readiness = 5 }
+			add_tech_bonus = { name = artillery_bonus bonus = 1.0 uses = 1 category = artillery }
+		}
+	}
+
+	focus = {
+		id = SER_rapid_fire_field_guns
+		icon = GFX_SER_rapid_fire_field_guns
+		x = 13
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_artillery_park_reorganization }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 40 producer = SER }
+			army_experience = 10
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_drina_defensive_survey
+		icon = GFX_SER_drina_defensive_survey
+		x = 11
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_radomir_putnik_doctrine }
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			107 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 3609 } }
+			107 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 11586 } }
+			add_command_power = 10
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_danubian_flotilla_watch
+		icon = GFX_SER_danubian_flotilla_watch
+		x = 11
+		y = 3
+		cost = 4
+
+		prerequisite = { focus = SER_drina_defensive_survey }
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			107 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 11586 } }
+			add_stability = 0.03
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_mountain_warfare_detachments
+		icon = GFX_SER_mountain_warfare_detachments
+		x = 8
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_peacetime_infantry_cadre }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = special_forces_bonus bonus = 1.0 uses = 1 category = mountaineers }
+			army_experience = 15
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_entrenchment_and_counterstroke
+		icon = GFX_SER_entrenchment_and_counterstroke
+		x = 10
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_peacetime_infantry_cadre }
+		prerequisite = { focus = SER_danubian_flotilla_watch }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			army_experience = 20
+			add_to_variable = { ser_army_readiness = 5 }
+			add_tech_bonus = { name = land_doc bonus = 1.0 uses = 1 category = land_doctrine }
+		}
+	}
+
+	focus = {
+		id = SER_officer_corps_meritocracy
+		icon = GFX_SER_officer_corps_meritocracy
+		x = 12
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_rapid_fire_field_guns }
+		prerequisite = { focus = SER_danubian_flotilla_watch }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_command_power = 25
+			army_experience = 15
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_military_telegraph_corps
+		icon = GFX_SER_military_telegraph_corps
+		x = 14
+		y = 4
+		cost = 4
+
+		prerequisite = { focus = SER_rapid_fire_field_guns }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = radio_bonus bonus = 1.0 uses = 1 category = electronics }
+			add_political_power = 30
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_field_medical_directorate
+		icon = GFX_SER_field_medical_directorate
+		x = 9
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = SER_mountain_warfare_detachments }
+		prerequisite = { focus = SER_entrenchment_and_counterstroke }
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = { name = hospital_bonus bonus = 1.0 uses = 1 category = support_tech }
+			add_stability = 0.03
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_foreign_medical_missions
+		icon = GFX_SER_foreign_medical_missions
+		x = 11
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = SER_entrenchment_and_counterstroke }
+		prerequisite = { focus = SER_officer_corps_meritocracy }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 40
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_veteran_serbian_soldier
+		icon = GFX_SER_veteran_serbian_soldier
+		x = 13
+		y = 5
+		cost = 6
+
+		prerequisite = { focus = SER_officer_corps_meritocracy }
+		prerequisite = { focus = SER_military_telegraph_corps }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 25
+			add_war_support = 0.05
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_supreme_command_preparedness
+		icon = GFX_SER_supreme_command_preparedness
+		x = 11
+		y = 6
+		cost = 5
+
+		prerequisite = { focus = SER_field_medical_directorate }
+		prerequisite = { focus = SER_foreign_medical_missions }
+		prerequisite = { focus = SER_veteran_serbian_soldier }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_command_power = 30
+			army_experience = 30
+			add_war_support = 0.05
+			add_to_variable = { ser_army_readiness = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_reign_of_peter_i
+		icon = GFX_SER_reign_of_peter_i
+		x = 19
+		y = 0
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = ww1_serbia.1 }
+			add_political_power = 80
+			add_stability = 0.05
+			add_to_variable = { ser_civil_military_balance = 5 }
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_radical_party_cabinet
+		icon = GFX_SER_radical_party_cabinet
+		x = 17
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_reign_of_peter_i }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = { ideology = democratic popularity = 0.10 }
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_independent_radicals_dialogue
+		icon = GFX_SER_independent_radicals_dialogue
+		x = 16
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_radical_party_cabinet }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_strengthen_narodna_skupstina
+		icon = GFX_SER_strengthen_narodna_skupstina
+		x = 17
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = SER_independent_radicals_dialogue }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_constitutional_liberties_bill
+		icon = GFX_SER_constitutional_liberties_bill
+		x = 17
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_strengthen_narodna_skupstina }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.08
+			add_political_power = 60
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_crown_prince_regency_prep
+		icon = GFX_SER_crown_prince_regency_prep
+		x = 19
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_reign_of_peter_i }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 60
+			add_command_power = 15
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_investigate_officer_conspiracies
+		icon = GFX_SER_investigate_officer_conspiracies
+		x = 19
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_crown_prince_regency_prep }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_serbia.2 }
+			add_political_power = 50
+			add_stability = -0.03
+			add_to_variable = { ser_civil_military_balance = -5 }
+		}
+	}
+
+	focus = {
+		id = SER_the_shadow_of_apis
+		icon = GFX_SER_the_shadow_of_apis
+		x = 21
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_reign_of_peter_i }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_serbia.2 }
+			add_war_support = 0.08
+			add_command_power = 20
+			add_to_variable = { ser_civil_military_balance = -10 }
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_narodna_odbrana_patronage
+		icon = GFX_SER_narodna_odbrana_patronage
+		x = 21
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_the_shadow_of_apis }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_war_support = 0.05
+			add_manpower = 10000
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_military_intelligence_network
+		icon = GFX_SER_military_intelligence_network
+		x = 22
+		y = 3
+		cost = 5
+
+		prerequisite = { focus = SER_the_shadow_of_apis }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_command_power = 25
+			army_experience = 15
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_civilian_supremacy_charter
+		icon = GFX_SER_civilian_supremacy_charter
+		x = 17
+		y = 5
+		cost = 6
+
+		prerequisite = { focus = SER_constitutional_liberties_bill }
+		prerequisite = { focus = SER_investigate_officer_conspiracies }
+		mutually_exclusive = { focus = SER_officer_corps_ascendancy }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			remove_ideas = SER_civil_military_rivalry
+			add_ideas = SER_civilian_supremacy_established
+			add_political_power = 120
+			add_stability = 0.10
+			add_to_variable = { ser_civil_military_balance = 25 }
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_curb_secret_societies
+		icon = GFX_SER_curb_secret_societies
+		x = 17
+		y = 6
+		cost = 5
+
+		prerequisite = { focus = SER_civilian_supremacy_charter }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.08
+			add_command_power = -15
+			add_political_power = 60
+			add_to_variable = { ser_civil_military_balance = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_officer_corps_ascendancy
+		icon = GFX_SER_officer_corps_ascendancy
+		x = 21
+		y = 5
+		cost = 6
+
+		prerequisite = { focus = SER_narodna_odbrana_patronage }
+		prerequisite = { focus = SER_military_intelligence_network }
+		mutually_exclusive = { focus = SER_civilian_supremacy_charter }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			remove_ideas = SER_civil_military_rivalry
+			add_ideas = SER_military_officer_ascendancy
+			add_war_support = 0.15
+			army_experience = 25
+			add_to_variable = { ser_civil_military_balance = -25 }
+			add_to_variable = { ser_army_readiness = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_clandestine_national_action
+		icon = GFX_SER_clandestine_national_action
+		x = 21
+		y = 6
+		cost = 5
+
+		prerequisite = { focus = SER_officer_corps_ascendancy }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_command_power = 30
+			add_war_support = 0.05
+			add_manpower = 15000
+			add_to_variable = { ser_army_readiness = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_monarchic_arbiter
+		icon = GFX_SER_monarchic_arbiter
+		x = 19
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_investigate_officer_conspiracies }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_patriotic_press_censorship
+		icon = GFX_SER_patriotic_press_censorship
+		x = 19
+		y = 5
+		cost = 4
+
+		prerequisite = { focus = SER_monarchic_arbiter }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.03
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_anticorruption_procurement
+		icon = GFX_SER_anticorruption_procurement
+		x = 16
+		y = 6
+		cost = 5
+
+		prerequisite = { focus = SER_civilian_supremacy_charter }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.05
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_professional_civil_service
+		icon = GFX_SER_professional_civil_service
+		x = 16
+		y = 7
+		cost = 5
+
+		prerequisite = { focus = SER_anticorruption_procurement }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_stability = 0.05
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_national_unity_covenant
+		icon = GFX_SER_national_unity_covenant
+		x = 19
+		y = 7
+		cost = 6
+
+		prerequisite = { focus = SER_curb_secret_societies }
+		prerequisite = { focus = SER_patriotic_press_censorship }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+			add_political_power = 80
+			add_to_variable = { ser_national_cohesion = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_regency_of_alexander
+		icon = GFX_SER_regency_of_alexander
+		x = 19
+		y = 8
+		cost = 5
+
+		prerequisite = { focus = SER_national_unity_covenant }
+		available = { date > 1914.6.1 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_serbia.6 }
+			add_political_power = 100
+			add_command_power = 25
+			add_to_variable = { ser_civil_military_balance = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_balkan_diplomatic_initiatives
+		icon = GFX_SER_balkan_diplomatic_initiatives
+		x = 27
+		y = 0
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 80
+			add_to_variable = { ser_balkan_influence = 10 }
+			set_country_flag = SER_balkan_diplomacy_opened
+		}
+	}
+
+	focus = {
+		id = SER_serbo_bulgarian_dialogue
+		icon = GFX_SER_serbo_bulgarian_dialogue
+		x = 25
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_serbia.4 }
+			add_opinion_modifier = { target = BUL modifier = positive_50 }
+			add_to_variable = { ser_balkan_influence = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_macedonian_autonomy_proposal
+		icon = GFX_SER_macedonian_autonomy_proposal
+		x = 25
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_serbo_bulgarian_dialogue }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+			BUL = { add_opinion_modifier = { target = SER modifier = positive_25 } }
+			add_to_variable = { ser_balkan_influence = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_bulgarian_non_aggression_pact
+		icon = GFX_SER_bulgarian_non_aggression_pact
+		x = 25
+		y = 3
+		cost = 6
+
+		prerequisite = { focus = SER_macedonian_autonomy_proposal }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			give_guarantee = BUL
+			BUL = { give_guarantee = SER }
+			add_political_power = 60
+			add_to_variable = { ser_balkan_influence = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_montenegrin_dynastic_ties
+		icon = GFX_SER_montenegrin_dynastic_ties
+		x = 26
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = ww1_serbia.5 }
+			add_stability = 0.05
+			add_political_power = 50
+			add_to_variable = { ser_balkan_influence = 5 }
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_cetinje_military_convention
+		icon = GFX_SER_cetinje_military_convention
+		x = 26
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_montenegrin_dynastic_ties }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_command_power = 20
+			army_experience = 15
+			add_manpower = 10000
+			add_to_variable = { ser_balkan_influence = 5 }
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_greek_commercial_transit
+		icon = GFX_SER_greek_commercial_transit
+		x = 28
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = GRE modifier = positive_50 }
+			add_political_power = 50
+			add_to_variable = { ser_balkan_influence = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_romanian_danube_understanding
+		icon = GFX_SER_romanian_danube_understanding
+		x = 28
+		y = 2
+		cost = 5
+
+		prerequisite = { focus = SER_greek_commercial_transit }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = ROM modifier = positive_50 }
+			add_stability = 0.05
+			add_to_variable = { ser_balkan_influence = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_sublime_porte_normalization
+		icon = GFX_SER_sublime_porte_normalization
+		x = 30
+		y = 1
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = TUR modifier = positive_25 }
+			add_political_power = 60
+			add_to_variable = { ser_balkan_influence = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_balkan_equilibrium_accord
+		icon = GFX_SER_balkan_equilibrium_accord
+		x = 26
+		y = 4
+		cost = 6
+
+		prerequisite = { focus = SER_bulgarian_non_aggression_pact }
+		prerequisite = { focus = SER_cetinje_military_convention }
+		prerequisite = { focus = SER_romanian_danube_understanding }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.08
+			add_to_variable = { ser_balkan_influence = 15 }
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_traditional_russian_patronage
+		icon = GFX_SER_traditional_russian_patronage
+		x = 24
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = RUS modifier = positive_100 }
+			add_political_power = 60
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_saint_petersburg_arms_loans
+		icon = GFX_SER_saint_petersburg_arms_loans
+		x = 24
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = SER_traditional_russian_patronage }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = RUS }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 40 producer = RUS }
+			add_to_variable = { ser_army_readiness = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_banque_franco_serbe_credits
+		icon = GFX_SER_banque_franco_serbe_credits
+		x = 25
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			country_event = { id = ww1_serbia.3 }
+			if = { limit = { has_idea = SER_underdeveloped_agrarian_economy } remove_ideas = SER_underdeveloped_agrarian_economy }
+			add_ideas = SER_french_serbian_trade_accord
+			add_political_power = 80
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_entente_diplomatic_shield
+		icon = GFX_SER_entente_diplomatic_shield
+		x = 24
+		y = 6
+		cost = 6
+
+		prerequisite = { focus = SER_saint_petersburg_arms_loans }
+		prerequisite = { focus = SER_banque_franco_serbe_credits }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			RUS = { give_guarantee = SER }
+			FRA = { give_guarantee = SER }
+			add_war_support = 0.10
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_austrian_border_accommodation
+		icon = GFX_SER_austrian_border_accommodation
+		x = 29
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_diplomatic_initiatives }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = AUS modifier = positive_50 }
+			add_political_power = 60
+			add_to_variable = { ser_balkan_influence = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_serbo_austrian_trade_treaty
+		icon = GFX_SER_serbo_austrian_trade_treaty
+		x = 30
+		y = 5
+		cost = 6
+
+		prerequisite = { focus = SER_austrian_border_accommodation }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = { limit = { has_idea = SER_underdeveloped_agrarian_economy } remove_ideas = SER_underdeveloped_agrarian_economy }
+			add_ideas = SER_serbo_austrian_economic_pact
+			add_political_power = 80
+			add_stability = 0.05
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_suppress_anti_habsburg_agitation
+		icon = GFX_SER_suppress_anti_habsburg_agitation
+		x = 29
+		y = 6
+		cost = 5
+
+		prerequisite = { focus = SER_serbo_austrian_trade_treaty }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_opinion_modifier = { target = AUS modifier = positive_75 }
+			add_stability = 0.05
+			add_war_support = -0.05
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_south_slav_cultural_links
+		icon = GFX_SER_south_slav_cultural_links
+		x = 27
+		y = 5
+		cost = 5
+
+		prerequisite = { focus = SER_balkan_equilibrium_accord }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+			add_to_variable = { ser_balkan_influence = 5 }
+			add_to_variable = { ser_national_cohesion = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_greater_serbian_strategy
+		icon = GFX_SER_greater_serbian_strategy
+		x = 27
+		y = 6
+		cost = 6
+
+		prerequisite = { focus = SER_south_slav_cultural_links }
+		mutually_exclusive = { focus = SER_yugoslav_federal_ideal }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			if = { limit = { has_idea = SER_balkan_defiance } remove_ideas = SER_balkan_defiance }
+			add_ideas = SER_greater_serbia_ideal
+			add_war_support = 0.15
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_yugoslav_federal_ideal
+		icon = GFX_SER_yugoslav_federal_ideal
+		x = 28
+		y = 6
+		cost = 6
+
+		prerequisite = { focus = SER_south_slav_cultural_links }
+		mutually_exclusive = { focus = SER_greater_serbian_strategy }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			if = { limit = { has_idea = SER_balkan_defiance } remove_ideas = SER_balkan_defiance }
+			add_ideas = SER_yugoslav_brotherhood_charter
+			add_stability = 0.10
+			add_to_variable = { ser_balkan_influence = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_sarajevo_aftermath_crisis
+		icon = GFX_SER_sarajevo_aftermath_crisis
+		x = 36
+		y = 0
+		cost = 3
+
+		available = { OR = { date > 1914.6.28 has_global_flag = ww1_sarajevo_assassination has_war = yes } }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_serbia.7 }
+			add_political_power = 50
+			add_war_support = 0.10
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_internal_inquiry_on_conspirators
+		icon = GFX_SER_internal_inquiry_on_conspirators
+		x = 34
+		y = 1
+		cost = 3
+
+		prerequisite = { focus = SER_sarajevo_aftermath_crisis }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 40
+			add_to_variable = { ser_civil_military_balance = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_face_austrian_ultimatum
+		icon = GFX_SER_face_austrian_ultimatum
+		x = 36
+		y = 1
+		cost = 4
+
+		prerequisite = { focus = SER_sarajevo_aftermath_crisis }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_serbia.8 }
+			add_political_power = 60
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_appeal_to_tsar_nicholas
+		icon = GFX_SER_appeal_to_tsar_nicholas
+		x = 35
+		y = 2
+		cost = 3
+
+		prerequisite = { focus = SER_face_austrian_ultimatum }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			RUS = { country_event = { id = ww1_russia.12 } }
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SER_general_mobilization_order
+		icon = GFX_SER_general_mobilization_order
+		x = 37
+		y = 2
+		cost = 4
+
+		prerequisite = { focus = SER_face_austrian_ultimatum }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			country_event = { id = ww1_serbia.9 }
+			add_manpower = 45000
+			add_war_support = 0.15
+			add_to_variable = { ser_army_readiness = 20 }
+		}
+	}
+
+	focus = {
+		id = SER_defend_belgrade_perimeter
+		icon = GFX_SER_defend_belgrade_perimeter
+		x = 35
+		y = 3
+		cost = 4
+
+		prerequisite = { focus = SER_appeal_to_tsar_nicholas }
+		prerequisite = { focus = SER_general_mobilization_order }
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			107 = { add_building_construction = { type = bunker level = 2 instant_build = yes province = 11586 } }
+			add_command_power = 20
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_drina_valley_ambush_lines
+		icon = GFX_SER_drina_valley_ambush_lines
+		x = 37
+		y = 3
+		cost = 4
+
+		prerequisite = { focus = SER_general_mobilization_order }
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			107 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = 3609 } }
+			army_experience = 20
+			add_to_variable = { ser_army_readiness = 5 }
+		}
+	}
+
+	focus = {
+		id = SER_total_defensive_war
+		icon = GFX_SER_total_defensive_war
+		x = 36
+		y = 4
+		cost = 5
+
+		prerequisite = { focus = SER_defend_belgrade_perimeter }
+		prerequisite = { focus = SER_drina_valley_ambush_lines }
+		available = { has_war = yes }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.10
+			add_command_power = 30
+			add_to_variable = { ser_army_readiness = 15 }
+			add_to_variable = { ser_national_cohesion = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_battle_of_cer_heroism
+		icon = GFX_SER_battle_of_cer_heroism
+		x = 35
+		y = 5
+		cost = 3
+
+		prerequisite = { focus = SER_total_defensive_war }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			add_timed_idea = { idea = SER_cer_counterstroke_glory days = 28 }
+			army_experience = 25
+			add_war_support = 0.10
+			add_to_variable = { ser_army_readiness = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_misic_kolubara_counteroffensive
+		icon = GFX_SER_misic_kolubara_counteroffensive
+		x = 37
+		y = 5
+		cost = 4
+
+		prerequisite = { focus = SER_total_defensive_war }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			country_event = { id = ww1_serbia.10 }
+			add_timed_idea = { idea = SER_kolubara_maneuver_mastery days = 21 }
+			army_experience = 30
+			add_command_power = 25
+			add_to_variable = { ser_army_readiness = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_typhus_epidemic_containment
+		icon = GFX_SER_typhus_epidemic_containment
+		x = 36
+		y = 6
+		cost = 4
+
+		prerequisite = { focus = SER_battle_of_cer_heroism }
+		prerequisite = { focus = SER_misic_kolubara_counteroffensive }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_timed_idea = { idea = SER_typhus_epidemic_crisis days = 180 }
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SER_the_albanian_golgotha
+		icon = GFX_SER_the_albanian_golgotha
+		x = 33
+		y = 7
+		cost = 4
+
+		prerequisite = { focus = SER_typhus_epidemic_containment }
+		available = { OR = { NOT = { controls_state = 107 } surrender_progress > 0.30 } }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_serbia.11 }
+			add_war_support = 0.15
+			add_command_power = 25
+			add_to_variable = { ser_national_cohesion = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_evacuation_of_military_cadres
+		icon = GFX_SER_evacuation_of_military_cadres
+		x = 33
+		y = 8
+		cost = 4
+
+		prerequisite = { focus = SER_the_albanian_golgotha }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 20000
+			army_experience = 20
+			add_to_variable = { ser_army_readiness = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_montenegrin_rearguard_stand
+		icon = GFX_SER_montenegrin_rearguard_stand
+		x = 33
+		y = 9
+		cost = 3
+
+		prerequisite = { focus = SER_evacuation_of_military_cadres }
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_timed_idea = { idea = SER_cer_counterstroke_glory days = 21 }
+			add_war_support = 0.10
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_government_in_exile_corfu
+		icon = GFX_SER_government_in_exile_corfu
+		x = 36
+		y = 7
+		cost = 4
+
+		prerequisite = { focus = SER_typhus_epidemic_containment }
+		available = { OR = { NOT = { controls_state = 107 } has_war = yes } }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_serbia.12 }
+			add_political_power = 100
+			add_stability = 0.10
+			add_to_variable = { ser_national_cohesion = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_rebuild_army_in_salonika
+		icon = GFX_SER_rebuild_army_in_salonika
+		x = 36
+		y = 8
+		cost = 6
+
+		prerequisite = { focus = SER_government_in_exile_corfu }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			if = { limit = { has_idea = SER_balkan_defiance } remove_ideas = SER_balkan_defiance }
+			add_ideas = SER_rebuilt_salonika_corps
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 8000 producer = FRA }
+			army_experience = 30
+			add_to_variable = { ser_army_readiness = 20 }
+		}
+	}
+
+	focus = {
+		id = SER_french_chauchats_and_75mm
+		icon = GFX_SER_french_chauchats_and_75mm
+		x = 35
+		y = 9
+		cost = 5
+
+		prerequisite = { focus = SER_rebuild_army_in_salonika }
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = FRA }
+			add_tech_bonus = { name = infantry_weapons bonus = 1.0 uses = 1 category = infantry_weapons }
+			add_to_variable = { ser_army_readiness = 10 }
+		}
+	}
+
+	focus = {
+		id = SER_salonika_trial_of_apis
+		icon = GFX_SER_salonika_trial_of_apis
+		x = 37
+		y = 9
+		cost = 5
+
+		prerequisite = { focus = SER_rebuild_army_in_salonika }
+		available = { date > 1917.1.1 }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = ww1_serbia.13 }
+			add_stability = 0.12
+			add_political_power = 80
+			add_to_variable = { ser_civil_military_balance = 20 }
+		}
+	}
+
+	focus = {
+		id = SER_corfu_declaration_accord
+		icon = GFX_SER_corfu_declaration_accord
+		x = 36
+		y = 10
+		cost = 5
+
+		prerequisite = { focus = SER_french_chauchats_and_75mm }
+		prerequisite = { focus = SER_salonika_trial_of_apis }
+		available = { date > 1917.1.1 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			country_event = { id = ww1_serbia.14 }
+			add_political_power = 120
+			add_stability = 0.10
+			add_to_variable = { ser_national_cohesion = 15 }
+			add_to_variable = { ser_balkan_influence = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_allied_balkan_coordination
+		icon = GFX_SER_allied_balkan_coordination
+		x = 36
+		y = 11
+		cost = 4
+
+		prerequisite = { focus = SER_corfu_declaration_accord }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 25
+			add_command_power = 25
+			add_war_support = 0.10
+			add_to_variable = { ser_army_readiness = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_breakthrough_at_dobro_pole
+		icon = GFX_SER_breakthrough_at_dobro_pole
+		x = 39
+		y = 7
+		cost = 4
+
+		prerequisite = { focus = SER_typhus_epidemic_containment }
+		available = { AND = { date > 1918.6.1 has_war = yes } }
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			country_event = { id = ww1_serbia.15 }
+			add_timed_idea = { idea = SER_dobro_pole_breakthrough days = 30 }
+			army_experience = 35
+			add_command_power = 30
+			add_to_variable = { ser_army_readiness = 20 }
+		}
+	}
+
+	focus = {
+		id = SER_liberation_of_the_homeland
+		icon = GFX_SER_liberation_of_the_homeland
+		x = 39
+		y = 8
+		cost = 4
+
+		prerequisite = { focus = SER_breakthrough_at_dobro_pole }
+		available = { controls_state = 107 }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.20
+			add_war_support = 0.15
+			add_political_power = 100
+			add_to_variable = { ser_national_cohesion = 20 }
+			add_to_variable = { ser_army_readiness = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_armistice_on_the_danube
+		icon = GFX_SER_armistice_on_the_danube
+		x = 39
+		y = 9
+		cost = 3
+
+		prerequisite = { focus = SER_liberation_of_the_homeland }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.15
+			add_to_variable = { ser_national_cohesion = 15 }
+			add_to_variable = { ser_balkan_influence = 20 }
+		}
+	}
+
+	focus = {
+		id = SER_podgorica_assembly_unification
+		icon = GFX_SER_podgorica_assembly_unification
+		x = 38
+		y = 10
+		cost = 4
+
+		prerequisite = { focus = SER_armistice_on_the_danube }
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.10
+			add_manpower = 15000
+			add_political_power = 80
+			add_to_variable = { ser_national_cohesion = 15 }
+		}
+	}
+
+	focus = {
+		id = SER_proclamation_of_yugoslavia
+		icon = GFX_SER_proclamation_of_yugoslavia
+		x = 39
+		y = 11
+		cost = 5
+
+		prerequisite = { focus = SER_armistice_on_the_danube }
+		prerequisite = { focus = SER_podgorica_assembly_unification }
+		mutually_exclusive = { focus = SER_restored_sovereign_serbia }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = ww1_serbia.16 }
+			set_cosmetic_tag = YUG
+			add_stability = 0.15
+			add_political_power = 150
+			add_to_variable = { ser_national_cohesion = 25 }
+			add_to_variable = { ser_balkan_influence = 30 }
+		}
+	}
+
+	focus = {
+		id = SER_restored_sovereign_serbia
+		icon = GFX_SER_restored_sovereign_serbia
+		x = 41
+		y = 11
+		cost = 5
+
+		prerequisite = { focus = SER_armistice_on_the_danube }
+		mutually_exclusive = { focus = SER_proclamation_of_yugoslavia }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.15
+			add_political_power = 150
+			107 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { ser_national_cohesion = 25 }
+		}
+	}
+
+}
