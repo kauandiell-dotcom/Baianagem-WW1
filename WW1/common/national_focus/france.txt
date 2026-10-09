@@ -16,7 +16,7 @@ focus_tree = {
 	}
 	default = no
 	reset_on_actions = { }
-	continuous_focus_position = { x = 45 y = 1700 }
+	continuous_focus_position = { x = 45 y = 2500 }
 
 	focus = {
 		id = FRA_preserver_la_republique
@@ -483,6 +483,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = FRA_appel_au_tigre }
 		completion_reward = {
+			remove_ideas = FRA_parliamentary_equilibrium
+			remove_ideas = FRA_poincare_national_firmness
 			add_ideas = FRA_clemenceau_iron_resolve
 			add_war_support = 0.10
 			add_stability = 0.05
@@ -1627,6 +1629,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { name = bb_bonus bonus = 1.0 uses = 1 category = heavy_ship }
 			add_ideas = FRA_boue_de_lapeyrere_naval_law
+			30 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2060,6 +2063,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = FRA_tactique_des_convois_maritimes }
 		completion_reward = {
+			remove_ideas = FRA_mediterranean_battlefleet
+			remove_ideas = FRA_adriatic_naval_blockade
 			add_ideas = FRA_mediterranean_dominance
 			add_political_power = 50
 			add_war_support = 0.05
@@ -2077,6 +2082,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = FRA_division_aerienne_du_colonel_duval }
 		completion_reward = {
+			remove_ideas = FRA_pilot_training_corps
 			add_ideas = FRA_air_supremacy_spad
 			add_political_power = 50
 			add_war_support = 0.05
@@ -2275,6 +2281,8 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = FRA_crise_des_mutineries_1917 }
 		completion_reward = {
+			remove_ideas = FRA_joffre_supreme_staff
+			remove_ideas = FRA_offensive_school
 			add_ideas = FRA_petain_elastic_defense
 			add_political_power = 40
 		}
@@ -2325,6 +2333,8 @@ focus_tree = {
 		prerequisite = { focus = FRA_reforme_des_permissions_et_soupe }
 		prerequisite = { focus = FRA_justice_militaire_mesuree }
 		completion_reward = {
+			remove_ideas = FRA_petain_elastic_defense
+			remove_ideas = FRA_joffre_supreme_staff
 			add_ideas = FRA_supreme_allied_command
 			add_command_power = 50
 			add_army_experience = 30
@@ -2366,6 +2376,7 @@ focus_tree = {
 			    add_idea = FRA_balanced_siege_and_field_artillery
 			}
 			add_tech_bonus = { name = art_tech bonus = 1.0 uses = 1 category = artillery }
+			33 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2382,6 +2393,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = FRA_adrian_helmet_protection
 			add_army_experience = 15
+			30 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2413,7 +2425,7 @@ focus_tree = {
 		prerequisite = { focus = FRA_adopter_le_casque_adrian_m1915 }
 		completion_reward = {
 			add_tech_bonus = { name = heavy_art bonus = 1.0 uses = 2 category = artillery }
-			27 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			27 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2431,6 +2443,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { name = infantry_weapons bonus = 1.0 uses = 1 category = infantry_weapons }
 			add_ideas = FRA_light_machinegun_fireteams
+			20 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2447,6 +2460,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { name = railway_gun bonus = 1.0 uses = 1 category = artillery }
 			add_ideas = FRA_railway_super_heavy_artillery
+			27 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2479,6 +2493,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { name = heavy_armor bonus = 1.0 uses = 1 category = armor }
 			add_army_experience = 20
+			20 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2495,7 +2510,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = { name = light_armor bonus = 1.0 uses = 2 category = armor }
 			add_ideas = FRA_renault_ft_revolution
-			16 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			16 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -2510,6 +2525,7 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = FRA_char_leger_renault_ft }
 		completion_reward = {
+			remove_ideas = FRA_artillerie_speciale_cadres
 			add_ideas = FRA_mass_swarm_tank_tactics
 			add_army_experience = 25
 		}
@@ -2528,6 +2544,7 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = FRA_fully_motorised_logistics
 			add_army_experience = 20
+			19 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 		ai_will_do = {
 			factor = 10
