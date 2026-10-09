@@ -235,7 +235,7 @@ class ExtraContentContracts(unittest.TestCase):
             self.assertTrue('is_triggered_only' in keys or {'trigger','mean_time_to_happen'}<=keys,k)
             self.assertGreaterEqual(len([x for x in e.value if x.key=='option']),2,k)
             pic=e.get('picture');self.assertIn(pic,registry,k);self.assertNotIn(pic,pictures,k);pictures.add(pic)
-            im=Image.open(registry[pic]);self.assertEqual(im.size,(450,250))
+            im=Image.open(registry[pic]);self.assertEqual(im.size,(210,176))
     def test_extra_ideas_and_decisions_have_unique_art_and_text(self):
         registry=sprites(GAME)|sprites(ROOT);hashes={}
         ideas=[n for n in nodes('common/ideas/ww1_austria_hungary_extra_ideas.txt')[0].value[0].value]

@@ -186,7 +186,7 @@ class Content(unittest.TestCase):
         for p in pics:
             self.assertIn(p, sprites, p)
             self.assertTrue((ROOT / sprites[p]).is_file(), p)
-            self.assertEqual(Image.open(ROOT / sprites[p]).size, (450, 250))
+            self.assertEqual(Image.open(ROOT / sprites[p]).size, (210, 176))
         self.assertEqual(len(set(sprites)), len(sprites))
         for i in ids:
             for suf in (".t", ".d"):

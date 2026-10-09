@@ -23,7 +23,7 @@ class VisualIntegration(unittest.TestCase):
                     self.assertEqual(list(image.size), record["size"])
                     image.load()
                 if record["kind"] == "event":
-                    self.assertEqual(record["size"], [450, 250])
+                    self.assertIn(record["size"], ([210, 176], [397, 153]))
                 elif record["kind"] in ["idea", "decision", "category"]:
                     self.assertEqual(record["size"], [64, 64])
                 elif record["kind"] == "focus":

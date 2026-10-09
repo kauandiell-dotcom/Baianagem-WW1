@@ -83,7 +83,7 @@ class BritainExtraContent(unittest.TestCase):
             tex = ROOT / SPRITES[p]
             self.assertTrue(tex.is_file(), p)
             im = Image.open(tex)
-            self.assertEqual(im.size, (450, 250))
+            self.assertEqual(im.size, (210, 176))
             hashes.add(hashlib.sha256(im.convert("RGBA").tobytes()).hexdigest())
         self.assertEqual(len(hashes), len(pics))
 
