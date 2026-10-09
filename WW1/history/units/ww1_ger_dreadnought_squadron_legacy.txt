@@ -1,0 +1,12 @@
+units = {
+	fleet = {
+		name = "III. Geschwader"
+		naval_base = 241
+		task_force = {
+			name = "III. Geschwader"
+			location = 241
+			ship = { name = "SMS Oldenburg" definition = battleship start_experience_factor = 0.3 equipment = { ww1_1911_dreadnought_legacy = { amount = 1 owner = GER version_name = "Nassau" } } }
+			ship = { name = "SMS Kaiser" definition = battleship start_experience_factor = 0.3 equipment = { ww1_1911_dreadnought_legacy = { amount = 1 owner = GER version_name = "Nassau" } } }
+		}
+	}
+}

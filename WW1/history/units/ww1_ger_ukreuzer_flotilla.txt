@@ -1,0 +1,14 @@
+units = {
+	fleet = {
+		name = "U-Kreuzer Verband"
+		naval_base = 6389
+		task_force = {
+			name = "U-Kreuzer Verband"
+			location = 6389
+			ship = { name = "SM U-151" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-152" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-153" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-155" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+		}
+	}
+}

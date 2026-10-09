@@ -170,6 +170,12 @@ focus_tree = {
 		y = 5
 		prerequisite = { focus = GER_prussian_franchise_debate }
 		available_if_capitulated = no
+		available = {
+			OR = {
+				has_war = yes
+				date > 1914.8.1
+			}
+		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_war_support = 0.10
@@ -187,7 +193,14 @@ focus_tree = {
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
 		mutually_exclusive = { focus = GER_prussian_franchise_reform }
 		available_if_capitulated = no
-		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
+		available = {
+			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
+			OR = {
+				date > 1918.1.1
+				has_stability < 0.40
+				surrender_progress > 0.15
+			}
+		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			set_country_flag = GER_chose_post_burgfrieden_path
@@ -595,7 +608,14 @@ focus_tree = {
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
 		mutually_exclusive = { focus = GER_spartakusbund_proletarian_revolt focus = GER_silent_dictatorship_ohl }
 		available_if_capitulated = no
-		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
+		available = {
+			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
+			OR = {
+				date > 1917.6.1
+				has_war_support < 0.45
+				surrender_progress > 0.10
+			}
+		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			set_country_flag = GER_chose_post_burgfrieden_path
@@ -992,7 +1012,15 @@ focus_tree = {
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
 		mutually_exclusive = { focus = GER_prussian_franchise_reform focus = GER_found_vaterlandspartei }
 		available_if_capitulated = no
-		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
+		available = {
+			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
+			has_war = yes
+			OR = {
+				date > 1916.1.1
+				has_completed_focus = GER_falkenhayn_dismissal_third_ohl
+				has_war_support < 0.60
+			}
+		}
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			set_country_flag = GER_chose_post_burgfrieden_path
@@ -1379,7 +1407,14 @@ focus_tree = {
 		prerequisite = { focus = GER_burgfrieden_declaration_1914 }
 		mutually_exclusive = { focus = GER_silent_dictatorship_ohl }
 		available_if_capitulated = no
-		available = { NOT = { has_country_flag = GER_chose_post_burgfrieden_path } }
+		available = {
+			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
+			has_war = yes
+			OR = {
+				date > 1917.1.1
+				has_war_support < 0.50
+			}
+		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_country_flag = GER_chose_post_burgfrieden_path
@@ -2341,7 +2376,7 @@ focus_tree = {
 	focus = {
 		id = GER_tirpitz_fourth_naval_bill
 		icon = GFX_focus_GER_navy_ww1
-		cost = 10
+		cost = 7
 		x = 37
 		y = 0
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY }
@@ -2359,14 +2394,14 @@ focus_tree = {
 				}
 			}
 			56 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
-			navy_experience = 25
+			navy_experience = 35
 		}
 	}
 
@@ -2390,7 +2425,29 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			navy_experience = 20
+			56 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_ger_dreadnought_squadron"
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Man the Guns" } }
+				load_oob = "ww1_ger_dreadnought_squadron_legacy"
+			}
+			add_tech_bonus = {
+				name = dreadnought_bonus
+				bonus = 1.0
+				uses = 1
+				category = bb_tech
+			}
+			navy_experience = 30
 		}
 	}
 
@@ -2414,13 +2471,22 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_ger_hipper_battlecruisers"
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Man the Guns" } }
+				load_oob = "ww1_ger_hipper_battlecruisers_legacy"
+			}
+			add_ideas = GER_hipper_scouting_tactics
 			add_tech_bonus = {
 				name = battlecruiser_bonus
 				bonus = 1.0
 				uses = 1
 				category = naval_equipment
 			}
-			navy_experience = 25
+			navy_experience = 30
 		}
 	}
 
@@ -2436,8 +2502,24 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			navy_experience = 20
+			navy_experience = 25
 			58 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			56 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			85 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
@@ -2460,7 +2542,7 @@ focus_tree = {
 		id = GER_kiel_canal_widening
 		icon = GFX_GER_adriatic_sea_reinforcement
 		prerequisite = { focus = GER_dreadnought_battle_squadrons }
-		cost = 7
+		cost = 5
 		x = 39
 		y = 2
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -2475,7 +2557,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_political_power = 50
+			56 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_political_power = 60
+			navy_experience = 20
 		}
 	}
 
@@ -2528,15 +2618,21 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		cost = 5
 		x = 36
 		y = 4
-		available = { date > 1916.5.1 }
+		available = {
+			OR = {
+				has_war = yes
+				date > 1916.5.1
+			}
+		}
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.28 }
-			navy_experience = 35
-			add_war_support = 0.05
+			navy_experience = 50
+			add_war_support = 0.08
+			add_ideas = GER_skagerrak_tactical_triumph
 		}
 	}
 
@@ -2575,7 +2671,7 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		available_if_capitulated = no
 
 		completion_reward = {
-			navy_experience = 25
+			navy_experience = 35
 			remove_ideas = GER_tirpitz_naval_ambition
 			add_ideas = GER_high_seas_fleet_active
 		}
@@ -2610,8 +2706,17 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		available_if_capitulated = no
 
 		completion_reward = {
-			navy_experience = 20
-			add_political_power = 40
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_ger_cruiser_raiders"
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Man the Guns" } }
+				load_oob = "ww1_ger_cruiser_raiders_legacy"
+			}
+			add_ideas = GER_cruiser_raiding_tradition
+			navy_experience = 30
+			add_political_power = 50
 		}
 	}
 
@@ -2693,13 +2798,22 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		available_if_capitulated = no
 
 		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_ger_uboat_flotilla"
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Man the Guns" } }
+				load_oob = "ww1_ger_uboat_flotilla_legacy"
+			}
 			add_ideas = GER_unrestricted_submarines_active
 			add_war_support = 0.10
+			navy_experience = 25
 			if = {
 				limit = { country_exists = USA }
 				USA = {
 					add_war_support = 0.15
-			set_country_flag = ger_blank_cheque_given
+					set_country_flag = ger_blank_cheque_given
 				}
 			}
 		}
@@ -2737,7 +2851,15 @@ add_tech_bonus = { name = GER_the_fokker_scourge_dominance bonus = 0.50 uses = 1
 		available_if_capitulated = no
 
 		completion_reward = {
-			navy_experience = 30
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_ger_ukreuzer_flotilla"
+			}
+			if = {
+				limit = { NOT = { has_dlc = "Man the Guns" } }
+				load_oob = "ww1_ger_ukreuzer_flotilla_legacy"
+			}
+			navy_experience = 35
 			add_tech_bonus = {
 				name = submarine_bonus
 				bonus = 1.0
@@ -2768,7 +2890,7 @@ add_mastery_bonus = { name = GER_albatros_diii_fighters bonus = 0.10 days = 180 
 		id = GER_unrestricted_submarine_warfare
 		icon = GFX_focus_GER_unrestricted_submarine_warfare
 		prerequisite = { focus = GER_submarine_cruiser_u_kreuzer_fleet }
-		cost = 10
+		cost = 7
 		x = 36
 		y = 8
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_POLITICAL }
@@ -3061,7 +3183,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		id = GER_expand_heavy_howitzers
 		icon = GFX_focus_GER_the_prussian_legacy
 		prerequisite = { focus = GER_centenary_of_leipzig_1913 }
-		cost = 10
+		cost = 7
 		x = 103
 		y = 2
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
@@ -3229,7 +3351,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		id = GER_the_blank_cheque
 		icon = GFX_focus_ger_support_austrian_claims
 		prerequisite = { focus = GER_expand_heavy_howitzers }
-		cost = 5
+		cost = 2
 		x = 103
 		y = 3
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
@@ -3312,7 +3434,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		icon = GFX_GER_militarism
 		prerequisite = { focus = GER_the_blank_cheque }
 		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
-		cost = 3
+		cost = 2
 		x = 102
 		y = 4
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
@@ -3370,7 +3492,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		id = GER_ultimatum_to_belgium
 		icon = GFX_ww1_mex_upca_conquer
 		prerequisite = { focus = GER_proclaim_state_of_war_danger }
-		cost = 3
+		cost = 1
 		x = 101
 		y = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -4202,6 +4324,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		}
 		completion_reward = {
 			custom_effect_tooltip = GER_eastern_armistice_request_tt
+			add_ideas = GER_eastern_breadbasket
 			if = {
 				limit = { country_exists = SOV has_war_with = SOV }
 				SOV = { country_event = { id = ww1_diplomacy.31 days = 1 } }

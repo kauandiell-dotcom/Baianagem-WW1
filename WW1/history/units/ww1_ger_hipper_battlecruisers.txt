@@ -1,0 +1,12 @@
+units = {
+	fleet = {
+		name = "I. Aufklärungsgruppe"
+		naval_base = 241
+		task_force = {
+			name = "I. Aufklärungsgruppe"
+			location = 241
+			ship = { name = "SMS Goeben" definition = battle_cruiser start_experience_factor = 0.3 equipment = { ww1_1911_battlecruiser = { amount = 1 owner = GER version_name = "Von der Tann" } } }
+			ship = { name = "SMS Seydlitz" definition = battle_cruiser start_experience_factor = 0.3 equipment = { ww1_1911_battlecruiser = { amount = 1 owner = GER version_name = "Von der Tann" } } }
+		}
+	}
+}

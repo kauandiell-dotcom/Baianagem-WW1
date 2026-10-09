@@ -9,7 +9,7 @@ GER_schlieffen_operations = {
 
 	ger_mission_reach_paris = {
 		icon = generic_civil_support
-		days_mission_timeout = 25
+		days_mission_timeout = 60
 		available = {
 			controls_state = 16
 		}
@@ -36,6 +36,29 @@ GER_schlieffen_operations = {
 			add_timed_idea = { idea = GER_schlieffen_hangover days = 30 }
 			country_event = { id = ww1_germany_events.23 }
 		}
+	}
+
+	ger_schlieffen_capture_brussels = {
+		icon = generic_prepare_civil_war
+		available = {
+			has_war_with = FRA
+			has_war_with = BEL
+			controls_state = 6 # Flanders / Brussels
+			NOT = { has_country_flag = ger_brussels_milestone_secured }
+		}
+		visible = {
+			has_country_flag = ger_schlieffen_plan_launched
+			NOT = { has_country_flag = ger_schlieffen_concluded }
+		}
+		cost = 15
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = ger_brussels_milestone_secured
+			add_timed_idea = { idea = GER_right_wing_momentum days = 30 }
+			army_experience = 15
+			add_political_power = 25
+		}
+		ai_will_do = { factor = 100 }
 	}
 
 
@@ -127,7 +150,7 @@ GER_schlieffen_operations = {
 }
 
 # -------------------------------------------------------------------------
-# 2. KRIcoordinateGSROHSTOFFABTEILUNG (KRA) - MATÉRIAS-PRIMAS
+# 2. KRIEGSROHSTOFFABTEILUNG (KRA) - MATÉRIAS-PRIMAS
 # -------------------------------------------------------------------------
 GER_kriegsrohstoffabteilung = {
 

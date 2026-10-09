@@ -1,0 +1,16 @@
+units = {
+	fleet = {
+		name = "I. Unterseebootsflottille"
+		naval_base = 6389
+		task_force = {
+			name = "I. Unterseebootsflottille"
+			location = 6389
+			ship = { name = "SM U-19" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-20" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-21" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-22" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-23" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+			ship = { name = "SM U-24" definition = submarine start_experience_factor = 0.3 equipment = { ww1_1911_submarine = { amount = 1 owner = GER version_name = "U 5" } } }
+		}
+	}
+}

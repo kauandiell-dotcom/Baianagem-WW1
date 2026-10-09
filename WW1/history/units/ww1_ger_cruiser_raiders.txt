@@ -1,0 +1,12 @@
+units = {
+	fleet = {
+		name = "II. Aufklärungsgruppe"
+		naval_base = 241
+		task_force = {
+			name = "II. Aufklärungsgruppe"
+			location = 241
+			ship = { name = "SMS Karlsruhe" definition = light_cruiser start_experience_factor = 0.3 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = GER version_name = "Kolberg" } } }
+			ship = { name = "SMS Rostock" definition = light_cruiser start_experience_factor = 0.3 equipment = { ww1_1911_protected_cruiser = { amount = 1 owner = GER version_name = "Kolberg" } } }
+		}
+	}
+}
