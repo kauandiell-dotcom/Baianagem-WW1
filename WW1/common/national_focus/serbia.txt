@@ -8,6 +8,7 @@ focus_tree = {
 		}
 	}
 	default = no
+	continuous_focus_position = { x = 20 y = 2500 }
 
 	focus = {
 		id = SER_agrarian_kingdom_finances
@@ -297,6 +298,8 @@ focus_tree = {
 		prerequisite = { focus = SER_artillery_park_reorganization }
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			107 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			107 = { add_extra_state_shared_building_slots = 1 }
 			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 40 producer = SER }
 			army_experience = 10
 			add_to_variable = { ser_army_readiness = 5 }

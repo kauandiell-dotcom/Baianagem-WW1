@@ -1,10 +1,41 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 import re
+from PIL import Image
+import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# 1. Load existing sprites in interface/*.gfx
+# Load reference stolypin for framing
+stolypin_path = ROOT / "gfx/interface/ideas/RUS/idea_RUS_pyotr_stolypin.png"
+if stolypin_path.exists():
+    stolypin_im = Image.open(stolypin_path).convert("RGBA")
+    s_arr = np.array(stolypin_im)
+else:
+    s_arr = None
+
+def compose_advisor_clean(src_path, dst_path):
+    src = Image.open(src_path).convert("RGBA")
+    portrait = src.resize((34, 46), Image.Resampling.LANCZOS)
+    canvas = Image.new("RGBA", (65, 67), (0, 0, 0, 0))
+    canvas.paste(portrait, (9, 9))
+    c_arr = np.array(canvas)
+    if s_arr is not None:
+        for y in range(67):
+            for x in range(65):
+                if s_arr[y, x, 3] == 0:
+                    c_arr[y, x] = [0, 0, 0, 0]
+                elif (x < 9 or x > 42 or y < 9 or y > 54) and not (x >= 28 and y >= 34):
+                    c_arr[y, x] = s_arr[y, x]
+                elif x >= 28 and y >= 34:
+                    if s_arr[y, x, 3] > 10:
+                        c_arr[y, x] = s_arr[y, x]
+    dst_path.parent.mkdir(parents=True, exist_ok=True)
+    out = Image.fromarray(c_arr)
+    out.save(dst_path)
+    return dst_path
+
+# 1. Load existing sprites in interface/*.gfx (excluding ww1_advisors_portraits.gfx)
 existing_sprites = set()
 for p in (ROOT / "interface").glob("*.gfx"):
     if p.name == "ww1_advisors_portraits.gfx":
@@ -15,7 +46,7 @@ for p in (ROOT / "interface").glob("*.gfx"):
 
 print(f"Loaded {len(existing_sprites)} existing sprites across interface/*.gfx.")
 
-# 2. Index all textures on disk
+# 2. Index all textures on disk with their dimensions
 textures_by_stem = {}
 for p in (ROOT / "gfx").glob("**/*"):
     if p.suffix.lower() in [".dds", ".png", ".tga"]:
@@ -23,34 +54,40 @@ for p in (ROOT / "gfx").glob("**/*"):
         stem = p.stem.lower()
         if stem not in textures_by_stem:
             textures_by_stem[stem] = []
-        textures_by_stem[stem].append(rel)
+        textures_by_stem[stem].append((p, rel))
 
 print(f"Indexed {len(textures_by_stem)} unique texture stems on disk.")
+
+def get_image_size(path_obj):
+    try:
+        im = Image.open(path_obj)
+        return im.size
+    except Exception:
+        return (9999, 9999)
 
 # 3. Known specific sprite-to-texture mappings for authentic WW1 accuracy
 SPECIFIC_MAPPINGS = {
     # Russia
     "GFX_idea_SOV_pyotr_stolypin": "gfx/interface/ideas/RUS/idea_RUS_pyotr_stolypin.png",
     "GFX_idea_SOV_alexander_kerensky": "gfx/interface/ideas/RUS/idea_RUS_alexander_kerensky_army.png",
-    "GFX_idea_SOV_mikhail_rodzianko": "gfx/leaders/SOV/SOV_mikhail_rodzianko.png",
-    "GFX_idea_SOV_sergei_sazonov": "gfx/leaders/SOV/SOV_sergei_sazonov.png",
+    "GFX_idea_SOV_mikhail_rodzianko": "gfx/interface/ideas/RUS/idea_RUS_mikhail_rodzianko.png",
+    "GFX_idea_SOV_sergei_sazonov": "gfx/interface/ideas/RUS/idea_RUS_sergei_sazonov.png",
     "GFX_idea_SOV_vladimir_sukhomlinov": "gfx/hoi4tgw_portraits/RUS/advisor/RUS_vladimir_sukhomlinov.dds",
     "GFX_idea_SOV_grigori_rasputin": "gfx/interface/ideas/RUS/idea_RUS_grigori_rasputin.png",
     "GFX_idea_SOV_boris_savinkov": "gfx/interface/ideas/RUS/idea_RUS_boris_savinkov.png",
-    "GFX_idea_SOV_grand_duke_nicholas": "gfx/leaders/SOV/SOV_grand_duke_nicholas.png",
+    "GFX_idea_SOV_grand_duke_nicholas": "gfx/interface/ideas/RUS/idea_RUS_nikolai_nikolaevich.png",
     "GFX_idea_SOV_alexei_brusilov": "gfx/interface/ideas/RUS/idea_RUS_alexei_brusilov.png",
-    "GFX_idea_SOV_mikhail_alekseyev": "gfx/hoi4tgw_portraits/RUS/army_generals/RUS_alekseyev.dds",
+    "GFX_idea_SOV_mikhail_alekseyev": "gfx/interface/ideas/RUS/idea_RUS_mikhail_alexeev.png",
     "GFX_idea_SOV_lavr_kornilov": "gfx/interface/ideas/RUS/idea_RUS_lavr_kornilov.png",
     "GFX_idea_SOV_nicholas_yudenich": "gfx/interface/ideas/RUS/idea_RUS_nicholas_yudenich.png",
-    "GFX_idea_SOV_anton_denikin": "gfx/hoi4tgw_portraits/RUS/army_generals/RUS_Anton_Denikin.dds",
+    "GFX_idea_SOV_anton_denikin": "gfx/interface/ideas/RUS/idea_RUS_anton_denikin.png",
     "GFX_idea_SOV_nikolay_rouzski": "gfx/interface/ideas/RUS/idea_RUS_generic_land_1.png",
     "GFX_idea_SOV_alexander_kolchak": "gfx/interface/ideas/RUS/idea_RUS_alexander_kolchak.png",
     "GFX_idea_SOV_nikolai_essen": "gfx/interface/ideas/RUS/idea_RUS_Nikolai_von_Essen.png",
-    "GFX_idea_SOV_andrei_eberhardt": "gfx/interface/ideas/RUS/idea_RUS_generic_navy_1.png",
+    "GFX_idea_SOV_andrei_eberhardt": "gfx/interface/ideas/RUS/idea_RUS_andrei_eberhardt.png",
     "GFX_idea_SOV_maria_bochkareva": "gfx/leaders/SOV/SOV_maria_bochkareva_small.png",
 
     # Austria-Hungary
-    "GFX_idea_rudolf_hess": "gfx/leaders/AUS/AUS_Franz_Ferdinand.dds",
     "GFX_idea_AUH_franz_conrad_von_hotzendorf": "gfx/interface/ideas/idea_AUH_franz_conrad_von_hotzendorf.dds",
     "GFX_idea_AUH_artur_arz_von_straussenberg": "gfx/interface/ideas/idea_AUH_artur_arz_von_straussenberg.dds",
     "GFX_idea_AUH_anton_haus": "gfx/interface/ideas/idea_AUH_anton_haus.dds",
@@ -88,28 +125,45 @@ SPECIFIC_MAPPINGS = {
     "GFX_idea_BEL_marcel_de_crombrugghe": "gfx/interface/ideas/idea_BEL_marcel_de_crombrugghe.dds",
     "GFX_idea_BEL_edwart_anseele": "gfx/interface/ideas/idea_BEL_edwart_anseele.dds",
     "GFX_idea_BEL_leon_delacroix": "gfx/interface/ideas/idea_BEL_leon_delacroix.dds",
+    "GFX_idea_BEL_cyriaque_gillain": "gfx/interface/ideas/BEL/idea_BEL_Cyriaque_Gillain.png",
+    "GFX_idea_BEL_count_carton_de_wiart": "gfx/interface/ideas/BEL/idea_BEL_count_carton_de_wiart.png",
 
     # United Kingdom
     "GFX_idea_ENG_jfc_fuller": "gfx/interface/ideas/ENG/idea_ENG_J_F_C_Fuller.png",
     "GFX_idea_ENG_navy_churchill": "gfx/admiral/ENG_churchill.dds",
-    "GFX_idea_EGY_edmund_allenby": "gfx/generals/ENG_Allenby.dds",
+    "GFX_idea_EGY_edmund_allenby": "gfx/interface/ideas/ENG/idea_ENG_edmund_allenby.png",
 
     # Germany
     "GFX_idea_GER_von_lettowvorbeck": "gfx/interface/ideas/GER/GER_paul_von_lettow_vorbeck.png",
     "GFX_idea_GER_von_quast": "gfx/interface/ideas/GER/idea_german_generic_land_1.dds",
     "GFX_idea_GER_von_bothmer": "gfx/interface/ideas/GER/idea_german_generic_land_5.dds",
+    "GFX_idea_GER_erich_von_falkenhayn": "gfx/interface/ideas/GER/GER_erich_von_falkenhayn.png",
+    "GFX_idea_GER_helmuth_von_moltke": "gfx/interface/ideas/GER/GER_helmuth_von_moltke.png",
+    "GFX_idea_GER_rudiger_von_der_goltz": "gfx/interface/ideas/GER/idea_GER_rudiger_von_der_goltz.png",
+    "GFX_idea_GER_clemens_von_delbruck": "gfx/interface/ideas/GER/GER_clemens_von_delbruck.png",
 
-    # Generic fallbacks
-    "GFX_idea_generic_political_advisor_europe_3": "gfx/interface/ideas/idea_generic_political_advisor_europe_1.dds",
-        "GFX_idea_BEL_georges_moulaert": "gfx/interface/ideas/idea_GER_generic_navy_1.dds",
+    # Poland
+    "GFX_idea_POL_roman_dmowski": "gfx/interface/ideas/POL/idea_POL_roman_dmowski.png",
     "GFX_idea_POL_swirski": "gfx/interface/ideas/idea_GER_generic_navy_2.dds",
     "GFX_idea_POL_porebski": "gfx/interface/ideas/idea_GER_generic_navy_3.dds",
     "GFX_idea_POL_steyer": "gfx/interface/ideas/idea_GER_generic_navy_1.dds",
-    "GFX_idea_POL_roman_dmowski": "gfx/hoi4tgw_portraits/POL/advisor/POL_roman_dmowski.dds",
+
+    # Portugal
+    "GFX_idea_POR_joao_do_canto_e_castro": "gfx/interface/ideas/idea_POR_joao_do_canto_e_castro.png",
+
+    # Serbia
+    "GFX_idea_SER_petar_zivkovic_army": "gfx/interface/ideas/SER/idea_SER_petar_zivkovic_army.png",
+
+    # Ottoman
+    "GFX_idea_TUR_ismail_enver": "gfx/interface/ideas/TUR/TUR_ismail_enver.png",
+    "GFX_idea_TUR_huseyin_hilmi": "gfx/interface/ideas/TUR/idea_TUR_huseyin_hilmi.png",
+
+    # Generic fallbacks
+    "GFX_idea_generic_political_advisor_europe_3": "gfx/interface/ideas/idea_generic_political_advisor_europe_1.dds",
+    "GFX_idea_BEL_georges_moulaert": "gfx/interface/ideas/idea_GER_generic_navy_1.dds",
     "GFX_idea_ROM_general_genner": "gfx/interface/ideas/idea_generic_army_europe_4.dds",
     "GFX_idea_SWE_theodor_carl_adam_sandstrom": "gfx/interface/ideas/idea_GER_generic_navy_2.dds",
     "GFX_idea_generic_navy_europe_1": "gfx/interface/ideas/idea_GER_generic_navy_1.dds",
-    "GFX_idea_generic_navy_europe_3": "gfx/interface/ideas/idea_GER_generic_navy_3.dds",
     "GFX_idea_generic_navy_europe_3": "gfx/interface/ideas/idea_generic_navy_europe_2.dds",
 }
 
@@ -192,8 +246,10 @@ for c in char_advisors:
         # Check if s is already a direct path
         if s.lower().endswith(".dds") or s.lower().endswith(".png"):
             if (ROOT / s).exists():
-                new_sprites[s] = s
-                continue
+                w, h = get_image_size(ROOT / s)
+                if w <= 82 and h <= 90:
+                    new_sprites[s] = s
+                    continue
                 
         # Try finding on disk
         s_clean = s.replace("GFX_", "")
@@ -215,9 +271,17 @@ for c in char_advisors:
         for cand in candidates:
             if cand in textures_by_stem:
                 matches = textures_by_stem[cand]
-                idea_matches = [m for m in matches if 'idea' in m.lower()]
-                found_path = idea_matches[0] if idea_matches else matches[0]
-                break
+                # Filter only small matches (<= 82x90)
+                valid_matches = []
+                for p_obj, rel_path in matches:
+                    w, h = get_image_size(p_obj)
+                    if w <= 82 and h <= 90:
+                        valid_matches.append(rel_path)
+                        
+                if valid_matches:
+                    idea_matches = [m for m in valid_matches if 'idea' in m.lower()]
+                    found_path = idea_matches[0] if idea_matches else valid_matches[0]
+                    break
                 
         if found_path:
             new_sprites[s] = found_path
@@ -236,7 +300,6 @@ lines = [
 # Group by TAG
 by_tag = {}
 for s, tex in sorted(new_sprites.items()):
-    # try extract tag
     tag_match = re.search(r'([A-Z]{3})', s)
     group = tag_match.group(1) if tag_match else "GENERIC"
     if group not in by_tag:
