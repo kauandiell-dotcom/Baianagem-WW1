@@ -791,6 +791,17 @@ def analyze_focus(node: FocusNode) -> None:
             wing = 'NAVY'
         else:
             wing = 'DIPLOMACY'
+    elif node.id.startswith('TUR_'):
+        if x <= 16:
+            wing = 'POLITICAL'
+        elif 17 <= x <= 33:
+            wing = 'ECONOMIC'
+        elif 34 <= x <= 50:
+            wing = 'ARMY'
+        elif 51 <= x <= 67:
+            wing = 'DIPLOMACY'
+        else:
+            wing = 'POSTWAR'
     elif x <= 10:
         wing = 'POLITICAL'
     elif 16 <= x <= 38:
@@ -1841,6 +1852,17 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
                 wing_map['Marinha'].append(node)
             else:
                 wing_map['Diplomacia'].append(node)
+        elif node.id.startswith('TUR_') or tag == 'TUR':
+            if node.x <= 16:
+                wing_map['Político'].append(node)
+            elif 17 <= node.x <= 33:
+                wing_map['Econômico'].append(node)
+            elif 34 <= node.x <= 50:
+                wing_map['Exército'].append(node)
+            elif 51 <= node.x <= 67:
+                wing_map['Diplomacia'].append(node)
+            else:
+                wing_map['Pós-Guerra'].append(node)
         elif node.x <= 10:
             wing_map['Político'].append(node)
         elif 16 <= node.x <= 38:

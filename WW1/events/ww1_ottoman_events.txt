@@ -5,13 +5,13 @@
 add_namespace = ww1_ottoman
 
 # ------------------------------------------------------------------------------
-# 1. A Crise da Requisição dos Dreadnoughts Britânicos
+# 1. A Crise dos Dreadnoughts Britânicos (Sultan Osman & Reşadiye)
 # ------------------------------------------------------------------------------
 country_event = {
 	id = ww1_ottoman.1
 	title = ww1_ottoman.1.t
 	desc = ww1_ottoman.1.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_report_event_generic_naval_battle
 
 	is_triggered_only = yes
 
@@ -21,6 +21,8 @@ country_event = {
 		add_war_support = 0.15
 		add_political_power = 60
 		add_ideas = TUR_dreadnought_national_fervor
+		add_to_variable = { tur_foreign_influence = -10 }
+		add_to_variable = { tur_imperial_cohesion = 5 }
 		set_country_flag = TUR_dreadnoughts_confiscated_anger
 	}
 
@@ -29,18 +31,245 @@ country_event = {
 		ai_chance = { factor = 15 }
 		add_political_power = 40
 		add_stability = 0.05
+		add_to_variable = { tur_public_debt = -5 }
 		set_country_flag = TUR_dreadnoughts_protest_diplomatic
 	}
 }
 
 # ------------------------------------------------------------------------------
-# 2. A Chegada do SMS Goeben e Breslau aos Dardanelos
+# 2. O Ultimato dos Oficiais Salvadores (Halâskâr Zâbitân 1912)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.2
+	title = ww1_ottoman.2.t
+	desc = ww1_ottoman.2.d
+	picture = GFX_report_event_report_event_jon_turkler
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.2.a
+		ai_chance = { factor = 50 }
+		add_political_power = 40
+		add_stability = 0.05
+		add_to_variable = { tur_imperial_cohesion = 5 }
+		add_to_variable = { tur_arab_unrest = -5 }
+		set_country_flag = TUR_halaskar_zabitan_appeased
+	}
+
+	option = {
+		name = ww1_ottoman.2.b
+		ai_chance = { factor = 50 }
+		add_political_power = 60
+		add_war_support = 0.05
+		add_stability = -0.05
+		add_to_variable = { tur_imperial_cohesion = -5 }
+		set_country_flag = TUR_halaskar_zabitan_suppressed
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 3. O Ataque ao Sublime Porte (Bab-ı Ali Baskını 1913)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.3
+	title = ww1_ottoman.3.t
+	desc = ww1_ottoman.3.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.3.a
+		ai_chance = { factor = 85 }
+		add_political_power = 100
+		add_war_support = 0.10
+		add_to_variable = { tur_imperial_cohesion = 10 }
+		set_country_flag = TUR_three_pashas_triumvirate_in_power
+	}
+
+	option = {
+		name = ww1_ottoman.3.b
+		ai_chance = { factor = 15 }
+		add_political_power = 50
+		add_stability = 0.10
+		add_to_variable = { tur_imperial_cohesion = 5 }
+		set_country_flag = TUR_constitutional_coalition_preserved
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 4. O Dilema do Congresso Árabe de Paris (1913)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.4
+	title = ww1_ottoman.4.t
+	desc = ww1_ottoman.4.d
+	picture = GFX_report_event_report_event_arab_protests
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.4.a
+		ai_chance = { factor = 60 }
+		add_political_power = 30
+		add_stability = 0.05
+		add_to_variable = { tur_arab_unrest = -15 }
+		add_to_variable = { tur_imperial_cohesion = 10 }
+		set_country_flag = TUR_arab_demands_granted
+	}
+
+	option = {
+		name = ww1_ottoman.4.b
+		ai_chance = { factor = 40 }
+		add_political_power = 70
+		add_stability = -0.05
+		add_to_variable = { tur_arab_unrest = 15 }
+		add_to_variable = { tur_imperial_cohesion = -5 }
+		set_country_flag = TUR_arab_demands_rejected
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 5. A Missão Militar Alemã de Liman von Sanders
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.5
+	title = ww1_ottoman.5.t
+	desc = ww1_ottoman.5.d
+	picture = GFX_report_event_report_event_GER_TUR_military_mission
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.5.a
+		ai_chance = { factor = 80 }
+		army_experience = 25
+		add_opinion_modifier = { target = GER modifier = positive_50 }
+		add_opinion_modifier = { target = RUS modifier = negative_50 }
+		add_to_variable = { tur_foreign_influence = 5 }
+		set_country_flag = TUR_liman_von_sanders_empowered
+	}
+
+	option = {
+		name = ww1_ottoman.5.b
+		ai_chance = { factor = 20 }
+		add_political_power = 40
+		army_experience = 10
+		add_opinion_modifier = { target = RUS modifier = positive_25 }
+		set_country_flag = TUR_liman_von_sanders_advisory_only
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 6. A Missão Naval Britânica do Almirante Limpus
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.6
+	title = ww1_ottoman.6.t
+	desc = ww1_ottoman.6.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.6.a
+		ai_chance = { factor = 50 }
+		navy_experience = 25
+		add_opinion_modifier = { target = ENG modifier = positive_50 }
+		add_to_variable = { tur_foreign_influence = 5 }
+		set_country_flag = TUR_limpus_naval_reforms
+	}
+
+	option = {
+		name = ww1_ottoman.6.b
+		ai_chance = { factor = 50 }
+		add_political_power = 40
+		add_to_variable = { tur_foreign_influence = -5 }
+		set_country_flag = TUR_naval_autonomy_chosen
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 7. A Administração da Dívida Pública (Düyun-ı Umumiye / OPDA)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.7
+	title = ww1_ottoman.7.t
+	desc = ww1_ottoman.7.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.7.a
+		ai_chance = { factor = 75 }
+		add_political_power = 60
+		add_to_variable = { tur_public_debt = -15 }
+		add_to_variable = { tur_foreign_influence = -15 }
+		set_country_flag = TUR_opda_revenues_reclaimed
+	}
+
+	option = {
+		name = ww1_ottoman.7.b
+		ai_chance = { factor = 25 }
+		add_stability = 0.05
+		add_to_variable = { tur_public_debt = -5 }
+		set_country_flag = TUR_opda_cooperation_continued
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 8. A Abolição Unilateral das Capitulações
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.8
+	title = ww1_ottoman.8.t
+	desc = ww1_ottoman.8.d
+	picture = GFX_report_event_report_event_turkish_protests
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.8.a
+		ai_chance = { factor = 90 }
+		add_political_power = 80
+		add_stability = 0.05
+		add_to_variable = { tur_foreign_influence = -25 }
+		add_to_variable = { tur_imperial_cohesion = 15 }
+		set_country_flag = TUR_capitulations_abolished
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 9. A Ferrovia de Bagdá e a Passagem das Montanhas Taurus
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.9
+	title = ww1_ottoman.9.t
+	desc = ww1_ottoman.9.d
+	picture = GFX_report_event_report_event_baghdad_front
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.9.a
+		ai_chance = { factor = 80 }
+		add_political_power = 30
+		add_to_variable = { tur_imperial_cohesion = 10 }
+		add_to_variable = { tur_arab_unrest = -10 }
+		set_country_flag = TUR_taurus_tunnels_completed
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 10. A Chegada do SMS Goeben e Breslau aos Dardanelos
 # ------------------------------------------------------------------------------
 country_event = {
 	id = ww1_ottoman.10
 	title = ww1_ottoman.10.t
 	desc = ww1_ottoman.10.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_report_event_generic_naval_battle
 
 	is_triggered_only = yes
 
@@ -50,6 +279,7 @@ country_event = {
 		add_ideas = TUR_yavuz_and_midilli_supremacy
 		add_war_support = 0.10
 		navy_experience = 30
+		add_to_variable = { tur_foreign_influence = 10 }
 		set_country_flag = TUR_goeben_welcomed
 	}
 
@@ -63,37 +293,75 @@ country_event = {
 }
 
 # ------------------------------------------------------------------------------
-# 3. O Tratado Secreto Teuto-Otomano
+# 11. O Fechamento dos Estreitos dos Dardanelos
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.11
+	title = ww1_ottoman.11.t
+	desc = ww1_ottoman.11.d
+	picture = GFX_event_ww1_britain_dardanelles_decision
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.11.a
+		ai_chance = { factor = 85 }
+		add_war_support = 0.10
+		add_political_power = 50
+		add_to_variable = { tur_imperial_cohesion = 10 }
+		set_country_flag = TUR_straits_closed_to_allies
+	}
+
+	option = {
+		name = ww1_ottoman.11.b
+		ai_chance = { factor = 15 }
+		add_stability = 0.05
+		add_political_power = 25
+		set_country_flag = TUR_straits_kept_open
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 12. O Tratado Secreto Teuto-Otomano
 # ------------------------------------------------------------------------------
 country_event = {
 	id = ww1_ottoman.12
 	title = ww1_ottoman.12.t
 	desc = ww1_ottoman.12.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_event_ww1_ger_ottoman_alliance_ratified
 
 	is_triggered_only = yes
 
 	option = {
 		name = ww1_ottoman.12.a
+		ai_chance = { factor = 85 }
 		add_political_power = 80
 		add_opinion_modifier = { target = GER modifier = positive_75 }
 		set_country_flag = TUR_treaty_ratified
 	}
+
+	option = {
+		name = ww1_ottoman.12.b
+		ai_chance = { factor = 15 }
+		add_stability = 0.05
+		add_political_power = 40
+		set_country_flag = TUR_treaty_neutrality_reserved
+	}
 }
 
 # ------------------------------------------------------------------------------
-# 4. A Incursão de Souchon no Mar Negro
+# 13. A Incursão de Souchon no Mar Negro
 # ------------------------------------------------------------------------------
 country_event = {
-	id = ww1_ottoman.15
-	title = ww1_ottoman.15.t
-	desc = ww1_ottoman.15.d
-	picture = GFX_report_event_generic_sign_treaty1
+	id = ww1_ottoman.13
+	title = ww1_ottoman.13.t
+	desc = ww1_ottoman.13.d
+	picture = GFX_report_event_generic_naval_battle
 
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_ottoman.15.a
+		name = ww1_ottoman.13.a
 		ai_chance = { factor = 90 }
 		add_war_support = 0.15
 		declare_war_on = { target = RUS type = annex_everything }
@@ -101,7 +369,7 @@ country_event = {
 	}
 
 	option = {
-		name = ww1_ottoman.15.b
+		name = ww1_ottoman.13.b
 		ai_chance = { factor = 10 }
 		add_stability = -0.10
 		add_political_power = -50
@@ -110,46 +378,389 @@ country_event = {
 }
 
 # ------------------------------------------------------------------------------
-# 5. A Proclamação da Guerra Santa (Cihad-ı Ekber)
+# 14. A Proclamação da Guerra Santa (Cihad-ı Ekber)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.14
+	title = ww1_ottoman.14.t
+	desc = ww1_ottoman.14.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.14.a
+		ai_chance = { factor = 80 }
+		add_war_support = 0.15
+		add_manpower = 25000
+		add_to_variable = { tur_imperial_cohesion = 15 }
+		set_country_flag = TUR_holy_jihad_proclaimed
+	}
+
+	option = {
+		name = ww1_ottoman.14.b
+		ai_chance = { factor = 20 }
+		add_stability = 0.10
+		add_political_power = 50
+		set_country_flag = TUR_civic_defense_proclaimed
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 15. A Batalha de Sarıkamış e a Lição do Terceiro Exército
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.15
+	title = ww1_ottoman.15.t
+	desc = ww1_ottoman.15.d
+	picture = GFX_report_event_generic_soldier
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.15.a
+		ai_chance = { factor = 70 }
+		army_experience = 30
+		add_political_power = 30
+		add_to_variable = { tur_imperial_cohesion = -5 }
+		set_country_flag = TUR_sarikamis_lesson_learned
+	}
+
+	option = {
+		name = ww1_ottoman.15.b
+		ai_chance = { factor = 30 }
+		add_war_support = 0.10
+		army_experience = 15
+		set_country_flag = TUR_sarikamis_all_out_push
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 16. O Triunfo Épico de Galípoli (Çanakkale Zaferi)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.16
+	title = ww1_ottoman.16.t
+	desc = ww1_ottoman.16.d
+	picture = GFX_report_event_generic_soldier
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.16.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.15
+		add_stability = 0.15
+		army_experience = 40
+		add_to_variable = { tur_imperial_cohesion = 20 }
+		add_ideas = TUR_canakkale_impenetrable_bastion
+		set_country_flag = TUR_gallipoli_triumph_achieved
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 17. A Capitulação Britânica em Kut al-Amara
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.17
+	title = ww1_ottoman.17.t
+	desc = ww1_ottoman.17.d
+	picture = GFX_report_event_report_event_baghdad_front
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.17.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.15
+		add_stability = 0.10
+		army_experience = 35
+		add_to_variable = { tur_imperial_cohesion = 15 }
+		add_ideas = TUR_kut_al_amara_triumph
+		set_country_flag = TUR_kut_al_amara_triumph_achieved
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 18. A Praga de Gafanhotos e a Crise de Abastecimento no Levante
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.18
+	title = ww1_ottoman.18.t
+	desc = ww1_ottoman.18.d
+	picture = GFX_report_event_generic_strike
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.18.a
+		ai_chance = { factor = 65 }
+		add_political_power = -40
+		add_stability = 0.05
+		add_to_variable = { tur_arab_unrest = -10 }
+		set_country_flag = TUR_locust_relief_provided
+	}
+
+	option = {
+		name = ww1_ottoman.18.b
+		ai_chance = { factor = 35 }
+		add_war_support = 0.05
+		add_to_variable = { tur_arab_unrest = 15 }
+		set_country_flag = TUR_locust_military_priority
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 19. A Erupção da Revolta Árabe no Hejaz
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.19
+	title = ww1_ottoman.19.t
+	desc = ww1_ottoman.19.d
+	picture = GFX_report_event_report_event_arab_revolt
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.19.a
+		ai_chance = { factor = 70 }
+		add_war_support = 0.05
+		add_to_variable = { tur_arab_unrest = 20 }
+		add_to_variable = { tur_imperial_cohesion = -10 }
+		set_country_flag = TUR_arab_revolt_erupted
+	}
+
+	option = {
+		name = ww1_ottoman.19.b
+		ai_chance = { factor = 30 }
+		add_political_power = 50
+		add_to_variable = { tur_arab_unrest = -10 }
+		set_country_flag = TUR_arab_tribes_bribed
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 20. Fakhri Pasha e a Defesa Sagrada de Medina
 # ------------------------------------------------------------------------------
 country_event = {
 	id = ww1_ottoman.20
 	title = ww1_ottoman.20.t
 	desc = ww1_ottoman.20.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_report_event_news_army_in_desert
 
 	is_triggered_only = yes
 
 	option = {
 		name = ww1_ottoman.20.a
-		add_war_support = 0.15
-		add_manpower = 25000
-		custom_effect_tooltip = TUR_tt_jihad_appeal_effect
+		ai_chance = { factor = 100 }
+		add_war_support = 0.10
+		add_stability = 0.05
+		army_experience = 25
+		add_to_variable = { tur_imperial_cohesion = 10 }
+		set_country_flag = TUR_medina_defended_to_the_end
 	}
 }
 
 # ------------------------------------------------------------------------------
-# 6. O Triunfo Épico de Galípoli
+# 21. A Batalha de Gaza-Beersheba e a Linha da Palestina
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.21
+	title = ww1_ottoman.21.t
+	desc = ww1_ottoman.21.d
+	picture = GFX_report_event_news_army_in_desert
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.21.a
+		ai_chance = { factor = 100 }
+		army_experience = 30
+		add_war_support = 0.05
+		add_to_variable = { tur_imperial_cohesion = 5 }
+		set_country_flag = TUR_palestine_defensive_line_held
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 22. O Exército do Islã de Nuri Pasha e a Libertação de Baku
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.22
+	title = ww1_ottoman.22.t
+	desc = ww1_ottoman.22.d
+	picture = GFX_report_event_generic_soldier
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.22.a
+		ai_chance = { factor = 100 }
+		add_political_power = 80
+		add_war_support = 0.15
+		army_experience = 30
+		add_to_variable = { tur_imperial_cohesion = 15 }
+		set_country_flag = TUR_baku_liberated_army_of_islam
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 23. Morte do Sultão Mehmed V e Ascensão de Mehmed VI Vahideddin
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.23
+	title = ww1_ottoman.23.t
+	desc = ww1_ottoman.23.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.23.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.05
+		add_political_power = 50
+		set_country_flag = TUR_mehmed_vi_ascension
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 24. A Fundação do Osmanlı İtibar-ı Millî Bankası
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.24
+	title = ww1_ottoman.24.t
+	desc = ww1_ottoman.24.d
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.24.a
+		ai_chance = { factor = 100 }
+		add_political_power = 60
+		add_to_variable = { tur_public_debt = -10 }
+		add_to_variable = { tur_foreign_influence = -15 }
+		set_country_flag = TUR_national_credit_bank_operating
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 25. O Petróleo da Mesopotâmia: A Turkish Petroleum Company
 # ------------------------------------------------------------------------------
 country_event = {
 	id = ww1_ottoman.25
 	title = ww1_ottoman.25.t
 	desc = ww1_ottoman.25.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_report_event_generic_research
 
 	is_triggered_only = yes
 
 	option = {
 		name = ww1_ottoman.25.a
-		add_war_support = 0.15
-		add_stability = 0.15
-		army_experience = 40
-		add_ideas = TUR_canakkale_impenetrable_bastion
+		ai_chance = { factor = 80 }
+		add_political_power = 50
+		add_to_variable = { tur_foreign_influence = -10 }
+		set_country_flag = TUR_mesopotamian_oil_nationalized
+	}
+
+	option = {
+		name = ww1_ottoman.25.b
+		ai_chance = { factor = 20 }
+		add_political_power = 80
+		add_to_variable = { tur_public_debt = -10 }
+		set_country_flag = TUR_mesopotamian_oil_concessions
 	}
 }
 
 # ------------------------------------------------------------------------------
-# 7. A Capitulação Britânica em Kut al-Amara
+# 26. O Tratado de Da'an e a Pacificação do Iêmen
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.26
+	title = ww1_ottoman.26.t
+	desc = ww1_ottoman.26.d
+	picture = GFX_report_event_news_army_in_desert
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.26.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.05
+		add_political_power = 40
+		add_to_variable = { tur_imperial_cohesion = 10 }
+		add_to_variable = { tur_arab_unrest = -15 }
+		set_country_flag = TUR_yemen_daan_treaty_ratified
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 27. O Pacto Federal Turco-Árabe
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.27
+	title = ww1_ottoman.27.t
+	desc = ww1_ottoman.27.d
+	picture = GFX_report_event_report_event_jon_turkler
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.27.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.15
+		add_political_power = 80
+		add_to_variable = { tur_imperial_cohesion = 25 }
+		add_to_variable = { tur_arab_unrest = -30 }
+		set_country_flag = TUR_turco_arab_federation_ratified
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 28. O Triunfo e Renascimento do Império Otomano
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.28
+	title = ww1_ottoman.28.t
+	desc = ww1_ottoman.28.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.28.a
+		ai_chance = { factor = 100 }
+		add_stability = 0.20
+		add_war_support = 0.15
+		add_political_power = 150
+		add_to_variable = { tur_imperial_cohesion = 30 }
+		set_country_flag = TUR_eternal_empire_triumph
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 29. O Pacto Nacional (Misak-ı Millî)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.29
+	title = ww1_ottoman.29.t
+	desc = ww1_ottoman.29.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.29.a
+		ai_chance = { factor = 100 }
+		add_war_support = 0.20
+		add_political_power = 100
+		set_country_flag = TUR_misak_i_milli_ratified
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 30. O Tratado de Brest-Litovsk e a Restituição do Cáucaso
 # ------------------------------------------------------------------------------
 country_event = {
 	id = ww1_ottoman.30
@@ -161,29 +772,11 @@ country_event = {
 
 	option = {
 		name = ww1_ottoman.30.a
-		add_war_support = 0.15
-		add_stability = 0.10
-		army_experience = 35
-		add_ideas = TUR_kut_al_amara_triumph
-	}
-}
-
-# ------------------------------------------------------------------------------
-# 8. O Tratado de Brest-Litovsk & A Restituição do Cáucaso
-# ------------------------------------------------------------------------------
-country_event = {
-	id = ww1_ottoman.35
-	title = ww1_ottoman.35.t
-	desc = ww1_ottoman.35.d
-	picture = GFX_report_event_generic_sign_treaty1
-
-	is_triggered_only = yes
-
-	option = {
-		name = ww1_ottoman.35.a
+		ai_chance = { factor = 100 }
 		add_political_power = 100
 		add_stability = 0.10
 		add_war_support = 0.10
-		custom_effect_tooltip = TUR_tt_brest_litovsk_kars_ardahan
+		add_to_variable = { tur_imperial_cohesion = 15 }
+		set_country_flag = TUR_brest_litovsk_caucasus_restored
 	}
 }

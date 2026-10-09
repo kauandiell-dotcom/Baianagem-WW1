@@ -49,6 +49,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 5 }
 			set_country_flag = TUR_constitutional_reforms_begun
 		}
 	}
@@ -64,8 +65,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = TUR_cup_vanguard_centralization
+			country_event = { id = ww1_ottoman.2 }
 			remove_ideas = TUR_second_constitutional_era
+			add_ideas = TUR_cup_vanguard_centralization
+			add_to_variable = { tur_imperial_cohesion = 5 }
+			add_to_variable = { tur_arab_unrest = 5 }
 			add_popularity = { ideology = fascism popularity = 0.15 }
 		}
 	}
@@ -82,6 +86,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 75
 			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -97,6 +102,7 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.10
 			army_experience = 25
+			add_command_power = 20
 		}
 	}
 
@@ -110,8 +116,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_curb_unrest
 			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 5 }
+			add_to_variable = { tur_arab_unrest = -5 }
 		}
 	}
 
@@ -125,8 +132,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			country_event = { id = ww1_ottoman.3 }
 			set_politics = { ruling_party = fascism elections_allowed = no }
 			add_political_power = 120
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -141,7 +150,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INTELLIGENCE }
 		completion_reward = {
 			add_ideas = TUR_teskilat_i_mahsusa_network
-			create_operative_agent = yes
+			add_political_power = 40
+			add_to_variable = { tur_foreign_influence = -5 }
 		}
 	}
 
@@ -157,6 +167,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 60
+			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_to_variable = { tur_arab_unrest = 5 }
 		}
 	}
 
@@ -171,7 +183,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_manpower = 25000
-			add_war_support = 0.05
+			add_war_support = 0.08
 		}
 	}
 
@@ -186,6 +198,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_foreign_influence = -5 }
 		}
 	}
 
@@ -200,7 +213,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
-			add_stability = -0.05
+			add_stability = -0.03
+			add_political_power = 50
 		}
 	}
 
@@ -215,7 +229,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 50
-			consumer_goods_factor = -0.03
+			add_ideas = TUR_milli_iktisat_economy
+			add_to_variable = { tur_foreign_influence = -10 }
 		}
 	}
 
@@ -229,8 +244,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 1 }
+			340 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_stability = 0.05
+			add_to_variable = { tur_foreign_influence = -5 }
 		}
 	}
 
@@ -246,6 +262,7 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.10
 			add_political_power = 50
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -261,6 +278,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 30
 			add_command_power = 25
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -275,9 +293,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = TUR_hurriyet_ve_itilaf_governance
 			remove_ideas = TUR_second_constitutional_era
+			add_ideas = TUR_hurriyet_ve_itilaf_governance
 			add_popularity = { ideology = democratic popularity = 0.20 }
+			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -293,6 +313,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 80
 			add_stability = 0.05
+			add_to_variable = { tur_foreign_influence = 5 }
 		}
 	}
 
@@ -306,8 +327,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_provincial_autonomy
 			add_stability = 0.10
+			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_to_variable = { tur_arab_unrest = -15 }
 		}
 	}
 
@@ -321,7 +343,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 1 }
+			339 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_stability = 0.05
 		}
 	}
@@ -338,6 +360,7 @@ focus_tree = {
 		completion_reward = {
 			add_opinion_modifier = { target = ENG modifier = positive_50 }
 			add_opinion_modifier = { target = FRA modifier = positive_50 }
+			add_to_variable = { tur_foreign_influence = 5 }
 		}
 	}
 
@@ -369,6 +392,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 60
 			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -383,7 +407,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_stability = 0.10
-			custom_effect_tooltip = TUR_tt_millet_equality
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -399,6 +423,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_political_power = 75
+			add_to_variable = { tur_imperial_cohesion = 15 }
+			add_to_variable = { tur_arab_unrest = -15 }
 		}
 	}
 
@@ -412,8 +438,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			consumer_goods_factor = -0.03
-			add_stability = 0.05
+			add_ideas = TUR_tax_farming_abolished
+			add_political_power = 50
+			add_to_variable = { tur_public_debt = -5 }
 		}
 	}
 
@@ -429,6 +456,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.10
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -443,9 +471,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = TUR_palace_autocracy_restored
 			remove_ideas = TUR_second_constitutional_era
-			add_political_power = 100
+			add_ideas = TUR_palace_autocracy_restored
+			add_popularity = { ideology = neutrality popularity = 0.25 }
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -459,7 +488,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 75
+			add_political_power = 80
 			add_stability = 0.05
 		}
 	}
@@ -476,6 +505,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_war_support = 0.05
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -491,6 +521,7 @@ focus_tree = {
 		completion_reward = {
 			set_politics = { ruling_party = neutrality elections_allowed = no }
 			add_political_power = 120
+			add_stability = -0.05
 		}
 	}
 
@@ -504,7 +535,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_manpower = 20000
+			add_manpower = 15000
 			army_experience = 20
 		}
 	}
@@ -519,8 +550,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.10
-			add_political_power = 80
+			add_stability = 0.08
+			add_political_power = 60
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -534,8 +566,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 90
-			add_stability = 0.05
+			add_political_power = 100
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -550,7 +582,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_stability = 0.05
-			conscription_factor = 0.05
+			add_political_power = 50
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -564,8 +597,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.10
+			add_political_power = 90
+			add_stability = 0.08
 		}
 	}
 
@@ -579,9 +612,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
+			add_stability = 0.15
 			add_war_support = 0.10
-			add_stability = 0.10
-			add_political_power = 150
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -595,8 +628,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			country_event = { id = ww1_ottoman.4 }
 			add_political_power = 50
-			custom_effect_tooltip = TUR_tt_arab_talks
+			add_to_variable = { tur_arab_unrest = -10 }
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -610,9 +645,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_ideas = TUR_arab_ottoman_federal_compact
-			remove_ideas = TUR_arab_unrest_smoldering
-			add_stability = 0.10
+			553 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_stability = 0.05
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -626,8 +661,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.05
+			add_stability = 0.10
+			add_to_variable = { tur_imperial_cohesion = 15 }
+			add_to_variable = { tur_arab_unrest = -20 }
 		}
 	}
 
@@ -643,6 +679,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 60
 			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -656,8 +693,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_manpower = 30000
-			custom_effect_tooltip = TUR_tt_tribal_support
+			add_manpower = 20000
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -673,6 +710,7 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.10
 			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -686,8 +724,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.05
-			compliance_growth_focus_factor = 0.15
+			add_stability = 0.08
+			add_political_power = 50
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -701,8 +740,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_sharif_loyalty
-			add_stability = 0.05
+			add_stability = 0.08
+			add_to_variable = { tur_arab_unrest = -15 }
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -716,8 +756,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			291 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_political_power = 50
+			291 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -732,6 +772,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			554 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_stability = 0.05
 		}
 	}
 
@@ -745,9 +786,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_stability = 0.10
 			add_war_support = 0.10
-			add_political_power = 80
+			add_manpower = 30000
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -761,8 +802,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.05
-			add_war_support = 0.05
+			add_stability = 0.08
 			add_political_power = 50
 		}
 	}
@@ -777,8 +817,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_war_support = 0.10
-			subversive_activites_upkeep = -0.20
+			add_manpower = 25000
+			add_war_support = 0.05
 		}
 	}
 
@@ -792,8 +832,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			679 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_stability = 0.05
+			add_political_power = 75
+			add_stability = 0.10
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -807,8 +848,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_war_support = 0.10
-			set_country_flag = TUR_ready_for_holy_war
+			country_event = { id = ww1_ottoman.14 }
+			add_war_support = 0.15
+			add_manpower = 35000
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -822,9 +865,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.10
+			add_stability = 0.15
 			add_political_power = 100
-			conscription_factor = 0.05
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -838,9 +881,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_stability = 0.10
-			add_war_support = 0.10
-			army_core_defence_factor = 0.05
+			add_stability = 0.20
+			add_war_support = 0.15
+			add_political_power = 150
+			add_to_variable = { tur_imperial_cohesion = 25 }
 		}
 	}
 
@@ -853,9 +897,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_political_power = 75
-			consumer_goods_factor = -0.02
-			set_country_flag = TUR_economy_program_begun
+			add_ideas = TUR_milli_iktisat_economy
+			add_political_power = 60
+			add_to_variable = { tur_public_debt = -5 }
+			add_to_variable = { tur_foreign_influence = -5 }
 		}
 	}
 
@@ -870,7 +915,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 60
-			add_stability = 0.05
+			add_to_variable = { tur_public_debt = -5 }
+			add_to_variable = { tur_foreign_influence = -5 }
 		}
 	}
 
@@ -884,9 +930,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_ideas = TUR_debt_renegotiated
+			country_event = { id = ww1_ottoman.7 }
 			remove_ideas = TUR_sick_man_debt
-			add_stability = 0.05
+			add_ideas = TUR_debt_renegotiated
+			add_to_variable = { tur_public_debt = -15 }
+			add_to_variable = { tur_foreign_influence = -10 }
 		}
 	}
 
@@ -900,9 +948,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_ideas = TUR_capitulations_abrogated
+			country_event = { id = ww1_ottoman.8 }
 			remove_ideas = TUR_debt_renegotiated
-			add_war_support = 0.05
+			add_ideas = TUR_capitulations_abrogated
+			add_to_variable = { tur_foreign_influence = -25 }
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -916,8 +966,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_protective_tariffs
 			add_political_power = 50
+			341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_foreign_influence = -5 }
 		}
 	}
 
@@ -931,9 +982,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_ideas = TUR_financial_sovereignty
-			remove_ideas = TUR_capitulations_abrogated
-			add_political_power = 100
+			country_event = { id = ww1_ottoman.24 }
+			add_political_power = 60
+			add_to_variable = { tur_public_debt = -10 }
+			add_to_variable = { tur_foreign_influence = -15 }
 		}
 	}
 
@@ -947,8 +999,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			797 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
-			add_stability = 0.05
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_foreign_influence = -15 }
 		}
 	}
 
@@ -962,8 +1014,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.05
-			consumer_goods_factor = -0.03
+			add_ideas = TUR_monetary_gold_lira
+			add_political_power = 60
+			add_to_variable = { tur_public_debt = -10 }
 		}
 	}
 
@@ -977,8 +1030,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 1 }
-			add_political_power = 50
+			340 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_foreign_influence = -10 }
 		}
 	}
 
@@ -992,8 +1045,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			consumer_goods_factor = -0.02
-			add_stability = 0.05
+			346 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_public_debt = -10 }
 		}
 	}
 
@@ -1007,8 +1060,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 120
-			industrial_capacity_factory = 0.08
+			remove_ideas = TUR_capitulations_abrogated
+			add_ideas = TUR_financial_sovereignty
+			add_political_power = 100
+			add_to_variable = { tur_public_debt = -20 }
+			add_to_variable = { tur_foreign_influence = -20 }
 		}
 	}
 
@@ -1022,8 +1078,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			799 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
-			add_ideas = TUR_baghdad_railway_artery
+			country_event = { id = ww1_ottoman.9 }
+			344 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -1037,8 +1094,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			677 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
-			343 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			346 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1053,6 +1110,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			676 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_to_variable = { tur_arab_unrest = -5 }
 		}
 	}
 
@@ -1067,7 +1125,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			291 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
-			add_political_power = 50
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -1081,8 +1139,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			1011 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			1011 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } }
+			811 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_political_power = 40
 		}
 	}
 
@@ -1096,8 +1154,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			679 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
 			add_ideas = TUR_hejaz_pilgrim_railway
+			551 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -1111,8 +1170,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 			553 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1126,8 +1185,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			856 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_stability = 0.05
+			550 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -1141,7 +1201,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			454 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			552 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_stability = 0.05
 		}
 	}
 
@@ -1155,8 +1216,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			348 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
-			army_speed_factor = 0.05
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			347 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1170,8 +1231,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			signal_company_factor = 0.15
-			reinforce_rate = 0.05
+			add_tech_bonus = { name = industrial_bonus bonus = 0.50 uses = 1 category = industry }
+			add_political_power = 50
 		}
 	}
 
@@ -1185,8 +1246,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			344 = { add_resource = { type = steel amount = 12 } }
-			344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			341 = { add_resource = { type = steel amount = 12 } }
+			add_political_power = 40
 		}
 	}
 
@@ -1201,7 +1262,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			354 = { add_resource = { type = steel amount = 8 } }
-			354 = { add_resource = { type = chromium amount = 6 } }
+			add_political_power = 30
 		}
 	}
 
@@ -1215,7 +1276,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -1229,7 +1291,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			797 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1243,8 +1305,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			797 = { add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2000 producer = TUR }
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -1258,7 +1320,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			348 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1272,7 +1334,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			343 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			339 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1286,8 +1348,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			797 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
-			add_stability = 0.05
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1301,7 +1362,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			355 = { add_resource = { type = steel amount = 10 } }
+			347 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1315,8 +1376,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			industrial_capacity_factory = 0.10
-			production_speed_arms_factory_factor = 0.15
+			add_ideas = TUR_munitions_directorate_idea
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1330,8 +1391,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = arms_factory level = 2 }
-			add_war_support = 0.05
+			add_war_support = 0.10
+			346 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1361,6 +1422,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			291 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_arab_unrest = -5 }
 		}
 	}
 
@@ -1374,7 +1436,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			799 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			344 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1388,8 +1450,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.05
-			consumer_goods_factor = -0.02
+			country_event = { id = ww1_ottoman.18 }
+			add_political_power = 40
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -1403,8 +1466,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.05
-			custom_effect_tooltip = TUR_tt_famine_protection
+			add_ideas = TUR_breadbasket_idea
+			add_stability = 0.08
 		}
 	}
 
@@ -1418,8 +1481,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_stability = 0.05
-			consumer_goods_factor = -0.02
+			add_political_power = 50
+			346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1433,7 +1496,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 1 }
+			add_tech_bonus = { name = industrial_bonus bonus = 0.50 uses = 1 category = industry }
+			add_stability = 0.05
 		}
 	}
 
@@ -1447,8 +1511,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			production_speed_infrastructure_factor = 0.10
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_political_power = 40
 		}
 	}
 
@@ -1462,8 +1526,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.05
-			war_support_factor = 0.05
+			add_stability = 0.08
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -1477,8 +1541,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			supply_consumption_factor = -0.08
-			add_stability = 0.10
+			add_ideas = TUR_breadbasket_idea
+			add_stability = 0.05
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -1492,8 +1557,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_research_slot = 1
-			add_stability = 0.05
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -1507,8 +1572,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			348 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			346 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			347 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1522,8 +1587,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			676 = { add_resource = { type = oil amount = 16 } }
-			add_political_power = 60
+			country_event = { id = ww1_ottoman.25 }
+			676 = { add_resource = { type = oil amount = 24 } }
+			add_ideas = TUR_mesopotamian_oil_production
+			add_to_variable = { tur_foreign_influence = -10 }
 		}
 	}
 
@@ -1537,8 +1604,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			industrial_capacity_factory = 0.08
-			production_speed_industrial_complex_factor = 0.10
+			341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_tech_bonus = { name = industrial_bonus bonus = 0.50 uses = 1 category = industry }
 		}
 	}
 
@@ -1552,9 +1619,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			consumer_goods_factor = -0.05
-			add_stability = 0.05
-			add_offsite_building = { type = industrial_complex level = 2 }
+			add_ideas = TUR_milli_iktisat_economy
+			add_stability = 0.08
+			add_to_variable = { tur_foreign_influence = -15 }
 		}
 	}
 
@@ -1568,9 +1635,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 100
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_stability = 0.10
-			industrial_capacity_factory = 0.10
+			add_to_variable = { tur_public_debt = -20 }
 		}
 	}
 
@@ -1583,9 +1651,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_experience = 35
-			add_command_power = 20
-			set_country_flag = TUR_army_reform_begun
+			army_experience = 30
+			add_command_power = 25
+			remove_ideas = TUR_army_modernization_struggle
+			add_ideas = TUR_german_military_mission
 		}
 	}
 
@@ -1599,8 +1668,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_experience = 25
-			add_ideas = TUR_army_modernization_struggle
+			add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
+			army_experience = 20
 		}
 	}
 
@@ -1614,9 +1683,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			add_political_power = -30
-			army_experience = 20
-			custom_effect_tooltip = TUR_tt_purge_incompetent
+			army_experience = 25
+			add_political_power = 50
+			add_stability = -0.03
 		}
 	}
 
@@ -1630,8 +1699,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 producer = TUR }
-			add_tech_bonus = { name = infantry_weapons bonus = 1.0 uses = 1 }
+			341 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_tech_bonus = { name = infantry_weapons bonus = 0.50 uses = 1 category = infantry_weapons }
 		}
 	}
 
@@ -1645,8 +1714,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 producer = TUR }
-			add_tech_bonus = { name = artillery bonus = 1.0 uses = 1 }
+			346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }
 		}
 	}
 
@@ -1660,8 +1729,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = { name = land_doctrine cost_reduction = 0.5 uses = 1 }
-			army_morale_factor = 0.05
+			add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
+			army_experience = 25
 		}
 	}
 
@@ -1676,7 +1745,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_manpower = 15000
-			cavalry_attack_factor = 0.05
+			army_experience = 15
 		}
 	}
 
@@ -1691,7 +1760,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_ideas = TUR_caucasus_alpine_preparations
-			army_experience = 15
+			army_experience = 20
 		}
 	}
 
@@ -1705,8 +1774,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2000 producer = TUR }
-			army_infantry_defence_factor = 0.05
+			354 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_tech_bonus = { name = infantry_weapons bonus = 0.50 uses = 1 category = infantry_weapons }
+			army_experience = 15
 		}
 	}
 
@@ -1720,8 +1790,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_morale_factor = 0.05
-			casualty_trickleback = 0.10
+			add_ideas = TUR_red_crescent_logistics
+			army_experience = 20
 		}
 	}
 
@@ -1735,8 +1805,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			resistance_target = -0.15
-			add_stability = 0.05
+			add_stability = 0.08
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -1750,8 +1820,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 producer = TUR }
-			army_artillery_attack_factor = 0.05
+			346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_ideas = TUR_heavy_ordnance_idea
+			add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }
 		}
 	}
 
@@ -1765,8 +1836,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			conscription_factor = 0.10
-			add_manpower = 50000
+			add_manpower = 40000
+			add_war_support = 0.08
 		}
 	}
 
@@ -1780,7 +1851,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 50
+			country_event = { id = ww1_ottoman.5 }
+			army_experience = 20
+			add_political_power = 40
 		}
 	}
 
@@ -1795,9 +1868,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			add_ideas = TUR_german_military_mission
-			remove_ideas = TUR_army_modernization_struggle
+			country_event = { id = ww1_ottoman.5 }
+			army_experience = 30
 			add_opinion_modifier = { target = GER modifier = positive_50 }
+			add_to_variable = { tur_foreign_influence = 5 }
 		}
 	}
 
@@ -1813,8 +1887,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			add_ideas = TUR_kemalist_tactical_doctrine
-			remove_ideas = TUR_army_modernization_struggle
-			add_stability = 0.05
+			army_experience = 35
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -1828,8 +1902,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = { name = land_doctrine cost_reduction = 0.5 uses = 2 }
-			max_planning = 0.10
+			add_ideas = TUR_prusso_ottoman_tactics
+			add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -1843,8 +1917,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_core_defence_factor = 0.10
-			reinforce_rate = 0.10
+			add_ideas = TUR_kemalist_tactical_doctrine
+			army_experience = 30
 		}
 	}
 
@@ -1858,8 +1932,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_tech_bonus = { name = artillery bonus = 1.0 uses = 1 }
-			army_artillery_attack_factor = 0.05
+			346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_ideas = TUR_heavy_ordnance_idea
 		}
 	}
 
@@ -1873,8 +1947,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			attrition = -0.10
-			out_of_supply_factor = -0.10
+			army_experience = 20
+			add_war_support = 0.05
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -1888,8 +1963,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			planning_speed = 0.10
-			army_experience = 20
+			add_ideas = TUR_reformed_ottoman_corps
+			army_experience = 30
+			add_command_power = 25
 		}
 	}
 
@@ -1903,8 +1979,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_org_factor = 0.05
-			add_political_power = 50
+			army_experience = 25
+			add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -1918,8 +1994,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			army_artillery_attack_factor = 0.05
-			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 60 producer = TUR }
+			347 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }
 		}
 	}
 
@@ -1933,8 +2009,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			max_planning = 0.05
-			reinforce_rate = 0.05
+			add_ideas = TUR_prusso_ottoman_tactics
+			army_experience = 25
 		}
 	}
 
@@ -1948,8 +2024,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			navy_experience = 25
-			set_country_flag = TUR_navy_expansion_begun
+			navy_experience = 30
+			add_political_power = 50
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1963,8 +2040,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_ottoman.1 }
-			add_political_power = 50
+			country_event = { id = ww1_ottoman.6 }
+			navy_experience = 25
+			add_opinion_modifier = { target = ENG modifier = positive_50 }
 		}
 	}
 
@@ -1978,7 +2056,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			797 = { add_building_construction = { type = dockyard level = 2 instant_build = yes } }
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1992,8 +2070,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
+			add_political_power = 60
 			add_war_support = 0.10
-			add_ideas = TUR_dreadnought_national_fervor
+			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 	}
 
@@ -2007,8 +2086,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_tech_bonus = { name = naval_bonus bonus = 0.50 uses = 1 category = naval_equipment }
 			navy_experience = 20
-			add_tech_bonus = { name = naval_equipment bonus = 1.0 uses = 1 }
 		}
 	}
 
@@ -2024,6 +2103,8 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = ww1_ottoman.10 }
 			add_ideas = TUR_yavuz_and_midilli_supremacy
+			navy_experience = 30
+			add_war_support = 0.10
 		}
 	}
 
@@ -2037,8 +2118,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_tech_bonus = { name = ss_tech bonus = 1.0 uses = 1 }
-			sub_detection = 0.15
+			add_tech_bonus = { name = naval_bonus bonus = 0.50 uses = 1 category = naval_equipment }
+			navy_experience = 25
 		}
 	}
 
@@ -2052,8 +2133,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			naval_mine_hit_chance_factor = 0.20
-			navy_experience = 15
+			navy_experience = 20
+			341 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2067,8 +2148,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			navy_capital_ship_attack_factor = 0.10
-			naval_hit_chance = 0.05
+			navy_experience = 30
+			add_command_power = 20
 		}
 	}
 
@@ -2082,8 +2163,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			navy_screen_ship_attack_factor = 0.10
-			navy_anti_air_factor = 0.10
+			navy_experience = 25
+			339 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2097,8 +2178,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			navy_capital_ship_attack_factor = 0.10
-			navy_experience = 30
+			add_war_support = 0.10
+			navy_experience = 35
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -2112,8 +2194,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
-			air_experience = 25
 			add_ideas = TUR_ottoman_aviation_detachment
+			air_experience = 30
+			add_tech_bonus = { name = air_bonus bonus = 0.50 uses = 1 category = air_equipment }
 		}
 	}
 
@@ -2142,8 +2225,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_tech_bonus = { name = air_equipment bonus = 1.0 uses = 1 }
-			air_experience = 15
+			air_experience = 25
+			add_tech_bonus = { name = air_bonus bonus = 0.50 uses = 1 category = air_equipment }
 		}
 	}
 
@@ -2157,8 +2240,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_straits_mines
-			navy_experience = 15
+			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_war_support = 0.05
 		}
 	}
 
@@ -2172,8 +2255,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
-			air_recon_factor = 0.20
-			air_experience = 15
+			air_experience = 25
+			add_command_power = 20
 		}
 	}
 
@@ -2187,8 +2270,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			amphibious_invasion_defence = 0.20
-			naval_strike_defence_factor = 0.15
+			341 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -2202,9 +2285,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			341 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 			army_experience = 30
 			navy_experience = 20
-			air_experience = 15
 			add_command_power = 30
 		}
 	}
@@ -2219,8 +2302,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			reinforce_rate = 0.10
-			signal_company_factor = 0.15
+			add_tech_bonus = { name = electronics_bonus bonus = 0.50 uses = 1 category = electronics }
+			army_experience = 20
 		}
 	}
 
@@ -2234,8 +2317,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_speed_factor = 0.05
-			supply_consumption_factor = -0.05
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -2249,8 +2332,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			industrial_capacity_factory = 0.10
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 producer = TUR }
+			554 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_ideas = TUR_munitions_directorate_idea
 		}
 	}
 
@@ -2264,9 +2347,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_org_factor = 0.05
-			army_morale_factor = 0.10
-			max_planning = 0.10
+			add_ideas = TUR_reformed_ottoman_corps
+			army_experience = 40
+			add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -2280,9 +2363,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			army_core_defence_factor = 0.10
-			army_morale_factor = 0.10
-			add_war_support = 0.10
+			add_ideas = TUR_kemalist_tactical_doctrine
+			add_war_support = 0.15
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -2296,7 +2379,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 80
-			set_country_flag = TUR_diplomacy_path_begun
+			add_to_variable = { tur_foreign_influence = 5 }
 		}
 	}
 
@@ -2310,8 +2393,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			341 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
-			add_stability = 0.05
+			184 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			add_war_support = 0.05
 		}
 	}
 
@@ -2325,8 +2408,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			341 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
-			add_war_support = 0.05
+			184 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -2341,7 +2424,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_opinion_modifier = { target = BUL modifier = positive_50 }
-			add_political_power = 50
+			add_stability = 0.05
 		}
 	}
 
@@ -2356,7 +2439,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_opinion_modifier = { target = ROM modifier = positive_50 }
-			add_stability = 0.05
+			add_ideas = TUR_anatolian_grain_monopoly
 		}
 	}
 
@@ -2370,8 +2453,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			448 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
-			add_stability = 0.05
+			add_war_support = 0.08
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -2385,8 +2468,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_sanusi_pact
-			add_manpower = 15000
+			add_manpower = 20000
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -2401,7 +2484,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			448 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
-			add_stability = 0.05
+			army_experience = 15
 		}
 	}
 
@@ -2415,8 +2498,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			164 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
-			add_war_support = 0.05
+			339 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_stability = 0.05
 		}
 	}
 
@@ -2432,7 +2515,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_opinion_modifier = { target = GER modifier = positive_75 }
-			add_political_power = 50
+			add_to_variable = { tur_foreign_influence = 10 }
 		}
 	}
 
@@ -2446,8 +2529,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			set_country_flag = TUR_secret_treaty_signed
 			country_event = { id = ww1_ottoman.12 }
+			add_political_power = 80
+			add_opinion_modifier = { target = GER modifier = positive_75 }
 		}
 	}
 
@@ -2461,8 +2545,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 2 }
-			add_political_power = 60
+			add_political_power = 100
+			add_to_variable = { tur_public_debt = -10 }
 		}
 	}
 
@@ -2476,7 +2560,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			country_event = { id = ww1_ottoman.15 }
+			country_event = { id = ww1_ottoman.13 }
 			add_war_support = 0.15
 		}
 	}
@@ -2506,8 +2590,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			add_ideas = TUR_german_military_mission
-			army_experience = 25
+			add_opinion_modifier = { target = GER modifier = positive_100 }
+			add_political_power = 60
 		}
 	}
 
@@ -2521,8 +2605,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_opinion_modifier = { target = AUS modifier = positive_50 }
-			add_political_power = 50
+			add_opinion_modifier = { target = AUS modifier = positive_75 }
+			add_stability = 0.05
 		}
 	}
 
@@ -2536,8 +2620,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_stability = 0.05
+			add_opinion_modifier = { target = BUL modifier = positive_75 }
+			add_political_power = 40
 		}
 	}
 
@@ -2551,7 +2635,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_experience = 30
+			army_experience = 35
 			add_command_power = 30
 		}
 	}
@@ -2566,8 +2650,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			industrial_capacity_factory = 0.08
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 4000 producer = TUR }
+			add_ideas = TUR_munitions_directorate_idea
+			army_experience = 25
 		}
 	}
 
@@ -2582,9 +2666,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.10
+			add_stability = 0.15
 			add_political_power = 100
-			set_country_flag = TUR_neutral_policy
+			add_to_variable = { tur_foreign_influence = -15 }
 		}
 	}
 
@@ -2598,8 +2682,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_close_straits
+			country_event = { id = ww1_ottoman.11 }
 			add_political_power = 50
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -2613,8 +2698,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			consumer_goods_factor = -0.05
-			add_offsite_building = { type = industrial_complex level = 1 }
+			add_ideas = TUR_monetary_gold_lira
+			add_political_power = 75
 		}
 	}
 
@@ -2628,8 +2713,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_research_slot = 1
-			add_stability = 0.05
+			341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_stability = 0.08
 		}
 	}
 
@@ -2643,8 +2728,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 2 }
-			add_stability = 0.05
+			add_political_power = 120
+			add_to_variable = { tur_public_debt = -15 }
 		}
 	}
 
@@ -2658,8 +2743,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.15
-			add_political_power = 120
+			add_stability = 0.20
+			add_political_power = 100
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -2673,8 +2759,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 80
-			add_stability = 0.05
+			add_political_power = 150
+			add_stability = 0.10
 		}
 	}
 
@@ -2688,8 +2774,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			army_core_defence_factor = 0.15
-			add_stability = 0.10
+			add_stability = 0.15
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -2704,8 +2790,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_opinion_modifier = { target = ENG modifier = positive_50 }
 			add_political_power = 50
+			add_to_variable = { tur_foreign_influence = 5 }
 		}
 	}
 
@@ -2719,8 +2805,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_demand_dreadnoughts
-			add_war_support = 0.05
+			country_event = { id = ww1_ottoman.1 }
+			add_war_support = 0.15
+			add_political_power = 60
 		}
 	}
 
@@ -2735,7 +2822,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_stability = 0.10
-			give_guarantee = ENG
+			add_political_power = 60
 		}
 	}
 
@@ -2749,8 +2836,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 80
-			add_stability = 0.05
+			add_opinion_modifier = { target = ENG modifier = positive_75 }
+			add_political_power = 50
 		}
 	}
 
@@ -2779,8 +2866,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 1 }
-			add_stability = 0.05
+			553 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_opinion_modifier = { target = FRA modifier = positive_50 }
 		}
 	}
 
@@ -2795,7 +2882,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_opinion_modifier = { target = ENG modifier = positive_75 }
-			add_political_power = 100
+			add_opinion_modifier = { target = FRA modifier = positive_75 }
+			add_political_power = 75
 		}
 	}
 
@@ -2809,8 +2897,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.15
-			consumer_goods_factor = -0.03
+			add_stability = 0.10
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -2824,9 +2912,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_stability = 0.10
-			add_war_support = 0.10
-			add_political_power = 100
+			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -2840,8 +2927,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			navy_capital_ship_attack_factor = 0.10
-			naval_torpedo_hit_chance_factor = 0.10
+			navy_experience = 30
+			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
 		}
 	}
 
@@ -2855,8 +2942,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			554 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
-			454 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			553 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_stability = 0.05
 		}
 	}
 
@@ -2870,8 +2957,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.10
-			add_political_power = 80
+			add_stability = 0.15
+			add_political_power = 100
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -2885,8 +2973,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
+			add_stability = 0.15
 			add_war_support = 0.10
-			army_core_defence_factor = 0.05
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -2900,9 +2989,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_stability = 0.10
-			add_war_support = 0.10
-			add_political_power = 120
+			add_stability = 0.20
+			add_political_power = 150
+			add_to_variable = { tur_imperial_cohesion = 25 }
 		}
 	}
 
@@ -2917,8 +3006,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_war_support = 0.15
-			add_political_power = 100
-			set_country_flag = TUR_total_war_mobilization
+			army_experience = 25
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -2932,8 +3021,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_caucasus_winter_supplies
-			winter_attrition_factor = -0.30
+			354 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -2947,8 +3036,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_attack_factor = 0.05
-			army_experience = 25
+			country_event = { id = ww1_ottoman.15 }
+			army_experience = 30
+			add_to_variable = { tur_imperial_cohesion = -5 }
 		}
 	}
 
@@ -2962,8 +3052,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			9932 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } }
-			supply_consumption_factor = -0.05
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -2977,8 +3067,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_war_support = 0.10
-			army_core_defence_factor = 0.10
+			add_war_support = 0.15
+			army_experience = 30
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -2992,9 +3083,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_manpower = 35000
-			army_experience = 30
-			set_country_flag = TUR_army_of_islam_formed
+			country_event = { id = ww1_ottoman.22 }
+			add_manpower = 25000
+			army_experience = 25
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -3008,8 +3100,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			add_war_support = 0.15
 			add_political_power = 80
-			custom_effect_tooltip = TUR_tt_baku_oil
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -3023,8 +3116,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			navy_experience = 15
-			add_war_support = 0.05
+			navy_experience = 20
+			add_command_power = 20
 		}
 	}
 
@@ -3039,7 +3132,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_manpower = 20000
-			army_morale_factor = 0.05
+			army_experience = 15
 		}
 	}
 
@@ -3054,7 +3147,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_stability = 0.10
-			add_political_power = 75
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -3068,7 +3161,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			country_event = { id = ww1_ottoman.16 }
 			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			army_experience = 35
 			add_ideas = TUR_canakkale_impenetrable_bastion
 		}
 	}
@@ -3083,9 +3178,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			army_morale_factor = 0.15
-			army_core_defence_factor = 0.15
-			add_war_support = 0.10
+			country_event = { id = ww1_ottoman.17 }
+			army_experience = 40
+			add_war_support = 0.15
+			add_ideas = TUR_canakkale_impenetrable_bastion
 		}
 	}
 
@@ -3099,8 +3195,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			reinforce_rate = 0.15
-			dig_in_speed_factor = 0.20
+			add_manpower = 20000
+			army_experience = 25
 		}
 	}
 
@@ -3115,8 +3211,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_war_support = 0.15
-			add_stability = 0.10
-			country_event = { id = ww1_ottoman.25 }
+			add_stability = 0.15
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -3130,8 +3226,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_core_defence_factor = 0.10
-			army_morale_factor = 0.10
+			add_ideas = TUR_kemalist_tactical_doctrine
+			add_war_support = 0.10
+			army_experience = 30
 		}
 	}
 
@@ -3145,8 +3242,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			341 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
-			add_stability = 0.05
+			341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_stability = 0.10
 		}
 	}
 
@@ -3160,8 +3257,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			291 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			army_speed_factor = 0.05
+			navy_experience = 20
+			army_experience = 15
 		}
 	}
 
@@ -3175,8 +3272,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			max_dig_in = 5
-			army_core_defence_factor = 0.10
+			country_event = { id = ww1_ottoman.17 }
+			291 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_experience = 30
+			add_ideas = TUR_kut_al_amara_triumph
 		}
 	}
 
@@ -3190,8 +3289,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_encircle_kut
-			army_experience = 25
+			add_war_support = 0.15
+			army_experience = 35
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -3206,7 +3306,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_ideas = TUR_kut_al_amara_triumph
-			country_event = { id = ww1_ottoman.30 }
+			add_stability = 0.10
+			add_political_power = 75
 		}
 	}
 
@@ -3220,8 +3321,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			1011 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
-			add_stability = 0.05
+			811 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -3235,8 +3336,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			1011 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
-			add_war_support = 0.05
+			811 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_stability = 0.05
 		}
 	}
 
@@ -3250,8 +3351,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			attrition = -0.15
-			out_of_supply_factor = -0.10
+			army_experience = 25
+			add_command_power = 25
 		}
 	}
 
@@ -3265,8 +3366,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_suez_raid
 			add_war_support = 0.10
+			army_experience = 30
+			add_political_power = 50
 		}
 	}
 
@@ -3280,7 +3382,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			454 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			country_event = { id = ww1_ottoman.21 }
+			552 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
 			add_ideas = TUR_gaza_beersheba_defensive_wall
 		}
 	}
@@ -3295,9 +3398,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			454 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
-			add_stability = 0.05
-			add_war_support = 0.05
+			552 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			add_stability = 0.08
 		}
 	}
 
@@ -3312,7 +3414,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			554 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
-			army_core_defence_factor = 0.10
+			army_experience = 20
 		}
 	}
 
@@ -3326,8 +3428,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			supply_consumption_factor = -0.05
+			553 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -3341,8 +3443,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_protect_railway
-			supply_consumption_factor = -0.05
+			551 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 
@@ -3356,8 +3458,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			679 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			country_event = { id = ww1_ottoman.20 }
 			add_ideas = TUR_fakhri_pasha_desert_stand
+			add_war_support = 0.10
+			army_experience = 30
 		}
 	}
 
@@ -3371,8 +3475,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_sharif_revolt_containment
-			add_stability = 0.05
+			country_event = { id = ww1_ottoman.19 }
+			add_political_power = 60
+			add_to_variable = { tur_arab_unrest = -20 }
 		}
 	}
 
@@ -3387,7 +3492,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			add_stability = 0.10
-			add_war_support = 0.05
+			add_political_power = 50
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -3401,8 +3507,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			attrition = -0.10
-			army_speed_factor = 0.05
+			army_experience = 20
+			add_command_power = 20
 		}
 	}
 
@@ -3417,7 +3523,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			add_ideas = TUR_war_bread_and_rationing
-			consumer_goods_factor = -0.05
+			add_political_power = 40
 		}
 	}
 
@@ -3431,8 +3537,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			industrial_capacity_factory = 0.10
-			add_war_support = 0.05
+			add_ideas = TUR_war_bread_and_rationing
+			add_war_support = 0.10
 		}
 	}
 
@@ -3446,8 +3552,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INTELLIGENCE }
 		completion_reward = {
-			subversive_activites_upkeep = -0.30
-			recon_factor = 0.15
+			add_ideas = TUR_teskilat_i_mahsusa_network
+			army_experience = 25
 		}
 	}
 
@@ -3461,7 +3567,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 2 }
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_stability = 0.05
 		}
 	}
@@ -3476,8 +3582,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			industrial_capacity_factory = 0.10
-			production_speed_arms_factory_factor = 0.15
+			add_war_support = 0.10
+			346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3491,8 +3597,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			conscription_factor = 0.10
-			add_manpower = 40000
+			add_manpower = 50000
+			add_stability = -0.05
 		}
 	}
 
@@ -3506,9 +3612,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_stability = 0.10
+			add_stability = 0.15
 			add_war_support = 0.15
-			add_political_power = 120
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -3522,8 +3628,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			country_event = { id = ww1_ottoman.35 }
-			add_political_power = 80
+			country_event = { id = ww1_ottoman.30 }
+			add_political_power = 100
+			add_war_support = 0.10
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -3537,8 +3645,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_ideas = TUR_anatolian_sovereignty_victory
-			add_stability = 0.10
+			add_political_power = 120
+			add_stability = 0.15
+			add_to_variable = { tur_imperial_cohesion = 20 }
 		}
 	}
 
@@ -3552,9 +3661,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_war_support = 0.15
-			add_stability = 0.15
-			conscription_factor = 0.05
+			country_event = { id = ww1_ottoman.28 }
+			add_stability = 0.20
+			add_political_power = 150
+			add_to_variable = { tur_imperial_cohesion = 30 }
 		}
 	}
 
@@ -3569,8 +3679,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
-			add_political_power = 150
-			add_stability = 0.15
+			country_event = { id = ww1_ottoman.28 }
+			add_stability = 0.20
+			add_war_support = 0.15
+			add_to_variable = { tur_imperial_cohesion = 30 }
 		}
 	}
 
@@ -3585,9 +3697,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_research_slot = 1
-			add_stability = 0.10
-			industrial_capacity_factory = 0.10
+			add_stability = 0.15
+			add_ideas = TUR_financial_sovereignty
+			add_political_power = 120
 		}
 	}
 
@@ -3601,9 +3713,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_stability = 0.20
-			add_war_support = 0.20
+			country_event = { id = ww1_ottoman.28 }
+			add_stability = 0.25
 			add_political_power = 200
+			add_to_variable = { tur_imperial_cohesion = 35 }
 		}
 	}
 
@@ -3617,8 +3730,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_manpower = 15000
-			army_experience = 15
+			army_experience = 30
+			add_manpower = 20000
 		}
 	}
 
@@ -3632,8 +3745,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
-			add_war_support = 0.05
-			add_political_power = 40
+			add_political_power = 60
+			add_stability = 0.05
 		}
 	}
 
@@ -3647,8 +3760,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = TUR_tt_appease_fatat
-			add_stability = 0.05
+			add_political_power = 50
+			add_to_variable = { tur_arab_unrest = -15 }
+			add_to_variable = { tur_imperial_cohesion = 10 }
 		}
 	}
 
@@ -3662,8 +3776,10 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_political_power = 50
-			add_stability = 0.05
+			country_event = { id = ww1_ottoman.27 }
+			add_stability = 0.10
+			add_to_variable = { tur_arab_unrest = -20 }
+			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
 	}
 
@@ -3677,8 +3793,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			344 = { add_resource = { type = steel amount = 4 } }
-			add_stability = 0.05
+			341 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_political_power = 40
 		}
 	}
 
@@ -3692,7 +3808,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			799 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 			add_stability = 0.05
 		}
 	}
@@ -3707,7 +3823,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			677 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			554 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3721,8 +3837,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			supply_consumption_factor = -0.03
+			add_ideas = TUR_breadbasket_idea
+			add_stability = 0.05
 		}
 	}
 
@@ -3736,8 +3852,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_AIR_XP }
 		completion_reward = {
-			air_experience = 15
-			navy_experience = 10
+			air_experience = 20
+			navy_experience = 20
 		}
 	}
 
@@ -3751,8 +3867,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NAVY_XP }
 		completion_reward = {
-			sub_detection = 0.15
-			naval_mine_hit_chance_factor = 0.10
+			797 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			navy_experience = 15
 		}
 	}
 
@@ -3766,8 +3882,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			recon_factor = 0.15
-			cavalry_speed_factor = 0.05
+			army_experience = 20
+			add_command_power = 20
 		}
 	}
 
@@ -3781,8 +3897,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			army_experience = 20
-			army_morale_factor = 0.05
+			army_experience = 25
+			add_manpower = 15000
 		}
 	}
 
@@ -3811,8 +3927,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_offsite_building = { type = industrial_complex level = 1 }
-			add_political_power = 50
+			add_opinion_modifier = { target = FRA modifier = positive_50 }
+			add_to_variable = { tur_public_debt = -10 }
 		}
 	}
 
@@ -3826,8 +3942,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			354 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
 			add_stability = 0.05
-			291 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3841,8 +3957,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			663 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-			add_manpower = 10000
+			448 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -3856,8 +3972,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			9860 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
-			army_core_defence_factor = 0.10
+			354 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -3871,8 +3987,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
-			max_dig_in = 5
-			dig_in_speed_factor = 0.20
+			army_experience = 30
+			add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
 		}
 	}
 
@@ -3887,7 +4003,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			291 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
-			army_core_defence_factor = 0.10
+			army_experience = 25
 		}
 	}
 
@@ -3901,8 +4017,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			supply_consumption_factor = -0.05
-			armored_train_efficiency = 0.15
+			551 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_to_variable = { tur_arab_unrest = -10 }
 		}
 	}
 

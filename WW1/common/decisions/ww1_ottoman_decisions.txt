@@ -64,6 +64,51 @@ TUR_imperial_cohesion_category = {
 			resistance_target = -0.20
 			compliance_growth_focus_factor = 0.10
 		}
+		complete_effect = {
+			add_to_variable = { tur_arab_unrest = -5 }
+			add_to_variable = { tur_imperial_cohesion = 5 }
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Rally de Emergência da Coesão Imperial
+	TUR_emergency_imperial_rally = {
+		icon = GFX_decision_generic_propaganda
+		available = {
+			check_variable = { tur_imperial_cohesion < 40 }
+		}
+		visible = {
+			tag = TUR
+		}
+		cost = 50
+		days_re_enable = 180
+		complete_effect = {
+			add_to_variable = { tur_imperial_cohesion = 15 }
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1.0
+		}
+	}
+
+	# Apaziguar Notáveis Provinciais do Levante e Iraque
+	TUR_pacify_levant_notables = {
+		icon = GFX_decision_generic_political_discourse
+		available = {
+			check_variable = { tur_arab_unrest > 40 }
+		}
+		visible = {
+			tag = TUR
+		}
+		cost = 40
+		days_re_enable = 180
+		complete_effect = {
+			add_to_variable = { tur_arab_unrest = -15 }
+			add_to_variable = { tur_imperial_cohesion = 5 }
+			add_political_power = 25
+		}
 		ai_will_do = {
 			factor = 1.0
 		}

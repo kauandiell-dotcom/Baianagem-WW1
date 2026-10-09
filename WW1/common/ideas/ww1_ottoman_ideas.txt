@@ -309,5 +309,106 @@ ideas = {
 				stability_factor = -0.05
 			}
 		}
+
+		# Economia Nacional (Milli İktisat)
+		TUR_milli_iktisat_economy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+
+		# Abolição do Sistema Ilitizam (Arrecadação Fiscal Direta)
+		TUR_tax_farming_abolished = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.03
+				political_power_gain = 0.08
+			}
+		}
+
+		# Padrão Lira de Ouro e Soberania Monetária
+		TUR_monetary_gold_lira = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.08
+			}
+		}
+
+		# Diretoria Imperial de Munições e Armamento
+		TUR_munitions_directorate_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+
+		# Artilharia Pesada de Assédio Krupp
+		TUR_heavy_ordnance_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = 0.08
+			}
+		}
+
+		# Táticas Operacionais Prusso-Otomanas
+		TUR_prusso_ottoman_tactics = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.10
+				planning_speed = 0.10
+			}
+		}
+
+		# Logística do Crescente Vermelho (Hilal-i Ahmer)
+		TUR_red_crescent_logistics = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.08
+				casualty_trickleback = 0.10
+			}
+		}
+
+		# Celeiro da Mesopotâmia e Anatólia
+		TUR_breadbasket_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.08
+				out_of_supply_factor = -0.10
+			}
+		}
+
+		# Corpos de Exército Otomanos Reformados
+		TUR_reformed_ottoman_corps = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.08
+				army_morale_factor = 0.08
+				planning_speed = 0.10
+			}
+		}
+
+		# Produção Petrolífera de Mosul e Kirkuk
+		TUR_mesopotamian_oil_production = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				fuel_gain_factor = 0.20
+				industrial_capacity_factory = 0.05
+			}
+		}
 	}
 }
