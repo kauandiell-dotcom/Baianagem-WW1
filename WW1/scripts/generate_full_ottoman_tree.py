@@ -68,7 +68,7 @@ add_f("TUR_bab_i_ali_consolidation", 3, 4, 5, "GFX_focus_generic_authoritarian",
 
 add_f("TUR_teskilat_i_mahsusa", 1, 5, 5, "GFX_focus_generic_intelligence_agency",
       prereqs=["TUR_bab_i_ali_consolidation"],
-      rewards=["add_ideas = TUR_teskilat_i_mahsusa_network", "add_political_power = 40", "add_to_variable = { tur_foreign_influence = -5 }"],
+      rewards=["add_timed_idea = { idea = TUR_teskilat_i_mahsusa_network days = 720 }", "add_political_power = 60", "add_to_variable = { tur_foreign_influence = -5 }"],
       filters=["FOCUS_FILTER_INTELLIGENCE"])
 
 add_f("TUR_centralist_provincial_governors", 3, 5, 5, "GFX_focus_generic_propaganda",
@@ -93,7 +93,7 @@ add_f("TUR_secular_law_codes", 4, 6, 5, "GFX_focus_generic_treaty",
 
 add_f("TUR_turkification_of_trade", 1, 7, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_national_bourgeoisie_creation"],
-      rewards=["add_political_power = 50", "add_ideas = TUR_milli_iktisat_economy", "add_to_variable = { tur_foreign_influence = -10 }"],
+      rewards=["add_political_power = 75", "add_to_variable = { tur_foreign_influence = -15 }", "add_to_variable = { tur_public_debt = -5 }", "add_tech_bonus = { name = TUR_milli_iktisat bonus = 1.0 ahead_reduction = 1 category = industry }", "797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"],
       filters=["FOCUS_FILTER_POLITICAL"])
 
 add_f("TUR_milli_iktisat_policies", 3, 7, 5, "GFX_TUR_industrialization_of_the_nation",
@@ -160,7 +160,7 @@ add_f("TUR_civic_ottomanism_restored", 7, 6, 5, "GFX_TUR_continuing_ottomanism_e
 
 add_f("TUR_decentralized_tax_farming_abolition", 7, 7, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_civic_ottomanism_restored"],
-      rewards=["add_ideas = TUR_tax_farming_abolished", "add_political_power = 50", "add_to_variable = { tur_public_debt = -5 }"],
+      rewards=["add_political_power = 80", "add_to_variable = { tur_public_debt = -15 }", "add_to_variable = { tur_imperial_cohesion = 10 }", "add_stability = 0.05", "343 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_liberal_parliamentary_hegemony", 7, 8, 5, "GFX_focus_generic_parliament",
@@ -314,7 +314,7 @@ add_f("TUR_legacy_of_osman_eternal", 8, 13, 5, "GFX_focus_generic_monarchy",
 
 # Root (y=0)
 add_f("TUR_economic_sovereignty_drive", 25, 0, 5, "GFX_TUR_law_for_encouraging_industry",
-      rewards=["add_ideas = TUR_milli_iktisat_economy", "add_political_power = 60", "add_to_variable = { tur_public_debt = -5 }", "add_to_variable = { tur_foreign_influence = -5 }"],
+      rewards=["add_political_power = 60", "add_to_variable = { tur_public_debt = -5 }", "add_to_variable = { tur_foreign_influence = -5 }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 # Sub-branch 2.1: Public Debt & Capitulations (x=18..21, y=1..8)
@@ -350,7 +350,7 @@ add_f("TUR_confiscate_foreign_monopolies", 18, 5, 5, "GFX_focus_generic_war_indu
 
 add_f("TUR_monetary_autonomy_and_gold_lira", 20, 5, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_national_bank_osmanli_itibar"],
-      rewards=["add_ideas = TUR_monetary_gold_lira", "add_political_power = 60", "add_to_variable = { tur_public_debt = -10 }"],
+      rewards=["add_political_power = 75", "add_to_variable = { tur_public_debt = -15 }", "add_to_variable = { tur_foreign_influence = -10 }", "add_stability = 0.05", "add_tech_bonus = { name = TUR_gold_lira bonus = 1.0 ahead_reduction = 1 category = industry }"],
       filters=["FOCUS_FILTER_STABILITY"])
 
 add_f("TUR_tobacco_regie_liquidation", 19, 6, 5, "GFX_TUR_law_for_encouraging_industry",
@@ -396,7 +396,7 @@ add_f("TUR_basra_terminus_settlement", 22, 4, 5, "GFX_TUR_baghdadberlin_railway"
 
 add_f("TUR_hejaz_railway_expansion", 26, 4, 5, "GFX_TUR_baghdadberlin_railway",
       prereqs=["TUR_mosul_baghdad_railhead"],
-      rewards=["add_ideas = TUR_hejaz_pilgrim_railway", "551 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }", "add_to_variable = { tur_imperial_cohesion = 10 }"],
+      rewards=["551 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }", "550 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }", "add_to_variable = { tur_imperial_cohesion = 10 }", "add_to_variable = { tur_arab_unrest = -10 }", "add_stability = 0.05"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_syrian_feeder_lines", 23, 5, 5, "GFX_focus_generic_railroads",
@@ -472,7 +472,7 @@ add_f("TUR_amasya_metal_smelters", 28, 6, 5, "GFX_TUR_industrialization_of_the_n
 
 add_f("TUR_imperial_munitions_directorate", 28, 7, 5, "GFX_TUR_office_of_war_industry",
       prereqs=["TUR_amasya_metal_smelters"],
-      rewards=["add_ideas = TUR_munitions_directorate_idea", "797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }"],
+      rewards=["797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }", "add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = TUR }", "add_tech_bonus = { name = TUR_munitions bonus = 1.0 ahead_reduction = 1 category = weapons }", "army_experience = 20"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_full_industrial_mobilization", 28, 8, 5, "GFX_TUR_office_of_war_industry",
@@ -483,7 +483,7 @@ add_f("TUR_full_industrial_mobilization", 28, 8, 5, "GFX_TUR_office_of_war_indus
 # Sub-branch 2.4: Agriculture & Food Autonomy (x=30..32, y=1..8)
 add_f("TUR_anatolian_grain_reserves", 31, 1, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_economic_sovereignty_drive"],
-      rewards=["add_ideas = TUR_anatolian_grain_monopoly", "add_stability = 0.05"],
+      rewards=["343 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }", "344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }", "add_stability = 0.08", "add_to_variable = { tur_imperial_cohesion = 5 }"],
       filters=["FOCUS_FILTER_STABILITY"])
 
 add_f("TUR_willcocks_mesopotamia_irrigation", 30, 2, 5, "GFX_focus_generic_propaganda",
@@ -503,7 +503,7 @@ add_f("TUR_anti_locust_campaigns", 31, 3, 5, "GFX_focus_generic_propaganda",
 
 add_f("TUR_state_silos_and_famine_relief", 31, 4, 5, "GFX_focus_generic_war_industry",
       prereqs=["TUR_anti_locust_campaigns"],
-      rewards=["add_ideas = TUR_breadbasket_idea", "add_stability = 0.08"],
+      rewards=["add_stability = 0.08", "add_political_power = 40", "add_to_variable = { tur_imperial_cohesion = 5 }"],
       filters=["FOCUS_FILTER_STABILITY"])
 
 add_f("TUR_ziraat_bankasi_credit_expansion", 30, 5, 5, "GFX_TUR_law_for_encouraging_industry",
@@ -528,7 +528,7 @@ add_f("TUR_agrarian_surplus_storage", 31, 7, 5, "GFX_TUR_1913_taxation_exemption
 
 add_f("TUR_breadbasket_of_the_empire", 31, 8, 5, "GFX_focus_generic_propaganda",
       prereqs=["TUR_agrarian_surplus_storage"],
-      rewards=["add_ideas = TUR_breadbasket_idea", "add_stability = 0.05", "add_to_variable = { tur_imperial_cohesion = 10 }"],
+      rewards=["346 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }", "add_stability = 0.10", "add_to_variable = { tur_imperial_cohesion = 10 }"],
       filters=["FOCUS_FILTER_STABILITY"])
 
 # Economic Integration Bridges (y=9..13)
@@ -544,7 +544,7 @@ add_f("TUR_anatolian_highway_system", 23, 10, 5, "GFX_focus_generic_infrastructu
 
 add_f("TUR_petroleum_concessions_mosul", 27, 10, 5, "GFX_TUR_industrialization_of_the_nation",
       prereqs=["TUR_integrated_imperial_economy"],
-      rewards=["country_event = { id = ww1_ottoman.25 }", "676 = { add_resource = { type = oil amount = 24 } }", "add_ideas = TUR_mesopotamian_oil_production", "add_to_variable = { tur_foreign_influence = -10 }"],
+      rewards=["country_event = { id = ww1_ottoman.25 }", "676 = { add_resource = { type = oil amount = 24 } }", "676 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }", "676 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } }", "add_to_variable = { tur_foreign_influence = -15 }", "add_tech_bonus = { name = TUR_petroleum bonus = 1.0 ahead_reduction = 1 category = industry }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_sublime_porte_heavy_industry_board", 25, 11, 5, "GFX_TUR_office_of_war_industry",
@@ -554,7 +554,7 @@ add_f("TUR_sublime_porte_heavy_industry_board", 25, 11, 5, "GFX_TUR_office_of_wa
 
 add_f("TUR_autarkic_imperial_foundation", 25, 12, 5, "GFX_TUR_law_for_encouraging_industry",
       prereqs=["TUR_sublime_porte_heavy_industry_board"],
-      rewards=["add_ideas = TUR_milli_iktisat_economy", "add_stability = 0.08", "add_to_variable = { tur_foreign_influence = -15 }"],
+      rewards=["add_stability = 0.08", "add_political_power = 50", "add_to_variable = { tur_foreign_influence = -15 }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_modern_ottoman_economic_miracle", 25, 13, 5, "GFX_TUR_industrialization_of_the_nation",
@@ -605,7 +605,7 @@ add_f("TUR_desert_camel_corps_regiments", 37, 4, 5, "GFX_focus_generic_cavalry",
 
 add_f("TUR_caucasus_alpine_detachments", 39, 4, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_krupp_quick_fire_artillery"],
-      rewards=["add_ideas = TUR_caucasus_alpine_preparations", "army_experience = 20"],
+      rewards=["add_timed_idea = { idea = TUR_caucasus_alpine_preparations days = 720 }", "army_experience = 25", "add_command_power = 20"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_machine_gun_companies", 37, 5, 5, "GFX_TUR_turkish_equipment_modernization",
@@ -615,7 +615,7 @@ add_f("TUR_machine_gun_companies", 37, 5, 5, "GFX_TUR_turkish_equipment_moderniz
 
 add_f("TUR_field_medicine_red_crescent", 36, 6, 5, "GFX_focus_generic_propaganda",
       prereqs=["TUR_machine_gun_companies"],
-      rewards=["add_ideas = TUR_red_crescent_logistics", "army_experience = 20"],
+      rewards=["add_timed_idea = { idea = TUR_red_crescent_logistics days = 720 }", "add_tech_bonus = { name = TUR_red_crescent bonus = 1.0 ahead_reduction = 1 category = support_tech }", "army_experience = 20"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_gendarmerie_modernization_corps", 38, 6, 5, "GFX_TUR_jandarma_genel_komutanlgi",
@@ -625,7 +625,7 @@ add_f("TUR_gendarmerie_modernization_corps", 38, 6, 5, "GFX_TUR_jandarma_genel_k
 
 add_f("TUR_heavy_siege_howitzers", 37, 7, 5, "GFX_TUR_arms_expansions",
       prereqs=["TUR_field_medicine_red_crescent", "TUR_gendarmerie_modernization_corps"],
-      rewards=["346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }", "add_ideas = TUR_heavy_ordnance_idea", "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }"],
+      rewards=["346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }", "add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 150 producer = TUR }", "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }", "army_experience = 20"],
       filters=["FOCUS_FILTER_RESEARCH"])
 
 add_f("TUR_comprehensive_conscription_law", 37, 8, 5, "GFX_TUR_1914_law_of_military_obligation",
@@ -648,22 +648,22 @@ add_f("TUR_german_military_mission_sanders", 40, 2, 5, "GFX_TUR_german_five_year
 add_f("TUR_native_general_staff_kemal", 42, 2, 5, "GFX_TUR_restructured_army_command",
       prereqs=["TUR_foreign_mission_choice"],
       mut_excl=["TUR_german_military_mission_sanders"],
-      rewards=["add_ideas = TUR_kemalist_tactical_doctrine", "army_experience = 35", "add_to_variable = { tur_imperial_cohesion = 10 }"],
+      rewards=["if = { limit = { has_idea = TUR_german_military_mission } remove_ideas = TUR_german_military_mission }", "if = { limit = { has_idea = TUR_army_modernization_struggle } remove_ideas = TUR_army_modernization_struggle }", "add_ideas = TUR_kemalist_tactical_doctrine", "army_experience = 35", "add_to_variable = { tur_imperial_cohesion = 10 }"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_prusso_ottoman_doctrine", 40, 3, 5, "GFX_TUR_schellendorf_plan",
       prereqs=["TUR_german_military_mission_sanders"],
-      rewards=["add_ideas = TUR_prusso_ottoman_tactics", "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"],
+      rewards=["add_doctrine_cost_reduction = { name = TUR_prusso_doctrine cost_reduction = 0.5 category = land_doctrine }", "add_tech_bonus = { name = doctrine_bonus bonus = 1.0 ahead_reduction = 1 category = land_doctrine }", "army_experience = 35", "add_command_power = 25"],
       filters=["FOCUS_FILTER_RESEARCH"])
 
 add_f("TUR_independent_tactical_flexibility", 42, 3, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_native_general_staff_kemal"],
-      rewards=["add_ideas = TUR_kemalist_tactical_doctrine", "army_experience = 30"],
+      rewards=["army_experience = 30", "add_command_power = 20"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_krupp_heavy_ordnance_contracts", 40, 4, 5, "GFX_TUR_arms_deal_with_germany",
       prereqs=["TUR_prusso_ottoman_doctrine"],
-      rewards=["346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }", "add_ideas = TUR_heavy_ordnance_idea"],
+      rewards=["346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }", "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }", "army_experience = 20"],
       filters=["FOCUS_FILTER_RESEARCH"])
 
 add_f("TUR_anatolian_guerrilla_tradition", 42, 4, 5, "GFX_TUR_osmanl_ordusu",
@@ -673,7 +673,7 @@ add_f("TUR_anatolian_guerrilla_tradition", 42, 4, 5, "GFX_TUR_osmanl_ordusu",
 
 add_f("TUR_joint_staff_operational_drills", 41, 5, 5, "GFX_TUR_restructured_army_command",
       prereqs=["TUR_krupp_heavy_ordnance_contracts", "TUR_anatolian_guerrilla_tradition"],
-      rewards=["add_ideas = TUR_reformed_ottoman_corps", "army_experience = 30", "add_command_power = 25"],
+      rewards=["if = { limit = { has_idea = TUR_german_military_mission } remove_ideas = TUR_german_military_mission }", "if = { limit = { has_idea = TUR_kemalist_tactical_doctrine } remove_ideas = TUR_kemalist_tactical_doctrine }", "add_ideas = TUR_reformed_ottoman_corps", "army_experience = 30", "add_command_power = 25"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_officer_corps_intellectual_vigor", 41, 6, 5, "GFX_focus_generic_treaty",
@@ -688,7 +688,7 @@ add_f("TUR_divisional_artillery_batteries", 41, 7, 5, "GFX_TUR_arms_expansions",
 
 add_f("TUR_corps_level_reserves_doctrine", 41, 8, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_divisional_artillery_batteries"],
-      rewards=["add_ideas = TUR_prusso_ottoman_tactics", "army_experience = 25"],
+      rewards=["army_experience = 30", "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 # Sub-branch 3.3: Navy & Dreadnoughts (x=44..47, y=1..8)
@@ -719,7 +719,7 @@ add_f("TUR_torpedo_boat_flotillas", 46, 3, 5, "GFX_TUR_fleet_expansion",
 
 add_f("TUR_welcome_goeben_and_breslau", 44, 4, 5, "GFX_TUR_osmanl_donanmas",
       prereqs=["TUR_public_donation_drive_sultan_osman"],
-      rewards=["country_event = { id = ww1_ottoman.10 }", "add_ideas = TUR_yavuz_and_midilli_supremacy", "navy_experience = 30", "add_war_support = 0.10"],
+      rewards=["country_event = { id = ww1_ottoman.10 }", "add_timed_idea = { idea = TUR_yavuz_and_midilli_supremacy days = 720 }", "navy_experience = 30", "add_war_support = 0.10"],
       filters=["FOCUS_FILTER_NAVY_XP"])
 
 add_f("TUR_black_sea_submarine_patrols", 46, 4, 5, "GFX_TUR_fleet_expansion",
@@ -750,12 +750,12 @@ add_f("TUR_sovereign_black_sea_fleet", 45, 8, 5, "GFX_TUR_osmanl_donanmas",
 # Sub-branch 3.4: Aviation & Straits Fortresses (x=48..49, y=1..8)
 add_f("TUR_yesilkoy_aviation_school", 48, 1, 5, "GFX_TUR_air_defense",
       prereqs=["TUR_reorganizing_the_imperial_army"],
-      rewards=["add_ideas = TUR_ottoman_aviation_detachment", "air_experience = 30", "add_tech_bonus = { name = air_bonus bonus = 0.50 uses = 1 category = air_equipment }"],
+      rewards=["341 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }", "air_experience = 35", "add_tech_bonus = { name = air_bonus bonus = 0.50 uses = 1 category = air_equipment }"],
       filters=["FOCUS_FILTER_AIR_XP"])
 
 add_f("TUR_strengthen_canakkale_batteries", 49, 1, 5, "GFX_focus_generic_coastal_fort",
       prereqs=["TUR_reorganizing_the_imperial_army"],
-      rewards=["341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }", "add_ideas = TUR_canakkale_impenetrable_bastion"],
+      rewards=["341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }", "remove_ideas = TUR_straits_fortress_cannons", "add_ideas = TUR_canakkale_impenetrable_bastion"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_procure_bleriot_and_rumpler_monoplanes", 48, 2, 5, "GFX_TUR_air_defense",
@@ -796,17 +796,17 @@ add_f("TUR_logistics_motor_truck_corps", 44, 10, 5, "GFX_TUR_turkish_equipment_m
 
 add_f("TUR_imperial_arsenals_peak_output", 42, 11, 5, "GFX_TUR_imperial_arsenal",
       prereqs=["TUR_modern_field_communications", "TUR_logistics_motor_truck_corps"],
-      rewards=["554 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }", "add_ideas = TUR_munitions_directorate_idea"],
+      rewards=["554 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }", "army_experience = 25"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_harbiye_tactical_doctrine_zenith", 42, 12, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_imperial_arsenals_peak_output"],
-      rewards=["add_ideas = TUR_reformed_ottoman_corps", "army_experience = 40", "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"],
+      rewards=["army_experience = 40", "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_invincible_mehmetcik_spirit", 42, 13, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_harbiye_tactical_doctrine_zenith"],
-      rewards=["add_ideas = TUR_kemalist_tactical_doctrine", "add_war_support = 0.15", "add_to_variable = { tur_imperial_cohesion = 15 }"],
+      rewards=["army_experience = 30", "add_war_support = 0.15", "add_to_variable = { tur_imperial_cohesion = 15 }"],
       filters=["FOCUS_FILTER_ARMY_XP", "FOCUS_FILTER_WAR_SUPPORT"])
 
 
@@ -837,7 +837,7 @@ add_f("TUR_bulgarian_friendship_treaty", 52, 3, 5, "GFX_focus_generic_treaty",
 
 add_f("TUR_romanian_grain_accord", 54, 3, 5, "GFX_focus_generic_treaty",
       prereqs=["TUR_edirne_fortress_complex"],
-      rewards=["add_opinion_modifier = { target = ROM modifier = positive_50 }", "add_ideas = TUR_anatolian_grain_monopoly"],
+      rewards=["add_opinion_modifier = { target = ROM modifier = positive_50 }", "add_political_power = 40", "add_stability = 0.05"],
       filters=["FOCUS_FILTER_POLITICAL"])
 
 add_f("TUR_reaffirm_libyan_sovereignty", 55, 1, 5, "GFX_focus_generic_propaganda",
@@ -909,7 +909,7 @@ add_f("TUR_central_powers_war_council", 57, 7, 5, "GFX_TUR_office_of_war_industr
 
 add_f("TUR_shared_munitions_standardization", 57, 8, 5, "GFX_TUR_arms_deal_with_germany",
       prereqs=["TUR_central_powers_war_council"],
-      rewards=["add_ideas = TUR_munitions_directorate_idea", "army_experience = 25"],
+      rewards=["army_experience = 30", "add_tech_bonus = { name = infantry_weapons bonus = 0.50 uses = 1 category = infantry_weapons }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 # Sub-branch 4.3: Strict Armed Neutrality (x=60..62, y=1..8)
@@ -926,7 +926,7 @@ add_f("TUR_close_straits_to_all_belligerents", 60, 2, 5, "GFX_focus_generic_coas
 
 add_f("TUR_demand_belligerent_transit_tolls", 62, 2, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_strict_armed_neutrality"],
-      rewards=["add_ideas = TUR_monetary_gold_lira", "add_political_power = 75"],
+      rewards=["add_political_power = 75", "add_to_variable = { tur_public_debt = -5 }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_internal_development_focus", 61, 3, 5, "GFX_TUR_industrialization_of_the_nation",
@@ -1087,12 +1087,12 @@ add_f("TUR_transcaucasian_security_sphere", 70, 8, 5, "GFX_focus_generic_treaty"
 # Sub-branch 5.2: Gallipoli & Dardanelles Defense (x=72..74, y=1..8)
 add_f("TUR_cevat_pasha_artillery_defence", 73, 1, 5, "GFX_TUR_air_defense",
       prereqs=["TUR_the_war_for_imperial_survival"],
-      rewards=["country_event = { id = ww1_ottoman.16 }", "341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }", "army_experience = 35", "add_ideas = TUR_canakkale_impenetrable_bastion"],
+      rewards=["country_event = { id = ww1_ottoman.16 }", "341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }", "army_experience = 35"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_chunuk_bair_counterattack", 72, 2, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_cevat_pasha_artillery_defence"],
-      rewards=["country_event = { id = ww1_ottoman.17 }", "army_experience = 40", "add_war_support = 0.15", "add_ideas = TUR_canakkale_impenetrable_bastion"],
+      rewards=["country_event = { id = ww1_ottoman.17 }", "army_experience = 40", "add_war_support = 0.15"],
       filters=["FOCUS_FILTER_ARMY_XP", "FOCUS_FILTER_WAR_SUPPORT"])
 
 add_f("TUR_fifth_army_mobile_reserves", 74, 2, 5, "GFX_TUR_restructured_army_command",
@@ -1107,7 +1107,7 @@ add_f("TUR_drive_invaders_into_the_sea", 73, 3, 5, "GFX_TUR_osmanl_ordusu",
 
 add_f("TUR_anafartalar_heroism_legacy", 73, 4, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_drive_invaders_into_the_sea"],
-      rewards=["add_ideas = TUR_kemalist_tactical_doctrine", "add_war_support = 0.10", "army_experience = 30"],
+      rewards=["add_war_support = 0.10", "army_experience = 30", "add_to_variable = { tur_imperial_cohesion = 10 }"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_fortress_canakkale_permanent", 73, 5, 5, "GFX_focus_generic_coastal_fort",
@@ -1123,7 +1123,7 @@ add_f("TUR_tigris_river_flotilla", 76, 1, 5, "GFX_TUR_osmanl_donanmas",
 
 add_f("TUR_defense_of_kut_al_amara", 75, 2, 5, "GFX_focus_generic_war_industry",
       prereqs=["TUR_tigris_river_flotilla"],
-      rewards=["country_event = { id = ww1_ottoman.17 }", "291 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }", "army_experience = 30", "add_ideas = TUR_kut_al_amara_triumph"],
+      rewards=["country_event = { id = ww1_ottoman.17 }", "291 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }", "army_experience = 30"],
       filters=["FOCUS_FILTER_ARMY_XP"])
 
 add_f("TUR_encirclement_of_townshend_army", 77, 2, 5, "GFX_TUR_restructured_army_command",
@@ -1133,7 +1133,7 @@ add_f("TUR_encirclement_of_townshend_army", 77, 2, 5, "GFX_TUR_restructured_army
 
 add_f("TUR_halil_kut_triumph", 76, 3, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_defense_of_kut_al_amara", "TUR_encirclement_of_townshend_army"],
-      rewards=["add_ideas = TUR_kut_al_amara_triumph", "add_stability = 0.10", "add_political_power = 75"],
+      rewards=["add_timed_idea = { idea = TUR_kut_al_amara_triumph days = 365 }", "add_stability = 0.10", "add_political_power = 75"],
       filters=["FOCUS_FILTER_WAR_SUPPORT"])
 
 add_f("TUR_secure_basra_access", 76, 4, 5, "GFX_TUR_baghdad_industrialization",
@@ -1159,7 +1159,7 @@ add_f("TUR_suez_canal_raids", 78, 2, 5, "GFX_TUR_osmanl_ordusu",
 
 add_f("TUR_gaza_beersheba_defensive_line", 80, 2, 5, "GFX_focus_generic_war_industry",
       prereqs=["TUR_cross_the_sinai_desert"],
-      rewards=["country_event = { id = ww1_ottoman.21 }", "552 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }", "add_ideas = TUR_gaza_beersheba_defensive_wall"],
+      rewards=["country_event = { id = ww1_ottoman.21 }", "552 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }", "add_timed_idea = { idea = TUR_gaza_beersheba_defensive_wall days = 365 }"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_defense_of_jerusalem", 79, 3, 5, "GFX_focus_generic_monarchy",
@@ -1185,7 +1185,7 @@ add_f("TUR_protect_hejaz_railway_garrisons", 81, 1, 5, "GFX_TUR_baghdadberlin_ra
 
 add_f("TUR_fakhri_pasha_medina_defense", 82, 2, 5, "GFX_TUR_osmanl_ordusu",
       prereqs=["TUR_protect_hejaz_railway_garrisons"],
-      rewards=["country_event = { id = ww1_ottoman.20 }", "add_ideas = TUR_fakhri_pasha_desert_stand", "add_war_support = 0.10", "army_experience = 30"],
+      rewards=["country_event = { id = ww1_ottoman.20 }", "add_timed_idea = { idea = TUR_fakhri_pasha_desert_stand days = 365 }", "add_war_support = 0.10", "army_experience = 30"],
       filters=["FOCUS_FILTER_WAR_SUPPORT"])
 
 add_f("TUR_crush_or_reconcile_sharifians", 81, 3, 5, "GFX_focus_generic_diplomacy",
@@ -1206,17 +1206,17 @@ add_f("TUR_red_sea_desert_patrols", 81, 5, 5, "GFX_TUR_asienkorps",
 # Sub-branch 5.6: War Economy & Mobilization (x=83..85, y=1..8)
 add_f("TUR_war_bread_and_rationing", 84, 1, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_the_war_for_imperial_survival"],
-      rewards=["add_ideas = TUR_war_bread_and_rationing", "add_political_power = 40"],
+      rewards=["add_timed_idea = { idea = TUR_war_bread_and_rationing days = 365 }", "add_political_power = 40"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_requisition_imperial_resources", 83, 2, 5, "GFX_TUR_office_of_war_industry",
       prereqs=["TUR_war_bread_and_rationing"],
-      rewards=["add_ideas = TUR_war_bread_and_rationing", "add_war_support = 0.10"],
+      rewards=["add_war_support = 0.10", "add_political_power = 50"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_teskilat_asymmetric_warfare", 85, 2, 5, "GFX_focus_generic_intelligence_agency",
       prereqs=["TUR_war_bread_and_rationing"],
-      rewards=["add_ideas = TUR_teskilat_i_mahsusa_network", "army_experience = 25"],
+      rewards=["army_experience = 30", "add_command_power = 25"],
       filters=["FOCUS_FILTER_INTELLIGENCE"])
 
 add_f("TUR_counter_the_blockade", 84, 3, 5, "GFX_TUR_civil_communitcations_improvements",
@@ -1264,7 +1264,7 @@ add_f("TUR_reborn_empire_destiny", 75, 12, 5, "GFX_focus_generic_monarchy",
 add_f("TUR_republican_renaissance_destiny", 79, 12, 5, "GFX_focus_generic_parliament",
       prereqs=["TUR_1918_total_victory_protocol"],
       mut_excl=["TUR_reborn_empire_destiny"],
-      rewards=["add_stability = 0.15", "add_ideas = TUR_financial_sovereignty", "add_political_power = 120"],
+      rewards=["add_stability = 0.15", "add_political_power = 120", "add_to_variable = { tur_imperial_cohesion = 25 }"],
       filters=["FOCUS_FILTER_RESEARCH", "FOCUS_FILTER_INDUSTRY"])
 
 add_f("TUR_eternal_sublime_destiny", 77, 13, 5, "GFX_focus_generic_monarchy",
@@ -1313,7 +1313,7 @@ add_f("TUR_aleppo_commercial_hub", 23, 6, 5, "GFX_TUR_industrialization_of_the_n
 
 add_f("TUR_syrian_grain_storage", 25, 7, 5, "GFX_TUR_1913_taxation_exemptions",
       prereqs=["TUR_jerusalem_jaffa_railway_upgrade"],
-      rewards=["add_ideas = TUR_breadbasket_idea", "add_stability = 0.05"],
+      rewards=["554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }", "add_stability = 0.05"],
       filters=["FOCUS_FILTER_INDUSTRY"])
 
 # Candidate additions for Wing 3

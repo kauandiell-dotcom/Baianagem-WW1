@@ -4,6 +4,11 @@
 Master Rework Engine for Ottoman Empire (TUR) WW1 National Focus Tree.
 Reconstructs scripts/generate_full_ottoman_tree.py with high-substance rewards,
 Clausewitz syntax compliance, variable integration, event hooks, and factory placement.
+ENFORCES STRICT ANTI-STACKING & CLEAN SPIRIT UPGRADES:
+- No idea is duplicated across multiple focuses.
+- Focuses upgrade starting spirits by removing earlier tiers (remove_ideas / add_ideas).
+- Short-term crisis moments use add_timed_idea (365/720 days).
+- Topbar active spirits are kept strictly between 5 and 6 at any given time.
 """
 
 from pathlib import Path
@@ -51,8 +56,8 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 10 }"
     ],
     "TUR_teskilat_i_mahsusa": [
-        "add_ideas = TUR_teskilat_i_mahsusa_network",
-        "add_political_power = 40",
+        "add_timed_idea = { idea = TUR_teskilat_i_mahsusa_network days = 720 }",
+        "add_political_power = 60",
         "add_to_variable = { tur_foreign_influence = -5 }"
     ],
     "TUR_centralist_provincial_governors": [
@@ -75,9 +80,11 @@ REWARDS_MAP = {
         "add_political_power = 50"
     ],
     "TUR_turkification_of_trade": [
-        "add_political_power = 50",
-        "add_ideas = TUR_milli_iktisat_economy",
-        "add_to_variable = { tur_foreign_influence = -10 }"
+        "add_political_power = 75",
+        "add_to_variable = { tur_foreign_influence = -15 }",
+        "add_to_variable = { tur_public_debt = -5 }",
+        "add_tech_bonus = { name = TUR_milli_iktisat bonus = 1.0 ahead_reduction = 1 category = industry }",
+        "797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"
     ],
     "TUR_milli_iktisat_policies": [
         "340 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
@@ -143,9 +150,11 @@ REWARDS_MAP = {
         "add_to_variable = { tur_arab_unrest = -15 }"
     ],
     "TUR_decentralized_tax_farming_abolition": [
-        "add_ideas = TUR_tax_farming_abolished",
-        "add_political_power = 50",
-        "add_to_variable = { tur_public_debt = -5 }"
+        "add_political_power = 80",
+        "add_to_variable = { tur_public_debt = -15 }",
+        "add_to_variable = { tur_imperial_cohesion = 10 }",
+        "add_stability = 0.05",
+        "343 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"
     ],
     "TUR_liberal_parliamentary_hegemony": [
         "add_political_power = 100",
@@ -291,7 +300,6 @@ REWARDS_MAP = {
     # WING 2: ECONOMY, PUBLIC DEBT, RAILWAYS & INDUSTRY
     # -------------------------------------------------------------------------
     "TUR_economic_sovereignty_drive": [
-        "add_ideas = TUR_milli_iktisat_economy",
         "add_political_power = 60",
         "add_to_variable = { tur_public_debt = -5 }",
         "add_to_variable = { tur_foreign_influence = -5 }"
@@ -331,9 +339,11 @@ REWARDS_MAP = {
         "add_to_variable = { tur_foreign_influence = -15 }"
     ],
     "TUR_monetary_autonomy_and_gold_lira": [
-        "add_ideas = TUR_monetary_gold_lira",
-        "add_political_power = 60",
-        "add_to_variable = { tur_public_debt = -10 }"
+        "add_political_power = 75",
+        "add_to_variable = { tur_public_debt = -15 }",
+        "add_to_variable = { tur_foreign_influence = -10 }",
+        "add_stability = 0.05",
+        "add_tech_bonus = { name = TUR_gold_lira bonus = 1.0 ahead_reduction = 1 category = industry }"
     ],
     "TUR_tobacco_regie_liquidation": [
         "340 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
@@ -372,9 +382,11 @@ REWARDS_MAP = {
         "add_political_power = 40"
     ],
     "TUR_hejaz_railway_expansion": [
-        "add_ideas = TUR_hejaz_pilgrim_railway",
-        "551 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }",
-        "add_to_variable = { tur_imperial_cohesion = 10 }"
+        "551 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }",
+        "550 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }",
+        "add_to_variable = { tur_imperial_cohesion = 10 }",
+        "add_to_variable = { tur_arab_unrest = -10 }",
+        "add_stability = 0.05"
     ],
     "TUR_syrian_feeder_lines": [
         "553 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }",
@@ -429,16 +441,20 @@ REWARDS_MAP = {
         "347 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"
     ],
     "TUR_imperial_munitions_directorate": [
-        "add_ideas = TUR_munitions_directorate_idea",
-        "797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }"
+        "797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }",
+        "add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = TUR }",
+        "add_tech_bonus = { name = TUR_munitions bonus = 1.0 ahead_reduction = 1 category = weapons }",
+        "army_experience = 20"
     ],
     "TUR_full_industrial_mobilization": [
         "add_war_support = 0.10",
         "346 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"
     ],
     "TUR_anatolian_grain_reserves": [
-        "add_ideas = TUR_anatolian_grain_monopoly",
-        "add_stability = 0.05"
+        "343 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
+        "344 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }",
+        "add_stability = 0.08",
+        "add_to_variable = { tur_imperial_cohesion = 5 }"
     ],
     "TUR_willcocks_mesopotamia_irrigation": [
         "291 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
@@ -453,8 +469,9 @@ REWARDS_MAP = {
         "add_to_variable = { tur_arab_unrest = -10 }"
     ],
     "TUR_state_silos_and_famine_relief": [
-        "add_ideas = TUR_breadbasket_idea",
-        "add_stability = 0.08"
+        "add_stability = 0.08",
+        "add_political_power = 40",
+        "add_to_variable = { tur_imperial_cohesion = 5 }"
     ],
     "TUR_ziraat_bankasi_credit_expansion": [
         "add_political_power = 50",
@@ -473,8 +490,8 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 5 }"
     ],
     "TUR_breadbasket_of_the_empire": [
-        "add_ideas = TUR_breadbasket_idea",
-        "add_stability = 0.05",
+        "346 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
+        "add_stability = 0.10",
         "add_to_variable = { tur_imperial_cohesion = 10 }"
     ],
     "TUR_integrated_imperial_economy": [
@@ -488,16 +505,18 @@ REWARDS_MAP = {
     "TUR_petroleum_concessions_mosul": [
         "country_event = { id = ww1_ottoman.25 }",
         "676 = { add_resource = { type = oil amount = 24 } }",
-        "add_ideas = TUR_mesopotamian_oil_production",
-        "add_to_variable = { tur_foreign_influence = -10 }"
+        "676 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } }",
+        "676 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = synthetic_refinery level = 1 instant_build = yes } }",
+        "add_to_variable = { tur_foreign_influence = -15 }",
+        "add_tech_bonus = { name = TUR_petroleum bonus = 1.0 ahead_reduction = 1 category = industry }"
     ],
     "TUR_sublime_porte_heavy_industry_board": [
         "341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
         "add_tech_bonus = { name = industrial_bonus bonus = 0.50 uses = 1 category = industry }"
     ],
     "TUR_autarkic_imperial_foundation": [
-        "add_ideas = TUR_milli_iktisat_economy",
         "add_stability = 0.08",
+        "add_political_power = 50",
         "add_to_variable = { tur_foreign_influence = -15 }"
     ],
     "TUR_modern_ottoman_economic_miracle": [
@@ -542,8 +561,9 @@ REWARDS_MAP = {
         "army_experience = 15"
     ],
     "TUR_caucasus_alpine_detachments": [
-        "add_ideas = TUR_caucasus_alpine_preparations",
-        "army_experience = 20"
+        "add_timed_idea = { idea = TUR_caucasus_alpine_preparations days = 720 }",
+        "army_experience = 25",
+        "add_command_power = 20"
     ],
     "TUR_machine_gun_companies": [
         "354 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }",
@@ -551,7 +571,8 @@ REWARDS_MAP = {
         "army_experience = 15"
     ],
     "TUR_field_medicine_red_crescent": [
-        "add_ideas = TUR_red_crescent_logistics",
+        "add_timed_idea = { idea = TUR_red_crescent_logistics days = 720 }",
+        "add_tech_bonus = { name = TUR_red_crescent bonus = 1.0 ahead_reduction = 1 category = support_tech }",
         "army_experience = 20"
     ],
     "TUR_gendarmerie_modernization_corps": [
@@ -560,8 +581,9 @@ REWARDS_MAP = {
     ],
     "TUR_heavy_siege_howitzers": [
         "346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }",
-        "add_ideas = TUR_heavy_ordnance_idea",
-        "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }"
+        "add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 150 producer = TUR }",
+        "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }",
+        "army_experience = 20"
     ],
     "TUR_comprehensive_conscription_law": [
         "add_manpower = 40000",
@@ -579,21 +601,26 @@ REWARDS_MAP = {
         "add_to_variable = { tur_foreign_influence = 5 }"
     ],
     "TUR_native_general_staff_kemal": [
+        "if = { limit = { has_idea = TUR_german_military_mission } remove_ideas = TUR_german_military_mission }",
+        "if = { limit = { has_idea = TUR_army_modernization_struggle } remove_ideas = TUR_army_modernization_struggle }",
         "add_ideas = TUR_kemalist_tactical_doctrine",
         "army_experience = 35",
         "add_to_variable = { tur_imperial_cohesion = 10 }"
     ],
     "TUR_prusso_ottoman_doctrine": [
-        "add_ideas = TUR_prusso_ottoman_tactics",
-        "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"
+        "add_doctrine_cost_reduction = { name = TUR_prusso_doctrine cost_reduction = 0.5 category = land_doctrine }",
+        "add_tech_bonus = { name = doctrine_bonus bonus = 1.0 ahead_reduction = 1 category = land_doctrine }",
+        "army_experience = 35",
+        "add_command_power = 25"
     ],
     "TUR_independent_tactical_flexibility": [
-        "add_ideas = TUR_kemalist_tactical_doctrine",
-        "army_experience = 30"
+        "army_experience = 30",
+        "add_command_power = 20"
     ],
     "TUR_krupp_heavy_ordnance_contracts": [
         "346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }",
-        "add_ideas = TUR_heavy_ordnance_idea"
+        "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }",
+        "army_experience = 20"
     ],
     "TUR_anatolian_guerrilla_tradition": [
         "army_experience = 20",
@@ -601,6 +628,8 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 5 }"
     ],
     "TUR_joint_staff_operational_drills": [
+        "if = { limit = { has_idea = TUR_german_military_mission } remove_ideas = TUR_german_military_mission }",
+        "if = { limit = { has_idea = TUR_kemalist_tactical_doctrine } remove_ideas = TUR_kemalist_tactical_doctrine }",
         "add_ideas = TUR_reformed_ottoman_corps",
         "army_experience = 30",
         "add_command_power = 25"
@@ -614,8 +643,8 @@ REWARDS_MAP = {
         "add_tech_bonus = { name = artillery_bonus bonus = 0.50 uses = 1 category = artillery }"
     ],
     "TUR_corps_level_reserves_doctrine": [
-        "add_ideas = TUR_prusso_ottoman_tactics",
-        "army_experience = 25"
+        "army_experience = 30",
+        "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"
     ],
     "TUR_rebuild_the_imperial_fleet": [
         "navy_experience = 30",
@@ -641,7 +670,7 @@ REWARDS_MAP = {
     ],
     "TUR_welcome_goeben_and_breslau": [
         "country_event = { id = ww1_ottoman.10 }",
-        "add_ideas = TUR_yavuz_and_midilli_supremacy",
+        "add_timed_idea = { idea = TUR_yavuz_and_midilli_supremacy days = 720 }",
         "navy_experience = 30",
         "add_war_support = 0.10"
     ],
@@ -667,12 +696,13 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 10 }"
     ],
     "TUR_yesilkoy_aviation_school": [
-        "add_ideas = TUR_ottoman_aviation_detachment",
-        "air_experience = 30",
+        "341 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }",
+        "air_experience = 35",
         "add_tech_bonus = { name = air_bonus bonus = 0.50 uses = 1 category = air_equipment }"
     ],
     "TUR_strengthen_canakkale_batteries": [
         "341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }",
+        "remove_ideas = TUR_straits_fortress_cannons",
         "add_ideas = TUR_canakkale_impenetrable_bastion"
     ],
     "TUR_procure_bleriot_and_rumpler_monoplanes": [
@@ -707,15 +737,14 @@ REWARDS_MAP = {
     ],
     "TUR_imperial_arsenals_peak_output": [
         "554 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }",
-        "add_ideas = TUR_munitions_directorate_idea"
+        "army_experience = 25"
     ],
     "TUR_harbiye_tactical_doctrine_zenith": [
-        "add_ideas = TUR_reformed_ottoman_corps",
         "army_experience = 40",
         "add_tech_bonus = { name = doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }"
     ],
     "TUR_invincible_mehmetcik_spirit": [
-        "add_ideas = TUR_kemalist_tactical_doctrine",
+        "army_experience = 30",
         "add_war_support = 0.15",
         "add_to_variable = { tur_imperial_cohesion = 15 }"
     ],
@@ -741,7 +770,8 @@ REWARDS_MAP = {
     ],
     "TUR_romanian_grain_accord": [
         "add_opinion_modifier = { target = ROM modifier = positive_50 }",
-        "add_ideas = TUR_anatolian_grain_monopoly"
+        "add_political_power = 40",
+        "add_stability = 0.05"
     ],
     "TUR_reaffirm_libyan_sovereignty": [
         "add_war_support = 0.08",
@@ -797,8 +827,8 @@ REWARDS_MAP = {
         "add_command_power = 30"
     ],
     "TUR_shared_munitions_standardization": [
-        "add_ideas = TUR_munitions_directorate_idea",
-        "army_experience = 25"
+        "army_experience = 30",
+        "add_tech_bonus = { name = infantry_weapons bonus = 0.50 uses = 1 category = infantry_weapons }"
     ],
     "TUR_strict_armed_neutrality": [
         "add_stability = 0.15",
@@ -811,8 +841,8 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 10 }"
     ],
     "TUR_demand_belligerent_transit_tolls": [
-        "add_ideas = TUR_monetary_gold_lira",
-        "add_political_power = 75"
+        "add_political_power = 75",
+        "add_to_variable = { tur_public_debt = -5 }"
     ],
     "TUR_internal_development_focus": [
         "341 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
@@ -831,7 +861,7 @@ REWARDS_MAP = {
         "add_political_power = 150",
         "add_stability = 0.10"
     ],
-    "TUR_neutral_sovereignty_guaranteed": [
+    "TUR_neutral_soovereignty_guaranteed": [
         "add_stability = 0.15",
         "add_to_variable = { tur_imperial_cohesion = 15 }"
     ],
@@ -949,14 +979,12 @@ REWARDS_MAP = {
     "TUR_cevat_pasha_artillery_defence": [
         "country_event = { id = ww1_ottoman.16 }",
         "341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }",
-        "army_experience = 35",
-        "add_ideas = TUR_canakkale_impenetrable_bastion"
+        "army_experience = 35"
     ],
     "TUR_chunuk_bair_counterattack": [
         "country_event = { id = ww1_ottoman.17 }",
         "army_experience = 40",
-        "add_war_support = 0.15",
-        "add_ideas = TUR_canakkale_impenetrable_bastion"
+        "add_war_support = 0.15"
     ],
     "TUR_fifth_army_mobile_reserves": [
         "add_manpower = 20000",
@@ -968,9 +996,9 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 20 }"
     ],
     "TUR_anafartalar_heroism_legacy": [
-        "add_ideas = TUR_kemalist_tactical_doctrine",
         "add_war_support = 0.10",
-        "army_experience = 30"
+        "army_experience = 30",
+        "add_to_variable = { tur_imperial_cohesion = 10 }"
     ],
     "TUR_fortress_canakkale_permanent": [
         "341 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }",
@@ -983,8 +1011,7 @@ REWARDS_MAP = {
     "TUR_defense_of_kut_al_amara": [
         "country_event = { id = ww1_ottoman.17 }",
         "291 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }",
-        "army_experience = 30",
-        "add_ideas = TUR_kut_al_amara_triumph"
+        "army_experience = 30"
     ],
     "TUR_encirclement_of_townshend_army": [
         "add_war_support = 0.15",
@@ -992,7 +1019,7 @@ REWARDS_MAP = {
         "add_to_variable = { tur_imperial_cohesion = 15 }"
     ],
     "TUR_halil_kut_triumph": [
-        "add_ideas = TUR_kut_al_amara_triumph",
+        "add_timed_idea = { idea = TUR_kut_al_amara_triumph days = 365 }",
         "add_stability = 0.10",
         "add_political_power = 75"
     ],
@@ -1016,7 +1043,7 @@ REWARDS_MAP = {
     "TUR_gaza_beersheba_defensive_line": [
         "country_event = { id = ww1_ottoman.21 }",
         "552 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }",
-        "add_ideas = TUR_gaza_beersheba_defensive_wall"
+        "add_timed_idea = { idea = TUR_gaza_beersheba_defensive_wall days = 365 }"
     ],
     "TUR_defense_of_jerusalem": [
         "552 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }",
@@ -1036,7 +1063,7 @@ REWARDS_MAP = {
     ],
     "TUR_fakhri_pasha_medina_defense": [
         "country_event = { id = ww1_ottoman.20 }",
-        "add_ideas = TUR_fakhri_pasha_desert_stand",
+        "add_timed_idea = { idea = TUR_fakhri_pasha_desert_stand days = 365 }",
         "add_war_support = 0.10",
         "army_experience = 30"
     ],
@@ -1055,16 +1082,16 @@ REWARDS_MAP = {
         "add_command_power = 20"
     ],
     "TUR_war_bread_and_rationing": [
-        "add_ideas = TUR_war_bread_and_rationing",
+        "add_timed_idea = { idea = TUR_war_bread_and_rationing days = 365 }",
         "add_political_power = 40"
     ],
     "TUR_requisition_imperial_resources": [
-        "add_ideas = TUR_war_bread_and_rationing",
-        "add_war_support = 0.10"
+        "add_war_support = 0.10",
+        "add_political_power = 50"
     ],
     "TUR_teskilat_asymmetric_warfare": [
-        "add_ideas = TUR_teskilat_i_mahsusa_network",
-        "army_experience = 25"
+        "army_experience = 30",
+        "add_command_power = 25"
     ],
     "TUR_counter_the_blockade": [
         "797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }",
@@ -1108,8 +1135,8 @@ REWARDS_MAP = {
     ],
     "TUR_republican_renaissance_destiny": [
         "add_stability = 0.15",
-        "add_ideas = TUR_financial_sovereignty",
-        "add_political_power = 120"
+        "add_political_power = 120",
+        "add_to_variable = { tur_imperial_cohesion = 25 }"
     ],
     "TUR_eternal_sublime_destiny": [
         "country_event = { id = ww1_ottoman.28 }",
@@ -1150,7 +1177,7 @@ REWARDS_MAP = {
         "554 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }"
     ],
     "TUR_syrian_grain_storage": [
-        "add_ideas = TUR_breadbasket_idea",
+        "554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }",
         "add_stability = 0.05"
     ],
     "TUR_izmir_naval_seaplane_base": [
@@ -1217,7 +1244,6 @@ def update_generator():
         m = re.match(r'^(add_f\(\s*)"([^"]+)"(.*)$', line)
         if m:
             prefix, fid, rest = m.group(1), m.group(2), m.group(3)
-            # Find the rewards parameter in this multi-line call
             # Gather lines until closing parenthesis of add_f
             block_lines = [line]
             while i + 1 < len(lines) and not block_lines[-1].strip().endswith(")") and not (block_lines[-1].strip().endswith("),") or (")" in block_lines[-1] and "add_f" not in lines[i+1])):
@@ -1227,7 +1253,6 @@ def update_generator():
             block_text = "\n".join(block_lines)
             
             if fid in REWARDS_MAP:
-                # Replace rewards=[...] in block_text
                 new_rewards_list = REWARDS_MAP[fid]
                 formatted_rewards = "rewards=[" + ", ".join([f'"{r}"' for r in new_rewards_list]) + "]"
                 
@@ -1235,7 +1260,6 @@ def update_generator():
                 if "rewards=" in block_text:
                     block_text = re.sub(r'rewards=\[[^\]]*\]', formatted_rewards, block_text)
                 else:
-                    # insert before filters or before closing ')'
                     if "filters=" in block_text:
                         block_text = re.sub(r'filters=', f'{formatted_rewards},\n      filters=', block_text)
                     else:

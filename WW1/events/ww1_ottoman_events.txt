@@ -393,6 +393,7 @@ country_event = {
 		ai_chance = { factor = 80 }
 		add_war_support = 0.15
 		add_manpower = 25000
+		add_timed_idea = { idea = TUR_caliphate_global_banner days = 720 }
 		add_to_variable = { tur_imperial_cohesion = 15 }
 		set_country_flag = TUR_holy_jihad_proclaimed
 	}
