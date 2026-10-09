@@ -27,6 +27,15 @@ ww1_sov_rework_weekly = {
 			add_to_variable = { SOV_unrest = 0.10 }
 		}
 		if = { limit = { surrender_progress > 0.15 } add_to_variable = { SOV_army_loyalty = -0.20 } }
+		if = {
+			limit = {
+				NOT = { has_country_flag = SOV_shell_crisis_active }
+				NOT = { has_country_flag = SOV_shell_crisis_resolved }
+			}
+			set_country_flag = SOV_shell_crisis_active
+			add_ideas = SOV_shell_shortage_crisis
+			country_event = { id = ww1_russia.50 days = 10 }
+		}
 	}
 	else = {
 		add_to_variable = { SOV_unrest = -0.15 }

@@ -163,8 +163,19 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_speed_factor = 0.05
-				planning_speed = -0.10
+				max_planning = -0.15
+				planning_speed = -0.15
+				army_morale_factor = -0.10
+				army_artillery_attack_factor = -0.10
+			}
+		}
+
+		SOV_polivanov_staff_reforms = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = -0.05
+				planning_speed = -0.05
 			}
 		}
 
@@ -178,10 +189,39 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_attack_factor = -0.15
+				army_attack_factor = -0.10
 				army_artillery_attack_factor = -0.25
 				army_org_factor = -0.10
 				war_support_factor = -0.10
+			}
+		}
+
+		SOV_shell_shortage_stage_2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = -0.12
+				army_attack_factor = -0.05
+				army_org_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		SOV_shell_shortage_stage_3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_artillery_attack_factor = -0.05
+			}
+		}
+
+		SOV_vpk_mobilization_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_arms_factory_factor = 0.15
+				industrial_capacity_factory = 0.05
 			}
 		}
 

@@ -301,6 +301,39 @@ class Content(unittest.TestCase):
             self.assertEqual(sum(vals), 100)
             self.assertGreaterEqual(len(vals), 4)
 
+    def test_russia_military_rework_and_balance(self):
+        sov_hist = rd("history/countries/SOV - Soviet union.txt")
+        self.assertIn("SOV_sukhomlinov_administration", sov_hist)
+        self.assertIn("SOV_the_steamroller", sov_hist)
+
+        nat_mod = rd("common/ideas/ww1_national_modifiers.txt")
+        self.assertIn("conscription_factor = 0.25", nat_mod)
+        self.assertIn("army_org_factor = -0.10", nat_mod)
+        self.assertIn("training_time_army_factor = 0.15", nat_mod)
+
+        rus_ideas = rd("common/ideas/ww1_russia_ideas.txt")
+        self.assertIn("SOV_polivanov_staff_reforms", rus_ideas)
+        self.assertIn("SOV_shell_shortage_crisis", rus_ideas)
+        self.assertIn("SOV_shell_shortage_stage_2", rus_ideas)
+        self.assertIn("SOV_shell_shortage_stage_3", rus_ideas)
+        self.assertIn("SOV_vpk_mobilization_spirit", rus_ideas)
+
+        t_sov = rd("common/national_focus/soviet.txt")
+        self.assertIn("date > 1913.6.1", t_sov)
+        self.assertIn("date > 1916.5.1", t_sov)
+        self.assertIn("SOV_shell_crisis_resolved", t_sov)
+
+        eff = rd("common/scripted_effects/ww1_ger_rus_rework_effects.txt")
+        self.assertIn("SOV_shell_crisis_active", eff)
+        self.assertIn("ww1_russia.50", eff)
+
+        for lang in ("english", "braz_por"):
+            loc_k = loc_keys(lang)
+            for k in ("SOV_polivanov_staff_reforms", "SOV_shell_shortage_stage_2", "SOV_shell_shortage_stage_3",
+                      "SOV_vpk_mobilization_spirit", "ww1_russia.50.t", "ww1_russia.50.d", "ww1_russia.50.a",
+                      "ww1_russia.51.t", "ww1_russia.51.d", "ww1_russia.51.a", "SOV_dec_mobilize_vpk_shells"):
+                self.assertIn(k, loc_k, (lang, k))
+
 
 if __name__ == "__main__":
     unittest.main()

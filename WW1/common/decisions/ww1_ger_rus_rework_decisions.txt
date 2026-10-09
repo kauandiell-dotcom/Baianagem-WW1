@@ -192,6 +192,42 @@ SOV_imperial_crisis = {
 		}
 	}
 
+	SOV_dec_mobilize_vpk_shells = {
+		icon = generic_factory
+		cost = 40
+		days_re_enable = 180
+		available = {
+			has_war = yes
+			OR = {
+				has_idea = SOV_shell_shortage_crisis
+				has_idea = SOV_shell_shortage_stage_2
+			}
+		}
+		visible = {
+			original_tag = SOV
+			has_war = yes
+			OR = {
+				has_idea = SOV_shell_shortage_crisis
+				has_idea = SOV_shell_shortage_stage_2
+				has_country_flag = SOV_shell_crisis_active
+			}
+		}
+		complete_effect = {
+			add_timed_idea = { idea = SOV_vpk_mobilization_spirit days = 180 }
+			if = {
+				limit = { has_idea = SOV_shell_shortage_crisis }
+				remove_ideas = SOV_shell_shortage_crisis
+				add_ideas = SOV_shell_shortage_stage_2
+			}
+			add_to_variable = { SOV_unrest = 4 }
+			add_war_support = 0.05
+		}
+		ai_will_do = {
+			base = 0
+			modifier = { add = 30 has_war = yes }
+		}
+	}
+
 }
 
 SOV_civil_war_front = {

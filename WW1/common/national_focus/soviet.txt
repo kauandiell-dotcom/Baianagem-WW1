@@ -2931,6 +2931,7 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 		x = 67
 		y = 0
 		ai_will_do = { factor = 10 }
+		available = { date > 1913.6.1 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
@@ -2953,9 +2954,8 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_the_great_military_program
 		}
 		completion_reward = {
-			army_experience = 35
-			add_political_power = 100
-			add_ideas = SOV_sukhomlinov_administration
+			army_experience = 25
+			add_political_power = 50
 		}
 	}
 
@@ -3198,7 +3198,7 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 		x = 68
 		y = 2
 		ai_will_do = { factor = 10 }
-		available = { date > 1915.7.1 }
+		available = { date > 1915.6.1 has_war = yes }
 		cost = 7
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
@@ -3206,10 +3206,16 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 			focus = SOV_the_shell_shortage_crisis
 		}
 		completion_reward = {
-			add_stability = -0.10
-			add_war_support = 0.10
+			add_stability = -0.05
+			add_war_support = 0.05
 			army_experience = 30
+			if = {
+				limit = { has_idea = SOV_sukhomlinov_administration }
+				remove_ideas = SOV_sukhomlinov_administration
+				add_ideas = SOV_polivanov_staff_reforms
+			}
 			206 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			country_event = { id = ww1_russia.51 days = 1 }
 		}
 	}
 
@@ -3228,6 +3234,12 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 		completion_reward = {
 			223 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
 			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			if = {
+				limit = { has_idea = SOV_shell_shortage_crisis }
+				remove_ideas = SOV_shell_shortage_crisis
+				add_ideas = SOV_shell_shortage_stage_2
+			}
+			set_country_flag = SOV_vpk_arms_surge_active
 		}
 	}
 
@@ -3237,6 +3249,7 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 		x = 68
 		y = 3
 		ai_will_do = { factor = 10 }
+		available = { date > 1916.1.1 has_war = yes }
 		cost = 7
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
@@ -3246,8 +3259,17 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 		completion_reward = {
 			set_country_flag = side_ww1_SOV_imports_open
 			custom_effect_tooltip = side_ww1_import_contract_tt
+			if = {
+				limit = { has_idea = SOV_shell_shortage_stage_2 }
+				remove_ideas = SOV_shell_shortage_stage_2
+				add_ideas = SOV_shell_shortage_stage_3
+			}
+			else_if = {
+				limit = { has_idea = SOV_shell_shortage_crisis }
+				remove_ideas = SOV_shell_shortage_crisis
+				add_ideas = SOV_shell_shortage_stage_3
+			}
 		}
-			available = { date > 1915.6.1  has_war = yes }
 	}
 
 	focus = {
@@ -3383,7 +3405,7 @@ add_tech_bonus = { name = SOV_gas_warfare_and_zelinsky_masks bonus = 0.50 uses =
 		available = {
 			has_war_with = AUS
 			has_capitulated = no
-			date > 1915.1.1
+			date > 1916.5.1
 			NOT = { AND = { controls_state = 89 controls_state = 91 } }
 		}
 		completion_reward = {
@@ -3406,6 +3428,12 @@ add_tech_bonus = { name = SOV_gas_warfare_and_zelinsky_masks bonus = 0.50 uses =
 		}
 		completion_reward = {
 			remove_ideas = SOV_sukhomlinov_administration
+			remove_ideas = SOV_polivanov_staff_reforms
+			remove_ideas = SOV_shell_shortage_crisis
+			remove_ideas = SOV_shell_shortage_stage_2
+			remove_ideas = SOV_shell_shortage_stage_3
+			add_ideas = SOV_brusilov_doctrine_victory
+			set_country_flag = SOV_shell_crisis_resolved
 			army_experience = 35
 			add_mastery_bonus = { name = SOV_deep_echelon_surprise_assault bonus = 0.10 days = 180 folder = land }
 		}
