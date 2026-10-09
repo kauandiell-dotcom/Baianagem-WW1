@@ -3,7 +3,7 @@ ideas = { country = {
  AUH_ww1_budget_negotiated = { picture = AUH_ww1_budget allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = .04 political_power_factor = -.04 } }
  AUH_ww1_budget_settled = { picture = AUH_ww1_budget allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = .025 political_power_factor = -.02 } }
  AUH_ww1_budget_trialist = { picture = AUH_ww1_budget allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = .035 political_power_factor = -.025 } }
- AUH_ww1_budget_federal = { picture = AUH_ww1_budget allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = .04 political_power_factor = -.02 } }
+ AUH_ww1_budget_federal = { picture = AUH_ww1_budget allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = .04 political_power_factor = -.02 stability_factor = .03 conscription_factor = .03 } }
  AUH_ww1_languages_untrained = { picture = AUH_ww1_languages allowed = { original_tag = AUS } removal_cost = -1 modifier = { army_org_factor = -.08 land_reinforce_rate = -.005 } }
  AUH_ww1_languages_trained = { picture = AUH_ww1_languages allowed = { original_tag = AUS } removal_cost = -1 modifier = { army_org_factor = -.045 land_reinforce_rate = -.002 } }
  AUH_ww1_languages_staff = { picture = AUH_ww1_languages allowed = { original_tag = AUS } removal_cost = -1 modifier = { army_org_factor = -.02 land_reinforce_rate = -.001 } }
@@ -11,15 +11,15 @@ ideas = { country = {
  AUH_ww1_arsenals_initial = { picture = AUH_ww1_arsenals allowed = { original_tag = AUS } removal_cost = -1 modifier = { production_factory_efficiency_gain_factor = -.03 } }
  AUH_ww1_arsenals_standardised = { picture = AUH_ww1_arsenals allowed = { original_tag = AUS } removal_cost = -1 modifier = { industrial_capacity_factory = .025 production_factory_efficiency_gain_factor = .03 } }
  AUH_ww1_logistics_organised = { picture = AUH_ww1_logistics allowed = { original_tag = AUS } removal_cost = -1 modifier = { supply_consumption_factor = -.025 } }
- AUH_ww1_defensive_staff = { picture = AUH_ww1_staff allowed = { original_tag = AUS } removal_cost = -1 modifier = { dig_in_speed_factor = .05 planning_speed = -.05 } }
- AUH_ww1_offensive_staff = { picture = AUH_ww1_staff allowed = { original_tag = AUS } removal_cost = -1 modifier = { planning_speed = .05 supply_consumption_factor = .025 } }
+ AUH_ww1_defensive_staff = { picture = AUH_ww1_staff allowed = { original_tag = AUS } removal_cost = -1 modifier = { dig_in_speed_factor = .05 planning_speed = -.05 supply_consumption_factor = -.025 } }
+ AUH_ww1_offensive_staff = { picture = AUH_ww1_staff allowed = { original_tag = AUS } removal_cost = -1 modifier = { planning_speed = .05 supply_consumption_factor = -.025 } }
  AUH_ww1_council = { picture = AUH_ww1_council allowed = { original_tag = AUS } removal_cost = -1 modifier = { political_power_factor = -.02 stability_factor = .03 conscription_factor = .03 } }
  AUH_ww1_rationing = { picture = AUH_ww1_rationing allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = -.02 stability_factor = -.02 } }
  AUH_ww1_labour_compact = { picture = AUH_ww1_labour allowed = { original_tag = AUS } removal_cost = -1 modifier = { industrial_capacity_factory = .02 production_factory_efficiency_gain_factor = .03 } }
  AUH_ww1_diplomatic_restraint = { picture = AUH_ww1_diplomacy allowed = { original_tag = AUS } removal_cost = -1 modifier = { justify_war_goal_time = .10 } }
  AUH_ww1_fleet_cautious = { picture = AUH_ww1_fleet allowed = { original_tag = AUS } removal_cost = -1 modifier = { naval_retreat_chance = .05 naval_speed_factor = -.025 } }
  AUH_ww1_naval_refit_priority = { picture = AUH_ww1_repair allowed = { original_tag = AUS } removal_cost = -1 modifier = { refit_speed = .05 industrial_capacity_dockyard = -.025 } }
- AUH_ww1_veterans = { picture = AUH_ww1_veterans allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = -.02 army_morale_factor = .03 } }
+ AUH_ww1_veterans = { picture = AUH_ww1_veterans allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = -.02 army_morale_factor = .03 production_speed_buildings_factor = .03 } }
  AUH_ww1_peace_administration = { picture = AUH_ww1_administration allowed = { original_tag = AUS } removal_cost = -1 modifier = { consumer_goods_factor = -.02 production_speed_buildings_factor = .03 } }
  AUH_ww1_civil_cabinet = { picture = AUH_ww1_cabinet allowed = { original_tag = AUS } removal_cost = -1 modifier = { industrial_capacity_factory = .025 consumer_goods_factor = .025 } }
  AUH_ww1_emergency_shifts = { picture = AUH_ww1_shifts allowed = { original_tag = AUS } removal_cost = -1 modifier = { industrial_capacity_factory = .04 stability_weekly = -.001 } }

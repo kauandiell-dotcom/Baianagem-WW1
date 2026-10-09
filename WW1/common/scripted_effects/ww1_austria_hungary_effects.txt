@@ -100,24 +100,56 @@ auh_ww1_set_arsenals_standardised = {
 }
 auh_ww1_set_logistics_organised = { if = { limit = { NOT = { has_idea = AUH_ww1_logistics_organised } } add_ideas = AUH_ww1_logistics_organised } }
 auh_ww1_set_defensive_staff = {
-	hidden_effect = { remove_ideas = AUH_ww1_offensive_staff }
+	hidden_effect = {
+		remove_ideas = AUH_ww1_offensive_staff
+		remove_ideas = AUH_ww1_logistics_organised
+	}
 	if = { limit = { NOT = { has_idea = AUH_ww1_defensive_staff } } add_ideas = AUH_ww1_defensive_staff }
 }
 auh_ww1_set_offensive_staff = {
-	hidden_effect = { remove_ideas = AUH_ww1_defensive_staff }
+	hidden_effect = {
+		remove_ideas = AUH_ww1_defensive_staff
+		remove_ideas = AUH_ww1_logistics_organised
+	}
 	if = { limit = { NOT = { has_idea = AUH_ww1_offensive_staff } } add_ideas = AUH_ww1_offensive_staff }
 }
-auh_ww1_set_council = { if = { limit = { NOT = { has_idea = AUH_ww1_council } } add_ideas = AUH_ww1_council } }
+auh_ww1_set_council = {
+	hidden_effect = {
+		if = { limit = { has_idea = AUH_ww1_budget_federal } remove_ideas = AUH_ww1_council }
+	}
+	if = { limit = { NOT = { has_idea = AUH_ww1_budget_federal } NOT = { has_idea = AUH_ww1_council } } add_ideas = AUH_ww1_council }
+}
 auh_ww1_set_rationing = { if = { limit = { NOT = { has_idea = AUH_ww1_rationing } } add_ideas = AUH_ww1_rationing } }
 auh_ww1_set_labour_compact = { if = { limit = { NOT = { has_idea = AUH_ww1_labour_compact } } add_ideas = AUH_ww1_labour_compact } }
 auh_ww1_set_diplomatic_restraint = {
 	hidden_effect = { remove_ideas = AUS_balkan_destiny }
 	if = { limit = { NOT = { has_idea = AUH_ww1_diplomatic_restraint } } add_ideas = AUH_ww1_diplomatic_restraint }
 }
-auh_ww1_set_fleet_cautious = { if = { limit = { NOT = { has_idea = AUH_ww1_fleet_cautious } } add_ideas = AUH_ww1_fleet_cautious } }
-auh_ww1_set_naval_refit_priority = { if = { limit = { NOT = { has_idea = AUH_ww1_naval_refit_priority } } add_ideas = AUH_ww1_naval_refit_priority } }
-auh_ww1_set_veterans = { if = { limit = { NOT = { has_idea = AUH_ww1_veterans } } add_ideas = AUH_ww1_veterans } }
-auh_ww1_set_peace_administration = { if = { limit = { NOT = { has_idea = AUH_ww1_peace_administration } } add_ideas = AUH_ww1_peace_administration } }
+auh_ww1_set_fleet_cautious = {
+	hidden_effect = { remove_ideas = AUH_ww1_naval_refit_priority }
+	if = { limit = { NOT = { has_idea = AUH_ww1_fleet_cautious } } add_ideas = AUH_ww1_fleet_cautious }
+}
+auh_ww1_set_naval_refit_priority = {
+	hidden_effect = { remove_ideas = AUH_ww1_fleet_cautious }
+	if = { limit = { NOT = { has_idea = AUH_ww1_naval_refit_priority } } add_ideas = AUH_ww1_naval_refit_priority }
+}
+auh_ww1_set_veterans = {
+	hidden_effect = {
+		remove_ideas = AUH_ww1_peace_administration
+		remove_ideas = AUH_ww1_labour_compact
+		remove_ideas = AUH_ww1_rationing
+	}
+	if = { limit = { NOT = { has_idea = AUH_ww1_veterans } } add_ideas = AUH_ww1_veterans }
+}
+auh_ww1_set_peace_administration = {
+	hidden_effect = {
+		remove_ideas = AUH_ww1_labour_compact
+		remove_ideas = AUH_ww1_rationing
+		remove_ideas = AUH_ww1_emergency_shifts
+		remove_ideas = AUH_ww1_civil_cabinet
+	}
+	if = { limit = { NOT = { has_idea = AUH_ww1_peace_administration } } add_ideas = AUH_ww1_peace_administration }
+}
 auh_ww1_set_civil_cabinet = { if = { limit = { NOT = { has_idea = AUH_ww1_civil_cabinet } } add_ideas = AUH_ww1_civil_cabinet } }
 auh_ww1_set_emergency_shifts = { if = { limit = { NOT = { has_idea = AUH_ww1_emergency_shifts } } add_ideas = AUH_ww1_emergency_shifts } }
 auh_ww1_set_harvest_leave = { if = { limit = { NOT = { has_idea = AUH_ww1_harvest_leave } } add_ideas = AUH_ww1_harvest_leave } }
@@ -273,6 +305,7 @@ auh_ww1_weekly = {
    remove_ideas = AUH_ww1_civil_cabinet
    remove_ideas = AUH_ww1_emergency_shifts
    remove_ideas = AUH_ww1_operation_exhausted
+   remove_ideas = AUH_ww1_rationing
    if = { limit = { has_country_flag = auh_ww1_federal_constitution } add_to_variable = { auh_ww1_cohesion = .08 } }
   }
   if = { limit = { check_variable = { auh_ww1_cohesion < 25 } NOT = { has_country_flag = auh_ww1_constitutional_crisis_cooldown } }
@@ -321,7 +354,10 @@ auh_ww1_ratify_federation = {
  auh_ww1_set_budget_federal = yes
  add_to_variable = { auh_ww1_cohesion = 10 }
  add_to_variable = { auh_ww1_consent = -8 }
- add_ideas = AUH_ww1_council
+ hidden_effect = {
+  remove_ideas = AUH_ww1_council
+  remove_ideas = AUS_balkan_destiny
+ }
 }
 auh_ww1_establish_republic = {
  if = { limit = { has_character = AUH_ww1_karl } retire_character = AUH_ww1_karl }
@@ -338,4 +374,8 @@ auh_ww1_establish_republic = {
  auh_ww1_set_budget_federal = yes
  add_to_variable = { auh_ww1_cohesion = 8 }
  add_to_variable = { auh_ww1_consent = -10 }
+ hidden_effect = {
+  remove_ideas = AUH_ww1_council
+  remove_ideas = AUS_balkan_destiny
+ }
 }

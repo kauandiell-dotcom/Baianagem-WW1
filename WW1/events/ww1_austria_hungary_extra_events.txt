@@ -222,10 +222,9 @@ country_event = {
  title = ww1_auh.109.t
  desc = ww1_auh.109.d
  picture = GFX_event_AUH_ww1_bread_queues
- fire_only_once = no
- trigger = { tag = AUS has_country_flag = auh_ww1_initialised has_war = yes date > 1916.11.1 check_variable = { auh_ww1_provisions < 50 } NOT = { has_country_flag = auh_ww1_evt_109_cooldown } }
+ fire_only_once = yes
+ trigger = { tag = AUS has_country_flag = auh_ww1_initialised has_war = yes date > 1916.11.1 check_variable = { auh_ww1_provisions < 50 } }
  mean_time_to_happen = { days = 12 }
- immediate = { set_country_flag = { flag = auh_ww1_evt_109_cooldown days = 365 } }
  option = {
   name = ww1_auh.109.a
   ai_chance = { base = 50 }
@@ -351,57 +350,50 @@ country_event = {
  }
 }
 country_event = {
- id = ww1_auh.115
- title = ww1_auh.115.t
- desc = ww1_auh.115.d
- picture = GFX_event_AUH_ww1_harvest
- fire_only_once = no
- trigger = { tag = AUS has_country_flag = auh_ww1_initialised date > 1911.9.1 NOT = { has_country_flag = auh_ww1_evt_115_cooldown } }
- mean_time_to_happen = { days = 20 }
- immediate = { set_country_flag = { flag = auh_ww1_evt_115_cooldown days = 330 } }
- option = {
-  name = ww1_auh.115.a
-  ai_chance = { base = 50 }
-  add_to_variable = { auh_ww1_provisions = 5 } add_political_power = -15
-  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
- }
- option = {
-  name = ww1_auh.115.b
-  ai_chance = { base = 25 }
-  trigger = { has_war = no }
-  add_political_power = 30 add_to_variable = { auh_ww1_provisions = -2 }
-  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
- }
- option = {
-  name = ww1_auh.115.c
-  ai_chance = { base = 25 }
-  trigger = { has_war = yes }
-  add_to_variable = { auh_ww1_provisions = 6 } add_to_variable = { auh_ww1_consent = -4 }
-  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
- }
+	id = ww1_auh.115
+	title = ww1_auh.115.t
+	desc = ww1_auh.115.d
+	picture = GFX_event_AUH_ww1_harvest
+	is_triggered_only = yes
+	option = {
+		name = ww1_auh.115.a
+		ai_chance = { base = 50 }
+		add_to_variable = { auh_ww1_provisions = 5 } add_political_power = -15
+		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+	}
+	option = {
+		name = ww1_auh.115.b
+		ai_chance = { base = 25 }
+		trigger = { has_war = no }
+		add_political_power = 30 add_to_variable = { auh_ww1_provisions = -2 }
+		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+	}
+	option = {
+		name = ww1_auh.115.c
+		ai_chance = { base = 25 }
+		trigger = { has_war = yes }
+		add_to_variable = { auh_ww1_provisions = 6 } add_to_variable = { auh_ww1_consent = -4 }
+		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+	}
 }
 country_event = {
- id = ww1_auh.116
- title = ww1_auh.116.t
- desc = ww1_auh.116.d
- picture = GFX_event_AUH_ww1_delegations_session
- fire_only_once = no
- trigger = { tag = AUS has_country_flag = auh_ww1_initialised date > 1911.11.1 check_variable = { auh_ww1_consent < 60 } NOT = { has_country_flag = auh_ww1_republic } NOT = { has_country_flag = auh_ww1_evt_116_cooldown } }
- mean_time_to_happen = { days = 25 }
- immediate = { set_country_flag = { flag = auh_ww1_evt_116_cooldown days = 365 } }
- option = {
-  name = ww1_auh.116.a
-  ai_chance = { base = 65 }
-  add_to_variable = { auh_ww1_consent = 4 } add_political_power = -30
-  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
- }
- option = {
-  name = ww1_auh.116.b
-  ai_chance = { base = 35 }
-  trigger = { has_war = yes }
-  add_to_variable = { auh_ww1_consent = -6 } add_political_power = 20
-  if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
- }
+	id = ww1_auh.116
+	title = ww1_auh.116.t
+	desc = ww1_auh.116.d
+	picture = GFX_event_AUH_ww1_delegations_session
+	is_triggered_only = yes
+	option = {
+		name = ww1_auh.116.a
+		ai_chance = { base = 65 }
+		add_to_variable = { auh_ww1_consent = 4 } add_political_power = -30
+		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+	}
+	option = {
+		name = ww1_auh.116.b
+		ai_chance = { base = 35 }
+		trigger = { has_war = yes }
+		add_to_variable = { auh_ww1_consent = -6 } add_political_power = 20
+	}
 }
 country_event = {
  id = ww1_auh.117
