@@ -11,7 +11,7 @@ AUH_ww1_diplomacy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 2
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_provisions = 8 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 12 } add_political_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = ROM NOT = { country_exists = ROM } } } }
  }
  AUH_ww1_serbian_trade = {
@@ -26,7 +26,7 @@ AUH_ww1_diplomacy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_provisions = 4 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 8 } add_political_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = SER NOT = { country_exists = SER } } } }
  }
  AUH_ww1_german_exchange = {
@@ -41,7 +41,7 @@ AUH_ww1_diplomacy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { army_experience = 8 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = GER NOT = { country_exists = GER } } } }
  }
  AUH_ww1_italian_consultations = {
@@ -55,7 +55,7 @@ AUH_ww1_diplomacy = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_cohesion = 3 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { has_war_with = ITA NOT = { country_exists = ITA } } } }
  }
  AUH_ww1_refugee_assistance = {
@@ -225,7 +225,7 @@ AUH_ww1_diplomacy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { army_experience = 8 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_service_foreign_programme = {

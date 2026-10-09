@@ -11,7 +11,7 @@ AUH_ww1_economy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 2
   complete_effect = { add_stability = 0.04 add_war_support = 0.02 }
-  remove_effect = { add_to_variable = { auh_ww1_provisions = 10 } add_to_variable = { auh_ww1_consent = -2 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 15 } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { NOT = { controls_state = 43 } NOT = { controls_state = 154 } } } }
  }
  AUH_ww1_harvest_leave_grant = {
@@ -25,7 +25,7 @@ AUH_ww1_economy = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = { add_timed_idea = { idea = AUH_ww1_harvest_leave days = 90 } }
-  remove_effect = { add_to_variable = { auh_ww1_provisions = 8 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 12 } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
  }
  AUH_ww1_ration_distribution = {
@@ -55,7 +55,7 @@ AUH_ww1_economy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_stability = 0.05 add_war_support = 0.03 }
-  remove_effect = { add_to_variable = { auh_ww1_cohesion = 6 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 8 } add_political_power = 25 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_bond_issue = {
@@ -76,7 +76,7 @@ AUH_ww1_economy = {
   icon = GFX_decision_AUH_ww1_economy
   allowed = { original_tag = AUS }
   visible = { OR = { has_country_flag = auh_ww1_debt_repayment_unlocked has_country_flag = auh_ww1_peace_accounts_unlocked } }
-  available = { has_capitulated = no check_variable = { auh_ww1_debt > 0 } num_of_civilian_factories_available_for_projects > 2 }
+  available = { has_capitulated = no check_variable = { auh_ww1_debt > 0 } num_of_civilian_factories_available_for_projects > 0 }
   cost = 70
   days_remove = 180
   days_re_enable = 1
@@ -84,7 +84,7 @@ AUH_ww1_economy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 3
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_debt = -1 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_debt = -1 } add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_price_audit = {
@@ -98,7 +98,7 @@ AUH_ww1_economy = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_provisions = 3 } add_to_variable = { auh_ww1_cohesion = 2 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_provisions = 6 } add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_industrial_training = {
@@ -113,7 +113,7 @@ AUH_ww1_economy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_cohesion = 3 } add_tech_bonus = { name = AUH_ww1_research_program bonus = .15 uses = 1 category = industry } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 3 } add_tech_bonus = { name = AUH_ww1_research_program bonus = .25 uses = 1 category = industry } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_peace_credit_line = {
@@ -157,7 +157,7 @@ AUH_ww1_economy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { add_tech_bonus = { name = AUH_ww1_investment_review bonus = .15 uses = 1 category = construction_tech } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_tech_bonus = { name = AUH_ww1_investment_review bonus = .25 uses = 1 category = construction_tech } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_service_peace_accounts = {

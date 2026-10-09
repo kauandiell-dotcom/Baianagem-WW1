@@ -71,7 +71,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } add_equipment_to_stockpile = { type = infantry_equipment amount = -300 } }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_pilot_course = {
@@ -176,7 +176,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -60 } }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
  }
  AUH_ww1_staff_priority_review = {
@@ -202,7 +202,7 @@ AUH_ww1_military = {
    NOT = { has_country_flag = auh_ww1_serbia_active }
    NOT = { has_country_flag = auh_ww1_operation_cooldown }
   }
-  cost = 40 days_re_enable = 180
+  cost = 20 days_re_enable = 120
   complete_effect = { add_command_power = -30
    add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
@@ -220,8 +220,8 @@ AUH_ww1_military = {
   days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SER } } }
   cancel_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia }
-  complete_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
-  timeout_effect = { if = { limit = { controls_state = 107 } clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+  complete_effect = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 107 } clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_serbia_active remove_ideas = AUH_ww1_operation_serbia add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 30 } } }
  }
 
 
@@ -233,7 +233,7 @@ AUH_ww1_military = {
    NOT = { has_country_flag = auh_ww1_galicia_active }
    NOT = { has_country_flag = auh_ww1_operation_cooldown }
   }
-  cost = 40 days_re_enable = 180
+  cost = 20 days_re_enable = 120
   complete_effect = { add_command_power = -30
    add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
@@ -251,8 +251,8 @@ AUH_ww1_military = {
   days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SOV } } }
   cancel_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia }
-  complete_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
-  timeout_effect = { if = { limit = { controls_state = 91 } clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+  complete_effect = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 91 } clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_galicia_active remove_ideas = AUH_ww1_operation_galicia add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 30 } } }
  }
 
 
@@ -264,7 +264,7 @@ AUH_ww1_military = {
    NOT = { has_country_flag = auh_ww1_isonzo_active }
    NOT = { has_country_flag = auh_ww1_operation_cooldown }
   }
-  cost = 40 days_re_enable = 180
+  cost = 20 days_re_enable = 120
   complete_effect = { add_command_power = -30
    add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
@@ -281,9 +281,9 @@ AUH_ww1_military = {
   available = { always = no }
   days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = ITA } NOT = { controls_state = 736 } } }
-  cancel_effect = { if = { limit = { has_capitulated = no has_war_with = ITA NOT = { controls_state = 736 } } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo } }
-  complete_effect = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
-  timeout_effect = { if = { limit = { controls_state = 736 } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+  cancel_effect = { if = { limit = { has_capitulated = no has_war_with = ITA NOT = { controls_state = 736 } } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 30 } } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo } }
+  complete_effect = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 736 } clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_isonzo_active remove_ideas = AUH_ww1_operation_isonzo add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 30 } } }
  }
 
 
@@ -295,7 +295,7 @@ AUH_ww1_military = {
    NOT = { has_country_flag = auh_ww1_carpathians_active }
    NOT = { has_country_flag = auh_ww1_operation_cooldown }
   }
-  cost = 40 days_re_enable = 180
+  cost = 20 days_re_enable = 120
   complete_effect = { add_command_power = -30
    add_equipment_to_stockpile = { type = artillery_equipment amount = -30 }
    add_equipment_to_stockpile = { type = support_equipment amount = -50 }
@@ -312,9 +312,9 @@ AUH_ww1_military = {
   available = { always = no }
   days_mission_timeout = 45 is_good = no
   cancel_trigger = { OR = { has_capitulated = yes NOT = { has_war_with = SOV } NOT = { controls_state = 73 } } }
-  cancel_effect = { if = { limit = { has_capitulated = no has_war_with = SOV NOT = { controls_state = 73 } } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians } }
-  complete_effect = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success }
-  timeout_effect = { if = { limit = { controls_state = 73 } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 6 add_war_support = .015 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 45 } } }
+  cancel_effect = { if = { limit = { has_capitulated = no has_war_with = SOV NOT = { controls_state = 73 } } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 30 } } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians } }
+  complete_effect = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success }
+  timeout_effect = { if = { limit = { controls_state = 73 } clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians army_experience = 25 add_command_power = 20 add_war_support = 0.03 add_political_power = 40 set_country_flag = auh_ww1_operation_success } else = { clr_country_flag = auh_ww1_carpathians_active remove_ideas = AUH_ww1_operation_carpathians add_war_support = -.02 add_timed_idea = { idea = AUH_ww1_operation_exhausted days = 30 } } }
  }
 
  AUH_ww1_service_artillery_supply = {
@@ -329,7 +329,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = artillery_equipment amount = -20 } add_equipment_to_stockpile = { type = support_equipment amount = -30 } }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_service_defensive_sectors = {
@@ -359,7 +359,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_service_eastern_contingency = {
@@ -374,7 +374,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { army_experience = 6 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_service_naval_programme = {
@@ -389,7 +389,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { navy_experience = 5 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { navy_experience = 20 add_command_power = 15 add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
 }

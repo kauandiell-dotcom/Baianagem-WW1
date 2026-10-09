@@ -3,7 +3,7 @@ AUH_ww1_economy = {
   icon = GFX_decision_AUH_ww1_arsenal_subsidy
   allowed = { original_tag = AUS }
   visible = { has_completed_focus = AUH_ww1_skoda_contracts }
-  available = { has_capitulated = no check_variable = { auh_ww1_debt < 5 } NOT = { has_idea = AUH_ww1_subsidised_arsenals } num_of_civilian_factories_available_for_projects > 1 }
+  available = { has_capitulated = no check_variable = { auh_ww1_debt < 5 } NOT = { has_idea = AUH_ww1_subsidised_arsenals } num_of_civilian_factories_available_for_projects > 0 }
   cost = 45
   days_remove = 90
   days_re_enable = 240
@@ -11,7 +11,7 @@ AUH_ww1_economy = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 2
   complete_effect = { add_timed_idea = { idea = AUH_ww1_subsidised_arsenals days = 120 } add_to_variable = { auh_ww1_debt = 1 } }
-  remove_effect = {  auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_political_power = 25 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
 }
@@ -28,7 +28,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -40 } }
-  remove_effect = { army_experience = 5 add_timed_idea = { idea = AUH_ww1_winter_training days = 120 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_timed_idea = { idea = AUH_ww1_winter_training days = 120 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes has_war = yes } }
  }
  AUH_ww1_inspect_fortress_belt = {
@@ -43,7 +43,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = {  }
-  remove_effect = { add_timed_idea = { idea = AUH_ww1_fortress_inspection days = 120 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_timed_idea = { idea = AUH_ww1_fortress_inspection days = 120 } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes has_war = no } }
  }
  AUH_ww1_mountain_cadres = {
@@ -58,7 +58,7 @@ AUH_ww1_military = {
   ai_will_do = { base = 1 }
   civilian_factory_use = 1
   complete_effect = { add_equipment_to_stockpile = { type = support_equipment amount = -30 } }
-  remove_effect = { army_experience = 4 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { army_experience = 20 add_command_power = 15 add_political_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_pola_review = {
@@ -72,7 +72,7 @@ AUH_ww1_military = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { navy_experience = 4 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { navy_experience = 20 add_command_power = 15 add_political_power = 15 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes has_war = yes } }
  }
 }
@@ -88,7 +88,7 @@ AUH_ww1_diplomacy = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { if = { limit = { country_exists = BUL } add_opinion_modifier = { target = BUL modifier = AUH_ww1_sofia_contacts } BUL = { add_opinion_modifier = { target = ROOT modifier = AUH_ww1_sofia_contacts } } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { if = { limit = { country_exists = BUL } add_opinion_modifier = { target = BUL modifier = AUH_ww1_sofia_contacts } BUL = { add_opinion_modifier = { target = ROOT modifier = AUH_ww1_sofia_contacts } } } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { NOT = { country_exists = BUL } has_war_with = BUL } } }
  }
  AUH_ww1_constantinople_mission = {
@@ -102,7 +102,7 @@ AUH_ww1_diplomacy = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { if = { limit = { country_exists = TUR } add_opinion_modifier = { target = TUR modifier = AUH_ww1_porte_contacts } TUR = { add_opinion_modifier = { target = ROOT modifier = AUH_ww1_porte_contacts } } } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { if = { limit = { country_exists = TUR } add_opinion_modifier = { target = TUR modifier = AUH_ww1_porte_contacts } TUR = { add_opinion_modifier = { target = ROOT modifier = AUH_ww1_porte_contacts } } } add_political_power = 20 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes OR = { NOT = { country_exists = TUR } has_war_with = TUR } } }
  }
 }
@@ -118,7 +118,7 @@ AUH_ww1_crown = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_consent = 4 } add_to_variable = { auh_ww1_cohesion = -1 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_consent = 6 } add_political_power = 25 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_governors_conference = {
@@ -132,7 +132,7 @@ AUH_ww1_crown = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = {  }
-  remove_effect = { add_to_variable = { auh_ww1_cohesion = 4 } add_to_variable = { auh_ww1_consent = -1 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = 25 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
 }

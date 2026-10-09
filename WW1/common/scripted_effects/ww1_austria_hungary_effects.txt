@@ -289,19 +289,19 @@ auh_ww1_weekly = {
  if = { limit = { has_capitulated = no }
   if = { limit = { has_war = yes }
    set_country_flag = auh_ww1_fought_war
-   add_to_variable = { auh_ww1_provisions = -.30 }
-   if = { limit = { NOT = { controls_state = 43 } } add_to_variable = { auh_ww1_provisions = -.15 } }
-   if = { limit = { NOT = { controls_state = 154 } } add_to_variable = { auh_ww1_provisions = -.10 } }
+   add_to_variable = { auh_ww1_provisions = -.20 }
+   if = { limit = { NOT = { controls_state = 43 } } add_to_variable = { auh_ww1_provisions = -.12 } }
+   if = { limit = { NOT = { controls_state = 154 } } add_to_variable = { auh_ww1_provisions = -.08 } }
    if = { limit = { has_idea = AUH_ww1_rationing } add_to_variable = { auh_ww1_provisions = .08 } }
    if = { limit = { has_idea = AUH_ww1_labour_compact } add_to_variable = { auh_ww1_cohesion = .06 } }
    if = { limit = { OR = { has_idea = AUS_nationalities_fracture_crisis_1 has_idea = AUS_nationalities_fracture_crisis_2 has_idea = AUS_nationalities_fracture_crisis_3 } }
     add_to_variable = { auh_ww1_cohesion = -.15 }
    }
-   if = { limit = { check_variable = { auh_ww1_provisions < 30 } } add_to_variable = { auh_ww1_cohesion = -.20 } }
+   if = { limit = { check_variable = { auh_ww1_provisions < 30 } } add_to_variable = { auh_ww1_cohesion = -.10 } }
    if = { limit = { NOT = { controls_state = 4 } } add_to_variable = { auh_ww1_cohesion = -.25 } }
   }
   else = {
-   add_to_variable = { auh_ww1_provisions = .40 }
+   add_to_variable = { auh_ww1_provisions = .60 }
    remove_ideas = AUH_ww1_civil_cabinet
    remove_ideas = AUH_ww1_emergency_shifts
    remove_ideas = AUH_ww1_operation_exhausted
@@ -309,11 +309,11 @@ auh_ww1_weekly = {
    if = { limit = { has_country_flag = auh_ww1_federal_constitution } add_to_variable = { auh_ww1_cohesion = .08 } }
   }
   if = { limit = { check_variable = { auh_ww1_cohesion < 25 } NOT = { has_country_flag = auh_ww1_constitutional_crisis_cooldown } }
-   set_country_flag = { flag = auh_ww1_constitutional_crisis_cooldown days = 365 }
+   set_country_flag = { flag = auh_ww1_constitutional_crisis_cooldown days = 730 }
    country_event = { id = ww1_auh.28 days = 1 }
   }
   if = { limit = { check_variable = { auh_ww1_provisions < 30 } NOT = { has_country_flag = auh_ww1_food_warning_cooldown } }
-   set_country_flag = { flag = auh_ww1_food_warning_cooldown days = 180 }
+   set_country_flag = { flag = auh_ww1_food_warning_cooldown days = 730 }
    country_event = { id = ww1_auh.29 days = 1 }
   }
  }

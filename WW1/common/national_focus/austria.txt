@@ -5,7 +5,7 @@ focus_tree = {
  country = { factor = 0 modifier = { add = 100 tag = AUS } }
  default = no
  initial_show_position = { x = 5 y = 0 }
- continuous_focus_position = { x = 100 y = 1800 }
+ continuous_focus_position = { x = 20 y = 2500 }
  shortcut = {
   name = AUH_ww1_shortcut_crown_council
   target = AUH_ww1_crown_council
@@ -48,7 +48,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.1 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 50 add_stability = 0.02 auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_delegations
@@ -78,7 +78,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.2 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 40 add_to_variable = { auh_ww1_cohesion = 6 } add_to_variable = { auh_ww1_consent = 4 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_crownland_hearings
@@ -116,7 +116,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 8 }
-  completion_reward = { country_event = { id = ww1_auh.3 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 45 add_to_variable = { auh_ww1_consent = 8 } 4 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_budapest_compact
@@ -284,7 +284,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.5 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 8 } 103 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_croatian_diet
@@ -445,7 +445,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.7 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 10 } 9 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_constitutional_convention
@@ -549,7 +549,7 @@ focus_tree = {
 			set_country_flag = auh_ww1_federal_constitution_unlocked
 			auh_ww1_set_languages_reformed = yes
 			add_to_variable = { auh_ww1_cohesion = 15 }
-			country_event = { id = ww1_auh.9 days = 1 }
+			add_political_power = 50
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -850,7 +850,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.10 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 30 4 = { add_building_construction = { type = industrial_complex level = 1 instant = yes } add_extra_state_shared_building_slots = 1 } add_to_variable = { auh_ww1_provisions = 8 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_economic_coordination
@@ -1126,7 +1126,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.11 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_to_variable = { auh_ww1_provisions = 15 } add_to_variable = { auh_ww1_consent = 4 } 43 = { add_building_construction = { type = infrastructure level = 1 instant = yes } } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_fair_rationing
@@ -1292,7 +1292,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.12 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { 9 = { add_building_construction = { type = industrial_complex level = 1 instant = yes } add_extra_state_shared_building_slots = 1 } add_political_power = 25 auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_workers_housing
@@ -1638,7 +1638,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.14 days = 1 } army_experience = 10 add_command_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { army_experience = 25 add_command_power = 20 add_tech_bonus = { name = AUH_ww1_army_reform_bonus bonus = 0.50 uses = 1 category = land_doctrine } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_staff_college
@@ -1715,7 +1715,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.15 days = 1 } army_experience = 15 add_command_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { army_experience = 20 add_command_power = 15 152 = { add_building_construction = { type = arms_factory level = 1 instant = yes } add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_mannlicher_standards
@@ -2326,7 +2326,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.16 days = 1 } army_experience = 15 add_command_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { army_experience = 25 add_command_power = 20 add_tech_bonus = { name = AUH_ww1_artillery_doctrine_bonus bonus = 0.50 uses = 1 category = artillery } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_combined_staff
@@ -2595,7 +2595,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.17 days = 1 } add_political_power = 20 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 50 add_to_variable = { auh_ww1_consent = 5 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_consular_network
@@ -2651,7 +2651,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.18 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 40 add_to_variable = { auh_ww1_cohesion = 5 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_foreign_programme
@@ -2687,7 +2687,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.30 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 35 add_opinion_modifier = { target = GER modifier = AUH_ww1_alliance_renewed } GER = { add_opinion_modifier = { target = AUS modifier = AUH_ww1_alliance_renewed } } add_tech_bonus = { name = AUH_ww1_german_cooperation_bonus bonus = 0.50 uses = 1 category = armor } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_german_staff_exchange
@@ -2801,7 +2801,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.32 days = 1 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 30 add_to_variable = { auh_ww1_consent = 4 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_bosnian_civil_security
@@ -2816,7 +2816,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.20 days = 1 } add_political_power = 10 add_to_variable = { auh_ww1_cohesion = 2 } auh_ww1_clamp_counters = yes }
+  completion_reward = { 104 = { add_building_construction = { type = bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } } add_political_power = 25 add_to_variable = { auh_ww1_cohesion = 6 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_sarajevo_services
@@ -2852,7 +2852,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.34 days = 1 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 30 add_to_variable = { auh_ww1_consent = 4 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_montenegrin_channel
@@ -2867,7 +2867,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.36 days = 1 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 30 add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_balkan_restraint
@@ -2897,7 +2897,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.38 days = 1 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 35 add_opinion_modifier = { target = ITA modifier = AUH_ww1_alliance_renewed } ITA = { add_opinion_modifier = { target = AUS modifier = AUH_ww1_alliance_renewed } } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_italian_minorities
@@ -3012,7 +3012,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.40 days = 1 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 30 add_opinion_modifier = { target = ROM modifier = AUH_ww1_alliance_renewed } ROM = { add_opinion_modifier = { target = AUS modifier = AUH_ww1_alliance_renewed } } add_to_variable = { auh_ww1_provisions = 10 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_romanian_grain
@@ -3066,7 +3066,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.42 days = 1 } add_political_power = 10 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_eastern_contingency
@@ -3122,7 +3122,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.21 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 40 add_to_variable = { auh_ww1_cohesion = 8 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_sixtus_channel
@@ -3137,7 +3137,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.44 days = 1 } add_political_power = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 40 add_to_variable = { auh_ww1_consent = 8 } add_opinion_modifier = { target = FRA modifier = AUH_ww1_alliance_renewed } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_armistice_delegates
@@ -3155,7 +3155,7 @@ focus_tree = {
   completion_reward = {
 			4 = { add_extra_state_shared_building_slots = 1 }
 			add_political_power = 40
-			country_event = { id = ww1_auh.46 days = 1 }
+			add_to_variable = { auh_ww1_cohesion = 10 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -3176,7 +3176,7 @@ focus_tree = {
   completion_reward = {
 			add_political_power = 40
 			add_to_variable = { auh_ww1_consent = 12 }
-			country_event = { id = ww1_auh.21 days = 1 }
+			add_to_variable = { auh_ww1_cohesion = 10 }
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -3232,7 +3232,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.22 days = 1 } navy_experience = 15 auh_ww1_clamp_counters = yes }
+  completion_reward = { navy_experience = 25 add_command_power = 15 736 = { add_building_construction = { type = dockyard level = 1 instant = yes } add_extra_state_shared_building_slots = 1 } add_tech_bonus = { name = AUH_ww1_naval_doctrine_bonus bonus = 0.50 uses = 1 category = naval_doctrine } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_naval_programme
@@ -3598,7 +3598,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.23 days = 1 } add_political_power = 20 auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 45 add_to_variable = { auh_ww1_cohesion = 10 } 4 = { add_building_construction = { type = industrial_complex level = 1 instant = yes } add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_veterans_registry
@@ -3654,7 +3654,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.24 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 50 add_to_variable = { auh_ww1_provisions = 20 } add_to_variable = { auh_ww1_cohesion = 8 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_veterans_pensions
@@ -3808,7 +3808,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.25 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 50 add_to_variable = { auh_ww1_consent = 10 } add_to_variable = { auh_ww1_cohesion = 10 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_peacetime_elections
@@ -3823,7 +3823,7 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.26 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 50 add_to_variable = { auh_ww1_cohesion = 10 } auh_ww1_clamp_counters = yes }
  }
  focus = {
   id = AUH_ww1_danubian_services
@@ -3858,6 +3858,6 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { country_event = { id = ww1_auh.27 days = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = { add_political_power = 50 add_to_variable = { auh_ww1_cohesion = 15 } add_to_variable = { auh_ww1_consent = 15 } auh_ww1_clamp_counters = yes }
  }
 }

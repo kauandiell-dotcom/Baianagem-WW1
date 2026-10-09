@@ -3,8 +3,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_sabor = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_sabor_unlocked }
-  available = { has_capitulated = no owns_state = 103 controls_state = 103  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 103 controls_state = 103  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -20,8 +20,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_bosnia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_bosnia_unlocked }
-  available = { has_capitulated = no owns_state = 104 controls_state = 104  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 104 controls_state = 104  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -37,8 +37,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_bohemia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_bohemia_unlocked }
-  available = { has_capitulated = no owns_state = 9 controls_state = 9  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 9 controls_state = 9  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -54,8 +54,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_moravia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_moravia_unlocked }
-  available = { has_capitulated = no owns_state = 75 controls_state = 75  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 75 controls_state = 75  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -71,8 +71,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_silesia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_silesia_unlocked }
-  available = { has_capitulated = no owns_state = 74 controls_state = 74  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 74 controls_state = 74  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -88,8 +88,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_galicia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_galicia_unlocked }
-  available = { has_capitulated = no owns_state = 89 controls_state = 89  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 89 controls_state = 89  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -105,8 +105,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_ruthenia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_ruthenia_unlocked }
-  available = { has_capitulated = no owns_state = 73 controls_state = 73  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 73 controls_state = 73  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -122,8 +122,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_bukovina = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_bukovina_unlocked }
-  available = { has_capitulated = no owns_state = 80 controls_state = 80  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 80 controls_state = 80  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -139,8 +139,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_slovakia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_slovakia_unlocked }
-  available = { has_capitulated = no owns_state = 70 controls_state = 70  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 70 controls_state = 70  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -156,8 +156,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_transylvania = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_transylvania_unlocked }
-  available = { has_capitulated = no owns_state = 84 controls_state = 84  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 84 controls_state = 84  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -173,8 +173,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_banat = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_banat_unlocked }
-  available = { has_capitulated = no owns_state = 82 controls_state = 82  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 82 controls_state = 82  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -190,8 +190,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_dalmatia = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_dalmatia_unlocked }
-  available = { has_capitulated = no owns_state = 163 controls_state = 163  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 163 controls_state = 163  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -207,8 +207,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_trentino = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_trentino_unlocked }
-  available = { has_capitulated = no owns_state = 850 controls_state = 850  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 850 controls_state = 850  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -224,8 +224,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_pilsen = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_pilsen_unlocked }
-  available = { has_capitulated = no owns_state = 9 controls_state = 9  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 3 }
-  cost = 60 civilian_factory_use = 4 days_remove = 365
+  available = { has_capitulated = no owns_state = 9 controls_state = 9  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 30 civilian_factory_use = 2 days_remove = 120
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -241,8 +241,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_vitkovice = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_vitkovice_unlocked }
-  available = { has_capitulated = no owns_state = 75 controls_state = 75  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 75 controls_state = 75  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -258,8 +258,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_csepel = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_csepel_unlocked }
-  available = { has_capitulated = no owns_state = 43 controls_state = 43  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 3 }
-  cost = 60 civilian_factory_use = 4 days_remove = 365
+  available = { has_capitulated = no owns_state = 43 controls_state = 43  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 30 civilian_factory_use = 2 days_remove = 120
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -275,8 +275,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_granaries = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_granaries_unlocked }
-  available = { has_capitulated = no owns_state = 43 controls_state = 43 owns_state = 154 controls_state = 154  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 43 controls_state = 43 owns_state = 154 controls_state = 154  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -292,8 +292,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_vienna_budapest = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_vienna_budapest_unlocked }
-  available = { has_capitulated = no owns_state = 4 controls_state = 4 owns_state = 43 controls_state = 43  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 4 controls_state = 4 owns_state = 43 controls_state = 43  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -309,8 +309,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_prague_vienna = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_prague_vienna_unlocked }
-  available = { has_capitulated = no owns_state = 9 controls_state = 9 owns_state = 4 controls_state = 4  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 9 controls_state = 9 owns_state = 4 controls_state = 4  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -326,8 +326,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_galician_rail = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_galician_rail_unlocked }
-  available = { has_capitulated = no owns_state = 43 controls_state = 43 owns_state = 89 controls_state = 89  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 43 controls_state = 43 owns_state = 89 controls_state = 89  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -343,8 +343,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_bosnian_rail = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_bosnian_rail_unlocked }
-  available = { has_capitulated = no owns_state = 43 controls_state = 43 owns_state = 104 controls_state = 104  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 43 controls_state = 43 owns_state = 104 controls_state = 104  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -360,8 +360,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_adriatic_rail = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_adriatic_rail_unlocked }
-  available = { has_capitulated = no owns_state = 4 controls_state = 4 owns_state = 736 controls_state = 736  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 4 controls_state = 4 owns_state = 736 controls_state = 736  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -377,8 +377,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_workers_housing = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_workers_housing_unlocked }
-  available = { has_capitulated = no owns_state = 152 controls_state = 152 152 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 152 controls_state = 152 152 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -394,8 +394,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_canteens = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_canteens_unlocked }
-  available = { has_capitulated = no owns_state = 9 controls_state = 9 owns_state = 43 controls_state = 43  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 9 controls_state = 9 owns_state = 43 controls_state = 43  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -411,8 +411,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_danube = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_danube_unlocked }
-  available = { has_capitulated = no owns_state = 154 controls_state = 154 154 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 154 controls_state = 154 154 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -428,8 +428,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_galician_oil = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_galician_oil_unlocked }
-  available = { has_capitulated = no owns_state = 91 controls_state = 91  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 91 controls_state = 91  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -445,8 +445,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_civilian_conversion = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_civilian_conversion_unlocked }
-  available = { has_capitulated = no owns_state = 152 controls_state = 152  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 3 }
-  cost = 60 civilian_factory_use = 4 days_remove = 365
+  available = { has_capitulated = no owns_state = 152 controls_state = 152  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 30 civilian_factory_use = 2 days_remove = 120
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -462,8 +462,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_alpine_routes = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_alpine_routes_unlocked }
-  available = { has_capitulated = no owns_state = 153 controls_state = 153 153 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 153 controls_state = 153 153 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -479,8 +479,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_przemysl = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_przemysl_unlocked }
-  available = { has_capitulated = no owns_state = 89 controls_state = 89 owns_state = 91 controls_state = 91  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 89 controls_state = 89 owns_state = 91 controls_state = 91  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -496,8 +496,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_airfield = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_airfield_unlocked }
-  available = { has_capitulated = no owns_state = 4 controls_state = 4 4 = { air_base < 10 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 4 controls_state = 4 4 = { air_base < 10 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -513,8 +513,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_sarajevo = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_sarajevo_unlocked }
-  available = { has_capitulated = no owns_state = 104 controls_state = 104 104 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 104 controls_state = 104 104 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -530,8 +530,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_litorale = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_litorale_unlocked }
-  available = { has_capitulated = no owns_state = 736 controls_state = 736  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 0 }
-  cost = 40 civilian_factory_use = 1 days_remove = 90
+  available = { has_capitulated = no owns_state = 736 controls_state = 736  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 25 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -547,8 +547,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_south_tyrol = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_south_tyrol_unlocked }
-  available = { has_capitulated = no owns_state = 39 controls_state = 39 39 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 39 controls_state = 39 39 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -564,8 +564,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_trieste_yards = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_trieste_yards_unlocked }
-  available = { has_capitulated = no owns_state = 736 controls_state = 736  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 3 }
-  cost = 60 civilian_factory_use = 4 days_remove = 365
+  available = { has_capitulated = no owns_state = 736 controls_state = 736  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 30 civilian_factory_use = 2 days_remove = 120
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -581,8 +581,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_dalmatian_ports = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_dalmatian_ports_unlocked }
-  available = { has_capitulated = no owns_state = 163 controls_state = 163 163 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 163 controls_state = 163 163 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -598,8 +598,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_adriatic_supply = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_adriatic_supply_unlocked }
-  available = { has_capitulated = no owns_state = 736 controls_state = 736 owns_state = 163 controls_state = 163  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 736 controls_state = 736 owns_state = 163 controls_state = 163  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -615,8 +615,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_rehabilitation = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_rehabilitation_unlocked }
-  available = { has_capitulated = no owns_state = 4 controls_state = 4  check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 180
+  available = { has_capitulated = no owns_state = 4 controls_state = 4  check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 75
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -632,8 +632,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_galician_reconstruction = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_galician_reconstruction_unlocked }
-  available = { has_capitulated = no owns_state = 91 controls_state = 91 91 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 91 controls_state = 91 91 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }
@@ -649,8 +649,8 @@ AUH_ww1_projects = {
  AUH_ww1_project_budapest_reconstruction = {
   icon = GFX_decision_AUH_ww1_projects
   allowed = { original_tag = AUS } visible = { has_country_flag = auh_ww1_project_budapest_reconstruction_unlocked }
-  available = { has_capitulated = no owns_state = 43 controls_state = 43 43 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 2 } num_of_civilian_factories_available_for_projects > 1 }
-  cost = 35 civilian_factory_use = 2 days_remove = 120
+  available = { has_capitulated = no owns_state = 43 controls_state = 43 43 = { infrastructure < 5 } check_variable = { auh_ww1_projects_active < 4 } num_of_civilian_factories_available_for_projects > 0 }
+  cost = 20 civilian_factory_use = 1 days_remove = 60
   fire_only_once = yes
   complete_effect = { add_to_variable = { auh_ww1_projects_active = 1 } }
   remove_effect = { add_to_variable = { auh_ww1_projects_active = -1 }

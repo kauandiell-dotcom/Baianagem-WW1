@@ -10,7 +10,7 @@ AUH_ww1_crown = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = { add_political_power = 25 add_stability = 0.02 }
-  remove_effect = { add_to_variable = { auh_ww1_consent = 6 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_consent = 8 } add_political_power = 25 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_provincial_hearings = {
@@ -24,7 +24,7 @@ AUH_ww1_crown = {
   fire_only_once = no
   ai_will_do = { base = 1 }
   complete_effect = { add_stability = 0.03 add_war_support = 0.02 }
-  remove_effect = { add_to_variable = { auh_ww1_cohesion = 5 } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
+  remove_effect = { add_to_variable = { auh_ww1_cohesion = 8 } add_political_power = 25 auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
   cancel_trigger = { OR = { has_capitulated = yes  } }
  }
  AUH_ww1_constitutional_session = {

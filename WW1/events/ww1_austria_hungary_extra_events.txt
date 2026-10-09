@@ -10,19 +10,19 @@ country_event = {
  option = {
   name = ww1_auh.100.a
   ai_chance = { base = 55 }
-  add_to_variable = { auh_ww1_consent = 4 } add_to_variable = { auh_ww1_cohesion = -3 } add_political_power = -25 set_country_flag = auh_ww1_army_bill_passed
+  add_to_variable = { auh_ww1_consent = 5 } add_political_power = 35 army_experience = 10 set_country_flag = auh_ww1_army_bill_passed
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.100.b
   ai_chance = { base = 15 }
-  add_to_variable = { auh_ww1_consent = -8 } army_experience = 4 add_political_power = 25
+  add_to_variable = { auh_ww1_consent = -3 } army_experience = 15 add_political_power = 40 add_command_power = 15
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.100.c
   ai_chance = { base = 30 }
-  add_to_variable = { auh_ww1_consent = 2 } add_war_support = -0.01
+  add_to_variable = { auh_ww1_consent = 4 } add_political_power = 25 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -37,20 +37,20 @@ country_event = {
  option = {
   name = ww1_auh.101.a
   ai_chance = { base = 35 }
-  add_political_power = -40 add_war_support = 0.02 army_experience = 3 add_to_variable = { auh_ww1_provisions = -3 }
+  add_political_power = 25 add_war_support = 0.03 army_experience = 15 add_command_power = 10
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.101.b
   ai_chance = { base = 45 }
-  add_to_variable = { auh_ww1_cohesion = 2 } add_political_power = -20 add_war_support = -0.01
+  add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = 35 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.101.c
   ai_chance = { base = 20 }
   trigger = { country_exists = GER NOT = { has_war_with = GER } }
-  add_political_power = -15 army_experience = 2 add_to_variable = { auh_ww1_consent = 2 }
+  add_political_power = 25 army_experience = 10 add_to_variable = { auh_ww1_consent = 4 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -65,20 +65,20 @@ country_event = {
  option = {
   name = ww1_auh.102.a
   ai_chance = { base = 40 }
-  navy_experience = 4 add_political_power = -40 add_to_variable = { auh_ww1_consent = -2 }
+  navy_experience = 15 add_political_power = 25 add_command_power = 10
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.102.b
   ai_chance = { base = 40 }
-  add_to_variable = { auh_ww1_cohesion = 2 } add_political_power = 10 add_war_support = -0.01
+  add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = 35 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.102.c
   ai_chance = { base = 20 }
   trigger = { country_exists = MNT }
-  add_war_support = 0.02 add_political_power = -20 add_to_variable = { auh_ww1_consent = -3 }
+  add_war_support = 0.03 add_political_power = 25 army_experience = 10
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -93,13 +93,13 @@ country_event = {
  option = {
   name = ww1_auh.103.a
   ai_chance = { base = 65 }
-  add_timed_idea = { idea = AUH_ww1_replanned_deployment days = 180 } army_experience = 2 add_political_power = -30
+  add_timed_idea = { idea = AUH_ww1_replanned_deployment days = 180 } army_experience = 15 add_political_power = 25
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.103.b
   ai_chance = { base = 35 }
-  add_to_variable = { auh_ww1_consent = -3 } add_political_power = 15
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = 40 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -114,13 +114,13 @@ country_event = {
  option = {
   name = ww1_auh.104.a
   ai_chance = { base = 45 }
-  add_to_variable = { auh_ww1_cohesion = 3 } add_to_variable = { auh_ww1_consent = -3 } add_political_power = -25
+  add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = 35 army_experience = 10
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.104.b
   ai_chance = { base = 55 }
-  add_to_variable = { auh_ww1_consent = 3 } add_to_variable = { auh_ww1_cohesion = -2 }
+  add_to_variable = { auh_ww1_consent = 5 } add_political_power = 35 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -135,13 +135,13 @@ country_event = {
  option = {
   name = ww1_auh.105.a
   ai_chance = { base = 40 }
-  army_experience = 3 add_war_support = -0.02 add_to_variable = { auh_ww1_cohesion = -2 }
+  army_experience = 15 add_war_support = 0.02 add_command_power = 15
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.105.b
   ai_chance = { base = 60 }
-  add_political_power = -30 add_war_support = -0.01 add_to_variable = { auh_ww1_cohesion = 1 }
+  add_political_power = 25 add_to_variable = { auh_ww1_cohesion = 4 } add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -156,13 +156,13 @@ country_event = {
  option = {
   name = ww1_auh.106.a
   ai_chance = { base = 35 }
-  army_experience = 5 add_war_support = -0.02 add_to_variable = { auh_ww1_provisions = -4 } add_timed_idea = { idea = AUH_ww1_front_crisis days = 60 }
+  army_experience = 20 add_command_power = 15 add_timed_idea = { idea = AUH_ww1_front_crisis days = 60 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.106.b
   ai_chance = { base = 65 }
-  add_political_power = -20 add_war_support = -0.015 army_experience = 2 add_to_variable = { auh_ww1_cohesion = -2 }
+  add_political_power = 25 army_experience = 10 add_to_variable = { auh_ww1_cohesion = 3 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -178,13 +178,13 @@ country_event = {
   name = ww1_auh.107.a
   ai_chance = { base = 55 }
   trigger = { country_exists = GER NOT = { has_war_with = GER } }
-  add_war_support = 0.03 army_experience = 4 add_to_variable = { auh_ww1_consent = -3 }
+  add_war_support = 0.04 army_experience = 20 add_command_power = 15 add_to_variable = { auh_ww1_cohesion = 5 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.107.b
   ai_chance = { base = 45 }
-  add_to_variable = { auh_ww1_consent = 2 } add_political_power = -20 add_war_support = 0.01
+  add_to_variable = { auh_ww1_consent = 5 } add_political_power = 30 add_war_support = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -200,20 +200,20 @@ country_event = {
   name = ww1_auh.108.a
   ai_chance = { base = 45 }
   trigger = { country_exists = GER NOT = { has_war_with = GER } }
-  add_to_variable = { auh_ww1_consent = -4 } add_war_support = -0.02 army_experience = 4
+  army_experience = 15 add_command_power = 10 add_political_power = 20
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.108.b
   ai_chance = { base = 30 }
   trigger = { has_war_with = ITA }
-  add_timed_idea = { idea = AUH_ww1_front_crisis days = 60 } add_war_support = -0.03 army_experience = 2
+  add_timed_idea = { idea = AUH_ww1_front_crisis days = 60 } army_experience = 20 add_command_power = 15
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.108.c
   ai_chance = { base = 25 }
-  add_to_variable = { auh_ww1_cohesion = -2 } add_war_support = -0.03 add_to_variable = { auh_ww1_provisions = -2 }
+  add_political_power = 25 add_to_variable = { auh_ww1_cohesion = 3 } army_experience = 10
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -228,19 +228,19 @@ country_event = {
  option = {
   name = ww1_auh.109.a
   ai_chance = { base = 50 }
-  add_to_variable = { auh_ww1_provisions = 4 } add_to_variable = { auh_ww1_cohesion = 2 } add_political_power = -40
+  add_to_variable = { auh_ww1_provisions = 8 } add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = 20
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.109.b
   ai_chance = { base = 30 }
-  add_to_variable = { auh_ww1_provisions = 8 } add_to_variable = { auh_ww1_consent = -8 }
+  add_to_variable = { auh_ww1_provisions = 12 } add_to_variable = { auh_ww1_consent = -2 } add_political_power = 20
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.109.c
   ai_chance = { base = 20 }
-  add_war_support = -0.01 add_to_variable = { auh_ww1_cohesion = -3 } add_political_power = 15
+  add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 2 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -255,13 +255,13 @@ country_event = {
  option = {
   name = ww1_auh.110.a
   ai_chance = { base = 55 }
-  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = -35
+  add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = 25 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.110.b
   ai_chance = { base = 45 }
-  add_to_variable = { auh_ww1_cohesion = -5 } add_timed_idea = { idea = AUH_ww1_strike_wave days = 90 }
+  add_to_variable = { auh_ww1_consent = 4 } add_political_power = 35 add_timed_idea = { idea = AUH_ww1_strike_wave days = 60 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -276,13 +276,13 @@ country_event = {
  option = {
   name = ww1_auh.111.a
   ai_chance = { base = 40 }
-  add_to_variable = { auh_ww1_cohesion = 4 } add_to_variable = { auh_ww1_consent = -4 } add_political_power = -30
+  add_to_variable = { auh_ww1_cohesion = 6 } add_political_power = 30 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.111.b
   ai_chance = { base = 60 }
-  add_to_variable = { auh_ww1_cohesion = -4 } add_to_variable = { auh_ww1_consent = 2 }
+  add_to_variable = { auh_ww1_consent = 6 } add_political_power = 30 add_war_support = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -297,13 +297,13 @@ country_event = {
  option = {
   name = ww1_auh.112.a
   ai_chance = { base = 50 }
-  add_to_variable = { auh_ww1_cohesion = 2 } add_political_power = -25
+  add_to_variable = { auh_ww1_cohesion = 4 } add_political_power = 25 navy_experience = 15
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.112.b
   ai_chance = { base = 50 }
-  add_to_variable = { auh_ww1_cohesion = -3 } navy_experience = 2 add_timed_idea = { idea = AUH_ww1_naval_unrest days = 120 }
+  navy_experience = 20 add_command_power = 15 add_timed_idea = { idea = AUH_ww1_naval_unrest days = 60 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -318,13 +318,13 @@ country_event = {
  option = {
   name = ww1_auh.113.a
   ai_chance = { base = 35 }
-  army_experience = 4 add_war_support = -0.03 add_to_variable = { auh_ww1_provisions = -3 } add_timed_idea = { idea = AUH_ww1_front_crisis days = 60 }
+  army_experience = 20 add_command_power = 20 add_timed_idea = { idea = AUH_ww1_front_crisis days = 45 }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.113.b
   ai_chance = { base = 65 }
-  add_timed_idea = { idea = AUH_ww1_fortress_inspection days = 120 } add_war_support = -0.01
+  add_timed_idea = { idea = AUH_ww1_fortress_inspection days = 120 } add_political_power = 25 army_experience = 10
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -339,13 +339,13 @@ country_event = {
  option = {
   name = ww1_auh.114.a
   ai_chance = { base = 45 }
-  add_to_variable = { auh_ww1_cohesion = 6 } add_to_variable = { auh_ww1_consent = -6 } add_political_power = -40 add_war_support = -0.02
+  add_to_variable = { auh_ww1_cohesion = 8 } add_political_power = 35 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.114.b
   ai_chance = { base = 55 }
-  add_to_variable = { auh_ww1_cohesion = -5 } add_to_variable = { auh_ww1_consent = 3 }
+  add_to_variable = { auh_ww1_consent = 6 } add_political_power = 35 add_war_support = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -358,21 +358,21 @@ country_event = {
 	option = {
 		name = ww1_auh.115.a
 		ai_chance = { base = 50 }
-		add_to_variable = { auh_ww1_provisions = 5 } add_political_power = -15
+		add_to_variable = { auh_ww1_provisions = 10 } add_political_power = 20
 		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
 	}
 	option = {
 		name = ww1_auh.115.b
 		ai_chance = { base = 25 }
 		trigger = { has_war = no }
-		add_political_power = 30 add_to_variable = { auh_ww1_provisions = -2 }
+		add_political_power = 40 add_to_variable = { auh_ww1_provisions = 5 }
 		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
 	}
 	option = {
 		name = ww1_auh.115.c
 		ai_chance = { base = 25 }
 		trigger = { has_war = yes }
-		add_to_variable = { auh_ww1_provisions = 6 } add_to_variable = { auh_ww1_consent = -4 }
+		add_to_variable = { auh_ww1_provisions = 12 } add_to_variable = { auh_ww1_consent = 2 }
 		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
 	}
 }
@@ -385,14 +385,14 @@ country_event = {
 	option = {
 		name = ww1_auh.116.a
 		ai_chance = { base = 65 }
-		add_to_variable = { auh_ww1_consent = 4 } add_political_power = -30
+		add_to_variable = { auh_ww1_consent = 6 } add_political_power = 30
 		if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
 	}
 	option = {
 		name = ww1_auh.116.b
 		ai_chance = { base = 35 }
 		trigger = { has_war = yes }
-		add_to_variable = { auh_ww1_consent = -6 } add_political_power = 20
+		add_political_power = 40 add_to_variable = { auh_ww1_cohesion = 4 }
 	}
 }
 country_event = {
@@ -406,13 +406,13 @@ country_event = {
  option = {
   name = ww1_auh.117.a
   ai_chance = { base = 45 }
-  add_political_power = -20 navy_experience = 2 add_opinion_modifier = { target = GER modifier = AUH_ww1_alliance_renewed } add_opinion_modifier = { target = ITA modifier = AUH_ww1_alliance_renewed }
+  add_political_power = 30 navy_experience = 15 army_experience = 10 add_opinion_modifier = { target = GER modifier = AUH_ww1_alliance_renewed } add_opinion_modifier = { target = ITA modifier = AUH_ww1_alliance_renewed }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.117.b
   ai_chance = { base = 55 }
-  add_to_variable = { auh_ww1_consent = 2 } add_opinion_modifier = { target = GER modifier = AUH_ww1_alliance_renewed }
+  add_to_variable = { auh_ww1_consent = 5 } add_political_power = 30 add_opinion_modifier = { target = GER modifier = AUH_ww1_alliance_renewed }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
@@ -427,13 +427,13 @@ country_event = {
  option = {
   name = ww1_auh.118.a
   ai_chance = { base = 55 }
-  add_to_variable = { auh_ww1_cohesion = 3 } add_to_variable = { auh_ww1_consent = -2 } add_political_power = -20
+  add_to_variable = { auh_ww1_cohesion = 5 } add_political_power = 30 104 = { add_building_construction = { type = infrastructure level = 1 instant = yes } }
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
  option = {
   name = ww1_auh.118.b
   ai_chance = { base = 45 }
-  add_to_variable = { auh_ww1_cohesion = -3 } add_political_power = 15
+  add_political_power = 35 add_stability = 0.02
   if = { limit = { tag = AUS } auh_ww1_clamp_counters = yes auh_ww1_update_pressure = yes }
  }
 }
