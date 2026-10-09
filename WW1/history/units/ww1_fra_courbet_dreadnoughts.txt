@@ -1,0 +1,12 @@
+units = {
+	fleet = {
+		name = "1re Escadre de Ligne"
+		naval_base = 911
+		task_force = {
+			name = "1re Division de Cuirassés"
+			location = 911
+			ship = { name = "Courbet" definition = battleship start_experience_factor = 0.3 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "République" } } }
+			ship = { name = "Jean Bart" definition = battleship start_experience_factor = 0.3 equipment = { ww1_1911_pre_dreadnought = { amount = 1 owner = FRA version_name = "République" } } }
+		}
+	}
+}

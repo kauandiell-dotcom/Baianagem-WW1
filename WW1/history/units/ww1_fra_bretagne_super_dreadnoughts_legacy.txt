@@ -1,0 +1,12 @@
+units = {
+	fleet = {
+		name = "1re Escadre de Ligne"
+		naval_base = 911
+		task_force = {
+			name = "2e Division de Cuirassés"
+			location = 911
+			ship = { name = "Bretagne" definition = battleship start_experience_factor = 0.3 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = FRA version_name = "Liberté" } } }
+			ship = { name = "Provence" definition = battleship start_experience_factor = 0.3 equipment = { ww1_1911_pre_dreadnought_legacy = { amount = 1 owner = FRA version_name = "Liberté" } } }
+		}
+	}
+}

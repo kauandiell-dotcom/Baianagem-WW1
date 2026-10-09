@@ -143,7 +143,8 @@ focus_tree = {
 		icon = GFX_FRA_election_presidentielle_1913
 		x = 6
 		y = 3
-		cost = 8
+		cost = 4
+		available = { date > 1912.11.1 }
 		prerequisite = { focus = FRA_alliance_democratique }
 		completion_reward = {
 			country_event = { id = ww1_france.20 days = 1 }
@@ -191,10 +192,12 @@ focus_tree = {
 		icon = GFX_FRA_presidence_poincare
 		x = 4
 		y = 4
-		cost = 8
+		cost = 5
+		available = { date > 1913.1.1 }
 		prerequisite = { focus = FRA_election_presidentielle_1913 }
 		mutually_exclusive = { focus = FRA_presidence_pams }
 		completion_reward = {
+			set_politics = { ruling_party = democratic elections_allowed = yes }
 			add_political_power = 60
 			add_war_support = 0.08
 			add_ideas = FRA_poincare_presidency
@@ -209,10 +212,12 @@ focus_tree = {
 		icon = GFX_FRA_presidence_pams
 		x = 8
 		y = 4
-		cost = 8
+		cost = 5
+		available = { date > 1913.1.1 }
 		prerequisite = { focus = FRA_election_presidentielle_1913 }
 		mutually_exclusive = { focus = FRA_presidence_poincare }
 		completion_reward = {
+			set_politics = { ruling_party = democratic elections_allowed = yes }
 			add_political_power = 40
 			add_stability = 0.08
 			add_ideas = FRA_pams_conciliatory_presidency
@@ -227,7 +232,8 @@ focus_tree = {
 		icon = GFX_FRA_abattre_la_gueuse
 		x = 4
 		y = 5
-		cost = 6
+		cost = 4
+		available = { date > 1914.3.1 }
 		prerequisite = { focus = FRA_presidence_poincare }
 		completion_reward = {
 			add_political_power = -20
@@ -279,7 +285,8 @@ focus_tree = {
 		icon = GFX_FRA_le_scandale_calmette_caillaux
 		x = 10
 		y = 6
-		cost = 5
+		cost = 3
+		available = { date > 1914.7.20 }
 		prerequisite = { focus = FRA_pacifisme_de_jean_jaures }
 		completion_reward = {
 			add_stability = -0.05
@@ -296,7 +303,8 @@ focus_tree = {
 		icon = GFX_FRA_proclamer_union_sacree
 		x = 6
 		y = 6
-		cost = 10
+		cost = 4
+		available = { OR = { has_war = yes date > 1914.8.1 } }
 		prerequisite = { focus = FRA_reforme_fiscale_impot_revenu }
 		completion_reward = {
 			add_war_support = 0.12
@@ -317,7 +325,7 @@ focus_tree = {
 		icon = GFX_FRA_gouvernement_de_defense_nationale
 		x = 4
 		y = 7
-		cost = 8
+		cost = 5
 		prerequisite = { focus = FRA_proclamer_union_sacree }
 		completion_reward = {
 			add_political_power = 60
@@ -334,6 +342,7 @@ focus_tree = {
 		x = 8
 		y = 7
 		cost = 6
+		available = { has_war = yes OR = { surrender_progress > 0.10 any_enemy_country = { has_war_with = FRA } } }
 		prerequisite = { focus = FRA_proclamer_union_sacree }
 		completion_reward = {
 			add_stability = 0.03
@@ -399,6 +408,7 @@ focus_tree = {
 		x = 6
 		y = 9
 		cost = 8
+		available = { date > 1917.6.1 has_war = yes }
 		prerequisite = { focus = FRA_comite_de_guerre_secret }
 		completion_reward = {
 			add_stability = -0.06
@@ -448,6 +458,7 @@ focus_tree = {
 		x = 4
 		y = 10
 		cost = 6
+		available = { date > 1917.10.1 has_war = yes }
 		prerequisite = { focus = FRA_la_crise_politique_de_1917 }
 		completion_reward = {
 			country_event = { id = ww1_france.61 days = 1 }
@@ -483,6 +494,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = FRA_appel_au_tigre }
 		completion_reward = {
+			set_politics = { ruling_party = democratic elections_allowed = no }
+			add_ideas = FRA_le_tigre_clemenceau
 			remove_ideas = FRA_parliamentary_equilibrium
 			remove_ideas = FRA_poincare_national_firmness
 			add_ideas = FRA_clemenceau_iron_resolve
@@ -1692,6 +1705,13 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = FRA_statut_naval_de_1912 }
 		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_fra_courbet_dreadnoughts"
+			}
+			else = {
+				load_oob = "ww1_fra_courbet_dreadnoughts_legacy"
+			}
 			add_tech_bonus = { name = heavy_ship_bonus bonus = 1.0 uses = 1 category = heavy_ship }
 			add_navy_experience = 20
 			21 = { add_building_construction = { type = dockyard level = 1 instant_build = yes } }
@@ -1741,6 +1761,13 @@ focus_tree = {
 		cost = 8
 		prerequisite = { focus = FRA_dreadnoughts_classe_courbet }
 		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				load_oob = "ww1_fra_bretagne_super_dreadnoughts"
+			}
+			else = {
+				load_oob = "ww1_fra_bretagne_super_dreadnoughts_legacy"
+			}
 			add_tech_bonus = { name = heavy_ship_bonus bonus = 1.0 uses = 1 category = heavy_ship }
 			add_navy_experience = 20
 		}
@@ -2263,6 +2290,7 @@ focus_tree = {
 		x = 62
 		y = 7
 		cost = 6
+		available = { date > 1917.4.15 has_war = yes }
 		prerequisite = { focus = FRA_doctrine_petain_feu_et_materiel }
 		completion_reward = {
 			country_event = { id = ww1_france.210 days = 1 }
@@ -2279,6 +2307,7 @@ focus_tree = {
 		x = 64
 		y = 8
 		cost = 8
+		available = { date > 1917.5.1 has_war = yes }
 		prerequisite = { focus = FRA_crise_des_mutineries_1917 }
 		completion_reward = {
 			remove_ideas = FRA_joffre_supreme_staff
@@ -2299,6 +2328,7 @@ focus_tree = {
 		cost = 6
 		prerequisite = { focus = FRA_petain_commandant_en_chef }
 		completion_reward = {
+			add_ideas = FRA_poilus_reconcilies
 			remove_ideas = FRA_trench_mutiny_crisis_2
 			add_stability = 0.08
 			add_war_support = 0.05
@@ -2330,6 +2360,7 @@ focus_tree = {
 		x = 64
 		y = 11
 		cost = 10
+		available = { date > 1918.3.1 has_war = yes }
 		prerequisite = { focus = FRA_reforme_des_permissions_et_soupe }
 		prerequisite = { focus = FRA_justice_militaire_mesuree }
 		completion_reward = {
@@ -2389,6 +2420,7 @@ focus_tree = {
 		x = 72
 		y = 3
 		cost = 6
+		available = { date > 1915.1.1 has_war = yes }
 		prerequisite = { focus = FRA_stabilisation_du_front_de_tranchees }
 		completion_reward = {
 			add_ideas = FRA_adrian_helmet_protection
@@ -2506,6 +2538,7 @@ focus_tree = {
 		x = 70
 		y = 9
 		cost = 10
+		available = { date > 1917.6.1 }
 		prerequisite = { focus = FRA_developpement_des_chars_d_assaut }
 		completion_reward = {
 			add_tech_bonus = { name = light_armor bonus = 1.0 uses = 2 category = armor }
@@ -2588,7 +2621,8 @@ focus_tree = {
 		icon = GFX_FRA_bataille_des_frontieres
 		x = 76
 		y = 3
-		cost = 6
+		cost = 4
+		available = { has_war = yes }
 		prerequisite = { focus = FRA_adoption_du_plan_xvii }
 		completion_reward = {
 			add_army_experience = 20
@@ -2604,7 +2638,8 @@ focus_tree = {
 		icon = GFX_FRA_operation_de_la_marne
 		x = 76
 		y = 4
-		cost = 8
+		cost = 5
+		available = { has_war = yes }
 		prerequisite = { focus = FRA_bataille_des_frontieres }
 		completion_reward = {
 			add_ideas = FRA_miracle_of_the_marne
@@ -2638,6 +2673,7 @@ focus_tree = {
 		x = 76
 		y = 6
 		cost = 8
+		available = { date > 1916.1.1 has_war = yes }
 		prerequisite = { focus = FRA_la_course_a_la_mer }
 		completion_reward = {
 			activate_mission = FRA_verdun_resilience_mission
@@ -2687,6 +2723,7 @@ focus_tree = {
 		x = 76
 		y = 8
 		cost = 8
+		available = { date > 1916.6.1 has_war = yes }
 		prerequisite = { focus = FRA_organisation_de_la_voie_sacree }
 		prerequisite = { focus = FRA_rotation_de_la_noria_petain }
 		completion_reward = {
@@ -2704,6 +2741,7 @@ focus_tree = {
 		x = 76
 		y = 9
 		cost = 6
+		available = { date > 1917.3.1 has_war = yes }
 		prerequisite = { focus = FRA_la_bataille_de_la_somme_soutien }
 		completion_reward = {
 			activate_mission = FRA_nivelle_offensive_mission
@@ -2720,6 +2758,7 @@ focus_tree = {
 		x = 74
 		y = 10
 		cost = 8
+		available = { date > 1918.3.1 has_war = yes }
 		prerequisite = { focus = FRA_offensive_nivelle_chemin_des_dames }
 		completion_reward = {
 			add_ideas = FRA_kaiser_offensive_halted
@@ -2737,6 +2776,7 @@ focus_tree = {
 		x = 76
 		y = 11
 		cost = 10
+		available = { date > 1918.7.1 has_war = yes }
 		prerequisite = { focus = FRA_arret_des_offensives_ludendorff }
 		prerequisite = { focus = FRA_char_leger_renault_ft }
 		completion_reward = {
@@ -2754,7 +2794,7 @@ focus_tree = {
 		icon = GFX_FRA_question_du_maroc_1911
 		x = 85
 		y = 0
-		cost = 10
+		cost = 4
 		completion_reward = {
 			country_event = { id = ww1_france.1 days = 1 }
 			add_political_power = 40
@@ -2799,7 +2839,7 @@ focus_tree = {
 		icon = GFX_FRA_reponse_au_coup_d_agadir
 		x = 83
 		y = 1
-		cost = 6
+		cost = 4
 		prerequisite = { focus = FRA_question_du_maroc_1911 }
 		mutually_exclusive = { focus = FRA_compromis_colonial_allemand }
 		completion_reward = {
@@ -2820,7 +2860,7 @@ focus_tree = {
 		icon = GFX_FRA_accord_colonial_franco_allemand
 		x = 87
 		y = 1
-		cost = 6
+		cost = 4
 		prerequisite = { focus = FRA_question_du_maroc_1911 }
 		mutually_exclusive = { focus = FRA_fermete_diplomatique_agadir }
 		completion_reward = {
@@ -2933,7 +2973,8 @@ focus_tree = {
 		icon = GFX_FRA_traite_de_fez_1912
 		x = 85
 		y = 2
-		cost = 8
+		cost = 5
+		available = { date > 1912.3.1 }
 		prerequisite = { focus = FRA_fermete_diplomatique_agadir }
 		prerequisite = { focus = FRA_compromis_colonial_allemand }
 		completion_reward = {
@@ -3003,7 +3044,8 @@ focus_tree = {
 		icon = GFX_FRA_la_loi_des_trois_ans_1913
 		x = 85
 		y = 3
-		cost = 8
+		cost = 5
+		available = { date > 1913.5.1 }
 		prerequisite = { focus = FRA_traite_de_fez_1912 }
 		completion_reward = {
 			add_ideas = FRA_three_year_conscription
@@ -3076,6 +3118,7 @@ focus_tree = {
 		x = 91
 		y = 5
 		cost = 8
+		available = { OR = { date > 1917.10.1 RUS = { has_capitulated = yes } country_exists = SOV } }
 		prerequisite = { focus = FRA_soutien_financier_au_tsar }
 		completion_reward = {
 			add_war_support = 0.05
@@ -3092,6 +3135,7 @@ focus_tree = {
 		x = 84
 		y = 6
 		cost = 8
+		available = { date > 1915.3.1 has_war = yes }
 		prerequisite = { focus = FRA_loi_des_trois_ans_1913 }
 		completion_reward = {
 			add_political_power = 50
@@ -3274,6 +3318,7 @@ focus_tree = {
 		x = 94
 		y = 10
 		cost = 8
+		available = { date > 1917.6.1 OR = { is_in_faction_with = USA USA = { has_war = yes } } }
 		prerequisite = { focus = FRA_mission_viviani_joffre_aux_usa }
 		completion_reward = {
 			add_ideas = FRA_american_aef_arrival
@@ -3326,6 +3371,7 @@ focus_tree = {
 		x = 94
 		y = 11
 		cost = 5
+		available = { has_war = yes OR = { GER = { surrender_progress > 0.70 } GER = { has_capitulated = yes } date > 1918.10.1 } }
 		prerequisite = { focus = FRA_arrivee_du_corps_expeditionnaire_americain }
 		prerequisite = { focus = FRA_offensive_du_vardar_franchet_d_esperey }
 		completion_reward = {
@@ -3344,6 +3390,7 @@ focus_tree = {
 		x = 94
 		y = 12
 		cost = 8
+		available = { NOT = { has_war_with = GER } OR = { GER = { has_capitulated = yes } owns_state = 28 } }
 		prerequisite = { focus = FRA_le_wagon_de_rethondes_a_compiegne }
 		completion_reward = {
 			swap_ideas = {
@@ -3364,6 +3411,7 @@ focus_tree = {
 		x = 94
 		y = 13
 		cost = 10
+		available = { NOT = { has_war_with = GER } }
 		prerequisite = { focus = FRA_retour_de_l_alsace_lorraine }
 		completion_reward = {
 			country_event = { id = ww1_france.271 days = 1 }

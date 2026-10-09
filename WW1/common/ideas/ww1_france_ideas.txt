@@ -1070,5 +1070,52 @@ ideas = {
 			}
 		}
 
+		FRA_le_tigre_clemenceau = {
+			picture = FRA_appel_au_tigre
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.10
+				army_morale_factor = 0.15
+				war_support_factor = 0.10
+				surrender_limit = 0.10
+			}
+		}
+
+		FRA_ils_ne_passeront_pas = {
+			picture = FRA_la_fournaise_de_verdun
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.12
+				max_dig_in = 5
+				dig_in_speed_factor = 0.20
+				stability_factor = 0.05
+			}
+		}
+
+		FRA_poilus_reconcilies = {
+			picture = FRA_reforme_des_permissions_et_soupe
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.10
+				army_org_regain = 0.10
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		FRA_taxis_de_la_marne_active = {
+			picture = FRA_operation_de_la_marne
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_speed_factor = 0.10
+				army_core_attack_factor = 0.05
+				army_morale_factor = 0.10
+			}
+		}
+
 	}
 }

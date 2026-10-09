@@ -22,6 +22,7 @@ FRA_western_front_operations = {
 		timeout_effect = {
 			custom_effect_tooltip = FRA_verdun_mission_timeout_tt
 			remove_ideas = FRA_verdun_resilience
+			add_ideas = FRA_ils_ne_passeront_pas
 			add_timed_idea = { idea = FRA_verdun_exhaustion days = 60 }
 			add_stability = 0.05
 			add_war_support = 0.05
@@ -123,6 +124,30 @@ FRA_western_front_operations = {
 		}
 	}
 
+	FRA_taxis_de_la_marne = {
+		icon = generic_morale
+		allowed = { tag = FRA }
+		available = {
+			has_war_with = GER
+			controls_state = 16
+		}
+		cost = 25
+		fire_only_once = yes
+		ai_will_do = { factor = 10 }
+		visible = {
+			has_war_with = GER
+		}
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = FRA_taxis_de_la_marne_active
+				days = 45
+			}
+			add_war_support = 0.05
+			add_stability = 0.03
+		}
+	}
+
 	FRA_petain_welfare_and_leave_reform = {
 		icon = generic_political_action
 		allowed = { tag = FRA }
@@ -136,6 +161,7 @@ FRA_western_front_operations = {
 
 		complete_effect = {
 			remove_ideas = FRA_trench_mutiny_crisis_2
+			add_ideas = FRA_poilus_reconcilies
 			add_stability = 0.08
 			add_war_support = 0.05
 		}
