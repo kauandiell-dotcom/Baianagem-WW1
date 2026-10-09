@@ -134,6 +134,8 @@ def build_tree():
             ai_str = f"factor = {ai_val}"
         elif str(ai_val).isdigit():
             ai_str = f"factor = {ai_val}"
+        elif str(ai_val).startswith("base ="):
+            ai_str = str(ai_val).replace("base =", "factor =").strip()
         elif "factor" in str(ai_val):
             ai_str = str(ai_val)
         else:
@@ -183,10 +185,9 @@ def build_localisation():
         desc_pt = data.get("desc_pt") or data.get("pt_desc") or ""
         desc_en = data.get("desc_en") or data.get("en_desc") or ""
 
-        if not desc_pt.startswith("Efeito imediato:"):
-            desc_pt = f"Efeito imediato: {desc_pt}"
-        if not desc_en.startswith("Immediate effect:"):
-            desc_en = f"Immediate effect: {desc_en}"
+        from apply_italy_fixes import clean_pt_text, clean_en_text
+        desc_pt = clean_pt_text(desc_pt)
+        desc_en = clean_en_text(desc_en)
 
         LOC_PT[f"{full_id}_desc"] = desc_pt
         LOC_EN[f"{full_id}_desc"] = desc_en

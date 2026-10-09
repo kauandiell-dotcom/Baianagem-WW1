@@ -299,7 +299,7 @@ POLITICS_FOCI = {
         "effect": "remove_ideas = ITA_ww1_squadrist_violence remove_ideas = ITA_ww1_pci_workers_councils add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 }",
         "desc_en": "A concerted effort by constitutional liberals to preserve parliamentary democracy and suppress extremist paramilitary violence. Immediate effect: Removes squadrist and workers council spirits, grants 40 PP.",
         "desc_pt": "Esforço concentrado dos liberais constitucionais para preservar a ordem e reprimir a violência extremista. Efeito imediato: Remove a violência dos esquadrões e os conselhos de fábrica, concede 40 de PP.",
-        "ai": "base = 70"
+        "ai": "factor = 70"
     },
     "nationalist_order": {
         "cost": 5,
@@ -356,7 +356,7 @@ POLITICS_FOCI = {
         "effect": "remove_ideas = ITA_ww1_squadrist_violence country_event = { id = ww1_italy.25 days = 1 } add_political_power = 30",
         "desc_en": "Four fascist quadrumvirs orchestrate armed columns marching on the capital, forcing the crown to concede power. Immediate effect: Squads become the state, removing street squadrist violence idea, triggers March on Rome event and grants 30 PP.",
         "desc_pt": "Quatro quadrunviros coordenam colunas armadas sobre a capital, assumindo o poder. Efeito imediato: Os esquadrões assumem o controle do Estado, encerra a violência esquadrista de rua e concede 30 de PP.",
-        "ai": "base = 80"
+        "ai": "factor = 80"
     },
     "workers_councils": {
         "cost": 5,
@@ -365,7 +365,7 @@ POLITICS_FOCI = {
         "effect": "remove_ideas = ITA_ww1_squadrist_violence add_ideas = ITA_ww1_pci_workers_councils add_political_power = 20",
         "desc_en": "Gramsci and the Ordine Nuovo group organize elected factory councils to direct industrial production, breaking fascist squad control. Immediate effect: Replaces squadrist violence with Workers' Councils idea and grants 20 PP.",
         "desc_pt": "Gramsci e L'Ordine Nuovo organizam conselhos de fábrica que quebram o cerco esquadrista. Efeito imediato: Substitui a violência dos esquadrões pelos Conselhos Operários e concede 20 de PP.",
-        "ai": "base = 20"
+        "ai": "factor = 20"
     },
     "legalitarian_strike": {
         "cost": 5,

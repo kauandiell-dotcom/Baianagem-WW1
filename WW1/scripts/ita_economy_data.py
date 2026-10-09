@@ -135,7 +135,7 @@ ECONOMY_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 15",
-        "effect": "159 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_tech_bonus = { name = ITA_ww1_munitions_tech bonus = 0.25 uses = 1 category = weapons } add_political_power = 25",
+        "effect": "159 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_tech_bonus = { name = ITA_ww1_munitions_tech bonus = 0.25 uses = 1 category = infantry_weapons } add_political_power = 25",
         "desc_en": "A dedicated government undersecretariat centralizes shell and explosive procurement. Immediate effect: Constructs 1 arms factory in Lombardy, grants 25 Political Power and 25% Weapons tech bonus.",
         "desc_pt": "Subsecretaria governamental exclusiva centraliza o fornecimento de projéteis e explosivos. Efeito imediato: Constrói 1 fábrica militar na Lombardia, concede 25 de Poder Político e 25% de bônus em Armamentos."
     },
