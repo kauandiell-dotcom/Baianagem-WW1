@@ -66,7 +66,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_city_of_london_credit
    add_ideas = ENG_ww1_national_insurance
    add_to_variable = { ww1_britain_labour_support = 5 }
    add_to_variable = { ww1_britain_debt_burden = 1 }
@@ -204,7 +203,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_national_insurance
    add_ideas = ENG_ww1_defence_of_the_realm
    set_country_flag = ENG_ww1_dora_enacted
   }
@@ -224,7 +222,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_national_insurance
    add_ideas = ENG_ww1_cabinet_consultation
    add_stability = 0.02
    add_to_variable = { ww1_britain_labour_support = 2 }
@@ -264,7 +261,7 @@ focus_tree = {
   ai_will_do = { factor = 1 }
   completion_reward = {
    set_country_flag = ENG_ww1_military_service_authorised
-   remove_ideas = ENG_professional_bef
+   hidden_effect = { remove_ideas = ENG_professional_bef }
    add_to_variable = { ww1_britain_labour_support = -6 }
    add_to_variable = { ww1_britain_irish_tension = 4 }
   }
@@ -284,7 +281,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_defence_of_the_realm
    add_ideas = ENG_ww1_reserved_occupations
   }
  }
@@ -342,8 +338,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_defence_of_the_realm
-   remove_ideas = ENG_ww1_reserved_occupations
+   hidden_effect = { remove_ideas = ENG_ww1_defence_of_the_realm remove_ideas = ENG_ww1_reserved_occupations }
    add_ideas = ENG_ww1_enlarged_franchise
    add_to_variable = { ww1_britain_labour_support = 8 }
    set_country_flag = ENG_ww1_franchise_extended
@@ -382,8 +377,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_defence_of_the_realm
-   remove_ideas = ENG_ww1_reserved_occupations
+   hidden_effect = { remove_ideas = ENG_ww1_defence_of_the_realm remove_ideas = ENG_ww1_reserved_occupations }
    add_political_power = 25
    add_stability = 0.03
    add_to_variable = { ww1_britain_debt_burden = 3 }
@@ -406,8 +400,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
   completion_reward = {
-   remove_ideas = ENG_ww1_defence_of_the_realm
-   remove_ideas = ENG_ww1_reserved_occupations
+   hidden_effect = { remove_ideas = ENG_ww1_defence_of_the_realm remove_ideas = ENG_ww1_reserved_occupations }
    add_ideas = ENG_ww1_labour_compact
    add_to_variable = { ww1_britain_labour_support = 10 }
    add_stability = -0.02
@@ -431,8 +424,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_defence_of_the_realm
-   remove_ideas = ENG_ww1_reserved_occupations
+   hidden_effect = { remove_ideas = ENG_ww1_defence_of_the_realm remove_ideas = ENG_ww1_reserved_occupations }
    add_political_power = 25
    add_stability = 0.02
    add_to_variable = { ww1_britain_labour_support = -8 }
@@ -592,7 +584,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_city_of_london_credit
    add_ideas = ENG_ww1_railway_executive
    build_railway = { level = 2 start_state = 126 target_state = 127 build_only_on_allied = yes }
    add_political_power = 10
@@ -614,7 +605,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_city_of_london_credit
    130 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 } }
    add_ideas = ENG_ww1_coal_allocation
    122 = { add_building_construction = { type = infrastructure level = 1 } }
@@ -636,8 +626,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_coal_allocation
-   remove_ideas = ENG_city_of_london_credit
+   hidden_effect = { remove_ideas = ENG_ww1_coal_allocation }
    126 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    128 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    add_ideas = ENG_ww1_munitions_contracts
@@ -660,9 +649,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_city_of_london_credit
-   remove_ideas = ENG_ww1_coal_allocation
-   remove_ideas = ENG_ww1_munitions_contracts
+   hidden_effect = { remove_ideas = ENG_ww1_coal_allocation remove_ideas = ENG_ww1_munitions_contracts }
    add_ideas = ENG_ww1_munitions_ministry
    add_to_variable = { ww1_britain_labour_support = -3 }
    set_country_flag = ENG_ww1_ministry_of_munitions
@@ -683,8 +670,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_munitions_contracts
-   remove_ideas = ENG_ww1_coal_allocation
+   hidden_effect = { remove_ideas = ENG_ww1_munitions_contracts remove_ideas = ENG_ww1_coal_allocation }
    130 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 } }
    add_ideas = ENG_ww1_shell_inspection
    set_country_flag = ENG_ww1_shell_inspection
@@ -706,8 +692,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_shell_inspection
-   remove_ideas = ENG_ww1_coal_allocation
+   hidden_effect = { remove_ideas = ENG_ww1_shell_inspection remove_ideas = ENG_ww1_coal_allocation }
    add_ideas = ENG_ww1_labour_dilution
    add_to_variable = { ww1_britain_labour_support = -4 }
    set_country_flag = ENG_ww1_labour_dilution
@@ -728,8 +713,7 @@ focus_tree = {
   mutually_exclusive = { focus = ENG_ww1_emergency_factory_controls }
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_labour_dilution
-   remove_ideas = ENG_ww1_shell_inspection
+   hidden_effect = { remove_ideas = ENG_ww1_labour_dilution remove_ideas = ENG_ww1_shell_inspection }
    add_ideas = ENG_ww1_labour_compact
    add_to_variable = { ww1_britain_labour_support = 6 }
    set_country_flag = ENG_ww1_shop_stewards_agreement
@@ -750,8 +734,7 @@ focus_tree = {
   mutually_exclusive = { focus = ENG_ww1_the_shop_stewards_agreement }
   ai_will_do = { factor = 1 modifier = { factor = 0 is_historical_focus_on = yes } }
   completion_reward = {
-   remove_ideas = ENG_ww1_labour_dilution
-   remove_ideas = ENG_ww1_shell_inspection
+   hidden_effect = { remove_ideas = ENG_ww1_labour_dilution remove_ideas = ENG_ww1_shell_inspection }
    add_ideas = ENG_ww1_emergency_controls
    add_to_variable = { ww1_britain_labour_support = -6 }
    set_country_flag = ENG_ww1_emergency_factory_controls
@@ -854,9 +837,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_emergency_controls
-   remove_ideas = ENG_ww1_labour_compact
-   remove_ideas = ENG_ww1_labour_dilution
+   hidden_effect = { remove_ideas = ENG_ww1_emergency_controls remove_ideas = ENG_ww1_labour_compact remove_ideas = ENG_ww1_labour_dilution }
    129 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 } }
    add_ideas = ENG_ww1_housing_programme
    add_to_variable = { ww1_britain_debt_burden = 3 }
@@ -1018,7 +999,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_the_imperial_web
    add_ideas = ENG_ww1_dominion_procurement
    add_to_variable = { ww1_britain_dominion_consent = 2 }
   }
@@ -1077,7 +1057,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_dominion_procurement
+   hidden_effect = { remove_ideas = ENG_ww1_dominion_procurement }
    add_ideas = ENG_ww1_imperial_sealift
   }
  }
@@ -1177,9 +1157,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_the_imperial_web
-   remove_ideas = ENG_ww1_imperial_sealift
-   remove_ideas = ENG_ww1_dominion_procurement
+   hidden_effect = { remove_ideas = ENG_ww1_imperial_sealift remove_ideas = ENG_ww1_dominion_procurement }
    add_ideas = ENG_ww1_commonwealth_consultation
    add_to_variable = { ww1_britain_dominion_consent = 5 }
    set_country_flag = ENG_ww1_commonwealth_charter
@@ -1662,7 +1640,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_professional_bef
+   hidden_effect = { remove_ideas = ENG_professional_bef }
    add_ideas = ENG_ww1_haldane_reforms
    add_political_power = 15
    army_experience = 5
@@ -1810,8 +1788,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_professional_bef
-   remove_ideas = ENG_ww1_haldane_reforms
+   hidden_effect = { remove_ideas = ENG_professional_bef remove_ideas = ENG_ww1_haldane_reforms }
    add_ideas = ENG_ww1_kitchener_armies
    add_manpower = 25000
    add_to_variable = { ww1_britain_labour_support = -2 }
@@ -1833,7 +1810,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_kitchener_armies
+   hidden_effect = { remove_ideas = ENG_ww1_kitchener_armies }
    add_ideas = ENG_ww1_pals_battalions
    add_manpower = 10000
    set_country_flag = ENG_ww1_pals_battalions
@@ -1981,7 +1958,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_pals_battalions
+   hidden_effect = { remove_ideas = ENG_ww1_pals_battalions }
    add_ideas = ENG_ww1_training_directorate
    add_political_power = 10
    set_country_flag = ENG_ww1_training_directorate
@@ -2002,7 +1979,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_training_directorate
+   hidden_effect = { remove_ideas = ENG_ww1_training_directorate }
    add_ideas = ENG_ww1_combined_arms_staff
    army_experience = 15
    set_country_flag = ENG_ww1_combined_arms
@@ -2042,8 +2019,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_general_staff_lessons
-   remove_ideas = ENG_ww1_flanders_supply
+   hidden_effect = { remove_ideas = ENG_ww1_general_staff_lessons remove_ideas = ENG_ww1_flanders_supply }
    add_to_variable = { ww1_britain_debt_burden = -3 }
    add_political_power = 15
    add_stability = 0.01
@@ -2089,7 +2065,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_two_power_standard
    add_political_power = 15
    add_ideas = ENG_ww1_admiralty_war_staff
    set_country_flag = ENG_ww1_fleet_survey
@@ -2236,7 +2211,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_admiralty_war_staff
+   hidden_effect = { remove_ideas = ENG_ww1_admiralty_war_staff }
    add_ideas = ENG_ww1_northern_patrol
    navy_experience = 5
    set_country_flag = ENG_ww1_north_sea_watch
@@ -2257,7 +2232,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_northern_patrol
+   hidden_effect = { remove_ideas = ENG_ww1_northern_patrol }
    add_ideas = ENG_ww1_grand_fleet_anchorage
    120 = { add_building_construction = { type = coastal_bunker level = 1 } }
    120 = { add_building_construction = { type = naval_base level = 1 province = 11064 } }
@@ -2450,7 +2425,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_grand_fleet_anchorage
+   hidden_effect = { remove_ideas = ENG_ww1_grand_fleet_anchorage }
    add_political_power = 20
    navy_experience = 5
    set_country_flag = ENG_ww1_postwar_fleet_review
@@ -2536,7 +2511,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_two_power_standard
    add_ideas = ENG_ww1_royal_flying_corps
    air_experience = 5
    set_country_flag = ENG_ww1_royal_flying_corps
@@ -2786,7 +2760,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_royal_flying_corps
+   hidden_effect = { remove_ideas = ENG_ww1_royal_flying_corps }
    add_ideas = ENG_ww1_engine_reliability
    add_to_variable = { ww1_britain_debt_burden = 1 }
    set_country_flag = ENG_ww1_engine_reliability
@@ -2807,8 +2781,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_engine_reliability
-   remove_ideas = ENG_ww1_royal_flying_corps
+   hidden_effect = { remove_ideas = ENG_ww1_engine_reliability remove_ideas = ENG_ww1_royal_flying_corps }
    add_ideas = ENG_ww1_home_air_defence
    add_political_power = 10
    set_country_flag = ENG_ww1_home_air_defence
@@ -2847,9 +2820,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_royal_flying_corps
-   remove_ideas = ENG_ww1_home_air_defence
-   remove_ideas = ENG_ww1_engine_reliability
+   hidden_effect = { remove_ideas = ENG_ww1_royal_flying_corps remove_ideas = ENG_ww1_home_air_defence remove_ideas = ENG_ww1_engine_reliability }
    add_ideas = ENG_ww1_royal_air_force
    set_country_flag = ENG_ww1_raf_formed
    if = { limit = { has_country_flag = ENG_ww1_air_independent } air_experience = 15 add_political_power = -10 }
@@ -2871,7 +2842,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_royal_air_force
+   hidden_effect = { remove_ideas = ENG_ww1_royal_air_force }
    add_to_variable = { ww1_britain_debt_burden = -2 }
    add_political_power = 15
    add_stability = 0.01
@@ -2916,7 +2887,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_royal_air_force
+   hidden_effect = { remove_ideas = ENG_ww1_royal_air_force }
    air_experience = 15
    add_political_power = 20
    add_to_variable = { ww1_britain_debt_burden = 1 }
@@ -3000,7 +2971,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_haldane_reforms
    add_ideas = ENG_ww1_flanders_supply
    add_to_variable = { ww1_britain_debt_burden = 1 }
    set_country_flag = ENG_ww1_flanders_supply
@@ -3163,7 +3133,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_combined_arms_staff
+   hidden_effect = { remove_ideas = ENG_ww1_combined_arms_staff }
    add_ideas = ENG_ww1_creeping_barrage
    add_tech_bonus = { name = ENG_ww1_the_creeping_barrage_school bonus = 0.25 uses = 1 category = artillery }
    set_country_flag = ENG_ww1_creeping_barrage
@@ -3329,7 +3299,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_creeping_barrage
+   hidden_effect = { remove_ideas = ENG_ww1_creeping_barrage }
    army_experience = 15
    add_political_power = 15
    add_ideas = ENG_ww1_general_staff_lessons
@@ -3411,7 +3381,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_industrial_conversion
    add_political_power = 15
    add_stability = 0.01
    add_ideas = ENG_ww1_veterans_settlement
@@ -3495,9 +3464,7 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_ww1_housing_programme
-   remove_ideas = ENG_ww1_munitions_ministry
-   remove_ideas = ENG_ww1_coal_allocation
+   hidden_effect = { remove_ideas = ENG_ww1_housing_programme remove_ideas = ENG_ww1_munitions_ministry remove_ideas = ENG_ww1_coal_allocation }
    add_ideas = ENG_ww1_industrial_conversion
    set_country_flag = ENG_ww1_industrial_conversion_planned
   }
@@ -3540,7 +3507,7 @@ focus_tree = {
    add_stability = 0.01
    add_political_power = 15
    add_to_variable = { ww1_britain_debt_burden = 1 }
-   remove_ideas = ENG_ww1_railway_executive
+   hidden_effect = { remove_ideas = ENG_ww1_railway_executive }
    set_country_flag = ENG_ww1_railways_restored
   }
  }
@@ -3928,7 +3895,6 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
   completion_reward = {
-   remove_ideas = ENG_the_imperial_web
    add_ideas = ENG_ww1_room_forty
    set_country_flag = ENG_ww1_room_forty
   }

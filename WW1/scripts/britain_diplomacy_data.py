@@ -139,9 +139,9 @@ FOCI = {
     "Admiralty e War Office reúnem interceptações de rádio e cabo em um só escritório. Ganha 10 de poder político e abre o escritório da Sala 40.",
     "The Admiralty and War Office pool wireless and cable intercepts in one office. It grants 10 political power and opens the Room 40 office."),
 "the_room_forty_office": (
-    ["remove_ideas = ENG_the_imperial_web", idea("room_forty"), flag("room_forty")],
-    "A Sala 40 lê códigos navais alemães e intercepta despachos globais. Substitui a teia imperial inicial pela instituição Sala 40 (velocidade de decifração +10%).",
-    "Room 40 reads German naval codes and global intercepts. Replaces early imperial web with Room 40 institution (decryption speed +10%)."),
+    [idea("room_forty"), flag("room_forty")],
+    "A Sala 40 lê códigos navais alemães e intercepta despachos globais. Instituição Sala 40 (velocidade de decifração +10%).",
+    "Room 40 reads German naval codes and global intercepts. Room 40 institution (decryption speed +10%)."),
 "aerial_photography_research": (
     [tech("aerial_photography_research", "recon_tech")],
     "Câmeras em aviões mapeiam trincheiras e baterias. Bônus de pesquisa de 25% em reconhecimento (uso único).",

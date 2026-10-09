@@ -53,7 +53,7 @@ def build(state, kind, slots=1):
 FOCI = {
 # ------------------------------------------------------------------ naval (20)
 "admiralty_fleet_survey": (
-    ["remove_ideas = ENG_two_power_standard", pp(15), idea("admiralty_war_staff"), flag("fleet_survey")],
+    [pp(15), idea("admiralty_war_staff"), flag("fleet_survey")],
     "O Almirantado mede a prontidão da frota e cria o Estado-Maior de Guerra Naval em 1912. Ganha 15 de poder político e a instituição Estado-Maior Naval (+10% de ganho de XP naval).",
     "The Admiralty measures fleet readiness and establishes the Admiralty War Staff in 1912. Grants 15 political power and the Admiralty War Staff institution (+10% naval XP gain)."),
 "the_naval_estimates": (
@@ -81,13 +81,13 @@ FOCI = {
     "As mesas de controle de fogo de Dreyer e Pollen prometem disparos precisos a longa distância. Ganha 10 de experiência naval e bônus de pesquisa de 25% em artilharia naval.",
     "The fire-control tables of Dreyer and Pollen promise accurate long-range fire. Grants 10 naval experience and a 25% research bonus on naval artillery."),
 "the_north_sea_watch": (
-    [remove_idea("admiralty_war_staff"), idea("northern_patrol"), navy_xp(5), flag("north_sea_watch")],
-    "Cruzadores e navios armados patrulham entre a Escócia e a Noruega. Substitui o estado-maior inicial pela instituição Patrulha do Norte (detecção naval +10%) e 5 de experiência naval.",
-    "Cruisers and armed merchant vessels patrol between Scotland and Norway. Replaces initial staff with the Northern Patrol institution (naval detection +10%) and 5 naval experience."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_admiralty_war_staff }", idea("northern_patrol"), navy_xp(5), flag("north_sea_watch")],
+    "Cruzadores e navios armados patrulham entre a Escócia e a Noruega. Institui a Patrulha do Norte (detecção naval +10%) e 5 de experiência naval.",
+    "Cruisers and armed merchant vessels patrol between Scotland and Norway. Establishes the Northern Patrol institution (naval detection +10%) and 5 naval experience."),
 "grand_fleet_maintenance": (
-    [remove_idea("northern_patrol"), idea("grand_fleet_anchorage"), "120 = { add_building_construction = { type = coastal_bunker level = 1 } }", "120 = { add_building_construction = { type = naval_base level = 1 province = 11064 } }", "121 = { add_building_construction = { type = naval_base level = 1 province = 6300 } }", var("debt_burden", 1), flag("scapa_flow")],
-    "Scapa Flow e Rosyth ganham baterias costeiras e bases navais. Substitui patrulhas pela instituição Fundeadouros da Grande Frota (reparo naval +10%); dívida sobe 1.",
-    "Scapa Flow and Rosyth receive coastal batteries and expanded naval bases. Replaces patrols with Grand Fleet Anchorages institution (naval repair +10%); debt rises by 1."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_northern_patrol }", idea("grand_fleet_anchorage"), "120 = { add_building_construction = { type = coastal_bunker level = 1 } }", "120 = { add_building_construction = { type = naval_base level = 1 province = 11064 } }", "121 = { add_building_construction = { type = naval_base level = 1 province = 6300 } }", var("debt_burden", 1), flag("scapa_flow")],
+    "Scapa Flow e Rosyth ganham baterias costeiras e bases navais. Instituição Fundeadouros da Grande Frota (reparo naval +10%); dívida sobe 1.",
+    "Scapa Flow and Rosyth receive coastal batteries and expanded naval bases. Grand Fleet Anchorages institution (naval repair +10%); debt rises by 1."),
 "merchant_shipping_register": (
     [navy_xp(5), stab(0.02), pp(15), flag("merchant_register")],
     "O registro do Lloyd's lista navios mercantes que podem virar transportes e escoltas. Ganha 5 de experiência naval, 2% de estabilidade e 15 de poder político.",
@@ -122,8 +122,8 @@ FOCI = {
     "Marinhas aliadas compartilham a escolta no Mediterrâneo contra submarinos. Ganha 10 de experiência naval, 10 de poder político e propõe a cooperação aos aliados.",
     "Allied navies share escort duties in the Mediterranean against submarines. Grants 10 naval experience, 10 political power and proposes cooperation to allies."),
 "the_postwar_fleet_review": (
-    [remove_idea("grand_fleet_anchorage"), pp(20), navy_xp(5), flag("postwar_fleet_review")],
-    "Com o armistício, o Almirantado faz a revista da frota, desmobilizando fundeadouros de guerra. Ganha 20 de poder político e 5 de experiência naval.",
+    ["hidden_effect = { remove_ideas = ENG_ww1_grand_fleet_anchorage }", pp(20), navy_xp(5), flag("postwar_fleet_review")],
+    "Com o armistício, o Almirantado faz a revista da frota, desmobilizando os fundeadouros de guerra. Ganha 20 de poder político e 5 de experiência naval.",
     "With the armistice the Admiralty conducts the fleet review, standing down wartime anchorages. Grants 20 political power and 5 naval experience."),
 "naval_budget_retrenchment": (
     [var("debt_burden", -3), pp(20), stab(0.02), flag("naval_retrenchment")],
@@ -139,7 +139,7 @@ FOCI = {
     "O Batalhão Aéreo dos Engenheiros Reais testa dirigíveis e aeroplanos em Larkhill. Ganha 5 de experiência aérea e bônus de pesquisa de 25% em equipamento aéreo.",
     "The Air Battalion of the Royal Engineers tests airships and aeroplanes at Larkhill. Grants 5 air experience and a 25% research bonus on air equipment."),
 "royal_flying_corps_organisation": (
-    ["remove_ideas = ENG_two_power_standard", idea("royal_flying_corps"), air_xp(5), flag("royal_flying_corps")],
+    [idea("royal_flying_corps"), air_xp(5), flag("royal_flying_corps")],
     "O Corpo Aéreo Real nasce em 1912 com a Escola Central de Voo em Upavon. Ganha a instituição Corpo Aéreo Real (+10% de ganho de XP aérea) e 5 de experiência aérea.",
     "The Royal Flying Corps is formed in 1912 with the Central Flying School at Upavon. Grants the Royal Flying Corps institution (+10% air XP gain) and 5 air experience."),
 "military_pilot_instruction": (
@@ -187,35 +187,35 @@ FOCI = {
     "Voos de longo curso com tanques ampliados preparam bombardeios estratégicos. Ganha 5 de experiência aérea e bônus de pesquisa de 25% em bombardeiros táticos.",
     "Long-range flights with enlarged fuel tanks prepare strategic bombing missions. Grants 5 air experience and a 25% bonus on tactical bombers."),
 "aircraft_engine_reliability": (
-    [remove_idea("royal_flying_corps"), idea("engine_reliability"), var("debt_burden", 1), flag("engine_reliability")],
-    "Motores Rolls-Royce Eagle e Le Rhône recebem peças padronizadas. Substitui o corpo inicial pela instituição Motores Confiáveis (acidentes aéreos -15%); dívida sobe 1.",
-    "Rolls-Royce Eagle and Le Rhône engines receive standardised parts. Replaces early corps with Reliable Engines institution (air accidents -15%); debt rises by 1."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_royal_flying_corps }", idea("engine_reliability"), var("debt_burden", 1), flag("engine_reliability")],
+    "Motores Rolls-Royce Eagle e Le Rhône recebem peças padronizadas. Institui Motores Confiáveis (acidentes aéreos -15%); dívida sobe 1.",
+    "Rolls-Royce Eagle and Le Rhône engines receive standardised parts. Establishes Reliable Engines institution (air accidents -15%); debt rises by 1."),
 "home_air_defence_coordination": (
-    [remove_idea("engine_reliability"), remove_idea("royal_flying_corps"), idea("home_air_defence"), pp(10), flag("home_air_defence")],
-    "Canhões AA, holofotes e patrulhas protegem Londres contra Zeppelins. Substitui melhorias de motores pela instituição Defesa Aérea Doméstica (estabilidade +1%) e 10 de poder político.",
-    "AA guns, searchlights and patrols protect London against Zeppelins. Replaces engine improvements with the Home Air Defence institution (stability +1%) and 10 political power."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_engine_reliability remove_ideas = ENG_ww1_royal_flying_corps }", idea("home_air_defence"), pp(10), flag("home_air_defence")],
+    "Canhões AA, holofotes e patrulhas protegem Londres contra Zeppelins. Institui Defesa Aérea Doméstica (estabilidade +1%) e 10 de poder político.",
+    "AA guns, searchlights and patrols protect London against Zeppelins. Establishes Home Air Defence institution (stability +1%) and 10 political power."),
 "the_independent_air_service_debate": (
     [ev(6)],
     "Depois dos ataques dos Gotha a Londres, o general Smuts investiga a defesa aérea. A questão é se o Exército e a Marinha continuam com serviços aéreos separados ou se nasce uma força independente. Dispara o Relatório Smuts.",
     "After the Gotha raids on London, General Smuts investigates air defence. The question is whether the Army and the Navy keep separate air services or an independent force is born. It triggers the Smuts Report."),
 "royal_air_force_unification": (
-    ["remove_ideas = ENG_ww1_royal_flying_corps", remove_idea("home_air_defence"), remove_idea("engine_reliability"), idea("royal_air_force"), flag("raf_formed"),
+    ["hidden_effect = { remove_ideas = ENG_ww1_royal_flying_corps remove_ideas = ENG_ww1_home_air_defence remove_ideas = ENG_ww1_engine_reliability }", idea("royal_air_force"), flag("raf_formed"),
      "if = { limit = { has_country_flag = ENG_ww1_air_independent } air_experience = 15 add_political_power = -10 }",
      "else = { air_experience = 5 add_political_power = 10 }"],
-    "Em 1º de abril de 1918 nasce a Força Aérea Real, substituindo a defesa aérea provisória. Instituição Força Aérea Real (+15% de XP aérea, +5% de eficiência de missão).",
-    "On 1 April 1918 the Royal Air Force is born, replacing provisional air defences. Royal Air Force institution (+15% air XP, +5% mission efficiency)."),
+    "Em 1º de abril de 1918 nasce a Força Aérea Real. Instituição Força Aérea Real (+15% de XP aérea, +5% de eficiência de missão).",
+    "On 1 April 1918 the Royal Air Force is born. Royal Air Force institution (+15% air XP, +5% mission efficiency)."),
 "postwar_aircraft_demobilisation": (
-    [remove_idea("royal_air_force"), var("debt_burden", -2), pp(15), stab(0.01), flag("aircraft_demobilised")],
-    "A Companhia de Alienação de Aeronaves vende excedentes, desmobilizando a força de guerra. A dívida cai 2; ganha 15 de poder político e 1% de estabilidade.",
+    ["hidden_effect = { remove_ideas = ENG_ww1_royal_air_force }", var("debt_burden", -2), pp(15), stab(0.01), flag("aircraft_demobilised")],
+    "A Companhia de Alienação de Aeronaves vende excedentes, desmobilizando a aviação de guerra. A dívida cai 2; ganha 15 de poder político e 1% de estabilidade.",
     "The Aircraft Disposal Company sells surpluses, standing down wartime forces. Debt falls by 2; it grants 15 political power and 1% stability."),
 "civil_aviation_research": (
     [tech("civil_aviation_research", "air_equipment"), stab(0.02), var("debt_burden", -1), flag("civil_aviation")],
     "O Comitê de Transporte Aéreo Civil estuda rotas aéreas imperiais. A dívida cai 1; ganha 2% de estabilidade e bônus de pesquisa de 25% em equipamento aéreo. Exclui a força militar permanente.",
     "The Civil Air Transport Committee studies imperial civil flight routes. Debt falls by 1; grants 2% stability and a 25% air equipment bonus. Excludes permanent military establishment."),
 "a_sustainable_air_establishment": (
-    [remove_idea("royal_air_force"), air_xp(15), pp(20), var("debt_burden", 1), flag("trenchard_memorandum")],
-    "O memorando de Trenchard define uma RAF pequena, permanente e altamente qualificada. Remove instituições de guerra, ganha 15 de experiência aérea e 20 de poder político; dívida sobe 1. Exclui a pesquisa civil.",
-    "Trenchard's memorandum establishes a small, permanent, highly trained RAF. Removes wartime institutions, grants 15 air experience and 20 political power; debt rises by 1. Excludes civil research."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_royal_air_force }", air_xp(15), pp(20), var("debt_burden", 1), flag("trenchard_memorandum")],
+    "O memorando de Trenchard define uma RAF permanente e altamente qualificada. Ganha 15 de experiência aérea e 20 de poder político; dívida sobe 1. Exclui a pesquisa civil.",
+    "Trenchard's memorandum establishes a permanent, highly trained RAF. Grants 15 air experience and 20 political power; debt rises by 1. Excludes civil research."),
 }
 
 EXCLUSIVE = [("naval_budget_retrenchment", "naval_technical_lessons"),

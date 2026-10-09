@@ -42,37 +42,37 @@ FOCI = {
     "A City de Londres financia o governo com títulos e aceita letras de câmbio de aliados. A dívida cai 2 e ganha 15 de poder político.",
     "The City of London finances the government through bonds and accepts bills from allies. Debt falls by 2 and it grants 15 political power."),
 "railway_freight_coordination": (
-    ["remove_ideas = ENG_city_of_london_credit", idea("railway_executive"), "build_railway = { level = 2 start_state = 126 target_state = 127 build_only_on_allied = yes }", pp(10), flag("railway_executive")],
-    "O Comitê Executivo das Ferrovias coordena cargas e duplica a linha Londres-Southampton. Substitui o crédito financeiro pelo Executivo Ferroviário (consumo de suprimento -2%), ferrovia nível 2 e 10 de poder político.",
-    "The Railway Executive Committee coordinates freight and expands London-Southampton link. Replaces credit idea with Railway Executive (supply consumption -2%), level 2 railway and 10 political power."),
+    [idea("railway_executive"), "build_railway = { level = 2 start_state = 126 target_state = 127 build_only_on_allied = yes }", pp(10), flag("railway_executive")],
+    "O Comitê Executivo das Ferrovias coordena cargas e duplica a linha Londres-Southampton. Institui o Executivo Ferroviário (consumo de suprimento -2%), ferrovia nível 2 e 10 de poder político.",
+    "The Railway Executive Committee coordinates freight and expands London-Southampton link. Establishes Railway Executive (supply consumption -2%), level 2 railway and 10 political power."),
 "domestic_coal_allocation": (
-    ["remove_ideas = ENG_city_of_london_credit", build(130, "industrial_complex"), idea("coal_allocation"), "122 = { add_building_construction = { type = infrastructure level = 1 } }", flag("coal_allocation_done")],
+    [build(130, "industrial_complex"), idea("coal_allocation"), "122 = { add_building_construction = { type = infrastructure level = 1 } }", flag("coal_allocation_done")],
     "O carvão galês é a base da indústria, da frota e das exportações. Adiciona 1 nível de infraestrutura no País de Gales, complexo industrial em Yorkshire e instituição Alocação do Carvão.",
     "Welsh coal underpins industry, the fleet and exports. Adds 1 infrastructure level in Wales, industrial complex in Yorkshire and Coal Allocation institution."),
 "national_munitions_contracts": (
-    [remove_idea("coal_allocation"), "remove_ideas = ENG_city_of_london_credit", build(126, "arms_factory"), build(128, "arms_factory"), idea("munitions_contracts"), var("debt_burden", 2)],
-    "Contratos nacionais ampliam Woolwich e Birmingham com duas fábricas militares. Substitui alocação de carvão por Contratos de Munição (capacidade +1,5%); dívida sobe 2.",
-    "National contracts expand Woolwich and Birmingham with two arms factories. Replaces coal allocation with Munitions Contracts (capacity +1.5%); debt rises by 2."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_coal_allocation }", build(126, "arms_factory"), build(128, "arms_factory"), idea("munitions_contracts"), var("debt_burden", 2)],
+    "Contratos nacionais ampliam Woolwich e Birmingham com duas fábricas militares. Instituição Contratos de Munição (capacidade +1,5%); dívida sobe 2.",
+    "National contracts expand Woolwich and Birmingham with two arms factories. Munitions Contracts institution (capacity +1.5%); debt rises by 2."),
 "the_ministry_of_munitions": (
-    ["remove_ideas = ENG_city_of_london_credit", remove_idea("coal_allocation"), "remove_ideas = ENG_ww1_munitions_contracts", idea("munitions_ministry"), var("labour_support", -3), flag("ministry_of_munitions")],
-    "Lloyd George assume a produção de guerra em maio de 1915. O Ministério substitui contratos dispersos por Ministério de Munições (capacidade industrial +4%, eficiência máxima +2,5%); apoio trabalhista -3.",
-    "Lloyd George takes charge of war production in May 1915. Replaces scattered contracts with Ministry of Munitions (industrial capacity +4%, maximum efficiency +2.5%); labour support -3."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_coal_allocation remove_ideas = ENG_ww1_munitions_contracts }", idea("munitions_ministry"), var("labour_support", -3), flag("ministry_of_munitions")],
+    "Lloyd George assume a produção de guerra em maio de 1915. O Ministério estabelece o Ministério de Munições (capacidade industrial +4%, eficiência máxima +2,5%); apoio trabalhista -3.",
+    "Lloyd George takes charge of war production in May 1915. Establishes Ministry of Munitions (industrial capacity +4%, maximum efficiency +2.5%); labour support -3."),
 "shell_inspection_boards": (
-    [remove_idea("munitions_contracts"), remove_idea("coal_allocation"), build(130, "arms_factory"), idea("shell_inspection"), flag("shell_inspection")],
-    "Inspetores reorganizam a produção de projéteis em Sheffield com fábrica militar em Yorkshire. Substitui contratos preliminares pela instituição Inspeção de Projéteis.",
-    "Inspectors reorganise shell production in Sheffield with an arms factory in Yorkshire. Replaces preliminary contracts with Shell Inspection institution."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_munitions_contracts remove_ideas = ENG_ww1_coal_allocation }", build(130, "arms_factory"), idea("shell_inspection"), flag("shell_inspection")],
+    "Inspetores reorganizam a produção de projéteis em Sheffield com fábrica militar em Yorkshire. Instituição Inspeção de Projéteis.",
+    "Inspectors reorganise shell production in Sheffield with an arms factory in Yorkshire. Shell Inspection institution."),
 "wartime_labour_dilution": (
-    [remove_idea("shell_inspection"), remove_idea("coal_allocation"), idea("labour_dilution"), var("labour_support", -4), flag("labour_dilution")],
-    "O Acordo do Tesouro de 1915 permite mulheres e operários sem ofício em funções técnicas. Substitui inspeções locais pela instituição Diluição da Mão de Obra; apoio trabalhista -4.",
-    "The 1915 Treasury Agreement allows women and unskilled hands in technical posts. Replaces local inspection with Labour Dilution institution; labour support -4."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_shell_inspection remove_ideas = ENG_ww1_coal_allocation }", idea("labour_dilution"), var("labour_support", -4), flag("labour_dilution")],
+    "O Acordo do Tesouro de 1915 permite mulheres e operários sem ofício em funções técnicas. Instituição Diluição da Mão de Obra; apoio trabalhista -4.",
+    "The 1915 Treasury Agreement allows women and unskilled hands in technical posts. Labour Dilution institution; labour support -4."),
 "the_shop_stewards_agreement": (
-    [remove_idea("labour_dilution"), remove_idea("shell_inspection"), idea("labour_compact"), var("labour_support", 6), flag("shop_stewards_agreement")],
-    "Delegados de oficina ganham voz nas fábricas de guerra. Substitui diluição unilateral pelo Pacto Trabalhista e apoio trabalhista +6.",
-    "Shop stewards gain a voice in war plants. Replaces unilateral dilution with Labour Compact and labour support +6."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_labour_dilution remove_ideas = ENG_ww1_shell_inspection }", idea("labour_compact"), var("labour_support", 6), flag("shop_stewards_agreement")],
+    "Delegados de oficina ganham voz nas fábricas de guerra. Institui o Pacto Trabalhista e apoio trabalhista +6.",
+    "Shop stewards gain a voice in war plants. Establishes Labour Compact and labour support +6."),
 "emergency_factory_controls": (
-    [remove_idea("labour_dilution"), remove_idea("shell_inspection"), idea("emergency_controls"), var("labour_support", -6), flag("emergency_factory_controls")],
-    "O Estado assume controle direto de contratações e salários fabris. Substitui acordos voluntários por Controles Emergenciais; apoio trabalhista -6.",
-    "The state takes direct control of hiring and plant wages. Replaces voluntary agreements with Emergency Controls; labour support -6."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_labour_dilution remove_ideas = ENG_ww1_shell_inspection }", idea("emergency_controls"), var("labour_support", -6), flag("emergency_factory_controls")],
+    "O Estado assume controle direto de contratações e salários fabris. Institui Controles Emergenciais; apoio trabalhista -6.",
+    "The state takes direct control of hiring and plant wages. Establishes Emergency Controls; labour support -6."),
 "the_ministry_of_food": (
     [var("debt_burden", 1), flag("ministry_of_food"), eco_ev(3)],
     "Em dezembro de 1916 nasce o Ministério da Alimentação. O governo precisa decidir entre racionamento obrigatório e apelo voluntário. A dívida sobe 1.",
@@ -90,9 +90,9 @@ FOCI = {
     "Depois do armistício, fábricas de munição voltam a produzir máquinas e locomotivas. Ganha 20 de poder político, 2% de estabilidade e apoio trabalhista +3.",
     "After the armistice, munition plants return to machines and locomotives. It grants 20 political power, 2% stability and labour support +3."),
 "housing_and_civilian_employment": (
-    [remove_idea("emergency_controls"), "remove_ideas = ENG_ww1_labour_compact", remove_idea("labour_dilution"), build(129, "industrial_complex"), idea("housing_programme"), var("debt_burden", 3), var("labour_support", 4)],
-    "A Lei Addison promove casas para veteranos com um complexo industrial nas Midlands. Substitui controles de guerra por Programa de Habitação; dívida +3 e apoio trabalhista +4.",
-    "The Addison Act builds homes for veterans with an industrial complex in the East Midlands. Replaces wartime controls with Housing Programme; debt rises by 3 and labour support +4."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_emergency_controls remove_ideas = ENG_ww1_labour_compact remove_ideas = ENG_ww1_labour_dilution }", build(129, "industrial_complex"), idea("housing_programme"), var("debt_burden", 3), var("labour_support", 4)],
+    "A Lei Addison promove casas para veteranos com um complexo industrial nas Midlands. Institui o Programa de Habitação; dívida +3 e apoio trabalhista +4.",
+    "The Addison Act builds homes for veterans with an industrial complex in the East Midlands. Establishes Housing Programme; debt rises by 3 and labour support +4."),
 # ------------------------------------------------------------------ reconstruction (20)
 "the_peace_administration_office": (
     [pp(15), flag("peace_administration")],
@@ -107,9 +107,9 @@ FOCI = {
     "Navios de transporte levam tropas de volta da França, do Oriente Médio e dos domínios. A dívida sobe 1 e a estabilidade sobe 1%.",
     "Transports carry troops home from France, the Middle East and the Dominions. Debt rises by 1 and stability rises by 1%."),
 "veterans_welfare_register": (
-    [remove_idea("industrial_conversion"), pp(15), stab(0.01), idea("veterans_settlement"), var("debt_burden", 1)],
-    "Um registro nacional liga cada veterano a pensão e emprego. Substitui conversão preliminar pelo Assentamento de Veteranos; estabilidade +1% e dívida +1.",
-    "A national register links each veteran to pension and employment. Replaces preliminary conversion with Veterans' Settlement; stability +1% and debt +1."),
+    [pp(15), stab(0.01), idea("veterans_settlement"), var("debt_burden", 1)],
+    "Um registro nacional liga cada veterano a pensão e emprego. Garante o Assentamento de Veteranos; estabilidade +1% e dívida +1.",
+    "A national register links each veteran to pension and employment. Grants Veterans' Settlement; stability +1% and debt +1."),
 "disability_pension_administration": (
     [var("debt_burden", 2), stab(0.02), var("labour_support", 4), pp(10)],
     "Centenas de milhares de mutilados e viúvas passam a receber pensão regular. Ganha 10 de poder político, estabilidade sobe 2% e apoio trabalhista +4; dívida sobe 2.",
@@ -123,17 +123,17 @@ FOCI = {
     "Prefeituras assinam contratos para construir moradias populares com subsídio do Estado, ampliando a infraestrutura das Midlands. A dívida sobe 2, apoio trabalhista +3 e 1% de estabilidade.",
     "Local authorities sign contracts to build council housing with state subsidies, expanding infrastructure in the Midlands. Debt rises by 2, labour support +3 and 1% stability."),
 "industrial_conversion_planning": (
-    [remove_idea("housing_programme"), "remove_ideas = ENG_ww1_munitions_ministry", remove_idea("coal_allocation"), idea("industrial_conversion"), flag("industrial_conversion_planned")],
-    "Planos de conversão de aço e químicos para uso civil substituem ministérios e programas bélicos. Instituição Conversão Industrial (bens de consumo -2%).",
-    "Plans to convert steel and chemicals to civilian use replace wartime ministries and programmes. Industrial Conversion institution (consumer goods -2%)."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_housing_programme remove_ideas = ENG_ww1_munitions_ministry remove_ideas = ENG_ww1_coal_allocation }", idea("industrial_conversion"), flag("industrial_conversion_planned")],
+    "Planos de conversão de aço e químicos para uso civil coordenam as prioridades da paz. Instituição Conversão Industrial (bens de consumo -2%).",
+    "Plans to convert steel and chemicals to civilian use organise peacetime priorities. Industrial Conversion institution (consumer goods -2%)."),
 "the_employment_exchanges": (
     [var("labour_support", 3), stab(0.01), flag("employment_exchanges")],
     "Bolsas de emprego ligam desempregados e vagas em todo o país. Apoio trabalhista +3 e 1% de estabilidade.",
     "Labour exchanges match the unemployed with vacancies across the country. Labour support +3 and 1% stability."),
 "restore_civilian_railway_traffic": (
-    [stab(0.01), pp(15), var("debt_burden", 1), "remove_ideas = ENG_ww1_railway_executive", flag("railways_restored")],
-    "As companhias retomam o controle das linhas. Ganha 15 de poder político, estabilidade +1% e desfaz o Executivo Ferroviário; dívida +1.",
-    "The companies regain control of lines. Grants 15 political power, stability +1% and winds up the Railway Executive; debt +1."),
+    [stab(0.01), pp(15), var("debt_burden", 1), "hidden_effect = { remove_ideas = ENG_ww1_railway_executive }", flag("railways_restored")],
+    "As companhias retomam o controle das linhas civis. Ganha 15 de poder político, estabilidade +1% e desmobiliza o controle estatal ferroviário; dívida +1.",
+    "The companies regain control of civilian lines. Grants 15 political power, stability +1% and demobilises state railway control; debt +1."),
 "public_debt_repayment": (
     [var("debt_burden", -5), var("labour_support", -2)],
     "O Tesouro usa receitas para resgatar títulos de guerra. A dívida cai 5 e apoio trabalhista cai 2 pelo custo fiscal.",

@@ -55,7 +55,7 @@ def build(state, kind, slots=1):
 FOCI = {
 # ------------------------------------------------------------------ army (20)
 "the_haldane_establishment": (
-    ["remove_ideas = ENG_professional_bef", idea("haldane_reforms"), pp(15), army_xp(5), flag("haldane_reforms")],
+    ["hidden_effect = { remove_ideas = ENG_professional_bef }", idea("haldane_reforms"), pp(15), army_xp(5), flag("haldane_reforms")],
     "As reformas de Haldane criam um Estado-Maior Geral, uma Força Expedicionária e uma Força Territorial, modernizando a força regular. Ganha 15 de poder político, 5 de experiência de exército e a instituição Reformas de Haldane (tempo de treinamento -10%).",
     "Haldane's reforms create a General Staff, an Expeditionary Force and a Territorial Force, modernising the regular army. It grants 15 political power, 5 army experience and the Haldane Reforms institution (training time -10%)."),
 "territorial_force_camps": (
@@ -83,13 +83,13 @@ FOCI = {
     "A Força Expedicionária recebe seis divisões e arsenais em Coventry. Enfileira 1 fábrica militar nas Midlands, ganha 10 de experiência de exército e 10 de poder político; dívida +1.",
     "The Expeditionary Force receives six divisions and ordnance works in Coventry. Queues 1 arms factory in the Midlands, grants 10 army experience and 10 political power; debt rises by 1."),
 "kitchener_new_armies": (
-    ["remove_ideas = ENG_professional_bef", remove_idea("haldane_reforms"), idea("kitchener_armies"), manpower(25000), var("labour_support", -2), flag("kitchener_armies")],
-    "Kitchener pede um milhão de voluntários: a instituição Haldane cede lugar ao exército de massa. Remove reformas anteriores, ganha 25.000 de mão de obra e a instituição Novos Exércitos (moral +5%, capacidade industrial -3%); apoio trabalhista -2.",
-    "Kitchener asks for a million volunteers: the Haldane institution gives way to a mass army. Removes previous reforms, grants 25,000 manpower and the New Armies institution (army morale +5%, industrial capacity -3%); labour support falls by 2."),
+    ["hidden_effect = { remove_ideas = ENG_professional_bef remove_ideas = ENG_ww1_haldane_reforms }", idea("kitchener_armies"), manpower(25000), var("labour_support", -2), flag("kitchener_armies")],
+    "Kitchener pede um milhão de voluntários para a formação do exército de massa. Ganha 25.000 de mão de obra e a instituição Novos Exércitos (moral +5%, capacidade industrial -3%); apoio trabalhista -2.",
+    "Kitchener asks for a million volunteers to build a mass army. Grants 25,000 manpower and the New Armies institution (army morale +5%, industrial capacity -3%); labour support falls by 2."),
 "the_pals_battalion_system": (
-    [remove_idea("kitchener_armies"), idea("pals_battalions"), manpower(10000), flag("pals_battalions")],
-    "Amigos e vizinhos se alistam juntos nos Batalhões de Camaradas. Substitui os Novos Exércitos pela instituição Batalhões de Amigos (organização +5%) e ganha 10.000 de mão de obra.",
-    "Friends and neighbours enlist together in Pals Battalions. Replaces New Armies with the Pals Battalions institution (army organisation +5%) and grants 10,000 manpower."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_kitchener_armies }", idea("pals_battalions"), manpower(10000), flag("pals_battalions")],
+    "Amigos e vizinhos se alistam juntos nos Batalhões de Camaradas. Instituição Batalhões de Amigos (organização +5%) e ganha 10.000 de mão de obra.",
+    "Friends and neighbours enlist together in Pals Battalions. Pals Battalions institution (army organisation +5%) and grants 10,000 manpower."),
 "the_rifle_training_depots": (
     [build(126, "arms_factory"), tech("the_rifle_training_depots", "infantry_weapons"), army_xp(5), flag("rifle_depots")],
     "A Fábrica Real de Enfield e a Escola de Hythe ampliam a produção e o treino de tiro rápido. Enfileira 1 fábrica militar em Londres, ganha 5 de experiência de exército e bônus de 25% em armas de infantaria.",
@@ -115,21 +115,21 @@ FOCI = {
     "Depois de Ypres, máscaras de flanela dão lugar ao respirador em caixa. Ganha 5 de experiência de exército, 1% de apoio à guerra, bônus de 25% em equipamentos e a dívida sobe 1.",
     "After Ypres, flannel masks give way to the box respirator. Grants 5 army experience, 1% war support, a 25% infantry weapons bonus and debt rises by 1."),
 "the_infantry_training_directorate": (
-    [remove_idea("pals_battalions"), idea("training_directorate"), pp(10), flag("training_directorate")],
-    "A Diretoria de Treinamento padroniza o manual de combate, substituindo os batalhões de amigos. Instituição Diretoria de Treinamento (tempo de treinamento -10%, ganho de XP +5%) e 10 de poder político.",
-    "The Training Directorate standardises combat manuals, replacing the pals battalions. Training Directorate institution (training time -10%, army XP gain +5%) and 10 political power."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_pals_battalions }", idea("training_directorate"), pp(10), flag("training_directorate")],
+    "A Diretoria de Treinamento padroniza o manual de combate de todas as unidades. Instituição Diretoria de Treinamento (tempo de treinamento -10%, ganho de XP +5%) e 10 de poder político.",
+    "The Training Directorate standardises combat manuals for all units. Training Directorate institution (training time -10%, army XP gain +5%) and 10 political power."),
 "combined_arms_staff_courses": (
-    [remove_idea("training_directorate"), idea("combined_arms_staff"), army_xp(15), flag("combined_arms")],
-    "Cursos de estado-maior unem infantaria, artilharia, engenharia e aviação, superando manuais básicos. Ganha 15 de experiência de exército e a instituição Armas Combinadas (velocidade de planejamento +10%).",
-    "Staff courses integrate infantry, artillery, engineers and aviation, advancing beyond basic manuals. Grants 15 army experience and the Combined Arms institution (planning speed +10%)."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_training_directorate }", idea("combined_arms_staff"), army_xp(15), flag("combined_arms")],
+    "Cursos de estado-maior unem infantaria, artilharia, engenharia e aviação como uma doutrina conjunta. Ganha 15 de experiência de exército e a instituição Armas Combinadas (velocidade de planejamento +10%).",
+    "Staff courses integrate infantry, artillery, engineers and aviation into combined doctrine. Grants 15 army experience and the Combined Arms institution (planning speed +10%)."),
 "the_demobilisation_register": (
     [ev(5)],
     "Milhões de homens querem voltar para casa. O registro decide a ordem: tempo de serviço, emprego garantido ou unidades inteiras. Dispara o evento da desmobilização.",
     "Millions of men want to go home. The register decides the order: length of service, guaranteed job, or whole units. It triggers the demobilisation event."),
 "a_smaller_professional_force": (
-    [remove_idea("general_staff_lessons"), remove_idea("flanders_supply"), var("debt_burden", -3), pp(15), stab(0.01), flag("smaller_army")],
-    "O Exército volta a ser pequeno e profissional, desmobilizando instituições de guerra. A dívida cai 3; ganha 15 de poder político e 1% de estabilidade. Exclui a renovação territorial.",
-    "The Army returns to being small and professional, standing down wartime institutions. Debt falls by 3; it grants 15 political power and 1% stability. Excludes territorial renewal."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_general_staff_lessons remove_ideas = ENG_ww1_flanders_supply }", var("debt_burden", -3), pp(15), stab(0.01), flag("smaller_army")],
+    "O Exército volta a ser pequeno e profissional no período pós-guerra. A dívida cai 3; ganha 15 de poder político e 1% de estabilidade. Exclui a renovação territorial.",
+    "The Army returns to being small and professional in the post-war era. Debt falls by 3; it grants 15 political power and 1% stability. Excludes territorial renewal."),
 "territorial_defence_renewal": (
     [tech("territorial_defence_renewal", "land_doctrine", 0.5), army_xp(15), stab(0.02), var("debt_burden", 1), pp(15), flag("territorial_army")],
     "O Exército Territorial renasce com veteranos e doutrina moderna. Ganha 15 de experiência de exército, 15 de poder político, 2% de estabilidade e bônus de 50% em doutrina terrestre. Exclui a força profissional menor.",
@@ -148,7 +148,7 @@ FOCI = {
     "Em agosto de 1914, a Força Expedicionária Britânica cruza o Canal. A França recebe os ingleses com entusiasmo. Ganha 10 de experiência de exército; a França ganha apoio à guerra.",
     "In August 1914 the British Expeditionary Force crosses the Channel. France welcomes the British with enthusiasm. It grants 10 army experience; France gains war support."),
 "the_flanders_supply_organisation": (
-    [remove_idea("haldane_reforms"), idea("flanders_supply"), var("debt_burden", 1), flag("flanders_supply")],
+    [idea("flanders_supply"), var("debt_burden", 1), flag("flanders_supply")],
     "Boulogne, Calais e Dunquerque viram portos de suprimento com ferrovias até a linha. A dívida sobe 1; ganha a instituição Suprimento de Flandres (consumo de suprimentos -5%).",
     "Boulogne, Calais and Dunkirk become supply ports, with railways to the front line. Debt rises by 1; it grants the Flanders Supply institution (supply consumption -5%)."),
 "holding_the_continental_line": (
@@ -180,9 +180,9 @@ FOCI = {
     "Loos e Festubert mostram as lições de reservas e artilharia. Ganha 10 de experiência de exército, 10 de poder político e bônus de 25% em doutrina terrestre.",
     "Loos and Festubert show lessons in reserves and artillery. It grants 10 army experience, 10 political power and a 25% land doctrine bonus."),
 "the_creeping_barrage_school": (
-    [remove_idea("combined_arms_staff"), idea("creeping_barrage"), tech("the_creeping_barrage_school", "artillery"), flag("creeping_barrage")],
-    "A cortina de fogo cronometrada avança à frente dos soldados. Substitui o estado-maior de armas combinadas pela instituição Cortina de Fogo (ataque de artilharia +5%) e bônus de 25% em artilharia.",
-    "The timed creeping barrage advances ahead of the soldiers. Replaces combined arms staff with the Creeping Barrage institution (artillery attack +5%) and a 25% artillery bonus."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_combined_arms_staff }", idea("creeping_barrage"), tech("the_creeping_barrage_school", "artillery"), flag("creeping_barrage")],
+    "A cortina de fogo cronometrada avança à frente dos soldados. Instituição Cortina de Fogo (ataque de artilharia +5%) e bônus de 25% em artilharia.",
+    "The timed creeping barrage advances ahead of the soldiers. Creeping Barrage institution (artillery attack +5%) and a 25% artillery bonus."),
 "tank_committee_experiments": (
     [build(129, "arms_factory"), tech("tank_committee_experiments", "armor"), var("debt_burden", 1), flag("tank_corps")],
     "O Comitê dos Navios Terrestres estabelece oficinas de montagem de tanques em Lincoln. Enfileira 1 fábrica militar, ganha bônus de pesquisa de 25% em blindados; a dívida sobe 1.",
@@ -212,9 +212,9 @@ FOCI = {
     "O armistício de 11 de novembro suspende operações e organiza a ocupação pacífica. Ganha 25 de poder político, 2% de estabilidade e 10 de experiência de exército.",
     "The armistice of 11 November suspends operations and organises peaceful occupation. Grants 25 political power, 2% stability and 10 army experience."),
 "lessons_for_the_general_staff": (
-    [remove_idea("creeping_barrage"), army_xp(15), pp(15), idea("general_staff_lessons"), flag("staff_lessons")],
-    "O Estado-Maior Geral compila as doutrinas de quatro anos de combate nos novos manuais de 1919. Remove doutrinas provisórias, ganha 15 de experiência de exército, 15 de poder político e a instituição Lições da Guerra (ganho de XP +10%).",
-    "The General Staff compiles four years of operational doctrine into new 1919 manuals. Removes interim doctrines, grants 15 army experience, 15 political power and the Lessons of the War institution (army XP gain +10%)."),
+    ["hidden_effect = { remove_ideas = ENG_ww1_creeping_barrage }", army_xp(15), pp(15), idea("general_staff_lessons"), flag("staff_lessons")],
+    "O Estado-Maior Geral compila as doutrinas de quatro anos de combate nos novos manuais de 1919. Ganha 15 de experiência de exército, 15 de poder político e a instituição Lições da Guerra (ganho de XP +10%).",
+    "The General Staff compiles four years of operational doctrine into new 1919 manuals. Grants 15 army experience, 15 political power and the Lessons of the War institution (army XP gain +10%)."),
 }
 
 EXCLUSIVE = [("a_smaller_professional_force", "territorial_defence_renewal")]
