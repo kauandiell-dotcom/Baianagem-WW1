@@ -268,6 +268,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			remove_ideas = GER_wilhelmine_personal_regime
+			remove_ideas = GER_burgfrieden_social_peace
+			remove_ideas = GER_encirclement_paranoia
 			add_ideas = GER_rate_republik
 			add_political_power = 75
 			set_country_flag = GER_council_power_consolidated
@@ -309,6 +312,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			remove_ideas = GER_grosser_generalstab
+			remove_ideas = GER_silent_dictatorship_ohl
 			add_ideas = GER_red_commissars
 			add_political_power = 50
 			add_stability = -0.05
@@ -745,6 +750,9 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			remove_ideas = GER_wilhelmine_personal_regime
+			remove_ideas = GER_burgfrieden_social_peace
+			remove_ideas = GER_encirclement_paranoia
 			add_ideas = GER_weimar_democracy
 			add_political_power = 100
 			add_stability = 0.05
@@ -989,6 +997,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = GER_chose_post_burgfrieden_path
 			country_event = { id = ww1_germany_events.330 }
+			remove_ideas = GER_grosser_generalstab
 			add_ideas = GER_silent_dictatorship_ohl
 			add_war_support = 0.10
 			army_experience = 25
@@ -1022,6 +1031,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			remove_ideas = GER_krupp_chemical_conglomerates
 			add_ideas = GER_hindenburg_program
 			57 = { # Westfalen
 			add_extra_state_shared_building_slots = 2
@@ -1170,6 +1180,7 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = ww1_germany_events.331 }
 			navy_experience = 40
+			remove_ideas = GER_unrestricted_submarines_active
 			add_ideas = GER_unrestricted_submarine_warfare_spirit
 		}
 	}
@@ -1349,6 +1360,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
+			remove_ideas = GER_mitteleuropa_hegemony
+			remove_ideas = GER_encirclement_paranoia
 			add_ideas = GER_continental_hegemony
 			add_ideas = GER_morphed_mitteleuropa_iron_rule
 			add_war_support = 0.15
@@ -1371,6 +1384,7 @@ focus_tree = {
 		completion_reward = {
 			set_country_flag = GER_chose_post_burgfrieden_path
 			country_event = { id = ww1_germany_events.340 }
+			remove_ideas = GER_burgfrieden_social_peace
 			add_ideas = GER_vaterlandspartei_movement
 			add_war_support = 0.10
 			add_popularity = { ideology = fascism popularity = 0.20 }
@@ -1710,6 +1724,8 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			remove_ideas = GER_encirclement_paranoia
+			remove_ideas = GER_trench_stalemate_western_front
 			add_ideas = GER_siegfrieden_triumph
 			add_war_support = 0.20
 			add_stability = 0.10
@@ -1767,10 +1783,15 @@ focus_tree = {
 
 		completion_reward = {
 			57 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1886,9 +1907,14 @@ focus_tree = {
 
 		completion_reward = {
 			66 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
@@ -1993,11 +2019,19 @@ focus_tree = {
 		cost = 7
 		x = 22
 		y = 4
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
 		completion_reward = {
+			42 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = industrial_chemistry_bonus
 				bonus = 1.0
@@ -2043,7 +2077,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -2164,11 +2198,19 @@ focus_tree = {
 		cost = 7
 		x = 23
 		y = 7
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = no
 
 		completion_reward = {
+			55 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = synthetic_rubber_bonus
 				bonus = 1.0
@@ -2359,18 +2401,26 @@ focus_tree = {
 		cost = 7
 		x = 35
 		y = 2
-		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = no
 
 		completion_reward = {
+			56 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = battlecruiser_bonus
 				bonus = 1.0
 				uses = 1
 				category = naval_equipment
 			}
-			navy_experience = 15
+			navy_experience = 25
 		}
 	}
 
@@ -2388,6 +2438,15 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 20
 			58 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			61 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = dockyard
 					level = 1
@@ -2517,6 +2576,7 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 
 		completion_reward = {
 			navy_experience = 25
+			remove_ideas = GER_tirpitz_naval_ambition
 			add_ideas = GER_high_seas_fleet_active
 		}
 	}
@@ -2724,6 +2784,7 @@ add_mastery_bonus = { name = GER_albatros_diii_fighters bonus = 0.10 days = 180 
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.8 }
+			remove_ideas = GER_unrestricted_submarines_active
 			add_ideas = GER_unrestricted_submarine_warfare_spirit
 			navy_experience = 25
 		}
@@ -3141,11 +3202,19 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		cost = 7
 		x = 106
 		y = 4
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
 
 		completion_reward = {
+			64 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = infantry_weapons_bonus
 				bonus = 1.0
@@ -3787,12 +3856,35 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 10
 		x = 106
 		y = 8
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 		available = { has_war = yes date > 1916.7.31 OR = { has_completed_focus = GER_the_miracle_of_tannenberg has_completed_focus = GER_aufmarsch_ost_focus } }
 
-		completion_reward = { set_country_flag = { flag = side_ww1_GER_hindenburg_proposal_pending days = 60 } set_country_flag = side_ww1_GER_industry_open country_event = { id = side_ww1_ger_rus.1 days = 1 } }
+		completion_reward = {
+			set_country_flag = { flag = side_ww1_GER_hindenburg_proposal_pending days = 60 }
+			set_country_flag = side_ww1_GER_industry_open
+			country_event = { id = side_ww1_ger_rus.1 days = 1 }
+			side_ww1_set_GER_hindenburg_program_victory = yes
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			66 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			army_experience = 25
+			add_war_support = 0.05
+		}
 	}
 
 	focus = {
@@ -3864,7 +3956,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 10
 		x = 106
 		y = 9
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
@@ -3872,8 +3964,14 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 			add_ideas = german_infiltration_assault_idea
 			set_technology = { sturmtruppe_battalion_tech = 1 }
 			load_oob = "unlock_elite_inf"
-			army_experience = 30
-add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 folder = land }
+			add_tech_bonus = {
+				name = stosstruppen_doctrine_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+			army_experience = 35
+			add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 folder = land }
 		}
 	}
 
@@ -3923,12 +4021,20 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		cost = 5
 		x = 105
 		y = 10
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
 		completion_reward = {
 			side_ww1_set_GER_hindenburg_total_mobilization = yes
+			42 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 			add_war_support = 0.05
 			add_stability = 0.05
 		}
@@ -4028,13 +4134,22 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		cost = 5
 		x = 104
 		y = 12
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
 
 		completion_reward = {
-			army_experience = 20
-			add_ideas = german_infiltration_assault_idea
+			army_experience = 25
+			add_tech_bonus = {
+				name = support_tech_bonus
+				bonus = 1.0
+				uses = 1
+				category = support_tech
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 200
+			}
 		}
 	}
 
@@ -4045,12 +4160,20 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		cost = 5
 		x = 106
 		y = 12
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
 		completion_reward = {
 			army_experience = 25
+			60 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = infantry_weapons_bonus
 				bonus = 1.0
@@ -4117,12 +4240,26 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		cost = 7
 		x = 106
 		y = 13
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.31 }
+			52 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
 			army_experience = 25
 			add_war_support = 0.05
 		}
@@ -4170,18 +4307,26 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		x = 107
 		y = 14
 		available = { date > 1917.4.1 }
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
 
 		completion_reward = {
+			64 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			add_tech_bonus = {
 				name = armor_bonus
 				bonus = 1.0
 				uses = 1
 				category = armor
 			}
-			army_experience = 20
+			army_experience = 25
 		}
 	}
 
@@ -4291,11 +4436,19 @@ add_mastery_bonus = { name = GER_stosstruppen_tactics bonus = 0.10 days = 180 fo
 		cost = 5
 		x = 107
 		y = 15
-		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = no
 
 		completion_reward = {
+			55 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			army_experience = 25
 			add_war_support = 0.05
 		}
@@ -4905,8 +5058,18 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 
 		completion_reward = {
 			army_experience = 35
-add_tech_bonus = { name = GER_bruchmueller_feuerwalze_doctrine bonus = 0.50 uses = 1 category = artillery }
-			army_experience = 25
+			add_tech_bonus = {
+				name = GER_bruchmueller_feuerwalze_doctrine
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = bruchmueller_doctrine_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
 		}
 	}
 
@@ -5139,6 +5302,8 @@ add_tech_bonus = { name = GER_bruchmueller_feuerwalze_doctrine bonus = 0.50 uses
 
 		completion_reward = {
 			country_event = { id = ww1_germany_events.81 }
+			remove_ideas = GER_encirclement_paranoia
+			remove_ideas = GER_trench_stalemate_western_front
 			add_ideas = GER_siegfrieden_hegemony
 			add_stability = 0.20
 			add_political_power = 150

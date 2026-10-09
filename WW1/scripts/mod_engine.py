@@ -308,7 +308,7 @@ class GFXDatabase:
             return
         
         # Regex to capture name and texturefile in spriteType blocks
-        sprite_block_re = re.compile(r'spriteType\s*=\s*\{([^\}]+(?:\{[^\}]*\}[^\}]*)*)\}', re.DOTALL)
+        sprite_block_re = re.compile(r'spriteType\s*=\s*\{([^\}]+(?:\{[^\}]*\}[^\}]*)*)\}', re.DOTALL | re.IGNORECASE)
         name_re = re.compile(r'name\s*=\s*\"?([a-zA-Z0-9_\-\.]+)\"?')
         tex_re = re.compile(r'texturefile\s*=\s*\"?([^\s\"\n\}]+)\"?', re.IGNORECASE)
 
@@ -748,6 +748,21 @@ def analyze_focus(node: FocusNode) -> None:
             wing = 'ARMY'
         elif 78 <= x <= 87:
             wing = 'NAVY'
+        else:
+            wing = 'POSTWAR'
+    elif node.id.startswith('GER_'):
+        if x <= 20:
+            wing = 'POLITICAL'
+        elif 21 <= x <= 30:
+            wing = 'ECONOMIC'
+        elif 31 <= x <= 45:
+            wing = 'NAVY'
+        elif 46 <= x <= 65:
+            wing = 'DIPLOMACY'
+        elif 66 <= x <= 92:
+            wing = 'DIPLOMACY'
+        elif 93 <= x <= 110:
+            wing = 'ARMY'
         else:
             wing = 'POSTWAR'
     elif x <= 10:
@@ -1763,6 +1778,17 @@ def analyze_tree(tag: str, file_path: Path) -> TreeReport:
                 wing_map['Exército'].append(node)
             elif 78 <= node.x <= 87:
                 wing_map['Marinha'].append(node)
+        elif node.id.startswith('GER_') or tag == 'GER':
+            if node.x <= 20:
+                wing_map['Político'].append(node)
+            elif 21 <= node.x <= 30:
+                wing_map['Econômico'].append(node)
+            elif 31 <= node.x <= 45:
+                wing_map['Marinha'].append(node)
+            elif 46 <= node.x <= 92:
+                wing_map['Diplomacia'].append(node)
+            elif 93 <= node.x <= 110:
+                wing_map['Exército'].append(node)
             else:
                 wing_map['Pós-Guerra'].append(node)
         elif node.x <= 10:
