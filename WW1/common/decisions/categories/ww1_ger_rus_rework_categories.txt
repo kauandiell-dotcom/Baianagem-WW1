@@ -18,3 +18,14 @@ GER_home_front = {
 	visible = { original_tag = GER has_country_flag = GER_rework_init }
 	visible_when_empty = no
 }
+
+SOV_revolutionary_crisis_management = {
+	icon = generic_crisis
+	allowed = { original_tag = SOV }
+	visible = {
+		original_tag = SOV
+		has_country_flag = SOV_revolutionary_crisis_active
+		NOT = { has_country_flag = SOV_revolutionary_crisis_resolved }
+	}
+	visible_when_empty = yes
+}

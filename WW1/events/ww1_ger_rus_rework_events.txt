@@ -1912,3 +1912,132 @@ country_event = {
 		add_to_variable = { GER_discontent = 3 }
 	}
 }
+
+# -------------------------------------------------------------
+# Crise Revolucionaria Russa (1915-1918)
+# -------------------------------------------------------------
+
+country_event = {
+	id = ww1_russia.250
+	title = ww1_russia.250.t
+	desc = ww1_russia.250.d
+	picture = GFX_event_WW1_sov_april_theses
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_country_flag = SOV_revolutionary_crisis_active
+		add_ideas = SOV_revolutionary_subversion
+		add_ideas = SOV_patriotic_trench_resilience
+	}
+
+	option = {
+		name = ww1_russia.250.a
+		add_stability = -0.05
+		add_war_support = -0.10
+		add_to_variable = { SOV_revolutionary_tension = 20 }
+		clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+		custom_effect_tooltip = SOV_revolutionary_crisis_started_tt
+	}
+}
+
+country_event = {
+	id = ww1_russia.251
+	title = ww1_russia.251.t
+	desc = ww1_russia.251.d
+	picture = GFX_event_WW1_sov_putilov
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.251.a
+		add_ideas = SOV_arsenal_strikes_spirit
+		add_to_variable = { SOV_unrest = 10 }
+		clamp_variable = { var = SOV_unrest min = 0 max = 100 }
+	}
+}
+
+country_event = {
+	id = ww1_russia.252
+	title = ww1_russia.252.t
+	desc = ww1_russia.252.d
+	picture = GFX_event_WW1_sov_petrograd_uprising
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.252.a
+		add_stability = -0.10
+		add_to_variable = { SOV_revolutionary_tension = 15 }
+		clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+		custom_effect_tooltip = SOV_petrograd_demilitarized_tt
+	}
+}
+
+country_event = {
+	id = ww1_russia.253
+	title = ww1_russia.253.t
+	desc = ww1_russia.253.d
+	picture = GFX_event_WW1_sov_bread_lines
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.253.a
+		add_stability = -0.08
+		add_to_variable = { SOV_revolutionary_tension = 15 }
+		clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+		custom_effect_tooltip = SOV_moscow_demilitarized_tt
+	}
+}
+
+country_event = {
+	id = ww1_russia.254
+	title = ww1_russia.254.t
+	desc = ww1_russia.254.d
+	picture = GFX_event_WW1_sov_supreme_command
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.254.a
+		add_ideas = SOV_iron_order_triumph
+		add_stability = 0.15
+		add_war_support = 0.10
+		add_political_power = 100
+		custom_effect_tooltip = SOV_iron_order_triumph_tt
+	}
+}
+
+country_event = {
+	id = ww1_russia.255
+	title = ww1_russia.255.t
+	desc = ww1_russia.255.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.255.a
+		set_country_flag = SOV_civil_war_started
+		SOV_clear_revolutionary_crisis = yes
+		if = {
+			limit = { has_government = neutrality }
+			start_civil_war = { ideology = communism size = 0.45 }
+		}
+		else_if = {
+			limit = { has_government = democratic }
+			start_civil_war = { ideology = communism size = 0.45 }
+		}
+		else = {
+			start_civil_war = { ideology = neutrality size = 0.45 }
+		}
+		custom_effect_tooltip = SOV_civil_war_erupts_tt
+	}
+}

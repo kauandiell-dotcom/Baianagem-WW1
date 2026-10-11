@@ -493,4 +493,221 @@ GER_home_front = {
 		}
 	}
 
+	GER_operation_sealed_train = {
+		icon = generic_intelligence_operation
+		cost = 75
+		fire_only_once = yes
+		days_remove = 90
+		modifier = {
+			civilian_factory_use = 2
+		}
+		available = {
+			has_war_with = SOV
+			date > 1915.11.1
+			NOT = { has_country_flag = GER_sealed_train_launched }
+		}
+		visible = {
+			original_tag = GER
+			has_war_with = SOV
+			date > 1915.10.1
+		}
+		complete_effect = {
+			set_country_flag = GER_sealed_train_launched
+			custom_effect_tooltip = GER_sealed_train_launched_tt
+			SOV = {
+				country_event = { id = ww1_russia.250 days = 14 }
+			}
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 3
+				SOV = { surrender_progress > 0.05 }
+			}
+		}
+	}
+
+}
+
+SOV_revolutionary_crisis_management = {
+
+	SOV_dec_raise_opolcheniye_militias = {
+		icon = generic_reorganize_irregulars
+		cost = 30
+		fire_only_once = yes
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = SOV_opolcheniye_raised }
+			has_equipment = { infantry_equipment > 1499 }
+			check_variable = { SOV_revolutionary_tension > 20 }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_revolutionary_crisis_active
+			NOT = { has_country_flag = SOV_opolcheniye_raised }
+		}
+		complete_effect = {
+			set_country_flag = SOV_opolcheniye_raised
+			custom_effect_tooltip = SOV_opolcheniye_raised_tt
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = -1500
+			}
+			division_template = {
+				name = "Opolchenskaya Diviziya"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 208 }
+				create_unit = {
+					division = "name = \"1-ya Opolchenskaya Diviziya\" division_template = \"Opolchenskaya Diviziya\" start_experience_factor = 0.2"
+					owner = SOV
+					count = 2
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 218 }
+				create_unit = {
+					division = "name = \"2-ya Opolchenskaya Diviziya\" division_template = \"Opolchenskaya Diviziya\" start_experience_factor = 0.2"
+					owner = SOV
+					count = 2
+				}
+			}
+			random_owned_controlled_state = {
+				prioritize = { 200 }
+				create_unit = {
+					division = "name = \"3-ya Opolchenskaya Diviziya\" division_template = \"Opolchenskaya Diviziya\" start_experience_factor = 0.2"
+					owner = SOV
+					count = 2
+				}
+			}
+		}
+		ai_will_do = { base = 10 }
+	}
+
+	SOV_dec_emergency_grain_relief = {
+		icon = generic_fundraising
+		cost = 40
+		days_remove = 90
+		days_re_enable = 90
+		modifier = {
+			civilian_factory_use = 3
+		}
+		available = {
+			always = yes
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_revolutionary_crisis_active
+			NOT = { has_country_flag = SOV_revolutionary_crisis_resolved }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_hunger = -15 }
+			add_to_variable = { SOV_revolutionary_tension = -12 }
+			clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+			add_stability = 0.02
+		}
+		ai_will_do = {
+			base = 10
+			modifier = { add = 20 check_variable = { SOV_revolutionary_tension > 40 } }
+		}
+	}
+
+	SOV_dec_retake_petrograd = {
+		icon = generic_police_action
+		cost = 60
+		fire_only_once = no
+		days_re_enable = 60
+		available = {
+			195 = { is_demilitarized_zone = yes }
+			has_equipment = { infantry_equipment > 799 artillery_equipment > 79 }
+			check_variable = { num_divisions > 14 }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_revolutionary_crisis_active
+			195 = { is_demilitarized_zone = yes }
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = -800
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = -80
+			}
+			195 = { set_demilitarized_zone = no }
+			add_to_variable = { SOV_revolutionary_tension = -25 }
+			clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+			add_stability = 0.03
+			custom_effect_tooltip = SOV_retake_petrograd_tt
+		}
+		ai_will_do = { base = 50 }
+	}
+
+	SOV_dec_retake_moscow = {
+		icon = generic_police_action
+		cost = 60
+		fire_only_once = no
+		days_re_enable = 60
+		available = {
+			219 = { is_demilitarized_zone = yes }
+			has_equipment = { infantry_equipment > 799 artillery_equipment > 79 }
+			check_variable = { num_divisions > 14 }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_revolutionary_crisis_active
+			219 = { is_demilitarized_zone = yes }
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = -800
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = -80
+			}
+			219 = { set_demilitarized_zone = no }
+			add_to_variable = { SOV_revolutionary_tension = -25 }
+			clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+			add_stability = 0.03
+			custom_effect_tooltip = SOV_retake_moscow_tt
+		}
+		ai_will_do = { base = 50 }
+	}
+
+	SOV_dec_crush_bolsheviks_okhrana = {
+		icon = generic_disband_irregulars
+		cost = 60
+		fire_only_once = yes
+		available = {
+			check_variable = { SOV_revolutionary_tension < 20 }
+			has_stability > 0.40
+			195 = { is_demilitarized_zone = no }
+			219 = { is_demilitarized_zone = no }
+		}
+		visible = {
+			original_tag = SOV
+			has_country_flag = SOV_revolutionary_crisis_active
+			NOT = { has_country_flag = SOV_revolutionary_crisis_resolved }
+		}
+		complete_effect = {
+			SOV_clear_revolutionary_crisis = yes
+			country_event = { id = ww1_russia.254 days = 1 }
+		}
+		ai_will_do = { base = 100 }
+	}
+
 }
