@@ -170,12 +170,43 @@ ideas = {
 			}
 		}
 
+		SOV_sukhomlinov_administration_tier2 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = -0.10
+				planning_speed = -0.10
+				army_morale_factor = -0.05
+				army_artillery_attack_factor = -0.10
+			}
+		}
+
+		SOV_sukhomlinov_administration_tier3 = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = -0.05
+				planning_speed = -0.05
+				army_artillery_attack_factor = -0.05
+			}
+		}
+
 		SOV_polivanov_staff_reforms = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
 				max_planning = -0.05
 				planning_speed = -0.05
+			}
+		}
+
+		SOV_modern_imperial_general_staff = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				max_planning = 0.05
+				planning_speed = 0.05
+				army_org_factor = 0.05
 			}
 		}
 

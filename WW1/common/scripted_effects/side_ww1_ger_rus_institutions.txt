@@ -402,10 +402,46 @@ side_ww1_set_SOV_stolypin_unbroken_reforms = {
   add_ideas = SOV_stolypin_unbroken_reforms
 }
 side_ww1_normalize_SOV_agrarian = {
- if = { limit = { has_idea = SOV_stolypin_unbroken_reforms }
-  remove_ideas = SOV_stolypin_reforms_spirit
- }
- else_if = { limit = { has_idea = SOV_stolypin_reforms_spirit }
-  remove_ideas = SOV_stolypin_unbroken_reforms
- }
+	if = { limit = { has_idea = SOV_stolypin_unbroken_reforms }
+		remove_ideas = SOV_stolypin_reforms_spirit
+	}
+	else_if = { limit = { has_idea = SOV_stolypin_reforms_spirit }
+		remove_ideas = SOV_stolypin_unbroken_reforms
+	}
 }
+
+# Gradual Stepped Reorganization of the Imperial Russian Army
+side_ww1_advance_SOV_army_reform = {
+	if = {
+		limit = { has_idea = SOV_sukhomlinov_administration }
+		remove_ideas = SOV_sukhomlinov_administration
+		add_ideas = SOV_sukhomlinov_administration_tier2
+	}
+	else_if = {
+		limit = { has_idea = SOV_sukhomlinov_administration_tier2 }
+		remove_ideas = SOV_sukhomlinov_administration_tier2
+		add_ideas = SOV_sukhomlinov_administration_tier3
+	}
+	else_if = {
+		limit = { has_idea = SOV_sukhomlinov_administration_tier3 }
+		remove_ideas = SOV_sukhomlinov_administration_tier3
+		add_ideas = SOV_polivanov_staff_reforms
+	}
+	else_if = {
+		limit = { has_idea = SOV_polivanov_staff_reforms }
+		remove_ideas = SOV_polivanov_staff_reforms
+		add_ideas = SOV_modern_imperial_general_staff
+	}
+}
+
+side_ww1_finalize_SOV_army_reform = {
+	remove_ideas = SOV_sukhomlinov_administration
+	remove_ideas = SOV_sukhomlinov_administration_tier2
+	remove_ideas = SOV_sukhomlinov_administration_tier3
+	remove_ideas = SOV_polivanov_staff_reforms
+	if = {
+		limit = { NOT = { has_idea = SOV_modern_imperial_general_staff } }
+		add_ideas = SOV_modern_imperial_general_staff
+	}
+}
+
