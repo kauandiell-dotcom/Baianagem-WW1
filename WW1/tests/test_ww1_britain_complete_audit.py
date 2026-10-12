@@ -169,6 +169,95 @@ class TestBritainCompleteAudit(unittest.TestCase):
             for key in required_keys:
                 self.assertIn(key, content, f"Missing localization key '{key}' in {lang} ({fname})!")
 
+    def test_irish_crisis_escalation_and_state_securing_mechanics(self):
+        """Irish Crisis Escalation & State Securing Engine:
+        Validates starting debuff severity, dynamic escalation ideas,
+        dedicated decision category, state securing decisions, and civil war event.
+        """
+        errors = []
+
+        # 1. Assert ENG_irish_home_rule_tension in common/ideas/ww1_britain_ideas.txt has stability_factor <= -0.30 and war_support_factor <= -0.10
+        ideas_file = os.path.join(MOD_ROOT, "common", "ideas", "ww1_britain_ideas.txt")
+        self.assertTrue(os.path.exists(ideas_file), f"Ideas file {ideas_file} not found")
+        with open(ideas_file, "r", encoding="utf-8", errors="ignore") as f:
+            ideas_content = f.read()
+
+        def extract_block(text, keyword):
+            pos = text.find(keyword)
+            if pos == -1:
+                return None
+            brace_pos = text.find("{", pos)
+            if brace_pos == -1:
+                return None
+            depth = 1
+            cur = brace_pos + 1
+            while cur < len(text) and depth > 0:
+                if text[cur] == "{":
+                    depth += 1
+                elif text[cur] == "}":
+                    depth -= 1
+                cur += 1
+            return text[brace_pos + 1 : cur - 1]
+
+        tension_block = extract_block(ideas_content, "ENG_irish_home_rule_tension")
+        if tension_block is None:
+            errors.append("ENG_irish_home_rule_tension idea not found in ww1_britain_ideas.txt")
+        else:
+            stab_m = re.search(r"stability_factor\s*=\s*(-?[0-9\.]+)", tension_block)
+            ws_m = re.search(r"war_support_factor\s*=\s*(-?[0-9\.]+)", tension_block)
+            if not stab_m:
+                errors.append("stability_factor not defined in ENG_irish_home_rule_tension")
+            elif float(stab_m.group(1)) > -0.30:
+                errors.append(f"ENG_irish_home_rule_tension stability_factor ({float(stab_m.group(1))}) must be <= -0.30")
+
+            if not ws_m:
+                errors.append("war_support_factor not defined in ENG_irish_home_rule_tension")
+            elif float(ws_m.group(1)) > -0.10:
+                errors.append(f"ENG_irish_home_rule_tension war_support_factor ({float(ws_m.group(1))}) must be <= -0.10")
+
+        # 2. Assert ENG_irish_sabotage_wave, ENG_irish_martial_law, ENG_irish_civil_war_debacle, ENG_irish_union_secured exist in ww1_britain_ideas.txt
+        required_ideas = [
+            "ENG_irish_sabotage_wave",
+            "ENG_irish_martial_law",
+            "ENG_irish_civil_war_debacle",
+            "ENG_irish_union_secured",
+        ]
+        for idea_id in required_ideas:
+            if not re.search(rf"\b{idea_id}\s*=", ideas_content):
+                errors.append(f"Required Irish crisis idea '{idea_id}' missing from ww1_britain_ideas.txt")
+
+        # 3. Assert decision category ENG_ww1_irish_crisis_category exists in common/decisions/categories/ww1_britain_categories.txt
+        cat_file = os.path.join(MOD_ROOT, "common", "decisions", "categories", "ww1_britain_categories.txt")
+        self.assertTrue(os.path.exists(cat_file), f"Categories file {cat_file} not found")
+        with open(cat_file, "r", encoding="utf-8", errors="ignore") as f:
+            cat_content = f.read()
+        if not re.search(r"\bENG_ww1_irish_crisis_category\s*=", cat_content):
+            errors.append("Decision category 'ENG_ww1_irish_crisis_category' missing from ww1_britain_categories.txt")
+
+        # 4. Assert state securing decisions exist in common/decisions/ww1_britain_decisions.txt (ENG_deploy_crown_garrison, ENG_raid_paramilitary_armories)
+        dec_file = os.path.join(MOD_ROOT, "common", "decisions", "ww1_britain_decisions.txt")
+        self.assertTrue(os.path.exists(dec_file), f"Decisions file {dec_file} not found")
+        with open(dec_file, "r", encoding="utf-8", errors="ignore") as f:
+            dec_content = f.read()
+        required_decisions = ["ENG_deploy_crown_garrison", "ENG_raid_paramilitary_armories"]
+        for dec in required_decisions:
+            if not re.search(rf"\b{dec}\s*=", dec_content):
+                errors.append(f"State securing decision '{dec}' missing from ww1_britain_decisions.txt")
+
+        # 5. Assert civil war event ww1_britain_pol.irish_civil_war exists in events/ww1_britain_events.txt
+        event_file = os.path.join(MOD_ROOT, "events", "ww1_britain_events.txt")
+        self.assertTrue(os.path.exists(event_file), f"Events file {event_file} not found")
+        with open(event_file, "r", encoding="utf-8", errors="ignore") as f:
+            event_content = f.read()
+        if not re.search(r"id\s*=\s*ww1_britain_pol\.irish_civil_war\b", event_content):
+            errors.append("Civil war event 'ww1_britain_pol.irish_civil_war' missing from events/ww1_britain_events.txt")
+
+        self.assertEqual(
+            len(errors), 0,
+            f"Found {len(errors)} Irish crisis escalation and state securing engine failures:\n" + "\n".join(errors)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
+
