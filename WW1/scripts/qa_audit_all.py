@@ -99,10 +99,13 @@ def audit_bom_integrity() -> List[str]:
                 if file.endswith(".yml"):
                     fpath = os.path.join(root, file)
                     with open(fpath, "rb") as f:
-                        header = f.read(3)
-                    if header != b"\xef\xbb\xbf":
+                        header = f.read(6)
+                    if header[:3] != b"\xef\xbb\xbf":
                         rel = os.path.relpath(fpath, MOD_ROOT)
                         errors.append(f"Missing mandatory UTF-8 BOM in localisation: {rel}")
+                    elif header[3:6] == b"\xef\xbb\xbf":
+                        rel = os.path.relpath(fpath, MOD_ROOT)
+                        errors.append(f"Double UTF-8 BOM (corrupts HOI4 YAML parser) in localisation: {rel}")
 
     # 2. Script and project files MUST NOT have BOM
     # Check all python scripts
@@ -442,11 +445,13 @@ def audit_uk_semantic_integrity() -> List[str]:
     from scripts.hoi4_semantic_oracle import audit_file_modifiers
     import glob
     errors = []
-    uk_files = [
+    target_files = [
         os.path.join(MOD_ROOT, "common", "ideas", "ww1_britain_ideas.txt"),
         os.path.join(MOD_ROOT, "common", "decisions", "ww1_britain_decisions.txt"),
+        os.path.join(MOD_ROOT, "common", "ideas", "ww1_ottoman_ideas.txt"),
+        os.path.join(MOD_ROOT, "common", "decisions", "ww1_ottoman_decisions.txt"),
     ]
-    for fpath in uk_files:
+    for fpath in target_files:
         if os.path.exists(fpath):
             errs = audit_file_modifiers(fpath)
             for line_no, token, ctx in errs:
@@ -492,9 +497,9 @@ def main():
     all_errors["De-inflation & Guide"] = deinf_errs
     print(f"    -> {len(deinf_errs)} issues found.")
 
-    print("\n[*] Auditing Clausewitz Semantic Oracle on British Ideas & Decisions...")
+    print("\n[*] Auditing Clausewitz Semantic Oracle on British & Ottoman Ideas/Decisions...")
     uk_semantic_errs = audit_uk_semantic_integrity()
-    all_errors["UK Semantic Oracle Integrity"] = uk_semantic_errs
+    all_errors["Semantic Oracle Integrity"] = uk_semantic_errs
     print(f"    -> {len(uk_semantic_errs)} issues found.")
 
     total_issues = sum(len(errs) for errs in all_errors.values())
@@ -526,13 +531,17 @@ def main():
     print("\n[*] Executing British Empire Master QA Audit Suite (tests/test_ww1_britain_complete_audit.py)...")
     res_uk = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_britain_complete_audit.py"], cwd=MOD_ROOT)
 
-    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0)
+    # 4. Execute Ottoman Empire Master QA Audit
+    print("\n[*] Executing Ottoman Empire Master QA Audit Suite (tests/test_ww1_ottoman.py)...")
+    res_tur = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_ottoman.py"], cwd=MOD_ROOT)
+
+    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0)
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}) <<<\n")
         sys.exit(1)
 
 
