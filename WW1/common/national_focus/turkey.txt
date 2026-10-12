@@ -11,7 +11,7 @@ focus_tree = {
 		}
 	}
 	continuous_focus_position = { x = 40 y = 3500 }
-	initial_show_position = { x = 8 y = 0 }
+	initial_show_position = { x = 18 y = 0 }
 	shortcut = {
 		name = TUR_ww1_shortcut_politics
 		target = TUR_second_constitutional_era_politics
@@ -42,7 +42,7 @@ focus_tree = {
 		id = TUR_second_constitutional_era_politics
 		icon = GFX_focus_TUR_second_constitutional_era_politics
 		cost = 5
-		x = 8
+		x = 18
 		y = 0
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
@@ -51,6 +51,7 @@ focus_tree = {
 			add_stability = 0.05
 			add_to_variable = { tur_imperial_cohesion = 5 }
 			set_country_flag = TUR_constitutional_reforms_begun
+			add_command_power = 25
 		}
 	}
 
@@ -58,7 +59,7 @@ focus_tree = {
 		id = TUR_cup_vanguard
 		icon = GFX_focus_TUR_cup_vanguard
 		cost = 5
-		x = 3
+		x = 4
 		y = 1
 		prerequisite = { focus = TUR_second_constitutional_era_politics }
 		mutually_exclusive = { focus = TUR_hurriyet_ve_itilaf_victory focus = TUR_imperial_prerogative_of_mehmed_v }
@@ -78,7 +79,7 @@ focus_tree = {
 		id = TUR_talat_interior_ministry
 		icon = GFX_focus_TUR_talat_interior_ministry
 		cost = 5
-		x = 2
+		x = 3
 		y = 2
 		prerequisite = { focus = TUR_cup_vanguard }
 		available_if_capitulated = no
@@ -87,6 +88,7 @@ focus_tree = {
 			add_political_power = 75
 			add_stability = 0.05
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			797 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -94,7 +96,7 @@ focus_tree = {
 		id = TUR_enver_military_drive
 		icon = GFX_focus_TUR_enver_military_drive
 		cost = 5
-		x = 4
+		x = 5
 		y = 2
 		prerequisite = { focus = TUR_cup_vanguard }
 		available_if_capitulated = no
@@ -110,7 +112,7 @@ focus_tree = {
 		id = TUR_cemal_public_order
 		icon = GFX_focus_TUR_cemal_public_order
 		cost = 5
-		x = 3
+		x = 4
 		y = 3
 		prerequisite = { focus = TUR_talat_interior_ministry focus = TUR_enver_military_drive }
 		available_if_capitulated = no
@@ -119,6 +121,8 @@ focus_tree = {
 			add_stability = 0.05
 			add_to_variable = { tur_imperial_cohesion = 5 }
 			add_to_variable = { tur_arab_unrest = -5 }
+			army_experience = 15
+			add_command_power = 15
 		}
 	}
 
@@ -126,7 +130,7 @@ focus_tree = {
 		id = TUR_bab_i_ali_consolidation
 		icon = GFX_focus_TUR_bab_i_ali_consolidation
 		cost = 5
-		x = 3
+		x = 4
 		y = 4
 		prerequisite = { focus = TUR_cemal_public_order }
 		available_if_capitulated = no
@@ -143,7 +147,7 @@ focus_tree = {
 		id = TUR_teskilat_i_mahsusa
 		icon = GFX_focus_TUR_teskilat_i_mahsusa
 		cost = 5
-		x = 1
+		x = 2
 		y = 5
 		prerequisite = { focus = TUR_bab_i_ali_consolidation }
 		available_if_capitulated = no
@@ -159,7 +163,7 @@ focus_tree = {
 		id = TUR_centralist_provincial_governors
 		icon = GFX_focus_TUR_centralist_provincial_governors
 		cost = 5
-		x = 3
+		x = 4
 		y = 5
 		prerequisite = { focus = TUR_bab_i_ali_consolidation }
 		available_if_capitulated = no
@@ -169,6 +173,7 @@ focus_tree = {
 			add_political_power = 60
 			add_to_variable = { tur_imperial_cohesion = 10 }
 			add_to_variable = { tur_arab_unrest = 5 }
+			49 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -176,7 +181,7 @@ focus_tree = {
 		id = TUR_paramilitary_youth_unions
 		icon = GFX_focus_TUR_paramilitary_youth_unions
 		cost = 5
-		x = 5
+		x = 6
 		y = 5
 		prerequisite = { focus = TUR_bab_i_ali_consolidation }
 		available_if_capitulated = no
@@ -191,7 +196,7 @@ focus_tree = {
 		id = TUR_national_bourgeoisie_creation
 		icon = GFX_focus_TUR_national_bourgeoisie_creation
 		cost = 5
-		x = 2
+		x = 3
 		y = 6
 		prerequisite = { focus = TUR_centralist_provincial_governors }
 		available_if_capitulated = no
@@ -206,7 +211,7 @@ focus_tree = {
 		id = TUR_secular_law_codes
 		icon = GFX_focus_TUR_secular_law_codes
 		cost = 5
-		x = 4
+		x = 5
 		y = 6
 		prerequisite = { focus = TUR_centralist_provincial_governors }
 		available_if_capitulated = no
@@ -222,7 +227,7 @@ focus_tree = {
 		id = TUR_turkification_of_trade
 		icon = GFX_focus_TUR_turkification_of_trade
 		cost = 5
-		x = 1
+		x = 2
 		y = 7
 		prerequisite = { focus = TUR_national_bourgeoisie_creation }
 		available_if_capitulated = no
@@ -240,7 +245,7 @@ focus_tree = {
 		id = TUR_milli_iktisat_policies
 		icon = GFX_focus_TUR_milli_iktisat_policies
 		cost = 5
-		x = 3
+		x = 4
 		y = 7
 		prerequisite = { focus = TUR_national_bourgeoisie_creation focus = TUR_secular_law_codes }
 		available_if_capitulated = no
@@ -256,7 +261,7 @@ focus_tree = {
 		id = TUR_state_controlled_newspapers
 		icon = GFX_focus_TUR_state_controlled_newspapers
 		cost = 5
-		x = 5
+		x = 6
 		y = 7
 		prerequisite = { focus = TUR_paramilitary_youth_unions }
 		available_if_capitulated = no
@@ -265,6 +270,8 @@ focus_tree = {
 			add_war_support = 0.10
 			add_political_power = 50
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			add_command_power = 20
+			army_experience = 15
 		}
 	}
 
@@ -272,7 +279,7 @@ focus_tree = {
 		id = TUR_sublime_porte_war_council
 		icon = GFX_focus_TUR_sublime_porte_war_council
 		cost = 5
-		x = 3
+		x = 4
 		y = 8
 		prerequisite = { focus = TUR_milli_iktisat_policies }
 		available_if_capitulated = no
@@ -288,7 +295,7 @@ focus_tree = {
 		id = TUR_hurriyet_ve_itilaf_victory
 		icon = GFX_focus_TUR_hurriyet_ve_itilaf_victory
 		cost = 5
-		x = 7
+		x = 12
 		y = 1
 		prerequisite = { focus = TUR_second_constitutional_era_politics }
 		mutually_exclusive = { focus = TUR_cup_vanguard focus = TUR_imperial_prerogative_of_mehmed_v }
@@ -307,7 +314,7 @@ focus_tree = {
 		id = TUR_prince_sabahaddin_doctrine
 		icon = GFX_focus_TUR_prince_sabahaddin_doctrine
 		cost = 5
-		x = 6
+		x = 10
 		y = 2
 		prerequisite = { focus = TUR_hurriyet_ve_itilaf_victory }
 		available_if_capitulated = no
@@ -316,6 +323,7 @@ focus_tree = {
 			add_political_power = 80
 			add_stability = 0.05
 			add_to_variable = { tur_foreign_influence = 5 }
+			add_tech_bonus = { name = TUR_sabahaddin_econ_bonus bonus = 0.50 uses = 1 category = industry }
 		}
 	}
 
@@ -323,7 +331,7 @@ focus_tree = {
 		id = TUR_provincial_self_governance
 		icon = GFX_focus_TUR_provincial_self_governance
 		cost = 5
-		x = 8
+		x = 14
 		y = 2
 		prerequisite = { focus = TUR_hurriyet_ve_itilaf_victory }
 		available_if_capitulated = no
@@ -332,6 +340,7 @@ focus_tree = {
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 10 }
 			add_to_variable = { tur_arab_unrest = -15 }
+			339 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -339,7 +348,7 @@ focus_tree = {
 		id = TUR_empower_minority_bourgeoisie
 		icon = GFX_focus_TUR_empower_minority_bourgeoisie
 		cost = 5
-		x = 6
+		x = 10
 		y = 3
 		prerequisite = { focus = TUR_prince_sabahaddin_doctrine }
 		available_if_capitulated = no
@@ -354,7 +363,7 @@ focus_tree = {
 		id = TUR_anglo_french_constitutionalism
 		icon = GFX_focus_TUR_anglo_french_constitutionalism
 		cost = 5
-		x = 8
+		x = 14
 		y = 3
 		prerequisite = { focus = TUR_provincial_self_governance }
 		available_if_capitulated = no
@@ -370,7 +379,7 @@ focus_tree = {
 		id = TUR_pluralistic_parliament
 		icon = GFX_focus_TUR_pluralistic_parliament
 		cost = 5
-		x = 7
+		x = 12
 		y = 4
 		prerequisite = { focus = TUR_empower_minority_bourgeoisie focus = TUR_anglo_french_constitutionalism }
 		available_if_capitulated = no
@@ -386,7 +395,7 @@ focus_tree = {
 		id = TUR_judicial_and_press_liberties
 		icon = GFX_focus_TUR_judicial_and_press_liberties
 		cost = 5
-		x = 6
+		x = 10
 		y = 5
 		prerequisite = { focus = TUR_pluralistic_parliament }
 		available_if_capitulated = no
@@ -395,6 +404,7 @@ focus_tree = {
 			add_political_power = 60
 			add_stability = 0.05
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			add_tech_bonus = { name = TUR_electronics_press_bonus bonus = 0.50 uses = 1 category = electronics }
 		}
 	}
 
@@ -402,7 +412,7 @@ focus_tree = {
 		id = TUR_millet_equality_charter
 		icon = GFX_focus_TUR_millet_equality_charter
 		cost = 5
-		x = 8
+		x = 14
 		y = 5
 		prerequisite = { focus = TUR_pluralistic_parliament }
 		available_if_capitulated = no
@@ -410,6 +420,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_manpower = 15000
 		}
 	}
 
@@ -417,7 +428,7 @@ focus_tree = {
 		id = TUR_civic_ottomanism_restored
 		icon = GFX_focus_TUR_civic_ottomanism_restored
 		cost = 5
-		x = 7
+		x = 12
 		y = 6
 		prerequisite = { focus = TUR_judicial_and_press_liberties focus = TUR_millet_equality_charter }
 		available_if_capitulated = no
@@ -427,6 +438,7 @@ focus_tree = {
 			add_political_power = 75
 			add_to_variable = { tur_imperial_cohesion = 15 }
 			add_to_variable = { tur_arab_unrest = -15 }
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -434,7 +446,7 @@ focus_tree = {
 		id = TUR_decentralized_tax_farming_abolition
 		icon = GFX_focus_TUR_decentralized_tax_farming_abolition
 		cost = 5
-		x = 7
+		x = 12
 		y = 7
 		prerequisite = { focus = TUR_civic_ottomanism_restored }
 		available_if_capitulated = no
@@ -452,7 +464,7 @@ focus_tree = {
 		id = TUR_liberal_parliamentary_hegemony
 		icon = GFX_focus_TUR_liberal_parliamentary_hegemony
 		cost = 5
-		x = 7
+		x = 12
 		y = 8
 		prerequisite = { focus = TUR_decentralized_tax_farming_abolition }
 		available_if_capitulated = no
@@ -461,6 +473,7 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			340 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -468,7 +481,7 @@ focus_tree = {
 		id = TUR_imperial_prerogative_of_mehmed_v
 		icon = GFX_focus_TUR_imperial_prerogative_of_mehmed_v
 		cost = 5
-		x = 11
+		x = 20
 		y = 1
 		prerequisite = { focus = TUR_second_constitutional_era_politics }
 		mutually_exclusive = { focus = TUR_cup_vanguard focus = TUR_hurriyet_ve_itilaf_victory }
@@ -486,7 +499,7 @@ focus_tree = {
 		id = TUR_loyal_viziers_cabinet
 		icon = GFX_focus_TUR_loyal_viziers_cabinet
 		cost = 5
-		x = 10
+		x = 18
 		y = 2
 		prerequisite = { focus = TUR_imperial_prerogative_of_mehmed_v }
 		available_if_capitulated = no
@@ -494,6 +507,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 80
 			add_stability = 0.05
+			add_command_power = 25
 		}
 	}
 
@@ -501,7 +515,7 @@ focus_tree = {
 		id = TUR_traditional_ulema_alliance
 		icon = GFX_focus_TUR_traditional_ulema_alliance
 		cost = 5
-		x = 12
+		x = 22
 		y = 2
 		prerequisite = { focus = TUR_imperial_prerogative_of_mehmed_v }
 		available_if_capitulated = no
@@ -510,6 +524,7 @@ focus_tree = {
 			add_stability = 0.10
 			add_war_support = 0.05
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_manpower = 12000
 		}
 	}
 
@@ -517,7 +532,7 @@ focus_tree = {
 		id = TUR_dissolve_fractious_assembly
 		icon = GFX_focus_TUR_dissolve_fractious_assembly
 		cost = 5
-		x = 11
+		x = 20
 		y = 3
 		prerequisite = { focus = TUR_loyal_viziers_cabinet focus = TUR_traditional_ulema_alliance }
 		available_if_capitulated = no
@@ -533,7 +548,7 @@ focus_tree = {
 		id = TUR_imperial_bodyguard_regiments
 		icon = GFX_focus_TUR_imperial_bodyguard_regiments
 		cost = 5
-		x = 10
+		x = 18
 		y = 4
 		prerequisite = { focus = TUR_dissolve_fractious_assembly }
 		available_if_capitulated = no
@@ -548,7 +563,7 @@ focus_tree = {
 		id = TUR_reinforce_the_porte
 		icon = GFX_focus_TUR_reinforce_the_porte
 		cost = 5
-		x = 12
+		x = 22
 		y = 4
 		prerequisite = { focus = TUR_dissolve_fractious_assembly }
 		available_if_capitulated = no
@@ -557,6 +572,8 @@ focus_tree = {
 			add_stability = 0.08
 			add_political_power = 60
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			army_experience = 20
+			add_command_power = 20
 		}
 	}
 
@@ -564,7 +581,7 @@ focus_tree = {
 		id = TUR_sultans_decree_prerogatives
 		icon = GFX_focus_TUR_sultans_decree_prerogatives
 		cost = 5
-		x = 11
+		x = 20
 		y = 5
 		prerequisite = { focus = TUR_imperial_bodyguard_regiments focus = TUR_reinforce_the_porte }
 		available_if_capitulated = no
@@ -572,6 +589,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			add_command_power = 25
+			army_experience = 15
 		}
 	}
 
@@ -579,7 +598,7 @@ focus_tree = {
 		id = TUR_court_appointed_valis
 		icon = GFX_focus_TUR_court_appointed_valis
 		cost = 5
-		x = 11
+		x = 20
 		y = 6
 		prerequisite = { focus = TUR_sultans_decree_prerogatives }
 		available_if_capitulated = no
@@ -588,6 +607,7 @@ focus_tree = {
 			add_stability = 0.05
 			add_political_power = 50
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			346 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -595,7 +615,7 @@ focus_tree = {
 		id = TUR_divan_council_restored
 		icon = GFX_focus_TUR_divan_council_restored
 		cost = 5
-		x = 11
+		x = 20
 		y = 7
 		prerequisite = { focus = TUR_court_appointed_valis }
 		available_if_capitulated = no
@@ -603,6 +623,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 90
 			add_stability = 0.08
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -610,7 +631,7 @@ focus_tree = {
 		id = TUR_absolute_caliphal_authority
 		icon = GFX_focus_TUR_absolute_caliphal_authority
 		cost = 5
-		x = 11
+		x = 20
 		y = 8
 		prerequisite = { focus = TUR_divan_council_restored }
 		available_if_capitulated = no
@@ -619,6 +640,8 @@ focus_tree = {
 			add_stability = 0.15
 			add_war_support = 0.10
 			add_to_variable = { tur_imperial_cohesion = 15 }
+			add_manpower = 20000
+			add_command_power = 25
 		}
 	}
 
@@ -626,7 +649,7 @@ focus_tree = {
 		id = TUR_arab_congress_dialogue
 		icon = GFX_focus_TUR_arab_congress_dialogue
 		cost = 5
-		x = 14
+		x = 28
 		y = 1
 		prerequisite = { focus = TUR_second_constitutional_era_politics }
 		available_if_capitulated = no
@@ -643,7 +666,7 @@ focus_tree = {
 		id = TUR_beirut_and_damascus_charters
 		icon = GFX_focus_TUR_beirut_and_damascus_charters
 		cost = 5
-		x = 13
+		x = 26
 		y = 2
 		prerequisite = { focus = TUR_arab_congress_dialogue }
 		available_if_capitulated = no
@@ -659,7 +682,7 @@ focus_tree = {
 		id = TUR_dual_monarchy_protocol
 		icon = GFX_focus_TUR_dual_monarchy_protocol
 		cost = 5
-		x = 15
+		x = 30
 		y = 2
 		prerequisite = { focus = TUR_arab_congress_dialogue }
 		available_if_capitulated = no
@@ -668,6 +691,7 @@ focus_tree = {
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 15 }
 			add_to_variable = { tur_arab_unrest = -20 }
+			554 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -675,7 +699,7 @@ focus_tree = {
 		id = TUR_guaranteed_arab_cabinet_seats
 		icon = GFX_focus_TUR_guaranteed_arab_cabinet_seats
 		cost = 5
-		x = 14
+		x = 28
 		y = 3
 		prerequisite = { focus = TUR_beirut_and_damascus_charters focus = TUR_dual_monarchy_protocol }
 		available_if_capitulated = no
@@ -684,6 +708,7 @@ focus_tree = {
 			add_political_power = 60
 			add_stability = 0.05
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			291 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -691,7 +716,7 @@ focus_tree = {
 		id = TUR_loyal_tribal_federation
 		icon = GFX_focus_TUR_loyal_tribal_federation
 		cost = 5
-		x = 13
+		x = 26
 		y = 4
 		prerequisite = { focus = TUR_guaranteed_arab_cabinet_seats }
 		available_if_capitulated = no
@@ -706,7 +731,7 @@ focus_tree = {
 		id = TUR_caliphate_and_arab_solidarity
 		icon = GFX_focus_TUR_caliphate_and_arab_solidarity
 		cost = 5
-		x = 15
+		x = 30
 		y = 4
 		prerequisite = { focus = TUR_guaranteed_arab_cabinet_seats }
 		available_if_capitulated = no
@@ -715,6 +740,7 @@ focus_tree = {
 			add_war_support = 0.10
 			add_stability = 0.05
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			add_manpower = 18000
 		}
 	}
 
@@ -722,7 +748,7 @@ focus_tree = {
 		id = TUR_bilingual_imperial_administration
 		icon = GFX_focus_TUR_bilingual_imperial_administration
 		cost = 5
-		x = 14
+		x = 28
 		y = 5
 		prerequisite = { focus = TUR_loyal_tribal_federation focus = TUR_caliphate_and_arab_solidarity }
 		available_if_capitulated = no
@@ -731,6 +757,7 @@ focus_tree = {
 			add_stability = 0.08
 			add_political_power = 50
 			add_to_variable = { tur_arab_unrest = -10 }
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -738,7 +765,7 @@ focus_tree = {
 		id = TUR_sharifian_protectorate_accord
 		icon = GFX_focus_TUR_sharifian_protectorate_accord
 		cost = 5
-		x = 13
+		x = 26
 		y = 6
 		prerequisite = { focus = TUR_bilingual_imperial_administration }
 		available_if_capitulated = no
@@ -747,6 +774,8 @@ focus_tree = {
 			add_stability = 0.08
 			add_to_variable = { tur_arab_unrest = -15 }
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			679 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_manpower = 10000
 		}
 	}
 
@@ -754,7 +783,7 @@ focus_tree = {
 		id = TUR_mesopotamian_notables_council
 		icon = GFX_focus_TUR_mesopotamian_notables_council
 		cost = 5
-		x = 15
+		x = 30
 		y = 6
 		prerequisite = { focus = TUR_bilingual_imperial_administration }
 		available_if_capitulated = no
@@ -769,7 +798,7 @@ focus_tree = {
 		id = TUR_syrian_economic_integration
 		icon = GFX_focus_TUR_syrian_economic_integration
 		cost = 5
-		x = 14
+		x = 28
 		y = 7
 		prerequisite = { focus = TUR_sharifian_protectorate_accord focus = TUR_mesopotamian_notables_council }
 		available_if_capitulated = no
@@ -784,7 +813,7 @@ focus_tree = {
 		id = TUR_pan_islamic_imperial_brotherhood
 		icon = GFX_focus_TUR_pan_islamic_imperial_brotherhood
 		cost = 5
-		x = 14
+		x = 28
 		y = 8
 		prerequisite = { focus = TUR_syrian_economic_integration }
 		available_if_capitulated = no
@@ -800,7 +829,7 @@ focus_tree = {
 		id = TUR_shrine_of_eyup_pilgrimage
 		icon = GFX_focus_TUR_shrine_of_eyup_pilgrimage
 		cost = 5
-		x = 8
+		x = 18
 		y = 9
 		prerequisite = { focus = TUR_sublime_porte_war_council focus = TUR_liberal_parliamentary_hegemony focus = TUR_absolute_caliphal_authority focus = TUR_pan_islamic_imperial_brotherhood }
 		available_if_capitulated = no
@@ -808,6 +837,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.08
 			add_political_power = 50
+			add_manpower = 15000
+			add_command_power = 20
 		}
 	}
 
@@ -815,7 +846,7 @@ focus_tree = {
 		id = TUR_mobilize_sufi_brotherhoods
 		icon = GFX_focus_TUR_mobilize_sufi_brotherhoods
 		cost = 5
-		x = 6
+		x = 16
 		y = 10
 		prerequisite = { focus = TUR_shrine_of_eyup_pilgrimage }
 		available_if_capitulated = no
@@ -830,7 +861,7 @@ focus_tree = {
 		id = TUR_holy_cities_custodianship
 		icon = GFX_focus_TUR_holy_cities_custodianship
 		cost = 5
-		x = 10
+		x = 20
 		y = 10
 		prerequisite = { focus = TUR_shrine_of_eyup_pilgrimage }
 		available_if_capitulated = no
@@ -839,6 +870,8 @@ focus_tree = {
 			add_political_power = 75
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			679 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			add_manpower = 12000
 		}
 	}
 
@@ -846,7 +879,7 @@ focus_tree = {
 		id = TUR_proclamation_of_jihad_readiness
 		icon = GFX_focus_TUR_proclamation_of_jihad_readiness
 		cost = 5
-		x = 8
+		x = 18
 		y = 11
 		prerequisite = { focus = TUR_mobilize_sufi_brotherhoods focus = TUR_holy_cities_custodianship }
 		available_if_capitulated = no
@@ -863,7 +896,7 @@ focus_tree = {
 		id = TUR_imperial_cohesion_ascendant
 		icon = GFX_focus_TUR_imperial_cohesion_ascendant
 		cost = 5
-		x = 8
+		x = 18
 		y = 12
 		prerequisite = { focus = TUR_proclamation_of_jihad_readiness }
 		available_if_capitulated = no
@@ -872,6 +905,8 @@ focus_tree = {
 			add_stability = 0.15
 			add_political_power = 100
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			army_experience = 25
 		}
 	}
 
@@ -879,7 +914,7 @@ focus_tree = {
 		id = TUR_legacy_of_osman_eternal
 		icon = GFX_focus_TUR_legacy_of_osman_eternal
 		cost = 5
-		x = 8
+		x = 18
 		y = 13
 		prerequisite = { focus = TUR_imperial_cohesion_ascendant }
 		available_if_capitulated = no
@@ -889,6 +924,9 @@ focus_tree = {
 			add_war_support = 0.15
 			add_political_power = 150
 			add_to_variable = { tur_imperial_cohesion = 25 }
+			country_event = { id = ww1_ottoman.23 }
+			army_experience = 30
+			add_command_power = 30
 		}
 	}
 
@@ -896,7 +934,7 @@ focus_tree = {
 		id = TUR_economic_sovereignty_drive
 		icon = GFX_focus_TUR_economic_sovereignty_drive
 		cost = 5
-		x = 25
+		x = 48
 		y = 0
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -904,6 +942,7 @@ focus_tree = {
 			add_political_power = 60
 			add_to_variable = { tur_public_debt = -5 }
 			add_to_variable = { tur_foreign_influence = -5 }
+			add_tech_bonus = { name = TUR_econ_sovereignty_bonus bonus = 0.50 uses = 1 category = industry }
 		}
 	}
 
@@ -911,13 +950,18 @@ focus_tree = {
 		id = TUR_audit_opda_administration
 		icon = GFX_focus_TUR_audit_opda_administration
 		cost = 5
-		x = 19
+		x = 39
 		y = 1
 		prerequisite = { focus = TUR_economic_sovereignty_drive }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 60
+			random_owned_controlled_state = {
+				limit = { is_core_of = TUR }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
 			add_to_variable = { tur_public_debt = -5 }
 			add_to_variable = { tur_foreign_influence = -5 }
 		}
@@ -927,15 +971,20 @@ focus_tree = {
 		id = TUR_renegotiate_creditor_coupons
 		icon = GFX_focus_TUR_renegotiate_creditor_coupons
 		cost = 5
-		x = 19
+		x = 39
 		y = 2
 		prerequisite = { focus = TUR_audit_opda_administration }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
 			country_event = { id = ww1_ottoman.7 }
-			remove_ideas = TUR_sick_man_debt
-			add_ideas = TUR_debt_renegotiated
+			if = {
+				limit = { has_idea = TUR_sick_man_debt }
+				swap_ideas = {
+					remove_idea = TUR_sick_man_debt
+					add_idea = TUR_debt_renegotiated
+				}
+			}
 			add_to_variable = { tur_public_debt = -15 }
 			add_to_variable = { tur_foreign_influence = -10 }
 		}
@@ -945,15 +994,20 @@ focus_tree = {
 		id = TUR_unilateral_abrogation_of_capitulations
 		icon = GFX_focus_TUR_unilateral_abrogation_of_capitulations
 		cost = 5
-		x = 19
+		x = 39
 		y = 3
 		prerequisite = { focus = TUR_renegotiate_creditor_coupons }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			country_event = { id = ww1_ottoman.8 }
-			remove_ideas = TUR_debt_renegotiated
-			add_ideas = TUR_capitulations_abrogated
+			if = {
+				limit = { has_idea = TUR_debt_renegotiated }
+				swap_ideas = {
+					remove_idea = TUR_debt_renegotiated
+					add_idea = TUR_capitulations_abrogated
+				}
+			}
 			add_to_variable = { tur_foreign_influence = -25 }
 			add_to_variable = { tur_imperial_cohesion = 15 }
 		}
@@ -963,7 +1017,7 @@ focus_tree = {
 		id = TUR_protective_tariff_code
 		icon = GFX_focus_TUR_protective_tariff_code
 		cost = 5
-		x = 18
+		x = 38
 		y = 4
 		prerequisite = { focus = TUR_unilateral_abrogation_of_capitulations }
 		available_if_capitulated = no
@@ -979,7 +1033,7 @@ focus_tree = {
 		id = TUR_national_bank_osmanli_itibar
 		icon = GFX_focus_TUR_national_bank_osmanli_itibar
 		cost = 5
-		x = 20
+		x = 40
 		y = 4
 		prerequisite = { focus = TUR_unilateral_abrogation_of_capitulations }
 		available_if_capitulated = no
@@ -996,7 +1050,7 @@ focus_tree = {
 		id = TUR_confiscate_foreign_monopolies
 		icon = GFX_focus_TUR_confiscate_foreign_monopolies
 		cost = 5
-		x = 18
+		x = 38
 		y = 5
 		prerequisite = { focus = TUR_protective_tariff_code }
 		available_if_capitulated = no
@@ -1011,7 +1065,7 @@ focus_tree = {
 		id = TUR_monetary_autonomy_and_gold_lira
 		icon = GFX_focus_TUR_monetary_autonomy_and_gold_lira
 		cost = 5
-		x = 20
+		x = 40
 		y = 5
 		prerequisite = { focus = TUR_national_bank_osmanli_itibar }
 		available_if_capitulated = no
@@ -1029,7 +1083,7 @@ focus_tree = {
 		id = TUR_tobacco_regie_liquidation
 		icon = GFX_focus_TUR_tobacco_regie_liquidation
 		cost = 5
-		x = 19
+		x = 39
 		y = 6
 		prerequisite = { focus = TUR_confiscate_foreign_monopolies focus = TUR_monetary_autonomy_and_gold_lira }
 		available_if_capitulated = no
@@ -1044,7 +1098,7 @@ focus_tree = {
 		id = TUR_salt_monopoly_nationalization
 		icon = GFX_focus_TUR_salt_monopoly_nationalization
 		cost = 5
-		x = 19
+		x = 39
 		y = 7
 		prerequisite = { focus = TUR_tobacco_regie_liquidation }
 		available_if_capitulated = no
@@ -1059,14 +1113,19 @@ focus_tree = {
 		id = TUR_complete_fiscal_liberation
 		icon = GFX_focus_TUR_complete_fiscal_liberation
 		cost = 5
-		x = 19
+		x = 39
 		y = 8
 		prerequisite = { focus = TUR_salt_monopoly_nationalization }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			remove_ideas = TUR_capitulations_abrogated
-			add_ideas = TUR_financial_sovereignty
+			if = {
+				limit = { has_idea = TUR_capitulations_abrogated }
+				swap_ideas = {
+					remove_idea = TUR_capitulations_abrogated
+					add_idea = TUR_financial_sovereignty
+				}
+			}
 			add_political_power = 100
 			add_to_variable = { tur_public_debt = -20 }
 			add_to_variable = { tur_foreign_influence = -20 }
@@ -1077,7 +1136,7 @@ focus_tree = {
 		id = TUR_taurus_and_amanus_tunnels
 		icon = GFX_focus_TUR_taurus_and_amanus_tunnels
 		cost = 5
-		x = 24
+		x = 45
 		y = 1
 		prerequisite = { focus = TUR_economic_sovereignty_drive }
 		available_if_capitulated = no
@@ -1093,7 +1152,7 @@ focus_tree = {
 		id = TUR_konya_aleppo_trunk_line
 		icon = GFX_focus_TUR_konya_aleppo_trunk_line
 		cost = 5
-		x = 23
+		x = 44
 		y = 2
 		prerequisite = { focus = TUR_taurus_and_amanus_tunnels }
 		available_if_capitulated = no
@@ -1108,7 +1167,7 @@ focus_tree = {
 		id = TUR_aleppo_to_mosul_extension
 		icon = GFX_focus_TUR_aleppo_to_mosul_extension
 		cost = 5
-		x = 25
+		x = 46
 		y = 2
 		prerequisite = { focus = TUR_taurus_and_amanus_tunnels }
 		available_if_capitulated = no
@@ -1123,7 +1182,7 @@ focus_tree = {
 		id = TUR_mosul_baghdad_railhead
 		icon = GFX_focus_TUR_mosul_baghdad_railhead
 		cost = 5
-		x = 24
+		x = 45
 		y = 3
 		prerequisite = { focus = TUR_konya_aleppo_trunk_line focus = TUR_aleppo_to_mosul_extension }
 		available_if_capitulated = no
@@ -1138,7 +1197,7 @@ focus_tree = {
 		id = TUR_basra_terminus_settlement
 		icon = GFX_focus_TUR_basra_terminus_settlement
 		cost = 5
-		x = 22
+		x = 44
 		y = 4
 		prerequisite = { focus = TUR_mosul_baghdad_railhead }
 		available_if_capitulated = no
@@ -1153,7 +1212,7 @@ focus_tree = {
 		id = TUR_hejaz_railway_expansion
 		icon = GFX_focus_TUR_hejaz_railway_expansion
 		cost = 5
-		x = 26
+		x = 46
 		y = 4
 		prerequisite = { focus = TUR_mosul_baghdad_railhead }
 		available_if_capitulated = no
@@ -1171,7 +1230,7 @@ focus_tree = {
 		id = TUR_syrian_feeder_lines
 		icon = GFX_focus_TUR_syrian_feeder_lines
 		cost = 5
-		x = 23
+		x = 44
 		y = 5
 		prerequisite = { focus = TUR_basra_terminus_settlement }
 		available_if_capitulated = no
@@ -1186,7 +1245,7 @@ focus_tree = {
 		id = TUR_medina_to_mecca_link
 		icon = GFX_focus_TUR_medina_to_mecca_link
 		cost = 5
-		x = 25
+		x = 46
 		y = 5
 		prerequisite = { focus = TUR_hejaz_railway_expansion }
 		available_if_capitulated = no
@@ -1202,7 +1261,7 @@ focus_tree = {
 		id = TUR_jerusalem_jaffa_railway_upgrade
 		icon = GFX_focus_TUR_jerusalem_jaffa_railway_upgrade
 		cost = 5
-		x = 24
+		x = 45
 		y = 6
 		prerequisite = { focus = TUR_syrian_feeder_lines focus = TUR_medina_to_mecca_link }
 		available_if_capitulated = no
@@ -1217,7 +1276,7 @@ focus_tree = {
 		id = TUR_anatolian_railway_loop
 		icon = GFX_focus_TUR_anatolian_railway_loop
 		cost = 5
-		x = 24
+		x = 44
 		y = 7
 		prerequisite = { focus = TUR_jerusalem_jaffa_railway_upgrade }
 		available_if_capitulated = no
@@ -1232,7 +1291,7 @@ focus_tree = {
 		id = TUR_railway_telegraph_integration
 		icon = GFX_focus_TUR_railway_telegraph_integration
 		cost = 5
-		x = 24
+		x = 45
 		y = 8
 		prerequisite = { focus = TUR_anatolian_railway_loop }
 		available_if_capitulated = no
@@ -1247,7 +1306,7 @@ focus_tree = {
 		id = TUR_zonguldak_coal_basin_drives
 		icon = GFX_focus_TUR_zonguldak_coal_basin_drives
 		cost = 5
-		x = 28
+		x = 51
 		y = 1
 		prerequisite = { focus = TUR_economic_sovereignty_drive }
 		available_if_capitulated = no
@@ -1262,7 +1321,7 @@ focus_tree = {
 		id = TUR_ergani_copper_mines
 		icon = GFX_focus_TUR_ergani_copper_mines
 		cost = 5
-		x = 27
+		x = 50
 		y = 2
 		prerequisite = { focus = TUR_zonguldak_coal_basin_drives }
 		available_if_capitulated = no
@@ -1277,7 +1336,7 @@ focus_tree = {
 		id = TUR_tophane_ordnance_foundry
 		icon = GFX_focus_TUR_tophane_ordnance_foundry
 		cost = 5
-		x = 29
+		x = 52
 		y = 2
 		prerequisite = { focus = TUR_zonguldak_coal_basin_drives }
 		available_if_capitulated = no
@@ -1292,7 +1351,7 @@ focus_tree = {
 		id = TUR_bakirkoy_textile_mills
 		icon = GFX_focus_TUR_bakirkoy_textile_mills
 		cost = 5
-		x = 27
+		x = 50
 		y = 3
 		prerequisite = { focus = TUR_ergani_copper_mines }
 		available_if_capitulated = no
@@ -1306,7 +1365,7 @@ focus_tree = {
 		id = TUR_zeytinburnu_munitions_complex
 		icon = GFX_focus_TUR_zeytinburnu_munitions_complex
 		cost = 5
-		x = 29
+		x = 52
 		y = 3
 		prerequisite = { focus = TUR_tophane_ordnance_foundry }
 		available_if_capitulated = no
@@ -1321,7 +1380,7 @@ focus_tree = {
 		id = TUR_ankara_state_foundries
 		icon = GFX_focus_TUR_ankara_state_foundries
 		cost = 5
-		x = 28
+		x = 51
 		y = 4
 		prerequisite = { focus = TUR_bakirkoy_textile_mills focus = TUR_zeytinburnu_munitions_complex }
 		available_if_capitulated = no
@@ -1335,7 +1394,7 @@ focus_tree = {
 		id = TUR_izmir_commercial_quays
 		icon = GFX_focus_TUR_izmir_commercial_quays
 		cost = 5
-		x = 27
+		x = 50
 		y = 5
 		prerequisite = { focus = TUR_ankara_state_foundries }
 		available_if_capitulated = no
@@ -1349,7 +1408,7 @@ focus_tree = {
 		id = TUR_constantinople_electric_grid
 		icon = GFX_focus_TUR_constantinople_electric_grid
 		cost = 5
-		x = 29
+		x = 52
 		y = 5
 		prerequisite = { focus = TUR_ankara_state_foundries }
 		available_if_capitulated = no
@@ -1363,7 +1422,7 @@ focus_tree = {
 		id = TUR_amasya_metal_smelters
 		icon = GFX_focus_TUR_amasya_metal_smelters
 		cost = 5
-		x = 28
+		x = 51
 		y = 6
 		prerequisite = { focus = TUR_izmir_commercial_quays focus = TUR_constantinople_electric_grid }
 		available_if_capitulated = no
@@ -1377,7 +1436,7 @@ focus_tree = {
 		id = TUR_imperial_munitions_directorate
 		icon = GFX_focus_TUR_imperial_munitions_directorate
 		cost = 5
-		x = 28
+		x = 52
 		y = 7
 		prerequisite = { focus = TUR_amasya_metal_smelters }
 		available_if_capitulated = no
@@ -1394,7 +1453,7 @@ focus_tree = {
 		id = TUR_full_industrial_mobilization
 		icon = GFX_focus_TUR_full_industrial_mobilization
 		cost = 5
-		x = 28
+		x = 51
 		y = 8
 		prerequisite = { focus = TUR_imperial_munitions_directorate }
 		available_if_capitulated = no
@@ -1409,7 +1468,7 @@ focus_tree = {
 		id = TUR_anatolian_grain_reserves
 		icon = GFX_focus_TUR_anatolian_grain_reserves
 		cost = 5
-		x = 31
+		x = 57
 		y = 1
 		prerequisite = { focus = TUR_economic_sovereignty_drive }
 		available_if_capitulated = no
@@ -1426,7 +1485,7 @@ focus_tree = {
 		id = TUR_willcocks_mesopotamia_irrigation
 		icon = GFX_focus_TUR_willcocks_mesopotamia_irrigation
 		cost = 5
-		x = 30
+		x = 56
 		y = 2
 		prerequisite = { focus = TUR_anatolian_grain_reserves }
 		available_if_capitulated = no
@@ -1441,7 +1500,7 @@ focus_tree = {
 		id = TUR_cilicia_cotton_modernization
 		icon = GFX_focus_TUR_cilicia_cotton_modernization
 		cost = 5
-		x = 32
+		x = 58
 		y = 2
 		prerequisite = { focus = TUR_anatolian_grain_reserves }
 		available_if_capitulated = no
@@ -1455,7 +1514,7 @@ focus_tree = {
 		id = TUR_anti_locust_campaigns
 		icon = GFX_focus_TUR_anti_locust_campaigns
 		cost = 5
-		x = 31
+		x = 57
 		y = 3
 		prerequisite = { focus = TUR_willcocks_mesopotamia_irrigation focus = TUR_cilicia_cotton_modernization }
 		available_if_capitulated = no
@@ -1471,7 +1530,7 @@ focus_tree = {
 		id = TUR_state_silos_and_famine_relief
 		icon = GFX_focus_TUR_state_silos_and_famine_relief
 		cost = 5
-		x = 31
+		x = 57
 		y = 4
 		prerequisite = { focus = TUR_anti_locust_campaigns }
 		available_if_capitulated = no
@@ -1480,6 +1539,7 @@ focus_tree = {
 			add_stability = 0.08
 			add_political_power = 40
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			49 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1487,7 +1547,7 @@ focus_tree = {
 		id = TUR_ziraat_bankasi_credit_expansion
 		icon = GFX_focus_TUR_ziraat_bankasi_credit_expansion
 		cost = 5
-		x = 30
+		x = 56
 		y = 5
 		prerequisite = { focus = TUR_state_silos_and_famine_relief }
 		available_if_capitulated = no
@@ -1502,7 +1562,7 @@ focus_tree = {
 		id = TUR_mechanized_anatolian_farming
 		icon = GFX_focus_TUR_mechanized_anatolian_farming
 		cost = 5
-		x = 32
+		x = 58
 		y = 5
 		prerequisite = { focus = TUR_state_silos_and_famine_relief }
 		available_if_capitulated = no
@@ -1517,7 +1577,7 @@ focus_tree = {
 		id = TUR_black_sea_timber_concessions
 		icon = GFX_focus_TUR_black_sea_timber_concessions
 		cost = 5
-		x = 31
+		x = 56
 		y = 6
 		prerequisite = { focus = TUR_ziraat_bankasi_credit_expansion focus = TUR_mechanized_anatolian_farming }
 		available_if_capitulated = no
@@ -1532,7 +1592,7 @@ focus_tree = {
 		id = TUR_agrarian_surplus_storage
 		icon = GFX_focus_TUR_agrarian_surplus_storage
 		cost = 5
-		x = 31
+		x = 57
 		y = 7
 		prerequisite = { focus = TUR_black_sea_timber_concessions }
 		available_if_capitulated = no
@@ -1540,6 +1600,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.08
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			346 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1547,7 +1608,7 @@ focus_tree = {
 		id = TUR_breadbasket_of_the_empire
 		icon = GFX_focus_TUR_breadbasket_of_the_empire
 		cost = 5
-		x = 31
+		x = 57
 		y = 8
 		prerequisite = { focus = TUR_agrarian_surplus_storage }
 		available_if_capitulated = no
@@ -1563,7 +1624,7 @@ focus_tree = {
 		id = TUR_integrated_imperial_economy
 		icon = GFX_focus_TUR_integrated_imperial_economy
 		cost = 5
-		x = 25
+		x = 48
 		y = 9
 		prerequisite = { focus = TUR_complete_fiscal_liberation focus = TUR_railway_telegraph_integration focus = TUR_full_industrial_mobilization focus = TUR_breadbasket_of_the_empire }
 		available_if_capitulated = no
@@ -1578,7 +1639,7 @@ focus_tree = {
 		id = TUR_anatolian_highway_system
 		icon = GFX_focus_TUR_anatolian_highway_system
 		cost = 5
-		x = 23
+		x = 46
 		y = 10
 		prerequisite = { focus = TUR_integrated_imperial_economy }
 		available_if_capitulated = no
@@ -1593,7 +1654,7 @@ focus_tree = {
 		id = TUR_petroleum_concessions_mosul
 		icon = GFX_focus_TUR_petroleum_concessions_mosul
 		cost = 5
-		x = 27
+		x = 50
 		y = 10
 		prerequisite = { focus = TUR_integrated_imperial_economy }
 		available_if_capitulated = no
@@ -1612,7 +1673,7 @@ focus_tree = {
 		id = TUR_sublime_porte_heavy_industry_board
 		icon = GFX_focus_TUR_sublime_porte_heavy_industry_board
 		cost = 5
-		x = 25
+		x = 48
 		y = 11
 		prerequisite = { focus = TUR_anatolian_highway_system focus = TUR_petroleum_concessions_mosul }
 		available_if_capitulated = no
@@ -1627,7 +1688,7 @@ focus_tree = {
 		id = TUR_autarkic_imperial_foundation
 		icon = GFX_focus_TUR_autarkic_imperial_foundation
 		cost = 5
-		x = 25
+		x = 48
 		y = 12
 		prerequisite = { focus = TUR_sublime_porte_heavy_industry_board }
 		available_if_capitulated = no
@@ -1636,6 +1697,7 @@ focus_tree = {
 			add_stability = 0.08
 			add_political_power = 50
 			add_to_variable = { tur_foreign_influence = -15 }
+			49 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -1643,7 +1705,7 @@ focus_tree = {
 		id = TUR_modern_ottoman_economic_miracle
 		icon = GFX_focus_TUR_modern_ottoman_economic_miracle
 		cost = 5
-		x = 25
+		x = 48
 		y = 13
 		prerequisite = { focus = TUR_autarkic_imperial_foundation }
 		available_if_capitulated = no
@@ -1660,7 +1722,7 @@ focus_tree = {
 		id = TUR_reorganizing_the_imperial_army
 		icon = GFX_focus_TUR_reorganizing_the_imperial_army
 		cost = 5
-		x = 42
+		x = 74
 		y = 0
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
@@ -1676,7 +1738,7 @@ focus_tree = {
 		id = TUR_harbiye_academy_modernization
 		icon = GFX_focus_TUR_harbiye_academy_modernization
 		cost = 5
-		x = 37
+		x = 66
 		y = 1
 		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
 		available_if_capitulated = no
@@ -1691,7 +1753,7 @@ focus_tree = {
 		id = TUR_purge_inefficient_cadres
 		icon = GFX_focus_TUR_purge_inefficient_cadres
 		cost = 5
-		x = 36
+		x = 64
 		y = 2
 		prerequisite = { focus = TUR_harbiye_academy_modernization }
 		available_if_capitulated = no
@@ -1707,7 +1769,7 @@ focus_tree = {
 		id = TUR_standardize_mauser_rifles
 		icon = GFX_focus_TUR_standardize_mauser_rifles
 		cost = 5
-		x = 38
+		x = 66
 		y = 2
 		prerequisite = { focus = TUR_harbiye_academy_modernization }
 		available_if_capitulated = no
@@ -1722,7 +1784,7 @@ focus_tree = {
 		id = TUR_krupp_quick_fire_artillery
 		icon = GFX_focus_TUR_krupp_quick_fire_artillery
 		cost = 5
-		x = 37
+		x = 66
 		y = 3
 		prerequisite = { focus = TUR_purge_inefficient_cadres focus = TUR_standardize_mauser_rifles }
 		available_if_capitulated = no
@@ -1737,7 +1799,7 @@ focus_tree = {
 		id = TUR_anatolian_infantry_doctrine
 		icon = GFX_focus_TUR_anatolian_infantry_doctrine
 		cost = 5
-		x = 35
+		x = 64
 		y = 4
 		prerequisite = { focus = TUR_krupp_quick_fire_artillery }
 		available_if_capitulated = no
@@ -1752,7 +1814,7 @@ focus_tree = {
 		id = TUR_desert_camel_corps_regiments
 		icon = GFX_focus_TUR_desert_camel_corps_regiments
 		cost = 5
-		x = 37
+		x = 66
 		y = 4
 		prerequisite = { focus = TUR_krupp_quick_fire_artillery }
 		available_if_capitulated = no
@@ -1767,7 +1829,7 @@ focus_tree = {
 		id = TUR_caucasus_alpine_detachments
 		icon = GFX_focus_TUR_caucasus_alpine_detachments
 		cost = 5
-		x = 39
+		x = 68
 		y = 4
 		prerequisite = { focus = TUR_krupp_quick_fire_artillery }
 		available_if_capitulated = no
@@ -1783,7 +1845,7 @@ focus_tree = {
 		id = TUR_machine_gun_companies
 		icon = GFX_focus_TUR_machine_gun_companies
 		cost = 5
-		x = 37
+		x = 65
 		y = 5
 		prerequisite = { focus = TUR_anatolian_infantry_doctrine focus = TUR_desert_camel_corps_regiments focus = TUR_caucasus_alpine_detachments }
 		available_if_capitulated = no
@@ -1799,7 +1861,7 @@ focus_tree = {
 		id = TUR_field_medicine_red_crescent
 		icon = GFX_focus_TUR_field_medicine_red_crescent
 		cost = 5
-		x = 36
+		x = 65
 		y = 6
 		prerequisite = { focus = TUR_machine_gun_companies }
 		available_if_capitulated = no
@@ -1815,7 +1877,7 @@ focus_tree = {
 		id = TUR_gendarmerie_modernization_corps
 		icon = GFX_focus_TUR_gendarmerie_modernization_corps
 		cost = 5
-		x = 38
+		x = 68
 		y = 6
 		prerequisite = { focus = TUR_machine_gun_companies }
 		available_if_capitulated = no
@@ -1823,6 +1885,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.08
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			army_experience = 20
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 producer = TUR }
 		}
 	}
 
@@ -1830,7 +1894,7 @@ focus_tree = {
 		id = TUR_heavy_siege_howitzers
 		icon = GFX_focus_TUR_heavy_siege_howitzers
 		cost = 5
-		x = 37
+		x = 66
 		y = 7
 		prerequisite = { focus = TUR_field_medicine_red_crescent focus = TUR_gendarmerie_modernization_corps }
 		available_if_capitulated = no
@@ -1847,7 +1911,7 @@ focus_tree = {
 		id = TUR_comprehensive_conscription_law
 		icon = GFX_focus_TUR_comprehensive_conscription_law
 		cost = 5
-		x = 37
+		x = 66
 		y = 8
 		prerequisite = { focus = TUR_heavy_siege_howitzers }
 		available_if_capitulated = no
@@ -1862,7 +1926,7 @@ focus_tree = {
 		id = TUR_foreign_mission_choice
 		icon = GFX_focus_TUR_foreign_mission_choice
 		cost = 5
-		x = 41
+		x = 71
 		y = 1
 		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
 		available_if_capitulated = no
@@ -1878,7 +1942,7 @@ focus_tree = {
 		id = TUR_german_military_mission_sanders
 		icon = GFX_focus_TUR_german_military_mission_sanders
 		cost = 5
-		x = 40
+		x = 70
 		y = 2
 		prerequisite = { focus = TUR_foreign_mission_choice }
 		mutually_exclusive = { focus = TUR_native_general_staff_kemal }
@@ -1896,7 +1960,7 @@ focus_tree = {
 		id = TUR_native_general_staff_kemal
 		icon = GFX_focus_TUR_native_general_staff_kemal
 		cost = 5
-		x = 42
+		x = 72
 		y = 2
 		prerequisite = { focus = TUR_foreign_mission_choice }
 		mutually_exclusive = { focus = TUR_german_military_mission_sanders }
@@ -1915,7 +1979,7 @@ focus_tree = {
 		id = TUR_prusso_ottoman_doctrine
 		icon = GFX_focus_TUR_prusso_ottoman_doctrine
 		cost = 5
-		x = 40
+		x = 70
 		y = 3
 		prerequisite = { focus = TUR_german_military_mission_sanders }
 		available_if_capitulated = no
@@ -1932,7 +1996,7 @@ focus_tree = {
 		id = TUR_independent_tactical_flexibility
 		icon = GFX_focus_TUR_independent_tactical_flexibility
 		cost = 5
-		x = 42
+		x = 72
 		y = 3
 		prerequisite = { focus = TUR_native_general_staff_kemal }
 		available_if_capitulated = no
@@ -1947,7 +2011,7 @@ focus_tree = {
 		id = TUR_krupp_heavy_ordnance_contracts
 		icon = GFX_focus_TUR_krupp_heavy_ordnance_contracts
 		cost = 5
-		x = 40
+		x = 70
 		y = 4
 		prerequisite = { focus = TUR_prusso_ottoman_doctrine }
 		available_if_capitulated = no
@@ -1963,7 +2027,7 @@ focus_tree = {
 		id = TUR_anatolian_guerrilla_tradition
 		icon = GFX_focus_TUR_anatolian_guerrilla_tradition
 		cost = 5
-		x = 42
+		x = 72
 		y = 4
 		prerequisite = { focus = TUR_independent_tactical_flexibility }
 		available_if_capitulated = no
@@ -1979,7 +2043,7 @@ focus_tree = {
 		id = TUR_joint_staff_operational_drills
 		icon = GFX_focus_TUR_joint_staff_operational_drills
 		cost = 5
-		x = 41
+		x = 71
 		y = 5
 		prerequisite = { focus = TUR_krupp_heavy_ordnance_contracts focus = TUR_anatolian_guerrilla_tradition }
 		available_if_capitulated = no
@@ -1997,7 +2061,7 @@ focus_tree = {
 		id = TUR_officer_corps_intellectual_vigor
 		icon = GFX_focus_TUR_officer_corps_intellectual_vigor
 		cost = 5
-		x = 41
+		x = 71
 		y = 6
 		prerequisite = { focus = TUR_joint_staff_operational_drills }
 		available_if_capitulated = no
@@ -2012,7 +2076,7 @@ focus_tree = {
 		id = TUR_divisional_artillery_batteries
 		icon = GFX_focus_TUR_divisional_artillery_batteries
 		cost = 5
-		x = 41
+		x = 71
 		y = 7
 		prerequisite = { focus = TUR_officer_corps_intellectual_vigor }
 		available_if_capitulated = no
@@ -2027,7 +2091,7 @@ focus_tree = {
 		id = TUR_corps_level_reserves_doctrine
 		icon = GFX_focus_TUR_corps_level_reserves_doctrine
 		cost = 5
-		x = 41
+		x = 71
 		y = 8
 		prerequisite = { focus = TUR_divisional_artillery_batteries }
 		available_if_capitulated = no
@@ -2042,7 +2106,7 @@ focus_tree = {
 		id = TUR_rebuild_the_imperial_fleet
 		icon = GFX_focus_TUR_rebuild_the_imperial_fleet
 		cost = 5
-		x = 45
+		x = 76
 		y = 1
 		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
 		available_if_capitulated = no
@@ -2058,7 +2122,7 @@ focus_tree = {
 		id = TUR_the_dreadnought_contracts_uk
 		icon = GFX_focus_TUR_the_dreadnought_contracts_uk
 		cost = 5
-		x = 44
+		x = 75
 		y = 2
 		prerequisite = { focus = TUR_rebuild_the_imperial_fleet }
 		available_if_capitulated = no
@@ -2074,7 +2138,7 @@ focus_tree = {
 		id = TUR_golden_horn_shipyards_expansion
 		icon = GFX_focus_TUR_golden_horn_shipyards_expansion
 		cost = 5
-		x = 46
+		x = 77
 		y = 2
 		prerequisite = { focus = TUR_rebuild_the_imperial_fleet }
 		available_if_capitulated = no
@@ -2088,7 +2152,7 @@ focus_tree = {
 		id = TUR_public_donation_drive_sultan_osman
 		icon = GFX_focus_TUR_public_donation_drive_sultan_osman
 		cost = 5
-		x = 44
+		x = 75
 		y = 3
 		prerequisite = { focus = TUR_the_dreadnought_contracts_uk }
 		available_if_capitulated = no
@@ -2097,6 +2161,8 @@ focus_tree = {
 			add_political_power = 60
 			add_war_support = 0.10
 			add_to_variable = { tur_imperial_cohesion = 5 }
+			navy_experience = 25
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2104,7 +2170,7 @@ focus_tree = {
 		id = TUR_torpedo_boat_flotillas
 		icon = GFX_focus_TUR_torpedo_boat_flotillas
 		cost = 5
-		x = 46
+		x = 77
 		y = 3
 		prerequisite = { focus = TUR_golden_horn_shipyards_expansion }
 		available_if_capitulated = no
@@ -2119,7 +2185,7 @@ focus_tree = {
 		id = TUR_welcome_goeben_and_breslau
 		icon = GFX_focus_TUR_welcome_goeben_and_breslau
 		cost = 5
-		x = 44
+		x = 75
 		y = 4
 		prerequisite = { focus = TUR_public_donation_drive_sultan_osman }
 		available_if_capitulated = no
@@ -2136,7 +2202,7 @@ focus_tree = {
 		id = TUR_black_sea_submarine_patrols
 		icon = GFX_focus_TUR_black_sea_submarine_patrols
 		cost = 5
-		x = 46
+		x = 78
 		y = 4
 		prerequisite = { focus = TUR_torpedo_boat_flotillas }
 		available_if_capitulated = no
@@ -2151,7 +2217,7 @@ focus_tree = {
 		id = TUR_coastal_minelayer_force
 		icon = GFX_focus_TUR_coastal_minelayer_force
 		cost = 5
-		x = 45
+		x = 77
 		y = 5
 		prerequisite = { focus = TUR_welcome_goeben_and_breslau focus = TUR_black_sea_submarine_patrols }
 		available_if_capitulated = no
@@ -2166,7 +2232,7 @@ focus_tree = {
 		id = TUR_naval_gunnery_schools
 		icon = GFX_focus_TUR_naval_gunnery_schools
 		cost = 5
-		x = 45
+		x = 77
 		y = 6
 		prerequisite = { focus = TUR_coastal_minelayer_force }
 		available_if_capitulated = no
@@ -2181,7 +2247,7 @@ focus_tree = {
 		id = TUR_cruiser_escort_squadrons
 		icon = GFX_focus_TUR_cruiser_escort_squadrons
 		cost = 5
-		x = 45
+		x = 77
 		y = 7
 		prerequisite = { focus = TUR_naval_gunnery_schools }
 		available_if_capitulated = no
@@ -2196,7 +2262,7 @@ focus_tree = {
 		id = TUR_sovereign_black_sea_fleet
 		icon = GFX_focus_TUR_sovereign_black_sea_fleet
 		cost = 5
-		x = 45
+		x = 77
 		y = 8
 		prerequisite = { focus = TUR_cruiser_escort_squadrons }
 		available_if_capitulated = no
@@ -2212,7 +2278,7 @@ focus_tree = {
 		id = TUR_yesilkoy_aviation_school
 		icon = GFX_focus_TUR_yesilkoy_aviation_school
 		cost = 5
-		x = 48
+		x = 80
 		y = 1
 		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
 		available_if_capitulated = no
@@ -2228,7 +2294,7 @@ focus_tree = {
 		id = TUR_strengthen_canakkale_batteries
 		icon = GFX_focus_TUR_strengthen_canakkale_batteries
 		cost = 5
-		x = 49
+		x = 83
 		y = 1
 		prerequisite = { focus = TUR_reorganizing_the_imperial_army }
 		available_if_capitulated = no
@@ -2244,7 +2310,7 @@ focus_tree = {
 		id = TUR_procure_bleriot_and_rumpler_monoplanes
 		icon = GFX_focus_TUR_procure_bleriot_and_rumpler_monoplanes
 		cost = 5
-		x = 48
+		x = 80
 		y = 2
 		prerequisite = { focus = TUR_yesilkoy_aviation_school }
 		available_if_capitulated = no
@@ -2259,7 +2325,7 @@ focus_tree = {
 		id = TUR_underwater_minefields_straits
 		icon = GFX_focus_TUR_underwater_minefields_straits
 		cost = 5
-		x = 49
+		x = 83
 		y = 2
 		prerequisite = { focus = TUR_strengthen_canakkale_batteries }
 		available_if_capitulated = no
@@ -2274,7 +2340,7 @@ focus_tree = {
 		id = TUR_aerial_reconnaissance_detachments
 		icon = GFX_focus_TUR_aerial_reconnaissance_detachments
 		cost = 5
-		x = 48
+		x = 80
 		y = 3
 		prerequisite = { focus = TUR_procure_bleriot_and_rumpler_monoplanes }
 		available_if_capitulated = no
@@ -2289,7 +2355,7 @@ focus_tree = {
 		id = TUR_searchlight_batteries_dardanelles
 		icon = GFX_focus_TUR_searchlight_batteries_dardanelles
 		cost = 5
-		x = 49
+		x = 83
 		y = 3
 		prerequisite = { focus = TUR_underwater_minefields_straits }
 		available_if_capitulated = no
@@ -2304,9 +2370,9 @@ focus_tree = {
 		id = TUR_joint_command_supreme_staff
 		icon = GFX_focus_TUR_joint_command_supreme_staff
 		cost = 5
-		x = 42
+		x = 74
 		y = 9
-		prerequisite = { focus = TUR_comprehensive_conscription_law focus = TUR_corps_level_reserves_doctrine focus = TUR_sovereign_black_sea_fleet focus = TUR_aerial_reconnaissance_detachments focus = TUR_searchlight_batteries_dardanelles }
+		prerequisite = { focus = TUR_comprehensive_conscription_law focus = TUR_corps_level_reserves_doctrine focus = TUR_sovereign_black_sea_fleet }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
@@ -2321,7 +2387,7 @@ focus_tree = {
 		id = TUR_modern_field_communications
 		icon = GFX_focus_TUR_modern_field_communications
 		cost = 5
-		x = 40
+		x = 72
 		y = 10
 		prerequisite = { focus = TUR_joint_command_supreme_staff }
 		available_if_capitulated = no
@@ -2336,7 +2402,7 @@ focus_tree = {
 		id = TUR_logistics_motor_truck_corps
 		icon = GFX_focus_TUR_logistics_motor_truck_corps
 		cost = 5
-		x = 44
+		x = 76
 		y = 10
 		prerequisite = { focus = TUR_joint_command_supreme_staff }
 		available_if_capitulated = no
@@ -2351,7 +2417,7 @@ focus_tree = {
 		id = TUR_imperial_arsenals_peak_output
 		icon = GFX_focus_TUR_imperial_arsenals_peak_output
 		cost = 5
-		x = 42
+		x = 74
 		y = 11
 		prerequisite = { focus = TUR_modern_field_communications focus = TUR_logistics_motor_truck_corps }
 		available_if_capitulated = no
@@ -2366,7 +2432,7 @@ focus_tree = {
 		id = TUR_harbiye_tactical_doctrine_zenith
 		icon = GFX_focus_TUR_harbiye_tactical_doctrine_zenith
 		cost = 5
-		x = 42
+		x = 74
 		y = 12
 		prerequisite = { focus = TUR_imperial_arsenals_peak_output }
 		available_if_capitulated = no
@@ -2381,7 +2447,7 @@ focus_tree = {
 		id = TUR_invincible_mehmetcik_spirit
 		icon = GFX_focus_TUR_invincible_mehmetcik_spirit
 		cost = 5
-		x = 42
+		x = 74
 		y = 13
 		prerequisite = { focus = TUR_harbiye_tactical_doctrine_zenith }
 		available_if_capitulated = no
@@ -2397,13 +2463,14 @@ focus_tree = {
 		id = TUR_sublime_porte_foreign_policy
 		icon = GFX_focus_TUR_sublime_porte_foreign_policy
 		cost = 5
-		x = 59
+		x = 100
 		y = 0
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			add_political_power = 80
 			add_to_variable = { tur_foreign_influence = 5 }
+			add_command_power = 25
 		}
 	}
 
@@ -2411,7 +2478,7 @@ focus_tree = {
 		id = TUR_western_thrace_border_vigilance
 		icon = GFX_focus_TUR_western_thrace_border_vigilance
 		cost = 5
-		x = 53
+		x = 91
 		y = 1
 		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
 		available_if_capitulated = no
@@ -2426,7 +2493,7 @@ focus_tree = {
 		id = TUR_edirne_fortress_complex
 		icon = GFX_focus_TUR_edirne_fortress_complex
 		cost = 5
-		x = 53
+		x = 91
 		y = 2
 		prerequisite = { focus = TUR_western_thrace_border_vigilance }
 		available_if_capitulated = no
@@ -2441,7 +2508,7 @@ focus_tree = {
 		id = TUR_bulgarian_friendship_treaty
 		icon = GFX_focus_TUR_bulgarian_friendship_treaty
 		cost = 5
-		x = 52
+		x = 90
 		y = 3
 		prerequisite = { focus = TUR_edirne_fortress_complex }
 		available_if_capitulated = no
@@ -2456,7 +2523,7 @@ focus_tree = {
 		id = TUR_romanian_grain_accord
 		icon = GFX_focus_TUR_romanian_grain_accord
 		cost = 5
-		x = 54
+		x = 92
 		y = 3
 		prerequisite = { focus = TUR_edirne_fortress_complex }
 		available_if_capitulated = no
@@ -2472,7 +2539,7 @@ focus_tree = {
 		id = TUR_reaffirm_libyan_sovereignty
 		icon = GFX_focus_TUR_reaffirm_libyan_sovereignty
 		cost = 5
-		x = 55
+		x = 94
 		y = 1
 		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
 		available_if_capitulated = no
@@ -2480,6 +2547,8 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.08
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			448 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 producer = TUR }
 		}
 	}
 
@@ -2487,7 +2556,7 @@ focus_tree = {
 		id = TUR_sanusi_brotherhood_pact
 		icon = GFX_focus_TUR_sanusi_brotherhood_pact
 		cost = 5
-		x = 55
+		x = 94
 		y = 2
 		prerequisite = { focus = TUR_reaffirm_libyan_sovereignty }
 		available_if_capitulated = no
@@ -2502,12 +2571,13 @@ focus_tree = {
 		id = TUR_tripoli_coastal_fortifications
 		icon = GFX_focus_TUR_tripoli_coastal_fortifications
 		cost = 5
-		x = 55
+		x = 94
 		y = 3
 		prerequisite = { focus = TUR_sanusi_brotherhood_pact }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			country_event = { id = ww1_ottoman.32 }
 			448 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
 			army_experience = 15
 		}
@@ -2517,7 +2587,7 @@ focus_tree = {
 		id = TUR_aegean_island_garrisons
 		icon = GFX_focus_TUR_aegean_island_garrisons
 		cost = 5
-		x = 53
+		x = 91
 		y = 4
 		prerequisite = { focus = TUR_bulgarian_friendship_treaty focus = TUR_romanian_grain_accord }
 		available_if_capitulated = no
@@ -2532,7 +2602,7 @@ focus_tree = {
 		id = TUR_german_rapprochement
 		icon = GFX_focus_TUR_german_rapprochement
 		cost = 5
-		x = 57
+		x = 98
 		y = 1
 		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
 		mutually_exclusive = { focus = TUR_strict_armed_neutrality focus = TUR_entente_diplomatic_demands }
@@ -2548,7 +2618,7 @@ focus_tree = {
 		id = TUR_secret_alliance_august_1914
 		icon = GFX_focus_TUR_secret_alliance_august_1914
 		cost = 5
-		x = 57
+		x = 98
 		y = 2
 		prerequisite = { focus = TUR_german_rapprochement }
 		available_if_capitulated = no
@@ -2564,7 +2634,7 @@ focus_tree = {
 		id = TUR_german_gold_loans
 		icon = GFX_focus_TUR_german_gold_loans
 		cost = 5
-		x = 56
+		x = 96
 		y = 3
 		prerequisite = { focus = TUR_secret_alliance_august_1914 }
 		available_if_capitulated = no
@@ -2572,6 +2642,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_to_variable = { tur_public_debt = -10 }
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2579,7 +2650,7 @@ focus_tree = {
 		id = TUR_souchon_black_sea_raid
 		icon = GFX_focus_TUR_souchon_black_sea_raid
 		cost = 5
-		x = 58
+		x = 99
 		y = 3
 		prerequisite = { focus = TUR_secret_alliance_august_1914 }
 		available_if_capitulated = no
@@ -2594,7 +2665,7 @@ focus_tree = {
 		id = TUR_join_central_powers_faction
 		icon = GFX_focus_TUR_join_central_powers_faction
 		cost = 5
-		x = 57
+		x = 98
 		y = 4
 		prerequisite = { focus = TUR_german_gold_loans focus = TUR_souchon_black_sea_raid }
 		available_if_capitulated = no
@@ -2609,7 +2680,7 @@ focus_tree = {
 		id = TUR_berlin_constantinople_axis
 		icon = GFX_focus_TUR_berlin_constantinople_axis
 		cost = 5
-		x = 57
+		x = 98
 		y = 5
 		prerequisite = { focus = TUR_join_central_powers_faction }
 		available_if_capitulated = no
@@ -2624,7 +2695,7 @@ focus_tree = {
 		id = TUR_austro_hungarian_danubian_link
 		icon = GFX_focus_TUR_austro_hungarian_danubian_link
 		cost = 5
-		x = 56
+		x = 96
 		y = 6
 		prerequisite = { focus = TUR_berlin_constantinople_axis }
 		available_if_capitulated = no
@@ -2639,7 +2710,7 @@ focus_tree = {
 		id = TUR_bulgarian_transit_corridor
 		icon = GFX_focus_TUR_bulgarian_transit_corridor
 		cost = 5
-		x = 58
+		x = 99
 		y = 6
 		prerequisite = { focus = TUR_berlin_constantinople_axis }
 		available_if_capitulated = no
@@ -2654,7 +2725,7 @@ focus_tree = {
 		id = TUR_central_powers_war_council
 		icon = GFX_focus_TUR_central_powers_war_council
 		cost = 5
-		x = 57
+		x = 98
 		y = 7
 		prerequisite = { focus = TUR_austro_hungarian_danubian_link focus = TUR_bulgarian_transit_corridor }
 		available_if_capitulated = no
@@ -2669,7 +2740,7 @@ focus_tree = {
 		id = TUR_shared_munitions_standardization
 		icon = GFX_focus_TUR_shared_munitions_standardization
 		cost = 5
-		x = 57
+		x = 98
 		y = 8
 		prerequisite = { focus = TUR_central_powers_war_council }
 		available_if_capitulated = no
@@ -2684,7 +2755,7 @@ focus_tree = {
 		id = TUR_strict_armed_neutrality
 		icon = GFX_focus_TUR_strict_armed_neutrality
 		cost = 5
-		x = 61
+		x = 103
 		y = 1
 		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
 		mutually_exclusive = { focus = TUR_german_rapprochement focus = TUR_entente_diplomatic_demands }
@@ -2694,6 +2765,8 @@ focus_tree = {
 			add_stability = 0.15
 			add_political_power = 100
 			add_to_variable = { tur_foreign_influence = -15 }
+			341 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -2701,7 +2774,7 @@ focus_tree = {
 		id = TUR_close_straits_to_all_belligerents
 		icon = GFX_focus_TUR_close_straits_to_all_belligerents
 		cost = 5
-		x = 60
+		x = 102
 		y = 2
 		prerequisite = { focus = TUR_strict_armed_neutrality }
 		available_if_capitulated = no
@@ -2717,7 +2790,7 @@ focus_tree = {
 		id = TUR_demand_belligerent_transit_tolls
 		icon = GFX_focus_TUR_demand_belligerent_transit_tolls
 		cost = 5
-		x = 62
+		x = 104
 		y = 2
 		prerequisite = { focus = TUR_strict_armed_neutrality }
 		available_if_capitulated = no
@@ -2725,6 +2798,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 75
 			add_to_variable = { tur_public_debt = -5 }
+			797 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2732,7 +2806,7 @@ focus_tree = {
 		id = TUR_internal_development_focus
 		icon = GFX_focus_TUR_internal_development_focus
 		cost = 5
-		x = 61
+		x = 103
 		y = 3
 		prerequisite = { focus = TUR_close_straits_to_all_belligerents focus = TUR_demand_belligerent_transit_tolls }
 		available_if_capitulated = no
@@ -2747,7 +2821,7 @@ focus_tree = {
 		id = TUR_profit_from_wartime_trade
 		icon = GFX_focus_TUR_profit_from_wartime_trade
 		cost = 5
-		x = 61
+		x = 103
 		y = 4
 		prerequisite = { focus = TUR_internal_development_focus }
 		available_if_capitulated = no
@@ -2755,6 +2829,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 120
 			add_to_variable = { tur_public_debt = -15 }
+			339 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2762,7 +2837,7 @@ focus_tree = {
 		id = TUR_swiss_of_the_orient_neutrality
 		icon = GFX_focus_TUR_swiss_of_the_orient_neutrality
 		cost = 5
-		x = 61
+		x = 103
 		y = 5
 		prerequisite = { focus = TUR_profit_from_wartime_trade }
 		available_if_capitulated = no
@@ -2771,6 +2846,7 @@ focus_tree = {
 			add_stability = 0.20
 			add_political_power = 100
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			49 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 		}
 	}
 
@@ -2778,7 +2854,7 @@ focus_tree = {
 		id = TUR_diplomatic_mediation_summit
 		icon = GFX_focus_TUR_diplomatic_mediation_summit
 		cost = 5
-		x = 61
+		x = 103
 		y = 6
 		prerequisite = { focus = TUR_swiss_of_the_orient_neutrality }
 		available_if_capitulated = no
@@ -2786,6 +2862,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			add_stability = 0.10
+			add_command_power = 25
+			add_tech_bonus = { name = TUR_mediation_industry_bonus bonus = 0.50 uses = 1 category = industry }
 		}
 	}
 
@@ -2793,7 +2871,7 @@ focus_tree = {
 		id = TUR_neutral_sovereignty_guaranteed
 		icon = GFX_focus_TUR_neutral_sovereignty_guaranteed
 		cost = 5
-		x = 61
+		x = 103
 		y = 7
 		prerequisite = { focus = TUR_diplomatic_mediation_summit }
 		available_if_capitulated = no
@@ -2801,6 +2879,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.15
 			add_to_variable = { tur_imperial_cohesion = 15 }
+			797 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -2808,7 +2888,7 @@ focus_tree = {
 		id = TUR_entente_diplomatic_demands
 		icon = GFX_focus_TUR_entente_diplomatic_demands
 		cost = 5
-		x = 64
+		x = 108
 		y = 1
 		prerequisite = { focus = TUR_sublime_porte_foreign_policy }
 		mutually_exclusive = { focus = TUR_german_rapprochement focus = TUR_strict_armed_neutrality }
@@ -2817,6 +2897,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			add_to_variable = { tur_foreign_influence = 5 }
+			add_command_power = 20
+			navy_experience = 15
 		}
 	}
 
@@ -2824,7 +2906,7 @@ focus_tree = {
 		id = TUR_demand_dreadnought_deliveries
 		icon = GFX_focus_TUR_demand_dreadnought_deliveries
 		cost = 5
-		x = 63
+		x = 106
 		y = 2
 		prerequisite = { focus = TUR_entente_diplomatic_demands }
 		available_if_capitulated = no
@@ -2840,7 +2922,7 @@ focus_tree = {
 		id = TUR_territorial_integrity_guarantees
 		icon = GFX_focus_TUR_territorial_integrity_guarantees
 		cost = 5
-		x = 65
+		x = 108
 		y = 2
 		prerequisite = { focus = TUR_entente_diplomatic_demands }
 		available_if_capitulated = no
@@ -2848,6 +2930,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_political_power = 60
+			354 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			army_experience = 15
 		}
 	}
 
@@ -2855,7 +2939,7 @@ focus_tree = {
 		id = TUR_anglo_ottoman_gulf_treaty
 		icon = GFX_focus_TUR_anglo_ottoman_gulf_treaty
 		cost = 5
-		x = 64
+		x = 108
 		y = 3
 		prerequisite = { focus = TUR_demand_dreadnought_deliveries focus = TUR_territorial_integrity_guarantees }
 		available_if_capitulated = no
@@ -2870,7 +2954,7 @@ focus_tree = {
 		id = TUR_neutralize_russian_threat
 		icon = GFX_focus_TUR_neutralize_russian_threat
 		cost = 5
-		x = 64
+		x = 108
 		y = 4
 		prerequisite = { focus = TUR_anglo_ottoman_gulf_treaty }
 		available_if_capitulated = no
@@ -2885,7 +2969,7 @@ focus_tree = {
 		id = TUR_french_syrian_economic_pact
 		icon = GFX_focus_TUR_french_syrian_economic_pact
 		cost = 5
-		x = 64
+		x = 107
 		y = 5
 		prerequisite = { focus = TUR_neutralize_russian_threat }
 		available_if_capitulated = no
@@ -2900,7 +2984,7 @@ focus_tree = {
 		id = TUR_entente_cooperation_treaty
 		icon = GFX_focus_TUR_entente_cooperation_treaty
 		cost = 5
-		x = 64
+		x = 108
 		y = 6
 		prerequisite = { focus = TUR_french_syrian_economic_pact }
 		available_if_capitulated = no
@@ -2916,7 +3000,7 @@ focus_tree = {
 		id = TUR_secured_ottoman_borders
 		icon = GFX_focus_TUR_secured_ottoman_borders
 		cost = 5
-		x = 64
+		x = 108
 		y = 7
 		prerequisite = { focus = TUR_entente_cooperation_treaty }
 		available_if_capitulated = no
@@ -2924,6 +3008,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 15 }
+			341 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -2931,9 +3017,9 @@ focus_tree = {
 		id = TUR_the_sovereign_straits_regime
 		icon = GFX_focus_TUR_the_sovereign_straits_regime
 		cost = 5
-		x = 59
+		x = 100
 		y = 9
-		prerequisite = { focus = TUR_aegean_island_garrisons focus = TUR_shared_munitions_standardization focus = TUR_neutral_sovereignty_guaranteed focus = TUR_secured_ottoman_borders }
+		prerequisite = { focus = TUR_cyrenaica_desert_posts focus = TUR_shared_munitions_standardization focus = TUR_neutral_sovereignty_guaranteed focus = TUR_secured_ottoman_borders }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
@@ -2946,7 +3032,7 @@ focus_tree = {
 		id = TUR_dardanelles_maritime_hegemony
 		icon = GFX_focus_TUR_dardanelles_maritime_hegemony
 		cost = 5
-		x = 57
+		x = 98
 		y = 10
 		prerequisite = { focus = TUR_the_sovereign_straits_regime }
 		available_if_capitulated = no
@@ -2961,7 +3047,7 @@ focus_tree = {
 		id = TUR_levantine_coastal_security
 		icon = GFX_focus_TUR_levantine_coastal_security
 		cost = 5
-		x = 61
+		x = 102
 		y = 10
 		prerequisite = { focus = TUR_the_sovereign_straits_regime }
 		available_if_capitulated = no
@@ -2976,7 +3062,7 @@ focus_tree = {
 		id = TUR_sublime_porte_global_standing
 		icon = GFX_focus_TUR_sublime_porte_global_standing
 		cost = 5
-		x = 59
+		x = 100
 		y = 11
 		prerequisite = { focus = TUR_dardanelles_maritime_hegemony focus = TUR_levantine_coastal_security }
 		available_if_capitulated = no
@@ -2985,6 +3071,8 @@ focus_tree = {
 			add_stability = 0.15
 			add_political_power = 100
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_command_power = 25
 		}
 	}
 
@@ -2992,7 +3080,7 @@ focus_tree = {
 		id = TUR_destiny_of_the_near_east
 		icon = GFX_focus_TUR_destiny_of_the_near_east
 		cost = 5
-		x = 59
+		x = 100
 		y = 12
 		prerequisite = { focus = TUR_sublime_porte_global_standing }
 		available_if_capitulated = no
@@ -3001,6 +3089,8 @@ focus_tree = {
 			add_stability = 0.15
 			add_war_support = 0.10
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			554 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			army_experience = 25
 		}
 	}
 
@@ -3008,7 +3098,7 @@ focus_tree = {
 		id = TUR_pax_osmanica_reasserted
 		icon = GFX_focus_TUR_pax_osmanica_reasserted
 		cost = 5
-		x = 59
+		x = 100
 		y = 13
 		prerequisite = { focus = TUR_destiny_of_the_near_east }
 		available_if_capitulated = no
@@ -3017,6 +3107,7 @@ focus_tree = {
 			add_stability = 0.20
 			add_political_power = 150
 			add_to_variable = { tur_imperial_cohesion = 25 }
+			797 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3024,7 +3115,7 @@ focus_tree = {
 		id = TUR_the_war_for_imperial_survival
 		icon = GFX_focus_TUR_the_war_for_imperial_survival
 		cost = 5
-		x = 77
+		x = 128
 		y = 0
 		available = { has_war = yes }
 		available_if_capitulated = no
@@ -3040,7 +3131,7 @@ focus_tree = {
 		id = TUR_caucasus_logistics_preparation
 		icon = GFX_focus_TUR_caucasus_logistics_preparation
 		cost = 5
-		x = 70
+		x = 117
 		y = 1
 		prerequisite = { focus = TUR_the_war_for_imperial_survival }
 		available_if_capitulated = no
@@ -3055,7 +3146,7 @@ focus_tree = {
 		id = TUR_third_army_mountain_offensive
 		icon = GFX_focus_TUR_third_army_mountain_offensive
 		cost = 5
-		x = 69
+		x = 116
 		y = 2
 		prerequisite = { focus = TUR_caucasus_logistics_preparation }
 		available_if_capitulated = no
@@ -3071,7 +3162,7 @@ focus_tree = {
 		id = TUR_trabzon_supply_lifeline
 		icon = GFX_focus_TUR_trabzon_supply_lifeline
 		cost = 5
-		x = 71
+		x = 118
 		y = 2
 		prerequisite = { focus = TUR_caucasus_logistics_preparation }
 		available_if_capitulated = no
@@ -3086,7 +3177,7 @@ focus_tree = {
 		id = TUR_retake_kars_ardahan_batum
 		icon = GFX_focus_TUR_retake_kars_ardahan_batum
 		cost = 5
-		x = 70
+		x = 117
 		y = 3
 		prerequisite = { focus = TUR_third_army_mountain_offensive focus = TUR_trabzon_supply_lifeline }
 		available_if_capitulated = no
@@ -3102,7 +3193,7 @@ focus_tree = {
 		id = TUR_army_of_islam_caucasus
 		icon = GFX_focus_TUR_army_of_islam_caucasus
 		cost = 5
-		x = 70
+		x = 118
 		y = 4
 		prerequisite = { focus = TUR_retake_kars_ardahan_batum }
 		available_if_capitulated = no
@@ -3119,7 +3210,7 @@ focus_tree = {
 		id = TUR_baku_petroleum_drive
 		icon = GFX_focus_TUR_baku_petroleum_drive
 		cost = 5
-		x = 70
+		x = 118
 		y = 5
 		prerequisite = { focus = TUR_army_of_islam_caucasus }
 		available_if_capitulated = no
@@ -3128,6 +3219,8 @@ focus_tree = {
 			add_war_support = 0.15
 			add_political_power = 80
 			add_to_variable = { tur_imperial_cohesion = 15 }
+			354 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			army_experience = 20
 		}
 	}
 
@@ -3135,7 +3228,7 @@ focus_tree = {
 		id = TUR_caspian_flotilla_organization
 		icon = GFX_focus_TUR_caspian_flotilla_organization
 		cost = 5
-		x = 70
+		x = 118
 		y = 6
 		prerequisite = { focus = TUR_baku_petroleum_drive }
 		available_if_capitulated = no
@@ -3150,7 +3243,7 @@ focus_tree = {
 		id = TUR_caucasian_tribal_auxiliaries
 		icon = GFX_focus_TUR_caucasian_tribal_auxiliaries
 		cost = 5
-		x = 70
+		x = 118
 		y = 7
 		prerequisite = { focus = TUR_caspian_flotilla_organization }
 		available_if_capitulated = no
@@ -3165,7 +3258,7 @@ focus_tree = {
 		id = TUR_transcaucasian_security_sphere
 		icon = GFX_focus_TUR_transcaucasian_security_sphere
 		cost = 5
-		x = 70
+		x = 118
 		y = 8
 		prerequisite = { focus = TUR_caucasian_tribal_auxiliaries }
 		available_if_capitulated = no
@@ -3173,6 +3266,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_to_variable = { tur_imperial_cohesion = 15 }
+			354 = { add_building_construction = { type = bunker level = 2 instant_build = yes } }
+			army_experience = 25
 		}
 	}
 
@@ -3180,7 +3275,7 @@ focus_tree = {
 		id = TUR_cevat_pasha_artillery_defence
 		icon = GFX_focus_TUR_cevat_pasha_artillery_defence
 		cost = 5
-		x = 73
+		x = 121
 		y = 1
 		prerequisite = { focus = TUR_the_war_for_imperial_survival }
 		available_if_capitulated = no
@@ -3196,7 +3291,7 @@ focus_tree = {
 		id = TUR_chunuk_bair_counterattack
 		icon = GFX_focus_TUR_chunuk_bair_counterattack
 		cost = 5
-		x = 72
+		x = 120
 		y = 2
 		prerequisite = { focus = TUR_cevat_pasha_artillery_defence }
 		available_if_capitulated = no
@@ -3212,7 +3307,7 @@ focus_tree = {
 		id = TUR_fifth_army_mobile_reserves
 		icon = GFX_focus_TUR_fifth_army_mobile_reserves
 		cost = 5
-		x = 74
+		x = 122
 		y = 2
 		prerequisite = { focus = TUR_cevat_pasha_artillery_defence }
 		available_if_capitulated = no
@@ -3227,7 +3322,7 @@ focus_tree = {
 		id = TUR_drive_invaders_into_the_sea
 		icon = GFX_focus_TUR_drive_invaders_into_the_sea
 		cost = 5
-		x = 73
+		x = 121
 		y = 3
 		prerequisite = { focus = TUR_chunuk_bair_counterattack focus = TUR_fifth_army_mobile_reserves }
 		available_if_capitulated = no
@@ -3236,6 +3331,8 @@ focus_tree = {
 			add_war_support = 0.15
 			add_stability = 0.15
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			army_experience = 30
+			add_command_power = 25
 		}
 	}
 
@@ -3243,7 +3340,7 @@ focus_tree = {
 		id = TUR_anafartalar_heroism_legacy
 		icon = GFX_focus_TUR_anafartalar_heroism_legacy
 		cost = 5
-		x = 73
+		x = 121
 		y = 4
 		prerequisite = { focus = TUR_drive_invaders_into_the_sea }
 		available_if_capitulated = no
@@ -3259,7 +3356,7 @@ focus_tree = {
 		id = TUR_fortress_canakkale_permanent
 		icon = GFX_focus_TUR_fortress_canakkale_permanent
 		cost = 5
-		x = 73
+		x = 121
 		y = 5
 		prerequisite = { focus = TUR_anafartalar_heroism_legacy }
 		available_if_capitulated = no
@@ -3274,7 +3371,7 @@ focus_tree = {
 		id = TUR_tigris_river_flotilla
 		icon = GFX_focus_TUR_tigris_river_flotilla
 		cost = 5
-		x = 76
+		x = 125
 		y = 1
 		prerequisite = { focus = TUR_the_war_for_imperial_survival }
 		available_if_capitulated = no
@@ -3289,7 +3386,7 @@ focus_tree = {
 		id = TUR_defense_of_kut_al_amara
 		icon = GFX_focus_TUR_defense_of_kut_al_amara
 		cost = 5
-		x = 75
+		x = 124
 		y = 2
 		prerequisite = { focus = TUR_tigris_river_flotilla }
 		available_if_capitulated = no
@@ -3305,7 +3402,7 @@ focus_tree = {
 		id = TUR_encirclement_of_townshend_army
 		icon = GFX_focus_TUR_encirclement_of_townshend_army
 		cost = 5
-		x = 77
+		x = 126
 		y = 2
 		prerequisite = { focus = TUR_tigris_river_flotilla }
 		available_if_capitulated = no
@@ -3321,7 +3418,7 @@ focus_tree = {
 		id = TUR_halil_kut_triumph
 		icon = GFX_focus_TUR_halil_kut_triumph
 		cost = 5
-		x = 76
+		x = 125
 		y = 3
 		prerequisite = { focus = TUR_defense_of_kut_al_amara focus = TUR_encirclement_of_townshend_army }
 		available_if_capitulated = no
@@ -3337,7 +3434,7 @@ focus_tree = {
 		id = TUR_secure_basra_access
 		icon = GFX_focus_TUR_secure_basra_access
 		cost = 5
-		x = 76
+		x = 125
 		y = 4
 		prerequisite = { focus = TUR_halil_kut_triumph }
 		available_if_capitulated = no
@@ -3352,7 +3449,7 @@ focus_tree = {
 		id = TUR_shatt_al_arab_defensive_perimeter
 		icon = GFX_focus_TUR_shatt_al_arab_defensive_perimeter
 		cost = 5
-		x = 76
+		x = 125
 		y = 5
 		prerequisite = { focus = TUR_secure_basra_access }
 		available_if_capitulated = no
@@ -3367,7 +3464,7 @@ focus_tree = {
 		id = TUR_cross_the_sinai_desert
 		icon = GFX_focus_TUR_cross_the_sinai_desert
 		cost = 5
-		x = 79
+		x = 129
 		y = 1
 		prerequisite = { focus = TUR_the_war_for_imperial_survival }
 		available_if_capitulated = no
@@ -3382,7 +3479,7 @@ focus_tree = {
 		id = TUR_suez_canal_raids
 		icon = GFX_focus_TUR_suez_canal_raids
 		cost = 5
-		x = 78
+		x = 128
 		y = 2
 		prerequisite = { focus = TUR_cross_the_sinai_desert }
 		available_if_capitulated = no
@@ -3398,7 +3495,7 @@ focus_tree = {
 		id = TUR_gaza_beersheba_defensive_line
 		icon = GFX_focus_TUR_gaza_beersheba_defensive_line
 		cost = 5
-		x = 80
+		x = 130
 		y = 2
 		prerequisite = { focus = TUR_cross_the_sinai_desert }
 		available_if_capitulated = no
@@ -3414,7 +3511,7 @@ focus_tree = {
 		id = TUR_defense_of_jerusalem
 		icon = GFX_focus_TUR_defense_of_jerusalem
 		cost = 5
-		x = 79
+		x = 129
 		y = 3
 		prerequisite = { focus = TUR_suez_canal_raids focus = TUR_gaza_beersheba_defensive_line }
 		available_if_capitulated = no
@@ -3429,7 +3526,7 @@ focus_tree = {
 		id = TUR_damascus_bastion
 		icon = GFX_focus_TUR_damascus_bastion
 		cost = 5
-		x = 79
+		x = 129
 		y = 4
 		prerequisite = { focus = TUR_defense_of_jerusalem }
 		available_if_capitulated = no
@@ -3444,8 +3541,8 @@ focus_tree = {
 		id = TUR_levantine_supply_depots
 		icon = GFX_focus_TUR_levantine_supply_depots
 		cost = 5
-		x = 79
-		y = 5
+		x = 129
+		y = 6
 		prerequisite = { focus = TUR_damascus_bastion }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3459,7 +3556,7 @@ focus_tree = {
 		id = TUR_protect_hejaz_railway_garrisons
 		icon = GFX_focus_TUR_protect_hejaz_railway_garrisons
 		cost = 5
-		x = 81
+		x = 133
 		y = 1
 		prerequisite = { focus = TUR_the_war_for_imperial_survival }
 		available_if_capitulated = no
@@ -3474,7 +3571,7 @@ focus_tree = {
 		id = TUR_fakhri_pasha_medina_defense
 		icon = GFX_focus_TUR_fakhri_pasha_medina_defense
 		cost = 5
-		x = 82
+		x = 133
 		y = 2
 		prerequisite = { focus = TUR_protect_hejaz_railway_garrisons }
 		available_if_capitulated = no
@@ -3491,7 +3588,7 @@ focus_tree = {
 		id = TUR_crush_or_reconcile_sharifians
 		icon = GFX_focus_TUR_crush_or_reconcile_sharifians
 		cost = 5
-		x = 81
+		x = 133
 		y = 3
 		prerequisite = { focus = TUR_fakhri_pasha_medina_defense }
 		available_if_capitulated = no
@@ -3507,7 +3604,7 @@ focus_tree = {
 		id = TUR_holy_relics_safeguard
 		icon = GFX_focus_TUR_holy_relics_safeguard
 		cost = 5
-		x = 82
+		x = 133
 		y = 4
 		prerequisite = { focus = TUR_crush_or_reconcile_sharifians }
 		available_if_capitulated = no
@@ -3516,6 +3613,8 @@ focus_tree = {
 			add_stability = 0.10
 			add_political_power = 50
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			679 = { add_building_construction = { type = bunker level = 1 instant_build = yes } }
+			add_command_power = 20
 		}
 	}
 
@@ -3523,12 +3622,13 @@ focus_tree = {
 		id = TUR_red_sea_desert_patrols
 		icon = GFX_focus_TUR_red_sea_desert_patrols
 		cost = 5
-		x = 81
-		y = 5
+		x = 133
+		y = 6
 		prerequisite = { focus = TUR_holy_relics_safeguard }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			country_event = { id = ww1_ottoman.26 }
 			army_experience = 20
 			add_command_power = 20
 		}
@@ -3538,7 +3638,7 @@ focus_tree = {
 		id = TUR_war_bread_and_rationing
 		icon = GFX_focus_TUR_war_bread_and_rationing
 		cost = 5
-		x = 84
+		x = 137
 		y = 1
 		prerequisite = { focus = TUR_the_war_for_imperial_survival }
 		available_if_capitulated = no
@@ -3553,7 +3653,7 @@ focus_tree = {
 		id = TUR_requisition_imperial_resources
 		icon = GFX_focus_TUR_requisition_imperial_resources
 		cost = 5
-		x = 83
+		x = 136
 		y = 2
 		prerequisite = { focus = TUR_war_bread_and_rationing }
 		available_if_capitulated = no
@@ -3561,6 +3661,8 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.10
 			add_political_power = 50
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 producer = TUR }
+			49 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3568,7 +3670,7 @@ focus_tree = {
 		id = TUR_teskilat_asymmetric_warfare
 		icon = GFX_focus_TUR_teskilat_asymmetric_warfare
 		cost = 5
-		x = 85
+		x = 138
 		y = 2
 		prerequisite = { focus = TUR_war_bread_and_rationing }
 		available_if_capitulated = no
@@ -3583,7 +3685,7 @@ focus_tree = {
 		id = TUR_counter_the_blockade
 		icon = GFX_focus_TUR_counter_the_blockade
 		cost = 5
-		x = 84
+		x = 137
 		y = 3
 		prerequisite = { focus = TUR_requisition_imperial_resources focus = TUR_teskilat_asymmetric_warfare }
 		available_if_capitulated = no
@@ -3598,7 +3700,7 @@ focus_tree = {
 		id = TUR_total_war_labour_mobilization
 		icon = GFX_focus_TUR_total_war_labour_mobilization
 		cost = 5
-		x = 84
+		x = 137
 		y = 4
 		prerequisite = { focus = TUR_counter_the_blockade }
 		available_if_capitulated = no
@@ -3613,8 +3715,8 @@ focus_tree = {
 		id = TUR_emergency_war_levies
 		icon = GFX_focus_TUR_emergency_war_levies
 		cost = 5
-		x = 84
-		y = 5
+		x = 137
+		y = 6
 		prerequisite = { focus = TUR_total_war_labour_mobilization }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -3628,15 +3730,17 @@ focus_tree = {
 		id = TUR_the_eastern_storm_survived
 		icon = GFX_focus_TUR_the_eastern_storm_survived
 		cost = 5
-		x = 77
+		x = 128
 		y = 9
-		prerequisite = { focus = TUR_transcaucasian_security_sphere focus = TUR_fortress_canakkale_permanent focus = TUR_shatt_al_arab_defensive_perimeter focus = TUR_levantine_supply_depots focus = TUR_red_sea_desert_patrols focus = TUR_emergency_war_levies }
+		prerequisite = { focus = TUR_transcaucasian_security_sphere focus = TUR_trench_warfare_drills_canakkale focus = TUR_ctesiphon_defensive_stand focus = TUR_levantine_supply_depots focus = TUR_red_sea_desert_patrols focus = TUR_emergency_war_levies }
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_stability = 0.15
 			add_war_support = 0.15
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			army_experience = 35
+			add_command_power = 30
 		}
 	}
 
@@ -3644,7 +3748,7 @@ focus_tree = {
 		id = TUR_brest_litovsk_claims
 		icon = GFX_focus_TUR_brest_litovsk_claims
 		cost = 5
-		x = 74
+		x = 125
 		y = 10
 		prerequisite = { focus = TUR_the_eastern_storm_survived }
 		available_if_capitulated = no
@@ -3661,7 +3765,7 @@ focus_tree = {
 		id = TUR_middle_eastern_hegemon
 		icon = GFX_focus_TUR_middle_eastern_hegemon
 		cost = 5
-		x = 80
+		x = 131
 		y = 10
 		prerequisite = { focus = TUR_the_eastern_storm_survived }
 		available_if_capitulated = no
@@ -3670,6 +3774,8 @@ focus_tree = {
 			add_political_power = 120
 			add_stability = 0.15
 			add_to_variable = { tur_imperial_cohesion = 20 }
+			291 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			army_experience = 25
 		}
 	}
 
@@ -3677,7 +3783,7 @@ focus_tree = {
 		id = TUR_1918_total_victory_protocol
 		icon = GFX_focus_TUR_1918_total_victory_protocol
 		cost = 5
-		x = 77
+		x = 128
 		y = 11
 		prerequisite = { focus = TUR_brest_litovsk_claims focus = TUR_middle_eastern_hegemon }
 		available_if_capitulated = no
@@ -3694,7 +3800,7 @@ focus_tree = {
 		id = TUR_reborn_empire_destiny
 		icon = GFX_focus_TUR_reborn_empire_destiny
 		cost = 5
-		x = 75
+		x = 126
 		y = 12
 		prerequisite = { focus = TUR_1918_total_victory_protocol }
 		mutually_exclusive = { focus = TUR_republican_renaissance_destiny }
@@ -3712,7 +3818,7 @@ focus_tree = {
 		id = TUR_republican_renaissance_destiny
 		icon = GFX_focus_TUR_republican_renaissance_destiny
 		cost = 5
-		x = 79
+		x = 130
 		y = 12
 		prerequisite = { focus = TUR_1918_total_victory_protocol }
 		mutually_exclusive = { focus = TUR_reborn_empire_destiny }
@@ -3722,6 +3828,8 @@ focus_tree = {
 			add_stability = 0.15
 			add_political_power = 120
 			add_to_variable = { tur_imperial_cohesion = 25 }
+			country_event = { id = ww1_ottoman.29 }
+			add_tech_bonus = { name = TUR_republican_renaissance_bonus bonus = 0.50 uses = 1 category = industry }
 		}
 	}
 
@@ -3729,7 +3837,7 @@ focus_tree = {
 		id = TUR_eternal_sublime_destiny
 		icon = GFX_focus_TUR_eternal_sublime_destiny
 		cost = 5
-		x = 77
+		x = 128
 		y = 13
 		prerequisite = { focus = TUR_reborn_empire_destiny focus = TUR_republican_renaissance_destiny }
 		available_if_capitulated = no
@@ -3769,6 +3877,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 60
 			add_stability = 0.05
+			add_command_power = 20
+			797 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -3776,7 +3886,7 @@ focus_tree = {
 		id = TUR_al_fatat_secret_dialogue
 		icon = GFX_focus_TUR_al_fatat_secret_dialogue
 		cost = 5
-		x = 13
+		x = 26
 		y = 5
 		prerequisite = { focus = TUR_loyal_tribal_federation }
 		available_if_capitulated = no
@@ -3785,6 +3895,8 @@ focus_tree = {
 			add_political_power = 50
 			add_to_variable = { tur_arab_unrest = -15 }
 			add_to_variable = { tur_imperial_cohesion = 10 }
+			554 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_command_power = 15
 		}
 	}
 
@@ -3792,7 +3904,7 @@ focus_tree = {
 		id = TUR_arab_notables_chamber
 		icon = GFX_focus_TUR_arab_notables_chamber
 		cost = 5
-		x = 15
+		x = 30
 		y = 5
 		prerequisite = { focus = TUR_caliphate_and_arab_solidarity }
 		available_if_capitulated = no
@@ -3809,7 +3921,7 @@ focus_tree = {
 		id = TUR_pontic_coal_shipping
 		icon = GFX_focus_TUR_pontic_coal_shipping
 		cost = 5
-		x = 27
+		x = 50
 		y = 7
 		prerequisite = { focus = TUR_amasya_metal_smelters }
 		available_if_capitulated = no
@@ -3824,7 +3936,7 @@ focus_tree = {
 		id = TUR_cilicia_irrigation_canals
 		icon = GFX_focus_TUR_cilicia_irrigation_canals
 		cost = 5
-		x = 32
+		x = 58
 		y = 6
 		prerequisite = { focus = TUR_mechanized_anatolian_farming }
 		available_if_capitulated = no
@@ -3839,7 +3951,7 @@ focus_tree = {
 		id = TUR_aleppo_commercial_hub
 		icon = GFX_focus_TUR_aleppo_commercial_hub
 		cost = 5
-		x = 23
+		x = 43
 		y = 6
 		prerequisite = { focus = TUR_syrian_feeder_lines }
 		available_if_capitulated = no
@@ -3853,7 +3965,7 @@ focus_tree = {
 		id = TUR_syrian_grain_storage
 		icon = GFX_focus_TUR_syrian_grain_storage
 		cost = 5
-		x = 25
+		x = 46
 		y = 7
 		prerequisite = { focus = TUR_jerusalem_jaffa_railway_upgrade }
 		available_if_capitulated = no
@@ -3868,7 +3980,7 @@ focus_tree = {
 		id = TUR_izmir_naval_seaplane_base
 		icon = GFX_focus_TUR_izmir_naval_seaplane_base
 		cost = 5
-		x = 47
+		x = 80
 		y = 5
 		prerequisite = { focus = TUR_black_sea_submarine_patrols }
 		available_if_capitulated = no
@@ -3883,7 +3995,7 @@ focus_tree = {
 		id = TUR_marmara_anti_submarine_nets
 		icon = GFX_focus_TUR_marmara_anti_submarine_nets
 		cost = 5
-		x = 49
+		x = 83
 		y = 5
 		prerequisite = { focus = TUR_searchlight_batteries_dardanelles }
 		available_if_capitulated = no
@@ -3898,7 +4010,7 @@ focus_tree = {
 		id = TUR_cavalry_reconnaissance_squadrons
 		icon = GFX_focus_TUR_cavalry_reconnaissance_squadrons
 		cost = 5
-		x = 38
+		x = 68
 		y = 5
 		prerequisite = { focus = TUR_desert_camel_corps_regiments }
 		available_if_capitulated = no
@@ -3913,7 +4025,7 @@ focus_tree = {
 		id = TUR_harbiye_cadet_battalions
 		icon = GFX_focus_TUR_harbiye_cadet_battalions
 		cost = 5
-		x = 43
+		x = 74
 		y = 5
 		prerequisite = { focus = TUR_anatolian_guerrilla_tradition }
 		available_if_capitulated = no
@@ -3928,7 +4040,7 @@ focus_tree = {
 		id = TUR_rome_mediterranean_dialogue
 		icon = GFX_focus_TUR_rome_mediterranean_dialogue
 		cost = 5
-		x = 55
+		x = 94
 		y = 5
 		prerequisite = { focus = TUR_tripoli_coastal_fortifications }
 		available_if_capitulated = no
@@ -3943,7 +4055,7 @@ focus_tree = {
 		id = TUR_paris_credit_negotiations
 		icon = GFX_focus_TUR_paris_credit_negotiations
 		cost = 5
-		x = 65
+		x = 109
 		y = 5
 		prerequisite = { focus = TUR_neutralize_russian_threat }
 		available_if_capitulated = no
@@ -3958,7 +4070,7 @@ focus_tree = {
 		id = TUR_persian_border_security
 		icon = GFX_focus_TUR_persian_border_security
 		cost = 5
-		x = 53
+		x = 91
 		y = 5
 		prerequisite = { focus = TUR_aegean_island_garrisons }
 		available_if_capitulated = no
@@ -3973,7 +4085,7 @@ focus_tree = {
 		id = TUR_cyrenaica_desert_posts
 		icon = GFX_focus_TUR_cyrenaica_desert_posts
 		cost = 5
-		x = 55
+		x = 94
 		y = 6
 		prerequisite = { focus = TUR_rome_mediterranean_dialogue }
 		available_if_capitulated = no
@@ -3988,7 +4100,7 @@ focus_tree = {
 		id = TUR_erzurum_fortress_line
 		icon = GFX_focus_TUR_erzurum_fortress_line
 		cost = 5
-		x = 69
+		x = 116
 		y = 4
 		prerequisite = { focus = TUR_retake_kars_ardahan_batum }
 		available_if_capitulated = no
@@ -4003,7 +4115,7 @@ focus_tree = {
 		id = TUR_trench_warfare_drills_canakkale
 		icon = GFX_focus_TUR_trench_warfare_drills_canakkale
 		cost = 5
-		x = 73
+		x = 121
 		y = 6
 		prerequisite = { focus = TUR_fortress_canakkale_permanent }
 		available_if_capitulated = no
@@ -4018,7 +4130,7 @@ focus_tree = {
 		id = TUR_ctesiphon_defensive_stand
 		icon = GFX_focus_TUR_ctesiphon_defensive_stand
 		cost = 5
-		x = 76
+		x = 125
 		y = 6
 		prerequisite = { focus = TUR_shatt_al_arab_defensive_perimeter }
 		available_if_capitulated = no
@@ -4033,7 +4145,7 @@ focus_tree = {
 		id = TUR_hejaz_armored_train_patrols
 		icon = GFX_focus_TUR_hejaz_armored_train_patrols
 		cost = 5
-		x = 82
+		x = 133
 		y = 5
 		prerequisite = { focus = TUR_holy_relics_safeguard }
 		available_if_capitulated = no
