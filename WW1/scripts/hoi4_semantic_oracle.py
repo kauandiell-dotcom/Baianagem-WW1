@@ -50,6 +50,7 @@ def audit_file_modifiers(filepath: str) -> List[Tuple[int, str, str]]:
     """
     Parses a Clausewitz file and extracts all modifier = { ... } blocks,
     returning a list of (line_num, token_name, idea_or_context_id) that are invalid.
+    Correctly distinguishes country modifier blocks from ai_will_do/ai_chance trigger modifiers.
     """
     if not os.path.exists(filepath):
         return []
@@ -58,44 +59,33 @@ def audit_file_modifiers(filepath: str) -> List[Tuple[int, str, str]]:
     with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
         lines = f.readlines()
 
-    in_modifier_block = False
-    brace_depth = 0
-    current_context = "unknown"
-
+    stack = []
     for line_idx, raw_line in enumerate(lines, start=1):
-        line = raw_line.strip()
-        if not line or line.startswith("#"):
+        clean = raw_line.split("#")[0].strip()
+        if not clean:
             continue
 
-        # Simple context tracking (e.g. idea_id = {)
-        id_match = re.match(r"^([a-zA-Z0-9_]+)\s*=\s*\{", line)
-        if id_match and not in_modifier_block:
-            token = id_match.group(1)
-            if token not in ("ideas", "country", "modifier", "limit", "available", "rule"):
-                current_context = token
-
-        if "modifier" in line and "{" in line:
-            in_modifier_block = True
-            brace_depth = 1
-            continue
-
-        if in_modifier_block:
-            brace_depth += line.count("{") - line.count("}")
-            if brace_depth <= 0:
-                in_modifier_block = False
-                continue
-
-            # Inside modifier = { ... }, check token = value
-            if "=" in line and not line.startswith("#"):
-                parts = line.split("=")
-                key = parts[0].strip()
-                # filter out structural keywords inside modifier like custom_effect_tooltip
-                if key in ("custom_effect_tooltip",):
-                    continue
-                if not is_valid_country_modifier(key):
-                    errors.append((line_idx, key, current_context))
+        for m in re.finditer(r'([a-zA-Z0-9_]+)\s*=\s*\{|\{|\}|([a-zA-Z0-9_]+)\s*=\s*([^\{\}]+)', clean):
+            full = m.group(0)
+            if full.endswith("{"):
+                key = m.group(1) or "block"
+                stack.append(key)
+            elif full == "}":
+                if stack:
+                    stack.pop()
+            else:
+                key = m.group(2)
+                if stack and stack[-1] == "modifier":
+                    parent = stack[-2] if len(stack) >= 2 else ""
+                    if parent in ("ai_will_do", "ai_chance", "mtth", "mean_time_to_happen"):
+                        continue
+                    if key in ("custom_effect_tooltip", "modifier"):
+                        continue
+                    if not is_valid_country_modifier(key):
+                        errors.append((line_idx, key, parent))
 
     return errors
+
 
 
 if __name__ == "__main__":

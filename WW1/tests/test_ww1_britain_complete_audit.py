@@ -50,6 +50,40 @@ class TestBritainCompleteAudit(unittest.TestCase):
             f"Anti-Stacking Violation: UK focus tree calls add_ideas {len(added_ideas)} times! Max allowed is 5."
         )
 
+    def test_decisions_have_no_invalid_modifiers_or_ghost_ideas(self):
+        """Failure Mode 5: Decisions must not reference non-existent ideas or use invalid modifier tokens."""
+        dec_files = glob.glob(os.path.join(MOD_ROOT, "common", "decisions", "*britain*.txt"))
+        self.assertTrue(len(dec_files) > 0, "No UK decision files found!")
+
+        # 1. Modifiers inside decisions must be valid
+        all_mod_errors = []
+        for df in dec_files:
+            rel = os.path.relpath(df, MOD_ROOT)
+            errors = audit_file_modifiers(df)
+            for line_no, token, ctx in errors:
+                all_mod_errors.append(f"{rel}:{line_no} [{ctx}]: Unknown modifier token '{token}'")
+
+        self.assertEqual(len(all_mod_errors), 0, f"Found invalid modifiers in decisions:\n" + "\n".join(all_mod_errors[:10]))
+
+        # 2. Check for references to ghost ideas
+        ghost_ideas = [
+            "ENG_ww1_x_indian_corps",
+            "ENG_ww1_x_district_contracts",
+            "ENG_ww1_x_seaplane_patrols",
+            "ENG_ww1_x_city_credit_line",
+            "ENG_ww1_x_officer_courses"
+        ]
+        ghost_errors = []
+        for df in dec_files:
+            rel = os.path.relpath(df, MOD_ROOT)
+            with open(df, "r", encoding="utf-8", errors="ignore") as f:
+                content = f.read()
+            for gid in ghost_ideas:
+                if f"idea = {gid}" in content or f"has_idea = {gid}" in content:
+                    ghost_errors.append(f"{rel}: References ghost idea '{gid}' that causes empty modifiers in game!")
+
+        self.assertEqual(len(ghost_errors), 0, f"Found ghost ideas in decisions:\n" + "\n".join(ghost_errors))
+
     def test_events_have_tangible_effects_and_no_empty_options(self):
         """Failure Mode 3: No event option may be empty, and Imperial Conference must have tangible rewards."""
         event_files = glob.glob(os.path.join(MOD_ROOT, "events", "*britain*.txt"))

@@ -1,0 +1,17 @@
+ENG_ww1_services_policy = {
+	icon = GFX_decision_ENG_ww1_services_policy
+	allowed = { tag = ENG }
+	visible = { has_country_flag = ww1_britain_initialised }
+}
+
+ENG_ww1_cabinet_policy = {
+	icon = GFX_idea_ENG_ww1_balanced_estimates
+	allowed = { tag = ENG }
+	visible = { has_country_flag = ww1_britain_initialised }
+}
+
+ENG_ww1_empire_policy = {
+	icon = GFX_decision_ENG_ww1_empire_policy
+	allowed = { tag = ENG }
+	visible = { has_country_flag = ww1_britain_initialised }
+}
