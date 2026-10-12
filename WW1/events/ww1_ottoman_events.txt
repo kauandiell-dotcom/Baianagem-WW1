@@ -529,6 +529,7 @@ country_event = {
 		add_to_variable = { tur_arab_unrest = 20 }
 		add_to_variable = { tur_imperial_cohesion = -10 }
 		set_country_flag = TUR_arab_revolt_erupted
+		country_event = { id = ww1_ottoman.31 days = 5 }
 	}
 
 	option = {
@@ -779,5 +780,109 @@ country_event = {
 		add_war_support = 0.10
 		add_to_variable = { tur_imperial_cohesion = 15 }
 		set_country_flag = TUR_brest_litovsk_caucasus_restored
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 31. A Erupção Territorial da Grande Revolta Árabe
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.31
+	title = ww1_ottoman.31.t
+	desc = ww1_ottoman.31.d
+	picture = GFX_report_event_report_event_arab_revolt
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.31.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { 679 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
+			679 = { damage_building = { type = infrastructure damage = 2 } }
+		}
+		if = {
+			limit = { 856 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
+			856 = { damage_building = { type = infrastructure damage = 2 } }
+		}
+		if = {
+			limit = { 554 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
+			554 = { damage_building = { type = infrastructure damage = 2 } }
+		}
+		if = {
+			limit = { 454 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
+			454 = { damage_building = { type = infrastructure damage = 2 } }
+		}
+		if = {
+			limit = { 291 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
+			291 = { damage_building = { type = infrastructure damage = 2 } }
+		}
+		if = {
+			limit = { 1011 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
+			1011 = { damage_building = { type = infrastructure damage = 2 } }
+		}
+		if = {
+			limit = {
+				679 = { has_state_flag = TUR_vilayet_garrison_secured }
+				856 = { has_state_flag = TUR_vilayet_garrison_secured }
+			}
+			if = {
+				limit = { has_idea = TUR_arab_unrest_smoldering }
+				swap_ideas = {
+					remove_idea = TUR_arab_unrest_smoldering
+					add_idea = TUR_imperial_vilayets_pacified
+				}
+			}
+			add_stability = 0.10
+			army_experience = 25
+			set_country_flag = TUR_arab_revolt_crushed_by_garrisons
+		}
+		else = {
+			if = {
+				limit = { has_idea = TUR_arab_unrest_smoldering }
+				swap_ideas = {
+					remove_idea = TUR_arab_unrest_smoldering
+					add_idea = TUR_arab_revolt_insurgency
+				}
+			}
+			else = {
+				add_ideas = TUR_arab_revolt_insurgency
+			}
+			add_manpower = -10000
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -500 }
+			set_country_flag = TUR_arab_insurgency_active
+		}
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 32. A Resistência Tripolitana: Enver Bey e Mustafa Kemal na Líbia
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_ottoman.32
+	title = ww1_ottoman.32.t
+	desc = ww1_ottoman.32.d
+	picture = GFX_report_event_news_army_in_desert
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_ottoman.32.a
+		ai_chance = { factor = 80 }
+		add_ideas = TUR_senussi_desert_brotherhood
+		army_experience = 25
+		add_war_support = 0.05
+		448 = { if = { limit = { is_owned_by = TUR } add_building_construction = { type = bunker level = 1 instant_build = yes } } }
+		450 = { if = { limit = { is_owned_by = TUR } add_building_construction = { type = bunker level = 1 instant_build = yes } } }
+		set_country_flag = TUR_enver_kemal_in_libya
+	}
+
+	option = {
+		name = ww1_ottoman.32.b
+		ai_chance = { factor = 20 }
+		add_political_power = 50
+		add_manpower = 10000
+		341 = { if = { limit = { is_owned_by = TUR } add_building_construction = { type = bunker level = 1 instant_build = yes } } }
+		set_country_flag = TUR_balkan_priority_over_libya
 	}
 }
