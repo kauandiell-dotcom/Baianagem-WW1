@@ -14,6 +14,8 @@ from pathlib import Path
 import re
 import unittest
 
+from scripts.hoi4_semantic_oracle import audit_file_modifiers
+
 ROOT = Path(__file__).resolve().parents[1]
 
 BANNED_MODIFIERS = {
@@ -62,25 +64,163 @@ class OttomanContentReworkTests(unittest.TestCase):
             idx = cur
 
     def test_focus_count_and_coordinate_collisions(self):
-        """Verifies that all 256 Ottoman focuses are present with unique coordinates."""
+        """Verifies that all 256 Ottoman focuses are present with unique coordinates and dx >= 2 on every row."""
         self.assertEqual(len(self.foci), 256, f"Expected exactly 256 Ottoman focuses, found {len(self.foci)}")
         coords = {}
+        rows = {}
         for fid, data in self.foci.items():
             coord = (data["x"], data["y"])
             self.assertNotIn(coord, coords, f"Collision at {coord}: {fid} vs {coords.get(coord)}")
             coords[coord] = fid
+            rows.setdefault(data["y"], []).append({"id": fid, "x": data["x"], "y": data["y"]})
+
+        horizontal_collisions = []
+        for y, row in sorted(rows.items()):
+            row_sorted = sorted(row, key=lambda f: f["x"])
+            for i in range(len(row_sorted) - 1):
+                f1, f2 = row_sorted[i], row_sorted[i + 1]
+                if abs(f2["x"] - f1["x"]) < 2:
+                    horizontal_collisions.append((y, f1["id"], f1["x"], f2["id"], f2["x"]))
+
+        self.assertEqual(
+            horizontal_collisions,
+            [],
+            f"Expected 0 horizontal banner collisions (dx >= 2), found {len(horizontal_collisions)}: {horizontal_collisions[:10]}"
+        )
 
     def test_prerequisite_integrity_and_downward_progression(self):
-        """Verifies that all prerequisites exist and children are strictly below parents (dy >= 1)."""
+        """Verifies that all prerequisites exist and children satisfy 1 <= dy <= 3."""
+        long_vertical_arrows = []
         for fid, data in self.foci.items():
             for pr_group in data["prereqs"]:
                 for parent in pr_group:
                     self.assertIn(parent, self.foci, f"Focus {fid} has non-existent parent {parent}")
                     py = self.foci[parent]["y"]
-                    self.assertGreaterEqual(
-                        data["y"], py + 1,
-                        f"Focus {fid} (y={data['y']}) is not below parent {parent} (y={py})"
-                    )
+                    dy = data["y"] - py
+                    if not (1 <= dy <= 3):
+                        long_vertical_arrows.append((parent, py, fid, data["y"], dy))
+
+        self.assertEqual(
+            long_vertical_arrows,
+            [],
+            f"Expected all prerequisite links to satisfy 1 <= dy <= 3, found {len(long_vertical_arrows)} violations: {long_vertical_arrows}"
+        )
+
+    def test_zero_hollow_focuses(self):
+        """Verifies every focus grants tangible rewards beyond flat PP/stability/war support/variables/flags."""
+        hollow_focuses = []
+        for fid, data in self.foci.items():
+            block = data["block"]
+            reward_pos = block.find("completion_reward")
+            self.assertNotEqual(reward_pos, -1, f"Focus {fid} missing completion_reward")
+            start_brace = block.find("{", reward_pos)
+            depth = 1
+            cur = start_brace + 1
+            while cur < len(block) and depth > 0:
+                if block[cur] == "{":
+                    depth += 1
+                elif block[cur] == "}":
+                    depth -= 1
+                cur += 1
+            reward_body = block[start_brace + 1 : cur - 1]
+            cleaned = re.sub(r"#[^\n]*", "", reward_body)
+            cleaned = re.sub(r"\badd_political_power\s*=\s*[-0-9.]+", "", cleaned)
+            cleaned = re.sub(r"\badd_stability\s*=\s*[-0-9.]+", "", cleaned)
+            cleaned = re.sub(r"\badd_war_support\s*=\s*[-0-9.]+", "", cleaned)
+            cleaned = re.sub(r"\badd_to_variable\s*=\s*\{[^}]*\}", "", cleaned)
+            cleaned = re.sub(r"\bset_country_flag\s*=\s*[a-zA-Z0-9_]+", "", cleaned)
+            if not cleaned.strip():
+                hollow_focuses.append(fid)
+
+        self.assertEqual(
+            hollow_focuses,
+            [],
+            f"Expected 0 hollow focuses, found {len(hollow_focuses)}: {hollow_focuses[:15]}"
+        )
+
+    def test_all_referenced_ideas_exist_and_oracle_clean(self):
+        """Verifies all required Ottoman ideas exist and Semantic Oracle reports 0 errors on ideas and decisions."""
+        ideas_path = ROOT / "common/ideas/ww1_ottoman_ideas.txt"
+        decisions_path = ROOT / "common/decisions/ww1_ottoman_decisions.txt"
+        ideas_text = ideas_path.read_text(encoding="utf-8")
+
+        required_ideas = [
+            "TUR_sick_man_debt",
+            "TUR_mehmetcik_tenacity",
+            "TUR_straits_fortress_cannons",
+            "TUR_caliphate_global_banner",
+            "TUR_arab_revolt_insurgency",
+            "TUR_imperial_vilayets_pacified",
+            "TUR_senussi_desert_brotherhood",
+        ]
+        missing_ideas = [
+            idea for idea in required_ideas
+            if not re.search(rf"\b{idea}\s*=\s*\{{", ideas_text)
+        ]
+        self.assertEqual(missing_ideas, [], f"Missing required Ottoman ideas: {missing_ideas}")
+
+        idea_oracle_errors = audit_file_modifiers(str(ideas_path))
+        self.assertEqual(
+            idea_oracle_errors,
+            [],
+            f"Semantic Oracle errors in ww1_ottoman_ideas.txt: {idea_oracle_errors}"
+        )
+
+        decision_oracle_errors = audit_file_modifiers(str(decisions_path))
+        self.assertEqual(
+            decision_oracle_errors,
+            [],
+            f"Semantic Oracle errors in ww1_ottoman_decisions.txt: {decision_oracle_errors}"
+        )
+
+    def test_arab_vilayet_state_securing_and_opda_decisions(self):
+        """Verifies Arab vilayet security decisions, OPDA debt decisions, events 31-32, 0 orphan events, and commanders."""
+        decisions_text = (ROOT / "common/decisions/ww1_ottoman_decisions.txt").read_text(encoding="utf-8")
+        required_decisions = [
+            "TUR_deploy_hejaz_armored_garrison",
+            "TUR_teskilat_counter_insurgency_sweep",
+            "TUR_subsidize_bedouin_sheikhs",
+            "TUR_pacify_arab_insurgency_campaign",
+            "TUR_liquidate_opda_debt_tranche",
+            "TUR_curb_foreign_consular_courts",
+            "TUR_dispatch_officers_to_tripolitania",
+        ]
+        missing_decisions = [
+            dec for dec in required_decisions
+            if not re.search(rf"\b{dec}\s*=\s*\{{", decisions_text)
+        ]
+        self.assertEqual(missing_decisions, [], f"Missing required Ottoman decisions: {missing_decisions}")
+
+        events_text = (ROOT / "events/ww1_ottoman_events.txt").read_text(encoding="utf-8")
+        for ev_id in ("ww1_ottoman.31", "ww1_ottoman.32"):
+            self.assertIsNotNone(
+                re.search(rf"\bid\s*=\s*{re.escape(ev_id)}\b(?!\.)", events_text),
+                f"Missing event definition {ev_id} in events/ww1_ottoman_events.txt"
+            )
+
+        orphan_events = []
+        for i in range(1, 33):
+            ev_id = f"ww1_ottoman.{i}"
+            # Check if event is defined and triggered
+            in_focus = bool(re.search(rf"\b{re.escape(ev_id)}\b(?!\.)", self.focus_text))
+            in_decisions = bool(re.search(rf"\b{re.escape(ev_id)}\b(?!\.)", decisions_text))
+            event_id_matches = re.findall(rf"\bid\s*=\s*{re.escape(ev_id)}\b(?!\.)", events_text)
+            in_events_followup = len(event_id_matches) > 1
+            if not (in_focus or in_decisions or in_events_followup):
+                orphan_events.append(ev_id)
+
+        self.assertEqual(orphan_events, [], f"Found orphan events never triggered: {orphan_events}")
+
+        tur_history = (ROOT / "history/countries/TUR - Turkey.txt").read_text(encoding="utf-8")
+        for char_id in ("TUR_ismail_enver_pasha", "TUR_fakhri_pasha", "TUR_halil_kut"):
+            self.assertIn(
+                f"recruit_character = {char_id}",
+                tur_history,
+                f"Missing recruit_character = {char_id} in history/countries/TUR - Turkey.txt"
+            )
+
+        tur_chars = (ROOT / "common/characters/TUR.txt").read_text(encoding="utf-8")
+        self.assertNotIn("ideology=nazism", tur_chars, "common/characters/TUR.txt must not contain anachronistic ideology=nazism")
 
     def test_kuwait_ownership_and_british_garrison(self):
         """Verifies Kuwait sovereignty is transferred to Great Britain with a British garrison."""
@@ -117,7 +257,7 @@ class OttomanContentReworkTests(unittest.TestCase):
             )
 
     def test_bilingual_localization_parity_and_utf8_bom(self):
-        """Verifies 100% localization parity and UTF-8 BOM encoding for both English and PT-BR."""
+        """Verifies 100% localization parity, strictly single UTF-8 BOM, and zero generic/untranslated strings."""
         en_path = ROOT / "localisation/english/ww1_ottoman_l_english.yml"
         pt_path = ROOT / "localisation/braz_por/ww1_ottoman_l_braz_por.yml"
 
@@ -127,8 +267,10 @@ class OttomanContentReworkTests(unittest.TestCase):
         en_bytes = en_path.read_bytes()
         pt_bytes = pt_path.read_bytes()
 
-        self.assertTrue(en_bytes.startswith(b"\xef\xbb\xbf"), "English localization must start with UTF-8 BOM")
-        self.assertTrue(pt_bytes.startswith(b"\xef\xbb\xbf"), "Portuguese localization must start with UTF-8 BOM")
+        self.assertEqual(en_bytes[:3], b"\xef\xbb\xbf", "English localization must start with UTF-8 BOM")
+        self.assertNotEqual(en_bytes[3:6], b"\xef\xbb\xbf", "English localization must not have a double UTF-8 BOM")
+        self.assertEqual(pt_bytes[:3], b"\xef\xbb\xbf", "Portuguese localization must start with UTF-8 BOM")
+        self.assertNotEqual(pt_bytes[3:6], b"\xef\xbb\xbf", "Portuguese localization must not have a double UTF-8 BOM")
 
         en_text = en_bytes.decode("utf-8")
         pt_text = pt_bytes.decode("utf-8")
@@ -138,6 +280,21 @@ class OttomanContentReworkTests(unittest.TestCase):
             self.assertIn(f"{fid}_desc:0", en_text, f"Missing English description for {fid}")
             self.assertIn(f"{fid}:0", pt_text, f"Missing Portuguese title for {fid}")
             self.assertIn(f"{fid}_desc:0", pt_text, f"Missing Portuguese description for {fid}")
+
+        banned_placeholders = [
+            "Reflete as realidades estruturais e esforços administrativos do Estado Otomano.",
+            "Aplica medidas operacionais especializadas para a defesa e prosperidade do império.",
+            "Iniciativa estratégica entra em vigor nos territórios imperiais pertinentes.",
+        ]
+        for placeholder in banned_placeholders:
+            self.assertNotIn(placeholder, pt_text, f"Generic copy-paste placeholder found in PT-BR localization: {placeholder}")
+
+        untranslated_titles = [
+            "Subsidize Anatolian Grain",
+            "Second Constitutional Era",
+        ]
+        for title in untranslated_titles:
+            self.assertNotIn(title, pt_text, f"Untranslated English title found in PT-BR localization: {title}")
 
     def test_gfx_sprites_and_shines_completeness(self):
         """Verifies that all focus icons used in turkey.txt have corresponding base and shine sprite definitions."""
