@@ -15,3 +15,9 @@ ENG_ww1_empire_policy = {
 	allowed = { tag = ENG }
 	visible = { has_country_flag = ww1_britain_initialised }
 }
+
+ENG_ww1_irish_crisis_category = {
+	icon = GFX_decision_ENG_ww1_empire_policy
+	allowed = { tag = ENG }
+	visible = { has_country_flag = ww1_britain_initialised }
+}

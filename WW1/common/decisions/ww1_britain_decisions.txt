@@ -609,3 +609,433 @@ ENG_ww1_empire_policy = {
 		}
 	}
 }
+
+ENG_ww1_irish_crisis_category = {
+	ENG_deploy_crown_garrison = {
+		icon = GFX_decision_generic_military
+		state_target = yes
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				OR = {
+					state = 113
+					state = 114
+					state = 117
+					state = 119
+				}
+				NOT = { has_state_flag = ENG_state_garrison_secured }
+			}
+		}
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			NOT = { has_country_flag = ENG_securing_irish_state_in_progress }
+			has_manpower > 25000
+			has_equipment = {
+				type = infantry_equipment_0
+				amount > 500
+			}
+		}
+		cost = 35
+		days_remove = 60
+		days_re_enable = 30
+		complete_effect = {
+			set_country_flag = ENG_securing_irish_state_in_progress
+			add_manpower = -25000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = -500
+			}
+		}
+		remove_effect = {
+			clr_country_flag = ENG_securing_irish_state_in_progress
+			FROM = {
+				set_state_flag = ENG_state_garrison_secured
+				clr_state_flag = ENG_state_contested_unrest
+				clr_state_flag = ENG_state_rebel_stronghold
+			}
+			add_to_variable = { ww1_britain_irish_tension = -10 }
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				check_variable = { ww1_britain_irish_tension > 50 }
+			}
+		}
+	}
+
+	ENG_raid_paramilitary_armories = {
+		icon = GFX_decision_generic_assassination
+		state_target = yes
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				OR = {
+					state = 113
+					state = 114
+					state = 117
+					state = 119
+				}
+			}
+		}
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			NOT = { has_country_flag = ENG_irish_raid_in_progress }
+			command_power > 10
+		}
+		cost = 25
+		days_re_enable = 90
+		complete_effect = {
+			add_command_power = -10
+			add_to_variable = { ww1_britain_irish_tension = -5 }
+			random_list = {
+				85 = { }
+				15 = {
+					add_stability = -0.02
+					FROM = {
+						damage_building = {
+							type = infrastructure
+							damage = 1
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	ENG_emergency_curfew_lockdown = {
+		icon = GFX_decision_police_state
+		state_target = yes
+		target_array = owned_states
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT
+				OR = {
+					state = 113
+					state = 114
+					state = 117
+					state = 119
+				}
+				NOT = { has_state_flag = ENG_curfew_active }
+			}
+		}
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 0
+		}
+		cost = 20
+		days_remove = 90
+		civilian_factory_use = 1
+		complete_effect = {
+			FROM = {
+				set_state_flag = ENG_curfew_active
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = ENG_curfew_active
+			}
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	ENG_larne_arms_interdiction = {
+		icon = GFX_decision_ENG_ww1_tighten_the_blockade
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			navy_experience > 14
+			check_variable = { ww1_britain_ulster_tension > 10 }
+			NOT = { has_country_flag = ENG_larne_interdiction_enacted }
+		}
+		cost = 30
+		days_re_enable = 180
+		complete_effect = {
+			navy_experience = -15
+			add_to_variable = { ww1_britain_ulster_tension = -15 }
+			set_country_flag = ENG_larne_interdiction_enacted
+			add_stability = 0.02
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				check_variable = { ww1_britain_ulster_tension > 40 }
+			}
+		}
+	}
+
+	ENG_appease_curragh_officers = {
+		icon = GFX_decision_generic_military
+		visible = {
+			has_country_flag = ww1_britain_initialised
+			check_variable = { ww1_britain_ulster_tension > 30 }
+		}
+		available = {
+			NOT = { has_country_flag = ENG_curragh_settled }
+		}
+		cost = 25
+		complete_effect = {
+			set_country_flag = ENG_curragh_settled
+			set_country_flag = ENG_curragh_appeased
+			add_to_variable = { ww1_britain_ulster_tension = -15 }
+			add_to_variable = { ww1_britain_irish_tension = 10 }
+			add_stability = -0.03
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	ENG_purge_curragh_officers = {
+		icon = GFX_decision_generic_military
+		visible = {
+			has_country_flag = ww1_britain_initialised
+			check_variable = { ww1_britain_ulster_tension > 30 }
+		}
+		available = {
+			NOT = { has_country_flag = ENG_curragh_settled }
+			army_experience > 10
+		}
+		cost = 35
+		complete_effect = {
+			set_country_flag = ENG_curragh_settled
+			set_country_flag = ENG_curragh_purged
+			army_experience = -10
+			add_to_variable = { ww1_britain_ulster_tension = 15 }
+			add_to_variable = { ww1_britain_irish_tension = -10 }
+			add_stability = 0.02
+		}
+		ai_will_do = {
+			base = 1
+		}
+	}
+
+	ENG_deploy_black_and_tans = {
+		icon = GFX_decision_police_state
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			has_manpower > 10000
+			OR = {
+				check_variable = { ww1_britain_irish_tension > 40 }
+				has_country_flag = ENG_irish_rebellion_active
+			}
+			NOT = { has_idea = ENG_irish_martial_law }
+			NOT = { has_idea = ENG_irish_union_secured }
+			NOT = { has_idea = ENG_irish_home_rule_compromise }
+		}
+		cost = 50
+		complete_effect = {
+			add_manpower = -10000
+			if = {
+				limit = { has_idea = ENG_irish_home_rule_tension }
+				swap_ideas = {
+					remove_idea = ENG_irish_home_rule_tension
+					add_idea = ENG_irish_martial_law
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_sabotage_wave }
+				swap_ideas = {
+					remove_idea = ENG_irish_sabotage_wave
+					add_idea = ENG_irish_martial_law
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_home_rule_suspended }
+				swap_ideas = {
+					remove_idea = ENG_irish_home_rule_suspended
+					add_idea = ENG_irish_martial_law
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_civil_war_debacle }
+				swap_ideas = {
+					remove_idea = ENG_irish_civil_war_debacle
+					add_idea = ENG_irish_martial_law
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = ENG_irish_martial_law }
+				}
+				add_ideas = ENG_irish_martial_law
+			}
+			add_to_variable = { ww1_britain_irish_tension = -15 }
+			add_stability = -0.05
+			set_country_flag = ENG_black_and_tans_deployed
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 2
+				check_variable = { ww1_britain_irish_tension > 60 }
+			}
+		}
+	}
+
+	ENG_restore_order_in_ireland_act = {
+		icon = GFX_decision_ENG_ww1_empire_policy
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			113 = { has_state_flag = ENG_state_garrison_secured }
+			114 = { has_state_flag = ENG_state_garrison_secured }
+			117 = { has_state_flag = ENG_state_garrison_secured }
+			119 = { has_state_flag = ENG_state_garrison_secured }
+			NOT = { country_exists = IRE }
+			NOT = { has_idea = ENG_irish_union_secured }
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			if = {
+				limit = { has_idea = ENG_irish_martial_law }
+				swap_ideas = {
+					remove_idea = ENG_irish_martial_law
+					add_idea = ENG_irish_union_secured
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_civil_war_debacle }
+				swap_ideas = {
+					remove_idea = ENG_irish_civil_war_debacle
+					add_idea = ENG_irish_union_secured
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_sabotage_wave }
+				swap_ideas = {
+					remove_idea = ENG_irish_sabotage_wave
+					add_idea = ENG_irish_union_secured
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_home_rule_tension }
+				swap_ideas = {
+					remove_idea = ENG_irish_home_rule_tension
+					add_idea = ENG_irish_union_secured
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_home_rule_suspended }
+				swap_ideas = {
+					remove_idea = ENG_irish_home_rule_suspended
+					add_idea = ENG_irish_union_secured
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = ENG_irish_union_secured }
+				}
+				add_ideas = ENG_irish_union_secured
+			}
+			set_country_flag = ENG_irish_union_permanently_secured
+			set_variable = { ww1_britain_irish_tension = 0 }
+			set_variable = { ww1_britain_ulster_tension = 0 }
+			add_stability = 0.10
+			add_political_power = 50
+		}
+		ai_will_do = {
+			base = 10
+		}
+	}
+
+	ENG_enact_irish_free_state_treaty = {
+		icon = GFX_decision_generic_military
+		visible = {
+			has_country_flag = ww1_britain_initialised
+		}
+		available = {
+			has_capitulated = no
+			has_war = no
+			OR = {
+				has_country_flag = ENG_ww1_irish_dominion_track
+				has_completed_focus = ENG_ww1_the_irish_settlement_conference
+				date > 1918.11.11
+			}
+			NOT = { country_exists = IRE }
+			NOT = { has_idea = ENG_irish_home_rule_compromise }
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			release_autonomy = {
+				target = IRE
+				autonomy_state = autonomy_dominion
+				freedom_level = 0.5
+			}
+			119 = {
+				if = {
+					limit = { is_owned_by = IRE }
+					transfer_state_to = ENG
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_martial_law }
+				swap_ideas = {
+					remove_idea = ENG_irish_martial_law
+					add_idea = ENG_irish_home_rule_compromise
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_civil_war_debacle }
+				swap_ideas = {
+					remove_idea = ENG_irish_civil_war_debacle
+					add_idea = ENG_irish_home_rule_compromise
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_sabotage_wave }
+				swap_ideas = {
+					remove_idea = ENG_irish_sabotage_wave
+					add_idea = ENG_irish_home_rule_compromise
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_home_rule_tension }
+				swap_ideas = {
+					remove_idea = ENG_irish_home_rule_tension
+					add_idea = ENG_irish_home_rule_compromise
+				}
+			}
+			if = {
+				limit = { has_idea = ENG_irish_home_rule_suspended }
+				swap_ideas = {
+					remove_idea = ENG_irish_home_rule_suspended
+					add_idea = ENG_irish_home_rule_compromise
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = ENG_irish_home_rule_compromise }
+				}
+				add_ideas = ENG_irish_home_rule_compromise
+			}
+			set_variable = { ww1_britain_irish_tension = 10 }
+			set_country_flag = ENG_ww1_irish_free_state
+			add_stability = 0.10
+			add_political_power = 50
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+}
