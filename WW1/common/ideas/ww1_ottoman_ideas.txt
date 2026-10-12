@@ -58,7 +58,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.15
 				non_core_manpower = 0.25
-				compliance_growth_focus_factor = 0.20
+				compliance_gain = 0.03
 				resistance_target = -0.30
 			}
 		}
@@ -75,9 +75,32 @@ ideas = {
 			}
 		}
 
+		# Estandarte Global do Califado (Jihad-i Ekber & Pan-Islamismo)
+		TUR_caliphate_global_banner = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				conscription_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+
 		# ==============================================================================
 		# 2. SOBERANIA ECONÔMICA, DÍVIDA PÚBLICA & INFRAESTRUTURA
 		# ==============================================================================
+
+		# Grilhões da Dívida Pública Otomana (Situação Inicial em 1911 - OPDA / Düyun-ı Umumiye)
+		TUR_sick_man_debt = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.20
+				political_power_gain = -0.15
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+		}
 
 		# Dívida Pública Renegociada (Etapa 2 da OPDA / Düyun-ı Umumiye)
 		TUR_debt_renegotiated = {
@@ -175,6 +198,27 @@ ideas = {
 			}
 		}
 
+		# Tenacidade do Mehmetçik (Situação Inicial em 1911)
+		TUR_mehmetcik_tenacity = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.08
+				out_of_supply_factor = -0.10
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		# Canhões das Fortalezas dos Estreitos (Situação Inicial em 1911)
+		TUR_straits_fortress_cannons = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				amphibious_invasion_defence = 0.15
+				production_speed_coastal_bunker_factor = 0.15
+			}
+		}
+
 		# Missão Militar Alemã (Liman von Sanders & Colmar von der Goltz)
 		TUR_german_military_mission = {
 			allowed = { always = no }
@@ -215,7 +259,7 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				navy_surface_detection_factor = 0.15
+				spotting_chance = 0.15
 				navy_capital_ship_attack_factor = 0.10
 				naval_hit_chance = 0.05
 			}
@@ -227,7 +271,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				production_speed_coastal_bunker_factor = 0.25
-				naval_strike_defence_factor = 0.20
+				army_core_defence_factor = 0.10
 				amphibious_invasion_defence = 0.25
 			}
 		}
@@ -238,7 +282,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				air_superiority_detect_factor = 0.10
-				air_recon_factor = 0.15
+				recon_factor = 0.10
 			}
 		}
 
@@ -251,8 +295,43 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
+				stability_factor = -0.12
 				resistance_target = 0.15
 				non_core_manpower = -0.10
+			}
+		}
+
+		# Insurgência da Revolta Árabe
+		TUR_arab_revolt_insurgency = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.20
+				attrition = 0.12
+				supply_consumption_factor = 0.15
+				non_core_manpower = -0.25
+			}
+		}
+
+		# Vilaietes Imperiais Pacificados
+		TUR_imperial_vilayets_pacified = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				non_core_manpower = 0.15
+				resistance_target = -0.20
+			}
+		}
+
+		# Irmandade do Deserto Senussi (Resistência na Tripolitânia e Cirenaica)
+		TUR_senussi_desert_brotherhood = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				attrition = -0.10
+				out_of_supply_factor = -0.15
+				army_morale_factor = 0.05
 			}
 		}
 
@@ -376,7 +455,8 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				army_morale_factor = 0.08
-				casualty_trickleback = 0.10
+				experience_loss_factor = -0.10
+				attrition = -0.08
 			}
 		}
 

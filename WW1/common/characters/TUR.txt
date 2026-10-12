@@ -54,11 +54,6 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=nazism
-			expire="1935.1.1.1"
-			id=-1
-		}
-		country_leader={
 			ideology=despotism
 			expire="1935.1.1.1"
 			id=-1
@@ -83,6 +78,9 @@ characters={
 	TUR_ismail_enver_pasha={
 		name="İsmail Enver Paşa"
 		portraits={
+			civilian={
+				large="gfx/leaders/TUR/TUR_enver_pasha.dds"
+			}
 			army={
 				large="gfx/leaders/TUR/TUR_enver_pasha.dds"
 				small="GFX_idea_TUR_enver_pasha-96388"
@@ -108,6 +106,44 @@ characters={
 			planning_skill=1
 			logistics_skill=1
 			legacy_id=90007
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	TUR_fakhri_pasha={
+		name="Ömer Fahreddin Paşa"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/TUR_omer_fahrettin.dds"
+			}
+		}
+		corps_commander={
+			traits={ desert_fox unyielding_defender inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=3
+		}
+	}
+	TUR_halil_kut={
+		name="Halil Kut Paşa"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/TUR_halil_kut.dds"
+				small="gfx/interface/ideas/TUR/TUR_halil_kut_advisor.png"
+			}
+		}
+		corps_commander={
+			traits={ desert_fox fortress_buster }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 	TUR_mehmed_esad_pasha={
