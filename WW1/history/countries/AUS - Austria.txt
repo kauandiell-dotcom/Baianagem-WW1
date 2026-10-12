@@ -336,132 +336,290 @@ if = {
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Kaiser Karl VI"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Kaiserin und Königin Maria Theresia"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Sankt Georg"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_WW1_1911_AUS_sankt_georg"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Monarch"
 		type = ww1_1911_ironclad
 		icon = "GFX_ww1_1911_ironclad_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_old_heavy
+			fixed_ship_armor_slot = ww1_1911_old_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Erzherzog Karl"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_WW1_1911_AUS_erzherzog_karl"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Habsburg"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Kronprinz Erzherzog Rudolf"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Radetzky"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_WW1_1911_AUS_radetzky"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Admiral Spaun"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Kaiser Franz Joseph I"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Panther"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_WW1_1911_AUS_panther"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Zenta"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_WW1_1911_AUS_zenta"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "U-3"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "U-5"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Blitz"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Huszár"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_WW1_1911_AUS_huszar"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Magnet"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Meteor"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Planet"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Satellit"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Trabant"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	set_naval_oob = "ww1_1911_aus_naval"
 }

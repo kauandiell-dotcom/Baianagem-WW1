@@ -617,192 +617,423 @@ if = {
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "New York"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Pennsylvania"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Tennessee"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Delaware"
 		type = ww1_1911_dreadnought
 		icon = "GFX_ww1_1911_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_uniform_heavy
+			fixed_ship_armor_slot = ww1_1911_dread_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_uniform_heavy
+		}
 	}
 	create_equipment_variant = {
 		name = "South Carolina"
 		type = ww1_1911_dreadnought
 		icon = "GFX_ww1_1911_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_uniform_heavy
+			fixed_ship_armor_slot = ww1_1911_dread_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_uniform_heavy
+		}
 	}
 	create_equipment_variant = {
 		name = "Connecticut"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Illinois"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Indiana"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Iowa"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Kearsarge"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Maine"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Virginia"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Baltimore"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Boston"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Chester"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Chicago"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Cincinnati"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Columbia"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Denver"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Montgomery"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "New Orleans"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Olympia"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "San Fransisco"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "St. Louis"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "B"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "C"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "D"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Plunger"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Bainbridge"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Smith"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Truxtun"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	set_naval_oob = "ww1_1911_usa_naval"
 }

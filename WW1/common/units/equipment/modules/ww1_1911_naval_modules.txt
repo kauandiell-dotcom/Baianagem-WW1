@@ -151,4 +151,15 @@ equipment_modules = {
 			build_cost_ic = 100
 		}
 	}
+	ww1_1911_secondary_battery = {
+		category = ship_secondaries
+		add_equipment_type = capital_ship
+		add_stats = {
+			lg_attack = 5
+			build_cost_ic = 120
+		}
+		add_average_stats = {
+			lg_armor_piercing = 5
+		}
+	}
 }

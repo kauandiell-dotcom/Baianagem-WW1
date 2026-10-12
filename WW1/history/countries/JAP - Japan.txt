@@ -926,198 +926,442 @@ if = {
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Azuma"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Chiyoda"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Giuseppe Garibaldi"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Ibuki"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Izumo"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Yakumo"
 		type = ww1_1911_armoured_cruiser
 		icon = "GFX_ww1_1911_armoured_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_medium
+			fixed_ship_armor_slot = ww1_1911_cruiser_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			rear_1_custom_slot = ww1_1911_medium
+		}
 	}
 	create_equipment_variant = {
 		name = "Admiral Ushakov"
 		type = ww1_1911_ironclad
 		icon = "GFX_ww1_1911_ironclad_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_old_heavy
+			fixed_ship_armor_slot = ww1_1911_old_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Asahi"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Borodino"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Mikasa"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Peresvet"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Poltava"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Retvizan"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Satsuma"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Shikishima"
 		type = ww1_1911_pre_dreadnought
 		icon = "GFX_ww1_1911_pre_dreadnought_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_heavy_coal
+			fixed_ship_battery_slot = ww1_1911_mixed_heavy
+			fixed_ship_armor_slot = ww1_1911_pre_belt
+			fixed_ship_secondaries_slot = ww1_1911_secondary_battery
+			mid_1_custom_slot = ww1_1911_secondary_battery
+		}
 	}
 	create_equipment_variant = {
 		name = "Akitsushima"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Chihaya"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Kasagi"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Naniwa"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Niitaka"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Otowa"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Suma"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Tatsuta"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Yodo Class - Mogami"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Yodo Class - Yodo"
 		type = ww1_1911_protected_cruiser
 		icon = "GFX_ww1_1911_protected_cruiser_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_cruiser_coal
+			fixed_ship_battery_slot = ww1_1911_light_medium
+			fixed_ship_armor_slot = ww1_1911_protected_deck
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Holland"
 		type = ww1_1911_submarine
 		icon = "GFX_ww1_1911_submarine_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_sub_engine
+			fixed_ship_torpedo_slot = ww1_1911_sub_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Akatsuki"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Harusame"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Ikazuchi"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Murakumo"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Shirakumo"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	create_equipment_variant = {
 		name = "Sokol"
 		type = ww1_1911_torpedo_craft
 		icon = "GFX_ww1_1911_torpedo_craft_medium"
 		parent_version = 0
+	
+		modules = {
+			fixed_ship_engine_slot = ww1_1911_light_coal
+			fixed_ship_battery_slot = ww1_1911_light
+			fixed_ship_torpedo_slot = ww1_1911_torpedoes
+			mid_1_custom_slot = ww1_1911_torpedoes
+		}
 	}
 	set_naval_oob = "ww1_1911_jap_naval"
 }
