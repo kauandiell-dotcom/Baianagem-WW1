@@ -438,6 +438,23 @@ def audit_deinflation_and_timed_ideas() -> List[str]:
     return errors
 
 
+def audit_uk_semantic_integrity() -> List[str]:
+    from scripts.hoi4_semantic_oracle import audit_file_modifiers
+    import glob
+    errors = []
+    uk_files = [
+        os.path.join(MOD_ROOT, "common", "ideas", "ww1_britain_ideas.txt"),
+        os.path.join(MOD_ROOT, "common", "decisions", "ww1_britain_decisions.txt"),
+    ]
+    for fpath in uk_files:
+        if os.path.exists(fpath):
+            errs = audit_file_modifiers(fpath)
+            for line_no, token, ctx in errs:
+                rel = os.path.relpath(fpath, MOD_ROOT)
+                errors.append(f"{rel}:{line_no} [{ctx}]: Unknown/invalid Clausewitz modifier token '{token}'")
+    return errors
+
+
 def main():
     print("=" * 80)
     print("       BAIANAGEM-WW1 MASTER QA & BALANCE VALIDATION AUDIT")
@@ -475,6 +492,11 @@ def main():
     all_errors["De-inflation & Guide"] = deinf_errs
     print(f"    -> {len(deinf_errs)} issues found.")
 
+    print("\n[*] Auditing Clausewitz Semantic Oracle on British Ideas & Decisions...")
+    uk_semantic_errs = audit_uk_semantic_integrity()
+    all_errors["UK Semantic Oracle Integrity"] = uk_semantic_errs
+    print(f"    -> {len(uk_semantic_errs)} issues found.")
+
     total_issues = sum(len(errs) for errs in all_errors.values())
 
     print("\n" + "=" * 80)
@@ -490,17 +512,27 @@ def main():
 
     print("=" * 80)
 
-    # Now execute test_runner.py
-    print("\n[*] Executing Master Automated Test Suite (tests/test_runner.py)...")
     import subprocess
-    cmd = [sys.executable, os.path.join(TESTS_DIR, "test_runner.py")]
-    res = subprocess.run(cmd, cwd=MOD_ROOT)
 
-    if total_issues == 0 and res.returncode == 0:
+    # 1. Execute German E2E test runner
+    print("\n[*] Executing German Automated Test Suite (tests/test_runner.py)...")
+    res_ger = subprocess.run([sys.executable, os.path.join(TESTS_DIR, "test_runner.py")], cwd=MOD_ROOT)
+
+    # 2. Execute Clausewitz Semantic Oracle unit test
+    print("\n[*] Executing Clausewitz Semantic Oracle Test Suite (tests/test_hoi4_semantic_oracle.py)...")
+    res_oracle = subprocess.run([sys.executable, "-m", "unittest", "tests/test_hoi4_semantic_oracle.py"], cwd=MOD_ROOT)
+
+    # 3. Execute British Master QA Complete Audit
+    print("\n[*] Executing British Empire Master QA Audit Suite (tests/test_ww1_britain_complete_audit.py)...")
+    res_uk = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_britain_complete_audit.py"], cwd=MOD_ROOT)
+
+    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0)
+
+    if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (Total QA Issues: {total_issues}, Test Runner Code: {res.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}) <<<\n")
         sys.exit(1)
 
 
