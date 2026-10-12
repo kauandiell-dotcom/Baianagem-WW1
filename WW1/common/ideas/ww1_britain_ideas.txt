@@ -182,8 +182,10 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				stability_factor = -0.10
-				war_support_factor = -0.05
+				stability_factor = -0.35
+				war_support_factor = -0.15
+				political_power_gain = -0.20
+				conscription_factor = -0.15
 			}
 		}
 
@@ -203,6 +205,54 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				stability_factor = 0.05
+				conscription_factor = 0.05
+			}
+		}
+
+		ENG_irish_sabotage_wave = {
+			picture = generic_disruption
+			allowed = { tag = ENG }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.45
+				war_support_factor = -0.15
+				political_power_gain = -0.25
+				conscription_factor = -0.25
+				industrial_capacity_factory = -0.05
+			}
+		}
+
+		ENG_irish_martial_law = {
+			picture = generic_manpower_bonus
+			allowed = { tag = ENG }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.20
+				political_power_gain = -0.15
+				army_morale_factor = -0.05
+				conscription_factor = -0.10
+			}
+		}
+
+		ENG_irish_civil_war_debacle = {
+			picture = generic_morale_bonus
+			allowed = { tag = ENG }
+			removal_cost = -1
+			modifier = {
+				stability_factor = -0.40
+				war_support_factor = -0.20
+				political_power_gain = -0.30
+				army_org_factor = -0.10
+			}
+		}
+
+		ENG_irish_union_secured = {
+			picture = generic_victors_of_ww1
+			allowed = { tag = ENG }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
 				conscription_factor = 0.05
 			}
 		}
