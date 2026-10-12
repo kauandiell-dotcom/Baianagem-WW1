@@ -412,25 +412,159 @@ country_event = {
  }
 }
 country_event = {
- id = ww1_britain_pol.11 title = ww1_britain_pol.11.t desc = ww1_britain_pol.11.d
- picture = GFX_event_ww1_britain_easter_rising
- mean_time_to_happen = { days = 15 }
- fire_only_once = yes
- trigger = { tag = ENG has_capitulated = no has_war = yes date > 1916.4.23 date < 1916.8.1 113 = { is_owned_by = ENG } }
- option = {
-  name = ww1_britain_pol.11.a
-  ai_chance = { base = 60 }
-  add_to_variable = { ww1_britain_irish_tension = 20 }
-  add_political_power = 10
-  set_country_flag = ENG_ww1_easter_rising_suppressed
- }
- option = {
-  name = ww1_britain_pol.11.b
-  ai_chance = { base = 40 }
-  add_to_variable = { ww1_britain_irish_tension = 8 }
-  add_political_power = -20
-  set_country_flag = ENG_ww1_easter_rising_inquiry
- }
+	id = ww1_britain_pol.curragh_mutiny
+	title = ww1_britain_pol.curragh_mutiny.t
+	desc = ww1_britain_pol.curragh_mutiny.d
+	picture = GFX_event_ww1_britain_x_curragh
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1914.3.1
+		date < 1914.8.1
+		has_capitulated = no
+		NOT = { has_country_flag = ENG_curragh_mutiny_happened }
+	}
+
+	option = {
+		name = ww1_britain_pol.curragh_mutiny.a
+		ai_chance = { base = 60 }
+		add_to_variable = { ww1_britain_ulster_tension = -20 }
+		add_to_variable = { ww1_britain_irish_tension = 15 }
+		add_political_power = -25
+		add_stability = -0.05
+		set_country_flag = ENG_curragh_officers_appeased
+		set_country_flag = ENG_curragh_mutiny_happened
+	}
+
+	option = {
+		name = ww1_britain_pol.curragh_mutiny.b
+		ai_chance = { base = 40 }
+		add_to_variable = { ww1_britain_ulster_tension = 25 }
+		add_to_variable = { ww1_britain_irish_tension = -5 }
+		add_command_power = -30
+		add_stability = 0.02
+		set_country_flag = ENG_curragh_officers_purged
+		set_country_flag = ENG_curragh_mutiny_happened
+	}
+}
+
+country_event = {
+	id = ww1_britain_pol.larne_howth_guns
+	title = ww1_britain_pol.larne_howth_guns.t
+	desc = ww1_britain_pol.larne_howth_guns.d
+	picture = GFX_event_ww1_britain_ulster_volunteers
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1914.7.1
+		date < 1914.9.1
+		has_capitulated = no
+		NOT = { has_country_flag = ENG_gunrunning_happened }
+	}
+
+	option = {
+		name = ww1_britain_pol.larne_howth_guns.a
+		ai_chance = { base = 100 }
+		add_to_variable = { ww1_britain_irish_tension = 10 }
+		add_to_variable = { ww1_britain_ulster_tension = 10 }
+		add_stability = -0.02
+		add_political_power = -10
+		set_country_flag = ENG_gunrunning_happened
+	}
+}
+
+country_event = {
+	id = ww1_britain_pol.11
+	title = ww1_britain_pol.11.t
+	desc = ww1_britain_pol.11.d
+	picture = GFX_event_ww1_britain_easter_rising
+	mean_time_to_happen = { days = 15 }
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		has_capitulated = no
+		has_war = yes
+		date > 1916.4.23
+		date < 1916.8.1
+		OR = {
+			117 = { is_owned_by = ENG }
+			113 = { is_owned_by = ENG }
+		}
+	}
+	option = {
+		name = ww1_britain_pol.11.a
+		ai_chance = { base = 60 }
+		if = {
+			limit = {
+				OR = {
+					117 = { has_state_flag = ENG_state_garrison_secured }
+					113 = { has_state_flag = ENG_state_garrison_secured }
+				}
+			}
+			add_to_variable = { ww1_britain_irish_tension = 5 }
+			add_political_power = 20
+			add_stability = 0.02
+			set_country_flag = ENG_ww1_easter_rising_suppressed
+		}
+		else = {
+			add_to_variable = { ww1_britain_irish_tension = 25 }
+			add_stability = -0.08
+			add_political_power = -20
+			if = {
+				limit = { 117 = { is_owned_by = ROOT } }
+				117 = {
+					damage_building = { type = infrastructure damage = 2 }
+					damage_building = { type = arms_factory damage = 1 }
+				}
+			}
+			if = {
+				limit = { 113 = { is_owned_by = ROOT } }
+				113 = {
+					damage_building = { type = infrastructure damage = 2 }
+					damage_building = { type = arms_factory damage = 1 }
+				}
+			}
+			set_country_flag = ENG_ww1_easter_rising_suppressed
+		}
+	}
+	option = {
+		name = ww1_britain_pol.11.b
+		ai_chance = { base = 40 }
+		if = {
+			limit = {
+				OR = {
+					117 = { has_state_flag = ENG_state_garrison_secured }
+					113 = { has_state_flag = ENG_state_garrison_secured }
+				}
+			}
+			add_to_variable = { ww1_britain_irish_tension = 5 }
+			add_political_power = 10
+			add_stability = 0.01
+			set_country_flag = ENG_ww1_easter_rising_inquiry
+		}
+		else = {
+			add_to_variable = { ww1_britain_irish_tension = 20 }
+			add_stability = -0.05
+			add_political_power = -25
+			if = {
+				limit = { 117 = { is_owned_by = ROOT } }
+				117 = {
+					damage_building = { type = infrastructure damage = 1 }
+				}
+			}
+			if = {
+				limit = { 113 = { is_owned_by = ROOT } }
+				113 = {
+					damage_building = { type = infrastructure damage = 1 }
+				}
+			}
+			set_country_flag = ENG_ww1_easter_rising_inquiry
+		}
+	}
 }
 country_event = {
  id = ww1_britain_pol.12 title = ww1_britain_pol.12.t desc = ww1_britain_pol.12.d
@@ -477,6 +611,188 @@ country_event = {
   add_stability = 0.01
  }
 }
+
+country_event = {
+	id = ww1_britain_pol.irish_civil_war
+	title = ww1_britain_pol.irish_civil_war.t
+	desc = ww1_britain_pol.irish_civil_war.d
+	picture = GFX_event_ww1_britain_easter_rising
+	mean_time_to_happen = { days = 2 }
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_capitulated = no
+		check_variable = { ww1_britain_irish_tension > 85 }
+		NOT = { has_country_flag = ENG_irish_civil_war_fired }
+		NOT = { has_country_flag = ENG_ww1_irish_union_secured }
+		NOT = { has_country_flag = ENG_ww1_irish_free_state }
+	}
+
+	immediate = {
+		set_country_flag = ENG_irish_civil_war_fired
+		if = {
+			limit = { has_idea = ENG_irish_home_rule_tension }
+			swap_ideas = {
+				remove_idea = ENG_irish_home_rule_tension
+				add_idea = ENG_irish_civil_war_debacle
+			}
+		}
+		if = {
+			limit = { has_idea = ENG_irish_sabotage_wave }
+			swap_ideas = {
+				remove_idea = ENG_irish_sabotage_wave
+				add_idea = ENG_irish_civil_war_debacle
+			}
+		}
+		if = {
+			limit = { has_idea = ENG_irish_martial_law }
+			swap_ideas = {
+				remove_idea = ENG_irish_martial_law
+				add_idea = ENG_irish_civil_war_debacle
+			}
+		}
+		if = {
+			limit = { has_idea = ENG_irish_home_rule_suspended }
+			swap_ideas = {
+				remove_idea = ENG_irish_home_rule_suspended
+				add_idea = ENG_irish_civil_war_debacle
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = ENG_irish_civil_war_debacle }
+			}
+			add_ideas = ENG_irish_civil_war_debacle
+		}
+		113 = {
+			if = {
+				limit = {
+					is_owned_by = ROOT
+					NOT = { has_state_flag = ENG_state_garrison_secured }
+				}
+				transfer_state_to = IRE
+			}
+		}
+		114 = {
+			if = {
+				limit = {
+					is_owned_by = ROOT
+					NOT = { has_state_flag = ENG_state_garrison_secured }
+				}
+				transfer_state_to = IRE
+			}
+		}
+		117 = {
+			if = {
+				limit = {
+					is_owned_by = ROOT
+					NOT = { has_state_flag = ENG_state_garrison_secured }
+				}
+				transfer_state_to = IRE
+			}
+		}
+		if = {
+			limit = {
+				NOT = { country_exists = IRE }
+			}
+			113 = {
+				transfer_state_to = IRE
+			}
+		}
+		IRE = {
+			add_rule = { can_join_factions = no }
+			load_oob = "IRE_1936_generic"
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 8000
+			}
+		}
+		declare_war_on = {
+			target = IRE
+			type = civil_war
+		}
+	}
+
+	option = {
+		name = ww1_britain_pol.irish_civil_war.a
+		ai_chance = { base = 100 }
+		add_stability = -0.10
+		add_war_support = 0.05
+		add_political_power = -50
+	}
+}
+
+country_event = {
+	id = ww1_britain_pol.ireland_pacified
+	title = ww1_britain_pol.ireland_pacified.t
+	desc = ww1_britain_pol.ireland_pacified.d
+	picture = GFX_event_ww1_britain_palace_conference
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_country_flag = ENG_irish_civil_war_fired
+		NOT = { has_country_flag = ENG_ww1_irish_union_secured }
+		country_exists = IRE
+		IRE = { has_capitulated = yes }
+	}
+
+	immediate = {
+		annex_country = {
+			target = IRE
+			transfer_troops = no
+		}
+		if = {
+			limit = { has_idea = ENG_irish_civil_war_debacle }
+			swap_ideas = {
+				remove_idea = ENG_irish_civil_war_debacle
+				add_idea = ENG_irish_union_secured
+			}
+		}
+		if = {
+			limit = { has_idea = ENG_irish_martial_law }
+			swap_ideas = {
+				remove_idea = ENG_irish_martial_law
+				add_idea = ENG_irish_union_secured
+			}
+		}
+		if = {
+			limit = { has_idea = ENG_irish_sabotage_wave }
+			swap_ideas = {
+				remove_idea = ENG_irish_sabotage_wave
+				add_idea = ENG_irish_union_secured
+			}
+		}
+		if = {
+			limit = { has_idea = ENG_irish_home_rule_tension }
+			swap_ideas = {
+				remove_idea = ENG_irish_home_rule_tension
+				add_idea = ENG_irish_union_secured
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = ENG_irish_union_secured }
+			}
+			add_ideas = ENG_irish_union_secured
+		}
+		set_country_flag = ENG_ww1_irish_union_secured
+		set_country_flag = ENG_irish_union_permanently_secured
+		set_variable = { ww1_britain_irish_tension = 0 }
+		set_variable = { ww1_britain_ulster_tension = 0 }
+	}
+
+	option = {
+		name = ww1_britain_pol.ireland_pacified.a
+		ai_chance = { base = 100 }
+		add_stability = 0.10
+		add_political_power = 50
+	}
+}
+
 add_namespace = ww1_britain
 country_event = {
  id = ww1_britain.3 title = ww1_britain.3.t desc = ww1_britain.3.d
