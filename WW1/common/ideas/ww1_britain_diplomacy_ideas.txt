@@ -1,5 +1,18 @@
+# ==============================================================================
+# BRITISH DIPLOMACY & INTELLIGENCE (WW1) - ROOM 40 & COALITION IDEAS
+# ==============================================================================
 ideas = {
- country = {
-  ENG_ww1_room_forty = { picture = ENG_ww1_room_forty allowed = { always = no } removal_cost = -1 modifier = { decryption_factor = .1 } }
- }
+	country = {
+		ENG_ww1_room_forty = {
+			picture = ENG_ww1_room_forty
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				decryption_factor = 0.35
+				sub_detection = 0.15
+				naval_hit_chance = 0.10
+				intel_network_gain_factor = 0.25
+			}
+		}
+	}
 }
