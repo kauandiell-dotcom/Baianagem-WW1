@@ -16,9 +16,8 @@ set_country_flag = ENG_ww1_parliament_act_passed"""
         "en_t": "National Insurance Act",
         "pt_d": "A pioneira legislação de seguridade social de Lloyd George oferece auxílio-doença e proteção contra o desemprego para milhões de trabalhadores industriais britânicos.",
         "en_d": "Lloyd George's landmark social insurance reforms provide sickness benefits and unemployment protections to millions of British industrial workers, cementing working-class loyalty.",
-        "reward": """add_ideas = ENG_ww1_national_insurance
-add_stability = 0.05
-add_political_power = 50"""
+        "reward": """add_stability = 0.05
+add_political_power = 60"""
     },
     "ENG_ww1_the_liberal_cabinet": {
         "pt_t": "O Gabinete Liberal de H. H. Asquith",
@@ -77,9 +76,12 @@ add_stability = 0.03"""
         "en_t": "Defence of the Realm Act (DORA)",
         "pt_d": "Promulgada no início da guerra, a DORA concede ao Executivo amplos poderes para censurar correspondências de espionagem, controlar ferrovias e requisitar portos.",
         "en_d": "Passed upon the outbreak of war, DORA grants executive authority to censor sensitive dispatches, requisition civilian harbors, and take control of the rail network.",
-        "reward": """add_ideas = ENG_ww1_defence_of_the_realm
-add_war_support = 0.10
-add_political_power = 60"""
+        "reward": """swap_ideas = {
+    remove_idea = ENG_irish_home_rule_tension
+    add_idea = ENG_irish_home_rule_suspended
+}
+add_stability = 0.05
+add_war_support = 0.05"""
     },
     "ENG_ww1_wartime_parliamentary_scrutiny": {
         "pt_t": "Supervisão Parlamentar de Guerra",
@@ -104,28 +106,34 @@ set_country_flag = ENG_ww1_coalition_formed"""
         "en_t": "Military Service Act 1916",
         "pt_d": "Diante das perdas avassaladoras nas trincheiras, a Grã-Bretanha abandona o voluntariado e introduz o recrutamento obrigatório para homens solteiros e casados.",
         "en_d": "Compelled by attrition on the Western Front, Parliament enacts universal conscription, guaranteeing an unbroken stream of divisions for Field Marshal Haig.",
-        "reward": """add_ideas = ENG_ww1_unsanctioned_conscription
-add_manpower = 250000
+        "reward": """add_manpower = 100000
 add_war_support = 0.05
-set_country_flag = ENG_ww1_conscription_passed"""
+add_political_power = 40"""
     },
     "ENG_ww1_reserved_civilian_occupations": {
         "pt_t": "Ocupações Civis Reservadas",
         "en_t": "Reserved Civilian Occupations",
         "pt_d": "Mineiros de carvão, maquinistas de trem, metalúrgicos e operários de estaleiros são isentos da convocação para manter a máquina industrial britânica a todo vapor.",
         "en_d": "Miners, railway engineers, and shipyard caulkers are exempted from trench conscription, shielding vital war production from devastating labor shortages.",
-        "reward": """add_ideas = ENG_ww1_reserved_occupations
-industrial_capacity_factory = 0.08"""
+        "reward": """128 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}
+add_stability = 0.03"""
     },
     "ENG_ww1_the_war_cabinet": {
         "pt_t": "O Gabinete de Guerra de Lloyd George",
         "en_t": "Lloyd George's Supreme War Cabinet",
         "pt_d": "David Lloyd George assume como Primeiro-Ministro com um conselho executivo de cinco líderes dedicados dia e noite à condução implacável da vitória militar.",
         "en_d": "David Lloyd George establishes a streamlined War Cabinet of five ministers, concentrating supreme decision-making authority to prosecute total war to victory.",
-        "reward": """add_ideas = ENG_ww1_war_cabinet
-add_war_support = 0.10
-add_stability = 0.05
-add_political_power = 100"""
+        "reward": """add_political_power = 100
+add_war_support = 0.05
+army_experience = 15
+navy_experience = 15"""
     },
     "ENG_ww1_the_franchise_debate": {
         "pt_t": "O Debate da Extensão do Sufrágio",
@@ -140,8 +148,11 @@ add_stability = 0.04"""
         "en_t": "Representation of the People Act 1918",
         "pt_d": "Todos os homens maiores de 21 anos e mulheres maiores de 30 recebem o voto, multiplicando o eleitorado britânico de 8 para mais de 21 milhões de pessoas.",
         "en_d": "Franchise is granted to all men over 21 and women over 30, expanding the electorate from 8 to 21 million citizens in a triumph of British democracy.",
-        "reward": """add_ideas = ENG_ww1_enlarged_franchise
-add_stability = 0.10
+        "reward": """swap_ideas = {
+    remove_idea = ENG_irish_home_rule_suspended
+    add_idea = ENG_irish_home_rule_compromise
+}
+add_stability = 0.08
 add_political_power = 75"""
     },
     "ENG_ww1_the_coalition_election": {
@@ -158,8 +169,15 @@ set_country_flag = ENG_ww1_coalition_victorious"""
         "en_t": "Liberal Reconstruction Mandate",
         "pt_d": "Investimentos massivos em saúde comunitária, habitação pública e seguridade desfazem as cicatrizes da guerra nos bairros fabris.",
         "en_d": "Public housing initiatives, clinics, and expanded pensions heal domestic wounds, rewarding the sacrifices of the working classes.",
-        "reward": """add_ideas = ENG_ww1_veterans_settlement
-add_stability = 0.06"""
+        "reward": """126 = {
+    add_extra_state_shared_building_slots = 2
+    add_building_construction = {
+        type = industrial_complex
+        level = 2
+        instant_build = yes
+    }
+}
+add_stability = 0.05"""
     },
     "ENG_ww1_the_labour_alternative": {
         "pt_t": "A Ascensão Trabalhista de Ramsay MacDonald",
@@ -182,8 +200,9 @@ add_stability = 0.06"""
         "en_t": "The 1911 Imperial Conference",
         "pt_d": "Os Primeiros-Ministros do Canadá, Austrália, Nova Zelândia e África do Sul reúnem-se em Londres para coordenar planos de defesa marítima e telégrafo imperial.",
         "en_d": "Prime Ministers of the Dominions convene in London to coordinate imperial naval defenses, wireless networks, and shared strategic priorities.",
-        "reward": """add_ideas = ENG_ww1_cabinet_consultation
-add_political_power = 50"""
+        "reward": """country_event = { id = ww1_britain_pol.6 }
+add_political_power = 50
+set_country_flag = ENG_ww1_imperial_conference_held"""
     },
     "ENG_ww1_canadian_defence_consultation": {
         "pt_t": "O Corpo Canadense e Sir Robert Borden",
@@ -242,8 +261,12 @@ add_stability = 0.04"""
         "en_t": "Dominion War Supply Integration",
         "pt_d": "Fábricas de munição canadenses, trigo australiano e lã neozelandesa são integrados em um circuito logístico soberano e contínuo para o esforço de guerra.",
         "en_d": "Canadian shell foundries, Australian durum wheat, and New Zealand wool are systematically funneled into the imperial logistical pipeline.",
-        "reward": """add_ideas = ENG_ww1_dominion_procurement
-123 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }"""
+        "reward": """add_equipment_to_stockpile = {
+    type = infantry_equipment_1
+    amount = 5000
+    producer = ENG
+}
+add_political_power = 40"""
     },
     "ENG_ww1_the_mediterranean_stations": {
         "pt_t": "As Estações Navais de Gibraltar e Malta",
@@ -266,8 +289,16 @@ add_stability = 0.04"""
         "en_t": "Imperial Troop Convoy Escorts",
         "pt_d": "Transatlânticos oceânicos de passageiros como o Olympic e o Mauretania são convertidos em transportes rápidos blindados protegidos pela Marinha Real.",
         "en_d": "Luxury ocean liners, including the Olympic and Mauretania, are armed as high-speed troopships, ferrying hundreds of thousands safely across oceans.",
-        "reward": """add_ideas = ENG_ww1_imperial_sealift
-add_equipment_to_stockpile = { type = convoy amount = 50 }"""
+        "reward": """swap_ideas = {
+    remove_idea = ENG_the_imperial_web
+    add_idea = ENG_the_imperial_web_t2
+}
+add_equipment_to_stockpile = {
+    type = convoy
+    amount = 100
+    producer = ENG
+}
+add_war_support = 0.05"""
     },
     "ENG_ww1_the_imperial_war_conference": {
         "pt_t": "A Conferência de Guerra Imperial de 1917",
@@ -283,8 +314,12 @@ add_stability = 0.05"""
         "en_t": "Dominion War Cabinet Delegates",
         "pt_d": "Sir Robert Borden e Jan Smuts assumem responsabilidades operacionais diretas no planejamento de frentes militares e diplomáticas.",
         "en_d": "Eminent Dominion statesmen direct high military councils, coordinating resources across five continents toward imperial victory.",
-        "reward": """add_political_power = 75
-add_ideas = ENG_ww1_commonwealth_consultation"""
+        "reward": """swap_ideas = {
+    remove_idea = ENG_the_imperial_web_t2
+    add_idea = ENG_the_imperial_web_t3
+}
+add_political_power = 75
+add_stability = 0.05"""
     },
     "ENG_ww1_indian_constitutional_consultation": {
         "pt_t": "Declaração Montagu e Reformas na Índia",

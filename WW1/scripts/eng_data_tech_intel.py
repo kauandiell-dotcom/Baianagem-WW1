@@ -7,18 +7,21 @@ TECH_INTEL_DATA = {
         "en_t": "The National Physical Laboratory",
         "pt_d": "O NPL estabelece padrões científicos soberanos em metrologia, aerodinâmica e termodinâmica, fornecendo precisão inigualável à engenharia britânica.",
         "en_d": "The NPL at Teddington standardizes sovereign scientific norms in metrology, aerodynamics, and materials testing, giving British industry precision rigor.",
-        "reward": """add_ideas = ENG_ww1_npl_standards
-add_research_slot = 1
-add_political_power = 50"""
+        "reward": """add_tech_bonus = {
+    name = npl_standards
+    bonus = 1.0
+    uses = 2
+    category = industry
+}
+add_political_power = 30"""
     },
     "ENG_ww1_university_military_contracts": {
         "pt_t": "Contratos Universitários de Pesquisa Militar",
         "en_t": "University Military Research Contracts",
         "pt_d": "Os laboratórios Cavendish de Cambridge, Oxford e o Imperial College canalizam as maiores mentes acadêmicas para desvendar soluções bélicas de vanguarda.",
         "en_d": "The Cavendish Laboratory at Cambridge, Oxford, and Imperial College harness world-leading physicists and chemists to solve urgent wartime engineering puzzles.",
-        "reward": """add_ideas = ENG_ww1_university_research
-add_tech_bonus = {
-    name = university_science_bonus
+        "reward": """add_tech_bonus = {
+    name = university_science
     bonus = 1.0
     uses = 2
     category = electronics
@@ -34,17 +37,21 @@ add_political_power = 40"""
     name = metallurgy_bonus
     bonus = 1.0
     uses = 2
-    category = industry
+    category = artillery
 }
-add_ideas = ENG_ww1_ordnance_metallurgy"""
+army_experience = 15"""
     },
     "ENG_ww1_machine_tool_standards": {
         "pt_t": "Padronização de Tornos e Ferramentas Mecânicas",
         "en_t": "Machine Tool Standardization",
         "pt_d": "Gabaritos e matrizes universais permitem que pequenas oficinas familiares fabriquem peças de fuzis e obuses com tolerâncias micrométricas perfeitamente intercambiáveis.",
         "en_d": "Standardized jigs, fixtures, and micrometric gauges enable thousands of subcontracted workshops to produce flawlessly interchangeable weapon components.",
-        "reward": """add_ideas = ENG_ww1_machine_tool_standards
-add_political_power = 40"""
+        "reward": """add_tech_bonus = {
+    name = machine_tools_bonus
+    bonus = 1.0
+    uses = 2
+    category = industry
+}"""
     },
     "ENG_ww1_railway_engineering_standards": {
         "pt_t": "Padronização da Engenharia Ferroviária",
@@ -93,28 +100,38 @@ add_stability = 0.04"""
         "reward": """add_tech_bonus = {
     name = wireless_bonus
     bonus = 1.0
-    uses = 1
+    uses = 2
     category = electronics
 }
-add_ideas = ENG_ww1_field_wireless"""
+army_experience = 15"""
     },
     "ENG_ww1_signals_intelligence_organisation": {
         "pt_t": "Organização do Serviço de Inteligência de Sinais",
         "en_t": "Signals Intelligence Organisation",
         "pt_d": "Redes de escuta eletromagnética monitoram o tráfego de rádio das marinhas e exércitos centrais, alimentando os analistas britânicos com dados vitais.",
         "en_d": "Electromagnetic interception stations across Britain intercept telegraphic traffic, feeding cryptanalysts with raw intelligence on enemy troop movements.",
-        "reward": """add_ideas = ENG_ww1_signals_intelligence
-add_political_power = 50"""
+        "reward": """add_tech_bonus = {
+    name = sigint_bonus
+    bonus = 1.0
+    uses = 2
+    category = electronics
+}
+navy_experience = 20
+army_experience = 20"""
     },
     "ENG_ww1_the_room_forty_office": {
         "pt_t": "O Lendário Room 40 e o Telegrama Zimmermann",
         "en_t": "The Legendary Room 40 and Zimmermann Telegram",
         "pt_d": "A seção criptográfica ultra-secreta do Almirantado sob o Almirante Hall decifra códigos navais alemães e intercepta o Telegrama Zimmermann, alterando o curso da história.",
         "en_d": "The Admiralty's clandestine cryptanalysis bureau under Admiral 'Blinker' Hall deciphers German naval ciphers and intercepts the momentous Zimmermann Telegram.",
-        "reward": """add_ideas = ENG_ww1_room_forty
-add_political_power = 75
-add_war_support = 0.08
-set_country_flag = ENG_ww1_room_40_active"""
+        "reward": """add_tech_bonus = {
+    name = room_forty_crypto
+    bonus = 1.0
+    uses = 2
+    category = electronics
+}
+navy_experience = 25
+add_political_power = 50"""
     },
     "ENG_ww1_aerial_photography_research": {
         "pt_t": "Pesquisa em Aerofotogrametria Estereoscópica",
@@ -134,35 +151,47 @@ add_air_experience = 15"""
         "en_t": "Sound Ranging and Artillery Mathematics",
         "pt_d": "O jovem físico Lawrence Bragg desenvolve sistemas de microfones subterrâneos que calculam a localização exata de baterias alemãs pelo estrondo dos canhões.",
         "en_d": "Nobel laureate Lawrence Bragg develops sound-ranging microphone arrays that pinpoint hidden German heavy batteries within seconds of firing.",
-        "reward": """add_ideas = ENG_ww1_sound_ranging_math
-add_army_experience = 20"""
+        "reward": """add_tech_bonus = {
+    name = artillery_math_bonus
+    bonus = 1.0
+    uses = 2
+    category = artillery
+}
+army_experience = 20"""
     },
     "ENG_ww1_chemical_protection_research": {
         "pt_t": "Centro de Defesa Química de Porton Down",
         "en_t": "Porton Down Chemical Protection Research",
         "pt_d": "Cientistas em Porton Down desenvolvem filtros de carvão ativado e tecidos impermeabilizantes capazes de neutralizar gás cloro, fosgênio e gás mostarda.",
         "en_d": "Scientists at Porton Down engineer activated-charcoal filters and neutralizing ointments to completely shield Allied soldiers from mustard and phosgene gas.",
-        "reward": """add_ideas = ENG_ww1_porton_down_protection
-add_tech_bonus = {
-    name = support_bonus
+        "reward": """add_tech_bonus = {
+    name = chemical_protection
     bonus = 1.0
     uses = 1
     category = support_tech
-}"""
+}
+army_experience = 15"""
     },
     "ENG_ww1_the_landships_technical_committee": {
         "pt_t": "Comitê Técnico de Navios Terrestres (Landships)",
         "en_t": "The Landships Technical Committee",
         "pt_d": "O comitê secreto fundado por Churchill e Eustace Tennyson d'Eyncourt projeta lagartas envolventes e blindagens balísticas para cruzar trincheiras de 3 metros.",
         "en_d": "Churchill's clandestine Landships Committee designs rhomboid wrap-around tracks and bulletproof hulls capable of crossing 9-foot trench spans.",
-        "reward": """add_ideas = ENG_ww1_landships_technical
-add_tech_bonus = {
-    name = heavy_armor_bonus
+        "reward": """add_tech_bonus = {
+    name = tank_bonus
     bonus = 1.0
     uses = 2
     category = armor
 }
-add_army_experience = 20"""
+army_experience = 25
+130 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = arms_factory
+        level = 1
+        instant_build = yes
+    }
+}"""
     },
     "ENG_ww1_aircraft_engine_research": {
         "pt_t": "Pesquisa de Compressores e Motores Aeronáuticos",
@@ -182,45 +211,75 @@ add_air_experience = 15"""
         "en_t": "ASDIC Acoustic Analysis Laboratory",
         "pt_d": "O comitê BIR (Board of Invention and Research) sob Ernest Rutherford desenvolve cristais de quartzo piezelétricos, criando o sonar ativo (ASDIC) pioneiro.",
         "en_d": "Ernest Rutherford and Allied researchers develop piezoelectric quartz transducers, birthing the world's first active acoustic submarine detection (ASDIC).",
-        "reward": """add_ideas = ENG_ww1_asdic_sonar
-add_navy_experience = 20"""
+        "reward": """swap_ideas = {
+    remove_idea = ENG_two_power_standard_t2
+    add_idea = ENG_two_power_standard_t3
+}
+add_tech_bonus = {
+    name = asdic_bonus
+    bonus = 1.0
+    uses = 2
+    category = dd_tech
+}
+navy_experience = 30"""
     },
     "ENG_ww1_production_quality_standards": {
         "pt_t": "Normas Nacionais de Qualidade de Produção",
         "en_t": "Production Quality Standards",
         "pt_d": "A Associação Britânica de Padrões de Engenharia (BSI) estabelece tolerâncias industriais rigorosas para parafusos, porcas, aços e rolamentos em todo o Império.",
         "en_d": "The British Engineering Standards Association enforces strict tolerances across all imperial armaments plants, dramatically reducing factory waste.",
-        "reward": """add_ideas = ENG_ww1_production_standards
-add_political_power = 40"""
+        "reward": """add_tech_bonus = {
+    name = quality_standards
+    bonus = 1.0
+    uses = 2
+    category = industry
+}
+128 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}"""
     },
     "ENG_ww1_the_postwar_research_council": {
         "pt_t": "Conselho de Pesquisa Científica e Industrial (DSIR)",
         "en_t": "Department of Scientific and Industrial Research",
         "pt_d": "A criação do DSIR consolida o financiamento permanente da pesquisa científica aplicada, mantendo o Reino Unido na liderança tecnológica mundial.",
         "en_d": "Founding the DSIR cements state-sponsored scientific and industrial innovation, ensuring British technological leadership into the postwar era.",
-        "reward": """add_ideas = ENG_ww1_postwar_research_council
-add_political_power = 60"""
+        "reward": """add_tech_bonus = {
+    name = postwar_science
+    bonus = 1.0
+    uses = 2
+    category = electronics
+}
+add_political_power = 50"""
     },
     "ENG_ww1_industrial_patent_exchanges": {
         "pt_t": "Intercâmbio de Patentes Industriais Anglo-Aliadas",
         "en_t": "Anglo-Allied Industrial Patent Exchanges",
         "pt_d": "Compartilhamento mútuo de patentes de química industrial, processos de refino de petróleo e eletromecânica acelera a modernização de manufaturas civis.",
         "en_d": "Reciprocal patent pooling in industrial chemistry, optical glass, and petroleum cracking accelerates postwar manufacturing modernizations.",
-        "reward": """add_ideas = ENG_ww1_patent_exchanges
-add_tech_bonus = {
-    name = postwar_tech_bonus
+        "reward": """add_tech_bonus = {
+    name = patent_industry
     bonus = 1.0
-    uses = 1
+    uses = 2
     category = industry
-}"""
+}
+add_political_power = 40"""
     },
     "ENG_ww1_technical_education_for_reconstruction": {
         "pt_t": "Educação Técnica Superior para a Reconstrução",
         "en_t": "Technical Education for Reconstruction",
         "pt_d": "Faculdades politécnicas e institutos de mecânica aplicada formam centenas de milhares de engenheiros, químicos e arquitetos civis para o futuro britânico.",
         "en_d": "Polytechnic colleges and mechanical institutes qualify hundreds of thousands of certified engineers, chemists, and architects for Britain's future.",
-        "reward": """add_ideas = ENG_ww1_technical_education
-add_political_power = 75
+        "reward": """add_tech_bonus = {
+    name = technical_edu
+    bonus = 1.0
+    uses = 2
+    category = electronics
+}
 add_stability = 0.05"""
     }
 }

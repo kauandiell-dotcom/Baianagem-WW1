@@ -99,8 +99,7 @@ add_political_power = 40"""
         "en_t": "The City of London Credit Market",
         "pt_d": "O centro financeiro mundial na City mobiliza linhas globais de crédito comercial e títulos de guerra para financiar suprimentos vitais para a Entente.",
         "en_d": "The global financial hub in the City of London unlocks credit syndicates and issues war loan bonds to finance vital material acquisitions for the Entente.",
-        "reward": """add_ideas = ENG_city_of_london_credit
-add_political_power = 75
+        "reward": """add_political_power = 75
 add_stability = 0.05"""
     },
     "ENG_ww1_railway_freight_coordination": {
@@ -108,17 +107,34 @@ add_stability = 0.05"""
         "en_t": "Railway Freight Coordination",
         "pt_d": "O Comitê Executivo Ferroviário assume o controle operacional unificado das linhas férreas britânicas, priorizando o fluxo ininterrupto de carvão e munições para os portos.",
         "en_d": "The Railway Executive Committee assumes centralized traffic control across British lines, guaranteeing expedited coal and ammunition movements to deepwater ports.",
-        "reward": """add_ideas = ENG_ww1_railway_executive
-126 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-128 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
-132 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }"""
+        "reward": """128 = {
+    add_building_construction = {
+        type = infrastructure
+        level = 1
+        instant_build = yes
+    }
+}
+129 = {
+    add_building_construction = {
+        type = infrastructure
+        level = 1
+        instant_build = yes
+    }
+}"""
     },
     "ENG_ww1_domestic_coal_allocation": {
         "pt_t": "Alocação Doméstica de Carvão",
         "en_t": "Domestic Coal Allocation",
         "pt_d": "O carvão de alta qualidade do País de Gales e de Yorkshire é reservado estrategicamente para abastecer as caldeiras da Grand Fleet e as fundições de aço bélico.",
         "en_d": "High-calorific Welsh and Yorkshire steam coal is strategically rationed to feed Grand Fleet boilers, munitions furnaces, and export commitments.",
-        "reward": """add_ideas = ENG_ww1_coal_allocation
+        "reward": """131 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}
 add_political_power = 40"""
     },
     "ENG_ww1_national_munitions_contracts": {
@@ -145,31 +161,45 @@ add_equipment_to_stockpile = {
         "en_t": "The Ministry of Munitions",
         "pt_d": "Criado para superar a dramática Crise dos Projéteis de 1915, o ministério revoluciona a produção bélica, integrando ciência, indústria pesada e trabalho em escala total.",
         "en_d": "Established to overcome the catastrophic 1915 Shell Crisis, the Ministry under David Lloyd George organizes industry, labor, and state resources for total war.",
-        "reward": """add_ideas = ENG_ww1_munitions_ministry
-add_war_support = 0.05
-add_political_power = 50"""
+        "reward": """swap_ideas = {
+    remove_idea = ENG_city_of_london_credit
+    add_idea = ENG_city_of_london_credit_t2
+}
+128 = {
+    add_extra_state_shared_building_slots = 2
+    add_building_construction = {
+        type = arms_factory
+        level = 2
+        instant_build = yes
+    }
+}"""
     },
     "ENG_ww1_shell_inspection_boards": {
         "pt_t": "Conselhos de Inspeção de Projéteis",
         "en_t": "Shell Inspection Boards",
         "pt_d": "Normas rigorosas de controle químico e metalúrgico eliminam falhas de detonação em projéteis de alto explosivo e espoletas temporizadas britânicas.",
         "en_d": "Rigorous metallurgical and chemical inspection regimes eliminate defective duds among British high-explosive shells and timed artillery fuses.",
-        "reward": """add_tech_bonus = {
-    name = artillery_research_bonus
-    bonus = 1.0
-    uses = 2
-    category = artillery
+        "reward": """130 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = arms_factory
+        level = 1
+        instant_build = yes
+    }
 }
-add_ideas = ENG_ww1_shell_inspection"""
+add_equipment_to_stockpile = {
+    type = artillery_equipment_1
+    amount = 120
+    producer = ENG
+}"""
     },
     "ENG_ww1_wartime_labour_dilution": {
         "pt_t": "Diluição do Trabalho e as 'Munitionettes'",
         "en_t": "Wartime Labour Dilution",
         "pt_d": "Quase um milhão de mulheres entram nas fábricas de projéteis e componentes aeronáuticos, garantindo produção recorde enquanto os homens marcham para o front.",
         "en_d": "Hundreds of thousands of female workers ('munitionettes') enter arms factories and engineering plants, sustaining record industrial output while soldiers enlist.",
-        "reward": """add_ideas = ENG_ww1_labour_dilution
-add_manpower = 50000
-add_stability = 0.03"""
+        "reward": """add_manpower = 60000
+add_war_support = 0.05"""
     },
     "ENG_ww1_the_shop_stewards_agreement": {
         "pt_t": "Acordo com os Delegados Sindicais (Shop Stewards)",
@@ -185,17 +215,26 @@ set_country_flag = ENG_ww1_labour_peace_secured"""
         "en_t": "Emergency Factory Controls",
         "pt_d": "Mais de cinco mil estabelecimentos industriais são designados 'Estabelecimentos Controlados', dedicados integralmente à vitória militar sob a égide da DORA.",
         "en_d": "Over five thousand manufacturing plants are gazetted as 'Controlled Establishments', operating under direct government scheduling to maximize war output.",
-        "reward": """add_ideas = ENG_ww1_emergency_controls
-add_war_support = 0.05"""
+        "reward": """swap_ideas = {
+    remove_idea = ENG_city_of_london_credit_t2
+    add_idea = ENG_city_of_london_credit_t3
+}
+129 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = arms_factory
+        level = 1
+        instant_build = yes
+    }
+}"""
     },
     "ENG_ww1_the_ministry_of_food": {
         "pt_t": "O Ministério da Alimentação e Racionamento",
         "en_t": "The Ministry of Food",
         "pt_d": "O controle científico de estoques de trigo, açúcar e carne, somado ao racionamento equitativo, derrota as tentativas alemãs de estrangular o sustento britânico.",
         "en_d": "Centralized food purchasing, scientific calorie management, and fair rationing successfully defeat the German attempt to starve the British Isles.",
-        "reward": """add_ideas = ENG_ww1_food_control
-add_stability = 0.05
-add_political_power = 40"""
+        "reward": """add_stability = 0.05
+add_political_power = 50"""
     },
     "ENG_ww1_austerity_and_public_credit": {
         "pt_t": "Austeridade e Crédito Público",
@@ -241,9 +280,15 @@ add_stability = 0.05"""
         "en_t": "Housing and Civilian Employment",
         "pt_d": "O programa habitacional de Addison ('Homes Fit for Heroes') ergue conjuntos residenciais modernos com saneamento, gerando centenas de milhares de empregos.",
         "en_d": "The Addison Housing Act finances high-standard council housing with sanitation for demobilized veterans, generating widespread civilian employment.",
-        "reward": """add_ideas = ENG_ww1_housing_programme
-add_stability = 0.08
-add_political_power = 60"""
+        "reward": """126 = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = {
+        type = industrial_complex
+        level = 1
+        instant_build = yes
+    }
+}
+add_stability = 0.05"""
     },
     "ENG_ww1_the_peace_administration_office": {
         "pt_t": "Gabinete de Administração da Paz",
@@ -259,9 +304,8 @@ set_country_flag = ENG_ww1_peace_office_founded"""
         "en_t": "Military Demobilisation Planning",
         "pt_d": "Critérios escalonados por ocupação e tempo de serviço garantem o retorno ordeiro de milhões de soldados às suas cidades sem gerar colapso econômico.",
         "en_d": "A methodical points system prioritized by civilian profession and service duration facilitates the orderly repatriation of millions of frontline soldiers.",
-        "reward": """add_political_power = 60
-add_stability = 0.05
-add_ideas = ENG_orderly_demobilisation"""
+        "reward": """add_manpower = 50000
+add_stability = 0.05"""
     },
     "ENG_ww1_shipping_repatriation_coordination": {
         "pt_t": "Coordenação da Frota de Repatriação",
@@ -289,9 +333,8 @@ add_political_power = 40"""
         "en_t": "Disability Pension Administration",
         "pt_d": "O Ministério das Pensões garante auxílio financeiro vitalício e cuidados hospitalares para centenas de milhares de soldados amputados e gaseados.",
         "en_d": "The Ministry of Pensions secures lifelong financial sustenance and specialized clinical treatment for disabled veterans and war widows.",
-        "reward": """add_political_power = 50
-add_stability = 0.05
-add_ideas = ENG_ww1_veterans_settlement"""
+        "reward": """add_stability = 0.08
+add_political_power = 50"""
     },
     "ENG_ww1_civilian_training_for_returning_soldiers": {
         "pt_t": "Capacitação Civil para Veteranos",
@@ -326,8 +369,14 @@ add_stability = 0.05"""
         "en_t": "Industrial Conversion Planning",
         "pt_d": "Engenheiros civis e líderes fabris estabelecem diretrizes para rápida reconversão de plantas de explosivos em indústrias químicas de fertilizantes e plásticos.",
         "en_d": "Civilian planners and business federations facilitate the conversion of propellant plants into chemical fertilizer and synthetic dye manufacturers.",
-        "reward": """add_ideas = ENG_ww1_industrial_conversion
-add_political_power = 50"""
+        "reward": """130 = {
+    add_extra_state_shared_building_slots = 2
+    add_building_construction = {
+        type = industrial_complex
+        level = 2
+        instant_build = yes
+    }
+}"""
     },
     "ENG_ww1_the_employment_exchanges": {
         "pt_t": "Bolsas Nacionais de Emprego",
@@ -352,9 +401,8 @@ add_political_power = 40"""
         "en_t": "Public Debt Repayment",
         "pt_d": "Uma gestão orçamentária rigorosa e a amortização contínua de títulos nos mercados internacionais restauram a solidez inabalável da Libra Esterlina.",
         "en_d": "Disciplined fiscal management and orderly bond amortizations on international markets reaffirm the global primacy of the Pound Sterling.",
-        "reward": """add_ideas = ENG_sterling_stabilization
-add_stability = 0.06
-add_political_power = 60"""
+        "reward": """add_political_power = 75
+add_stability = 0.05"""
     },
     "ENG_ww1_treasury_expenditure_review": {
         "pt_t": "Revisão de Despesas do Tesouro (Geddes Axe)",
@@ -389,16 +437,20 @@ set_country_flag = ENG_ww1_geddes_axe_passed"""
         "en_t": "The Public Health Settlement",
         "pt_d": "A fundação do Ministério da Saúde unifica o combate a epidemias, saneamento urbano, assistência materno-infantil e vigilância sanitária nacional.",
         "en_d": "The creation of the Ministry of Health consolidates epidemic control, urban sanitation, and maternity welfare into a unified national system.",
-        "reward": """add_ideas = ENG_ministry_of_health
-add_stability = 0.06
-add_political_power = 50"""
+        "reward": """add_stability = 0.08
+add_manpower = 40000"""
     },
     "ENG_ww1_the_education_reconstruction_programme": {
         "pt_t": "Programa de Reconstrução da Educação (Fisher Act)",
         "en_t": "The Education Reconstruction Programme",
         "pt_d": "A Lei Fisher de 1918 eleva a idade escolar obrigatória para 14 anos e amplia colégios técnicos, forjando uma geração de trabalhadores altamente qualificados.",
         "en_d": "The Fisher Education Act raises the compulsory school age to 14 and expands continuation colleges, cultivating a highly literate technical generation.",
-        "reward": """add_ideas = ENG_fisher_education_act
+        "reward": """add_tech_bonus = {
+    name = education_science_bonus
+    bonus = 1.0
+    uses = 2
+    category = electronics
+}
 add_political_power = 50"""
     },
     "ENG_ww1_local_government_finance": {
@@ -417,8 +469,7 @@ add_political_power = 40"""
         "en_t": "The Industrial Relations Conference",
         "pt_d": "Os Conselhos Whitley estabelecem fóruns permanentes de negociação paritária entre industriais e sindicatos, garantindo estabilidade produtiva duradoura.",
         "en_d": "Whitley Councils institutionalize joint industrial bargaining councils between trade unions and employers, preventing class conflict.",
-        "reward": """add_ideas = ENG_whitley_councils
-add_stability = 0.05
+        "reward": """add_stability = 0.08
 add_political_power = 50"""
     },
     "ENG_ww1_the_postwar_parliamentary_mandate": {
@@ -444,8 +495,7 @@ set_country_flag = ENG_ww1_conservative_rule_1922"""
         "en_t": "The 1923 Imperial Settlement",
         "pt_d": "O Reino Unido consolida sua recuperação interna e o alinhamento com a Comunidade de Nações, assegurando uma era de estabilidade democrática e prosperidade.",
         "en_d": "Britain cements its domestic recovery and economic equilibrium with the Commonwealth, inaugurating a decade of democratic resilience and peace.",
-        "reward": """add_ideas = ENG_the_imperial_web
-add_political_power = 100
-add_stability = 0.08"""
+        "reward": """add_stability = 0.10
+add_political_power = 100"""
     }
 }
