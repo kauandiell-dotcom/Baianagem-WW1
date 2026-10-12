@@ -16,7 +16,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "remove_ideas = ITA_sacro_egoismo_policy add_ideas = ITA_ww1_trasformismo_politics add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -5 }",
+        "effect": "add_ideas = ITA_ww1_trasformismo_politics add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -5 }",
         "desc_en": "Giovanni Giolitti's parliamentary mastery governs through shifting coalitions and pragmatic reform. Immediate effect: Grants 50 Political Power, establishes the Trasformismo political idea, and cools interventionist fervor by 5.",
         "desc_pt": "O domínio parlamentar de Giovanni Giolitti governa por coalizões fluidas e reformas pragmáticas. Efeito imediato: Concede 50 de Poder Político, estabelece a ideia Trasformismo e reduz a agitação intervencionista em 5."
     },
@@ -184,15 +184,15 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "158 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } country_event = { id = ww1_italy.16 days = 1 } add_political_power = 25",
-        "desc_en": "Hundreds of thousands of women enter munitions plants, textile mills, and agricultural cooperatives. Immediate effect: Triggers the Female Labour Mobilisation event and grants 20 Political Power.",
-        "desc_pt": "Centenas de milhares de mulheres assumem postos em fábricas de munição, tecelagens e lavouras. Efeito imediato: Dispara o evento do Trabalho Feminino e concede 20 de Poder Político."
+        "effect": "159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } country_event = { id = ww1_italy.16 days = 1 } add_political_power = 25",
+        "desc_en": "Hundreds of thousands of women enter munitions plants, textile mills, and agricultural cooperatives. Immediate effect: Constructs 1 civilian factory in Lombardy, triggers Female Labour Mobilisation event and grants 25 Political Power.",
+        "desc_pt": "Centenas de milhares de mulheres assumem postos em fábricas de munição, tecelagens e lavouras. Efeito imediato: Constrói 1 fábrica civil na Lombardia, dispara o evento do Trabalho Feminino e concede 25 de Poder Político."
     },
     "propaganda_service": {
         "cost": 5,
         "available": "has_war = yes",
         "ai": "factor = 10",
-        "effect": "add_political_power = 30 add_to_variable = { ita_ww1_army_morale = 10 } country_event = { id = ww1_italy.17 days = 1 } ita_ww1_clamp_counters = yes",
+        "effect": "add_ideas = ITA_ww1_propaganda_service_spirit add_political_power = 30 add_to_variable = { ita_ww1_army_morale = 10 } country_event = { id = ww1_italy.17 days = 1 } ita_ww1_clamp_counters = yes",
         "desc_en": "Servizio P deploys trench illustrators, writers, and lecturers to sustain morale in the Alpine trenches. Immediate effect: Activates the Servizio P Propaganda idea and triggers the Propaganda Service event.",
         "desc_pt": "O Servizio P envia ilustradores, escritores e oradores para sustentar o ânimo nas trincheiras alpinas. Efeito imediato: Ativa a ideia Servizio P e dispara o evento do Serviço de Propaganda."
     },
@@ -216,7 +216,7 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "date > 1917.10.1",
         "ai": "factor = 20",
-        "effect": "add_to_variable = { ita_ww1_army_morale = 10 } add_political_power = 40 country_event = { id = ww1_italy.20 days = 1 }",
+        "effect": "remove_ideas = ITA_ww1_salandra_emergency_cabinet add_ideas = ITA_ww1_orlando_victory_cabinet add_to_variable = { ita_ww1_army_morale = 15 } add_political_power = 50 country_event = { id = ww1_italy.20 days = 1 }",
         "desc_en": "Vittorio Emanuele Orlando takes the helm with a single mandate: resistance on the Piave and total national mobilization. Immediate effect: Grants 40 Political Power and triggers the Orlando Government event.",
         "desc_pt": "Vittorio Emanuele Orlando assume a chefia do governo com mandato de ferro: resistência no Piave e vitória total. Efeito imediato: Concede 40 de Poder Político e dispara o evento do Governo Orlando."
     },
@@ -224,15 +224,15 @@ POLITICS_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "add_political_power = 30 add_stability = 0.02 add_to_variable = { ita_ww1_social_tension = -5 } country_event = { id = ww1_italy.18 days = 1 } ita_ww1_clamp_counters = yes",
-        "desc_en": "The Opera Nazionale Combattenti assists returning veterans with vocational training, credit, and settlement land. Immediate effect: Activates the Opera Nazionale Combattenti idea and grants 25 Political Power.",
-        "desc_pt": "A Opera Nazionale Combattenti apoia os veteranos com reintegração profissional, crédito e lotes rurais. Efeito imediato: Ativa a ideia Opera Nazionale Combattenti e concede 25 de Poder Político."
+        "effect": "add_ideas = ITA_ww1_opera_nazionale_combattenti add_political_power = 30 add_stability = 0.05 country_event = { id = ww1_italy.18 days = 1 } ita_ww1_clamp_counters = yes",
+        "desc_en": "The Opera Nazionale Combattenti assists returning veterans with vocational training, credit, and settlement land. Immediate effect: Activates the Opera Nazionale Combattenti idea and grants +5% Stability.",
+        "desc_pt": "A Opera Nazionale Combattenti apoia os veteranos com reintegração profissional, crédito e lotes rurais. Efeito imediato: Ativa a ideia Opera Nazionale Combattenti e concede +5% de Estabilidade."
     },
     "mutilated_victory": {
         "cost": 5,
         "available": "date > 1919.1.1",
         "ai": "factor = 15",
-        "effect": "remove_ideas = ITA_ww1_radiant_may_fervor country_event = { id = ww1_italy.21 days = 1 } add_to_variable = { ita_ww1_irredentism = 10 }",
+        "effect": "remove_ideas = ITA_vittorio_veneto_triumph remove_ideas = ITA_ww1_radiant_may_fervor add_ideas = ITA_ww1_mutilated_victory_syndrome country_event = { id = ww1_italy.21 days = 1 } add_to_variable = { ita_ww1_irredentism = 15 }",
         "desc_en": "Disappointment over Dalmatia and Fiume at Versailles replaces wartime enthusiasm with the bitter Vittoria Mutilata myth. Immediate effect: Removes Radiant May Fervor, triggers Mutilated Victory event and raises Irredentism by 10.",
         "desc_pt": "O desapontamento em Versalhes substitui o entusiasmo bélico pelo mito amargo da Vittoria Mutilata. Efeito imediato: Remove o fervor do Maio Radiante, dispara a Vitória Mutilada e eleva o Irredentismo em 10."
     },

@@ -127,9 +127,9 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "date > 1915.4.1",
         "ai": "factor = 20",
-        "effect": "add_war_support = 0.03 country_event = { id = ww1_italy.35 days = 1 }",
-        "desc_en": "Signing the secret Pact of London promising Trentino, South Tyrol, Trieste, Istria, and Dalmatia. Immediate effect: Grants +3% War Support and triggers the Treaty of London event.",
-        "desc_pt": "Assinatura do Pacto secreto de Londres garantindo Trentino, Tirol Meridional, Trieste, Ístria e Dalmácia. Efeito imediato: Concede +3% de Apoio à Guerra e dispara o evento do Tratado de Londres."
+        "effect": "remove_ideas = ITA_terre_irredente_dream add_ideas = ITA_patto_di_londra_spirit add_war_support = 0.10 country_event = { id = ww1_italy.35 days = 1 }",
+        "desc_en": "Signing the secret Pact of London promising Trentino, South Tyrol, Trieste, Istria, and Dalmatia. Immediate effect: Grants Commitment of the London Pact national spirit, +10% War Support and triggers the Treaty of London event.",
+        "desc_pt": "Assinatura do Pacto secreto de Londres garantindo Trentino, Tirol Meridional, Trieste, Ístria e Dalmácia. Efeito imediato: Concede o espírito Compromisso do Pacto de Londres, +10% de Apoio à Guerra e dispara o Tratado de Londres."
     },
     "central_concessions_accord": {
         "cost": 5,
@@ -287,9 +287,9 @@ DIPLOMACY_FOCI = {
         "cost": 5,
         "available": "date > 1919.9.1",
         "ai": "factor = 15",
-        "effect": "country_event = { id = ww1_italy.45 days = 1 } add_political_power = 30",
-        "desc_en": "Ratifying the treaty that formalizes the dissolution of Austria-Hungary and cedes Trento and Trieste. Immediate effect: Triggers the Saint-Germain Ratification event and grants +2% Stability.",
-        "desc_pt": "Ratificação do tratado que formaliza a dissolução da Áustria-Hungria e a cessão de Trento e Trieste. Efeito imediato: Dispara o evento de Ratificação de Saint-Germain e concede +2% de Estabilidade."
+        "effect": "remove_ideas = ITA_terre_irredente_dream remove_ideas = ITA_patto_di_londra_spirit add_ideas = ITA_vittorio_veneto_triumph country_event = { id = ww1_italy.45 days = 1 } add_political_power = 30",
+        "desc_en": "Ratifying the treaty that formalizes the dissolution of Austria-Hungary and cedes Trento and Trieste. Immediate effect: Grants Triumph of Vittorio Veneto spirit, triggers Saint-Germain Ratification event and grants 30 Political Power.",
+        "desc_pt": "Ratificação do tratado que formaliza a dissolução da Áustria-Hungria e a cessão de Trento e Trieste. Efeito imediato: Concede o espírito Triunfo de Vittorio Veneto, dispara o evento de Saint-Germain e concede 30 de Poder Político."
     },
     "dalmatian_claims": {
         "cost": 5,

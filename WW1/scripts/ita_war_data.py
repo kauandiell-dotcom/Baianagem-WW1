@@ -23,17 +23,17 @@ WAR_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 15",
-        "effect": "navy_experience = 10 army_experience = 10",
-        "desc_en": "Deploying naval detachments and marines to secure port facilities along the Libyan coastline. Immediate effect: Grants 10 Navy Experience and 10 Army Experience.",
-        "desc_pt": "Desdobramento de destacamentos navais e fuzileiros para assegurar instalações portuárias líbias. Efeito imediato: Concede 10 de Experiência Naval e 10 de Experiência do Exército."
+        "effect": "add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 producer = ITA } navy_experience = 15 army_experience = 15",
+        "desc_en": "Deploying naval detachments and marines to secure port facilities along the Libyan coastline. Immediate effect: Grants 1,000 rifles to stockpile, 15 Navy Experience and 15 Army Experience.",
+        "desc_pt": "Desdobramento de destacamentos navais e fuzileiros para assegurar instalações portuárias líbias. Efeito imediato: Concede 1.000 fuzis ao estoque, 15 de Experiência Naval e 15 de Experiência do Exército."
     },
     "first_aerial_bombing": {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "air_experience = 15 add_tech_bonus = { name = ITA_ww1_early_air_recon bonus = 0.25 uses = 1 category = air_doctrine }",
-        "desc_en": "Lieutenant Giulio Gavotti conducts the world's first aerial bombardment dropping Cipelli grenades near Ain Zara. Immediate effect: Grants 15 Air Experience and a 25% Air Doctrine research bonus (1 use).",
-        "desc_pt": "O Tenente Giulio Gavotti realiza o primeiro bombardeio aéreo da história militar em Ain Zara. Efeito imediato: Concede 15 de Experiência Aérea e 25% de bônus em Doutrina Aérea (1 uso)."
+        "effect": "air_experience = 25 add_tech_bonus = { name = ITA_ww1_early_air_recon bonus = 0.50 uses = 1 category = air_doctrine } add_political_power = 20",
+        "desc_en": "Lieutenant Giulio Gavotti conducts the world's first aerial bombardment dropping Cipelli grenades near Ain Zara. Immediate effect: Grants 25 Air Experience, 50% Air Doctrine research bonus (1 use) and 20 Political Power.",
+        "desc_pt": "O Tenente Giulio Gavotti realiza o primeiro bombardeio aéreo da história militar em Ain Zara. Efeito imediato: Concede 25 de Experiência Aérea, 50% de bônus em Doutrina Aérea (1 uso) e 20 de Poder Político."
     },
     "inland_oases_campaign": {
         "cost": 5,
@@ -47,9 +47,9 @@ WAR_FOCI = {
         "cost": 5,
         "available": "",
         "ai": "factor = 10",
-        "effect": "navy_experience = 15 add_to_variable = { ita_ww1_irredentism = 5 }",
-        "desc_en": "Naval operations occupy Rhodes and the Aegean Dodecanese archipelago as a strategic pledge. Immediate effect: Grants 15 Navy Experience and raises Irredentism by 5.",
-        "desc_pt": "Operações navais ocupam Rodes e as ilhas do Dodecaneso no Mar Egeu como penhor estratégico. Efeito imediato: Concede 15 de Experiência Naval e eleva o Irredentismo em 5."
+        "effect": "164 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } navy_experience = 20 add_to_variable = { ita_ww1_irredentism = 5 } add_political_power = 25",
+        "desc_en": "Naval operations occupy Rhodes and the Aegean Dodecanese archipelago as a strategic pledge. Immediate effect: Constructs 1 Naval Base in Rhodes (Dodecanese), grants 20 Navy Experience and 25 Political Power.",
+        "desc_pt": "Operações navais ocupam Rodes e as ilhas do Dodecaneso no Mar Egeu como penhor estratégico. Efeito imediato: Constrói 1 Base Naval em Rodes (Dodecaneso), concede 20 de Experiência Naval e 25 de Poder Político."
     },
     "treaty_of_ouchy": {
         "cost": 5,
@@ -151,25 +151,25 @@ WAR_FOCI = {
         "cost": 5,
         "available": "date > 1918.10.1",
         "ai": "factor = 25",
-        "effect": "remove_ideas = ITA_ww1_radiant_may_fervor add_ideas = ITA_vittorio_veneto_triumph add_war_support = 0.03 country_event = { id = ww1_italy.60 days = 1 }",
-        "desc_en": "The decisive general offensive shattering the Austro-Hungarian lines and liberating Trento and Trieste. Immediate effect: Grants Vittorio Veneto Triumph national spirit, +3% War Support and triggers victory event.",
-        "desc_pt": "A ofensiva geral decisiva que rompe as linhas austríacas e liberta Trento e Trieste. Efeito imediato: Concede o espírito nacional Triunfo de Vittorio Veneto, +3% de Apoio à Guerra e dispara o evento da vitória."
+        "effect": "remove_ideas = ITA_ww1_radiant_may_fervor remove_ideas = ITA_terre_irredente_dream remove_ideas = ITA_patto_di_londra_spirit add_ideas = ITA_vittorio_veneto_triumph add_war_support = 0.05 country_event = { id = ww1_italy.60 days = 1 }",
+        "desc_en": "The decisive general offensive shattering the Austro-Hungarian lines and liberating Trento and Trieste. Immediate effect: Grants Vittorio Veneto Triumph national spirit, +5% War Support and triggers victory event.",
+        "desc_pt": "A ofensiva geral decisiva que rompe as linhas austríacas e liberta Trento e Trieste. Efeito imediato: Concede o espírito nacional Triunfo de Vittorio Veneto, +5% de Apoio à Guerra e dispara o evento da vitória."
     },
     "villa_giusti_armistice": {
         "cost": 5,
         "available": "has_country_flag = ita_ww1_vittorio_veneto_won",
         "ai": "factor = 25",
-        "effect": "remove_ideas = ITA_vittorio_veneto_triumph add_stability = 0.02 country_event = { id = ww1_italy.61 days = 1 }",
-        "desc_en": "Signing the armistice with defeated Austria-Hungary at Villa Giusti outside Padua on November 3, 1918. Immediate effect: Concludes the war, removes wartime triumph spirit, grants +3% Stability and triggers the armistice event.",
-        "desc_pt": "Assinatura do armistício com a Áustria-Hungria derrotada na Villa Giusti em 3 de novembro de 1918. Efeito imediato: Conclui o conflito, remove o bônus de triunfo bélico temporário, concede +3% de Estabilidade e dispara o armistício."
+        "effect": "remove_ideas = ITA_isonzo_attrition_crisis_3 remove_ideas = ITA_isonzo_attrition_crisis_2 remove_ideas = ITA_isonzo_attrition_crisis_1 add_stability = 0.05 country_event = { id = ww1_italy.61 days = 1 } add_political_power = 50",
+        "desc_en": "Signing the armistice with defeated Austria-Hungary at Villa Giusti outside Padua on November 3, 1918. Immediate effect: Concludes the war, removes any lingering Isonzo crises, grants +5% Stability, 50 Political Power and triggers armistice event.",
+        "desc_pt": "Assinatura do armistício com a Áustria-Hungria derrotada na Villa Giusti em 3 de novembro de 1918. Efeito imediato: Conclui o conflito, remove quaisquer crises residuais do Isonzo, concede +5% de Estabilidade, 50 de Poder Político e dispara o armistício."
     },
     "trento_trieste_integration": {
         "cost": 5,
         "available": "",
         "ai": "factor = 20",
-        "effect": "add_stability = 0.01 add_to_variable = { ita_ww1_irredentism = -15 }",
-        "desc_en": "Full administrative, judicial, and linguistic integration of the redeemed provinces into the Kingdom of Italy. Immediate effect: Grants +3% Stability and satisfies Irredentism by 15.",
-        "desc_pt": "Integração administrativa, jurídica e linguística plena das províncias redimidas ao Reino da Itália. Efeito imediato: Concede +3% de Estabilidade e reduz a pressão do Irredentismo em 15."
+        "effect": "add_stability = 0.05 add_political_power = 50 add_to_variable = { ita_ww1_irredentism = -25 }",
+        "desc_en": "Full administrative, judicial, and linguistic integration of the redeemed provinces into the Kingdom of Italy. Immediate effect: Grants +5% Stability, 50 Political Power and satisfies Irredentism by 25.",
+        "desc_pt": "Integração administrativa, jurídica e linguística plena das províncias redimidas ao Reino da Itália. Efeito imediato: Concede +5% de Estabilidade, 50 de Poder Político e satisfaz o Irredentismo em 25."
     },
     "fiume_regency": {
         "cost": 5,

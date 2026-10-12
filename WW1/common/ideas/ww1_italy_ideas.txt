@@ -454,5 +454,66 @@ ideas = {
 				army_speed_factor = 0.03
 			}
 		}
+
+		# --- TIERED UPGRADED NATIONAL SPIRITS (REPLACES STARTING DEBUFFS) ---
+		ITA_carbone_bianco_hydro = {
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = -0.08
+				production_speed_infrastructure_factor = 0.15
+			}
+		}
+
+		ITA_energy_independence_spirit = {
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_industrial_complex_factor = 0.10
+			}
+		}
+
+		ITA_mezzogiorno_development_stage = {
+			picture = generic_agrarian_reform
+			modifier = {
+				stability_factor = -0.05
+				production_speed_infrastructure_factor = 0.10
+			}
+		}
+
+		ITA_mezzogiorno_integrated = {
+			picture = generic_economic_increase
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.03
+				monthly_population = 0.05
+			}
+		}
+
+		ITA_alpini_eccellenza = {
+			picture = generic_infantry_bonus
+			modifier = {
+				army_speed_factor = 0.10
+				army_core_defence_factor = 0.15
+				attrition = -0.10
+			}
+		}
+
+		ITA_arditi_shock_battalions = {
+			picture = ITA_ww1_idea_3
+			modifier = {
+				special_forces_attack_factor = 0.15
+				breakthrough_factor = 0.15
+				army_speed_factor = 0.05
+			}
+		}
+
+		ITA_patto_di_londra_spirit = {
+			picture = generic_war_support
+			modifier = {
+				war_support_factor = 0.15
+				justify_war_goal_time = -0.40
+				planning_speed = 0.10
+			}
+		}
 	}
 }
