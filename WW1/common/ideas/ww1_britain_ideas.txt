@@ -190,12 +190,13 @@ ideas = {
 		}
 
 		ENG_irish_home_rule_suspended = {
-			picture = ENG_ww1_irish_conciliation
+			picture = generic_disruption
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				stability_factor = -0.03
-				war_support_factor = 0.02
+				stability_factor = -0.25
+				war_support_factor = -0.10
+				political_power_gain = -0.15
 			}
 		}
 

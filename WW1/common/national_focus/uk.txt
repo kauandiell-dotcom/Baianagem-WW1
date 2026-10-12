@@ -204,13 +204,24 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
         completion_reward = {
-   swap_ideas = {
-   remove_idea = ENG_irish_home_rule_tension
-   add_idea = ENG_irish_home_rule_suspended
+   if = {
+    limit = { has_idea = ENG_irish_sabotage_wave }
+    swap_ideas = {
+     remove_idea = ENG_irish_sabotage_wave
+     add_idea = ENG_irish_home_rule_suspended
+    }
+   }
+   if = {
+    limit = { has_idea = ENG_irish_home_rule_tension }
+    swap_ideas = {
+     remove_idea = ENG_irish_home_rule_tension
+     add_idea = ENG_irish_home_rule_suspended
+    }
    }
    add_stability = 0.05
    add_war_support = 0.05
    set_country_flag = ENG_ww1_dora_enacted
+   set_country_flag = ENG_ww1_easter_rising_countdown_started
   }
  }
  focus = {
@@ -1359,7 +1370,41 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
         completion_reward = {
-   remove_ideas = ENG_irish_home_rule_tension
+   if = {
+    limit = { has_idea = ENG_irish_home_rule_tension }
+    swap_ideas = {
+     remove_idea = ENG_irish_home_rule_tension
+     add_idea = ENG_irish_home_rule_compromise
+    }
+   }
+   if = {
+    limit = { has_idea = ENG_irish_home_rule_suspended }
+    swap_ideas = {
+     remove_idea = ENG_irish_home_rule_suspended
+     add_idea = ENG_irish_home_rule_compromise
+    }
+   }
+   if = {
+    limit = { has_idea = ENG_irish_sabotage_wave }
+    swap_ideas = {
+     remove_idea = ENG_irish_sabotage_wave
+     add_idea = ENG_irish_home_rule_compromise
+    }
+   }
+   if = {
+    limit = { has_idea = ENG_irish_martial_law }
+    swap_ideas = {
+     remove_idea = ENG_irish_martial_law
+     add_idea = ENG_irish_home_rule_compromise
+    }
+   }
+   if = {
+    limit = { has_idea = ENG_irish_civil_war_debacle }
+    swap_ideas = {
+     remove_idea = ENG_irish_civil_war_debacle
+     add_idea = ENG_irish_home_rule_compromise
+    }
+   }
    add_stability = 0.15
    add_political_power = 75
    country_event = { id = ww1_britain_pol.10 }
