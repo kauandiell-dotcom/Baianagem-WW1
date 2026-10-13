@@ -11,3 +11,5 @@
 | Task 14 vs All | Localization keys | Clean. Keys match focus, idea, decision IDs across all tasks. | Approved as designed. |
 
 Task 1: complete (commits 86b0e53..2dcba46, review clean)
+Task 2: fix round 1/5 (3 addressed, 0 open; commits a959e19..588521b)
+Task 2: complete (commits 69f95f4..588521b, review clean)
