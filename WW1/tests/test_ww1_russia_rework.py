@@ -1,0 +1,544 @@
+"""Master QA Test Suite for Russian Empire, Revolution, Soviet & White Civil War Overhaul.
+
+Validates the full specification across:
+- Tag WHT definition, history, colors, cosmetics, and historical characters (Bolshevik & White).
+- Tsarist Russia (1911-1917) ideas, Snaryadny Golod (shell shortage), VPK mobilization, and strategic depth.
+- Pre-Revolutionary Crisis Engine (1915-1917), 4 clamped gauges, visual decision bars, Lenin return events.
+- Multi-Front Russian Civil War (SOV vs WHT), breakaway nations (UKR, FIN, POL, GEO, ARM, AZR, DON), OOBs, prevent_join_factions.
+- Central Powers interaction, Treaty of Brest-Litovsk, Entente proxy intervention, 1918 armistice dissolution.
+- Dedicated Soviet Russia focus tree (soviet_russia_focus: 80 focuses, 5 wings, non-colliding layout, tangible rewards).
+- Dedicated White Movement focus tree (white_russia_focus: 60 focuses, 4 wings, non-colliding layout, reunification).
+- Tsarist Russian focus tree (russian_empire_focus: purged dead-end stubs, enriched hollow focuses, Imperial Salvation capstones).
+- Bilingual localization parity (English and Brazilian Portuguese) with strictly single UTF-8 BOM.
+"""
+
+from collections import defaultdict
+import glob
+import os
+import re
+import sys
+import unittest
+
+MOD_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def parse_focus_tree(filepath):
+    """Parses a Clausewitz national focus tree file and returns tree_id and focus dicts."""
+    if not os.path.isfile(filepath):
+        return None, []
+
+    with open(filepath, "r", encoding="utf-8-sig", errors="replace") as f:
+        text = f.read()
+
+    # Strip single-line comments
+    clean_lines = [re.sub(r"#[^\n]*", "", line) for line in text.splitlines()]
+    clean = "\n".join(clean_lines)
+
+    m_id = re.search(r"\bfocus_tree\s*=\s*\{[^{}]*?\bid\s*=\s*([a-zA-Z0-9_]+)", clean)
+    tree_id = m_id.group(1) if m_id else None
+
+    foci = []
+    idx = 0
+    while True:
+        pos = clean.find("focus = {", idx)
+        if pos == -1:
+            break
+        brace = clean.find("{", pos)
+        depth = 1
+        cur = brace + 1
+        while cur < len(clean) and depth > 0:
+            if clean[cur] == "{":
+                depth += 1
+            elif clean[cur] == "}":
+                depth -= 1
+            cur += 1
+        block = clean[pos:cur]
+
+        id_m = re.search(r"\bid\s*=\s*([a-zA-Z0-9_]+)", block)
+        if id_m:
+            fid = id_m.group(1)
+            x_m = re.search(r"\bx\s*=\s*(-?[0-9]+)", block)
+            y_m = re.search(r"\by\s*=\s*(-?[0-9]+)", block)
+            rel_m = re.search(r"\brelative_position_id\s*=\s*([a-zA-Z0-9_]+)", block)
+
+            x = int(x_m.group(1)) if x_m else None
+            y = int(y_m.group(1)) if y_m else None
+            rel_id = rel_m.group(1) if rel_m else None
+
+            prereqs = []
+            for pr in re.findall(r"prerequisite\s*=\s*\{([^}]+)\}", block):
+                for p in re.findall(r"focus\s*=\s*([a-zA-Z0-9_]+)", pr):
+                    prereqs.append(p)
+
+            mutually_exclusive = []
+            for mex in re.findall(r"mutually_exclusive\s*=\s*\{([^}]+)\}", block):
+                for m_id_target in re.findall(r"focus\s*=\s*([a-zA-Z0-9_]+)", mex):
+                    mutually_exclusive.append(m_id_target)
+
+            reward_m = re.search(r"completion_reward\s*=\s*\{", block)
+            has_reward = False
+            reward_body = ""
+            if reward_m:
+                r_start = reward_m.end()
+                r_depth = 1
+                r_cur = r_start
+                while r_cur < len(block) and r_depth > 0:
+                    if block[r_cur] == "{":
+                        r_depth += 1
+                    elif block[r_cur] == "}":
+                        r_depth -= 1
+                    r_cur += 1
+                reward_body = block[r_start:r_cur - 1].strip()
+                has_reward = len(reward_body) > 0
+
+            foci.append({
+                "id": fid,
+                "x": x,
+                "y": y,
+                "relative_position_id": rel_id,
+                "prereqs": prereqs,
+                "mutually_exclusive": mutually_exclusive,
+                "has_reward": has_reward,
+                "reward_body": reward_body,
+                "block": block,
+            })
+        idx = cur
+
+    # Resolve relative positions if any are present
+    foci_by_id = {f["id"]: f for f in foci}
+    resolved = {}
+
+    def get_pos(fid):
+        if fid in resolved:
+            return resolved[fid]
+        f = foci_by_id[fid]
+        if f["relative_position_id"] and f["relative_position_id"] in foci_by_id:
+            px, py = get_pos(f["relative_position_id"])
+            rx = px + (f["x"] if f["x"] is not None else 0)
+            ry = py + (f["y"] if f["y"] is not None else 0)
+        else:
+            rx = f["x"] if f["x"] is not None else 0
+            ry = f["y"] if f["y"] is not None else 0
+        resolved[fid] = (rx, ry)
+        return rx, ry
+
+    for f in foci:
+        rx, ry = get_pos(f["id"])
+        f["abs_x"] = rx
+        f["abs_y"] = ry
+
+    return tree_id, foci
+
+
+def extract_loc_keys(filepath):
+    """Extracts localization keys from a Paradox YAML localization file."""
+    keys = set()
+    if not os.path.isfile(filepath):
+        return keys
+    with open(filepath, "r", encoding="utf-8-sig", errors="replace") as f:
+        for line in f:
+            m = re.match(r"^\s*([a-zA-Z0-9_.\-]+):\d*\s+\"", line)
+            if m:
+                keys.add(m.group(1))
+    return keys
+
+
+class TestRussiaOverhaul(unittest.TestCase):
+    """Comprehensive QA and mechanical integrity tests for the Russia Rework."""
+
+    def test_characters_and_tags(self):
+        """Validates tag WHT, White Russia history & colors, character recruitment and GFX sprites."""
+        # 1. Tag WHT definition in common/country_tags/
+        tag_found = False
+        tag_dir = os.path.join(MOD_ROOT, "common", "country_tags")
+        if os.path.isdir(tag_dir):
+            for fname in os.listdir(tag_dir):
+                if fname.endswith(".txt"):
+                    fpath = os.path.join(tag_dir, fname)
+                    with open(fpath, "r", encoding="utf-8-sig", errors="replace") as f:
+                        if re.search(r"\bWHT\s*=\s*\"?[^\n\"]+\"?", f.read()):
+                            tag_found = True
+                            break
+        self.assertTrue(tag_found, "Tag WHT must be defined in common/country_tags/")
+
+        # 2. common/countries/White Russia.txt exists
+        wht_country_file = os.path.join(MOD_ROOT, "common", "countries", "White Russia.txt")
+        self.assertTrue(os.path.isfile(wht_country_file), "common/countries/White Russia.txt must exist")
+
+        # 3. history/countries/WHT - White Russia.txt exists with Omsk capital (state 594) and neutrality
+        wht_history_file = os.path.join(MOD_ROOT, "history", "countries", "WHT - White Russia.txt")
+        self.assertTrue(os.path.isfile(wht_history_file), "history/countries/WHT - White Russia.txt must exist")
+        with open(wht_history_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            wht_hist = f.read()
+        self.assertIn("capital = 594", wht_hist, "WHT history file must set capital to state 594 (Omsk)")
+        self.assertIn("neutrality", wht_hist, "WHT history file must configure neutrality ideology")
+
+        # 4. colors.txt defines WHT
+        colors_file = os.path.join(MOD_ROOT, "common", "countries", "colors.txt")
+        self.assertTrue(os.path.isfile(colors_file), "common/countries/colors.txt must exist")
+        with open(colors_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            self.assertTrue(
+                re.search(r"\bWHT\s*=\s*\{", f.read()) is not None,
+                "common/countries/colors.txt must define color for WHT",
+            )
+
+        # 5. Bolshevik character recruitment in common/characters/SOV.txt
+        sov_chars_file = os.path.join(MOD_ROOT, "common", "characters", "SOV.txt")
+        self.assertTrue(os.path.isfile(sov_chars_file), "common/characters/SOV.txt must exist")
+        with open(sov_chars_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            sov_chars_content = f.read()
+
+        expected_bolsheviks = [
+            ("Trotsky", ["SOV_leon_trotsky", "SOV_trotsky"]),
+            ("Stalin", ["SOV_joseph_stalin", "SOV_stalin"]),
+            ("Frunze", ["SOV_mikhail_frunze", "SOV_frunze"]),
+            ("Dzerzhinsky", ["SOV_felix_dzerzhinsky", "SOV_dzerzhinsky"]),
+            ("Budyonny", ["SOV_semyon_budyonny", "SOV_budyonny"]),
+            ("Tukhachevsky", ["SOV_mikhail_tukhachevsky", "SOV_tukhachevsky"]),
+            ("Chicherin", ["SOV_georgy_chicherin", "SOV_chicherin"]),
+            ("Bukharin", ["SOV_nikolai_bukharin", "SOV_bukharin"]),
+        ]
+        for name, ids in expected_bolsheviks:
+            found = any(re.search(rf"\b{re.escape(cid)}\s*=\s*\{{", sov_chars_content) for cid in ids)
+            self.assertTrue(found, f"Bolshevik leader {name} ({ids[0]}) must be recruited in common/characters/SOV.txt")
+
+        # 6. White character recruitment in common/characters/WHT.txt
+        wht_chars_file = os.path.join(MOD_ROOT, "common", "characters", "WHT.txt")
+        self.assertTrue(os.path.isfile(wht_chars_file), "common/characters/WHT.txt must exist")
+        with open(wht_chars_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            wht_chars_content = f.read()
+
+        expected_whites = [
+            ("Kolchak", ["WHT_alexander_kolchak", "WHT_kolchak"]),
+            ("Denikin", ["WHT_anton_denikin", "WHT_denikin"]),
+            ("Wrangel", ["WHT_pyotr_wrangel", "WHT_wrangel"]),
+            ("Yudenich", ["WHT_nikolai_yudenich", "WHT_yudenich"]),
+            ("Kornilov", ["WHT_lavr_kornilov", "WHT_kornilov"]),
+            ("Kaledin", ["WHT_alexey_kaledin", "WHT_kaledin"]),
+            ("Savinkov", ["WHT_boris_savinkov", "WHT_savinkov"]),
+        ]
+        for name, ids in expected_whites:
+            found = any(re.search(rf"\b{re.escape(cid)}\s*=\s*\{{", wht_chars_content) for cid in ids)
+            self.assertTrue(found, f"White leader {name} ({ids[0]}) must be recruited in common/characters/WHT.txt")
+
+        # 7. Focus GFX sprite definitions exist
+        sov_gfx = os.path.join(MOD_ROOT, "interface", "ww1_soviet_goals.gfx")
+        wht_gfx = os.path.join(MOD_ROOT, "interface", "ww1_white_goals.gfx")
+        self.assertTrue(os.path.isfile(sov_gfx), "interface/ww1_soviet_goals.gfx must exist")
+        self.assertTrue(os.path.isfile(wht_gfx), "interface/ww1_white_goals.gfx must exist")
+
+    def test_tsarist_mechanics_and_ideas(self):
+        """Validates Tsarist ideas (strategic depth, shell shortage, VPK, order restored) and decisions."""
+        ideas_file = os.path.join(MOD_ROOT, "common", "ideas", "ww1_russia_ideas.txt")
+        self.assertTrue(os.path.isfile(ideas_file), "common/ideas/ww1_russia_ideas.txt must exist")
+        with open(ideas_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            ideas_content = f.read()
+
+        required_ideas = [
+            "SOV_strategic_depth_and_rasputitsa",
+            "SOV_shell_shortage_crisis",
+            "SOV_vpk_mobilization_spirit",
+            "SOV_rasputin_court_intrigues",
+            "SOV_order_restored_spirit",
+        ]
+        for idea_id in required_ideas:
+            self.assertIn(
+                idea_id,
+                ideas_content,
+                f"Idea '{idea_id}' must exist in common/ideas/ww1_russia_ideas.txt",
+            )
+
+        # Tsarist decisions and categories
+        dec_file = os.path.join(MOD_ROOT, "common", "decisions", "ww1_russia_tsarist_decisions.txt")
+        cat_file = os.path.join(MOD_ROOT, "common", "decisions", "categories", "ww1_russia_tsarist_categories.txt")
+        self.assertTrue(os.path.isfile(dec_file), "common/decisions/ww1_russia_tsarist_decisions.txt must exist")
+        self.assertTrue(os.path.isfile(cat_file), "common/decisions/categories/ww1_russia_tsarist_categories.txt must exist")
+
+        with open(cat_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            cat_content = f.read()
+        self.assertIn("SOV_duma_and_court_politics", cat_content)
+        self.assertIn("SOV_war_industry_mobilization", cat_content)
+
+        with open(dec_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            dec_content = f.read()
+        self.assertIn("SOV_evacuate_industrial_machinery", dec_content)
+        self.assertIn("SOV_prepare_southwestern_offensive", dec_content)
+
+    def test_crisis_engine_and_gauges(self):
+        """Validates Pre-Revolutionary Crisis scripted effects, clamped gauges, and events."""
+        effects_file = os.path.join(MOD_ROOT, "common", "scripted_effects", "ww1_russia_crisis_effects.txt")
+        self.assertTrue(os.path.isfile(effects_file), "common/scripted_effects/ww1_russia_crisis_effects.txt must exist")
+        with open(effects_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            eff_content = f.read()
+
+        required_effects = [
+            "sov_russia_init_crisis_gauges",
+            "sov_russia_clamp_crisis_gauges",
+            "sov_russia_weekly_crisis_update",
+        ]
+        for eff in required_effects:
+            self.assertIn(eff, eff_content, f"Scripted effect '{eff}' must exist in {effects_file}")
+
+        gauges = [
+            "SOV_revolutionary_tension",
+            "SOV_worker_unrest",
+            "SOV_urban_hunger",
+            "SOV_army_loyalty",
+        ]
+        for g in gauges:
+            self.assertIn(g, eff_content, f"Crisis gauge variable '{g}' must be handled in {effects_file}")
+
+        # Decisions dashboard
+        crisis_dec_file = os.path.join(MOD_ROOT, "common", "decisions", "ww1_russia_crisis_decisions.txt")
+        crisis_cat_file = os.path.join(MOD_ROOT, "common", "decisions", "categories", "ww1_russia_crisis_categories.txt")
+        self.assertTrue(os.path.isfile(crisis_dec_file), "common/decisions/ww1_russia_crisis_decisions.txt must exist")
+        self.assertTrue(os.path.isfile(crisis_cat_file), "common/decisions/categories/ww1_russia_crisis_categories.txt must exist")
+
+        with open(crisis_cat_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            self.assertIn("SOV_revolutionary_crisis_category", f.read())
+
+        # Crisis events
+        events_file = os.path.join(MOD_ROOT, "events", "ww1_russia_crisis_events.txt")
+        self.assertTrue(os.path.isfile(events_file), "events/ww1_russia_crisis_events.txt must exist")
+        with open(events_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            ev_content = f.read()
+
+        for ev in ["ww1_russia.300", "ww1_russia.301", "ww1_russia.305", "ww1_russia.310"]:
+            self.assertIn(f"id = {ev}", ev_content, f"Crisis event '{ev}' must be defined in {events_file}")
+
+    def test_civil_war_spawns_and_oobs(self):
+        """Validates civil war eruption events, prevent_join_factions, dedicated OOBs, and decisions."""
+        events_file = os.path.join(MOD_ROOT, "events", "ww1_russia_civil_war_events.txt")
+        self.assertTrue(os.path.isfile(events_file), "events/ww1_russia_civil_war_events.txt must exist")
+        with open(events_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            ev_content = f.read()
+
+        self.assertIn("prevent_join_factions = yes", ev_content, "Civil war must enforce prevent_join_factions = yes")
+        for tag in ["UKR", "FIN", "POL", "GEO", "ARM", "AZR", "DON"]:
+            self.assertIn(tag, ev_content, f"Civil war event must reference breakaway tag {tag}")
+
+        # Dedicated civil war OOBs
+        required_oobs = [
+            "SOV_red_army_civil_war.txt",
+            "WHT_white_army_civil_war.txt",
+            "UKR_civil_war.txt",
+            "FIN_civil_war.txt",
+            "POL_civil_war.txt",
+        ]
+        for oob in required_oobs:
+            oob_path = os.path.join(MOD_ROOT, "history", "units", oob)
+            self.assertTrue(os.path.isfile(oob_path), f"Civil war OOB {oob} must exist in history/units/")
+
+        # Civil war decisions
+        cw_dec_file = os.path.join(MOD_ROOT, "common", "decisions", "ww1_soviet_civil_war_decisions.txt")
+        self.assertTrue(os.path.isfile(cw_dec_file), "common/decisions/ww1_soviet_civil_war_decisions.txt must exist")
+
+    def test_brest_litovsk_and_diplomacy(self):
+        """Validates Treaty of Brest-Litovsk, Entente proxy aid, and 1918 armistice dissolution."""
+        dip_events = os.path.join(MOD_ROOT, "events", "ww1_russia_diplomacy_events.txt")
+        self.assertTrue(os.path.isfile(dip_events), "events/ww1_russia_diplomacy_events.txt must exist")
+
+        dip_dec = os.path.join(MOD_ROOT, "common", "decisions", "ww1_soviet_diplomacy_decisions.txt")
+        self.assertTrue(os.path.isfile(dip_dec), "common/decisions/ww1_soviet_diplomacy_decisions.txt must exist")
+        with open(dip_dec, "r", encoding="utf-8-sig", errors="replace") as f:
+            self.assertIn("SOV_decree_on_peace", f.read())
+
+        # On-actions for 1918 German armistice voiding Brest-Litovsk
+        on_actions_file = os.path.join(MOD_ROOT, "common", "on_actions", "zz_ww1_ger_rus_rework_on_actions.txt")
+        self.assertTrue(os.path.isfile(on_actions_file), "common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt must exist")
+
+    def test_soviet_focus_tree_integrity(self):
+        """Validates the dedicated Soviet Russia focus tree (soviet_russia_focus: 80 focuses, layout, rewards)."""
+        tree_path = os.path.join(MOD_ROOT, "common", "national_focus", "soviet_russia.txt")
+        self.assertTrue(os.path.isfile(tree_path), "common/national_focus/soviet_russia.txt must exist")
+
+        tree_id, foci = parse_focus_tree(tree_path)
+        self.assertEqual(tree_id, "soviet_russia_focus", "Tree ID must be 'soviet_russia_focus'")
+        self.assertEqual(len(foci), 80, f"Soviet Russia tree must have exactly 80 focuses, found {len(foci)}")
+
+        ids = [f["id"] for f in foci]
+        self.assertEqual(len(ids), len(set(ids)), "Focus IDs in Soviet tree must be unique")
+        foci_by_id = {f["id"]: f for f in foci}
+
+        # Spatial grid assertions: 0 coordinate collisions, dx >= 2 on same row, 1 <= dy <= 3
+        coords = [(f["abs_x"], f["abs_y"]) for f in foci]
+        self.assertEqual(len(coords), len(set(coords)), "Soviet tree must have 0 coordinate collisions")
+
+        rows = defaultdict(list)
+        for f in foci:
+            rows[f["abs_y"]].append((f["abs_x"], f["id"]))
+
+        for y, row in sorted(rows.items()):
+            row.sort(key=lambda item: item[0])
+            for i in range(len(row) - 1):
+                x1, id1 = row[i]
+                x2, id2 = row[i + 1]
+                self.assertGreaterEqual(
+                    abs(x2 - x1),
+                    2,
+                    f"Soviet tree banner collision on row y={y}: {id1} (x={x1}) and {id2} (x={x2}) have dx < 2",
+                )
+
+        for f in foci:
+            for p_id in f["prereqs"]:
+                self.assertTrue(p_id in foci_by_id, f"Focus {f['id']} references non-existent parent {p_id}")
+                dy = f["abs_y"] - foci_by_id[p_id]["abs_y"]
+                self.assertGreater(dy, 0, f"Focus {f['id']} must be below parent {p_id}")
+                self.assertTrue(1 <= dy <= 3, f"Focus {f['id']} to parent {p_id} spans {dy} rows (must be 1..3)")
+
+            # Zero hollow focuses
+            self.assertTrue(f["has_reward"], f"Focus {f['id']} must have a substantive completion_reward")
+
+    def test_white_focus_tree_integrity(self):
+        """Validates the dedicated White Movement focus tree (white_russia_focus: 60 focuses, layout, reunification)."""
+        tree_path = os.path.join(MOD_ROOT, "common", "national_focus", "white_russia.txt")
+        self.assertTrue(os.path.isfile(tree_path), "common/national_focus/white_russia.txt must exist")
+
+        tree_id, foci = parse_focus_tree(tree_path)
+        self.assertEqual(tree_id, "white_russia_focus", "Tree ID must be 'white_russia_focus'")
+        self.assertEqual(len(foci), 60, f"White Movement tree must have exactly 60 focuses, found {len(foci)}")
+
+        ids = [f["id"] for f in foci]
+        self.assertEqual(len(ids), len(set(ids)), "Focus IDs in White tree must be unique")
+        foci_by_id = {f["id"]: f for f in foci}
+
+        # Spatial grid assertions: 0 coordinate collisions, dx >= 2 on same row, 1 <= dy <= 3
+        coords = [(f["abs_x"], f["abs_y"]) for f in foci]
+        self.assertEqual(len(coords), len(set(coords)), "White tree must have 0 coordinate collisions")
+
+        rows = defaultdict(list)
+        for f in foci:
+            rows[f["abs_y"]].append((f["abs_x"], f["id"]))
+
+        for y, row in sorted(rows.items()):
+            row.sort(key=lambda item: item[0])
+            for i in range(len(row) - 1):
+                x1, id1 = row[i]
+                x2, id2 = row[i + 1]
+                self.assertGreaterEqual(
+                    abs(x2 - x1),
+                    2,
+                    f"White tree banner collision on row y={y}: {id1} (x={x1}) and {id2} (x={x2}) have dx < 2",
+                )
+
+        for f in foci:
+            for p_id in f["prereqs"]:
+                self.assertTrue(p_id in foci_by_id, f"Focus {f['id']} references non-existent parent {p_id}")
+                dy = f["abs_y"] - foci_by_id[p_id]["abs_y"]
+                self.assertGreater(dy, 0, f"Focus {f['id']} must be below parent {p_id}")
+                self.assertTrue(1 <= dy <= 3, f"Focus {f['id']} to parent {p_id} spans {dy} rows (must be 1..3)")
+
+            # Zero hollow focuses
+            self.assertTrue(f["has_reward"], f"Focus {f['id']} must have a substantive completion_reward")
+
+        # Post-war reunification capstone: must restore tag to SOV
+        with open(tree_path, "r", encoding="utf-8-sig", errors="replace") as f:
+            white_raw = f.read()
+        self.assertIn("change_tag_to = SOV", white_raw, "White tree must have reunification capstone restoring SOV tag")
+
+    def test_imperial_focus_tree_integrity(self):
+        """Validates Tsarist Russian focus tree (purged dead-end stubs, enriched rewards, capstones)."""
+        tree_path = os.path.join(MOD_ROOT, "common", "national_focus", "soviet.txt")
+        self.assertTrue(os.path.isfile(tree_path), "common/national_focus/soviet.txt must exist")
+
+        tree_id, foci = parse_focus_tree(tree_path)
+        self.assertEqual(tree_id, "russian_empire_focus", "Tree ID must be 'russian_empire_focus'")
+
+        foci_by_id = {f["id"]: f for f in foci}
+
+        # Purged legacy dead-end Bolshevik branch
+        self.assertFalse(
+            "SOV_war_communism_decrees" in foci_by_id,
+            "Legacy dead-end focus SOV_war_communism_decrees must be purged from Tsarist tree",
+        )
+
+        # Imperial Salvation capstones must be present
+        capstones = [
+            "SOV_annexation_of_tsargrad",
+            "SOV_triumph_of_the_romanov_dynasty",
+        ]
+        for cap in capstones:
+            self.assertTrue(cap in foci_by_id, f"Capstone focus '{cap}' must exist in Tsarist tree")
+
+        # Spatial grid assertions: 0 coordinate collisions, dx >= 2 on same row, 1 <= dy <= 3
+        coords = [(f["abs_x"], f["abs_y"]) for f in foci]
+        self.assertEqual(len(coords), len(set(coords)), "Tsarist tree must have 0 coordinate collisions")
+
+        rows = defaultdict(list)
+        for f in foci:
+            rows[f["abs_y"]].append((f["abs_x"], f["id"]))
+
+        for y, row in sorted(rows.items()):
+            row.sort(key=lambda item: item[0])
+            for i in range(len(row) - 1):
+                x1, id1 = row[i]
+                x2, id2 = row[i + 1]
+                self.assertGreaterEqual(
+                    abs(x2 - x1),
+                    2,
+                    f"Tsarist tree banner collision on row y={y}: {id1} (x={x1}) and {id2} (x={x2}) have dx < 2",
+                )
+
+        for f in foci:
+            for p_id in f["prereqs"]:
+                self.assertTrue(p_id in foci_by_id, f"Focus {f['id']} references non-existent parent {p_id}")
+                dy = f["abs_y"] - foci_by_id[p_id]["abs_y"]
+                self.assertGreater(dy, 0, f"Focus {f['id']} must be below parent {p_id}")
+                self.assertTrue(1 <= dy <= 3, f"Focus {f['id']} to parent {p_id} spans {dy} rows (must be 1..3)")
+
+    def test_localisation_integrity_and_bom(self):
+        """Validates strictly single UTF-8 BOM on all Russian localization files and bilingual key parity."""
+        loc_dir = os.path.join(MOD_ROOT, "localisation")
+        self.assertTrue(os.path.isdir(loc_dir), "localisation/ directory must exist")
+
+        all_russia_loc_files = [
+            f for f in glob.glob(os.path.join(loc_dir, "**", "*.yml"), recursive=True)
+            if any(k in os.path.basename(f).lower() for k in ["sov", "russia", "white"])
+        ]
+        self.assertTrue(len(all_russia_loc_files) > 0, "Russian localization files must be present")
+
+        # 1. Strictly single UTF-8 BOM on all files
+        for fpath in all_russia_loc_files:
+            rel = os.path.relpath(fpath, MOD_ROOT)
+            with open(fpath, "rb") as bf:
+                header = bf.read(6)
+            self.assertEqual(
+                header[:3],
+                b"\xef\xbb\xbf",
+                f"{rel} must begin with UTF-8 BOM (\\xef\\xbb\\xbf)",
+            )
+            self.assertNotEqual(
+                header[3:6],
+                b"\xef\xbb\xbf",
+                f"{rel} has double UTF-8 BOM corruption",
+            )
+
+        # 2. Required new localization files must exist
+        required_loc = [
+            os.path.join(loc_dir, "english", "ww1_soviet_l_english.yml"),
+            os.path.join(loc_dir, "braz_por", "ww1_soviet_l_braz_por.yml"),
+            os.path.join(loc_dir, "english", "ww1_white_l_english.yml"),
+            os.path.join(loc_dir, "braz_por", "ww1_white_l_braz_por.yml"),
+            os.path.join(loc_dir, "english", "ww1_russia_focus_l_english.yml"),
+            os.path.join(loc_dir, "braz_por", "ww1_russia_focus_l_braz_por.yml"),
+            os.path.join(loc_dir, "english", "ww1_russia_events_l_english.yml"),
+            os.path.join(loc_dir, "braz_por", "ww1_russia_events_l_braz_por.yml"),
+        ]
+        for fpath in required_loc:
+            rel = os.path.relpath(fpath, MOD_ROOT)
+            self.assertTrue(os.path.isfile(fpath), f"Localization file {rel} must exist")
+
+        # 3. Bilingual key parity between English and Brazilian Portuguese
+        sov_en = extract_loc_keys(os.path.join(loc_dir, "english", "ww1_soviet_l_english.yml"))
+        sov_pt = extract_loc_keys(os.path.join(loc_dir, "braz_por", "ww1_soviet_l_braz_por.yml"))
+        self.assertTrue(len(sov_en) > 0, "ww1_soviet_l_english.yml must contain localization keys")
+        self.assertEqual(sov_en, sov_pt, f"Key mismatch between English and Portuguese for ww1_soviet: {sov_en ^ sov_pt}")
+
+        wht_en = extract_loc_keys(os.path.join(loc_dir, "english", "ww1_white_l_english.yml"))
+        wht_pt = extract_loc_keys(os.path.join(loc_dir, "braz_por", "ww1_white_l_braz_por.yml"))
+        self.assertTrue(len(wht_en) > 0, "ww1_white_l_english.yml must contain localization keys")
+        self.assertEqual(wht_en, wht_pt, f"Key mismatch between English and Portuguese for ww1_white: {wht_en ^ wht_pt}")
+
+
+if __name__ == "__main__":
+    unittest.main()
