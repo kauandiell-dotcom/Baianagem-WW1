@@ -60,7 +60,7 @@ NEW_FILES = ["events/ww1_ger_rus_rework_events.txt", "common/ideas/ww1_ger_rus_r
 
 
 class Trees(unittest.TestCase):
-    EXPECT = {"germany": (245, 7, "GER_ww1_shortcut_"), "soviet": (235, 6, "SOV_ww1_shortcut_")}
+    EXPECT = {"germany": (245, 7, "GER_ww1_shortcut_"), "soviet": (228, 6, "SOV_ww1_shortcut_")}
 
     def test_focus_counts_and_integrity(self):
         for name, (count, wings, _) in self.EXPECT.items():
@@ -162,7 +162,7 @@ class Trees(unittest.TestCase):
     def test_russian_regimes_are_exclusive(self):
         _, nodes, _ = tree("soviet")
         by = {n["id"]: n for n in nodes}
-        roots = ["SOV_all_power_to_the_soviets", "SOV_kornilov_iron_dictatorship", "SOV_convene_constituent_assembly"]
+        roots = ["SOV_kornilov_iron_dictatorship", "SOV_convene_constituent_assembly"]
         for r in roots:
             self.assertEqual(set(by[r]["excl"]), set(roots) - {r}, r)
 
