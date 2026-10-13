@@ -155,7 +155,7 @@ sub_units = {
 		
 		#Size Definitions
 		max_strength = 25
-		max_organisation = 45
+		max_organisation = 35
 		default_morale = 0.35
 		manpower = 1400
 
@@ -164,7 +164,8 @@ sub_units = {
 		suppression = 1
 		weight = 0.5
 		supply_consumption = 0.08
-		breakthrough = 0.15
+		breakthrough = 0.02
+		hard_attack = -0.25
 	
 		need = {
 			infantry_equipment = 140
@@ -178,6 +179,14 @@ sub_units = {
 		}
 		amphibious = {
 			attack = 0.5
+		}
+		mountain = {
+			attack = -0.30
+			movement = -0.20
+		}
+		hills = {
+			attack = -0.20
+			movement = -0.10
 		}
 	}
 
@@ -214,7 +223,7 @@ sub_units = {
 		
 		#Size Definitions
 		max_strength = 20
-		max_organisation = 55
+		max_organisation = 38
 		default_morale = 0.4
 		manpower = 1000
 
@@ -223,7 +232,8 @@ sub_units = {
 		suppression = 1
 		weight = 0.5
 		supply_consumption = 0.08
-		breakthrough = 0.20
+		breakthrough = 0.05
+		hard_attack = -0.25
 	
 		need = {
 			infantry_equipment = 130
@@ -237,6 +247,14 @@ sub_units = {
 		}
 		amphibious = {
 			attack = 0.5
+		}
+		mountain = {
+			attack = -0.30
+			movement = -0.20
+		}
+		hills = {
+			attack = -0.20
+			movement = -0.10
 		}
 	}
 	
@@ -271,7 +289,7 @@ sub_units = {
 		
 		#Size Definitions
 		max_strength = 25
-		max_organisation = 45
+		max_organisation = 35
 		default_morale = 0.35
 		manpower = 1400
 
@@ -281,7 +299,8 @@ sub_units = {
 		weight = 0.5
 		
 		supply_consumption = 0.08
-		breakthrough = 0.12
+		breakthrough = 0.02
+		hard_attack = -0.25
 	
 		need = {
 			infantry_equipment = 140
@@ -296,6 +315,17 @@ sub_units = {
 			attack = 0.35
 			defence = 0.1
 			movement = 0.2
+		}
+		river = {
+			attack = -0.30
+			movement = -0.20
+		}
+		marsh = {
+			attack = -0.30
+			movement = -0.20
+		}
+		amphibious = {
+			attack = -0.50
 		}
 	}
 
@@ -330,7 +360,7 @@ sub_units = {
 
 		#Size Definitions
 		max_strength = 20
-		max_organisation = 55
+		max_organisation = 35
 		default_morale = 0.4
 		manpower = 1000
 
@@ -340,7 +370,8 @@ sub_units = {
 		weight = 0.5
 
 		supply_consumption = 0.08
-		breakthrough = 0.15
+		breakthrough = 0.02
+		hard_attack = -0.25
 
 		need = {
 			infantry_equipment = 130
@@ -354,6 +385,18 @@ sub_units = {
 			attack = 0.2
 			defence = 0.1
 			movement = 0.15
+		}
+		mountain = {
+			attack = -0.20
+		}
+		river = {
+			attack = -0.20
+		}
+		marsh = {
+			attack = -0.20
+		}
+		amphibious = {
+			attack = -0.40
 		}
 	}
 

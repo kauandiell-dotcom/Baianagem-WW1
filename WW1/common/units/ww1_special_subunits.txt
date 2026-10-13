@@ -154,6 +154,9 @@ sub_units = {
 		hills = {
 			attack = 0.10
 		}
+		mountain = {
+			attack = -0.20
+		}
 	}
 
 	# =======================================================
@@ -293,6 +296,15 @@ sub_units = {
 		hills = {
 			attack = 0.15
 			defence = 0.15
+		}
+		river = {
+			attack = -0.30
+		}
+		marsh = {
+			attack = -0.30
+		}
+		amphibious = {
+			attack = -0.50
 		}
 	}
 
