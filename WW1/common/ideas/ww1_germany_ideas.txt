@@ -834,5 +834,28 @@ ideas = {
 				war_support_factor = 0.05
 			}
 		}
+
+		GER_operation_faustschlag = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = GFX_idea_GER_faustschlag
+			modifier = {
+				breakthrough_factor = 0.20
+				army_infantry_attack_factor = 0.15
+				army_speed_factor = 0.10
+			}
+		}
+
+		GER_brest_litovsk_deliveries = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_wheat
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+		}
 	}
 }
+

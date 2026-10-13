@@ -1,0 +1,125 @@
+SOV_soviet_diplomacy = {
+
+	SOV_decree_on_peace = {
+		icon = generic_peace
+		available = {
+			has_war_with = GER
+		}
+		visible = {
+			tag = SOV
+			has_government = communism
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			GER = {
+				country_event = { id = ww1_russia_diplomacy.1 days = 2 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+}
+
+WHT_entente_aid_category = {
+
+	WHT_general_knox_british_mission = {
+		icon = generic_foreign_diplomacy
+		available = {
+			has_war = yes
+			tag = WHT
+		}
+		visible = {
+			tag = WHT
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 180
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 300
+			}
+			add_manpower = 10000
+		}
+		modifier = {
+			army_org_factor = 0.05
+			planning_speed = 0.10
+		}
+		ai_will_do = {
+			factor = 90
+		}
+	}
+
+	WHT_french_odessa_naval_aid = {
+		icon = generic_naval
+		available = {
+			has_war = yes
+			tag = WHT
+			controls_state = 192 # Odessa
+		}
+		visible = {
+			tag = WHT
+		}
+		fire_only_once = no
+		days_re_enable = 60
+		days_remove = 90
+		cost = 30
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 150
+			}
+		}
+		modifier = {
+			supply_consumption_factor = -0.10
+		}
+		ai_will_do = {
+			factor = 80
+		}
+	}
+
+	WHT_vladivostok_allied_lend_lease = {
+		icon = generic_industry
+		available = {
+			has_war = yes
+			tag = WHT
+			controls_state = 408 # Vladivostok
+		}
+		visible = {
+			tag = WHT
+		}
+		fire_only_once = no
+		days_re_enable = 90
+		days_remove = 120
+		cost = 35
+		complete_effect = {
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 3000
+			}
+		}
+		modifier = {
+			consumer_goods_factor = -0.03
+			industrial_capacity_factory = 0.05
+		}
+		ai_will_do = {
+			factor = 85
+		}
+	}
+
+}

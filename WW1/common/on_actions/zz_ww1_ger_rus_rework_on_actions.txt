@@ -17,8 +17,30 @@ on_actions = {
 	on_weekly_GER = {
 		effect = {
 			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
+			# 1918 German Armistice Dissolution Hook
+			if = {
+				limit = {
+					date > 1918.11.1
+					has_global_flag = SOV_brest_litovsk_signed
+					GER = { has_capitulated = yes }
+				}
+				SOV_dissolve_brest_litovsk = yes
+				news_event = { id = ww1_russia_diplomacy.20 }
+			}
 		}
 	}
 
-	# 1918 German armistice / Brest-Litovsk dissolution hook: SOV_dissolve_brest_litovsk
+	# 1918 German Armistice Dissolution Hook
+	on_surrender = {
+		effect = {
+			if = {
+				limit = {
+					tag = GER
+					has_global_flag = SOV_brest_litovsk_signed
+				}
+				SOV_dissolve_brest_litovsk = yes
+				news_event = { id = ww1_russia_diplomacy.20 }
+			}
+		}
+	}
 }

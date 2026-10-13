@@ -1,0 +1,25 @@
+SOV_soviet_diplomacy = {
+	icon = generic_foreign_policy
+	picture = GFX_decision_cat_generic
+	priority = 95
+	allowed = {
+		tag = SOV
+		has_government = communism
+	}
+	visible = {
+		tag = SOV
+		has_government = communism
+	}
+}
+
+WHT_entente_aid_category = {
+	icon = generic_foreign_diplomacy
+	picture = GFX_decision_cat_generic
+	priority = 90
+	allowed = {
+		tag = WHT
+	}
+	visible = {
+		tag = WHT
+	}
+}

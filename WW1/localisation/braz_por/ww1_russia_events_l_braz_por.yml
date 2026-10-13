@@ -109,3 +109,55 @@ ww1_russia.50.t:0 "A Grande Crise de Projéteis: Snaryadny Golod"
  SOV_trotsky_armored_train_inspection:0 "Inspeção do Trem Blindado de Trotsky"
  SOV_trotsky_armored_train_inspection_desc:0 "O Comissário da Guerra Leon Trotsky percorre as frentes a bordo de seu trem blindado para restaurar a disciplina, insuflar o fervor revolucionário e conter recuos."
 
+ # Brest-Litovsk & Soviet Diplomacy Events
+ ww1_russia_diplomacy.1.t:0 "Sondas Soviéticas de Paz em Brest-Litovsk"
+ ww1_russia_diplomacy.1.d:0 "O recém-formado Conselho dos Comissários do Povo proclamou o Decreto sobre a Paz, apelando para a cessação imediata das hostilidades. Emissários liderados por Adolf Joffe chegaram ao quartel-general alemão em Brest-Litovsk em busca de um armistício. O Marechal von Hindenburg e o General Ludendorff apresentam nossa escolha: ditar severos termos territoriais despojando a Rússia de suas províncias ocidentais, ou retomar o avanço rumo ao leste."
+ ww1_russia_diplomacy.1.a:0 "Ditar nossos termos! Cedam as terras fronteiriças ou enfrentem a destruição!"
+ ww1_russia_diplomacy.1.b:0 "Recusar negociações! O exército alemão marchará até Petrogrado!"
+ GER_dictate_brest_litovsk_tt:0 "Apresentar um ultimato exigindo a independência e cessão da Polônia, Lituânia e Ucrânia."
+ GER_refuse_peace_talks_tt:0 "As hostilidades prosseguem sem trégua por toda a Frente Oriental."
+
+ ww1_russia_diplomacy.2.t:0 "O Ultimato Alemão: O Tratado de Brest-Litovsk"
+ ww1_russia_diplomacy.2.d:0 "Em Brest-Litovsk, a delegação alemã liderada pelo General Max Hoffmann impôs um ultimato de ferro. A Rússia deve renunciar à soberania sobre a Polônia, Lituânia, Curlândia e reconhecer a independência ucraniana e finlandesa. A liderança bolchevique divide-se profundamente: Lenin exige aceitar a 'paz vergonhosa' para salvar o poder soviético, Bukharin clama por guerra revolucionária e Trotsky proclama 'nem guerra, nem paz'."
+ ww1_russia_diplomacy.2.a:0 "Assinar o Tratado. A República Soviética necessita de fôlego!"
+ ww1_russia_diplomacy.2.b:0 "Nem guerra, nem paz! Trotsky abandona as negociações!"
+ SOV_brest_litovsk_signed_tt:0 "Concluir paz branca imediata com as Potências Centrais. A Alemanha assegura entregas de grãos e matérias-primas."
+ SOV_trotsky_walkout_tt:0 "Trotsky denuncia as anexações imperialistas e se retira, deixando a frente aberta ao avanço alemão."
+
+ ww1_russia_diplomacy.3.t:0 "Operação Faustschlag: A Ofensiva de Primavera Alemã"
+ ww1_russia_diplomacy.3.d:0 "Diante da recusa soviética em assinar o tratado, o Alto Comando Alemão desencadeou a Operação Faustschlag — o 'Golpe de Punho'. Com o antigo exército russo desintegrado e os Guardas Vermelhos oferecendo apenas fraca resistência, cinquenta divisões alemãs avançam sobre as linhas férreas em velocidade vertiginosa, capturando Dvinsk, Minsk e Kiev."
+ ww1_russia_diplomacy.3.a:0 "Avante sobre os trilhos! Nada deterá o avanço alemão!"
+
+ ww1_russia_diplomacy.4.t:0 "A Frente Desmorona: Faustschlag Arrasa o Leste"
+ ww1_russia_diplomacy.4.d:0 "O avanço alemão é imparável. Colunas germânicas varrem a Ucrânia, Bielorrússia e Estônia em trens blindados. Com as vanguardas do Kaiser a poucos dias de Petrogrado, a facção de Lenin força uma votação emergencial: aceitar termos ainda mais humilhantes agora, ou sucumbir ante a invasão militar."
+ ww1_russia_diplomacy.4.a:0 "Assinar a paz imediatamente! Não temos exército para resistir!"
+ ww1_russia_diplomacy.4.b:0 "Lutar até o último proletário! Nenhuma rendição ao Kaiser!"
+ SOV_faustschlag_capitulation_tt:0 "Capitular às exigências alemãs sob fogo. Sai da guerra contra as Potências Centrais."
+
+ ww1_russia_diplomacy.20.t:0 "O Colapso de Brest-Litovsk"
+ ww1_russia_diplomacy.20.d:0 "Com a rendição e o armistício do Império Alemão no Ocidente, o draconiano Tratado de Brest-Litovsk é formalmente anulado! As autoridades soviéticas em Moscou declararam o tratado nulo, enquanto guarnições alemãs se retiram da Ucrânia, Bielorrússia e Báltico. Um vasto vácuo de poder se abre pelo Leste Europeu, convidando o avanço do Exército Vermelho."
+ ww1_russia_diplomacy.20.a:0 "O tratado imperialista foi rasgado em pedaços! Rumo ao Vístula!"
+ ww1_russia_diplomacy.20.b:0 "Nosso domínio oriental desaba em ruínas..."
+ ww1_russia_diplomacy.20.c:0 "A hegemonia alemã no Leste Europeu evaporou-se."
+ SOV_target_vistula_reclamation_tt:0 "O Tratado de Brest-Litovsk foi dissolvido! Inicia-se a reconquista soviética para o oeste."
+
+ # Soviet & White Diplomacy Decisions
+ SOV_soviet_diplomacy:0 "Diplomacia Externa Soviética"
+ SOV_soviet_diplomacy_desc:0 "Manobras diplomáticas, decretos de paz e política externa revolucionária do Conselho dos Comissários do Povo."
+ SOV_decree_on_peace:0 "Proclamar o Decreto sobre a Paz"
+ SOV_decree_on_peace_desc:0 "Emitir um apelo a todas as nações beligerantes por uma paz democrática imediata sem anexações ou indenizações, abrindo negociações diretas com Berlim."
+
+ WHT_entente_aid_category:0 "Assistência Externa da Entente"
+ WHT_entente_aid_category_desc:0 "Missões militares aliadas, carregamentos de munições e apoio logístico às Forças Armadas Brancas na luta por uma Rússia Una e Indivisível."
+ WHT_general_knox_british_mission:0 "Missão Militar Britânica do General Knox"
+ WHT_general_knox_british_mission_desc:0 "O General Alfred Knox coordena o envio de centenas de milhares de fuzis Lee-Enfield, metralhadoras, uniformes e instrutores militares para equipar os exércitos lealistas na Sibéria."
+ WHT_french_odessa_naval_aid:0 "Comboios Navais Franceses em Odessa"
+ WHT_french_odessa_naval_aid_desc:0 "Esquadras francesas no Mar Negro descarregam munições, suprimentos médicos e suporte logístico no porto de Odessa para reforçar os Brancos no Sul."
+ WHT_vladivostok_allied_lend_lease:0 "Remessas Aliadas via Vladivostok"
+ WHT_vladivostok_allied_lend_lease_desc:0 "Navios americanos e japoneses descarregam maquinário industrial pesado, peças ferroviárias e armas leves através do Pacífico em Vladivostok."
+
+ # German Brest-Litovsk Ideas
+ GER_brest_litovsk_deliveries:0 "Entregas de Grãos e Recursos de Brest-Litovsk"
+ GER_brest_litovsk_deliveries_desc:0 "Remessas maciças de trigo ucraniano, manganês e matérias-primas fluem para o oeste conforme as cláusulas do tratado, aliviando o bloqueio naval britânico."
+ GER_operation_faustschlag:0 "Operação Faustschlag"
+ GER_operation_faustschlag_desc:0 "A ofensiva ferroviária implacável sobre a Frente Oriental em colapso, varrendo a resistência bolchevique desorganizada."
