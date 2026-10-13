@@ -284,6 +284,32 @@ class TestItalyBalanceAndMechanics(unittest.TestCase):
         for idea_id in dynamic_gauge_ideas:
             self.assertIn(idea_id, update_block, f"ita_ww1_update_gauges does not apply dynamic gauge idea {idea_id}")
 
+    def test_anti_stacking_doctrine_swaps(self):
+        """Verifies progressive doctrine branches swap ideas rather than stacking topbar spirits."""
+        swaps = {
+            "ITA_ww1_north_east_mobilisation": "ITA_ww1_cadorna_discipline",
+            "ITA_ww1_frontier_fortifications": "ITA_ww1_railway_mobilisation_plan",
+            "ITA_ww1_gas_defence": "ITA_ww1_frontier_fortress_belt",
+            "ITA_ww1_reserve_officer_schools": "ITA_ww1_gas_respirators",
+            "ITA_ww1_dismounted_cavalry": "ITA_ww1_complimentary_officer_academies",
+            "ITA_ww1_taranto_base": "ITA_ww1_regia_marina_cadres",
+            "ITA_ww1_brindisi_venice_bases": "ITA_ww1_taranto_naval_arsenal",
+            "ITA_ww1_adriatic_watch": "ITA_ww1_adriatic_naval_stations",
+            "ITA_ww1_otranto_barrage": "ITA_ww1_adriatic_patrol_network",
+            "ITA_ww1_pilot_schools": "ITA_ww1_battaglione_aviatori",
+            "ITA_ww1_aeronautical_corps": "ITA_ww1_military_flight_schools",
+            "ITA_ww1_ace_squadrons": "ITA_ww1_corpo_aeronautico_militare",
+            "ITA_ww1_strategic_bombing": "ITA_ww1_baracca_ace_tradition",
+            "ITA_ww1_air_autonomy_debate": "ITA_ww1_douhet_air_doctrine",
+        }
+        for fid, predecessor in swaps.items():
+            node = self.foci.get(fid)
+            self.assertIsNotNone(node, f"Focus {fid} missing from tree")
+            reward = node.get("completion_reward")
+            self.assertIsNotNone(reward, f"Focus {fid} missing completion_reward")
+            removes = [x.value for x in walk(reward) if x.key == "remove_ideas"]
+            self.assertIn(predecessor, removes, f"Focus {fid} must remove predecessor idea {predecessor} to prevent spirit stacking")
+
 
 class TestItalyEventsAndDecisions(unittest.TestCase):
     def test_events_volume_options_and_spontaneous_count(self):

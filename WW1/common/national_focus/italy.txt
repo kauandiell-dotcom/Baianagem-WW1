@@ -2114,7 +2114,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { add_ideas = ITA_ww1_railway_mobilisation_plan 160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 736 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } army_experience = 20 add_political_power = 30 add_command_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_cadorna_discipline add_ideas = ITA_ww1_railway_mobilisation_plan 160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 736 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } army_experience = 20 add_political_power = 30 add_command_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2130,7 +2130,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 70 }
-		completion_reward = { add_ideas = ITA_ww1_frontier_fortress_belt 160 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } 158 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } army_experience = 15 add_tech_bonus = { name = ITA_ww1_alpine_fortifications bonus = 0.25 uses = 1 category = industry } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_railway_mobilisation_plan add_ideas = ITA_ww1_frontier_fortress_belt 160 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } 158 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } army_experience = 15 add_tech_bonus = { name = ITA_ww1_alpine_fortifications bonus = 0.25 uses = 1 category = industry } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2196,7 +2196,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { add_ideas = ITA_ww1_gas_respirators army_experience = 15 add_tech_bonus = { name = ITA_ww1_chemical_defence bonus = 0.25 uses = 1 category = support_tech } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_frontier_fortress_belt add_ideas = ITA_ww1_gas_respirators army_experience = 15 add_tech_bonus = { name = ITA_ww1_chemical_defence bonus = 0.25 uses = 1 category = support_tech } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2212,7 +2212,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_ideas = ITA_ww1_complimentary_officer_academies 161 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 25 add_command_power = 30 add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_gas_respirators add_ideas = ITA_ww1_complimentary_officer_academies 161 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 25 add_command_power = 30 add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2228,7 +2228,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 65 }
-		completion_reward = { add_ideas = ITA_ww1_dismounted_cavalry_regiments army_experience = 20 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1500 producer = ITA } add_tech_bonus = { name = ITA_ww1_cavalry_recon bonus = 0.25 uses = 1 category = recon_tech } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_complimentary_officer_academies add_ideas = ITA_ww1_dismounted_cavalry_regiments army_experience = 20 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1500 producer = ITA } add_tech_bonus = { name = ITA_ww1_cavalry_recon bonus = 0.25 uses = 1 category = recon_tech } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2260,7 +2260,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 98 }
-		completion_reward = { remove_ideas = ITA_ww1_cadornian_offensive_cult remove_ideas = ITA_ww1_methodical_firepower_doctrine remove_ideas = ITA_isonzo_attrition_crisis_3 remove_ideas = ITA_isonzo_attrition_crisis_2 remove_ideas = ITA_isonzo_attrition_crisis_1 army_experience = 25 add_ideas = ITA_ww1_diaz_humane_leadership add_to_variable = { ita_ww1_army_morale = 20 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_cadornian_offensive_cult remove_ideas = ITA_ww1_methodical_firepower_doctrine remove_ideas = ITA_ww1_dismounted_cavalry_regiments remove_ideas = ITA_isonzo_attrition_crisis_3 remove_ideas = ITA_isonzo_attrition_crisis_2 remove_ideas = ITA_isonzo_attrition_crisis_1 army_experience = 25 add_ideas = ITA_ww1_diaz_humane_leadership add_to_variable = { ita_ww1_army_morale = 20 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2310,7 +2310,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_ideas = ITA_ww1_motorized_shock_cadres 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_defence_in_depth_piave remove_ideas = ITA_ww1_continuous_offensive_pressure add_ideas = ITA_ww1_motorized_shock_cadres 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2342,7 +2342,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_ideas = ITA_ww1_strengthened_carabinieri add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = 40 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_motorized_shock_cadres add_ideas = ITA_ww1_strengthened_carabinieri add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = 40 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2358,7 +2358,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 70 }
-		completion_reward = { remove_ideas = ITA_ww1_general_staff_corps remove_ideas = ITA_ww1_diaz_humane_leadership add_ideas = ITA_ww1_badoglio_standing_army army_experience = 25 add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_strengthened_carabinieri remove_ideas = ITA_ww1_motorized_shock_cadres remove_ideas = ITA_ww1_general_staff_corps remove_ideas = ITA_ww1_diaz_humane_leadership add_ideas = ITA_ww1_badoglio_standing_army army_experience = 25 add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2453,7 +2453,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { add_ideas = ITA_ww1_taranto_naval_arsenal 157 = { add_building_construction = { type = naval_base level = 2 instant_build = yes } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } } navy_experience = 20 add_political_power = 30 add_tech_bonus = { name = ITA_ww1_naval_repair bonus = 0.25 uses = 1 category = naval_equipment } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_regia_marina_cadres add_ideas = ITA_ww1_taranto_naval_arsenal 157 = { add_building_construction = { type = naval_base level = 2 instant_build = yes } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } } navy_experience = 20 add_political_power = 30 add_tech_bonus = { name = ITA_ww1_naval_repair bonus = 0.25 uses = 1 category = naval_equipment } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2469,7 +2469,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_ideas = ITA_ww1_adriatic_naval_stations 160 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } 157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } navy_experience = 20 add_tech_bonus = { name = ITA_ww1_submarine_detection bonus = 0.25 uses = 1 category = dd_tech } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_taranto_naval_arsenal add_ideas = ITA_ww1_adriatic_naval_stations 160 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } 157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } navy_experience = 20 add_tech_bonus = { name = ITA_ww1_submarine_detection bonus = 0.25 uses = 1 category = dd_tech } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2517,7 +2517,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { add_ideas = ITA_ww1_adriatic_patrol_network navy_experience = 25 add_to_variable = { ita_ww1_irredentism = 5 } add_tech_bonus = { name = ITA_ww1_patrol_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_adriatic_naval_stations add_ideas = ITA_ww1_adriatic_patrol_network navy_experience = 25 add_to_variable = { ita_ww1_irredentism = 5 } add_tech_bonus = { name = ITA_ww1_patrol_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2533,7 +2533,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { add_ideas = ITA_ww1_otranto_barrage_net navy_experience = 25 add_tech_bonus = { name = ITA_ww1_asw_barrage bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_adriatic_patrol_network add_ideas = ITA_ww1_otranto_barrage_net navy_experience = 25 add_tech_bonus = { name = ITA_ww1_asw_barrage bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2550,7 +2550,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 70 }
-		completion_reward = { remove_ideas = ITA_ww1_regia_marina_cadres add_ideas = ITA_ww1_dreadnought_fleet_in_being navy_experience = 20 add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_regia_marina_cadres remove_ideas = ITA_ww1_otranto_barrage_net add_ideas = ITA_ww1_dreadnought_fleet_in_being navy_experience = 20 add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2567,7 +2567,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 30 }
-		completion_reward = { remove_ideas = ITA_ww1_regia_marina_cadres add_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 20 add_tech_bonus = { name = ITA_ww1_light_forces bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_regia_marina_cadres remove_ideas = ITA_ww1_otranto_barrage_net add_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 20 add_tech_bonus = { name = ITA_ww1_light_forces bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2583,7 +2583,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 90 }
-		completion_reward = { add_ideas = ITA_ww1_mas_motor_torpedo_boats navy_experience = 25 add_tech_bonus = { name = ITA_ww1_mas_boat_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_insidious_flotilla_doctrine add_ideas = ITA_ww1_mas_motor_torpedo_boats navy_experience = 25 add_tech_bonus = { name = ITA_ww1_mas_boat_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2599,7 +2599,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_ideas = ITA_ww1_albanian_convoy_routes navy_experience = 20 add_equipment_to_stockpile = { type = convoy_1 amount = 30 producer = ITA } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_mas_motor_torpedo_boats add_ideas = ITA_ww1_albanian_convoy_routes navy_experience = 20 add_equipment_to_stockpile = { type = convoy_1 amount = 30 producer = ITA } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2631,7 +2631,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { add_ideas = ITA_ww1_mignatta_special_raiders navy_experience = 30 add_tech_bonus = { name = ITA_ww1_mignatta_special_ops bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_albanian_convoy_routes add_ideas = ITA_ww1_mignatta_special_raiders navy_experience = 30 add_tech_bonus = { name = ITA_ww1_mignatta_special_ops bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2663,7 +2663,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 65 }
-		completion_reward = { remove_ideas = ITA_ww1_dreadnought_fleet_in_being remove_ideas = ITA_ww1_insidious_flotilla_doctrine navy_experience = 20 add_ideas = ITA_ww1_capital_fleet_modernisation ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_dreadnought_fleet_in_being remove_ideas = ITA_ww1_insidious_flotilla_doctrine remove_ideas = ITA_ww1_mignatta_special_raiders remove_ideas = ITA_ww1_albanian_convoy_routes navy_experience = 20 add_ideas = ITA_ww1_capital_fleet_modernisation ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2694,7 +2694,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { add_ideas = ITA_ww1_military_flight_schools air_experience = 25 add_tech_bonus = { name = ITA_ww1_flight_training bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_battaglione_aviatori add_ideas = ITA_ww1_military_flight_schools air_experience = 25 add_tech_bonus = { name = ITA_ww1_flight_training bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2726,7 +2726,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { add_ideas = ITA_ww1_corpo_aeronautico_militare air_experience = 25 add_tech_bonus = { name = ITA_ww1_air_recon bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_military_flight_schools add_ideas = ITA_ww1_corpo_aeronautico_militare air_experience = 25 add_tech_bonus = { name = ITA_ww1_air_recon bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2806,7 +2806,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { add_ideas = ITA_ww1_baracca_ace_tradition air_experience = 30 add_tech_bonus = { name = ITA_ww1_baracca_fighter_tactics bonus = 0.25 uses = 1 category = light_fighter } country_event = { id = ww1_italy.62 days = 1 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_corpo_aeronautico_militare add_ideas = ITA_ww1_baracca_ace_tradition air_experience = 30 add_tech_bonus = { name = ITA_ww1_baracca_fighter_tactics bonus = 0.25 uses = 1 category = light_fighter } country_event = { id = ww1_italy.62 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2823,7 +2823,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { add_ideas = ITA_ww1_douhet_air_doctrine air_experience = 25 add_tech_bonus = { name = ITA_ww1_douhet_strategic_theory bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_baracca_ace_tradition add_ideas = ITA_ww1_douhet_air_doctrine air_experience = 25 add_tech_bonus = { name = ITA_ww1_douhet_strategic_theory bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2856,7 +2856,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_ideas = ITA_ww1_independent_air_force_charter 159 = { add_building_construction = { type = air_base level = 2 instant_build = yes } } air_experience = 30 add_political_power = 40 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_douhet_air_doctrine add_ideas = ITA_ww1_independent_air_force_charter 159 = { add_building_construction = { type = air_base level = 2 instant_build = yes } } air_experience = 30 add_political_power = 40 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
