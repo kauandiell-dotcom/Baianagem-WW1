@@ -450,6 +450,8 @@ def audit_uk_semantic_integrity() -> List[str]:
         os.path.join(MOD_ROOT, "common", "decisions", "ww1_britain_decisions.txt"),
         os.path.join(MOD_ROOT, "common", "ideas", "ww1_ottoman_ideas.txt"),
         os.path.join(MOD_ROOT, "common", "decisions", "ww1_ottoman_decisions.txt"),
+        os.path.join(MOD_ROOT, "common", "ideas", "ww1_italy_ideas.txt"),
+        os.path.join(MOD_ROOT, "common", "decisions", "ww1_italy_decisions.txt"),
     ]
     for fpath in target_files:
         if os.path.exists(fpath):
@@ -497,7 +499,7 @@ def main():
     all_errors["De-inflation & Guide"] = deinf_errs
     print(f"    -> {len(deinf_errs)} issues found.")
 
-    print("\n[*] Auditing Clausewitz Semantic Oracle on British & Ottoman Ideas/Decisions...")
+    print("\n[*] Auditing Clausewitz Semantic Oracle on British, Ottoman & Italian Ideas/Decisions...")
     uk_semantic_errs = audit_uk_semantic_integrity()
     all_errors["Semantic Oracle Integrity"] = uk_semantic_errs
     print(f"    -> {len(uk_semantic_errs)} issues found.")
@@ -535,13 +537,17 @@ def main():
     print("\n[*] Executing Ottoman Empire Master QA Audit Suite (tests/test_ww1_ottoman.py)...")
     res_tur = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_ottoman.py"], cwd=MOD_ROOT)
 
-    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0)
+    # 5. Execute Kingdom of Italy Master QA Audit
+    print("\n[*] Executing Kingdom of Italy Master QA Audit Suite (tests/test_ww1_italy.py)...")
+    res_ita = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_italy.py"], cwd=MOD_ROOT)
+
+    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0) or (res_ita.returncode != 0)
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}) <<<\n")
         sys.exit(1)
 
 
