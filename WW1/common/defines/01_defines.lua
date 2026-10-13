@@ -16,8 +16,8 @@ NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 7
 
 -- These caps are COUNTRY defines; category membership alone does not make a
 -- battalion special forces. Subunits also need special_forces = yes.
-NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.05
-NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 24
+NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.0
+NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 48
 
 -- Existing WW1 land-combat baseline, retained pending controlled combat tests.
 NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.055

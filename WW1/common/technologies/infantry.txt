@@ -1077,7 +1077,7 @@ technologies = {
 			advanced_special_forces
 		}
 
-		special_forces_cap = 0.10
+		special_forces_min = 12
 		special_forces_training_time_factor = -0.1
 
 		path = {
@@ -1180,6 +1180,7 @@ technologies = {
 			soft_attack = 0.05
 		}
 
+		special_forces_min = 6
 		special_forces_no_supply_grace = 24
 
 		research_cost = 2
