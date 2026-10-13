@@ -28,12 +28,30 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = Path("E:/SteamLibrary/steamapps/common/Hearts of Iron IV")
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 from validate_ww1_foundation import parse, read, walk
+from scripts.hoi4_semantic_oracle import audit_file_modifiers
 
 OUTLINE = ROOT / "docs" / "italy_focus_outline.txt"
 FOCUS_FILE = ROOT / "common" / "national_focus" / "italy.txt"
 EFFECTS_FILE = ROOT / "common" / "scripted_effects" / "ww1_italy_effects.txt"
+
+
+def extract_named_block(text, block_name):
+    m = re.search(rf"\b{re.escape(block_name)}\s*=\s*\{{", text)
+    if not m:
+        return ""
+    start = m.end()
+    depth = 1
+    i = start
+    while i < len(text) and depth > 0:
+        if text[i] == "{":
+            depth += 1
+        elif text[i] == "}":
+            depth -= 1
+        i += 1
+    return text[start:i - 1]
 
 
 def get_nodes(path):
@@ -82,15 +100,36 @@ class TestItalyTreeAndGraph(unittest.TestCase):
         duplicates = [pos for pos, count in counts.items() if count > 1]
         self.assertFalse(duplicates, f"Found duplicate focus coordinates: {duplicates}")
 
-        # Check prerequisite links: child y must be greater than parent y
+        rows = defaultdict(list)
+        for n in self.focus_nodes:
+            rows[int(n.get("y", 0))].append((int(n.get("x", 0)), n.get("id")))
+        for y, row_items in sorted(rows.items()):
+            row_items.sort(key=lambda item: item[0])
+            for (x1, fid1), (x2, fid2) in zip(row_items, row_items[1:]):
+                self.assertGreaterEqual(
+                    abs(x2 - x1), 2,
+                    f"Horizontal banner collision on row y={y}: {fid1} (x={x1}) and {fid2} (x={x2}) have dx={abs(x2 - x1)} < 2"
+                )
+
+        # Check prerequisite links: child y must be greater than parent y and within 1..3 rows
         for fid, n in self.foci.items():
             for prereq in [p for p in n.value if p.key == "prerequisite"]:
                 for ref in prereq.value:
                     if ref.key == "focus":
                         parent_id = ref.value
                         self.assertIn(parent_id, self.foci, f"Parent {parent_id} of {fid} does not exist")
+                        dy = int(n.get("y")) - int(self.foci[parent_id].get("y"))
                         self.assertGreater(int(n.get("y")), int(self.foci[parent_id].get("y")),
                                            f"Focus {fid} (y={n.get('y')}) is not strictly below parent {parent_id} (y={self.foci[parent_id].get('y')})")
+                        self.assertTrue(
+                            1 <= dy <= 3,
+                            f"Focus {fid} (y={n.get('y')}) to parent {parent_id} (y={self.foci[parent_id].get('y')}) spans {dy} rows (must be 1..3)"
+                        )
+
+        self.assertFalse(
+            (ROOT / "common" / "national_focus" / "italy.txt.disabled").exists(),
+            "common/national_focus/italy.txt.disabled must not exist"
+        )
 
     def test_mutual_exclusions_are_symmetric(self):
         for fid, n in self.foci.items():
@@ -131,6 +170,32 @@ class TestItalyBalanceAndMechanics(unittest.TestCase):
             keys = {x.key for x in walk(reward)}
             has_real = bool(keys & REAL_EFFECTS) or any(k.startswith("ita_ww1_") or k.startswith("ww1_ITA_") for k in keys)
             self.assertTrue(has_real, f"Focus {fid} has no real player-facing completion reward: {keys}")
+
+    def test_zero_shallow_focuses(self):
+        SHALLOW_KEYS = {
+            "add_political_power",
+            "add_stability",
+            "add_war_support",
+            "army_experience",
+            "navy_experience",
+            "air_experience",
+            "add_command_power",
+            "add_to_variable",
+            "set_country_flag",
+            "custom_effect_tooltip",
+            "ita_ww1_clamp_counters",
+        }
+        shallow_foci = []
+        for fid, n in self.foci.items():
+            reward = n.get("completion_reward")
+            self.assertIsNotNone(reward, f"Focus {fid} missing completion_reward")
+            tangible = [stmt.key for stmt in reward if stmt.key not in SHALLOW_KEYS]
+            if not tangible:
+                shallow_foci.append(fid)
+        self.assertFalse(
+            shallow_foci,
+            f"Found {len(shallow_foci)} shallow focuses with only flat PP/stab/ws/XP/gauge rewards: {shallow_foci[:15]}"
+        )
 
     def test_balance_ceilings_on_focus_tree(self):
         total_pos_stab = 0.0
@@ -181,6 +246,43 @@ class TestItalyBalanceAndMechanics(unittest.TestCase):
         for g in gauges:
             self.assertIn(g, text, f"Gauge variable {g} missing from scripted effects")
             self.assertIn(f"var = {g}", text, f"Clamp for {g} missing from scripted effects")
+
+    def test_active_five_gauges_and_zero_unused_ideas(self):
+        self.assertTrue(EFFECTS_FILE.is_file(), "common/scripted_effects/ww1_italy_effects.txt must exist")
+        text = read(EFFECTS_FILE)
+        update_block = extract_named_block(text, "ita_ww1_update_gauges")
+        self.assertTrue(update_block, "ita_ww1_update_gauges block missing from ww1_italy_effects.txt")
+        self.assertIn("check_variable", update_block, "ita_ww1_update_gauges must contain check_variable checks")
+
+        gauges = [
+            "ita_ww1_interventionism",
+            "ita_ww1_social_tension",
+            "ita_ww1_army_morale",
+            "ita_ww1_southern_gap",
+            "ita_ww1_irredentism",
+        ]
+        for g in gauges:
+            self.assertIn(g, update_block, f"ita_ww1_update_gauges missing check_variable for gauge {g}")
+
+        dynamic_gauge_ideas = [
+            "ITA_ww1_neutralist_predominance",
+            "ITA_ww1_divided_public_opinion",
+            "ITA_ww1_radiant_fever",
+            "ITA_ww1_social_truce",
+            "ITA_ww1_labour_friction",
+            "ITA_ww1_revolutionary_ferment",
+            "ITA_ww1_shattered_discipline",
+            "ITA_ww1_stoic_endurance",
+            "ITA_ww1_victorious_ardor",
+            "ITA_ww1_integrated_mezzogiorno",
+            "ITA_ww1_southern_disparity",
+            "ITA_ww1_acute_agrarian_crisis",
+            "ITA_ww1_subdued_claims",
+            "ITA_ww1_unredeemed_lands_call",
+            "ITA_ww1_irredentist_fervor",
+        ]
+        for idea_id in dynamic_gauge_ideas:
+            self.assertIn(idea_id, update_block, f"ita_ww1_update_gauges does not apply dynamic gauge idea {idea_id}")
 
 
 class TestItalyEventsAndDecisions(unittest.TestCase):
@@ -241,6 +343,47 @@ class TestItalyEventsAndDecisions(unittest.TestCase):
             if "civilian_factory_use" in keys:
                 self.assertIn("cancel_effect", keys, f"Industrial decision {d.key} missing cancel_effect")
 
+    def test_map_state_targeted_decisions_and_zero_orphan_events(self):
+        dec_file = ROOT / "common" / "decisions" / "ww1_italy_decisions.txt"
+        self.assertTrue(dec_file.is_file(), "common/decisions/ww1_italy_decisions.txt missing")
+        dec_text = read(dec_file)
+
+        required_new_decisions = [
+            "ITA_ww1_mezzogiorno_aqueduct_and_roads",
+            "ITA_ww1_carabinieri_anti_brigandage_sweep",
+            "ITA_ww1_southern_agrarian_credit_consortium",
+            "ITA_ww1_alpine_mine_warfare_tunnel",
+            "ITA_ww1_launch_isonzo_general_offensive",
+            "ITA_ww1_fortify_piave_and_monte_grappa",
+            "ITA_ww1_fortify_libyan_coastal_oases",
+            "ITA_ww1_integrate_irredenta_province",
+            "ITA_ww1_impresa_di_pola_raid",
+        ]
+        missing_decisions = [d for d in required_new_decisions if d not in dec_text]
+        self.assertFalse(missing_decisions, f"Missing required new decisions: {missing_decisions}")
+
+        state_target_count = len(re.findall(r"\bstate_target\s*=\s*yes\b", dec_text))
+        self.assertGreaterEqual(
+            state_target_count, 6,
+            f"Expected at least 6 state_target = yes decisions, found {state_target_count}"
+        )
+
+        triggered_sources = [
+            read(FOCUS_FILE) if FOCUS_FILE.is_file() else "",
+            dec_text,
+        ]
+        for ef in sorted(ROOT.glob("events/ww1_italy_*.txt")):
+            for ev in get_nodes(ef):
+                if ev.key == "country_event":
+                    for child in ev.value:
+                        if child.key in ("option", "immediate") and isinstance(child.value, list):
+                            for node in walk(child.value):
+                                if node.key in ("id", "country_event") and isinstance(node.value, str):
+                                    triggered_sources.append(node.value)
+        triggered_blob = "\n".join(triggered_sources)
+        self.assertIn("ww1_italy.50", triggered_blob, "Event ww1_italy.50 is not triggered across focuses, decisions, or events")
+        self.assertIn("ww1_italy.63", triggered_blob, "Event ww1_italy.63 is not triggered across focuses, decisions, or events")
+
 
 class TestItalyIdeasAndModifiers(unittest.TestCase):
     def test_ideas_volume_and_valid_modifiers(self):
@@ -265,6 +408,37 @@ class TestItalyIdeasAndModifiers(unittest.TestCase):
                     for m in mod_block.value:
                         self.assertIn(m.key, valid_mods, f"Idea {idea.key} has invalid modifier {m.key}")
 
+        idea_mod_errors = audit_file_modifiers(str(ideas_file))
+        dec_mod_errors = audit_file_modifiers(str(ROOT / "common" / "decisions" / "ww1_italy_decisions.txt"))
+        self.assertFalse(idea_mod_errors, f"Invalid modifiers in ww1_italy_ideas.txt: {idea_mod_errors}")
+        self.assertFalse(dec_mod_errors, f"Invalid modifiers in ww1_italy_decisions.txt: {dec_mod_errors}")
+
+        idea_ids = {idea.key for idea in ideas}
+        restored_ideas = [
+            "ITA_terre_irredente_dream",
+            "ITA_alpini_tradition",
+            "ITA_coal_iron_scarcity",
+            "ITA_southern_question_gap",
+            "ITA_sacro_egoismo_policy",
+            "ITA_isonzo_attrition_crisis_1",
+            "ITA_isonzo_attrition_crisis_2",
+            "ITA_isonzo_attrition_crisis_3",
+            "ITA_vittorio_veneto_triumph",
+        ]
+        missing_restored = [i for i in restored_ideas if i not in idea_ids]
+        self.assertFalse(missing_restored, f"Missing restored ideas in ww1_italy_ideas.txt: {missing_restored}")
+
+        ref_files = [
+            ROOT / "history" / "countries" / "ITA - Italy.txt",
+            FOCUS_FILE,
+            ROOT / "common" / "decisions" / "ww1_italy_decisions.txt",
+            EFFECTS_FILE,
+            *sorted(ROOT.glob("events/ww1_italy_*.txt")),
+        ]
+        combined_refs = "\n".join(read(p) for p in ref_files if p.is_file())
+        unused_ideas = [idea.key for idea in ideas if not re.search(rf"\b{re.escape(idea.key)}\b", combined_refs)]
+        self.assertFalse(unused_ideas, f"Unused ideas in ww1_italy_ideas.txt: {unused_ideas}")
+
     def test_opinion_modifiers_exist(self):
         opinion_files = sorted(ROOT.glob("common/opinion_modifiers/ww1_italy_*.txt"))
         self.assertTrue(opinion_files, "Opinion modifiers file missing")
@@ -284,16 +458,24 @@ class TestItalyLocalisationAndGraphics(unittest.TestCase):
         self.assertTrue(en_file.is_file(), "English localisation missing")
         self.assertTrue(pt_file.is_file(), "Portuguese localisation missing")
 
-        # BOM check
-        self.assertTrue(en_file.read_bytes().startswith(b"\xef\xbb\xbf"), "English yml must have UTF-8 BOM")
-        self.assertTrue(pt_file.read_bytes().startswith(b"\xef\xbb\xbf"), "Portuguese yml must have UTF-8 BOM")
+        # Single UTF-8 BOM check
+        en_raw = en_file.read_bytes()
+        pt_raw = pt_file.read_bytes()
+        self.assertTrue(
+            en_raw[:3] == b"\xef\xbb\xbf" and en_raw[3:6] != b"\xef\xbb\xbf",
+            "English yml must have exactly a single UTF-8 BOM"
+        )
+        self.assertTrue(
+            pt_raw[:3] == b"\xef\xbb\xbf" and pt_raw[3:6] != b"\xef\xbb\xbf",
+            "Portuguese yml must have exactly a single UTF-8 BOM"
+        )
 
         en_keys = set(re.findall(r"^ ([\w.]+):0 ", read(en_file), re.M))
         pt_keys = set(re.findall(r"^ ([\w.]+):0 ", read(pt_file), re.M))
 
         self.assertEqual(en_keys, pt_keys, f"Localisation key mismatch: {len(en_keys ^ pt_keys)} differing keys")
 
-        # Check focus descriptions have immediate effect
+        # Check focus, idea, and decision descriptions in both languages
         en_text = read(en_file)
         pt_text = read(pt_file)
         foci = get_focus_nodes()
@@ -303,6 +485,28 @@ class TestItalyLocalisationAndGraphics(unittest.TestCase):
             self.assertIn(f" {fid}_desc:0 ", en_text, f"Missing EN desc for {fid}")
             self.assertIn(f" {fid}:0 ", pt_text, f"Missing PT title for {fid}")
             self.assertIn(f" {fid}_desc:0 ", pt_text, f"Missing PT desc for {fid}")
+
+        ideas_file = ROOT / "common" / "ideas" / "ww1_italy_ideas.txt"
+        for n in get_nodes(ideas_file):
+            if n.key == "ideas":
+                for cat in n.value:
+                    for idea in cat.value:
+                        if isinstance(idea.value, list):
+                            iid = idea.key
+                            self.assertIn(f" {iid}:0 ", en_text, f"Missing EN title for idea {iid}")
+                            self.assertIn(f" {iid}_desc:0 ", en_text, f"Missing EN desc for idea {iid}")
+                            self.assertIn(f" {iid}:0 ", pt_text, f"Missing PT title for idea {iid}")
+                            self.assertIn(f" {iid}_desc:0 ", pt_text, f"Missing PT desc for idea {iid}")
+
+        dec_file = ROOT / "common" / "decisions" / "ww1_italy_decisions.txt"
+        for cat_node in get_nodes(dec_file):
+            for dec in cat_node.value:
+                if isinstance(dec.value, list):
+                    did = dec.key
+                    self.assertIn(f" {did}:0 ", en_text, f"Missing EN title for decision {did}")
+                    self.assertIn(f" {did}_desc:0 ", en_text, f"Missing EN desc for decision {did}")
+                    self.assertIn(f" {did}:0 ", pt_text, f"Missing PT title for decision {did}")
+                    self.assertIn(f" {did}_desc:0 ", pt_text, f"Missing PT desc for decision {did}")
 
     def test_gfx_sprite_definitions_and_shine(self):
         gfx_file = ROOT / "interface" / "ww1_italy_goals.gfx"
@@ -319,6 +523,23 @@ class TestItalyLocalisationAndGraphics(unittest.TestCase):
             self.assertIn(f'name = "{base_sprite}"', gfx_text, f"Missing base sprite for {fid}")
             self.assertIn(f'name = "{shine_sprite}"', gfx_text, f"Missing shine sprite for {fid}")
 
+        gfx_files = [
+            ROOT / "interface" / "ww1_italy_goals.gfx",
+            ROOT / "interface" / "ww1_italy_ideas.gfx",
+            ROOT / "interface" / "ww1_italy_decisions.gfx",
+            ROOT / "interface" / "ww1_italy_events.gfx",
+        ]
+        missing_textures = []
+        for gf in gfx_files:
+            self.assertTrue(gf.is_file(), f"interface/{gf.name} missing")
+            for tex in re.findall(r'texturefile\s*=\s*"([^"]+)"', read(gf)):
+                if tex == "gfx/interface/goals/shine_overlay.dds":
+                    continue
+                if not (ROOT / tex).is_file():
+                    missing_textures.append((gf.name, tex))
+        self.assertFalse(missing_textures, f"Missing texture files on disk in mod directory: {missing_textures}")
+
 
 if __name__ == "__main__":
     unittest.main()
+
