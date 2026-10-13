@@ -237,13 +237,8 @@ PixelShader =
 			float4 IndexU;
 			float4 IndexV;
 
-			if ( cam_distance( GB_CAM_MIN, GB_CAM_MAX ) < 1.0f ) {
-				calculate_map_tex_index( tex2D( TerrainIDMap, Input.uv + vOffsets.xy ), IndexU, IndexV, vAllSame );
-			}
-			else {
-				calculate_map_tex_index( tex2D( TerrainIDMap, float2(0.0f, 0.0f) ), IndexU, IndexV, vAllSame );
-			}
-
+			calculate_map_tex_index( tex2D( TerrainIDMap, Input.uv + vOffsets.xy ), IndexU, IndexV, vAllSame );
+						
 			float2 vTileRepeat = Input.uv2 * TERRAIN_TILE_FREQ;
 			vTileRepeat.x *= MAP_SIZE_X/MAP_SIZE_Y;
 			
@@ -253,20 +248,9 @@ PixelShader =
 		#ifdef LOW_END_GFX
 			float3 normal = float3( 0, 1, 0 );
 		#else
-			float3 normal = float3( 0, 1, 0 );
-			if ( cam_distance( GB_CAM_MIN, GB_CAM_MAX ) < 1.0f ) {
-				normal = normalize( tex2D( HeightNormal, Input.uv2 ).rbg - 0.5f );
-			}
+			float3 normal = normalize( tex2D( HeightNormal, Input.uv2 ).rbg - 0.5f );
 		#endif
-
-			float4 diffuse;
-			if ( cam_distance( GB_CAM_MIN, GB_CAM_MAX ) < 1.0f ) {
-				diffuse = tex2Dlod( TerrainDiffuse, sample_terrain( IndexU.w, IndexV.w, vTileRepeat, vMipTexels, lod ) ).rgba;
-			}
-			else {
-				diffuse = tex2Dlod( TerrainDiffuse, sample_terrain( 0.0f, 0.0f, float2( 0.0f, 0.0f ), vMipTexels, lod ) ).rgba;
-			}
-
+			float4 diffuse = tex2Dlod( TerrainDiffuse, sample_terrain( IndexU.w, IndexV.w, vTileRepeat, vMipTexels, lod ) ).rgba;
 			float vGlossiness = diffuse.a;
 									
 		#ifdef NO_SHADER_TEXTURE_LOD
@@ -335,10 +319,8 @@ PixelShader =
 		
 		#ifndef LOW_END_GFX
 			float4 vMudSnow = GetMudSnowColor( Input.prepos, SnowMudData );	
-			if ( cam_distance( GB_CAM_MIN, GB_CAM_MAX ) < 1.0f ) {
-				diffuse.rgb = ApplySnow( diffuse.rgb, Input.prepos, normal, vMudSnow, SnowTexture, CityLightsAndSnowNoise, vGlossiness, vSnowAlpha );
-				diffuse.rgb = GetMudColor( diffuse.rgb, vMudSnow, Input.prepos, normal, vGlossiness, vSpec, MudDiffuseGloss, MudNormalSpec, TerrainColor.rgb, CityLightsAndSnowNoise );
-			}
+			diffuse.rgb = ApplySnow( diffuse.rgb, Input.prepos, normal, vMudSnow, SnowTexture, CityLightsAndSnowNoise, vGlossiness, vSnowAlpha );
+			diffuse.rgb = GetMudColor( diffuse.rgb, vMudSnow, Input.prepos, normal, vGlossiness, vSpec, MudDiffuseGloss, MudNormalSpec, TerrainColor.rgb, CityLightsAndSnowNoise );
 		#endif
 		
 			// Gradient Borders

@@ -541,13 +541,17 @@ def main():
     print("\n[*] Executing Kingdom of Italy Master QA Audit Suite (tests/test_ww1_italy.py)...")
     res_ita = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_italy.py"], cwd=MOD_ROOT)
 
-    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0) or (res_ita.returncode != 0)
+    # 6. Execute Cross-Platform Map & Shaders Audit (Linux/macOS)
+    print("\n[*] Executing Cross-Platform Map & Shaders Audit Suite (tests/test_map_cross_platform.py)...")
+    res_map = subprocess.run([sys.executable, "-m", "unittest", "tests/test_map_cross_platform.py"], cwd=MOD_ROOT)
+
+    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0) or (res_ita.returncode != 0) or (res_map.returncode != 0)
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}) <<<\n")
         sys.exit(1)
 
 
