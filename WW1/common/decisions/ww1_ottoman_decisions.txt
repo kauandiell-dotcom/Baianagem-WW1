@@ -65,6 +65,7 @@ TUR_imperial_cohesion_category = {
 			compliance_gain = 0.05
 		}
 		complete_effect = {
+			custom_effect_tooltip = TUR_tt_curb_unrest
 			add_to_variable = { tur_arab_unrest = -5 }
 			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
@@ -85,6 +86,7 @@ TUR_imperial_cohesion_category = {
 		cost = 50
 		days_re_enable = 180
 		complete_effect = {
+			custom_effect_tooltip = TUR_tt_millet_equality
 			add_to_variable = { tur_imperial_cohesion = 15 }
 			add_stability = 0.05
 		}
@@ -105,6 +107,7 @@ TUR_imperial_cohesion_category = {
 		cost = 40
 		days_re_enable = 180
 		complete_effect = {
+			custom_effect_tooltip = TUR_tt_arab_talks
 			add_to_variable = { tur_arab_unrest = -15 }
 			add_to_variable = { tur_imperial_cohesion = 5 }
 			add_political_power = 25
@@ -118,6 +121,7 @@ TUR_imperial_cohesion_category = {
 	TUR_deploy_hejaz_armored_garrison = {
 		icon = GFX_decision_generic_military
 		state_target = yes
+		on_map_mode = map_and_decisions_view
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
@@ -139,20 +143,27 @@ TUR_imperial_cohesion_category = {
 		available = {
 			NOT = { has_country_flag = TUR_securing_arab_vilayet_in_progress }
 			has_manpower > 15000
-			has_equipment = { type = infantry_equipment_1 amount > 400 }
+			has_equipment = { infantry_equipment > 399 }
 		}
 		cost = 30
 		days_remove = 50
 		complete_effect = {
 			set_country_flag = TUR_securing_arab_vilayet_in_progress
 			add_manpower = -15000
-			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -400 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -400 }
 		}
 		remove_effect = {
 			clr_country_flag = TUR_securing_arab_vilayet_in_progress
+			custom_effect_tooltip = TUR_tt_vilayet_garrison_secured
 			FROM = {
 				set_state_flag = TUR_vilayet_garrison_secured
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 			}
+			army_experience = 5
 			add_to_variable = { tur_arab_unrest = -10 }
 			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
@@ -165,6 +176,7 @@ TUR_imperial_cohesion_category = {
 	TUR_teskilat_counter_insurgency_sweep = {
 		icon = GFX_decision_generic_police_action
 		state_target = yes
+		on_map_mode = map_and_decisions_view
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
@@ -177,6 +189,7 @@ TUR_imperial_cohesion_category = {
 					state = 291
 					state = 1011
 				}
+				NOT = { has_state_flag = TUR_vilayet_teskilat_swept }
 			}
 		}
 		visible = {
@@ -187,9 +200,17 @@ TUR_imperial_cohesion_category = {
 			check_variable = { tur_arab_unrest > 10 }
 		}
 		cost = 25
-		days_re_enable = 90
+		days_remove = 45
 		complete_effect = {
 			add_command_power = -10
+			FROM = {
+				set_state_flag = TUR_vilayet_teskilat_swept
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = TUR_tt_teskilat_vilayet_sweep
+			army_experience = 10
+			add_stability = 0.02
 			add_to_variable = { tur_arab_unrest = -8 }
 			add_to_variable = { tur_imperial_cohesion = 3 }
 		}
@@ -202,6 +223,7 @@ TUR_imperial_cohesion_category = {
 	TUR_subsidize_bedouin_sheikhs = {
 		icon = GFX_decision_generic_political_discourse
 		state_target = yes
+		on_map_mode = map_and_decisions_view
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
@@ -225,8 +247,11 @@ TUR_imperial_cohesion_category = {
 		}
 		cost = 25
 		days_remove = 60
-		civilian_factory_use = 1
+		modifier = {
+			civilian_factory_use = 1
+		}
 		complete_effect = {
+			custom_effect_tooltip = TUR_tt_tribal_support
 			FROM = {
 				set_state_flag = TUR_vilayet_tribes_subsidized
 			}
@@ -234,6 +259,7 @@ TUR_imperial_cohesion_category = {
 		}
 		remove_effect = {
 			add_stability = 0.03
+			add_manpower = 2500
 			add_to_variable = { tur_imperial_cohesion = 5 }
 		}
 		ai_will_do = {
@@ -348,6 +374,7 @@ TUR_debt_and_capitulations_category = {
 		cost = 45
 		days_re_enable = 120
 		complete_effect = {
+			custom_effect_tooltip = TUR_tt_opda_tranche_liquidated
 			add_to_variable = { tur_public_debt = -15 }
 			add_to_variable = { tur_foreign_influence = -10 }
 			add_stability = 0.03
@@ -380,6 +407,7 @@ TUR_debt_and_capitulations_category = {
 		cost = 35
 		days_re_enable = 120
 		complete_effect = {
+			custom_effect_tooltip = TUR_tt_protective_tariffs
 			add_to_variable = { tur_foreign_influence = -15 }
 			add_to_variable = { tur_imperial_cohesion = 5 }
 			add_political_power = 50

@@ -614,6 +614,7 @@ ENG_ww1_irish_crisis_category = {
 	ENG_deploy_crown_garrison = {
 		icon = GFX_decision_generic_military
 		state_target = yes
+		on_map_mode = map_and_decisions_view
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
@@ -634,8 +635,7 @@ ENG_ww1_irish_crisis_category = {
 			NOT = { has_country_flag = ENG_securing_irish_state_in_progress }
 			has_manpower > 25000
 			has_equipment = {
-				type = infantry_equipment_0
-				amount > 500
+				infantry_equipment > 499
 			}
 		}
 		cost = 35
@@ -645,17 +645,19 @@ ENG_ww1_irish_crisis_category = {
 			set_country_flag = ENG_securing_irish_state_in_progress
 			add_manpower = -25000
 			add_equipment_to_stockpile = {
-				type = infantry_equipment_0
+				type = infantry_equipment
 				amount = -500
 			}
 		}
 		remove_effect = {
 			clr_country_flag = ENG_securing_irish_state_in_progress
+			custom_effect_tooltip = ENG_state_garrison_secured_desc
 			FROM = {
 				set_state_flag = ENG_state_garrison_secured
 				clr_state_flag = ENG_state_contested_unrest
 				clr_state_flag = ENG_state_rebel_stronghold
 			}
+			army_experience = 5
 			add_to_variable = { ww1_britain_irish_tension = -10 }
 		}
 		ai_will_do = {
@@ -670,6 +672,7 @@ ENG_ww1_irish_crisis_category = {
 	ENG_raid_paramilitary_armories = {
 		icon = GFX_decision_generic_assassination
 		state_target = yes
+		on_map_mode = map_and_decisions_view
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
@@ -695,7 +698,9 @@ ENG_ww1_irish_crisis_category = {
 			add_command_power = -10
 			add_to_variable = { ww1_britain_irish_tension = -5 }
 			random_list = {
-				85 = { }
+				85 = {
+					army_experience = 5
+				}
 				15 = {
 					add_stability = -0.02
 					FROM = {
@@ -715,6 +720,7 @@ ENG_ww1_irish_crisis_category = {
 	ENG_emergency_curfew_lockdown = {
 		icon = GFX_decision_police_state
 		state_target = yes
+		on_map_mode = map_and_decisions_view
 		target_array = owned_states
 		target_trigger = {
 			FROM = {
@@ -736,13 +742,17 @@ ENG_ww1_irish_crisis_category = {
 		}
 		cost = 20
 		days_remove = 90
-		civilian_factory_use = 1
+		modifier = {
+			civilian_factory_use = 1
+		}
 		complete_effect = {
+			custom_effect_tooltip = ENG_curfew_active_desc
 			FROM = {
 				set_state_flag = ENG_curfew_active
 			}
 		}
 		remove_effect = {
+			add_stability = 0.02
 			FROM = {
 				clr_state_flag = ENG_curfew_active
 			}
