@@ -1,0 +1,524 @@
+# Review package: 44adace..HEAD
+
+## Commits
+73587c4 feat(sov): implement real-time revolutionary crisis dashboard, visual progress bars, and dual catalyst
+
+## Files changed
+ .../categories/ww1_russia_crisis_categories.txt    |  14 +++
+ .../decisions/ww1_ger_rus_rework_decisions.txt     |   1 +
+ .../decisions/ww1_russia_crisis_decisions.txt      | 111 +++++++++++++++++++
+ .../zz_ww1_ger_rus_rework_on_actions.txt           |  14 ++-
+ .../scripted_effects/ww1_russia_crisis_effects.txt | 119 +++++++++++++++++++++
+ WW1/events/ww1_russia_crisis_events.txt            |  85 +++++++++++++++
+ .../braz_por/ww1_russia_events_l_braz_por.yml      |  34 ++++++
+ .../english/ww1_russia_events_l_english.yml        |  34 ++++++
+ 8 files changed, 411 insertions(+), 1 deletion(-)
+
+## Diff
+diff --git a/WW1/common/decisions/categories/ww1_russia_crisis_categories.txt b/WW1/common/decisions/categories/ww1_russia_crisis_categories.txt
+new file mode 100644
+index 0000000..b525b64
+--- /dev/null
++++ b/WW1/common/decisions/categories/ww1_russia_crisis_categories.txt
+@@ -0,0 +1,14 @@
++SOV_revolutionary_crisis_category = {
++	icon = generic_civil_war
++	picture = GFX_decision_cat_generic
++	priority = 100
++	allowed = {
++		tag = SOV
++	}
++	visible = {
++		has_variable = SOV_revolutionary_tension
++		NOT = {
++			has_government = communism
++		}
++	}
++}
+diff --git a/WW1/common/decisions/ww1_ger_rus_rework_decisions.txt b/WW1/common/decisions/ww1_ger_rus_rework_decisions.txt
+index ed2480f..9ac23dd 100644
+--- a/WW1/common/decisions/ww1_ger_rus_rework_decisions.txt
++++ b/WW1/common/decisions/ww1_ger_rus_rework_decisions.txt
+@@ -509,20 +509,21 @@ GER_home_front = {
+ 		visible = {
+ 			original_tag = GER
+ 			has_war_with = SOV
+ 			date > 1915.10.1
+ 		}
+ 		complete_effect = {
+ 			set_country_flag = GER_sealed_train_launched
+ 			custom_effect_tooltip = GER_sealed_train_launched_tt
+ 			SOV = {
+ 				country_event = { id = ww1_russia.250 days = 14 }
++				country_event = { id = ww1_russia.300 days = 14 }
+ 			}
+ 		}
+ 		ai_will_do = {
+ 			base = 10
+ 			modifier = {
+ 				factor = 3
+ 				SOV = { surrender_progress > 0.05 }
+ 			}
+ 		}
+ 	}
+diff --git a/WW1/common/decisions/ww1_russia_crisis_decisions.txt b/WW1/common/decisions/ww1_russia_crisis_decisions.txt
+new file mode 100644
+index 0000000..fbb404b
+--- /dev/null
++++ b/WW1/common/decisions/ww1_russia_crisis_decisions.txt
+@@ -0,0 +1,111 @@
++SOV_revolutionary_crisis_category = {
++
++	SOV_crisis_emergency_grain_requisitions = {
++		icon = generic_agriculture
++		cost = 25
++		days_re_enable = 60
++		available = {
++			check_variable = { SOV_urban_hunger > 5 }
++		}
++		visible = {
++			tag = SOV
++			has_variable = SOV_revolutionary_tension
++			NOT = { has_government = communism }
++		}
++		complete_effect = {
++			add_to_variable = { SOV_urban_hunger = -10 }
++			add_to_variable = { SOV_worker_unrest = 5 }
++			sov_russia_clamp_crisis_gauges = yes
++			custom_effect_tooltip = SOV_crisis_tension_bar_tt
++		}
++		ai_will_do = {
++			base = 10
++			modifier = {
++				factor = 2
++				check_variable = { SOV_urban_hunger > 50 }
++			}
++		}
++	}
++
++	SOV_crisis_bread_price_subsidies = {
++		icon = generic_trade
++		cost = 30
++		days_re_enable = 60
++		available = {
++			check_variable = { SOV_urban_hunger > 5 }
++		}
++		visible = {
++			tag = SOV
++			has_variable = SOV_revolutionary_tension
++			NOT = { has_government = communism }
++		}
++		complete_effect = {
++			add_to_variable = { SOV_urban_hunger = -15 }
++			add_to_variable = { SOV_revolutionary_tension = -5 }
++			sov_russia_clamp_crisis_gauges = yes
++			custom_effect_tooltip = SOV_crisis_tension_bar_tt
++		}
++		ai_will_do = {
++			base = 15
++			modifier = {
++				factor = 2
++				check_variable = { SOV_urban_hunger > 40 }
++			}
++		}
++	}
++
++	SOV_crisis_okhrana_sweeps = {
++		icon = generic_secret_police
++		cost = 50
++		days_re_enable = 60
++		available = {
++			check_variable = { SOV_worker_unrest > 5 }
++		}
++		visible = {
++			tag = SOV
++			has_variable = SOV_revolutionary_tension
++			NOT = { has_government = communism }
++		}
++		complete_effect = {
++			add_to_variable = { SOV_worker_unrest = -15 }
++			add_to_variable = { SOV_revolutionary_tension = -10 }
++			sov_russia_clamp_crisis_gauges = yes
++			custom_effect_tooltip = SOV_crisis_tension_bar_tt
++		}
++		ai_will_do = {
++			base = 20
++			modifier = {
++				factor = 2
++				check_variable = { SOV_worker_unrest > 45 }
++			}
++		}
++	}
++
++	SOV_crisis_imperial_frontline_tour = {
++		icon = generic_propaganda
++		cost = 40
++		days_re_enable = 60
++		available = {
++			check_variable = { SOV_army_loyalty < 95 }
++		}
++		visible = {
++			tag = SOV
++			has_variable = SOV_revolutionary_tension
++			NOT = { has_government = communism }
++		}
++		complete_effect = {
++			add_to_variable = { SOV_army_loyalty = 15 }
++			add_to_variable = { SOV_revolutionary_tension = -5 }
++			sov_russia_clamp_crisis_gauges = yes
++			custom_effect_tooltip = SOV_crisis_tension_bar_tt
++		}
++		ai_will_do = {
++			base = 15
++			modifier = {
++				factor = 2
++				check_variable = { SOV_army_loyalty < 60 }
++			}
++		}
++	}
++
++}
+diff --git a/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt b/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
+index 70a53c5..3306e66 100644
+--- a/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
++++ b/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
+@@ -1,12 +1,24 @@
+ on_actions = {
+ 	on_weekly_SOV = {
+ 		effect = {
+-			if = { limit = { original_tag = SOV } ww1_sov_rework_weekly = yes }
++			if = {
++				limit = { original_tag = SOV }
++				ww1_sov_rework_weekly = yes
++				if = {
++					limit = {
++						NOT = { has_variable = SOV_revolutionary_tension }
++					}
++					sov_russia_init_crisis_gauges = yes
++				}
++				sov_russia_weekly_crisis_update = yes
++			}
+ 		}
+ 	}
+ 	on_weekly_GER = {
+ 		effect = {
+ 			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
+ 		}
+ 	}
++
++	# 1918 German armistice / Brest-Litovsk dissolution hook: SOV_dissolve_brest_litovsk
+ }
+diff --git a/WW1/common/scripted_effects/ww1_russia_crisis_effects.txt b/WW1/common/scripted_effects/ww1_russia_crisis_effects.txt
+new file mode 100644
+index 0000000..4034df6
+--- /dev/null
++++ b/WW1/common/scripted_effects/ww1_russia_crisis_effects.txt
+@@ -0,0 +1,119 @@
++# Pre-Revolutionary Crisis Scripted Effects (1915-1917)
++# Tracks Russian internal stability, worker unrest, urban hunger, and army loyalty.
++
++sov_russia_init_crisis_gauges = {
++	set_country_flag = SOV_crisis_gauges_initialized
++	set_variable = { SOV_revolutionary_tension = 15 }
++	set_variable = { SOV_worker_unrest = 20 }
++	set_variable = { SOV_urban_hunger = 10 }
++	set_variable = { SOV_army_loyalty = 80 }
++}
++
++sov_russia_clamp_crisis_gauges = {
++	clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
++	clamp_variable = { var = SOV_worker_unrest min = 0 max = 100 }
++	clamp_variable = { var = SOV_urban_hunger min = 0 max = 100 }
++	clamp_variable = { var = SOV_army_loyalty min = 0 max = 100 }
++}
++
++sov_russia_weekly_crisis_update = {
++	if = {
++		limit = {
++			NOT = { has_variable = SOV_revolutionary_tension }
++		}
++		sov_russia_init_crisis_gauges = yes
++	}
++
++	# Evaluate crisis progression weekly if Russia is at war
++	if = {
++		limit = {
++			original_tag = SOV
++			has_war = yes
++		}
++		# Casualties, war weariness, low stability impact
++		add_to_variable = { SOV_worker_unrest = 0.3 }
++		add_to_variable = { SOV_urban_hunger = 0.25 }
++		add_to_variable = { SOV_army_loyalty = -0.3 }
++
++		if = {
++			limit = { has_war_support < 0.40 }
++			add_to_variable = { SOV_worker_unrest = 0.2 }
++		}
++		if = {
++			limit = { has_stability < 0.40 }
++			add_to_variable = { SOV_worker_unrest = 0.2 }
++			add_to_variable = { SOV_urban_hunger = 0.2 }
++		}
++		if = {
++			limit = { surrender_progress > 0.10 }
++			add_to_variable = { SOV_army_loyalty = -0.4 }
++		}
++		if = {
++			limit = { has_idea = SOV_shell_shortage_crisis }
++			add_to_variable = { SOV_army_loyalty = -0.25 }
++			add_to_variable = { SOV_worker_unrest = 0.15 }
++		}
++	}
++	else = {
++		# Peacetime recovery
++		add_to_variable = { SOV_worker_unrest = -0.3 }
++		add_to_variable = { SOV_urban_hunger = -0.4 }
++		add_to_variable = { SOV_army_loyalty = 0.3 }
++	}
++
++	# Recompute SOV_revolutionary_tension: e.g. based on unrest, hunger, and (100 - loyalty)
++	set_temp_variable = { t_target_tension = 0 }
++	add_to_temp_variable = { t_target_tension = SOV_worker_unrest }
++	multiply_temp_variable = { t_target_tension = 0.40 }
++	set_temp_variable = { t_hunger_term = SOV_urban_hunger }
++	multiply_temp_variable = { t_hunger_term = 0.30 }
++	add_to_temp_variable = { t_target_tension = t_hunger_term }
++	set_temp_variable = { t_disloyalty_term = 100 }
++	subtract_from_temp_variable = { t_disloyalty_term = SOV_army_loyalty }
++	multiply_temp_variable = { t_disloyalty_term = 0.30 }
++	add_to_temp_variable = { t_target_tension = t_disloyalty_term }
++
++	if = {
++		limit = { has_country_flag = SOV_lenin_returned }
++		add_to_temp_variable = { t_target_tension = 15 }
++	}
++
++	if = {
++		limit = { check_variable = { t_target_tension > SOV_revolutionary_tension } }
++		add_to_variable = { SOV_revolutionary_tension = 0.8 }
++	}
++	else_if = {
++		limit = { check_variable = { t_target_tension < SOV_revolutionary_tension } }
++		add_to_variable = { SOV_revolutionary_tension = -0.5 }
++	}
++
++	sov_russia_clamp_crisis_gauges = yes
++
++	# Trigger Resolution & Milestones
++	if = {
++		limit = {
++			check_variable = { SOV_revolutionary_tension >= 85 }
++			NOT = { has_country_flag = SOV_revolution_triggered }
++		}
++		set_country_flag = SOV_revolution_triggered
++		country_event = { id = ww1_russia.310 days = 1 }
++	}
++
++	if = {
++		limit = {
++			date > 1917.3.1
++			NOT = { has_country_flag = SOV_lenin_returned }
++			NOT = { has_country_flag = SOV_revolution_triggered }
++		}
++		country_event = { id = ww1_russia.301 days = 1 }
++	}
++
++	if = {
++		limit = {
++			date > 1917.11.1
++			check_variable = { SOV_revolutionary_tension < 50 }
++			NOT = { has_country_flag = SOV_order_restored }
++		}
++		country_event = { id = ww1_russia.305 days = 1 }
++	}
++}
+diff --git a/WW1/events/ww1_russia_crisis_events.txt b/WW1/events/ww1_russia_crisis_events.txt
+new file mode 100644
+index 0000000..79e39fc
+--- /dev/null
++++ b/WW1/events/ww1_russia_crisis_events.txt
+@@ -0,0 +1,85 @@
++add_namespace = ww1_russia
++
++# -------------------------------------------------------------
++# Event 300: Lenin Arrives via German Sealed Train
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia.300
++	title = ww1_russia.300.t
++	desc = ww1_russia.300.d
++	picture = GFX_event_WW1_sov_april_theses
++
++	is_triggered_only = yes
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia.300.a
++		set_country_flag = SOV_lenin_returned
++		add_to_variable = { SOV_revolutionary_tension = 25 }
++		add_to_variable = { SOV_worker_unrest = 20 }
++		sov_russia_clamp_crisis_gauges = yes
++		custom_effect_tooltip = SOV_lenin_returned_tt
++	}
++}
++
++# -------------------------------------------------------------
++# Event 301: Autonomous Return of Lenin (March 1917 Fallback)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia.301
++	title = ww1_russia.301.t
++	desc = ww1_russia.301.d
++	picture = GFX_event_WW1_sov_april_theses
++
++	is_triggered_only = yes
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia.301.a
++		set_country_flag = SOV_lenin_returned
++		add_to_variable = { SOV_revolutionary_tension = 20 }
++		sov_russia_clamp_crisis_gauges = yes
++		custom_effect_tooltip = SOV_lenin_returned_tt
++	}
++}
++
++# -------------------------------------------------------------
++# Event 305: Triumph of Order (Tension remained < 50% in Late 1917)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia.305
++	title = ww1_russia.305.t
++	desc = ww1_russia.305.d
++	picture = GFX_event_WW1_sov_supreme_command
++
++	is_triggered_only = yes
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia.305.a
++		set_country_flag = SOV_order_restored
++		add_ideas = SOV_order_restored_spirit
++		add_stability = 0.15
++		add_war_support = 0.15
++		custom_effect_tooltip = SOV_order_restored_tt
++	}
++}
++
++# -------------------------------------------------------------
++# Event 310: Storming of the Winter Palace (Revolution Erupts!)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia.310
++	title = ww1_russia.310.t
++	desc = ww1_russia.310.d
++	picture = GFX_event_WW1_sov_october
++
++	is_triggered_only = yes
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia.310.a
++		set_country_flag = SOV_revolution_triggered
++		custom_effect_tooltip = SOV_revolution_triggered_tt
++	}
++}
+diff --git a/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml b/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
+index e3d43a5..60cedaf 100644
+--- a/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
++++ b/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
+@@ -46,10 +46,44 @@
+  ww1_russia.40.d:0 "DelegaÃ§Ãµes da RÃºssia e dos Poderes Centrais concluem o draconiano tratado de Brest-Litovsk. A RÃºssia retira-se da Grande Guerra, reconhecendo a independÃªncia da UcrÃ¢nia, FinlÃ¢ndia e BÃ¡ltico."
+  ww1_russia.40.a:0 "Assinar o tratado. Necessitamos de uma trÃ©gua."
+ ww1_russia.50.t:0 "A Grande Crise de ProjÃ©teis: Snaryadny Golod"
+  ww1_russia.50.d:0 "Os combates violentos dos primeiros meses de guerra consumiram completamente os estoques prÃ©-guerra de muniÃ§Ã£o. Baterias de artilharia estÃ£o racionadas a dois ou trÃªs disparos diÃ¡rios. A infantaria russa nas trincheiras suporta massacrantes bombardeios alemÃ£es e austro-hÃºngaros sem poder revidar."
+  ww1_russia.50.a:0 "Nossas baterias estÃ£o em silÃªncio..."
+  SOV_shell_shortage_crisis_tt:0 "O ataque da artilharia e a eficÃ¡cia de combate russa sÃ£o drasticamente reduzidos atÃ© que a indÃºstria e as importaÃ§Ãµes sejam mobilizadas."
+  ww1_russia.51.t:0 "A Queda de Sukhomlinov & O MinistÃ©rio Polivanov"
+  ww1_russia.51.d:0 "A fÃºria pÃºblica pela falta de muniÃ§Ãµes e os desastres do Grande Recuo forÃ§aram Nicolau II a demitir o desonrado Ministro da Guerra, Vladimir Sukhomlinov. O General Alexei Polivanov assume a pasta, buscando de imediato a Duma e criando o Conselho Especial de Defesa do Estado."
+  ww1_russia.51.a:0 "Reformar o MinistÃ©rio e cooperar com os Zemstvos!"
+  SOV_polivanov_appointed_tt:0 "O General Polivanov substitui Sukhomlinov. A paralisia de comando e as penalidades de planejamento sÃ£o amplamente aliviadas."
++
++ # Pre-Revolutionary Crisis Dashboard & Decisions
++ SOV_revolutionary_crisis_category:0 "Painel da Crise PrÃ©-RevolucionÃ¡ria"
++ SOV_revolutionary_crisis_category_desc:0 "Â§HEstado da Crise Interna:Â§!\nÂ§YTensÃ£o RevolucionÃ¡ria:Â§! [?SOV_revolutionary_tension|0%]\nÂ§YAgitaÃ§Ã£o OperÃ¡ria:Â§! [?SOV_worker_unrest|0%]\nÂ§YFome Urbana:Â§! [?SOV_urban_hunger|0%]\nÂ§YLealdade do ExÃ©rcito:Â§! [?SOV_army_loyalty|0%]\n\nÂ§R[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] [?SOV_revolutionary_tension|0%]Â§!"
++ SOV_crisis_tension_bar_tt:0 "Â§R[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] [?SOV_revolutionary_tension|0%]Â§!"
++ SOV_crisis_emergency_grain_requisitions:0 "RequisiÃ§Ãµes Emergenciais de GrÃ£os"
++ SOV_crisis_emergency_grain_requisitions_desc:0 "ForÃ§ar requisiÃ§Ãµes de grÃ£os no campo para alimentar os operÃ¡rios famintos em Petrogrado e Moscou."
++ SOV_crisis_bread_price_subsidies:0 "SubsÃ­dios ao PreÃ§o do PÃ£o"
++ SOV_crisis_bread_price_subsidies_desc:0 "Subsidiar padarias e transporte de cereais usando o tesouro estatal para baratear o pÃ£o nos centros urbanos."
++ SOV_crisis_okhrana_sweeps:0 "OperaÃ§Ãµes da Okhrana Contra Agitadores"
++ SOV_crisis_okhrana_sweeps_desc:0 "Ordenar Ã  polÃ­cia secreta Okhrana a prisÃ£o de agitadores bolcheviques e invasÃ£o de grÃ¡ficas clandestinas."
++ SOV_crisis_imperial_frontline_tour:0 "Visita Imperial Ã  Frente de Batalha"
++ SOV_crisis_imperial_frontline_tour_desc:0 "O Tsar visita as trincheiras do front e inspeciona batalhÃµes para revitalizar a lealdade monÃ¡rquica entre as tropas."
++
++ # Pre-Revolutionary Crisis Events
++ ww1_russia.300.t:0 "Lenin Chega pelo Trem Selado"
++ ww1_russia.300.d:0 "Facilitado pelo Estado-Maior AlemÃ£o em uma ousada operaÃ§Ã£o de guerra polÃ­tica, Vladimir Ilyich Lenin e sua comitiva bolchevique cruzaram a Europa em um vagÃ£o selado, desembarcando na EstaÃ§Ã£o FinlÃ¢ndia em Petrogrado sob aclamaÃ§Ã£o de marinheiros e operÃ¡rios."
++ ww1_russia.300.a:0 "Todo poder aos Sovietes!"
++ SOV_lenin_returned_tt:0 "Vladimir Lenin retornou a Petrogrado. A subversÃ£o revolucionÃ¡ria ganha enorme impulso."
++
++ ww1_russia.301.t:0 "Lenin Retorna a Petrogrado"
++ ww1_russia.301.d:0 "Contornando os postos de fronteira por rotas clandestinas, Vladimir Lenin chega a Petrogrado para liderar diretamente a agitaÃ§Ã£o revolucionÃ¡ria bolchevique."
++ ww1_russia.301.a:0 "Paz, Terra e PÃ£o!"
++
++ ww1_russia.305.t:0 "O Triunfo da Ordem"
++ ww1_russia.305.d:0 "AtravÃ©s de rigorosa administraÃ§Ã£o estatal, socorro social oportuno e lealdade inabalÃ¡vel das forÃ§as armadas, as autoridades imperiais resistiram Ã  tempestade da revolta revolucionÃ¡ria. A ordem reina sobre o ImpÃ©rio."
++ ww1_russia.305.a:0 "Deus Salve o Tsar!"
++ SOV_order_restored_tt:0 "A agitaÃ§Ã£o revolucionÃ¡ria foi desmantelada. A estabilidade imperial estÃ¡ restaurada."
++
++ ww1_russia.310.t:0 "A Tomada do PalÃ¡cio de Inverno"
++ ww1_russia.310.d:0 "A crise atinge o ponto de ruptura! OperÃ¡rios armados e soldados radicalizados cercam e tomam o PalÃ¡cio de Inverno. Os ministros sÃ£o presos enquanto a velha ordem desmorona diante do triunfo revolucionÃ¡rio!"
++ ww1_russia.310.a:0 "A RevoluÃ§Ã£o triunfou!"
++ SOV_revolution_triggered_tt:0 "O limiar revolucionÃ¡rio foi ultrapassado. A revoluÃ§Ã£o explode!"
++
+diff --git a/WW1/localisation/english/ww1_russia_events_l_english.yml b/WW1/localisation/english/ww1_russia_events_l_english.yml
+index 747d105..ca05919 100644
+--- a/WW1/localisation/english/ww1_russia_events_l_english.yml
++++ b/WW1/localisation/english/ww1_russia_events_l_english.yml
+@@ -46,10 +46,44 @@
+  ww1_russia.40.d:0 "Russian and Central Powers delegations conclude the draconian treaty of Brest-Litovsk. Russia withdraws from the Great War, recognizing the independence of Ukraine, Finland, and the Baltic."
+  ww1_russia.40.a:0 "Sign the treaty. We need breathing space."
+ ww1_russia.50.t:0 "The Great Shell Crisis: Snaryadny Golod"
+  ww1_russia.50.d:0 "The intense combat of the first months of war has utterly consumed pre-war artillery reserves. Frontline batteries are strictly rationed to two or three rounds per day. Russian infantry in the trenches face murderous German and Austro-Hungarian artillery barrages without the ability to fire back."
+  ww1_russia.50.a:0 "Our batteries are falling silent..."
+  SOV_shell_shortage_crisis_tt:0 "Russian artillery attack and unit combat effectiveness are severely reduced until industry and imports can be mobilized."
+  ww1_russia.51.t:0 "Dismissal of Sukhomlinov & Polivanov's Ministry"
+  ww1_russia.51.d:0 "Outrage over shell shortages and the catastrophes of the Great Retreat has forced Nicholas II to dismiss the disgraced Minister of War, Vladimir Sukhomlinov. General Alexei Polivanov takes office, immediately reaching out to the Duma and establishing the Special Council for State Defense."
+  ww1_russia.51.a:0 "Reform the Ministry and coordinate with the Zemstvos!"
+  SOV_polivanov_appointed_tt:0 "General Polivanov replaces Sukhomlinov. Command paralysis and planning penalties are substantially mitigated."
++
++ # Pre-Revolutionary Crisis Dashboard & Decisions
++ SOV_revolutionary_crisis_category:0 "Pre-Revolutionary Crisis Dashboard"
++ SOV_revolutionary_crisis_category_desc:0 "Â§HInternal Crisis Status:Â§!\nÂ§YRevolutionary Tension:Â§! [?SOV_revolutionary_tension|0%]\nÂ§YWorker Unrest:Â§! [?SOV_worker_unrest|0%]\nÂ§YUrban Hunger:Â§! [?SOV_urban_hunger|0%]\nÂ§YArmy Loyalty:Â§! [?SOV_army_loyalty|0%]\n\nÂ§R[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] [?SOV_revolutionary_tension|0%]Â§!"
++ SOV_crisis_tension_bar_tt:0 "Â§R[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] [?SOV_revolutionary_tension|0%]Â§!"
++ SOV_crisis_emergency_grain_requisitions:0 "Emergency Grain Requisitions"
++ SOV_crisis_emergency_grain_requisitions_desc:0 "Force grain requisitions from the countryside to feed the starving workers in Petrograd and Moscow."
++ SOV_crisis_bread_price_subsidies:0 "Bread Price Subsidies"
++ SOV_crisis_bread_price_subsidies_desc:0 "Subsidize bakeries and grain transports using state treasury funds to lower bread prices in urban centers."
++ SOV_crisis_okhrana_sweeps:0 "Okhrana Raids on Agitators"
++ SOV_crisis_okhrana_sweeps_desc:0 "Direct the Okhrana secret police to arrest Bolshevik agitators and raid clandestine printing presses."
++ SOV_crisis_imperial_frontline_tour:0 "Imperial Frontline Tour"
++ SOV_crisis_imperial_frontline_tour_desc:0 "The Tsar tours frontline trenches and inspects battalions to bolster monarchist loyalty among soldiers."
++
++ # Pre-Revolutionary Crisis Events
++ ww1_russia.300.t:0 "Lenin Arrives via Sealed Train"
++ ww1_russia.300.d:0 "Facilitated by the German General Staff in an audacious operation of political warfare, Vladimir Ilyich Lenin and his Bolshevik cohort have crossed Europe in a sealed train, arriving at Petrograd's Finland Station amidst crowds of cheering sailors and workers."
++ ww1_russia.300.a:0 "All power to the Soviets!"
++ SOV_lenin_returned_tt:0 "Vladimir Lenin has returned to Petrograd. Revolutionary subversion surges."
++
++ ww1_russia.301.t:0 "Lenin Returns to Petrograd"
++ ww1_russia.301.d:0 "Evading border police through clandestine transit channels, Vladimir Lenin has slipped into Petrograd to take direct command of Bolshevik revolutionary agitation."
++ ww1_russia.301.a:0 "Peace, Land, and Bread!"
++
++ ww1_russia.305.t:0 "Triumph of Order"
++ ww1_russia.305.d:0 "Through rigorous state administration, decisive social mitigation, and steadfast military loyalty, the imperial authorities have weathered the tempest of revolutionary unrest. Order reigns supreme across the Empire."
++ ww1_russia.305.a:0 "God Save the Tsar!"
++ SOV_order_restored_tt:0 "Revolutionary unrest is broken. Imperial stability is restored."
++
++ ww1_russia.310.t:0 "Storming of the Winter Palace"
++ ww1_russia.310.d:0 "The crisis reaches its boiling point! Armed workers and radicalized soldiers march upon the Winter Palace. Government ministers are placed under arrest as the old order collapses amidst revolutionary triumph!"
++ ww1_russia.310.a:0 "The Revolution has triumphed!"
++ SOV_revolution_triggered_tt:0 "The revolutionary threshold has been breached. The revolution erupts!"
++

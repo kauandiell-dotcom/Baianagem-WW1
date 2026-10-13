@@ -1,0 +1,2307 @@
+# Review package: a19e07a..HEAD
+
+## Commits
+d9300e0 feat(sov): establish WHT country tag, historical character cast, and focus GFX sprites
+
+## Files changed
+ WW1/common/characters/SOV.txt                | 214 +++++++
+ WW1/common/characters/WHT.txt                | 222 +++++++
+ WW1/common/countries/White Russia.txt        |   4 +
+ WW1/common/countries/colors.txt              |   4 +
+ WW1/common/countries/cosmetic.txt            |  21 +
+ WW1/common/country_tags/01_ww1_tags.txt      |   1 +
+ WW1/history/countries/WHT - White Russia.txt |  41 ++
+ WW1/interface/ww1_soviet_goals.gfx           | 879 +++++++++++++++++++++++++++
+ WW1/interface/ww1_white_goals.gfx            | 809 ++++++++++++++++++++++++
+ 9 files changed, 2195 insertions(+)
+
+## Diff
+diff --git a/WW1/common/characters/SOV.txt b/WW1/common/characters/SOV.txt
+index 257d8c4..8bf496c 100644
+--- a/WW1/common/characters/SOV.txt
++++ b/WW1/common/characters/SOV.txt
+@@ -650,11 +650,225 @@ characters = {
+ 		}
+ 		advisor = {
+ 			slot = army_chief
+ 			idea_token = SOV_maria_bochkareva
+ 			ledger = army
+ 			cost = 100
+ 			traits = { army_chief_morale_2 }
+ 			ai_will_do = { factor = 1.5 }
+ 		}
+ 	}
++
++	# -------------------------------------------------------------
++	# Bolshevik Leadership & Red Army High Command
++	# -------------------------------------------------------------
++
++	SOV_leon_trotsky = {
++		name = "Leon Trotsky"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/SOV/SOV_leon_trotsky.dds"
++			}
++			army = {
++				large = "gfx/leaders/SOV/SOV_leon_trotsky.dds"
++			}
++		}
++		country_leader = {
++			ideology = leninism
++			traits = { }
++			expire = "1940.8.21"
++		}
++		field_marshal = {
++			traits = { offensive_doctrine brilliant_strategist organizational_leader }
++			skill = 4
++			attack_skill = 4
++			defense_skill = 3
++			planning_skill = 4
++			logistics_skill = 3
++		}
++		advisor = {
++			slot = theorist
++			idea_token = SOV_leon_trotsky
++			ledger = army
++			cost = 100
++			traits = { military_theorist }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	SOV_joseph_stalin = {
++		name = "Joseph Stalin"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/SOV_josef_stalin.dds"
++			}
++		}
++		country_leader = {
++			ideology = stalinism
++			traits = { autocrat }
++			expire = "1953.3.5"
++		}
++		advisor = {
++			slot = political_advisor
++			idea_token = SOV_joseph_stalin
++			ledger = civilian
++			cost = 100
++			traits = { captain_of_industry }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	SOV_mikhail_frunze = {
++		name = "Mikhail Frunze"
++		portraits = {
++			army = {
++				large = "gfx/generals/SOV_frunze.dds"
++			}
++			civilian = {
++				large = "gfx/generals/SOV_frunze.dds"
++			}
++		}
++		country_leader = {
++			ideology = marxism
++			traits = { }
++			expire = "1925.10.31"
++		}
++		field_marshal = {
++			traits = { offensive_doctrine organizer fast_planner }
++			skill = 4
++			attack_skill = 4
++			defense_skill = 3
++			planning_skill = 4
++			logistics_skill = 4
++		}
++		advisor = {
++			slot = army_chief
++			idea_token = SOV_mikhail_frunze
++			ledger = army
++			cost = 100
++			traits = { army_chief_offensive_2 }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	SOV_felix_dzerzhinsky = {
++		name = "Felix Dzerzhinsky"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/POL/POL_felix_dzerzhinsky.png"
++			}
++		}
++		advisor = {
++			slot = political_advisor
++			idea_token = SOV_felix_dzerzhinsky
++			ledger = civilian
++			cost = 100
++			traits = { prince_of_terror }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 2.0 }
++		}
++	}
++
++	SOV_semyon_budyonny = {
++		name = "Semyon Budyonny"
++		portraits = {
++			army = {
++				large = "gfx/generals/SOV_budyonny__s.dds"
++			}
++		}
++		corps_commander = {
++			traits = { cavalry_officer cavalry_leader trickster }
++			skill = 3
++			attack_skill = 4
++			defense_skill = 2
++			planning_skill = 2
++			logistics_skill = 2
++		}
++		advisor = {
++			slot = high_command
++			idea_token = SOV_semyon_budyonny
++			ledger = army
++			cost = 100
++			traits = { army_cavalry_2 }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	SOV_mikhail_tukhachevsky = {
++		name = "Mikhail Tukhachevsky"
++		portraits = {
++			army = {
++				large = "gfx/fieldmarshal/SOV_tukhachevsky__m.dds"
++			}
++		}
++		field_marshal = {
++			traits = { brilliant_strategist offensive_doctrine }
++			skill = 4
++			attack_skill = 5
++			defense_skill = 2
++			planning_skill = 4
++			logistics_skill = 3
++		}
++		advisor = {
++			slot = high_command
++			idea_token = SOV_mikhail_tukhachevsky
++			ledger = army
++			cost = 100
++			traits = { army_artillery_2 }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	SOV_georgy_chicherin = {
++		name = "Georgy Chicherin"
++		portraits = {
++			civilian = {
++				large = "gfx/interface/ideas/idea_SOV_georgy_chicherin.dds"
++			}
++		}
++		advisor = {
++			slot = political_advisor
++			idea_token = SOV_georgy_chicherin
++			ledger = civilian
++			cost = 100
++			traits = { compassionate_gentleman }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	SOV_nikolai_bukharin = {
++		name = "Nikolai Bukharin"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/SOV/SOV_nikolai_bukharin.dds"
++			}
++		}
++		country_leader = {
++			ideology = marxism
++			traits = { }
++			expire = "1938.3.15"
++		}
++		advisor = {
++			slot = political_advisor
++			idea_token = SOV_nikolai_bukharin
++			ledger = civilian
++			cost = 100
++			traits = { popular_figurehead }
++			visible = { has_government = communism }
++			available = { has_government = communism }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
+ }
+diff --git a/WW1/common/characters/WHT.txt b/WW1/common/characters/WHT.txt
+new file mode 100644
+index 0000000..2244b1d
+--- /dev/null
++++ b/WW1/common/characters/WHT.txt
+@@ -0,0 +1,222 @@
++characters = {
++	WHT_alexander_kolchak = {
++		name = "Alexander Kolchak"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_alexander_kolchak.dds"
++			}
++			navy = {
++				large = "gfx/leaders/RUS/RUS_alexander_kolchak_admiral.dds"
++			}
++			army = {
++				large = "gfx/leaders/RUS/RUS_alexander_kolchak.dds"
++			}
++		}
++		country_leader = {
++			ideology = despotism
++			traits = { autocrat }
++			expire = "1920.2.7"
++		}
++		field_marshal = {
++			traits = { offensive_doctrine inspirational_leader }
++			skill = 3
++			attack_skill = 3
++			defense_skill = 3
++			planning_skill = 3
++			logistics_skill = 2
++		}
++		navy_leader = {
++			traits = { bold blockade_runner }
++			skill = 4
++			attack_skill = 4
++			defense_skill = 3
++			maneuvering_skill = 4
++			coordination_skill = 3
++		}
++		advisor = {
++			slot = navy_chief
++			idea_token = WHT_alexander_kolchak
++			ledger = navy
++			cost = 100
++			traits = { navy_chief_reform_2 }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	WHT_anton_denikin = {
++		name = "Anton Denikin"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_anton_denikin.dds"
++			}
++			army = {
++				large = "gfx/leaders/RUS/RUS_anton_denikin.dds"
++			}
++		}
++		country_leader = {
++			ideology = despotism
++			traits = { }
++			expire = "1947.8.8"
++		}
++		field_marshal = {
++			traits = { defensive_doctrine skilled_staffer cautious }
++			skill = 3
++			attack_skill = 3
++			defense_skill = 4
++			planning_skill = 3
++			logistics_skill = 3
++		}
++		advisor = {
++			slot = army_chief
++			idea_token = WHT_anton_denikin
++			ledger = army
++			cost = 100
++			traits = { army_chief_defensive_2 }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	WHT_pyotr_wrangel = {
++		name = "Pyotr Wrangel"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_pyotr_wrangel.dds"
++			}
++			army = {
++				large = "gfx/leaders/RUS/RUS_pyotr_wrangel.dds"
++			}
++		}
++		country_leader = {
++			ideology = despotism
++			traits = { }
++			expire = "1928.4.25"
++		}
++		field_marshal = {
++			traits = { offensive_doctrine brilliant_strategist cavalry_officer inspirational_leader }
++			skill = 4
++			attack_skill = 5
++			defense_skill = 4
++			planning_skill = 3
++			logistics_skill = 3
++		}
++		advisor = {
++			slot = high_command
++			idea_token = WHT_pyotr_wrangel
++			ledger = army
++			cost = 100
++			traits = { army_cavalry_2 }
++			ai_will_do = { factor = 2.0 }
++		}
++	}
++
++	WHT_nikolai_yudenich = {
++		name = "Nikolai Yudenich"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_nicholas_yudenich.dds"
++			}
++			army = {
++				large = "gfx/leaders/RUS/RUS_nicholas_yudenich.dds"
++			}
++		}
++		corps_commander = {
++			traits = { mountaineer winter_specialist fortress_buster }
++			skill = 4
++			attack_skill = 5
++			defense_skill = 4
++			planning_skill = 3
++			logistics_skill = 3
++		}
++		advisor = {
++			slot = high_command
++			idea_token = WHT_nikolai_yudenich
++			ledger = army
++			cost = 100
++			traits = { army_entrenchment_2 }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	WHT_lavr_kornilov = {
++		name = "Lavr Kornilov"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_lavr_kornilov.dds"
++			}
++			army = {
++				large = "gfx/leaders/RUS/RUS_lavr_kornilov.dds"
++			}
++		}
++		country_leader = {
++			ideology = autocracy
++			traits = { autocrat }
++			expire = "1918.4.13"
++		}
++		field_marshal = {
++			traits = { reckless infantry_officer offensive_doctrine }
++			skill = 4
++			attack_skill = 5
++			defense_skill = 3
++			planning_skill = 3
++			logistics_skill = 2
++		}
++		advisor = {
++			slot = high_command
++			idea_token = WHT_lavr_kornilov
++			ledger = army
++			cost = 100
++			traits = { army_commando_2 }
++			ai_will_do = { factor = 1.5 }
++		}
++	}
++
++	WHT_alexey_kaledin = {
++		name = "Alexei Kaledin"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_kaledin.dds"
++			}
++			army = {
++				large = "gfx/leaders/RUS/RUS_kaledin.dds"
++			}
++		}
++		corps_commander = {
++			traits = { trickster cavalry_officer cavalry_leader swamp_fox }
++			skill = 4
++			attack_skill = 2
++			defense_skill = 2
++			planning_skill = 3
++			logistics_skill = 3
++		}
++		advisor = {
++			slot = high_command
++			idea_token = WHT_alexey_kaledin
++			ledger = army
++			cost = 100
++			traits = { army_cavalry_2 }
++			ai_will_do = { factor = 1.0 }
++		}
++	}
++
++	WHT_boris_savinkov = {
++		name = "Boris Savinkov"
++		portraits = {
++			civilian = {
++				large = "gfx/leaders/RUS/RUS_boris_savinkov.dds"
++			}
++		}
++		country_leader = {
++			ideology = autocracy
++			traits = { }
++			expire = "1925.5.7"
++		}
++		advisor = {
++			slot = political_advisor
++			idea_token = WHT_boris_savinkov
++			ledger = civilian
++			cost = 100
++			traits = { prince_of_terror }
++			ai_will_do = { factor = 1.0 }
++		}
++	}
++}
+diff --git a/WW1/common/countries/White Russia.txt b/WW1/common/countries/White Russia.txt
+new file mode 100644
+index 0000000..9534f0f
+--- /dev/null
++++ b/WW1/common/countries/White Russia.txt	
+@@ -0,0 +1,4 @@
++graphical_culture = eastern_european_gfx
++graphical_culture_2d = eastern_european_2d
++
++color = rgb { 240 240 245 }
+diff --git a/WW1/common/countries/colors.txt b/WW1/common/countries/colors.txt
+index c301ae6..f2ad6b4 100644
+--- a/WW1/common/countries/colors.txt
++++ b/WW1/common/countries/colors.txt
+@@ -5,20 +5,24 @@ GER = {
+ 	color_ui = rgb { 75 79 83 }
+ }
+ ENG = {
+ 	color = rgb { 128 48 140 }
+ 	color_ui = rgb { 150 60 165 }
+ }
+ SOV = {
+ 	color = rgb { 64 104 78 }
+ 	color_ui = rgb { 76 122 92 }
+ }
++WHT = {
++	color = rgb { 240 240 245 }
++	color_ui = rgb { 240 240 245 }
++}
+ SWE = {
+ 	color = rgb { 56 96 134 }
+ 	color_ui = rgb { 68 112 154 }
+ }
+ FRA = {
+ 	color = rgb { 52 86 138 }
+ 	color_ui = rgb { 62 100 156 }
+ }
+ LUX = {
+ 	color = rgb { 50 115 65 }
+diff --git a/WW1/common/countries/cosmetic.txt b/WW1/common/countries/cosmetic.txt
+index 97e9cfd..27e3f61 100644
+--- a/WW1/common/countries/cosmetic.txt
++++ b/WW1/common/countries/cosmetic.txt
+@@ -2851,12 +2851,33 @@ AFG_mughal_emirate = {
+ AFG_BUK_emirate = {
+ 	color = rgb { 0 102 153 }
+ 	color_ui = rgb { 0 51 77 }
+ }
+ 
+ AFG_second_empire = {
+ 	color = rgb { 0 102 153 }
+ 	color_ui = rgb { 0 51 77 }
+ }
+ 
++WHT_neutrality = {
++	color = rgb { 240 240 245 }
++	color_ui = rgb { 240 240 245 }
++}
++
++WHT_democratic = {
++	color = rgb { 210 220 235 }
++	color_ui = rgb { 210 220 235 }
++}
++
++WHT_fascism = {
++	color = rgb { 180 180 190 }
++	color_ui = rgb { 180 180 190 }
++}
++
++WHT_russia = {
++	color = rgb { 240 240 245 }
++	color_ui = rgb { 240 240 245 }
++}
++
++
+ 
+ 
+diff --git a/WW1/common/country_tags/01_ww1_tags.txt b/WW1/common/country_tags/01_ww1_tags.txt
+new file mode 100644
+index 0000000..7bd4837
+--- /dev/null
++++ b/WW1/common/country_tags/01_ww1_tags.txt
+@@ -0,0 +1 @@
++WHT = "countries/White Russia.txt"
+diff --git a/WW1/history/countries/WHT - White Russia.txt b/WW1/history/countries/WHT - White Russia.txt
+new file mode 100644
+index 0000000..a5aad05
+--- /dev/null
++++ b/WW1/history/countries/WHT - White Russia.txt	
+@@ -0,0 +1,41 @@
++MBR_grant_level_one_technologies = yes
++
++capital = 594 # Omsk
++
++oob = "WHT_white_army_civil_war"
++
++set_research_slots = 3
++
++set_technology = {
++	infantry_weapons = 1
++	infantry_weapons1 = 1
++	tech_support = 1
++	tech_engineers = 1
++	tech_recon = 1
++	gw_artillery = 1
++}
++
++set_grand_doctrine = grand_battle_plan
++set_grand_doctrine = fleet_in_being
++
++set_politics = {
++	ruling_party = neutrality
++	last_election = "1912.1.1"
++	election_frequency = 48
++	elections_allowed = no
++}
++
++set_popularities = {
++	neutrality = 70
++	democratic = 20
++	fascism = 10
++	communism = 0
++}
++
++recruit_character = WHT_alexander_kolchak
++recruit_character = WHT_anton_denikin
++recruit_character = WHT_pyotr_wrangel
++recruit_character = WHT_nikolai_yudenich
++recruit_character = WHT_lavr_kornilov
++recruit_character = WHT_alexey_kaledin
++recruit_character = WHT_boris_savinkov
+diff --git a/WW1/interface/ww1_soviet_goals.gfx b/WW1/interface/ww1_soviet_goals.gfx
+new file mode 100644
+index 0000000..e59c1e7
+--- /dev/null
++++ b/WW1/interface/ww1_soviet_goals.gfx
+@@ -0,0 +1,879 @@
++# ww1_soviet_goals.gfx
++# Goal GFX definitions and shine animations for Soviet Russia focus tree
++spriteTypes = {
++
++	SpriteType = {
++		name = "GFX_SOV_all_power_to_the_soviets"
++		texturefile = "gfx/interface/goals/focus_SOV_the_supreme_soviet.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_all_power_to_the_soviets_shine"
++		texturefile = "gfx/interface/goals/focus_SOV_the_supreme_soviet.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_SOV_the_supreme_soviet.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_SOV_the_supreme_soviet.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_war_communism"
++		texturefile = "gfx/interface/goals/focus_sov_the_hands_do.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_war_communism_shine"
++		texturefile = "gfx/interface/goals/focus_sov_the_hands_do.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_the_hands_do.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_the_hands_do.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_cheka_revolutionary_tribunal"
++		texturefile = "gfx/interface/goals/focus_sov_great_purge.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_cheka_revolutionary_tribunal_shine"
++		texturefile = "gfx/interface/goals/focus_sov_great_purge.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_great_purge.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_great_purge.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_red_terror"
++		texturefile = "gfx/interface/goals/focus_sov_consolidate_power.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_red_terror_shine"
++		texturefile = "gfx/interface/goals/focus_sov_consolidate_power.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_consolidate_power.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_consolidate_power.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_grain_requisition_brigades"
++		texturefile = "gfx/interface/goals/focus_sov_anti_capitalism.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_grain_requisition_brigades_shine"
++		texturefile = "gfx/interface/goals/focus_sov_anti_capitalism.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_anti_capitalism.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_anti_capitalism.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_militarization_of_labor"
++		texturefile = "gfx/interface/goals/focus_SOV_the_path_of_marxism_leninism.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_militarization_of_labor_shine"
++		texturefile = "gfx/interface/goals/focus_SOV_the_path_of_marxism_leninism.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_SOV_the_path_of_marxism_leninism.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_SOV_the_path_of_marxism_leninism.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_workers_and_peasants_red_army"
++		texturefile = "gfx/interface/goals/SOV_an_adaptable_army.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_workers_and_peasants_red_army_shine"
++		texturefile = "gfx/interface/goals/SOV_an_adaptable_army.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_an_adaptable_army.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_an_adaptable_army.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_revvoyensovyet"
++		texturefile = "gfx/interface/goals/focus_SOV_international_union_of_soviet_republics.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_revvoyensovyet_shine"
++		texturefile = "gfx/interface/goals/focus_SOV_international_union_of_soviet_republics.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_SOV_international_union_of_soviet_republics.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_SOV_international_union_of_soviet_republics.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_recruit_tsarist_voenspetsy"
++		texturefile = "gfx/interface/goals/SOV_advanced_training.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_recruit_tsarist_voenspetsy_shine"
++		texturefile = "gfx/interface/goals/SOV_advanced_training.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_advanced_training.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_advanced_training.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_first_cavalry_army"
++		texturefile = "gfx/interface/goals/SOV_advanced_maneuvers.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_first_cavalry_army_shine"
++		texturefile = "gfx/interface/goals/SOV_advanced_maneuvers.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_advanced_maneuvers.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_advanced_maneuvers.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_tachanka_warfare"
++		texturefile = "gfx/interface/goals/SOV_legacy_of_green_armies.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_tachanka_warfare_shine"
++		texturefile = "gfx/interface/goals/SOV_legacy_of_green_armies.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_legacy_of_green_armies.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_legacy_of_green_armies.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_tukhachevsky_deep_battle"
++		texturefile = "gfx/interface/goals/SOV_soviet_artillery.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_tukhachevsky_deep_battle_shine"
++		texturefile = "gfx/interface/goals/SOV_soviet_artillery.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_soviet_artillery.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_soviet_artillery.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_frunze_unified_doctrine"
++		texturefile = "gfx/interface/goals/focus_generic_soviet_politics.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_frunze_unified_doctrine_shine"
++		texturefile = "gfx/interface/goals/focus_generic_soviet_politics.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_generic_soviet_politics.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_generic_soviet_politics.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_goelro_plan"
++		texturefile = "gfx/interface/goals/SOV_a_sustainable_economy.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_goelro_plan_shine"
++		texturefile = "gfx/interface/goals/SOV_a_sustainable_economy.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_a_sustainable_economy.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_a_sustainable_economy.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_new_economic_policy"
++		texturefile = "gfx/interface/goals/focus_sov_return_democracy_to_the_party.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_new_economic_policy_shine"
++		texturefile = "gfx/interface/goals/focus_sov_return_democracy_to_the_party.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_return_democracy_to_the_party.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_return_democracy_to_the_party.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_superindustrialization"
++		texturefile = "gfx/interface/goals/SOV_steel_casting_industry.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_superindustrialization_shine"
++		texturefile = "gfx/interface/goals/SOV_steel_casting_industry.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_steel_casting_industry.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_steel_casting_industry.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_third_international_comintern"
++		texturefile = "gfx/interface/goals/SOV_two_red_flags.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_third_international_comintern_shine"
++		texturefile = "gfx/interface/goals/SOV_two_red_flags.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_two_red_flags.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_two_red_flags.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_treaty_of_the_creation_of_the_ussr"
++		texturefile = "gfx/interface/goals/SOV_ussr.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_treaty_of_the_creation_of_the_ussr_shine"
++		texturefile = "gfx/interface/goals/SOV_ussr.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_ussr.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_ussr.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_red_baltic_fleet"
++		texturefile = "gfx/interface/goals/SOV_expand_the_red_fleet.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_red_baltic_fleet_shine"
++		texturefile = "gfx/interface/goals/SOV_expand_the_red_fleet.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_expand_the_red_fleet.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_expand_the_red_fleet.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_commissars_of_the_fleet"
++		texturefile = "gfx/interface/goals/SOV_pc_of_the_ussr_navy.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_commissars_of_the_fleet_shine"
++		texturefile = "gfx/interface/goals/SOV_pc_of_the_ussr_navy.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_pc_of_the_ussr_navy.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_pc_of_the_ussr_navy.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_trans_siberian_logistics"
++		texturefile = "gfx/interface/goals/SOV_improve_railway_network.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_trans_siberian_logistics_shine"
++		texturefile = "gfx/interface/goals/SOV_improve_railway_network.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_improve_railway_network.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_improve_railway_network.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_anti_fascist_front"
++		texturefile = "gfx/interface/goals/focus_sov_anti_fascism.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_anti_fascist_front_shine"
++		texturefile = "gfx/interface/goals/focus_sov_anti_fascism.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_anti_fascism.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_anti_fascism.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_autonomous_republics"
++		texturefile = "gfx/interface/goals/focus_sov_autonomous_soviet_republics.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_autonomous_republics_shine"
++		texturefile = "gfx/interface/goals/focus_sov_autonomous_soviet_republics.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_autonomous_soviet_republics.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_autonomous_soviet_republics.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_soviet_bear"
++		texturefile = "gfx/interface/goals/focus_soviet_bear.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_soviet_bear_shine"
++		texturefile = "gfx/interface/goals/focus_soviet_bear.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_soviet_bear.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_soviet_bear.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_SOV_the_lonely_island"
++		texturefile = "gfx/interface/goals/focus_sov_the_lonely_island.dds"
++	}
++	SpriteType = {
++		name = "GFX_SOV_the_lonely_island_shine"
++		texturefile = "gfx/interface/goals/focus_sov_the_lonely_island.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_the_lonely_island.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_sov_the_lonely_island.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++}
+diff --git a/WW1/interface/ww1_white_goals.gfx b/WW1/interface/ww1_white_goals.gfx
+new file mode 100644
+index 0000000..e7136c2
+--- /dev/null
++++ b/WW1/interface/ww1_white_goals.gfx
+@@ -0,0 +1,809 @@
++# ww1_white_goals.gfx
++# Goal GFX definitions and shine animations for White Movement focus tree
++spriteTypes = {
++
++	SpriteType = {
++		name = "GFX_WHT_ufa_state_conference"
++		texturefile = "gfx/interface/goals/SOV_duma_and_crown.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_ufa_state_conference_shine"
++		texturefile = "gfx/interface/goals/SOV_duma_and_crown.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_duma_and_crown.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_duma_and_crown.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_omsk_directorate"
++		texturefile = "gfx/interface/goals/SOV_taurida_palace.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_omsk_directorate_shine"
++		texturefile = "gfx/interface/goals/SOV_taurida_palace.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_taurida_palace.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_taurida_palace.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_kolchak_supreme_ruler"
++		texturefile = "gfx/interface/goals/SOV_vladimir_coronation.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_kolchak_supreme_ruler_shine"
++		texturefile = "gfx/interface/goals/SOV_vladimir_coronation.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_vladimir_coronation.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_vladimir_coronation.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_seize_kazan_gold"
++		texturefile = "gfx/interface/goals/SOV_ruble_bloc.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_seize_kazan_gold_shine"
++		texturefile = "gfx/interface/goals/SOV_ruble_bloc.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_ruble_bloc.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_ruble_bloc.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_czechoslovak_legion_alliance"
++		texturefile = "gfx/interface/goals/SOV_the_triple_entente.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_czechoslovak_legion_alliance_shine"
++		texturefile = "gfx/interface/goals/SOV_the_triple_entente.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_the_triple_entente.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_the_triple_entente.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_volunteer_army_mobilization"
++		texturefile = "gfx/interface/goals/SOV_imperial_guard.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_volunteer_army_mobilization_shine"
++		texturefile = "gfx/interface/goals/SOV_imperial_guard.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_imperial_guard.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_imperial_guard.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_first_kuban_campaign"
++		texturefile = "gfx/interface/goals/RUS_caucasus.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_first_kuban_campaign_shine"
++		texturefile = "gfx/interface/goals/RUS_caucasus.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/RUS_caucasus.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/RUS_caucasus.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_armed_forces_of_south_russia"
++		texturefile = "gfx/interface/goals/SOV_an_oceangoing_navy.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_armed_forces_of_south_russia_shine"
++		texturefile = "gfx/interface/goals/SOV_an_oceangoing_navy.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_an_oceangoing_navy.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_an_oceangoing_navy.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_moscow_directive"
++		texturefile = "gfx/interface/goals/focus_anti_soviet_pact.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_moscow_directive_shine"
++		texturefile = "gfx/interface/goals/focus_anti_soviet_pact.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_anti_soviet_pact.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_anti_soviet_pact.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_wrangel_land_reform"
++		texturefile = "gfx/interface/goals/SOV_russian_miracle.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_wrangel_land_reform_shine"
++		texturefile = "gfx/interface/goals/SOV_russian_miracle.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_russian_miracle.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_russian_miracle.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_crimean_redoubt"
++		texturefile = "gfx/interface/goals/SOV_impregnable_forts.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_crimean_redoubt_shine"
++		texturefile = "gfx/interface/goals/SOV_impregnable_forts.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_impregnable_forts.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_impregnable_forts.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_general_knox_british_mission"
++		texturefile = "gfx/interface/goals/focus_chi_mission_to_the_soviet_union.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_general_knox_british_mission_shine"
++		texturefile = "gfx/interface/goals/focus_chi_mission_to_the_soviet_union.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_chi_mission_to_the_soviet_union.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_chi_mission_to_the_soviet_union.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_french_black_sea_mission"
++		texturefile = "gfx/interface/goals/FRA_franco_soviet_treaty.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_french_black_sea_mission_shine"
++		texturefile = "gfx/interface/goals/FRA_franco_soviet_treaty.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/FRA_franco_soviet_treaty.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/FRA_franco_soviet_treaty.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_japanese_siberian_liaison"
++		texturefile = "gfx/interface/goals/JAP_non_aggression_pact_with_the_soviet_union.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_japanese_siberian_liaison_shine"
++		texturefile = "gfx/interface/goals/JAP_non_aggression_pact_with_the_soviet_union.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/JAP_non_aggression_pact_with_the_soviet_union.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/JAP_non_aggression_pact_with_the_soviet_union.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_constituent_assembly"
++		texturefile = "gfx/interface/goals/SOV_romanov_reconstruction.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_constituent_assembly_shine"
++		texturefile = "gfx/interface/goals/SOV_romanov_reconstruction.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_romanov_reconstruction.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_romanov_reconstruction.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_military_dictatorship"
++		texturefile = "gfx/interface/goals/goal_SOV_Okhrana.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_military_dictatorship_shine"
++		texturefile = "gfx/interface/goals/goal_SOV_Okhrana.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/goal_SOV_Okhrana.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/goal_SOV_Okhrana.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_restoration_of_the_monarchy"
++		texturefile = "gfx/interface/goals/focus_BUL_power_to_the_tsar.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_restoration_of_the_monarchy_shine"
++		texturefile = "gfx/interface/goals/focus_BUL_power_to_the_tsar.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_BUL_power_to_the_tsar.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/focus_BUL_power_to_the_tsar.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_all_russian_reunification"
++		texturefile = "gfx/interface/goals/SOV_russian_people.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_all_russian_reunification_shine"
++		texturefile = "gfx/interface/goals/SOV_russian_people.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_russian_people.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_russian_people.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_russia_one_and_indivisible"
++		texturefile = "gfx/interface/goals/SOV_faith_tsar_fatherland.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_russia_one_and_indivisible_shine"
++		texturefile = "gfx/interface/goals/SOV_faith_tsar_fatherland.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_faith_tsar_fatherland.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_faith_tsar_fatherland.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_cossack_hosts_federation"
++		texturefile = "gfx/interface/goals/RUS_central_asia.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_cossack_hosts_federation_shine"
++		texturefile = "gfx/interface/goals/RUS_central_asia.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/RUS_central_asia.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/RUS_central_asia.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_black_baron_offensive"
++		texturefile = "gfx/interface/goals/goal_SOV_black_baron.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_black_baron_offensive_shine"
++		texturefile = "gfx/interface/goals/goal_SOV_black_baron.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/goal_SOV_black_baron.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/goal_SOV_black_baron.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_okhrana_restoration"
++		texturefile = "gfx/interface/goals/SOV_okhrana.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_okhrana_restoration_shine"
++		texturefile = "gfx/interface/goals/SOV_okhrana.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_okhrana.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_okhrana.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++
++	SpriteType = {
++		name = "GFX_WHT_siberian_fortifications"
++		texturefile = "gfx/interface/goals/SOV_far_east_fortification.dds"
++	}
++	SpriteType = {
++		name = "GFX_WHT_siberian_fortifications_shine"
++		texturefile = "gfx/interface/goals/SOV_far_east_fortification.dds"
++		effectFile = "gfx/FX/buttonstate.lua"
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_far_east_fortification.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = -90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		animation = {
++			animationmaskfile = "gfx/interface/goals/SOV_far_east_fortification.dds"
++			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
++			animationrotation = 90.0
++			animationlooping = no
++			animationtime = 0.75
++			animationdelay = 0
++			animationblendmode = "add"
++			animationtype = "scrolling"
++			animationrotationoffset = { x = 0.0 y = 0.0 }
++			animationtexturescale = { x = 1.0 y = 1.0 }
++		}
++		legacy_lazy_load = no
++	}
++}

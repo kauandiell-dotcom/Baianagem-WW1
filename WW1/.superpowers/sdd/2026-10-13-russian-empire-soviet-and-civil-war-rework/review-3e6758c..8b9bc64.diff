@@ -1,0 +1,977 @@
+# Review package: 3e6758c..HEAD
+
+## Commits
+8b9bc64 feat(sov): implement multi-front Russian Civil War engine, breakaway nations, and combat OOBs
+
+## Files changed
+ WW1/common/country_tags/01_ww1_tags.txt            |   1 +
+ .../categories/ww1_soviet_civil_war_categories.txt |  12 +
+ .../decisions/ww1_soviet_civil_war_decisions.txt   |  99 ++++++++
+ WW1/events/ww1_russia_civil_war_events.txt         | 260 +++++++++++++++++++++
+ WW1/events/ww1_russia_crisis_events.txt            |   1 +
+ WW1/history/units/FIN_civil_war.txt                |  55 +++++
+ WW1/history/units/POL_civil_war.txt                |  74 ++++++
+ WW1/history/units/SOV_red_army_civil_war.txt       | 133 +++++++++++
+ WW1/history/units/UKR_civil_war.txt                |  72 ++++++
+ WW1/history/units/WHT_white_army_civil_war.txt     | 104 +++++++++
+ .../braz_por/ww1_russia_events_l_braz_por.yml      |  22 ++
+ .../english/ww1_russia_events_l_english.yml        |  22 ++
+ 12 files changed, 855 insertions(+)
+
+## Diff
+diff --git a/WW1/common/country_tags/01_ww1_tags.txt b/WW1/common/country_tags/01_ww1_tags.txt
+index 7bd4837..86b7d42 100644
+--- a/WW1/common/country_tags/01_ww1_tags.txt
++++ b/WW1/common/country_tags/01_ww1_tags.txt
+@@ -1 +1,2 @@
+ WHT = "countries/White Russia.txt"
++DON = "countries/Don Republic.txt"
+diff --git a/WW1/common/decisions/categories/ww1_soviet_civil_war_categories.txt b/WW1/common/decisions/categories/ww1_soviet_civil_war_categories.txt
+new file mode 100644
+index 0000000..4dde9e1
+--- /dev/null
++++ b/WW1/common/decisions/categories/ww1_soviet_civil_war_categories.txt
+@@ -0,0 +1,12 @@
++SOV_civil_war_management = {
++	icon = generic_civil_war
++	picture = GFX_decision_cat_generic
++	priority = 90
++	allowed = {
++		tag = SOV
++	}
++	visible = {
++		has_government = communism
++		has_war = yes
++	}
++}
+diff --git a/WW1/common/decisions/ww1_soviet_civil_war_decisions.txt b/WW1/common/decisions/ww1_soviet_civil_war_decisions.txt
+new file mode 100644
+index 0000000..6a927d0
+--- /dev/null
++++ b/WW1/common/decisions/ww1_soviet_civil_war_decisions.txt
+@@ -0,0 +1,99 @@
++SOV_civil_war_management = {
++
++	SOV_seize_kazan_gold_reserves = {
++		icon = generic_civil_war
++		available = {
++			controls_state = 249 # Kazan
++		}
++		visible = {
++			tag = SOV
++			has_government = communism
++		}
++		fire_only_once = yes
++		cost = 0
++		days_remove = 365
++		complete_effect = {
++			add_political_power = 150
++			add_stability = 0.05
++		}
++		modifier = {
++			industrial_capacity_factory = 0.10
++			consumer_goods_factor = -0.05
++		}
++		ai_will_do = {
++			factor = 100
++		}
++	}
++
++	SOV_prodrazvyorstka_grain_expeditions = {
++		icon = generic_civil_war
++		available = {
++			has_war = yes
++		}
++		visible = {
++			tag = SOV
++			has_government = communism
++		}
++		fire_only_once = no
++		cost = 25
++		days_remove = 120
++		days_re_enable = 30
++		complete_effect = {
++			add_stability = -0.05
++		}
++		modifier = {
++			supply_consumption_factor = -0.15
++			attrition = -0.10
++		}
++		ai_will_do = {
++			factor = 80
++		}
++	}
++
++	SOV_mobilize_petrograd_workers = {
++		icon = generic_civil_war
++		available = {
++			has_war = yes
++			controls_state = 195 # Leningrad / Petrograd
++		}
++		visible = {
++			tag = SOV
++			has_government = communism
++		}
++		fire_only_once = no
++		cost = 50
++		days_remove = 90
++		days_re_enable = 60
++		modifier = {
++			conscription_factor = 0.10
++			mobilization_speed = 0.20
++			training_time_factor = -0.10
++		}
++		ai_will_do = {
++			factor = 70
++		}
++	}
++
++	SOV_trotsky_armored_train_inspection = {
++		icon = generic_civil_war
++		available = {
++			has_war = yes
++		}
++		visible = {
++			tag = SOV
++			has_government = communism
++		}
++		fire_only_once = no
++		cost = 30
++		days_remove = 90
++		days_re_enable = 45
++		modifier = {
++			army_morale_factor = 0.10
++			army_org_regain = 0.10
++			land_reinforce_rate = 0.05
++		}
++		ai_will_do = {
++			factor = 90
++		}
++	}
++}
+diff --git a/WW1/events/ww1_russia_civil_war_events.txt b/WW1/events/ww1_russia_civil_war_events.txt
+new file mode 100644
+index 0000000..15aad5f
+--- /dev/null
++++ b/WW1/events/ww1_russia_civil_war_events.txt
+@@ -0,0 +1,260 @@
++add_namespace = ww1_russia_civil_war
++
++# -------------------------------------------------------------
++# Event 1: Russian Civil War Eruption & Partition
++# Triggered following the Storming of the Winter Palace (ww1_russia.310)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia_civil_war.1
++	title = ww1_russia_civil_war.1.t
++	desc = ww1_russia_civil_war.1.d
++	picture = GFX_event_WW1_sov_october
++
++	is_triggered_only = yes
++	fire_only_once = yes
++
++	immediate = {
++		# 1. Establish Soviet State
++		set_country_flag = SOV_russian_civil_war_active
++		set_politics = {
++			ruling_party = communism
++			elections_allowed = no
++		}
++		prevent_join_factions = yes
++		set_rule = { can_join_factions = no }
++
++		# 2. Disband Bloated Imperial Army
++		delete_unit_template_and_units = { division_template = "Pekhotnaya Diviziya" }
++		delete_unit_template_and_units = { division_template = "Kazachya Diviziya" }
++		delete_unit_template_and_units = { division_template = "Gornostrelkovaya Diviziya" }
++		delete_unit_template_and_units = { division_template = "Leib-Gvardiya & Opolcheniye" }
++
++		# 3. Territory Transfers: White Russia (WHT)
++		# Siberia, Urals, and Southern territories (including Omsk 571 and 594, Ekaterinburg, Irkutsk, Vladivostok, Kuban, Novorossiysk)
++		WHT = {
++			set_country_flag = WHT_russian_civil_war_active
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++
++			# Urals & Northern Regions
++			transfer_state = 398
++			transfer_state = 407
++			transfer_state = 581
++			transfer_state = 582
++
++			# Siberia & Far East
++			transfer_state = 408
++			transfer_state = 409
++			transfer_state = 516
++			transfer_state = 560
++			transfer_state = 561
++			transfer_state = 562
++			transfer_state = 563
++			transfer_state = 564
++			transfer_state = 565
++			transfer_state = 566
++			transfer_state = 567
++			transfer_state = 568
++			transfer_state = 569
++			transfer_state = 570
++			transfer_state = 571
++			transfer_state = 572
++			transfer_state = 573
++			transfer_state = 574
++			transfer_state = 575
++			transfer_state = 576
++			transfer_state = 577
++			transfer_state = 578
++			transfer_state = 579
++			transfer_state = 580
++			transfer_state = 594
++			transfer_state = 655
++			transfer_state = 874
++			transfer_state = 875
++			transfer_state = 876
++			transfer_state = 877
++			transfer_state = 878
++
++			# South Russia & Steppe (Kuban, Novorossiysk, Tsaritsyn, Crimea)
++			transfer_state = 137
++			transfer_state = 217
++			transfer_state = 232
++			transfer_state = 233
++			transfer_state = 234
++			transfer_state = 235
++			transfer_state = 236
++			transfer_state = 237
++			transfer_state = 238
++			transfer_state = 401
++			transfer_state = 402
++			transfer_state = 403
++			transfer_state = 404
++			transfer_state = 405
++			transfer_state = 406
++
++			# Central Asia
++			transfer_state = 583
++			transfer_state = 584
++			transfer_state = 585
++			transfer_state = 586
++			transfer_state = 587
++			transfer_state = 588
++			transfer_state = 589
++			transfer_state = 590
++			transfer_state = 732
++			transfer_state = 742
++			transfer_state = 823
++			transfer_state = 830
++			transfer_state = 831
++			transfer_state = 832
++
++			# Core White territories
++			add_state_core = 571
++			add_state_core = 594
++			add_state_core = 398
++			add_state_core = 408
++			add_state_core = 234
++			add_state_core = 217
++		}
++
++		# 4. Territory Transfers: Peripheral Breakaways
++		# Ukraine (UKR): Kiev 202, Odessa 192, Kharkov 221, etc.
++		UKR = {
++			transfer_state = 192
++			transfer_state = 193
++			transfer_state = 196
++			transfer_state = 197
++			transfer_state = 198
++			transfer_state = 199
++			transfer_state = 200
++			transfer_state = 201
++			transfer_state = 202
++			transfer_state = 203
++			transfer_state = 221
++			transfer_state = 225
++			transfer_state = 226
++			transfer_state = 227
++			transfer_state = 245
++			transfer_state = 259
++			transfer_state = 766
++			transfer_state = 834
++		}
++
++		# Finland (FIN): Helsinki 111, Viipuri 145, etc.
++		FIN = {
++			transfer_state = 111
++			transfer_state = 145
++			transfer_state = 146
++			transfer_state = 147
++			transfer_state = 148
++			transfer_state = 149
++			transfer_state = 150
++			transfer_state = 722
++			transfer_state = 926
++			transfer_state = 927
++			transfer_state = 928
++			transfer_state = 929
++			transfer_state = 930
++		}
++
++		# Poland (POL): Warsaw 10, Lodz 87, etc.
++		POL = {
++			transfer_state = 10
++			transfer_state = 87
++			transfer_state = 92
++			transfer_state = 94
++			transfer_state = 95
++			transfer_state = 96
++			transfer_state = 97
++			transfer_state = 98
++		}
++
++		# Georgia (GEO): Tbilisi 231
++		GEO = {
++			transfer_state = 231
++			transfer_state = 826
++			add_state_core = 231
++		}
++
++		# Armenia (ARM): Yerevan 229 / 230
++		ARM = {
++			transfer_state = 230
++			if = {
++				limit = { 229 = { is_owned_by = SOV } }
++				transfer_state = 229
++			}
++			add_state_core = 230
++		}
++
++		# Azerbaijan (AZR): Baku 228 / 229
++		AZR = {
++			transfer_state = 229
++			if = {
++				limit = { 228 = { is_owned_by = SOV } }
++				transfer_state = 228
++			}
++			add_state_core = 229
++		}
++
++		# Don Cossacks (DON): Rostov 218
++		DON = {
++			transfer_state = 218
++			transfer_state = 228
++			add_state_core = 218
++		}
++
++		# 5. Load Dedicated Civil War OOBs
++		load_oob = "SOV_red_army_civil_war"
++		WHT = { load_oob = "WHT_white_army_civil_war" }
++		UKR = { load_oob = "UKR_civil_war" }
++		FIN = { load_oob = "FIN_civil_war" }
++		POL = { load_oob = "POL_civil_war" }
++		DON = { load_oob = "DON_1936_generic" }
++		GEO = { load_oob = "GEO_1936_generic" }
++		ARM = { load_oob = "ARM_1936_generic" }
++		AZR = { load_oob = "AZR_1936_generic" }
++
++		# 6. Fleet and Stockpile Division
++		custom_effect_tooltip = SOV_fleet_split_tt
++		custom_effect_tooltip = SOV_stockpile_split_tt
++
++		# 7. Mutual War Declarations
++		# SOV vs WHT
++		declare_war_on = { target = WHT type = civil_war }
++
++		# SOV vs Breakaways
++		declare_war_on = { target = UKR type = annex_everything }
++		declare_war_on = { target = FIN type = annex_everything }
++		declare_war_on = { target = POL type = annex_everything }
++		declare_war_on = { target = GEO type = annex_everything }
++		declare_war_on = { target = ARM type = annex_everything }
++		declare_war_on = { target = AZR type = annex_everything }
++		declare_war_on = { target = DON type = annex_everything }
++
++		# WHT vs Breakaways
++		WHT = {
++			declare_war_on = { target = UKR type = annex_everything }
++			declare_war_on = { target = FIN type = annex_everything }
++			declare_war_on = { target = POL type = annex_everything }
++			declare_war_on = { target = GEO type = annex_everything }
++			declare_war_on = { target = ARM type = annex_everything }
++			declare_war_on = { target = AZR type = annex_everything }
++			declare_war_on = { target = DON type = annex_everything }
++		}
++	}
++
++	# Option A: Play as Soviet Russia (SOV)
++	option = {
++		name = ww1_russia_civil_war.1.a
++		custom_effect_tooltip = SOV_play_reds_tt
++	}
++
++	# Option B: Play as White Russia (WHT)
++	option = {
++		name = ww1_russia_civil_war.1.b
++		WHT = {
++			change_tag_from = SOV
++		}
++		custom_effect_tooltip = SOV_play_whites_tt
++	}
++}
+diff --git a/WW1/events/ww1_russia_crisis_events.txt b/WW1/events/ww1_russia_crisis_events.txt
+index 71b9404..a7a2a7d 100644
+--- a/WW1/events/ww1_russia_crisis_events.txt
++++ b/WW1/events/ww1_russia_crisis_events.txt
+@@ -79,12 +79,13 @@ country_event = {
+ 	desc = ww1_russia.310.d
+ 	picture = GFX_event_WW1_sov_october
+ 
+ 	is_triggered_only = yes
+ 	fire_only_once = yes
+ 
+ 	option = {
+ 		name = ww1_russia.310.a
+ 		set_country_flag = SOV_revolution_triggered
+ 		custom_effect_tooltip = SOV_revolution_triggered_tt
++		country_event = { id = ww1_russia_civil_war.1 days = 1 }
+ 	}
+ }
+diff --git a/WW1/history/units/FIN_civil_war.txt b/WW1/history/units/FIN_civil_war.txt
+new file mode 100644
+index 0000000..f7cb938
+--- /dev/null
++++ b/WW1/history/units/FIN_civil_war.txt
+@@ -0,0 +1,55 @@
++# Finnish Civil War (Suomen Vapaussota) - White Guard OOB
++# 10 Divisions: White Guards (Suojeluskunta), Coastal Jaegers (RannikkojÃ¤Ã¤kÃ¤rit)
++
++division_template = {
++	name = "Suojeluskunta"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		engineer = { x = 0 y = 0 }
++	}
++}
++
++division_template = {
++	name = "Rannikkojaakarit"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++		artillery = { x = 0 y = 1 }
++	}
++}
++
++units = {
++	# --- Helsinki & Southern Shore (3 divisions) ---
++	division = { name = "Helsingin Suojeluskuntarykmentti" location = 204 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
++	division = { name = "1. RannikkojÃ¤Ã¤kÃ¤ripataljoona" location = 204 division_template = "Rannikkojaakarit" start_experience_factor = 0.35 }
++	division = { name = "Uudenmaan Suojeluskuntapataljoona" location = 204 division_template = "Suojeluskunta" start_experience_factor = 0.2 }
++
++	# --- Southwestern Archipelago & Turku (2 divisions) ---
++	division = { name = "Turun Suojeluskuntarykmentti" location = 32 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
++	division = { name = "2. RannikkojÃ¤Ã¤kÃ¤ripataljoona" location = 32 division_template = "Rannikkojaakarit" start_experience_factor = 0.3 }
++
++	# --- Karelian Isthmus & Viipuri (2 divisions) ---
++	division = { name = "Viipurin Suojeluskuntarykmentti" location = 9228 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
++	division = { name = "Karjalan JÃ¤Ã¤kÃ¤ripataljoona" location = 9228 division_template = "Rannikkojaakarit" start_experience_factor = 0.35 }
++
++	# --- Ostrobothnia & Vaasa White Stronghold (2 divisions) ---
++	division = { name = "Vaasan Suojeluskuntarykmentti" location = 63 division_template = "Suojeluskunta" start_experience_factor = 0.3 }
++	division = { name = "Pohjanmaan Suojeluskuntapataljoona" location = 63 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
++
++	# --- Savonia & Central Finland (1 division) ---
++	division = { name = "Savon Suojeluskuntarykmentti" location = 136 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
++}
+diff --git a/WW1/history/units/POL_civil_war.txt b/WW1/history/units/POL_civil_war.txt
+new file mode 100644
+index 0000000..5e6eb6f
+--- /dev/null
++++ b/WW1/history/units/POL_civil_war.txt
+@@ -0,0 +1,74 @@
++# Polish Army (Wojsko Polskie) - Independence & Civil War OOB
++# 16 Divisions: Polish Legions (Legiony Polskie), Haller's Army (Armia Hallera), Polish Cavalry (Jazda Polska)
++
++division_template = {
++	name = "Legiony Polskie"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		engineer = { x = 0 y = 0 }
++		artillery = { x = 0 y = 1 }
++	}
++}
++
++division_template = {
++	name = "Armia Hallera"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++	}
++}
++
++division_template = {
++	name = "Jazda Polska"
++	regiments = {
++		cavalry = { x = 0 y = 0 }
++		cavalry = { x = 0 y = 1 }
++		cavalry = { x = 0 y = 2 }
++		cavalry = { x = 1 y = 0 }
++		cavalry = { x = 1 y = 1 }
++		cavalry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++	}
++}
++
++units = {
++	# --- Warsaw Capital & Central Mazovia (6 divisions) ---
++	division = { name = "1. Dywizja Piechoty Legionow" location = 3544 division_template = "Legiony Polskie" start_experience_factor = 0.35 }
++	division = { name = "2. Dywizja Piechoty Legionow" location = 3544 division_template = "Legiony Polskie" start_experience_factor = 0.3 }
++	division = { name = "1. BÅ‚Ä™kitna Dywizja Strzelcow" location = 3544 division_template = "Armia Hallera" start_experience_factor = 0.3 }
++	division = { name = "2. BÅ‚Ä™kitna Dywizja Strzelcow" location = 3544 division_template = "Armia Hallera" start_experience_factor = 0.25 }
++	division = { name = "1. Pulk Szwolezerow Jozefa Pilsudskiego" location = 3544 division_template = "Jazda Polska" start_experience_factor = 0.35 }
++	division = { name = "Warszawska Brygada Obrony Narodowej" location = 3544 division_template = "Armia Hallera" start_experience_factor = 0.2 }
++
++	# --- Lodz Industrial District (3 divisions) ---
++	division = { name = "3. Dywizja Piechoty Legionow" location = 9508 division_template = "Legiony Polskie" start_experience_factor = 0.3 }
++	division = { name = "3. BÅ‚Ä™kitna Dywizja Strzelcow" location = 9508 division_template = "Armia Hallera" start_experience_factor = 0.25 }
++	division = { name = "2. Pulk Ulanow Grochowskich" location = 9508 division_template = "Jazda Polska" start_experience_factor = 0.3 }
++
++	# --- Lublin & Southern Borderlands (4 divisions) ---
++	division = { name = "4. Dywizja Strzelcow Polskich" location = 11399 division_template = "Armia Hallera" start_experience_factor = 0.25 }
++	division = { name = "5. Dywizja Strzelcow Polskich" location = 11399 division_template = "Armia Hallera" start_experience_factor = 0.25 }
++	division = { name = "3. Pulk Ulanow Slaskich" location = 11399 division_template = "Jazda Polska" start_experience_factor = 0.3 }
++	division = { name = "Lubelska Brygada Piechoty" location = 11399 division_template = "Legiony Polskie" start_experience_factor = 0.25 }
++
++	# --- Bialystok & Eastern Approaches (3 divisions) ---
++	division = { name = "Litewsko-Bialoruska Dywizja Piechoty" location = 11301 division_template = "Legiony Polskie" start_experience_factor = 0.3 }
++	division = { name = "6. Dywizja Strzelcow Polskich" location = 11301 division_template = "Armia Hallera" start_experience_factor = 0.25 }
++	division = { name = "4. Pulk Ulanow Zaniemyskich" location = 11301 division_template = "Jazda Polska" start_experience_factor = 0.3 }
++}
+diff --git a/WW1/history/units/SOV_red_army_civil_war.txt b/WW1/history/units/SOV_red_army_civil_war.txt
+new file mode 100644
+index 0000000..0014f9f
+--- /dev/null
++++ b/WW1/history/units/SOV_red_army_civil_war.txt
+@@ -0,0 +1,133 @@
++# Soviet Red Army (Raboche-Krestyanskaya Krasnaya Armiya) - Russian Civil War OOB
++# 50 Divisions: Red Guards, Workers' Militias, Revolutionary Sailors, Red Cavalry
++
++division_template = {
++	name = "Krasnaya Gvardiya"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		engineer = { x = 0 y = 0 }
++		artillery = { x = 0 y = 1 }
++	}
++}
++
++division_template = {
++	name = "Rabochaya Druzhina"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++	}
++}
++
++division_template = {
++	name = "Revolyutsionnye Moryaki"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		engineer = { x = 0 y = 0 }
++		artillery = { x = 0 y = 1 }
++		recon = { x = 0 y = 2 }
++	}
++}
++
++division_template = {
++	name = "Krasnaya Kavalerie"
++	regiments = {
++		cavalry = { x = 0 y = 0 }
++		cavalry = { x = 0 y = 1 }
++		cavalry = { x = 0 y = 2 }
++		cavalry = { x = 1 y = 0 }
++		cavalry = { x = 1 y = 1 }
++		cavalry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++	}
++}
++
++units = {
++	# --- Petrograd & Baltic Naval Strongholds (12 divisions) ---
++	division = { name = "1-y Petrogradskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.3 }
++	division = { name = "2-y Petrogradskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "3-y Petrogradskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "4-y Vyborgskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "5-y Vasilieostrovskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Petrogradskaya Rabochaya Druzhina" location = 3151 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "2-ya Putilovskaya Rabochaya Druzhina" location = 3151 division_template = "Rabochaya Druzhina" start_experience_factor = 0.25 }
++	division = { name = "1-y Kronshtadtskiy Morskoy Otryad" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.4 }
++	division = { name = "2-y Kronshtadtskiy Morskoy Otryad" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.4 }
++	division = { name = "1-y Baltiyskiy Morskoy Polk" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.35 }
++	division = { name = "3-y Severniy Morskoy Otryad" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.35 }
++	division = { name = "4-y Morskoy Ekipazh Avrory" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.4 }
++
++	# --- Moscow Red Heart & Central Garrison (11 divisions) ---
++	division = { name = "1-y Moskovskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.3 }
++	division = { name = "2-y Moskovskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "3-y Zamoskvoretskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "4-y Krasnopresnenskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Moskovskaya Rabochaya Druzhina" location = 6380 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "2-ya Moskovskaya Rabochaya Druzhina" location = 6380 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "3-ya Rogozhskaya Rabochaya Druzhina" location = 6380 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "1-y Revolyutsionniy Kavaleriyskiy Polk" location = 6380 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.3 }
++	division = { name = "2-y Revolyutsionniy Kavaleriyskiy Polk" location = 6380 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
++	division = { name = "1-y Smolenskiy Krasnogvardeiskiy Polk" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-ya Petrogradskaya Kavaleriyskaya Brigada" location = 6380 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
++
++	# --- Tula Arms Industry & Tver (4 divisions) ---
++	division = { name = "1-y Tulskiy Oruzheyniy Otryad" location = 6262 division_template = "Rabochaya Druzhina" start_experience_factor = 0.25 }
++	division = { name = "2-y Tulskiy Krasnogvardeiskiy Polk" location = 6262 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "1-y Tverskoy Krasnogvardeiskiy Otryad" location = 6245 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Tverskoy Rabochiy Polk" location = 6245 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++
++	# --- Nizhny Novgorod & Volga Flotilla Base (4 divisions) ---
++	division = { name = "1-y Nizhegorodskiy Krasnogvardeiskiy Otryad" location = 11375 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Sormovskiy Rabochiy Otryad" location = 11375 division_template = "Rabochaya Druzhina" start_experience_factor = 0.25 }
++	division = { name = "1-y Yaroslavskiy Krasnogvardeiskiy Polk" location = 121 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Yaroslavskiy Rabochiy Otryad" location = 121 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++
++	# --- Ryazan & Penza Heartland (4 divisions) ---
++	division = { name = "1-y Ryazanskiy Krasnogvardeiskiy Polk" location = 11248 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Ryazanskiy Rabochiy Otryad" location = 11248 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "1-y Penzenskiy Krasnogvardeiskiy Polk" location = 9258 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Penzenskiy Rabochiy Otryad" location = 9258 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++
++	# --- Samara & Middle Volga (5 divisions) ---
++	division = { name = "1-y Samarskiy Krasnogvardeiskiy Polk" location = 11225 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Samarskiy Rabochiy Otryad" location = 11225 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "3-y Povolzhskiy Kavaleriyskiy Polk" location = 11225 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
++	division = { name = "1-y Kazanskiy Krasnogvardeiskiy Polk" location = 6338 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Kazanskiy Rabochiy Otryad" location = 6338 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++
++	# --- Orel & Kursk Southern Approaches (5 divisions) ---
++	division = { name = "1-y Orlovskiy Krasnogvardeiskiy Polk" location = 9355 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Orlovskiy Rabochiy Otryad" location = 9355 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "1-y Kurskiy Krasnogvardeiskiy Polk" location = 3580 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Kurskiy Rabochiy Otryad" location = 3580 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "4-y Chernozemniy Kavaleriyskiy Polk" location = 3580 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
++
++	# --- Voronezh & Southern Frontline (5 divisions) ---
++	division = { name = "1-y Voronezhskiy Krasnogvardeiskiy Polk" location = 9449 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "2-y Voronezhskiy Krasnogvardeiskiy Polk" location = 9449 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Voronezhskaya Rabochaya Druzhina" location = 9449 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
++	division = { name = "5-y Donskoy Krasnokazachiy Polk" location = 9449 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.3 }
++	division = { name = "6-y Voronezhskiy Kavaleriyskiy Polk" location = 9449 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
++}
+diff --git a/WW1/history/units/UKR_civil_war.txt b/WW1/history/units/UKR_civil_war.txt
+new file mode 100644
+index 0000000..c318180
+--- /dev/null
++++ b/WW1/history/units/UKR_civil_war.txt
+@@ -0,0 +1,72 @@
++# Ukrainian People's Republic (UNR) - Civil War OOB
++# 14 Divisions: Haidamaks, Sich Riflemen, Free Cossacks
++
++division_template = {
++	name = "Haidamatsky Kish"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		engineer = { x = 0 y = 0 }
++	}
++}
++
++division_template = {
++	name = "Sichovi Striltsi"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		artillery = { x = 0 y = 0 }
++		recon = { x = 0 y = 1 }
++	}
++}
++
++division_template = {
++	name = "Vilne Kozatstvo"
++	regiments = {
++		cavalry = { x = 0 y = 0 }
++		cavalry = { x = 0 y = 1 }
++		cavalry = { x = 0 y = 2 }
++		cavalry = { x = 1 y = 0 }
++		cavalry = { x = 1 y = 1 }
++		cavalry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++	}
++}
++
++units = {
++	# --- Kiev Capital & Dnieper Sector (5 divisions) ---
++	division = { name = "1-y Polkovytskiy Kish Haidamakiv" location = 525 division_template = "Haidamatsky Kish" start_experience_factor = 0.3 }
++	division = { name = "1-y Kurin Sichovykh Striltsiv" location = 525 division_template = "Sichovi Striltsi" start_experience_factor = 0.35 }
++	division = { name = "2-y Kurin Sichovykh Striltsiv" location = 525 division_template = "Sichovi Striltsi" start_experience_factor = 0.3 }
++	division = { name = "1-y Polk Vilnoho Kozatstva" location = 525 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
++	division = { name = "Kyivska Strilecka Bryhada" location = 525 division_template = "Haidamatsky Kish" start_experience_factor = 0.2 }
++
++	# --- Left-Bank & Kharkov Frontier (3 divisions) ---
++	division = { name = "2-y Haidamatsky Kish Slobozhanshchyny" location = 418 division_template = "Haidamatsky Kish" start_experience_factor = 0.25 }
++	division = { name = "Kharkivsky Polk Vilnoho Kozatstva" location = 418 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
++	division = { name = "3-y Kurin Sichovykh Striltsiv" location = 418 division_template = "Sichovi Striltsi" start_experience_factor = 0.3 }
++
++	# --- Southern Steppe & Black Sea Coast (3 divisions) ---
++	division = { name = "Odesky Haidamatsky Polk" location = 11670 division_template = "Haidamatsky Kish" start_experience_factor = 0.25 }
++	division = { name = "Khersonsky Polk Vilnoho Kozatstva" location = 721 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
++	division = { name = "Tavriysky Strilecky Kurin" location = 11670 division_template = "Sichovi Striltsi" start_experience_factor = 0.25 }
++
++	# --- Podolia & Central Ukraine (3 divisions) ---
++	division = { name = "Podilsky Haidamatsky Kish" location = 476 division_template = "Haidamatsky Kish" start_experience_factor = 0.2 }
++	division = { name = "Cherkasky Polk Vilnoho Kozatstva" location = 488 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
++	division = { name = "Zaporizky Udarniy Kish" location = 488 division_template = "Sichovi Striltsi" start_experience_factor = 0.3 }
++}
+diff --git a/WW1/history/units/WHT_white_army_civil_war.txt b/WW1/history/units/WHT_white_army_civil_war.txt
+new file mode 100644
+index 0000000..cf247f5
+--- /dev/null
++++ b/WW1/history/units/WHT_white_army_civil_war.txt
+@@ -0,0 +1,104 @@
++# White Movement (Beloye Dvizheniye) - Russian Civil War OOB
++# 45 Divisions: Siberian Riflemen, Volunteer Army, Cossack Cavalry
++
++division_template = {
++	name = "Sibirskaya Strelkovaya Diviziya"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		engineer = { x = 0 y = 0 }
++		artillery = { x = 0 y = 1 }
++	}
++}
++
++division_template = {
++	name = "Dobrovolcheskaya Armiya"
++	regiments = {
++		infantry = { x = 0 y = 0 }
++		infantry = { x = 0 y = 1 }
++		infantry = { x = 0 y = 2 }
++		infantry = { x = 1 y = 0 }
++		infantry = { x = 1 y = 1 }
++		infantry = { x = 1 y = 2 }
++	}
++	support = {
++		artillery = { x = 0 y = 0 }
++		recon = { x = 0 y = 1 }
++	}
++}
++
++division_template = {
++	name = "Kazachya Kavaleriyskaya Diviziya"
++	regiments = {
++		cavalry = { x = 0 y = 0 }
++		cavalry = { x = 0 y = 1 }
++		cavalry = { x = 0 y = 2 }
++		cavalry = { x = 1 y = 0 }
++		cavalry = { x = 1 y = 1 }
++		cavalry = { x = 1 y = 2 }
++	}
++	support = {
++		recon = { x = 0 y = 0 }
++	}
++}
++
++units = {
++	# --- Siberian Army (Omsk & Tomsk - 18 divisions) ---
++	division = { name = "1-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "2-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "3-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "4-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "5-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "6-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "7-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "8-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Omskaya Kazachya Diviziya" location = 10696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "2-ya Sibirskaya Kazachya Diviziya" location = 10696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "9-ya Sibirskaya Strelkovaya Diviziya" location = 10641 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "10-ya Sibirskaya Strelkovaya Diviziya" location = 10641 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "3-ya Altayskaya Kazachya Diviziya" location = 10641 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "11-ya Irkutskaya Strelkovaya Diviziya" location = 1679 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "12-ya Baykalskaya Strelkovaya Diviziya" location = 1679 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "4-ya Zabaykalskaya Kazachya Diviziya" location = 1679 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "5-ya Semirechenskaya Kazachya Diviziya" location = 10696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "Sibirskiy Ofitserskiy Polk" location = 10696 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
++
++	# --- Ural Army (Ekaterinburg & Uralsk - 12 divisions) ---
++	division = { name = "1-ya Uralskaya Strelkovaya Diviziya" location = 7375 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "2-ya Uralskaya Strelkovaya Diviziya" location = 7375 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "3-ya Permskaya Strelkovaya Diviziya" location = 7375 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Orenburgskaya Kazachya Diviziya" location = 7375 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "2-ya Orenburgskaya Kazachya Diviziya" location = 7375 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "1-ya Uralskaya Kazachya Diviziya" location = 11537 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "2-ya Uralskaya Kazachya Diviziya" location = 11537 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "4-ya Ufimskaya Strelkovaya Diviziya" location = 10256 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "5-ya Zlatoustovskaya Strelkovaya Diviziya" location = 10256 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "3-ya Orenburgskaya Kazachya Diviziya" location = 10256 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "Uralskiy Ofitserskiy Polk" location = 7375 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
++	division = { name = "Izhevsko-Votkinskaya Brigada" location = 7375 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.35 }
++
++	# --- Armed Forces of South Russia / Volunteer Army (Kuban & Steppe - 12 divisions) ---
++	division = { name = "Kornilovskiy Udarniy Polk" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.45 }
++	division = { name = "Markovskaia Ofitserskaia Diviziya" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
++	division = { name = "Drozdovskaia Strelkovaia Diviziya" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
++	division = { name = "Alekseevskaia Partizanskaia Diviziya" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.35 }
++	division = { name = "1-ya Kubanskaya Kazachya Diviziya" location = 3720 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.35 }
++	division = { name = "2-ya Kubanskaya Kazachya Diviziya" location = 3720 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "3-ya Kubanskaya Kazachya Diviziya" location = 3720 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "1-ya Terskaya Kazachya Diviziya" location = 11696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "2-ya Terskaya Kazachya Diviziya" location = 11696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Astrakhanskaya Kazachya Diviziya" location = 9753 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "Tsaritsynskiy Bely Polk" location = 3529 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.3 }
++	division = { name = "Volzhskaya Kavaleriyskaya Brigada" location = 3529 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++
++	# --- Far Eastern Army (Vladivostok - 3 divisions) ---
++	division = { name = "1-ya Vladivostokskaya Strelkovaya Diviziya" location = 957 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
++	division = { name = "1-ya Ussuriyskaya Kazachya Diviziya" location = 957 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++	division = { name = "Amurskiy Kazachiy Polk" location = 957 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
++}
+diff --git a/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml b/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
+index 60cedaf..3c5e1a9 100644
+--- a/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
++++ b/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
+@@ -80,10 +80,32 @@ ww1_russia.50.t:0 "A Grande Crise de ProjÃ©teis: Snaryadny Golod"
+  ww1_russia.305.t:0 "O Triunfo da Ordem"
+  ww1_russia.305.d:0 "AtravÃ©s de rigorosa administraÃ§Ã£o estatal, socorro social oportuno e lealdade inabalÃ¡vel das forÃ§as armadas, as autoridades imperiais resistiram Ã  tempestade da revolta revolucionÃ¡ria. A ordem reina sobre o ImpÃ©rio."
+  ww1_russia.305.a:0 "Deus Salve o Tsar!"
+  SOV_order_restored_tt:0 "A agitaÃ§Ã£o revolucionÃ¡ria foi desmantelada. A estabilidade imperial estÃ¡ restaurada."
+ 
+  ww1_russia.310.t:0 "A Tomada do PalÃ¡cio de Inverno"
+  ww1_russia.310.d:0 "A crise atinge o ponto de ruptura! OperÃ¡rios armados e soldados radicalizados cercam e tomam o PalÃ¡cio de Inverno. Os ministros sÃ£o presos enquanto a velha ordem desmorona diante do triunfo revolucionÃ¡rio!"
+  ww1_russia.310.a:0 "A RevoluÃ§Ã£o triunfou!"
+  SOV_revolution_triggered_tt:0 "O limiar revolucionÃ¡rio foi ultrapassado. A revoluÃ§Ã£o explode!"
+ 
++ # Civil War Eruption Events
++ ww1_russia_civil_war.1.t:0 "Eclode a Guerra Civil Russa"
++ ww1_russia_civil_war.1.d:0 "A tomada do PalÃ¡cio de Inverno despedaÃ§ou o ImpÃ©rio Russo em facÃ§Ãµes ideolÃ³gicas em armas. Em Petrogrado e Moscou, Vladimir Lenin e o Conselho dos ComissÃ¡rios do Povo proclamam o poder soviÃ©tico e mobilizam o ExÃ©rcito Vermelho. Pela SibÃ©ria, Urais e Sul, generais brancos e atamans cossacos erguem regimentos lealistas para esmagar os bolcheviques. Ao mesmo tempo, movimentos nacionais na UcrÃ¢nia, FinlÃ¢ndia, PolÃ´nia e CÃ¡ucaso declaram independÃªncia, mergulhando o antigo impÃ©rio em uma luta sangrenta em mÃºltiplas frentes."
++ ww1_russia_civil_war.1.a:0 "Todo o poder aos Sovietes! Avante, Guardas Vermelhos!"
++ ww1_russia_civil_war.1.b:0 "Por uma RÃºssia Una e IndivisÃ­vel! Os Brancos se levantam!"
++ SOV_fleet_split_tt:0 "Â§YDivisÃ£o Naval:Â§! A Frota do BÃ¡ltico jura lealdade aos sovietes; a Frota do Mar Negro apoia o ExÃ©rcito Branco."
++ SOV_stockpile_split_tt:0 "Â§YPartilha de Arsenais:Â§! DepÃ³sitos imperiais sÃ£o divididos entre as facÃ§Ãµes em conflito."
++ SOV_play_reds_tt:0 "Jogar como a Â§RRÃºssia SoviÃ©ticaÂ§! (SOV)."
++ SOV_play_whites_tt:0 "Mudar perspectiva para comandar a Â§RRÃºssia BrancaÂ§! (WHT)."
++
++ # Soviet Civil War Management Decisions
++ SOV_civil_war_management:0 "AdministraÃ§Ã£o da Guerra Civil SoviÃ©tica"
++ SOV_civil_war_management_desc:0 "Medidas emergenciais de tempo de guerra para salvaguardar o poder soviÃ©tico, alimentar os operÃ¡rios urbanos e suprir o ExÃ©rcito Vermelho."
++ SOV_seize_kazan_gold_reserves:0 "Confiscar as Reservas de Ouro de CazÃ£"
++ SOV_seize_kazan_gold_reserves_desc:0 "Assegurar os lingotes de ouro do Banco Imperial depositados nos cofres de CazÃ£ para financiar a produÃ§Ã£o industrial e compras estatais de emergÃªncia."
++ SOV_prodrazvyorstka_grain_expeditions:0 "ExpediÃ§Ãµes de Prodrazvyorstka"
++ SOV_prodrazvyorstka_grain_expeditions_desc:0 "Enviar destacamentos armados de operÃ¡rios ao campo para confiscar cotas de grÃ£os e garantir o abastecimento de raÃ§Ãµes nas frentes de combate."
++ SOV_mobilize_petrograd_workers:0 "Mobilizar os OperÃ¡rios de Petrogrado"
++ SOV_mobilize_petrograd_workers_desc:0 "Convocar trabalhadores das fÃ¡bricas Putilov e dos estaleiros bÃ¡lticos em batalhÃµes armados para reforÃ§ar setores ameaÃ§ados."
++ SOV_trotsky_armored_train_inspection:0 "InspeÃ§Ã£o do Trem Blindado de Trotsky"
++ SOV_trotsky_armored_train_inspection_desc:0 "O ComissÃ¡rio da Guerra Leon Trotsky percorre as frentes a bordo de seu trem blindado para restaurar a disciplina, insuflar o fervor revolucionÃ¡rio e conter recuos."
++
+diff --git a/WW1/localisation/english/ww1_russia_events_l_english.yml b/WW1/localisation/english/ww1_russia_events_l_english.yml
+index ca05919..aea3ee5 100644
+--- a/WW1/localisation/english/ww1_russia_events_l_english.yml
++++ b/WW1/localisation/english/ww1_russia_events_l_english.yml
+@@ -80,10 +80,32 @@ ww1_russia.50.t:0 "The Great Shell Crisis: Snaryadny Golod"
+  ww1_russia.305.t:0 "Triumph of Order"
+  ww1_russia.305.d:0 "Through rigorous state administration, decisive social mitigation, and steadfast military loyalty, the imperial authorities have weathered the tempest of revolutionary unrest. Order reigns supreme across the Empire."
+  ww1_russia.305.a:0 "God Save the Tsar!"
+  SOV_order_restored_tt:0 "Revolutionary unrest is broken. Imperial stability is restored."
+ 
+  ww1_russia.310.t:0 "Storming of the Winter Palace"
+  ww1_russia.310.d:0 "The crisis reaches its boiling point! Armed workers and radicalized soldiers march upon the Winter Palace. Government ministers are placed under arrest as the old order collapses amidst revolutionary triumph!"
+  ww1_russia.310.a:0 "The Revolution has triumphed!"
+  SOV_revolution_triggered_tt:0 "The revolutionary threshold has been breached. The revolution erupts!"
+ 
++ # Civil War Eruption Events
++ ww1_russia_civil_war.1.t:0 "The Russian Civil War Erupts"
++ ww1_russia_civil_war.1.d:0 "The storming of the Winter Palace has shattered the Russian Empire into armed ideological camps. In Petrograd and Moscow, Vladimir Lenin and the Bolshevik Council of People's Commissars proclaim Soviet power and mobilize the Red Army. Across Siberia, the Urals, and the South, White generals and Cossack Atamans rally loyalist divisions to crush the Reds. Simultaneously, national movements in Ukraine, Finland, Poland, and the Caucasus declare independence, plunging the former empire into a multi-front struggle for survival."
++ ww1_russia_civil_war.1.a:0 "All power to the Soviets! Forward, Red Guards!"
++ ww1_russia_civil_war.1.b:0 "For a One and Indivisible Russia! White Movement rallies!"
++ SOV_fleet_split_tt:0 "Â§YNaval Division:Â§! Baltic Fleet pledges allegiance to the Soviets; Black Sea Fleet rallies to the White Army."
++ SOV_stockpile_split_tt:0 "Â§YStockpile Partition:Â§! Imperial armories and arsenals are split between the warring factions."
++ SOV_play_reds_tt:0 "Play as Â§RSoviet RussiaÂ§! (SOV)."
++ SOV_play_whites_tt:0 "Switch perspective to play as Â§WWhite RussiaÂ§! (WHT)."
++
++ # Soviet Civil War Management Decisions
++ SOV_civil_war_management:0 "Soviet Civil War Administration"
++ SOV_civil_war_management_desc:0 "Emergency wartime measures to safeguard Soviet power, feed urban industrial workers, and arm the Red Army on all fronts."
++ SOV_seize_kazan_gold_reserves:0 "Seize the Imperial Gold Reserves in Kazan"
++ SOV_seize_kazan_gold_reserves_desc:0 "Secure the Imperial State Bank's gold bullion stored in the vaults of Kazan to finance emergency industrial production and state purchases."
++ SOV_prodrazvyorstka_grain_expeditions:0 "Prodrazvyorstka Grain Expeditions"
++ SOV_prodrazvyorstka_grain_expeditions_desc:0 "Dispatch armed worker and Red Guard detachments into rural provinces to requisition grain quotas and ensure food supply to the frontlines."
++ SOV_mobilize_petrograd_workers:0 "Mobilize Petrograd Industrial Workers"
++ SOV_mobilize_petrograd_workers_desc:0 "Levy workers from the Putilov and Baltic shipyards into armed battalions to reinforce threatened fronts."
++ SOV_trotsky_armored_train_inspection:0 "Trotsky's Armored Train Frontline Inspection"
++ SOV_trotsky_armored_train_inspection_desc:0 "Commissar of War Leon Trotsky travels the frontlines aboard his armored train to restore discipline, inspire revolutionary zeal, and rally retreating divisions."
++

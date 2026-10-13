@@ -1,0 +1,515 @@
+# Review package: d9300e0..HEAD
+
+## Commits
+e5773f1 feat(sov): implement Tsarist 1911-1917 mechanics, shell shortage, and strategic depth
+
+## Files changed
+ .../categories/ww1_russia_tsarist_categories.txt   |  17 ++
+ .../decisions/ww1_russia_tsarist_decisions.txt     | 290 +++++++++++++++++++++
+ WW1/common/ideas/ww1_russia_ideas.txt              |  45 +++-
+ 3 files changed, 342 insertions(+), 10 deletions(-)
+
+## Diff
+diff --git a/WW1/common/decisions/categories/ww1_russia_tsarist_categories.txt b/WW1/common/decisions/categories/ww1_russia_tsarist_categories.txt
+new file mode 100644
+index 0000000..dca212d
+--- /dev/null
++++ b/WW1/common/decisions/categories/ww1_russia_tsarist_categories.txt
+@@ -0,0 +1,17 @@
++SOV_duma_and_court_politics = {
++	icon = generic_propaganda
++	picture = GFX_decision_cat_generic
++	priority = 90
++	allowed = {
++		tag = SOV
++	}
++}
++
++SOV_war_industry_mobilization = {
++	icon = generic_industry
++	picture = GFX_decision_cat_generic
++	priority = 80
++	allowed = {
++		tag = SOV
++	}
++}
+diff --git a/WW1/common/decisions/ww1_russia_tsarist_decisions.txt b/WW1/common/decisions/ww1_russia_tsarist_decisions.txt
+new file mode 100644
+index 0000000..de4dd2f
+--- /dev/null
++++ b/WW1/common/decisions/ww1_russia_tsarist_decisions.txt
+@@ -0,0 +1,290 @@
++SOV_duma_and_court_politics = {
++
++	SOV_convene_imperial_duma = {
++		icon = generic_propaganda
++		cost = 25
++		days_re_enable = 120
++		available = {
++			always = yes
++		}
++		visible = {
++			tag = SOV
++		}
++		complete_effect = {
++			add_political_power = 50
++			add_stability = 0.05
++		}
++		ai_will_do = {
++			factor = 1
++			modifier = {
++				factor = 2
++				has_political_power < 50
++			}
++		}
++	}
++
++	SOV_prorogue_the_duma = {
++		icon = generic_oppression
++		cost = 50
++		days_remove = 90
++		days_re_enable = 180
++		available = {
++			has_stability < 0.60
++		}
++		visible = {
++			tag = SOV
++		}
++		modifier = {
++			stability_factor = 0.05
++		}
++		complete_effect = {
++			add_stability = 0.05
++			if = {
++				limit = { has_variable = SOV_worker_unrest }
++				subtract_from_variable = { var = SOV_worker_unrest value = 5 }
++			}
++		}
++		ai_will_do = {
++			factor = 1
++			modifier = {
++				factor = 3
++				has_stability < 0.40
++			}
++		}
++	}
++
++	SOV_conspiracy_rasputin = {
++		icon = generic_assassination
++		cost = 75
++		fire_only_once = yes
++		available = {
++			date > 1916.1.1
++			has_idea = SOV_rasputin_court_intrigues
++		}
++		visible = {
++			tag = SOV
++			has_idea = SOV_rasputin_court_intrigues
++		}
++		complete_effect = {
++			remove_ideas = SOV_rasputin_court_intrigues
++			add_stability = 0.05
++		}
++		ai_will_do = {
++			factor = 2
++		}
++	}
++
++}
++
++SOV_war_industry_mobilization = {
++
++	SOV_establish_vpk_committees = {
++		icon = generic_industry
++		cost = 50
++		fire_only_once = yes
++		available = {
++			has_war = yes
++		}
++		visible = {
++			tag = SOV
++		}
++		complete_effect = {
++			add_ideas = SOV_vpk_mobilization_spirit
++			if = {
++				limit = { has_idea = SOV_shell_shortage_crisis }
++				remove_ideas = SOV_shell_shortage_crisis
++			}
++		}
++		ai_will_do = {
++			factor = 2
++		}
++	}
++
++	SOV_mobilize_machine_shops = {
++		icon = generic_factory
++		cost = 50
++		days_remove = 60
++		days_re_enable = 120
++		available = {
++			has_war = yes
++		}
++		visible = {
++			tag = SOV
++		}
++		modifier = {
++			conversion_cost_civ_to_mil_factor = -0.20
++			production_speed_arms_factory_factor = 0.10
++		}
++		complete_effect = {
++			219 = { # Moscow Area
++				add_extra_state_shared_building_slots = 1
++				add_building_construction = {
++					type = arms_factory
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++		ai_will_do = {
++			factor = 1
++		}
++	}
++
++	SOV_zemgor_medical_union = {
++		icon = generic_prepare_civil_war
++		cost = 40
++		days_remove = 120
++		days_re_enable = 180
++		available = {
++			has_war = yes
++		}
++		visible = {
++			tag = SOV
++		}
++		modifier = {
++			experience_loss_factor = -0.10
++			army_morale_factor = 0.05
++			war_support_factor = 0.05
++		}
++		complete_effect = {
++			add_war_support = 0.03
++		}
++		ai_will_do = {
++			factor = 1
++		}
++	}
++
++	SOV_british_shell_presses = {
++		icon = generic_trade
++		cost = 50
++		fire_only_once = yes
++		available = {
++			OR = {
++				is_in_faction_with = ENG
++				has_opinion = { target = ENG value > 50 }
++			}
++		}
++		visible = {
++			tag = SOV
++			country_exists = ENG
++		}
++		complete_effect = {
++			add_equipment_to_stockpile = {
++				type = artillery_equipment_1
++				amount = 1000
++			}
++		}
++		ai_will_do = {
++			factor = 2
++		}
++	}
++
++	SOV_evacuate_industrial_machinery = {
++		icon = generic_relocate_industry
++		state_target = yes
++		on_map_mode = map_and_decisions_view
++		target_array = owned_states
++		target_trigger = {
++			FROM = {
++				is_controlled_by = ROOT
++				OR = {
++					state = 10 # Warsaw
++					state = 87 # Lodz
++					state = 92 # Lublin
++					state = 96 # Wilejka
++					state = 97 # Bialystok
++					state = 98 # Mazurskie / Grodno
++					state = 189 # Kaunas
++					state = 808 # Riga
++				}
++				NOT = { has_state_flag = SOV_machinery_evacuated }
++				OR = {
++					arms_factory > 0
++					industrial_complex > 0
++				}
++			}
++		}
++		cost = 25
++		days_remove = 30
++		available = {
++			always = yes
++		}
++		visible = {
++			tag = SOV
++		}
++		complete_effect = {
++			FROM = {
++				set_state_flag = SOV_machinery_evacuated
++				damage_building = {
++					type = infrastructure
++					damage = 2
++				}
++				if = {
++					limit = { arms_factory > 0 }
++					remove_building = {
++						type = arms_factory
++						level = 1
++					}
++					582 = { # Southern Urals
++						add_extra_state_shared_building_slots = 1
++						add_building_construction = {
++							type = arms_factory
++							level = 1
++							instant_build = yes
++						}
++					}
++				}
++				else = {
++					remove_building = {
++						type = industrial_complex
++						level = 1
++					}
++					219 = { # Moscow Area
++						add_extra_state_shared_building_slots = 1
++						add_building_construction = {
++							type = industrial_complex
++							level = 1
++							instant_build = yes
++						}
++					}
++				}
++			}
++		}
++		ai_will_do = {
++			factor = 1
++			modifier = {
++				factor = 5
++				FROM = {
++					any_neighbor_state = {
++						NOT = { is_controlled_by = ROOT }
++					}
++				}
++			}
++		}
++	}
++
++	SOV_prepare_southwestern_offensive = {
++		icon = generic_operation
++		cost = 50
++		days_remove = 90
++		available = {
++			has_war_with = AUS
++		}
++		visible = {
++			tag = SOV
++			country_exists = AUS
++		}
++		modifier = {
++			breakthrough_factor = 0.15
++			army_morale_factor = 0.10
++			army_attack_factor = 0.05
++		}
++		complete_effect = {
++			add_command_power = -20
++		}
++		ai_will_do = {
++			factor = 2
++		}
++	}
++
++}
+diff --git a/WW1/common/ideas/ww1_russia_ideas.txt b/WW1/common/ideas/ww1_russia_ideas.txt
+index d60245b..80ddfe8 100644
+--- a/WW1/common/ideas/ww1_russia_ideas.txt
++++ b/WW1/common/ideas/ww1_russia_ideas.txt
+@@ -209,26 +209,40 @@ ideas = {
+ 				army_org_factor = 0.05
+ 			}
+ 		}
+ 
+ 		SOV_stavka_operational_clarity = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = { max_planning = .06 planning_speed = .10 army_org_factor = .04 }
+ 		}
+ 
++		SOV_strategic_depth_and_rasputitsa = {
++			picture = generic_mountain_artillery
++			allowed = { always = yes }
++			removal_cost = -1
++			modifier = {
++				attrition = 0.20
++				winter_attrition_factor = 0.20
++				supply_consumption_factor = 0.05
++				army_core_defence_factor = 0.10
++			}
++		}
++
+ 		SOV_shell_shortage_crisis = {
+-			allowed = { always = no }
++			picture = generic_production_bonus
++			allowed = { always = yes }
+ 			removal_cost = -1
+ 			modifier = {
+-				army_attack_factor = -0.10
+ 				army_artillery_attack_factor = -0.25
++				breakthrough_factor = -0.15
++				army_attack_factor = -0.10
+ 				army_org_factor = -0.10
+ 				war_support_factor = -0.10
+ 			}
+ 		}
+ 
+ 		SOV_shell_shortage_stage_2 = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				army_artillery_attack_factor = -0.12
+@@ -240,25 +254,25 @@ ideas = {
+ 
+ 		SOV_shell_shortage_stage_3 = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				army_artillery_attack_factor = -0.05
+ 			}
+ 		}
+ 
+ 		SOV_vpk_mobilization_spirit = {
+-			allowed = { always = no }
++			picture = generic_economic_increase
++			allowed = { always = yes }
+ 			removal_cost = -1
+ 			modifier = {
+-				consumer_goods_factor = 0.05
+-				production_speed_arms_factory_factor = 0.15
++				production_speed_arms_factory_factor = 0.10
+ 				industrial_capacity_factory = 0.05
+ 			}
+ 		}
+ 
+ 		SOV_brusilov_doctrine_victory = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				army_attack_factor = 0.05
+ 				breakthrough_factor = 0.05
+@@ -334,26 +348,27 @@ ideas = {
+ 		SOV_tsarist_autocracy_and_duma = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				political_power_gain = 0.10
+ 				stability_factor = -0.05
+ 			}
+ 		}
+ 
+ 		SOV_rasputin_court_intrigues = {
+-			allowed = { always = no }
++			picture = generic_disloyal_officers
++			allowed = { always = yes }
+ 			removal_cost = -1
+ 			modifier = {
+-				stability_factor = -0.15
++				political_power_factor = -0.15
++				stability_factor = -0.05
+ 				political_power_cost = 0.20
+-				war_support_factor = -0.10
+ 			}
+ 		}
+ 
+ 		SOV_dual_power_dvoevlastie = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = { stability_factor = -.12 political_power_gain = -.20 army_org_factor = -.05 }
+ 		}
+ 
+ 		SOV_petrograd_order_no_1 = {
+@@ -394,20 +409,30 @@ ideas = {
+ 
+ 		SOV_russian_federal_republic = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				stability_factor = 0.15
+ 				political_power_gain = 0.20
+ 			}
+ 		}
+ 
++		SOV_order_restored_spirit = {
++			picture = generic_intel_bonus
++			allowed = { always = yes }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.10
++				war_support_factor = 0.10
++			}
++		}
++
+ 		SOV_absolute_autocracy_triumphant = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				stability_factor = 0.15
+ 				political_power_gain = 0.25
+ 				conscription_factor = 0.10
+ 			}
+ 		}
+ 
+@@ -532,21 +557,21 @@ ideas = {
+ 				drift_defence_factor = 0.50
+ 				enemy_operative_detection_chance_factor = 0.25
+ 				stability_factor = 0.10
+ 			}
+ 		}
+ 
+ 		SOV_declaration_rights_peoples = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+-				compliance_growth_focus = 0.20
++				compliance_growth = 0.20
+ 				resistance_growth = -0.15
+ 				non_core_manpower = 0.05
+ 			}
+ 		}
+ 
+ 		SOV_black_hundreds_paramilitaries = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				drift_defence_factor = 0.35
+@@ -554,21 +579,21 @@ ideas = {
+ 				army_core_defence_factor = 0.05
+ 			}
+ 		}
+ 
+ 		SOV_divine_autocracy = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				political_power_gain = 0.15
+ 				stability_factor = 0.10
+-				subject_tribute_factor = 0.25
++				subjects_autonomy_gain = -0.25
+ 			}
+ 		}
+ 
+ 		SOV_imperial_secret_police = {
+ 			allowed = { always = no }
+ 			removal_cost = -1
+ 			modifier = {
+ 				subversive_activites_upkeep = -0.25
+ 				stability_factor = 0.10
+ 				drift_defence_factor = 0.40

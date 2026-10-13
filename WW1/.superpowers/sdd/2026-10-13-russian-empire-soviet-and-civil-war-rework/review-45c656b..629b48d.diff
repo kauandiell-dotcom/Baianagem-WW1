@@ -1,0 +1,1451 @@
+# Review package: 45c656b..629b48d
+
+## Commits
+629b48d feat(wht): implement dedicated 60-focus White Movement national focus tree
+
+## Files changed
+ WW1/common/ideas/ww1_russia_ideas.txt      |  234 ++++++
+ WW1/common/national_focus/white_russia.txt | 1182 ++++++++++++++++++++++++++++
+ 2 files changed, 1416 insertions(+)
+
+## Diff
+diff --git a/WW1/common/ideas/ww1_russia_ideas.txt b/WW1/common/ideas/ww1_russia_ideas.txt
+index c21a060..758e55d 100644
+--- a/WW1/common/ideas/ww1_russia_ideas.txt
++++ b/WW1/common/ideas/ww1_russia_ideas.txt
+@@ -835,13 +835,247 @@ ideas = {
+ 			removal_cost = -1
+ 			modifier = {
+ 				stability_factor = 0.15
+ 				war_support_factor = 0.10
+ 				compliance_growth = 0.15
+ 				conscription_factor = 0.05
+ 				political_power_gain = 0.15
+ 			}
+ 		}
+ 
++		# =========================================================================
++		# WHITE MOVEMENT NATIONAL SPIRITS & IDEAS (WHT)
++		# =========================================================================
++
++		WHT_provisional_all_russian_government = {
++			picture = generic_democratic_drift_bonus
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.05
++				political_power_gain = 0.10
++			}
++		}
++
++		WHT_trans_siberian_artery = {
++			picture = generic_goods_redistribution
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				production_speed_rail_way_factor = 0.20
++				supply_consumption_factor = -0.05
++			}
++		}
++
++		WHT_supreme_ruler_authority = {
++			picture = generic_officer
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.05
++				war_support_factor = 0.10
++				political_power_gain = 0.15
++			}
++		}
++
++		WHT_ice_march_heroism = {
++			picture = generic_morale_bonus
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				army_morale_factor = 0.10
++				army_core_defence_factor = 0.10
++			}
++		}
++
++		WHT_volunteer_officer_spirit = {
++			picture = generic_officer
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				army_org_factor = 0.05
++				army_attack_factor = 0.05
++			}
++		}
++
++		WHT_denikin_general_command = {
++			picture = generic_officer
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				planning_speed = 0.15
++				max_planning = 0.10
++			}
++		}
++
++		WHT_cossack_allegiance = {
++			picture = generic_manpower_bonus
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				cavalry_attack_factor = 0.10
++				cavalry_defence_factor = 0.10
++				conscription_factor = 0.05
++			}
++		}
++
++		WHT_shock_officer_regiments = {
++			picture = generic_officer
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				special_forces_attack_factor = 0.10
++				army_infantry_attack_factor = 0.05
++			}
++		}
++
++		WHT_moscow_directive_spirit = {
++			picture = generic_victors_of_ww1
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				army_core_attack_factor = 0.10
++				war_support_factor = 0.10
++			}
++		}
++
++		WHT_wrangel_agrarian_order = {
++			picture = generic_agrarian_reform
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				consumer_goods_factor = -0.04
++				stability_factor = 0.10
++			}
++		}
++
++		WHT_reorganized_russian_army = {
++			picture = generic_victors_of_ww1
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				army_org_factor = 0.08
++				land_reinforce_rate = 0.05
++				experience_gain_army_factor = 0.10
++			}
++		}
++
++		WHT_british_military_mission = {
++			picture = generic_foreign_capital
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				experience_gain_army = 0.05
++				research_speed_factor = 0.03
++			}
++		}
++
++		WHT_french_munitions_pipeline = {
++			picture = generic_foreign_capital
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				industrial_capacity_factory = 0.05
++				production_speed_arms_factory_factor = 0.10
++			}
++		}
++
++		WHT_stevens_railway_mission = {
++			picture = generic_goods_redistribution
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				production_speed_rail_way_factor = 0.20
++				supply_node_range = 0.10
++			}
++		}
++
++		WHT_entente_diplomatic_recognition = {
++			picture = generic_foreign_capital
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				trade_opinion_factor = 0.20
++				political_power_gain = 0.10
++				stability_factor = 0.05
++			}
++		}
++
++		WHT_arsenal_of_democracy_aid = {
++			picture = generic_foreign_capital
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				industrial_capacity_factory = 0.10
++				production_speed_arms_factory_factor = 0.10
++				consumer_goods_factor = -0.03
++			}
++		}
++
++		WHT_russia_one_and_indivisible_spirit = {
++			picture = generic_national_unity
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.05
++				war_support_factor = 0.05
++				compliance_growth = 0.10
++			}
++		}
++
++		WHT_republican_constitution = {
++			picture = generic_democratic_drift_bonus
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.10
++				political_power_gain = 0.15
++				research_speed_factor = 0.05
++			}
++		}
++
++		WHT_supreme_military_dictate = {
++			picture = generic_officer
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.05
++				war_support_factor = 0.15
++				conscription = 0.01
++			}
++		}
++
++		WHT_restored_state_gendarmerie = {
++			picture = generic_intel_bonus
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				subversive_activites_upkeep = -0.25
++				foreign_subversive_activites = 0.20
++				resistance_damage_to_garrison = -0.15
++			}
++		}
++
++		WHT_crowned_regency = {
++			picture = generic_national_unity
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.10
++				political_power_gain = 0.20
++				war_support_factor = 0.05
++			}
++		}
++
++		WHT_holy_orthodox_symphonia = {
++			picture = generic_national_unity
++			allowed = { always = no }
++			removal_cost = -1
++			modifier = {
++				stability_factor = 0.10
++				army_morale_factor = 0.05
++			}
++		}
++
+ 	}
+ }
+ 
+diff --git a/WW1/common/national_focus/white_russia.txt b/WW1/common/national_focus/white_russia.txt
+new file mode 100644
+index 0000000..a8323e6
+--- /dev/null
++++ b/WW1/common/national_focus/white_russia.txt
+@@ -0,0 +1,1182 @@
++focus_tree = {
++	id = white_russia_focus
++	country = {
++		factor = 0
++		modifier = {
++			add = 10
++			tag = WHT
++		}
++	}
++	default = no
++	reset_on_civilwar = no
++
++	continuous_focus_position = { x = 20 y = 1400 }
++
++	shortcut = {
++		name = WHT_ww1_shortcut_omsk
++		target = WHT_ufa_state_conference
++		scroll_wheel_factor = 0.5
++	}
++	shortcut = {
++		name = WHT_ww1_shortcut_afsr
++		target = WHT_first_kuban_campaign
++		scroll_wheel_factor = 0.5
++	}
++	shortcut = {
++		name = WHT_ww1_shortcut_entente
++		target = WHT_allied_supreme_war_council_appeal
++		scroll_wheel_factor = 0.5
++	}
++	shortcut = {
++		name = WHT_ww1_shortcut_restoration
++		target = WHT_russia_one_and_indivisible
++		scroll_wheel_factor = 0.5
++	}
++
++	# =========================================================================
++	# WING 1: THE OMSK DIRECTORATE & SUPREME RULER KOLCHAK (15 Focuses)
++	# =========================================================================
++
++	focus = {
++		id = WHT_ufa_state_conference
++		icon = GFX_WHT_ufa_state_conference
++		cost = 5
++		x = 4
++		y = 0
++		completion_reward = {
++			add_political_power = 120
++			add_stability = 0.05
++		}
++	}
++
++	focus = {
++		id = WHT_czechoslovak_legion_alliance
++		icon = GFX_WHT_czechoslovak_legion_alliance
++		cost = 7
++		x = 2
++		y = 1
++		prerequisite = { focus = WHT_ufa_state_conference }
++		completion_reward = {
++			add_command_power = 20
++			army_experience = 15
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 2000
++				producer = WHT
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_omsk_directorate
++		icon = GFX_WHT_omsk_directorate
++		cost = 7
++		x = 4
++		y = 1
++		prerequisite = { focus = WHT_ufa_state_conference }
++		completion_reward = {
++			add_political_power = 100
++			add_ideas = WHT_provisional_all_russian_government
++		}
++	}
++
++	focus = {
++		id = WHT_trans_siberian_logistics
++		icon = GFX_RUS_Begin_Industrialization
++		cost = 7
++		x = 6
++		y = 1
++		prerequisite = { focus = WHT_ufa_state_conference }
++		completion_reward = {
++			add_ideas = WHT_trans_siberian_artery
++			594 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++			582 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_seize_kazan_gold
++		icon = GFX_WHT_seize_kazan_gold
++		cost = 8
++		x = 2
++		y = 2
++		prerequisite = { focus = WHT_czechoslovak_legion_alliance }
++		completion_reward = {
++			add_political_power = 150
++			add_stability = 0.10
++			add_offsite_building = {
++				type = industrial_complex
++				level = 2
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_kolchak_supreme_ruler
++		icon = GFX_WHT_kolchak_supreme_ruler
++		cost = 10
++		x = 4
++		y = 2
++		prerequisite = { focus = WHT_omsk_directorate }
++		completion_reward = {
++			add_political_power = 100
++			add_war_support = 0.10
++			set_country_flag = kolchak_supreme_ruler_proclaimed
++			swap_ideas = {
++				remove_idea = WHT_provisional_all_russian_government
++				add_idea = WHT_supreme_ruler_authority
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_pepelyayev_siberian_corps
++		icon = GFX_RUS_Aristocratic_Army
++		cost = 8
++		x = 6
++		y = 2
++		prerequisite = { focus = WHT_trans_siberian_logistics }
++		completion_reward = {
++			army_experience = 25
++			add_tech_bonus = {
++				name = WHT_siberian_infantry_bonus
++				bonus = 1.0
++				uses = 2
++				category = infantry_weapons
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_ural_industrial_complex
++		icon = GFX_RUS_Begin_Industrialization
++		cost = 10
++		x = 2
++		y = 3
++		prerequisite = { focus = WHT_seize_kazan_gold }
++		completion_reward = {
++			398 = {
++				add_extra_state_shared_building_slots = 3
++				add_building_construction = {
++					type = arms_factory
++					level = 2
++					instant_build = yes
++				}
++				add_building_construction = {
++					type = industrial_complex
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_siberian_mobilization
++		icon = GFX_RUS_All_For_Needs_Front
++		cost = 8
++		x = 4
++		y = 3
++		prerequisite = { focus = WHT_kolchak_supreme_ruler }
++		completion_reward = {
++			add_manpower = 40000
++			add_war_support = 0.05
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 1500
++				producer = WHT
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_siberian_river_flotillas
++		icon = GFX_RUS_CAS1_medium
++		cost = 7
++		x = 6
++		y = 3
++		prerequisite = { focus = WHT_pepelyayev_siberian_corps }
++		completion_reward = {
++			navy_experience = 25
++			add_tech_bonus = {
++				name = WHT_river_flotilla_bonus
++				bonus = 1.0
++				uses = 1
++				category = naval_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_siberian_fortifications
++		icon = GFX_WHT_siberian_fortifications
++		cost = 8
++		x = 2
++		y = 4
++		prerequisite = { focus = WHT_ural_industrial_complex }
++		completion_reward = {
++			594 = {
++				add_building_construction = {
++					type = bunker
++					level = 2
++					instant_build = yes
++				}
++			}
++			398 = {
++				add_building_construction = {
++					type = bunker
++					level = 2
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_purge_socialist_revolutionaries
++		icon = GFX_RUS_Bring_Officer_Corps_Under_Control
++		cost = 8
++		x = 4
++		y = 4
++		prerequisite = { focus = WHT_siberian_mobilization }
++		completion_reward = {
++			add_stability = 0.08
++			add_political_power = 75
++			add_popularity = {
++				ideology = neutrality
++				popularity = 0.15
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_omsk_cadet_corps
++		icon = GFX_RUS_Court_General_Staff
++		cost = 8
++		x = 6
++		y = 4
++		prerequisite = { focus = WHT_siberian_river_flotillas }
++		completion_reward = {
++			army_experience = 30
++			add_command_power = 25
++			add_tech_bonus = {
++				name = WHT_cadet_doctrine_bonus
++				bonus = 1.0
++				uses = 1
++				category = land_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_ural_offensive
++		icon = GFX_RUS_Better_Death_Than_Slavery
++		cost = 10
++		x = 2
++		y = 5
++		prerequisite = { focus = WHT_siberian_fortifications }
++		prerequisite = { focus = WHT_purge_socialist_revolutionaries }
++		completion_reward = {
++			add_war_support = 0.10
++			army_experience = 25
++			add_tech_bonus = {
++				name = WHT_ural_offensive_doctrine
++				bonus = 1.0
++				uses = 2
++				category = land_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_great_siberian_march
++		icon = GFX_RUS_All_Russian_Movement
++		cost = 10
++		x = 6
++		y = 5
++		prerequisite = { focus = WHT_omsk_cadet_corps }
++		prerequisite = { focus = WHT_purge_socialist_revolutionaries }
++		completion_reward = {
++			add_ideas = WHT_ice_march_heroism
++			add_war_support = 0.10
++			add_political_power = 100
++		}
++	}
++
++	# =========================================================================
++	# WING 2: ARMED FORCES OF SOUTH RUSSIA - DENIKIN, WRANGEL & COSSACKS (16 Focuses)
++	# =========================================================================
++
++	focus = {
++		id = WHT_first_kuban_campaign
++		icon = GFX_WHT_first_kuban_campaign
++		cost = 5
++		x = 14
++		y = 0
++		completion_reward = {
++			add_stability = 0.05
++			add_war_support = 0.10
++			army_experience = 20
++		}
++	}
++
++	focus = {
++		id = WHT_volunteer_army_mobilization
++		icon = GFX_WHT_volunteer_army_mobilization
++		cost = 8
++		x = 12
++		y = 1
++		prerequisite = { focus = WHT_first_kuban_campaign }
++		completion_reward = {
++			add_manpower = 30000
++			add_ideas = WHT_volunteer_officer_spirit
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 2500
++				producer = WHT
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_denikin_assumes_command
++		icon = GFX_RUS_Bring_Officer_Corps_Under_Control
++		cost = 8
++		x = 14
++		y = 1
++		prerequisite = { focus = WHT_first_kuban_campaign }
++		completion_reward = {
++			add_political_power = 100
++			add_ideas = WHT_denikin_general_command
++		}
++	}
++
++	focus = {
++		id = WHT_cossack_hosts_federation
++		icon = GFX_WHT_cossack_hosts_federation
++		cost = 8
++		x = 16
++		y = 1
++		prerequisite = { focus = WHT_first_kuban_campaign }
++		completion_reward = {
++			add_ideas = WHT_cossack_allegiance
++			add_manpower = 25000
++		}
++	}
++
++	focus = {
++		id = WHT_colored_officer_regiments
++		icon = GFX_RUS_Aristocratic_Army
++		cost = 8
++		x = 12
++		y = 2
++		prerequisite = { focus = WHT_volunteer_army_mobilization }
++		completion_reward = {
++			army_experience = 25
++			add_ideas = WHT_shock_officer_regiments
++		}
++	}
++
++	focus = {
++		id = WHT_armed_forces_of_south_russia
++		icon = GFX_WHT_armed_forces_of_south_russia
++		cost = 10
++		x = 14
++		y = 2
++		prerequisite = { focus = WHT_denikin_assumes_command }
++		completion_reward = {
++			add_war_support = 0.10
++			add_political_power = 80
++			218 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = arms_factory
++					level = 2
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_don_and_kuban_cavalry_corps
++		icon = GFX_RUS_Cossack_Bedrock
++		cost = 8
++		x = 16
++		y = 2
++		prerequisite = { focus = WHT_cossack_hosts_federation }
++		completion_reward = {
++			army_experience = 25
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 1500
++				producer = WHT
++			}
++			add_tech_bonus = {
++				name = WHT_cavalry_corps_bonus
++				bonus = 1.0
++				uses = 2
++				category = land_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_armored_train_flotillas
++		icon = GFX_RUS_Begin_Industrialization
++		cost = 8
++		x = 12
++		y = 3
++		prerequisite = { focus = WHT_colored_officer_regiments }
++		completion_reward = {
++			218 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 2
++					instant_build = yes
++				}
++			}
++			add_tech_bonus = {
++				name = WHT_armored_train_bonus
++				bonus = 1.0
++				uses = 1
++				category = armor
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_moscow_directive
++		icon = GFX_WHT_moscow_directive
++		cost = 10
++		x = 14
++		y = 3
++		prerequisite = { focus = WHT_armed_forces_of_south_russia }
++		completion_reward = {
++			add_ideas = WHT_moscow_directive_spirit
++			add_political_power = 100
++			add_war_support = 0.10
++		}
++	}
++
++	focus = {
++		id = WHT_tarki_and_terek_pacification
++		icon = GFX_RUS_All_Russian_Movement
++		cost = 8
++		x = 16
++		y = 3
++		prerequisite = { focus = WHT_don_and_kuban_cavalry_corps }
++		completion_reward = {
++			add_political_power = 80
++			232 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++			233 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_black_sea_squadron
++		icon = GFX_RUS_CAS1_medium
++		cost = 8
++		x = 12
++		y = 4
++		prerequisite = { focus = WHT_armored_train_flotillas }
++		completion_reward = {
++			137 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = dockyard
++					level = 2
++					instant_build = yes
++				}
++				add_building_construction = {
++					type = naval_base
++					level = 2
++					instant_build = yes
++				}
++			}
++			navy_experience = 25
++		}
++	}
++
++	focus = {
++		id = WHT_wrangel_land_reform
++		icon = GFX_WHT_wrangel_land_reform
++		cost = 10
++		x = 14
++		y = 4
++		prerequisite = { focus = WHT_moscow_directive }
++		completion_reward = {
++			add_stability = 0.15
++			add_ideas = WHT_wrangel_agrarian_order
++		}
++	}
++
++	focus = {
++		id = WHT_black_baron_offensive
++		icon = GFX_WHT_black_baron_offensive
++		cost = 8
++		x = 16
++		y = 4
++		prerequisite = { focus = WHT_tarki_and_terek_pacification }
++		prerequisite = { focus = WHT_moscow_directive }
++		completion_reward = {
++			army_experience = 30
++			add_tech_bonus = {
++				name = WHT_wrangel_offensive_bonus
++				bonus = 1.0
++				uses = 2
++				category = land_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_crimean_redoubt
++		icon = GFX_WHT_crimean_redoubt
++		cost = 10
++		x = 12
++		y = 5
++		prerequisite = { focus = WHT_black_sea_squadron }
++		completion_reward = {
++			137 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = industrial_complex
++					level = 2
++					instant_build = yes
++				}
++				add_building_construction = {
++					type = bunker
++					level = 3
++					instant_build = yes
++				}
++				add_building_construction = {
++					type = coastal_bunker
++					level = 3
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_tsaritsyn_bridgehead
++		icon = GFX_RUS_All_For_Needs_Front
++		cost = 8
++		x = 14
++		y = 5
++		prerequisite = { focus = WHT_wrangel_land_reform }
++		prerequisite = { focus = WHT_black_baron_offensive }
++		completion_reward = {
++			238 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = arms_factory
++					level = 2
++					instant_build = yes
++				}
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_russian_army_reorganization
++		icon = GFX_RUS_Court_General_Staff
++		cost = 10
++		x = 16
++		y = 5
++		prerequisite = { focus = WHT_black_baron_offensive }
++		completion_reward = {
++			add_ideas = WHT_reorganized_russian_army
++			army_experience = 30
++			add_manpower = 35000
++		}
++	}
++
++	# =========================================================================
++	# WING 3: ENTENTE INTERVENTION & WESTERN MUNITIONS (15 Focuses)
++	# =========================================================================
++
++	focus = {
++		id = WHT_allied_supreme_war_council_appeal
++		icon = GFX_RUS_Connections_In_Senate
++		cost = 5
++		x = 24
++		y = 0
++		completion_reward = {
++			add_political_power = 100
++			add_stability = 0.05
++		}
++	}
++
++	focus = {
++		id = WHT_general_knox_british_mission
++		icon = GFX_WHT_general_knox_british_mission
++		cost = 8
++		x = 22
++		y = 1
++		prerequisite = { focus = WHT_allied_supreme_war_council_appeal }
++		completion_reward = {
++			add_ideas = WHT_british_military_mission
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 4000
++				producer = ENG
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_french_black_sea_mission
++		icon = GFX_WHT_french_black_sea_mission
++		cost = 8
++		x = 24
++		y = 1
++		prerequisite = { focus = WHT_allied_supreme_war_council_appeal }
++		completion_reward = {
++			add_ideas = WHT_french_munitions_pipeline
++			add_tech_bonus = {
++				name = WHT_french_artillery_bonus
++				bonus = 1.0
++				uses = 2
++				category = artillery
++			}
++			add_equipment_to_stockpile = {
++				type = artillery_equipment_1
++				amount = 200
++				producer = FRA
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_japanese_siberian_liaison
++		icon = GFX_WHT_japanese_siberian_liaison
++		cost = 8
++		x = 26
++		y = 1
++		prerequisite = { focus = WHT_allied_supreme_war_council_appeal }
++		completion_reward = {
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 3000
++				producer = JAP
++			}
++			408 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 2
++					instant_build = yes
++				}
++				add_building_construction = {
++					type = naval_base
++					level = 2
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_british_vickers_and_enfield_supplies
++		icon = GFX_RUS_All_For_Needs_Front
++		cost = 8
++		x = 22
++		y = 2
++		prerequisite = { focus = WHT_general_knox_british_mission }
++		completion_reward = {
++			add_equipment_to_stockpile = {
++				type = infantry_equipment_1
++				amount = 5000
++				producer = ENG
++			}
++			add_equipment_to_stockpile = {
++				type = support_equipment_1
++				amount = 300
++				producer = ENG
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_murmansk_and_arkhangelsk_bridgehead
++		icon = GFX_RUS_Begin_Industrialization
++		cost = 8
++		x = 24
++		y = 2
++		prerequisite = { focus = WHT_general_knox_british_mission }
++		prerequisite = { focus = WHT_french_black_sea_mission }
++		completion_reward = {
++			214 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = industrial_complex
++					level = 2
++					instant_build = yes
++				}
++			}
++			213 = {
++				add_building_construction = {
++					type = naval_base
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_american_railroad_corps
++		icon = GFX_RUS_An_Example_Of_Liberal_Democracy
++		cost = 8
++		x = 26
++		y = 2
++		prerequisite = { focus = WHT_japanese_siberian_liaison }
++		completion_reward = {
++			add_ideas = WHT_stevens_railway_mission
++			594 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++			408 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_heavy_mark_v_tanks
++		icon = GFX_RUS_Aristocratic_Army
++		cost = 8
++		x = 22
++		y = 3
++		prerequisite = { focus = WHT_british_vickers_and_enfield_supplies }
++		completion_reward = {
++			army_experience = 25
++			add_tech_bonus = {
++				name = WHT_mark_v_tank_bonus
++				bonus = 1.0
++				uses = 2
++				category = armor
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_royal_navy_black_sea_escorts
++		icon = GFX_RUS_CAS1_medium
++		cost = 8
++		x = 24
++		y = 3
++		prerequisite = { focus = WHT_murmansk_and_arkhangelsk_bridgehead }
++		completion_reward = {
++			navy_experience = 25
++			add_equipment_to_stockpile = {
++				type = convoy_1
++				amount = 50
++				producer = ENG
++			}
++			add_tech_bonus = {
++				name = WHT_naval_convoy_bonus
++				bonus = 1.0
++				uses = 1
++				category = naval_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_renault_ft_tanks
++		icon = GFX_RUS_Begin_Industrialization
++		cost = 8
++		x = 26
++		y = 3
++		prerequisite = { focus = WHT_american_railroad_corps }
++		completion_reward = {
++			army_experience = 25
++			add_tech_bonus = {
++				name = WHT_renault_ft_bonus
++				bonus = 1.0
++				uses = 2
++				category = armor
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_air_service_sopwith_camels
++		icon = GFX_RUS_CAS1_medium
++		cost = 8
++		x = 22
++		y = 4
++		prerequisite = { focus = WHT_heavy_mark_v_tanks }
++		completion_reward = {
++			air_experience = 30
++			add_tech_bonus = {
++				name = WHT_air_fighter_bonus
++				bonus = 1.0
++				uses = 2
++				category = air_doctrine
++			}
++			add_equipment_to_stockpile = {
++				type = fighter_equipment_1
++				amount = 50
++				producer = ENG
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_paris_peace_conference_delegation
++		icon = GFX_RUS_Connections_In_Senate
++		cost = 10
++		x = 24
++		y = 4
++		prerequisite = { focus = WHT_royal_navy_black_sea_escorts }
++		completion_reward = {
++			add_political_power = 150
++			add_stability = 0.10
++			add_ideas = WHT_entente_diplomatic_recognition
++		}
++	}
++
++	focus = {
++		id = WHT_trans_pacific_credit_lines
++		icon = GFX_RUS_A_Fair_Salary
++		cost = 8
++		x = 26
++		y = 4
++		prerequisite = { focus = WHT_renault_ft_tanks }
++		completion_reward = {
++			add_offsite_building = {
++				type = industrial_complex
++				level = 3
++			}
++			add_political_power = 75
++		}
++	}
++
++	focus = {
++		id = WHT_western_military_academies
++		icon = GFX_RUS_Court_General_Staff
++		cost = 10
++		x = 22
++		y = 5
++		prerequisite = { focus = WHT_air_service_sopwith_camels }
++		prerequisite = { focus = WHT_paris_peace_conference_delegation }
++		completion_reward = {
++			army_experience = 35
++			add_tech_bonus = {
++				name = WHT_western_doctrine_bonus
++				bonus = 1.0
++				uses = 2
++				category = land_doctrine
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_entente_arsenal_of_liberation
++		icon = GFX_RUS_All_Russian_Movement
++		cost = 10
++		x = 26
++		y = 5
++		prerequisite = { focus = WHT_trans_pacific_credit_lines }
++		prerequisite = { focus = WHT_paris_peace_conference_delegation }
++		completion_reward = {
++			add_ideas = WHT_arsenal_of_democracy_aid
++			add_war_support = 0.10
++		}
++	}
++
++	# =========================================================================
++	# WING 4: POST-WAR POLITICAL RESTORATION - CONSTITUENT ASSEMBLY VS CROWNED REGENT (14 Focuses)
++	# =========================================================================
++
++	focus = {
++		id = WHT_russia_one_and_indivisible
++		icon = GFX_WHT_russia_one_and_indivisible
++		cost = 5
++		x = 34
++		y = 0
++		completion_reward = {
++			add_stability = 0.10
++			add_war_support = 0.10
++			add_ideas = WHT_russia_one_and_indivisible_spirit
++		}
++	}
++
++	focus = {
++		id = WHT_constituent_assembly
++		icon = GFX_WHT_constituent_assembly
++		cost = 10
++		x = 32
++		y = 1
++		mutually_exclusive = { focus = WHT_military_dictatorship }
++		prerequisite = { focus = WHT_russia_one_and_indivisible }
++		completion_reward = {
++			set_politics = {
++				ruling_party = democratic
++				elections_allowed = yes
++			}
++			add_popularity = {
++				ideology = democratic
++				popularity = 0.30
++			}
++			add_stability = 0.10
++			add_ideas = WHT_republican_constitution
++		}
++	}
++
++	focus = {
++		id = WHT_military_dictatorship
++		icon = GFX_WHT_military_dictatorship
++		cost = 10
++		x = 36
++		y = 1
++		mutually_exclusive = { focus = WHT_constituent_assembly }
++		prerequisite = { focus = WHT_russia_one_and_indivisible }
++		completion_reward = {
++			set_politics = {
++				ruling_party = neutrality
++				elections_allowed = no
++			}
++			add_popularity = {
++				ideology = neutrality
++				popularity = 0.30
++			}
++			add_political_power = 150
++			add_ideas = WHT_supreme_military_dictate
++		}
++	}
++
++	focus = {
++		id = WHT_broad_coalition_duma
++		icon = GFX_RUS_An_Example_Of_Liberal_Democracy
++		cost = 8
++		x = 32
++		y = 2
++		prerequisite = { focus = WHT_constituent_assembly }
++		completion_reward = {
++			add_political_power = 120
++			add_stability = 0.05
++			add_popularity = {
++				ideology = democratic
++				popularity = 0.15
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_okhrana_restoration
++		icon = GFX_WHT_okhrana_restoration
++		cost = 8
++		x = 34
++		y = 2
++		prerequisite = { focus = WHT_russia_one_and_indivisible }
++		completion_reward = {
++			add_ideas = WHT_restored_state_gendarmerie
++			add_political_power = 75
++		}
++	}
++
++	focus = {
++		id = WHT_restoration_of_the_monarchy
++		icon = GFX_WHT_restoration_of_the_monarchy
++		cost = 10
++		x = 36
++		y = 2
++		prerequisite = { focus = WHT_military_dictatorship }
++		completion_reward = {
++			set_country_flag = romanov_regency_established
++			add_political_power = 150
++			add_ideas = WHT_crowned_regency
++		}
++	}
++
++	focus = {
++		id = WHT_zemstvo_self_governance
++		icon = GFX_RUS_Bring_Prosperity_To_Peasants
++		cost = 8
++		x = 32
++		y = 3
++		prerequisite = { focus = WHT_broad_coalition_duma }
++		completion_reward = {
++			594 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++			218 = {
++				add_building_construction = {
++					type = infrastructure
++					level = 1
++					instant_build = yes
++				}
++			}
++			add_stability = 0.05
++		}
++	}
++
++	focus = {
++		id = WHT_reconstruction_of_devastated_lands
++		icon = GFX_RUS_Begin_Industrialization
++		cost = 10
++		x = 34
++		y = 3
++		prerequisite = { focus = WHT_okhrana_restoration }
++		completion_reward = {
++			594 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = industrial_complex
++					level = 2
++					instant_build = yes
++				}
++			}
++			218 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = industrial_complex
++					level = 2
++					instant_build = yes
++				}
++			}
++			398 = {
++				add_extra_state_shared_building_slots = 2
++				add_building_construction = {
++					type = industrial_complex
++					level = 2
++					instant_build = yes
++				}
++			}
++		}
++	}
++
++	focus = {
++		id = WHT_crowned_regency_council
++		icon = GFX_RUS_All_Russian_Regency_Council
++		cost = 8
++		x = 36
++		y = 3
++		prerequisite = { focus = WHT_restoration_of_the_monarchy }
++		completion_reward = {
++			add_ideas = WHT_holy_orthodox_symphonia
++			add_stability = 0.10
++			add_political_power = 100
++		}
++	}
++
++	focus = {
++		id = WHT_free_peasant_proprietorship
++		icon = GFX_RUS_A_Russian_Farmer
++		cost = 8
++		x = 32
++		y = 4
++		prerequisite = { focus = WHT_zemstvo_self_governance }
++		completion_reward = {
++			add_stability = 0.10
++			add_political_power = 75
++		}
++	}
++
++	focus = {
++		id = WHT_national_reconciliation_decree
++		icon = GFX_RUS_All_Russian_Movement
++		cost = 8
++		x = 34
++		y = 4
++		prerequisite = { focus = WHT_reconstruction_of_devastated_lands }
++		completion_reward = {
++			add_stability = 0.10
++			add_war_support = 0.05
++			add_manpower = 50000
++		}
++	}
++
++	focus = {
++		id = WHT_loyalist_officer_privileges
++		icon = GFX_RUS_Court_General_Staff
++		cost = 8
++		x = 36
++		y = 4
++		prerequisite = { focus = WHT_crowned_regency_council }
++		completion_reward = {
++			army_experience = 30
++			add_command_power = 25
++		}
++	}
++
++	focus = {
++		id = WHT_all_russian_reunification
++		icon = GFX_WHT_all_russian_reunification
++		cost = 10
++		x = 34
++		y = 5
++		prerequisite = { focus = WHT_national_reconciliation_decree }
++		prerequisite = {
++			focus = WHT_free_peasant_proprietorship
++			focus = WHT_loyalist_officer_privileges
++		}
++		completion_reward = {
++			add_stability = 0.15
++			add_war_support = 0.15
++			add_political_power = 200
++		}
++	}
++
++	focus = {
++		id = WHT_reunify_the_russian_state
++		icon = GFX_WHT_all_russian_reunification
++		cost = 10
++		x = 34
++		y = 6
++		prerequisite = { focus = WHT_all_russian_reunification }
++		completion_reward = {
++			change_tag_to = SOV
++			add_political_power = 250
++			add_stability = 0.15
++			add_war_support = 0.15
++			set_country_flag = WHT_russia_restored_and_reunified
++			custom_effect_tooltip = WHT_reunify_the_russian_state_tt
++		}
++	}
++}
