@@ -2,8 +2,8 @@
 
 Asserts game rules and balances defined in the SDD specification:
 - Global defines: SPECIAL_FORCES_CAP_BASE = 0.0, SPECIAL_FORCES_CAP_MIN = 48.
-- Infantry Special Forces: org <= 38, breakthrough <= 0.05, hard_attack <= -0.20,
-  plus polarized opposing terrain penalties.
+- Infantry Special Forces (marine, marine_commando, mountaineers, ranger_battalion):
+  org <= 38, breakthrough <= 0.05, hard_attack <= -0.20, plus polarized opposing terrain penalties.
 - Historical subunits (K.u.k. Gebirgsjäger, ANZAC Corps) terrain penalties.
 - Tech tree: improved_special_forces uses flat capacity (special_forces_min = 12)
   without percentage multipliers (special_forces_cap).
@@ -106,7 +106,33 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(hills_atk, "marine hills terrain block with attack penalty is required")
         self.assertLessEqual(hills_atk, -0.15, f"marine hills attack must be <= -0.15, found {hills_atk}")
 
-    # 3. Mountaineers Balance in common/units/infantry.txt
+    # 3. Marine Commando Balance in common/units/infantry.txt
+    def test_marine_commando_balance(self):
+        subunits = self._get_subunits("common/units/infantry.txt")
+        self.assertIn("marine_commando", subunits, "marine_commando subunit definition missing in infantry.txt")
+        commando = subunits["marine_commando"]
+
+        org = self._get_float_attr(commando, "max_organisation")
+        self.assertIsNotNone(org, "marine_commando max_organisation is missing")
+        self.assertLessEqual(org, 38.0, f"marine_commando max_organisation must be <= 38, found {org}")
+
+        breakthrough = self._get_float_attr(commando, "breakthrough")
+        self.assertIsNotNone(breakthrough, "marine_commando breakthrough is missing")
+        self.assertLessEqual(breakthrough, 0.05, f"marine_commando breakthrough must be <= 0.05, found {breakthrough}")
+
+        hard_attack = self._get_float_attr(commando, "hard_attack")
+        self.assertIsNotNone(hard_attack, "marine_commando hard_attack must be defined")
+        self.assertLessEqual(hard_attack, -0.20, f"marine_commando hard_attack must be <= -0.20, found {hard_attack}")
+
+        mountain_atk = self._get_terrain_attack(commando, "mountain")
+        self.assertIsNotNone(mountain_atk, "marine_commando mountain terrain block with attack penalty is required")
+        self.assertLessEqual(mountain_atk, -0.25, f"marine_commando mountain attack must be <= -0.25, found {mountain_atk}")
+
+        hills_atk = self._get_terrain_attack(commando, "hills")
+        self.assertIsNotNone(hills_atk, "marine_commando hills terrain block with attack penalty is required")
+        self.assertLessEqual(hills_atk, -0.15, f"marine_commando hills attack must be <= -0.15, found {hills_atk}")
+
+    # 4. Mountaineers Balance in common/units/infantry.txt
     def test_mountaineers_balance(self):
         subunits = self._get_subunits("common/units/infantry.txt")
         self.assertIn("mountaineers", subunits, "mountaineers subunit definition missing in infantry.txt")
@@ -138,7 +164,7 @@ class TestSpecialForcesBalance(unittest.TestCase):
             amphibious_atk, -0.40, f"mountaineers amphibious attack must be <= -0.40, found {amphibious_atk}"
         )
 
-    # 4. Ranger Battalion Balance in common/units/infantry.txt
+    # 5. Ranger Battalion Balance in common/units/infantry.txt
     def test_ranger_battalion_balance(self):
         subunits = self._get_subunits("common/units/infantry.txt")
         self.assertIn("ranger_battalion", subunits, "ranger_battalion subunit definition missing in infantry.txt")
@@ -164,7 +190,17 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(river_atk, "ranger_battalion river terrain block with attack penalty is required")
         self.assertLessEqual(river_atk, -0.15, f"ranger_battalion river attack must be <= -0.15, found {river_atk}")
 
-    # 5. WW1 Special Subunits: K.u.k. Gebirgsjäger
+        marsh_atk = self._get_terrain_attack(ranger, "marsh")
+        self.assertIsNotNone(marsh_atk, "ranger_battalion marsh terrain block with attack penalty is required")
+        self.assertLessEqual(marsh_atk, -0.15, f"ranger_battalion marsh attack must be <= -0.15, found {marsh_atk}")
+
+        amphibious_atk = self._get_terrain_attack(ranger, "amphibious")
+        self.assertIsNotNone(amphibious_atk, "ranger_battalion amphibious terrain block with attack penalty is required")
+        self.assertLessEqual(
+            amphibious_atk, -0.30, f"ranger_battalion amphibious attack must be <= -0.30, found {amphibious_atk}"
+        )
+
+    # 6. WW1 Special Subunits: K.u.k. Gebirgsjäger
     def test_ww1_special_subunits_kuk_gebirgsjaeger(self):
         subunits = self._get_subunits("common/units/ww1_special_subunits.txt")
         self.assertIn(
@@ -176,13 +212,17 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(river_atk, "kuk_gebirgsjaeger river terrain block with attack penalty is required")
         self.assertLessEqual(river_atk, -0.25, f"kuk_gebirgsjaeger river attack must be <= -0.25, found {river_atk}")
 
+        marsh_atk = self._get_terrain_attack(kuk, "marsh")
+        self.assertIsNotNone(marsh_atk, "kuk_gebirgsjaeger marsh terrain block with attack penalty is required")
+        self.assertLessEqual(marsh_atk, -0.25, f"kuk_gebirgsjaeger marsh attack must be <= -0.25, found {marsh_atk}")
+
         amphibious_atk = self._get_terrain_attack(kuk, "amphibious")
         self.assertIsNotNone(amphibious_atk, "kuk_gebirgsjaeger amphibious terrain block with attack penalty is required")
         self.assertLessEqual(
             amphibious_atk, -0.40, f"kuk_gebirgsjaeger amphibious attack must be <= -0.40, found {amphibious_atk}"
         )
 
-    # 6. WW1 Special Subunits: ANZAC Corps
+    # 7. WW1 Special Subunits: ANZAC Corps
     def test_ww1_special_subunits_anzac_corps(self):
         subunits = self._get_subunits("common/units/ww1_special_subunits.txt")
         self.assertIn("anzac_corps", subunits, "anzac_corps subunit missing in ww1_special_subunits.txt")
@@ -192,7 +232,7 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(mountain_atk, "anzac_corps mountain terrain block with attack penalty is required")
         self.assertLessEqual(mountain_atk, -0.15, f"anzac_corps mountain attack must be <= -0.15, found {mountain_atk}")
 
-    # 7. Technology: improved_special_forces in common/technologies/infantry.txt
+    # 8. Technology: improved_special_forces in common/technologies/infantry.txt
     def test_improved_special_forces_technology(self):
         nodes = parse(read(ROOT / "common/technologies/infantry.txt"))
         techs_node = next((n for n in nodes if n.key == "technologies"), None)
@@ -212,7 +252,7 @@ class TestSpecialForcesBalance(unittest.TestCase):
             pct_cap, f"improved_special_forces must NOT define special_forces_cap multiplier, found {pct_cap}"
         )
 
-    # 8. Elite Infantry Preservation in common/units/elite_inf.txt
+    # 9. Elite Infantry Preservation in common/units/elite_inf.txt
     def test_elite_inf_breakthrough_and_equipment_preservation(self):
         subunits = self._get_subunits("common/units/elite_inf.txt")
         self.assertIn("elite_inf", subunits, "elite_inf subunit definition missing in elite_inf.txt")
@@ -228,7 +268,7 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIn("support_equipment", needs, "elite_inf must require support_equipment")
         self.assertIn("artillery_equipment", needs, "elite_inf must require artillery_equipment")
 
-    # 9. Tanks: heavy_armor
+    # 10. Tanks: heavy_armor
     def test_tank_heavy_armor(self):
         subunits = self._get_subunits("common/units/heavy_armor.txt")
         self.assertIn("heavy_armor", subunits, "heavy_armor subunit missing")
@@ -242,7 +282,7 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(fort_atk, "heavy_armor fort attack modifier missing")
         self.assertGreaterEqual(fort_atk, 0.60, f"heavy_armor fort attack must be >= 0.60, found {fort_atk}")
 
-    # 10. Tanks: medium_armor
+    # 11. Tanks: medium_armor
     def test_tank_medium_armor(self):
         subunits = self._get_subunits("common/units/medium_armor.txt")
         self.assertIn("medium_armor", subunits, "medium_armor subunit missing")
@@ -256,7 +296,7 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(fort_atk, "medium_armor fort attack modifier missing")
         self.assertGreaterEqual(fort_atk, 0.45, f"medium_armor fort attack must be >= 0.45, found {fort_atk}")
 
-    # 11. Tanks: light_armor
+    # 12. Tanks: light_armor
     def test_tank_light_armor(self):
         subunits = self._get_subunits("common/units/light_armor.txt")
         self.assertIn("light_armor", subunits, "light_armor subunit missing")
@@ -269,6 +309,35 @@ class TestSpecialForcesBalance(unittest.TestCase):
         fort_atk = self._get_terrain_attack(tank, "fort")
         self.assertIsNotNone(fort_atk, "light_armor fort attack modifier missing")
         self.assertGreaterEqual(fort_atk, 0.35, f"light_armor fort attack must be >= 0.35, found {fort_atk}")
+
+    # =========================================================================
+    # Plan Aliases (matching plan specification names)
+    # =========================================================================
+    def test_sf_technologies_flat_increment(self):
+        """Plan alias: tests tech tree flat increment and removal of percent cap."""
+        self.test_improved_special_forces_technology()
+
+    def test_generic_sf_stats_and_terrain_polarization(self):
+        """Plan alias: tests marine, marine_commando, mountaineers, and ranger battalion balance."""
+        self.test_marine_balance()
+        self.test_marine_commando_balance()
+        self.test_mountaineers_balance()
+        self.test_ranger_battalion_balance()
+
+    def test_national_sf_polarization(self):
+        """Plan alias: tests K.u.k. Gebirgsjäger and ANZAC Corps terrain polarization."""
+        self.test_ww1_special_subunits_kuk_gebirgsjaeger()
+        self.test_ww1_special_subunits_anzac_corps()
+
+    def test_elite_inf_preserved(self):
+        """Plan alias: tests elite infantry breakthrough and equipment preservation."""
+        self.test_elite_inf_breakthrough_and_equipment_preservation()
+
+    def test_tanks_fort_and_org_modifiers(self):
+        """Plan alias: tests heavy, medium, and light armor org ceiling and fort attack."""
+        self.test_tank_heavy_armor()
+        self.test_tank_medium_armor()
+        self.test_tank_light_armor()
 
 
 if __name__ == "__main__":
