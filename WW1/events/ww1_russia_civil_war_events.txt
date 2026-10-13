@@ -177,30 +177,24 @@ country_event = {
 		}
 
 		# Armenia (ARM): Yerevan 229 / 230
+		# Armenia (ARM): Yerevan 230
 		ARM = {
 			transfer_state = 230
-			if = {
-				limit = { 229 = { is_owned_by = SOV } }
-				transfer_state = 229
-			}
 			add_state_core = 230
 		}
 
-		# Azerbaijan (AZR): Baku 228 / 229
+		# Azerbaijan (AZR): Baku 229
 		AZR = {
 			transfer_state = 229
-			if = {
-				limit = { 228 = { is_owned_by = SOV } }
-				transfer_state = 228
-			}
 			add_state_core = 229
 		}
 
-		# Don Cossacks (DON): Rostov 218
+		# Don Cossacks (DON): Rostov 218, Taganrog 228
 		DON = {
 			transfer_state = 218
 			transfer_state = 228
 			add_state_core = 218
+			add_state_core = 228
 		}
 
 		# 5. Load Dedicated Civil War OOBs
@@ -217,6 +211,16 @@ country_event = {
 		# 6. Fleet and Stockpile Division
 		custom_effect_tooltip = SOV_fleet_split_tt
 		custom_effect_tooltip = SOV_stockpile_split_tt
+		WHT = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 500
+			}
+		}
 
 		# 7. Mutual War Declarations
 		# SOV vs WHT
@@ -246,12 +250,14 @@ country_event = {
 	# Option A: Play as Soviet Russia (SOV)
 	option = {
 		name = ww1_russia_civil_war.1.a
+		ai_chance = { factor = 100 }
 		custom_effect_tooltip = SOV_play_reds_tt
 	}
 
 	# Option B: Play as White Russia (WHT)
 	option = {
 		name = ww1_russia_civil_war.1.b
+		ai_chance = { factor = 0 }
 		WHT = {
 			change_tag_from = SOV
 		}
