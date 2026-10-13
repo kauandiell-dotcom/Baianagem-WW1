@@ -192,11 +192,14 @@ class OttomanContentReworkTests(unittest.TestCase):
         self.assertEqual(missing_decisions, [], f"Missing required Ottoman decisions: {missing_decisions}")
 
         events_text = (ROOT / "events/ww1_ottoman_events.txt").read_text(encoding="utf-8")
-        for ev_id in ("ww1_ottoman.31", "ww1_ottoman.32"):
+        for ev_id in ("ww1_ottoman.31", "ww1_ottoman.32", "ww1_ottoman.33"):
             self.assertIsNotNone(
                 re.search(rf"\bid\s*=\s*{re.escape(ev_id)}\b(?!\.)", events_text),
                 f"Missing event definition {ev_id} in events/ww1_ottoman_events.txt"
             )
+        self.assertIn("transfer_state_to = SAU", events_text, "ww1_ottoman.31 must transfer unsecured vilayets to SAU")
+        self.assertIn("declare_war_on = {\n\t\t\t\ttarget = SAU", events_text, "ww1_ottoman.31 must declare active war on SAU")
+        self.assertIn("white_peace = SAU", events_text, "ww1_ottoman.33 must pacify and peace with SAU")
 
         orphan_events = []
         for i in range(1, 33):

@@ -3703,6 +3703,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 		completion_reward = {
 			add_opinion_modifier = { target = SER modifier = SOV_slavic_brother_opinion }
 			add_opinion_modifier = { target = BUL modifier = SOV_slavic_brother_opinion }
+			add_political_power = 60
+			army_experience = 15
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 }
 		}
 	}
 
@@ -3787,6 +3790,8 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 			add_stability = 0.10
 			add_opinion_modifier = { target = BUL modifier = positive_50 }
 			add_opinion_modifier = { target = SER modifier = positive_50 }
+			army_experience = 20
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -3891,6 +3896,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 		completion_reward = {
 			add_opinion_modifier = { target = FRA modifier = SOV_sacred_alliance_opinion }
 			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 }
+			army_experience = 15
 		}
 	}
 
@@ -3909,6 +3917,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 		completion_reward = {
 			add_opinion_modifier = { target = ENG modifier = SOV_entente_cordiale_opinion }
 			add_political_power = 75
+			navy_experience = 20
+			229 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_stability = 0.05
 		}
 	}
 
@@ -4242,6 +4253,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 		completion_reward = {
 			add_opinion_modifier = { target = GER modifier = SOV_bjorko_pact_opinion }
 			set_country_flag = SOV_bjorko_treaty_ratified
+			add_political_power = 100
+			add_stability = 0.08
+			add_tech_bonus = { name = sov_german_industrial_partnership bonus = 0.50 uses = 1 category = industry }
 		}
 	}
 
@@ -4281,10 +4295,12 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 		prerequisite = {
 			focus = SOV_bjorko_treaty_reborn
 		}
-				completion_reward = {
+		completion_reward = {
 			add_war_support = 0.15
 			add_political_power = 120
 			add_state_claim = 265
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2500 }
+			army_experience = 25
 			if = {
 				limit = {
 					country_exists = GER
@@ -4337,6 +4353,8 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			add_political_power = 150
 			add_stability = 0.10
 			add_opinion_modifier = { target = GER modifier = positive_50 }
+			add_offsite_building = { type = industrial_complex level = 2 }
+			219 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 		}
 	}
 
@@ -4781,6 +4799,8 @@ add_tech_bonus = { name = SOV_optical_rangefinders_and_periscopes bonus = 0.50 u
 			add_stability = 0.08
 			add_political_power = 75
 			add_opinion_modifier = { target = JAP modifier = positive_50 }
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1500 }
+			navy_experience = 15
 		}
 	}
 

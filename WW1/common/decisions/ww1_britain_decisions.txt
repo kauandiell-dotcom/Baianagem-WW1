@@ -22,11 +22,12 @@ ENG_ww1_services_policy = {
 		cost = 30
 		days_re_enable = 240
 		days_remove = 180
-		civilian_factory_use = 1
 		modifier = {
+			civilian_factory_use = 1
 			production_speed_arms_factory_factor = 0.10
 		}
 		remove_effect = {
+			add_stability = 0.02
 			add_to_variable = { ww1_britain_debt_burden = 1 }
 		}
 		ai_will_do = { base = 1 }
@@ -67,8 +68,8 @@ ENG_ww1_services_policy = {
 		cost = 40
 		days_re_enable = 365
 		days_remove = 180
-		civilian_factory_use = 1
 		modifier = {
+			civilian_factory_use = 1
 			experience_gain_army_factor = 0.10
 			planning_speed = 0.10
 		}
@@ -241,7 +242,10 @@ ENG_ww1_cabinet_policy = {
 		}
 		cost = 25
 		days_re_enable = 180
-		complete_effect = { ww1_britain_open_budget_review = yes }
+		complete_effect = {
+			ww1_britain_open_budget_review = yes
+			add_political_power = 20
+		}
 		ai_will_do = {
 			base = 0.1
 			modifier = {
@@ -266,7 +270,10 @@ ENG_ww1_cabinet_policy = {
 		}
 		cost = 25
 		days_re_enable = 90
-		complete_effect = { ww1_britain_open_policy_review = yes }
+		complete_effect = {
+			ww1_britain_open_policy_review = yes
+			add_political_power = 20
+		}
 		ai_will_do = {
 			base = 0.2
 			modifier = {
@@ -294,7 +301,10 @@ ENG_ww1_cabinet_policy = {
 		}
 		cost = 20
 		days_re_enable = 90
-		complete_effect = { ww1_britain_request_entente_admission = yes }
+		complete_effect = {
+			ww1_britain_request_entente_admission = yes
+			add_political_power = 20
+		}
 		ai_will_do = { base = 3 }
 	}
 }
@@ -390,7 +400,9 @@ ENG_ww1_empire_policy = {
 		cost = 35
 		days_re_enable = 365
 		days_remove = 90
-		civilian_factory_use = 1
+		modifier = {
+			civilian_factory_use = 1
+		}
 		remove_effect = {
 			add_to_variable = { ww1_britain_labour_support = 3 }
 			add_stability = 0.02
@@ -656,8 +668,16 @@ ENG_ww1_irish_crisis_category = {
 				set_state_flag = ENG_state_garrison_secured
 				clr_state_flag = ENG_state_contested_unrest
 				clr_state_flag = ENG_state_rebel_stronghold
+				add_compliance = 10
+				add_resistance = -20
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+				}
 			}
-			army_experience = 5
+			army_experience = 10
+			add_stability = 0.03
 			add_to_variable = { ww1_britain_irish_tension = -10 }
 		}
 		ai_will_do = {
@@ -697,6 +717,16 @@ ENG_ww1_irish_crisis_category = {
 		complete_effect = {
 			add_command_power = -10
 			add_to_variable = { ww1_britain_irish_tension = -5 }
+			FROM = {
+				add_compliance = 5
+				add_resistance = -10
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 350
+			}
+			army_experience = 5
+			add_stability = 0.01
 			random_list = {
 				85 = {
 					army_experience = 5
@@ -749,12 +779,17 @@ ENG_ww1_irish_crisis_category = {
 			custom_effect_tooltip = ENG_curfew_active_desc
 			FROM = {
 				set_state_flag = ENG_curfew_active
+				add_resistance = -15
+				add_compliance = 5
 			}
+			add_to_variable = { ww1_britain_irish_tension = -5 }
 		}
 		remove_effect = {
-			add_stability = 0.02
+			add_stability = 0.03
+			add_political_power = 20
 			FROM = {
 				clr_state_flag = ENG_curfew_active
+				add_resistance = -5
 			}
 		}
 		ai_will_do = {

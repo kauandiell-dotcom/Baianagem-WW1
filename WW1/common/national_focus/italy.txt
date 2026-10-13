@@ -2887,7 +2887,18 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { country_event = { id = ww1_italy.51 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = {
+			if = {
+				limit = {
+					448 = { is_owned_by = TUR }
+					NOT = { has_country_flag = ita_ww1_libya_acquired }
+					NOT = { controls_state = 448 }
+				}
+				TUR = { country_event = { id = ww1_italy.51 days = 1 } }
+			}
+			add_political_power = 30
+			ita_ww1_clamp_counters = yes
+		}
 	}
 
 	focus = {

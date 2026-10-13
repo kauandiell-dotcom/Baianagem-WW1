@@ -11,8 +11,12 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
-		remove_effect = {
+		complete_effect = {
 			add_stability = 0.02
+			add_political_power = 25
+		}
+		remove_effect = {
+			add_stability = 0.03
 			add_to_variable = { ita_ww1_social_tension = -5 }
 			ita_ww1_clamp_counters = yes
 		}
@@ -29,8 +33,11 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
-		remove_effect = {
+		complete_effect = {
 			add_stability = 0.01
+		}
+		remove_effect = {
+			add_stability = 0.02
 			add_to_variable = { ita_ww1_social_tension = -10 }
 			ita_ww1_clamp_counters = yes
 		}
@@ -47,8 +54,11 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
-		remove_effect = {
+		complete_effect = {
 			add_stability = 0.02
+		}
+		remove_effect = {
+			add_stability = 0.03
 			add_opinion_modifier = { target = ITA modifier = ITA_ww1_gentiloni_reconciliation }
 		}
 		ai_will_do = { factor = 1 }
@@ -64,8 +74,12 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
-		remove_effect = {
+		complete_effect = {
 			add_war_support = 0.02
+		}
+		remove_effect = {
+			add_war_support = 0.03
+			add_stability = 0.02
 			add_to_variable = { ita_ww1_social_tension = -5 }
 			ita_ww1_clamp_counters = yes
 		}
@@ -82,8 +96,11 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
-		remove_effect = {
+		complete_effect = {
 			add_stability = 0.02
+		}
+		remove_effect = {
+			add_stability = 0.03
 			add_to_variable = { ita_ww1_social_tension = -8 }
 			ita_ww1_clamp_counters = yes
 		}
@@ -100,7 +117,12 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
+		complete_effect = {
+			add_stability = 0.02
+			add_political_power = 15
+		}
 		remove_effect = {
+			add_stability = 0.03
 			add_to_variable = { ita_ww1_social_tension = -10 }
 			ita_ww1_clamp_counters = yes
 		}
@@ -117,8 +139,11 @@ ITA_ww1_internal_politics_category = {
 		visible = {
 			original_tag = ITA
 		}
-		remove_effect = {
+		complete_effect = {
 			add_stability = 0.02
+		}
+		remove_effect = {
+			add_stability = 0.03
 			add_to_variable = { ita_ww1_social_tension = -10 }
 			ita_ww1_clamp_counters = yes
 		}
@@ -130,16 +155,30 @@ ITA_ww1_diplomatic_initiatives_category = {
 	ITA_ww1_diplomatic_pressure_tripoli = {
 		icon = generic_diplomacy
 		cost = 50
-		days_remove = 180
+		days_remove = 90
+		fire_only_once = yes
 		available = {
 			has_completed_focus = ITA_ww1_libyan_question
+			448 = { is_owned_by = TUR }
+			NOT = { controls_state = 448 }
+			NOT = { has_country_flag = ita_ww1_libya_acquired }
 			country_exists = TUR
 		}
 		visible = {
 			original_tag = ITA
+			448 = { is_owned_by = TUR }
+			NOT = { controls_state = 448 }
+			NOT = { has_country_flag = ita_ww1_libya_acquired }
 		}
 		remove_effect = {
-			TUR = { country_event = { id = ww1_italy.51 days = 1 } }
+			if = {
+				limit = {
+					448 = { is_owned_by = TUR }
+					NOT = { has_country_flag = ita_ww1_libya_acquired }
+					NOT = { controls_state = 448 }
+				}
+				TUR = { country_event = { id = ww1_italy.51 days = 1 } }
+			}
 		}
 		ai_will_do = { factor = 1 }
 	}
@@ -173,7 +212,11 @@ ITA_ww1_diplomatic_initiatives_category = {
 		visible = {
 			original_tag = ITA
 		}
+		complete_effect = {
+			add_political_power = 25
+		}
 		remove_effect = {
+			add_stability = 0.02
 			add_opinion_modifier = { target = GER modifier = ITA_ww1_treaty_of_london_solidarity }
 		}
 		ai_will_do = { factor = 1 }
@@ -190,7 +233,11 @@ ITA_ww1_diplomatic_initiatives_category = {
 		visible = {
 			original_tag = ITA
 		}
+		complete_effect = {
+			add_political_power = 20
+		}
 		remove_effect = {
+			add_war_support = 0.03
 			add_opinion_modifier = { target = FRA modifier = ITA_ww1_latin_sisterhood }
 			add_to_variable = { ita_ww1_interventionism = 5 }
 			ita_ww1_clamp_counters = yes
@@ -456,7 +503,12 @@ ITA_ww1_economic_mobilisation_category = {
 		visible = {
 			original_tag = ITA
 		}
+		complete_effect = {
+			add_stability = 0.02
+			add_political_power = 15
+		}
 		remove_effect = {
+			add_stability = 0.03
 			add_to_variable = { ita_ww1_southern_gap = -5 }
 			add_to_variable = { ita_ww1_social_tension = -5 }
 			ita_ww1_clamp_counters = yes
@@ -750,7 +802,12 @@ ITA_ww1_military_readiness_category = {
 		visible = {
 			original_tag = ITA
 		}
+		complete_effect = {
+			add_war_support = 0.02
+		}
 		remove_effect = {
+			army_experience = 10
+			add_war_support = 0.03
 			add_to_variable = { ita_ww1_army_morale = 5 }
 			ita_ww1_clamp_counters = yes
 		}

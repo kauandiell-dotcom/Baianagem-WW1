@@ -10,6 +10,13 @@ country_event = {
 	picture = GFX_event_ww1_italy_51
 	is_triggered_only = yes
 
+	trigger = {
+		tag = TUR
+		448 = { is_owned_by = TUR }
+		NOT = { ITA = { controls_state = 448 } }
+		NOT = { ITA = { has_country_flag = ita_ww1_libya_acquired } }
+	}
+
 	option = {
 		name = ww1_italy.51.a
 		ai_chance = {

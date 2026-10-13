@@ -884,6 +884,8 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 90
 			set_country_flag = GER_democratic_mitteleuropa_founded
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_stability = 0.05
 			if = {
 			limit = { country_exists = AUS }
 			add_opinion_modifier = { target = AUS modifier = ger_mitteleuropa_customs_pact }
@@ -941,7 +943,8 @@ focus_tree = {
 			add_opinion_modifier = { target = NOR modifier = ger_nordic_trade_compact }
 			NOR = { add_opinion_modifier = { target = GER modifier = ger_nordic_trade_compact } }
 			}
-			add_political_power = 60
+			add_offsite_building = { type = industrial_complex level = 2 }
+			add_political_power = 75
 		}
 	}
 
@@ -962,6 +965,8 @@ focus_tree = {
 			POL = { add_opinion_modifier = { target = GER modifier = ger_guarantee_independent_poland } }
 			}
 			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_stability = 0.05
 		}
 	}
 
@@ -996,6 +1001,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 150
 			add_stability = 0.10
+			add_offsite_building = { type = industrial_complex level = 3 }
 			every_other_country = {
 			limit = { has_government = democratic }
 			add_opinion_modifier = { target = GER modifier = ger_pan_european_league_admiration }
@@ -2782,6 +2788,8 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 					modifier = ger_blank_cheque_op
 				}
 			}
+			add_political_power = 50
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -3485,6 +3493,8 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 					modifier = ger_berlin_baghdad_railway_op
 				}
 			}
+			55 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 
@@ -3676,7 +3686,9 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 					modifier = ger_blank_cheque_op
 				}
 			}
-			add_political_power = 40
+			navy_experience = 20
+			58 = { add_building_construction = { type = coastal_bunker level = 1 instant_build = yes } }
+			add_political_power = 50
 		}
 	}
 
@@ -3820,7 +3832,9 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 					modifier = ger_blank_cheque_op
 				}
 			}
-			add_political_power = 40
+			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1000 }
+			army_experience = 15
+			add_political_power = 50
 		}
 	}
 
@@ -3944,7 +3958,9 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 					add_war_support = -0.05
 				}
 			}
-			add_political_power = 60
+			add_stability = 0.05
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
 

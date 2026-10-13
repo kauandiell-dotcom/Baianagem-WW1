@@ -1466,11 +1466,14 @@ focus_tree = {
   
   ai_will_do = { factor = 1 }
         completion_reward = {
-   add_political_power = 60
-   add_opinion_modifier = { target = FRA modifier = eng_fra_entente_understanding }
-   add_opinion_modifier = { target = RUS modifier = eng_rus_entente_understanding }
-   set_country_flag = ENG_ww1_grey_entente_cemented
-  }
+			add_political_power = 60
+			add_opinion_modifier = { target = FRA modifier = eng_fra_entente_understanding }
+			add_opinion_modifier = { target = RUS modifier = eng_rus_entente_understanding }
+			set_country_flag = ENG_ww1_grey_entente_cemented
+			add_stability = 0.05
+			navy_experience = 15
+			army_experience = 10
+		}
  }
  focus = {
   id = ENG_ww1_the_french_naval_understanding
