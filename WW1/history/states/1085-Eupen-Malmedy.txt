@@ -10,10 +10,13 @@ state={
 		owner = GER
 		
 		buildings = {
-			infrastructure = 1
+			infrastructure = 4
 
 			# Gileppe Dam
-			3488 = { dam = 1 }
+			3488 = {
+				supply_node = 1
+				dam = 1
+			}
 		}
 		add_core_of = BEL
 		add_core_of = GER

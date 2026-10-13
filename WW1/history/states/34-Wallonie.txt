@@ -27,15 +27,20 @@ state = {
 		}
 
 		buildings = {
-			infrastructure = 3
+			infrastructure = 4
 			arms_factory = 1
 			industrial_complex = 4
 			air_base = 1
 			3516 = {
+				supply_node = 1
 				bunker = 3 # Forts de Namur
 			}
 			11519 = {
+				supply_node = 1
 				bunker = 4 # Position fortifiee de Liege
+			}
+			9536 = {
+				supply_node = 1
 			}
 		}
 		
