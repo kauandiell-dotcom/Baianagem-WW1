@@ -310,6 +310,43 @@ class TestSpecialForcesBalance(unittest.TestCase):
         self.assertIsNotNone(fort_atk, "light_armor fort attack modifier missing")
         self.assertGreaterEqual(fort_atk, 0.35, f"light_armor fort attack must be >= 0.35, found {fort_atk}")
 
+    # 13. Runtime Exploit Guard & Over-Cap Penalty System
+    def test_runtime_exploit_guard_and_penalty_idea(self):
+        ideas_path = ROOT / "common/ideas/ww1_anti_exploit_ideas.txt"
+        self.assertTrue(ideas_path.is_file(), "common/ideas/ww1_anti_exploit_ideas.txt is missing")
+        ideas_text = read(ideas_path)
+        self.assertIn("special_forces_over_cap_penalty", ideas_text)
+        self.assertIn("special_forces_attack_factor = -0.50", ideas_text)
+        self.assertIn("special_forces_defence_factor = -0.50", ideas_text)
+        self.assertIn("special_forces_training_time_factor = 0.50", ideas_text)
+
+        on_actions_path = ROOT / "common/on_actions/ww1_anti_exploit_on_actions.txt"
+        self.assertTrue(on_actions_path.is_file(), "common/on_actions/ww1_anti_exploit_on_actions.txt is missing")
+        on_actions_text = read(on_actions_path)
+        self.assertIn("on_weekly", on_actions_text)
+        self.assertIn("num_battalions_with_type@marine", on_actions_text)
+        self.assertIn("num_battalions_with_type@mountaineers", on_actions_text)
+        self.assertIn("num_battalions_with_type@ranger_battalion", on_actions_text)
+        self.assertIn("add_ideas = special_forces_over_cap_penalty", on_actions_text)
+        self.assertIn("remove_ideas = special_forces_over_cap_penalty", on_actions_text)
+        self.assertIsNone(re.search(r"\badd_idea\s*=", on_actions_text), "Must use plural add_ideas =")
+        self.assertIsNone(re.search(r"\bremove_idea\s*=", on_actions_text), "Must use plural remove_ideas =")
+        self.assertNotIn("has_special_forces_subunits", on_actions_text)
+        self.assertNotIn("num_of_special_forces", on_actions_text)
+
+        for rel_loc in [
+            "localisation/english/ww1_special_forces_l_english.yml",
+            "localisation/braz_por/ww1_special_forces_l_braz_por.yml",
+        ]:
+            loc_path = ROOT / rel_loc
+            self.assertTrue(loc_path.is_file(), f"Missing localisation file {rel_loc}")
+            raw_bytes = loc_path.read_bytes()
+            self.assertEqual(raw_bytes[:3], b"\xef\xbb\xbf", f"Missing UTF-8 BOM in {rel_loc}")
+            self.assertNotEqual(raw_bytes[3:6], b"\xef\xbb\xbf", f"Double UTF-8 BOM in {rel_loc}")
+            loc_text = read(loc_path)
+            self.assertIn("special_forces_over_cap_penalty:0", loc_text)
+            self.assertIn("special_forces_over_cap_penalty_desc:0", loc_text)
+
     # =========================================================================
     # Plan Aliases (matching plan specification names)
     # =========================================================================
