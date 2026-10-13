@@ -520,24 +520,52 @@ country_event = {
 	desc = ww1_ottoman.19.d
 	picture = GFX_report_event_report_event_arab_revolt
 
-	is_triggered_only = yes
+	is_triggered_only = no
+
+	trigger = {
+		tag = TUR
+		has_capitulated = no
+		NOT = { has_country_flag = TUR_arab_revolt_erupted }
+		NOT = { has_country_flag = TUR_arab_revolt_victory_achieved }
+		NOT = { has_country_flag = TUR_imperial_vilayets_permanently_pacified }
+		OR = {
+			AND = {
+				has_war_with = ENG
+				date > 1916.5.1
+			}
+			check_variable = { tur_arab_unrest > 75 }
+			has_country_flag = ENG_arab_revolt_sponsored
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+		modifier = {
+			factor = 0.5
+			check_variable = { tur_arab_unrest > 80 }
+		}
+	}
+
+	fire_only_once = yes
 
 	option = {
 		name = ww1_ottoman.19.a
-		ai_chance = { factor = 70 }
+		ai_chance = { factor = 85 }
 		add_war_support = 0.05
 		add_to_variable = { tur_arab_unrest = 20 }
 		add_to_variable = { tur_imperial_cohesion = -10 }
 		set_country_flag = TUR_arab_revolt_erupted
-		country_event = { id = ww1_ottoman.31 days = 5 }
+		country_event = { id = ww1_ottoman.31 days = 3 }
 	}
 
 	option = {
 		name = ww1_ottoman.19.b
-		ai_chance = { factor = 30 }
-		add_political_power = 50
-		add_to_variable = { tur_arab_unrest = -10 }
+		ai_chance = { factor = 15 }
+		add_political_power = -50
+		add_stability = -0.05
+		add_to_variable = { tur_arab_unrest = -15 }
 		set_country_flag = TUR_arab_tribes_bribed
+		custom_effect_tooltip = TUR_ww1_sharif_delay_tt
 	}
 }
 
@@ -821,85 +849,103 @@ country_event = {
 			limit = { 1011 = { is_owned_by = TUR NOT = { has_state_flag = TUR_vilayet_garrison_secured } } }
 			1011 = { damage_building = { type = infrastructure damage = 2 } }
 		}
+
 		if = {
-			limit = {
-				679 = { has_state_flag = TUR_vilayet_garrison_secured }
-				856 = { has_state_flag = TUR_vilayet_garrison_secured }
+			limit = { has_idea = TUR_arab_unrest_smoldering }
+			swap_ideas = {
+				remove_idea = TUR_arab_unrest_smoldering
+				add_idea = TUR_arab_revolt_insurgency
 			}
-			if = {
-				limit = { has_idea = TUR_arab_unrest_smoldering }
-				swap_ideas = {
-					remove_idea = TUR_arab_unrest_smoldering
-					add_idea = TUR_imperial_vilayets_pacified
-				}
-			}
-			add_stability = 0.10
-			army_experience = 25
-			set_country_flag = TUR_arab_revolt_crushed_by_garrisons
 		}
 		else = {
+			add_ideas = TUR_arab_revolt_insurgency
+		}
+		add_manpower = -15000
+		add_equipment_to_stockpile = { type = infantry_equipment_0 amount = -1000 }
+		set_country_flag = TUR_arab_insurgency_active
+		set_country_flag = TUR_arab_revolt_erupted
+
+		# Territorial Breakaway: Mecca & Asir (856) defects to the Arab Kingdom / Revolt
+		856 = { transfer_state_to = SAU }
+
+		# Hejaz (679): If secured, Fakhri Pasha holds Medina fortresses; otherwise defects
+		679 = {
 			if = {
-				limit = { has_idea = TUR_arab_unrest_smoldering }
-				swap_ideas = {
-					remove_idea = TUR_arab_unrest_smoldering
-					add_idea = TUR_arab_revolt_insurgency
+				limit = {
+					NOT = { has_state_flag = TUR_vilayet_garrison_secured }
 				}
+				transfer_state_to = SAU
 			}
 			else = {
-				add_ideas = TUR_arab_revolt_insurgency
+				add_building_construction = { type = bunker level = 2 instant_build = yes }
 			}
-			add_manpower = -10000
-			add_equipment_to_stockpile = { type = infantry_equipment_0 amount = -500 }
-			set_country_flag = TUR_arab_insurgency_active
+		}
 
-			# Map-based territorial breakaway to Arab Kingdom / Insurgency (SAU)
-			679 = {
-				if = {
-					limit = {
-						is_owned_by = ROOT
-						NOT = { has_state_flag = TUR_vilayet_garrison_secured }
-					}
-					transfer_state_to = SAU
+		# Syria Desert (554): If unsecured, defects to SAU
+		554 = {
+			if = {
+				limit = {
+					NOT = { has_state_flag = TUR_vilayet_garrison_secured }
+				}
+				transfer_state_to = SAU
+			}
+		}
+
+		# Setup Arab Kingdom under Sharif Hussein bin Ali with authentic military divisions
+		SAU = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			create_country_leader = {
+				name = "Hussein bin Ali"
+				picture = "SAU_hussein_bin_ali.dds"
+				ideology = despotism
+				traits = { }
+			}
+			load_oob = "SAU_1936"
+			add_manpower = 40000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 6000
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Jaysh al-Thawra 1\" division_template = \"Alfurqat Almasha\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+					owner = SAU
+				}
+				create_unit = {
+					division = "name = \"Jaysh al-Thawra 2\" division_template = \"Alfurqat Almasha\" start_experience_factor = 0.3 start_equipment_factor = 0.9"
+					owner = SAU
+				}
+				create_unit = {
+					division = "name = \"Fursan al-Badiya 1\" division_template = \"Alfurqat Alfursan\" start_experience_factor = 0.4 start_equipment_factor = 0.9"
+					owner = SAU
+				}
+				create_unit = {
+					division = "name = \"Fursan al-Badiya 2\" division_template = \"Alfurqat Alfursan\" start_experience_factor = 0.4 start_equipment_factor = 0.9"
+					owner = SAU
 				}
 			}
 			856 = {
 				if = {
-					limit = {
-						is_owned_by = ROOT
-						NOT = { has_state_flag = TUR_vilayet_garrison_secured }
+					limit = { is_controlled_by = SAU }
+					create_unit = {
+						division = "name = \"Hashemite Camel Corps\" division_template = \"Alfurqat Alfursan\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+						owner = SAU
 					}
-					transfer_state_to = SAU
-				}
-			}
-			554 = {
-				if = {
-					limit = {
-						is_owned_by = ROOT
-						NOT = { has_state_flag = TUR_vilayet_garrison_secured }
+					create_unit = {
+						division = "name = \"Mecca Irregulars\" division_template = \"Alfurqat Almasha\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = SAU
 					}
-					transfer_state_to = SAU
 				}
 			}
-			if = {
-				limit = {
-					NOT = { 679 = { is_owned_by = SAU } }
-					NOT = { 856 = { is_owned_by = SAU } }
-				}
-				856 = { transfer_state_to = SAU }
-			}
-			SAU = {
-				add_rule = { can_join_factions = no }
-				load_oob = "SAU_1936"
-				add_manpower = 30000
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_0
-					amount = 4000
-				}
-			}
-			declare_war_on = {
-				target = SAU
-				type = civil_war
-			}
+		}
+
+		# Declare bona fide war using annex_everything wargoal
+		declare_war_on = {
+			target = SAU
+			type = annex_everything
 		}
 	}
 }
@@ -952,11 +998,22 @@ country_event = {
 		has_capitulated = no
 		has_country_flag = TUR_arab_insurgency_active
 		NOT = { has_country_flag = TUR_arab_revolt_victory_achieved }
-		controls_state = 679
-		controls_state = 856
+		OR = {
+			SAU = { has_capitulated = yes }
+			AND = {
+				controls_state = 679
+				controls_state = 856
+				controls_state = 292
+			}
+			AND = {
+				controls_state = 679
+				controls_state = 856
+				NOT = { has_war_with = SAU }
+			}
+		}
 	}
 
-	mean_time_to_happen = { days = 3 }
+	mean_time_to_happen = { days = 5 }
 
 	fire_only_once = yes
 
@@ -964,6 +1021,7 @@ country_event = {
 		name = ww1_ottoman.33.a
 		ai_chance = { factor = 100 }
 		set_country_flag = TUR_arab_revolt_victory_achieved
+		set_country_flag = TUR_imperial_vilayets_permanently_pacified
 		clr_country_flag = TUR_arab_insurgency_active
 		if = {
 			limit = { has_war_with = SAU }

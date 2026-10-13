@@ -198,8 +198,25 @@ class OttomanContentReworkTests(unittest.TestCase):
                 f"Missing event definition {ev_id} in events/ww1_ottoman_events.txt"
             )
         self.assertIn("transfer_state_to = SAU", events_text, "ww1_ottoman.31 must transfer unsecured vilayets to SAU")
-        self.assertIn("declare_war_on = {\n\t\t\t\ttarget = SAU", events_text, "ww1_ottoman.31 must declare active war on SAU")
+        self.assertIn("declare_war_on = {\n\t\t\ttarget = SAU\n\t\t\ttype = annex_everything", events_text, "ww1_ottoman.31 must declare valid active war on SAU")
+        self.assertIn("create_unit", events_text, "ww1_ottoman.31 must spawn insurgent Arab divisions on the map")
         self.assertIn("white_peace = SAU", events_text, "ww1_ottoman.33 must pacify and peace with SAU")
+
+        # Verify ww1_ottoman.19 triggers dynamically
+        ev19_match = re.search(r"id\s*=\s*ww1_ottoman\.19\s+.*?(?=country_event|$)", events_text, re.DOTALL)
+        self.assertIsNotNone(ev19_match, "ww1_ottoman.19 missing")
+        self.assertIn("is_triggered_only = no", ev19_match.group(0), "ww1_ottoman.19 must have is_triggered_only = no for dynamic eruption")
+        self.assertIn("has_war_with = ENG", ev19_match.group(0), "ww1_ottoman.19 must trigger dynamically when at war with UK")
+
+        # Verify British decision to sponsor Arab revolt
+        uk_decisions = (ROOT / "common/decisions/ww1_britain_decisions.txt").read_text(encoding="utf-8")
+        self.assertIn("ENG_sponsor_great_arab_revolt", uk_decisions, "British decisions must include ENG_sponsor_great_arab_revolt")
+
+        # Verify authentic historical Arab leaders
+        sau_history = (ROOT / "history/countries/SAU - Saudi Arabia.txt").read_text(encoding="utf-8")
+        self.assertIn("Hussein bin Ali", sau_history, "SAU must have historical Sharif Hussein bin Ali")
+        self.assertIn("Abdulaziz Ibn Saud", sau_history, "SAU must have historical Abdulaziz Ibn Saud")
+
 
         orphan_events = []
         for i in range(1, 33):

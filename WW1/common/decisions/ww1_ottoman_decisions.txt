@@ -297,18 +297,14 @@ TUR_imperial_cohesion_category = {
 		}
 		available = {
 			has_idea = TUR_arab_revolt_insurgency
+			controls_state = 679
+			controls_state = 856
 			679 = { has_state_flag = TUR_vilayet_garrison_secured }
-			554 = { has_state_flag = TUR_vilayet_garrison_secured }
 		}
 		cost = 50
 		fire_only_once = yes
 		complete_effect = {
-			swap_ideas = {
-				remove_idea = TUR_arab_revolt_insurgency
-				add_idea = TUR_imperial_vilayets_pacified
-			}
-			add_stability = 0.10
-			add_war_support = 0.05
+			country_event = { id = ww1_ottoman.33 }
 			set_variable = { tur_arab_unrest = 10 }
 		}
 		ai_will_do = {

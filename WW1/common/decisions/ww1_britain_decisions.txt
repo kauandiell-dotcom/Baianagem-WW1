@@ -310,6 +310,43 @@ ENG_ww1_cabinet_policy = {
 }
 
 ENG_ww1_empire_policy = {
+	ENG_sponsor_great_arab_revolt = {
+		icon = GFX_decision_generic_military_operation
+		visible = {
+			tag = ENG
+			has_war_with = TUR
+			date > 1915.6.1
+			NOT = { has_global_flag = arab_revolt_sponsored_by_uk }
+		}
+		available = {
+			has_war_with = TUR
+			command_power > 15
+			has_equipment = { infantry_equipment > 500 }
+		}
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			set_global_flag = arab_revolt_sponsored_by_uk
+			add_command_power = -15
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -500 }
+			TUR = {
+				add_to_variable = { tur_arab_unrest = 25 }
+				set_country_flag = ENG_arab_revolt_sponsored
+				if = {
+					limit = {
+						date > 1916.1.1
+						NOT = { has_country_flag = TUR_arab_revolt_erupted }
+					}
+					country_event = { id = ww1_ottoman.19 days = 5 }
+				}
+			}
+			add_war_support = 0.05
+		}
+		ai_will_do = {
+			base = 5
+		}
+	}
+
 	ENG_ww1_renew_american_credit = {
 		icon = GFX_decision_ENG_ww1_renew_american_credit
 		visible = { has_country_flag = ENG_ww1_american_credit }
