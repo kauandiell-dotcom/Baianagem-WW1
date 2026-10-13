@@ -1,0 +1,72 @@
+# Ukrainian People's Republic (UNR) - Civil War OOB
+# 14 Divisions: Haidamaks, Sich Riflemen, Free Cossacks
+
+division_template = {
+	name = "Haidamatsky Kish"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Sichovi Striltsi"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Vilne Kozatstvo"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Kiev Capital & Dnieper Sector (5 divisions) ---
+	division = { name = "1-y Polkovytskiy Kish Haidamakiv" location = 525 division_template = "Haidamatsky Kish" start_experience_factor = 0.3 }
+	division = { name = "1-y Kurin Sichovykh Striltsiv" location = 525 division_template = "Sichovi Striltsi" start_experience_factor = 0.35 }
+	division = { name = "2-y Kurin Sichovykh Striltsiv" location = 525 division_template = "Sichovi Striltsi" start_experience_factor = 0.3 }
+	division = { name = "1-y Polk Vilnoho Kozatstva" location = 525 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
+	division = { name = "Kyivska Strilecka Bryhada" location = 525 division_template = "Haidamatsky Kish" start_experience_factor = 0.2 }
+
+	# --- Left-Bank & Kharkov Frontier (3 divisions) ---
+	division = { name = "2-y Haidamatsky Kish Slobozhanshchyny" location = 418 division_template = "Haidamatsky Kish" start_experience_factor = 0.25 }
+	division = { name = "Kharkivsky Polk Vilnoho Kozatstva" location = 418 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
+	division = { name = "3-y Kurin Sichovykh Striltsiv" location = 418 division_template = "Sichovi Striltsi" start_experience_factor = 0.3 }
+
+	# --- Southern Steppe & Black Sea Coast (3 divisions) ---
+	division = { name = "Odesky Haidamatsky Polk" location = 11670 division_template = "Haidamatsky Kish" start_experience_factor = 0.25 }
+	division = { name = "Khersonsky Polk Vilnoho Kozatstva" location = 721 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
+	division = { name = "Tavriysky Strilecky Kurin" location = 11670 division_template = "Sichovi Striltsi" start_experience_factor = 0.25 }
+
+	# --- Podolia & Central Ukraine (3 divisions) ---
+	division = { name = "Podilsky Haidamatsky Kish" location = 476 division_template = "Haidamatsky Kish" start_experience_factor = 0.2 }
+	division = { name = "Cherkasky Polk Vilnoho Kozatstva" location = 488 division_template = "Vilne Kozatstvo" start_experience_factor = 0.25 }
+	division = { name = "Zaporizky Udarniy Kish" location = 488 division_template = "Sichovi Striltsi" start_experience_factor = 0.3 }
+}

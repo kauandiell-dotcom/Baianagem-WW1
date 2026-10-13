@@ -1,0 +1,74 @@
+# Polish Army (Wojsko Polskie) - Independence & Civil War OOB
+# 16 Divisions: Polish Legions (Legiony Polskie), Haller's Army (Armia Hallera), Polish Cavalry (Jazda Polska)
+
+division_template = {
+	name = "Legiony Polskie"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Armia Hallera"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Jazda Polska"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Warsaw Capital & Central Mazovia (6 divisions) ---
+	division = { name = "1. Dywizja Piechoty Legionow" location = 3544 division_template = "Legiony Polskie" start_experience_factor = 0.35 }
+	division = { name = "2. Dywizja Piechoty Legionow" location = 3544 division_template = "Legiony Polskie" start_experience_factor = 0.3 }
+	division = { name = "1. Błękitna Dywizja Strzelcow" location = 3544 division_template = "Armia Hallera" start_experience_factor = 0.3 }
+	division = { name = "2. Błękitna Dywizja Strzelcow" location = 3544 division_template = "Armia Hallera" start_experience_factor = 0.25 }
+	division = { name = "1. Pulk Szwolezerow Jozefa Pilsudskiego" location = 3544 division_template = "Jazda Polska" start_experience_factor = 0.35 }
+	division = { name = "Warszawska Brygada Obrony Narodowej" location = 3544 division_template = "Armia Hallera" start_experience_factor = 0.2 }
+
+	# --- Lodz Industrial District (3 divisions) ---
+	division = { name = "3. Dywizja Piechoty Legionow" location = 9508 division_template = "Legiony Polskie" start_experience_factor = 0.3 }
+	division = { name = "3. Błękitna Dywizja Strzelcow" location = 9508 division_template = "Armia Hallera" start_experience_factor = 0.25 }
+	division = { name = "2. Pulk Ulanow Grochowskich" location = 9508 division_template = "Jazda Polska" start_experience_factor = 0.3 }
+
+	# --- Lublin & Southern Borderlands (4 divisions) ---
+	division = { name = "4. Dywizja Strzelcow Polskich" location = 11399 division_template = "Armia Hallera" start_experience_factor = 0.25 }
+	division = { name = "5. Dywizja Strzelcow Polskich" location = 11399 division_template = "Armia Hallera" start_experience_factor = 0.25 }
+	division = { name = "3. Pulk Ulanow Slaskich" location = 11399 division_template = "Jazda Polska" start_experience_factor = 0.3 }
+	division = { name = "Lubelska Brygada Piechoty" location = 11399 division_template = "Legiony Polskie" start_experience_factor = 0.25 }
+
+	# --- Bialystok & Eastern Approaches (3 divisions) ---
+	division = { name = "Litewsko-Bialoruska Dywizja Piechoty" location = 11301 division_template = "Legiony Polskie" start_experience_factor = 0.3 }
+	division = { name = "6. Dywizja Strzelcow Polskich" location = 11301 division_template = "Armia Hallera" start_experience_factor = 0.25 }
+	division = { name = "4. Pulk Ulanow Zaniemyskich" location = 11301 division_template = "Jazda Polska" start_experience_factor = 0.3 }
+}

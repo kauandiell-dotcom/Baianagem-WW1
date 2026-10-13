@@ -1,0 +1,12 @@
+SOV_civil_war_management = {
+	icon = generic_civil_war
+	picture = GFX_decision_cat_generic
+	priority = 90
+	allowed = {
+		tag = SOV
+	}
+	visible = {
+		has_government = communism
+		has_war = yes
+	}
+}

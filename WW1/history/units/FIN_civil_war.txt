@@ -1,0 +1,55 @@
+# Finnish Civil War (Suomen Vapaussota) - White Guard OOB
+# 10 Divisions: White Guards (Suojeluskunta), Coastal Jaegers (Rannikkojääkärit)
+
+division_template = {
+	name = "Suojeluskunta"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Rannikkojaakarit"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	# --- Helsinki & Southern Shore (3 divisions) ---
+	division = { name = "Helsingin Suojeluskuntarykmentti" location = 204 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
+	division = { name = "1. Rannikkojääkäripataljoona" location = 204 division_template = "Rannikkojaakarit" start_experience_factor = 0.35 }
+	division = { name = "Uudenmaan Suojeluskuntapataljoona" location = 204 division_template = "Suojeluskunta" start_experience_factor = 0.2 }
+
+	# --- Southwestern Archipelago & Turku (2 divisions) ---
+	division = { name = "Turun Suojeluskuntarykmentti" location = 32 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
+	division = { name = "2. Rannikkojääkäripataljoona" location = 32 division_template = "Rannikkojaakarit" start_experience_factor = 0.3 }
+
+	# --- Karelian Isthmus & Viipuri (2 divisions) ---
+	division = { name = "Viipurin Suojeluskuntarykmentti" location = 9228 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
+	division = { name = "Karjalan Jääkäripataljoona" location = 9228 division_template = "Rannikkojaakarit" start_experience_factor = 0.35 }
+
+	# --- Ostrobothnia & Vaasa White Stronghold (2 divisions) ---
+	division = { name = "Vaasan Suojeluskuntarykmentti" location = 63 division_template = "Suojeluskunta" start_experience_factor = 0.3 }
+	division = { name = "Pohjanmaan Suojeluskuntapataljoona" location = 63 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
+
+	# --- Savonia & Central Finland (1 division) ---
+	division = { name = "Savon Suojeluskuntarykmentti" location = 136 division_template = "Suojeluskunta" start_experience_factor = 0.25 }
+}

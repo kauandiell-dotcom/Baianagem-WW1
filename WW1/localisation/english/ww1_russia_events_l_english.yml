@@ -87,3 +87,25 @@ ww1_russia.50.t:0 "The Great Shell Crisis: Snaryadny Golod"
  ww1_russia.310.a:0 "The Revolution has triumphed!"
  SOV_revolution_triggered_tt:0 "The revolutionary threshold has been breached. The revolution erupts!"
 
+ # Civil War Eruption Events
+ ww1_russia_civil_war.1.t:0 "The Russian Civil War Erupts"
+ ww1_russia_civil_war.1.d:0 "The storming of the Winter Palace has shattered the Russian Empire into armed ideological camps. In Petrograd and Moscow, Vladimir Lenin and the Bolshevik Council of People's Commissars proclaim Soviet power and mobilize the Red Army. Across Siberia, the Urals, and the South, White generals and Cossack Atamans rally loyalist divisions to crush the Reds. Simultaneously, national movements in Ukraine, Finland, Poland, and the Caucasus declare independence, plunging the former empire into a multi-front struggle for survival."
+ ww1_russia_civil_war.1.a:0 "All power to the Soviets! Forward, Red Guards!"
+ ww1_russia_civil_war.1.b:0 "For a One and Indivisible Russia! White Movement rallies!"
+ SOV_fleet_split_tt:0 "§YNaval Division:§! Baltic Fleet pledges allegiance to the Soviets; Black Sea Fleet rallies to the White Army."
+ SOV_stockpile_split_tt:0 "§YStockpile Partition:§! Imperial armories and arsenals are split between the warring factions."
+ SOV_play_reds_tt:0 "Play as §RSoviet Russia§! (SOV)."
+ SOV_play_whites_tt:0 "Switch perspective to play as §WWhite Russia§! (WHT)."
+
+ # Soviet Civil War Management Decisions
+ SOV_civil_war_management:0 "Soviet Civil War Administration"
+ SOV_civil_war_management_desc:0 "Emergency wartime measures to safeguard Soviet power, feed urban industrial workers, and arm the Red Army on all fronts."
+ SOV_seize_kazan_gold_reserves:0 "Seize the Imperial Gold Reserves in Kazan"
+ SOV_seize_kazan_gold_reserves_desc:0 "Secure the Imperial State Bank's gold bullion stored in the vaults of Kazan to finance emergency industrial production and state purchases."
+ SOV_prodrazvyorstka_grain_expeditions:0 "Prodrazvyorstka Grain Expeditions"
+ SOV_prodrazvyorstka_grain_expeditions_desc:0 "Dispatch armed worker and Red Guard detachments into rural provinces to requisition grain quotas and ensure food supply to the frontlines."
+ SOV_mobilize_petrograd_workers:0 "Mobilize Petrograd Industrial Workers"
+ SOV_mobilize_petrograd_workers_desc:0 "Levy workers from the Putilov and Baltic shipyards into armed battalions to reinforce threatened fronts."
+ SOV_trotsky_armored_train_inspection:0 "Trotsky's Armored Train Frontline Inspection"
+ SOV_trotsky_armored_train_inspection_desc:0 "Commissar of War Leon Trotsky travels the frontlines aboard his armored train to restore discipline, inspire revolutionary zeal, and rally retreating divisions."
+

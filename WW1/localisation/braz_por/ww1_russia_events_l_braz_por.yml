@@ -87,3 +87,25 @@ ww1_russia.50.t:0 "A Grande Crise de Projéteis: Snaryadny Golod"
  ww1_russia.310.a:0 "A Revolução triunfou!"
  SOV_revolution_triggered_tt:0 "O limiar revolucionário foi ultrapassado. A revolução explode!"
 
+ # Civil War Eruption Events
+ ww1_russia_civil_war.1.t:0 "Eclode a Guerra Civil Russa"
+ ww1_russia_civil_war.1.d:0 "A tomada do Palácio de Inverno despedaçou o Império Russo em facções ideológicas em armas. Em Petrogrado e Moscou, Vladimir Lenin e o Conselho dos Comissários do Povo proclamam o poder soviético e mobilizam o Exército Vermelho. Pela Sibéria, Urais e Sul, generais brancos e atamans cossacos erguem regimentos lealistas para esmagar os bolcheviques. Ao mesmo tempo, movimentos nacionais na Ucrânia, Finlândia, Polônia e Cáucaso declaram independência, mergulhando o antigo império em uma luta sangrenta em múltiplas frentes."
+ ww1_russia_civil_war.1.a:0 "Todo o poder aos Sovietes! Avante, Guardas Vermelhos!"
+ ww1_russia_civil_war.1.b:0 "Por uma Rússia Una e Indivisível! Os Brancos se levantam!"
+ SOV_fleet_split_tt:0 "§YDivisão Naval:§! A Frota do Báltico jura lealdade aos sovietes; a Frota do Mar Negro apoia o Exército Branco."
+ SOV_stockpile_split_tt:0 "§YPartilha de Arsenais:§! Depósitos imperiais são divididos entre as facções em conflito."
+ SOV_play_reds_tt:0 "Jogar como a §RRússia Soviética§! (SOV)."
+ SOV_play_whites_tt:0 "Mudar perspectiva para comandar a §RRússia Branca§! (WHT)."
+
+ # Soviet Civil War Management Decisions
+ SOV_civil_war_management:0 "Administração da Guerra Civil Soviética"
+ SOV_civil_war_management_desc:0 "Medidas emergenciais de tempo de guerra para salvaguardar o poder soviético, alimentar os operários urbanos e suprir o Exército Vermelho."
+ SOV_seize_kazan_gold_reserves:0 "Confiscar as Reservas de Ouro de Cazã"
+ SOV_seize_kazan_gold_reserves_desc:0 "Assegurar os lingotes de ouro do Banco Imperial depositados nos cofres de Cazã para financiar a produção industrial e compras estatais de emergência."
+ SOV_prodrazvyorstka_grain_expeditions:0 "Expedições de Prodrazvyorstka"
+ SOV_prodrazvyorstka_grain_expeditions_desc:0 "Enviar destacamentos armados de operários ao campo para confiscar cotas de grãos e garantir o abastecimento de rações nas frentes de combate."
+ SOV_mobilize_petrograd_workers:0 "Mobilizar os Operários de Petrogrado"
+ SOV_mobilize_petrograd_workers_desc:0 "Convocar trabalhadores das fábricas Putilov e dos estaleiros bálticos em batalhões armados para reforçar setores ameaçados."
+ SOV_trotsky_armored_train_inspection:0 "Inspeção do Trem Blindado de Trotsky"
+ SOV_trotsky_armored_train_inspection_desc:0 "O Comissário da Guerra Leon Trotsky percorre as frentes a bordo de seu trem blindado para restaurar a disciplina, insuflar o fervor revolucionário e conter recuos."
+

@@ -1,0 +1,104 @@
+# White Movement (Beloye Dvizheniye) - Russian Civil War OOB
+# 45 Divisions: Siberian Riflemen, Volunteer Army, Cossack Cavalry
+
+division_template = {
+	name = "Sibirskaya Strelkovaya Diviziya"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Dobrovolcheskaya Armiya"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Kazachya Kavaleriyskaya Diviziya"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Siberian Army (Omsk & Tomsk - 18 divisions) ---
+	division = { name = "1-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "2-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "3-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "4-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "5-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "6-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "7-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "8-ya Sibirskaya Strelkovaya Diviziya" location = 10696 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Omskaya Kazachya Diviziya" location = 10696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "2-ya Sibirskaya Kazachya Diviziya" location = 10696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "9-ya Sibirskaya Strelkovaya Diviziya" location = 10641 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "10-ya Sibirskaya Strelkovaya Diviziya" location = 10641 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "3-ya Altayskaya Kazachya Diviziya" location = 10641 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "11-ya Irkutskaya Strelkovaya Diviziya" location = 1679 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "12-ya Baykalskaya Strelkovaya Diviziya" location = 1679 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "4-ya Zabaykalskaya Kazachya Diviziya" location = 1679 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "5-ya Semirechenskaya Kazachya Diviziya" location = 10696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "Sibirskiy Ofitserskiy Polk" location = 10696 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
+
+	# --- Ural Army (Ekaterinburg & Uralsk - 12 divisions) ---
+	division = { name = "1-ya Uralskaya Strelkovaya Diviziya" location = 7375 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "2-ya Uralskaya Strelkovaya Diviziya" location = 7375 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "3-ya Permskaya Strelkovaya Diviziya" location = 7375 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Orenburgskaya Kazachya Diviziya" location = 7375 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "2-ya Orenburgskaya Kazachya Diviziya" location = 7375 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "1-ya Uralskaya Kazachya Diviziya" location = 11537 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "2-ya Uralskaya Kazachya Diviziya" location = 11537 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "4-ya Ufimskaya Strelkovaya Diviziya" location = 10256 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "5-ya Zlatoustovskaya Strelkovaya Diviziya" location = 10256 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "3-ya Orenburgskaya Kazachya Diviziya" location = 10256 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "Uralskiy Ofitserskiy Polk" location = 7375 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
+	division = { name = "Izhevsko-Votkinskaya Brigada" location = 7375 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.35 }
+
+	# --- Armed Forces of South Russia / Volunteer Army (Kuban & Steppe - 12 divisions) ---
+	division = { name = "Kornilovskiy Udarniy Polk" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.45 }
+	division = { name = "Markovskaia Ofitserskaia Diviziya" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
+	division = { name = "Drozdovskaia Strelkovaia Diviziya" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.4 }
+	division = { name = "Alekseevskaia Partizanskaia Diviziya" location = 3720 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.35 }
+	division = { name = "1-ya Kubanskaya Kazachya Diviziya" location = 3720 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.35 }
+	division = { name = "2-ya Kubanskaya Kazachya Diviziya" location = 3720 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "3-ya Kubanskaya Kazachya Diviziya" location = 3720 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "1-ya Terskaya Kazachya Diviziya" location = 11696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "2-ya Terskaya Kazachya Diviziya" location = 11696 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Astrakhanskaya Kazachya Diviziya" location = 9753 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "Tsaritsynskiy Bely Polk" location = 3529 division_template = "Dobrovolcheskaya Armiya" start_experience_factor = 0.3 }
+	division = { name = "Volzhskaya Kavaleriyskaya Brigada" location = 3529 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+
+	# --- Far Eastern Army (Vladivostok - 3 divisions) ---
+	division = { name = "1-ya Vladivostokskaya Strelkovaya Diviziya" location = 957 division_template = "Sibirskaya Strelkovaya Diviziya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Ussuriyskaya Kazachya Diviziya" location = 957 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+	division = { name = "Amurskiy Kazachiy Polk" location = 957 division_template = "Kazachya Kavaleriyskaya Diviziya" start_experience_factor = 0.3 }
+}

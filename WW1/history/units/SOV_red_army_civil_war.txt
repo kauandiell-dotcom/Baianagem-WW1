@@ -1,0 +1,133 @@
+# Soviet Red Army (Raboche-Krestyanskaya Krasnaya Armiya) - Russian Civil War OOB
+# 50 Divisions: Red Guards, Workers' Militias, Revolutionary Sailors, Red Cavalry
+
+division_template = {
+	name = "Krasnaya Gvardiya"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Rabochaya Druzhina"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Revolyutsionnye Moryaki"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Krasnaya Kavalerie"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# --- Petrograd & Baltic Naval Strongholds (12 divisions) ---
+	division = { name = "1-y Petrogradskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.3 }
+	division = { name = "2-y Petrogradskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "3-y Petrogradskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "4-y Vyborgskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "5-y Vasilieostrovskiy Krasnogvardeiskiy Otryad" location = 3151 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Petrogradskaya Rabochaya Druzhina" location = 3151 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "2-ya Putilovskaya Rabochaya Druzhina" location = 3151 division_template = "Rabochaya Druzhina" start_experience_factor = 0.25 }
+	division = { name = "1-y Kronshtadtskiy Morskoy Otryad" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.4 }
+	division = { name = "2-y Kronshtadtskiy Morskoy Otryad" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.4 }
+	division = { name = "1-y Baltiyskiy Morskoy Polk" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.35 }
+	division = { name = "3-y Severniy Morskoy Otryad" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.35 }
+	division = { name = "4-y Morskoy Ekipazh Avrory" location = 3151 division_template = "Revolyutsionnye Moryaki" start_experience_factor = 0.4 }
+
+	# --- Moscow Red Heart & Central Garrison (11 divisions) ---
+	division = { name = "1-y Moskovskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.3 }
+	division = { name = "2-y Moskovskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "3-y Zamoskvoretskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "4-y Krasnopresnenskiy Krasnogvardeiskiy Otryad" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Moskovskaya Rabochaya Druzhina" location = 6380 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "2-ya Moskovskaya Rabochaya Druzhina" location = 6380 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "3-ya Rogozhskaya Rabochaya Druzhina" location = 6380 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "1-y Revolyutsionniy Kavaleriyskiy Polk" location = 6380 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.3 }
+	division = { name = "2-y Revolyutsionniy Kavaleriyskiy Polk" location = 6380 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
+	division = { name = "1-y Smolenskiy Krasnogvardeiskiy Polk" location = 6380 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-ya Petrogradskaya Kavaleriyskaya Brigada" location = 6380 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
+
+	# --- Tula Arms Industry & Tver (4 divisions) ---
+	division = { name = "1-y Tulskiy Oruzheyniy Otryad" location = 6262 division_template = "Rabochaya Druzhina" start_experience_factor = 0.25 }
+	division = { name = "2-y Tulskiy Krasnogvardeiskiy Polk" location = 6262 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "1-y Tverskoy Krasnogvardeiskiy Otryad" location = 6245 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Tverskoy Rabochiy Polk" location = 6245 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+
+	# --- Nizhny Novgorod & Volga Flotilla Base (4 divisions) ---
+	division = { name = "1-y Nizhegorodskiy Krasnogvardeiskiy Otryad" location = 11375 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Sormovskiy Rabochiy Otryad" location = 11375 division_template = "Rabochaya Druzhina" start_experience_factor = 0.25 }
+	division = { name = "1-y Yaroslavskiy Krasnogvardeiskiy Polk" location = 121 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Yaroslavskiy Rabochiy Otryad" location = 121 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+
+	# --- Ryazan & Penza Heartland (4 divisions) ---
+	division = { name = "1-y Ryazanskiy Krasnogvardeiskiy Polk" location = 11248 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Ryazanskiy Rabochiy Otryad" location = 11248 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "1-y Penzenskiy Krasnogvardeiskiy Polk" location = 9258 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Penzenskiy Rabochiy Otryad" location = 9258 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+
+	# --- Samara & Middle Volga (5 divisions) ---
+	division = { name = "1-y Samarskiy Krasnogvardeiskiy Polk" location = 11225 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Samarskiy Rabochiy Otryad" location = 11225 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "3-y Povolzhskiy Kavaleriyskiy Polk" location = 11225 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
+	division = { name = "1-y Kazanskiy Krasnogvardeiskiy Polk" location = 6338 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Kazanskiy Rabochiy Otryad" location = 6338 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+
+	# --- Orel & Kursk Southern Approaches (5 divisions) ---
+	division = { name = "1-y Orlovskiy Krasnogvardeiskiy Polk" location = 9355 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Orlovskiy Rabochiy Otryad" location = 9355 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "1-y Kurskiy Krasnogvardeiskiy Polk" location = 3580 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Kurskiy Rabochiy Otryad" location = 3580 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "4-y Chernozemniy Kavaleriyskiy Polk" location = 3580 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
+
+	# --- Voronezh & Southern Frontline (5 divisions) ---
+	division = { name = "1-y Voronezhskiy Krasnogvardeiskiy Polk" location = 9449 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "2-y Voronezhskiy Krasnogvardeiskiy Polk" location = 9449 division_template = "Krasnaya Gvardiya" start_experience_factor = 0.25 }
+	division = { name = "1-ya Voronezhskaya Rabochaya Druzhina" location = 9449 division_template = "Rabochaya Druzhina" start_experience_factor = 0.2 }
+	division = { name = "5-y Donskoy Krasnokazachiy Polk" location = 9449 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.3 }
+	division = { name = "6-y Voronezhskiy Kavaleriyskiy Polk" location = 9449 division_template = "Krasnaya Kavalerie" start_experience_factor = 0.25 }
+}
