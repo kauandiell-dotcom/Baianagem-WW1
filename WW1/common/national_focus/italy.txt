@@ -77,7 +77,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 117 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } country_event = { id = ww1_italy.66 days = 1 } add_political_power = 30 add_to_variable = { ita_ww1_southern_gap = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -93,7 +93,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } country_event = { id = ww1_italy.2 days = 1 } add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -109,7 +109,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_to_variable = { ita_ww1_irredentism = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { country_event = { id = ww1_italy.3 days = 1 } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_to_variable = { ita_ww1_irredentism = 10 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -141,7 +141,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { 159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -239,7 +239,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { add_to_variable = { ita_ww1_interventionism = 10 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_opinion_modifier = { target = FRA modifier = ITA_ww1_latin_sisterhood } add_opinion_modifier = { target = ENG modifier = ITA_ww1_treaty_of_london_solidarity } add_to_variable = { ita_ww1_interventionism = 10 } add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -256,7 +256,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 2 }
-		completion_reward = { add_to_variable = { ita_ww1_interventionism = -15 } add_political_power = 40 ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_ideas = ITA_ww1_sacro_egoismo add_to_variable = { ita_ww1_interventionism = -15 } add_political_power = 40 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -320,7 +320,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = 10 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_political_power = 35 add_to_variable = { ita_ww1_social_tension = 10 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -336,7 +336,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 20 }
-		completion_reward = { remove_ideas = ITA_ww1_salandra_emergency_cabinet add_ideas = ITA_ww1_radiant_may_fervor add_war_support = 0.04 add_to_variable = { ita_ww1_interventionism = 25 } country_event = { id = ww1_italy.13 days = 1 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_salandra_emergency_cabinet add_ideas = ITA_ww1_radiant_may_fervor add_war_support = 0.03 add_to_variable = { ita_ww1_interventionism = 25 } country_event = { id = ww1_italy.13 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -400,7 +400,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_ideas = ITA_ww1_propaganda_service_spirit add_political_power = 30 add_to_variable = { ita_ww1_army_morale = 10 } country_event = { id = ww1_italy.17 days = 1 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_propaganda_service_spirit add_political_power = 30 add_to_variable = { ita_ww1_army_morale = 10 } country_event = { id = ww1_italy.17 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -464,7 +464,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_ideas = ITA_ww1_opera_nazionale_combattenti add_political_power = 30 add_stability = 0.05 country_event = { id = ww1_italy.18 days = 1 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_opera_nazionale_combattenti add_political_power = 30 add_stability = 0.02 country_event = { id = ww1_italy.18 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -502,7 +502,7 @@ focus_tree = {
 	focus = {
 		id = ITA_ww1_proportional_representation
 		icon = GFX_goal_ww1_ITA_ww1_proportional_representation
-		x = 7
+		x = 6
 		y = 12
 		cost = 5
 		search_filters = FOCUS_FILTER_POLITICAL
@@ -512,7 +512,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_universal_suffrage 2 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_political_power = 25 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -544,7 +544,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_to_variable = { ita_ww1_social_tension = 5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { country_event = { id = ww1_italy.78 days = 1 } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_to_variable = { ita_ww1_social_tension = 5 } add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -560,7 +560,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_to_variable = { ita_ww1_social_tension = 15 } add_political_power = -20 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_biennio_rosso_strikes country_event = { id = ww1_italy.75 days = 1 } add_to_variable = { ita_ww1_social_tension = 15 } add_political_power = -20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -592,7 +592,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -10 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_biennio_rosso_strikes country_event = { id = ww1_italy.77 days = 1 } 158 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -10 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -626,7 +626,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_political_power = 30 add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -643,7 +643,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { add_political_power = -25 add_to_variable = { ita_ww1_social_tension = 15 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_political_power = -25 add_to_variable = { ita_ww1_social_tension = 15 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -659,7 +659,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_ideas = ITA_ww1_trasformismo_politics add_political_power = 35 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -675,7 +675,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 5 }
-		completion_reward = { add_stability = 0.02 add_political_power = 35 ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_ideas = ITA_ww1_universal_suffrage add_stability = 0.02 add_political_power = 35 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -707,7 +707,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_political_power = 30 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } add_political_power = 30 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -756,7 +756,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = -20 ita_ww1_clamp_counters = yes }
+		completion_reward = { 159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = -20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1094,7 +1094,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { remove_ideas = ITA_coal_iron_scarcity remove_ideas = ITA_carbone_bianco_hydro add_ideas = ITA_energy_independence_spirit country_event = { id = ww1_italy.71 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_coal_iron_scarcity remove_ideas = ITA_carbone_bianco_hydro add_ideas = ITA_energy_independence_spirit country_event = { id = ww1_italy.50 days = 1 } country_event = { id = ww1_italy.71 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1143,7 +1143,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_stability = 0.05 add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = { 158 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } country_event = { id = ww1_italy.72 days = 1 } add_to_variable = { ita_ww1_social_tension = -5 } add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1159,7 +1159,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { set_country_flag = ita_ww1_bread_rationing_decree add_war_support = 0.05 add_to_variable = { ita_ww1_social_tension = 5 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } set_country_flag = ita_ww1_bread_rationing_decree add_to_variable = { ita_ww1_social_tension = 5 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1175,7 +1175,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { country_event = { id = ww1_italy.73 days = 1 } add_stability = 0.05 add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } country_event = { id = ww1_italy.73 days = 1 } add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1191,7 +1191,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_political_power = 40 add_stability = 0.03 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1240,7 +1240,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_to_variable = { ita_ww1_southern_gap = -10 } add_to_variable = { ita_ww1_social_tension = -5 } add_stability = 0.03 ita_ww1_clamp_counters = yes }
+		completion_reward = { 117 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_to_variable = { ita_ww1_southern_gap = -10 } add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1306,7 +1306,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { remove_ideas = ITA_southern_question_gap remove_ideas = ITA_mezzogiorno_development_stage add_ideas = ITA_mezzogiorno_integrated add_to_variable = { ita_ww1_southern_gap = -25 } add_stability = 0.05 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_southern_question_gap remove_ideas = ITA_mezzogiorno_development_stage add_ideas = ITA_mezzogiorno_integrated add_to_variable = { ita_ww1_southern_gap = -25 } add_stability = 0.02 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1322,7 +1322,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_political_power = 60 add_stability = 0.05 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_ideas = ITA_ww1_peacetime_military_economy add_political_power = 60 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1568,7 +1568,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { add_to_variable = { ita_ww1_interventionism = 15 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_opinion_modifier = { target = ENG modifier = ITA_ww1_treaty_of_london_solidarity } add_opinion_modifier = { target = FRA modifier = ITA_ww1_latin_sisterhood } add_to_variable = { ita_ww1_interventionism = 15 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1585,7 +1585,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 20 }
-		completion_reward = { remove_ideas = ITA_terre_irredente_dream add_ideas = ITA_patto_di_londra_spirit add_war_support = 0.10 country_event = { id = ww1_italy.35 days = 1 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_terre_irredente_dream add_ideas = ITA_patto_di_londra_spirit add_war_support = 0.02 country_event = { id = ww1_italy.35 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1619,7 +1619,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 2 }
-		completion_reward = { set_country_flag = ita_ww1_permanent_neutrality add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -20 } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_sacro_egoismo 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } set_country_flag = ita_ww1_permanent_neutrality add_political_power = 50 add_to_variable = { ita_ww1_interventionism = -20 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1651,7 +1651,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 25 }
-		completion_reward = { add_war_support = 0.04 country_event = { id = ww1_italy.37 days = 1 } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_war_support = 0.03 country_event = { id = ww1_italy.37 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1683,7 +1683,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { army_experience = 20 add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_tech_bonus = { name = ITA_ww1_central_staff_doctrine bonus = 0.25 uses = 1 category = land_doctrine } add_opinion_modifier = { target = GER modifier = ITA_ww1_treaty_of_london_solidarity } army_experience = 20 add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1699,7 +1699,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { navy_experience = 20 add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { 160 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } add_opinion_modifier = { target = AUS modifier = ITA_ww1_mediterranean_naval_cooperation } navy_experience = 20 add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1715,7 +1715,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { set_country_flag = ita_ww1_tunisia_nice_claims add_to_variable = { ita_ww1_irredentism = 15 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { 735 = { add_claim_by = ITA } 458 = { add_claim_by = ITA } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } set_country_flag = ita_ww1_tunisia_nice_claims add_to_variable = { ita_ww1_irredentism = 15 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1731,7 +1731,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 2 }
-		completion_reward = { add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 160 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = { all_provinces = yes limit_to_border = yes } } } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_political_power = 40 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1811,7 +1811,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { army_experience = 15 add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_tech_bonus = { name = ITA_ww1_allied_supreme_council_doctrine bonus = 0.25 uses = 1 category = land_doctrine } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } army_experience = 15 add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -1859,7 +1859,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 2 }
-		completion_reward = { add_political_power = 50 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 2 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } add_opinion_modifier = { target = ENG modifier = ITA_ww1_mediterranean_naval_cooperation } add_political_power = 50 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2018,7 +2018,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 90 }
-		completion_reward = { remove_ideas = ITA_ww1_general_staff_corps add_ideas = ITA_ww1_cadorna_discipline army_experience = 15 add_to_variable = { ita_ww1_army_morale = -5 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_general_staff_corps add_ideas = ITA_ww1_cadorna_discipline army_experience = 15 add_to_variable = { ita_ww1_army_morale = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2066,7 +2066,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { remove_ideas = ITA_alpini_tradition add_ideas = ITA_alpini_eccellenza 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 20 add_tech_bonus = { name = ITA_ww1_mountain_artillery bonus = 0.25 uses = 1 category = artillery } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 producer = ITA } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_alpini_tradition add_ideas = ITA_alpini_eccellenza add_ideas = ITA_ww1_mountain_howitzers 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 20 add_tech_bonus = { name = ITA_ww1_mountain_artillery bonus = 0.25 uses = 1 category = artillery } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 producer = ITA } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2114,7 +2114,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { 160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 736 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } army_experience = 20 add_political_power = 30 add_command_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_railway_mobilisation_plan 160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 736 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } army_experience = 20 add_political_power = 30 add_command_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2130,7 +2130,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 70 }
-		completion_reward = { 160 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } 158 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } army_experience = 15 add_tech_bonus = { name = ITA_ww1_alpine_fortifications bonus = 0.25 uses = 1 category = industry } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_frontier_fortress_belt 160 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } 158 = { add_building_construction = { type = bunker level = 2 instant_build = yes } } army_experience = 15 add_tech_bonus = { name = ITA_ww1_alpine_fortifications bonus = 0.25 uses = 1 category = industry } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2196,7 +2196,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { army_experience = 15 add_tech_bonus = { name = ITA_ww1_chemical_defence bonus = 0.25 uses = 1 category = support_tech } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_gas_respirators army_experience = 15 add_tech_bonus = { name = ITA_ww1_chemical_defence bonus = 0.25 uses = 1 category = support_tech } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2212,7 +2212,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { 161 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 25 add_command_power = 30 add_political_power = 30 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_complimentary_officer_academies 161 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 25 add_command_power = 30 add_political_power = 30 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2228,7 +2228,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 65 }
-		completion_reward = { army_experience = 20 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1500 producer = ITA } add_tech_bonus = { name = ITA_ww1_cavalry_recon bonus = 0.25 uses = 1 category = recon_tech } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_dismounted_cavalry_regiments army_experience = 20 add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 1500 producer = ITA } add_tech_bonus = { name = ITA_ww1_cavalry_recon bonus = 0.25 uses = 1 category = recon_tech } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2244,7 +2244,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 95 }
-		completion_reward = { 159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_ideas = ITA_arditi_shock_battalions army_experience = 25 add_tech_bonus = { name = ITA_ww1_arditi_assault_tactics bonus = 0.25 uses = 1 category = infantry_weapons } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } ita_ww1_clamp_counters = yes }
+		completion_reward = { 159 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } add_ideas = ITA_arditi_shock_battalions add_ideas = ITA_ww1_arditi_shock_troops army_experience = 25 add_tech_bonus = { name = ITA_ww1_arditi_assault_tactics bonus = 0.25 uses = 1 category = infantry_weapons } add_equipment_to_stockpile = { type = support_equipment_1 amount = 100 producer = ITA } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2310,7 +2310,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_motorized_shock_cadres 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } army_experience = 10 add_tech_bonus = { name = ITA_ww1_fiat_lorry_transport bonus = 0.25 uses = 1 category = motorized_equipment } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2342,7 +2342,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = 40 add_stability = 0.02 ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_strengthened_carabinieri add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_to_variable = { ita_ww1_social_tension = -10 } add_political_power = 40 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2453,7 +2453,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { 157 = { add_building_construction = { type = naval_base level = 2 instant_build = yes } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } } navy_experience = 20 add_political_power = 30 add_tech_bonus = { name = ITA_ww1_naval_repair bonus = 0.25 uses = 1 category = naval_equipment } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_taranto_naval_arsenal 157 = { add_building_construction = { type = naval_base level = 2 instant_build = yes } add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } } navy_experience = 20 add_political_power = 30 add_tech_bonus = { name = ITA_ww1_naval_repair bonus = 0.25 uses = 1 category = naval_equipment } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2469,7 +2469,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { 160 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } 157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } navy_experience = 20 add_tech_bonus = { name = ITA_ww1_submarine_detection bonus = 0.25 uses = 1 category = dd_tech } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_adriatic_naval_stations 160 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } 157 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } navy_experience = 20 add_tech_bonus = { name = ITA_ww1_submarine_detection bonus = 0.25 uses = 1 category = dd_tech } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2517,7 +2517,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { navy_experience = 25 add_to_variable = { ita_ww1_irredentism = 5 } add_tech_bonus = { name = ITA_ww1_patrol_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_adriatic_patrol_network navy_experience = 25 add_to_variable = { ita_ww1_irredentism = 5 } add_tech_bonus = { name = ITA_ww1_patrol_doctrine bonus = 0.25 uses = 1 category = naval_doctrine } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2533,7 +2533,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 85 }
-		completion_reward = { navy_experience = 25 add_tech_bonus = { name = ITA_ww1_asw_barrage bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_otranto_barrage_net navy_experience = 25 add_tech_bonus = { name = ITA_ww1_asw_barrage bonus = 0.25 uses = 1 category = naval_doctrine } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2599,7 +2599,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { navy_experience = 20 add_equipment_to_stockpile = { type = convoy_1 amount = 30 producer = ITA } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_albanian_convoy_routes navy_experience = 20 add_equipment_to_stockpile = { type = convoy_1 amount = 30 producer = ITA } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2641,13 +2641,13 @@ focus_tree = {
 		y = 7
 		cost = 5
 		search_filters = FOCUS_FILTER_ARMY_XP
-		prerequisite = { focus = ITA_ww1_anti_submarine_patrols focus = ITA_ww1_battleship_fleet_in_being focus = ITA_ww1_human_torpedoes }
+		prerequisite = { focus = ITA_ww1_anti_submarine_patrols focus = ITA_ww1_adriatic_convoys focus = ITA_ww1_human_torpedoes }
 		available = { has_capitulated = no has_war = no date > 1919.1.1 }
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { navy_experience = 15 add_political_power = 40 ita_ww1_clamp_counters = yes }
+		completion_reward = { 158 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } } add_tech_bonus = { name = ITA_ww1_postwar_naval_review_tech bonus = 0.25 uses = 1 category = naval_doctrine } navy_experience = 15 add_political_power = 40 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2678,7 +2678,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 90 }
-		completion_reward = { air_experience = 25 add_tech_bonus = { name = ITA_ww1_early_aviation bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_battaglione_aviatori air_experience = 25 add_tech_bonus = { name = ITA_ww1_early_aviation bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2694,7 +2694,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { air_experience = 25 add_tech_bonus = { name = ITA_ww1_flight_training bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_military_flight_schools air_experience = 25 add_tech_bonus = { name = ITA_ww1_flight_training bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2726,7 +2726,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 80 }
-		completion_reward = { air_experience = 25 add_tech_bonus = { name = ITA_ww1_air_recon bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_corpo_aeronautico_militare air_experience = 25 add_tech_bonus = { name = ITA_ww1_air_recon bonus = 0.25 uses = 1 category = air_equipment } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2856,7 +2856,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 75 }
-		completion_reward = { 159 = { add_building_construction = { type = air_base level = 2 instant_build = yes } } air_experience = 30 add_political_power = 40 ita_ww1_clamp_counters = yes }
+		completion_reward = { add_ideas = ITA_ww1_independent_air_force_charter 159 = { add_building_construction = { type = air_base level = 2 instant_build = yes } } air_experience = 30 add_political_power = 40 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2871,7 +2871,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { add_to_variable = { ita_ww1_irredentism = 5 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { 448 = { add_claim_by = ITA } 450 = { add_claim_by = ITA } add_equipment_to_stockpile = { type = convoy_1 amount = 25 producer = ITA } add_to_variable = { ita_ww1_irredentism = 5 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2919,7 +2919,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { air_experience = 25 add_tech_bonus = { name = ITA_ww1_early_air_recon bonus = 0.50 uses = 1 category = air_doctrine } add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { air_experience = 25 add_tech_bonus = { name = ITA_ww1_early_air_recon bonus = 0.25 uses = 1 category = air_doctrine } add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2935,7 +2935,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { army_experience = 15 add_political_power = 20 ita_ww1_clamp_counters = yes }
+		completion_reward = { 448 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } army_experience = 15 add_political_power = 20 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -2984,7 +2984,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { army_experience = 10 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 450 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } add_building_construction = { type = naval_base level = 1 instant_build = yes } } army_experience = 10 add_to_variable = { ita_ww1_social_tension = -5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3000,7 +3000,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 20 }
-		completion_reward = { army_experience = 20 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 producer = ITA } army_experience = 20 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3016,7 +3016,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { army_experience = 20 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 158 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 80 producer = ITA } army_experience = 20 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3032,7 +3032,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { army_experience = 15 add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } add_tech_bonus = { name = ITA_ww1_riviera_spearhead_tech bonus = 0.25 uses = 1 category = land_doctrine } army_experience = 15 add_to_variable = { ita_ww1_irredentism = 10 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3048,7 +3048,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 1 }
-		completion_reward = { navy_experience = 15 army_experience = 15 ita_ww1_clamp_counters = yes }
+		completion_reward = { 115 = { add_building_construction = { type = naval_base level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = convoy_1 amount = 30 producer = ITA } navy_experience = 15 army_experience = 15 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3064,7 +3064,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { army_experience = 15 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 160 = { add_building_construction = { type = bunker level = 1 instant_build = yes province = { all_provinces = yes limit_to_border = yes } } } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } army_experience = 15 add_to_variable = { ita_ww1_army_morale = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3144,7 +3144,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 20 }
-		completion_reward = { add_war_support = 0.03 country_event = { id = ww1_italy.59 days = 1 } ita_ww1_clamp_counters = yes }
+		completion_reward = { add_war_support = 0.02 country_event = { id = ww1_italy.59 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3155,13 +3155,13 @@ focus_tree = {
 		cost = 5
 		search_filters = FOCUS_FILTER_WAR_SUPPORT
 		prerequisite = { focus = ITA_ww1_solstice_battle }
-		prerequisite = { focus = ITA_ww1_trentino_defence }
+		prerequisite = { focus = ITA_ww1_piave_line }
 		available = { has_capitulated = no date > 1918.10.1 }
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 25 }
-		completion_reward = { remove_ideas = ITA_ww1_radiant_may_fervor remove_ideas = ITA_terre_irredente_dream remove_ideas = ITA_patto_di_londra_spirit add_ideas = ITA_vittorio_veneto_triumph add_war_support = 0.05 country_event = { id = ww1_italy.60 days = 1 } ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_ww1_radiant_may_fervor remove_ideas = ITA_terre_irredente_dream remove_ideas = ITA_patto_di_londra_spirit add_ideas = ITA_vittorio_veneto_triumph add_war_support = 0.03 country_event = { id = ww1_italy.60 days = 1 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3177,7 +3177,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 25 }
-		completion_reward = { remove_ideas = ITA_isonzo_attrition_crisis_3 remove_ideas = ITA_isonzo_attrition_crisis_2 remove_ideas = ITA_isonzo_attrition_crisis_1 add_stability = 0.05 country_event = { id = ww1_italy.61 days = 1 } add_political_power = 50 ita_ww1_clamp_counters = yes }
+		completion_reward = { remove_ideas = ITA_isonzo_attrition_crisis_3 remove_ideas = ITA_isonzo_attrition_crisis_2 remove_ideas = ITA_isonzo_attrition_crisis_1 add_stability = 0.03 country_event = { id = ww1_italy.61 days = 1 } add_political_power = 50 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3193,7 +3193,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 20 }
-		completion_reward = { add_stability = 0.05 add_political_power = 50 add_to_variable = { ita_ww1_irredentism = -25 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 39 = { add_core_of = ITA } 736 = { add_core_of = ITA } 160 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_stability = 0.02 add_political_power = 50 add_to_variable = { ita_ww1_irredentism = -25 } ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3209,7 +3209,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 15 }
-		completion_reward = { country_event = { id = ww1_italy.62 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
+		completion_reward = { country_event = { id = ww1_italy.62 days = 1 } country_event = { id = ww1_italy.63 days = 1 } add_political_power = 25 ita_ww1_clamp_counters = yes }
 	}
 
 	focus = {
@@ -3257,7 +3257,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		ai_will_do = { factor = 10 }
-		completion_reward = { army_experience = 15 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
+		completion_reward = { 448 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } 450 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } } add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = ITA } army_experience = 15 add_to_variable = { ita_ww1_irredentism = 5 } ita_ww1_clamp_counters = yes }
 	}
 
 }
