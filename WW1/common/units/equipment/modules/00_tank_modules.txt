@@ -120,7 +120,7 @@ equipment_modules = {
 
 		add_stats = {
 			#soft_attack = 1 # that's when rivets shoot back because they got dislodged by the shock. That was in fact the first reactive armor.
-			
+			armor_value = 12
 			defense = 2
 			breakthrough = 2
 		}
@@ -138,6 +138,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_sonar
 
 		add_stats = {
+			armor_value = 14
 			defense = 3
 			breakthrough = 3
 			hardness = 0.02	
@@ -156,6 +157,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_sonar
 		xp_cost = 0
 		add_stats = {
+			armor_value = 16
 			defense = 4
 			breakthrough = 4
 		}
@@ -174,6 +176,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_sonar
 		xp_cost = 0
 		add_stats = {
+			armor_value = 20
 			defense = 8
 			breakthrough = 8
 			hardness = 0.04

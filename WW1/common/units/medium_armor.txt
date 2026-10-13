@@ -28,8 +28,8 @@ sub_units = {
 		}
 		manpower = 500
 		
-		# WW1 Infantry Support Profile: High Org morale support, Low Defense, Low Solo Breakthrough
-		max_organisation = 40			# High organization: provides morale anchor and staying power to supported infantry
+		# WW1 Infantry Support Profile: Low Org (mandatory infantry escort), Low Defense, Low Solo Breakthrough
+		max_organisation = 15			# Low organization: requires mandatory infantry escort; cannot fight independently
 		max_strength = 2
 		default_morale = 0.35
 		training_time = 180
@@ -75,7 +75,7 @@ sub_units = {
 			attack = -0.8
 		}
 		fort = {
-			attack = 0.35
+			attack = 0.50
 		}
 	}
 }
