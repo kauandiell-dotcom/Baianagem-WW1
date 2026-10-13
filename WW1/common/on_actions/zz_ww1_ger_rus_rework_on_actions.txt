@@ -17,6 +17,17 @@ on_actions = {
 	on_weekly_GER = {
 		effect = {
 			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
+			# Western Front Trench Stalemate Transition Hook
+			if = {
+				limit = {
+					original_tag = GER
+					has_country_flag = ger_schlieffen_plan_launched
+					NOT = { controls_state = 16 }
+					NOT = { has_idea = GER_schlieffen_momentum }
+					NOT = { has_idea = GER_western_trench_stalemate }
+				}
+				country_event = { id = ww1_germany.10 }
+			}
 			# 1918 German Armistice Dissolution Hook
 			if = {
 				limit = {

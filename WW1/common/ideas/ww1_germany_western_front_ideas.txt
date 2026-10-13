@@ -1,0 +1,37 @@
+ideas = {
+	country = {
+		# =========================================================================
+		# IMPERIAL GERMANY - WESTERN FRONT OPERATIONAL SPIRITS
+		# =========================================================================
+
+		# Schlieffen Plan Momentum (Operational Tempo & Supply Grace)
+		GER_schlieffen_momentum = {
+			picture = GFX_idea_GER_schlieffen_momentum
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.10
+				army_speed_factor = 0.15
+				no_supply_grace = 96
+			}
+		}
+
+		# Western Front Trench Stalemate (Deep Defensive Entrenchment)
+		GER_western_trench_stalemate = {
+			picture = GFX_idea_trench_warfare
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				max_dig_in = 15
+				dig_in_speed_factor = 0.30
+				army_core_defence_factor = 0.20
+				army_defence_factor = 0.15
+				army_morale_factor = 0.10
+			}
+		}
+	}
+}

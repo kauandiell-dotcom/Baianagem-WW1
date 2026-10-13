@@ -2941,7 +2941,7 @@ add_mastery_bonus = { name = GER_dicta_boelcke_air_tactics bonus = 0.10 days = 1
 	focus = {
 		id = GER_smash_liege_forts
 		icon = GFX_focus_GER_ww1_smash_liege_forts
-		prerequisite = { focus = GER_execute_schlieffen_plan }
+		prerequisite = { focus = GER_schlieffen_maneuver }
 		cost = 5
 		x = 98
 		y = 7
@@ -3499,28 +3499,10 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 	}
 
 	focus = {
-		id = GER_ultimatum_to_belgium
-		icon = GFX_ww1_mex_upca_conquer
-		prerequisite = { focus = GER_proclaim_state_of_war_danger }
-		cost = 1
-		x = 101
-		y = 5
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		ai_will_do = { factor = 90 }
-		available_if_capitulated = no
-
-		completion_reward = {
-			BEL = {
-				country_event = { id = ww1_germany_events.22 }
-			}
-		}
-	}
-
-	focus = {
 		id = GER_aufmarsch_ost_focus
 		icon = GFX_focus_GER_aufmarsch_ost_focus
 		prerequisite = { focus = GER_the_blank_cheque }
-		mutually_exclusive = { focus = GER_execute_schlieffen_plan }
+		mutually_exclusive = { focus = GER_schlieffen_maneuver }
 		cost = 10
 		x = 104
 		y = 4
@@ -3589,15 +3571,15 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 	}
 
 	focus = {
-		id = GER_execute_schlieffen_plan
+		id = GER_schlieffen_maneuver
 		icon = GFX_focus_GER_schlieffen_once_more
-		prerequisite = { focus = GER_ultimatum_to_belgium }
+		prerequisite = { focus = GER_proclaim_state_of_war_danger }
 		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
 		cost = 5
 		x = 100
 		y = 6
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		ai_will_do = { factor = 85 }
+		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 		allow_branch = {
 			NOT = { has_country_flag = ger_aufmarsch_ost_launched }
@@ -3605,12 +3587,17 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 
 		available = {
 			has_war_with = FRA
-			country_exists = BEL
 		}
 		completion_reward = {
 			set_country_flag = ger_schlieffen_plan_launched
 			set_country_flag = GER_schlieffen_operations_active
-			country_event = { id = ww1_germany_events.3 }
+			if = {
+				limit = { country_exists = LUX }
+				annex_country = { target = LUX }
+			}
+			BEL = {
+				country_event = { id = ww1_germany_events.22 }
+			}
 			add_timed_idea = {
 				idea = GER_schlieffen_momentum
 				days = 90
@@ -3713,7 +3700,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 	focus = {
 		id = GER_battle_of_the_frontiers
 		icon = GFX_focus_GER_ww1_battle_of_the_frontiers
-		prerequisite = { focus = GER_execute_schlieffen_plan }
+		prerequisite = { focus = GER_schlieffen_maneuver }
 		cost = 5
 		x = 100
 		y = 7
