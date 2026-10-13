@@ -1,0 +1,1618 @@
+focus_tree = {
+	id = soviet_russia_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			AND = {
+				tag = SOV
+				has_government = communism
+			}
+		}
+	}
+	default = no
+	reset_on_civilwar = no
+
+	continuous_focus_position = { x = 25 y = 1400 }
+
+	shortcut = {
+		name = SOV_ww1_shortcut_war_communism
+		target = SOV_all_power_to_the_soviets
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_red_army
+		target = SOV_workers_and_peasants_red_army
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_goelro
+		target = SOV_the_goelro_plan
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_comintern
+		target = SOV_the_third_international
+		scroll_wheel_factor = 0.5
+	}
+	shortcut = {
+		name = SOV_ww1_shortcut_ussr
+		target = SOV_peoples_commissariat_of_nationalities
+		scroll_wheel_factor = 0.5
+	}
+
+	focus = {
+		id = SOV_all_power_to_the_soviets
+		icon = GFX_SOV_all_power_to_the_soviets
+		cost = 5
+		x = 4
+		y = 0
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_decree_on_land
+		icon = GFX_RUS_A_Russian_Farmer
+		cost = 10
+		x = 2
+		y = 1
+		prerequisite = { focus = SOV_all_power_to_the_soviets }
+		completion_reward = {
+			add_ideas = SOV_land_socialization_decree
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_establish_the_vecheka
+		icon = GFX_SOV_cheka_revolutionary_tribunal
+		cost = 10
+		x = 6
+		y = 1
+		prerequisite = { focus = SOV_all_power_to_the_soviets }
+		completion_reward = {
+			add_ideas = SOV_vecheka_state_security
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_war_communism_decrees
+		icon = GFX_SOV_war_communism
+		cost = 10
+		x = 2
+		y = 2
+		prerequisite = { focus = SOV_decree_on_land }
+		completion_reward = {
+			add_ideas = SOV_war_communism_regime
+			add_war_support = 0.10
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_grain_requisition_detachments
+		icon = GFX_SOV_grain_requisition_brigades
+		cost = 10
+		x = 4
+		y = 2
+		prerequisite = { focus = SOV_decree_on_land }
+		prerequisite = { focus = SOV_establish_the_vecheka }
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.05
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				producer = SOV
+			}
+			240 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_revolutionary_tribunals
+		icon = GFX_SOV_red_terror
+		cost = 10
+		x = 6
+		y = 2
+		prerequisite = { focus = SOV_establish_the_vecheka }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = SOV_militarization_of_labor
+		icon = GFX_SOV_militarization_of_labor
+		cost = 10
+		x = 2
+		y = 3
+		prerequisite = { focus = SOV_war_communism_decrees }
+		completion_reward = {
+			add_ideas = SOV_militarization_of_labor_spirit
+			195 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_communist_subbotniks
+		icon = GFX_RUS_A_New_Russian_Worker
+		cost = 7
+		x = 4
+		y = 3
+		prerequisite = { focus = SOV_grain_requisition_detachments }
+		completion_reward = {
+			add_political_power = 50
+			219 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			195 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_red_terror
+		icon = GFX_focus_sov_great_purge
+		cost = 10
+		x = 6
+		y = 3
+		prerequisite = { focus = SOV_revolutionary_tribunals }
+		completion_reward = {
+			add_war_support = 0.10
+			add_political_power = 100
+			add_manpower = 25000
+		}
+	}
+
+	focus = {
+		id = SOV_nationalization_of_heavy_industry
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10
+		x = 2
+		y = 4
+		prerequisite = { focus = SOV_militarization_of_labor }
+		completion_reward = {
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_worker_food_rationing_cards
+		icon = GFX_goal_generic_production
+		cost = 7
+		x = 4
+		y = 4
+		prerequisite = { focus = SOV_communist_subbotniks }
+		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 30000
+			add_tech_bonus = {
+				name = industry_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_eradicate_counter_revolutionary_cells
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 10
+		x = 6
+		y = 4
+		prerequisite = { focus = SOV_the_red_terror }
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+			add_command_power = 20
+		}
+	}
+
+	focus = {
+		id = SOV_central_transport_board_glavtrans
+		icon = GFX_SOV_trans_siberian_logistics
+		cost = 10
+		x = 2
+		y = 5
+		prerequisite = { focus = SOV_nationalization_of_heavy_industry }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 30
+				producer = SOV
+			}
+			219 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			220 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_smash_the_tambov_rebellion
+		icon = GFX_SOV_the_lonely_island
+		cost = 10
+		x = 4
+		y = 5
+		prerequisite = { focus = SOV_worker_food_rationing_cards }
+		prerequisite = { focus = SOV_eradicate_counter_revolutionary_cells }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = SOV_kronstadt_reckoning
+		icon = GFX_SOV_commissars_of_the_fleet
+		cost = 10
+		x = 6
+		y = 5
+		prerequisite = { focus = SOV_eradicate_counter_revolutionary_cells }
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 15
+			navy_experience = 15
+		}
+	}
+
+	focus = {
+		id = SOV_triumph_of_the_proletarian_dictatorship
+		icon = GFX_SOV_soviet_bear
+		cost = 10
+		x = 4
+		y = 6
+		prerequisite = { focus = SOV_central_transport_board_glavtrans }
+		prerequisite = { focus = SOV_smash_the_tambov_rebellion }
+		prerequisite = { focus = SOV_kronstadt_reckoning }
+		completion_reward = {
+			add_ideas = SOV_dictatorship_of_the_proletariat
+			add_political_power = 150
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_workers_and_peasants_red_army
+		icon = GFX_SOV_workers_and_peasants_red_army
+		cost = 5
+		x = 14
+		y = 0
+		completion_reward = {
+			army_experience = 30
+			add_manpower = 50000
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = SOV_the_revvoyensovyet
+		icon = GFX_SOV_revvoyensovyet
+		cost = 10
+		x = 12
+		y = 1
+		prerequisite = { focus = SOV_workers_and_peasants_red_army }
+		completion_reward = {
+			add_command_power = 50
+			army_experience = 15
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_recruit_tsarist_voenspetsy
+		icon = GFX_SOV_recruit_tsarist_voenspetsy
+		cost = 10
+		x = 16
+		y = 1
+		prerequisite = { focus = SOV_workers_and_peasants_red_army }
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = SOV_institution_of_political_commissars
+		icon = GFX_SOV_Peace_Commisar
+		cost = 10
+		x = 12
+		y = 2
+		prerequisite = { focus = SOV_the_revvoyensovyet }
+		prerequisite = { focus = SOV_recruit_tsarist_voenspetsy }
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 20
+			add_ideas = SOV_draconian_discipline
+		}
+	}
+
+	focus = {
+		id = SOV_armored_train_command
+		icon = GFX_SOV_trans_siberian_logistics
+		cost = 10
+		x = 14
+		y = 2
+		prerequisite = { focus = SOV_the_revvoyensovyet }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 20
+				producer = SOV
+			}
+			army_experience = 20
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_red_officer_courses_vystrel
+		icon = GFX_SOV_advanced_training
+		cost = 10
+		x = 16
+		y = 2
+		prerequisite = { focus = SOV_recruit_tsarist_voenspetsy }
+		completion_reward = {
+			army_experience = 25
+			add_command_power = 30
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_conscription_of_the_toilers
+		icon = GFX_goal_generic_allies_build_infantry
+		cost = 10
+		x = 12
+		y = 3
+		prerequisite = { focus = SOV_institution_of_political_commissars }
+		completion_reward = {
+			add_manpower = 100000
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_the_first_cavalry_army
+		icon = GFX_SOV_first_cavalry_army
+		cost = 10
+		x = 14
+		y = 3
+		prerequisite = { focus = SOV_armored_train_command }
+		completion_reward = {
+			army_experience = 25
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 100
+				producer = SOV
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_tachanka_warfare
+		icon = GFX_SOV_tachanka_warfare
+		cost = 10
+		x = 16
+		y = 3
+		prerequisite = { focus = SOV_armored_train_command }
+		prerequisite = { focus = SOV_red_officer_courses_vystrel }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = SOV
+			}
+			army_experience = 20
+			add_tech_bonus = {
+				name = support_bonus
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_arsenals_of_tula_and_izhevsk
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		x = 18
+		y = 3
+		prerequisite = { focus = SOV_red_officer_courses_vystrel }
+		completion_reward = {
+			220 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 2000
+				producer = SOV
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_partisan_detachments_and_red_guards
+		icon = GFX_SOV_an_adaptable_army
+		cost = 10
+		x = 12
+		y = 4
+		prerequisite = { focus = SOV_conscription_of_the_toilers }
+		completion_reward = {
+			add_manpower = 50000
+			army_experience = 20
+			add_tech_bonus = {
+				name = inf_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_mass_artillery_concentration
+		icon = GFX_GER_prussian_artillery
+		cost = 10
+		x = 14
+		y = 4
+		prerequisite = { focus = SOV_the_first_cavalry_army }
+		prerequisite = { focus = SOV_tachanka_warfare }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 150
+				producer = SOV
+			}
+			army_experience = 25
+			add_tech_bonus = {
+				name = art_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_red_baltic_fleet_defenses
+		icon = GFX_SOV_red_baltic_fleet
+		cost = 10
+		x = 16
+		y = 4
+		prerequisite = { focus = SOV_tachanka_warfare }
+		completion_reward = {
+			navy_experience = 30
+			195 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_revolutionary_red_air_fleet
+		icon = GFX_SOV_airforce
+		cost = 10
+		x = 18
+		y = 4
+		prerequisite = { focus = SOV_arsenals_of_tula_and_izhevsk }
+		completion_reward = {
+			air_experience = 30
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_frunze_military_reforms
+		icon = GFX_SOV_frunze_unified_doctrine
+		cost = 10
+		x = 14
+		y = 5
+		prerequisite = { focus = SOV_partisan_detachments_and_red_guards }
+		prerequisite = { focus = SOV_mass_artillery_concentration }
+		completion_reward = {
+			add_ideas = SOV_frunze_unified_doctrine_spirit
+			army_experience = 35
+			add_command_power = 30
+		}
+	}
+
+	focus = {
+		id = SOV_tukhachevsky_operational_art
+		icon = GFX_SOV_tukhachevsky_deep_battle
+		cost = 10
+		x = 16
+		y = 5
+		prerequisite = { focus = SOV_mass_artillery_concentration }
+		prerequisite = { focus = SOV_red_baltic_fleet_defenses }
+		completion_reward = {
+			add_ideas = SOV_tukhachevsky_deep_operations
+			army_experience = 35
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_field_communications_and_logistics
+		icon = GFX_SOV_advanced_maneuvers
+		cost = 10
+		x = 14
+		y = 6
+		prerequisite = { focus = SOV_frunze_military_reforms }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 200
+				producer = SOV
+			}
+			army_experience = 25
+			219 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_rkka_victorious_red_colossus
+		icon = GFX_SOV_soviet_bear
+		cost = 10
+		x = 16
+		y = 6
+		prerequisite = { focus = SOV_frunze_military_reforms }
+		prerequisite = { focus = SOV_tukhachevsky_operational_art }
+		completion_reward = {
+			add_ideas = SOV_reborn_red_army
+			army_experience = 50
+			add_war_support = 0.10
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SOV_the_goelro_plan
+		icon = GFX_SOV_goelro_plan
+		cost = 5
+		x = 24
+		y = 0
+		completion_reward = {
+			add_ideas = SOV_goelro_electrification
+			add_tech_bonus = {
+				name = ind_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			219 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_shaturskaya_power_station
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		x = 22
+		y = 1
+		prerequisite = { focus = SOV_the_goelro_plan }
+		completion_reward = {
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_founding_of_gosplan
+		icon = GFX_SOV_administrative_reforms
+		cost = 10
+		x = 26
+		y = 1
+		prerequisite = { focus = SOV_the_goelro_plan }
+		completion_reward = {
+			add_political_power = 100
+			add_tech_bonus = {
+				name = ind_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_kashira_and_volkhov_turbines
+		icon = GFX_FRA_second_industrial_revolution
+		cost = 10
+		x = 22
+		y = 2
+		prerequisite = { focus = SOV_shaturskaya_power_station }
+		completion_reward = {
+			195 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_reopen_the_donbass_coalfields
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10
+		x = 24
+		y = 2
+		prerequisite = { focus = SOV_shaturskaya_power_station }
+		prerequisite = { focus = SOV_founding_of_gosplan }
+		completion_reward = {
+			227 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_baku_oil_syndicate
+		icon = GFX_goal_generic_oil_refinery
+		cost = 10
+		x = 26
+		y = 2
+		prerequisite = { focus = SOV_founding_of_gosplan }
+		completion_reward = {
+			229 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_new_economic_policy
+		icon = GFX_SOV_new_economic_policy
+		cost = 10
+		x = 22
+		y = 3
+		prerequisite = { focus = SOV_kashira_and_volkhov_turbines }
+		prerequisite = { focus = SOV_reopen_the_donbass_coalfields }
+		mutually_exclusive = { focus = SOV_primitive_socialist_accumulation }
+		completion_reward = {
+			add_ideas = SOV_new_economic_policy_spirit
+			add_stability = 0.10
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_primitive_socialist_accumulation
+		icon = GFX_SOV_superindustrialization
+		cost = 10
+		x = 26
+		y = 3
+		prerequisite = { focus = SOV_reopen_the_donbass_coalfields }
+		prerequisite = { focus = SOV_baku_oil_syndicate }
+		mutually_exclusive = { focus = SOV_the_new_economic_policy }
+		completion_reward = {
+			add_ideas = SOV_superindustrialization_spirit
+			add_war_support = 0.10
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_prodnalog_tax_in_kind
+		icon = GFX_RUS_A_Russian_Farmer
+		cost = 10
+		x = 22
+		y = 4
+		prerequisite = { focus = SOV_the_new_economic_policy }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 75
+			240 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_stabilize_the_soviet_chervonets
+		icon = GFX_goal_generic_trade
+		cost = 10
+		x = 24
+		y = 4
+		prerequisite = { focus = SOV_the_new_economic_policy }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			add_tech_bonus = {
+				name = ind_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_state_industrial_monopolies
+		icon = GFX_goal_generic_soviet_construction
+		cost = 10
+		x = 26
+		y = 4
+		prerequisite = { focus = SOV_primitive_socialist_accumulation }
+		completion_reward = {
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			195 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_forced_grain_procurements
+		icon = GFX_SOV_grain_requisition_brigades
+		cost = 10
+		x = 28
+		y = 4
+		prerequisite = { focus = SOV_primitive_socialist_accumulation }
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 50
+			220 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_nepmen_and_cooperatives
+		icon = GFX_SOV_a_sustainable_economy
+		cost = 10
+		x = 22
+		y = 5
+		prerequisite = { focus = SOV_the_prodnalog_tax_in_kind }
+		prerequisite = { focus = SOV_stabilize_the_soviet_chervonets }
+		completion_reward = {
+			219 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			195 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_foreign_concessions_krupp_hammer
+		icon = GFX_FRA_credit_lyonnais_et_haute_banque
+		cost = 10
+		x = 24
+		y = 5
+		prerequisite = { focus = SOV_stabilize_the_soviet_chervonets }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ind_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_political_power = 75
+			398 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_dnieper_hydroelectric_project
+		icon = GFX_FRA_technological_revolution
+		cost = 10
+		x = 26
+		y = 5
+		prerequisite = { focus = SOV_state_industrial_monopolies }
+		completion_reward = {
+			227 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_ural_kuznetsk_combine
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 10
+		x = 28
+		y = 5
+		prerequisite = { focus = SOV_forced_grain_procurements }
+		prerequisite = { focus = SOV_state_industrial_monopolies }
+		completion_reward = {
+			582 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_third_international
+		icon = GFX_SOV_third_international_comintern
+		cost = 5
+		x = 34
+		y = 0
+		completion_reward = {
+			add_ideas = SOV_comintern_vanguard
+			add_political_power = 120
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_twenty_one_conditions
+		icon = GFX_focus_sov_the_hands_do
+		cost = 10
+		x = 32
+		y = 1
+		prerequisite = { focus = SOV_the_third_international }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_support_the_bavarian_and_hungarian_soviets
+		icon = GFX_AUS_red_green_flames
+		cost = 10
+		x = 36
+		y = 1
+		prerequisite = { focus = SOV_the_third_international }
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 20
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SOV_ignite_the_western_flame
+		icon = GFX_goal_generic_propaganda
+		cost = 10
+		x = 32
+		y = 2
+		prerequisite = { focus = SOV_twenty_one_conditions }
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 20
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1500
+				producer = SOV
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_target_vistula_offensive
+		icon = GFX_SOV_tukhachevsky_deep_battle
+		cost = 10
+		x = 34
+		y = 2
+		prerequisite = { focus = SOV_twenty_one_conditions }
+		prerequisite = { focus = SOV_support_the_bavarian_and_hungarian_soviets }
+		completion_reward = {
+			army_experience = 30
+			add_command_power = 30
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_anti_imperialist_eastern_bureau
+		icon = GFX_SOV_anti_fascist_front
+		cost = 10
+		x = 36
+		y = 2
+		prerequisite = { focus = SOV_support_the_bavarian_and_hungarian_soviets }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			add_ideas = SOV_pan_slavic_patronage
+		}
+	}
+
+	focus = {
+		id = SOV_the_treaty_of_riga_settlement
+		icon = GFX_SOV_Peace_Commisar
+		cost = 10
+		x = 32
+		y = 3
+		prerequisite = { focus = SOV_the_target_vistula_offensive }
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			206 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_proclaim_the_curzon_line
+		icon = GFX_goal_generic_military_sphere
+		cost = 10
+		x = 34
+		y = 3
+		prerequisite = { focus = SOV_the_target_vistula_offensive }
+		completion_reward = {
+			add_war_support = 0.10
+			add_political_power = 75
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = SOV_aid_to_anatolian_nationalists
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 10
+		x = 36
+		y = 3
+		prerequisite = { focus = SOV_anti_imperialist_eastern_bureau }
+		completion_reward = {
+			add_political_power = 75
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				producer = SOV
+			}
+			add_tech_bonus = {
+				name = inf_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_genoa_conference_diplomacy
+		icon = GFX_goal_generic_trade
+		cost = 10
+		x = 32
+		y = 4
+		prerequisite = { focus = SOV_the_treaty_of_riga_settlement }
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_treaty_of_rapallo
+		icon = GFX_FRA_franco_soviet_treaty
+		cost = 10
+		x = 34
+		y = 4
+		prerequisite = { focus = SOV_the_treaty_of_riga_settlement }
+		prerequisite = { focus = SOV_proclaim_the_curzon_line }
+		completion_reward = {
+			add_ideas = SOV_rapallo_cooperation
+			add_political_power = 100
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_alliance_with_kuomintang
+		icon = GFX_ARM_Damadians_Redemption
+		cost = 10
+		x = 36
+		y = 4
+		prerequisite = { focus = SOV_aid_to_anatolian_nationalists }
+		completion_reward = {
+			add_command_power = 30
+			army_experience = 25
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_secret_lipetsk_fighter_school
+		icon = GFX_SOV_airforce
+		cost = 10
+		x = 32
+		y = 5
+		prerequisite = { focus = SOV_treaty_of_rapallo }
+		completion_reward = {
+			air_experience = 35
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_kama_tank_proving_grounds
+		icon = GFX_SOV_advanced_medium_tank_medium
+		cost = 10
+		x = 34
+		y = 5
+		prerequisite = { focus = SOV_treaty_of_rapallo }
+		completion_reward = {
+			army_experience = 35
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+			250 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_tomka_chemical_weapons_testing
+		icon = GFX_goal_generic_secret_weapon
+		cost = 10
+		x = 36
+		y = 5
+		prerequisite = { focus = SOV_treaty_of_rapallo }
+		prerequisite = { focus = SOV_alliance_with_kuomintang }
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = support_bonus
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+			254 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_break_the_capitalist_encirclement
+		icon = GFX_SOV_soviet_bear
+		cost = 10
+		x = 34
+		y = 6
+		prerequisite = { focus = SOV_secret_lipetsk_fighter_school }
+		prerequisite = { focus = SOV_kama_tank_proving_grounds }
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.10
+			add_war_support = 0.10
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_peoples_commissariat_of_nationalities
+		icon = GFX_SOV_autonomous_republics
+		cost = 5
+		x = 44
+		y = 0
+		completion_reward = {
+			add_ideas = SOV_declaration_rights_peoples
+			add_political_power = 120
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_sovietization_of_ukraine
+		icon = GFX_SOV_all_power_to_the_soviets
+		cost = 10
+		x = 42
+		y = 1
+		prerequisite = { focus = SOV_peoples_commissariat_of_nationalities }
+		completion_reward = {
+			221 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			202 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_manpower = 50000
+		}
+	}
+
+	focus = {
+		id = SOV_sovietization_of_belarus
+		icon = GFX_focus_sov_the_hands_do
+		cost = 10
+		x = 46
+		y = 1
+		prerequisite = { focus = SOV_peoples_commissariat_of_nationalities }
+		completion_reward = {
+			206 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_red_army_in_the_caucasus
+		icon = GFX_SOV_first_cavalry_army
+		cost = 10
+		x = 42
+		y = 2
+		prerequisite = { focus = SOV_sovietization_of_ukraine }
+		completion_reward = {
+			231 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			army_experience = 20
+		}
+	}
+
+	focus = {
+		id = SOV_pacify_the_basmachi_in_turkestan
+		icon = GFX_SOV_an_adaptable_army
+		cost = 10
+		x = 44
+		y = 2
+		prerequisite = { focus = SOV_peoples_commissariat_of_nationalities }
+		completion_reward = {
+			add_stability = 0.05
+			army_experience = 20
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+				producer = SOV
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_georgian_affair_debate
+		icon = GFX_SOV_administrative_reforms
+		cost = 10
+		x = 46
+		y = 2
+		prerequisite = { focus = SOV_sovietization_of_belarus }
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SOV_korenizatsiya_indigenization_policy
+		icon = GFX_SOV_autonomous_republics
+		cost = 10
+		x = 42
+		y = 3
+		prerequisite = { focus = SOV_red_army_in_the_caucasus }
+		completion_reward = {
+			add_stability = 0.10
+			add_manpower = 40000
+			add_political_power = 75
+		}
+	}
+
+	focus = {
+		id = SOV_treaty_on_the_creation_of_the_ussr
+		icon = GFX_SOV_treaty_of_the_creation_of_the_ussr
+		cost = 10
+		x = 44
+		y = 3
+		prerequisite = { focus = SOV_red_army_in_the_caucasus }
+		prerequisite = { focus = SOV_the_georgian_affair_debate }
+		completion_reward = {
+			add_ideas = SOV_union_of_soviet_socialist_republics
+			add_political_power = 150
+			add_stability = 0.10
+			add_war_support = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_autonomous_soviet_republics
+		icon = GFX_SOV_autonomous_republics
+		cost = 10
+		x = 46
+		y = 3
+		prerequisite = { focus = SOV_the_georgian_affair_debate }
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+			250 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_likbez_literacy_campaign
+		icon = GFX_goal_generic_scientific_exchange
+		cost = 10
+		x = 42
+		y = 4
+		prerequisite = { focus = SOV_korenizatsiya_indigenization_policy }
+		completion_reward = {
+			add_political_power = 100
+			add_tech_bonus = {
+				name = ind_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_1924_soviet_constitution
+		icon = GFX_focus_sov_the_supreme_soviet
+		cost = 10
+		x = 44
+		y = 4
+		prerequisite = { focus = SOV_treaty_on_the_creation_of_the_ussr }
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SOV_emancipation_of_women_zhenotdel
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		x = 46
+		y = 4
+		prerequisite = { focus = SOV_autonomous_soviet_republics }
+		completion_reward = {
+			add_stability = 0.05
+			add_manpower = 50000
+			219 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_sovnarkom_central_bureaucracy
+		icon = GFX_SOV_administrative_reforms
+		cost = 10
+		x = 44
+		y = 5
+		prerequisite = { focus = SOV_the_likbez_literacy_campaign }
+		prerequisite = { focus = SOV_the_1924_soviet_constitution }
+		prerequisite = { focus = SOV_emancipation_of_women_zhenotdel }
+		completion_reward = {
+			add_political_power = 150
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			195 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SOV_the_socialist_fatherland_triumphant
+		icon = GFX_SOV_soviet_bear
+		cost = 10
+		x = 44
+		y = 6
+		prerequisite = { focus = SOV_sovnarkom_central_bureaucracy }
+		completion_reward = {
+			add_ideas = SOV_iron_order_triumph
+			add_political_power = 200
+			add_stability = 0.15
+			add_war_support = 0.15
+			army_experience = 50
+		}
+	}
+
+}

@@ -723,5 +723,125 @@ ideas = {
 
 		}
 
+		# =========================================================================
+		# 6. DEDICATED SOVIET RUSSIA FOCUS TREE IDEAS
+		# =========================================================================
+
+		SOV_vecheka_state_security = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = 0.50
+				enemy_operative_detection_chance_factor = 0.25
+				stability_factor = 0.05
+				subversive_activites_upkeep = -0.30
+			}
+		}
+
+		SOV_militarization_of_labor_spirit = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_speed_buildings_factor = 0.10
+				consumer_goods_factor = 0.02
+			}
+		}
+
+		SOV_frunze_unified_doctrine_spirit = {
+			picture = generic_army_war_college
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.08
+				army_morale_factor = 0.10
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		SOV_tukhachevsky_deep_operations = {
+			picture = generic_artillery_regiments
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				breakthrough_factor = 0.10
+				planning_speed = 0.15
+				army_speed_factor = 0.05
+			}
+		}
+
+		SOV_goelro_electrification = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				industrial_capacity_factory = 0.05
+				research_speed_factor = 0.05
+			}
+		}
+
+		SOV_new_economic_policy_spirit = {
+			picture = generic_agrarian_reform
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		SOV_superindustrialization_spirit = {
+			picture = generic_central_management
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.12
+				production_speed_arms_factory_factor = 0.10
+				stability_factor = -0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+
+		SOV_comintern_vanguard = {
+			picture = generic_communist_drift_bonus
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				subversive_activites_upkeep = -0.25
+				foreign_subversive_activites = 0.25
+				war_support_factor = 0.10
+				political_power_gain = 0.10
+			}
+		}
+
+		SOV_rapallo_cooperation = {
+			picture = generic_scientific_exchange
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+				army_armor_attack_factor = 0.05
+				air_mission_efficiency = 0.05
+			}
+		}
+
+		SOV_union_of_soviet_socialist_republics = {
+			picture = generic_national_unity
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.10
+				compliance_growth = 0.15
+				conscription_factor = 0.05
+				political_power_gain = 0.15
+			}
+		}
+
 	}
 }
+
