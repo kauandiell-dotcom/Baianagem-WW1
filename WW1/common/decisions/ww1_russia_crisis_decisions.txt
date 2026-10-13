@@ -1,4 +1,4 @@
-SOV_revolutionary_crisis_category = {
+﻿SOV_revolutionary_crisis_category = {
 
 	SOV_crisis_emergency_grain_requisitions = {
 		icon = generic_agriculture
@@ -11,6 +11,8 @@ SOV_revolutionary_crisis_category = {
 			tag = SOV
 			has_variable = SOV_revolutionary_tension
 			NOT = { has_government = communism }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+			NOT = { has_country_flag = SOV_order_restored }
 		}
 		complete_effect = {
 			add_to_variable = { SOV_urban_hunger = -10 }
@@ -38,6 +40,8 @@ SOV_revolutionary_crisis_category = {
 			tag = SOV
 			has_variable = SOV_revolutionary_tension
 			NOT = { has_government = communism }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+			NOT = { has_country_flag = SOV_order_restored }
 		}
 		complete_effect = {
 			add_to_variable = { SOV_urban_hunger = -15 }
@@ -65,6 +69,8 @@ SOV_revolutionary_crisis_category = {
 			tag = SOV
 			has_variable = SOV_revolutionary_tension
 			NOT = { has_government = communism }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+			NOT = { has_country_flag = SOV_order_restored }
 		}
 		complete_effect = {
 			add_to_variable = { SOV_worker_unrest = -15 }
@@ -92,6 +98,8 @@ SOV_revolutionary_crisis_category = {
 			tag = SOV
 			has_variable = SOV_revolutionary_tension
 			NOT = { has_government = communism }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+			NOT = { has_country_flag = SOV_order_restored }
 		}
 		complete_effect = {
 			add_to_variable = { SOV_army_loyalty = 15 }

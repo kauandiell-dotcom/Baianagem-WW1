@@ -10,5 +10,7 @@ SOV_revolutionary_crisis_category = {
 		NOT = {
 			has_government = communism
 		}
+		NOT = { has_country_flag = SOV_revolution_triggered }
+		NOT = { has_country_flag = SOV_order_restored }
 	}
 }

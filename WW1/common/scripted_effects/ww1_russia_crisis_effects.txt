@@ -1,4 +1,4 @@
-# Pre-Revolutionary Crisis Scripted Effects (1915-1917)
+﻿# Pre-Revolutionary Crisis Scripted Effects (1915-1917)
 # Tracks Russian internal stability, worker unrest, urban hunger, and army loyalty.
 
 sov_russia_init_crisis_gauges = {
@@ -23,6 +23,14 @@ sov_russia_weekly_crisis_update = {
 		}
 		sov_russia_init_crisis_gauges = yes
 	}
+
+
+	if = {
+		limit = {
+			NOT = { has_country_flag = SOV_revolution_triggered }
+			NOT = { has_country_flag = SOV_order_restored }
+			NOT = { has_government = communism }
+		}
 
 	# Evaluate crisis progression weekly if Russia is at war
 	if = {
@@ -113,7 +121,10 @@ sov_russia_weekly_crisis_update = {
 			date > 1917.11.1
 			check_variable = { SOV_revolutionary_tension < 50 }
 			NOT = { has_country_flag = SOV_order_restored }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+			NOT = { has_government = communism }
 		}
 		country_event = { id = ww1_russia.305 days = 1 }
 	}
-}
+
+	}}

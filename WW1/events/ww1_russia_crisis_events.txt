@@ -55,6 +55,11 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 
+	trigger = {
+		NOT = { has_country_flag = SOV_revolution_triggered }
+		NOT = { has_government = communism }
+	}
+
 	option = {
 		name = ww1_russia.305.a
 		set_country_flag = SOV_order_restored
