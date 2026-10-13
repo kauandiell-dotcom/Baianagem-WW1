@@ -38,6 +38,7 @@ ita_ww1_initialise = {
 		set_variable = { ita_ww1_irredentism = 40 }
 		ita_ww1_clamp_counters = yes
 		ita_ww1_clean_legacy_gauges = yes
+		ita_ww1_update_gauges = yes
 	}
 }
 
@@ -45,6 +46,71 @@ ita_ww1_update_gauges = {
 	# Clean up any legacy topbar spirits to prevent icon stacking
 	ita_ww1_clean_legacy_gauges = yes
 	ita_ww1_clamp_counters = yes
+
+	# Gauge 1: Interventionism
+	if = {
+		limit = { check_variable = { ita_ww1_interventionism < 35 } }
+		add_ideas = ITA_ww1_neutralist_predominance
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_interventionism < 65 } }
+		add_ideas = ITA_ww1_divided_public_opinion
+	}
+	else = {
+		add_ideas = ITA_ww1_radiant_fever
+	}
+
+	# Gauge 2: Social Tension
+	if = {
+		limit = { check_variable = { ita_ww1_social_tension < 30 } }
+		add_ideas = ITA_ww1_social_truce
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_social_tension < 65 } }
+		add_ideas = ITA_ww1_labour_friction
+	}
+	else = {
+		add_ideas = ITA_ww1_revolutionary_ferment
+	}
+
+	# Gauge 3: Army Morale
+	if = {
+		limit = { check_variable = { ita_ww1_army_morale < 35 } }
+		add_ideas = ITA_ww1_shattered_discipline
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_army_morale < 70 } }
+		add_ideas = ITA_ww1_stoic_endurance
+	}
+	else = {
+		add_ideas = ITA_ww1_victorious_ardor
+	}
+
+	# Gauge 4: Southern Gap
+	if = {
+		limit = { check_variable = { ita_ww1_southern_gap < 30 } }
+		add_ideas = ITA_ww1_integrated_mezzogiorno
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_southern_gap < 65 } }
+		add_ideas = ITA_ww1_southern_disparity
+	}
+	else = {
+		add_ideas = ITA_ww1_acute_agrarian_crisis
+	}
+
+	# Gauge 5: Irredentism
+	if = {
+		limit = { check_variable = { ita_ww1_irredentism < 35 } }
+		add_ideas = ITA_ww1_subdued_claims
+	}
+	else_if = {
+		limit = { check_variable = { ita_ww1_irredentism < 70 } }
+		add_ideas = ITA_ww1_unredeemed_lands_call
+	}
+	else = {
+		add_ideas = ITA_ww1_irredentist_fervor
+	}
 }
 
 ita_ww1_weekly = {
