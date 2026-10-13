@@ -657,4 +657,218 @@ characters = {
 			ai_will_do = { factor = 1.5 }
 		}
 	}
+
+	# -------------------------------------------------------------
+	# Bolshevik Leadership & Red Army High Command
+	# -------------------------------------------------------------
+
+	SOV_leon_trotsky = {
+		name = "Leon Trotsky"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_leon_trotsky.dds"
+			}
+			army = {
+				large = "gfx/leaders/SOV/SOV_leon_trotsky.dds"
+			}
+		}
+		country_leader = {
+			ideology = leninism
+			traits = { }
+			expire = "1940.8.21"
+		}
+		field_marshal = {
+			traits = { offensive_doctrine brilliant_strategist organizational_leader }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SOV_leon_trotsky
+			ledger = army
+			cost = 100
+			traits = { military_theorist }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	SOV_joseph_stalin = {
+		name = "Joseph Stalin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV_josef_stalin.dds"
+			}
+		}
+		country_leader = {
+			ideology = stalinism
+			traits = { autocrat }
+			expire = "1953.3.5"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_joseph_stalin
+			ledger = civilian
+			cost = 100
+			traits = { captain_of_industry }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	SOV_mikhail_frunze = {
+		name = "Mikhail Frunze"
+		portraits = {
+			army = {
+				large = "gfx/generals/SOV_frunze.dds"
+			}
+			civilian = {
+				large = "gfx/generals/SOV_frunze.dds"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1925.10.31"
+		}
+		field_marshal = {
+			traits = { offensive_doctrine organizer fast_planner }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = SOV_mikhail_frunze
+			ledger = army
+			cost = 100
+			traits = { army_chief_offensive_2 }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	SOV_felix_dzerzhinsky = {
+		name = "Felix Dzerzhinsky"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POL/POL_felix_dzerzhinsky.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_felix_dzerzhinsky
+			ledger = civilian
+			cost = 100
+			traits = { prince_of_terror }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 2.0 }
+		}
+	}
+
+	SOV_semyon_budyonny = {
+		name = "Semyon Budyonny"
+		portraits = {
+			army = {
+				large = "gfx/generals/SOV_budyonny__s.dds"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer cavalry_leader trickster }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SOV_semyon_budyonny
+			ledger = army
+			cost = 100
+			traits = { army_cavalry_2 }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	SOV_mikhail_tukhachevsky = {
+		name = "Mikhail Tukhachevsky"
+		portraits = {
+			army = {
+				large = "gfx/fieldmarshal/SOV_tukhachevsky__m.dds"
+			}
+		}
+		field_marshal = {
+			traits = { brilliant_strategist offensive_doctrine }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SOV_mikhail_tukhachevsky
+			ledger = army
+			cost = 100
+			traits = { army_artillery_2 }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	SOV_georgy_chicherin = {
+		name = "Georgy Chicherin"
+		portraits = {
+			civilian = {
+				large = "gfx/interface/ideas/idea_SOV_georgy_chicherin.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_georgy_chicherin
+			ledger = civilian
+			cost = 100
+			traits = { compassionate_gentleman }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	SOV_nikolai_bukharin = {
+		name = "Nikolai Bukharin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_nikolai_bukharin.dds"
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			traits = { }
+			expire = "1938.3.15"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_nikolai_bukharin
+			ledger = civilian
+			cost = 100
+			traits = { popular_figurehead }
+			visible = { has_government = communism }
+			available = { has_government = communism }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
 }

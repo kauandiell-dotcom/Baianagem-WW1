@@ -1,0 +1,222 @@
+characters = {
+	WHT_alexander_kolchak = {
+		name = "Alexander Kolchak"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_alexander_kolchak.dds"
+			}
+			navy = {
+				large = "gfx/leaders/RUS/RUS_alexander_kolchak_admiral.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_alexander_kolchak.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { autocrat }
+			expire = "1920.2.7"
+		}
+		field_marshal = {
+			traits = { offensive_doctrine inspirational_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		navy_leader = {
+			traits = { bold blockade_runner }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = WHT_alexander_kolchak
+			ledger = navy
+			cost = 100
+			traits = { navy_chief_reform_2 }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	WHT_anton_denikin = {
+		name = "Anton Denikin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_anton_denikin.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_anton_denikin.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1947.8.8"
+		}
+		field_marshal = {
+			traits = { defensive_doctrine skilled_staffer cautious }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = WHT_anton_denikin
+			ledger = army
+			cost = 100
+			traits = { army_chief_defensive_2 }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	WHT_pyotr_wrangel = {
+		name = "Pyotr Wrangel"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_pyotr_wrangel.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_pyotr_wrangel.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { }
+			expire = "1928.4.25"
+		}
+		field_marshal = {
+			traits = { offensive_doctrine brilliant_strategist cavalry_officer inspirational_leader }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WHT_pyotr_wrangel
+			ledger = army
+			cost = 100
+			traits = { army_cavalry_2 }
+			ai_will_do = { factor = 2.0 }
+		}
+	}
+
+	WHT_nikolai_yudenich = {
+		name = "Nikolai Yudenich"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_nicholas_yudenich.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_nicholas_yudenich.dds"
+			}
+		}
+		corps_commander = {
+			traits = { mountaineer winter_specialist fortress_buster }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WHT_nikolai_yudenich
+			ledger = army
+			cost = 100
+			traits = { army_entrenchment_2 }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	WHT_lavr_kornilov = {
+		name = "Lavr Kornilov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_lavr_kornilov.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_lavr_kornilov.dds"
+			}
+		}
+		country_leader = {
+			ideology = autocracy
+			traits = { autocrat }
+			expire = "1918.4.13"
+		}
+		field_marshal = {
+			traits = { reckless infantry_officer offensive_doctrine }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WHT_lavr_kornilov
+			ledger = army
+			cost = 100
+			traits = { army_commando_2 }
+			ai_will_do = { factor = 1.5 }
+		}
+	}
+
+	WHT_alexey_kaledin = {
+		name = "Alexei Kaledin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_kaledin.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_kaledin.dds"
+			}
+		}
+		corps_commander = {
+			traits = { trickster cavalry_officer cavalry_leader swamp_fox }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = high_command
+			idea_token = WHT_alexey_kaledin
+			ledger = army
+			cost = 100
+			traits = { army_cavalry_2 }
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+
+	WHT_boris_savinkov = {
+		name = "Boris Savinkov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_boris_savinkov.dds"
+			}
+		}
+		country_leader = {
+			ideology = autocracy
+			traits = { }
+			expire = "1925.5.7"
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = WHT_boris_savinkov
+			ledger = civilian
+			cost = 100
+			traits = { prince_of_terror }
+			ai_will_do = { factor = 1.0 }
+		}
+	}
+}
