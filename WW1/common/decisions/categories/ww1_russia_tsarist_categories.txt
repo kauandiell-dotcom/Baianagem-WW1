@@ -1,0 +1,17 @@
+SOV_duma_and_court_politics = {
+	icon = generic_propaganda
+	picture = GFX_decision_cat_generic
+	priority = 90
+	allowed = {
+		tag = SOV
+	}
+}
+
+SOV_war_industry_mobilization = {
+	icon = generic_industry
+	picture = GFX_decision_cat_generic
+	priority = 80
+	allowed = {
+		tag = SOV
+	}
+}

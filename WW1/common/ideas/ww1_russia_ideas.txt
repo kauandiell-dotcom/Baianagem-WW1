@@ -216,12 +216,26 @@ ideas = {
 			modifier = { max_planning = .06 planning_speed = .10 army_org_factor = .04 }
 		}
 
-		SOV_shell_shortage_crisis = {
-			allowed = { always = no }
+		SOV_strategic_depth_and_rasputitsa = {
+			picture = generic_mountain_artillery
+			allowed = { always = yes }
 			removal_cost = -1
 			modifier = {
-				army_attack_factor = -0.10
+				attrition = 0.20
+				winter_attrition_factor = 0.20
+				supply_consumption_factor = 0.05
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		SOV_shell_shortage_crisis = {
+			picture = generic_production_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
 				army_artillery_attack_factor = -0.25
+				breakthrough_factor = -0.15
+				army_attack_factor = -0.10
 				army_org_factor = -0.10
 				war_support_factor = -0.10
 			}
@@ -247,11 +261,11 @@ ideas = {
 		}
 
 		SOV_vpk_mobilization_spirit = {
-			allowed = { always = no }
+			picture = generic_economic_increase
+			allowed = { always = yes }
 			removal_cost = -1
 			modifier = {
-				consumer_goods_factor = 0.05
-				production_speed_arms_factory_factor = 0.15
+				production_speed_arms_factory_factor = 0.10
 				industrial_capacity_factory = 0.05
 			}
 		}
@@ -341,12 +355,13 @@ ideas = {
 		}
 
 		SOV_rasputin_court_intrigues = {
-			allowed = { always = no }
+			picture = generic_disloyal_officers
+			allowed = { always = yes }
 			removal_cost = -1
 			modifier = {
-				stability_factor = -0.15
+				political_power_factor = -0.15
+				stability_factor = -0.05
 				political_power_cost = 0.20
-				war_support_factor = -0.10
 			}
 		}
 
@@ -398,6 +413,16 @@ ideas = {
 			modifier = {
 				stability_factor = 0.15
 				political_power_gain = 0.20
+			}
+		}
+
+		SOV_order_restored_spirit = {
+			picture = generic_intel_bonus
+			allowed = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10
+				war_support_factor = 0.10
 			}
 		}
 
@@ -539,7 +564,7 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				compliance_growth_focus = 0.20
+				compliance_growth = 0.20
 				resistance_growth = -0.15
 				non_core_manpower = 0.05
 			}
@@ -561,7 +586,7 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.15
 				stability_factor = 0.10
-				subject_tribute_factor = 0.25
+				subjects_autonomy_gain = -0.25
 			}
 		}
 
