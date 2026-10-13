@@ -1,4 +1,4 @@
-# GR_PATCH_V1
+﻿# GR_PATCH_V1
 focus_tree = {
 	id = russian_empire_focus
 	country = {
@@ -86,12 +86,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 75
+			219 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			197 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 			if = {
 				limit = { has_idea = SOV_backward_agrarian_system }
-				side_ww1_set_SOV_stolypin_reforms_spirit = yes
-			}
-			else = {
-				side_ww1_set_SOV_stolypin_reforms_spirit = yes
+				remove_ideas = SOV_backward_agrarian_system
+				add_ideas = SOV_stolypin_reforms_spirit
 			}
 		}
 	}
@@ -111,6 +111,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = ww1_russia.1 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 }
+			add_stability = 0.05
 		}
 	}
 
@@ -131,6 +133,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = SOV_stolypin_reforms_spirit
+			202 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 250 }
 			add_stability = -0.05
 			add_political_power = 50
 		}
@@ -168,6 +172,7 @@ focus_tree = {
 			focus = SOV_kokovtsov_premiership
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 			add_popularity = { ideology = despotism popularity = 0.10 }
 			add_political_power = 100
 		}
@@ -223,6 +228,8 @@ focus_tree = {
 			focus = SOV_stolypin_martyrdom
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_stability = 0.10
 			add_political_power = 100
 			set_country_flag = SOV_stolypin_alive
@@ -392,6 +399,8 @@ focus_tree = {
 			focus = SOV_the_fourth_state_duma_1912
 		}
 		completion_reward = {
+			195 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 300 }
 			add_stability = 0.05
 			add_popularity = { ideology = communism popularity = -0.05 }
 		}
@@ -410,6 +419,7 @@ focus_tree = {
 			focus = SOV_the_fourth_state_duma_1912
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_public_health_bonus bonus = 0.50 uses = 1 category = industry }
 			add_stability = 0.10
 			add_manpower = 50000
 			add_political_power = 60
@@ -431,6 +441,7 @@ focus_tree = {
 			focus = SOV_pass_public_health_acts
 		}
 		completion_reward = {
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
 			add_political_power = 100
 			set_country_flag = SOV_progressive_bloc_formed
 		}
@@ -510,7 +521,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = SOV_rasputin_court_intrigues
-			add_political_power = 50
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_political_power = 100
+			add_command_power = 30
 		}
 	}
 
@@ -529,6 +542,7 @@ focus_tree = {
 			focus = SOV_rasputin_court_influence
 		}
 		completion_reward = {
+			195 = { add_building_construction = { type = supply_node level = 1 instant_build = yes } }
 			add_stability = -0.15
 			country_event = { id = ww1_russia.10 }
 		}
@@ -589,6 +603,8 @@ focus_tree = {
 			focus = SOV_mutiny_of_petrograd_garrison
 		}
 		completion_reward = {
+			208 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 }
 			country_event = { id = ww1_russia.11 }
 		}
 	}
@@ -665,6 +681,8 @@ focus_tree = {
 			focus = SOV_petrograd_soviet_order_no_1
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 }
 			add_popularity = { ideology = communism popularity = 0.10 }
 			add_political_power = 50
 		}
@@ -684,6 +702,9 @@ focus_tree = {
 			focus = SOV_executive_committee_ispolkom
 		}
 		completion_reward = {
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
+			add_political_power = 75
 			country_event = { id = ww1_russia.15 }
 		}
 	}
@@ -723,164 +744,28 @@ focus_tree = {
 			focus = SOV_the_kerensky_ministry
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = train amount = 15 }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 500 }
+			army_experience = 25
 			country_event = { id = ww1_russia.20 }
 		}
 	}
 
-	focus = {
-		id = SOV_all_power_to_the_soviets
-		icon = GFX_focus_SOV_party
-		x = 19
-		y = 14
-		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_bolshevik } }
-		mutually_exclusive = { focus = SOV_kornilov_iron_dictatorship focus = SOV_convene_constituent_assembly }
-		available = { has_country_flag = SOV_path_bolshevik }
-		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL }
+	
 
-		prerequisite = {
-			focus = SOV_the_kornilov_affair
-		}
-		completion_reward = {
-			set_country_flag = SOV_bolshevik_path_chosen
-		}
-	}
+	
 
-	focus = {
-		id = SOV_storming_of_winter_palace
-		icon = GFX_focus_SOV_ww1_storming_of_winter_palace
-		x = 19
-		y = 15
-		ai_will_do = { factor = 10 }
-		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL }
+	
 
-		prerequisite = {
-			focus = SOV_all_power_to_the_soviets
-		}
-		completion_reward = {
-			set_politics = { ruling_party = communism elections_allowed = no }
-			set_country_leader = SOV_vladimir_lenin
-			add_stability = 0.10
-		}
-	}
+	
 
-	focus = {
-		id = SOV_decree_on_peace
-		icon = GFX_focus_SOV_decree_peace
-		x = 16
-		y = 16
-		ai_will_do = { factor = 10 }
-		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL }
+	
 
-		prerequisite = {
-			focus = SOV_storming_of_winter_palace
-		}
-				completion_reward = {
-			add_war_support = -0.25
-			add_stability = 0.15
-			add_manpower = 50000
-		}
-	}
+	
 
-	focus = {
-		id = SOV_decree_on_land
-		icon = GFX_focus_SOV_ww1_decree_on_land
-		x = 18
-		y = 16
-		ai_will_do = { factor = 10 }
-		cost = 5
-		search_filters = { FOCUS_FILTER_POLITICAL }
+	
 
-		prerequisite = {
-			focus = SOV_storming_of_winter_palace
-		}
-				completion_reward = {
-			remove_ideas = SOV_backward_agrarian_system
-			add_ideas = SOV_land_socialization_decree
-			add_stability = 0.15
-			add_political_power = 75
-			add_manpower = 150000
-		}
-	}
-
-	focus = {
-		id = SOV_founding_of_the_cheka
-		icon = GFX_focus_SOV_ww1_founding_of_the_cheka
-		x = 16
-		y = 17
-		ai_will_do = { factor = 10 }
-		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		prerequisite = {
-			focus = SOV_decree_on_peace
-		}
-				completion_reward = {
-			add_stability = 0.15
-			add_political_power = 100
-			add_ideas = SOV_all_russian_cheka
-		}
-	}
-
-	focus = {
-		id = SOV_creation_of_the_red_army
-		icon = GFX_focus_SOV_red_army
-		x = 18
-		y = 17
-		ai_will_do = { factor = 10 }
-		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		prerequisite = {
-			focus = SOV_decree_on_land
-		}
-		completion_reward = {
-			side_ww1_set_SOV_reborn_red_army = yes
-			add_manpower = 250000
-		}
-	}
-
-	focus = {
-		id = SOV_war_communism_decrees
-		icon = GFX_focus_SOV_labor
-		x = 17
-		y = 18
-		ai_will_do = { factor = 10 }
-		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		prerequisite = {
-			focus = SOV_founding_of_the_cheka
-			focus = SOV_creation_of_the_red_army
-		}
-		completion_reward = {
-			side_ww1_set_SOV_war_communism_regime = yes
-			195 = { add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
-			219 = { add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
-		}
-	}
-
-	focus = {
-		id = SOV_crush_the_white_armies
-		icon = GFX_focus_SOV_international_union_of_soviet_republics
-		x = 17
-		y = 19
-		ai_will_do = { factor = 10 }
-		cost = 10
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		prerequisite = {
-			focus = SOV_war_communism_decrees
-		}
-		completion_reward = {
-			add_war_support = 0.20
-			add_stability = 0.15
-			add_political_power = 100
-			army_experience = 30
-		}
-	}
+	
 
 	focus = {
 		id = SOV_kornilov_iron_dictatorship
@@ -888,7 +773,7 @@ focus_tree = {
 		x = 21
 		y = 14
 		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_kornilov } }
-		mutually_exclusive = { focus = SOV_all_power_to_the_soviets focus = SOV_convene_constituent_assembly }
+		mutually_exclusive = { focus = SOV_convene_constituent_assembly }
 		available = { has_country_flag = SOV_path_kornilov }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -897,6 +782,8 @@ focus_tree = {
 			focus = SOV_the_kornilov_affair
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 }
 			set_country_flag = SOV_kornilov_path_chosen
 			set_politics = { ruling_party = fascism elections_allowed = no }
 			set_country_leader = SOV_lavr_kornilov
@@ -934,6 +821,8 @@ focus_tree = {
 			focus = SOV_martial_law_in_petrograd
 		}
 		completion_reward = {
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
 			add_political_power = 100
 			add_popularity = { ideology = communism popularity = -0.30 }
 		}
@@ -992,6 +881,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = SOV_salvation_directory_rule
+			add_tech_bonus = { name = SOV_frontline_discipline_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = land_doctrine }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 }
 			add_command_power = 40
 			add_war_support = 0.15
 			army_experience = 35
@@ -1022,7 +913,7 @@ focus_tree = {
 		x = 23
 		y = 13
 		ai_will_do = { factor = 0 modifier = { add = 100 has_country_flag = SOV_path_democratic } }
-		mutually_exclusive = { focus = SOV_all_power_to_the_soviets focus = SOV_kornilov_iron_dictatorship }
+		mutually_exclusive = { focus = SOV_kornilov_iron_dictatorship }
 		available = { has_country_flag = SOV_path_democratic }
 		cost = 5
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -1031,6 +922,8 @@ focus_tree = {
 			focus = SOV_the_kerensky_ministry
 		}
 		completion_reward = {
+			219 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
+			add_political_power = 100
 			set_country_flag = SOV_democratic_path_chosen
 			set_politics = { ruling_party = democratic elections_allowed = yes }
 		}
@@ -1049,6 +942,8 @@ focus_tree = {
 			focus = SOV_convene_constituent_assembly
 		}
 		completion_reward = {
+			197 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_agrarian_coop_bonus bonus = 0.50 uses = 1 category = industry }
 			add_political_power = 100
 			set_country_leader = SOV_boris_savinkov
 		}
@@ -1143,6 +1038,8 @@ focus_tree = {
 			focus = SOV_autonomy_to_minority_nations
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 10000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 150 }
 			add_war_support = 0.20
 			army_experience = 35
 			add_manpower = 100000
@@ -1182,6 +1079,8 @@ focus_tree = {
 			focus = SOV_mutiny_of_petrograd_garrison
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
 			set_country_flag = SOV_tsarist_path_chosen
 			add_stability = -0.10
 		}
@@ -1200,9 +1099,10 @@ focus_tree = {
 			focus = SOV_the_tsar_refuses_abdication
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 500 }
 			add_manpower = 50000
 			army_experience = 30
-			add_manpower = 50000
 		}
 	}
 
@@ -1353,6 +1253,39 @@ focus_tree = {
 		completion_reward = {
 			swap_ideas = { remove_idea = SOV_rifle_famine_scar add_idea = SOV_unbreakable_union_victory }
 			add_stability = 0.20
+		}
+	}
+
+	focus = {
+		id = SOV_triumph_of_the_romanov_dynasty
+		icon = GFX_SOV_tsar_personal_command
+		x = 27
+		y = 15
+		ai_will_do = { factor = 100 }
+		cost = 10
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		prerequisite = {
+			focus = SOV_divine_right_unbroken
+		}
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_idea = SOV_order_restored_spirit } }
+				add_ideas = SOV_order_restored_spirit
+			}
+			195 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+			}
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+			}
+			army_experience = 50
+			add_command_power = 50
+			add_war_support = 0.15
+			add_stability = 0.15
+			add_political_power = 150
 		}
 	}
 
@@ -2056,6 +1989,8 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 			focus = SOV_modernizing_the_colossus
 		}
 		completion_reward = {
+			223 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			add_tech_bonus = { name = SOV_defense_council_bonus bonus = 0.50 uses = 1 category = industry }
 			set_country_flag = side_ww1_SOV_industry_open
 			country_event = { id = side_ww1_ger_rus.3 days = 1 }
 		}
@@ -2190,6 +2125,8 @@ add_tech_bonus = { name = SOV_domestic_machine_tool_production bonus = 0.50 uses
 			focus = SOV_emergency_coal_allotment
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = arms_factory level = 2 instant_build = yes } }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 500 }
 			set_country_flag = side_ww1_SOV_supply_audit_open
 			custom_effect_tooltip = side_ww1_supply_audit_tt
 		}
@@ -2423,8 +2360,10 @@ add_tech_bonus = { name = SOV_british_baltic_submarine_flotilla bonus = 0.50 use
 			focus = SOV_borodino_battlecruisers_laid_down
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_mine_warfare_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = naval_doctrine }
 			navy_experience = 30
-add_mastery_bonus = { name = SOV_baltic_mine_offensive bonus = 0.10 days = 180 folder = naval }
+			add_mastery_bonus = { name = SOV_baltic_mine_offensive bonus = 0.10 days = 180 folder = naval }
 		}
 	}
 
@@ -2458,8 +2397,10 @@ add_mastery_bonus = { name = SOV_baltic_mine_offensive bonus = 0.10 days = 180 f
 			focus = SOV_moonsund_archipelago_defenses
 		}
 		completion_reward = {
+			191 = { add_building_construction = { type = coastal_bunker level = 2 instant_build = yes } }
+			add_tech_bonus = { name = SOV_sea_denial_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = naval_doctrine }
 			navy_experience = 40
-add_mastery_bonus = { name = SOV_baltic_sea_denial bonus = 0.10 days = 180 folder = naval }
+			add_mastery_bonus = { name = SOV_baltic_sea_denial bonus = 0.10 days = 180 folder = naval }
 			add_war_support = 0.05
 		}
 	}
@@ -2511,8 +2452,10 @@ add_mastery_bonus = { name = SOV_baltic_sea_denial bonus = 0.10 days = 180 folde
 			focus = SOV_black_sea_fleet_supremacy
 		}
 		completion_reward = {
+			137 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_bosphorus_raid_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = dd_tech }
 			navy_experience = 35
-add_mastery_bonus = { name = SOV_bosphorus_raid_doctrine bonus = 0.10 days = 180 folder = naval }
+			add_mastery_bonus = { name = SOV_bosphorus_raid_doctrine bonus = 0.10 days = 180 folder = naval }
 		}
 	}
 
@@ -2547,8 +2490,10 @@ add_mastery_bonus = { name = SOV_bosphorus_raid_doctrine bonus = 0.10 days = 180
 			focus = SOV_sevastopol_naval_bastion
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_coal_blockade_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = ss_tech }
+			add_convoys = 50
 			navy_experience = 25
-add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180 folder = naval }
+			add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180 folder = naval }
 			add_war_support = 0.05
 		}
 	}
@@ -2653,6 +2598,8 @@ add_mastery_bonus = { name = SOV_cut_anatolia_coal_lines bonus = 0.10 days = 180
 			focus = SOV_trabzon_amphibious_landing
 		}
 		completion_reward = {
+			137 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = naval_base level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_landing_craft_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = tp_tech }
 			army_experience = 35
 			navy_experience = 25
 			add_manpower = 40000
@@ -2774,6 +2721,8 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_sikorsky_ilya_muromets
 		}
 		completion_reward = {
+			206 = { add_building_construction = { type = air_base level = 2 instant_build = yes } }
+			add_tech_bonus = { name = SOV_evok_bomber_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = air_equipment }
 			strategic_bombing_damage_factor = 0.25
 			air_experience = 25
 			strategic_bombing_factor = 0.25
@@ -2953,6 +2902,8 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_the_great_military_program
 		}
 		completion_reward = {
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_sukhomlinov_doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
 			army_experience = 25
 			add_political_power = 50
 			side_ww1_advance_SOV_army_reform = yes
@@ -2972,6 +2923,8 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_the_great_military_program
 		}
 		completion_reward = {
+			206 = { add_building_construction = { type = infrastructure level = 2 instant_build = yes } add_building_construction = { type = supply_node level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_stavka_doctrine_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = land_doctrine }
 			army_experience = 40
 			add_political_power = 60
 			side_ww1_set_SOV_stavka_operational_clarity = yes
@@ -3049,6 +3002,8 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_cossack_hosts_mobilization
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 300 }
 			add_manpower = 30000
 			add_war_support = 0.05
 			army_experience = 15
@@ -3109,6 +3064,8 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_standing_corps_readiness
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_praporshchik_doctrine_bonus bonus = 0.50 uses = 1 category = land_doctrine }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
 			army_experience = 30
 			add_manpower = 100000
 			add_command_power = 30
@@ -3149,8 +3106,10 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 			focus = SOV_telegraph_and_wireless_corps
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_academy_doctrine_bonus bonus = 1.0 ahead_reduction = 1 uses = 2 category = land_doctrine }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 500 }
 			army_experience = 40
-add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 days = 180 folder = land }
+			add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 days = 180 folder = land }
 			side_ww1_advance_SOV_army_reform = yes
 		}
 	}
@@ -3170,6 +3129,8 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 			focus = SOV_general_staff_academy_doctrine
 		}
 		completion_reward = {
+			206 = { add_building_construction = { type = supply_node level = 1 instant_build = yes } add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = train amount = 20 }
 			army_experience = 35
 			add_command_power = 40
 			add_political_power = 75
@@ -3190,6 +3151,8 @@ add_mastery_bonus = { name = SOV_general_staff_academy_doctrine bonus = 0.10 day
 			focus = SOV_the_great_military_program
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_shell_artillery_bonus bonus = 0.50 uses = 1 category = artillery }
 			set_country_flag = side_ww1_SOV_imports_open
 			set_country_flag = side_ww1_SOV_supply_audit_open
 			custom_effect_tooltip = side_ww1_supply_audit_tt
@@ -3423,6 +3386,9 @@ add_tech_bonus = { name = SOV_gas_warfare_and_zelinsky_masks bonus = 0.50 uses =
 			NOT = { AND = { controls_state = 89 controls_state = 91 } }
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 300 }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
+			add_tech_bonus = { name = SOV_brusilov_shock_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = land_doctrine }
 			set_country_flag = SOV_southwestern_plan_ready
 			country_event = { id = ww1_russia.100 }
 		}
@@ -3810,6 +3776,8 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 			focus = SOV_aid_to_serbian_army
 		}
 		completion_reward = {
+			78 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 }
 			add_opinion_modifier = { target = ROM modifier = SOV_transylvania_promise }
 			add_political_power = 75
 			if = { limit = { country_exists = ROM } ROM = { country_event = { id = ww1_diplomacy.50 days = 1 } } }
@@ -3832,6 +3800,9 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 			focus = SOV_bring_romania_into_the_war
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 10000 }
+			add_equipment_to_stockpile = { type = train amount = 20 }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 500 }
 			country_event = { id = ww1_russia.5 }
 			add_war_support = 0.20
 		}
@@ -3990,8 +3961,10 @@ add_tech_bonus = { name = SOV_inelastic_trench_fortifications bonus = 0.50 uses 
 			focus = SOV_french_strategic_loans
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_plan_19_galicia_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = land_doctrine }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 200 }
 			army_experience = 30
-add_mastery_bonus = { name = SOV_plan_19_galicia_variant bonus = 0.10 days = 180 folder = land }
+			add_mastery_bonus = { name = SOV_plan_19_galicia_variant bonus = 0.10 days = 180 folder = land }
 		}
 	}
 
@@ -4008,8 +3981,10 @@ add_mastery_bonus = { name = SOV_plan_19_galicia_variant bonus = 0.10 days = 180
 			focus = SOV_persian_corridor_security
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_plan_19_prussia_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = land_doctrine }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 5000 }
 			army_experience = 35
-add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days = 180 folder = land }
+			add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days = 180 folder = land }
 			add_war_support = 0.10
 		}
 	}
@@ -4028,6 +4003,8 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_french_strategic_loans
 		}
 		completion_reward = {
+			231 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_mountain_artillery_bonus bonus = 0.50 uses = 1 category = artillery }
 			army_experience = 35
 			add_manpower = 50000
 			add_war_support = 0.10
@@ -4048,6 +4025,8 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_sarikamish_counter_encirclement
 		}
 		completion_reward = {
+			231 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 150 }
 			army_experience = 35
 			add_war_support = 0.05
 			add_political_power = 100
@@ -4098,18 +4077,14 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_plan_19_east_prussia_variant
 		}
 				completion_reward = {
+			234 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant_build = yes } }
+			add_tech_bonus = { name = SOV_straits_naval_bonus bonus = 1.0 uses = 1 category = naval_equipment }
 			add_political_power = 100
 			add_war_support = 0.15
 			add_state_claim = 341
 			add_state_claim = 340
-			if = {
-				limit = { is_in_faction_with = FRA }
-				FRA = { country_event = { id = ww1_diplomacy.70 days = 1 } }
-			}
-			if = {
-				limit = { is_in_faction_with = ENG }
-				ENG = { country_event = { id = ww1_diplomacy.70 days = 1 } }
-			}
+			if = { limit = { is_in_faction_with = FRA } FRA = { country_event = { id = ww1_diplomacy.70 days = 1 } } }
+			if = { limit = { is_in_faction_with = ENG } ENG = { country_event = { id = ww1_diplomacy.70 days = 1 } } }
 		}
 	}
 
@@ -4126,6 +4101,7 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_claim_tsargrad_and_the_straits
 		}
 		completion_reward = {
+			89 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
 			add_stability = 0.05
 			add_manpower = 100000
 		}
@@ -4144,6 +4120,7 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_claim_tsargrad_and_the_straits
 		}
 		completion_reward = {
+			10 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes } }
 			add_stability = 0.10
 			add_manpower = 50000
 			add_stability = 0.10
@@ -4217,6 +4194,39 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 	}
 
 	focus = {
+		id = SOV_annexation_of_tsargrad
+		icon = GFX_RUS_True_Heirs_Of_Constantinople
+		x = 115
+		y = 9
+		ai_will_do = { factor = 100 }
+		cost = 10
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION }
+
+		prerequisite = {
+			focus = SOV_hagia_sophia_cross_restored
+		}
+		completion_reward = {
+			add_ideas = SOV_tsargrad_liberated
+			add_state_core = 341
+			add_state_core = 340
+			add_state_core = 339
+			341 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = dockyard level = 2 instant_build = yes }
+				add_building_construction = { type = coastal_bunker level = 2 instant_build = yes }
+			}
+			340 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = naval_base level = 2 instant_build = yes }
+			}
+			navy_experience = 50
+			add_war_support = 0.15
+			add_stability = 0.15
+			add_political_power = 150
+		}
+	}
+
+	focus = {
 		id = SOV_willy_nicky_secret_correspondence
 		icon = GFX_RUS_Russo_German_Diplomacy
 		x = 118
@@ -4229,6 +4239,8 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_third_rome_foreign_policy
 		}
 		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_tech_bonus = { name = SOV_secret_diplomacy_bonus bonus = 0.50 uses = 1 category = industry }
 			add_political_power = 75
 			country_event = { id = ww1_russia.30 }
 			if = { limit = { country_exists = GER } GER = { country_event = { id = ww1_diplomacy.40 days = 1 } } }
@@ -4279,6 +4291,8 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			has_capitulated = no
 		}
 		completion_reward = {
+			195 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
+			219 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			country_event = { id = ww1_russia.40 }
 		}
 	}
@@ -4333,6 +4347,8 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_continental_league_against_britain
 		}
 		completion_reward = {
+			589 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_resource = { type = oil amount = 8 state = 229 }
 			army_experience = 35
 			add_political_power = 100
 			add_war_support = 0.10
@@ -4426,6 +4442,9 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 			focus = SOV_reconstruction_from_the_ashes
 		}
 		completion_reward = {
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 10000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 300 }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 }
 			add_war_support = 0.20
 			army_experience = 40
 			add_manpower = 100000
@@ -4472,25 +4491,7 @@ add_mastery_bonus = { name = SOV_plan_19_east_prussia_variant bonus = 0.10 days 
 		}
 	}
 
-	focus = {
-		id = SOV_tambov_peasant_rebellion
-		icon = GFX_SOV_legacy_of_green_armies
-		x = 19
-		y = 18
-		ai_will_do = { factor = 10 }
-		available = { date > 1920.8.1 }
-		cost = 7
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		prerequisite = {
-			focus = SOV_creation_of_the_red_army
-		}
-		completion_reward = {
-			add_stability = -0.10
-			add_political_power = 75
-			add_ideas = SOV_peasant_unrest
-		}
-	}
+	
 
 	focus = {
 		id = SOV_armed_forces_of_south_russia
@@ -4738,6 +4739,8 @@ add_tech_bonus = { name = SOV_synchronized_aerial_machine_guns bonus = 0.50 uses
 			focus = SOV_osowiec_and_novogeorgievsk_forts
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_osowiec_defense_bonus bonus = 1.0 ahead_reduction = 1 uses = 1 category = infantry_weapons }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 }
 			add_war_support = 0.15
 			add_stability = 0.05
 			army_experience = 40
@@ -4817,6 +4820,10 @@ add_tech_bonus = { name = SOV_optical_rangefinders_and_periscopes bonus = 0.50 u
 			focus = SOV_gold_transfers_for_credit
 		}
 		completion_reward = {
+			213 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = naval_base level = 2 instant_build = yes } add_building_construction = { type = infrastructure level = 2 instant_build = yes } }
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 10000 }
+			add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 200 }
+			add_convoys = 40
 			set_country_flag = side_ww1_SOV_imports_open
 			custom_effect_tooltip = side_ww1_import_contract_tt
 		}
@@ -4841,6 +4848,8 @@ add_tech_bonus = { name = SOV_optical_rangefinders_and_periscopes bonus = 0.50 u
 			SER = { has_capitulated = no }
 		}
 		completion_reward = {
+			add_tech_bonus = { name = SOV_red_cross_bonus bonus = 1.0 uses = 1 category = support_tech }
+			add_equipment_to_stockpile = { type = support_equipment_1 amount = 500 }
 			add_political_power = -25
 			SER = { country_event = { id = ww1_russia.103 days = 1 } }
 		}
