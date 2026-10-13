@@ -20,6 +20,7 @@ country_event = {
 			ruling_party = communism
 			elections_allowed = no
 		}
+		load_focus_tree = soviet_russia_focus
 		prevent_join_factions = yes
 		set_rule = { can_join_factions = no }
 
@@ -33,6 +34,7 @@ country_event = {
 		# Siberia, Urals, and Southern territories (including Omsk 571 and 594, Ekaterinburg, Irkutsk, Vladivostok, Kuban, Novorossiysk)
 		WHT = {
 			set_country_flag = WHT_russian_civil_war_active
+			load_focus_tree = white_russia_focus
 			prevent_join_factions = yes
 			set_rule = { can_join_factions = no }
 
@@ -168,6 +170,13 @@ country_event = {
 			transfer_state = 97
 			transfer_state = 98
 		}
+		if = {
+			limit = { country_exists = GER has_war_with = GER }
+			GER = {
+				puppet = POL
+				white_peace = POL
+			}
+		}
 
 		# Georgia (GEO): Tbilisi 231
 		GEO = {
@@ -251,6 +260,7 @@ country_event = {
 	option = {
 		name = ww1_russia_civil_war.1.a
 		ai_chance = { factor = 100 }
+		load_focus_tree = soviet_russia_focus
 		custom_effect_tooltip = SOV_play_reds_tt
 	}
 
@@ -260,6 +270,7 @@ country_event = {
 		ai_chance = { factor = 0 }
 		WHT = {
 			change_tag_from = SOV
+			load_focus_tree = white_russia_focus
 		}
 		custom_effect_tooltip = SOV_play_whites_tt
 	}

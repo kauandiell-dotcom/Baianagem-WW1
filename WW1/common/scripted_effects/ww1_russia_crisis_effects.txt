@@ -100,7 +100,9 @@ sov_russia_weekly_crisis_update = {
 	# Trigger Resolution & Milestones
 	if = {
 		limit = {
-			check_variable = { SOV_revolutionary_tension >= 85 }
+			has_war = yes
+			date > 1916.6.1
+			check_variable = { SOV_revolutionary_tension > 84 }
 			NOT = { has_country_flag = SOV_revolution_triggered }
 		}
 		set_country_flag = SOV_revolution_triggered
