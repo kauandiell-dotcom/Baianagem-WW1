@@ -1,0 +1,85 @@
+add_namespace = ww1_russia
+
+# -------------------------------------------------------------
+# Event 300: Lenin Arrives via German Sealed Train
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.300
+	title = ww1_russia.300.t
+	desc = ww1_russia.300.d
+	picture = GFX_event_WW1_sov_april_theses
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.300.a
+		set_country_flag = SOV_lenin_returned
+		add_to_variable = { SOV_revolutionary_tension = 25 }
+		add_to_variable = { SOV_worker_unrest = 20 }
+		sov_russia_clamp_crisis_gauges = yes
+		custom_effect_tooltip = SOV_lenin_returned_tt
+	}
+}
+
+# -------------------------------------------------------------
+# Event 301: Autonomous Return of Lenin (March 1917 Fallback)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.301
+	title = ww1_russia.301.t
+	desc = ww1_russia.301.d
+	picture = GFX_event_WW1_sov_april_theses
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.301.a
+		set_country_flag = SOV_lenin_returned
+		add_to_variable = { SOV_revolutionary_tension = 20 }
+		sov_russia_clamp_crisis_gauges = yes
+		custom_effect_tooltip = SOV_lenin_returned_tt
+	}
+}
+
+# -------------------------------------------------------------
+# Event 305: Triumph of Order (Tension remained < 50% in Late 1917)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.305
+	title = ww1_russia.305.t
+	desc = ww1_russia.305.d
+	picture = GFX_event_WW1_sov_supreme_command
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.305.a
+		set_country_flag = SOV_order_restored
+		add_ideas = SOV_order_restored_spirit
+		add_stability = 0.15
+		add_war_support = 0.15
+		custom_effect_tooltip = SOV_order_restored_tt
+	}
+}
+
+# -------------------------------------------------------------
+# Event 310: Storming of the Winter Palace (Revolution Erupts!)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia.310
+	title = ww1_russia.310.t
+	desc = ww1_russia.310.d
+	picture = GFX_event_WW1_sov_october
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia.310.a
+		set_country_flag = SOV_revolution_triggered
+		custom_effect_tooltip = SOV_revolution_triggered_tt
+	}
+}

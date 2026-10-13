@@ -1,0 +1,119 @@
+# Pre-Revolutionary Crisis Scripted Effects (1915-1917)
+# Tracks Russian internal stability, worker unrest, urban hunger, and army loyalty.
+
+sov_russia_init_crisis_gauges = {
+	set_country_flag = SOV_crisis_gauges_initialized
+	set_variable = { SOV_revolutionary_tension = 15 }
+	set_variable = { SOV_worker_unrest = 20 }
+	set_variable = { SOV_urban_hunger = 10 }
+	set_variable = { SOV_army_loyalty = 80 }
+}
+
+sov_russia_clamp_crisis_gauges = {
+	clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
+	clamp_variable = { var = SOV_worker_unrest min = 0 max = 100 }
+	clamp_variable = { var = SOV_urban_hunger min = 0 max = 100 }
+	clamp_variable = { var = SOV_army_loyalty min = 0 max = 100 }
+}
+
+sov_russia_weekly_crisis_update = {
+	if = {
+		limit = {
+			NOT = { has_variable = SOV_revolutionary_tension }
+		}
+		sov_russia_init_crisis_gauges = yes
+	}
+
+	# Evaluate crisis progression weekly if Russia is at war
+	if = {
+		limit = {
+			original_tag = SOV
+			has_war = yes
+		}
+		# Casualties, war weariness, low stability impact
+		add_to_variable = { SOV_worker_unrest = 0.3 }
+		add_to_variable = { SOV_urban_hunger = 0.25 }
+		add_to_variable = { SOV_army_loyalty = -0.3 }
+
+		if = {
+			limit = { has_war_support < 0.40 }
+			add_to_variable = { SOV_worker_unrest = 0.2 }
+		}
+		if = {
+			limit = { has_stability < 0.40 }
+			add_to_variable = { SOV_worker_unrest = 0.2 }
+			add_to_variable = { SOV_urban_hunger = 0.2 }
+		}
+		if = {
+			limit = { surrender_progress > 0.10 }
+			add_to_variable = { SOV_army_loyalty = -0.4 }
+		}
+		if = {
+			limit = { has_idea = SOV_shell_shortage_crisis }
+			add_to_variable = { SOV_army_loyalty = -0.25 }
+			add_to_variable = { SOV_worker_unrest = 0.15 }
+		}
+	}
+	else = {
+		# Peacetime recovery
+		add_to_variable = { SOV_worker_unrest = -0.3 }
+		add_to_variable = { SOV_urban_hunger = -0.4 }
+		add_to_variable = { SOV_army_loyalty = 0.3 }
+	}
+
+	# Recompute SOV_revolutionary_tension: e.g. based on unrest, hunger, and (100 - loyalty)
+	set_temp_variable = { t_target_tension = 0 }
+	add_to_temp_variable = { t_target_tension = SOV_worker_unrest }
+	multiply_temp_variable = { t_target_tension = 0.40 }
+	set_temp_variable = { t_hunger_term = SOV_urban_hunger }
+	multiply_temp_variable = { t_hunger_term = 0.30 }
+	add_to_temp_variable = { t_target_tension = t_hunger_term }
+	set_temp_variable = { t_disloyalty_term = 100 }
+	subtract_from_temp_variable = { t_disloyalty_term = SOV_army_loyalty }
+	multiply_temp_variable = { t_disloyalty_term = 0.30 }
+	add_to_temp_variable = { t_target_tension = t_disloyalty_term }
+
+	if = {
+		limit = { has_country_flag = SOV_lenin_returned }
+		add_to_temp_variable = { t_target_tension = 15 }
+	}
+
+	if = {
+		limit = { check_variable = { t_target_tension > SOV_revolutionary_tension } }
+		add_to_variable = { SOV_revolutionary_tension = 0.8 }
+	}
+	else_if = {
+		limit = { check_variable = { t_target_tension < SOV_revolutionary_tension } }
+		add_to_variable = { SOV_revolutionary_tension = -0.5 }
+	}
+
+	sov_russia_clamp_crisis_gauges = yes
+
+	# Trigger Resolution & Milestones
+	if = {
+		limit = {
+			check_variable = { SOV_revolutionary_tension >= 85 }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+		}
+		set_country_flag = SOV_revolution_triggered
+		country_event = { id = ww1_russia.310 days = 1 }
+	}
+
+	if = {
+		limit = {
+			date > 1917.3.1
+			NOT = { has_country_flag = SOV_lenin_returned }
+			NOT = { has_country_flag = SOV_revolution_triggered }
+		}
+		country_event = { id = ww1_russia.301 days = 1 }
+	}
+
+	if = {
+		limit = {
+			date > 1917.11.1
+			check_variable = { SOV_revolutionary_tension < 50 }
+			NOT = { has_country_flag = SOV_order_restored }
+		}
+		country_event = { id = ww1_russia.305 days = 1 }
+	}
+}

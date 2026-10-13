@@ -53,3 +53,37 @@ ww1_russia.50.t:0 "A Grande Crise de Projéteis: Snaryadny Golod"
  ww1_russia.51.d:0 "A fúria pública pela falta de munições e os desastres do Grande Recuo forçaram Nicolau II a demitir o desonrado Ministro da Guerra, Vladimir Sukhomlinov. O General Alexei Polivanov assume a pasta, buscando de imediato a Duma e criando o Conselho Especial de Defesa do Estado."
  ww1_russia.51.a:0 "Reformar o Ministério e cooperar com os Zemstvos!"
  SOV_polivanov_appointed_tt:0 "O General Polivanov substitui Sukhomlinov. A paralisia de comando e as penalidades de planejamento são amplamente aliviadas."
+
+ # Pre-Revolutionary Crisis Dashboard & Decisions
+ SOV_revolutionary_crisis_category:0 "Painel da Crise Pré-Revolucionária"
+ SOV_revolutionary_crisis_category_desc:0 "§HEstado da Crise Interna:§!\n§YTensão Revolucionária:§! [?SOV_revolutionary_tension|0%]\n§YAgitação Operária:§! [?SOV_worker_unrest|0%]\n§YFome Urbana:§! [?SOV_urban_hunger|0%]\n§YLealdade do Exército:§! [?SOV_army_loyalty|0%]\n\n§R[████████░░] [?SOV_revolutionary_tension|0%]§!"
+ SOV_crisis_tension_bar_tt:0 "§R[████████░░] [?SOV_revolutionary_tension|0%]§!"
+ SOV_crisis_emergency_grain_requisitions:0 "Requisições Emergenciais de Grãos"
+ SOV_crisis_emergency_grain_requisitions_desc:0 "Forçar requisições de grãos no campo para alimentar os operários famintos em Petrogrado e Moscou."
+ SOV_crisis_bread_price_subsidies:0 "Subsídios ao Preço do Pão"
+ SOV_crisis_bread_price_subsidies_desc:0 "Subsidiar padarias e transporte de cereais usando o tesouro estatal para baratear o pão nos centros urbanos."
+ SOV_crisis_okhrana_sweeps:0 "Operações da Okhrana Contra Agitadores"
+ SOV_crisis_okhrana_sweeps_desc:0 "Ordenar à polícia secreta Okhrana a prisão de agitadores bolcheviques e invasão de gráficas clandestinas."
+ SOV_crisis_imperial_frontline_tour:0 "Visita Imperial à Frente de Batalha"
+ SOV_crisis_imperial_frontline_tour_desc:0 "O Tsar visita as trincheiras do front e inspeciona batalhões para revitalizar a lealdade monárquica entre as tropas."
+
+ # Pre-Revolutionary Crisis Events
+ ww1_russia.300.t:0 "Lenin Chega pelo Trem Selado"
+ ww1_russia.300.d:0 "Facilitado pelo Estado-Maior Alemão em uma ousada operação de guerra política, Vladimir Ilyich Lenin e sua comitiva bolchevique cruzaram a Europa em um vagão selado, desembarcando na Estação Finlândia em Petrogrado sob aclamação de marinheiros e operários."
+ ww1_russia.300.a:0 "Todo poder aos Sovietes!"
+ SOV_lenin_returned_tt:0 "Vladimir Lenin retornou a Petrogrado. A subversão revolucionária ganha enorme impulso."
+
+ ww1_russia.301.t:0 "Lenin Retorna a Petrogrado"
+ ww1_russia.301.d:0 "Contornando os postos de fronteira por rotas clandestinas, Vladimir Lenin chega a Petrogrado para liderar diretamente a agitação revolucionária bolchevique."
+ ww1_russia.301.a:0 "Paz, Terra e Pão!"
+
+ ww1_russia.305.t:0 "O Triunfo da Ordem"
+ ww1_russia.305.d:0 "Através de rigorosa administração estatal, socorro social oportuno e lealdade inabalável das forças armadas, as autoridades imperiais resistiram à tempestade da revolta revolucionária. A ordem reina sobre o Império."
+ ww1_russia.305.a:0 "Deus Salve o Tsar!"
+ SOV_order_restored_tt:0 "A agitação revolucionária foi desmantelada. A estabilidade imperial está restaurada."
+
+ ww1_russia.310.t:0 "A Tomada do Palácio de Inverno"
+ ww1_russia.310.d:0 "A crise atinge o ponto de ruptura! Operários armados e soldados radicalizados cercam e tomam o Palácio de Inverno. Os ministros são presos enquanto a velha ordem desmorona diante do triunfo revolucionário!"
+ ww1_russia.310.a:0 "A Revolução triunfou!"
+ SOV_revolution_triggered_tt:0 "O limiar revolucionário foi ultrapassado. A revolução explode!"
+

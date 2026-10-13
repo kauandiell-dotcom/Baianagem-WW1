@@ -53,3 +53,37 @@ ww1_russia.50.t:0 "The Great Shell Crisis: Snaryadny Golod"
  ww1_russia.51.d:0 "Outrage over shell shortages and the catastrophes of the Great Retreat has forced Nicholas II to dismiss the disgraced Minister of War, Vladimir Sukhomlinov. General Alexei Polivanov takes office, immediately reaching out to the Duma and establishing the Special Council for State Defense."
  ww1_russia.51.a:0 "Reform the Ministry and coordinate with the Zemstvos!"
  SOV_polivanov_appointed_tt:0 "General Polivanov replaces Sukhomlinov. Command paralysis and planning penalties are substantially mitigated."
+
+ # Pre-Revolutionary Crisis Dashboard & Decisions
+ SOV_revolutionary_crisis_category:0 "Pre-Revolutionary Crisis Dashboard"
+ SOV_revolutionary_crisis_category_desc:0 "§HInternal Crisis Status:§!\n§YRevolutionary Tension:§! [?SOV_revolutionary_tension|0%]\n§YWorker Unrest:§! [?SOV_worker_unrest|0%]\n§YUrban Hunger:§! [?SOV_urban_hunger|0%]\n§YArmy Loyalty:§! [?SOV_army_loyalty|0%]\n\n§R[████████░░] [?SOV_revolutionary_tension|0%]§!"
+ SOV_crisis_tension_bar_tt:0 "§R[████████░░] [?SOV_revolutionary_tension|0%]§!"
+ SOV_crisis_emergency_grain_requisitions:0 "Emergency Grain Requisitions"
+ SOV_crisis_emergency_grain_requisitions_desc:0 "Force grain requisitions from the countryside to feed the starving workers in Petrograd and Moscow."
+ SOV_crisis_bread_price_subsidies:0 "Bread Price Subsidies"
+ SOV_crisis_bread_price_subsidies_desc:0 "Subsidize bakeries and grain transports using state treasury funds to lower bread prices in urban centers."
+ SOV_crisis_okhrana_sweeps:0 "Okhrana Raids on Agitators"
+ SOV_crisis_okhrana_sweeps_desc:0 "Direct the Okhrana secret police to arrest Bolshevik agitators and raid clandestine printing presses."
+ SOV_crisis_imperial_frontline_tour:0 "Imperial Frontline Tour"
+ SOV_crisis_imperial_frontline_tour_desc:0 "The Tsar tours frontline trenches and inspects battalions to bolster monarchist loyalty among soldiers."
+
+ # Pre-Revolutionary Crisis Events
+ ww1_russia.300.t:0 "Lenin Arrives via Sealed Train"
+ ww1_russia.300.d:0 "Facilitated by the German General Staff in an audacious operation of political warfare, Vladimir Ilyich Lenin and his Bolshevik cohort have crossed Europe in a sealed train, arriving at Petrograd's Finland Station amidst crowds of cheering sailors and workers."
+ ww1_russia.300.a:0 "All power to the Soviets!"
+ SOV_lenin_returned_tt:0 "Vladimir Lenin has returned to Petrograd. Revolutionary subversion surges."
+
+ ww1_russia.301.t:0 "Lenin Returns to Petrograd"
+ ww1_russia.301.d:0 "Evading border police through clandestine transit channels, Vladimir Lenin has slipped into Petrograd to take direct command of Bolshevik revolutionary agitation."
+ ww1_russia.301.a:0 "Peace, Land, and Bread!"
+
+ ww1_russia.305.t:0 "Triumph of Order"
+ ww1_russia.305.d:0 "Through rigorous state administration, decisive social mitigation, and steadfast military loyalty, the imperial authorities have weathered the tempest of revolutionary unrest. Order reigns supreme across the Empire."
+ ww1_russia.305.a:0 "God Save the Tsar!"
+ SOV_order_restored_tt:0 "Revolutionary unrest is broken. Imperial stability is restored."
+
+ ww1_russia.310.t:0 "Storming of the Winter Palace"
+ ww1_russia.310.d:0 "The crisis reaches its boiling point! Armed workers and radicalized soldiers march upon the Winter Palace. Government ministers are placed under arrest as the old order collapses amidst revolutionary triumph!"
+ ww1_russia.310.a:0 "The Revolution has triumphed!"
+ SOV_revolution_triggered_tt:0 "The revolutionary threshold has been breached. The revolution erupts!"
+

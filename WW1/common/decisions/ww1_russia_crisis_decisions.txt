@@ -1,0 +1,111 @@
+SOV_revolutionary_crisis_category = {
+
+	SOV_crisis_emergency_grain_requisitions = {
+		icon = generic_agriculture
+		cost = 25
+		days_re_enable = 60
+		available = {
+			check_variable = { SOV_urban_hunger > 5 }
+		}
+		visible = {
+			tag = SOV
+			has_variable = SOV_revolutionary_tension
+			NOT = { has_government = communism }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_urban_hunger = -10 }
+			add_to_variable = { SOV_worker_unrest = 5 }
+			sov_russia_clamp_crisis_gauges = yes
+			custom_effect_tooltip = SOV_crisis_tension_bar_tt
+		}
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 2
+				check_variable = { SOV_urban_hunger > 50 }
+			}
+		}
+	}
+
+	SOV_crisis_bread_price_subsidies = {
+		icon = generic_trade
+		cost = 30
+		days_re_enable = 60
+		available = {
+			check_variable = { SOV_urban_hunger > 5 }
+		}
+		visible = {
+			tag = SOV
+			has_variable = SOV_revolutionary_tension
+			NOT = { has_government = communism }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_urban_hunger = -15 }
+			add_to_variable = { SOV_revolutionary_tension = -5 }
+			sov_russia_clamp_crisis_gauges = yes
+			custom_effect_tooltip = SOV_crisis_tension_bar_tt
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+				factor = 2
+				check_variable = { SOV_urban_hunger > 40 }
+			}
+		}
+	}
+
+	SOV_crisis_okhrana_sweeps = {
+		icon = generic_secret_police
+		cost = 50
+		days_re_enable = 60
+		available = {
+			check_variable = { SOV_worker_unrest > 5 }
+		}
+		visible = {
+			tag = SOV
+			has_variable = SOV_revolutionary_tension
+			NOT = { has_government = communism }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_worker_unrest = -15 }
+			add_to_variable = { SOV_revolutionary_tension = -10 }
+			sov_russia_clamp_crisis_gauges = yes
+			custom_effect_tooltip = SOV_crisis_tension_bar_tt
+		}
+		ai_will_do = {
+			base = 20
+			modifier = {
+				factor = 2
+				check_variable = { SOV_worker_unrest > 45 }
+			}
+		}
+	}
+
+	SOV_crisis_imperial_frontline_tour = {
+		icon = generic_propaganda
+		cost = 40
+		days_re_enable = 60
+		available = {
+			check_variable = { SOV_army_loyalty < 95 }
+		}
+		visible = {
+			tag = SOV
+			has_variable = SOV_revolutionary_tension
+			NOT = { has_government = communism }
+		}
+		complete_effect = {
+			add_to_variable = { SOV_army_loyalty = 15 }
+			add_to_variable = { SOV_revolutionary_tension = -5 }
+			sov_russia_clamp_crisis_gauges = yes
+			custom_effect_tooltip = SOV_crisis_tension_bar_tt
+		}
+		ai_will_do = {
+			base = 15
+			modifier = {
+				factor = 2
+				check_variable = { SOV_army_loyalty < 60 }
+			}
+		}
+	}
+
+}

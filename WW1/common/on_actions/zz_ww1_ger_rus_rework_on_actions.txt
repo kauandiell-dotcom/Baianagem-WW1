@@ -1,7 +1,17 @@
 on_actions = {
 	on_weekly_SOV = {
 		effect = {
-			if = { limit = { original_tag = SOV } ww1_sov_rework_weekly = yes }
+			if = {
+				limit = { original_tag = SOV }
+				ww1_sov_rework_weekly = yes
+				if = {
+					limit = {
+						NOT = { has_variable = SOV_revolutionary_tension }
+					}
+					sov_russia_init_crisis_gauges = yes
+				}
+				sov_russia_weekly_crisis_update = yes
+			}
 		}
 	}
 	on_weekly_GER = {
@@ -9,4 +19,6 @@ on_actions = {
 			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
 		}
 	}
+
+	# 1918 German armistice / Brest-Litovsk dissolution hook: SOV_dissolve_brest_litovsk
 }
