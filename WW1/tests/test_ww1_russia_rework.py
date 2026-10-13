@@ -226,6 +226,14 @@ class TestRussiaOverhaul(unittest.TestCase):
         wht_gfx = os.path.join(MOD_ROOT, "interface", "ww1_white_goals.gfx")
         self.assertTrue(os.path.isfile(sov_gfx), "interface/ww1_soviet_goals.gfx must exist")
         self.assertTrue(os.path.isfile(wht_gfx), "interface/ww1_white_goals.gfx must exist")
+        with open(sov_gfx, "r", encoding="utf-8-sig", errors="replace") as f:
+            sov_gfx_text = f.read()
+            self.assertIn("SpriteType", sov_gfx_text)
+            self.assertIn("ww1_soviet_goals", sov_gfx_text)
+        with open(wht_gfx, "r", encoding="utf-8-sig", errors="replace") as f:
+            wht_gfx_text = f.read()
+            self.assertIn("SpriteType", wht_gfx_text)
+            self.assertIn("ww1_white_goals", wht_gfx_text)
 
     def test_tsarist_mechanics_and_ideas(self):
         """Validates Tsarist ideas (strategic depth, shell shortage, VPK, order restored) and decisions."""
@@ -346,6 +354,12 @@ class TestRussiaOverhaul(unittest.TestCase):
         # On-actions for 1918 German armistice voiding Brest-Litovsk
         on_actions_file = os.path.join(MOD_ROOT, "common", "on_actions", "zz_ww1_ger_rus_rework_on_actions.txt")
         self.assertTrue(os.path.isfile(on_actions_file), "common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt must exist")
+        with open(on_actions_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            oa_text = f.read()
+            self.assertTrue(
+                "SOV_dissolve_brest_litovsk" in oa_text or "armistice" in oa_text.lower(),
+                "zz_ww1_ger_rus_rework_on_actions.txt must contain 1918 armistice / Brest-Litovsk dissolution hook",
+            )
 
     def test_soviet_focus_tree_integrity(self):
         """Validates the dedicated Soviet Russia focus tree (soviet_russia_focus: 80 focuses, layout, rewards)."""
@@ -480,6 +494,7 @@ class TestRussiaOverhaul(unittest.TestCase):
                 )
 
         for f in foci:
+            self.assertTrue(f["has_reward"], f"Tsarist focus {f['id']} must have a substantive completion_reward")
             for p_id in f["prereqs"]:
                 self.assertTrue(p_id in foci_by_id, f"Focus {f['id']} references non-existent parent {p_id}")
                 dy = f["abs_y"] - foci_by_id[p_id]["abs_y"]
