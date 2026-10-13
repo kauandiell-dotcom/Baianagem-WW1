@@ -94,6 +94,14 @@ SOV_war_industry_mobilization = {
 				limit = { has_idea = SOV_shell_shortage_crisis }
 				remove_ideas = SOV_shell_shortage_crisis
 			}
+			if = {
+				limit = { has_idea = SOV_shell_shortage_stage_2 }
+				remove_ideas = SOV_shell_shortage_stage_2
+			}
+			if = {
+				limit = { has_idea = SOV_shell_shortage_stage_3 }
+				remove_ideas = SOV_shell_shortage_stage_3
+			}
 		}
 		ai_will_do = {
 			factor = 2
@@ -267,6 +275,7 @@ SOV_war_industry_mobilization = {
 		icon = generic_operation
 		cost = 50
 		days_remove = 90
+		fire_only_once = yes
 		available = {
 			has_war_with = AUS
 		}

@@ -5,6 +5,9 @@ SOV_duma_and_court_politics = {
 	allowed = {
 		tag = SOV
 	}
+	visible = {
+		NOT = { has_government = communism }
+	}
 }
 
 SOV_war_industry_mobilization = {
