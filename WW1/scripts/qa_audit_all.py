@@ -171,8 +171,8 @@ def audit_balance_defines() -> List[str]:
         "COMBAT_STACKING_PENALTY": "-0.06",
         "OUT_OF_SUPPLY_ATTRITION": "0.20",
         "SUPPLY_ORG_MAX_CAP": "0.35",
-        "SPECIAL_FORCES_CAP_BASE": "0.05",
-        "SPECIAL_FORCES_CAP_MIN": "24",
+        "SPECIAL_FORCES_CAP_BASE": "0.0",
+        "SPECIAL_FORCES_CAP_MIN": "48",
     }
 
     for key, expected_val in expected_defines.items():
@@ -545,13 +545,17 @@ def main():
     print("\n[*] Executing Cross-Platform Map & Shaders Audit Suite (tests/test_map_cross_platform.py)...")
     res_map = subprocess.run([sys.executable, "-m", "unittest", "tests/test_map_cross_platform.py"], cwd=MOD_ROOT)
 
-    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0) or (res_ita.returncode != 0) or (res_map.returncode != 0)
+    # 7. Execute Special Forces Anti-Exploit & Armor Balance Audit
+    print("\n[*] Executing Special Forces Anti-Exploit & Armor Balance Suite (tests/test_special_forces_balance.py)...")
+    res_sf = subprocess.run([sys.executable, "-m", "unittest", "tests/test_special_forces_balance.py"], cwd=MOD_ROOT)
+
+    tests_failed = (res_ger.returncode != 0) or (res_oracle.returncode != 0) or (res_uk.returncode != 0) or (res_tur.returncode != 0) or (res_ita.returncode != 0) or (res_map.returncode != 0) or (res_sf.returncode != 0)
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}) <<<\n")
         sys.exit(1)
 
 
