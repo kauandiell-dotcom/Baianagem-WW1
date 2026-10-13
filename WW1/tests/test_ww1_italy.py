@@ -384,6 +384,18 @@ class TestItalyEventsAndDecisions(unittest.TestCase):
         self.assertIn("ww1_italy.50", triggered_blob, "Event ww1_italy.50 is not triggered across focuses, decisions, or events")
         self.assertIn("ww1_italy.63", triggered_blob, "Event ww1_italy.63 is not triggered across focuses, decisions, or events")
 
+    def test_decision_tooltips_clean_of_raw_remove_ideas_and_hidden_gauges(self):
+        effects_text = read(EFFECTS_FILE)
+        clean_block = extract_named_block(effects_text, "ita_ww1_clean_legacy_gauges")
+        self.assertIn("hidden_effect", clean_block, "ita_ww1_clean_legacy_gauges must wrap idea removals in hidden_effect to avoid decision tooltip clutter")
+
+        update_block = extract_named_block(effects_text, "ita_ww1_update_gauges")
+        self.assertIn("hidden_effect", update_block, "ita_ww1_update_gauges must wrap gauge idea assignments in hidden_effect to avoid decision tooltip clutter")
+
+        dec_text = read(ROOT / "common" / "decisions" / "ww1_italy_decisions.txt")
+        isonzo_block = extract_named_block(dec_text, "ITA_ww1_launch_isonzo_general_offensive")
+        self.assertIn("hidden_effect", isonzo_block, "ITA_ww1_launch_isonzo_general_offensive must wrap crisis idea swaps in hidden_effect")
+
 
 class TestItalyIdeasAndModifiers(unittest.TestCase):
     def test_ideas_volume_and_valid_modifiers(self):

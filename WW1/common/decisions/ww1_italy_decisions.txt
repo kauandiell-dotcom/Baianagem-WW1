@@ -934,27 +934,33 @@ ITA_ww1_military_readiness_category = {
 				limit = {
 					NOT = { has_country_flag = ita_ww1_diaz_appointed }
 				}
-				if = {
-					limit = { has_idea = ITA_isonzo_attrition_crisis_2 }
-					remove_ideas = ITA_isonzo_attrition_crisis_2
-					add_ideas = ITA_isonzo_attrition_crisis_3
-				}
-				else_if = {
-					limit = { has_idea = ITA_isonzo_attrition_crisis_1 }
-					remove_ideas = ITA_isonzo_attrition_crisis_1
-					add_ideas = ITA_isonzo_attrition_crisis_2
-				}
-				else_if = {
-					limit = { NOT = { has_idea = ITA_isonzo_attrition_crisis_3 } }
-					add_ideas = ITA_isonzo_attrition_crisis_1
+				custom_effect_tooltip = ITA_ww1_isonzo_offensive_crisis_tt
+				hidden_effect = {
+					if = {
+						limit = { has_idea = ITA_isonzo_attrition_crisis_2 }
+						remove_ideas = ITA_isonzo_attrition_crisis_2
+						add_ideas = ITA_isonzo_attrition_crisis_3
+					}
+					else_if = {
+						limit = { has_idea = ITA_isonzo_attrition_crisis_1 }
+						remove_ideas = ITA_isonzo_attrition_crisis_1
+						add_ideas = ITA_isonzo_attrition_crisis_2
+					}
+					else_if = {
+						limit = { NOT = { has_idea = ITA_isonzo_attrition_crisis_3 } }
+						add_ideas = ITA_isonzo_attrition_crisis_1
+					}
 				}
 				army_experience = 20
 				add_to_variable = { ita_ww1_army_morale = -8 }
 			}
 			else = {
-				remove_ideas = ITA_isonzo_attrition_crisis_1
-				remove_ideas = ITA_isonzo_attrition_crisis_2
-				remove_ideas = ITA_isonzo_attrition_crisis_3
+				custom_effect_tooltip = ITA_ww1_isonzo_offensive_victorious_tt
+				hidden_effect = {
+					remove_ideas = ITA_isonzo_attrition_crisis_1
+					remove_ideas = ITA_isonzo_attrition_crisis_2
+					remove_ideas = ITA_isonzo_attrition_crisis_3
+				}
 				army_experience = 25
 				add_war_support = 0.03
 				add_to_variable = { ita_ww1_army_morale = 10 }
