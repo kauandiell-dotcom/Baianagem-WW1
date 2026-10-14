@@ -60,3 +60,24 @@ ww1_medium_minor_division_limiter = {
 		value = 15
 	}
 }
+
+ww1_peace_neutral_minor_limiter = {
+	enable = {
+		is_ai = yes
+		is_major = no
+		has_war = no
+		is_in_faction = no
+		num_of_military_factories < 6
+		num_divisions > 8
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ai_wanted_divisions_factor
+		value = -100
+	}
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = 40
+	}
+}
