@@ -4495,6 +4495,23 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		completion_reward = {
 			add_political_power = 50
 			add_stability = 0.05
+			if = {
+				limit = { country_exists = BAT }
+				puppet = BAT
+			}
+			else = {
+				release_puppet = BAT
+			}
+			if = {
+				limit = { country_exists = BAT }
+				BAT = {
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+					add_stability = 0.15
+				}
+			}
 		}
 	}
 

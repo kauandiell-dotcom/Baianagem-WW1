@@ -890,6 +890,24 @@ country_event = {
 		name = ww1_germany_events.41.a
 		add_stability = 0.05
 		add_political_power = 50
+		# Proclaim the Regency Kingdom of Poland as a German Protectorate
+		if = {
+			limit = { country_exists = POL }
+			puppet = POL
+		}
+		else = {
+			release_puppet = POL
+		}
+		if = {
+			limit = { country_exists = POL }
+			POL = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				add_stability = 0.15
+			}
+		}
 	}
 }
 
@@ -910,7 +928,27 @@ country_event = {
 		remove_ideas = GER_turnip_winter_crisis_1
 		remove_ideas = GER_turnip_winter_crisis_2
 		remove_ideas = GER_turnip_winter_crisis_3
+		add_ideas = GER_eastern_breadbasket
 		add_political_power = 60
+		set_country_flag = GER_ukrainian_hetmanate_satellite
+		# Establish Hetman Pavlo Skoropadsky under German Military Protection
+		if = {
+			limit = { country_exists = UKR }
+			puppet = UKR
+		}
+		else = {
+			release_puppet = UKR
+		}
+		if = {
+			limit = { country_exists = UKR }
+			UKR = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				add_stability = 0.15
+			}
+		}
 	}
 }
 
