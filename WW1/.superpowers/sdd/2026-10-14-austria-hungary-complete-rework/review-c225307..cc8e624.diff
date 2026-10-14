@@ -1,0 +1,1347 @@
+# Review package: c225307..cc8e624
+
+## Commits
+cc8e624 feat(auh): implement 4 divergent constitutional paths and authentic national ideas
+ed90aa2 fix(rus): remove Soviet Russia from Entente upon civil war, enforce anti-faction rules, and add scripted civil war victory events
+
+## Files changed
+ .../ww1_russian_civil_war_ai_strategy.txt          | 125 +++++++++++++
+ .../ideas/ww1_austria_constitutional_ideas.txt     |  51 ++++++
+ WW1/common/national_focus/austria.txt              | 169 +++++++++++++----
+ WW1/events/ww1_russia_civil_war_events.txt         | 203 ++++++++++++++++++++-
+ WW1/interface/ww1_austria_hungary_extra_assets.gfx |   9 +
+ .../braz_por/ww1_russia_events_l_braz_por.yml      |  18 +-
+ .../english/ww1_russia_events_l_english.yml        |  18 +-
+ WW1/tests/test_ww1_ai_and_russia_fixes.py          |  19 ++
+ WW1/tests/test_ww1_austria_hungary.py              |  31 +++-
+ 9 files changed, 602 insertions(+), 41 deletions(-)
+
+## Diff
+diff --git a/WW1/common/ai_strategy/ww1_russian_civil_war_ai_strategy.txt b/WW1/common/ai_strategy/ww1_russian_civil_war_ai_strategy.txt
+new file mode 100644
+index 0000000..af85618
+--- /dev/null
++++ b/WW1/common/ai_strategy/ww1_russian_civil_war_ai_strategy.txt
+@@ -0,0 +1,125 @@
++# Baianagem-WW1: Russian Civil War Belligerents Anti-Faction Strategy
++# Prevents all civil war factions from entering foreign alliances or Entente/Central Powers factions.
++
++sov_civil_war_isolation = {
++	enable = {
++		tag = SOV
++		has_country_flag = SOV_russian_civil_war_active
++	}
++	abort_when_not_enabled = yes
++
++	ai_strategy = {
++		type = join_faction
++		id = FRA
++		value = -5000
++	}
++	ai_strategy = {
++		type = join_faction
++		id = ENG
++		value = -5000
++	}
++	ai_strategy = {
++		type = join_faction
++		id = GER
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = FRA
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = ENG
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = GER
++		value = -5000
++	}
++}
++
++wht_civil_war_isolation = {
++	enable = {
++		tag = WHT
++		has_country_flag = WHT_russian_civil_war_active
++	}
++	abort_when_not_enabled = yes
++
++	ai_strategy = {
++		type = join_faction
++		id = FRA
++		value = -5000
++	}
++	ai_strategy = {
++		type = join_faction
++		id = ENG
++		value = -5000
++	}
++	ai_strategy = {
++		type = join_faction
++		id = GER
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = FRA
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = ENG
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = GER
++		value = -5000
++	}
++}
++
++breakaway_civil_war_isolation = {
++	enable = {
++		OR = {
++			tag = UKR
++			tag = FIN
++			tag = GEO
++			tag = ARM
++			tag = AZR
++			tag = DON
++		}
++	}
++	abort_when_not_enabled = yes
++
++	ai_strategy = {
++		type = join_faction
++		id = FRA
++		value = -5000
++	}
++	ai_strategy = {
++		type = join_faction
++		id = ENG
++		value = -5000
++	}
++	ai_strategy = {
++		type = join_faction
++		id = GER
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = FRA
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = ENG
++		value = -5000
++	}
++	ai_strategy = {
++		type = alliance
++		id = GER
++		value = -5000
++	}
++}
+diff --git a/WW1/common/ideas/ww1_austria_constitutional_ideas.txt b/WW1/common/ideas/ww1_austria_constitutional_ideas.txt
+new file mode 100644
+index 0000000..69a563c
+--- /dev/null
++++ b/WW1/common/ideas/ww1_austria_constitutional_ideas.txt
+@@ -0,0 +1,51 @@
++ideas = {
++	country = {
++		AUH_idea_dualism_iron = {
++			picture = generic_intel_bonus
++			allowed = { always = no }
++			modifier = {
++				cavalry_attack_factor = 0.15
++				breakthrough_factor = 0.10
++				political_power_factor = 0.10
++			}
++		}
++		AUH_idea_habsburg_trialism = {
++			picture = generic_victors_of_ww1
++			allowed = { always = no }
++			modifier = {
++				stability_factor = 0.10
++				army_core_defence_factor = 0.15
++				surrender_limit = 0.10
++			}
++		}
++		AUH_idea_danubian_federation_spirit = {
++			picture = generic_constitutional_guarantees
++			allowed = { always = no }
++			modifier = {
++				production_factory_max_efficiency_factor = 0.15
++				consumer_goods_factor = -0.05
++				research_speed_factor = 0.05
++			}
++		}
++		AUH_idea_aok_military_dictatorship = {
++			picture = generic_militarism_drift_bonus
++			allowed = { always = no }
++			modifier = {
++				army_attack_factor = 0.10
++				breakthrough_factor = 0.15
++				war_support_factor = 0.15
++				stability_factor = -0.15
++			}
++		}
++		AUH_danubian_federal_member = {
++			picture = generic_autonomy_increase
++			allowed = { always = no }
++			modifier = {
++				cic_to_overlord_factor = 0.75
++				mic_to_overlord_factor = 0.75
++				extra_trade_to_overlord_factor = 0.75
++				autonomy_manpower_share = 0.70
++			}
++		}
++	}
++}
+diff --git a/WW1/common/national_focus/austria.txt b/WW1/common/national_focus/austria.txt
+index 5584cbb..df14590 100644
+--- a/WW1/common/national_focus/austria.txt
++++ b/WW1/common/national_focus/austria.txt
+@@ -103,102 +103,112 @@ focus_tree = {
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_dualism
+   icon = GFX_focus_AUH_ww1_dualism
+   x = 2
+   y = 3
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_constitutional_audit }
+-  mutually_exclusive = { focus = AUH_ww1_trialism focus = AUH_ww1_federalism }
++  mutually_exclusive = { focus = AUH_ww1_trialism focus = AUH_ww1_federalism focus = AUH_ww1_military_dictatorship }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 8 }
+-  completion_reward = { add_political_power = 45 add_to_variable = { auh_ww1_consent = 8 } 4 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
++  completion_reward = {
++			add_ideas = AUH_idea_dualism_iron
++			add_political_power = 45
++			add_to_variable = { auh_ww1_consent = 8 }
++			4 = { add_extra_state_shared_building_slots = 1 }
++			auh_ww1_clamp_counters = yes
++		}
+  }
+  focus = {
+-  id = AUH_ww1_budapest_compact
+-  icon = GFX_focus_AUH_ww1_budapest_compact
++  id = AUH_ww1_tisza_alliance
++  icon = GFX_focus_AUH_ww1_tisza_alliance
+   x = 2
+   y = 4
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_dualism }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
++			set_country_flag = auh_ww1_tisza_alliance_flag
+ 			set_country_flag = auh_ww1_budapest_unlocked
+ 			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
++			add_political_power = 30
++			add_to_variable = { AUH_vienna_grain = 30 }
+ 			add_to_variable = { auh_ww1_consent = 8 }
+ 			add_to_variable = { auh_ww1_cohesion = 6 }
+ 			auh_ww1_set_budget_negotiated = yes
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_joint_budget
+   icon = GFX_focus_AUH_ww1_joint_budget
+   x = 0
+   y = 5
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_budapest_compact }
++  prerequisite = { focus = AUH_ww1_tisza_alliance }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			auh_ww1_set_budget_negotiated = yes
+ 			add_to_variable = { auh_ww1_consent = 2 }
+ 			add_political_power = 40
+ 			4 = { add_extra_state_shared_building_slots = 1 }
+ 			43 = { add_extra_state_shared_building_slots = 1 }
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+-  id = AUH_ww1_honved_safeguards
+-  icon = GFX_focus_AUH_ww1_honved_safeguards
++  id = AUH_ww1_magyar_cavalry_corps
++  icon = GFX_focus_AUH_ww1_magyar_cavalry_corps
+   x = 2
+   y = 5
+   cost = 5
+-  search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_budapest_compact }
++  search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
++  prerequisite = { focus = AUH_ww1_tisza_alliance }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_honved_contract_unlocked
+ 			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+ 			army_experience = 15
++			add_war_support = 0.05
+ 			add_to_variable = { auh_ww1_consent = 6 }
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_crown_arbitration
+   icon = GFX_focus_AUH_ww1_crown_arbitration
+   x = 1
+   y = 6
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_joint_budget }
+-  prerequisite = { focus = AUH_ww1_honved_safeguards }
++  prerequisite = { focus = AUH_ww1_magyar_cavalry_corps }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_arbitration_unlocked
+ 			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			add_political_power = 30
+ 			add_to_variable = { auh_ww1_cohesion = 8 }
+@@ -271,94 +281,108 @@ focus_tree = {
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_trialism
+   icon = GFX_focus_AUH_ww1_trialism
+   x = 6
+   y = 3
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_constitutional_audit }
+-  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_federalism }
++  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_federalism focus = AUH_ww1_military_dictatorship }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+-  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 8 } 103 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
++  completion_reward = {
++			add_ideas = AUH_idea_habsburg_trialism
++			add_political_power = 35
++			add_to_variable = { auh_ww1_cohesion = 8 }
++			103 = { add_extra_state_shared_building_slots = 1 }
++			auh_ww1_clamp_counters = yes
++		}
+  }
+  focus = {
+-  id = AUH_ww1_croatian_diet
+-  icon = GFX_focus_AUH_ww1_croatian_diet
++  id = AUH_ww1_zagreb_coronation
++  icon = GFX_focus_AUH_ww1_zagreb_coronation
+   x = 6
+   y = 4
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_trialism }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+-  completion_reward = { set_country_flag = auh_ww1_project_sabor_unlocked 103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant = yes } } 736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } } navy_experience = 10 add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes }
++  completion_reward = {
++			set_country_flag = auh_ww1_project_sabor_unlocked
++			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant = yes } }
++			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
++			navy_experience = 10
++			add_to_variable = { auh_ww1_cohesion = 6 }
++			auh_ww1_clamp_counters = yes
++		}
+  }
+  focus = {
+   id = AUH_ww1_bosnian_guarantees
+   icon = GFX_focus_AUH_ww1_bosnian_guarantees
+   x = 4
+   y = 5
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_croatian_diet }
++  prerequisite = { focus = AUH_ww1_zagreb_coronation }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_project_bosnia_unlocked
+ 			104 = { add_building_construction = { type = bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+ 			add_to_variable = { auh_ww1_cohesion = 8 }
+ 			add_political_power = 20
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+-  id = AUH_ww1_trialist_compensation
+-  icon = GFX_focus_AUH_ww1_trialist_compensation
++  id = AUH_ww1_pacify_south_slavs
++  icon = GFX_focus_AUH_ww1_pacify_south_slavs
+   x = 6
+   y = 5
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_croatian_diet }
++  prerequisite = { focus = AUH_ww1_zagreb_coronation }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_compensation_unlocked
+ 			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			add_to_variable = { auh_ww1_consent = 8 }
+-			add_to_variable = { auh_ww1_cohesion = 6 }
++			add_to_variable = { auh_ww1_cohesion = 10 }
++			add_stability = 0.05
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_third_crown_charter
+   icon = GFX_focus_AUH_ww1_third_crown_charter
+   x = 5
+   y = 6
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_bosnian_guarantees }
+-  prerequisite = { focus = AUH_ww1_trialist_compensation }
++  prerequisite = { focus = AUH_ww1_pacify_south_slavs }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_trialist_charter_unlocked
+ 			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			auh_ww1_set_budget_trialist = yes
+ 			add_to_variable = { auh_ww1_cohesion = 10 }
+@@ -432,99 +456,108 @@ focus_tree = {
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_federalism
+   icon = GFX_focus_AUH_ww1_federalism
+   x = 8
+   y = 3
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_constitutional_audit }
+-  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_trialism }
++  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_trialism focus = AUH_ww1_military_dictatorship }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+-  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 10 } 9 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
++  completion_reward = {
++			add_ideas = AUH_idea_danubian_federation_spirit
++			add_political_power = 35
++			add_to_variable = { auh_ww1_cohesion = 10 }
++			9 = { add_extra_state_shared_building_slots = 1 }
++			auh_ww1_clamp_counters = yes
++		}
+  }
+  focus = {
+-  id = AUH_ww1_constitutional_convention
+-  icon = GFX_focus_AUH_ww1_constitutional_convention
++  id = AUH_ww1_popovici_manifesto
++  icon = GFX_focus_AUH_ww1_popovici_manifesto
+   x = 8
+   y = 4
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+   prerequisite = { focus = AUH_ww1_federalism }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_convention_unlocked
+ 			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			add_political_power = 30
+ 			add_to_variable = { auh_ww1_consent = 8 }
++			add_to_variable = { auh_ww1_cohesion = 8 }
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+-  id = AUH_ww1_language_rights
+-  icon = GFX_focus_AUH_ww1_language_rights
++  id = AUH_ww1_proclaim_danubian_federation
++  icon = GFX_focus_AUH_ww1_proclaim_danubian_federation
+   x = 8
+   y = 5
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_constitutional_convention }
++  prerequisite = { focus = AUH_ww1_popovici_manifesto }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
++			AUH_spawn_danubian_mega_federation = yes
+ 			set_country_flag = auh_ww1_languages_civil_unlocked
+ 			auh_ww1_set_languages_staff = yes
+-			add_to_variable = { auh_ww1_cohesion = 10 }
++			add_political_power = 50
++			add_to_variable = { auh_ww1_cohesion = 15 }
+ 			add_to_variable = { auh_ww1_consent = 6 }
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_federal_tax_compact
+   icon = GFX_focus_AUH_ww1_federal_tax_compact
+   x = 10
+   y = 5
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_constitutional_convention }
++  prerequisite = { focus = AUH_ww1_popovici_manifesto }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_tax_compact_unlocked
+ 			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			auh_ww1_set_budget_federal = yes
+ 			add_to_variable = { auh_ww1_consent = 8 }
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_council_of_peoples
+   icon = GFX_focus_AUH_ww1_council_of_peoples
+   x = 9
+   y = 6
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_language_rights }
++  prerequisite = { focus = AUH_ww1_proclaim_danubian_federation }
+   prerequisite = { focus = AUH_ww1_federal_tax_compact }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_council_peoples_unlocked
+ 			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			add_political_power = 35
+@@ -590,28 +623,94 @@ focus_tree = {
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_civil_cabinet_unlocked
+ 			4 = { add_building_construction = { type = arms_factory level = 1 instant = yes } }
+ 			add_war_support = 0.02
+ 			add_command_power = 20
+ 			auh_ww1_set_civil_cabinet = yes
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
++ focus = {
++  id = AUH_ww1_military_dictatorship
++  icon = GFX_focus_AUH_ww1_military_dictatorship
++  x = 12
++  y = 3
++  cost = 5
++  search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
++  prerequisite = { focus = AUH_ww1_constitutional_audit }
++  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_trialism focus = AUH_ww1_federalism }
++  available = { has_capitulated = no  }
++  cancel_if_invalid = yes
++  continue_if_invalid = no
++  available_if_capitulated = no
++  ai_will_do = { factor = 1 }
++  completion_reward = {
++			add_ideas = AUH_idea_aok_military_dictatorship
++			add_political_power = 50
++			add_war_support = 0.10
++			add_stability = -0.05
++			army_experience = 20
++			auh_ww1_clamp_counters = yes
++		}
++ }
++ focus = {
++  id = AUH_ww1_conrad_supreme_command
++  icon = GFX_focus_AUH_ww1_conrad_supreme_command
++  x = 12
++  y = 4
++  cost = 5
++  search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
++  prerequisite = { focus = AUH_ww1_military_dictatorship }
++  available = { has_capitulated = no  }
++  cancel_if_invalid = yes
++  continue_if_invalid = no
++  available_if_capitulated = no
++  ai_will_do = { factor = 1 }
++  completion_reward = {
++			add_command_power = 30
++			army_experience = 15
++			add_war_support = 0.05
++			set_country_flag = auh_ww1_aok_dictatorship_flag
++			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
++			auh_ww1_clamp_counters = yes
++		}
++ }
++ focus = {
++  id = AUH_ww1_war_surveillance_office
++  icon = GFX_focus_AUH_ww1_war_surveillance_office
++  x = 12
++  y = 5
++  cost = 5
++  search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
++  prerequisite = { focus = AUH_ww1_conrad_supreme_command }
++  available = { has_capitulated = no  }
++  cancel_if_invalid = yes
++  continue_if_invalid = no
++  available_if_capitulated = no
++  ai_will_do = { factor = 1 }
++  completion_reward = {
++			add_stability = -0.05
++			add_war_support = 0.05
++			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
++			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
++			auh_ww1_clamp_counters = yes
++		}
++ }
+  focus = {
+   id = AUH_ww1_bohemian_landtag
+   icon = GFX_focus_AUH_ww1_bohemian_landtag
+   x = 2
+   y = 9
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
++  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_project_bohemia_unlocked
+ 			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
+ 			add_to_variable = { auh_ww1_cohesion = 6 }
+ 			auh_ww1_clamp_counters = yes
+@@ -657,21 +756,21 @@ focus_tree = {
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_galician_autonomy
+   icon = GFX_focus_AUH_ww1_galician_autonomy
+   x = 4
+   y = 9
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
++  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_project_galicia_unlocked
+ 			88 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = bunker level = 1 instant = yes } }
+ 			add_to_variable = { auh_ww1_cohesion = 8 }
+ 			auh_ww1_clamp_counters = yes
+@@ -717,21 +816,21 @@ focus_tree = {
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_slovak_petitions
+   icon = GFX_focus_AUH_ww1_slovak_petitions
+   x = 6
+   y = 9
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
++  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_project_slovakia_unlocked
+ 			70 = { add_building_construction = { type = infrastructure level = 1 instant = yes } add_building_construction = { type = arms_factory level = 1 instant = yes } }
+ 			add_to_variable = { auh_ww1_cohesion = 6 }
+ 			auh_ww1_clamp_counters = yes
+@@ -777,21 +876,21 @@ focus_tree = {
+ 			auh_ww1_clamp_counters = yes
+ 		}
+  }
+  focus = {
+   id = AUH_ww1_dalmatian_services
+   icon = GFX_focus_AUH_ww1_dalmatian_services
+   x = 8
+   y = 9
+   cost = 5
+   search_filters = { FOCUS_FILTER_POLITICAL }
+-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
++  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
+   available = { has_capitulated = no  }
+   cancel_if_invalid = yes
+   continue_if_invalid = no
+   available_if_capitulated = no
+   ai_will_do = { factor = 1 }
+   completion_reward = {
+ 			set_country_flag = auh_ww1_project_dalmatia_unlocked
+ 			163 = { add_building_construction = { type = coastal_bunker level = 1 instant = yes } add_building_construction = { type = infrastructure level = 1 instant = yes } }
+ 			add_to_variable = { auh_ww1_cohesion = 6 }
+ 			auh_ww1_clamp_counters = yes
+diff --git a/WW1/events/ww1_russia_civil_war_events.txt b/WW1/events/ww1_russia_civil_war_events.txt
+index f34451e..64cc71b 100644
+--- a/WW1/events/ww1_russia_civil_war_events.txt
++++ b/WW1/events/ww1_russia_civil_war_events.txt
+@@ -7,43 +7,82 @@ add_namespace = ww1_russia_civil_war
+ country_event = {
+ 	id = ww1_russia_civil_war.1
+ 	title = ww1_russia_civil_war.1.t
+ 	desc = ww1_russia_civil_war.1.d
+ 	picture = GFX_event_WW1_sov_october
+ 
+ 	is_triggered_only = yes
+ 	fire_only_once = yes
+ 
+ 	immediate = {
+-		# 1. Establish Soviet State
++		# 1. Establish Soviet State & Immediately Exit Entente (Decree on Peace)
+ 		set_country_flag = SOV_russian_civil_war_active
+ 		set_politics = {
+ 			ruling_party = communism
+ 			elections_allowed = no
+ 		}
+ 		load_focus_tree = soviet_russia_focus
++		leave_faction = yes
++		dismantle_faction = yes
+ 		prevent_join_factions = yes
+ 		set_rule = { can_join_factions = no }
++		set_rule = { can_create_factions = no }
++
++		# Immediate Armistice / Exit from the World War (Decree on Peace)
++		if = {
++			limit = { country_exists = GER has_war_with = GER }
++			white_peace = GER
++		}
++		if = {
++			limit = { country_exists = AUS has_war_with = AUS }
++			white_peace = AUS
++		}
++		if = {
++			limit = { country_exists = OTT has_war_with = OTT }
++			white_peace = OTT
++		}
++		if = {
++			limit = { country_exists = BUL has_war_with = BUL }
++			white_peace = BUL
++		}
+ 
+ 		# 2. Disband Bloated Imperial Army
+ 		delete_unit_template_and_units = { division_template = "Pekhotnaya Diviziya" }
+ 		delete_unit_template_and_units = { division_template = "Kazachya Diviziya" }
+ 		delete_unit_template_and_units = { division_template = "Gornostrelkovaya Diviziya" }
+ 		delete_unit_template_and_units = { division_template = "Leib-Gvardiya & Opolcheniye" }
+ 
+ 		# 3. Territory Transfers: White Russia (WHT)
+ 		# Siberia, Urals, and Southern territories (including Omsk 571 and 594, Ekaterinburg, Irkutsk, Vladivostok, Kuban, Novorossiysk)
+ 		WHT = {
+ 			set_country_flag = WHT_russian_civil_war_active
+ 			load_focus_tree = white_russia_focus
++			leave_faction = yes
+ 			prevent_join_factions = yes
+ 			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
++			if = {
++				limit = { country_exists = GER has_war_with = GER }
++				white_peace = GER
++			}
++			if = {
++				limit = { country_exists = AUS has_war_with = AUS }
++				white_peace = AUS
++			}
++			if = {
++				limit = { country_exists = OTT has_war_with = OTT }
++				white_peace = OTT
++			}
++			if = {
++				limit = { country_exists = BUL has_war_with = BUL }
++				white_peace = BUL
++			}
+ 
+ 			# Urals & Northern Regions
+ 			transfer_state = 398
+ 			transfer_state = 407
+ 			transfer_state = 581
+ 			transfer_state = 582
+ 
+ 			# Siberia & Far East
+ 			transfer_state = 408
+ 			transfer_state = 409
+@@ -115,20 +154,24 @@ country_event = {
+ 			add_state_core = 594
+ 			add_state_core = 398
+ 			add_state_core = 408
+ 			add_state_core = 234
+ 			add_state_core = 217
+ 		}
+ 
+ 		# 4. Territory Transfers: Peripheral Breakaways
+ 		# Ukraine (UKR): Kiev 202, Odessa 192, Kharkov 221, etc.
+ 		UKR = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 192
+ 			transfer_state = 193
+ 			transfer_state = 196
+ 			transfer_state = 197
+ 			transfer_state = 198
+ 			transfer_state = 199
+ 			transfer_state = 200
+ 			transfer_state = 201
+ 			transfer_state = 202
+ 			transfer_state = 203
+@@ -137,76 +180,99 @@ country_event = {
+ 			transfer_state = 226
+ 			transfer_state = 227
+ 			transfer_state = 245
+ 			transfer_state = 259
+ 			transfer_state = 766
+ 			transfer_state = 834
+ 		}
+ 
+ 		# Finland (FIN): Helsinki 111, Viipuri 145, etc.
+ 		FIN = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 111
+ 			transfer_state = 145
+ 			transfer_state = 146
+ 			transfer_state = 147
+ 			transfer_state = 148
+ 			transfer_state = 149
+ 			transfer_state = 150
+ 			transfer_state = 722
+ 			transfer_state = 926
+ 			transfer_state = 927
+ 			transfer_state = 928
+ 			transfer_state = 929
+ 			transfer_state = 930
+ 		}
+ 
+ 		# Poland (POL): Warsaw 10, Lodz 87, etc.
+ 		POL = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 10
+ 			transfer_state = 87
+ 			transfer_state = 92
+ 			transfer_state = 94
+ 			transfer_state = 95
+ 			transfer_state = 96
+ 			transfer_state = 97
+ 			transfer_state = 98
+ 		}
+ 		if = {
+ 			limit = { country_exists = GER has_war_with = GER }
+ 			GER = {
+ 				puppet = POL
+ 				white_peace = POL
+ 			}
+ 		}
+ 
+ 		# Georgia (GEO): Tbilisi 231
+ 		GEO = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 231
+ 			transfer_state = 826
+ 			add_state_core = 231
+ 		}
+ 
+-		# Armenia (ARM): Yerevan 229 / 230
+ 		# Armenia (ARM): Yerevan 230
+ 		ARM = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 230
+ 			add_state_core = 230
+ 		}
+ 
+ 		# Azerbaijan (AZR): Baku 229
+ 		AZR = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 229
+ 			add_state_core = 229
+ 		}
+ 
+ 		# Don Cossacks (DON): Rostov 218, Taganrog 228
+ 		DON = {
++			leave_faction = yes
++			prevent_join_factions = yes
++			set_rule = { can_join_factions = no }
++			set_rule = { can_create_factions = no }
+ 			transfer_state = 218
+ 			transfer_state = 228
+ 			add_state_core = 218
+ 			add_state_core = 228
+ 		}
+ 
+ 		# 5. Load Dedicated Civil War OOBs
+ 		load_oob = "SOV_red_army_civil_war"
+ 		WHT = { load_oob = "WHT_white_army_civil_war" }
+ 		UKR = { load_oob = "UKR_civil_war" }
+@@ -274,10 +340,143 @@ country_event = {
+ 	option = {
+ 		name = ww1_russia_civil_war.1.b
+ 		ai_chance = { factor = 0 }
+ 		WHT = {
+ 			change_tag_from = SOV
+ 			load_focus_tree = white_russia_focus
+ 		}
+ 		custom_effect_tooltip = SOV_play_whites_tt
+ 	}
+ }
++
++# -------------------------------------------------------------
++# Event 10: Red Victory (Bolshevik Triumph)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia_civil_war.10
++	title = ww1_russia_civil_war.10.t
++	desc = ww1_russia_civil_war.10.d
++	picture = GFX_event_WW1_sov_civil_war
++
++	trigger = {
++		tag = SOV
++		has_country_flag = SOV_russian_civil_war_active
++		country_exists = WHT
++		has_war_with = WHT
++		OR = {
++			WHT = { surrender_progress > 0.85 }
++			AND = {
++				controls_state = 571 # Omsk
++				controls_state = 398 # Ekaterinburg
++				controls_state = 217 # Tsaritsyn
++			}
++		}
++	}
++
++	mean_time_to_happen = { days = 3 }
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia_civil_war.10.a
++		ai_chance = { factor = 100 }
++		annex_country = { target = WHT transfer_troops = yes }
++		clr_country_flag = SOV_russian_civil_war_active
++		set_rule = { can_join_factions = yes }
++		add_stability = 0.20
++		add_political_power = 150
++	}
++}
++
++# -------------------------------------------------------------
++# Event 20: White Victory (Fall of the Soviets)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia_civil_war.20
++	title = ww1_russia_civil_war.20.t
++	desc = ww1_russia_civil_war.20.d
++	picture = GFX_event_WW1_sov_civil_war
++
++	trigger = {
++		tag = WHT
++		has_country_flag = WHT_russian_civil_war_active
++		country_exists = SOV
++		has_war_with = SOV
++		OR = {
++			SOV = { surrender_progress > 0.85 }
++			AND = {
++				controls_state = 219 # Moscow
++				controls_state = 195 # Petrograd
++			}
++		}
++	}
++
++	mean_time_to_happen = { days = 3 }
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia_civil_war.20.a
++		ai_chance = { factor = 100 }
++		annex_country = { target = SOV transfer_troops = yes }
++		clr_country_flag = WHT_russian_civil_war_active
++		set_rule = { can_join_factions = yes }
++		add_stability = 0.20
++		add_political_power = 150
++	}
++}
++
++# -------------------------------------------------------------
++# Event 30: Re-integration of Ukraine
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia_civil_war.30
++	title = ww1_russia_civil_war.30.t
++	desc = ww1_russia_civil_war.30.d
++	picture = GFX_event_WW1_sov_civil_war
++
++	trigger = {
++		OR = { tag = SOV tag = WHT }
++		country_exists = UKR
++		has_war_with = UKR
++		controls_state = 202 # Kiev
++		UKR = { surrender_progress > 0.80 }
++	}
++
++	mean_time_to_happen = { days = 5 }
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia_civil_war.30.a
++		ai_chance = { factor = 100 }
++		annex_country = { target = UKR transfer_troops = yes }
++		add_political_power = 50
++	}
++}
++
++# -------------------------------------------------------------
++# Event 40: Treaty of Tartu (Finnish Border Settlement)
++# -------------------------------------------------------------
++country_event = {
++	id = ww1_russia_civil_war.40
++	title = ww1_russia_civil_war.40.t
++	desc = ww1_russia_civil_war.40.d
++	picture = GFX_event_WW1_sov_civil_war
++
++	trigger = {
++		OR = { tag = SOV tag = WHT }
++		country_exists = FIN
++		has_war_with = FIN
++		FIN = {
++			controls_state = 111 # Helsinki
++			controls_state = 145 # Viipuri
++		}
++	}
++
++	mean_time_to_happen = { days = 14 }
++	fire_only_once = yes
++
++	option = {
++		name = ww1_russia_civil_war.40.a
++		ai_chance = { factor = 100 }
++		white_peace = FIN
++		add_stability = 0.05
++	}
++}
+diff --git a/WW1/interface/ww1_austria_hungary_extra_assets.gfx b/WW1/interface/ww1_austria_hungary_extra_assets.gfx
+index d7678d8..3c9d47c 100644
+--- a/WW1/interface/ww1_austria_hungary_extra_assets.gfx
++++ b/WW1/interface/ww1_austria_hungary_extra_assets.gfx
+@@ -31,11 +31,20 @@ spriteTypes = {
+  spriteType = { name = "GFX_idea_AUH_ww1_winter_training" texturefile = "gfx/interface/ideas/ww1_auh_extra/winter_training.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_arsenal_subsidy" texturefile = "gfx/interface/decisions/ww1_auh_extra/arsenal_subsidy.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_winter_manoeuvres" texturefile = "gfx/interface/decisions/ww1_auh_extra/winter_manoeuvres.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_inspect_fortress_belt" texturefile = "gfx/interface/decisions/ww1_auh_extra/inspect_fortress_belt.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_mountain_cadres" texturefile = "gfx/interface/decisions/ww1_auh_extra/mountain_cadres.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_pola_review" texturefile = "gfx/interface/decisions/ww1_auh_extra/pola_review.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_sound_out_sofia" texturefile = "gfx/interface/decisions/ww1_auh_extra/sound_out_sofia.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_constantinople_mission" texturefile = "gfx/interface/decisions/ww1_auh_extra/constantinople_mission.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_coronation_city_visit" texturefile = "gfx/interface/decisions/ww1_auh_extra/coronation_city_visit.dds" }
+  spriteType = { name = "GFX_decision_AUH_ww1_governors_conference" texturefile = "gfx/interface/decisions/ww1_auh_extra/governors_conference.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_tisza_alliance" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_budapest_compact.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_magyar_cavalry_corps" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_honved_safeguards.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_zagreb_coronation" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_croatian_diet.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_pacify_south_slavs" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_bosnian_guarantees.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_popovici_manifesto" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_constitutional_convention.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_proclaim_danubian_federation" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_federal_constitution.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_military_dictatorship" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_staff_college.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_conrad_supreme_command" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_offensive_audit.dds" }
++ spriteType = { name = "GFX_focus_AUH_ww1_war_surveillance_office" texturefile = "gfx/interface/goals/ww1_auh/AUH_ww1_mobilisation_tables.dds" }
+ }
+diff --git a/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml b/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
+index e622f5a..af640b5 100644
+--- a/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
++++ b/WW1/localisation/braz_por/ww1_russia_events_l_braz_por.yml
+@@ -1,11 +1,11 @@
+-﻿l_braz_por:
++l_braz_por:
+  ww1_russia.1.t:0 "Atentado contra Stolypin na Ópera de Kiev"
+  ww1_russia.1.d:0 "Durante uma récita de gala na Ópera de Kiev na presença do Czar, o revolucionário Dmitry Bogrov disparou dois tiros contra o Primeiro-Ministro Pyotr Stolypin. O estadista tombou em sua cadeira, fazendo o sinal da cruz em direção ao camarote imperial."
+  ww1_russia.1.a:0 "Stolypin sucumbe aos ferimentos dias depois..."
+  ww1_russia.1.b:0 "Milagrosamente, a bala desvia em sua condecoração!"
+  SOV_stolypin_dies_tt:0 "Pyotr Stolypin morre. O ímpeto reformista é paralisado."
+  SOV_stolypin_survives_tt:0 "Stolypin sobrevive e consolida sua autoridade."
+ 
+  ww1_russia.5.t:0 "Mobilização Geral do Exército Imperial"
+  ww1_russia.5.d:0 "O Imperador de todas as Rússias assinou o decreto de mobilização geral. Sinos repicam em todas as aldeias da Polônia ao Pacífico enquanto milhões de camponeses se apresentam às guarnições."
+  ww1_russia.5.a:0 "Por Deus, pelo Czar e pela Pátria!"
+@@ -100,20 +100,36 @@ ww1_russia.50.t:0 "A Grande Crise de Projéteis: Snaryadny Golod"
+  # Civil War Eruption Events
+  ww1_russia_civil_war.1.t:0 "Eclode a Guerra Civil Russa"
+  ww1_russia_civil_war.1.d:0 "A tomada do Palácio de Inverno despedaçou o Império Russo em facções ideológicas em armas. Em Petrogrado e Moscou, Vladimir Lenin e o Conselho dos Comissários do Povo proclamam o poder soviético e mobilizam o Exército Vermelho. Pela Sibéria, Urais e Sul, generais brancos e atamans cossacos erguem regimentos lealistas para esmagar os bolcheviques. Ao mesmo tempo, movimentos nacionais na Ucrânia, Finlândia, Polônia e Cáucaso declaram independência, mergulhando o antigo império em uma luta sangrenta em múltiplas frentes."
+  ww1_russia_civil_war.1.a:0 "Todo o poder aos Sovietes! Avante, Guardas Vermelhos!"
+  ww1_russia_civil_war.1.b:0 "Por uma Rússia Una e Indivisível! Os Brancos se levantam!"
+  SOV_fleet_split_tt:0 "§YDivisão Naval:§! A Frota do Báltico jura lealdade aos sovietes; a Frota do Mar Negro apoia o Exército Branco."
+  SOV_stockpile_split_tt:0 "§YPartilha de Arsenais:§! Depósitos imperiais são divididos entre as facções em conflito."
+  SOV_play_reds_tt:0 "Jogar como a §RRússia Soviética§! (SOV)."
+  SOV_play_whites_tt:0 "Mudar perspectiva para comandar a §RRússia Branca§! (WHT)."
+ 
++ ww1_russia_civil_war.10.t:0 "Vitória Vermelha: O Triunfo Bolchevique"
++ ww1_russia_civil_war.10.d:0 "As fortalezas brancas na Sibéria e nos Urais caíram perante o avanço do Exército Vermelho de Operários e Camponeses. O General Kolchak e os generais brancos foram derrotados, com seus remanescentes fugindo ou se rendendo. Por toda a vasta extensão da Rússia, o poder soviético triunfou, estabelecendo a autoridade incontestada do estado bolchevique."
++ ww1_russia_civil_war.10.a:0 "Viva a República Soviética! Glória ao Exército Vermelho!"
++
++ ww1_russia_civil_war.20.t:0 "Vitória Branca: A Queda dos Soviéticos"
++ ww1_russia_civil_war.20.d:0 "Os bastiões vermelhos em Moscou e Petrogrado caíram perante os exércitos lealistas! Vladimir Lênin e o Conselho de Comissários do Povo foram derrubados ou forçados ao exílio. Por toda a nação, os sinos das igrejas tocam enquanto o movimento branco proclama a restauração da ordem, da lei civil e do Estado Russo."
++ ww1_russia_civil_war.20.a:0 "A ordem foi restaurada! Viva o Estado Russo!"
++
++ ww1_russia_civil_war.30.t:0 "Reintegração da Ucrânia"
++ ww1_russia_civil_war.30.d:0 "Kiev caiu e a resistência ruiu. O território ucraniano é reintegrado sob a administração central, assegurando terras de grãos vitais e centros industriais ao longo do Dnieper."
++ ww1_russia_civil_war.30.a:0 "Restabelecer a autoridade sobre a Ucrânia!"
++
++ ww1_russia_civil_war.40.t:0 "O Tratado de Tartu"
++ ww1_russia_civil_war.40.d:0 "Com o front da Carélia estagnado e as forças finlandesas segurando seu território soberano, enviados se reúnem em Tartu para concluir um tratado de paz. A fronteira é demarcada e a independência finlandesa é formalmente reconhecida, encerrando as hostilidades no norte."
++ ww1_russia_civil_war.40.a:0 "Assinar o Tratado de Tartu."
++
+  # Soviet Civil War Management Decisions
+  SOV_civil_war_management:0 "Administração da Guerra Civil Soviética"
+  SOV_civil_war_management_desc:0 "Medidas emergenciais de tempo de guerra para salvaguardar o poder soviético, alimentar os operários urbanos e suprir o Exército Vermelho."
+  SOV_seize_kazan_gold_reserves:0 "Confiscar as Reservas de Ouro de Cazã"
+  SOV_seize_kazan_gold_reserves_desc:0 "Assegurar os lingotes de ouro do Banco Imperial depositados nos cofres de Cazã para financiar a produção industrial e compras estatais de emergência."
+  SOV_prodrazvyorstka_grain_expeditions:0 "Expedições de Prodrazvyorstka"
+  SOV_prodrazvyorstka_grain_expeditions_desc:0 "Enviar destacamentos armados de operários ao campo para confiscar cotas de grãos e garantir o abastecimento de rações nas frentes de combate."
+  SOV_mobilize_petrograd_workers:0 "Mobilizar os Operários de Petrogrado"
+  SOV_mobilize_petrograd_workers_desc:0 "Convocar trabalhadores das fábricas Putilov e dos estaleiros bálticos em batalhões armados para reforçar setores ameaçados."
+  SOV_trotsky_armored_train_inspection:0 "Inspeção do Trem Blindado de Trotsky"
+diff --git a/WW1/localisation/english/ww1_russia_events_l_english.yml b/WW1/localisation/english/ww1_russia_events_l_english.yml
+index ce2026b..a1743b0 100644
+--- a/WW1/localisation/english/ww1_russia_events_l_english.yml
++++ b/WW1/localisation/english/ww1_russia_events_l_english.yml
+@@ -1,11 +1,11 @@
+-﻿l_english:
++l_english:
+  ww1_russia.1.t:0 "Assassination Attempt on Stolypin in Kiev"
+  ww1_russia.1.d:0 "During a gala performance at the Kiev Opera House in the presence of the Tsar, revolutionary Dmitry Bogrov fired two shots at Prime Minister Pyotr Stolypin. The Prime Minister collapsed onto his chair, making the sign of the cross toward the imperial box."
+  ww1_russia.1.a:0 "Stolypin succumbs to his wounds days later..."
+  ww1_russia.1.b:0 "Miraculously, the bullet glances off his medal!"
+  SOV_stolypin_dies_tt:0 "Pyotr Stolypin dies. Reformist momentum is halted."
+  SOV_stolypin_survives_tt:0 "Stolypin survives and solidifies his authority."
+ 
+  ww1_russia.5.t:0 "General Mobilization of the Imperial Army"
+  ww1_russia.5.d:0 "The Emperor of all the Russias has signed the decree ordering general mobilization. Bells toll across every village from Poland to the Pacific as millions of peasants report to their garrisons."
+  ww1_russia.5.a:0 "For God, the Tsar, and the Fatherland!"
+@@ -100,20 +100,36 @@ ww1_russia.50.t:0 "The Great Shell Crisis: Snaryadny Golod"
+  # Civil War Eruption Events
+  ww1_russia_civil_war.1.t:0 "The Russian Civil War Erupts"
+  ww1_russia_civil_war.1.d:0 "The storming of the Winter Palace has shattered the Russian Empire into armed ideological camps. In Petrograd and Moscow, Vladimir Lenin and the Bolshevik Council of People's Commissars proclaim Soviet power and mobilize the Red Army. Across Siberia, the Urals, and the South, White generals and Cossack Atamans rally loyalist divisions to crush the Reds. Simultaneously, national movements in Ukraine, Finland, Poland, and the Caucasus declare independence, plunging the former empire into a multi-front struggle for survival."
+  ww1_russia_civil_war.1.a:0 "All power to the Soviets! Forward, Red Guards!"
+  ww1_russia_civil_war.1.b:0 "For a One and Indivisible Russia! White Movement rallies!"
+  SOV_fleet_split_tt:0 "§YNaval Division:§! Baltic Fleet pledges allegiance to the Soviets; Black Sea Fleet rallies to the White Army."
+  SOV_stockpile_split_tt:0 "§YStockpile Partition:§! Imperial armories and arsenals are split between the warring factions."
+  SOV_play_reds_tt:0 "Play as §RSoviet Russia§! (SOV)."
+  SOV_play_whites_tt:0 "Switch perspective to play as §WWhite Russia§! (WHT)."
+ 
++ ww1_russia_civil_war.10.t:0 "Red Victory: The Bolshevik Triumph"
++ ww1_russia_civil_war.10.d:0 "The White strongholds in Siberia and the Urals have fallen before the advance of the Workers' and Peasants' Red Army. General Kolchak and the White generals have been defeated, their remnants fleeing or surrendering. Across the vast expanse of Russia, Soviet power has triumphed, establishing the undisputed authority of the Bolshevik state."
++ ww1_russia_civil_war.10.a:0 "Long live the Soviet Republic! Glory to the Red Army!"
++
++ ww1_russia_civil_war.20.t:0 "White Victory: The Fall of the Soviets"
++ ww1_russia_civil_war.20.d:0 "The Red bastions in Moscow and Petrograd have fallen to loyalist armies! Vladimir Lenin and the Council of People's Commissars have been overthrown or forced into exile. Across the nation, church bells toll as the White movement proclaims the restoration of order, civil law, and the Russian State."
++ ww1_russia_civil_war.20.a:0 "Order is restored! Long live the Russian State!"
++
++ ww1_russia_civil_war.30.t:0 "Re-integration of Ukraine"
++ ww1_russia_civil_war.30.d:0 "Kiev has fallen and resistance has collapsed. Ukrainian territory is re-integrated under central administration, securing vital grain lands and industrial centers along the Dnieper."
++ ww1_russia_civil_war.30.a:0 "Re-establish authority over Ukraine!"
++
++ ww1_russia_civil_war.40.t:0 "The Treaty of Tartu"
++ ww1_russia_civil_war.40.d:0 "With the Karelian front deadlocked and Finnish forces securing their sovereign territory, envoys meet in Tartu to conclude a peace treaty. The border is demarcated and Finnish independence is formally recognized, ending hostilities in the north."
++ ww1_russia_civil_war.40.a:0 "Sign the Treaty of Tartu."
++
+  # Soviet Civil War Management Decisions
+  SOV_civil_war_management:0 "Soviet Civil War Administration"
+  SOV_civil_war_management_desc:0 "Emergency wartime measures to safeguard Soviet power, feed urban industrial workers, and arm the Red Army on all fronts."
+  SOV_seize_kazan_gold_reserves:0 "Seize the Imperial Gold Reserves in Kazan"
+  SOV_seize_kazan_gold_reserves_desc:0 "Secure the Imperial State Bank's gold bullion stored in the vaults of Kazan to finance emergency industrial production and state purchases."
+  SOV_prodrazvyorstka_grain_expeditions:0 "Prodrazvyorstka Grain Expeditions"
+  SOV_prodrazvyorstka_grain_expeditions_desc:0 "Dispatch armed worker and Red Guard detachments into rural provinces to requisition grain quotas and ensure food supply to the frontlines."
+  SOV_mobilize_petrograd_workers:0 "Mobilize Petrograd Industrial Workers"
+  SOV_mobilize_petrograd_workers_desc:0 "Levy workers from the Putilov and Baltic shipyards into armed battalions to reinforce threatened fronts."
+  SOV_trotsky_armored_train_inspection:0 "Trotsky's Armored Train Frontline Inspection"
+diff --git a/WW1/tests/test_ww1_ai_and_russia_fixes.py b/WW1/tests/test_ww1_ai_and_russia_fixes.py
+index 5aba6a9..d416ccd 100644
+--- a/WW1/tests/test_ww1_ai_and_russia_fixes.py
++++ b/WW1/tests/test_ww1_ai_and_russia_fixes.py
+@@ -153,20 +153,39 @@ class TestAIAndRussiaFixes(unittest.TestCase):
+         evt_255 = get_event_block("ww1_russia.255")
+         self.assertTrue(len(evt_255) > 0, "Event ww1_russia.255 not found")
+         self.assertIn("WHT", evt_255, "Event ww1_russia.255 does not reference tag WHT")
+         self.assertIn("SOV", evt_255, "Event ww1_russia.255 does not reference tag SOV")
+ 
+         evt_220 = get_event_block("ww1_russia.220")
+         self.assertTrue(len(evt_220) > 0, "Event ww1_russia.220 not found")
+         self.assertIn("WHT", evt_220, "Event ww1_russia.220 does not reference tag WHT")
+         self.assertIn("SOV", evt_220, "Event ww1_russia.220 does not reference tag SOV")
+ 
++        # Check Russian Civil War ignition event ww1_russia_civil_war.1
++        cw_event_file = os.path.join(MOD_ROOT, "events", "ww1_russia_civil_war_events.txt")
++        self.assertTrue(os.path.isfile(cw_event_file), f"Missing {cw_event_file}")
++        with open(cw_event_file, "r", encoding="utf-8", errors="replace") as f:
++            cw_text = f.read()
++
++        self.assertIn("leave_faction = yes", cw_text, "SOV must leave the Entente on civil war eruption")
++        self.assertIn("can_join_factions = no", cw_text, "Faction rule can_join_factions = no missing from civil war")
++        self.assertIn("ww1_russia_civil_war.10", cw_text, "Red Victory scripted conclusion event missing")
++        self.assertIn("ww1_russia_civil_war.20", cw_text, "White Victory scripted conclusion event missing")
++
++        # Check AI isolation strategy exists
++        strat_file = os.path.join(MOD_ROOT, "common", "ai_strategy", "ww1_russian_civil_war_ai_strategy.txt")
++        self.assertTrue(os.path.isfile(strat_file), f"Missing {strat_file}")
++        with open(strat_file, "r", encoding="utf-8", errors="replace") as f:
++            strat_text = f.read()
++        self.assertIn("join_faction", strat_text)
++        self.assertIn("-5000", strat_text)
++
+     def test_russian_crisis_variable_reconciliation(self):
+         """Verifies zero legacy SOV_unrest/SOV_hunger and confirms SOV_worker_unrest/SOV_urban_hunger in decisions."""
+         decisions_path = os.path.join(MOD_ROOT, "common", "decisions", "ww1_ger_rus_rework_decisions.txt")
+         self.assertTrue(os.path.isfile(decisions_path), f"Missing {decisions_path}")
+         with open(decisions_path, "r", encoding="utf-8", errors="replace") as f:
+             content = f.read()
+ 
+         # Zero occurrences of legacy SOV_unrest and SOV_hunger as exact variable names
+         unrest_matches = re.findall(r"\bSOV_unrest\b", content)
+         hunger_matches = re.findall(r"\bSOV_hunger\b", content)
+diff --git a/WW1/tests/test_ww1_austria_hungary.py b/WW1/tests/test_ww1_austria_hungary.py
+index 8a518e5..35de67a 100644
+--- a/WW1/tests/test_ww1_austria_hungary.py
++++ b/WW1/tests/test_ww1_austria_hungary.py
+@@ -209,40 +209,67 @@ class TestAustriaHungaryOverhaul(unittest.TestCase):
+         for fid in expected_paths:
+             f = foci_dict[fid]
+             mex = set(f["mutually_exclusive"])
+             other_paths = set(expected_paths) - {fid}
+             for other in other_paths:
+                 self.assertIn(
+                     other, mex,
+                     f"Focus {fid} must be mutually exclusive with {other}"
+                 )
+ 
+-        # 3. Check distinct ideas exist in ideas file
++        # 3. Check sub-focuses exist in each constitutional branch
++        expected_subfoci = [
++            "AUH_ww1_tisza_alliance", "AUH_ww1_magyar_cavalry_corps",
++            "AUH_ww1_zagreb_coronation", "AUH_ww1_pacify_south_slavs",
++            "AUH_ww1_popovici_manifesto", "AUH_ww1_proclaim_danubian_federation",
++            "AUH_ww1_conrad_supreme_command", "AUH_ww1_war_surveillance_office",
++        ]
++        for sfid in expected_subfoci:
++            self.assertIn(sfid, foci_dict, f"Sub-focus {sfid} missing from austria.txt")
++
++        # 4. Check proclamation completion reward calls AUH_spawn_danubian_mega_federation
++        fed_proc = foci_dict["AUH_ww1_proclaim_danubian_federation"]
++        self.assertIn(
++            "AUH_spawn_danubian_mega_federation", fed_proc["block"],
++            "AUH_ww1_proclaim_danubian_federation must call AUH_spawn_danubian_mega_federation"
++        )
++
++        # 5. Check 0 coordinate collisions across all focuses
++        coords = {}
++        for f in foci:
++            x_m = re.search(r"\bx\s*=\s*([0-9\-]+)", f["block"])
++            y_m = re.search(r"\by\s*=\s*([0-9\-]+)", f["block"])
++            if x_m and y_m:
++                coord = (int(x_m.group(1)), int(y_m.group(1)))
++                self.assertNotIn(coord, coords, f"Coordinate collision at {coord}: {coords.get(coord)} and {f['id']}")
++                coords[coord] = f["id"]
++
++        # 6. Check distinct ideas exist in ideas file
+         ideas_file = os.path.join(REPO_ROOT, "common", "ideas", "ww1_austria_constitutional_ideas.txt")
+         self.assertTrue(os.path.isfile(ideas_file), f"Constitutional ideas file missing: {ideas_file}")
+ 
+         with open(ideas_file, "r", encoding="utf-8-sig", errors="replace") as f:
+             ideas_content = f.read()
+ 
+         expected_ideas = [
+             "AUH_idea_dualism_iron",
+             "AUH_idea_habsburg_trialism",
+             "AUH_idea_danubian_federation_spirit",
+             "AUH_idea_aok_military_dictatorship",
+         ]
+ 
+         # Ensure all 4 ideas are unique and present
+         self.assertEqual(len(set(expected_ideas)), 4, "Expected ideas must be 4 distinct tokens")
+         for iid in expected_ideas:
+             self.assertIn(iid, ideas_content, f"Idea {iid} missing from ww1_austria_constitutional_ideas.txt")
+ 
+-        # 4. Semantic modifier audit on constitutional ideas
++        # 7. Semantic modifier audit on constitutional ideas
+         errs = audit_file_modifiers(ideas_file)
+         self.assertEqual(len(errs), 0, f"Semantic Oracle found invalid modifiers in {ideas_file}: {errs}")
+ 
+     def test_danubian_mega_federation_setup(self):
+         """Verify that Danubian federation releases HUN, CZE, CRO, POL with imperial color matching and 4-18 divisions."""
+         effects_file = os.path.join(REPO_ROOT, "common", "scripted_effects", "ww1_danubian_federation_effects.txt")
+         self.assertTrue(os.path.isfile(effects_file), f"Danubian federation effects file missing: {effects_file}")
+ 
+         with open(effects_file, "r", encoding="utf-8-sig", errors="replace") as f:
+             eff_content = f.read()

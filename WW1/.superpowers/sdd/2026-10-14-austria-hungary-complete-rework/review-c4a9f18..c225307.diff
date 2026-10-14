@@ -1,0 +1,297 @@
+# Review package: c4a9f18..c225307
+
+## Commits
+c225307 feat(auh): implement Crown Dashboard, Vienna grain stockpiles, and 3 survival vectors
+
+## Files changed
+ .../categories/ww1_auh_dashboard_categories.txt    |   9 ++
+ .../decisions/ww1_auh_dashboard_decisions.txt      | 147 +++++++++++++++++++++
+ .../zz_ww1_ger_rus_rework_on_actions.txt           |  17 +++
+ .../scripted_effects/ww1_auh_dashboard_effects.txt |  77 +++++++++++
+ 4 files changed, 250 insertions(+)
+
+## Diff
+diff --git a/WW1/common/decisions/categories/ww1_auh_dashboard_categories.txt b/WW1/common/decisions/categories/ww1_auh_dashboard_categories.txt
+new file mode 100644
+index 0000000..bbf17b6
+--- /dev/null
++++ b/WW1/common/decisions/categories/ww1_auh_dashboard_categories.txt
+@@ -0,0 +1,9 @@
++AUH_crown_dashboard = {
++	icon = generic_propaganda
++	allowed = {
++		original_tag = AUS
++	}
++	visible = {
++		tag = AUS
++	}
++}
+diff --git a/WW1/common/decisions/ww1_auh_dashboard_decisions.txt b/WW1/common/decisions/ww1_auh_dashboard_decisions.txt
+new file mode 100644
+index 0000000..48137e9
+--- /dev/null
++++ b/WW1/common/decisions/ww1_auh_dashboard_decisions.txt
+@@ -0,0 +1,147 @@
++AUH_crown_dashboard = {
++
++	AUH_dec_requisition_banat_grain = {
++		icon = generic_agriculture
++		cost = 25
++		days_re_enable = 90
++		allowed = {
++			original_tag = AUS
++		}
++		visible = {
++			tag = AUS
++			has_war = yes
++		}
++		available = {
++			has_war = yes
++			OR = {
++				controls_state = 82
++				controls_state = 764
++				controls_state = 43
++			}
++			check_variable = { AUH_vienna_grain < 95 }
++		}
++		complete_effect = {
++			add_to_variable = { AUH_vienna_grain = 15 }
++			add_to_variable = { AUH_cohesion = -5 }
++			add_stability = -0.02
++			AUH_clamp_dashboard_variables = yes
++		}
++		ai_will_do = {
++			base = 0
++			modifier = {
++				add = 20
++				check_variable = { AUH_vienna_grain < 40 }
++			}
++			modifier = {
++				add = 50
++				check_variable = { AUH_vienna_grain < 20 }
++			}
++		}
++	}
++
++	AUH_dec_bread_rationing_cards = {
++		icon = generic_consumer_goods
++		cost = 30
++		days_remove = 180
++		days_re_enable = 60
++		allowed = {
++			original_tag = AUS
++		}
++		visible = {
++			tag = AUS
++			has_war = yes
++		}
++		available = {
++			has_war = yes
++			NOT = { has_country_flag = AUH_bread_rationing_cards_active }
++		}
++		modifier = {
++			consumer_goods_factor = 0.03
++			stability_weekly = -0.0005
++		}
++		complete_effect = {
++			set_country_flag = AUH_bread_rationing_cards_active
++			add_to_variable = { AUH_war_weariness = 2 }
++			AUH_clamp_dashboard_variables = yes
++		}
++		remove_effect = {
++			clr_country_flag = AUH_bread_rationing_cards_active
++		}
++		ai_will_do = {
++			base = 0
++			modifier = {
++				add = 30
++				check_variable = { AUH_vienna_grain < 50 }
++			}
++		}
++	}
++
++	AUH_dec_appease_budapest_diet = {
++		icon = generic_agreement
++		cost = 50
++		days_re_enable = 120
++		allowed = {
++			original_tag = AUS
++		}
++		visible = {
++			tag = AUS
++		}
++		available = {
++			check_variable = { AUH_cohesion < 90 }
++			controls_state = 43
++		}
++		complete_effect = {
++			add_to_variable = { AUH_cohesion = 15 }
++			add_stability = 0.03
++			AUH_clamp_dashboard_variables = yes
++		}
++		ai_will_do = {
++			base = 0
++			modifier = {
++				add = 25
++				check_variable = { AUH_cohesion < 50 }
++			}
++			modifier = {
++				add = 50
++				check_variable = { AUH_cohesion < 30 }
++			}
++		}
++	}
++
++	AUH_dec_galician_food_corps = {
++		icon = generic_colonial_administration
++		cost = 20
++		days_re_enable = 90
++		allowed = {
++			original_tag = AUS
++		}
++		visible = {
++			tag = AUS
++			has_war = yes
++		}
++		available = {
++			has_war = yes
++			OR = {
++				controls_state = 88
++				controls_state = 171
++			}
++			check_variable = { AUH_vienna_grain < 95 }
++		}
++		complete_effect = {
++			add_to_variable = { AUH_vienna_grain = 12 }
++			add_to_variable = { AUH_war_weariness = 4 }
++			AUH_clamp_dashboard_variables = yes
++		}
++		ai_will_do = {
++			base = 0
++			modifier = {
++				add = 20
++				check_variable = { AUH_vienna_grain < 35 }
++			}
++			modifier = {
++				add = 50
++				check_variable = { AUH_vienna_grain < 15 }
++			}
++		}
++	}
++}
+diff --git a/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt b/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
+index 76f57f2..ddf8693 100644
+--- a/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
++++ b/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
+@@ -59,11 +59,28 @@ on_actions = {
+ 			}
+ 		}
+ 	}
+ 
+ 	# Transient Memory & Garbage Collection Hook
+ 	on_monthly = {
+ 		effect = {
+ 			ww1_clean_transient_memory = yes
+ 		}
+ 	}
++
++	# Austria-Hungary Crown Dashboard & Grain Simulation Hook
++	on_weekly = {
++		effect = {
++			if = {
++				limit = { tag = AUS }
++				if = {
++					limit = {
++						NOT = { has_variable = AUH_vienna_grain }
++					}
++					AUH_init_crown_dashboard = yes
++				}
++				AUH_clamp_dashboard_variables = yes
++				AUH_weekly_grain_tick = yes
++			}
++		}
++	}
+ }
+diff --git a/WW1/common/scripted_effects/ww1_auh_dashboard_effects.txt b/WW1/common/scripted_effects/ww1_auh_dashboard_effects.txt
+new file mode 100644
+index 0000000..17f52d5
+--- /dev/null
++++ b/WW1/common/scripted_effects/ww1_auh_dashboard_effects.txt
+@@ -0,0 +1,77 @@
++# Austria-Hungary Crown Dashboard & 3 Survival Vectors
++# Vectors:
++# AUH_war_weariness (0 to 100)
++# AUH_cohesion (0 to 100)
++# AUH_vienna_grain (0 to 100)
++
++AUH_init_crown_dashboard = {
++	set_variable = { AUH_war_weariness = 0 }
++	set_variable = { AUH_cohesion = 65 }
++	set_variable = { AUH_vienna_grain = 70 }
++}
++
++AUH_clamp_dashboard_variables = {
++	clamp_variable = { var = AUH_war_weariness min = 0 max = 100 }
++	clamp_variable = { var = AUH_cohesion min = 0 max = 100 }
++	clamp_variable = { var = AUH_vienna_grain min = 0 max = 100 }
++}
++
++AUH_weekly_grain_tick = {
++	if = {
++		limit = {
++			NOT = { has_variable = AUH_vienna_grain }
++		}
++		AUH_init_crown_dashboard = yes
++	}
++
++	if = {
++		limit = {
++			has_war = yes
++		}
++		if = {
++			limit = {
++				has_country_flag = AUH_bread_rationing_cards_active
++			}
++			if = {
++				limit = {
++					OR = {
++						has_country_flag = suffering_distant_blockade
++						has_country_flag = suffering_u_boat_blockade
++						has_idea = FRA_adriatic_naval_blockade
++						has_war_with = ENG
++						has_war_with = FRA
++						has_war_with = ITA
++					}
++				}
++				add_to_variable = { AUH_vienna_grain = -1 }
++			}
++		}
++		else = {
++			if = {
++				limit = {
++					OR = {
++						has_country_flag = suffering_distant_blockade
++						has_country_flag = suffering_u_boat_blockade
++						has_idea = FRA_adriatic_naval_blockade
++						has_war_with = ENG
++						has_war_with = FRA
++						has_war_with = ITA
++					}
++				}
++				add_to_variable = { AUH_vienna_grain = -2 }
++			}
++			else = {
++				add_to_variable = { AUH_vienna_grain = -1 }
++			}
++		}
++
++		if = {
++			limit = {
++				check_variable = { AUH_vienna_grain < 25 }
++			}
++			add_to_variable = { AUH_war_weariness = 1 }
++		}
++	}
++
++	AUH_clamp_dashboard_variables = yes
++}
