@@ -1,0 +1,147 @@
+AUH_crown_dashboard = {
+
+	AUH_dec_requisition_banat_grain = {
+		icon = generic_agriculture
+		cost = 25
+		days_re_enable = 90
+		allowed = {
+			original_tag = AUS
+		}
+		visible = {
+			tag = AUS
+			has_war = yes
+		}
+		available = {
+			has_war = yes
+			OR = {
+				controls_state = 82
+				controls_state = 764
+				controls_state = 43
+			}
+			check_variable = { AUH_vienna_grain < 95 }
+		}
+		complete_effect = {
+			add_to_variable = { AUH_vienna_grain = 15 }
+			add_to_variable = { AUH_cohesion = -5 }
+			add_stability = -0.02
+			AUH_clamp_dashboard_variables = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 20
+				check_variable = { AUH_vienna_grain < 40 }
+			}
+			modifier = {
+				add = 50
+				check_variable = { AUH_vienna_grain < 20 }
+			}
+		}
+	}
+
+	AUH_dec_bread_rationing_cards = {
+		icon = generic_consumer_goods
+		cost = 30
+		days_remove = 180
+		days_re_enable = 60
+		allowed = {
+			original_tag = AUS
+		}
+		visible = {
+			tag = AUS
+			has_war = yes
+		}
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = AUH_bread_rationing_cards_active }
+		}
+		modifier = {
+			consumer_goods_factor = 0.03
+			stability_weekly = -0.0005
+		}
+		complete_effect = {
+			set_country_flag = AUH_bread_rationing_cards_active
+			add_to_variable = { AUH_war_weariness = 2 }
+			AUH_clamp_dashboard_variables = yes
+		}
+		remove_effect = {
+			clr_country_flag = AUH_bread_rationing_cards_active
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 30
+				check_variable = { AUH_vienna_grain < 50 }
+			}
+		}
+	}
+
+	AUH_dec_appease_budapest_diet = {
+		icon = generic_agreement
+		cost = 50
+		days_re_enable = 120
+		allowed = {
+			original_tag = AUS
+		}
+		visible = {
+			tag = AUS
+		}
+		available = {
+			check_variable = { AUH_cohesion < 90 }
+			controls_state = 43
+		}
+		complete_effect = {
+			add_to_variable = { AUH_cohesion = 15 }
+			add_stability = 0.03
+			AUH_clamp_dashboard_variables = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 25
+				check_variable = { AUH_cohesion < 50 }
+			}
+			modifier = {
+				add = 50
+				check_variable = { AUH_cohesion < 30 }
+			}
+		}
+	}
+
+	AUH_dec_galician_food_corps = {
+		icon = generic_colonial_administration
+		cost = 20
+		days_re_enable = 90
+		allowed = {
+			original_tag = AUS
+		}
+		visible = {
+			tag = AUS
+			has_war = yes
+		}
+		available = {
+			has_war = yes
+			OR = {
+				controls_state = 88
+				controls_state = 171
+			}
+			check_variable = { AUH_vienna_grain < 95 }
+		}
+		complete_effect = {
+			add_to_variable = { AUH_vienna_grain = 12 }
+			add_to_variable = { AUH_war_weariness = 4 }
+			AUH_clamp_dashboard_variables = yes
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 20
+				check_variable = { AUH_vienna_grain < 35 }
+			}
+			modifier = {
+				add = 50
+				check_variable = { AUH_vienna_grain < 15 }
+			}
+		}
+	}
+}

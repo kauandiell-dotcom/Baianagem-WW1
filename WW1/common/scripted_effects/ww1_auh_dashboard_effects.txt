@@ -1,0 +1,77 @@
+# Austria-Hungary Crown Dashboard & 3 Survival Vectors
+# Vectors:
+# AUH_war_weariness (0 to 100)
+# AUH_cohesion (0 to 100)
+# AUH_vienna_grain (0 to 100)
+
+AUH_init_crown_dashboard = {
+	set_variable = { AUH_war_weariness = 0 }
+	set_variable = { AUH_cohesion = 65 }
+	set_variable = { AUH_vienna_grain = 70 }
+}
+
+AUH_clamp_dashboard_variables = {
+	clamp_variable = { var = AUH_war_weariness min = 0 max = 100 }
+	clamp_variable = { var = AUH_cohesion min = 0 max = 100 }
+	clamp_variable = { var = AUH_vienna_grain min = 0 max = 100 }
+}
+
+AUH_weekly_grain_tick = {
+	if = {
+		limit = {
+			NOT = { has_variable = AUH_vienna_grain }
+		}
+		AUH_init_crown_dashboard = yes
+	}
+
+	if = {
+		limit = {
+			has_war = yes
+		}
+		if = {
+			limit = {
+				has_country_flag = AUH_bread_rationing_cards_active
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = suffering_distant_blockade
+						has_country_flag = suffering_u_boat_blockade
+						has_idea = FRA_adriatic_naval_blockade
+						has_war_with = ENG
+						has_war_with = FRA
+						has_war_with = ITA
+					}
+				}
+				add_to_variable = { AUH_vienna_grain = -1 }
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = suffering_distant_blockade
+						has_country_flag = suffering_u_boat_blockade
+						has_idea = FRA_adriatic_naval_blockade
+						has_war_with = ENG
+						has_war_with = FRA
+						has_war_with = ITA
+					}
+				}
+				add_to_variable = { AUH_vienna_grain = -2 }
+			}
+			else = {
+				add_to_variable = { AUH_vienna_grain = -1 }
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = { AUH_vienna_grain < 25 }
+			}
+			add_to_variable = { AUH_war_weariness = 1 }
+		}
+	}
+
+	AUH_clamp_dashboard_variables = yes
+}

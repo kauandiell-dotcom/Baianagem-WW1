@@ -66,4 +66,21 @@ on_actions = {
 			ww1_clean_transient_memory = yes
 		}
 	}
+
+	# Austria-Hungary Crown Dashboard & Grain Simulation Hook
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { tag = AUS }
+				if = {
+					limit = {
+						NOT = { has_variable = AUH_vienna_grain }
+					}
+					AUH_init_crown_dashboard = yes
+				}
+				AUH_clamp_dashboard_variables = yes
+				AUH_weekly_grain_tick = yes
+			}
+		}
+	}
 }
