@@ -39,6 +39,7 @@ SUITES: List[str] = [
     "tests.test_ww1_germany_rework",
     "tests.test_ww1_ai_and_russia_fixes",
     "tests.test_ww1_supreme_optimization",
+    "tests.test_ww1_austria_hungary",
 ]
 
 
@@ -579,6 +580,10 @@ def main():
     print("\n[*] Executing Supreme Engine Optimization QA Suite (tests/test_ww1_supreme_optimization.py)...")
     res_supreme_perf = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_supreme_optimization.py"], cwd=MOD_ROOT)
 
+    # 12. Execute Austro-Hungarian Monarchy Master QA Audit Suite
+    print("\n[*] Executing Austro-Hungarian Monarchy Master QA Audit Suite (tests/test_ww1_austria_hungary.py)...")
+    res_auh = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_austria_hungary.py"], cwd=MOD_ROOT)
+
     tests_failed = (
         (res_ger.returncode != 0)
         or (res_oracle.returncode != 0)
@@ -591,13 +596,14 @@ def main():
         or (res_ger_rework.returncode != 0)
         or (res_ai_rus_fixes.returncode != 0)
         or (res_supreme_perf.returncode != 0)
+        or (res_auh.returncode != 0)
     )
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}, SUPREME_PERF: {res_supreme_perf.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}, SUPREME_PERF: {res_supreme_perf.returncode}, AUH: {res_auh.returncode}) <<<\n")
         sys.exit(1)
 
 
