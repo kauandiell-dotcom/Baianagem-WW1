@@ -1,0 +1,10 @@
+GER_naval_warfare_category = {
+	icon = generic_naval
+	priority = 85
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		has_war = yes
+	}
+}

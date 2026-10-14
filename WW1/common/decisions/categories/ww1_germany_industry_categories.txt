@@ -1,0 +1,10 @@
+GER_chemical_warfare_program = {
+	icon = generic_propaganda
+	priority = 80
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		has_war = yes
+	}
+}

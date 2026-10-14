@@ -1,0 +1,10 @@
+GER_high_command_operations = {
+	icon = generic_army
+	priority = 90
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		has_war = yes
+	}
+}

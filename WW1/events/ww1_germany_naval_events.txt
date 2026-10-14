@@ -1,0 +1,72 @@
+add_namespace = ww1_germany_naval
+
+# -------------------------------------------------------------
+# Event 1: The Zimmermann Telegram
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_germany_naval.1
+	title = ww1_germany_naval.1.t
+	desc = ww1_germany_naval.1.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_naval.1.a # Send the telegram proposing alliance to Mexico (MEX)
+		ai_chance = { factor = 90 }
+		set_country_flag = GER_zimmermann_telegram_dispatched
+		if = {
+			limit = { country_exists = MEX }
+			MEX = {
+				country_event = { id = ww1_germany_naval.2 days = 14 }
+			}
+		}
+	}
+
+	option = {
+		name = ww1_germany_naval.1.b # Do not risk American intervention
+		ai_chance = { factor = 10 }
+		add_political_power = -20
+	}
+}
+
+# -------------------------------------------------------------
+# Event 2: Mexican Consideration
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_germany_naval.2
+	title = ww1_germany_naval.2.t
+	desc = ww1_germany_naval.2.d
+	picture = GFX_report_event_mexican_soldiers
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_naval.2.a # Decline the German overture
+		ai_chance = { factor = 95 }
+		GER = {
+			country_event = { id = ww1_germany_naval.3 days = 5 }
+		}
+	}
+}
+
+# -------------------------------------------------------------
+# Event 3: Telegram Intercepted / British Disclosure
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_germany_naval.3
+	title = ww1_germany_naval.3.t
+	desc = ww1_germany_naval.3.d
+	picture = GFX_report_event_journalists_speech
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = ww1_germany_naval.3.a
+		add_to_variable = { GER_us_intervention_tension = 35 }
+		ger_clamp_naval_gauges = yes
+	}
+}

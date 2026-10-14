@@ -856,6 +856,56 @@ ideas = {
 				production_factory_max_efficiency_factor = 0.05
 			}
 		}
+
+		GER_krupp_siege_guns = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_artillery_regiments
+			modifier = {
+				army_artillery_attack_factor = 0.15
+			}
+		}
+
+		GER_thyssen_steel_syndicate = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+			}
+		}
+
+		GER_haber_bosch_synthesis = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_exploit_mines
+			modifier = {
+				local_resources_factor = 0.15
+				production_speed_arms_factory_factor = 0.10
+			}
+		}
+
+		GER_buna_rubber = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_speed_synthetic_refinery_factor = 0.20
+			}
+		}
+
+		GER_hindenburg_program = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_war_preparation
+			modifier = {
+				industrial_capacity_factory = 0.15
+				consumer_goods_factor = 0.05
+				war_support_factor = 0.10
+			}
+		}
 	}
 }
 

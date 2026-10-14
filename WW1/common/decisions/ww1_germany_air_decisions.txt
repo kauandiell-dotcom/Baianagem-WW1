@@ -1,0 +1,62 @@
+GER_air_warfare_category = {
+
+	# The Fokker Scourge (Interrupter Gear)
+	GER_fokker_scourge = {
+		icon = generic_air
+		cost = 50
+		days_remove = 180
+		fire_only_once = yes
+
+		available = {
+			has_war_with = FRA
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		modifier = {
+			air_superiority_factor = 0.20
+		}
+
+		complete_effect = {
+			add_timed_idea = {
+				idea = GER_fokker_scourge_spirit
+				days = 180
+			}
+			air_experience = 25
+		}
+
+		ai_will_do = {
+			factor = 95
+		}
+	}
+
+	# Zeppelin Terror Raids over London
+	GER_zeppelin_raids_london = {
+		icon = generic_air
+		cost = 40
+		days_remove = 60
+		fire_only_once = no
+
+		available = {
+			has_war_with = ENG
+		}
+
+		visible = {
+			has_war_with = ENG
+		}
+
+		complete_effect = {
+			ENG = {
+				add_stability = -0.03
+				add_war_support = -0.02
+			}
+			add_war_support = 0.03
+		}
+
+		ai_will_do = {
+			factor = 85
+		}
+	}
+}

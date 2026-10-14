@@ -1,0 +1,92 @@
+GER_chemical_warfare_program = {
+
+	# Stage 1: Chlorine Gas Release (Ypres 1915)
+	GER_chlorine_gas_release = {
+		icon = generic_chemical_gas
+		cost = 50
+		days_remove = 90
+		fire_only_once = yes
+
+		available = {
+			has_war_with = FRA
+		}
+
+		visible = {
+			has_war_with = FRA
+		}
+
+		modifier = {
+			army_attack_factor = 0.10
+			breakthrough_factor = 0.10
+		}
+
+		complete_effect = {
+			set_country_flag = GER_chlorine_gas_released
+			add_threat = 2
+		}
+
+		ai_will_do = {
+			factor = 95
+		}
+	}
+
+	# Stage 2: Phosgene Gas Shells (Green Cross 1916)
+	GER_phosgene_gas_shells = {
+		icon = generic_chemical_gas
+		cost = 60
+		days_remove = 90
+		fire_only_once = yes
+
+		available = {
+			has_war_with = FRA
+		}
+
+		visible = {
+			has_war_with = FRA
+		}
+
+		modifier = {
+			army_artillery_attack_factor = 0.15
+			breakthrough_factor = 0.12
+		}
+
+		complete_effect = {
+			set_country_flag = GER_phosgene_gas_deployed
+			add_threat = 3
+		}
+
+		ai_will_do = {
+			factor = 90
+		}
+	}
+
+	# Stage 3: Mustard Gas (Yellow Cross 1917)
+	GER_mustard_gas_deployment = {
+		icon = generic_chemical_gas
+		cost = 75
+		days_remove = 120
+		fire_only_once = yes
+
+		available = {
+			has_war_with = FRA
+		}
+
+		visible = {
+			has_war_with = FRA
+		}
+
+		modifier = {
+			army_attack_factor = 0.15
+			army_artillery_attack_factor = 0.20
+		}
+
+		complete_effect = {
+			set_country_flag = GER_mustard_gas_deployed
+			add_threat = 5
+		}
+
+		ai_will_do = {
+			factor = 85
+		}
+	}
+}

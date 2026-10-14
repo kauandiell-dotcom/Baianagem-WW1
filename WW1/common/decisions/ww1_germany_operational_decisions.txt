@@ -1,0 +1,120 @@
+GER_high_command_operations = {
+
+	# Operation Gericht - Verdun Meatgrinder
+	GER_operation_gericht = {
+		icon = generic_artillery
+		cost = 50
+		days_remove = 120
+		fire_only_once = no
+
+		available = {
+			has_war_with = FRA
+		}
+
+		visible = {
+			has_war_with = FRA
+		}
+
+		modifier = {
+			army_artillery_attack_factor = 0.15
+			army_breakthrough_factor = 0.10
+		}
+
+		remove_effect = {
+			add_war_support = 0.05
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	# Gorlice-Tarnow Breakthrough
+	GER_gorlice_tarnow_breakthrough = {
+		icon = generic_infantry
+		cost = 50
+		days_remove = 90
+		fire_only_once = no
+
+		available = {
+			OR = {
+				has_war_with = RUS
+				has_war_with = SOV
+			}
+		}
+
+		visible = {
+			OR = {
+				has_war_with = RUS
+				has_war_with = SOV
+			}
+		}
+
+		modifier = {
+			army_attack_factor = 0.10
+			army_speed_factor = 0.10
+		}
+
+		remove_effect = {
+			add_stability = 0.03
+		}
+
+		ai_will_do = {
+			factor = 95
+		}
+	}
+
+	# Caporetto Mountain Shock
+	GER_caporetto_mountain_shock = {
+		icon = generic_mountain
+		cost = 40
+		days_remove = 90
+		fire_only_once = no
+
+		available = {
+			has_war_with = ITA
+		}
+
+		visible = {
+			has_war_with = ITA
+		}
+
+		modifier = {
+			special_forces_attack_factor = 0.15
+			army_speed_factor = 0.10
+		}
+
+		ai_will_do = {
+			factor = 90
+		}
+	}
+
+	# Kaiserschlacht Spring Offensive
+	GER_kaiserschlacht_spring_offensive = {
+		icon = generic_offensive
+		cost = 75
+		days_remove = 100
+		fire_only_once = yes
+
+		available = {
+			has_war_with = FRA
+		}
+
+		visible = {
+			has_war_with = FRA
+		}
+
+		modifier = {
+			army_attack_factor = 0.15
+			army_org_factor = 0.10
+		}
+
+		remove_effect = {
+			add_war_support = 0.05
+		}
+
+		ai_will_do = {
+			factor = 90
+		}
+	}
+}

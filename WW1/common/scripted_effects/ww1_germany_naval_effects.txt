@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# German Empire Naval Warfare & Atlantic U-Boat Tension Gauge Scripted Effects
+# ---------------------------------------------------------------------------
+
+ger_init_naval_gauges = {
+	set_variable = { GER_us_intervention_tension = 0 }
+}
+
+ger_clamp_naval_gauges = {
+	clamp_variable = { var = GER_us_intervention_tension min = 0 max = 100 }
+}
+
+ger_uboat_weekly_tension_update = {
+	if = {
+		limit = {
+			has_country_flag = GER_uboat_cruiser_rules_active
+		}
+		add_to_variable = { GER_us_intervention_tension = 0.25 }
+	}
+	if = {
+		limit = {
+			has_country_flag = GER_uboat_declared_war_zone_active
+		}
+		add_to_variable = { GER_us_intervention_tension = 1.0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = GER_uboat_unrestricted_warfare_active
+		}
+		add_to_variable = { GER_us_intervention_tension = 3.0 }
+	}
+	ger_clamp_naval_gauges = yes
+	if = {
+		limit = {
+			check_variable = { GER_us_intervention_tension > 99 }
+			country_exists = USA
+			USA = { NOT = { has_war_with = ROOT } }
+		}
+		USA = {
+			country_event = { id = ww1_germany_naval.50 days = 3 }
+		}
+	}
+}

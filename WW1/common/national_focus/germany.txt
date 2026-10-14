@@ -171,10 +171,7 @@ focus_tree = {
 		prerequisite = { focus = GER_prussian_franchise_debate }
 		available_if_capitulated = no
 		available = {
-			OR = {
-				has_war = yes
-				date > 1914.8.1
-			}
+			has_war = yes
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		completion_reward = {
@@ -196,7 +193,7 @@ focus_tree = {
 		available = {
 			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
 			OR = {
-				date > 1918.1.1
+				
 				has_stability < 0.40
 				surrender_progress > 0.15
 			}
@@ -611,7 +608,7 @@ focus_tree = {
 		available = {
 			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
 			OR = {
-				date > 1917.6.1
+				
 				has_war_support < 0.45
 				surrender_progress > 0.10
 			}
@@ -1022,7 +1019,7 @@ focus_tree = {
 			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
 			has_war = yes
 			OR = {
-				date > 1916.1.1
+				
 				has_completed_focus = GER_falkenhayn_dismissal_third_ohl
 				has_war_support < 0.60
 			}
@@ -1417,7 +1414,7 @@ focus_tree = {
 			NOT = { has_country_flag = GER_chose_post_burgfrieden_path }
 			has_war = yes
 			OR = {
-				date > 1917.1.1
+				
 				has_war_support < 0.50
 			}
 		}
@@ -2625,10 +2622,7 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		x = 36
 		y = 4
 		available = {
-			OR = {
-				has_war = yes
-				date > 1916.5.1
-			}
+			has_war = yes
 		}
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 95 }
@@ -2755,7 +2749,7 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		cost = 5
 		x = 33
 		y = 6
-		available = { date > 1917.10.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -2833,7 +2827,7 @@ add_mastery_bonus = { name = GER_imperial_airship_corps bonus = 0.10 days = 180 
 		cost = 5
 		x = 40
 		y = 5
-		available = { date > 1915.7.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_RESEARCH }
 		prerequisite = { focus = GER_aviator_training_schools }
 		prerequisite = { focus = GER_rumpler_reconnaissance_craft }
@@ -2907,7 +2901,7 @@ add_mastery_bonus = { name = GER_albatros_diii_fighters bonus = 0.10 days = 180 
 		available = {
 			has_war = yes
 			OR = {
-				date > 1917.1.1
+				
 				has_completed_focus = GER_silent_dictatorship_ohl
 			}
 		}
@@ -3045,9 +3039,9 @@ add_mastery_bonus = { name = GER_dicta_boelcke_air_tactics bonus = 0.10 days = 1
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
-		available = { date > 1916.1.1 
+		available = {  
 			has_war_with = FRA
-			date > 1915.1.1
+			
 			NOT = { controls_state = 18 }
 		}
 		completion_reward = {
@@ -3116,9 +3110,9 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		ai_will_do = { factor = 0 }
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		available_if_capitulated = no
-		available = { date > 1918.10.1 
+		available = {  
 			has_war = yes
-			date > 1917.1.1
+			
 		}
 
 		completion_reward = {
@@ -3290,7 +3284,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		available = {
 			OR = {
 				has_global_flag = sarajevo_assassination_occurred
-				date > 1914.6.27
+				
 			}
 		}
 
@@ -3317,7 +3311,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 			country_exists = TUR
 			NOT = { has_war_with = TUR }
 			TUR = { has_capitulated = no }
-			date > 1912.1.1
+			
 		}
 		completion_reward = {
 			set_country_flag = GER_ottoman_mission_pending
@@ -3370,7 +3364,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 			has_completed_focus = GER_tirpitz_fourth_naval_bill
 			OR = {
 				has_global_flag = sarajevo_assassination_occurred
-				date > 1914.6.27
+				
 			}
 		}
 
@@ -3429,7 +3423,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 			NOT = { has_war_with = TUR }
 			TUR = { has_capitulated = no NOT = { is_in_faction = yes } }
 			is_faction_leader = yes
-			OR = { has_war = yes date > 1914.7.1 }
+			has_war = yes
 		}
 		completion_reward = {
 			set_country_flag = GER_ottoman_alliance_pending
@@ -3620,7 +3614,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
-		available = { date > 1914.8.1 
+		available = {  
 			OR = { has_war_with = SOV has_war_with = RUS }
 		}
 		completion_reward = {
@@ -3757,7 +3751,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days = 
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
-		available = { date > 1914.8.1 
+		available = {  
 			OR = { has_war_with = SOV has_war_with = RUS }
 		}
 		completion_reward = {
@@ -3859,7 +3853,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 			add_timed_idea = { idea = side_ww1_GER_gas_drills days = 180 }
 			country_event = { id = side_ww1_ger_rus.2 days = 1 }
 		}
-			available = { has_war = yes date > 1914.12.31 }
+			available = { has_war = yes  }
 	}
 
 	focus = {
@@ -3890,7 +3884,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 7
 		x = 69
 		y = 5
-		available = { date > 1917.9.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = GER_austro_hungarian_naval_danube_flotilla }
 		prerequisite = { focus = GER_fourteenth_army_alpine_corps }
@@ -3911,7 +3905,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 75
 		y = 6
-		available = { date > 1916.7.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -3984,7 +3978,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
-		available = { has_war = yes date > 1916.7.31 OR = { has_completed_focus = GER_the_miracle_of_tannenberg has_completed_focus = GER_aufmarsch_ost_focus } }
+		available = { has_war = yes  OR = { has_completed_focus = GER_the_miracle_of_tannenberg has_completed_focus = GER_aufmarsch_ost_focus } }
 
 		completion_reward = {
 			set_country_flag = { flag = side_ww1_GER_hindenburg_proposal_pending days = 60 }
@@ -4023,7 +4017,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
-		available = { date > 1915.4.1 
+		available = {  
 			has_war = yes
 			country_exists = AUS
 			OR = { has_war_with = SOV has_war_with = RUS }
@@ -4062,7 +4056,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 100
 		y = 10
-		available = { date > 1915.4.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -4106,7 +4100,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 7
 		x = 103
 		y = 8
-		available = { date > 1915.7.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = GER_relief_of_przemysl }
 		prerequisite = { focus = GER_gorlice_tarnow_breakthrough }
@@ -4163,7 +4157,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 			add_war_support = 0.05
 			add_stability = 0.05
 		}
-			available = { has_war = yes has_country_flag = side_ww1_GER_hindenburg_delivered date > 1916.11.30 }
+			available = { has_war = yes has_country_flag = side_ww1_GER_hindenburg_delivered  }
 	}
 
 	focus = {
@@ -4211,7 +4205,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		prerequisite = { focus = GER_treaty_of_bucharest_1918 }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
-		available = { date > 1917.3.1 
+		available = {  
 			OR = { has_war_with = SOV has_war_with = RUS }
 			has_completed_focus = GER_silent_dictatorship_ohl
 		}
@@ -4240,7 +4234,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 100
 		y = 12
-		available = { date > 1917.4.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		prerequisite = { focus = GER_champagne_defensive_victories }
 		ai_will_do = { factor = 90 }
@@ -4318,12 +4312,12 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 100 }
 		available_if_capitulated = no
-		available = { date > 1917.11.30 
+		available = {  
 			OR = {
 				AND = { country_exists = SOV has_war_with = SOV }
 				AND = { country_exists = RUS has_war_with = RUS }
 			}
-			date > 1915.1.1
+			
 		}
 		completion_reward = {
 			custom_effect_tooltip = GER_eastern_armistice_request_tt
@@ -4345,7 +4339,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 99
 		y = 13
-		available = { date > 1917.11.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 		prerequisite = { focus = GER_operation_alberich_scorched_earth }
 		prerequisite = { focus = GER_arras_and_vimy_ridge_stand }
@@ -4432,7 +4426,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 7
 		x = 107
 		y = 14
-		available = { date > 1917.4.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -4472,7 +4466,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 				has_completed_focus = GER_treaty_of_brest_litovsk
 				RUS = { has_capitulated = yes }
 				is_in_faction_with = RUS
-				date > 1918.1.1
+				
 			}
 		}
 
@@ -4604,7 +4598,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 120
 		y = 14
-		available = { date > 1918.5.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -4675,7 +4669,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		x = 114
 		y = 16
 		ai_will_do = { factor = 0 }
-		available = { date > 1918.8.8 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		available_if_capitulated = no
 
@@ -4693,7 +4687,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 118
 		y = 14
-		available = { date > 1918.4.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_WAR_SUPPORT }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -4712,7 +4706,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		x = 115
 		y = 17
 		ai_will_do = { factor = 0 }
-		available = { date > 1918.9.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY }
 		available_if_capitulated = no
 
@@ -4918,7 +4912,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 5
 		x = 47
 		y = 4
-		available = { date > 1916.4.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -4998,7 +4992,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 7
 		x = 47
 		y = 5
-		available = { date > 1917.1.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 85 }
 		available_if_capitulated = no
@@ -5058,10 +5052,10 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
-		allow_branch = { date > 1918.10.31 has_war = no AUS = { side_ww1_AUS_postimperial_republic = yes } }
+		allow_branch = {  has_war = no AUS = { side_ww1_AUS_postimperial_republic = yes } }
 
 		completion_reward = { country_event = { id = ww1_germany_events.64 days = 1 } }
-			available = { date > 1918.10.31 has_war = no AUS = { side_ww1_AUS_postimperial_republic = yes } }
+			available = {  has_war = no AUS = { side_ww1_AUS_postimperial_republic = yes } }
 	}
 
 	focus = {
@@ -5095,7 +5089,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		available_if_capitulated = no
 
 		completion_reward = { set_country_flag = { flag = side_ww1_GER_austrian_union_offer days = 60 } AUS = { country_event = { id = side_ww1_ger_rus.60 days = 1 } } }
-			available = { date > 1918.10.31 has_war = no AUS = { side_ww1_AUS_postimperial_republic = yes } }
+			available = {  has_war = no AUS = { side_ww1_AUS_postimperial_republic = yes } }
 	}
 
 	focus = {
@@ -5122,7 +5116,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 7
 		x = 101
 		y = 11
-		available = { date > 1916.8.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
@@ -5140,7 +5134,7 @@ add_mastery_bonus = { name = GER_fourteenth_army_alpine_corps bonus = 0.10 days 
 		cost = 7
 		x = 102
 		y = 12
-		available = { date > 1916.9.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_STABILITY }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
@@ -5206,7 +5200,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		cost = 7
 		x = 105
 		y = 14
-		available = { date > 1918.3.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -5224,7 +5218,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		cost = 7
 		x = 41
 		y = 9
-		available = { date > 1917.5.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no
@@ -5242,7 +5236,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		cost = 7
 		x = 41
 		y = 10
-		available = { date > 1918.4.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_AIR_XP }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
@@ -5259,7 +5253,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		cost = 7
 		x = 76
 		y = 7
-		available = { date > 1918.3.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		prerequisite = { focus = GER_invasion_of_romania_falkenhayn }
 		ai_will_do = { factor = 95 }
@@ -5283,9 +5277,9 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
 
-		available = { date > 1918.2.1 
+		available = {  
 			has_war_with = FRA
-			date > 1916.1.1
+			
 		}
 		completion_reward = {
 			country_event = { id = ww1_germany_events.75 }
@@ -5302,7 +5296,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		cost = 5
 		x = 114
 		y = 15
-		available = { date > 1918.6.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 95 }
 		available_if_capitulated = no
@@ -5321,7 +5315,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		x = 113
 		y = 17
 		ai_will_do = { factor = 0 }
-		available = { date > 1918.9.15 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		available_if_capitulated = no
 
@@ -5340,7 +5334,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		x = 113
 		y = 18
 		ai_will_do = { factor = 0 }
-		available = { date > 1918.10.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
 		available_if_capitulated = no
 
@@ -5378,7 +5372,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		x = 114
 		y = 20
 		ai_will_do = { factor = 0 }
-		available = { date > 1918.11.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 		available_if_capitulated = no
 
@@ -5396,7 +5390,7 @@ add_mastery_bonus = { name = GER_elastic_defense_in_depth bonus = 0.10 days = 18
 		cost = 7
 		x = 114
 		y = 21
-		available = { date > 1918.11.1 }
+		# date gate purged
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 		ai_will_do = { factor = 90 }
 		available_if_capitulated = no

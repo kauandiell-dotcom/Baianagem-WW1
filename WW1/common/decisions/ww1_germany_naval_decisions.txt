@@ -1,0 +1,85 @@
+GER_naval_warfare_category = {
+
+	# Posture 1: Cruiser Rules (Prize Law)
+	GER_uboat_cruiser_rules = {
+		icon = generic_naval
+		cost = 25
+		fire_only_once = no
+
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = GER_uboat_cruiser_rules_active }
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_uboat_declared_war_zone_active
+			clr_country_flag = GER_uboat_unrestricted_warfare_active
+			set_country_flag = GER_uboat_cruiser_rules_active
+			add_political_power = 25
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	# Posture 2: Declared War Zone
+	GER_uboat_declared_war_zone = {
+		icon = generic_naval
+		cost = 50
+		fire_only_once = no
+
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = GER_uboat_declared_war_zone_active }
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_uboat_cruiser_rules_active
+			clr_country_flag = GER_uboat_unrestricted_warfare_active
+			set_country_flag = GER_uboat_declared_war_zone_active
+			add_to_variable = { GER_us_intervention_tension = 10 }
+			ger_clamp_naval_gauges = yes
+		}
+
+		ai_will_do = {
+			factor = 80
+		}
+	}
+
+	# Posture 3: Unrestricted Submarine Warfare
+	GER_uboat_unrestricted_warfare = {
+		icon = generic_naval
+		cost = 75
+		fire_only_once = no
+
+		available = {
+			has_war = yes
+			NOT = { has_country_flag = GER_uboat_unrestricted_warfare_active }
+		}
+
+		visible = {
+			has_war = yes
+		}
+
+		complete_effect = {
+			clr_country_flag = GER_uboat_cruiser_rules_active
+			clr_country_flag = GER_uboat_declared_war_zone_active
+			set_country_flag = GER_uboat_unrestricted_warfare_active
+			add_to_variable = { GER_us_intervention_tension = 25 }
+			ger_clamp_naval_gauges = yes
+		}
+
+		ai_will_do = {
+			factor = 90
+		}
+	}
+}
