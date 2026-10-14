@@ -1,0 +1,16 @@
+# Baianagem-WW1: Memory Footprint & Transient Flag Garbage Collection
+# Runs on monthly ticks to relieve savegame bloating and in-memory variable retention for 2-4 GB RAM systems.
+
+ww1_clean_transient_memory = {
+	every_country = {
+		limit = {
+			has_capitulated = yes
+		}
+		# Clear transient operational and battle counters on capitulated tags
+		clr_country_flag = ger_schlieffen_operations_active
+		clr_country_flag = ger_endsieg_volkssturm_mobilized
+		clr_country_flag = ww1_chlorine_gas_active
+		clr_country_flag = ww1_phosgene_gas_active
+		clr_country_flag = ww1_mustard_gas_active
+	}
+}

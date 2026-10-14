@@ -59,4 +59,11 @@ on_actions = {
 			}
 		}
 	}
+
+	# Transient Memory & Garbage Collection Hook
+	on_monthly = {
+		effect = {
+			ww1_clean_transient_memory = yes
+		}
+	}
 }
