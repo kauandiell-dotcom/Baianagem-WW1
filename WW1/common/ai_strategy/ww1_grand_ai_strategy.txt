@@ -1,0 +1,61 @@
+# Baianagem-WW1: Grand War Front Management & Strategic AI Defense
+# Native HOI4 1.19 AI Strategy module enforcing frontline cohesion, anti-encirclement defenses, and victory point defense.
+
+ww1_major_frontline_cohesion = {
+	enable = {
+		is_ai = yes
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		ratio = 0.50
+		ordertype = front
+		execution_type = balanced
+		execute_order = yes
+	}
+	ai_strategy = {
+		type = garrison
+		value = 25
+	}
+}
+
+ww1_anti_encirclement_defensive_priorities = {
+	enable = {
+		is_ai = yes
+		has_war = yes
+		surrender_progress > 0.05
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = front_control
+		ratio = 0.70
+		ordertype = front
+		execution_type = careful
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = garrison
+		value = 50
+	}
+}
+
+ww1_protect_capitals_and_victory_points = {
+	enable = {
+		is_ai = yes
+		has_war = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison
+		value = 40
+	}
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 50
+	}
+}

@@ -1,0 +1,71 @@
+# Baianagem-WW1: Strategic AI Strategy for the Kingdom of Bulgaria (BUL)
+# Configures Central Powers alignment, Balkan revanchism against Serbia and Romania,
+# and frontline troop deployment priority against the Serbian border.
+
+bulgaria_central_powers_alliance = {
+	enable = {
+		tag = BUL
+		is_ai = yes
+		country_exists = GER
+	}
+	abort = {
+		NOT = { country_exists = GER }
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = GER
+		value = 200
+	}
+}
+
+bulgaria_balkan_revanchism_serbia = {
+	enable = {
+		tag = BUL
+		is_ai = yes
+		country_exists = SER
+	}
+	abort = {
+		NOT = { country_exists = SER }
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = SER
+		value = 200
+	}
+	ai_strategy = {
+		type = antagonize
+		id = SER
+		value = 200
+	}
+	ai_strategy = {
+		type = front_unit_request
+		id = SER
+		tag = SER
+		value = 100
+	}
+}
+
+bulgaria_balkan_revanchism_romania = {
+	enable = {
+		tag = BUL
+		is_ai = yes
+		country_exists = ROM
+	}
+	abort = {
+		NOT = { country_exists = ROM }
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = ROM
+		value = 150
+	}
+	ai_strategy = {
+		type = front_unit_request
+		id = ROM
+		tag = ROM
+		value = 75
+	}
+}

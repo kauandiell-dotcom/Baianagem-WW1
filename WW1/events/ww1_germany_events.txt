@@ -706,10 +706,103 @@ country_event = {
 # ww1_germany_events.33: The Bulgarian Alliance Treaty
 # -------------------------------------------------------------------------
 country_event = {
- id = ww1_germany_events.33 title = ww1_germany_events.33.t desc = ww1_germany_events.33.d picture = GFX_report_event_generic_conference is_triggered_only = yes
- trigger = { tag = BUL FROM = { tag = GER exists = yes } }
- option = { name = ww1_germany_events.33.a trigger = { tag = BUL has_capitulated = no NOT = { is_in_faction = yes } FROM = { tag = GER exists = yes has_capitulated = no NOT = { has_war_with = ROOT } OR = { is_faction_leader = yes NOT = { is_in_faction = yes } } } } ai_chance = { factor = 60 } if = { limit = { tag = BUL has_capitulated = no NOT = { is_in_faction = yes } FROM = { tag = GER exists = yes has_capitulated = no NOT = { has_war_with = ROOT } OR = { is_faction_leader = yes NOT = { is_in_faction = yes } } } } FROM = { if = { limit = { is_in_faction = no } create_faction = "Central_Powers" } add_to_faction = ROOT country_event = { id = side_ww1_ger_rus.56 days = 1 } } } }
- option = { name = ww1_germany_events.33.b ai_chance = { factor = 40 } FROM = { if = { limit = { exists = yes } country_event = { id = side_ww1_ger_rus.57 days = 1 } } } }
+	id = ww1_germany_events.33
+	title = ww1_germany_events.33.t
+	desc = ww1_germany_events.33.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BUL
+		FROM = {
+			tag = GER
+			exists = yes
+		}
+	}
+
+	option = {
+		name = ww1_germany_events.33.a
+		trigger = {
+			tag = BUL
+			has_capitulated = no
+			NOT = { is_in_faction = yes }
+			FROM = {
+				tag = GER
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				OR = {
+					is_faction_leader = yes
+					NOT = { is_in_faction = yes }
+				}
+			}
+		}
+		ai_chance = { factor = 60 }
+		if = {
+			limit = {
+				tag = BUL
+				has_capitulated = no
+				NOT = { is_in_faction = yes }
+				FROM = {
+					tag = GER
+					exists = yes
+					has_capitulated = no
+					NOT = { has_war_with = ROOT }
+					OR = {
+						is_faction_leader = yes
+						NOT = { is_in_faction = yes }
+					}
+				}
+			}
+			FROM = {
+				if = {
+					limit = { is_in_faction = no }
+					create_faction = "Central_Powers"
+				}
+				add_to_faction = ROOT
+				country_event = { id = side_ww1_ger_rus.56 days = 1 }
+				if = {
+					limit = {
+						country_exists = SER
+						has_war_with = SER
+					}
+					ROOT = {
+						declare_war_on = {
+							target = SER
+							type = annex_everything
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_war = yes
+					}
+					every_enemy_country = {
+						limit = {
+							NOT = { has_war_with = ROOT }
+						}
+						ROOT = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ww1_germany_events.33.b
+		ai_chance = { factor = 40 }
+		FROM = {
+			if = {
+				limit = { exists = yes }
+				country_event = { id = side_ww1_ger_rus.57 days = 1 }
+			}
+		}
+	}
 }
 
 # -------------------------------------------------------------------------
