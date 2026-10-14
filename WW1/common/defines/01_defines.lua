@@ -8,11 +8,11 @@ NDefines.NGame.START_DATE = "1911.6.1.12"
 NDefines.NGame.END_DATE = "1924.1.1.1"
 NDefines.NTechnology.BASE_YEAR_AHEAD_PENALTY_FACTOR = 2.0
 
--- Keep the campaign's existing command capacities during the foundation pass.
-NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 30
+-- Player-grade command capacities: standard 24-division corps and 5-army army groups.
+NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 24
 NDefines.NMilitary.CORPS_COMMANDER_ARMIES_CAP = -1
-NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 30
-NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 7
+NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 24
+NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 5
 
 -- These caps are COUNTRY defines; category membership alone does not make a
 -- battalion special forces. Subunits also need special_forces = yes.
