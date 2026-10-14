@@ -1,0 +1,35 @@
+# German East Africa (Tanganyika - State 546) Colonial Schutztruppe OOB
+division_template = {
+	name = "Schutztruppe Askari"
+	division_names_group = GER_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	# Tanganyika / Dar es Salaam (State 546)
+	division = {
+		name = "1. Ostafrikanische Schutztruppe (Askari)"
+		location = 13038 # Dar es Salaam, Tanganyika (546)
+		division_template = "Schutztruppe Askari"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.9
+	}
+	division = {
+		name = "2. Ostafrikanische Schutztruppe (Askari)"
+		location = 13038 # Tanganyika (546)
+		division_template = "Schutztruppe Askari"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.8
+	}
+}

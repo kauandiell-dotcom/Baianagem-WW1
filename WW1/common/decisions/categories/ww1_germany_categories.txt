@@ -121,3 +121,16 @@ GER_pan_german_annexations = {
 	}
 	visible_when_empty = no
 }
+
+GER_deutsch_ostafrika_guerrilla = {
+	icon = military_operation
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_war = yes
+	}
+	visible_when_empty = no
+}
+
