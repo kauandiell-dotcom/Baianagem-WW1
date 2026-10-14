@@ -14,15 +14,36 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
-		# 1. Establish Soviet State
+		# 1. Establish Soviet State & Immediately Exit Entente (Decree on Peace)
 		set_country_flag = SOV_russian_civil_war_active
 		set_politics = {
 			ruling_party = communism
 			elections_allowed = no
 		}
 		load_focus_tree = soviet_russia_focus
+		leave_faction = yes
+		dismantle_faction = yes
 		prevent_join_factions = yes
 		set_rule = { can_join_factions = no }
+		set_rule = { can_create_factions = no }
+
+		# Immediate Armistice / Exit from the World War (Decree on Peace)
+		if = {
+			limit = { country_exists = GER has_war_with = GER }
+			white_peace = GER
+		}
+		if = {
+			limit = { country_exists = AUS has_war_with = AUS }
+			white_peace = AUS
+		}
+		if = {
+			limit = { country_exists = OTT has_war_with = OTT }
+			white_peace = OTT
+		}
+		if = {
+			limit = { country_exists = BUL has_war_with = BUL }
+			white_peace = BUL
+		}
 
 		# 2. Disband Bloated Imperial Army
 		delete_unit_template_and_units = { division_template = "Pekhotnaya Diviziya" }
@@ -35,8 +56,26 @@ country_event = {
 		WHT = {
 			set_country_flag = WHT_russian_civil_war_active
 			load_focus_tree = white_russia_focus
+			leave_faction = yes
 			prevent_join_factions = yes
 			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
+			if = {
+				limit = { country_exists = GER has_war_with = GER }
+				white_peace = GER
+			}
+			if = {
+				limit = { country_exists = AUS has_war_with = AUS }
+				white_peace = AUS
+			}
+			if = {
+				limit = { country_exists = OTT has_war_with = OTT }
+				white_peace = OTT
+			}
+			if = {
+				limit = { country_exists = BUL has_war_with = BUL }
+				white_peace = BUL
+			}
 
 			# Urals & Northern Regions
 			transfer_state = 398
@@ -122,6 +161,10 @@ country_event = {
 		# 4. Territory Transfers: Peripheral Breakaways
 		# Ukraine (UKR): Kiev 202, Odessa 192, Kharkov 221, etc.
 		UKR = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 192
 			transfer_state = 193
 			transfer_state = 196
@@ -144,6 +187,10 @@ country_event = {
 
 		# Finland (FIN): Helsinki 111, Viipuri 145, etc.
 		FIN = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 111
 			transfer_state = 145
 			transfer_state = 146
@@ -161,6 +208,10 @@ country_event = {
 
 		# Poland (POL): Warsaw 10, Lodz 87, etc.
 		POL = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 10
 			transfer_state = 87
 			transfer_state = 92
@@ -180,26 +231,41 @@ country_event = {
 
 		# Georgia (GEO): Tbilisi 231
 		GEO = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 231
 			transfer_state = 826
 			add_state_core = 231
 		}
 
-		# Armenia (ARM): Yerevan 229 / 230
 		# Armenia (ARM): Yerevan 230
 		ARM = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 230
 			add_state_core = 230
 		}
 
 		# Azerbaijan (AZR): Baku 229
 		AZR = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 229
 			add_state_core = 229
 		}
 
 		# Don Cossacks (DON): Rostov 218, Taganrog 228
 		DON = {
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
 			transfer_state = 218
 			transfer_state = 228
 			add_state_core = 218
@@ -279,5 +345,138 @@ country_event = {
 			load_focus_tree = white_russia_focus
 		}
 		custom_effect_tooltip = SOV_play_whites_tt
+	}
+}
+
+# -------------------------------------------------------------
+# Event 10: Red Victory (Bolshevik Triumph)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia_civil_war.10
+	title = ww1_russia_civil_war.10.t
+	desc = ww1_russia_civil_war.10.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	trigger = {
+		tag = SOV
+		has_country_flag = SOV_russian_civil_war_active
+		country_exists = WHT
+		has_war_with = WHT
+		OR = {
+			WHT = { surrender_progress > 0.85 }
+			AND = {
+				controls_state = 571 # Omsk
+				controls_state = 398 # Ekaterinburg
+				controls_state = 217 # Tsaritsyn
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia_civil_war.10.a
+		ai_chance = { factor = 100 }
+		annex_country = { target = WHT transfer_troops = yes }
+		clr_country_flag = SOV_russian_civil_war_active
+		set_rule = { can_join_factions = yes }
+		add_stability = 0.20
+		add_political_power = 150
+	}
+}
+
+# -------------------------------------------------------------
+# Event 20: White Victory (Fall of the Soviets)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia_civil_war.20
+	title = ww1_russia_civil_war.20.t
+	desc = ww1_russia_civil_war.20.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	trigger = {
+		tag = WHT
+		has_country_flag = WHT_russian_civil_war_active
+		country_exists = SOV
+		has_war_with = SOV
+		OR = {
+			SOV = { surrender_progress > 0.85 }
+			AND = {
+				controls_state = 219 # Moscow
+				controls_state = 195 # Petrograd
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 3 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia_civil_war.20.a
+		ai_chance = { factor = 100 }
+		annex_country = { target = SOV transfer_troops = yes }
+		clr_country_flag = WHT_russian_civil_war_active
+		set_rule = { can_join_factions = yes }
+		add_stability = 0.20
+		add_political_power = 150
+	}
+}
+
+# -------------------------------------------------------------
+# Event 30: Re-integration of Ukraine
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia_civil_war.30
+	title = ww1_russia_civil_war.30.t
+	desc = ww1_russia_civil_war.30.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	trigger = {
+		OR = { tag = SOV tag = WHT }
+		country_exists = UKR
+		has_war_with = UKR
+		controls_state = 202 # Kiev
+		UKR = { surrender_progress > 0.80 }
+	}
+
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia_civil_war.30.a
+		ai_chance = { factor = 100 }
+		annex_country = { target = UKR transfer_troops = yes }
+		add_political_power = 50
+	}
+}
+
+# -------------------------------------------------------------
+# Event 40: Treaty of Tartu (Finnish Border Settlement)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia_civil_war.40
+	title = ww1_russia_civil_war.40.t
+	desc = ww1_russia_civil_war.40.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	trigger = {
+		OR = { tag = SOV tag = WHT }
+		country_exists = FIN
+		has_war_with = FIN
+		FIN = {
+			controls_state = 111 # Helsinki
+			controls_state = 145 # Viipuri
+		}
+	}
+
+	mean_time_to_happen = { days = 14 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia_civil_war.40.a
+		ai_chance = { factor = 100 }
+		white_peace = FIN
+		add_stability = 0.05
 	}
 }

@@ -160,6 +160,25 @@ class TestAIAndRussiaFixes(unittest.TestCase):
         self.assertIn("WHT", evt_220, "Event ww1_russia.220 does not reference tag WHT")
         self.assertIn("SOV", evt_220, "Event ww1_russia.220 does not reference tag SOV")
 
+        # Check Russian Civil War ignition event ww1_russia_civil_war.1
+        cw_event_file = os.path.join(MOD_ROOT, "events", "ww1_russia_civil_war_events.txt")
+        self.assertTrue(os.path.isfile(cw_event_file), f"Missing {cw_event_file}")
+        with open(cw_event_file, "r", encoding="utf-8", errors="replace") as f:
+            cw_text = f.read()
+
+        self.assertIn("leave_faction = yes", cw_text, "SOV must leave the Entente on civil war eruption")
+        self.assertIn("can_join_factions = no", cw_text, "Faction rule can_join_factions = no missing from civil war")
+        self.assertIn("ww1_russia_civil_war.10", cw_text, "Red Victory scripted conclusion event missing")
+        self.assertIn("ww1_russia_civil_war.20", cw_text, "White Victory scripted conclusion event missing")
+
+        # Check AI isolation strategy exists
+        strat_file = os.path.join(MOD_ROOT, "common", "ai_strategy", "ww1_russian_civil_war_ai_strategy.txt")
+        self.assertTrue(os.path.isfile(strat_file), f"Missing {strat_file}")
+        with open(strat_file, "r", encoding="utf-8", errors="replace") as f:
+            strat_text = f.read()
+        self.assertIn("join_faction", strat_text)
+        self.assertIn("-5000", strat_text)
+
     def test_russian_crisis_variable_reconciliation(self):
         """Verifies zero legacy SOV_unrest/SOV_hunger and confirms SOV_worker_unrest/SOV_urban_hunger in decisions."""
         decisions_path = os.path.join(MOD_ROOT, "common", "decisions", "ww1_ger_rus_rework_decisions.txt")

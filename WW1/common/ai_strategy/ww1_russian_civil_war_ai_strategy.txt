@@ -1,0 +1,125 @@
+# Baianagem-WW1: Russian Civil War Belligerents Anti-Faction Strategy
+# Prevents all civil war factions from entering foreign alliances or Entente/Central Powers factions.
+
+sov_civil_war_isolation = {
+	enable = {
+		tag = SOV
+		has_country_flag = SOV_russian_civil_war_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = join_faction
+		id = FRA
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
+		id = ENG
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
+		id = GER
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = FRA
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = ENG
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = GER
+		value = -5000
+	}
+}
+
+wht_civil_war_isolation = {
+	enable = {
+		tag = WHT
+		has_country_flag = WHT_russian_civil_war_active
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = join_faction
+		id = FRA
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
+		id = ENG
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
+		id = GER
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = FRA
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = ENG
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = GER
+		value = -5000
+	}
+}
+
+breakaway_civil_war_isolation = {
+	enable = {
+		OR = {
+			tag = UKR
+			tag = FIN
+			tag = GEO
+			tag = ARM
+			tag = AZR
+			tag = DON
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = join_faction
+		id = FRA
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
+		id = ENG
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
+		id = GER
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = FRA
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = ENG
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		id = GER
+		value = -5000
+	}
+}
