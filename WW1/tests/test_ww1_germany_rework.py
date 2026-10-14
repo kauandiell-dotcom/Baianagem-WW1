@@ -695,6 +695,75 @@ class TestGermanyOverhaul(unittest.TestCase):
             f"Key mismatch between English and Portuguese localization for German rework: {en_keys ^ pt_keys}",
         )
 
+    def test_brest_litovsk_territorial_engine(self):
+        """11. Assert Brest-Litovsk territorial engine transfers Polish, Baltic, and Ukrainian states and creates puppets."""
+        eff_file = os.path.join(MOD_ROOT, "common", "scripted_effects", "zz_ww1_eastern_settlement.txt")
+        self.assertTrue(os.path.isfile(eff_file), "zz_ww1_eastern_settlement.txt must exist")
+        with open(eff_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            e_text = f.read()
+
+        # Must transfer Polish states (10, 87, 92), Baltic states (188, 189, 190, 191), and Ukrainian states (192, 193, 196)
+        for st in ["10", "87", "92", "188", "189", "190", "191", "192", "193", "196"]:
+            self.assertIn(f"transfer_state = {st}", e_text, f"Brest-Litovsk settlement must transfer state {st}")
+
+        # Must puppet or release client tags
+        self.assertTrue(
+            "release_puppet = POL" in e_text or "puppet = POL" in e_text,
+            "Brest-Litovsk settlement must puppet or release POL",
+        )
+        self.assertTrue(
+            "release_puppet = UKR" in e_text or "puppet = UKR" in e_text,
+            "Brest-Litovsk settlement must puppet or release UKR",
+        )
+        self.assertTrue(
+            "release_puppet = BAT" in e_text or "puppet = BAT" in e_text,
+            "Brest-Litovsk settlement must puppet or release BAT",
+        )
+
+    def test_mitteleuropa_protectorates(self):
+        """12. Assert German focus tree and events properly release and puppet Poland, Ukraine, and United Baltic Duchy."""
+        g_focus = os.path.join(MOD_ROOT, "common", "national_focus", "germany.txt")
+        self.assertTrue(os.path.isfile(g_focus), "germany.txt must exist")
+        with open(g_focus, "r", encoding="utf-8-sig", errors="replace") as f:
+            g_text = f.read()
+
+        ev_file = os.path.join(MOD_ROOT, "events", "ww1_germany_events.txt")
+        self.assertTrue(os.path.isfile(ev_file), "ww1_germany_events.txt must exist")
+        with open(ev_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            ev_text = f.read()
+
+        # Poland Regency
+        self.assertTrue(
+            "puppet = POL" in g_text or "release_puppet = POL" in g_text or "puppet = POL" in ev_text or "release_puppet = POL" in ev_text,
+            "Regency Kingdom of Poland must puppet/release POL",
+        )
+        # Ukrainian Hetmanate
+        self.assertTrue(
+            "puppet = UKR" in g_text or "release_puppet = UKR" in g_text or "puppet = UKR" in ev_text or "release_puppet = UKR" in ev_text,
+            "Ukrainian Hetmanate must puppet/release UKR",
+        )
+        # Baltic Duchy
+        self.assertTrue(
+            "puppet = BAT" in g_text or "release_puppet = BAT" in g_text or "puppet = BAT" in ev_text or "release_puppet = BAT" in ev_text,
+            "Establish United Baltic Duchy must puppet/release BAT",
+        )
+
+    def test_four_political_paths(self):
+        """13. Assert German focus tree or events implement the 4 political paths (Imperial, Vaterlandspartei, Weimar, Spartakusbund)."""
+        g_focus = os.path.join(MOD_ROOT, "common", "national_focus", "germany.txt")
+        with open(g_focus, "r", encoding="utf-8-sig", errors="replace") as f:
+            g_text = f.read()
+
+        # 1. Imperial Pax Germanica
+        self.assertIn("GER_pax_germanica", g_text, "germany.txt must define Imperial Pax Germanica focus")
+        # 2. Vaterlandspartei Totalitarian Dictatorship
+        self.assertIn("GER_vaterlandspartei_dictatorship", g_text, "germany.txt must define Vaterlandspartei dictatorship focus")
+        # 3. Weimar Early Peace Resolution
+        self.assertIn("GER_weimar_peace_resolution", g_text, "germany.txt must define Weimar peace resolution focus")
+        # 4. Spartakusbund Red Revolution
+        self.assertIn("GER_spartakusbund_revolution", g_text, "germany.txt must define Spartakusbund red revolution focus")
+
 
 if __name__ == "__main__":
     unittest.main()
+
