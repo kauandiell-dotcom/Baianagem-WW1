@@ -140,11 +140,13 @@ class TestAIAndRussiaFixes(unittest.TestCase):
 
         # Helper to extract event block
         def get_event_block(event_id: str) -> str:
-            m = re.search(rf"\bid\s*=\s*{re.escape(event_id)}\b", content)
+            m = re.search(rf"(?m)^\t?id\s*=\s*{re.escape(event_id)}\b", content)
+            if not m:
+                m = re.search(rf"\bid\s*=\s*{re.escape(event_id)}\b", content)
             if not m:
                 return ""
             start = m.start()
-            next_m = re.search(r"\bcountry_event\s*=", content[m.end():])
+            next_m = re.search(r"(?m)^country_event\s*=", content[m.end():])
             end = m.end() + next_m.start() if next_m else len(content)
             return content[start:end]
 
