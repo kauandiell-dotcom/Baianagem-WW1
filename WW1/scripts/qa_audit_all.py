@@ -37,6 +37,7 @@ SUITES: List[str] = [
     "tests.test_special_forces_balance",
     "tests.test_ww1_russia_rework",
     "tests.test_ww1_germany_rework",
+    "tests.test_ww1_ai_and_russia_fixes",
 ]
 
 
@@ -569,6 +570,10 @@ def main():
     print("\n[*] Executing German Empire Complete Rework & Endsieg Test Suite (tests/test_ww1_germany_rework.py)...")
     res_ger_rework = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_germany_rework.py"], cwd=MOD_ROOT)
 
+    # 10. Execute AI Tactics, Civil War & Crisis Fixes QA Suite
+    print("\n[*] Executing AI Tactics, Tag-Safe Civil War & Crisis Fixes Suite (tests/test_ww1_ai_and_russia_fixes.py)...")
+    res_ai_rus_fixes = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_ai_and_russia_fixes.py"], cwd=MOD_ROOT)
+
     tests_failed = (
         (res_ger.returncode != 0)
         or (res_oracle.returncode != 0)
@@ -579,13 +584,14 @@ def main():
         or (res_sf.returncode != 0)
         or (res_rus.returncode != 0)
         or (res_ger_rework.returncode != 0)
+        or (res_ai_rus_fixes.returncode != 0)
     )
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}) <<<\n")
         sys.exit(1)
 
 
