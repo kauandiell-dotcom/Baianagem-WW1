@@ -41,11 +41,11 @@
   - `test_mitteleuropa_protectorates`: Asserts `GER_regency_kingdom_of_poland`, `GER_liberate_the_ukrainian_hetmanate`, and `GER_establish_united_baltic_duchy` release `POL`, `UKR`, and `BAT` as puppets.
   - `test_four_political_paths`: Asserts focuses/events for Imperial Pax, Vaterlandspartei, Weimar Peace Resolution, and Spartakusbund.
 
-- [ ] **Step 1: Add new test methods to `tests/test_ww1_germany_rework.py`**
-- [ ] **Step 2: Run test suite to verify RED state on unimplemented features**
+- [x] **Step 1: Add new test methods to `tests/test_ww1_germany_rework.py`**
+- [x] **Step 2: Run test suite to verify RED state on unimplemented features**
 Run: `python -m unittest tests.test_ww1_germany_rework -v`
 Expected: FAIL on the 3 new tests.
-- [ ] **Step 3: Commit RED test baseline**
+- [x] **Step 3: Commit RED test baseline**
 ```bash
 git add tests/test_ww1_germany_rework.py
 git commit -m "test(ger): add RED test cases for Brest-Litovsk territorial cessions, Mitteleuropa satellites, and political paths"
@@ -64,14 +64,14 @@ git commit -m "test(ger): add RED test cases for Brest-Litovsk territorial cessi
 - Consumes: Events `ww1_diplomacy.31`, `ww1_diplomacy.32`, and `ww1_russia_diplomacy.2`
 - Produces: Tag-safe transfer of all historical Brest-Litovsk states (Poland, Baltics, Ukraine, Finland, Kars/Batum to Ottomans)
 
-- [ ] **Step 1: Refactor `common/scripted_effects/zz_ww1_eastern_settlement.txt`**
+- [x] **Step 1: Refactor `common/scripted_effects/zz_ww1_eastern_settlement.txt`**
 Transfer all Brest-Litovsk ceded states from Russia to Germany regardless of frontline control, then execute puppet releases.
-- [ ] **Step 2: Refactor `events/ww1_russia_diplomacy_events.txt` (Option A of `ww1_russia_diplomacy.2`)**
+- [x] **Step 2: Refactor `events/ww1_russia_diplomacy_events.txt` (Option A of `ww1_russia_diplomacy.2`)**
 Ensure option A transfers states safely to GER, sets up puppets `POL`, `UKR`, `BAT`, and guarantees `FIN`.
-- [ ] **Step 3: Run unit test**
+- [x] **Step 3: Run unit test**
 Run: `python -m unittest tests.test_ww1_germany_rework.TestGermanyOverhaul.test_brest_litovsk_territorial_engine -v`
 Expected: PASS
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 ```bash
 git add common/scripted_effects/zz_ww1_eastern_settlement.txt events/ww1_russia_diplomacy_events.txt
 git commit -m "fix(diplomacy): implement tag-safe territorial transfer and puppet creation for Brest-Litovsk"
@@ -93,16 +93,16 @@ git commit -m "fix(diplomacy): implement tag-safe territorial transfer and puppe
   - `UKR` (Ukrainian Hetmanate under Skoropadsky with grain deliveries)
   - `BAT` (United Baltic Duchy in Riga, Courland, Livonia, Estonia)
 
-- [ ] **Step 1: Update `GER_regency_kingdom_of_poland` and `ww1_germany_events.41`**
+- [x] **Step 1: Update `GER_regency_kingdom_of_poland` and `ww1_germany_events.41`**
 Release `POL`, transfer states 10, 87, 92, 94, 95, 96, 97, 98, and puppet `POL`.
-- [ ] **Step 2: Update `GER_liberate_the_ukrainian_hetmanate` and `ww1_germany_events.42`**
+- [x] **Step 2: Update `GER_liberate_the_ukrainian_hetmanate` and `ww1_germany_events.42`**
 Release `UKR`, puppet `UKR`, set flag `GER_ukrainian_grain_deliveries`, remove `GER_turnip_winter_crisis_*`.
-- [ ] **Step 3: Update `GER_establish_united_baltic_duchy`**
+- [x] **Step 3: Update `GER_establish_united_baltic_duchy`**
 Release `BAT` as puppet, transfer states 188, 189, 190, 191 to `BAT`.
-- [ ] **Step 4: Run unit test**
+- [x] **Step 4: Run unit test**
 Run: `python -m unittest tests.test_ww1_germany_rework.TestGermanyOverhaul.test_mitteleuropa_protectorates -v`
 Expected: PASS
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 ```bash
 git add common/national_focus/germany.txt events/ww1_germany_events.txt
 git commit -m "feat(ger): implement authentic Mitteleuropa client kingdoms for Poland, Ukraine, and Baltics"
@@ -126,13 +126,13 @@ git commit -m "feat(ger): implement authentic Mitteleuropa client kingdoms for P
   3. Weimar Parliamentary Republic (1917 Peace Resolution & Social Democracy)
   4. Spartakusbund Red Revolution (Liebknecht & Luxemburg Red Germany)
 
-- [ ] **Step 1: Define ideas in `common/ideas/ww1_germany_political_ideas.txt`**
-- [ ] **Step 2: Implement political event chain in `events/ww1_germany_political_events.txt`**
-- [ ] **Step 3: Wire focuses and mutual exclusivity in `common/national_focus/germany.txt`**
-- [ ] **Step 4: Run unit test**
+- [x] **Step 1: Define ideas in `common/ideas/ww1_germany_political_ideas.txt`**
+- [x] **Step 2: Implement political event chain in `events/ww1_germany_political_events.txt`**
+- [x] **Step 3: Wire focuses and mutual exclusivity in `common/national_focus/germany.txt`**
+- [x] **Step 4: Run unit test**
 Run: `python -m unittest tests.test_ww1_germany_rework.TestGermanyOverhaul.test_four_political_paths -v`
 Expected: PASS
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 ```bash
 git add common/national_focus/germany.txt events/ww1_germany_political_events.txt common/ideas/ww1_germany_political_ideas.txt
 git commit -m "feat(ger): implement 4 political paths (Imperial, Vaterlandspartei, Weimar, Spartakusbund)"
@@ -151,12 +151,12 @@ git commit -m "feat(ger): implement 4 political paths (Imperial, Vaterlandsparte
 - Consumes: All new focus, idea, and event keys from Tasks 2, 3, and 4
 - Produces: 100% key parity with single UTF-8 BOM (`\xef\xbb\xbf`)
 
-- [ ] **Step 1: Add all keys to English and Brazilian Portuguese localization files**
-- [ ] **Step 2: Verify strictly single UTF-8 BOM**
-- [ ] **Step 3: Run localization unit test**
+- [x] **Step 1: Add all keys to English and Brazilian Portuguese localization files**
+- [x] **Step 2: Verify strictly single UTF-8 BOM**
+- [x] **Step 3: Run localization unit test**
 Run: `python -m unittest tests.test_ww1_germany_rework.TestGermanyOverhaul.test_localisation_bom_and_parity -v`
 Expected: PASS with 100% parity
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 ```bash
 git add localisation/
 git commit -m "feat(loc): add complete bilingual localization for Brest-Litovsk satellites and political paths"
@@ -174,9 +174,10 @@ git commit -m "feat(loc): add complete bilingual localization for Brest-Litovsk 
 - Consumes: All completed tasks
 - Produces: Exit Code 0 on master QA audit and 100% updated files in the active game directory
 
-- [ ] **Step 1: Run Semantic Oracle and syntax checks**
-- [ ] **Step 2: Run Master QA Audit `python scripts/qa_audit_all.py`**
+- [x] **Step 1: Run Semantic Oracle and syntax checks**
+- [x] **Step 2: Run Master QA Audit `python scripts/qa_audit_all.py`**
 Expected: Exit Code 0 across all 9 test suites
-- [ ] **Step 3: Run Python sync script mirroring all modified files to the Steam Workshop directory**
-- [ ] **Step 4: Verify synced files exist and match in size**
-- [ ] **Step 5: Report completion to user**
+- [x] **Step 3: Run Python sync script mirroring all modified files to the Steam Workshop directory**
+- [x] **Step 4: Verify synced files exist and match in size**
+- [x] **Step 5: Report completion to user**
+
