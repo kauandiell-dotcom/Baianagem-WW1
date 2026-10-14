@@ -271,7 +271,7 @@ class Content(unittest.TestCase):
         eff = rd("common/scripted_effects/ww1_ger_rus_rework_effects.txt")
         for eid in (210, 211, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 230, 231, 232, 233, 234):
             self.assertIn("ww1_russia.%d" % eid, self.ev + eff + rd("common/national_focus/soviet.txt"), eid)
-        self.assertIn("start_civil_war", self.ev)
+        self.assertTrue("ww1_russia_civil_war.1" in self.ev or "SOV_russian_civil_war_active" in self.ev)
         self.assertIn("release = FIN", self.ev)
         self.assertIn("ww1_germany_events.214", eff)
 
