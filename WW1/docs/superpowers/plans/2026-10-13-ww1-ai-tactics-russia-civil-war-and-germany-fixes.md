@@ -48,12 +48,12 @@
   4. `test_russian_crisis_variable_reconciliation`: Verifies zero references to legacy `SOV_unrest` and `SOV_hunger` in decision files; all use `SOV_worker_unrest` and `SOV_urban_hunger`.
   5. `test_okhrana_crackdown_balance_and_tooltips`: Verifies `SOV_dec_crush_bolsheviks_okhrana` has explicit localized tooltips and non-trivial requirements.
 
-- [ ] **Step 1: Write `tests/test_ww1_ai_and_russia_fixes.py` with the 5 test cases**
-- [ ] **Step 2: Run test suite to verify RED phase failure on unimplemented features**
+- [x] **Step 1: Write `tests/test_ww1_ai_and_russia_fixes.py` with the 5 test cases**
+- [x] **Step 2: Run test suite to verify RED phase failure on unimplemented features**
 Run: `python -m unittest tests.test_ww1_ai_and_russia_fixes -v`
 Expected: FAIL on unimplemented components.
-- [ ] **Step 3: Register test suite in `scripts/qa_audit_all.py`**
-- [ ] **Step 4: Commit RED test baseline**
+- [x] **Step 3: Register test suite in `scripts/qa_audit_all.py`**
+- [x] **Step 4: Commit RED test baseline**
 ```bash
 git add tests/test_ww1_ai_and_russia_fixes.py scripts/qa_audit_all.py
 git commit -m "test(ai,rus): establish RED QA test suite for AI tactical overhaul, tag-safe civil war, and crisis fixes"
@@ -79,11 +79,11 @@ git commit -m "test(ai,rus): establish RED QA test suite for AI tactical overhau
   - `NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 24` (Standardizes 24-division armies like human players).
   - `NDefines.NMilitary.FIELD_MARSHAL_ARMIES_CAP = 5` (Standardizes 5 armies per army group).
 
-- [ ] **Step 1: Create `common/defines/ww1_ai_defines.lua` with validated Lua syntax**
-- [ ] **Step 2: Run unit test**
+- [x] **Step 1: Create `common/defines/ww1_ai_defines.lua` with validated Lua syntax**
+- [x] **Step 2: Run unit test**
 Run: `python -m unittest tests.test_ww1_ai_and_russia_fixes.TestAIAndRussiaFixes.test_ai_tactical_defines -v`
 Expected: PASS
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 ```bash
 git add common/defines/ww1_ai_defines.lua
 git commit -m "feat(ai): implement player-grade WW1 combat, org conservation, and army management defines"
@@ -103,7 +103,7 @@ git commit -m "feat(ai): implement player-grade WW1 combat, org conservation, an
 - Consumes: Alliance treaty event `ww1_germany_events.33`
 - Produces: Direct war entry for Bulgaria against Serbia and Entente; strategic AI priorities for minor allies.
 
-- [ ] **Step 1: Refactor `ww1_germany_events.33` in `events/ww1_germany_events.txt`**
+- [x] **Step 1: Refactor `ww1_germany_events.33` in `events/ww1_germany_events.txt`**
 When Bulgaria accepts Option A:
 - Adds Bulgaria to `Central_Powers` faction.
 - Calls Bulgaria into existing wars against `SER` and any enemies of `GER`.
@@ -113,19 +113,19 @@ When Bulgaria accepts Option A:
       declare_war_on = { target = SER type = annex_everything }
   }
   ```
-- [ ] **Step 2: Create `common/ai_strategy/ww1_bulgaria_ai_strategy.txt`**
+- [x] **Step 2: Create `common/ai_strategy/ww1_bulgaria_ai_strategy.txt`**
 Configures AI strategy for Bulgaria:
 - Front unit priority against Serbia and Romania.
 - High alliance weight towards Central Powers (`alliance id = GER value = 200`).
 - High declare war weight towards Serbia (`declare_war id = SER value = 200`).
-- [ ] **Step 3: Create `common/ai_strategy/ww1_grand_ai_strategy.txt`**
+- [x] **Step 3: Create `common/ai_strategy/ww1_grand_ai_strategy.txt`**
 Configures major power AI front management:
 - Trench holding cohesion, avoiding division clustering in dead ends.
 - Anti-encirclement defensive retreat weight.
-- [ ] **Step 4: Run unit test**
+- [x] **Step 4: Run unit test**
 Run: `python -m unittest tests.test_ww1_ai_and_russia_fixes.TestAIAndRussiaFixes.test_bulgaria_alliance_and_war_call -v`
 Expected: PASS
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 ```bash
 git add events/ww1_germany_events.txt common/ai_strategy/
 git commit -m "feat(ai,bul): implement direct war entry, alliance call-to-arms, and strategic AI priorities for Bulgaria"
@@ -150,17 +150,17 @@ git commit -m "feat(ai,bul): implement direct war entry, alliance call-to-arms, 
   - Tag `WHT` loads `common/national_focus/white_russia.txt` (60 focuses).
   - Both sides are declared at war with each other. Zero dynamic `D01` tags!
 
-- [ ] **Step 1: Refactor `ww1_russia.255` in `events/ww1_ger_rus_rework_events.txt`**
+- [x] **Step 1: Refactor `ww1_russia.255` in `events/ww1_ger_rus_rework_events.txt`**
 Purge `start_civil_war = { ideology = communism size = 0.45 }` and `start_civil_war = { ideology = neutrality size = 0.45 }`.
 Implement tag-safe transfer to `WHT` and `SOV`.
-- [ ] **Step 2: Refactor `ww1_russia.220` in `events/ww1_ger_rus_rework_events.txt`**
+- [x] **Step 2: Refactor `ww1_russia.220` in `events/ww1_ger_rus_rework_events.txt`**
 Replace dynamic civil war calls with scripted tag transitions.
-- [ ] **Step 3: Update `common/scripted_effects/ww1_ger_rus_rework_effects.txt`**
+- [x] **Step 3: Update `common/scripted_effects/ww1_ger_rus_rework_effects.txt`**
 Ensure `SOV_trigger_civil_war_climax` correctly partitions states between `SOV` and `WHT` without engine desync.
-- [ ] **Step 4: Run unit test**
+- [x] **Step 4: Run unit test**
 Run: `python -m unittest tests.test_ww1_ai_and_russia_fixes.TestAIAndRussiaFixes.test_tag_safe_russian_civil_war -v`
 Expected: PASS
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 ```bash
 git add events/ww1_ger_rus_rework_events.txt common/scripted_effects/ww1_ger_rus_rework_effects.txt
 git commit -m "fix(rus): replace dynamic D01 civil war clones with tag-safe SOV and WHT historical civil war engine"
@@ -182,11 +182,11 @@ git commit -m "fix(rus): replace dynamic D01 civil war clones with tag-safe SOV 
 - Consumes: Decision categories `SOV_home_front` and `SOV_civil_war_front`.
 - Produces: Complete variable synchronization (`SOV_worker_unrest`, `SOV_urban_hunger`, `SOV_army_loyalty`), clear localized tooltips for Okhrana decision, and multi-step crackdown balance.
 
-- [ ] **Step 1: Reconcile all variables in `common/decisions/ww1_ger_rus_rework_decisions.txt`**
+- [x] **Step 1: Reconcile all variables in `common/decisions/ww1_ger_rus_rework_decisions.txt`**
 Change all instances of `SOV_unrest` to `SOV_worker_unrest` and `SOV_hunger` to `SOV_urban_hunger`.
-- [ ] **Step 2: Reconcile all variables in `common/scripted_effects/ww1_ger_rus_rework_effects.txt`**
+- [x] **Step 2: Reconcile all variables in `common/scripted_effects/ww1_ger_rus_rework_effects.txt`**
 Ensure clamps and calculations affect `SOV_worker_unrest` and `SOV_urban_hunger`.
-- [ ] **Step 3: Rebalance and add custom trigger tooltip to `SOV_dec_crush_bolsheviks_okhrana`**
+- [x] **Step 3: Rebalance and add custom trigger tooltip to `SOV_dec_crush_bolsheviks_okhrana`**
 Add:
 ```clausewitz
 custom_trigger_tooltip = {
@@ -198,12 +198,12 @@ custom_trigger_tooltip = {
 }
 ```
 Add 90-day mission / investigation phase (`days_remove = 90`) rather than an instant 1-click victory, costing 100 PP and requiring high stability (>50%).
-- [ ] **Step 4: Add localization keys with strictly single UTF-8 BOM in English and Portuguese**
+- [x] **Step 4: Add localization keys with strictly single UTF-8 BOM in English and Portuguese**
 Add `SOV_dec_crush_bolsheviks_okhrana_req_tt` and updated descriptions.
-- [ ] **Step 5: Run unit tests**
+- [x] **Step 5: Run unit tests**
 Run: `python -m unittest tests.test_ww1_ai_and_russia_fixes.TestAIAndRussiaFixes.test_russian_crisis_variable_reconciliation tests.test_ww1_ai_and_russia_fixes.TestAIAndRussiaFixes.test_okhrana_crackdown_balance_and_tooltips -v`
 Expected: PASS
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 ```bash
 git add common/decisions/ww1_ger_rus_rework_decisions.txt common/scripted_effects/ww1_ger_rus_rework_effects.txt localisation/
 git commit -m "fix(rus): reconcile Russian crisis variables and rebalance Okhrana crackdown with transparent tooltips"
@@ -221,9 +221,9 @@ git commit -m "fix(rus): reconcile Russian crisis variables and rebalance Okhran
 - Consumes: All completed tasks.
 - Produces: Exit Code 0 across master QA suite and 100% verified files in the Steam Workshop directory.
 
-- [ ] **Step 1: Audit all Clausewitz files with Semantic Oracle and syntax checks**
-- [ ] **Step 2: Run Master QA Audit `python scripts/qa_audit_all.py`**
+- [x] **Step 1: Audit all Clausewitz files with Semantic Oracle and syntax checks**
+- [x] **Step 2: Run Master QA Audit `python scripts/qa_audit_all.py`**
 Expected: Exit Code 0 across all test suites.
-- [ ] **Step 3: Run Python mirror script synchronizing all modified files to `E:\SteamLibrary\steamapps\workshop\content\394360\3809191491`**
-- [ ] **Step 4: Verify synced files exist and match byte sizes**
-- [ ] **Step 5: Report completion to user**
+- [x] **Step 3: Run Python mirror script synchronizing all modified files to `E:\SteamLibrary\steamapps\workshop\content\394360\3809191491`**
+- [x] **Step 4: Verify synced files exist and match byte sizes**
+- [x] **Step 5: Report completion to user**
