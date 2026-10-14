@@ -5,6 +5,11 @@ AUH_spawn_danubian_mega_federation = {
 	# Hungary
 	puppet = HUN
 	HUN = {
+		transfer_state = 43
+		transfer_state = 44
+		transfer_state = 45
+		transfer_state = 664
+		transfer_state = 764
 		set_cosmetic_tag = HUN_AUS_danubian_state
 		add_ideas = AUH_danubian_federal_member
 		load_oob = "AUH_hun_federal"
@@ -12,6 +17,10 @@ AUH_spawn_danubian_mega_federation = {
 	# Bohemia / Czechia
 	puppet = CZE
 	CZE = {
+		transfer_state = 9
+		transfer_state = 69
+		transfer_state = 74
+		transfer_state = 75
 		set_cosmetic_tag = CZE_AUS_danubian_state
 		add_ideas = AUH_danubian_federal_member
 		load_oob = "AUH_cze_federal"
@@ -19,6 +28,10 @@ AUH_spawn_danubian_mega_federation = {
 	# Croatia-Slavonia
 	puppet = CRO
 	CRO = {
+		transfer_state = 109
+		transfer_state = 108
+		transfer_state = 163
+		transfer_state = 164
 		set_cosmetic_tag = CRO_AUS_danubian_state
 		add_ideas = AUH_danubian_federal_member
 		load_oob = "AUH_cro_federal"
@@ -26,32 +39,10 @@ AUH_spawn_danubian_mega_federation = {
 	# Galicia-Poland
 	puppet = POL
 	POL = {
+		transfer_state = 88
+		transfer_state = 89
 		set_cosmetic_tag = POL_AUS_danubian_state
 		add_ideas = AUH_danubian_federal_member
 		load_oob = "AUH_pol_federal"
-	}
-	# Transfer core states
-	HUN = {
-		transfer_state = 43
-		transfer_state = 44
-		transfer_state = 45
-		transfer_state = 664
-		transfer_state = 764
-	}
-	CZE = {
-		transfer_state = 9
-		transfer_state = 69
-		transfer_state = 74
-		transfer_state = 75
-	}
-	CRO = {
-		transfer_state = 109
-		transfer_state = 108
-		transfer_state = 163
-		transfer_state = 164
-	}
-	POL = {
-		transfer_state = 88
-		transfer_state = 89
 	}
 }
