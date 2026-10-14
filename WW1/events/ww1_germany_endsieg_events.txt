@@ -16,16 +16,32 @@ country_event = {
 		has_war = yes
 		NOT = { has_country_flag = GER_endsieg_activated }
 		NOT = { has_country_flag = GER_versailles_signed }
+		NOT = { has_government = communism }
 		OR = {
-			surrender_progress > 0.40
-			NOT = { controls_state = 42 }
-			NOT = { controls_state = 55 }
-			587 = { NOT = { is_controlled_by = GER } }
+			surrender_progress > 0.60
+			AND = {
+				surrender_progress > 0.25
+				any_enemy_country = {
+					OR = {
+						controls_state = 42 # Rhineland
+						controls_state = 51 # Moselland
+						controls_state = 55 # Nassau / Frankfurt
+						controls_state = 64 # Berlin / Brandenburg
+					}
+				}
+			}
+			any_enemy_country = {
+				controls_state = 64 # Berlin captured
+			}
+			AND = {
+				any_enemy_country = { controls_state = 42 }
+				any_enemy_country = { controls_state = 51 }
+			}
 		}
 	}
 
 	mean_time_to_happen = {
-		days = 2
+		days = 5
 	}
 
 	# Option A: Historical Versailles Armistice - Proclaim the Weimar Republic

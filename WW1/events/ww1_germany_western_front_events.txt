@@ -13,6 +13,7 @@ country_event = {
 
 	trigger = {
 		tag = GER
+		has_war_with = FRA
 		has_country_flag = ger_schlieffen_plan_launched
 		NOT = { controls_state = 16 }
 		NOT = { has_idea = GER_schlieffen_momentum }

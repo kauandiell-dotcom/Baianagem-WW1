@@ -7,11 +7,13 @@ GER_naval_warfare_category = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			has_war = yes
 			NOT = { has_country_flag = GER_uboat_cruiser_rules_active }
 		}
 
 		visible = {
+			tag = GER
 			has_war = yes
 		}
 
@@ -34,11 +36,13 @@ GER_naval_warfare_category = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			has_war = yes
 			NOT = { has_country_flag = GER_uboat_declared_war_zone_active }
 		}
 
 		visible = {
+			tag = GER
 			has_war = yes
 		}
 
@@ -62,11 +66,13 @@ GER_naval_warfare_category = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			has_war = yes
 			NOT = { has_country_flag = GER_uboat_unrestricted_warfare_active }
 		}
 
 		visible = {
+			tag = GER
 			has_war = yes
 		}
 

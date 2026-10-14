@@ -8,10 +8,16 @@ GER_war_economy_category = {
 		fire_only_once = yes
 
 		available = {
+			tag = GER
 			has_war_with = FRA
+			OR = {
+				has_idea = GER_western_trench_stalemate
+				has_idea = GER_hindenburg_program
+			}
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = FRA
 		}
 
@@ -39,10 +45,12 @@ GER_war_economy_category = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			has_war = yes
 		}
 
 		visible = {
+			tag = GER
 			has_war = yes
 		}
 
@@ -67,6 +75,7 @@ GER_war_economy_category = {
 		fire_only_once = yes
 
 		available = {
+			tag = GER
 			OR = {
 				controls_state = 79 # Oltenia/Ploiesti
 				controls_state = 80
@@ -75,6 +84,7 @@ GER_war_economy_category = {
 		}
 
 		visible = {
+			tag = GER
 			OR = {
 				has_war_with = ROM
 				controls_state = 79

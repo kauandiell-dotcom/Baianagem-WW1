@@ -134,3 +134,29 @@ GER_deutsch_ostafrika_guerrilla = {
 	visible_when_empty = no
 }
 
+GER_air_warfare_category = {
+	icon = generic_air
+	priority = 75
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_war = yes
+	}
+	visible_when_empty = no
+}
+
+GER_war_economy_category = {
+	icon = generic_economy
+	priority = 70
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		has_war = yes
+	}
+	visible_when_empty = no
+}
+

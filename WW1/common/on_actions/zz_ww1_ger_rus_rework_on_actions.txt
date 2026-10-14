@@ -16,11 +16,16 @@ on_actions = {
 	}
 	on_weekly_GER = {
 		effect = {
-			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
+			if = {
+				limit = { original_tag = GER }
+				ww1_ger_rework_weekly = yes
+				ger_uboat_weekly_tension_update = yes
+			}
 			# Western Front Trench Stalemate Transition Hook
 			if = {
 				limit = {
 					original_tag = GER
+					has_war_with = FRA
 					has_country_flag = ger_schlieffen_plan_launched
 					NOT = { controls_state = 16 }
 					NOT = { has_idea = GER_schlieffen_momentum }

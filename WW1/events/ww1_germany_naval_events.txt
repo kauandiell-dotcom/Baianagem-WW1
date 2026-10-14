@@ -70,3 +70,84 @@ country_event = {
 		ger_clamp_naval_gauges = yes
 	}
 }
+
+# -------------------------------------------------------------
+# Event 50: American Ultimatum - Unrestricted Submarine Warfare Crisis
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_germany_naval.50
+	title = ww1_germany_naval.50.t
+	desc = ww1_germany_naval.50.d
+	picture = GFX_report_event_american_doughboys_parade
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	# Option A: A State of War Exists! (Historical)
+	option = {
+		name = ww1_germany_naval.50.a
+		ai_chance = { factor = 95 }
+		add_war_support = 0.35
+		add_stability = 0.10
+		if = {
+			limit = { country_exists = GER NOT = { has_war_with = GER } }
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = { country_exists = ENG ENG = { is_faction_leader = yes } }
+			ENG = { add_to_faction = ROOT }
+		}
+		if = {
+			limit = { country_exists = FRA FRA = { is_faction_leader = yes } NOT = { is_in_faction_with = FRA } }
+			FRA = { add_to_faction = ROOT }
+		}
+		news_event = { id = ww1_germany_naval.51 days = 1 }
+	}
+
+	# Option B: Demand German Guarantees and Issue Stern Protest
+	option = {
+		name = ww1_germany_naval.50.b
+		ai_chance = { factor = 5 }
+		add_political_power = 50
+		add_war_support = -0.15
+		if = {
+			limit = { country_exists = GER }
+			GER = {
+				add_to_variable = { GER_us_intervention_tension = -30 }
+				ger_clamp_naval_gauges = yes
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------
+# Event 51: News Event: United States Enters the Great War!
+# -------------------------------------------------------------
+news_event = {
+	id = ww1_germany_naval.51
+	title = ww1_germany_naval.51.t
+	desc = ww1_germany_naval.51.d
+	picture = GFX_report_event_american_doughboys_parade
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = ww1_germany_naval.51.a
+		trigger = { tag = USA }
+	}
+	option = {
+		name = ww1_germany_naval.51.b
+		trigger = { tag = GER }
+	}
+	option = {
+		name = ww1_germany_naval.51.c
+		trigger = {
+			NOT = { tag = USA }
+			NOT = { tag = GER }
+		}
+	}
+}

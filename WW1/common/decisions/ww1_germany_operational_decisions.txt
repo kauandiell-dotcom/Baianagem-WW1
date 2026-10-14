@@ -8,10 +8,13 @@ GER_high_command_operations = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			has_war_with = FRA
+			has_idea = GER_western_trench_stalemate
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = FRA
 		}
 
@@ -37,6 +40,7 @@ GER_high_command_operations = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			OR = {
 				has_war_with = RUS
 				has_war_with = SOV
@@ -44,6 +48,7 @@ GER_high_command_operations = {
 		}
 
 		visible = {
+			tag = GER
 			OR = {
 				has_war_with = RUS
 				has_war_with = SOV
@@ -72,10 +77,12 @@ GER_high_command_operations = {
 		fire_only_once = no
 
 		available = {
+			tag = GER
 			has_war_with = ITA
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = ITA
 		}
 
@@ -97,10 +104,19 @@ GER_high_command_operations = {
 		fire_only_once = yes
 
 		available = {
+			tag = GER
 			has_war_with = FRA
+			has_idea = GER_western_trench_stalemate
+			OR = {
+				NOT = { has_war_with = RUS }
+				NOT = { has_war_with = SOV }
+				has_idea = GER_hindenburg_program
+				surrender_progress > 0.15
+			}
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = FRA
 		}
 

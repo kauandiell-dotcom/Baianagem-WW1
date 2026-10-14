@@ -8,10 +8,12 @@ GER_chemical_warfare_program = {
 		fire_only_once = yes
 
 		available = {
+			tag = GER
 			has_war_with = FRA
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = FRA
 		}
 
@@ -38,11 +40,15 @@ GER_chemical_warfare_program = {
 		fire_only_once = yes
 
 		available = {
+			tag = GER
 			has_war_with = FRA
+			has_country_flag = GER_chlorine_gas_released
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = FRA
+			has_country_flag = GER_chlorine_gas_released
 		}
 
 		modifier = {
@@ -68,11 +74,15 @@ GER_chemical_warfare_program = {
 		fire_only_once = yes
 
 		available = {
+			tag = GER
 			has_war_with = FRA
+			has_country_flag = GER_phosgene_gas_deployed
 		}
 
 		visible = {
+			tag = GER
 			has_war_with = FRA
+			has_country_flag = GER_phosgene_gas_deployed
 		}
 
 		modifier = {
