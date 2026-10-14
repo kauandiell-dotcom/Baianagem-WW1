@@ -1,6 +1,9 @@
 political_actions = {
 	generic_ft_snap_election = {
 		icon = GFX_decision_generic_political_discourse
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		available = {
 			
 		}
@@ -26,6 +29,9 @@ political_actions = {
 
 	generic_ft_revival_purge = {
 		icon = GFX_decision_generic_assassination
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		available = {
 			hidden_trigger = { always = no }
 		}
@@ -65,6 +71,9 @@ political_actions = {
 generic_ft_internal_affairs_category = {
 	suppress_rebellious_state_decision = {
 		icon = generic_arrest
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		state_target = yes
 	    target_array = owned_states
 	    target_trigger = {
@@ -112,6 +121,9 @@ generic_ft_internal_affairs_category = {
 
 	core_compliant_state_decision = {
 		icon = generic_nationalism
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		state_target = yes
 	    target_array = owned_states
 	    target_trigger = {
@@ -159,6 +171,9 @@ generic_ft_external_affairs_category = {
 	#Communist Subversion in
 	generic_ft_spread_communism = {
 		icon = GFX_decisions_generic_infiltration
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		target_array = neighbors
 		visible = {
 			has_completed_focus = spread_communism_focus
@@ -208,6 +223,9 @@ generic_ft_external_affairs_category = {
 	#Appease Majors
 	generic_ft_appease_majors = {
 		icon = GFX_decision_generic_welfare
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		target_array = majors
 		visible = {
 			has_completed_focus = appease_major_powers_focus
@@ -269,6 +287,9 @@ generic_ft_external_affairs_category = {
 	#Request Investment from Majors
 	generic_ft_investment_from_majors = {
 		icon = GFX_decision_hol_attract_foreign_investors
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		target_array = majors
 		visible = {
 			has_completed_focus = appease_major_powers_focus
@@ -320,6 +341,9 @@ generic_ft_external_affairs_category = {
 	#Seduce Majors
 	generic_ft_seduce_majors = {
 		icon = GFX_decision_gre_investment_decisions
+		allowed = {
+			has_focus_tree = generic_focus_improved
+		}
 		target_array = majors
 		visible = {
 			has_completed_focus = seduce_major_powers_focus
@@ -361,6 +385,7 @@ generic_ft_external_affairs_category = {
 		target_array = neighbors
 		allowed = {
 			is_ai = no
+			has_focus_tree = generic_focus_improved
 		}
 	    target_trigger = {
 	        FROM = {

@@ -2,6 +2,10 @@ generic_ft_external_affairs_category = {
 
 	icon = generic_foreign_policy
 
+	allowed = {
+		has_focus_tree = generic_focus_improved
+	}
+
 	visible_when_empty = no
 
 	visible = {
@@ -11,6 +15,10 @@ generic_ft_external_affairs_category = {
 generic_ft_internal_affairs_category = {
 
 	icon = generic
+
+	allowed = {
+		has_focus_tree = generic_focus_improved
+	}
 
 	visible_when_empty = no
 

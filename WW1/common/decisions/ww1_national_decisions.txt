@@ -459,6 +459,9 @@ ww1_crisis_management_usa = {
 ww1_mechanics_guide = {
 	ww1_guide_stacking_and_logistics_decision = {
 		icon = generic_propaganda
+		allowed = {
+			is_ai = no
+		}
 		available = {
 			always = no
 		}

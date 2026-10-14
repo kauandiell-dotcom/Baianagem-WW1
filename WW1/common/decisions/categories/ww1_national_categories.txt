@@ -3,7 +3,16 @@
 ww1_tactical_war_powers = {
 	icon = generic_crisis
 	allowed = {
-		always = yes
+		OR = {
+			original_tag = TUR
+			original_tag = GER
+			original_tag = ENG
+			original_tag = FRA
+			original_tag = SOV
+			original_tag = AUS
+			original_tag = ITA
+			original_tag = USA
+		}
 	}
 	visible = {
 		has_war = yes
@@ -101,7 +110,7 @@ ww1_crisis_management_usa = {
 ww1_mechanics_guide = {
 	icon = generic_research
 	allowed = {
-		always = yes
+		is_ai = no
 	}
 	visible = {
 		always = yes
