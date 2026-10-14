@@ -352,15 +352,15 @@ def audit_deinflation_and_timed_ideas() -> List[str]:
     if os.path.isfile(ger_focus_path):
         with open(ger_focus_path, "r", encoding="utf-8", errors="replace") as f:
             ger_f_txt = f.read()
-        # Schlieffen momentum timed 90 days
-        s_match = re.search(r"id\s*=\s*GER_execute_schlieffen_plan.*?\bcompletion_reward\s*=\s*\{(.*?)\n\t\}", ger_f_txt, re.DOTALL)
+        # Schlieffen momentum timed 90 days (GER_schlieffen_maneuver or GER_execute_schlieffen_plan)
+        s_match = re.search(r"id\s*=\s*(?:GER_schlieffen_maneuver|GER_execute_schlieffen_plan).*?\bcompletion_reward\s*=\s*\{(.*?)\n\t\}", ger_f_txt, re.DOTALL)
         if s_match:
             s_block = s_match.group(1)
             if "GER_schlieffen_momentum" in s_block:
                 if "add_timed_idea" not in s_block or "days = 90" not in s_block:
                     errors.append("GER_schlieffen_momentum is not a 90-day timed idea in germany.txt")
         else:
-            errors.append("GER_execute_schlieffen_plan completion_reward not found in germany.txt")
+            errors.append("GER_schlieffen_maneuver completion_reward not found in germany.txt")
 
         # Kaiserschlacht timed 180 days
         k_match = re.search(r"id\s*=\s*GER_the_kaiserschlacht_1918.*?\bcompletion_reward\s*=\s*\{(.*?)\n\t\}", ger_f_txt, re.DOTALL)
