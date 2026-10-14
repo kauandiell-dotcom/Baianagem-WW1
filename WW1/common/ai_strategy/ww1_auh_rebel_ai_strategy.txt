@@ -1,0 +1,24 @@
+# Baianagem-WW1: Austria-Hungary Breakaway Tags Anti-Faction AI Strategy
+# Prevents seceding tags from joining foreign factions or forging alliances while fighting Austria
+
+ww1_auh_breakaway_isolation = {
+	enable = {
+		OR = {
+			tag = CZE
+			tag = HUN
+			tag = CRO
+			tag = POL
+		}
+		has_war_with = AUS
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = join_faction
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		value = -5000
+	}
+}

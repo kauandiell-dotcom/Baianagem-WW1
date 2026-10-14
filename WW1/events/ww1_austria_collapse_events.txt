@@ -1,0 +1,212 @@
+add_namespace = ww1_austria_collapse
+
+# =========================================================================
+# ww1_austria_collapse.1: Czech Secession (Bohemian National Committee)
+# =========================================================================
+country_event = {
+	id = ww1_austria_collapse.1
+	title = ww1_austria_collapse.1.t
+	desc = ww1_austria_collapse.1.d
+	picture = GFX_event_AUH_ww1_council
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AUS
+		has_war = yes
+		date > 1915
+		check_variable = { AUH_war_weariness > 70 }
+		OR = {
+			surrender_progress > 0.40
+			NOT = { controls_state = 4 }   # Vienna
+			NOT = { controls_state = 43 }  # Budapest
+			NOT = { controls_state = 88 }  # Galicia
+		}
+		OR = {
+			has_completed_focus = AUH_ww1_dualism
+			has_completed_focus = AUH_ww1_military_dictatorship
+		}
+		NOT = { country_exists = CZE }
+		NOT = { has_country_flag = AUH_czech_secession_fired }
+		owns_state = 9
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = ww1_austria_collapse.1.a
+		set_country_flag = AUH_czech_secession_fired
+		add_stability = -0.15
+		add_war_support = -0.10
+		CZE = {
+			transfer_state = 9
+			transfer_state = 69
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
+		}
+		declare_war_on = { target = CZE type = civil_war }
+	}
+}
+
+# =========================================================================
+# ww1_austria_collapse.2: Hungarian Secession (Hungarian Diet Breaks Union)
+# =========================================================================
+country_event = {
+	id = ww1_austria_collapse.2
+	title = ww1_austria_collapse.2.t
+	desc = ww1_austria_collapse.2.d
+	picture = GFX_event_AUH_ww1_council
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AUS
+		has_war = yes
+		date > 1915
+		check_variable = { AUH_war_weariness > 70 }
+		OR = {
+			surrender_progress > 0.40
+			NOT = { controls_state = 4 }   # Vienna
+			NOT = { controls_state = 43 }  # Budapest
+			NOT = { controls_state = 88 }  # Galicia
+		}
+		OR = {
+			has_completed_focus = AUH_ww1_trialism
+			has_completed_focus = AUH_ww1_military_dictatorship
+		}
+		NOT = { country_exists = HUN }
+		NOT = { has_country_flag = AUH_hungarian_secession_fired }
+		owns_state = 43
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = ww1_austria_collapse.2.a
+		set_country_flag = AUH_hungarian_secession_fired
+		add_stability = -0.20
+		add_war_support = -0.15
+		HUN = {
+			transfer_state = 43
+			transfer_state = 44
+			transfer_state = 45
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
+		}
+		declare_war_on = { target = HUN type = civil_war }
+	}
+}
+
+# =========================================================================
+# ww1_austria_collapse.3: South Slav Rebellion (Zagreb Sabor Secession)
+# =========================================================================
+country_event = {
+	id = ww1_austria_collapse.3
+	title = ww1_austria_collapse.3.t
+	desc = ww1_austria_collapse.3.d
+	picture = GFX_event_AUH_ww1_council
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AUS
+		has_war = yes
+		date > 1915
+		check_variable = { AUH_war_weariness > 70 }
+		OR = {
+			surrender_progress > 0.40
+			NOT = { controls_state = 4 }   # Vienna
+			NOT = { controls_state = 43 }  # Budapest
+			NOT = { controls_state = 88 }  # Galicia
+		}
+		OR = {
+			has_completed_focus = AUH_ww1_dualism
+			has_completed_focus = AUH_ww1_military_dictatorship
+		}
+		NOT = { country_exists = CRO }
+		NOT = { has_country_flag = AUH_croatian_secession_fired }
+		owns_state = 109
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = ww1_austria_collapse.3.a
+		set_country_flag = AUH_croatian_secession_fired
+		add_stability = -0.15
+		add_war_support = -0.10
+		CRO = {
+			transfer_state = 109
+			transfer_state = 108
+			leave_faction = yes
+			prevent_join_factions = yes
+			set_rule = { can_join_factions = no }
+			set_rule = { can_create_factions = no }
+		}
+		declare_war_on = { target = CRO type = civil_war }
+	}
+}
+
+# =========================================================================
+# ww1_austria_collapse.10: Imperial Authority Restored (Scripted Reunification)
+# =========================================================================
+country_event = {
+	id = ww1_austria_collapse.10
+	title = ww1_austria_collapse.10.t
+	desc = ww1_austria_collapse.10.d
+	picture = GFX_event_AUH_ww1_reconstruction
+
+	fire_only_once = no
+
+	trigger = {
+		tag = AUS
+		OR = {
+			AND = {
+				country_exists = CZE
+				has_war_with = CZE
+				controls_state = 9
+			}
+			AND = {
+				country_exists = HUN
+				has_war_with = HUN
+				controls_state = 43
+			}
+			AND = {
+				country_exists = CRO
+				has_war_with = CRO
+				controls_state = 109
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ww1_austria_collapse.10.a
+		if = {
+			limit = { country_exists = CZE controls_state = 9 }
+			annex_country = { target = CZE transfer_troops = yes }
+		}
+		if = {
+			limit = { country_exists = HUN controls_state = 43 }
+			annex_country = { target = HUN transfer_troops = yes }
+		}
+		if = {
+			limit = { country_exists = CRO controls_state = 109 }
+			annex_country = { target = CRO transfer_troops = yes }
+		}
+		add_stability = 0.15
+	}
+}
