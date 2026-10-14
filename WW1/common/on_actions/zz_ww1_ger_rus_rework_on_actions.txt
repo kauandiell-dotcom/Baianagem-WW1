@@ -1,6 +1,8 @@
 on_actions = {
-	on_weekly_SOV = {
+	# Master Weekly Simulation Hook (Country-Scoped by Engine)
+	on_weekly = {
 		effect = {
+			# Soviet / Russian Crisis & Revolutionary Gauges
 			if = {
 				limit = { original_tag = SOV }
 				ww1_sov_rework_weekly = yes
@@ -12,36 +14,48 @@ on_actions = {
 				}
 				sov_russia_weekly_crisis_update = yes
 			}
-		}
-	}
-	on_weekly_GER = {
-		effect = {
+
+			# German Empire Wartime Operations & Trench Stalemate
 			if = {
 				limit = { original_tag = GER }
 				ww1_ger_rework_weekly = yes
 				ger_uboat_weekly_tension_update = yes
-			}
-			# Western Front Trench Stalemate Transition Hook
-			if = {
-				limit = {
-					original_tag = GER
-					has_war_with = FRA
-					has_country_flag = ger_schlieffen_plan_launched
-					NOT = { controls_state = 16 }
-					NOT = { has_idea = GER_schlieffen_momentum }
-					NOT = { has_idea = GER_western_trench_stalemate }
+
+				# Western Front Trench Stalemate Transition Hook
+				if = {
+					limit = {
+						has_war_with = FRA
+						has_country_flag = ger_schlieffen_plan_launched
+						NOT = { controls_state = 16 }
+						NOT = { has_idea = GER_schlieffen_momentum }
+						NOT = { has_idea = GER_western_trench_stalemate }
+					}
+					country_event = { id = ww1_germany.10 }
 				}
-				country_event = { id = ww1_germany.10 }
-			}
-			# 1918 German Armistice Dissolution Hook
-			if = {
-				limit = {
-					date > 1918.11.1
-					has_global_flag = SOV_brest_litovsk_signed
-					GER = { has_capitulated = yes }
+
+				# 1918 German Armistice Dissolution Hook
+				if = {
+					limit = {
+						date > 1918.11.1
+						has_global_flag = SOV_brest_litovsk_signed
+						GER = { has_capitulated = yes }
+					}
+					SOV_dissolve_brest_litovsk = yes
+					news_event = { id = ww1_russia_diplomacy.20 }
 				}
-				SOV_dissolve_brest_litovsk = yes
-				news_event = { id = ww1_russia_diplomacy.20 }
+			}
+
+			# Austria-Hungary Crown Dashboard & Grain Simulation Hook
+			if = {
+				limit = { tag = AUS }
+				if = {
+					limit = {
+						NOT = { has_variable = AUH_vienna_grain }
+					}
+					AUH_init_crown_dashboard = yes
+				}
+				AUH_clamp_dashboard_variables = yes
+				AUH_weekly_grain_tick = yes
 			}
 		}
 	}
@@ -64,23 +78,6 @@ on_actions = {
 	on_monthly = {
 		effect = {
 			ww1_clean_transient_memory = yes
-		}
-	}
-
-	# Austria-Hungary Crown Dashboard & Grain Simulation Hook
-	on_weekly = {
-		effect = {
-			if = {
-				limit = { tag = AUS }
-				if = {
-					limit = {
-						NOT = { has_variable = AUH_vienna_grain }
-					}
-					AUH_init_crown_dashboard = yes
-				}
-				AUH_clamp_dashboard_variables = yes
-				AUH_weekly_grain_tick = yes
-			}
 		}
 	}
 }

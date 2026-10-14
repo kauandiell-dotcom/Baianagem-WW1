@@ -297,28 +297,48 @@ country_event = {
 			}
 		}
 
-		# 7. Mutual War Declarations
-		# SOV vs WHT
+		# 7. Tag-Safe & Faction-Isolated Civil War Declarations
+		# SOV vs WHT (The Main Civil War)
 		declare_war_on = { target = WHT type = civil_war }
 
-		# SOV vs Breakaways
-		declare_war_on = { target = UKR type = annex_everything }
-		declare_war_on = { target = FIN type = annex_everything }
-		declare_war_on = { target = POL type = annex_everything }
-		declare_war_on = { target = GEO type = annex_everything }
-		declare_war_on = { target = ARM type = annex_everything }
-		declare_war_on = { target = AZR type = annex_everything }
-		declare_war_on = { target = DON type = annex_everything }
+		# Don Cossacks fight the Bolsheviks alongside the Whites
+		if = {
+			limit = { country_exists = DON }
+			declare_war_on = { target = DON type = civil_war }
+		}
 
-		# WHT vs Breakaways
-		WHT = {
-			declare_war_on = { target = UKR type = annex_everything }
-			declare_war_on = { target = FIN type = annex_everything }
-			declare_war_on = { target = POL type = annex_everything }
-			declare_war_on = { target = GEO type = annex_everything }
-			declare_war_on = { target = ARM type = annex_everything }
-			declare_war_on = { target = AZR type = annex_everything }
-			declare_war_on = { target = DON type = annex_everything }
+		# Transcaucasian Republics (isolated civil war type, prevent external alliance drag)
+		if = {
+			limit = { country_exists = GEO NOT = { has_war_with = ROOT } }
+			declare_war_on = { target = GEO type = civil_war }
+		}
+		if = {
+			limit = { country_exists = ARM NOT = { has_war_with = ROOT } }
+			declare_war_on = { target = ARM type = civil_war }
+		}
+		if = {
+			limit = { country_exists = AZR NOT = { has_war_with = ROOT } }
+			declare_war_on = { target = AZR type = civil_war }
+		}
+
+		# Ukraine & Finland: Only declare civil war if NOT protected by or subject of Germany
+		if = {
+			limit = {
+				country_exists = UKR
+				NOT = { is_subject_of = GER }
+				NOT = { has_guaranteed = GER }
+				NOT = { has_war_with = ROOT }
+			}
+			declare_war_on = { target = UKR type = civil_war }
+		}
+		if = {
+			limit = {
+				country_exists = FIN
+				NOT = { is_subject_of = GER }
+				NOT = { has_guaranteed = GER }
+				NOT = { has_war_with = ROOT }
+			}
+			declare_war_on = { target = FIN type = civil_war }
 		}
 
 		# Central Powers Brest-Litovsk Peace Overture Hook
@@ -480,3 +500,85 @@ country_event = {
 		add_stability = 0.05
 	}
 }
+
+# -------------------------------------------------------------
+# Event 50: Re-integration of Transcaucasia (Georgia, Armenia, Azerbaijan)
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia_civil_war.50
+	title = ww1_russia_civil_war.50.t
+	desc = ww1_russia_civil_war.50.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	trigger = {
+		OR = { tag = SOV tag = WHT }
+		OR = {
+			AND = {
+				country_exists = GEO
+				has_war_with = GEO
+				controls_state = 231 # Tbilisi
+			}
+			AND = {
+				country_exists = ARM
+				has_war_with = ARM
+				controls_state = 230 # Yerevan
+			}
+			AND = {
+				country_exists = AZR
+				has_war_with = AZR
+				controls_state = 229 # Baku
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 7 }
+
+	option = {
+		name = ww1_russia_civil_war.50.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { country_exists = GEO controls_state = 231 }
+			annex_country = { target = GEO transfer_troops = yes }
+		}
+		if = {
+			limit = { country_exists = ARM controls_state = 230 }
+			annex_country = { target = ARM transfer_troops = yes }
+		}
+		if = {
+			limit = { country_exists = AZR controls_state = 229 }
+			annex_country = { target = AZR transfer_troops = yes }
+		}
+		add_political_power = 25
+	}
+}
+
+# -------------------------------------------------------------
+# Event 60: Fall of the Don Host
+# -------------------------------------------------------------
+country_event = {
+	id = ww1_russia_civil_war.60
+	title = ww1_russia_civil_war.60.t
+	desc = ww1_russia_civil_war.60.d
+	picture = GFX_event_WW1_sov_civil_war
+
+	trigger = {
+		tag = SOV
+		country_exists = DON
+		has_war_with = DON
+		OR = {
+			controls_state = 218 # Rostov
+			DON = { surrender_progress > 0.80 }
+		}
+	}
+
+	mean_time_to_happen = { days = 5 }
+	fire_only_once = yes
+
+	option = {
+		name = ww1_russia_civil_war.60.a
+		ai_chance = { factor = 100 }
+		annex_country = { target = DON transfer_troops = yes }
+		add_political_power = 25
+	}
+}
+
