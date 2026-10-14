@@ -1,0 +1,65 @@
+# Hungarian Federal Army (Magyar Királyi Honvédség) - Danubian Federation OOB
+# 16 Divisions: Honvéd Infantry & Hussar Cavalry
+
+division_template = {
+	name = "Magyar Kiralyi Honved Hadosztaly"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Magyar Kiralyi Huszar Hadosztaly"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	# Budapest & Central Hungary (State 43)
+	division = { name = "1. Honvéd Gyaloghadosztály" location = 9660 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.3 }
+	division = { name = "2. Honvéd Gyaloghadosztály" location = 9660 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "1. Honvéd Huszárhadosztály" location = 684 division_template = "Magyar Kiralyi Huszar Hadosztaly" start_experience_factor = 0.3 }
+	division = { name = "3. Honvéd Gyaloghadosztály" location = 716 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "4. Honvéd Gyaloghadosztály" location = 3713 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+
+	# Transdanubia & Pécs (State 44)
+	division = { name = "5. Honvéd Gyaloghadosztály" location = 9914 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "2. Honvéd Huszárhadosztály" location = 11767 division_template = "Magyar Kiralyi Huszar Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "6. Honvéd Gyaloghadosztály" location = 3448 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "7. Honvéd Gyaloghadosztály" location = 3884 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+
+	# Alföld, Szeged & Debrecen (State 45)
+	division = { name = "8. Honvéd Gyaloghadosztály" location = 619 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "3. Honvéd Huszárhadosztály" location = 3617 division_template = "Magyar Kiralyi Huszar Hadosztaly" start_experience_factor = 0.25 }
+
+	# Northern Highlands & Kassa (State 664)
+	division = { name = "9. Honvéd Gyaloghadosztály" location = 6573 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "10. Honvéd Gyaloghadosztály" location = 3565 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "11. Honvéd Gyaloghadosztály" location = 3716 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+
+	# Banat & Temesvár (State 764)
+	division = { name = "12. Honvéd Gyaloghadosztály" location = 3614 division_template = "Magyar Kiralyi Honved Hadosztaly" start_experience_factor = 0.25 }
+	division = { name = "4. Honvéd Huszárhadosztály" location = 614 division_template = "Magyar Kiralyi Huszar Hadosztaly" start_experience_factor = 0.25 }
+}

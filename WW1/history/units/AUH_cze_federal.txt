@@ -1,0 +1,58 @@
+# Bohemian & Moravian Federal Army (České Zemské Vojsko) - Danubian Federation OOB
+# 10 Divisions: Bohemian & Moravian Infantry and Artillery Divisions
+
+division_template = {
+	name = "Ceska Federalni Pesi Divize"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Ceska Federalni Delostrelecka Divize"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	# Bohemia & Prague (State 9)
+	division = { name = "1. Česká Federální Pěší Divize" location = 11542 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.3 }
+	division = { name = "2. Česká Federální Pěší Divize" location = 11542 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.25 }
+	division = { name = "1. Česká Federální Dělostřelecká Divize" location = 6418 division_template = "Ceska Federalni Delostrelecka Divize" start_experience_factor = 0.3 }
+	division = { name = "3. Česká Federální Pěší Divize" location = 9569 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.25 }
+	division = { name = "4. Česká Federální Pěší Divize" location = 9541 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.25 }
+
+	# Moravia & Brno (State 75)
+	division = { name = "1. Moravská Federální Pěší Divize" location = 3569 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.3 }
+	division = { name = "2. Moravská Federální Dělostřelecká Divize" location = 6562 division_template = "Ceska Federalni Delostrelecka Divize" start_experience_factor = 0.25 }
+
+	# Northern Bohemia / Sudetenland (State 69)
+	division = { name = "5. Česká Federální Pěší Divize" location = 3585 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.25 }
+	division = { name = "6. Česká Federální Pěší Divize" location = 11432 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.25 }
+
+	# Eastern Sudetenland / Silesia (State 74)
+	division = { name = "7. Česká Federální Pěší Divize" location = 3583 division_template = "Ceska Federalni Pesi Divize" start_experience_factor = 0.25 }
+}
