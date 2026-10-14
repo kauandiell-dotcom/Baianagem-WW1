@@ -1,0 +1,186 @@
+ideas = {
+	country = {
+		GER_totale_mobilmachung_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_war_preparation
+			modifier = {
+				industrial_capacity_factory = 0.15
+				conscription_factor = 0.10
+			}
+		}
+
+		GER_letzte_reserven = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = 0.03
+				division_recovery_rate_factor = 0.10
+			}
+		}
+
+		GER_drastic_requisitions = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_goods_red_bonus
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_factory_max_efficiency_factor = 0.10
+			}
+		}
+
+		GER_underground_industry = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				bombing_defence = 0.50
+				industry_repair_factor = 0.30
+			}
+		}
+
+		GER_volkssturm_call_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_morale_bonus
+			modifier = {
+				army_core_defence_factor = 0.15
+				dig_in_speed_factor = 0.25
+			}
+		}
+
+		GER_landsturm_defense = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_infantry_bonus
+			modifier = {
+				army_core_defence_factor = 0.20
+			}
+		}
+
+		GER_patriotic_frenzy = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_war_support
+			modifier = {
+				division_recovery_rate_factor = 0.15
+				war_support_factor = 0.10
+			}
+		}
+
+		GER_unyielding_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_victors_of_ww1
+			modifier = {
+				surrender_limit = 0.15
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.20
+			}
+		}
+
+		GER_festung_rhein = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_coastal_defense_ships
+			modifier = {
+				production_speed_bunker_factor = 0.30
+				max_dig_in = 5
+			}
+		}
+
+		GER_scorched_crossings = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_scorched_earth
+			modifier = {
+				army_core_defence_factor = 0.10
+				enemy_army_movement_speed_factor = -0.15
+			}
+		}
+
+		GER_westwall_bastion = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_fort_defense
+			modifier = {
+				army_defence_factor = 0.15
+				out_of_supply_factor = -0.25
+			}
+		}
+
+		GER_rejection_of_diktat = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_disjointed_gov
+			modifier = {
+				war_support_factor = 0.20
+				enemy_justify_war_goal_time = 0.50
+			}
+		}
+
+		GER_anti_bolshevik_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_intel_bonus
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+			}
+		}
+
+		GER_entente_defiance = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_air_bonus
+			modifier = {
+				army_defence_factor = 0.15
+				army_attack_factor = 0.05
+			}
+		}
+
+		GER_freikorps_vanguard_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_commando_bonus
+			modifier = {
+				breakthrough_factor = 0.15
+				special_forces_defence_factor = 0.20
+			}
+		}
+
+		GER_gotterdammerung_climax = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_total_war
+			modifier = {
+				surrender_limit = 0.25
+				army_core_attack_factor = 0.20
+				army_core_defence_factor = 0.25
+				division_recovery_rate_factor = 0.20
+			}
+		}
+
+		GER_versailles_reparations = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_economic_increase
+			modifier = {
+				consumer_goods_factor = 0.10
+				industrial_capacity_factory = -0.15
+			}
+		}
+
+		GER_endsieg_fanaticism = {
+			allowed = { always = no }
+			removal_cost = -1
+			picture = generic_fascism_drift_bonus
+			modifier = {
+				surrender_limit = 0.20
+				army_core_defence_factor = 0.25
+				army_morale_factor = 0.20
+			}
+		}
+	}
+}

@@ -1,0 +1,456 @@
+# =========================================================================
+# GERMAN EMPIRE - HIDDEN ENDSIEG EMERGENCY FOCUS TREE ("GÖTTERDÄMMERUNG")
+# 20 Focuses across 4 Emergency Branches:
+# Branch 1: Total Militarization (x=2..4)
+# Branch 2: Volkssturm Mobilization (x=7..9)
+# Branch 3: Rhine Fortress Defense (x=12..14)
+# Branch 4: Defiance against Entente/Bolsheviks (x=17..19)
+# =========================================================================
+
+focus_tree = {
+	id = ww1_germany_endsieg_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GER
+			has_country_flag = GER_endsieg_activated
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 10 y = 1200 }
+
+	# =========================================================================
+	# BRANCH 1: TOTAL MILITARIZATION (Totale Mobilmachung)
+	# =========================================================================
+
+	focus = {
+		id = GER_endsieg_total_militarization
+		icon = GFX_focus_GER_rally_the_nation
+		cost = 5
+		x = 3
+		y = 0
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.15
+			add_stability = 0.05
+			add_political_power = 100
+			add_ideas = GER_totale_mobilmachung_spirit
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_scraping_the_barrel
+		icon = GFX_goal_generic_class_A_reservists
+		cost = 5
+		x = 2
+		y = 1
+		prerequisite = { focus = GER_endsieg_total_militarization }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 250000
+			add_ideas = GER_letzte_reserven
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_war_economy_requisitions
+		icon = GFX_focus_GER_optimize_reich_labour_service
+		cost = 5
+		x = 4
+		y = 1
+		prerequisite = { focus = GER_endsieg_total_militarization }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 4
+			}
+			add_ideas = GER_drastic_requisitions
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_underground_factories
+		icon = GFX_goal_generic_workers
+		cost = 5
+		x = 3
+		y = 2
+		prerequisite = { focus = GER_endsieg_scraping_the_barrel }
+		prerequisite = { focus = GER_endsieg_war_economy_requisitions }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = {
+				type = arms_factory
+				level = 3
+			}
+			64 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = GER_underground_industry
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_wonder_weapons_program
+		icon = GFX_goal_national_artillery
+		cost = 5
+		x = 3
+		y = 3
+		prerequisite = { focus = GER_endsieg_underground_factories }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 15000
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1000
+				producer = GER
+			}
+			army_experience = 50
+			air_experience = 50
+		}
+	}
+
+	# =========================================================================
+	# BRANCH 2: VOLKSSTURM MOBILIZATION (Volkssturm und Heimatwehr)
+	# =========================================================================
+
+	focus = {
+		id = GER_endsieg_volkssturm_call
+		icon = GFX_focus_GER_root_out_imperialism
+		cost = 5
+		x = 8
+		y = 0
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_manpower = 150000
+			add_war_support = 0.10
+			load_oob = "GER_volkssturm_endsieg"
+			add_ideas = GER_volkssturm_call_spirit
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_berlin_levee_en_masse
+		icon = GFX_focus_GER_reichstag
+		cost = 5
+		x = 7
+		y = 1
+		prerequisite = { focus = GER_endsieg_volkssturm_call }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			64 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 6521
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+				producer = GER
+			}
+			add_manpower = 100000
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_landsturm_battalions
+		icon = GFX_focus_GER_ressurect_the_red_front_fighters_league
+		cost = 5
+		x = 9
+		y = 1
+		prerequisite = { focus = GER_endsieg_volkssturm_call }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 120000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 8000
+				producer = GER
+			}
+			add_ideas = GER_landsturm_defense
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_youth_and_veteran_auxiliaries
+		icon = GFX_focus_GER_workers_rights
+		cost = 5
+		x = 8
+		y = 2
+		prerequisite = { focus = GER_endsieg_berlin_levee_en_masse }
+		prerequisite = { focus = GER_endsieg_landsturm_battalions }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 80000
+			army_experience = 35
+			add_ideas = GER_patriotic_frenzy
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_iron_determination
+		icon = GFX_focus_GER_constitutional_monarchy_proclamation
+		cost = 5
+		x = 8
+		y = 3
+		prerequisite = { focus = GER_endsieg_youth_and_veteran_auxiliaries }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.20
+			add_ideas = GER_unyielding_spirit
+		}
+	}
+
+	# =========================================================================
+	# BRANCH 3: RHINE FORTRESS DEFENSE (Rheinstellung und Westfestungen)
+	# =========================================================================
+
+	focus = {
+		id = GER_endsieg_rhine_line_proclamation
+		icon = GFX_focus_GER_reintegrate_luxemburg_and_alsace_lorraine
+		cost = 5
+		x = 13
+		y = 0
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			add_ideas = GER_festung_rhein
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_fortify_the_ruhr
+		icon = GFX_focus_GER_strive_for_conservative_values
+		cost = 5
+		x = 12
+		y = 1
+		prerequisite = { focus = GER_endsieg_rhine_line_proclamation }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			42 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 11531
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 9575
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 11435
+					instant_build = yes
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_blow_the_bridges
+		icon = GFX_focus_GER_start_the_proletarian_revolution
+		cost = 5
+		x = 14
+		y = 1
+		prerequisite = { focus = GER_endsieg_rhine_line_proclamation }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			add_ideas = GER_scorched_crossings
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1500
+				producer = GER
+			}
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_siegfriedstellung_redoubt
+		icon = GFX_focus_GER_war_with_france
+		cost = 5
+		x = 13
+		y = 2
+		prerequisite = { focus = GER_endsieg_fortify_the_ruhr }
+		prerequisite = { focus = GER_endsieg_blow_the_bridges }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			42 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 11470
+					instant_build = yes
+				}
+			}
+			51 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 587
+					instant_build = yes
+				}
+			}
+			army_experience = 40
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_unconquerable_rhineland
+		icon = GFX_focus_GER_reassert_eastern_claims
+		cost = 5
+		x = 13
+		y = 3
+		prerequisite = { focus = GER_endsieg_siegfriedstellung_redoubt }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			add_ideas = GER_westwall_bastion
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 800
+				producer = GER
+			}
+		}
+	}
+
+	# =========================================================================
+	# BRANCH 4: DEFIANCE AGAINST ENTENTE/BOLSHEVIKS (Trotz und Widerstand)
+	# =========================================================================
+
+	focus = {
+		id = GER_endsieg_no_surrender
+		icon = GFX_focus_GER_emergency_danubian_annexation
+		cost = 5
+		x = 18
+		y = 0
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			add_war_support = 0.20
+			add_stability = 0.10
+			add_ideas = GER_rejection_of_diktat
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_anti_bolshevik_crusade
+		icon = GFX_focus_GER_subduing_the_baltic_states
+		cost = 5
+		x = 17
+		y = 1
+		prerequisite = { focus = GER_endsieg_no_surrender }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+		completion_reward = {
+			army_experience = 30
+			add_ideas = GER_anti_bolshevik_spirit
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = GER
+			}
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_stand_against_entente
+		icon = GFX_GER_Deutsche_Luftflotte
+		cost = 5
+		x = 19
+		y = 1
+		prerequisite = { focus = GER_endsieg_no_surrender }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_AIR_XP }
+		completion_reward = {
+			air_experience = 30
+			add_ideas = GER_entente_defiance
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1000
+				producer = GER
+			}
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_freikorps_vanguard
+		icon = GFX_focus_GER_support_the_proletarian_uprising
+		cost = 5
+		x = 18
+		y = 2
+		prerequisite = { focus = GER_endsieg_anti_bolshevik_crusade }
+		prerequisite = { focus = GER_endsieg_stand_against_entente }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_ARMY_XP FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			add_manpower = 75000
+			army_experience = 40
+			add_ideas = GER_freikorps_vanguard_spirit
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+				producer = GER
+			}
+		}
+	}
+
+	focus = {
+		id = GER_endsieg_gotterdammerung
+		icon = GFX_focus_GER_ww1_world_proletarian_revolution
+		cost = 5
+		x = 18
+		y = 3
+		prerequisite = { focus = GER_endsieg_freikorps_vanguard }
+		available_if_capitulated = yes
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_DEFENSE }
+		completion_reward = {
+			add_stability = 0.20
+			add_war_support = 0.30
+			add_ideas = GER_gotterdammerung_climax
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 20000
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1500
+				producer = GER
+			}
+		}
+	}
+}

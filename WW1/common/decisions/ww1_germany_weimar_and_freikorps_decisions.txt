@@ -1,0 +1,146 @@
+# =========================================================================
+# WEIMAR REPUBLIC RECONSTRUCTION & FREIKORPS BORDER DEFENSE DECISIONS
+# =========================================================================
+
+GER_weimar_and_freikorps_category = {
+
+	# Combat Berlin and Ruhr Communist Revolts
+	GER_spartakist_uprising = {
+		icon = generic_civil_support
+		cost = 50
+		days_remove = 60
+		fire_only_once = yes
+
+		available = {
+			tag = GER
+		}
+
+		visible = {
+			tag = GER
+			OR = {
+				has_country_flag = GER_versailles_signed
+				has_government = democratic
+				has_country_flag = GER_endsieg_activated
+			}
+		}
+
+		modifier = {
+			stability_factor = 0.10
+			drift_defence_factor = 0.25
+			communism_drift = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = GER_spartakist_revolt_crushed
+			add_stability = 0.10
+			add_political_power = 75
+			64 = {
+				add_manpower = -5000
+			}
+			42 = {
+				add_manpower = -5000
+			}
+		}
+
+		ai_will_do = {
+			factor = 95
+		}
+	}
+
+	# Support Freikorps volunteers holding the line against Red Army in the Baltics
+	GER_baltic_freikorps_defense = {
+		icon = generic_volunteer_forces
+		cost = 40
+		days_remove = 120
+		fire_only_once = no
+
+		available = {
+			tag = GER
+			has_manpower > 10000
+		}
+
+		visible = {
+			tag = GER
+			OR = {
+				has_country_flag = GER_versailles_signed
+				has_government = democratic
+				has_country_flag = GER_endsieg_activated
+			}
+		}
+
+		modifier = {
+			army_core_defence_factor = 0.10
+			war_support_factor = 0.05
+		}
+
+		complete_effect = {
+			set_country_flag = GER_baltic_freikorps_active
+			add_manpower = -10000
+			army_experience = 25
+			# Support Baltic allies if they exist
+			if = {
+				limit = { country_exists = BAT }
+				BAT = {
+					add_manpower = 5000
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1500
+						producer = GER
+					}
+				}
+			}
+			if = {
+				limit = { country_exists = LAT }
+				LAT = {
+					add_manpower = 2500
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = 1000
+						producer = GER
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 85
+		}
+	}
+
+	# Suppress Ruhr Red Army (Märzaufstand)
+	GER_suppress_ruhr_red_army = {
+		icon = generic_suppression
+		cost = 35
+		days_remove = 45
+		fire_only_once = yes
+
+		available = {
+			tag = GER
+			has_country_flag = GER_spartakist_revolt_crushed
+		}
+
+		visible = {
+			tag = GER
+			OR = {
+				has_country_flag = GER_versailles_signed
+				has_government = democratic
+			}
+		}
+
+		modifier = {
+			industrial_capacity_factory = 0.05
+			stability_factor = 0.05
+		}
+
+		complete_effect = {
+			add_stability = 0.05
+			42 = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+
+		ai_will_do = {
+			factor = 80
+		}
+	}
+}

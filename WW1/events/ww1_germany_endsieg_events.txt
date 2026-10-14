@@ -1,0 +1,82 @@
+add_namespace = ww1_germany_endsieg
+
+# =========================================================================
+# ww1_germany_endsieg.1: The Fall of the Rhine & The Versailles Crisis
+# =========================================================================
+country_event = {
+	id = ww1_germany_endsieg.1
+	title = ww1_germany_endsieg.1.t
+	desc = ww1_germany_endsieg.1.d
+	picture = GFX_report_event_german_troops
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		has_war = yes
+		NOT = { has_country_flag = GER_endsieg_activated }
+		NOT = { has_country_flag = GER_versailles_signed }
+		OR = {
+			surrender_progress > 0.40
+			NOT = { controls_state = 42 }
+			NOT = { controls_state = 55 }
+			587 = { NOT = { is_controlled_by = GER } }
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	# Option A: Historical Versailles Armistice - Proclaim the Weimar Republic
+	option = {
+		name = ww1_germany_endsieg.1.a
+		ai_chance = {
+			factor = 70
+		}
+		set_country_flag = GER_versailles_signed
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_stability = -0.20
+		add_war_support = -0.40
+		every_enemy_country = {
+			white_peace = GER
+		}
+		# Territorial cessions mandated by the Treaty of Versailles
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { transfer_state = 28 } # Alsace-Lorraine
+		}
+		if = {
+			limit = { country_exists = BEL }
+			BEL = { transfer_state = 1085 } # Eupen-Malmedy
+		}
+		if = {
+			limit = { country_exists = POL }
+			POL = {
+				transfer_state = 86 # Posen
+				transfer_state = 85 # Danzig / West Prussia corridor
+			}
+		}
+		add_ideas = GER_versailles_reparations
+	}
+
+	# Option B: Defy the World! - Total Resistance (Endsieg / Götterdämmerung)
+	option = {
+		name = ww1_germany_endsieg.1.b
+		ai_chance = {
+			factor = 30
+		}
+		set_country_flag = GER_endsieg_activated
+		load_focus_tree = ww1_germany_endsieg_focus
+		load_oob = "GER_volkssturm_endsieg"
+		add_war_support = 0.25
+		add_stability = -0.10
+		add_timed_idea = {
+			idea = GER_endsieg_fanaticism
+			days = 730
+		}
+	}
+}

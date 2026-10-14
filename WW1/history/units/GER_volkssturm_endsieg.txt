@@ -1,0 +1,97 @@
+# =========================================================================
+# GERMAN VOLKSSTURM & LANDSTURM EMERGENCY MOBILIZATION (ENDSIEG)
+# =========================================================================
+
+division_template = {
+	name = "Volkssturm-Division"
+	division_names_group = GER_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Landsturm-Brigade"
+	division_names_group = GER_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	# Berlin (State 64, Province 6521)
+	division = {
+		name = "1. Berliner Volkssturm-Division"
+		location = 6521
+		division_template = "Volkssturm-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "2. Berliner Volkssturm-Division"
+		location = 6521
+		division_template = "Volkssturm-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "3. Berliner Landsturm-Brigade"
+		location = 6521
+		division_template = "Landsturm-Brigade"
+		start_experience_factor = 0.15
+		start_equipment_factor = 0.7
+	}
+
+	# Ruhr / Rhineland (State 42, Provinces 11531 / 9575)
+	division = {
+		name = "1. Rheinisch-Westfälische Landsturm-Division"
+		location = 11531
+		division_template = "Volkssturm-Division"
+		start_experience_factor = 0.25
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "2. Rheinische Volkssturm-Division"
+		location = 9575
+		division_template = "Volkssturm-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division = {
+		name = "Ruhr-Heimatwehr Landsturm-Brigade"
+		location = 11435
+		division_template = "Landsturm-Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+
+	# Munich / Bavaria (State 52, Province 692)
+	division = {
+		name = "1. Bayerische Volkssturm-Division"
+		location = 692
+		division_template = "Volkssturm-Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "2. Bayerische Landsturm-Brigade"
+		location = 692
+		division_template = "Landsturm-Brigade"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+}

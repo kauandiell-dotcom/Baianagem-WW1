@@ -1,0 +1,15 @@
+GER_weimar_and_freikorps_category = {
+	icon = generic_propaganda
+	allowed = {
+		tag = GER
+	}
+	visible = {
+		tag = GER
+		OR = {
+			has_country_flag = GER_versailles_signed
+			has_government = democratic
+			has_country_flag = GER_endsieg_activated
+		}
+	}
+	visible_when_empty = no
+}
