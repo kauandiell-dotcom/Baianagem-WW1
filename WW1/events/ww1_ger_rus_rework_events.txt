@@ -16,7 +16,7 @@ country_event = {
 	option = {
 		name = ww1_russia.200.a
 		ai_chance = { factor = 60 }
-		add_to_variable = { SOV_unrest = 9 }
+		add_to_variable = { SOV_worker_unrest = 9 }
 		add_to_variable = { SOV_tsar_prestige = -3 }
 		add_political_power = 20
 		add_timed_idea = { idea = SOV_lena_shadow days = 540 }
@@ -25,7 +25,7 @@ country_event = {
 	option = {
 		name = ww1_russia.200.b
 		ai_chance = { factor = 40 }
-		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_worker_unrest = 3 }
 		add_to_variable = { SOV_duma_tension = -8 }
 		add_political_power = -25
 		add_stability = 0.01
@@ -44,7 +44,7 @@ country_event = {
 	option = {
 		name = ww1_russia.201.a
 		ai_chance = { factor = 55 }
-		add_to_variable = { SOV_unrest = -4 }
+		add_to_variable = { SOV_worker_unrest = -4 }
 		add_to_variable = { SOV_tsar_prestige = -2 }
 		add_stability = -0.02
 	}
@@ -52,7 +52,7 @@ country_event = {
 	option = {
 		name = ww1_russia.201.b
 		ai_chance = { factor = 45 }
-		add_to_variable = { SOV_unrest = 4 }
+		add_to_variable = { SOV_worker_unrest = 4 }
 		add_war_support = 0.02
 	}
 }
@@ -96,8 +96,8 @@ country_event = {
 	option = {
 		name = ww1_russia.203.a
 		ai_chance = { factor = 40 }
-		add_to_variable = { SOV_hunger = 8 }
-		add_to_variable = { SOV_unrest = 6 }
+		add_to_variable = { SOV_urban_hunger = 8 }
+		add_to_variable = { SOV_worker_unrest = 6 }
 		army_experience = 10
 		add_timed_idea = { idea = SOV_refugee_flood days = 240 }
 	}
@@ -136,7 +136,7 @@ country_event = {
 		name = ww1_russia.204.a
 		ai_chance = { factor = 55 }
 		add_to_variable = { SOV_duma_tension = 25 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_political_power = 25
 		add_stability = -0.02
 	}
@@ -176,7 +176,7 @@ country_event = {
 		set_country_flag = SOV_rasputin_dead
 		remove_ideas = SOV_rasputin_court_intrigues
 		add_to_variable = { SOV_tsar_prestige = -3 }
-		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_worker_unrest = 3 }
 		add_to_variable = { SOV_army_loyalty = 2 }
 		add_political_power = 30
 	}
@@ -195,7 +195,7 @@ country_event = {
 		name = ww1_russia.206.a
 		ai_chance = { factor = 40 }
 		add_to_variable = { SOV_army_loyalty = 5 }
-		add_to_variable = { SOV_unrest = 4 }
+		add_to_variable = { SOV_worker_unrest = 4 }
 		add_stability = -0.02
 		add_war_support = -0.01
 	}
@@ -229,8 +229,8 @@ country_event = {
 	option = {
 		name = ww1_russia.207.a
 		ai_chance = { factor = 55 }
-		add_to_variable = { SOV_hunger = -4 }
-		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_urban_hunger = -4 }
+		add_to_variable = { SOV_worker_unrest = 3 }
 		add_stability = 0.01
 		add_political_power = 20
 	}
@@ -238,8 +238,8 @@ country_event = {
 	option = {
 		name = ww1_russia.207.b
 		ai_chance = { factor = 45 }
-		add_to_variable = { SOV_unrest = -3 }
-		add_to_variable = { SOV_hunger = 2 }
+		add_to_variable = { SOV_worker_unrest = -3 }
+		add_to_variable = { SOV_urban_hunger = 2 }
 		add_political_power = -10
 	}
 }
@@ -284,15 +284,15 @@ country_event = {
 	}
 
 	immediate = {
-		add_to_variable = { SOV_hunger = 12 }
-		add_to_variable = { SOV_unrest = 8 }
+		add_to_variable = { SOV_urban_hunger = 12 }
+		add_to_variable = { SOV_worker_unrest = 8 }
 	}
 
 	option = {
 		name = ww1_russia.209.a
 		ai_chance = { factor = 40 }
-		add_to_variable = { SOV_hunger = -8 }
-		add_to_variable = { SOV_unrest = 2 }
+		add_to_variable = { SOV_urban_hunger = -8 }
+		add_to_variable = { SOV_worker_unrest = 2 }
 		add_political_power = -30
 		add_stability = -0.01
 	}
@@ -300,15 +300,15 @@ country_event = {
 	option = {
 		name = ww1_russia.209.b
 		ai_chance = { factor = 25 }
-		add_to_variable = { SOV_unrest = 6 }
-		add_to_variable = { SOV_hunger = 5 }
+		add_to_variable = { SOV_worker_unrest = 6 }
+		add_to_variable = { SOV_urban_hunger = 5 }
 		add_stability = -0.03
 	}
 
 	option = {
 		name = ww1_russia.209.c
 		ai_chance = { factor = 35 }
-		add_to_variable = { SOV_hunger = -5 }
+		add_to_variable = { SOV_urban_hunger = -5 }
 		add_to_variable = { SOV_duma_tension = -5 }
 		add_political_power = -20
 	}
@@ -334,7 +334,7 @@ country_event = {
 	option = {
 		name = ww1_russia.210.a
 		ai_chance = { factor = 55 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		country_event = { id = ww1_russia.211 days = 3 }
 	}
 
@@ -345,7 +345,7 @@ country_event = {
 		}
 		ai_chance = { factor = 45 }
 		add_to_variable = { SOV_repression_count = 1 }
-		add_to_variable = { SOV_unrest = -15 }
+		add_to_variable = { SOV_worker_unrest = -15 }
 		add_to_variable = { SOV_army_loyalty = -12 }
 		add_stability = -0.05
 		clr_country_flag = SOV_revolution_window_open
@@ -369,7 +369,7 @@ country_event = {
 	option = {
 		name = ww1_russia.213.a
 		ai_chance = { factor = 40 }
-		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_worker_unrest = 3 }
 		add_popularity = { ideology = communism popularity = 0.02 }
 		add_war_support = 0.02
 	}
@@ -378,7 +378,7 @@ country_event = {
 		name = ww1_russia.213.b
 		ai_chance = { factor = 30 }
 		add_political_power = -30
-		add_to_variable = { SOV_unrest = 8 }
+		add_to_variable = { SOV_worker_unrest = 8 }
 		add_stability = -0.03
 		add_popularity = { ideology = communism popularity = 0.01 }
 		set_country_flag = SOV_lenin_arrested
@@ -387,7 +387,7 @@ country_event = {
 	option = {
 		name = ww1_russia.213.c
 		ai_chance = { factor = 30 }
-		add_to_variable = { SOV_unrest = -6 }
+		add_to_variable = { SOV_worker_unrest = -6 }
 		add_popularity = { ideology = democratic popularity = 0.02 }
 		add_popularity = { ideology = communism popularity = 0.03 }
 	}
@@ -421,7 +421,7 @@ country_event = {
 		add_popularity = { ideology = communism popularity = 0.05 }
 		add_to_variable = { SOV_tsar_prestige = -100 }
 		add_to_variable = { SOV_duma_tension = -30 }
-		add_to_variable = { SOV_unrest = -20 }
+		add_to_variable = { SOV_worker_unrest = -20 }
 		add_to_variable = { SOV_army_loyalty = -8 }
 		country_event = { id = ww1_russia.212 days = 20 }
 		if = { limit = { country_exists = GER } GER = { country_event = { id = ww1_germany_events.230 days = 2 } } }
@@ -437,7 +437,7 @@ country_event = {
 		set_country_flag = SOV_path_tsarist
 		clr_country_flag = SOV_revolution_window_open
 		add_to_variable = { SOV_army_loyalty = -5 }
-		add_to_variable = { SOV_unrest = 10 }
+		add_to_variable = { SOV_worker_unrest = 10 }
 		add_stability = -0.05
 		add_ideas = SOV_divine_autocracy
 	}
@@ -456,7 +456,7 @@ country_event = {
 		name = ww1_russia.212.a
 		ai_chance = { factor = 60 }
 		add_to_variable = { SOV_army_loyalty = -6 }
-		add_to_variable = { SOV_unrest = -5 }
+		add_to_variable = { SOV_worker_unrest = -5 }
 		add_political_power = 30
 	}
 
@@ -464,7 +464,7 @@ country_event = {
 		name = ww1_russia.212.b
 		ai_chance = { factor = 40 }
 		add_to_variable = { SOV_army_loyalty = 4 }
-		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_worker_unrest = -10 }
 		add_stability = -0.03
 		add_popularity = { ideology = communism popularity = 0.04 }
 	}
@@ -486,7 +486,7 @@ country_event = {
 	option = {
 		name = ww1_russia.214.a
 		ai_chance = { factor = 50 }
-		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_worker_unrest = -10 }
 		add_to_variable = { SOV_army_loyalty = -5 }
 		add_popularity = { ideology = communism popularity = -0.02 }
 		add_stability = -0.02
@@ -496,7 +496,7 @@ country_event = {
 	option = {
 		name = ww1_russia.214.b
 		ai_chance = { factor = 50 }
-		add_to_variable = { SOV_unrest = -5 }
+		add_to_variable = { SOV_worker_unrest = -5 }
 		add_political_power = 25
 		add_popularity = { ideology = communism popularity = 0.03 }
 	}
@@ -524,7 +524,7 @@ country_event = {
 		set_country_flag = SOV_path_bolshevik
 		set_country_flag = SOV_bolshevik_path_open
 		add_to_variable = { SOV_army_loyalty = -8 }
-		add_to_variable = { SOV_unrest = 10 }
+		add_to_variable = { SOV_worker_unrest = 10 }
 		add_popularity = { ideology = communism popularity = 0.12 }
 		country_event = { id = ww1_russia.216 days = 50 }
 	}
@@ -542,7 +542,7 @@ country_event = {
 		name = ww1_russia.215.c
 		ai_chance = { factor = 35 }
 		set_country_flag = SOV_path_democratic
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_popularity = { ideology = democratic popularity = 0.1 }
 		country_event = { id = ww1_russia.218 days = 70 }
 	}
@@ -570,7 +570,7 @@ country_event = {
 		set_country_flag = SOV_bolshevik_path_chosen
 		clr_country_flag = SOV_provisional_gov_in_power
 		add_popularity = { ideology = communism popularity = 0.4 }
-		add_to_variable = { SOV_unrest = -20 }
+		add_to_variable = { SOV_worker_unrest = -20 }
 		add_to_variable = { SOV_army_loyalty = -10 }
 		add_political_power = 100
 		country_event = { id = ww1_russia.220 days = 45 }
@@ -600,7 +600,7 @@ country_event = {
 		set_country_flag = SOV_kornilov_path_chosen
 		clr_country_flag = SOV_provisional_gov_in_power
 		add_popularity = { ideology = fascism popularity = 0.3 }
-		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_worker_unrest = -10 }
 		add_to_variable = { SOV_army_loyalty = 10 }
 		country_event = { id = ww1_russia.220 days = 30 }
 	}
@@ -629,7 +629,7 @@ country_event = {
 	option = {
 		name = ww1_russia.218.b
 		ai_chance = { factor = 40 }
-		add_to_variable = { SOV_unrest = 8 }
+		add_to_variable = { SOV_worker_unrest = 8 }
 		add_popularity = { ideology = communism popularity = 0.06 }
 		set_country_flag = SOV_assembly_postponed
 		country_event = { id = ww1_russia.219 days = 45 }
@@ -662,7 +662,7 @@ country_event = {
 		clr_country_flag = SOV_provisional_gov_in_power
 		add_popularity = { ideology = democratic popularity = 0.2 }
 		add_stability = 0.05
-		add_to_variable = { SOV_unrest = -8 }
+		add_to_variable = { SOV_worker_unrest = -8 }
 	}
 
 	option = {
@@ -694,7 +694,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_country_flag = SOV_civil_war_started
 		add_political_power = 50
-		add_to_variable = { SOV_unrest = 10 }
+		add_to_variable = { SOV_worker_unrest = 10 }
 		add_ideas = SOV_civil_war_exhaustion
 		if = {
 			limit = { has_government = communism }
@@ -728,7 +728,7 @@ country_event = {
 	option = {
 		name = ww1_russia.221.a
 		ai_chance = { factor = 50 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		army_experience = 10
 		add_stability = -0.03
 	}
@@ -766,7 +766,7 @@ country_event = {
 	option = {
 		name = ww1_russia.222.b
 		ai_chance = { factor = 40 }
-		add_to_variable = { SOV_unrest = 4 }
+		add_to_variable = { SOV_worker_unrest = 4 }
 		army_experience = 5
 		add_political_power = 20
 	}
@@ -822,7 +822,7 @@ country_event = {
 	option = {
 		name = ww1_russia.224.a
 		ai_chance = { factor = 55 }
-		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_worker_unrest = -10 }
 		add_stability = -0.05
 		add_to_variable = { SOV_army_loyalty = 3 }
 	}
@@ -830,7 +830,7 @@ country_event = {
 	option = {
 		name = ww1_russia.224.b
 		ai_chance = { factor = 45 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_political_power = -40
 		add_stability = 0.01
 	}
@@ -853,8 +853,8 @@ country_event = {
 	option = {
 		name = ww1_russia.225.a
 		ai_chance = { factor = 65 }
-		add_to_variable = { SOV_hunger = -15 }
-		add_to_variable = { SOV_unrest = -10 }
+		add_to_variable = { SOV_urban_hunger = -15 }
+		add_to_variable = { SOV_worker_unrest = -10 }
 		add_ideas = SOV_nep_recovery
 		remove_ideas = SOV_civil_war_exhaustion
 		add_stability = 0.03
@@ -863,8 +863,8 @@ country_event = {
 	option = {
 		name = ww1_russia.225.b
 		ai_chance = { factor = 35 }
-		add_to_variable = { SOV_hunger = 6 }
-		add_to_variable = { SOV_unrest = 6 }
+		add_to_variable = { SOV_urban_hunger = 6 }
+		add_to_variable = { SOV_worker_unrest = 6 }
 		add_political_power = 40
 	}
 }
@@ -919,7 +919,7 @@ country_event = {
 		name = ww1_russia.227.b
 		ai_chance = { factor = 45 }
 		add_political_power = -30
-		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_worker_unrest = 3 }
 		set_country_flag = SOV_romanovs_tried
 	}
 }
@@ -941,7 +941,7 @@ country_event = {
 		name = ww1_russia.228.a
 		ai_chance = { factor = 50 }
 		add_stability = 0.02
-		add_to_variable = { SOV_unrest = -3 }
+		add_to_variable = { SOV_worker_unrest = -3 }
 		add_political_power = -20
 	}
 
@@ -949,7 +949,7 @@ country_event = {
 		name = ww1_russia.228.b
 		ai_chance = { factor = 50 }
 		add_political_power = 25
-		add_to_variable = { SOV_unrest = 3 }
+		add_to_variable = { SOV_worker_unrest = 3 }
 		add_stability = -0.01
 	}
 }
@@ -985,7 +985,7 @@ country_event = {
 		name = ww1_russia.230.c
 		ai_chance = { factor = 35 }
 		add_to_variable = { SOV_separatism = 10 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_stability = -0.02
 	}
 }
@@ -1008,7 +1008,7 @@ country_event = {
 		ai_chance = { factor = 35 }
 		release = UKR
 		add_to_variable = { SOV_separatism = -10 }
-		add_to_variable = { SOV_hunger = 8 }
+		add_to_variable = { SOV_urban_hunger = 8 }
 	}
 
 	option = {
@@ -1016,7 +1016,7 @@ country_event = {
 		ai_chance = { factor = 25 }
 		release_puppet = UKR
 		add_to_variable = { SOV_separatism = -5 }
-		add_to_variable = { SOV_hunger = 4 }
+		add_to_variable = { SOV_urban_hunger = 4 }
 	}
 
 	option = {
@@ -1025,7 +1025,7 @@ country_event = {
 		army_experience = 10
 		add_to_variable = { SOV_separatism = 8 }
 		add_to_variable = { SOV_army_loyalty = -4 }
-		add_to_variable = { SOV_unrest = 4 }
+		add_to_variable = { SOV_worker_unrest = 4 }
 	}
 }
 
@@ -1055,7 +1055,7 @@ country_event = {
 		name = ww1_russia.232.b
 		ai_chance = { factor = 65 }
 		add_to_variable = { SOV_separatism = 10 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_stability = -0.02
 	}
 }
@@ -1086,7 +1086,7 @@ country_event = {
 		name = ww1_russia.233.b
 		ai_chance = { factor = 60 }
 		add_to_variable = { SOV_separatism = 10 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_stability = -0.02
 	}
 }
@@ -1115,7 +1115,7 @@ country_event = {
 		name = ww1_russia.234.b
 		ai_chance = { factor = 50 }
 		add_to_variable = { SOV_separatism = 10 }
-		add_to_variable = { SOV_unrest = 5 }
+		add_to_variable = { SOV_worker_unrest = 5 }
 		add_stability = -0.02
 	}
 }
@@ -1965,8 +1965,8 @@ country_event = {
 	option = {
 		name = ww1_russia.251.a
 		add_ideas = SOV_arsenal_strikes_spirit
-		add_to_variable = { SOV_unrest = 10 }
-		clamp_variable = { var = SOV_unrest min = 0 max = 100 }
+		add_to_variable = { SOV_worker_unrest = 10 }
+		clamp_variable = { var = SOV_worker_unrest min = 0 max = 100 }
 	}
 }
 

@@ -2,8 +2,8 @@
 ww1_sov_rework_init = {
 	set_country_flag = SOV_rework_init
 	set_variable = { SOV_army_loyalty = 68 }
-	set_variable = { SOV_hunger = 12 }
-	set_variable = { SOV_unrest = 22 }
+	set_variable = { SOV_urban_hunger = 12 }
+	set_variable = { SOV_worker_unrest = 22 }
 	set_variable = { SOV_tsar_prestige = 60 }
 	set_variable = { SOV_duma_tension = 30 }
 	set_variable = { SOV_separatism = 15 }
@@ -27,16 +27,16 @@ ww1_sov_rework_weekly = {
 	# ---------------- deriva semanal ----------------
 	if = {
 		limit = { has_war = yes any_enemy_country = { is_major = yes } }
-		add_to_variable = { SOV_unrest = 0.22 }
+		add_to_variable = { SOV_worker_unrest = 0.22 }
 		add_to_variable = { SOV_army_loyalty = -0.12 }
-		add_to_variable = { SOV_hunger = 0.10 }
+		add_to_variable = { SOV_urban_hunger = 0.10 }
 		add_to_variable = { SOV_tsar_prestige = -0.05 }
-		if = { limit = { has_war_support < 0.40 } add_to_variable = { SOV_unrest = 0.15 } }
-		if = { limit = { has_stability < 0.40 } add_to_variable = { SOV_unrest = 0.15 } }
+		if = { limit = { has_war_support < 0.40 } add_to_variable = { SOV_worker_unrest = 0.15 } }
+		if = { limit = { has_stability < 0.40 } add_to_variable = { SOV_worker_unrest = 0.15 } }
 		if = {
 			limit = { check_variable = { ww1_infantry_equipment_ratio > 0.01 } check_variable = { ww1_infantry_equipment_ratio < 0.65 } }
 			add_to_variable = { SOV_army_loyalty = -0.25 }
-			add_to_variable = { SOV_unrest = 0.10 }
+			add_to_variable = { SOV_worker_unrest = 0.10 }
 		}
 		if = { limit = { surrender_progress > 0.15 } add_to_variable = { SOV_army_loyalty = -0.20 } }
 		if = {
@@ -50,36 +50,36 @@ ww1_sov_rework_weekly = {
 		}
 	}
 	else = {
-		add_to_variable = { SOV_unrest = -0.15 }
+		add_to_variable = { SOV_worker_unrest = -0.15 }
 		add_to_variable = { SOV_army_loyalty = 0.10 }
-		add_to_variable = { SOV_hunger = -0.20 }
+		add_to_variable = { SOV_urban_hunger = -0.20 }
 		add_to_variable = { SOV_tsar_prestige = 0.03 }
 	}
-	if = { limit = { check_variable = { SOV_duma_tension > 50 } } add_to_variable = { SOV_unrest = 0.05 } }
+	if = { limit = { check_variable = { SOV_duma_tension > 50 } } add_to_variable = { SOV_worker_unrest = 0.05 } }
 	if = { limit = { has_country_flag = SOV_tsar_abdicated has_country_flag = SOV_provisional_gov_in_power has_war = yes } add_to_variable = { SOV_separatism = 0.20 } }
-	if = { limit = { has_country_flag = SOV_civil_war_started NOT = { has_country_flag = SOV_civil_war_won } } add_to_variable = { SOV_hunger = 0.15 } add_to_variable = { SOV_unrest = 0.08 } }
-	clamp_variable = { var = SOV_unrest min = 0 max = 100 }
+	if = { limit = { has_country_flag = SOV_civil_war_started NOT = { has_country_flag = SOV_civil_war_won } } add_to_variable = { SOV_urban_hunger = 0.15 } add_to_variable = { SOV_worker_unrest = 0.08 } }
+	clamp_variable = { var = SOV_worker_unrest min = 0 max = 100 }
 	clamp_variable = { var = SOV_army_loyalty min = 0 max = 100 }
-	clamp_variable = { var = SOV_hunger min = 0 max = 100 }
+	clamp_variable = { var = SOV_urban_hunger min = 0 max = 100 }
 	clamp_variable = { var = SOV_tsar_prestige min = 0 max = 100 }
 	clamp_variable = { var = SOV_duma_tension min = 0 max = 100 }
 	clamp_variable = { var = SOV_separatism min = 0 max = 100 }
 	# ---------------- espiritos por nivel ----------------
 	if = {
-		limit = { check_variable = { SOV_hunger > 65 } }
+		limit = { check_variable = { SOV_urban_hunger > 65 } }
 		if = { limit = { NOT = { has_idea = SOV_hungry_cities_2 } } remove_ideas = SOV_hungry_cities_1 add_ideas = SOV_hungry_cities_2 }
 	}
 	else_if = {
-		limit = { check_variable = { SOV_hunger > 35 } }
+		limit = { check_variable = { SOV_urban_hunger > 35 } }
 		if = { limit = { NOT = { has_idea = SOV_hungry_cities_1 } } remove_ideas = SOV_hungry_cities_2 add_ideas = SOV_hungry_cities_1 }
 	}
 	else = { remove_ideas = SOV_hungry_cities_1 remove_ideas = SOV_hungry_cities_2 }
 	if = {
-		limit = { check_variable = { SOV_unrest > 70 } }
+		limit = { check_variable = { SOV_worker_unrest > 70 } }
 		if = { limit = { NOT = { has_idea = SOV_restless_workers_2 } } remove_ideas = SOV_restless_workers_1 add_ideas = SOV_restless_workers_2 }
 	}
 	else_if = {
-		limit = { check_variable = { SOV_unrest > 45 } }
+		limit = { check_variable = { SOV_worker_unrest > 45 } }
 		if = { limit = { NOT = { has_idea = SOV_restless_workers_1 } } remove_ideas = SOV_restless_workers_2 add_ideas = SOV_restless_workers_1 }
 	}
 	else = { remove_ideas = SOV_restless_workers_1 remove_ideas = SOV_restless_workers_2 }
@@ -170,10 +170,10 @@ ww1_sov_rework_weekly = {
 			has_war = yes
 			date > 1916.10.1
 			OR = {
-				check_variable = { SOV_unrest > 78 }
-				AND = { check_variable = { SOV_hunger > 50 } check_variable = { SOV_army_loyalty < 42 } }
-				AND = { date > 1917.2.15 check_variable = { SOV_unrest > 62 } }
-				AND = { check_variable = { SOV_repression_count > 1 } check_variable = { SOV_unrest > 55 } }
+				check_variable = { SOV_worker_unrest > 78 }
+				AND = { check_variable = { SOV_urban_hunger > 50 } check_variable = { SOV_army_loyalty < 42 } }
+				AND = { date > 1917.2.15 check_variable = { SOV_worker_unrest > 62 } }
+				AND = { check_variable = { SOV_repression_count > 1 } check_variable = { SOV_worker_unrest > 55 } }
 			}
 		}
 		set_country_flag = SOV_revolution_window_open

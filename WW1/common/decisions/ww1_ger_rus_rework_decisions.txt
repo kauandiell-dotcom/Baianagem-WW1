@@ -37,7 +37,7 @@ SOV_imperial_crisis = {
 		complete_effect = {
 			add_to_variable = { SOV_duma_tension = 15 }
 			add_political_power = 30
-			add_to_variable = { SOV_unrest = 3 }
+			add_to_variable = { SOV_worker_unrest = 3 }
 		}
 		ai_will_do = { base = 0
 			modifier = { add = 0 always = no }
@@ -49,18 +49,18 @@ SOV_imperial_crisis = {
 		cost = 30
 		days_re_enable = 90
 		available = {
-			check_variable = { SOV_hunger > 20 }
+			check_variable = { SOV_urban_hunger > 20 }
 		}
 		visible = {
 			original_tag = SOV
 			has_country_flag = SOV_rework_init
 		}
 		complete_effect = {
-			add_to_variable = { SOV_hunger = -10 }
+			add_to_variable = { SOV_urban_hunger = -10 }
 			add_stability = -0.01
 		}
 		ai_will_do = { base = 0
-			modifier = { add = 30 check_variable = { SOV_hunger > 45 } }
+			modifier = { add = 30 check_variable = { SOV_urban_hunger > 45 } }
 		}
 	}
 
@@ -77,11 +77,11 @@ SOV_imperial_crisis = {
 			has_war = yes
 		}
 		complete_effect = {
-			add_to_variable = { SOV_hunger = -7 }
-			add_to_variable = { SOV_unrest = 5 }
+			add_to_variable = { SOV_urban_hunger = -7 }
+			add_to_variable = { SOV_worker_unrest = 5 }
 		}
 		ai_will_do = { base = 0
-			modifier = { add = 15 check_variable = { SOV_hunger > 60 } }
+			modifier = { add = 15 check_variable = { SOV_urban_hunger > 60 } }
 		}
 	}
 
@@ -120,12 +120,12 @@ SOV_imperial_crisis = {
 			NOT = { has_country_flag = SOV_tsar_abdicated }
 		}
 		complete_effect = {
-			add_to_variable = { SOV_unrest = -10 }
+			add_to_variable = { SOV_worker_unrest = -10 }
 			add_stability = -0.03
 			add_to_variable = { SOV_tsar_prestige = -2 }
 		}
 		ai_will_do = { base = 0
-			modifier = { add = 20 check_variable = { SOV_unrest > 60 } }
+			modifier = { add = 20 check_variable = { SOV_worker_unrest > 60 } }
 		}
 	}
 
@@ -134,18 +134,18 @@ SOV_imperial_crisis = {
 		cost = 35
 		days_re_enable = 120
 		available = {
-			check_variable = { SOV_unrest > 25 }
+			check_variable = { SOV_worker_unrest > 25 }
 		}
 		visible = {
 			original_tag = SOV
 			has_country_flag = SOV_rework_init
 		}
 		complete_effect = {
-			add_to_variable = { SOV_unrest = -8 }
+			add_to_variable = { SOV_worker_unrest = -8 }
 			add_stability = 0.01
 		}
 		ai_will_do = { base = 0
-			modifier = { add = 25 check_variable = { SOV_unrest > 45 } }
+			modifier = { add = 25 check_variable = { SOV_worker_unrest > 45 } }
 		}
 	}
 
@@ -164,7 +164,7 @@ SOV_imperial_crisis = {
 		}
 		complete_effect = {
 			add_to_variable = { SOV_army_loyalty = 4 }
-			add_to_variable = { SOV_unrest = 3 }
+			add_to_variable = { SOV_worker_unrest = 3 }
 		}
 		ai_will_do = { base = 0
 			modifier = { add = 15 check_variable = { SOV_army_loyalty < 45 } }
@@ -185,7 +185,7 @@ SOV_imperial_crisis = {
 		}
 		complete_effect = {
 			add_war_support = 0.03
-			add_to_variable = { SOV_unrest = -3 }
+			add_to_variable = { SOV_worker_unrest = -3 }
 		}
 		ai_will_do = { base = 0
 			modifier = { add = 20 has_war_support < 0.40 }
@@ -219,7 +219,7 @@ SOV_imperial_crisis = {
 				remove_ideas = SOV_shell_shortage_crisis
 				add_ideas = SOV_shell_shortage_stage_2
 			}
-			add_to_variable = { SOV_unrest = 4 }
+			add_to_variable = { SOV_worker_unrest = 4 }
 			add_war_support = 0.05
 		}
 		ai_will_do = {
@@ -246,8 +246,8 @@ SOV_civil_war_front = {
 		}
 		complete_effect = {
 			army_experience = 10
-			add_to_variable = { SOV_unrest = 4 }
-			add_to_variable = { SOV_hunger = 4 }
+			add_to_variable = { SOV_worker_unrest = 4 }
+			add_to_variable = { SOV_urban_hunger = 4 }
 		}
 		ai_will_do = { base = 0
 			modifier = { add = 25 always = yes }
@@ -289,7 +289,7 @@ SOV_civil_war_front = {
 		}
 		complete_effect = {
 			add_to_variable = { SOV_army_loyalty = 5 }
-			add_to_variable = { SOV_unrest = -4 }
+			add_to_variable = { SOV_worker_unrest = -4 }
 			add_political_power = -30
 		}
 		ai_will_do = { base = 0
@@ -612,7 +612,7 @@ SOV_revolutionary_crisis_management = {
 			NOT = { has_country_flag = SOV_revolutionary_crisis_resolved }
 		}
 		complete_effect = {
-			add_to_variable = { SOV_hunger = -15 }
+			add_to_variable = { SOV_urban_hunger = -15 }
 			add_to_variable = { SOV_revolutionary_tension = -12 }
 			clamp_variable = { var = SOV_revolutionary_tension min = 0 max = 100 }
 			add_stability = 0.02
@@ -691,20 +691,25 @@ SOV_revolutionary_crisis_management = {
 
 	SOV_dec_crush_bolsheviks_okhrana = {
 		icon = generic_disband_irregulars
-		cost = 60
+		cost = 100
 		fire_only_once = yes
+		days_remove = 90
+		modifier = { political_power_factor = -0.10 }
 		available = {
-			check_variable = { SOV_revolutionary_tension < 20 }
-			has_stability > 0.40
-			195 = { is_demilitarized_zone = no }
-			219 = { is_demilitarized_zone = no }
+			custom_trigger_tooltip = {
+				tooltip = SOV_dec_crush_bolsheviks_okhrana_req_tt
+				check_variable = { SOV_revolutionary_tension < 20 }
+				has_stability > 0.50
+				195 = { is_demilitarized_zone = no }
+				219 = { is_demilitarized_zone = no }
+			}
 		}
 		visible = {
 			original_tag = SOV
 			has_country_flag = SOV_revolutionary_crisis_active
 			NOT = { has_country_flag = SOV_revolutionary_crisis_resolved }
 		}
-		complete_effect = {
+		remove_effect = {
 			SOV_clear_revolutionary_crisis = yes
 			country_event = { id = ww1_russia.254 days = 1 }
 		}
