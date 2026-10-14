@@ -1,0 +1,45 @@
+ideas = {
+	country = {
+		AUH_skoda_305_howitzer = {
+			picture = generic_artillery_bonus
+			allowed = { always = no }
+			modifier = {
+				army_artillery_attack_factor = 0.15
+				breakthrough_factor = 0.10
+			}
+		}
+		AUH_steyr_mannlicher = {
+			picture = generic_infantry_bonus
+			allowed = { always = no }
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				industrial_capacity_factory = 0.05
+			}
+		}
+		AUH_ganz_danubius = {
+			picture = generic_navy_bonus
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_dockyard = 0.10
+				navy_max_range_factor = 0.10
+			}
+		}
+		AUH_conrad_offensive_doctrine = {
+			picture = generic_militarism_drift_bonus
+			allowed = { always = no }
+			modifier = {
+				army_attack_factor = 0.10
+				breakthrough_factor = 0.15
+				attrition = 0.10
+			}
+		}
+		AUH_borojevic_alpine_defense = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			modifier = {
+				army_core_defence_factor = 0.15
+				dig_in_speed_factor = 0.20
+			}
+		}
+	}
+}

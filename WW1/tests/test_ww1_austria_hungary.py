@@ -434,6 +434,26 @@ class TestAustriaHungaryOverhaul(unittest.TestCase):
         errs = audit_file_modifiers(ideas_file)
         self.assertEqual(len(errs), 0, f"Semantic Oracle found invalid Clausewitz modifiers in {ideas_file}: {errs}")
 
+        # Decisions file check
+        dec_file = os.path.join(REPO_ROOT, "common", "decisions", "ww1_austria_skoda_decisions.txt")
+        self.assertTrue(os.path.isfile(dec_file), f"Skoda decisions file missing: {dec_file}")
+
+        with open(dec_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            dec_content = f.read()
+
+        expected_decisions = [
+            "AUH_dec_skoda_siege_howitzers",
+            "AUH_dec_galician_oil_extraction",
+            "AUH_dec_steep_alpine_redoubts",
+        ]
+        for dec in expected_decisions:
+            self.assertIn(dec, dec_content, f"Decision {dec} missing from ww1_austria_skoda_decisions.txt")
+
+        self.assertTrue(
+            "original_tag = AUS" in dec_content or "tag = AUS" in dec_content,
+            "Decisions must contain fast-failing tag check (original_tag = AUS)"
+        )
+
     def test_localisation_bom_and_parity(self):
         """Verify single UTF-8 BOM and 100% key parity between English and Portuguese."""
         eng_file = os.path.join(REPO_ROOT, "localisation", "english", "ww1_austria_rework_l_english.yml")

@@ -672,6 +672,11 @@ focus_tree = {
 			add_war_support = 0.05
 			set_country_flag = auh_ww1_aok_dictatorship_flag
 			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			if = {
+				limit = { has_idea = AUH_borojevic_alpine_defense }
+				remove_ideas = AUH_borojevic_alpine_defense
+			}
+			add_ideas = AUH_conrad_offensive_doctrine
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -1024,6 +1029,7 @@ focus_tree = {
 			set_country_flag = auh_ww1_project_skoda_unlocked
 			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
 			add_tech_bonus = { name = AUH_skoda_heavy_artillery_contract bonus = 1.0 uses = 1 category = artillery }
+			add_ideas = AUH_skoda_305_howitzer
 			auh_ww1_set_arsenals_standardised = yes
 			auh_ww1_clamp_counters = yes
 		}
@@ -1086,6 +1092,7 @@ focus_tree = {
 			set_country_flag = auh_ww1_project_steyr_unlocked
 			152 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
 			add_tech_bonus = { name = AUH_steyr_mannlicher_m95 bonus = 1.0 uses = 1 category = infantry_weapons }
+			add_ideas = AUH_steyr_mannlicher
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -2406,6 +2413,11 @@ focus_tree = {
 			set_country_flag = auh_ww1_isonzo_operation_unlocked
 			736 = { add_building_construction = { type = bunker level = 2 instant = yes } }
 			850 = { add_building_construction = { type = bunker level = 1 instant = yes } }
+			if = {
+				limit = { has_idea = AUH_conrad_offensive_doctrine }
+				remove_ideas = AUH_conrad_offensive_doctrine
+			}
+			add_ideas = AUH_borojevic_alpine_defense
 			auh_ww1_set_operation_isonzo = yes
 			army_experience = 20
 			auh_ww1_clamp_counters = yes
@@ -3478,6 +3490,7 @@ focus_tree = {
   completion_reward = {
 			set_country_flag = auh_ww1_project_trieste_unlocked
 			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			add_ideas = AUH_ganz_danubius
 			navy_experience = 15
 			auh_ww1_clamp_counters = yes
 		}
