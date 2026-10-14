@@ -454,6 +454,38 @@ class TestAustriaHungaryOverhaul(unittest.TestCase):
             "Decisions must contain fast-failing tag check (original_tag = AUS)"
         )
 
+    def test_diplomacy_events_and_redl(self):
+        """Verify that Austrian diplomacy events (Redl, Sixtus, Poland, Brotfrieden) and decisions exist."""
+        ev_file = os.path.join(REPO_ROOT, "events", "ww1_austria_diplomacy_events.txt")
+        self.assertTrue(os.path.isfile(ev_file), f"Diplomacy events file missing: {ev_file}")
+
+        with open(ev_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            ev_content = f.read()
+
+        expected_events = [
+            "ww1_austria_diplomacy.1",   # Colonel Redl Affair
+            "ww1_austria_diplomacy.10",  # Sixtus Affair
+            "ww1_austria_diplomacy.20",  # Austro-Polish Solution
+            "ww1_austria_diplomacy.30",  # Brotfrieden
+        ]
+        for evid in expected_events:
+            self.assertIn(evid, ev_content, f"Diplomacy event {evid} missing from ww1_austria_diplomacy_events.txt")
+
+        # Decisions check
+        dec_file = os.path.join(REPO_ROOT, "common", "decisions", "ww1_austria_diplomacy_decisions.txt")
+        self.assertTrue(os.path.isfile(dec_file), f"Diplomacy decisions missing: {dec_file}")
+
+        with open(dec_file, "r", encoding="utf-8-sig", errors="replace") as f:
+            dec_content = f.read()
+
+        for dec in ["AUH_dec_prince_wied_albania", "AUH_dec_danubian_customs_union"]:
+            self.assertIn(dec, dec_content, f"Decision {dec} missing from ww1_austria_diplomacy_decisions.txt")
+
+        self.assertTrue(
+            "original_tag = AUS" in dec_content or "tag = AUS" in dec_content,
+            "Diplomacy decisions must contain fast-failing tag check (original_tag = AUS)"
+        )
+
     def test_localisation_bom_and_parity(self):
         """Verify single UTF-8 BOM and 100% key parity between English and Portuguese."""
         eng_file = os.path.join(REPO_ROOT, "localisation", "english", "ww1_austria_rework_l_english.yml")

@@ -1,0 +1,55 @@
+AUH_crown_dashboard = {
+
+	# Backing Prince Wilhelm of Wied in Albania
+	AUH_dec_prince_wied_albania = {
+		icon = generic_diplomacy
+		cost = 35
+		fire_only_once = yes
+		allowed = {
+			original_tag = AUS
+		}
+		visible = {
+			tag = AUS
+		}
+		available = {
+			has_war = no
+			date < 1915.1.1
+		}
+		complete_effect = {
+			set_country_flag = AUH_backed_prince_wied_albania
+			add_stability = 0.05
+			add_to_variable = { AUH_cohesion = 5 }
+			AUH_clamp_dashboard_variables = yes
+			custom_effect_tooltip = AUH_dec_prince_wied_albania_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+
+	# Danubian Customs Union (Donauzollunion)
+	AUH_dec_danubian_customs_union = {
+		icon = generic_trade
+		cost = 50
+		fire_only_once = yes
+		allowed = {
+			original_tag = AUS
+		}
+		visible = {
+			tag = AUS
+		}
+		available = {
+			has_political_power > 49
+		}
+		complete_effect = {
+			set_country_flag = AUH_danubian_customs_union_active
+			add_to_variable = { AUH_vienna_grain = 15 }
+			add_to_variable = { AUH_cohesion = 5 }
+			AUH_clamp_dashboard_variables = yes
+			custom_effect_tooltip = AUH_dec_danubian_customs_union_tt
+		}
+		ai_will_do = {
+			base = 50
+		}
+	}
+}
