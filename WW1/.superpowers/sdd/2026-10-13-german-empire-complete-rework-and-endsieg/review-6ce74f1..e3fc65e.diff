@@ -1,0 +1,195 @@
+﻿diff --git a/WW1/common/ideas/ww1_germany_western_front_ideas.txt b/WW1/common/ideas/ww1_germany_western_front_ideas.txt
+new file mode 100644
+index 0000000..a302a13
+--- /dev/null
++++ b/WW1/common/ideas/ww1_germany_western_front_ideas.txt
+@@ -0,0 +1,37 @@
++ideas = {
++	country = {
++		# =========================================================================
++		# IMPERIAL GERMANY - WESTERN FRONT OPERATIONAL SPIRITS
++		# =========================================================================
++
++		# Schlieffen Plan Momentum (Operational Tempo & Supply Grace)
++		GER_schlieffen_momentum = {
++			picture = GFX_idea_GER_schlieffen_momentum
++			allowed = {
++				always = no
++			}
++			removal_cost = -1
++			modifier = {
++				army_attack_factor = 0.10
++				army_speed_factor = 0.15
++				no_supply_grace = 96
++			}
++		}
++
++		# Western Front Trench Stalemate (Deep Defensive Entrenchment)
++		GER_western_trench_stalemate = {
++			picture = GFX_idea_trench_warfare
++			allowed = {
++				always = no
++			}
++			removal_cost = -1
++			modifier = {
++				max_dig_in = 15
++				dig_in_speed_factor = 0.30
++				army_core_defence_factor = 0.20
++				army_defence_factor = 0.15
++				army_morale_factor = 0.10
++			}
++		}
++	}
++}
+diff --git a/WW1/common/national_focus/germany.txt b/WW1/common/national_focus/germany.txt
+index 563d7ef..28e95d9 100644
+--- a/WW1/common/national_focus/germany.txt
++++ b/WW1/common/national_focus/germany.txt
+@@ -2941,7 +2941,7 @@ add_mastery_bonus = { name = GER_dicta_boelcke_air_tactics bonus = 0.10 days = 1
+ 	focus = {
+ 		id = GER_smash_liege_forts
+ 		icon = GFX_focus_GER_ww1_smash_liege_forts
+-		prerequisite = { focus = GER_execute_schlieffen_plan }
++		prerequisite = { focus = GER_schlieffen_maneuver }
+ 		cost = 5
+ 		x = 98
+ 		y = 7
+@@ -3498,29 +3498,11 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days =
+ 		}
+ 	}
+ 
+-	focus = {
+-		id = GER_ultimatum_to_belgium
+-		icon = GFX_ww1_mex_upca_conquer
+-		prerequisite = { focus = GER_proclaim_state_of_war_danger }
+-		cost = 1
+-		x = 101
+-		y = 5
+-		search_filters = { FOCUS_FILTER_POLITICAL }
+-		ai_will_do = { factor = 90 }
+-		available_if_capitulated = no
+-
+-		completion_reward = {
+-			BEL = {
+-				country_event = { id = ww1_germany_events.22 }
+-			}
+-		}
+-	}
+-
+ 	focus = {
+ 		id = GER_aufmarsch_ost_focus
+ 		icon = GFX_focus_GER_aufmarsch_ost_focus
+ 		prerequisite = { focus = GER_the_blank_cheque }
+-		mutually_exclusive = { focus = GER_execute_schlieffen_plan }
++		mutually_exclusive = { focus = GER_schlieffen_maneuver }
+ 		cost = 10
+ 		x = 104
+ 		y = 4
+@@ -3589,15 +3571,15 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days =
+ 	}
+ 
+ 	focus = {
+-		id = GER_execute_schlieffen_plan
++		id = GER_schlieffen_maneuver
+ 		icon = GFX_focus_GER_schlieffen_once_more
+-		prerequisite = { focus = GER_ultimatum_to_belgium }
++		prerequisite = { focus = GER_proclaim_state_of_war_danger }
+ 		mutually_exclusive = { focus = GER_aufmarsch_ost_focus }
+ 		cost = 5
+ 		x = 100
+ 		y = 6
+ 		search_filters = { FOCUS_FILTER_POLITICAL }
+-		ai_will_do = { factor = 85 }
++		ai_will_do = { factor = 95 }
+ 		available_if_capitulated = no
+ 		allow_branch = {
+ 			NOT = { has_country_flag = ger_aufmarsch_ost_launched }
+@@ -3605,12 +3587,17 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days =
+ 
+ 		available = {
+ 			has_war_with = FRA
+-			country_exists = BEL
+ 		}
+ 		completion_reward = {
+ 			set_country_flag = ger_schlieffen_plan_launched
+ 			set_country_flag = GER_schlieffen_operations_active
+-			country_event = { id = ww1_germany_events.3 }
++			if = {
++				limit = { country_exists = LUX }
++				annex_country = { target = LUX }
++			}
++			BEL = {
++				country_event = { id = ww1_germany_events.22 }
++			}
+ 			add_timed_idea = {
+ 				idea = GER_schlieffen_momentum
+ 				days = 90
+@@ -3713,7 +3700,7 @@ add_mastery_bonus = { name = GER_somme_defensive_elasticity bonus = 0.10 days =
+ 	focus = {
+ 		id = GER_battle_of_the_frontiers
+ 		icon = GFX_focus_GER_ww1_battle_of_the_frontiers
+-		prerequisite = { focus = GER_execute_schlieffen_plan }
++		prerequisite = { focus = GER_schlieffen_maneuver }
+ 		cost = 5
+ 		x = 100
+ 		y = 7
+diff --git a/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt b/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
+index 8e8c309..68161a1 100644
+--- a/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
++++ b/WW1/common/on_actions/zz_ww1_ger_rus_rework_on_actions.txt
+@@ -17,6 +17,17 @@ on_actions = {
+ 	on_weekly_GER = {
+ 		effect = {
+ 			if = { limit = { original_tag = GER } ww1_ger_rework_weekly = yes }
++			# Western Front Trench Stalemate Transition Hook
++			if = {
++				limit = {
++					original_tag = GER
++					has_country_flag = ger_schlieffen_plan_launched
++					NOT = { controls_state = 16 }
++					NOT = { has_idea = GER_schlieffen_momentum }
++					NOT = { has_idea = GER_western_trench_stalemate }
++				}
++				country_event = { id = ww1_germany.10 }
++			}
+ 			# 1918 German Armistice Dissolution Hook
+ 			if = {
+ 				limit = {
+diff --git a/WW1/events/ww1_germany_western_front_events.txt b/WW1/events/ww1_germany_western_front_events.txt
+new file mode 100644
+index 0000000..f9ce162
+--- /dev/null
++++ b/WW1/events/ww1_germany_western_front_events.txt
+@@ -0,0 +1,32 @@
++add_namespace = ww1_germany
++
++# -------------------------------------------------------------------------
++# ww1_germany.10: Stabilization of the Western Front / Trench Warfare Begins
++# -------------------------------------------------------------------------
++country_event = {
++	id = ww1_germany.10
++	title = ww1_germany.10.t
++	desc = ww1_germany.10.d
++	picture = GFX_report_event_german_troops
++
++	fire_only_once = yes
++
++	trigger = {
++		tag = GER
++		has_country_flag = ger_schlieffen_plan_launched
++		NOT = { controls_state = 16 }
++		NOT = { has_idea = GER_schlieffen_momentum }
++		NOT = { has_idea = GER_western_trench_stalemate }
++	}
++
++	mean_time_to_happen = {
++		days = 1
++	}
++
++	option = {
++		name = ww1_germany.10.a
++		add_ideas = GER_western_trench_stalemate
++		remove_ideas = GER_schlieffen_momentum
++		add_stability = 0.05
++	}
++}
