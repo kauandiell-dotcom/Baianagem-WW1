@@ -110,17 +110,23 @@ focus_tree = {
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
   prerequisite = { focus = AUH_ww1_constitutional_audit }
-  mutually_exclusive = { focus = AUH_ww1_trialism focus = AUH_ww1_federalism }
+  mutually_exclusive = { focus = AUH_ww1_trialism focus = AUH_ww1_federalism focus = AUH_ww1_military_dictatorship }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 8 }
-  completion_reward = { add_political_power = 45 add_to_variable = { auh_ww1_consent = 8 } 4 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			add_ideas = AUH_idea_dualism_iron
+			add_political_power = 45
+			add_to_variable = { auh_ww1_consent = 8 }
+			4 = { add_extra_state_shared_building_slots = 1 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
-  id = AUH_ww1_budapest_compact
-  icon = GFX_focus_AUH_ww1_budapest_compact
+  id = AUH_ww1_tisza_alliance
+  icon = GFX_focus_AUH_ww1_tisza_alliance
   x = 2
   y = 4
   cost = 5
@@ -132,8 +138,11 @@ focus_tree = {
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
+			set_country_flag = auh_ww1_tisza_alliance_flag
 			set_country_flag = auh_ww1_budapest_unlocked
 			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			add_political_power = 30
+			add_to_variable = { AUH_vienna_grain = 30 }
 			add_to_variable = { auh_ww1_consent = 8 }
 			add_to_variable = { auh_ww1_cohesion = 6 }
 			auh_ww1_set_budget_negotiated = yes
@@ -147,7 +156,7 @@ focus_tree = {
   y = 5
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_budapest_compact }
+  prerequisite = { focus = AUH_ww1_tisza_alliance }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -163,13 +172,13 @@ focus_tree = {
 		}
  }
  focus = {
-  id = AUH_ww1_honved_safeguards
-  icon = GFX_focus_AUH_ww1_honved_safeguards
+  id = AUH_ww1_magyar_cavalry_corps
+  icon = GFX_focus_AUH_ww1_magyar_cavalry_corps
   x = 2
   y = 5
   cost = 5
-  search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_budapest_compact }
+  search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL }
+  prerequisite = { focus = AUH_ww1_tisza_alliance }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -179,6 +188,7 @@ focus_tree = {
 			set_country_flag = auh_ww1_honved_contract_unlocked
 			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
 			army_experience = 15
+			add_war_support = 0.05
 			add_to_variable = { auh_ww1_consent = 6 }
 			auh_ww1_clamp_counters = yes
 		}
@@ -191,7 +201,7 @@ focus_tree = {
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
   prerequisite = { focus = AUH_ww1_joint_budget }
-  prerequisite = { focus = AUH_ww1_honved_safeguards }
+  prerequisite = { focus = AUH_ww1_magyar_cavalry_corps }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -278,17 +288,23 @@ focus_tree = {
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
   prerequisite = { focus = AUH_ww1_constitutional_audit }
-  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_federalism }
+  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_federalism focus = AUH_ww1_military_dictatorship }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 8 } 103 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			add_ideas = AUH_idea_habsburg_trialism
+			add_political_power = 35
+			add_to_variable = { auh_ww1_cohesion = 8 }
+			103 = { add_extra_state_shared_building_slots = 1 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
-  id = AUH_ww1_croatian_diet
-  icon = GFX_focus_AUH_ww1_croatian_diet
+  id = AUH_ww1_zagreb_coronation
+  icon = GFX_focus_AUH_ww1_zagreb_coronation
   x = 6
   y = 4
   cost = 5
@@ -299,7 +315,14 @@ focus_tree = {
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { set_country_flag = auh_ww1_project_sabor_unlocked 103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant = yes } } 736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } } navy_experience = 10 add_to_variable = { auh_ww1_cohesion = 4 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			set_country_flag = auh_ww1_project_sabor_unlocked
+			103 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = infrastructure level = 1 instant = yes } }
+			736 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dockyard level = 1 instant = yes } }
+			navy_experience = 10
+			add_to_variable = { auh_ww1_cohesion = 6 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
   id = AUH_ww1_bosnian_guarantees
@@ -308,7 +331,7 @@ focus_tree = {
   y = 5
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_croatian_diet }
+  prerequisite = { focus = AUH_ww1_zagreb_coronation }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -323,13 +346,13 @@ focus_tree = {
 		}
  }
  focus = {
-  id = AUH_ww1_trialist_compensation
-  icon = GFX_focus_AUH_ww1_trialist_compensation
+  id = AUH_ww1_pacify_south_slavs
+  icon = GFX_focus_AUH_ww1_pacify_south_slavs
   x = 6
   y = 5
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_croatian_diet }
+  prerequisite = { focus = AUH_ww1_zagreb_coronation }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -339,7 +362,8 @@ focus_tree = {
 			set_country_flag = auh_ww1_compensation_unlocked
 			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
 			add_to_variable = { auh_ww1_consent = 8 }
-			add_to_variable = { auh_ww1_cohesion = 6 }
+			add_to_variable = { auh_ww1_cohesion = 10 }
+			add_stability = 0.05
 			auh_ww1_clamp_counters = yes
 		}
  }
@@ -351,7 +375,7 @@ focus_tree = {
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
   prerequisite = { focus = AUH_ww1_bosnian_guarantees }
-  prerequisite = { focus = AUH_ww1_trialist_compensation }
+  prerequisite = { focus = AUH_ww1_pacify_south_slavs }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -439,17 +463,23 @@ focus_tree = {
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
   prerequisite = { focus = AUH_ww1_constitutional_audit }
-  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_trialism }
+  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_trialism focus = AUH_ww1_military_dictatorship }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
-  completion_reward = { add_political_power = 35 add_to_variable = { auh_ww1_cohesion = 10 } 9 = { add_extra_state_shared_building_slots = 1 } auh_ww1_clamp_counters = yes }
+  completion_reward = {
+			add_ideas = AUH_idea_danubian_federation_spirit
+			add_political_power = 35
+			add_to_variable = { auh_ww1_cohesion = 10 }
+			9 = { add_extra_state_shared_building_slots = 1 }
+			auh_ww1_clamp_counters = yes
+		}
  }
  focus = {
-  id = AUH_ww1_constitutional_convention
-  icon = GFX_focus_AUH_ww1_constitutional_convention
+  id = AUH_ww1_popovici_manifesto
+  icon = GFX_focus_AUH_ww1_popovici_manifesto
   x = 8
   y = 4
   cost = 5
@@ -465,26 +495,29 @@ focus_tree = {
 			9 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant = yes } }
 			add_political_power = 30
 			add_to_variable = { auh_ww1_consent = 8 }
+			add_to_variable = { auh_ww1_cohesion = 8 }
 			auh_ww1_clamp_counters = yes
 		}
  }
  focus = {
-  id = AUH_ww1_language_rights
-  icon = GFX_focus_AUH_ww1_language_rights
+  id = AUH_ww1_proclaim_danubian_federation
+  icon = GFX_focus_AUH_ww1_proclaim_danubian_federation
   x = 8
   y = 5
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_constitutional_convention }
+  prerequisite = { focus = AUH_ww1_popovici_manifesto }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
   available_if_capitulated = no
   ai_will_do = { factor = 1 }
   completion_reward = {
+			AUH_spawn_danubian_mega_federation = yes
 			set_country_flag = auh_ww1_languages_civil_unlocked
 			auh_ww1_set_languages_staff = yes
-			add_to_variable = { auh_ww1_cohesion = 10 }
+			add_political_power = 50
+			add_to_variable = { auh_ww1_cohesion = 15 }
 			add_to_variable = { auh_ww1_consent = 6 }
 			auh_ww1_clamp_counters = yes
 		}
@@ -496,7 +529,7 @@ focus_tree = {
   y = 5
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_constitutional_convention }
+  prerequisite = { focus = AUH_ww1_popovici_manifesto }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -517,7 +550,7 @@ focus_tree = {
   y = 6
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_language_rights }
+  prerequisite = { focus = AUH_ww1_proclaim_danubian_federation }
   prerequisite = { focus = AUH_ww1_federal_tax_compact }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
@@ -598,13 +631,79 @@ focus_tree = {
 		}
  }
  focus = {
+  id = AUH_ww1_military_dictatorship
+  icon = GFX_focus_AUH_ww1_military_dictatorship
+  x = 12
+  y = 3
+  cost = 5
+  search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+  prerequisite = { focus = AUH_ww1_constitutional_audit }
+  mutually_exclusive = { focus = AUH_ww1_dualism focus = AUH_ww1_trialism focus = AUH_ww1_federalism }
+  available = { has_capitulated = no  }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  available_if_capitulated = no
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+			add_ideas = AUH_idea_aok_military_dictatorship
+			add_political_power = 50
+			add_war_support = 0.10
+			add_stability = -0.05
+			army_experience = 20
+			auh_ww1_clamp_counters = yes
+		}
+ }
+ focus = {
+  id = AUH_ww1_conrad_supreme_command
+  icon = GFX_focus_AUH_ww1_conrad_supreme_command
+  x = 12
+  y = 4
+  cost = 5
+  search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+  prerequisite = { focus = AUH_ww1_military_dictatorship }
+  available = { has_capitulated = no  }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  available_if_capitulated = no
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+			add_command_power = 30
+			army_experience = 15
+			add_war_support = 0.05
+			set_country_flag = auh_ww1_aok_dictatorship_flag
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
+ }
+ focus = {
+  id = AUH_ww1_war_surveillance_office
+  icon = GFX_focus_AUH_ww1_war_surveillance_office
+  x = 12
+  y = 5
+  cost = 5
+  search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+  prerequisite = { focus = AUH_ww1_conrad_supreme_command }
+  available = { has_capitulated = no  }
+  cancel_if_invalid = yes
+  continue_if_invalid = no
+  available_if_capitulated = no
+  ai_will_do = { factor = 1 }
+  completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.05
+			4 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			43 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant = yes } }
+			auh_ww1_clamp_counters = yes
+		}
+ }
+ focus = {
   id = AUH_ww1_bohemian_landtag
   icon = GFX_focus_AUH_ww1_bohemian_landtag
   x = 2
   y = 9
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
+  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -664,7 +763,7 @@ focus_tree = {
   y = 9
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
+  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -724,7 +823,7 @@ focus_tree = {
   y = 9
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
+  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no
@@ -784,7 +883,7 @@ focus_tree = {
   y = 9
   cost = 5
   search_filters = { FOCUS_FILTER_POLITICAL }
-  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet }
+  prerequisite = { focus = AUH_ww1_dual_war_cabinet focus = AUH_ww1_trialist_war_cabinet focus = AUH_ww1_federal_war_cabinet focus = AUH_ww1_war_surveillance_office }
   available = { has_capitulated = no  }
   cancel_if_invalid = yes
   continue_if_invalid = no

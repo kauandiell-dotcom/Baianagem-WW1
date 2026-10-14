@@ -216,7 +216,34 @@ class TestAustriaHungaryOverhaul(unittest.TestCase):
                     f"Focus {fid} must be mutually exclusive with {other}"
                 )
 
-        # 3. Check distinct ideas exist in ideas file
+        # 3. Check sub-focuses exist in each constitutional branch
+        expected_subfoci = [
+            "AUH_ww1_tisza_alliance", "AUH_ww1_magyar_cavalry_corps",
+            "AUH_ww1_zagreb_coronation", "AUH_ww1_pacify_south_slavs",
+            "AUH_ww1_popovici_manifesto", "AUH_ww1_proclaim_danubian_federation",
+            "AUH_ww1_conrad_supreme_command", "AUH_ww1_war_surveillance_office",
+        ]
+        for sfid in expected_subfoci:
+            self.assertIn(sfid, foci_dict, f"Sub-focus {sfid} missing from austria.txt")
+
+        # 4. Check proclamation completion reward calls AUH_spawn_danubian_mega_federation
+        fed_proc = foci_dict["AUH_ww1_proclaim_danubian_federation"]
+        self.assertIn(
+            "AUH_spawn_danubian_mega_federation", fed_proc["block"],
+            "AUH_ww1_proclaim_danubian_federation must call AUH_spawn_danubian_mega_federation"
+        )
+
+        # 5. Check 0 coordinate collisions across all focuses
+        coords = {}
+        for f in foci:
+            x_m = re.search(r"\bx\s*=\s*([0-9\-]+)", f["block"])
+            y_m = re.search(r"\by\s*=\s*([0-9\-]+)", f["block"])
+            if x_m and y_m:
+                coord = (int(x_m.group(1)), int(y_m.group(1)))
+                self.assertNotIn(coord, coords, f"Coordinate collision at {coord}: {coords.get(coord)} and {f['id']}")
+                coords[coord] = f["id"]
+
+        # 6. Check distinct ideas exist in ideas file
         ideas_file = os.path.join(REPO_ROOT, "common", "ideas", "ww1_austria_constitutional_ideas.txt")
         self.assertTrue(os.path.isfile(ideas_file), f"Constitutional ideas file missing: {ideas_file}")
 
@@ -235,7 +262,7 @@ class TestAustriaHungaryOverhaul(unittest.TestCase):
         for iid in expected_ideas:
             self.assertIn(iid, ideas_content, f"Idea {iid} missing from ww1_austria_constitutional_ideas.txt")
 
-        # 4. Semantic modifier audit on constitutional ideas
+        # 7. Semantic modifier audit on constitutional ideas
         errs = audit_file_modifiers(ideas_file)
         self.assertEqual(len(errs), 0, f"Semantic Oracle found invalid modifiers in {ideas_file}: {errs}")
 
