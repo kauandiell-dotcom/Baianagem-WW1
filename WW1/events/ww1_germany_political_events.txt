@@ -1,0 +1,93 @@
+add_namespace = ww1_germany_political
+
+# -------------------------------------------------------------------------
+# ww1_germany_political.1: Proclamation of the Imperial Pax Germanica
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_political.1
+	title = ww1_germany_political.1.t
+	desc = ww1_germany_political.1.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_political.1.a
+		add_stability = 0.15
+		add_war_support = 0.10
+		add_political_power = 100
+		add_ideas = GER_imperial_pax_spirit
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_political.2: Vaterlandspartei Totalitarian Dictatorship
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_political.2
+	title = ww1_germany_political.2.t
+	desc = ww1_germany_political.2.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_political.2.a
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_ideas = GER_vaterlandspartei_hegemony
+		add_popularity = { ideology = fascism popularity = 0.35 }
+		add_stability = 0.05
+		add_war_support = 0.15
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_political.3: The Weimar Peace Resolution Enacted
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_political.3
+	title = ww1_germany_political.3.t
+	desc = ww1_germany_political.3.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_political.3.a
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_ideas = GER_weimar_peace_coalition
+		add_popularity = { ideology = democratic popularity = 0.30 }
+		add_stability = 0.15
+		add_political_power = 75
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_germany_political.4: The Spartakusbund Red Republic Consolidates
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_germany_political.4
+	title = ww1_germany_political.4.t
+	desc = ww1_germany_political.4.d
+	picture = GFX_report_event_german_troops
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_germany_political.4.a
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_ideas = GER_spartakist_councils
+		add_popularity = { ideology = communism popularity = 0.35 }
+		add_stability = 0.10
+		add_war_support = 0.10
+	}
+}

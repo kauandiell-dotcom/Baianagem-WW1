@@ -597,6 +597,22 @@ focus_tree = {
 	}
 
 	focus = {
+		id = GER_spartakusbund_revolution
+		icon = GFX_focus_GER_start_the_proletarian_revolution
+		cost = 10
+		x = 2
+		y = 13
+		prerequisite = { focus = GER_world_proletarian_revolution }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_germany_political.4 }
+			add_political_power = 100
+			army_experience = 30
+		}
+	}
+
+	focus = {
 		id = GER_prussian_franchise_reform
 		icon = GFX_focus_GER_prussian_franchise_reform
 		cost = 10
@@ -1007,6 +1023,22 @@ focus_tree = {
 	}
 
 	focus = {
+		id = GER_weimar_peace_resolution
+		icon = GFX_focus_GER_prussian_franchise_reform
+		cost = 10
+		x = 7
+		y = 14
+		prerequisite = { focus = GER_pan_european_arbitration_league }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			country_event = { id = ww1_germany_political.3 }
+			add_political_power = 100
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
 		id = GER_silent_dictatorship_ohl
 		icon = GFX_focus_GER_silent_dictatorship_ohl
 		cost = 10
@@ -1402,6 +1434,22 @@ focus_tree = {
 	}
 
 	focus = {
+		id = GER_pax_germanica
+		icon = GFX_focus_GER_ww1_hohenzollern_imperial_hegemony
+		cost = 10
+		x = 12
+		y = 14
+		prerequisite = { focus = GER_hegemon_of_continental_europe }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_germany_political.1 }
+			add_political_power = 100
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
 		id = GER_found_vaterlandspartei
 		icon = GFX_focus_GER_found_vaterlandspartei
 		cost = 10
@@ -1769,6 +1817,22 @@ focus_tree = {
 			add_stability = 0.10
 			army_experience = 50
 			navy_experience = 50
+		}
+	}
+
+	focus = {
+		id = GER_vaterlandspartei_dictatorship
+		icon = GFX_GER_military_dictatorship
+		cost = 10
+		x = 17
+		y = 15
+		prerequisite = { focus = GER_unconditional_victory_or_ruin }
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
+		completion_reward = {
+			country_event = { id = ww1_germany_political.2 }
+			add_political_power = 100
+			add_war_support = 0.15
 		}
 	}
 
