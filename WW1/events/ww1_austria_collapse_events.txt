@@ -94,8 +94,12 @@ country_event = {
 		add_war_support = -0.15
 		HUN = {
 			transfer_state = 43
-			transfer_state = 44
-			transfer_state = 45
+			transfer_state = 154
+			transfer_state = 155
+			transfer_state = 664
+			transfer_state = 764
+			transfer_state = 973
+			transfer_state = 974
 			leave_faction = yes
 			prevent_join_factions = yes
 			set_rule = { can_join_factions = no }
@@ -133,7 +137,10 @@ country_event = {
 		}
 		NOT = { country_exists = CRO }
 		NOT = { has_country_flag = AUH_croatian_secession_fired }
-		owns_state = 109
+		OR = {
+			owns_state = 103
+			owns_state = 109
+		}
 	}
 
 	mean_time_to_happen = {
@@ -146,8 +153,9 @@ country_event = {
 		add_stability = -0.15
 		add_war_support = -0.10
 		CRO = {
+			transfer_state = 103
 			transfer_state = 109
-			transfer_state = 108
+			transfer_state = 163
 			leave_faction = yes
 			prevent_join_factions = yes
 			set_rule = { can_join_factions = no }
@@ -184,7 +192,10 @@ country_event = {
 			AND = {
 				country_exists = CRO
 				has_war_with = CRO
-				controls_state = 109
+				OR = {
+					controls_state = 103
+					controls_state = 109
+				}
 			}
 		}
 	}
@@ -204,7 +215,13 @@ country_event = {
 			annex_country = { target = HUN transfer_troops = yes }
 		}
 		if = {
-			limit = { country_exists = CRO controls_state = 109 }
+			limit = {
+				country_exists = CRO
+				OR = {
+					controls_state = 103
+					controls_state = 109
+				}
+			}
 			annex_country = { target = CRO transfer_troops = yes }
 		}
 		add_stability = 0.15

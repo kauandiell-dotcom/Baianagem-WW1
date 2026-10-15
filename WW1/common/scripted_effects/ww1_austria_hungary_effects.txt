@@ -239,24 +239,35 @@ auh_ww1_set_operation_carpathians = {
 }
 
 auh_ww1_clamp_counters = {
- clamp_variable = { var = auh_ww1_consent min = 0 max = 100 }
- clamp_variable = { var = auh_ww1_cohesion min = 0 max = 100 }
- clamp_variable = { var = auh_ww1_provisions min = 0 max = 100 }
- clamp_variable = { var = auh_ww1_debt min = 0 max = 6 }
- clamp_variable = { var = auh_ww1_projects_active min = 0 max = 2 }
+	clamp_variable = { var = auh_ww1_consent min = 0 max = 100 }
+	clamp_variable = { var = auh_ww1_cohesion min = 0 max = 100 }
+	clamp_variable = { var = auh_ww1_provisions min = 0 max = 100 }
+	clamp_variable = { var = auh_ww1_debt min = 0 max = 6 }
+	clamp_variable = { var = auh_ww1_projects_active min = 0 max = 2 }
+	if = {
+		limit = { has_variable = AUH_cohesion }
+		set_variable = { AUH_cohesion = auh_ww1_cohesion }
+		clamp_variable = { var = AUH_cohesion min = 0 max = 100 }
+	}
+	if = {
+		limit = { has_variable = AUH_vienna_grain }
+		set_variable = { AUH_vienna_grain = auh_ww1_provisions }
+		clamp_variable = { var = AUH_vienna_grain min = 0 max = 100 }
+	}
 }
 auh_ww1_initialise = {
- set_country_flag = auh_ww1_initialised
- set_variable = { auh_ww1_consent = 45 }
- set_variable = { auh_ww1_cohesion = 55 }
- set_variable = { auh_ww1_provisions = 70 }
- set_variable = { auh_ww1_debt = 0 }
- set_variable = { auh_ww1_projects_active = 0 }
- set_country_flag = auh_ww1_dualist_constitution
- set_grand_doctrine = grand_battleplan
- if = { limit = { has_character = AUS_conrad_von_hotzendorf }
-  AUS_conrad_von_hotzendorf = { remove_unit_leader_trait = paratrooper }
- }
+	set_country_flag = auh_ww1_initialised
+	set_variable = { auh_ww1_consent = 45 }
+	set_variable = { auh_ww1_cohesion = 65 }
+	set_variable = { auh_ww1_provisions = 70 }
+	set_variable = { auh_ww1_debt = 0 }
+	set_variable = { auh_ww1_projects_active = 0 }
+	set_country_flag = auh_ww1_dualist_constitution
+	set_grand_doctrine = grand_battleplan
+	AUH_init_crown_dashboard = yes
+	if = { limit = { has_character = AUS_conrad_von_hotzendorf }
+		AUS_conrad_von_hotzendorf = { remove_unit_leader_trait = paratrooper }
+	}
 }
 auh_ww1_update_pressure = {
  hidden_effect = {

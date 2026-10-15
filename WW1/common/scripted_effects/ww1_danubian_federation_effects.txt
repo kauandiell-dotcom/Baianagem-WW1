@@ -2,47 +2,77 @@
 # Triggered by focus AUH_ww1_proclaim_danubian_federation
 
 AUH_spawn_danubian_mega_federation = {
-	# Hungary
-	puppet = HUN
+	# 1. State Transfers to Federal Member Nations
+	# Hungary (Budapest, Alföld, Dunántúl, Felvidék, Bács, Transdanubia)
 	HUN = {
 		transfer_state = 43
-		transfer_state = 44
-		transfer_state = 45
+		transfer_state = 154
+		transfer_state = 155
 		transfer_state = 664
 		transfer_state = 764
-		set_cosmetic_tag = HUN_AUS_danubian_state
-		add_ideas = AUH_danubian_federal_member
-		load_oob = "AUH_hun_federal"
+		transfer_state = 973
+		transfer_state = 974
 	}
-	# Bohemia / Czechia
-	puppet = CZE
+
+	# Bohemia / Czechia (Prague, Sudetenland, Moravia, South Sudetenland)
 	CZE = {
 		transfer_state = 9
 		transfer_state = 69
 		transfer_state = 74
 		transfer_state = 75
-		set_cosmetic_tag = CZE_AUS_danubian_state
-		add_ideas = AUH_danubian_federal_member
-		load_oob = "AUH_cze_federal"
+		transfer_state = 972
 	}
-	# Croatia-Slavonia
-	puppet = CRO
+
+	# Croatia-Slavonia (Zagreb, Slavonia, Dalmatia)
 	CRO = {
+		transfer_state = 103
 		transfer_state = 109
-		transfer_state = 108
 		transfer_state = 163
-		transfer_state = 164
-		set_cosmetic_tag = CRO_AUS_danubian_state
-		add_ideas = AUH_danubian_federal_member
-		load_oob = "AUH_cro_federal"
 	}
-	# Galicia-Poland
-	puppet = POL
+
+	# Galicia-Poland (Kielce, Kraków, Tarnopol)
 	POL = {
 		transfer_state = 88
 		transfer_state = 89
+		transfer_state = 91
+	}
+
+	# 2. Strict Imperial Puppet Status under Vienna
+	puppet = HUN
+	puppet = CZE
+	puppet = CRO
+	puppet = POL
+
+	# 3. Federal Integration Spirit, Cosmetic Uniformity, Faction Lockdown & Troop Spawns
+	HUN = {
+		set_cosmetic_tag = HUN_AUS_danubian_state
+		add_ideas = AUH_danubian_federal_member
+		set_rule = { can_join_factions = no }
+		set_rule = { can_create_factions = no }
+		load_oob = "AUH_hun_federal"
+	}
+
+	CZE = {
+		set_cosmetic_tag = CZE_AUS_danubian_state
+		add_ideas = AUH_danubian_federal_member
+		set_rule = { can_join_factions = no }
+		set_rule = { can_create_factions = no }
+		load_oob = "AUH_cze_federal"
+	}
+
+	CRO = {
+		set_cosmetic_tag = CRO_AUS_danubian_state
+		add_ideas = AUH_danubian_federal_member
+		set_rule = { can_join_factions = no }
+		set_rule = { can_create_factions = no }
+		load_oob = "AUH_cro_federal"
+	}
+
+	POL = {
 		set_cosmetic_tag = POL_AUS_danubian_state
 		add_ideas = AUH_danubian_federal_member
+		set_rule = { can_join_factions = no }
+		set_rule = { can_create_factions = no }
 		load_oob = "AUH_pol_federal"
 	}
 }

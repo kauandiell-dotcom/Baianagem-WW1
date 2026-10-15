@@ -17,6 +17,9 @@ AUH_crown_dashboard = {
 				controls_state = 82
 				controls_state = 764
 				controls_state = 43
+				82 = { controller = { is_subject_of = ROOT } }
+				764 = { controller = { is_subject_of = ROOT } }
+				43 = { controller = { is_subject_of = ROOT } }
 			}
 			check_variable = { AUH_vienna_grain < 95 }
 		}
@@ -88,7 +91,10 @@ AUH_crown_dashboard = {
 		}
 		available = {
 			check_variable = { AUH_cohesion < 90 }
-			controls_state = 43
+			OR = {
+				controls_state = 43
+				43 = { controller = { is_subject_of = ROOT } }
+			}
 		}
 		complete_effect = {
 			add_to_variable = { AUH_cohesion = 15 }
@@ -124,6 +130,10 @@ AUH_crown_dashboard = {
 			OR = {
 				controls_state = 88
 				controls_state = 171
+				controls_state = 91
+				88 = { controller = { is_subject_of = ROOT } }
+				171 = { controller = { is_subject_of = ROOT } }
+				91 = { controller = { is_subject_of = ROOT } }
 			}
 			check_variable = { AUH_vienna_grain < 95 }
 		}

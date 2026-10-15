@@ -8,12 +8,19 @@ AUH_init_crown_dashboard = {
 	set_variable = { AUH_war_weariness = 0 }
 	set_variable = { AUH_cohesion = 65 }
 	set_variable = { AUH_vienna_grain = 70 }
+	set_variable = { auh_ww1_cohesion = 65 }
+	set_variable = { auh_ww1_provisions = 70 }
+	set_variable = { auh_ww1_consent = 45 }
 }
 
 AUH_clamp_dashboard_variables = {
 	clamp_variable = { var = AUH_war_weariness min = 0 max = 100 }
 	clamp_variable = { var = AUH_cohesion min = 0 max = 100 }
 	clamp_variable = { var = AUH_vienna_grain min = 0 max = 100 }
+	set_variable = { auh_ww1_cohesion = AUH_cohesion }
+	set_variable = { auh_ww1_provisions = AUH_vienna_grain }
+	auh_ww1_clamp_counters = yes
+	auh_ww1_update_pressure = yes
 }
 
 AUH_weekly_grain_tick = {
