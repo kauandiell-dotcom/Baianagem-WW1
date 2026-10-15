@@ -103,6 +103,13 @@ FRA_weekly_republic_tick = {
 			}
 			add_ideas = FRA_union_sacree_strong
 		}
+		if = {
+			limit = {
+				check_variable = { FRA_union_sacree_cohesion < 75 }
+				has_idea = FRA_union_sacree_strong
+			}
+			remove_ideas = FRA_union_sacree_strong
+		}
 	}
 
 	# 2. Poilu Morale
@@ -130,6 +137,13 @@ FRA_weekly_republic_tick = {
 				NOT = { has_idea = FRA_poilu_morale_high }
 			}
 			add_ideas = FRA_poilu_morale_high
+		}
+		if = {
+			limit = {
+				check_variable = { FRA_poilu_morale < 70 }
+				has_idea = FRA_poilu_morale_high
+			}
+			remove_ideas = FRA_poilu_morale_high
 		}
 	}
 
@@ -161,6 +175,13 @@ FRA_weekly_republic_tick = {
 				NOT = { has_idea = FRA_charbon_et_acier_surplus }
 			}
 			add_ideas = FRA_charbon_et_acier_surplus
+		}
+		if = {
+			limit = {
+				check_variable = { FRA_charbon_et_acier < 75 }
+				has_idea = FRA_charbon_et_acier_surplus
+			}
+			remove_ideas = FRA_charbon_et_acier_surplus
 		}
 	}
 }
