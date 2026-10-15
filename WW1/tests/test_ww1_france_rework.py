@@ -482,6 +482,20 @@ class TestFranceOverhaul(unittest.TestCase):
             f"Keys missing in English: {sorted(list(missing_in_en))[:10]}"
         )
 
+        # 3. Internal quote escaping verification
+        for path, lang in [(en_path, "English"), (pt_path, "Brazilian Portuguese")]:
+            with open(path, "r", encoding="utf-8-sig") as f:
+                for line_idx, line in enumerate(f, start=1):
+                    s = line.strip()
+                    if s.startswith("#") or not s or s.startswith("l_"):
+                        continue
+                    if ':0 "' in s:
+                        unquoted = s.replace(r'\"', '')
+                        self.assertEqual(
+                            unquoted.count('"'), 2,
+                            f"{lang} localization has unescaped internal quotes on line {line_idx}: {s}"
+                        )
+
 
 if __name__ == "__main__":
     unittest.main()
