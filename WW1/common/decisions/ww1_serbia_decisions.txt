@@ -101,6 +101,67 @@ SER_black_hand_and_national_defense = {
 
 SER_wartime_emergency_measures = {
 
+	# A Ordem do Major Gavrilović - Defesa Até o Fim de Belgrado
+	SER_dec_major_gavrilovic_last_stand = {
+		icon = GFX_decision_generic_military_operation
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			has_war = yes
+			controls_state = 107
+			OR = {
+				any_neighbor_country = {
+					has_war_with = ROOT
+				}
+				107 = {
+					any_neighbor_state = {
+						NOT = { controller = { original_tag = SER } }
+					}
+				}
+			}
+		}
+		visible = {
+			original_tag = SER
+			has_war = yes
+			controls_state = 107
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = SER_major_gavrilovic_spirit
+			add_stability = 0.05
+			add_war_support = 0.15
+			set_country_flag = ser_major_gavrilovic_defense_enacted
+		}
+		ai_will_do = {
+			factor = 10.0
+		}
+	}
+
+	# Missão Médica Escocesa de Dra. Elsie Inglis
+	SER_dec_scottish_women_hospitals = {
+		icon = GFX_decision_generic_aid
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			has_idea = SER_typhus_epidemic_crisis
+		}
+		visible = {
+			original_tag = SER
+			has_idea = SER_typhus_epidemic_crisis
+		}
+		cost = 25
+		fire_only_once = yes
+		complete_effect = {
+			country_event = { id = ww1_serbia.21 }
+		}
+		ai_will_do = {
+			factor = 10.0
+		}
+	}
+
 	# Triagem Médica e Quarentena Contra o Tifo
 	SER_typhus_quarantine_and_triage = {
 		icon = GFX_decision_generic_aid

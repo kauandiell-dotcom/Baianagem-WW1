@@ -149,14 +149,36 @@ ideas = {
 			}
 		}
 
-		# Crise Epidêmica de Tifo e Sobrecarga Médica (Timed: 180 dias)
+		# Espírito do Major Gavrilović - Defesa Heroica de Belgrado
+		SER_major_gavrilovic_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.20
+				dig_in_speed_factor = 0.25
+				max_dig_in = 5
+			}
+		}
+
+		# Crise Epidêmica de Tifo e Sobrecarga Médica
 		SER_typhus_epidemic_crisis = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				army_org_factor = -0.10
-				conscription_factor = -0.15
 				attrition = 0.15
+				army_org_factor = -0.15
+				monthly_population = -0.30
+			}
+		}
+
+		# Auxílio Médico das Missões Estrangeiras (Dr. Elsie Inglis)
+		SER_foreign_medical_missions_aid = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				attrition = -0.10
+				army_org_factor = 0.05
+				monthly_population = 0.10
 			}
 		}
 

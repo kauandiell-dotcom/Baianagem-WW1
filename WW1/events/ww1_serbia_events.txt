@@ -194,18 +194,23 @@ country_event = {
 	option = {
 		name = ww1_serbia.7.a
 		ai_chance = { factor = 70 }
+		SER_shift_bop_pasic = yes
 		add_stability = 0.05
 		add_political_power = 40
+		army_experience = -10
 		add_opinion_modifier = { target = AUS modifier = positive_25 }
 		set_country_flag = SER_inquiry_opened
+		set_country_flag = SER_suppress_black_hand_sarajevo
 	}
 
 	option = {
 		name = ww1_serbia.7.b
 		ai_chance = { factor = 30 }
+		SER_shift_bop_apis = yes
 		add_war_support = 0.10
 		army_experience = 15
 		set_country_flag = SER_national_defiance_posture
+		set_country_flag = SER_tacit_support_sarajevo
 	}
 }
 
@@ -222,20 +227,25 @@ country_event = {
 
 	option = {
 		name = ww1_serbia.8.a
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 85 }
+		SER_shift_bop_pasic = yes
 		add_war_support = 0.20
 		add_stability = 0.10
 		add_political_power = 80
 		set_country_flag = SER_ultimatum_dignified_rejection
+		set_country_flag = SER_ultimatum_conditional_acceptance
 	}
 
 	option = {
 		name = ww1_serbia.8.b
-		ai_chance = { factor = 20 }
-		add_stability = -0.10
-		add_political_power = -50
-		add_opinion_modifier = { target = AUS modifier = positive_50 }
-		set_country_flag = SER_ultimatum_humiliating_acceptance
+		ai_chance = { factor = 15 }
+		SER_shift_bop_apis = yes
+		add_war_support = 0.30
+		add_stability = -0.05
+		add_political_power = 40
+		army_experience = 20
+		set_country_flag = SER_ultimatum_outright_rejection
+		set_country_flag = SER_ultimatum_defiant_stand
 	}
 }
 
@@ -434,3 +444,101 @@ country_event = {
 		set_country_flag = SER_greater_serbia_restored
 	}
 }
+
+# ------------------------------------------------------------------------------
+# 20. A Epidemia de Tifo de 1915 (The 1915 Typhus Epidemic)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.20
+	title = ww1_serbia.20.t
+	desc = ww1_serbia.20.d
+	picture = GFX_report_event_hospital
+
+	trigger = {
+		tag = SER
+		date > 1915.1.1
+		has_war = yes
+		NOT = { has_country_flag = SER_typhus_epidemic_occurred }
+		NOT = { has_idea = SER_typhus_epidemic_crisis }
+		NOT = { has_idea = SER_foreign_medical_missions_aid }
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia.20.a
+		ai_chance = { factor = 100 }
+		add_ideas = SER_typhus_epidemic_crisis
+		add_manpower = -15000
+		set_country_flag = SER_typhus_epidemic_occurred
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 21. Missão Médica Escocesa de Dra. Elsie Inglis (Dr. Elsie Inglis & Scottish Women's Hospitals)
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.21
+	title = ww1_serbia.21.t
+	desc = ww1_serbia.21.d
+	picture = GFX_report_event_hospital
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia.21.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { has_idea = SER_typhus_epidemic_crisis }
+			remove_ideas = SER_typhus_epidemic_crisis
+		}
+		add_ideas = SER_foreign_medical_missions_aid
+		add_manpower = 10000
+		add_stability = 0.05
+		set_country_flag = SER_scottish_women_hospitals_arrived
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 22. O Primeiro Abate Antiaéreo da História: Radoje Ljutovac em Kragujevac
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia.22
+	title = ww1_serbia.22.t
+	desc = ww1_serbia.22.d
+	picture = GFX_report_event_generic_army
+
+	trigger = {
+		tag = SER
+		date > 1915.9.25
+		has_war = yes
+		NOT = { has_country_flag = SER_ljutovac_aa_shootdown_occurred }
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia.22.a
+		ai_chance = { factor = 100 }
+		add_political_power = 40
+		add_war_support = 0.05
+		add_tech_bonus = {
+			name = artillery_bonus
+			bonus = 1.0
+			uses = 1
+			category = artillery
+		}
+		set_country_flag = SER_ljutovac_aa_shootdown_occurred
+	}
+}
+
