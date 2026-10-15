@@ -548,7 +548,7 @@ focus_tree = {
 	focus = {
 		id = FRA_presse_populaire_et_illustres
 		icon = GFX_FRA_mobilisation_des_esprits
-		x = 12
+		x = 14
 		y = 4
 		cost = 8
 		prerequisite = { focus = FRA_laicite_republicaine }
@@ -580,7 +580,7 @@ focus_tree = {
 	focus = {
 		id = FRA_ecole_normale_et_instituteurs
 		icon = GFX_FRA_republique_sociale_et_democratique
-		x = 12
+		x = 14
 		y = 7
 		cost = 8
 		prerequisite = { focus = FRA_presse_populaire_et_illustres }
@@ -613,7 +613,7 @@ focus_tree = {
 	focus = {
 		id = FRA_reorganisation_post_guerre
 		icon = GFX_FRA_la_paix_de_versailles_imposition
-		x = 12
+		x = 14
 		y = 10
 		cost = 8
 		prerequisite = { focus = FRA_ecole_normale_et_instituteurs }
@@ -623,6 +623,179 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 10
+		}
+	}
+
+	# =========================================================================
+	# THE 4 DIVERGENT POLITICAL DESTINIES (1914-1918)
+	# =========================================================================
+
+	# Branch 1: Third Republic & Union Sacrée (Democratic)
+	focus = {
+		id = FRA_republique_union_sacree
+		icon = GFX_FRA_proclamer_union_sacree
+		x = 2
+		y = 6
+		cost = 8
+		prerequisite = { focus = FRA_presidence_poincare focus = FRA_presidence_pams }
+		mutually_exclusive = { focus = FRA_republique_des_soviets_de_paris focus = FRA_abattre_la_gueuse focus = FRA_directoire_militaire_gqg }
+		completion_reward = {
+			add_ideas = FRA_union_sacree_spirit
+			add_political_power = 60
+			add_stability = 0.05
+			add_to_variable = { FRA_union_sacree_cohesion = 20 }
+			FRA_clamp_dashboard_variables = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = FRA_clemenceau_je_fais_la_guerre
+		icon = GFX_FRA_je_fais_la_guerre
+		x = 2
+		y = 7
+		cost = 8
+		prerequisite = { focus = FRA_republique_union_sacree }
+		completion_reward = {
+			add_ideas = FRA_jusqu_au_bout_endsieg
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_war_support = 0.15
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	# Branch 2: Second Paris Commune (Communism)
+	focus = {
+		id = FRA_republique_des_soviets_de_paris
+		icon = GFX_FRA_proclamer_la_commune_francaise
+		x = 7
+		y = 6
+		cost = 8
+		prerequisite = { focus = FRA_essor_de_la_sfio }
+		mutually_exclusive = { focus = FRA_republique_union_sacree focus = FRA_abattre_la_gueuse focus = FRA_directoire_militaire_gqg }
+		completion_reward = {
+			add_ideas = FRA_commune_de_paris_spirit
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_popularities = {
+				communism = 60
+				democratic = 20
+				neutrality = 15
+				fascism = 5
+			}
+			promote_character = FRA_fernand_loriot
+			add_stability = -0.10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = FRA_comite_de_salut_public_1917
+		icon = GFX_FRA_comites_de_soldats_rouges
+		x = 7
+		y = 7
+		cost = 8
+		prerequisite = { focus = FRA_republique_des_soviets_de_paris }
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Branch 3: Action Française & Orléans Monarchy (Neutrality / Monarchism)
+	focus = {
+		id = FRA_abattre_la_gueuse
+		icon = GFX_FRA_abattre_la_gueuse
+		x = 12
+		y = 6
+		cost = 8
+		prerequisite = { focus = FRA_preserver_la_republique }
+		mutually_exclusive = { focus = FRA_republique_union_sacree focus = FRA_republique_des_soviets_de_paris focus = FRA_directoire_militaire_gqg }
+		completion_reward = {
+			add_ideas = FRA_action_francaise_monarchy
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			set_popularities = {
+				neutrality = 55
+				democratic = 25
+				fascism = 15
+				communism = 5
+			}
+			add_political_power = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = FRA_restauration_orleaniste_jean_iii
+		icon = GFX_FRA_les_camelots_du_roi
+		x = 12
+		y = 7
+		cost = 8
+		prerequisite = { focus = FRA_abattre_la_gueuse }
+		completion_reward = {
+			promote_character = FRA_king_jean_iii
+			add_stability = 0.10
+			add_war_support = 0.10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Branch 4: GQG Military Directory (Authoritarian / Non-Aligned)
+	focus = {
+		id = FRA_directoire_militaire_gqg
+		icon = GFX_FRA_escadrilles_de_protection_du_gqg
+		x = 17
+		y = 6
+		cost = 8
+		prerequisite = { focus = FRA_preserver_la_republique }
+		mutually_exclusive = { focus = FRA_republique_union_sacree focus = FRA_republique_des_soviets_de_paris focus = FRA_abattre_la_gueuse }
+		completion_reward = {
+			add_ideas = FRA_gqg_military_directory
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_war_support = 0.15
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	focus = {
+		id = FRA_etat_de_siege_permanent
+		icon = GFX_FRA_gouvernement_militaire_de_paris_gallieni
+		x = 17
+		y = 7
+		cost = 8
+		prerequisite = { focus = FRA_directoire_militaire_gqg }
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 40
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 

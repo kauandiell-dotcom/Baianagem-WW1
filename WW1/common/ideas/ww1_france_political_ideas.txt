@@ -1,0 +1,40 @@
+ideas = {
+	country = {
+		FRA_union_sacree_spirit = {
+			picture = generic_democracy
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.15
+				war_support_factor = 0.05
+			}
+		}
+		FRA_commune_de_paris_spirit = {
+			picture = generic_communism
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = 0.15
+				production_factory_max_efficiency_factor = 0.10
+				war_support_factor = 0.10
+			}
+		}
+		FRA_action_francaise_monarchy = {
+			picture = generic_monarchism
+			allowed = { always = no }
+			modifier = {
+				army_core_defence_factor = 0.15
+				war_support_factor = 0.15
+				stability_factor = 0.05
+			}
+		}
+		FRA_gqg_military_directory = {
+			picture = generic_junta
+			allowed = { always = no }
+			modifier = {
+				army_attack_factor = 0.10
+				breakthrough_factor = 0.10
+				mobilization_speed = 0.20
+			}
+		}
+	}
+}

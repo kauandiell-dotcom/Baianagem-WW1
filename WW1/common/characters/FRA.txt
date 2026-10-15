@@ -236,6 +236,103 @@ characters={
 			id=-1
 		}
 	}
+	FRA_charles_maurras={
+		name="Charles Maurras"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/FRA_charles_maurras.png"
+			}
+			army={
+				small="gfx/interface/ideas/FRA/FRA_charles_maurras.png"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_charles_maurras
+			ledger = civilian
+			traits = {
+				ideological_crusader
+			}
+			allowed = {
+				tag = FRA
+			}
+		}
+		country_leader={
+			ideology=autocracy
+			expire="1952.11.16"
+			id=-1
+		}
+	}
+	FRA_king_jean_iii={
+		name="Jean III"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/FRA_jean_duke_of_guise.dds"
+			}
+			army={
+				small="gfx/interface/ideas/FRA/idea_FRA_jean_iii.png"
+			}
+		}
+		country_leader={
+			ideology=autocracy
+			expire="1940.8.25"
+			id=-1
+		}
+	}
+	FRA_jean_longuet={
+		name="Jean Longuet"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/Portrait_France_Generic_1.dds"
+			}
+			army={
+				small="gfx/interface/ideas/FRA/idea_FRA_Jean_Allemane.png"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_jean_longuet
+			ledger = civilian
+			traits = {
+				compassionate_gentleman
+			}
+			allowed = {
+				tag = FRA
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1938.9.11"
+			id=-1
+		}
+	}
+	FRA_fernand_loriot={
+		name="Fernand Loriot"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/Portrait_France_Generic_1.dds"
+			}
+			army={
+				small="gfx/interface/ideas/FRA/idea_FRA_Edouard_Vaillant.png"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_fernand_loriot
+			ledger = civilian
+			traits = {
+				communist_revolutionary
+			}
+			allowed = {
+				tag = FRA
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1932.10.12"
+			id=-1
+		}
+	}
 	FRA_paul_painleve={
 		name="Paul Painlevé"
 		advisor={
