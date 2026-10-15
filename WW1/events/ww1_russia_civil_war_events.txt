@@ -37,8 +37,8 @@ country_event = {
 			white_peace = AUS
 		}
 		if = {
-			limit = { country_exists = OTT has_war_with = OTT }
-			white_peace = OTT
+			limit = { country_exists = TUR has_war_with = TUR }
+			white_peace = TUR
 		}
 		if = {
 			limit = { country_exists = BUL has_war_with = BUL }
@@ -69,8 +69,8 @@ country_event = {
 				white_peace = AUS
 			}
 			if = {
-				limit = { country_exists = OTT has_war_with = OTT }
-				white_peace = OTT
+				limit = { country_exists = TUR has_war_with = TUR }
+				white_peace = TUR
 			}
 			if = {
 				limit = { country_exists = BUL has_war_with = BUL }

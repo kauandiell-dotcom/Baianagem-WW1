@@ -10,6 +10,14 @@ sov_civil_war_isolation = {
 
 	ai_strategy = {
 		type = join_faction
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		value = -5000
+	}
+	ai_strategy = {
+		type = join_faction
 		id = FRA
 		value = -5000
 	}
@@ -47,6 +55,14 @@ wht_civil_war_isolation = {
 	}
 	abort_when_not_enabled = yes
 
+	ai_strategy = {
+		type = join_faction
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		value = -5000
+	}
 	ai_strategy = {
 		type = join_faction
 		id = FRA
@@ -92,6 +108,14 @@ breakaway_civil_war_isolation = {
 	}
 	abort_when_not_enabled = yes
 
+	ai_strategy = {
+		type = join_faction
+		value = -5000
+	}
+	ai_strategy = {
+		type = alliance
+		value = -5000
+	}
 	ai_strategy = {
 		type = join_faction
 		id = FRA

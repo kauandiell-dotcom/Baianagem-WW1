@@ -159,6 +159,13 @@ class TestAIAndRussiaFixes(unittest.TestCase):
         self.assertTrue(len(evt_220) > 0, "Event ww1_russia.220 not found")
         self.assertIn("WHT", evt_220, "Event ww1_russia.220 does not reference tag WHT")
         self.assertIn("SOV", evt_220, "Event ww1_russia.220 does not reference tag SOV")
+        # Assert ww1_russia.220 scopes civil war ignition event to SOV (and NOT WHT)
+        sov_block_m = re.search(r"SOV\s*=\s*\{([^}]+)\}", evt_220)
+        self.assertIsNotNone(sov_block_m, "SOV block not found in ww1_russia.220")
+        self.assertIn("ww1_russia_civil_war.1", sov_block_m.group(1), "ww1_russia_civil_war.1 must be dispatched to SOV")
+        wht_block_m = re.search(r"WHT\s*=\s*\{([^}]+)\}", evt_220)
+        if wht_block_m:
+            self.assertNotIn("ww1_russia_civil_war.1", wht_block_m.group(1), "ww1_russia_civil_war.1 must NOT be dispatched to WHT")
 
         # Check Russian Civil War ignition event ww1_russia_civil_war.1
         cw_event_file = os.path.join(MOD_ROOT, "events", "ww1_russia_civil_war_events.txt")
@@ -170,6 +177,8 @@ class TestAIAndRussiaFixes(unittest.TestCase):
         self.assertIn("can_join_factions = no", cw_text, "Faction rule can_join_factions = no missing from civil war")
         self.assertIn("ww1_russia_civil_war.10", cw_text, "Red Victory scripted conclusion event missing")
         self.assertIn("ww1_russia_civil_war.20", cw_text, "White Victory scripted conclusion event missing")
+        self.assertNotIn("white_peace = OTT", cw_text, "Events must not reference non-existent tag OTT, use TUR")
+        self.assertIn("white_peace = TUR", cw_text, "Events must white peace TUR (Ottoman Empire)")
 
         # Check AI isolation strategy exists
         strat_file = os.path.join(MOD_ROOT, "common", "ai_strategy", "ww1_russian_civil_war_ai_strategy.txt")
@@ -178,6 +187,35 @@ class TestAIAndRussiaFixes(unittest.TestCase):
             strat_text = f.read()
         self.assertIn("join_faction", strat_text)
         self.assertIn("-5000", strat_text)
+        # Verify global join_faction and alliance without target id exists with -5000
+        self.assertTrue(
+            re.search(r"ai_strategy\s*=\s*\{\s*type\s*=\s*join_faction\s*value\s*=\s*-5000\s*\}", strat_text) is not None,
+            "Global join_faction = -5000 strategy missing from ww1_russian_civil_war_ai_strategy.txt"
+        )
+        self.assertTrue(
+            re.search(r"ai_strategy\s*=\s*\{\s*type\s*=\s*alliance\s*value\s*=\s*-5000\s*\}", strat_text) is not None,
+            "Global alliance = -5000 strategy missing from ww1_russian_civil_war_ai_strategy.txt"
+        )
+
+    def test_russian_crisis_hud_gauges_and_bom(self):
+        """Verifies HUD decision descriptions display real-time gauges and files have single UTF-8 BOM."""
+        en_loc = os.path.join(MOD_ROOT, "localisation", "english", "ww1_ger_rus_rework_l_english.yml")
+        pt_loc = os.path.join(MOD_ROOT, "localisation", "braz_por", "ww1_ger_rus_rework_l_braz_por.yml")
+        for path in [en_loc, pt_loc]:
+            self.assertTrue(os.path.isfile(path), f"Missing loc file: {path}")
+            with open(path, "rb") as bf:
+                header = bf.read(6)
+            self.assertEqual(header[:3], b"\xef\xbb\xbf", f"{path} must have single UTF-8 BOM")
+            self.assertNotEqual(header[3:6], b"\xef\xbb\xbf", f"{path} has double BOM corruption")
+
+            with open(path, "r", encoding="utf-8-sig", errors="replace") as f:
+                loc_text = f.read()
+
+            self.assertIn("SOV_imperial_crisis_desc", loc_text)
+            self.assertIn("SOV_civil_war_front_desc", loc_text)
+            self.assertIn("[?SOV_army_loyalty|0]%", loc_text)
+            self.assertIn("[?SOV_urban_hunger|0]%", loc_text)
+            self.assertIn("[?SOV_worker_unrest|0]%", loc_text)
 
     def test_russian_crisis_variable_reconciliation(self):
         """Verifies zero legacy SOV_unrest/SOV_hunger and confirms SOV_worker_unrest/SOV_urban_hunger in decisions."""

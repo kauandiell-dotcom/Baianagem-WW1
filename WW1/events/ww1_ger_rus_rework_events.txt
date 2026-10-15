@@ -696,19 +696,14 @@ country_event = {
 		add_political_power = 50
 		add_to_variable = { SOV_worker_unrest = 10 }
 		add_ideas = SOV_civil_war_exhaustion
-		if = {
-			limit = { has_government = communism }
-			WHT = {
-				set_country_flag = WHT_russian_civil_war_active
-				country_event = { id = ww1_russia_civil_war.1 }
-			}
+		SOV = {
+			set_country_flag = SOV_russian_civil_war_active
+			country_event = { id = ww1_russia_civil_war.1 }
 		}
-		else = {
-			SOV = {
-				set_country_flag = SOV_russian_civil_war_active
-				country_event = { id = ww1_russia_civil_war.1 }
-			}
+		WHT = {
+			set_country_flag = WHT_russian_civil_war_active
 		}
+		custom_effect_tooltip = SOV_civil_war_erupts_tt
 	}
 }
 
