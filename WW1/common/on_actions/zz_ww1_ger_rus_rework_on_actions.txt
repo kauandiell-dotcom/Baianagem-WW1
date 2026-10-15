@@ -71,6 +71,18 @@ on_actions = {
 				FRA_clamp_dashboard_variables = yes
 				FRA_weekly_republic_tick = yes
 			}
+
+			# Kingdom of Serbia Balance of Power & Variables Clamping Hook
+			if = {
+				limit = { original_tag = SER }
+				if = {
+					limit = {
+						NOT = { has_variable = ser_civil_military_balance }
+					}
+					SER_init_power_balance = yes
+				}
+				SER_weekly_bop_tick = yes
+			}
 		}
 	}
 

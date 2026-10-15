@@ -1,0 +1,54 @@
+# =========================================================================
+# KINGDOM OF SERBIA — BALANCE OF POWER SCRIPTED EFFECTS
+# Synchronizes native BoP with fallback variables for maximum cross-compatibility.
+# =========================================================================
+
+SER_init_power_balance = {
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		set_power_balance = {
+			id = bop_ser_civil_military
+			left_side = bop_ser_pasic_parliament
+			right_side = bop_ser_apis_black_hand
+		}
+	}
+	set_variable = { ser_civil_military_balance = 50 }
+	set_variable = { ser_national_cohesion = 60 }
+	set_variable = { ser_army_readiness = 65 }
+	set_variable = { ser_balkan_influence = 40 }
+}
+
+SER_clamp_serbia_variables = {
+	clamp_variable = { var = ser_civil_military_balance min = 0 max = 100 }
+	clamp_variable = { var = ser_national_cohesion min = 0 max = 100 }
+	clamp_variable = { var = ser_army_readiness min = 0 max = 100 }
+	clamp_variable = { var = ser_balkan_influence min = 0 max = 100 }
+}
+
+SER_shift_bop_pasic = {
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		add_power_balance_value = {
+			id = bop_ser_civil_military
+			value = -0.10
+		}
+	}
+	subtract_from_variable = { ser_civil_military_balance = 10 }
+	SER_clamp_serbia_variables = yes
+}
+
+SER_shift_bop_apis = {
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+		add_power_balance_value = {
+			id = bop_ser_civil_military
+			value = 0.10
+		}
+	}
+	add_to_variable = { ser_civil_military_balance = 10 }
+	SER_clamp_serbia_variables = yes
+}
+
+SER_weekly_bop_tick = {
+	SER_clamp_serbia_variables = yes
+}

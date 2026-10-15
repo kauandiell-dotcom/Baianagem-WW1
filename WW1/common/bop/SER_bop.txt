@@ -1,0 +1,78 @@
+# =========================================================================
+# KINGDOM OF SERBIA — BALANCE OF POWER (BoP) ENGINE
+# Parliamentary Cabinet (Pašić) vs Military Intelligence / Black Hand (Apis)
+# =========================================================================
+
+bop_ser_civil_military = {
+	initial_value = 0.0
+	left_side = bop_ser_pasic_parliament
+	right_side = bop_ser_apis_black_hand
+
+	# ---------------------------------------------------------------------
+	# Range 1: Extreme Parliamentary Control (-1.0 to -0.7)
+	# ---------------------------------------------------------------------
+	range = {
+		id = bop_ser_range_extreme_pasic
+		min = -1.0
+		max = -0.7
+		modifier = {
+			stability_factor = 0.15
+			political_power_gain = 0.25
+			army_org_factor = -0.10
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# Range 2: Moderate Parliamentary Primacy (-0.69 to -0.2)
+	# ---------------------------------------------------------------------
+	range = {
+		id = bop_ser_range_medium_pasic
+		min = -0.69
+		max = -0.2
+		modifier = {
+			stability_factor = 0.08
+			political_power_gain = 0.15
+			army_core_defence_factor = 0.05
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# Range 3: Tense Balance / Priority Dispute (-0.19 to 0.19)
+	# ---------------------------------------------------------------------
+	range = {
+		id = bop_ser_range_balanced
+		min = -0.19
+		max = 0.19
+		modifier = {
+			political_power_gain = -0.05
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# Range 4: Moderate Black Hand Ascendancy (0.2 to 0.69)
+	# ---------------------------------------------------------------------
+	range = {
+		id = bop_ser_range_medium_apis
+		min = 0.2
+		max = 0.69
+		modifier = {
+			army_attack_factor = 0.08
+			army_core_defence_factor = 0.10
+			stability_factor = -0.10
+		}
+	}
+
+	# ---------------------------------------------------------------------
+	# Range 5: Extreme Military Dictatorship Risk (0.7 to 1.0)
+	# ---------------------------------------------------------------------
+	range = {
+		id = bop_ser_range_extreme_apis
+		min = 0.7
+		max = 1.0
+		modifier = {
+			army_attack_factor = 0.15
+			army_org_regain = 0.15
+			stability_factor = -0.25
+		}
+	}
+}
