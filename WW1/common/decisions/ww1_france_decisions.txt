@@ -11,7 +11,7 @@ FRA_western_front_operations = {
 	# ---------------------------------------------------------------------
 	FRA_verdun_resilience_mission = {
 		icon = generic_prepare_civil_war
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = { always = yes }
 
 		days_mission_timeout = 45
@@ -34,7 +34,7 @@ FRA_western_front_operations = {
 	# ---------------------------------------------------------------------
 	FRA_nivelle_offensive_mission = {
 		icon = generic_offensive
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = { always = yes }
 
 		days_mission_timeout = 30
@@ -53,7 +53,7 @@ FRA_western_front_operations = {
 	# ---------------------------------------------------------------------
 	FRA_cent_jours_final_offensive = {
 		icon = generic_attack
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = { always = yes }
 
 		days_mission_timeout = 45
@@ -73,7 +73,7 @@ FRA_western_front_operations = {
 	# ---------------------------------------------------------------------
 	FRA_activate_la_voie_sacree = {
 		icon = generic_logistics
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war_with = GER
 			has_idea = FRA_verdun_resilience
@@ -91,7 +91,7 @@ FRA_western_front_operations = {
 
 	FRA_rotate_frontline_divisions_noria = {
 		icon = generic_morale
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war_with = GER
 			has_idea = FRA_verdun_resilience
@@ -109,7 +109,7 @@ FRA_western_front_operations = {
 
 	FRA_concentrate_heavy_artillery_meuse = {
 		icon = generic_artillery
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war_with = GER
 		}
@@ -126,7 +126,7 @@ FRA_western_front_operations = {
 
 	FRA_taxis_de_la_marne = {
 		icon = generic_morale
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war_with = GER
 			controls_state = 16
@@ -150,7 +150,7 @@ FRA_western_front_operations = {
 
 	FRA_petain_welfare_and_leave_reform = {
 		icon = generic_political_action
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_idea = FRA_trench_mutiny_crisis_2
 		}
@@ -171,7 +171,7 @@ FRA_western_front_operations = {
 
 	FRA_improve_trench_soup_and_wine = {
 		icon = generic_food
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war = yes
 		}
@@ -190,7 +190,7 @@ FRA_western_front_operations = {
 
 	FRA_measured_justice_and_pardons = {
 		icon = generic_court
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war = yes
 		}
@@ -207,7 +207,7 @@ FRA_western_front_operations = {
 
 	FRA_issue_national_defense_bonds = {
 		icon = generic_economy
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war = yes
 		}
@@ -227,7 +227,7 @@ FRA_western_front_operations = {
 
 	FRA_expand_munitionnettes_workforce = {
 		icon = generic_factory
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war = yes
 		}
@@ -244,7 +244,7 @@ FRA_western_front_operations = {
 
 	FRA_equip_doughboys_with_french_equipment = {
 		icon = generic_infantry_weapons
-		allowed = { tag = FRA }
+		allowed = { original_tag = FRA }
 		available = {
 			has_war = yes
 			country_exists = USA
@@ -258,6 +258,325 @@ FRA_western_front_operations = {
 			add_political_power = 60
 			add_war_support = 0.05
 			USA = { country_event = { id = ww1_france.265 days = 2 } }
+		}
+	}
+}
+
+# =========================================================================
+# WAR ECONOMY & MUNITIONS PRODUCTION
+# Relocation of Northeast capacity, chemical works, heavy artillery
+# =========================================================================
+
+FRA_war_economy_and_munitions = {
+
+	# Evacuate Briey & Longwy Industrial Machinery to Lyon
+	FRA_dec_evacuate_briey_machinery = {
+		icon = generic_industry
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+
+		available = {
+			has_war_with = GER
+			controls_state = 20
+		}
+
+		complete_effect = {
+			20 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_to_variable = { FRA_charbon_et_acier = 15 }
+			FRA_clamp_dashboard_variables = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 50
+				has_war_with = GER
+			}
+		}
+	}
+
+	# Lyon Gunpowder & Chemical Arms Complex Expansion
+	FRA_dec_lyon_chemical_complex = {
+		icon = generic_industry
+		cost = 35
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+
+		available = {
+			has_war = yes
+			controls_state = 20
+		}
+
+		days_remove = 180
+		modifier = {
+			industrial_capacity_factory = 0.10
+			production_factory_max_efficiency_factor = 0.05
+		}
+
+		complete_effect = {
+			20 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 40
+				has_war = yes
+			}
+		}
+	}
+
+	# Schneider-Creusot Heavy Artillery Mobilization
+	FRA_dec_schneider_creusot_heavy_guns = {
+		icon = generic_artillery
+		cost = 35
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		days_remove = 180
+		modifier = {
+			army_artillery_attack_factor = 0.10
+		}
+
+		complete_effect = {
+			add_tech_bonus = {
+				name = FRA_schneider_creusot_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+			add_army_experience = 15
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 40
+				has_war = yes
+			}
+		}
+	}
+}
+
+# =========================================================================
+# DEFENCE OF VERDUN
+# Fort Douaumont redoubts & Voie Sacrée truck logistics
+# =========================================================================
+
+FRA_defence_of_verdun = {
+
+	# Fort Douaumont & Meuse Redoubts Reinforcement
+	FRA_dec_fort_douaumont_reinforcement = {
+		icon = generic_fort
+		cost = 25
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war_with = GER
+		}
+
+		available = {
+			has_war_with = GER
+			controls_state = 18
+		}
+
+		complete_effect = {
+			18 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 9490
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 50
+				has_war_with = GER
+			}
+		}
+	}
+
+	# La Voie Sacrée Emergency Truck Convoys
+	FRA_dec_voix_sacree_truck_convoys = {
+		icon = generic_logistics
+		cost = 25
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war_with = GER
+		}
+
+		available = {
+			has_war_with = GER
+			OR = {
+				controls_state = 18
+				controls_state = 16
+			}
+		}
+
+		days_remove = 180
+		modifier = {
+			army_core_defence_factor = 0.10
+		}
+
+		complete_effect = {
+			add_to_variable = { FRA_poilu_morale = 10 }
+			FRA_clamp_dashboard_variables = yes
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 50
+				has_war_with = GER
+			}
+		}
+	}
+}
+
+# =========================================================================
+# ENTENTE DIPLOMACY & ALLIED COOPERATION
+# Inter-Allied Supreme War Council & J.P. Morgan Credit Line
+# =========================================================================
+
+FRA_entente_diplomacy = {
+
+	# Inter-Allied Supreme War Council
+	FRA_dec_inter_allied_supreme_war_council = {
+		icon = generic_diplomacy
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+			country_exists = ENG
+			is_in_faction_with = ENG
+		}
+
+		available = {
+			has_war = yes
+			is_in_faction_with = ENG
+		}
+
+		days_remove = 360
+		modifier = {
+			coordination_bonus = 0.05
+			planning_speed = 0.10
+		}
+
+		complete_effect = {
+			add_political_power = 40
+			add_stability = 0.05
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 50
+				has_war = yes
+			}
+		}
+	}
+
+	# J.P. Morgan & Co. New York Credit Line
+	FRA_dec_us_morgan_bank_credit_line = {
+		icon = generic_economy
+		cost = 20
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+			country_exists = USA
+		}
+
+		available = {
+			has_war = yes
+			country_exists = USA
+			NOT = { has_war_with = USA }
+		}
+
+		days_remove = 360
+		modifier = {
+			industrial_capacity_factory = 0.10
+		}
+
+		complete_effect = {
+			add_political_power = 60
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				add = 50
+				has_war = yes
+			}
 		}
 	}
 }

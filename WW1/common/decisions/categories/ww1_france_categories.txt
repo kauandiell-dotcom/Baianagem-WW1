@@ -7,6 +7,7 @@ FRA_third_republic_politics = {
 	picture = decision_cat_generic
 	priority = 90
 	allowed = { original_tag = FRA }
+	visible_when_empty = no
 }
 
 FRA_western_front_operations = {
@@ -14,6 +15,7 @@ FRA_western_front_operations = {
 	picture = decision_cat_generic
 	priority = 95
 	allowed = { original_tag = FRA }
+	visible_when_empty = no
 }
 
 FRA_defence_of_verdun = {
@@ -21,6 +23,7 @@ FRA_defence_of_verdun = {
 	picture = decision_cat_generic
 	priority = 98
 	allowed = { original_tag = FRA }
+	visible_when_empty = no
 }
 
 FRA_mutinies_crisis_management = {
@@ -28,6 +31,7 @@ FRA_mutinies_crisis_management = {
 	picture = decision_cat_generic
 	priority = 99
 	allowed = { original_tag = FRA }
+	visible_when_empty = no
 }
 
 FRA_war_economy_and_munitions = {
@@ -35,6 +39,7 @@ FRA_war_economy_and_munitions = {
 	picture = decision_cat_generic
 	priority = 85
 	allowed = { original_tag = FRA }
+	visible_when_empty = no
 }
 
 FRA_entente_diplomacy = {
@@ -42,5 +47,5 @@ FRA_entente_diplomacy = {
 	picture = decision_cat_generic
 	priority = 80
 	allowed = { original_tag = FRA }
+	visible_when_empty = no
 }
-
