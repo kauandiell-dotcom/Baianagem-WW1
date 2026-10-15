@@ -163,6 +163,7 @@ country_event = {
 	option = {
 		name = ww1_russia.205.a
 		ai_chance = { factor = 60 }
+		retire_character = SOV_grigori_rasputin
 		set_country_flag = SOV_rasputin_dead
 		remove_ideas = SOV_rasputin_court_intrigues
 		add_to_variable = { SOV_tsar_prestige = -6 }
@@ -173,6 +174,7 @@ country_event = {
 	option = {
 		name = ww1_russia.205.b
 		ai_chance = { factor = 40 }
+		retire_character = SOV_grigori_rasputin
 		set_country_flag = SOV_rasputin_dead
 		remove_ideas = SOV_rasputin_court_intrigues
 		add_to_variable = { SOV_tsar_prestige = -3 }

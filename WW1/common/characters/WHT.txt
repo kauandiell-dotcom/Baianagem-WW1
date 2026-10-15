@@ -233,4 +233,65 @@ characters = {
 			expire = "1952.4.15"
 		}
 	}
+
+	WHT_mikhail_alekseyev = {
+		name = "Mikhail Alekseyev"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_mikhail_alekseyev.dds"
+			}
+			army = {
+				large = "gfx/leaders/RUS/RUS_mikhail_alekseyev.dds"
+			}
+		}
+		field_marshal = {
+			traits = { organizer thorough_planner cautious skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = WHT_mikhail_alekseyev
+			ledger = army
+			cost = 100
+			traits = { army_chief_defensive_2 }
+			ai_will_do = { factor = 2.0 }
+		}
+	}
+
+	WHT_grand_duke_nicholas = {
+		name = "Grand Duke Nicholas Nikolaevich"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_grand_duke_nicholas.png"
+			}
+			army = {
+				large = "gfx/leaders/SOV/SOV_grand_duke_nicholas.png"
+			}
+		}
+		country_leader = {
+			ideology = autocracy
+			traits = { autocrat }
+			expire = "1929.1.5"
+		}
+		field_marshal = {
+			traits = { old_guard inspirational_leader }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = WHT_grand_duke_nicholas
+			ledger = army
+			cost = 100
+			traits = { army_chief_defensive_2 }
+			ai_will_do = { factor = 2.0 }
+		}
+	}
 }

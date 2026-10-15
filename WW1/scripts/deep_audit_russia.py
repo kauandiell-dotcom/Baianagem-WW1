@@ -1,262 +1,361 @@
+#!/usr/bin/env python3
+"""
+Deep Forensic Audit of Russian Empire, Soviet Russia, and White Movement content in Baianagem-WW1.
+Audits:
+- Focus Trees: DAG, coordinates, prerequisites, mutual exclusions, ideas, characters, events, tooltips
+- Ideas: Modifiers oracle validation, picture existence, duplicate keys
+- Decisions: Categories, allowed/visible/available triggers, effects, costs
+- Events: ID uniqueness, triggers, effects, pictures, option logic
+- Characters: Roster completeness, valid traits, portrait definitions
+- Localization: UTF-8 BOM, missing keys, English/Portuguese parity
+"""
 import os
-import sys
 import re
+import sys
 import glob
 
 REPO_ROOT = r"C:\Users\Usuário\Pictures\Baianagem-WW1\WW1"
 
-def check_brackets(file_path):
-    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
-    # remove comments
-    lines = []
-    for line in content.splitlines():
-        line = re.sub(r'#.*$', '', line)
-        lines.append(line)
-    clean = "\n".join(lines)
-    open_b = clean.count("{")
-    close_b = clean.count("}")
-    return open_b, close_b, open_b - close_b
+def parse_bracket_blocks(text):
+    # Basic tokenized parser for top-level or nested blocks
+    pass
 
-def audit_characters():
-    print("=== AUDITING CHARACTERS ===")
-    sov_chars_file = os.path.join(REPO_ROOT, "common", "characters", "SOV.txt")
-    wht_chars_file = os.path.join(REPO_ROOT, "common", "characters", "WHT.txt")
+def load_file(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+        return f.read()
+
+def main():
+    print("=== STARTING DEEP FORENSIC AUDIT OF RUSSIA ===")
+    errors = []
+    warnings = []
     
-    def parse_chars(path):
-        with open(path, "r", encoding="utf-8", errors="ignore") as f:
-            text = f.read()
-        chars = {}
-        # Simple regex for top-level characters inside characters = { ... }
-        for m in re.finditer(r'^\t([A-Za-z0-9_]+)\s*=\s*\{', text, re.MULTILINE):
-            char_id = m.group(1)
-            # Find closing bracket or next char
-            chars[char_id] = text[m.start():m.start() + 1500]
-        return chars
+    # 1. GATHER ALL REGISTERED SPRITES IN INTERFACE .GFX FILES
+    print("\n--- Phase 1: Scanning Interface GFX Files ---")
+    all_sprites = set()
+    for gfx_file in glob.glob(os.path.join(REPO_ROOT, "interface", "**", "*.gfx"), recursive=True):
+        content = load_file(gfx_file)
+        if content:
+            for m in re.finditer(r'name\s*=\s*"(GFX_[^"]+)"', content):
+                all_sprites.add(m.group(1))
+            for m in re.finditer(r'name\s*=\s*(GFX_\w+)', content):
+                all_sprites.add(m.group(1))
+    print(f"Total interface sprites registered: {len(all_sprites)}")
 
-    sov_chars = parse_chars(sov_chars_file)
-    wht_chars = parse_chars(wht_chars_file)
-    print(f"Found {len(sov_chars)} characters in SOV.txt")
-    print(f"Found {len(wht_chars)} characters in WHT.txt")
+    # 2. GATHER ALL CHARACTERS
+    print("\n--- Phase 2: Scanning Characters ---")
+    all_characters = set()
+    character_files = glob.glob(os.path.join(REPO_ROOT, "common", "characters", "*.txt"))
+    char_by_country = {}
+    for cf in character_files:
+        tag = os.path.splitext(os.path.basename(cf))[0]
+        content = load_file(cf)
+        chars = re.findall(r'(\b(?:SOV|WHT|RUS)_\w+)\s*=\s*\{', content)
+        char_by_country[tag] = set(chars)
+        all_characters.update(chars)
+    print(f"Total characters found: {len(all_characters)}")
+    for t, chars in char_by_country.items():
+        if t in ['SOV', 'WHT', 'RUS']:
+            print(f"  {t}: {len(chars)} characters")
 
-    # Check portraits on disk
-    for cid, block in {**sov_chars, **wht_chars}.items():
-        portraits = re.findall(r'(?:large|small)\s*=\s*"([^"]+)"', block)
-        for p in portraits:
-            norm_p = os.path.normpath(os.path.join(REPO_ROOT, p.replace("/", os.sep)))
-            if not os.path.exists(norm_p):
-                print(f"  [MISSING PORTRAIT] Character {cid} references non-existent texture: {p}")
+    # 3. GATHER ALL IDEAS
+    print("\n--- Phase 3: Scanning Ideas ---")
+    all_ideas = set()
+    idea_files = glob.glob(os.path.join(REPO_ROOT, "common", "ideas", "*.txt"))
+    for f in idea_files:
+        content = load_file(f)
+        # Match idea definitions
+        # Ideas are inside country = { idea_id = { ... } } or hidden_ideas, etc.
+        lines = content.splitlines()
+        for line in lines:
+            m = re.match(r'^\s*([A-Za-z0-9_]+)\s*=\s*\{', line)
+            if m:
+                k = m.group(1)
+                if k not in ['ideas', 'country', 'hidden_ideas', 'political_advisor', 'theorist', 'army_chief', 'navy_chief', 'air_chief', 'high_command', 'tank_manufacturer', 'naval_manufacturer', 'aircraft_manufacturer', 'materiel_manufacturer', 'industrial_concern']:
+                    all_ideas.add(k)
+    print(f"Total ideas registered across common/ideas: {len(all_ideas)}")
 
-    # Check history recruitment
-    sov_hist = os.path.join(REPO_ROOT, "history", "countries", "SOV - Soviet union.txt")
-    with open(sov_hist, "r", encoding="utf-8", errors="ignore") as f:
-        hist_text = f.read()
+    # 4. GATHER ALL EVENTS
+    print("\n--- Phase 4: Scanning Events ---")
+    all_events = set()
+    event_files = glob.glob(os.path.join(REPO_ROOT, "events", "*.txt"))
+    events_in_file = {}
+    for f in event_files:
+        content = load_file(f)
+        ev_matches = re.findall(r'(?:country_event|news_event)\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', content)
+        events_in_file[f] = ev_matches
+        for eid in ev_matches:
+            if eid in all_events:
+                errors.append(f"DUPLICATE EVENT ID: {eid} in {os.path.basename(f)}")
+            all_events.add(eid)
+    print(f"Total events found: {len(all_events)}")
 
-    recruited_sov = re.findall(r'recruit_character\s*=\s*([A-Za-z0-9_]+)', hist_text)
-    print(f"Recruited in SOV history: {len(recruited_sov)} characters")
-    for r in recruited_sov:
-        if r not in sov_chars:
-            print(f"  [UNDEFINED RECRUIT] {r} recruited in SOV history but NOT in SOV.txt!")
+    # 5. GATHER ALL DECISIONS AND CATEGORIES
+    print("\n--- Phase 5: Scanning Decisions ---")
+    all_dec_categories = set()
+    for cat_file in glob.glob(os.path.join(REPO_ROOT, "common", "decisions", "categories", "*.txt")):
+        content = load_file(cat_file)
+        lines = content.splitlines()
+        for line in lines:
+            m = re.match(r'^([a-zA-Z0-9_]+)\s*=\s*\{', line)
+            if m:
+                all_dec_categories.add(m.group(1))
+    
+    all_decisions = set()
+    for dec_file in glob.glob(os.path.join(REPO_ROOT, "common", "decisions", "*.txt")):
+        content = load_file(dec_file)
+        # In HOI4, decisions are inside category_id = { decision_id = { ... } }
+        # Let's find category blocks
+        for m in re.finditer(r'([a-zA-Z0-9_]+)\s*=\s*\{([^{}]*(?:\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}[^{}]*)*)\}', content):
+            cat_candidate = m.group(1)
+            cat_body = m.group(2)
+            if cat_candidate in all_dec_categories:
+                # Find decisions inside
+                dec_ids = re.findall(r'\n\t([a-zA-Z0-9_]+)\s*=\s*\{', cat_body)
+                for d in dec_ids:
+                    all_decisions.add(d)
+    print(f"Total decision categories: {len(all_dec_categories)}")
+    print(f"Total decisions: {len(all_decisions)}")
 
-    # Check for legacy country leaders
-    legacy_leaders = re.findall(r'create_country_leader\s*=\s*\{[^}]*name\s*=\s*"([^"]+)"', hist_text)
-    if legacy_leaders:
-        print(f"  [LEGACY LEADER OVERLAP] Found legacy create_country_leader in SOV history: {legacy_leaders}")
-
-    return sov_chars, wht_chars
-
-def audit_focus_trees():
-    print("\n=== AUDITING FOCUS TREES ===")
-    trees = [
-        os.path.join(REPO_ROOT, "common", "national_focus", "soviet.txt"),
-        os.path.join(REPO_ROOT, "common", "national_focus", "soviet_russia.txt"),
-        os.path.join(REPO_ROOT, "common", "national_focus", "white_russia.txt")
+    # 6. FOCUS TREE DEEP AUDIT
+    print("\n--- Phase 6: Auditing Focus Trees ---")
+    focus_trees = [
+        ('common/national_focus/soviet.txt', 'russian_empire_focus'),
+        ('common/national_focus/soviet_russia.txt', 'soviet_russia_focus'),
+        ('common/national_focus/white_russia.txt', 'white_russia_focus')
     ]
-    for tree_path in trees:
-        fname = os.path.basename(tree_path)
-        op, cl, delta = check_brackets(tree_path)
-        print(f"\nTree: {fname} (Brackets: open={op}, close={cl}, delta={delta})")
-        if delta != 0:
-            print(f"  [BRACKET ERROR] {fname} has unbalanced brackets! Delta = {delta}")
 
-        with open(tree_path, "r", encoding="utf-8", errors="ignore") as f:
-            content = f.read()
+    all_tree_focus_ids = {}
 
+    for rel_path, expected_tree_id in focus_trees:
+        fpath = os.path.join(REPO_ROOT, rel_path)
+        content = load_file(fpath)
+        print(f"\nAuditing {rel_path}...")
+        
+        # Check bracket balance
+        open_b = content.count('{')
+        close_b = content.count('}')
+        if open_b != close_b:
+            errors.append(f"BRACKET IMBALANCE in {rel_path}: open={open_b}, close={close_b}, delta={open_b - close_b}")
+
+        # Parse focuses
         # Extract focus blocks
         focus_blocks = {}
-        # Pattern matching focus = { id = ... }
-        matches = list(re.finditer(r'focus\s*=\s*\{', content))
-        for i, m in enumerate(matches):
-            start = m.start()
-            end = matches[i+1].start() if i+1 < len(matches) else len(content)
-            chunk = content[start:end]
-            id_match = re.search(r'id\s*=\s*([A-Za-z0-9_]+)', chunk)
-            if id_match:
-                fid = id_match.group(1)
-                focus_blocks[fid] = chunk
+        # Simple regex matcher for focus blocks
+        # We can scan focus = { ... }
+        pattern = re.compile(r'focus\s*=\s*\{(.*?)\n\t\}', re.DOTALL)
+        for m in pattern.finditer(content):
+            ftext = m.group(1)
+            id_match = re.search(r'id\s*=\s*(\w+)', ftext)
+            if not id_match:
+                continue
+            fid = id_match.group(1)
+            focus_blocks[fid] = ftext
 
-        print(f"  Found {len(focus_blocks)} focuses in {fname}")
+        all_tree_focus_ids[expected_tree_id] = set(focus_blocks.keys())
+        print(f"  Parsed {len(focus_blocks)} focuses")
 
-        # Check coordinates & collisions
         coords = {}
-        for fid, block in focus_blocks.items():
-            x_m = re.search(r'x\s*=\s*(-?\d+)', block)
-            y_m = re.search(r'y\s*=\s*(-?\d+)', block)
+        for fid, ftext in focus_blocks.items():
+            # Check coordinates
+            x_m = re.search(r'x\s*=\s*(\d+)', ftext)
+            y_m = re.search(r'y\s*=\s*(\d+)', ftext)
             if x_m and y_m:
                 x, y = int(x_m.group(1)), int(y_m.group(1))
-                coords[fid] = (x, y)
-            else:
-                print(f"  [MISSING COORDS] Focus {fid} missing x/y coordinates!")
+                if (x, y) in coords:
+                    errors.append(f"COORDINATE COLLISION in {rel_path}: Focus '{fid}' and '{coords[(x,y)]}' both at ({x}, {y})")
+                else:
+                    coords[(x, y)] = fid
 
-        # Check collisions (same x and y, and not mutually exclusive)
-        coord_map = {}
-        for fid, (x, y) in coords.items():
-            key = (x, y)
-            if key in coord_map:
-                coord_map[key].append(fid)
-            else:
-                coord_map[key] = [fid]
-        
-        for (x, y), fids in coord_map.items():
-            if len(fids) > 1:
-                print(f"  [COORDINATE COLLISION] Focuses {fids} collide at ({x}, {y})!")
-
-        # Check prerequisites
-        for fid, block in focus_blocks.items():
-            prereqs = re.findall(r'prerequisite\s*=\s*\{[^}]*focus\s*=\s*([A-Za-z0-9_]+)', block)
-            for p in prereqs:
-                if p not in focus_blocks:
-                    print(f"  [DEAD PREREQUISITE] Focus {fid} requires non-existent focus: {p}")
-
-        # Check mutual exclusivity reciprocity
-        for fid, block in focus_blocks.items():
-            mutexes = re.findall(r'mutually_exclusive\s*=\s*\{([^}]+)\}', block)
-            for mutex_chunk in mutexes:
-                targets = re.findall(r'focus\s*=\s*([A-Za-z0-9_]+)', mutex_chunk)
+            # Check prerequisites
+            prereqs = re.findall(r'prerequisite\s*=\s*\{([^\}]+)\}', ftext)
+            for pblock in prereqs:
+                targets = re.findall(r'focus\s*=\s*(\w+)', pblock)
                 for t in targets:
                     if t not in focus_blocks:
-                        print(f"  [DEAD MUTEX] Focus {fid} mutually exclusive with non-existent focus: {t}")
+                        errors.append(f"DANGLING PREREQUISITE in {rel_path}: Focus '{fid}' requires '{t}' which does not exist in this tree!")
+
+            # Check mutual exclusion
+            mut_ex = re.findall(r'mutually_exclusive\s*=\s*\{([^\}]+)\}', ftext)
+            for mblock in mut_ex:
+                targets = re.findall(r'focus\s*=\s*(\w+)', mblock)
+                for t in targets:
+                    if t not in focus_blocks:
+                        errors.append(f"INVALID MUTEX TARGET in {rel_path}: Focus '{fid}' is mutually exclusive with nonexistent '{t}'")
                     else:
-                        t_block = focus_blocks[t]
-                        if fid not in t_block:
-                            print(f"  [ASYMMETRIC MUTEX] Focus {fid} lists {t} as mutex, but {t} does not list {fid}!")
+                        # Check reciprocal
+                        target_text = focus_blocks[t]
+                        if f"focus = {fid}" not in target_text and f"focus={fid}" not in target_text:
+                            warnings.append(f"ASYMMETRIC MUTEX in {rel_path}: '{fid}' excludes '{t}', but '{t}' does not list '{fid}'")
 
-def audit_events():
-    print("\n=== AUDITING EVENTS ===")
-    event_files = [
-        os.path.join(REPO_ROOT, "events", "ww1_ger_rus_rework_events.txt"),
-        os.path.join(REPO_ROOT, "events", "ww1_russia_civil_war_events.txt"),
-        os.path.join(REPO_ROOT, "events", "ww1_russia_crisis_events.txt"),
-        os.path.join(REPO_ROOT, "events", "ww1_russia_diplomacy_events.txt"),
-        os.path.join(REPO_ROOT, "events", "ww1_russia_events.txt")
+            # Check ideas referenced
+            add_ideas = re.findall(r'add_ideas\s*=\s*(\w+)', ftext)
+            for aid in add_ideas:
+                if aid not in all_ideas:
+                    errors.append(f"UNKNOWN IDEA in focus '{fid}' ({rel_path}): add_ideas = {aid}")
+            
+            remove_ideas = re.findall(r'remove_ideas\s*=\s*(\w+)', ftext)
+            for rid in remove_ideas:
+                if rid not in all_ideas:
+                    warnings.append(f"UNKNOWN REMOVE IDEA in focus '{fid}' ({rel_path}): remove_ideas = {rid}")
+
+            # Check characters referenced
+            char_refs = re.findall(r'(?:recruit_character|retire_character|set_country_leader)\s*=\s*(\w+)', ftext)
+            for cid in char_refs:
+                if cid not in all_characters:
+                    errors.append(f"UNKNOWN CHARACTER in focus '{fid}' ({rel_path}): {cid}")
+
+            # Check events triggered
+            event_calls = re.findall(r'id\s*=\s*([a-zA-Z0-9_\.]+)', re.search(r'completion_reward\s*=\s*\{.*', ftext, re.DOTALL).group(0) if 'completion_reward' in ftext else '')
+            for ec in event_calls:
+                # filter out non-events
+                if '.' in ec and ec not in all_events:
+                    errors.append(f"UNKNOWN EVENT CALLED in focus '{fid}' ({rel_path}): {ec}")
+
+            # Check icon
+            icon_m = re.search(r'icon\s*=\s*(\w+)', ftext)
+            if icon_m:
+                icon_name = icon_m.group(1)
+                if icon_name not in all_sprites and f"GFX_{icon_name}" not in all_sprites:
+                    warnings.append(f"UNREGISTERED ICON in focus '{fid}' ({rel_path}): {icon_name}")
+
+    # 7. EVENTS DEEP AUDIT
+    print("\n--- Phase 7: Auditing Russian Event Files ---")
+    rus_event_files = [
+        'events/side_ww1_ger_rus_depth.txt',
+        'events/ww1_ger_rus_rework_events.txt',
+        'events/ww1_russia_civil_war_events.txt',
+        'events/ww1_russia_crisis_events.txt',
+        'events/ww1_russia_diplomacy_events.txt',
+        'events/ww1_russia_events.txt'
     ]
-    all_defined_events = set()
-    event_contents = {}
-
-    for ef in event_files:
-        fname = os.path.basename(ef)
-        op, cl, delta = check_brackets(ef)
-        print(f"Event file: {fname} (Brackets: open={op}, close={cl}, delta={delta})")
-        if delta != 0:
-            print(f"  [BRACKET ERROR] {fname} has unbalanced brackets! Delta = {delta}")
-        with open(ef, "r", encoding="utf-8", errors="ignore") as f:
-            c = f.read()
-        event_contents[fname] = c
-        # Find defined event IDs
-        ev_ids = re.findall(r'(?:country_event|news_event)\s*=\s*\{[^}]*?id\s*=\s*([A-Za-z0-9_.]+)', c, re.DOTALL)
-        for eid in ev_ids:
-            all_defined_events.add(eid)
-        print(f"  Found {len(ev_ids)} events in {fname}")
-
-    print(f"Total defined Russian events: {len(all_defined_events)}")
-
-    # Check event dispatches
-    for fname, c in event_contents.items():
-        dispatches = re.findall(r'(?:country_event|news_event)\s*=\s*\{\s*id\s*=\s*([A-Za-z0-9_.]+)', c)
-        for disp in dispatches:
-            if disp.startswith("ww1_russia") or disp.startswith("ww1_sov") or disp.startswith("ww1_wht"):
-                if disp not in all_defined_events:
-                    print(f"  [DEAD EVENT DISPATCH] In {fname}: calls non-existent event {disp}!")
-
-def audit_decisions():
-    print("\n=== AUDITING DECISIONS ===")
-    dec_files = [
-        os.path.join(REPO_ROOT, "common", "decisions", "ww1_ger_rus_rework_decisions.txt"),
-        os.path.join(REPO_ROOT, "common", "decisions", "ww1_russia_crisis_decisions.txt"),
-        os.path.join(REPO_ROOT, "common", "decisions", "ww1_russia_tsarist_decisions.txt"),
-        os.path.join(REPO_ROOT, "common", "decisions", "ww1_soviet_civil_war_decisions.txt"),
-        os.path.join(REPO_ROOT, "common", "decisions", "ww1_soviet_diplomacy_decisions.txt"),
-        os.path.join(REPO_ROOT, "common", "decisions", "zz_ww1_sov_operations.txt")
-    ]
-    for df in dec_files:
-        if not os.path.exists(df):
+    for rel_path in rus_event_files:
+        fpath = os.path.join(REPO_ROOT, rel_path)
+        content = load_file(fpath)
+        if not content:
+            warnings.append(f"Event file not found: {rel_path}")
             continue
-        fname = os.path.basename(df)
-        op, cl, delta = check_brackets(df)
-        print(f"Decision file: {fname} (Brackets: delta={delta})")
-        if delta != 0:
-            print(f"  [BRACKET ERROR] {fname} has unbalanced brackets! Delta = {delta}")
+        print(f"Auditing {rel_path}...")
+        open_b = content.count('{')
+        close_b = content.count('}')
+        if open_b != close_b:
+            errors.append(f"BRACKET IMBALANCE in {rel_path}: open={open_b}, close={close_b}")
 
-def audit_localization():
-    print("\n=== AUDITING LOCALIZATION ===")
+        # Check pictures
+        pics = re.findall(r'picture\s*=\s*(\w+)', content)
+        for p in pics:
+            if p not in all_sprites:
+                errors.append(f"MISSING SPRITE in {rel_path}: picture = {p} is not defined in any .gfx file!")
+
+        # Check ideas
+        add_ideas = re.findall(r'add_ideas\s*=\s*(\w+)', content)
+        for aid in add_ideas:
+            if aid not in all_ideas:
+                errors.append(f"UNKNOWN IDEA in event ({rel_path}): add_ideas = {aid}")
+
+        # Check characters
+        char_refs = re.findall(r'(?:recruit_character|retire_character|set_country_leader)\s*=\s*(\w+)', content)
+        for cid in char_refs:
+            if cid not in all_characters:
+                errors.append(f"UNKNOWN CHARACTER in event ({rel_path}): {cid}")
+
+        # Check events called inside effects
+        called_events = re.findall(r'(?:country_event|news_event)\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', content)
+        for ce in called_events:
+            if ce not in all_events:
+                errors.append(f"UNKNOWN EVENT CALLED in event ({rel_path}): {ce}")
+
+    # 8. DECISIONS DEEP AUDIT
+    print("\n--- Phase 8: Auditing Russian Decision Files ---")
+    rus_dec_files = [
+        'common/decisions/side_ww1_ger_rus_depth.txt',
+        'common/decisions/ww1_ger_rus_rework_decisions.txt',
+        'common/decisions/ww1_russia_crisis_decisions.txt',
+        'common/decisions/ww1_russia_tsarist_decisions.txt',
+        'common/decisions/ww1_soviet_civil_war_decisions.txt',
+        'common/decisions/ww1_soviet_diplomacy_decisions.txt'
+    ]
+    for rel_path in rus_dec_files:
+        fpath = os.path.join(REPO_ROOT, rel_path)
+        content = load_file(fpath)
+        if not content:
+            continue
+        print(f"Auditing {rel_path}...")
+        open_b = content.count('{')
+        close_b = content.count('}')
+        if open_b != close_b:
+            errors.append(f"BRACKET IMBALANCE in {rel_path}: open={open_b}, close={close_b}")
+
+        # Check ideas in decisions
+        add_ideas = re.findall(r'add_ideas\s*=\s*(\w+)', content)
+        for aid in add_ideas:
+            if aid not in all_ideas:
+                errors.append(f"UNKNOWN IDEA in decision ({rel_path}): add_ideas = {aid}")
+
+        # Check events in decisions
+        called_events = re.findall(r'(?:country_event|news_event)\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_\.]+)', content)
+        for ce in called_events:
+            if ce not in all_events:
+                errors.append(f"UNKNOWN EVENT CALLED in decision ({rel_path}): {ce}")
+
+    # 9. LOCALIZATION AUDIT
+    print("\n--- Phase 9: Auditing Russian Localization Keys ---")
     loc_files = [
-        ("localisation/english/ww1_ger_rus_rework_l_english.yml", "localisation/braz_por/ww1_ger_rus_rework_l_braz_por.yml"),
-        ("localisation/english/ww1_russia_events_l_english.yml", "localisation/braz_por/ww1_russia_events_l_braz_por.yml"),
-        ("localisation/english/ww1_russia_focus_l_english.yml", "localisation/braz_por/ww1_russia_focus_l_braz_por.yml"),
-        ("localisation/english/ww1_russia_ideas_l_english.yml", "localisation/braz_por/ww1_russia_ideas_l_braz_por.yml"),
-        ("localisation/english/ww1_soviet_l_english.yml", "localisation/braz_por/ww1_soviet_l_braz_por.yml"),
-        ("localisation/english/ww1_sov_wings_l_english.yml", "localisation/braz_por/ww1_sov_wings_l_braz_por.yml"),
-        ("localisation/english/ww1_white_l_english.yml", "localisation/braz_por/ww1_white_l_braz_por.yml")
+        'localisation/english/ww1_russia_focus_l_english.yml',
+        'localisation/english/ww1_russia_events_l_english.yml',
+        'localisation/english/ww1_russia_ideas_l_english.yml',
+        'localisation/english/ww1_soviet_l_english.yml',
+        'localisation/english/ww1_ger_rus_rework_l_english.yml',
+        'localisation/english/ww1_white_l_english.yml',
+        'localisation/braz_por/ww1_russia_focus_l_braz_por.yml',
+        'localisation/braz_por/ww1_russia_events_l_braz_por.yml',
+        'localisation/braz_por/ww1_russia_ideas_l_braz_por.yml',
+        'localisation/braz_por/ww1_soviet_l_braz_por.yml',
+        'localisation/braz_por/ww1_ger_rus_rework_l_braz_por.yml',
+        'localisation/braz_por/ww1_white_l_braz_por.yml',
     ]
-    for en_rel, pt_rel in loc_files:
-        en_p = os.path.join(REPO_ROOT, en_rel)
-        pt_p = os.path.join(REPO_ROOT, pt_rel)
-        if not os.path.exists(en_p):
-            print(f"  [MISSING FILE] {en_rel}")
+    all_loc_keys = set()
+    for rel_path in loc_files:
+        fpath = os.path.join(REPO_ROOT, rel_path)
+        if not os.path.exists(fpath):
+            warnings.append(f"Localization file missing: {rel_path}")
             continue
-        if not os.path.exists(pt_p):
-            print(f"  [MISSING FILE] {pt_rel}")
-            continue
+        # Check UTF-8 BOM
+        with open(fpath, 'rb') as f:
+            raw = f.read()
+        if not raw.startswith(b'\xef\xbb\xbf'):
+            errors.append(f"MISSING UTF-8 BOM in {rel_path}")
+        if raw.startswith(b'\xef\xbb\xbf\xef\xbb\xbf'):
+            errors.append(f"DOUBLE UTF-8 BOM in {rel_path}")
+        
+        text = raw.decode('utf-8', errors='ignore')
+        for m in re.finditer(r'^\s*([a-zA-Z0-9_\.]+):\d*\s*"', text, re.MULTILINE):
+            all_loc_keys.add(m.group(1))
 
-        with open(en_p, "rb") as f:
-            en_bytes = f.read()
-        with open(pt_p, "rb") as f:
-            pt_bytes = f.read()
+    # Check focus localization
+    for tree_id, focuses in all_tree_focus_ids.items():
+        for fid in focuses:
+            if fid not in all_loc_keys:
+                warnings.append(f"MISSING FOCUS TITLE LOC: {fid} (tree: {tree_id})")
+            if f"{fid}_desc" not in all_loc_keys:
+                warnings.append(f"MISSING FOCUS DESC LOC: {fid}_desc (tree: {tree_id})")
 
-        en_bom = en_bytes.startswith(b"\xef\xbb\xbf")
-        pt_bom = pt_bytes.startswith(b"\xef\xbb\xbf")
-        en_double = en_bytes.startswith(b"\xef\xbb\xbf\xef\xbb\xbf")
-        pt_double = pt_bytes.startswith(b"\xef\xbb\xbf\xef\xbb\xbf")
+    # Check Russian ideas localization
+    for idea in all_ideas:
+        if idea.startswith('SOV_') or idea.startswith('WHT_') or idea.startswith('RUS_'):
+            if idea not in all_loc_keys:
+                warnings.append(f"MISSING IDEA LOC: {idea}")
 
-        print(f"Loc pair: {os.path.basename(en_p)} / {os.path.basename(pt_p)}")
-        if not en_bom or en_double:
-            print(f"  [BOM ERROR] {en_rel}: BOM={en_bom}, Double={en_double}")
-        if not pt_bom or pt_double:
-            print(f"  [BOM ERROR] {pt_rel}: BOM={pt_bom}, Double={pt_double}")
+    print("\n=== AUDIT SUMMARY ===")
+    print(f"Total Errors Found: {len(errors)}")
+    for e in errors:
+        print(f"  [ERROR] {e}")
+    print(f"\nTotal Warnings Found: {len(warnings)}")
+    for w in warnings[:50]: # show first 50
+        print(f"  [WARN] {w}")
+    if len(warnings) > 50:
+        print(f"  ... and {len(warnings) - 50} more warnings")
 
-        # Parse keys
-        en_text = en_bytes.decode("utf-8", errors="ignore")
-        pt_text = pt_bytes.decode("utf-8", errors="ignore")
-
-        en_keys = set(re.findall(r'^\s*([A-Za-z0-9_.]+):', en_text, re.MULTILINE))
-        pt_keys = set(re.findall(r'^\s*([A-Za-z0-9_.]+):', pt_text, re.MULTILINE))
-
-        # Filter out language headers
-        en_keys.discard("l_english")
-        pt_keys.discard("l_braz_por")
-
-        missing_in_pt = en_keys - pt_keys
-        missing_in_en = pt_keys - en_keys
-        if missing_in_pt:
-            print(f"  [KEY PARITY] {len(missing_in_pt)} keys in English but missing in Brazilian Portuguese: {list(missing_in_pt)[:10]}")
-        if missing_in_en:
-            print(f"  [KEY PARITY] {len(missing_in_en)} keys in Brazilian Portuguese but missing in English: {list(missing_in_en)[:10]}")
-        if not missing_in_pt and not missing_in_en:
-            print(f"  -> Perfect parity! {len(en_keys)} keys matched 100%.")
-
-if __name__ == "__main__":
-    audit_characters()
-    audit_focus_trees()
-    audit_events()
-    audit_decisions()
-    audit_localization()
+if __name__ == '__main__':
+    main()

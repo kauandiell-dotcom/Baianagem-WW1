@@ -5,7 +5,7 @@ focus_tree = {
 		modifier = {
 			add = 10
 			tag = WHT
-			NOT = { has_country_flag = WHT_civil_war_won }
+			NOT = { has_country_flag = WHT_russia_restored_and_reunified }
 		}
 	}
 	default = no
@@ -1103,6 +1103,12 @@ focus_tree = {
 		y = 3
 		prerequisite = { focus = WHT_restoration_of_the_monarchy }
 		completion_reward = {
+			recruit_character = WHT_grand_duke_nicholas
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			set_country_leader = WHT_grand_duke_nicholas
 			add_ideas = WHT_holy_orthodox_symphonia
 			add_stability = 0.10
 			add_political_power = 100

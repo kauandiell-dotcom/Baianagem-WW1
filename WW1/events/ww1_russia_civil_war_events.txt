@@ -457,6 +457,11 @@ country_event = {
 		name = ww1_russia_civil_war.20.a
 		ai_chance = { factor = 100 }
 		annex_country = { target = SOV transfer_troops = yes }
+		every_state = {
+			limit = { is_core_of = SOV }
+			add_core_of = WHT
+		}
+		set_capital = 219
 		clr_country_flag = WHT_russian_civil_war_active
 		clr_country_flag = SOV_civil_war_started
 		set_country_flag = WHT_civil_war_won
