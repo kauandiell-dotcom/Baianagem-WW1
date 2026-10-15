@@ -589,6 +589,10 @@ def main():
     print("\n[*] Executing French Republic Complete Overhaul & Agadir Crisis Test Suite (tests/test_ww1_france_rework.py)...")
     res_fra = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_france_rework.py"], cwd=MOD_ROOT)
 
+    # 14. Execute Kingdom of Serbia Complete Overhaul & Great Retreat Test Suite
+    print("\n[*] Executing Kingdom of Serbia Complete Overhaul & Great Retreat Test Suite (tests/test_ww1_serbia_rework.py)...")
+    res_ser = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_serbia_rework.py"], cwd=MOD_ROOT)
+
     tests_failed = (
         (res_ger.returncode != 0)
         or (res_oracle.returncode != 0)
@@ -603,13 +607,14 @@ def main():
         or (res_supreme_perf.returncode != 0)
         or (res_auh.returncode != 0)
         or (res_fra.returncode != 0)
+        or (res_ser.returncode != 0)
     )
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}, SUPREME_PERF: {res_supreme_perf.returncode}, AUH: {res_auh.returncode}, FRA: {res_fra.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}, SUPREME_PERF: {res_supreme_perf.returncode}, AUH: {res_auh.returncode}, FRA: {res_fra.returncode}, SER: {res_ser.returncode}) <<<\n")
         sys.exit(1)
 
 
