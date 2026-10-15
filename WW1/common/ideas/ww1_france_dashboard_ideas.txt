@@ -1,0 +1,59 @@
+# =========================================================================
+# FRENCH REPUBLIC DASHBOARD DYNAMIC IDEAS
+# Represents states of the 4 survival vectors:
+# - Union Sacrée Cohesion
+# - Poilu Morale
+# - Charbon et Acier (Fuel & Metallurgy)
+# =========================================================================
+
+ideas = {
+	country = {
+		FRA_union_sacree_strong = {
+			picture = generic_democracy
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.08
+				political_power_gain = 0.10
+			}
+		}
+		FRA_union_sacree_fractured = {
+			picture = generic_discontent
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.15
+			}
+		}
+		FRA_poilu_morale_high = {
+			picture = generic_morale
+			allowed = { always = no }
+			modifier = {
+				army_morale_factor = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+		FRA_poilu_morale_demoralized = {
+			picture = generic_intel_bonus
+			allowed = { always = no }
+			modifier = {
+				army_morale_factor = -0.20
+				army_attack_factor = -0.15
+			}
+		}
+		FRA_charbon_et_acier_surplus = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.10
+			}
+		}
+		FRA_charbon_et_acier_famine = {
+			picture = generic_economic_increase
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.25
+				consumer_goods_factor = 0.05
+			}
+		}
+	}
+}

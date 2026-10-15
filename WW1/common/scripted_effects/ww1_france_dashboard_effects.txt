@@ -1,0 +1,166 @@
+# =========================================================================
+# FRENCH REPUBLIC DASHBOARD & 4 SURVIVAL VECTORS SCRIPTED EFFECTS
+# Survival Vectors:
+# - FRA_union_sacree_cohesion (0 to 100)
+# - FRA_poilu_morale (0 to 100)
+# - FRA_charbon_et_acier (0 to 100)
+# - FRA_reserves_humaines (0 to 100)
+# =========================================================================
+
+FRA_init_republic_dashboard = {
+	set_variable = { FRA_union_sacree_cohesion = 80 }
+	set_variable = { FRA_poilu_morale = 75 }
+	set_variable = { FRA_charbon_et_acier = 70 }
+	set_variable = { FRA_reserves_humaines = 85 }
+}
+
+FRA_clamp_dashboard_variables = {
+	clamp_variable = { var = FRA_union_sacree_cohesion min = 0 max = 100 }
+	clamp_variable = { var = FRA_poilu_morale min = 0 max = 100 }
+	clamp_variable = { var = FRA_charbon_et_acier min = 0 max = 100 }
+	clamp_variable = { var = FRA_reserves_humaines min = 0 max = 100 }
+}
+
+FRA_weekly_republic_tick = {
+	# Ensure variables are initialized if running on an existing save or edge scenario
+	if = {
+		limit = {
+			NOT = { has_variable = FRA_union_sacree_cohesion }
+		}
+		FRA_init_republic_dashboard = yes
+	}
+
+	# Wartime consumption and weariness
+	if = {
+		limit = {
+			has_war = yes
+		}
+
+		# Coal and Steel weekly consumption
+		subtract_from_variable = { FRA_charbon_et_acier = 1 }
+
+		# Industrial loss: Briey-Longwy (state 18) or Nord-Pas-de-Calais (state 28)
+		if = {
+			limit = {
+				OR = {
+					NOT = { controls_state = 18 }
+					NOT = { controls_state = 28 }
+				}
+			}
+			subtract_from_variable = { FRA_charbon_et_acier = 1 }
+		}
+
+		# Base wartime weariness on poilu morale and national cohesion
+		subtract_from_variable = { FRA_poilu_morale = 0.20 }
+		subtract_from_variable = { FRA_union_sacree_cohesion = 0.15 }
+		subtract_from_variable = { FRA_reserves_humaines = 0.10 }
+
+		# Surrender progress weariness (frontline collapse / enemy advances)
+		if = {
+			limit = {
+				surrender_progress > 0.10
+			}
+			subtract_from_variable = { FRA_poilu_morale = 0.30 }
+			subtract_from_variable = { FRA_union_sacree_cohesion = 0.25 }
+		}
+		if = {
+			limit = {
+				surrender_progress > 0.25
+			}
+			subtract_from_variable = { FRA_poilu_morale = 0.50 }
+			subtract_from_variable = { FRA_union_sacree_cohesion = 0.50 }
+		}
+	}
+
+	# Strict clamping
+	FRA_clamp_dashboard_variables = yes
+
+	# Dynamic idea management based on survival vectors
+
+	# 1. Union Sacrée Cohesion
+	if = {
+		limit = {
+			check_variable = { FRA_union_sacree_cohesion < 30 }
+		}
+		if = {
+			limit = { has_idea = FRA_union_sacree_strong }
+			remove_ideas = FRA_union_sacree_strong
+		}
+		if = {
+			limit = { NOT = { has_idea = FRA_union_sacree_fractured } }
+			add_ideas = FRA_union_sacree_fractured
+		}
+	}
+	else = {
+		if = {
+			limit = { has_idea = FRA_union_sacree_fractured }
+			remove_ideas = FRA_union_sacree_fractured
+		}
+		if = {
+			limit = {
+				check_variable = { FRA_union_sacree_cohesion >= 75 }
+				NOT = { has_idea = FRA_union_sacree_strong }
+			}
+			add_ideas = FRA_union_sacree_strong
+		}
+	}
+
+	# 2. Poilu Morale
+	if = {
+		limit = {
+			check_variable = { FRA_poilu_morale < 30 }
+		}
+		if = {
+			limit = { has_idea = FRA_poilu_morale_high }
+			remove_ideas = FRA_poilu_morale_high
+		}
+		if = {
+			limit = { NOT = { has_idea = FRA_poilu_morale_demoralized } }
+			add_ideas = FRA_poilu_morale_demoralized
+		}
+	}
+	else = {
+		if = {
+			limit = { has_idea = FRA_poilu_morale_demoralized }
+			remove_ideas = FRA_poilu_morale_demoralized
+		}
+		if = {
+			limit = {
+				check_variable = { FRA_poilu_morale >= 70 }
+				NOT = { has_idea = FRA_poilu_morale_high }
+			}
+			add_ideas = FRA_poilu_morale_high
+		}
+	}
+
+	# 3. Charbon et Acier (Fuel & Metallurgy)
+	if = {
+		limit = {
+			check_variable = { FRA_charbon_et_acier < 25 }
+		}
+		if = {
+			limit = { has_idea = FRA_charbon_et_acier_surplus }
+			remove_ideas = FRA_charbon_et_acier_surplus
+		}
+		if = {
+			limit = { NOT = { has_idea = FRA_charbon_et_acier_famine } }
+			add_ideas = FRA_charbon_et_acier_famine
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				check_variable = { FRA_charbon_et_acier >= 50 }
+				has_idea = FRA_charbon_et_acier_famine
+			}
+			remove_ideas = FRA_charbon_et_acier_famine
+		}
+		if = {
+			limit = {
+				check_variable = { FRA_charbon_et_acier >= 75 }
+				NOT = { has_idea = FRA_charbon_et_acier_surplus }
+			}
+			add_ideas = FRA_charbon_et_acier_surplus
+		}
+	}
+}

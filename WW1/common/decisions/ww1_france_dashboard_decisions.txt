@@ -1,0 +1,163 @@
+# =========================================================================
+# FRENCH REPUBLIC DASHBOARD EMERGENCY SURVIVAL DECISIONS
+# Categories defined in common/decisions/categories/ww1_france_categories.txt
+# =========================================================================
+
+FRA_war_economy_and_munitions = {
+
+	# British Channel Coal Convoys
+	FRA_dec_british_channel_coal = {
+		icon = generic_industry
+		cost = 25
+		days_re_enable = 60
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+		}
+
+		available = {
+			has_war = yes
+			check_variable = { FRA_charbon_et_acier < 85 }
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+		}
+
+		complete_effect = {
+			add_to_variable = { FRA_charbon_et_acier = 20 }
+			FRA_clamp_dashboard_variables = yes
+		}
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				add = 50
+				check_variable = { FRA_charbon_et_acier < 40 }
+			}
+			modifier = {
+				add = 40
+				check_variable = { FRA_charbon_et_acier < 25 }
+			}
+		}
+	}
+
+	# Call up Class of 1917 (Les Bleuets)
+	FRA_dec_call_up_class_1917 = {
+		icon = generic_army
+		cost = 30
+		fire_only_once = yes
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+			date > 1916.6.1
+		}
+
+		available = {
+			has_war = yes
+			date > 1916.6.1
+		}
+
+		complete_effect = {
+			add_manpower = 50000
+			add_to_variable = { FRA_reserves_humaines = 15 }
+			add_stability = -0.05
+			FRA_clamp_dashboard_variables = yes
+		}
+
+		ai_will_do = {
+			base = 20
+			modifier = {
+				add = 60
+				check_variable = { FRA_reserves_humaines < 40 }
+			}
+		}
+	}
+
+	# Colonial Recruitment: Tirailleurs Sénégalais & North African Troops
+	FRA_dec_colonial_recruitment_tirailleurs = {
+		icon = generic_colonial_administration
+		cost = 35
+		days_re_enable = 120
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+
+		available = {
+			has_war = yes
+			check_variable = { FRA_reserves_humaines < 90 }
+		}
+
+		complete_effect = {
+			add_manpower = 60000
+			add_to_variable = { FRA_reserves_humaines = 10 }
+			FRA_clamp_dashboard_variables = yes
+		}
+
+		ai_will_do = {
+			base = 15
+			modifier = {
+				add = 50
+				check_variable = { FRA_reserves_humaines < 50 }
+			}
+		}
+	}
+}
+
+FRA_third_republic_politics = {
+
+	# Union Sacrée Cross-Party Pact
+	FRA_dec_union_sacree_cross_party_pact = {
+		icon = generic_democracy
+		cost = 30
+		days_re_enable = 90
+
+		allowed = {
+			original_tag = FRA
+		}
+
+		visible = {
+			tag = FRA
+			has_war = yes
+		}
+
+		available = {
+			has_war = yes
+			check_variable = { FRA_union_sacree_cohesion < 85 }
+		}
+
+		complete_effect = {
+			add_to_variable = { FRA_union_sacree_cohesion = 15 }
+			add_stability = 0.05
+			FRA_clamp_dashboard_variables = yes
+		}
+
+		ai_will_do = {
+			base = 15
+			modifier = {
+				add = 50
+				check_variable = { FRA_union_sacree_cohesion < 40 }
+			}
+			modifier = {
+				add = 35
+				check_variable = { FRA_union_sacree_cohesion < 25 }
+			}
+		}
+	}
+}

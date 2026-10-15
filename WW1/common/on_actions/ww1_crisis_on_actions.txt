@@ -27,11 +27,21 @@ on_actions = {
    ww1_ENG_update_crisis = yes
   }
  }
- on_weekly_FRA = {
-  effect = {
-   ww1_FRA_update_crisis = yes
-  }
- }
+	on_weekly_FRA = {
+		effect = {
+			ww1_FRA_update_crisis = yes
+			if = {
+				limit = { tag = FRA }
+				if = {
+					limit = { NOT = { has_country_flag = fra_dashboard_initialized } }
+					FRA_init_republic_dashboard = yes
+					set_country_flag = fra_dashboard_initialized
+				}
+				FRA_clamp_dashboard_variables = yes
+				FRA_weekly_republic_tick = yes
+			}
+		}
+	}
  on_weekly_SOV = {
   effect = {
    ww1_SOV_update_crisis = yes
