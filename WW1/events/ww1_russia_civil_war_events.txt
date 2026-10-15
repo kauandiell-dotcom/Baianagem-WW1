@@ -27,22 +27,16 @@ country_event = {
 		set_rule = { can_join_factions = no }
 		set_rule = { can_create_factions = no }
 
-		# Immediate Armistice / Exit from the World War (Decree on Peace)
+		# 1b. Central Powers Brest-Litovsk Peace Overture (Decree on Peace)
+		# Dispatches peace feelers to Germany to initiate the historical Treaty of Brest-Litovsk negotiations
 		if = {
 			limit = { country_exists = GER has_war_with = GER }
-			white_peace = GER
+			GER = { country_event = { id = ww1_russia_diplomacy.1 days = 2 } }
 		}
-		if = {
-			limit = { country_exists = AUS has_war_with = AUS }
-			white_peace = AUS
-		}
-		if = {
-			limit = { country_exists = TUR has_war_with = TUR }
-			white_peace = TUR
-		}
-		if = {
-			limit = { country_exists = BUL has_war_with = BUL }
-			white_peace = BUL
+		else = {
+			if = { limit = { country_exists = AUS has_war_with = AUS } white_peace = AUS }
+			if = { limit = { country_exists = TUR has_war_with = TUR } white_peace = TUR }
+			if = { limit = { country_exists = BUL has_war_with = BUL } white_peace = BUL }
 		}
 
 		# 2. Disband Bloated Imperial Army
@@ -339,12 +333,6 @@ country_event = {
 				NOT = { has_war_with = ROOT }
 			}
 			declare_war_on = { target = FIN type = civil_war }
-		}
-
-		# Central Powers Brest-Litovsk Peace Overture Hook
-		if = {
-			limit = { country_exists = GER has_war_with = GER }
-			GER = { country_event = { id = ww1_russia_diplomacy.1 days = 3 } }
 		}
 	}
 

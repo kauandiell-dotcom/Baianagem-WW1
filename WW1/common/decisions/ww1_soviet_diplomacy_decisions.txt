@@ -4,10 +4,12 @@ SOV_soviet_diplomacy = {
 		icon = generic_peace
 		available = {
 			has_war_with = GER
+			NOT = { has_global_flag = SOV_brest_litovsk_signed }
 		}
 		visible = {
 			tag = SOV
 			has_government = communism
+			NOT = { has_global_flag = SOV_brest_litovsk_signed }
 		}
 		fire_only_once = yes
 		cost = 25
