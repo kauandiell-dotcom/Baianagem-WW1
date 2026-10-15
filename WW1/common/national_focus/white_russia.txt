@@ -5,6 +5,7 @@ focus_tree = {
 		modifier = {
 			add = 10
 			tag = WHT
+			NOT = { has_country_flag = WHT_civil_war_won }
 		}
 	}
 	default = no
@@ -951,10 +952,12 @@ focus_tree = {
 		mutually_exclusive = { focus = WHT_military_dictatorship }
 		prerequisite = { focus = WHT_russia_one_and_indivisible }
 		completion_reward = {
+			recruit_character = WHT_viktor_chernov
 			set_politics = {
 				ruling_party = democratic
 				elections_allowed = yes
 			}
+			set_country_leader = WHT_viktor_chernov
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.30
@@ -977,6 +980,7 @@ focus_tree = {
 				ruling_party = neutrality
 				elections_allowed = no
 			}
+			set_country_leader = WHT_alexander_kolchak
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.30
@@ -1172,6 +1176,7 @@ focus_tree = {
 		prerequisite = { focus = WHT_all_russian_reunification }
 		completion_reward = {
 			change_tag_to = SOV
+			load_focus_tree = russian_empire_focus
 			add_political_power = 250
 			add_stability = 0.15
 			add_war_support = 0.15

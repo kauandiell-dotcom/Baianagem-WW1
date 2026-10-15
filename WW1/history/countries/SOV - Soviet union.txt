@@ -565,9 +565,9 @@ add_equipment_to_stockpile = {
 # 1911 Country Leaders & High Command
 recruit_character = SOV_nicholas_ii
 recruit_character = SOV_alexander_kerensky
-recruit_character = SOV_vladimir_lenin
 recruit_character = SOV_alexander_kolchak
 recruit_character = SOV_pyotr_stolypin
+recruit_character = SOV_pyotr_wrangel
 recruit_character = SOV_grand_duke_nicholas
 recruit_character = SOV_alexei_brusilov
 recruit_character = SOV_mikhail_alekseyev
@@ -582,11 +582,6 @@ recruit_character = SOV_boris_savinkov
 recruit_character = SOV_nikolai_essen
 recruit_character = SOV_andrei_eberhardt
 recruit_character = SOV_grigori_rasputin
-recruit_character = SOV_mikhail_frunze
-recruit_character = SOV_felix_dzerzhinsky
-recruit_character = SOV_semyon_budyonny
-recruit_character = SOV_georgy_chicherin
-recruit_character = SOV_nikolai_bukharin
 
 
 # MBR: no starting factions.
@@ -847,39 +842,6 @@ if = {
 # Prevent the save-game compatibility on_action from creating duplicates.
 set_country_flag = MBR_SOV_alternative_party_leaders_added
 
-create_country_leader = {
-	name = "Nicholas II"
-	picture = "GFX_portrait_SOV_nicholas_ii"
-	expire = "1935.1.1"
-	ideology = despotism
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Alexander Kerensky"
-	picture = "GFX_portrait_SOV_alexander_kerensky"
-	expire = "1935.1.1"
-	ideology = liberalism
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Vladimir Lenin"
-	picture = "GFX_portrait_SOV_vladimir_lenin"
-	expire = "1935.1.1"
-	ideology = marxism
-	traits = { }
-}
-
-create_country_leader = {
-	name = "Alexander Kolchak"
-	picture = "GFX_portrait_SOV_alexander_kolchak"
-	expire = "1935.1.1"
-	ideology = fascism_ideology
-	traits = { }
-}
-
-
 # ==============================================================================
 # Starting WW1 Characters, Generals, Field Marshals, Admirals & Staff
 # ==============================================================================
@@ -892,7 +854,6 @@ recruit_character = SOV_nikolay_iudovich_ivanov
 recruit_character = SOV_nikolay_rouzski
 recruit_character = SOV_nikolay_baratov
 recruit_character = SOV_vladimir_sakharov
-recruit_character = SOV_maria_bochkareva
 
 # BEGIN WW1_1911_NAVAL_OPENING
 set_technology = {

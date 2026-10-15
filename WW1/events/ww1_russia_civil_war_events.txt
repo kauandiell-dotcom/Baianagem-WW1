@@ -16,11 +16,41 @@ country_event = {
 	immediate = {
 		# 1. Establish Soviet State & Immediately Exit Entente (Decree on Peace)
 		set_country_flag = SOV_russian_civil_war_active
+		set_country_flag = SOV_civil_war_started
+		SOV_clear_revolutionary_crisis = yes
 		set_politics = {
 			ruling_party = communism
 			elections_allowed = no
 		}
 		load_focus_tree = soviet_russia_focus
+		recruit_character = SOV_vladimir_lenin
+		recruit_character = SOV_leon_trotsky
+		recruit_character = SOV_joseph_stalin
+		recruit_character = SOV_mikhail_tukhachevsky
+		recruit_character = SOV_semyon_budyonny
+		recruit_character = SOV_mikhail_frunze
+		recruit_character = SOV_felix_dzerzhinsky
+		recruit_character = SOV_georgy_chicherin
+		recruit_character = SOV_nikolai_bukharin
+		set_country_leader = SOV_vladimir_lenin
+
+		# Retire White / Tsarist commanders and leaders from the Red Army roster
+		retire_character = SOV_nicholas_ii
+		retire_character = SOV_alexander_kerensky
+		retire_character = SOV_grigori_rasputin
+		retire_character = SOV_boris_savinkov
+		retire_character = SOV_grand_duke_nicholas
+		retire_character = SOV_vladimir_sukhomlinov
+		retire_character = SOV_mikhail_rodzianko
+		retire_character = SOV_sergei_sazonov
+		retire_character = SOV_alexander_kolchak
+		retire_character = SOV_anton_denikin
+		retire_character = SOV_lavr_kornilov
+		retire_character = SOV_nicholas_yudenich
+		retire_character = SOV_alexey_kaledin
+		retire_character = SOV_mikhail_alekseyev
+		retire_character = SOV_pyotr_wrangel
+
 		leave_faction = yes
 		dismantle_faction = yes
 		prevent_join_factions = yes
@@ -388,6 +418,9 @@ country_event = {
 		ai_chance = { factor = 100 }
 		annex_country = { target = WHT transfer_troops = yes }
 		clr_country_flag = SOV_russian_civil_war_active
+		clr_country_flag = SOV_civil_war_started
+		set_country_flag = SOV_civil_war_won
+		remove_ideas = SOV_civil_war_exhaustion
 		set_rule = { can_join_factions = yes }
 		add_stability = 0.20
 		add_political_power = 150
@@ -425,6 +458,10 @@ country_event = {
 		ai_chance = { factor = 100 }
 		annex_country = { target = SOV transfer_troops = yes }
 		clr_country_flag = WHT_russian_civil_war_active
+		clr_country_flag = SOV_civil_war_started
+		set_country_flag = WHT_civil_war_won
+		set_cosmetic_tag = WHT_russia
+		remove_ideas = SOV_civil_war_exhaustion
 		set_rule = { can_join_factions = yes }
 		add_stability = 0.20
 		add_political_power = 150

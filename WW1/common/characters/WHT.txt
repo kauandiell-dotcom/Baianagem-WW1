@@ -219,4 +219,18 @@ characters = {
 			ai_will_do = { factor = 1.0 }
 		}
 	}
+
+	WHT_viktor_chernov = {
+		name = "Viktor Chernov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_viktor_chernov.dds"
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			traits = { }
+			expire = "1952.4.15"
+		}
+	}
 }

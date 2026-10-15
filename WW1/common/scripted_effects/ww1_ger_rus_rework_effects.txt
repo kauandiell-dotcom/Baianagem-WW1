@@ -209,7 +209,15 @@ ww1_sov_rework_weekly = {
 		country_event = { id = ww1_russia.201 days = 2 }
 	}
 	if = {
-		limit = { NOT = { has_country_flag = SOV_ev_great_retreat } has_war = yes date > 1915.7.20 }
+		limit = {
+			NOT = { has_country_flag = SOV_ev_great_retreat }
+			has_war = yes
+			date > 1915.7.20
+			OR = {
+				NOT = { controls_state = 10 } # Lost Warsaw
+				surrender_progress > 0.05
+			}
+		}
 		set_country_flag = SOV_ev_great_retreat
 		
 		country_event = { id = ww1_russia.203 days = 2 }
@@ -317,7 +325,14 @@ ww1_sov_rework_weekly = {
 		country_event = { id = ww1_russia.227 days = 2 }
 	}
 	if = {
-		limit = { NOT = { has_country_flag = SOV_ev_wrangel } has_country_flag = SOV_civil_war_started date > 1920.4.1 }
+		limit = {
+			NOT = { has_country_flag = SOV_ev_wrangel }
+			NOT = { has_country_flag = SOV_civil_war_won }
+			country_exists = WHT
+			has_war_with = WHT
+			has_country_flag = SOV_civil_war_started
+			date > 1920.4.1
+		}
 		set_country_flag = SOV_ev_wrangel
 		
 		country_event = { id = ww1_russia.223 days = 2 }

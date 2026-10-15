@@ -182,6 +182,20 @@ characters = {
 		}
 	}
 
+	SOV_viktor_chernov = {
+		name = "Viktor Chernov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/SOV_viktor_chernov.dds"
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			traits = { }
+			expire = "1952.4.15"
+		}
+	}
+
 	# -------------------------------------------------------------
 	# High Command & Military Chiefs
 	# -------------------------------------------------------------
@@ -658,6 +672,28 @@ characters = {
 		}
 	}
 
+	SOV_pyotr_wrangel = {
+		name = "Pyotr Wrangel"
+		portraits = {
+			army = {
+				large = "gfx/leaders/RUS/RUS_pyotr_wrangel.dds"
+				small = "GFX_idea_SOV_pyotr_wrangel"
+			}
+			civilian = {
+				large = "gfx/leaders/RUS/RUS_pyotr_wrangel.dds"
+				small = "GFX_idea_SOV_pyotr_wrangel"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer cavalry_leader offensive_doctrine inspirational_leader }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+
 	# -------------------------------------------------------------
 	# Bolshevik Leadership & Red Army High Command
 	# -------------------------------------------------------------
@@ -678,7 +714,7 @@ characters = {
 			expire = "1940.8.21"
 		}
 		field_marshal = {
-			traits = { offensive_doctrine brilliant_strategist organizational_leader }
+			traits = { offensive_doctrine brilliant_strategist organizer }
 			skill = 4
 			attack_skill = 4
 			defense_skill = 3

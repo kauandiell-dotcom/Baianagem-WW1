@@ -6,10 +6,16 @@ focus_tree = {
 		modifier = {
 			add = 10
 			OR = {
-				tag = SOV
+				AND = {
+					tag = SOV
+					NOT = { has_government = communism }
+				}
+				AND = {
+					tag = WHT
+					has_country_flag = WHT_civil_war_won
+				}
 				tag = RUS
 			}
-			NOT = { has_government = communism }
 		}
 	}
 	default = no
@@ -946,7 +952,8 @@ focus_tree = {
 			197 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_tech_bonus = { name = SOV_agrarian_coop_bonus bonus = 0.50 uses = 1 category = industry }
 			add_political_power = 100
-			set_country_leader = SOV_boris_savinkov
+			recruit_character = SOV_viktor_chernov
+			set_country_leader = SOV_viktor_chernov
 		}
 	}
 
@@ -1274,6 +1281,7 @@ focus_tree = {
 				limit = { NOT = { has_idea = SOV_order_restored_spirit } }
 				add_ideas = SOV_order_restored_spirit
 			}
+			set_country_flag = SOV_order_restored
 			195 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
@@ -2881,6 +2889,7 @@ add_tech_bonus = { name = SOV_sikorsky_ilya_muromets bonus = 0.50 uses = 1 categ
 		x = 67
 		y = 0
 		ai_will_do = { factor = 10 }
+		available = { date > 1913.6.1 }
 		cost = 10
 		search_filters = { FOCUS_FILTER_ARMY_XP }
 
