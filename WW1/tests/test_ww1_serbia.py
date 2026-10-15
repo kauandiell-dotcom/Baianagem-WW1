@@ -20,7 +20,7 @@ class TestWW1Serbia(unittest.TestCase):
 
         # Focus count
         foci = re.findall(r'focus\s*=\s*\{\s*id\s*=\s*([a-zA-Z0-9_]+)', txt)
-        self.assertEqual(len(foci), 94, f"Expected exactly 94 focuses, found {len(foci)}")
+        self.assertEqual(len(foci), 96, f"Expected exactly 96 focuses, found {len(foci)}")
 
         # Check coordinates and collisions
         coord_matches = re.findall(r'id\s*=\s*([a-zA-Z0-9_]+)[\s\S]*?x\s*=\s*(\d+)[\s\S]*?y\s*=\s*(\d+)', txt)
