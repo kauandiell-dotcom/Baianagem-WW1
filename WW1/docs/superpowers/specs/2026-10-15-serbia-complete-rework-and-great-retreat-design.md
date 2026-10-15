@@ -6,7 +6,16 @@ The Kingdom of Serbia (`SER`) was the crucible of the First World War. Despite s
 This rework delivers:
 1. **Native HOI4 Balance of Power (`bop_ser_civil_military`)**: Constitutional Parliament (Pašić) vs Military Intelligence Conspirators (*Crna Ruka* / Apis).
 2. **The Great Retreat & Salonika Sanctuary Engine**: Complete immunity to early softlock, granting cores on operational sanctuary territories (states 184 and 44), massive surrender limit reinforcement (`surrender_limit = +0.40`), and multi-wave mobilizations spawning 25–30 divisions.
-3. **Heroic Resistance**: Major Gavrilović's last stand in Belgrade, the 1915 Typhus Epidemic (Dr. Elsie Inglis), and national heroine Milunka Savić (*Iron Regiment*).
+3. **Heroic Resistance & Historical Crucials**: 
+   - Major Gavrilović's last stand in Belgrade (*Kalemegdan*).
+   - The 1915 Typhus Epidemic (Dr. Elsie Inglis & Scottish Women's Hospitals).
+   - National heroine Milunka Savić (*Iron Regiment / Gvozdeni Puk*).
+   - The secret pact with Essad Pasha Toptani in Albania (state 44).
+   - The Greek National Schism and Venizelos' Salonika Provisional Government.
+   - The Memorial of Vido and the Blue Graveyard (*Plava Grobnica*).
+   - The repatriation of South Slavic POWs in Russia (Odessa Volunteer Division).
+   - The world's first anti-aircraft shootdown by Radoje Ljutovac in Kragujevac.
+   - Unique historical traits for the 4 Vojvodas (Putnik, Mišić, Stepanović, Bojović) and Vojvoda Vuk.
 4. **4 Divergent Endgames**: Kingdom of Serbs, Croats and Slovenes (Yugoslavia), Greater Serbia Centralism, Balkan Socialist Soviet Republic, and the Black Hand Pretorian Military Junta.
 
 ---
@@ -58,14 +67,19 @@ This rework delivers:
 
 ### 4-Wave Mobilization:
 1. Wave 1: 8 Conscript Divisions in Salonika.
-2. Wave 2: 8 Yugoslav Volunteer Veteran Divisions in Salonika.
-3. Wave 3: 6 Allied Shock 75mm Divisions in Salonika.
-4. Wave 4: 6–8 Chetnik Irregular Guerilla Divisions behind enemy lines in states 107 & 108.
+2. Wave 2: 8 Yugoslav Volunteer Veteran Divisions in Salonika (Odessa & Austro-Slav POWs).
+3. Wave 3: 6 Allied Shock 75mm Divisions in Salonika (French armament).
+4. Wave 4: 6–8 Chetnik Irregular Guerilla Divisions behind enemy lines in states 107 & 108 (Toplica Uprising).
 Total: 28 to 30 divisions.
 
 ---
 
-## 4. Characters & National Heroes
+## 4. Characters, Military Vojvodas & National Heroes
+- `SER_radomir_putnik`: Field Marshal, trait `vojvoda_wheelchair_strategist` (`max_dig_in = 5`, `planning_speed = 0.20`).
+- `SER_zivojin_misic`: Field Marshal, trait `vojvoda_kolubara_master` (`attack_core_factor = 0.15`, `movement_speed = 0.15`).
+- `SER_stepa_stepanovic`: Field Marshal, trait `vojvoda_hero_of_cer` (`defence_core_factor = 0.20`, `entrenchment_factor = 0.15`).
+- `SER_petar_bojovic`: Field Marshal, trait `vojvoda_liberator_of_belgrade` (`cavalry_attack_factor = 0.15`, `breakthrough_factor = 0.10`).
+- `SER_vojin_popovic_vuk`: General, trait `chetnik_guerilla_leader` (`terrain_forest_attack = 0.15`, `reconnaissance_factor = 0.20`).
 - `SER_milunka_savic`: Heroine of the Iron Regiment (`national_heroine`, `army_morale_factor = 0.10`, `army_core_defence_factor = 0.10`).
 - `SER_dragutin_gavrilovic`: Major of the Kalemegdan Last Stand (`defence_specialist`, `entrenchment_factor = 0.15`).
 
