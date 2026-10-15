@@ -203,7 +203,7 @@ characters={
 		name="Momcilo Hadzilic"
 		portraits={
 			civilian={
-				large="GFX_portrait_europe_generic_8"
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			}
 		}
 		country_leader={
@@ -720,6 +720,32 @@ characters={
 			attack_skill=2
 			defense_skill=4
 			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	SER_dragutin_dimitrijevic_apis={
+		name="Dragutin Dimitrijević 'Apis'"
+		portraits={
+			civilian={
+				large="gfx/leaders/SER/SER_dragutin_dimitrijevic.png"
+			}
+			army={
+				large="gfx/leaders/SER/SER_dragutin_dimitrijevic.png"
+				small="gfx/interface/ideas/SER/idea_SER_jurisic_sturm.png"
+			}
+		}
+		country_leader={
+			ideology=military_junta
+			expire="1935.1.1.1"
+			id=-1
+		}
+		corps_commander={
+			traits={ trickster commando guerilla_fighter }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
 			logistics_skill=2
 		}
 	}

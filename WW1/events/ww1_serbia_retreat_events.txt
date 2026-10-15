@@ -31,7 +31,10 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_country_flag = ser_executed_great_retreat
 
-		# Concessão de núcleos operacionais de santuário (Salônica e Albânia/Durrës)
+		# Concessão de núcleos operacionais de santuário (Salônica, Trácia e Albânia/Durrës)
+		731 = {
+			add_core_of = SER
+		}
 		184 = {
 			add_core_of = SER
 		}
@@ -69,7 +72,11 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_country_flag = ser_salonika_sanctuary_established
 
-		# Transferência e integração militar da base naval e logística de Salônica
+		# Transferência e integração militar da base naval e logística de Salônica (Estado 731) e Trácia (Estado 184)
+		transfer_state = 731
+		731 = {
+			add_core_of = SER
+		}
 		transfer_state = 184
 		184 = {
 			add_core_of = SER

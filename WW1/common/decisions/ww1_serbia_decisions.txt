@@ -105,7 +105,7 @@ SER_black_hand_and_national_defense = {
 		days_remove = 180
 		modifier = {
 			army_core_defence_factor = 0.05
-			reconnaissance_factor = 0.10
+			recon_factor = 0.10
 		}
 		ai_will_do = {
 			factor = 1.0
@@ -269,7 +269,7 @@ SER_wartime_emergency_measures = {
 		days_remove = 60
 		modifier = {
 			attrition = -0.10
-			casualty_trickleback = 0.05
+			experience_loss_factor = -0.05
 		}
 		complete_effect = {
 			if = {

@@ -750,7 +750,7 @@ focus_tree = {
 	focus = {
 		id = SER_anticorruption_procurement
 		icon = GFX_SER_anticorruption_procurement
-		x = 16
+		x = 15
 		y = 6
 		cost = 5
 
@@ -766,7 +766,7 @@ focus_tree = {
 	focus = {
 		id = SER_professional_civil_service
 		icon = GFX_SER_professional_civil_service
-		x = 16
+		x = 15
 		y = 7
 		cost = 5
 
@@ -833,7 +833,7 @@ focus_tree = {
 	focus = {
 		id = SER_serbo_bulgarian_dialogue
 		icon = GFX_SER_serbo_bulgarian_dialogue
-		x = 25
+		x = 24
 		y = 1
 		cost = 5
 
@@ -849,7 +849,7 @@ focus_tree = {
 	focus = {
 		id = SER_macedonian_autonomy_proposal
 		icon = GFX_SER_macedonian_autonomy_proposal
-		x = 25
+		x = 24
 		y = 2
 		cost = 5
 
@@ -867,7 +867,7 @@ focus_tree = {
 	focus = {
 		id = SER_bulgarian_non_aggression_pact
 		icon = GFX_SER_bulgarian_non_aggression_pact
-		x = 25
+		x = 24
 		y = 3
 		cost = 6
 
@@ -991,7 +991,7 @@ focus_tree = {
 	focus = {
 		id = SER_traditional_russian_patronage
 		icon = GFX_SER_traditional_russian_patronage
-		x = 24
+		x = 23
 		y = 4
 		cost = 5
 
@@ -1009,7 +1009,7 @@ focus_tree = {
 	focus = {
 		id = SER_saint_petersburg_arms_loans
 		icon = GFX_SER_saint_petersburg_arms_loans
-		x = 24
+		x = 23
 		y = 5
 		cost = 5
 
@@ -1043,7 +1043,7 @@ focus_tree = {
 	focus = {
 		id = SER_entente_diplomatic_shield
 		icon = GFX_SER_entente_diplomatic_shield
-		x = 24
+		x = 23
 		y = 6
 		cost = 6
 
@@ -1097,7 +1097,7 @@ focus_tree = {
 	focus = {
 		id = SER_suppress_anti_habsburg_agitation
 		icon = GFX_SER_suppress_anti_habsburg_agitation
-		x = 29
+		x = 30
 		y = 6
 		cost = 5
 
@@ -1133,7 +1133,7 @@ focus_tree = {
 	focus = {
 		id = SER_greater_serbian_strategy
 		icon = GFX_SER_greater_serbian_strategy
-		x = 27
+		x = 26
 		y = 6
 		cost = 6
 
@@ -1538,6 +1538,14 @@ focus_tree = {
 		available = { controls_state = 107 }
 		search_filters = { FOCUS_FILTER_STABILITY }
 		completion_reward = {
+			if = {
+				limit = { has_idea = SER_otadzbina_u_pokretu }
+				remove_ideas = SER_otadzbina_u_pokretu
+			}
+			if = {
+				limit = { has_idea = SER_major_gavrilovic_spirit }
+				remove_ideas = SER_major_gavrilovic_spirit
+			}
 			add_stability = 0.20
 			add_war_support = 0.15
 			add_political_power = 100
@@ -1556,6 +1564,10 @@ focus_tree = {
 		prerequisite = { focus = SER_liberation_of_the_homeland }
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
+			if = {
+				limit = { has_idea = SER_otadzbina_u_pokretu }
+				remove_ideas = SER_otadzbina_u_pokretu
+			}
 			add_political_power = 120
 			add_stability = 0.15
 			add_to_variable = { ser_national_cohesion = 15 }
@@ -1594,9 +1606,20 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = ww1_serbia.16 }
 			set_cosmetic_tag = YUG
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
 			add_ideas = SER_yugoslav_kingdom_unification
 			add_stability = 0.15
 			add_political_power = 150
+			104 = { add_core_of = SER }
+			109 = { add_core_of = SER }
+			103 = { add_core_of = SER }
+			102 = { add_core_of = SER }
+			45 = { add_core_of = SER }
+			106 = { add_core_of = SER }
+			802 = { add_core_of = SER }
 			add_to_variable = { ser_national_cohesion = 25 }
 			add_to_variable = { ser_balkan_influence = 30 }
 		}
@@ -1613,10 +1636,23 @@ focus_tree = {
 		mutually_exclusive = { focus = SER_proclamation_of_yugoslavia focus = SER_balkan_socialist_soviet_republic focus = SER_apis_pretorian_military_junta }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			set_cosmetic_tag = SER_greater_serbia
 			add_ideas = SER_greater_serbian_hegemony
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
 			add_stability = 0.15
 			add_war_support = 0.15
 			add_political_power = 150
+			104 = { add_core_of = SER }
+			45 = { add_core_of = SER }
+			106 = { add_core_of = SER }
+			802 = { add_core_of = SER }
 			107 = { add_building_construction = { type = industrial_complex level = 1 instant_build = yes } }
 			add_to_variable = { ser_national_cohesion = 25 }
 		}
@@ -1633,6 +1669,9 @@ focus_tree = {
 		mutually_exclusive = { focus = SER_proclamation_of_yugoslavia focus = SER_restored_sovereign_serbia focus = SER_apis_pretorian_military_junta }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			set_cosmetic_tag = SER_socialist
+			recruit_character = SER_filip_filipovic
+			promote_character = SER_filip_filipovic
 			add_ideas = SER_balkan_soviet_federation
 			set_politics = {
 				ruling_party = communism
@@ -1660,6 +1699,9 @@ focus_tree = {
 		mutually_exclusive = { focus = SER_proclamation_of_yugoslavia focus = SER_restored_sovereign_serbia focus = SER_balkan_socialist_soviet_republic }
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
+			set_cosmetic_tag = SER_junta
+			recruit_character = SER_dragutin_dimitrijevic_apis
+			promote_character = SER_dragutin_dimitrijevic_apis
 			add_ideas = SER_black_hand_junta_rule
 			set_politics = {
 				ruling_party = neutrality

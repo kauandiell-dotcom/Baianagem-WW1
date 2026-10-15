@@ -23,11 +23,11 @@ bop_ser_civil_military = {
 	}
 
 	# ---------------------------------------------------------------------
-	# Range 2: Moderate Parliamentary Primacy (-0.69 to -0.2)
+	# Range 2: Moderate Parliamentary Primacy (-0.7 to -0.2)
 	# ---------------------------------------------------------------------
 	range = {
 		id = bop_ser_range_medium_pasic
-		min = -0.69
+		min = -0.7
 		max = -0.2
 		modifier = {
 			stability_factor = 0.08
@@ -37,24 +37,24 @@ bop_ser_civil_military = {
 	}
 
 	# ---------------------------------------------------------------------
-	# Range 3: Tense Balance / Priority Dispute (-0.19 to 0.19)
+	# Range 3: Tense Balance / Priority Dispute (-0.2 to 0.2)
 	# ---------------------------------------------------------------------
 	range = {
 		id = bop_ser_range_balanced
-		min = -0.19
-		max = 0.19
+		min = -0.2
+		max = 0.2
 		modifier = {
 			political_power_gain = -0.05
 		}
 	}
 
 	# ---------------------------------------------------------------------
-	# Range 4: Moderate Black Hand Ascendancy (0.2 to 0.69)
+	# Range 4: Moderate Black Hand Ascendancy (0.2 to 0.7)
 	# ---------------------------------------------------------------------
 	range = {
 		id = bop_ser_range_medium_apis
 		min = 0.2
-		max = 0.69
+		max = 0.7
 		modifier = {
 			army_attack_factor = 0.08
 			army_core_defence_factor = 0.10
