@@ -22,7 +22,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				army_defence_factor = 0.05
-				casualty_trickleback = 0.05
+				experience_loss_factor = -0.05
 			}
 		}
 
@@ -32,7 +32,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				convoy_escort_efficiency = 0.12
-				naval_strike_factor = 0.05
+				naval_strike_attack_factor = 0.05
 			}
 		}
 
@@ -403,7 +403,7 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				army_defence_factor = 0.06
-				casualty_trickleback = 0.04
+				experience_loss_factor = -0.04
 			}
 		}
 
@@ -661,7 +661,7 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				casualty_trickleback = 0.05
+				experience_loss_factor = -0.05
 				conscription_factor = 0.03
 			}
 		}
@@ -682,7 +682,7 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				air_accidental_factor = -0.15
+				air_accidents_factor = -0.15
 				air_training_xp_gain_factor = 0.1
 			}
 		}
@@ -724,7 +724,7 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				sub_detection = 0.15
+				navy_sub_detection_factor = 0.15
 				navy_screen_attack_factor = 0.05
 			}
 		}
@@ -870,7 +870,7 @@ ideas = {
 			modifier = {
 				industrial_capacity_factory = 0.1
 				production_speed_arms_factory_factor = 0.08
-				efficiency_retention_bonus = 0.05
+				line_change_production_efficiency_factor = 0.05
 			}
 		}
 

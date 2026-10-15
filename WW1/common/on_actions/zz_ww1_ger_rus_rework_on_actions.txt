@@ -57,6 +57,20 @@ on_actions = {
 				AUH_clamp_dashboard_variables = yes
 				AUH_weekly_grain_tick = yes
 			}
+
+			# French Republic Dashboard & Wartime Survival Vectors Hook
+			if = {
+				limit = { original_tag = FRA }
+				if = {
+					limit = {
+						NOT = { has_country_flag = fra_dashboard_initialized }
+					}
+					FRA_init_republic_dashboard = yes
+					set_country_flag = fra_dashboard_initialized
+				}
+				FRA_clamp_dashboard_variables = yes
+				FRA_weekly_republic_tick = yes
+			}
 		}
 	}
 

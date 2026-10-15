@@ -1,37 +1,48 @@
-# Country-specific weekly callbacks: each country advances exactly once per game week.
-# The generic on_weekly hook executes in each country's scope, so it must not sweep tags.
+# =========================================================================
+# WW1 CRISES & NARRATIVE DYNAMICS — ON-ACTIONS MASTER ENGINE
+# Includes engine-native on_weekly hook and country-scoped simulation loops.
+# =========================================================================
+
 on_actions = {
- on_weekly_GER = {
-  effect = {
-   ww1_GER_update_crisis = yes
-   ww1_GER_update_eastern_negotiations = yes
-   if = {
-    limit = { date > 1911.7.1 NOT = { has_global_flag = agadir_crisis_happened } NOT = { has_global_flag = ww1_agadir_dispatch_pending } }
-    set_global_flag = ww1_agadir_dispatch_pending
-    country_event = { id = ww1_agadir.1 days = 1 }
-   }
-   if = {
-    limit = { has_global_flag = agadir_crisis_active }
-    clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
-    if = {
-     limit = {
-      check_variable = { global.ww1_agadir_crisis_tension >= 100 }
-     }
-     country_event = { id = ww1_agadir.40 days = 1 }
-    }
-   }
-  }
- }
- on_weekly_ENG = {
-  effect = {
-   ww1_ENG_update_crisis = yes
-  }
- }
-	on_weekly_FRA = {
+	# Engine-native master weekly simulation hook
+	on_weekly = {
 		effect = {
-			ww1_FRA_update_crisis = yes
+			# GERMANY
 			if = {
-				limit = { tag = FRA }
+				limit = { original_tag = GER }
+				ww1_GER_update_crisis = yes
+				ww1_GER_update_eastern_negotiations = yes
+				if = {
+					limit = {
+						date > 1911.7.1
+						NOT = { has_global_flag = agadir_crisis_happened }
+						NOT = { has_global_flag = ww1_agadir_dispatch_pending }
+					}
+					set_global_flag = ww1_agadir_dispatch_pending
+					country_event = { id = ww1_agadir.1 days = 1 }
+				}
+				if = {
+					limit = { has_global_flag = agadir_crisis_active }
+					clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+					if = {
+						limit = {
+							check_variable = { global.ww1_agadir_crisis_tension >= 100 }
+						}
+						country_event = { id = ww1_agadir.40 days = 1 }
+					}
+				}
+			}
+
+			# BRITAIN
+			if = {
+				limit = { original_tag = ENG }
+				ww1_ENG_update_crisis = yes
+			}
+
+			# FRANCE — REPUBLIC DASHBOARD & 4 SURVIVAL VECTORS
+			if = {
+				limit = { original_tag = FRA }
+				ww1_FRA_update_crisis = yes
 				if = {
 					limit = { NOT = { has_country_flag = fra_dashboard_initialized } }
 					FRA_init_republic_dashboard = yes
@@ -40,31 +51,83 @@ on_actions = {
 				FRA_clamp_dashboard_variables = yes
 				FRA_weekly_republic_tick = yes
 			}
+
+			# RUSSIA / SOVIET
+			if = {
+				limit = { original_tag = SOV }
+				ww1_SOV_update_crisis = yes
+			}
+
+			# AUSTRIA-HUNGARY
+			if = {
+				limit = { original_tag = AUS }
+				ww1_AUS_update_crisis = yes
+			}
+
+			# OTTOMAN EMPIRE
+			if = {
+				limit = { original_tag = TUR }
+				ww1_TUR_update_crisis = yes
+			}
+
+			# ITALY
+			if = {
+				limit = { original_tag = ITA }
+				ww1_ITA_update_crisis = yes
+			}
+
+			# UNITED STATES
+			if = {
+				limit = { original_tag = USA }
+				ww1_USA_update_crisis = yes
+			}
 		}
 	}
- on_weekly_SOV = {
-  effect = {
-   ww1_SOV_update_crisis = yes
-  }
- }
- on_weekly_AUS = {
-  effect = {
-   ww1_AUS_update_crisis = yes
-  }
- }
- on_weekly_TUR = {
-  effect = {
-   ww1_TUR_update_crisis = yes
-  }
- }
- on_weekly_ITA = {
-  effect = {
-   ww1_ITA_update_crisis = yes
-  }
- }
- on_weekly_USA = {
-  effect = {
-   ww1_USA_update_crisis = yes
-  }
- }
+
+	# Compatibility fallback blocks
+	on_weekly_GER = {
+		effect = {
+			ww1_GER_update_crisis = yes
+			ww1_GER_update_eastern_negotiations = yes
+		}
+	}
+	on_weekly_ENG = {
+		effect = {
+			ww1_ENG_update_crisis = yes
+		}
+	}
+	on_weekly_FRA = {
+		effect = {
+			ww1_FRA_update_crisis = yes
+			if = {
+				limit = { tag = FRA }
+				FRA_weekly_republic_tick = yes
+			}
+		}
+	}
+	on_weekly_SOV = {
+		effect = {
+			ww1_SOV_update_crisis = yes
+		}
+	}
+	on_weekly_AUS = {
+		effect = {
+			ww1_AUS_update_crisis = yes
+		}
+	}
+	on_weekly_TUR = {
+		effect = {
+			ww1_TUR_update_crisis = yes
+		}
+	}
+	on_weekly_ITA = {
+		effect = {
+			ww1_ITA_update_crisis = yes
+		}
+	}
+	on_weekly_USA = {
+		effect = {
+			ww1_USA_update_crisis = yes
+		}
+	}
 }

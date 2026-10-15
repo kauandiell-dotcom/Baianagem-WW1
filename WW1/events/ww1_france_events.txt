@@ -733,9 +733,11 @@ country_event = {
 	option = {
 		name = ww1_france.211.b
 		ai_chance = { base = 10 }
+		remove_ideas = FRA_trench_mutiny_crisis_2
 		add_stability = -0.10
 		add_war_support = -0.05
 		subtract_from_variable = { FRA_union_sacree_cohesion = 15 }
+		subtract_from_variable = { FRA_poilu_morale = 10 }
 		FRA_clamp_dashboard_variables = yes
 	}
 }
@@ -775,7 +777,7 @@ country_event = {
 	option = {
 		name = ww1_france.215.b
 		ai_chance = { base = 25 }
-		add_ideas = FRA_munitionnettes_strike
+		add_timed_idea = { idea = FRA_munitionnettes_strike days = 90 }
 		add_stability = -0.05
 		subtract_from_variable = { FRA_union_sacree_cohesion = 10 }
 		FRA_clamp_dashboard_variables = yes
