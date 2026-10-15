@@ -1,7 +1,13 @@
-# Agadir Crisis (July 1911)
+# =========================================================================
+# AGADIR CRISIS (1911) DIPLOMATIC ESCALATION & CLIMAX EVENT SUITE
+# Dynamic Escalation Engine with 4 Divergent Climax Branches
+# =========================================================================
+
 add_namespace = ww1_agadir
 
-# German gunboat Panther arrives in Agadir
+# -------------------------------------------------------------------------
+# ww1_agadir.1: Panthersprung — SMS Panther Arrives at Agadir
+# -------------------------------------------------------------------------
 country_event = {
 	id = ww1_agadir.1
 	title = ww1_agadir.1.t
@@ -18,25 +24,36 @@ country_event = {
 
 	immediate = {
 		set_global_flag = agadir_crisis_happened
+		set_global_flag = agadir_crisis_active
 		clr_global_flag = ww1_agadir_dispatch_pending
+		set_variable = { global.ww1_agadir_crisis_tension = 25 }
 	}
 
 	option = {
 		name = ww1_agadir.1.a
 		ai_chance = { factor = 90 }
 		add_political_power = 50
-		FRA = { country_event = { id = ww1_agadir.2 days = 2 } }
-		ENG = { country_event = { id = ww1_agadir.3 days = 3 } }
+		if = {
+			limit = { country_exists = FRA }
+			FRA = { country_event = { id = ww1_agadir.2 days = 2 } }
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = { country_event = { id = ww1_agadir.3 days = 3 } }
+		}
 	}
 
 	option = {
 		name = ww1_agadir.1.b
 		ai_chance = { factor = 10 }
 		add_stability = 0.05
+		country_event = { id = ww1_agadir.30 days = 1 }
 	}
 }
 
-# French reaction
+# -------------------------------------------------------------------------
+# ww1_agadir.2: French Reaction to the Panthersprung
+# -------------------------------------------------------------------------
 country_event = {
 	id = ww1_agadir.2
 	title = ww1_agadir.2.t
@@ -49,10 +66,14 @@ country_event = {
 	option = {
 		name = ww1_agadir.2.a
 		add_war_support = 0.05
+		add_to_variable = { global.ww1_agadir_crisis_tension = 5 }
+		clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
 	}
 }
 
-# British reaction (Mansion House speech)
+# -------------------------------------------------------------------------
+# ww1_agadir.3: British Reaction — Mansion House Speech
+# -------------------------------------------------------------------------
 country_event = {
 	id = ww1_agadir.3
 	title = ww1_agadir.3.t
@@ -65,5 +86,250 @@ country_event = {
 	option = {
 		name = ww1_agadir.3.a
 		add_war_support = 0.05
+		give_guarantee = FRA
+		add_to_variable = { global.ww1_agadir_crisis_tension = 5 }
+		clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.4: Germany Demands Agadir Coaling Station
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.4
+	title = ww1_agadir.4.t
+	desc = ww1_agadir.4.d
+	picture = GFX_event_ww1_agadir_panther
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_agadir.4.a
+		ai_chance = { factor = 85 }
+		add_war_support = 0.05
+		add_to_variable = { global.ww1_agadir_crisis_tension = 10 }
+		clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+	}
+
+	option = {
+		name = ww1_agadir.4.b
+		ai_chance = { factor = 15 }
+		country_event = { id = ww1_agadir.20 days = 1 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.5: Germany Demands Neukamerun Compensation
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.5
+	title = ww1_agadir.5.t
+	desc = ww1_agadir.5.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_agadir.5.a
+		ai_chance = { factor = 80 }
+		add_political_power = 20
+		set_country_flag = fra_caillaux_secret_talks
+	}
+
+	option = {
+		name = ww1_agadir.5.b
+		ai_chance = { factor = 20 }
+		add_war_support = 0.05
+		add_to_variable = { global.ww1_agadir_crisis_tension = 15 }
+		clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.10: The Morocco-Congo Accord & Treaty of Fez (Historical Climax)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.10
+	title = ww1_agadir.10.t
+	desc = ww1_agadir.10.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		FRA = {
+			add_ideas = FRA_morocco_treaty_of_fez
+			add_ideas = FRA_poincare_national_firmness
+			add_political_power = 50
+			add_stability = 0.05
+			set_country_flag = fra_caillaux_fallen
+			set_country_flag = fra_poincare_premier
+		}
+		773 = {
+			add_extra_state_shared_building_slots = 2
+		}
+		GER = {
+			transfer_state = 1086
+			transfer_state = 1087
+			transfer_state = 1088
+			add_political_power = 50
+			add_stability = 0.03
+		}
+		clr_global_flag = agadir_crisis_active
+		set_global_flag = agadir_crisis_resolved_historical
+	}
+
+	option = {
+		name = ww1_agadir.10.a
+		ai_chance = { factor = 100 }
+		add_political_power = 20
+		hidden_effect = {
+			if = {
+				limit = { NOT = { tag = GER } }
+				GER = { country_event = { id = ww1_agadir.11 days = 1 } }
+			}
+			if = {
+				limit = { NOT = { tag = FRA } }
+				FRA = { country_event = { id = ww1_agadir.11 days = 1 } }
+			}
+			if = {
+				limit = { NOT = { tag = ENG } country_exists = ENG }
+				ENG = { country_event = { id = ww1_agadir.11 days = 1 } }
+			}
+		}
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.11: Treaty of Fez Notification
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.11
+	title = ww1_agadir.11.t
+	desc = ww1_agadir.11.d
+	picture = GFX_report_event_german_speech
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_agadir.11.a
+		add_political_power = 10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.20: Pan-German Triumph: Naval Station at Agadir
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.20
+	title = ww1_agadir.20.t
+	desc = ww1_agadir.20.d
+	picture = GFX_event_ww1_agadir_panther
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		462 = {
+			add_building_construction = {
+				type = coastal_bunker
+				level = 2
+				province = 1102
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				province = 1102
+				instant_build = yes
+			}
+		}
+		GER = {
+			add_political_power = 75
+			add_war_support = 0.10
+			set_country_flag = ger_secured_agadir_base
+		}
+		FRA = {
+			add_stability = -0.10
+			add_political_power = -50
+		}
+		if = {
+			limit = { country_exists = ENG }
+			ENG = {
+				add_war_support = 0.05
+			}
+		}
+		clr_global_flag = agadir_crisis_active
+		set_global_flag = agadir_crisis_resolved_german_base
+	}
+
+	option = {
+		name = ww1_agadir.20.a
+		add_political_power = 10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.30: The German Retreat (Panther Withdrawn)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.30
+	title = ww1_agadir.30.t
+	desc = ww1_agadir.30.d
+	picture = GFX_event_ww1_agadir_panther
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		GER = {
+			add_political_power = -100
+			add_stability = -0.05
+			set_country_flag = ger_agadir_humiliation
+		}
+		FRA = {
+			add_ideas = FRA_morocco_treaty_of_fez
+			add_political_power = 50
+			add_stability = 0.05
+		}
+		clr_global_flag = agadir_crisis_active
+		set_global_flag = agadir_crisis_resolved_humiliation
+	}
+
+	option = {
+		name = ww1_agadir.30.a
+		add_political_power = 10
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_agadir.40: The Premature Conflagration: World War I in 1911
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_agadir.40
+	title = ww1_agadir.40.t
+	desc = ww1_agadir.40.d
+	picture = GFX_report_event_german_troops
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		GER = {
+			declare_war_on = {
+				target = FRA
+				type = annex_everything
+			}
+		}
+		clr_global_flag = agadir_crisis_active
+		set_global_flag = agadir_crisis_war_1911
+	}
+
+	option = {
+		name = ww1_agadir.40.a
+		add_war_support = 0.15
 	}
 }

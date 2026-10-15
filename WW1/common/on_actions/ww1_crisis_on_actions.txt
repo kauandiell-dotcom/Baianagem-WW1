@@ -10,6 +10,16 @@ on_actions = {
     set_global_flag = ww1_agadir_dispatch_pending
     country_event = { id = ww1_agadir.1 days = 1 }
    }
+   if = {
+    limit = { has_global_flag = agadir_crisis_active }
+    clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+    if = {
+     limit = {
+      check_variable = { global.ww1_agadir_crisis_tension >= 100 }
+     }
+     country_event = { id = ww1_agadir.40 days = 1 }
+    }
+   }
   }
  }
  on_weekly_ENG = {

@@ -1,0 +1,335 @@
+# =========================================================================
+# AGADIR CRISIS (1911) INTERACTIVE ESCALATION DECISION ENGINE
+# Tags involved: Germany (GER), France (FRA), Great Britain (ENG)
+# =========================================================================
+
+ww1_agadir_crisis = {
+
+	# -------------------------------------------------------------------------
+	# GERMAN EMPIRE DECISIONS (GER_agadir_)
+	# -------------------------------------------------------------------------
+
+	GER_agadir_demand_naval_base = {
+		icon = generic_naval
+		cost = 30
+		fire_only_once = yes
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = ger_agadir_demanded_naval_base }
+		}
+		complete_effect = {
+			set_country_flag = ger_agadir_demanded_naval_base
+			add_to_variable = { global.ww1_agadir_crisis_tension = 25 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+			if = {
+				limit = { country_exists = FRA }
+				FRA = { country_event = { id = ww1_agadir.4 days = 1 } }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_country_flag = ger_agadir_demanded_congo
+			}
+		}
+	}
+
+	GER_agadir_demand_congo_compensation = {
+		icon = generic_colonial_administration
+		cost = 25
+		fire_only_once = yes
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = ger_agadir_demanded_congo }
+		}
+		complete_effect = {
+			set_country_flag = ger_agadir_demanded_congo
+			add_to_variable = { global.ww1_agadir_crisis_tension = 10 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+			if = {
+				limit = { country_exists = FRA }
+				FRA = { country_event = { id = ww1_agadir.5 days = 1 } }
+			}
+		}
+		ai_will_do = {
+			factor = 30
+		}
+	}
+
+	GER_agadir_send_sms_berlin = {
+		icon = generic_naval
+		cost = 20
+		fire_only_once = yes
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = ger_agadir_sent_sms_berlin }
+		}
+		complete_effect = {
+			set_country_flag = ger_agadir_sent_sms_berlin
+			add_to_variable = { global.ww1_agadir_crisis_tension = 15 }
+			add_war_support = 0.05
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+
+	GER_agadir_back_down_gracefully = {
+		icon = generic_diplomacy
+		cost = 0
+		fire_only_once = yes
+		allowed = {
+			tag = GER
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+		}
+		complete_effect = {
+			subtract_from_variable = { global.ww1_agadir_crisis_tension = 30 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+			country_event = { id = ww1_agadir.30 }
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0
+				check_variable = { global.ww1_agadir_crisis_tension < 70 }
+			}
+		}
+	}
+
+	# -------------------------------------------------------------------------
+	# FRENCH REPUBLIC DECISIONS (FRA_agadir_)
+	# -------------------------------------------------------------------------
+
+	FRA_agadir_caillaux_secret_channel = {
+		icon = generic_agreement
+		cost = 30
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = fra_caillaux_secret_talks }
+		}
+		complete_effect = {
+			set_country_flag = fra_caillaux_secret_talks
+			subtract_from_variable = { global.ww1_agadir_crisis_tension = 20 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+		}
+		ai_will_do = {
+			factor = 30
+		}
+	}
+
+	FRA_agadir_delcasse_firm_resolve = {
+		icon = generic_propaganda
+		cost = 25
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = fra_delcasse_firm_resolve }
+		}
+		complete_effect = {
+			set_country_flag = fra_delcasse_firm_resolve
+			add_to_variable = { global.ww1_agadir_crisis_tension = 20 }
+			add_war_support = 0.10
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+			if = {
+				limit = { country_exists = ENG }
+				ENG = { add_opinion_modifier = { target = FRA modifier = FRA_entente_cordiale_opinion } }
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+
+	FRA_agadir_financial_sanctions = {
+		icon = generic_economic_increase
+		cost = 20
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = fra_agadir_financial_sanctions }
+		}
+		complete_effect = {
+			set_country_flag = fra_agadir_financial_sanctions
+			if = {
+				limit = { country_exists = GER }
+				GER = {
+					add_stability = -0.05
+					add_political_power = -50
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 25
+		}
+	}
+
+	FRA_agadir_concede_congo_accord = {
+		icon = generic_agreement
+		cost = 25
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			OR = {
+				has_country_flag = fra_caillaux_secret_talks
+				GER = { has_country_flag = ger_agadir_demanded_congo }
+			}
+		}
+		complete_effect = {
+			country_event = { id = ww1_agadir.10 }
+		}
+		ai_will_do = {
+			factor = 35
+		}
+	}
+
+	FRA_agadir_concede_naval_station = {
+		icon = generic_naval
+		cost = 25
+		fire_only_once = yes
+		allowed = {
+			tag = FRA
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+			GER = { has_country_flag = ger_agadir_demanded_naval_base }
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			GER = { has_country_flag = ger_agadir_demanded_naval_base }
+		}
+		complete_effect = {
+			country_event = { id = ww1_agadir.20 }
+		}
+		ai_will_do = {
+			factor = 5
+		}
+	}
+
+	# -------------------------------------------------------------------------
+	# BRITISH EMPIRE DECISIONS (ENG_agadir_)
+	# -------------------------------------------------------------------------
+
+	ENG_agadir_mansion_house_speech = {
+		icon = generic_speech
+		cost = 25
+		fire_only_once = yes
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = eng_mansion_house_speech }
+		}
+		complete_effect = {
+			set_country_flag = eng_mansion_house_speech
+			add_to_variable = { global.ww1_agadir_crisis_tension = 15 }
+			give_guarantee = FRA
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+		}
+		ai_will_do = {
+			factor = 30
+		}
+	}
+
+	ENG_agadir_home_fleet_alert = {
+		icon = generic_naval
+		cost = 30
+		fire_only_once = yes
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = eng_home_fleet_alert }
+		}
+		complete_effect = {
+			set_country_flag = eng_home_fleet_alert
+			add_to_variable = { global.ww1_agadir_crisis_tension = 15 }
+			add_war_support = 0.05
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	ENG_agadir_urge_moderation = {
+		icon = generic_diplomacy
+		cost = 15
+		fire_only_once = yes
+		allowed = {
+			tag = ENG
+		}
+		visible = {
+			has_global_flag = agadir_crisis_active
+		}
+		available = {
+			has_global_flag = agadir_crisis_active
+			NOT = { has_country_flag = eng_urge_moderation }
+		}
+		complete_effect = {
+			set_country_flag = eng_urge_moderation
+			subtract_from_variable = { global.ww1_agadir_crisis_tension = 15 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+		}
+		ai_will_do = {
+			factor = 25
+		}
+	}
+}

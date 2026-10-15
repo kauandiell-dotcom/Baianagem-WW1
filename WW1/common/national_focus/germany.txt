@@ -1869,6 +1869,12 @@ focus_tree = {
 				}
 			}
 			add_political_power = 50
+			if = {
+				limit = { NOT = { has_global_flag = agadir_crisis_active } }
+				set_global_flag = agadir_crisis_active
+			}
+			add_to_variable = { global.ww1_agadir_crisis_tension = 15 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
 		}
 	}
 

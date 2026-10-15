@@ -1,0 +1,19 @@
+# =========================================================================
+# AGADIR CRISIS (1911) DIPLOMATIC ESCALATION CATEGORY
+# =========================================================================
+
+ww1_agadir_crisis = {
+	icon = generic_diplomacy
+	picture = decision_cat_generic
+	priority = 100
+	allowed = {
+		OR = {
+			tag = GER
+			tag = FRA
+			tag = ENG
+		}
+	}
+	visible = {
+		has_global_flag = agadir_crisis_active
+	}
+}

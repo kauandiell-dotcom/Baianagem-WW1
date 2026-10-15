@@ -2798,6 +2798,11 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = ww1_france.1 days = 1 }
 			add_political_power = 40
+			if = {
+				limit = { NOT = { has_global_flag = agadir_crisis_active } }
+				set_global_flag = agadir_crisis_active
+				set_variable = { global.ww1_agadir_crisis_tension = 25 }
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -2845,6 +2850,9 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.05
 			add_political_power = 30
+			add_to_variable = { global.ww1_agadir_crisis_tension = 15 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+			set_country_flag = fra_delcasse_firm_resolve
 			if = {
 			    limit = { country_exists = GER }
 			    GER = { country_event = { id = ww1_france.3 days = 2 } }
@@ -2866,6 +2874,9 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 20
+			subtract_from_variable = { global.ww1_agadir_crisis_tension = 15 }
+			clamp_variable = { var = global.ww1_agadir_crisis_tension min = 0 max = 100 }
+			set_country_flag = fra_caillaux_secret_talks
 			if = {
 			    limit = { country_exists = GER }
 			    GER = { country_event = { id = ww1_france.5 days = 2 } }
