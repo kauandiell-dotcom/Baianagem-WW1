@@ -190,7 +190,31 @@ ideas = {
 			modifier = {
 				stability_factor = 0.15
 				non_core_manpower = 0.20
-				compliance_growth_focus_factor = 0.20
+				compliance_growth = 0.20
+			}
+		}
+
+		# A Pátria em Movimento (Otadžbina u pokretu - Grande Retirada e Santuário)
+		SER_otadzbina_u_pokretu = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				surrender_limit = 0.40
+				army_core_defence_factor = 0.25
+				attrition = -0.15
+				out_of_supply_factor = -0.30
+				stability_factor = 0.10
+			}
+		}
+
+		# Juramento dos Mártires de Corfu e Vido (Plava Grobnica)
+		SER_oath_of_corfu_martyrs = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				war_support_factor = 0.15
+				army_org_factor = 0.10
+				recruitable_population_factor = 0.10
 			}
 		}
 	}

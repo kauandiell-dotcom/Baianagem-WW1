@@ -82,6 +82,16 @@ on_actions = {
 					SER_init_power_balance = yes
 				}
 				SER_weekly_bop_tick = yes
+
+				# Great Retreat & Salonika Sanctuary Automation Hook
+				if = {
+					limit = {
+						has_war = yes
+						NOT = { controls_state = 107 }
+						NOT = { has_country_flag = ser_executed_great_retreat }
+					}
+					country_event = { id = ww1_serbia_retreat.1 }
+				}
 			}
 		}
 	}

@@ -1,0 +1,219 @@
+# ==============================================================================
+# KINGDOM OF SERBIA - THE GREAT RETREAT & SALONIKA SANCTUARY EVENTS (WW1)
+# ==============================================================================
+
+add_namespace = ww1_serbia_retreat
+
+# ------------------------------------------------------------------------------
+# 1. Albanska Golgota - A Grande Retirada através dos Alpes Albaneses
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia_retreat.1
+	title = ww1_serbia_retreat.1.t
+	desc = ww1_serbia_retreat.1.d
+	picture = GFX_report_event_soldier_march
+
+	trigger = {
+		tag = SER
+		has_war = yes
+		NOT = { controls_state = 107 }
+		NOT = { has_country_flag = ser_executed_great_retreat }
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia_retreat.1.a
+		ai_chance = { factor = 100 }
+		set_country_flag = ser_executed_great_retreat
+
+		# Concessão de núcleos operacionais de santuário (Salônica e Albânia/Durrës)
+		184 = {
+			add_core_of = SER
+		}
+		44 = {
+			add_core_of = SER
+		}
+
+		# Espírito Nacional de Resistência Inabalável
+		add_ideas = SER_otadzbina_u_pokretu
+
+		add_political_power = 50
+		add_war_support = 0.15
+		add_stability = 0.05
+
+		# Chamada imediata para a integração do Santuário de Salônica
+		country_event = { id = ww1_serbia_retreat.2 days = 1 }
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 2. O Santuário de Salônica - A Frente Aliada dos Balcãs
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia_retreat.2
+	title = ww1_serbia_retreat.2.t
+	desc = ww1_serbia_retreat.2.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia_retreat.2.a
+		ai_chance = { factor = 100 }
+		set_country_flag = ser_salonika_sanctuary_established
+
+		# Transferência e integração militar da base naval e logística de Salônica
+		transfer_state = 184
+		184 = {
+			add_core_of = SER
+		}
+
+		add_political_power = 40
+		add_war_support = 0.10
+		add_stability = 0.05
+
+		# Cadeia de eventos narrativos complementares da marcha
+		country_event = { id = ww1_serbia_retreat.10 days = 7 }
+		country_event = { id = ww1_serbia_retreat.15 days = 14 }
+		country_event = { id = ww1_serbia_retreat.20 days = 28 }
+		country_event = { id = ww1_serbia_retreat.25 days = 60 }
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 10. A Batalha de Mojkovac - A Retaguarda Montenegrina Heroica
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia_retreat.10
+	title = ww1_serbia_retreat.10.t
+	desc = ww1_serbia_retreat.10.d
+	picture = GFX_report_event_soldier_march
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia_retreat.10.a
+		ai_chance = { factor = 100 }
+		set_country_flag = ser_mojkovac_rearguard_stand
+
+		# Ímpeto defensivo que retarda o avanço austro-húngaro nos desfiladeiros
+		add_timed_idea = { idea = SER_cer_counterstroke_glory days = 30 }
+		army_experience = 15
+		add_war_support = 0.10
+		add_stability = 0.05
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 15. O Pacto com Essad Pasha Toptani - O Corredor Albanês
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia_retreat.15
+	title = ww1_serbia_retreat.15.t
+	desc = ww1_serbia_retreat.15.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia_retreat.15.a
+		ai_chance = { factor = 100 }
+		set_country_flag = ser_essad_pasha_pact_signed
+
+		# Garantia do corredor de evacuação seguro através de Durrës e Tirana
+		44 = {
+			add_core_of = SER
+		}
+
+		if = {
+			limit = {
+				ALB = { exists = yes }
+			}
+			ALB = {
+				add_opinion_modifier = {
+					target = SER
+					modifier = positive_50
+				}
+			}
+		}
+
+		add_political_power = 30
+		add_stability = 0.05
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 20. O Cemitério Azul de Vido - Plava Grobnica
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia_retreat.20
+	title = ww1_serbia_retreat.20.t
+	desc = ww1_serbia_retreat.20.d
+	picture = GFX_report_event_hospital
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia_retreat.20.a
+		ai_chance = { factor = 100 }
+		set_country_flag = ser_vido_memorial_honored
+
+		# Juramento sagrado dos mártires de Corfu e regeneração das tropas
+		add_ideas = SER_oath_of_corfu_martyrs
+
+		# Eliminação de sequelas epidêmicas após a quarentena em Corfu
+		if = {
+			limit = {
+				has_idea = SER_typhus_epidemic_crisis
+			}
+			remove_ideas = SER_typhus_epidemic_crisis
+		}
+
+		add_manpower = 10000
+		add_war_support = 0.15
+		add_stability = 0.05
+	}
+}
+
+# ------------------------------------------------------------------------------
+# 25. A Divisão de Voluntários de Odessa
+# ------------------------------------------------------------------------------
+country_event = {
+	id = ww1_serbia_retreat.25
+	title = ww1_serbia_retreat.25.t
+	desc = ww1_serbia_retreat.25.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = ww1_serbia_retreat.25.a
+		ai_chance = { factor = 100 }
+		set_country_flag = ser_odessa_volunteers_arrived
+
+		# Chegada dos voluntários eslavos do sul libertados da Rússia
+		add_manpower = 25000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 5000
+			producer = SER
+		}
+		army_experience = 25
+		add_war_support = 0.10
+	}
+}

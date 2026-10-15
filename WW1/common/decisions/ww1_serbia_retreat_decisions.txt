@@ -1,0 +1,347 @@
+# ==============================================================================
+# KINGDOM OF SERBIA - THE GREAT RETREAT & 30-DIVISION MOBILIZATION DECISIONS
+# ==============================================================================
+
+ww1_serbia_great_retreat = {
+
+	# --------------------------------------------------------------------------
+	# Wave 1: Classes 1896-1899 Youth Conscripts & Third Ban (8 Divisions)
+	# --------------------------------------------------------------------------
+	SER_spawn_conscript_regiments_1896_1899 = {
+		icon = GFX_decision_generic_military_operation
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			has_war = yes
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		visible = {
+			original_tag = SER
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+
+		complete_effect = {
+			set_country_flag = ser_spawned_conscript_regiments
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 6000
+				producer = SER
+			}
+
+			division_template = {
+				name = "Pesadijska Divizija III Poziva"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+
+			random_controlled_state = {
+				prioritize = { 184 44 105 107 }
+				create_unit = {
+					division = "name = \"1. Regrutska Divizija (1896)\" division_template = \"Pesadijska Divizija III Poziva\" start_experience_factor = 0.20 start_equipment_factor = 0.85"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"2. Regrutska Divizija (1897)\" division_template = \"Pesadijska Divizija III Poziva\" start_experience_factor = 0.20 start_equipment_factor = 0.85"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"3. Regrutska Divizija (1898)\" division_template = \"Pesadijska Divizija III Poziva\" start_experience_factor = 0.20 start_equipment_factor = 0.85"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"4. Regrutska Divizija (1899)\" division_template = \"Pesadijska Divizija III Poziva\" start_experience_factor = 0.20 start_equipment_factor = 0.85"
+					owner = SER
+					count = 2
+				}
+			}
+
+			add_manpower = 8000
+			add_war_support = 0.05
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	# --------------------------------------------------------------------------
+	# Wave 2: Yugoslav Volunteer Corps - POWs & Diaspora (8 Divisions)
+	# --------------------------------------------------------------------------
+	SER_spawn_yugoslav_volunteer_corps = {
+		icon = GFX_decision_generic_rally
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			has_war = yes
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		visible = {
+			original_tag = SER
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+
+		complete_effect = {
+			set_country_flag = ser_spawned_yugoslav_volunteers
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 8000
+				producer = SER
+			}
+
+			division_template = {
+				name = "Jugoslovenska Dobrovoljacka Divizija"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+
+			random_controlled_state = {
+				prioritize = { 184 44 105 107 }
+				create_unit = {
+					division = "name = \"1. Srpska Dobrovoljacka Divizija\" division_template = \"Jugoslovenska Dobrovoljacka Divizija\" start_experience_factor = 0.35 start_equipment_factor = 0.90"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"2. Srpska Dobrovoljacka Divizija\" division_template = \"Jugoslovenska Dobrovoljacka Divizija\" start_experience_factor = 0.35 start_equipment_factor = 0.90"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"1. Jugoslovenska Dobrovoljacka Divizija\" division_template = \"Jugoslovenska Dobrovoljacka Divizija\" start_experience_factor = 0.35 start_equipment_factor = 0.90"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"2. Jugoslovenska Dobrovoljacka Divizija\" division_template = \"Jugoslovenska Dobrovoljacka Divizija\" start_experience_factor = 0.35 start_equipment_factor = 0.90"
+					owner = SER
+					count = 2
+				}
+			}
+
+			add_manpower = 12000
+			add_war_support = 0.05
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	# --------------------------------------------------------------------------
+	# Wave 3: French-Equipped Shock Artillery Brigades (6 Divisions)
+	# --------------------------------------------------------------------------
+	SER_spawn_french_allied_brigades = {
+		icon = GFX_decision_generic_military_operation
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			has_war = yes
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		visible = {
+			original_tag = SER
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+
+		complete_effect = {
+			set_country_flag = ser_spawned_french_allied_brigades
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 6000
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 250
+				producer = FRA
+			}
+
+			division_template = {
+				name = "Udarna Divizija M1897"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+				}
+				support = {
+					artillery = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+				}
+			}
+
+			random_controlled_state = {
+				prioritize = { 184 44 105 107 }
+				create_unit = {
+					division = "name = \"1. Udarna Divizija Salun\" division_template = \"Udarna Divizija M1897\" start_experience_factor = 0.40 start_equipment_factor = 0.95"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"2. Udarna Divizija Salun\" division_template = \"Udarna Divizija M1897\" start_experience_factor = 0.40 start_equipment_factor = 0.95"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"3. Udarna Divizija Salun\" division_template = \"Udarna Divizija M1897\" start_experience_factor = 0.40 start_equipment_factor = 0.95"
+					owner = SER
+					count = 2
+				}
+			}
+
+			add_manpower = 10000
+			army_experience = 20
+			add_war_support = 0.05
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	# --------------------------------------------------------------------------
+	# Wave 4: Toplica Chetnik Uprising behind Enemy Lines (8 Divisions)
+	# --------------------------------------------------------------------------
+	SER_spawn_toplica_chetnik_uprising = {
+		icon = GFX_decision_generic_ignite_civil_war
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			has_war = yes
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		visible = {
+			original_tag = SER
+			OR = {
+				has_country_flag = ser_executed_great_retreat
+				NOT = { controls_state = 107 }
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+
+		complete_effect = {
+			set_country_flag = ser_spawned_toplica_uprising
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 4000
+				producer = SER
+			}
+
+			division_template = {
+				name = "Cetnicki Odred"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+				}
+			}
+
+			107 = {
+				create_unit = {
+					division = "name = \"1. Toplicki Cetnicki Odred\" division_template = \"Cetnicki Odred\" start_experience_factor = 0.35 start_equipment_factor = 0.80"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"2. Jablanicki Cetnicki Odred\" division_template = \"Cetnicki Odred\" start_experience_factor = 0.35 start_equipment_factor = 0.80"
+					owner = SER
+					count = 2
+				}
+			}
+
+			108 = {
+				create_unit = {
+					division = "name = \"3. Ibarski Cetnicki Odred\" division_template = \"Cetnicki Odred\" start_experience_factor = 0.35 start_equipment_factor = 0.80"
+					owner = SER
+					count = 2
+				}
+				create_unit = {
+					division = "name = \"4. Kopaonicki Cetnicki Odred\" division_template = \"Cetnicki Odred\" start_experience_factor = 0.35 start_equipment_factor = 0.80"
+					owner = SER
+					count = 2
+				}
+			}
+
+			add_manpower = 6000
+			add_war_support = 0.05
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
