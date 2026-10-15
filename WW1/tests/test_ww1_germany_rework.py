@@ -633,9 +633,10 @@ class TestGermanyOverhaul(unittest.TestCase):
 
         self.assertIn("ww1_germany_endsieg.1", ev_text, "ww1_germany_endsieg_events.txt must define event ww1_germany_endsieg.1")
         self.assertTrue(
-            "42" in ev_text or "587" in ev_text or "55" in ev_text or "surrender_progress" in ev_text,
-            "Event ww1_germany_endsieg.1 must check Rhine crossing / surrender progress",
+            "date > 1918" in ev_text or "surrender_progress > 0.70" in ev_text,
+            "Event ww1_germany_endsieg.1 must check Rhine crossing / surrender progress with late-war date gate",
         )
+        self.assertIn("release = POL", ev_text, "Event ww1_germany_endsieg.1 Option A must release Poland if it does not exist")
         self.assertIn("load_focus_tree = ww1_germany_endsieg_focus", ev_text, "Option B must load ww1_germany_endsieg_focus")
 
         # 4. Post-Versailles Weimar & Freikorps decisions
@@ -762,6 +763,41 @@ class TestGermanyOverhaul(unittest.TestCase):
         self.assertIn("GER_weimar_peace_resolution", g_text, "germany.txt must define Weimar peace resolution focus")
         # 4. Spartakusbund Red Revolution
         self.assertIn("GER_spartakusbund_revolution", g_text, "germany.txt must define Spartakusbund red revolution focus")
+
+    def test_home_front_hud_and_semantic_modifiers(self):
+        """14. Assert German Home Front HUD displays dynamic variable gauges and 100% valid Clausewitz modifiers."""
+        sys.path.insert(0, os.path.join(MOD_ROOT, "scripts"))
+        from hoi4_semantic_oracle import audit_file_modifiers
+
+        # 1. Check HUD gauges in English and Portuguese
+        en_loc = os.path.join(MOD_ROOT, "localisation", "english", "ww1_ger_rus_rework_l_english.yml")
+        pt_loc = os.path.join(MOD_ROOT, "localisation", "braz_por", "ww1_ger_rus_rework_l_braz_por.yml")
+        for loc_path in [en_loc, pt_loc]:
+            with open(loc_path, "r", encoding="utf-8-sig", errors="replace") as f:
+                content = f.read()
+            self.assertIn("[?GER_social_peace|0]%", content, f"{loc_path} must display GER_social_peace gauge")
+            self.assertIn("[?GER_hunger|0]%", content, f"{loc_path} must display GER_hunger gauge")
+            self.assertIn("[?GER_discontent|0]%", content, f"{loc_path} must display GER_discontent gauge")
+            self.assertIn("[?GER_kaiser_prestige|0]%", content, f"{loc_path} must display GER_kaiser_prestige gauge")
+
+        # 2. Assert 0 invalid modifiers across all German idea and decision files
+        for pattern in ["common/ideas/*ger*.txt", "common/decisions/*ger*.txt"]:
+            for fpath in glob.glob(os.path.join(MOD_ROOT, pattern)):
+                errs = audit_file_modifiers(fpath)
+                self.assertEqual(len(errs), 0, f"Found invalid Clausewitz modifiers in {os.path.basename(fpath)}: {errs}")
+
+        # 3. Assert zero duplicate idea definitions in ww1_germany_ideas.txt
+        ger_ideas = os.path.join(MOD_ROOT, "common", "ideas", "ww1_germany_ideas.txt")
+        with open(ger_ideas, "r", encoding="utf-8", errors="ignore") as f:
+            lines = f.readlines()
+        seen = {}
+        for idx, line in enumerate(lines):
+            m = re.match(r"^\s*([A-Za-z0-9_]+)\s*=\s*\{", line)
+            if m:
+                tok = m.group(1)
+                if tok not in ["ideas", "country", "modifier", "allowed", "available", "ai_will_do"]:
+                    self.assertNotIn(tok, seen, f"Duplicate idea {tok} in {ger_ideas} at line {idx+1} (first at {seen.get(tok)})")
+                    seen[tok] = idx + 1
 
 
 if __name__ == "__main__":

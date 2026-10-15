@@ -18,24 +18,40 @@ country_event = {
 		NOT = { has_country_flag = GER_versailles_signed }
 		NOT = { has_government = communism }
 		OR = {
-			surrender_progress > 0.60
+			# Catastrophic military catastrophe: Berlin occupied and deep collapse
 			AND = {
-				surrender_progress > 0.25
+				surrender_progress > 0.70
 				any_enemy_country = {
-					OR = {
-						controls_state = 42 # Rhineland
-						controls_state = 51 # Moselland
-						controls_state = 55 # Nassau / Frankfurt
-						controls_state = 64 # Berlin / Brandenburg
-					}
+					controls_state = 64 # Berlin / Brandenburg
 				}
 			}
-			any_enemy_country = {
-				controls_state = 64 # Berlin captured
-			}
+			# Late-war historical collapse (Late 1918) with Western Front breach or revolution
 			AND = {
-				any_enemy_country = { controls_state = 42 }
-				any_enemy_country = { controls_state = 51 }
+				date > 1918.8.1
+				surrender_progress > 0.35
+				OR = {
+					any_enemy_country = {
+						OR = {
+							controls_state = 42 # Rhineland
+							controls_state = 51 # Moselland
+							controls_state = 55 # Nassau / Frankfurt
+							controls_state = 64 # Berlin / Brandenburg
+						}
+					}
+					has_country_flag = GER_republic_proclaimed
+					has_country_flag = GER_revolutionary_unrest
+					check_variable = { GER_discontent > 75 }
+				}
+			}
+			# November 1918 Revolution capitulation request
+			AND = {
+				date > 1918.10.15
+				has_country_flag = GER_republic_proclaimed
+			}
+			# Severe mid-to-late war total exhaustion collapse
+			AND = {
+				date > 1917.6.1
+				surrender_progress > 0.75
 			}
 		}
 	}
@@ -68,6 +84,10 @@ country_event = {
 		if = {
 			limit = { country_exists = BEL }
 			BEL = { transfer_state = 1085 } # Eupen-Malmedy
+		}
+		if = {
+			limit = { NOT = { country_exists = POL } }
+			release = POL
 		}
 		if = {
 			limit = { country_exists = POL }

@@ -16,7 +16,7 @@ ideas = {
 			picture = generic_manpower_bonus
 			modifier = {
 				conscription = 0.03
-				division_recovery_rate_factor = 0.10
+				army_morale_factor = 0.10
 			}
 		}
 
@@ -35,7 +35,7 @@ ideas = {
 			removal_cost = -1
 			picture = generic_production_bonus
 			modifier = {
-				bombing_defence = 0.50
+				industry_air_damage_factor = -0.50
 				industry_repair_factor = 0.30
 			}
 		}
@@ -64,7 +64,7 @@ ideas = {
 			removal_cost = -1
 			picture = generic_war_support
 			modifier = {
-				division_recovery_rate_factor = 0.15
+				army_morale_factor = 0.15
 				war_support_factor = 0.10
 			}
 		}
@@ -96,7 +96,7 @@ ideas = {
 			picture = generic_scorched_earth
 			modifier = {
 				army_core_defence_factor = 0.10
-				enemy_army_movement_speed_factor = -0.15
+				attrition = 0.10
 			}
 		}
 
@@ -158,7 +158,7 @@ ideas = {
 				surrender_limit = 0.25
 				army_core_attack_factor = 0.20
 				army_core_defence_factor = 0.25
-				division_recovery_rate_factor = 0.20
+				army_morale_factor = 0.20
 			}
 		}
 

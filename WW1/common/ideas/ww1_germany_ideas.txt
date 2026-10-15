@@ -122,7 +122,7 @@ ideas = {
 			modifier = {
 				convoy_raiding_efficiency_factor = 0.45
 				navy_submarine_attack_factor = 0.35
-				sub_detection = 0.15
+				navy_sub_detection_factor = 0.15
 			}
 		}
 
@@ -133,7 +133,7 @@ ideas = {
 			modifier = {
 				navy_submarine_attack_factor = 0.50
 				convoy_raiding_efficiency_factor = 0.60
-				sub_detection = 0.20
+				navy_sub_detection_factor = 0.20
 				naval_torpedo_hit_chance_factor = 0.15
 			}
 		}
@@ -438,8 +438,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				navy_battlecruiser_attack_factor = 0.20
-				navy_battlecruiser_defence_factor = 0.15
+				navy_capital_ship_attack_factor = 0.20
+				navy_capital_ship_defence_factor = 0.15
 				naval_speed_factor = 0.10
 				positioning = 0.15
 				screening_efficiency = 0.10
@@ -452,7 +452,7 @@ ideas = {
 			modifier = {
 				navy_capital_ship_attack_factor = 0.15
 				naval_hit_chance = 0.15
-				navy_screen_torpedo_hit_chance = 0.20
+				naval_torpedo_hit_chance_factor = 0.20
 				critical_receive_chance = -0.25
 				positioning = 0.15
 			}
@@ -462,9 +462,8 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				surface_raiding_efficiency_factor = 0.35
+				convoy_raiding_efficiency_factor = 0.40
 				navy_max_range_factor = 0.25
-				convoy_raiding_efficiency_factor = 0.25
 				naval_speed_factor = 0.05
 			}
 		}
@@ -710,7 +709,7 @@ ideas = {
 			picture = GFX_idea_GER_ruhr_industry
 			modifier = {
 				mobilization_speed = 0.10
-				reinforce_rate = 0.05
+				land_reinforce_rate = 0.05
 			}
 		}
 
@@ -751,9 +750,10 @@ ideas = {
 			removal_cost = -1
 			picture = GFX_idea_GER_hindenburg_program
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.15
 				consumer_goods_factor = 0.05
 				production_factory_max_efficiency_factor = 0.10
+				war_support_factor = 0.05
 			}
 		}
 
@@ -893,17 +893,6 @@ ideas = {
 			modifier = {
 				consumer_goods_factor = -0.03
 				production_speed_synthetic_refinery_factor = 0.20
-			}
-		}
-
-		GER_hindenburg_program = {
-			allowed = { always = no }
-			removal_cost = -1
-			picture = generic_war_preparation
-			modifier = {
-				industrial_capacity_factory = 0.15
-				consumer_goods_factor = 0.05
-				war_support_factor = 0.10
 			}
 		}
 	}

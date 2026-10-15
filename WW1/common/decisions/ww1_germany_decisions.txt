@@ -94,7 +94,7 @@ GER_schlieffen_operations = {
 		cost = 25
 		days_remove = 45
 		modifier = {
-			strategic_redeployment_speed = 0.25
+			army_speed_factor = 0.10
 			out_of_supply_factor = -0.15
 		}
 		ai_will_do = { factor = 90 }
@@ -329,7 +329,7 @@ GER_eastern_occupation_ober_ost = {
 		days_re_enable = 60
 		modifier = {
 			supply_node_range = 0.20
-			strategic_redeployment_speed = 0.15
+			army_speed_factor = 0.10
 		}
 		ai_will_do = { factor = 85 }
 	}

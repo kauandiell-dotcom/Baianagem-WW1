@@ -233,7 +233,7 @@ ideas = {
 				army_attack_factor = -0.25
 				planning_speed = -0.35
 				max_organisation = -0.10
-				reinforce_rate = -0.15
+				land_reinforce_rate = -0.15
 				war_support_factor = -0.20
 			}
 		}
@@ -243,9 +243,9 @@ ideas = {
 			allowed = { always = no }
 			removal_cost = -1
 			modifier = {
-				entrenchment_speed = 0.25
+				dig_in_speed_factor = 0.25
 				max_entrenchment = 5.0
-				defense = 0.10
+				army_core_defence_factor = 0.10
 			}
 		}
 
@@ -268,7 +268,6 @@ ideas = {
 				stability_factor = 0.15
 				army_morale_factor = 0.10
 				max_organisation = 0.10
-				organisation_recovery_rate = 0.10
 				industrial_capacity_factory = 0.10
 				political_power_gain = 0.10
 			}
