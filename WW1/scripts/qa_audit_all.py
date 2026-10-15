@@ -27,7 +27,7 @@ TESTS_DIR = os.path.join(MOD_ROOT, "tests")
 if TESTS_DIR not in sys.path:
     sys.path.insert(0, TESTS_DIR)
 
-SUITES: List[str] = [
+SUITES: List[Any] = [
     "tests.test_runner",
     "tests.test_hoi4_semantic_oracle",
     "tests.test_ww1_britain_complete_audit",
@@ -40,6 +40,7 @@ SUITES: List[str] = [
     "tests.test_ww1_ai_and_russia_fixes",
     "tests.test_ww1_supreme_optimization",
     "tests.test_ww1_austria_hungary",
+    ("French Republic Complete Overhaul & Agadir Crisis Test Suite", "tests.test_ww1_france_rework"),
 ]
 
 
@@ -584,6 +585,10 @@ def main():
     print("\n[*] Executing Austro-Hungarian Monarchy Master QA Audit Suite (tests/test_ww1_austria_hungary.py)...")
     res_auh = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_austria_hungary.py"], cwd=MOD_ROOT)
 
+    # 13. Execute French Republic Complete Overhaul & Agadir Crisis Test Suite
+    print("\n[*] Executing French Republic Complete Overhaul & Agadir Crisis Test Suite (tests/test_ww1_france_rework.py)...")
+    res_fra = subprocess.run([sys.executable, "-m", "unittest", "tests/test_ww1_france_rework.py"], cwd=MOD_ROOT)
+
     tests_failed = (
         (res_ger.returncode != 0)
         or (res_oracle.returncode != 0)
@@ -597,13 +602,14 @@ def main():
         or (res_ai_rus_fixes.returncode != 0)
         or (res_supreme_perf.returncode != 0)
         or (res_auh.returncode != 0)
+        or (res_fra.returncode != 0)
     )
 
     if total_issues == 0 and not tests_failed:
         print("\n>>> ALL QA AUDITS & UNIT TESTS PASSED SUCCESSFULLY! (Code 0) <<<\n")
         sys.exit(0)
     else:
-        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}, SUPREME_PERF: {res_supreme_perf.returncode}, AUH: {res_auh.returncode}) <<<\n")
+        print(f"\n>>> AUDIT FAILED (QA Issues: {total_issues}, GER: {res_ger.returncode}, Oracle: {res_oracle.returncode}, UK: {res_uk.returncode}, TUR: {res_tur.returncode}, ITA: {res_ita.returncode}, MAP: {res_map.returncode}, SF: {res_sf.returncode}, RUS: {res_rus.returncode}, GER_REWORK: {res_ger_rework.returncode}, AI_RUS_FIXES: {res_ai_rus_fixes.returncode}, SUPREME_PERF: {res_supreme_perf.returncode}, AUH: {res_auh.returncode}, FRA: {res_fra.returncode}) <<<\n")
         sys.exit(1)
 
 
