@@ -112,6 +112,26 @@ ideas = {
 			}
 		}
 
+		# Vojno-Tehnički Zavod Kragujevac - Arsenal e Fabricação Bélica
+		SER_kragujevac_arsenal = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+
+		# Concessões Francesas nas Minas de Cobre de Bor
+		SER_bor_copper_concession = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.20
+				consumer_goods_factor = -0.03
+			}
+		}
+
 		# ==============================================================================
 		# 3. MILITARY DOCTRINE & WARTIME CRISIS IDEAS
 		# ==============================================================================
@@ -157,6 +177,17 @@ ideas = {
 				army_core_defence_factor = 0.20
 				dig_in_speed_factor = 0.25
 				max_dig_in = 5
+			}
+		}
+
+		# Espírito do Regimento de Ferro (Gvozdeni Puk - Milunka Savić)
+		SER_gvozdeni_puk_spirit = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.08
+				army_morale_factor = 0.10
+				special_forces_attack_factor = 0.10
 			}
 		}
 

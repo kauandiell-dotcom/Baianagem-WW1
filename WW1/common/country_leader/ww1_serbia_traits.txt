@@ -1,0 +1,103 @@
+# ==============================================================================
+# KINGDOM OF SERBIA - CUSTOM LEADER, ADVISOR & UNIT TRAITS (1911-1918)
+# ==============================================================================
+
+leader_traits = {
+
+	# ==============================================================================
+	# 1. THE 4 LEGENDARY VOJVODAS (FIELD MARSHALS & CHIEFS OF STAFF)
+	# ==============================================================================
+
+	# Vojvoda Radomir Putnik - O Estrategista de Cadeira de Rodas
+	vojvoda_wheelchair_strategist = {
+		random = no
+		max_dig_in = 5
+		planning_speed = 0.20
+		max_planning_factor = 0.15
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Vojvoda Živojin Mišić - O Mestre da Contra-Ofensiva de Kolubara
+	vojvoda_kolubara_master = {
+		random = no
+		army_core_attack_factor = 0.15
+		army_core_defence_factor = 0.10
+		army_speed_factor = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Vojvoda Stepa Stepanović - O Vencedor Heroico de Cer
+	vojvoda_hero_of_cer = {
+		random = no
+		army_core_defence_factor = 0.20
+		dig_in_speed_factor = 0.15
+		recon_factor = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Vojvoda Petar Bojović - O Libertador Heroico de Belgrado
+	vojvoda_liberator_of_belgrade = {
+		random = no
+		cavalry_attack_factor = 0.15
+		breakthrough_factor = 0.10
+		army_speed_factor = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# ==============================================================================
+	# 2. GUERILLA LEADERS & NATIONAL HEROES
+	# ==============================================================================
+
+	# Vojin Popović (Vojvoda Vuk) - Comandante Guerrilheiro Chetnik
+	chetnik_guerilla_leader = {
+		random = no
+		recon_factor = 0.15
+		attrition = -0.15
+		out_of_supply_factor = -0.20
+		army_core_attack_factor = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Milunka Savić - A Mulher Mais Condecorada da História Militar
+	national_heroine = {
+		random = no
+		army_morale_factor = 0.10
+		army_core_defence_factor = 0.10
+		war_support_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Milunka Savić / Veterana do Regimento de Ferro (Gvozdeni Puk)
+	iron_regiment_veteran = {
+		random = no
+		army_morale_factor = 0.10
+		army_infantry_defence_factor = 0.10
+		max_dig_in = 3
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	# Major Dragutin Gavrilović - Defesa Heroica de Belgrado (Kalemegdan)
+	hero_of_belgrade_defense = {
+		random = no
+		army_core_defence_factor = 0.15
+		dig_in_speed_factor = 0.20
+		max_dig_in = 5
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

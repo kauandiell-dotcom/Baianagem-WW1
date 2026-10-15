@@ -16,13 +16,14 @@ characters={
 			}
 			traits = {
 				army_chief_entrenchment_2
+				vojvoda_wheelchair_strategist
 			}
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
 		field_marshal={
-			traits={ defensive_doctrine unyielding_defender expert_delegator }
+			traits={ defensive_doctrine unyielding_defender expert_delegator vojvoda_wheelchair_strategist }
 			skill=4
 			attack_skill=2
 			defense_skill=4
@@ -83,13 +84,14 @@ characters={
 			}
 			traits = {
 				army_chief_offensive_1
+				vojvoda_hero_of_cer
 			}
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
 		field_marshal={
-			traits={ trickster guerilla_fighter adaptable }
+			traits={ trickster guerilla_fighter adaptable vojvoda_hero_of_cer }
 			skill=3
 			attack_skill=2
 			defense_skill=2
@@ -115,13 +117,14 @@ characters={
 			}
 			traits = {
 				army_chief_maneuver_2
+				vojvoda_kolubara_master
 			}
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
-		corps_commander={
-			traits={ brilliant_strategist infantry_leader hill_fighter }
+		field_marshal={
+			traits={ brilliant_strategist infantry_leader hill_fighter vojvoda_kolubara_master }
 			skill=4
 			attack_skill=4
 			defense_skill=3
@@ -180,17 +183,18 @@ characters={
 			}
 			traits = {
 				army_infantry_1
+				vojvoda_liberator_of_belgrade
 			}
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
-		corps_commander={
-			traits={ infantry_leader defensive_doctrine }
-			skill=3
-			attack_skill=2
+		field_marshal={
+			traits={ infantry_leader defensive_doctrine offensive_doctrine vojvoda_liberator_of_belgrade }
+			skill=4
+			attack_skill=3
 			defense_skill=3
-			planning_skill=1
+			planning_skill=2
 			logistics_skill=2
 			legacy_id=82006
 		}
@@ -620,6 +624,103 @@ characters={
 			traits={ warlord_trait nationalist_symbol }
 			expire="1935.1.1.1"
 			id=-1
+		}
+	}
+
+	SER_vojin_popovic_vuk={
+		name="Vojin Popović"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
+				small="gfx/interface/ideas/SER/idea_SER_Vojislav_Tankosic_army.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_vojin_popovic_vuk
+			ledger = army
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				chetnik_guerilla_leader
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ trickster guerilla_fighter chetnik_guerilla_leader }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+
+	SER_milunka_savic={
+		name="Milunka Savić"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+				small="gfx/interface/ideas/SER/idea_helen.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_milunka_savic
+			ledger = army
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				national_heroine
+				iron_regiment_veteran
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer adaptable iron_regiment_veteran }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=2
+		}
+	}
+
+	SER_dragutin_gavrilovic={
+		name="Dragutin Gavrilović"
+		portraits={
+			army={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+				small="gfx/interface/ideas/SER/idea_SER_jurisic_sturm.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SER_dragutin_gavrilovic
+			ledger = army
+			allowed = {
+				tag = SER
+			}
+			traits = {
+				hero_of_belgrade_defense
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ unyielding_defender urban_assault_specialist hero_of_belgrade_defense }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
 		}
 	}
 }

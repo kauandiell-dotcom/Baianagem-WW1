@@ -7,11 +7,14 @@ SER_black_hand_and_national_defense = {
 	# Monitorar Células Ultranacionalistas
 	SER_monitor_ultranationalist_cells = {
 		icon = GFX_decision_generic_police_action
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			NOT = { has_country_flag = SER_secret_police_active }
 		}
 		visible = {
-			tag = SER
+			original_tag = SER
 		}
 		cost = 30
 		days_remove = 120
@@ -33,10 +36,14 @@ SER_black_hand_and_national_defense = {
 	# Infiltração de Redes de Inteligência na Bósnia
 	SER_infiltrate_bosnian_intelligence_network = {
 		icon = GFX_decision_generic_intelligence_operation
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			command_power > 15
 		}
 		visible = {
+			original_tag = SER
 			has_completed_focus = SER_military_intelligence_network
 		}
 		cost = 40
@@ -60,10 +67,14 @@ SER_black_hand_and_national_defense = {
 	# Expurgar Oficiais Clandestinos do Exército
 	SER_purge_army_clandestine_officers = {
 		icon = GFX_decision_generic_purge
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_completed_focus = SER_curb_secret_societies
 		}
 		visible = {
+			original_tag = SER
 			has_completed_focus = SER_curb_secret_societies
 		}
 		cost = 50
@@ -81,11 +92,14 @@ SER_black_hand_and_national_defense = {
 	# Reforçar a Vigília de Fronteira no Sava e Drina
 	SER_strengthen_border_watch = {
 		icon = GFX_decision_generic_military_operation
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_manpower > 5000
 		}
 		visible = {
-			tag = SER
+			original_tag = SER
 		}
 		cost = 25
 		days_remove = 180
@@ -95,6 +109,82 @@ SER_black_hand_and_national_defense = {
 		}
 		ai_will_do = {
 			factor = 1.0
+		}
+	}
+
+	# Vojno-Tehnički Zavod Kragujevac - Expansão e Rifles Mauser-Koka
+	SER_dec_kragujevac_arms_manufactory = {
+		icon = GFX_decision_generic_arms_factory
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			controls_state = 108
+		}
+		visible = {
+			original_tag = SER
+			controls_state = 108
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			108 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = SER_kragujevac_arsenal
+		}
+		ai_will_do = {
+			factor = 2.0
+		}
+	}
+
+	# Concessões Francesas nas Minas de Cobre de Bor
+	SER_dec_bor_copper_mines_concession = {
+		icon = GFX_decision_generic_construction
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			controls_state = 108
+		}
+		visible = {
+			original_tag = SER
+			controls_state = 108
+		}
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = SER_bor_copper_concession
+		}
+		ai_will_do = {
+			factor = 2.0
+		}
+	}
+
+	# Designação Oficial do Regimento de Ferro (Gvozdeni Puk) e Milunka Savić
+	SER_dec_gvozdeni_puk_iron_regiment = {
+		icon = GFX_decision_generic_military_operation
+		allowed = {
+			original_tag = SER
+		}
+		available = {
+			original_tag = SER
+		}
+		visible = {
+			original_tag = SER
+		}
+		cost = 40
+		fire_only_once = yes
+		complete_effect = {
+			add_ideas = SER_gvozdeni_puk_spirit
+		}
+		ai_will_do = {
+			factor = 2.0
 		}
 	}
 }
@@ -165,10 +255,14 @@ SER_wartime_emergency_measures = {
 	# Triagem Médica e Quarentena Contra o Tifo
 	SER_typhus_quarantine_and_triage = {
 		icon = GFX_decision_generic_aid
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_idea = SER_typhus_epidemic_crisis
 		}
 		visible = {
+			original_tag = SER
 			has_idea = SER_typhus_epidemic_crisis
 		}
 		cost = 30
@@ -191,10 +285,14 @@ SER_wartime_emergency_measures = {
 	# Prioridade Ferroviária de Munições para o Drina e Morava
 	SER_drina_railway_ammunition_priority = {
 		icon = GFX_decision_train
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_war = yes
 		}
 		visible = {
+			original_tag = SER
 			has_completed_focus = SER_morava_valley_logistics
 		}
 		cost = 25
@@ -211,11 +309,14 @@ SER_wartime_emergency_measures = {
 	# Requisição Emergencial de Grãos para a População Civil
 	SER_requisition_emergency_grain = {
 		icon = GFX_decision_generic_agriculture
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_war = yes
 		}
 		visible = {
-			tag = SER
+			original_tag = SER
 			has_war = yes
 		}
 		cost = 20
@@ -233,11 +334,15 @@ SER_wartime_emergency_measures = {
 	# Convocação dos Voluntários Montenegrinos de Lovćen
 	SER_montenegrin_mountain_levies = {
 		icon = GFX_decision_generic_form_nation
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			controls_state = 105
 			has_war = yes
 		}
 		visible = {
+			original_tag = SER
 			controls_state = 105
 			has_war = yes
 		}
@@ -259,11 +364,14 @@ SER_salonika_and_corfu_exile = {
 	# Recrutar Voluntários Sul-Eslavos entre Prisioneiros de Guerra
 	SER_recruit_south_slav_pow_volunteers = {
 		icon = GFX_decision_generic_form_nation
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_war = yes
 		}
 		visible = {
-			tag = SER
+			original_tag = SER
 			OR = {
 				has_completed_focus = SER_government_in_exile_corfu
 				has_completed_focus = SER_rebuild_army_in_salonika
@@ -287,10 +395,14 @@ SER_salonika_and_corfu_exile = {
 	# Coordenação de Intendência com o Exército Francês do Oriente
 	SER_french_logistical_coordination = {
 		icon = GFX_decision_generic_arms_factory
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_war = yes
 		}
 		visible = {
+			original_tag = SER
 			has_completed_focus = SER_rebuild_army_in_salonika
 		}
 		cost = 30
@@ -314,10 +426,14 @@ SER_salonika_and_corfu_exile = {
 	# Apelo Diplomático e Financeiro de Corfu
 	SER_diplomatic_appeal_corfu = {
 		icon = GFX_decision_generic_political_discourse
+		allowed = {
+			original_tag = SER
+		}
 		available = {
 			has_completed_focus = SER_government_in_exile_corfu
 		}
 		visible = {
+			original_tag = SER
 			has_completed_focus = SER_government_in_exile_corfu
 		}
 		cost = 50
