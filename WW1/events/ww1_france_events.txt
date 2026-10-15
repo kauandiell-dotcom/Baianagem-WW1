@@ -492,19 +492,19 @@ country_event = {
 # =========================================================================
 
 # -------------------------------------------------------------------------
-# ww1_france.220: Secret Treaty of London (Sent to ITA)
+# ww1_france.218: Secret Treaty of London (Sent to ITA)
 # -------------------------------------------------------------------------
 country_event = {
-	id = ww1_france.220
-	title = ww1_france.220.t
-	desc = ww1_france.220.d
+	id = ww1_france.218
+	title = ww1_france.218.t
+	desc = ww1_france.218.d
 	picture = GFX_report_event_italian_diplomats
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
-		name = ww1_france.220.a
+		name = ww1_france.218.a
 		ai_chance = { base = 85 }
 		add_political_power = 50
 		add_war_support = 0.10
@@ -512,7 +512,7 @@ country_event = {
 	}
 
 	option = {
-		name = ww1_france.220.b
+		name = ww1_france.218.b
 		ai_chance = { base = 15 }
 		add_political_power = -20
 		FRA = { country_event = { id = ww1_france.222 days = 2 } }
@@ -675,6 +675,9 @@ country_event = {
 # MILITARY CRISIS & PÉTAIN REFORMS (1917)
 # =========================================================================
 
+# -------------------------------------------------------------------------
+# ww1_france.210: The 1917 Army Mutinies
+# -------------------------------------------------------------------------
 country_event = {
 	id = ww1_france.210
 	title = ww1_france.210.t
@@ -682,12 +685,136 @@ country_event = {
 	picture = GFX_report_event_french_mutiny_poilus
 
 	fire_only_once = yes
-	is_triggered_only = yes
+
+	trigger = {
+		tag = FRA
+		has_war = yes
+		date > 1916.12.1
+		check_variable = { FRA_poilu_morale < 40 }
+		NOT = { has_idea = FRA_trench_mutiny_crisis_2 }
+		NOT = { has_idea = FRA_poilus_reconcilies }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
 
 	option = {
 		name = ww1_france.210.a
+		add_ideas = FRA_trench_mutiny_crisis_2
+		subtract_from_variable = { FRA_poilu_morale = 25 }
 		add_stability = -0.10
 		add_war_support = -0.10
+		FRA_clamp_dashboard_variables = yes
+		country_event = { id = ww1_france.211 days = 2 }
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.211: Pétain Appointed Generalissimo / Reforms
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.211
+	title = ww1_france.211.t
+	desc = ww1_france.211.d
+	picture = GFX_report_event_french_soldiers_parade
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_france.211.a
+		ai_chance = { base = 90 }
+		custom_effect_tooltip = FRA_petain_welfare_reforms_unlocked_tt
+		add_stability = 0.05
+		add_political_power = 20
+	}
+
+	option = {
+		name = ww1_france.211.b
+		ai_chance = { base = 10 }
+		add_stability = -0.10
+		add_war_support = -0.05
+		subtract_from_variable = { FRA_union_sacree_cohesion = 15 }
+		FRA_clamp_dashboard_variables = yes
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.215: Munitionnettes Strike in Paris
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.215
+	title = ww1_france.215.t
+	desc = ww1_france.215.d
+	picture = GFX_report_event_communist_crowd
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		has_war = yes
+		date > 1917.4.1
+		check_variable = { FRA_union_sacree_cohesion < 50 }
+		NOT = { has_idea = FRA_munitionnettes_strike }
+	}
+
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	option = {
+		name = ww1_france.215.a
+		ai_chance = { base = 75 }
+		add_political_power = -30
+		add_stability = 0.05
+		add_to_variable = { FRA_union_sacree_cohesion = 10 }
+		FRA_clamp_dashboard_variables = yes
+	}
+
+	option = {
+		name = ww1_france.215.b
+		ai_chance = { base = 25 }
+		add_ideas = FRA_munitionnettes_strike
+		add_stability = -0.05
+		subtract_from_variable = { FRA_union_sacree_cohesion = 10 }
+		FRA_clamp_dashboard_variables = yes
+	}
+}
+
+# -------------------------------------------------------------------------
+# ww1_france.220: Clemenceau's Jusqu'au Bout! Speech (French Endsieg)
+# -------------------------------------------------------------------------
+country_event = {
+	id = ww1_france.220
+	title = ww1_france.220.t
+	desc = ww1_france.220.d
+	picture = GFX_report_event_clemenceau_speech
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		has_war = yes
+		OR = {
+			surrender_progress > 0.15
+			date > 1917.11.1
+		}
+		NOT = { has_idea = FRA_jusqu_au_bout_endsieg }
+	}
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	option = {
+		name = ww1_france.220.a
+		add_ideas = FRA_jusqu_au_bout_endsieg
+		add_war_support = 0.20
+		add_stability = 0.05
+		add_to_variable = { FRA_poilu_morale = 15 }
+		add_to_variable = { FRA_union_sacree_cohesion = 15 }
+		FRA_clamp_dashboard_variables = yes
 	}
 }
 

@@ -1,0 +1,47 @@
+# =========================================================================
+# FRENCH REPUBLIC — 1917 MILITARY CRISES & ENDSIEG NATIONAL IDEAS
+# Bounded Clausewitz modifiers audited via scripts/hoi4_semantic_oracle.py
+# =========================================================================
+
+ideas = {
+	country = {
+		FRA_trench_mutiny_crisis_2 = {
+			picture = generic_discontent
+			allowed = { always = no }
+			modifier = {
+				army_attack_factor = -0.25
+				breakthrough_factor = -0.15
+				army_core_defence_factor = -0.10
+			}
+		}
+
+		FRA_poilus_reconcilies = {
+			picture = generic_victors_of_ww1
+			allowed = { always = no }
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_morale_factor = 0.10
+			}
+		}
+
+		FRA_munitionnettes_strike = {
+			picture = generic_production_bonus
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = -0.20
+				stability_factor = -0.10
+			}
+		}
+
+		FRA_jusqu_au_bout_endsieg = {
+			picture = generic_war_support
+			allowed = { always = no }
+			modifier = {
+				army_core_defence_factor = 0.20
+				war_support_factor = 0.15
+				political_power_gain = 0.10
+				surrender_limit = 0.20
+			}
+		}
+	}
+}

@@ -162,8 +162,10 @@ FRA_western_front_operations = {
 		complete_effect = {
 			remove_ideas = FRA_trench_mutiny_crisis_2
 			add_ideas = FRA_poilus_reconcilies
+			add_to_variable = { FRA_poilu_morale = 30 }
 			add_stability = 0.08
 			add_war_support = 0.05
+			FRA_clamp_dashboard_variables = yes
 		}
 	}
 
